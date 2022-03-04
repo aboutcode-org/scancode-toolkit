@@ -222,7 +222,7 @@ def pe_info(location):
 
 
 @attr.s()
-class WindowsExecutable(models.Package):
+class WindowsExecutableData(models.PackageData):
     
     filetypes = ('pe32', 'for ms windows',)
     mimetypes = ('application/x-dosexec',)
@@ -258,7 +258,7 @@ def concat(mapping, *keys):
 
 
 @attr.s()
-class WindowsExecutable(WindowsExecutable, models.PackageData):
+class WindowsExecutable(WindowsExecutableData, models.PackageDataFile):
     extensions = (
         '.exe',
         '.dll',
@@ -279,7 +279,7 @@ class WindowsExecutable(WindowsExecutable, models.PackageData):
     )
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -356,9 +356,9 @@ class WindowsExecutable(WindowsExecutable, models.PackageData):
 
 
 @attr.s()
-class WindowsPackageInstance(WindowsExecutable, models.PackageInstance):
+class WindowsPackage(WindowsExecutableData, models.Package):
     """
-    A Windows PackageInstance that is created out of one/multiple windows package
+    A Windows Package that is created out of one/multiple windows package
     manifests.
     """
 

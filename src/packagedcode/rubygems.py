@@ -51,7 +51,7 @@ if TRACE:
 
 
 @attr.s()
-class RubyGem(models.Package):
+class RubyGemData(models.PackageData):
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     default_type = 'gem'
@@ -103,13 +103,13 @@ class RubyGem(models.Package):
 
 
 @attr.s()
-class GemArchive(RubyGem, models.PackageData):
+class GemArchive(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('*.gem',)
     extensions = ('.gem',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -127,13 +127,13 @@ class GemArchive(RubyGem, models.PackageData):
 
 
 @attr.s()
-class GemArchiveExtracted(RubyGem, models.PackageData):
+class GemArchiveExtracted(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('metadata.gz-extract',)
     extensions = ('.gz-extract',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -152,13 +152,13 @@ class GemArchiveExtracted(RubyGem, models.PackageData):
 
 
 @attr.s()
-class GemSpec(RubyGem, models.PackageData):
+class GemSpec(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('*.gemspec',)
     extensions = ('.gemspec',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -220,12 +220,12 @@ class GemSpec(RubyGem, models.PackageData):
 
 
 @attr.s()
-class Gemfile(RubyGem, models.PackageData):
+class Gemfile(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('Gemfile',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -241,13 +241,13 @@ class Gemfile(RubyGem, models.PackageData):
         pass
 
 @attr.s()
-class GemfileLock(RubyGem, models.PackageData):
+class GemfileLock(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('Gemfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -305,9 +305,9 @@ class GemfileLock(RubyGem, models.PackageData):
 
 
 @attr.s()
-class RubyPackageInstance(RubyGem, models.PackageInstance):
+class RubyPackage(RubyGemData, models.Package):
     """
-    A Ruby PackageInstance that is created out of one/multiple ruby package
+    A Ruby Package that is created out of one/multiple ruby package
     manifests and package-like data, with it's files.
     """
 
@@ -425,7 +425,7 @@ def get_gem_metadata(location):
             content= archive.get_gz_compressed_file_content(metadata_gz)
 
         else:
-            raise Exception('No gem metadata found in RubyGem .gem file.')
+            raise Exception('No gem metadata found in RubyGemData .gem file.')
 
         return content
 
@@ -662,7 +662,7 @@ def get_dependencies(dependencies):
         version_constraint = ', '.join(constraints)
 
         dep = models.DependentPackage(
-            purl=RubyGem.create(name=name).purl,
+            purl=RubyGemData.create(name=name).purl,
             requirement=version_constraint or None,
             scope=scope,
             is_runtime=is_runtime,
@@ -716,7 +716,7 @@ LICENSES_MAPPING = {
 def spec_defaults():
     """
     Return a mapping with spec attribute defaults to ensure that the
-    returned results are the same on RubyGems 1.8 and RubyGems 2.0
+    returned results are the same on RubyGemDatas 1.8 and RubyGemDatas 2.0
     """
     return {
         'base_dir': None,

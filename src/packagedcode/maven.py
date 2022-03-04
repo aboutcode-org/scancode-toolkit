@@ -47,7 +47,7 @@ Attempts to resolve Maven properties when possible.
 
 
 @attr.s()
-class MavenPomPackage(models.Package):
+class MavenPomPackageData(models.PackageData):
     default_type = 'maven'
     default_primary_language = 'Java'
 
@@ -838,7 +838,7 @@ def get_maven_pom(location=None, text=None, check_is_pom=False, extra_properties
     Return a MavenPom object from a POM file at `location` or provided as a
     `text` string.
     """
-    if location and check_is_pom and not PomXml.is_package_data(location):
+    if location and check_is_pom and not PomXml.is_package_data_file(location):
         return
     pom = MavenPom(location, text)
     if not extra_properties:
@@ -985,9 +985,9 @@ def get_parties(pom):
 
 
 @attr.s()
-class MavenPackageInstance(MavenPomPackage, models.PackageInstance):
+class MavenPackage(MavenPomPackageData, models.Package):
     """
-    A Maven PackageInstance that is created out of one/multiple maven package
+    A Maven Package that is created out of one/multiple maven package
     manifests and package-like data, with it's files.
     """
 
@@ -999,13 +999,13 @@ class MavenPackageInstance(MavenPomPackage, models.PackageInstance):
 
 
 @attr.s()
-class PomXml(MavenPomPackage, models.PackageData):
+class PomXml(MavenPomPackageData, models.PackageDataFile):
 
     file_patterns = ('*.pom', 'pom.xml',)
     extensions = ('.pom',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at location is highly likely to be a POM.
         """
@@ -1076,7 +1076,7 @@ class PomXml(MavenPomPackage, models.PackageData):
         # TODO: what does this mean????
         if not classifier and all([pom.group_id, pom.artifact_id, version]):
             spurl = PackageURL(
-                type=MavenPomPackage.default_type,
+                type=MavenPomPackageData.default_type,
                 namespace=pom.group_id,
                 name=pom.artifact_id,
                 version=version,
@@ -1194,7 +1194,7 @@ class MavenRecognizer(object):
             if not filetype.is_file(loc):
                 continue
             # a pom is an xml doc
-            if not PomXml.is_package_data(location):
+            if not PomXml.is_package_data_file(location):
                 continue
 
             if f == 'pom.xml':

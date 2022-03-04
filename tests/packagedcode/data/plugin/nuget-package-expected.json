@@ -68,7 +68,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:nuget/Castle.Core@4.2.1",
-      "package_data_paths": [
+      "package_data_files": [
         "Castle.Core.nuspec"
       ],
       "files": [

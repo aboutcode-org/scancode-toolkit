@@ -36,7 +36,7 @@ if TRACE:
 
 
 @attr.s()
-class CranPackage(models.Package):
+class CranPackageData(models.PackageData):
     default_type = 'cran'
     default_web_baseurl = 'https://cran.r-project.org/package='
 
@@ -49,12 +49,12 @@ class CranPackage(models.Package):
 
 
 @attr.s()
-class DescriptionFile(CranPackage, models.PackageData):
+class DescriptionFile(CranPackageData, models.PackageDataFile):
 
     file_patterns = ('DESCRIPTION',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if `location` path is for a Cran DESCRIPTION file.
         """
@@ -132,9 +132,9 @@ class DescriptionFile(CranPackage, models.PackageData):
 
 
 @attr.s()
-class CranPackageInstance(CranPackage, models.PackageInstance):
+class CranPackage(CranPackageData, models.Package):
     """
-    A cran PackageInstance that is created out of one/multiple cran package
+    A cran Package that is created out of one/multiple cran package
     manifests.
     """
 

@@ -110,7 +110,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/busboy@0.2.14",
-      "package_data_paths": [
+      "package_data_files": [
         "package.json"
       ],
       "files": [

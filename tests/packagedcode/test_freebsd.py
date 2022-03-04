@@ -19,7 +19,7 @@ class TestFreeBSD(PackageTester):
 
     def test_is_manifest_compact_manifest(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
-        assert freebsd.CompactManifest.is_package_data(test_file)
+        assert freebsd.CompactManifest.is_package_data_file(test_file)
 
     def test_parse_with_multi_licenses(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')

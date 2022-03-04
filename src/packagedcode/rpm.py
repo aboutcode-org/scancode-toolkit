@@ -112,7 +112,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
 
 @attr.s()
-class RpmPackage(models.Package, models.PackageData):
+class RpmPackageData(models.PackageData):
 
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
@@ -128,7 +128,7 @@ class RpmPackage(models.Package, models.PackageData):
         return detected
 
     def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
+        data = models.PackageData.to_dict(self, **kwargs)
         if _detailed:
             #################################################
             data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
@@ -151,18 +151,18 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
     # note that we also have file flags that can tell us which file is a license and doc.
 
     # dump the rpmdb to XMLish
-    xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
+    xmlish_loc = rpm_installed.collPackageDataWithect_installed_rpmdb_xmlish_from_rootfs(root_dir)
     return rpm_installed.parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
 
 
 @attr.s()
-class RpmManifest(RpmPackage, models.PackageData):
+class RpmManifest(RpmPackageData, models.PackageDataFile):
 
     file_patterns = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -267,9 +267,9 @@ class RpmManifest(RpmPackage, models.PackageData):
 
 
 @attr.s()
-class RpmPackageInstance(RpmPackage, models.PackageInstance):
+class RpmPackage(RpmPackageData, models.Package):
     """
-    A RPM PackageInstance that is created out of one/multiple RPM package
+    A RPM Package that is created out of one/multiple RPM package
     manifests.
     """
 

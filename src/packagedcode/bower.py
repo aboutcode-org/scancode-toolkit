@@ -30,7 +30,7 @@ if TRACE:
 
 
 @attr.s()
-class BowerPackage(models.Package):
+class BowerPackageData(models.PackageData):
     
     default_type = 'bower'
 
@@ -43,13 +43,13 @@ class BowerPackage(models.Package):
 
 
 @attr.s()
-class BowerJson(BowerPackage, models.PackageData):
+class BowerJson(BowerPackageData, models.PackageDataFile):
 
     file_patterns = ('bower.json', '.bower.json')
     extensions = ('.json',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -146,9 +146,9 @@ class BowerJson(BowerPackage, models.PackageData):
 
 
 @attr.s()
-class BowerPackageInstance(BowerPackage, models.PackageInstance):
+class BowerPackage(BowerPackageData, models.Package):
     """
-    A Bower PackageInstance that is created out of one/multiple bower package
+    A Bower Package that is created out of one/multiple bower package
     manifests and package-like data, with it's files.
     """
 

@@ -44,7 +44,7 @@ if TRACE:
 
 
 @attr.s()
-class CondaPackage(models.Package):
+class CondaPackageData(models.PackageData):
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
@@ -73,13 +73,13 @@ class CondaPackage(models.Package):
         return models.compute_normalized_license(self.declared_license)
 
 @attr.s()
-class Condayml(CondaPackage, models.PackageData):
+class Condayml(CondaPackageData, models.PackageDataFile):
 
     file_patterns = ('meta.yaml', 'META.yml',)
     extensions = ('.yml', '.yaml',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

@@ -61,7 +61,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:cargo/clap@2.32.0",
-      "package_data_paths": [
+      "package_data_files": [
         "Cargo.toml"
       ],
       "files": [

@@ -19,7 +19,7 @@ class TestBower(PackageTester):
 
     def test_is_manifest_bower_json(self):
         test_file = self.get_test_loc('bower/basic/bower.json')
-        assert bower.BowerJson.is_package_data(test_file)
+        assert bower.BowerJson.is_package_data_file(test_file)
 
     def test_parse_bower_json_basic(self):
         test_file = self.get_test_loc('bower/basic/bower.json')

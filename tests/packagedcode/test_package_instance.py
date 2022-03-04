@@ -14,10 +14,10 @@ import os
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
-from packagedcode.pypi import PythonPackageInstance
+from packagedcode.pypi import PythonPackage
 
 
-class TestPackageAndDependencyInstance(PackageTester):
+class TestPackageAndDependency(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_package_instance_scan_python(self):
@@ -41,7 +41,7 @@ class TestPackageAndDependencyInstance(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        pk_instance = PythonPackageInstance()
+        pk_instance = PythonPackage()
         for manifest in manifests:
             pk_instance.update(manifest)
 
@@ -54,7 +54,7 @@ class TestPackageAndDependencyInstance(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        pk_instance = PythonPackageInstance()
+        pk_instance = PythonPackage()
         for manifest in manifests:
             pk_instance.update(manifest)
 

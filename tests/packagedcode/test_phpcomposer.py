@@ -38,7 +38,7 @@ class TestPHPcomposer(PackageTester):
 
     def test_is_manifest_php_composer_json(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
-        assert phpcomposer.ComposerJson.is_package_data(test_file)
+        assert phpcomposer.ComposerJson.is_package_data_file(test_file)
 
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
@@ -78,7 +78,7 @@ class TestPHPcomposer(PackageTester):
 
     def test_is_manifest_php_composer_lock(self):
         test_file = self.get_test_loc('phpcomposer/composer.lock')
-        assert phpcomposer.ComposerLock.is_package_data(test_file)
+        assert phpcomposer.ComposerLock.is_package_data_file(test_file)
 
     def test_parse_composer_lock(self):
         test_file = self.get_test_loc('phpcomposer/composer.lock')

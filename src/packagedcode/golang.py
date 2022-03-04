@@ -35,7 +35,7 @@ if TRACE:
 
 
 @attr.s()
-class GolangPackage(models.Package):
+class GolangPackageData(models.PackageData):
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
@@ -52,13 +52,13 @@ class GolangPackage(models.Package):
 
 
 @attr.s()
-class GoMod(GolangPackage, models.PackageData):
+class GoMod(GolangPackageData, models.PackageDataFile):
 
     file_patterns = ('go.mod',)
     extensions = ('.mod',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -115,13 +115,13 @@ class GoMod(GolangPackage, models.PackageData):
 
 
 @attr.s()
-class GoSum(GolangPackage, models.PackageData):
+class GoSum(GolangPackageData, models.PackageDataFile):
 
     file_patterns = ('go.sum',)
     extensions = ('.sum',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -153,9 +153,9 @@ class GoSum(GolangPackage, models.PackageData):
 
 
 @attr.s()
-class GoPackageInstance(GolangPackage, models.PackageInstance):
+class GoPackage(GolangPackageData, models.Package):
     """
-    A Golang PackageInstance that is created out of one/multiple go package
+    A Golang Package that is created out of one/multiple go package
     manifests.
     """
 

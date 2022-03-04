@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class RustCargoCrate(models.Package):
+class RustCargoCrate(models.PackageData):
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'
@@ -59,13 +59,13 @@ class RustCargoCrate(models.Package):
 
 
 @attr.s()
-class CargoToml(RustCargoCrate, models.PackageData):
+class CargoToml(RustCargoCrate, models.PackageDataFile):
 
     file_patterns = ('Cargo.toml',)
     extensions = ('.toml',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -103,13 +103,13 @@ class CargoToml(RustCargoCrate, models.PackageData):
 
 
 @attr.s()
-class CargoLock(RustCargoCrate, models.PackageData):
+class CargoLock(RustCargoCrate, models.PackageDataFile):
 
     file_patterns = ('Cargo.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -146,9 +146,9 @@ class CargoLock(RustCargoCrate, models.PackageData):
 
 
 @attr.s()
-class RustPackageInstance(RustCargoCrate, models.PackageInstance):
+class RustPackage(RustCargoCrate, models.Package):
     """
-    A Rust PackageInstance that is created out of one/multiple rust package
+    A Rust Package that is created out of one/multiple rust package
     manifests and package-like data, with it's files.
     """
 

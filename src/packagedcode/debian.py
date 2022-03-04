@@ -32,7 +32,7 @@ if TRACE:
 
 
 @attr.s()
-class DebianPackage(models.Package, models.PackageData):
+class DebianPackage(models.PackageData, models.PackageDataFile):
     file_patterns = ('*.control',)
     extensions = ('.deb',)
     filetypes = ('debian binary package',)

@@ -47,7 +47,7 @@ if TRACE:
 
 
 @attr.s()
-class PhpComposerPackage(models.Package):
+class PhpComposerPackageData(models.PackageData):
     
     mimetypes = ('application/json',)
 
@@ -81,7 +81,7 @@ class PhpComposerPackage(models.Package):
 
 
 @attr.s()
-class ComposerJson(PhpComposerPackage, models.PackageData):
+class ComposerJson(PhpComposerPackageData, models.PackageDataFile):
 
     file_patterns = (
         'composer.json',
@@ -89,7 +89,7 @@ class ComposerJson(PhpComposerPackage, models.PackageData):
     extensions = ('.json',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -179,7 +179,7 @@ def build_package_data(cls, package_data):
     return package
 
 @attr.s()
-class ComposerLock(PhpComposerPackage, models.PackageData):
+class ComposerLock(PhpComposerPackageData, models.PackageDataFile):
 
     file_patterns = (
         'composer.lock',
@@ -187,7 +187,7 @@ class ComposerLock(PhpComposerPackage, models.PackageData):
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -230,9 +230,9 @@ class ComposerLock(PhpComposerPackage, models.PackageData):
 
 
 @attr.s()
-class PhpPackageInstance(PhpComposerPackage, models.PackageInstance):
+class PhpPackage(PhpComposerPackageData, models.Package):
     """
-    A PHP PackageInstance that is created out of one/multiple python package
+    A PHP Package that is created out of one/multiple python package
     manifests.
     """
 

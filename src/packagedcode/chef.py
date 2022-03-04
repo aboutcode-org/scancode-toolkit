@@ -38,7 +38,7 @@ if TRACE:
 
 
 @attr.s()
-class ChefPackage(models.Package):
+class ChefPackageData(models.PackageData):
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'chef'
@@ -156,13 +156,13 @@ class ChefMetadataFormatter(Formatter):
 
 
 @attr.s()
-class MetadataJson(ChefPackage, models.PackageData):
+class MetadataJson(ChefPackageData, models.PackageDataFile):
 
     file_patterns = ('metadata.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'
@@ -187,13 +187,13 @@ class MetadataJson(ChefPackage, models.PackageData):
 
 
 @attr.s()
-class Metadatarb(ChefPackage, models.PackageData):
+class Metadatarb(ChefPackageData, models.PackageDataFile):
 
     file_patterns = ('metadata.rb',)
     extensions = ('.rb',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'
@@ -217,9 +217,9 @@ class Metadatarb(ChefPackage, models.PackageData):
 
 
 @attr.s()
-class ChefPackageInstance(ChefPackage, models.PackageInstance):
+class ChefPackage(ChefPackageData, models.Package):
     """
-    A Chef PackageInstance that is created out of one/multiple chef package
+    A Chef Package that is created out of one/multiple chef package
     manifests.
     """
 

@@ -57,7 +57,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/test-package@0.0.1",
-      "package_data_paths": [
+      "package_data_files": [
         "package-files-not-counted-in-license-holders/package/package.json"
       ],
       "files": [

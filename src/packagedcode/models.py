@@ -55,30 +55,30 @@ There are collectively named "manifests" in ScanCode.
 
 We handle package information at two levels:
 
-1. package manifest information collected in a "manifest" at a file level
-2. package instances at the codebase level, where a package instance contains
+1. package data information collected in a "manifest" or similar at a file level
+2. packages at the codebase level, where a package contains
    one or more package data, and files for that package.
 
 The second requires the first to be computed.
 
 These are case classes to extend:
 
-- Package:
-    Base class with shared package attributes and methods.
 - PackageData:
+    Base class with shared package attributes and methods.
+- PackageDataFile:
     Mixin class that represents a specific package manifest file.
-- PackageInstance:
+- Package:
     Mixin class that represents a package that's constructed from one or more
-    package data. It also tracks package files.
+    package data. It also tracks package files. Basically a package instance.
 
 Here is an example of the classes that would need to exist to support a new fictitious
 package type or ecosystem `dummy`.
 
-- DummyPackage(Package):
+- DummyPackageData(PackageData):
     This class provides type wide defaults and basic implementation for type specific methods.
-- DummyManifest(DummyPackage, PackageData) or DummyLockFile(DummyPackage, PackageData):
+- DummyManifest(DummyPackageData, PackageDataFile) or DummyLockFile(DummyPackageData, PackageDataFile):
     This class provides methods to recognize and parse a package manifest file format.
-- DummyPackageInstance(DummyPackage, PackageInstance):
+- DummyPackage(DummyPackageData, Package):
     This class provides methods to create package instances for one or more manifests and to
     collect package file paths.
 """
@@ -186,7 +186,7 @@ class Party(BaseModel):
 
 
 @attr.s()
-class BasePackage(BaseModel):
+class BasePackageData(BaseModel):
     """
     A base identifiable package object using discrete identifying attributes as
     specified here https://github.com/package-url/purl-spec.
@@ -344,7 +344,7 @@ class BasePackage(BaseModel):
         """
         from packagedcode import get_package_class
         type_cls = get_package_class(kwargs, default=cls)
-        return super(BasePackage, type_cls).create(**kwargs)
+        return super(BasePackageData, type_cls).create(**kwargs)
 
 
 @attr.s()
@@ -396,7 +396,7 @@ class DependentPackage(BaseModel):
 
 
 @attr.s
-class DependencyInstance(DependentPackage):
+class Dependency(DependentPackage):
 
     dependency_uuid = String(
         label='Dependency instance UUID',
@@ -452,7 +452,7 @@ class PackageFile(BaseModel):
 
 
 @attr.s()
-class Package(BasePackage):
+class PackageData(BasePackageData):
     """
     A package object as represented by either data from one of its different types of
     package data or that of a package instance created from one or more of these
@@ -553,11 +553,6 @@ class Package(BasePackage):
         help='The path to the root of the package documented in this manifest '
              'if any, such as a Maven .pom or a npm package.json parent directory.')
 
-    dependencies = List(
-        item_type=DependentPackage,
-        label='dependencies',
-        help='A list of DependentPackage for this package. ')
-
     contains_source_code = TriBoolean(
         label='contains source code',
         help='Flag set to True if this package contains its own source code, None '
@@ -591,9 +586,9 @@ class Package(BasePackage):
         """
         Yield the Resources of a Package starting from `package_root`
         """
-        if not Package.is_ignored_package_resource(package_root, codebase):
+        if not cls.is_ignored_package_resource(package_root, codebase):
             yield package_root
-        for resource in package_root.walk(codebase, topdown=True, ignored=Package.is_ignored_package_resource):
+        for resource in package_root.walk(codebase, topdown=True, ignored=cls.is_ignored_package_resource):
             yield resource
 
     @classmethod
@@ -688,14 +683,20 @@ def compute_normalized_license(declared_license, expression_symbols=None):
 
 
 @attr.s
-class PackageData:
+class PackageDataFile:
     """
-    A mixin for package manifests, lockfiles and other package data that can be
-    recognized.
+    A mixin for package manifests, lockfiles and other package data files
+    that can be recognized.
 
     When creating a new package data, a class should be created that extends
-    both PackageData and Package.
+    both PackageDataFile and PackageData.
     """
+
+    dependencies = List(
+        item_type=DependentPackage,
+        label='dependencies',
+        help='A list of DependentPackage for this package. ')
+
 
     # class-level attributes used to recognize a package
     filetypes = tuple()
@@ -718,11 +719,12 @@ class PackageData:
         return f"{cls.__module__}.{cls.__qualname__}"
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
-        Return True if the file at ``location`` is likely a manifest of this type.
+        Return True if the file at ``location`` is likely a manifest/lockfile/other
+        package data file of this type.
 
-        Sub-classes should override to implement their own manifest recognition.
+        Sub-classes should override to implement their own package data file recognition.
         """
         if not filetype.is_file(location):
             return
@@ -782,10 +784,11 @@ class PackageData:
 
 
 @attr.s()
-class PackageInstance:
+class Package:
     """
-    A package instance mixin as represented by its package data, files and data
-    from its package data.
+    A package mixin as represented by its package data, files and data
+    from its package data. Here package obviously represents a package
+    instance.
 
     Subclasses must extend a Package subclass for a given ecosystem.
     """
@@ -796,7 +799,7 @@ class PackageInstance:
              'Consists of a pURL and an UUID field as a pURL qualifier.'
     )
 
-    package_data_paths = List(
+    package_data_files = List(
         item_type=String,
         label='Package data paths',
         help='List of package data file paths for this package'
@@ -823,7 +826,7 @@ class PackageInstance:
         """
         data = super().to_dict(**kwargs)
 
-        for attribute in ('root_path', 'purl'):
+        for attribute in ('dependencies', 'purl'):
             data.pop(attribute, None)
 
         return data
@@ -834,17 +837,17 @@ class PackageInstance:
         """
         mapping = self.to_dict()
 
-        # Removes PackageInstance specific attributes
-        for attribute in ('package_uuid', 'package_data_paths', 'files'):
+        # Removes Package specific attributes
+        for attribute in ('package_uuid', 'package_data_files', 'files'):
             mapping.pop(attribute, None)
 
-        # Remove attributes which are BasePackage functions
+        # Remove attributes which are BasePackageData functions
         for attribute in ('repository_homepage_url', 'repository_download_url', 'api_data_url'):
             mapping.pop(attribute, None)
 
         return mapping
 
-    def populate_instance_from_package_data(self, package_data_by_path, uuid):
+    def populate_package_data(self, package_data_by_path, uuid):
         """
         Create a package instance object from one or multiple package data.
         """
@@ -852,10 +855,10 @@ class PackageInstance:
             if TRACE:
                 logger.debug('Merging package manifest data for: {}'.format(path))
                 logger.debug('package manifest data: {}'.format(repr(package_data)))
-            self.package_data_paths.append(path)
+            self.package_data_files.append(path)
             self.update(package_data.copy())
 
-        self.package_data_paths = tuple(self.package_data_paths)
+        self.package_data_files = tuple(self.package_data_files)
 
         # Set `package_uuid` as pURL for the package + it's uuid as a qualifier
         # in the pURL string
@@ -891,7 +894,7 @@ class PackageInstance:
         
         return files
 
-    def get_other_package_data_for_instance(self, resource, codebase):
+    def get_other_package_data(self, resource, codebase):
         """
         Return a dictionary of other package data by their paths for a given package instance.
 
@@ -941,7 +944,7 @@ class PackageInstance:
 
     def update(self, package_data, replace=False):
         """
-        Update the PackageInstance object with data from the `package_data`
+        Update the Package object with data from the `package_data`
         object.
         When an `package_instance` field has no value one side and and the
         `package_data` field has a value, the `package_instance` field is always
@@ -1076,7 +1079,7 @@ class PackageInstance:
 
 
 @attr.s()
-class JavaJar(Package, PackageData):
+class JavaJar(PackageData, PackageDataFile):
     file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1086,7 +1089,7 @@ class JavaJar(Package, PackageData):
 
 
 @attr.s()
-class JavaWar(Package, PackageData):
+class JavaWar(PackageData, PackageDataFile):
     file_patterns = ('WEB-INF/web.xml',)
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1096,7 +1099,7 @@ class JavaWar(Package, PackageData):
 
 
 @attr.s()
-class JavaEar(Package, PackageData):
+class JavaEar(PackageData, PackageDataFile):
     file_patterns = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1106,7 +1109,7 @@ class JavaEar(Package, PackageData):
 
 
 @attr.s()
-class Axis2Mar(Package, PackageData):
+class Axis2Mar(PackageData, PackageDataFile):
     """Apache Axis2 module"""
     file_patterns = ('META-INF/module.xml',)
     extensions = ('.mar',)
@@ -1117,7 +1120,7 @@ class Axis2Mar(Package, PackageData):
 
 
 @attr.s()
-class JBossSar(Package, PackageData):
+class JBossSar(PackageData, PackageDataFile):
     file_patterns = ('META-INF/jboss-service.xml',)
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1127,14 +1130,14 @@ class JBossSar(Package, PackageData):
 
 
 @attr.s()
-class MeteorPackage(Package, PackageData):
+class MeteorPackage(PackageData, PackageDataFile):
     file_patterns = ('package.js',)
     default_type = 'meteor'
     default_primary_language = 'JavaScript'
 
 
 @attr.s()
-class CpanModule(Package, PackageData):
+class CpanModule(PackageData, PackageDataFile):
     file_patterns = (
         '*.pod',
         # TODO: .pm is not a package manifest
@@ -1154,14 +1157,14 @@ class CpanModule(Package, PackageData):
 # TODO: refine me: Go packages are a mess but something is emerging
 # TODO: move to and use godeps.py
 @attr.s()
-class Godep(Package, PackageData):
+class Godep(PackageData, PackageDataFile):
     file_patterns = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
 
 
 @attr.s()
-class AndroidApp(Package, PackageData):
+class AndroidApp(PackageData, PackageDataFile):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
@@ -1171,7 +1174,7 @@ class AndroidApp(Package, PackageData):
 
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
 @attr.s()
-class AndroidLibrary(Package, PackageData):
+class AndroidLibrary(PackageData, PackageDataFile):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     # note: Apache Axis also uses AAR extensions for plain Jars.
@@ -1182,7 +1185,7 @@ class AndroidLibrary(Package, PackageData):
 
 
 @attr.s()
-class MozillaExtension(Package, PackageData):
+class MozillaExtension(PackageData, PackageDataFile):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
@@ -1191,7 +1194,7 @@ class MozillaExtension(Package, PackageData):
 
 
 @attr.s()
-class ChromeExtension(Package, PackageData):
+class ChromeExtension(PackageData, PackageDataFile):
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
@@ -1200,7 +1203,7 @@ class ChromeExtension(Package, PackageData):
 
 
 @attr.s()
-class IOSApp(Package, PackageData):
+class IOSApp(PackageData, PackageDataFile):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
@@ -1209,7 +1212,7 @@ class IOSApp(Package, PackageData):
 
 
 @attr.s()
-class CabPackage(Package, PackageData):
+class CabPackage(PackageData, PackageDataFile):
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
@@ -1217,7 +1220,7 @@ class CabPackage(Package, PackageData):
 
 
 @attr.s()
-class InstallShieldPackage(Package, PackageData):
+class InstallShieldPackage(PackageData, PackageDataFile):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -1225,7 +1228,7 @@ class InstallShieldPackage(Package, PackageData):
 
 
 @attr.s()
-class NSISInstallerPackage(Package, PackageData):
+class NSISInstallerPackage(PackageData, PackageDataFile):
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -1233,7 +1236,7 @@ class NSISInstallerPackage(Package, PackageData):
 
 
 @attr.s()
-class SharPackage(Package, PackageData):
+class SharPackage(PackageData, PackageDataFile):
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin',)
@@ -1241,7 +1244,7 @@ class SharPackage(Package, PackageData):
 
 
 @attr.s()
-class AppleDmgPackage(Package, PackageData):
+class AppleDmgPackage(PackageData, PackageDataFile):
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
@@ -1249,7 +1252,7 @@ class AppleDmgPackage(Package, PackageData):
 
 
 @attr.s()
-class IsoImagePackage(Package, PackageData):
+class IsoImagePackage(PackageData, PackageDataFile):
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img',)
@@ -1257,7 +1260,7 @@ class IsoImagePackage(Package, PackageData):
 
 
 @attr.s()
-class SquashfsPackage(Package, PackageData):
+class SquashfsPackage(PackageData, PackageDataFile):
     filetypes = ('squashfs',)
     default_type = 'squashfs'
 

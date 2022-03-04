@@ -43,7 +43,7 @@ if TRACE:
 
 
 @attr.s()
-class CocoapodsPackage(models.Package):
+class CocoapodsPackageData(models.PackageData):
     default_type = 'pods'
     default_primary_language = 'Objective-C'
     default_web_baseurl = 'https://cocoapods.org'
@@ -117,13 +117,13 @@ class CocoapodsPackage(models.Package):
 
 
 @attr.s()
-class Podspec(CocoapodsPackage, models.PackageData):
+class Podspec(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*.podspec',)
     extensions = ('.podspec',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -176,13 +176,13 @@ class Podspec(CocoapodsPackage, models.PackageData):
 
 
 @attr.s()
-class PodfileLock(CocoapodsPackage, models.PackageData):
+class PodfileLock(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*podfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -262,13 +262,13 @@ class PodfileLock(CocoapodsPackage, models.PackageData):
 
 
 @attr.s()
-class PodspecJson(CocoapodsPackage, models.PackageData):
+class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*.podspec.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -377,9 +377,9 @@ class PodspecJson(CocoapodsPackage, models.PackageData):
 
 
 @attr.s()
-class CocoapodsPackageInstance(CocoapodsPackage, models.PackageInstance):
+class CocoapodsPackage(CocoapodsPackageData, models.Package):
     """
-    A cocoapods PackageInstance that is created out of one/multiple cocoapods package
+    A cocoapods Package that is created out of one/multiple cocoapods package
     manifests and package-like data, with it's files.
     """
 

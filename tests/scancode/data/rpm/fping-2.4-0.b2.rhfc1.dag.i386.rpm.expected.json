@@ -61,7 +61,7 @@
       ],
       "extra_data": {},
       "package_uuid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
-      "package_data_paths": [
+      "package_data_files": [
         "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
       ],
       "files": [

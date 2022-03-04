@@ -51,7 +51,7 @@ def recognize_package_data(location):
 
     recognized_package_data = []
     for package_data_type in PACKAGE_DATA_TYPES:
-        if not package_data_type.is_package_data(location):
+        if not package_data_type.is_package_data_file(location):
             continue
 
         try:

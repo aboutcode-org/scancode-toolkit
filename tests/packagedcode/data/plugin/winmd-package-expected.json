@@ -65,7 +65,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:winexe/Windows%20SDK@10.0.10011.16384",
-      "package_data_paths": [
+      "package_data_files": [
         "Windows.AI.winmd"
       ],
       "files": [

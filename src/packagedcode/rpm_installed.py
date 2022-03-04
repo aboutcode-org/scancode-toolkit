@@ -133,7 +133,7 @@ def collect_tags(raw_tags):
 
 def build_package(rpm_tags):
     """
-    Return an RpmBasePackage object from an `rpm_tags` iterable of (name,
+    Return an RpmPackage object from an `rpm_tags` iterable of (name,
     value_type, value) tuples.
     """
     # guard from circular import

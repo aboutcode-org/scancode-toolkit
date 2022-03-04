@@ -38,12 +38,12 @@ gradle, Buck, Bazel, Pants, etc.
 
 
 @attr.s()
-class BaseBuildManifestPackage(models.Package):
+class BaseBuildManifestPackageData(models.PackageData):
     file_patterns = tuple()
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_package_data(location):
+        if not cls.is_package_data_file(location):
             return
 
         # we use the parent directory as a name
@@ -65,7 +65,7 @@ class BaseBuildManifestPackage(models.Package):
 
 
 @attr.s()
-class AutotoolsPackage(BaseBuildManifestPackage, models.PackageData):
+class AutotoolsPackage(BaseBuildManifestPackageData, models.PackageDataFile):
     file_patterns = ('configure', 'configure.ac',)
     default_type = 'autotools'
 
@@ -89,11 +89,11 @@ def check_rule_name_ending(rule_name):
 
 
 @attr.s()
-class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageData):
+class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFile):
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_package_data(location):
+        if not cls.is_package_data_file(location):
             return
 
         # Thanks to Starlark being a Python dialect, we can use the `ast`
@@ -183,7 +183,7 @@ class BuckPackage(StarlarkManifestPackage):
 
 
 @attr.s()
-class MetadataBzl(BaseBuildManifestPackage, models.PackageData):
+class MetadataBzl(BaseBuildManifestPackageData, models.PackageDataFile):
     file_patterns = ('METADATA.bzl',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
@@ -191,7 +191,7 @@ class MetadataBzl(BaseBuildManifestPackage, models.PackageData):
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_package_data(location):
+        if not cls.is_package_data_file(location):
             return
 
         with open(location, 'rb') as f:

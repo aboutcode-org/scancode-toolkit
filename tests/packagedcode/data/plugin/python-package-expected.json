@@ -284,7 +284,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:pypi/arpy@0.1.1",
-      "package_data_paths": [
+      "package_data_files": [
         "arpy/setup.py"
       ],
       "files": [
@@ -485,7 +485,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:pypi/atomicwrites@1.2.1",
-      "package_data_paths": [
+      "package_data_files": [
         "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
         "atomicwrites/Pipfile.lock"
       ],
@@ -549,7 +549,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:pypi/six@1.10.0",
-      "package_data_paths": [
+      "package_data_files": [
         "Six/METADATA"
       ],
       "files": [
@@ -594,7 +594,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:chef/six@1.10.0",
-      "package_data_paths": [
+      "package_data_files": [
         "Six/metadata.json"
       ],
       "files": [
@@ -649,7 +649,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:pypi/ticketimport@0.7a",
-      "package_data_paths": [
+      "package_data_files": [
         "TicketImport/PKG-INFO"
       ],
       "files": [

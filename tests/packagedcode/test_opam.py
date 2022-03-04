@@ -20,7 +20,7 @@ class TestOcaml(PackageTester):
 
     def test_is_manifest_cargo_toml(self):
         test_file = self.get_test_loc('opam/sample1/sample1.opam')
-        assert opam.OpamFile.is_package_data(test_file)
+        assert opam.OpamFile.is_package_data_file(test_file)
 
     def test_parse_sample1(self):
         test_file = self.get_test_loc('opam/sample1/sample1.opam')

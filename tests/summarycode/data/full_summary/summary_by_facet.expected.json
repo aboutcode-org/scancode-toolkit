@@ -3716,7 +3716,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/npm@2.13.5",
-      "package_data_paths": [
+      "package_data_files": [
         "scan/package.json"
       ],
       "files": [

@@ -39,7 +39,7 @@ README_MAPPING = {
 
 
 @attr.s()
-class ReadmePackage(models.Package):
+class ReadmePackageData(models.PackageData):
     default_type = 'readme'
 
     @classmethod
@@ -50,7 +50,7 @@ class ReadmePackage(models.Package):
         return models.compute_normalized_license(self.declared_license)
 
 @attr.s()
-class ReadmeManifest(ReadmePackage, models.PackageData):
+class ReadmeManifest(ReadmePackageData, models.PackageDataFile):
 
     file_patterns = (
         'README.android',
@@ -61,7 +61,7 @@ class ReadmeManifest(ReadmePackage, models.PackageData):
     )
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

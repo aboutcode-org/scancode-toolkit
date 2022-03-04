@@ -16,18 +16,18 @@ from packages_test_utils import PackageTester
 class TestChef(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_chef_metadata_json_is_package_data(self):
+    def test_chef_metadata_json_is_package_data_file(self):
         test_file = self.get_test_loc('chef/basic/metadata.json')
-        assert chef.MetadataJson.is_package_data(test_file)
+        assert chef.MetadataJson.is_package_data_file(test_file)
 
     def test_chef_metadata_rb_from_json(self):
         test_file = self.get_test_loc('chef/basic/metadata.json')
         expected_file = self.get_test_loc('chef/basic/metadata.json.expected')
         self.check_packages(chef.MetadataJson.recognize(test_file), expected_file, regen=False)
 
-    def test_chef_metadata_rb_is_package_data(self):
+    def test_chef_metadata_rb_is_package_data_file(self):
         test_file = self.get_test_loc('chef/basic/metadata.rb')
-        assert chef.Metadatarb.is_package_data(test_file)
+        assert chef.Metadatarb.is_package_data_file(test_file)
 
     def test_parse_from_rb(self):
         test_file = self.get_test_loc('chef/basic/metadata.rb')

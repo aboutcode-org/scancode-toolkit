@@ -93,7 +93,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:chef/301@0.1.0",
-      "package_data_paths": [
+      "package_data_files": [
         "metadata.json",
         "metadata.rb"
       ],

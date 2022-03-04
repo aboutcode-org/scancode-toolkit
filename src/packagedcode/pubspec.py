@@ -58,7 +58,7 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 
 
 @attr.s()
-class PubspecPackage(models.Package):
+class PubspecPackageData(models.PackageData):
     default_type = 'pubspec'
     default_primary_language = 'dart'
     default_web_baseurl = 'https://pub.dev/packages'
@@ -107,13 +107,13 @@ def compute_normalized_license(declared_license, location=None):
 
 
 @attr.s()
-class PubspecYaml(PubspecPackage, models.PackageData):
+class PubspecYaml(PubspecPackageData, models.PackageDataFile):
 
     file_patterns = ('*pubspec.yaml',)
     extensions = ('.yaml',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -142,13 +142,13 @@ def file_endswith(location, endswith):
 
 
 @attr.s()
-class PubspecLock(PubspecPackage, models.PackageData):
+class PubspecLock(PubspecPackageData, models.PackageDataFile):
 
     file_patterns = ('*pubspec.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -167,9 +167,9 @@ class PubspecLock(PubspecPackage, models.PackageData):
 
 
 @attr.s()
-class PubspecPackageInstance(PubspecPackage, models.PackageInstance):
+class PubspecPackage(PubspecPackageData, models.Package):
     """
-    A Pubspec PackageInstance that is created out of one/multiple pubspec package
+    A Pubspec Package that is created out of one/multiple pubspec package
     manifests.
     """
 

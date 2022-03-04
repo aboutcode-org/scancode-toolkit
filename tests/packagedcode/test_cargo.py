@@ -20,7 +20,7 @@ class TestCargo(PackageTester):
 
     def test_is_manifest_cargo_toml(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
-        assert cargo.CargoToml.is_package_data(test_file)
+        assert cargo.CargoToml.is_package_data_file(test_file)
 
     def test_parse_cargo_toml_clap(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
@@ -54,7 +54,7 @@ class TestCargo(PackageTester):
     
     def test_is_manifest_cargo_lock(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
-        assert cargo.CargoLock.is_package_data(test_file)
+        assert cargo.CargoLock.is_package_data_file(test_file)
 
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')

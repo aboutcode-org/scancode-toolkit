@@ -213,7 +213,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:composer/laravel/laravel",
-      "package_data_paths": [
+      "package_data_files": [
         "composer.json"
       ],
       "files": [

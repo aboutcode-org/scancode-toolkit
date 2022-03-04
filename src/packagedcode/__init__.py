@@ -114,24 +114,24 @@ PACKAGE_DATA_TYPES = [
 
 
 PACKAGE_INSTANCE_TYPES = [
-    rpm.RpmPackageInstance,
-    maven.MavenPackageInstance,
-    npm.NpmPackageInstance,
-    phpcomposer.PhpPackageInstance,
-    haxe.HaxePackageInstance,
-    cargo.RustPackageInstance,
-    cocoapods.CocoapodsPackageInstance,
-    opam.OpamPackageInstance,
-    bower.BowerPackageInstance,
-    freebsd.FreebsdPackageInstance,
-    rubygems.RubyPackageInstance,
-    pypi.PythonPackageInstance,
-    golang.GoPackageInstance,
-    nuget.NugetPackageInstance,
-    chef.ChefPackageInstance,
-    win_pe.WindowsPackageInstance,
-    pubspec.PubspecPackageInstance,
-    cran.CranPackageInstance
+    rpm.RpmPackage,
+    maven.MavenPackage,
+    npm.NpmPackage,
+    phpcomposer.PhpPackage,
+    haxe.HaxePackage,
+    cargo.RustPackage,
+    cocoapods.CocoapodsPackage,
+    opam.OpamPackage,
+    bower.BowerPackage,
+    freebsd.FreebsdPackage,
+    rubygems.RubyPackage,
+    pypi.PythonPackage,
+    golang.GoPackage,
+    nuget.NugetPackage,
+    chef.ChefPackage,
+    win_pe.WindowsPackage,
+    pubspec.PubspecPackage,
+    cran.CranPackage
 ]
 
 

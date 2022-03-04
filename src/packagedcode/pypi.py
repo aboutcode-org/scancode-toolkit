@@ -67,7 +67,7 @@ if TRACE:
 
 
 @attr.s()
-class PythonPackage(models.Package):
+class PythonPackageData(models.PackageData):
     default_type = 'pypi'
     default_primary_language = 'Python'
     default_web_baseurl = 'https://pypi.org'
@@ -100,12 +100,12 @@ meta_file_names = 'PKG-INFO', 'METADATA',
 
 
 @attr.s()
-class MetadataFile(PythonPackage, models.PackageData):
+class MetadataFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = meta_file_names
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -158,13 +158,13 @@ bdist_file_suffixes = '.whl', '.egg',
 
 
 @attr.s()
-class BinaryDistArchive(PythonPackage, models.PackageData):
+class BinaryDistArchive(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('*.whl', '*.egg',)
     extensions = bdist_file_suffixes
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -189,13 +189,13 @@ sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
 
 
 @attr.s()
-class SourceDistArchive(PythonPackage, models.PackageData):
+class SourceDistArchive(PythonPackageData, models.PackageDataFile):
     # TODO: we are ignoing sdists such as pex, pyz, etc.
     file_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
     extensions = sdist_file_suffixes
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -228,13 +228,13 @@ class SourceDistArchive(PythonPackage, models.PackageData):
 
 
 @attr.s()
-class SetupPy(PythonPackage, models.PackageData):
+class SetupPy(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('setup.py',)
     extensions = ('.py',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -271,7 +271,7 @@ class SetupPy(PythonPackage, models.PackageData):
 
 
 @attr.s()
-class DependencyFile(PythonPackage, models.PackageData):
+class DependencyFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = (
         'Pipfile',
@@ -281,7 +281,7 @@ class DependencyFile(PythonPackage, models.PackageData):
     )
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         for file_pattern in cls.file_patterns:
             if filetype.is_file(location) and location.endswith(file_pattern):
                 return True
@@ -306,13 +306,13 @@ class DependencyFile(PythonPackage, models.PackageData):
 
 
 @attr.s()
-class PipfileLock(PythonPackage, models.PackageData):
+class PipfileLock(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('Pipfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -343,7 +343,7 @@ class PipfileLock(PythonPackage, models.PackageData):
 
 
 @attr.s()
-class RequirementsFile(PythonPackage, models.PackageData):
+class RequirementsFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = (
         '*requirement*.txt',
@@ -356,7 +356,7 @@ class RequirementsFile(PythonPackage, models.PackageData):
     )
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the ``location`` is likely a pip requirements file.
         """
@@ -428,9 +428,9 @@ def get_requirements_txt_dependencies(location):
     return dependent_packages
 
 @attr.s()
-class PythonPackageInstance(PythonPackage, models.PackageInstance):
+class PythonPackage(PythonPackageData, models.Package):
     """
-    A Python PackageInstance that is created out of one/multiple python package
+    A Python Package that is created out of one/multiple python package
     manifests.
     """
 

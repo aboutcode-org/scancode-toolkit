@@ -19,7 +19,7 @@ class TestAbout(PackageTester):
 
     def test_can_detect_aboutfile(self):
         test_file = self.get_test_loc('about/aboutfiles/apipkg.ABOUT')
-        assert about.Aboutfile.is_package_data(test_file)
+        assert about.Aboutfile.is_package_data_file(test_file)
 
     def test_parse_about_file_home_url(self):
         test_file = self.get_test_loc('about/aboutfiles/apipkg.ABOUT')

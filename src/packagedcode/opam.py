@@ -33,7 +33,7 @@ if TRACE:
 
 
 @attr.s()
-class OpamPackage(models.Package):
+class OpamPackageData(models.PackageData):
 
     default_type = 'opam'
     default_primary_language = 'Ocaml'
@@ -55,13 +55,13 @@ class OpamPackage(models.Package):
 
 
 @attr.s()
-class OpamFile(OpamPackage, models.PackageData):
+class OpamFile(OpamPackageData, models.PackageDataFile):
 
     file_patterns = ('*opam',)
     extensions = ('.opam',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -149,9 +149,9 @@ class OpamFile(OpamPackage, models.PackageData):
 
 
 @attr.s()
-class OpamPackageInstance(OpamPackage, models.PackageInstance):
+class OpamPackage(OpamPackageData, models.Package):
     """
-    A Opam PackageInstance that is created out of one/multiple opam package
+    A Opam Package that is created out of one/multiple opam package
     manifests and package-like data, with it's files.
     """
 

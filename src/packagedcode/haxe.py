@@ -48,7 +48,7 @@ if TRACE:
 
 
 @attr.s()
-class HaxePackage(models.Package):
+class HaxePackageData(models.PackageData):
     
     filetypes = tuple()
     mimetypes = tuple()
@@ -69,13 +69,13 @@ class HaxePackage(models.Package):
 
 
 @attr.s()
-class HaxelibJson(HaxePackage, models.PackageData):
+class HaxelibJson(HaxePackageData, models.PackageDataFile):
 
     file_patterns = ('haxelib.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_package_data(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -136,9 +136,9 @@ class HaxelibJson(HaxePackage, models.PackageData):
 
 
 @attr.s()
-class HaxePackageInstance(HaxePackage, models.PackageInstance):
+class HaxePackage(HaxePackageData, models.Package):
     """
-    A Haxe PackageInstance that is created out of one/multiple haxe package
+    A Haxe Package that is created out of one/multiple haxe package
     manifests, lockfiles, build scripts and package-like data, with it's files.
     """
 

@@ -65,7 +65,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:winexe/File@5.03.3414.16721",
-      "package_data_paths": [
+      "package_data_files": [
         "file.exe"
       ],
       "files": [

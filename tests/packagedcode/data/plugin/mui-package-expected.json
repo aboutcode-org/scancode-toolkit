@@ -65,7 +65,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256",
-      "package_data_paths": [
+      "package_data_files": [
         "clfs.sys.mui"
       ],
       "files": [

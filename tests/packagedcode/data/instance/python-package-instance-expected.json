@@ -151,7 +151,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:pypi/click@8.0.1",
-      "package_data_paths": [
+      "package_data_files": [
         "METADATA",
         "setup.cfg",
         "setup.py",

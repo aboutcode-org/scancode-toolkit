@@ -733,7 +733,7 @@
       ],
       "extra_data": {},
       "package_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
-      "package_data_paths": [
+      "package_data_files": [
         "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
       ],
       "files": [
@@ -794,7 +794,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
-      "package_data_paths": [
+      "package_data_files": [
         "scan/freebsd/basic/+COMPACT_MANIFEST"
       ],
       "files": [
@@ -1336,7 +1336,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "package_data_paths": [
+      "package_data_files": [
         "scan/scoped1/package.json"
       ],
       "files": [

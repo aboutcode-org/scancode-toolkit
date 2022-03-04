@@ -24,7 +24,7 @@ from packageurl import PackageURL
 from packagedcode import get_package_instance
 from packagedcode import PACKAGE_DATA_TYPES
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
-from packagedcode.models import DependencyInstance
+from packagedcode.models import Dependency
 
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
@@ -124,7 +124,7 @@ def create_package_and_dep_instances(codebase, **kwargs):
     """
     Create package instances from package data present in the codebase.
     """
-    package_data_paths = []
+    package_data_files = []
     package_instance_by_id = {}
 
     dependency_data_paths = []
@@ -135,7 +135,7 @@ def create_package_and_dep_instances(codebase, **kwargs):
             continue
 
         # continue if this resource is already in a package_instance
-        if resource.path in package_data_paths:
+        if resource.path in package_data_files:
             continue
 
         if TRACE:
@@ -162,22 +162,22 @@ def create_package_and_dep_instances(codebase, **kwargs):
 
             continue
 
-        # Check if PackageInstance is implemented for this package type
+        # Check if Package is implemented for this package type
         pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(package_data["type"])
         if not pk_instance_class:
             continue
 
-        # create a PackageInstance object of the package type which this manifest belongs to
+        # create a Package object of the package type which this manifest belongs to
         pk_instance = pk_instance_class()
         pk_instance_uuid = uuid.uuid4()
         package_instance_by_id[pk_instance_uuid] = pk_instance
 
-        # use `get_other_package_data_for_instance` to get other package_data files of this instance
-        package_data_by_path = pk_instance.get_other_package_data_for_instance(resource, codebase)
+        # use `get_other_package_data` to get other package_data files of this instance
+        package_data_by_path = pk_instance.get_other_package_data(resource, codebase)
         package_data_by_path[resource.path] = package_data
 
-        # populate PackageInstance with data from it's package_data files
-        pk_instance.populate_instance_from_package_data(package_data_by_path, uuid=pk_instance_uuid)
+        # populate Package with data from it's package_data files
+        pk_instance.populate_package_data(package_data_by_path, uuid=pk_instance_uuid)
 
         if TRACE:
             logger_debug(
@@ -185,9 +185,9 @@ def create_package_and_dep_instances(codebase, **kwargs):
                 'package_data_by_path:', package_data_by_path,
             )
 
-        # add `path` into `package_data_paths` for all package_datas
+        # add `path` into `package_data_files` for all package_datas
         for path, package_data in package_data_by_path.items():
-            package_data_paths.append(path)
+            package_data_files.append(path)
 
             if package_data.get("dependencies"):
                 if path in dependency_data_paths:
@@ -206,7 +206,7 @@ def create_package_and_dep_instances(codebase, **kwargs):
                     dependency_instance_by_id[dep_instance.dependency_uuid] = dep_instance
                     dep_instance.for_package = pk_instance.package_uuid
 
-        # get files for this PackageInstance
+        # get files for this Package
         pk_instance.files = tuple(pk_instance.get_package_files(resource, codebase))
 
         # add `package_uuid` to `for_packages` for all files of that package
@@ -221,21 +221,21 @@ def create_package_and_dep_instances(codebase, **kwargs):
     if TRACE:
         logger_debug(
             'create_package_and_dep_instances:',
-            'package_data_paths:', package_data_paths,
+            'package_data_files:', package_data_files,
         )
 
-    # Get unique PackageInstance objects from `package_instance_by_id`
+    # Get unique Package objects from `package_instance_by_id`
     for package_instance in list(package_instance_by_id.values()):
         codebase.attributes.packages.append(package_instance.to_dict())
 
-     # Get unique DependencyInstance objects from `dependency_instance_by_id`
+     # Get unique Dependency objects from `dependency_instance_by_id`
     for dependency_instance in list(dependency_instance_by_id.values()):
         codebase.attributes.dependencies.append(dependency_instance.to_dict())
 
 
 def update_files_with_package_uuid(file_paths, codebase, package_uuid):
     """
-    For the corresponding resources to a list of `file_paths` for a PackageInstance,
+    For the corresponding resources to a list of `file_paths` for a Package,
     set their `for_packages` with the `package_uuid`. 
     """
     for file_path in file_paths:
@@ -256,7 +256,7 @@ def set_package_uuid_for_dependencies(dependency_instance_by_id, path, pk_instan
 
 def create_dependency_instances(path, dependencies):
     """
-    Return a list of DependencyInstance obejcts corresponding to
+    Return a list of Dependency obejcts corresponding to
     each dependency in the `package_data` level `dependencies` list. 
     """
     dependency_instances = []
@@ -266,7 +266,7 @@ def create_dependency_instances(path, dependencies):
         purl.qualifiers["uuid"] = str(uuid.uuid4())
 
         dependency_instances.append(
-            DependencyInstance(
+            Dependency(
                 dependency_uuid=purl.to_string(),
                 purl=dependency['purl'],
                 requirement=dependency['requirement'],

@@ -17,9 +17,9 @@ from packages_test_utils import PackageTester
 class TestWindows(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_gosum_is_package_data(self):
+    def test_gosum_is_package_data_file(self):
         test_file = self.get_test_loc('windows/mum/test.mum')
-        assert windows.MicrosoftUpdateManifest.is_package_data(test_file)
+        assert windows.MicrosoftUpdateManifest.is_package_data_file(test_file)
 
     def test_windows_mum_parse(self):
         test_file = self.get_test_loc('windows/mum/test.mum')

@@ -35,9 +35,9 @@ class TestWinPePeInfo(FileBasedTesting):
 
         assert result == expected
 
-    def test_gosum_is_package_data(self):
+    def test_gosum_is_package_data_file(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')
-        assert win_pe.WindowsExecutable.is_package_data(test_file)
+        assert win_pe.WindowsExecutable.is_package_data_file(test_file)
 
     def test_win_pe_ctypes_test_pyd(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')

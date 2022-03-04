@@ -130,11 +130,11 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_rpm_is_manifest_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert not rpm.RpmManifest.is_package_data(test_file)
+        assert not rpm.RpmManifest.is_package_data_file(test_file)
 
     def test_rpm_is_manifest_rpm_file(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
-        assert rpm.RpmManifest.is_package_data(test_file)
+        assert rpm.RpmManifest.is_package_data_file(test_file)
 
 
 def check_json(result, expected_file, regen=False):
