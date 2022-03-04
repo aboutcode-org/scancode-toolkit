@@ -47,6 +47,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
@@ -345,11 +350,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",

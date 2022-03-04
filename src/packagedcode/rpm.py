@@ -211,7 +211,7 @@ class RpmManifest(RpmPackageData, models.PackageDataFile):
                 src_qualifiers['arch'] = sarch
 
             src_purl = models.PackageURL(
-                type=RpmPackage.default_type,
+                type=RpmPackageData.default_type,
                 name=sname,
                 version=src_evr,
                 qualifiers=src_qualifiers

@@ -25,6 +25,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/org.openqa.selenium.client-drivers/selenium-java-client-driver@0.9.2?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/org.openqa.selenium.server/selenium-server",
@@ -43,11 +48,6 @@
       "is_resolved": null
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/org.openqa.selenium.client-drivers/selenium-java-client-driver@0.9.2?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/org.openqa.selenium.client-drivers/selenium-java-client-driver@0.9.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-java-client-driver/0.9.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-java-client-driver/0.9.2/selenium-java-client-driver-0.9.2.jar",

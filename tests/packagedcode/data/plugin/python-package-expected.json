@@ -279,7 +279,6 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -343,144 +342,6 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:pypi/atomicwrites@1.1.5",
-          "requirement": "==1.1.5",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/attrs@18.1.0",
-          "requirement": "==18.1.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/contextlib2@0.5.5",
-          "requirement": "==0.5.5",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/coverage@4.5.1",
-          "requirement": "==4.5.1",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/funcsigs@1.0.2",
-          "requirement": "==1.0.2",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/mock@2.0.0",
-          "requirement": "==2.0.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/more-itertools@4.2.0",
-          "requirement": "==4.2.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pbr@4.2.0",
-          "requirement": "==4.2.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pluggy@0.6.0",
-          "requirement": "==0.6.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/py@1.5.4",
-          "requirement": "==1.5.4",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pytest@3.6.3",
-          "requirement": "==3.6.3",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pytest-cov@2.5.1",
-          "requirement": "==2.5.1",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pytest-vcr@0.3.0",
-          "requirement": "==0.3.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/pyyaml@3.13",
-          "requirement": "==3.13",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/six@1.11.0",
-          "requirement": "==1.11.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/vcrpy@1.13.0",
-          "requirement": "==1.13.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        },
-        {
-          "purl": "pkg:pypi/wrapt@1.10.11",
-          "requirement": "==1.10.11",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": true
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -544,7 +405,6 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -589,7 +449,6 @@
       "declared_license": "MIT",
       "notice_text": null,
       "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -644,7 +503,6 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -729,10 +587,10 @@
           },
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:pypi/six@1.10.0",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
@@ -776,10 +634,10 @@
           "declared_license": "MIT",
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:chef/six@1.10.0",
           "repository_homepage_url": null,
           "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
@@ -840,10 +698,10 @@
           },
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:pypi/ticketimport@0.7a",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
@@ -903,10 +761,10 @@
           },
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:pypi/arpy@0.1.1",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
@@ -956,6 +814,9 @@
           "declared_license": null,
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -1094,9 +955,6 @@
               "is_resolved": true
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -1160,10 +1018,10 @@
           },
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:pypi/atomicwrites@1.2.1",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
@@ -1213,6 +1071,9 @@
           "declared_license": null,
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/setuptools",
@@ -1239,9 +1100,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,

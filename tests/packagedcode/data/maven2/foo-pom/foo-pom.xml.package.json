@@ -40,6 +40,11 @@
   ],
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
@@ -106,11 +111,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",

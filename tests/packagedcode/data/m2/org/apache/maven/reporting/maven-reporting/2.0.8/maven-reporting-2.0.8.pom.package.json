@@ -25,12 +25,12 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
-  "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.reporting/maven-reporting@2.0.8?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [],
   "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting@2.0.8",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.8/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.8/maven-reporting-2.0.8.jar",

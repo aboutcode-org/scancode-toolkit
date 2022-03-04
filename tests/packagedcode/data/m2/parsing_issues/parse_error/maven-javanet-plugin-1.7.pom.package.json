@@ -47,6 +47,9 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/httpunit/httpunit@1.5.4",
@@ -105,9 +108,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
   "purl": "pkg:maven/maven-javanet-plugin/maven-javanet-plugin",
   "repository_homepage_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/",
   "repository_download_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/maven-javanet-plugin-None.jar",

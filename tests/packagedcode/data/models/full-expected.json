@@ -40,24 +40,6 @@
   "declared_license": "apache-2.0",
   "notice_text": "licensed under the apacche 2.0 \nlicense",
   "root_path": "",
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.aspectj/aspectjtools",
-      "requirement": "1.5.4",
-      "scope": "relocation",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:maven/org.aspectj/aspectjruntime",
-      "requirement": "1.5.4-release",
-      "scope": "runtime",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": true,
   "source_packages": [
     "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"

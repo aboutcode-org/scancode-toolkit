@@ -138,6 +138,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/dom4j/dom4j@1.6.1?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/jaxme/jaxme-api@0.3",
@@ -236,11 +241,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/dom4j/dom4j@1.6.1?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/dom4j/dom4j@1.6.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar",

@@ -43,7 +43,7 @@ class TestBuild(PackageTester):
             'get_package_resources/BUCK',
             'get_package_resources/file1',
         ]
-        results = [r.path for r in build.BaseBuildManifestPackage.get_package_resources(root, codebase)]
+        results = [r.path for r in build.BaseBuildManifestPackageData.get_package_resources(root, codebase)]
         assert results == expected
 
     def test_BazelPackage_recognize(self):

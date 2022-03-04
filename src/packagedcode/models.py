@@ -820,17 +820,6 @@ class Package:
         """
         return []
 
-    def to_dict(self, **kwargs):
-        """
-        Return an dict of primitive Python types.
-        """
-        data = super().to_dict(**kwargs)
-
-        for attribute in ('dependencies', 'purl'):
-            data.pop(attribute, None)
-
-        return data
-
     def get_package_data(self):
         """
         Returns a mapping of package data attributes and corresponding values.

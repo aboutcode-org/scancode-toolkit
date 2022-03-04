@@ -40,6 +40,11 @@
   ],
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
@@ -90,11 +95,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/log4j/log4j@1.2.15",
   "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
   "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",

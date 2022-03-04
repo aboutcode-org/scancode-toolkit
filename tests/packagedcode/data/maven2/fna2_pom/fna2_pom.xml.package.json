@@ -25,6 +25,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",
@@ -107,11 +112,6 @@
       "is_resolved": false
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",

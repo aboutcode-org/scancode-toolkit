@@ -250,12 +250,12 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
-  "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.cargo/cargo-parent@4.2-SNAPSHOT?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [],
   "purl": "pkg:maven/org.codehaus.cargo/cargo-parent@4.2-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-parent/4.2-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-parent/4.2-SNAPSHOT/cargo-parent-4.2-SNAPSHOT.jar",

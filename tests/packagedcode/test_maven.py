@@ -207,7 +207,7 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         packages = maven.PomXml.recognize(test_file)
         package = list(packages).pop()
-        package2 = maven.MavenPomPackage.create(**package.to_dict())
+        package2 = maven.MavenPomPackageData.create(**package.to_dict())
         assert package2.to_dict().items() == package.to_dict().items()
 
     def test_package_root_is_properly_returned_for_metainf_poms(self):
@@ -219,7 +219,7 @@ class TestMavenMisc(BaseMavenCase):
         assert packages
         manifest_resource.package_data.append(packages[0].to_dict())
         manifest_resource.save(codebase)
-        proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
+        proot = maven.MavenPomPackageData.get_package_root(manifest_resource, codebase)
         assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'
 
     def test_package_dependency_not_missing(self):

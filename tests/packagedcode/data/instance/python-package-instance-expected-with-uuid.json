@@ -27,8 +27,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=6bf7d1d3-fc5d-43bd-ba39-e54f14dbf14e",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=e4c8166c-1abd-4a27-a28e-a5ff05dee79d",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "lockfile": "METADATA"
     },
     {
@@ -38,8 +38,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=cf451110-8833-4591-aa10-fc7440b41dfa",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=5438af92-8088-4d65-8172-5ba6fe59dc78",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "lockfile": "METADATA"
     },
     {
@@ -49,8 +49,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=e7320fd7-b926-4892-9f49-8332e5a11220",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=c7e10371-24c3-4939-b00a-4a83b2db6b32",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "lockfile": "setup.py"
     },
     {
@@ -60,8 +60,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=05b8a6ec-e5ac-4c13-9fb5-32c1ed61193d",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=842b2e07-c47d-4e57-9983-155b616c71bd",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "lockfile": "setup.py"
     },
     {
@@ -71,8 +71,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/pre-commit?uuid=ea29ec73-4851-4cac-ac63-60a3e9667c61",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "dependency_uuid": "pkg:pypi/pre-commit?uuid=95319681-484d-4490-96d5-3bb0d72c1750",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "lockfile": "tox.ini"
     }
   ],
@@ -129,28 +129,10 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:pypi/colorama",
-          "requirement": null,
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:pypi/importlib-metadata",
-          "requirement": null,
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "package_uuid": "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4",
       "package_data_files": [
         "METADATA",
         "setup.cfg",
@@ -178,7 +160,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -187,7 +169,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -247,6 +229,9 @@
           },
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
@@ -265,9 +250,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": "pkg:pypi/click@8.0.1",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": "https://pypi.org/packages/source/c/click/click-8.0.1.tar.gz",
@@ -275,7 +257,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -284,7 +266,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -319,10 +301,10 @@
           "declared_license": null,
           "notice_text": null,
           "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -330,7 +312,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -365,6 +347,9 @@
           "declared_license": {},
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
@@ -383,9 +368,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": "pkg:pypi/click",
           "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
           "repository_download_url": null,
@@ -393,7 +375,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     },
@@ -428,6 +410,9 @@
           "declared_license": null,
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/pre-commit",
@@ -438,9 +423,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -448,7 +430,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
+        "pkg:pypi/click@8.0.1?uuid=6adaaf0b-df5e-4440-a547-602e12a8d1b4"
       ],
       "scan_errors": []
     }

@@ -44,7 +44,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], rpm.RpmPackage)
+        assert isinstance(packages[0], rpm.RpmPackageData)
 
     def test_recognize_package_data_cab(self):
         test_file = self.get_test_loc('archives/basic.cab')
@@ -66,7 +66,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], packagedcode.rubygems.RubyGem)
+        assert isinstance(packages[0], packagedcode.rubygems.RubyGemData)
 
     def test_recognize_package_data_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
@@ -89,19 +89,19 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], maven.MavenPomPackage)
+        assert isinstance(packages[0], maven.MavenPomPackageData)
 
     def test_recognize_maven_pom_xml(self):
         test_file = self.get_test_loc('maven2/pom-generic/pom.xml')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], maven.MavenPomPackage)
+        assert isinstance(packages[0], maven.MavenPomPackageData)
 
     def test_recognize_npm(self):
         test_file = self.get_test_loc('recon/package.json')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], npm.NpmPackage)
+        assert isinstance(packages[0], npm.NpmPackageData)
 
     def test_recognize_cargo(self):
         test_file = self.get_test_loc('recon/Cargo.toml')
@@ -113,49 +113,49 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/opam')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], opam.OpamPackage)
+        assert isinstance(packages[0], opam.OpamPackageData)
 
     def test_recognize_opam1(self):
         test_file = self.get_test_loc('recon/base.opam')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], opam.OpamPackage)
+        assert isinstance(packages[0], opam.OpamPackageData)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], phpcomposer.PhpComposerPackage)
+        assert isinstance(packages[0], phpcomposer.PhpComposerPackageData)
 
     def test_recognize_haxe(self):
         test_file = self.get_test_loc('recon/haxelib.json')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], haxe.HaxePackage)
+        assert isinstance(packages[0], haxe.HaxePackageData)
 
     def test_recognize_freebsd(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], freebsd.FreeBSDPackage)
+        assert isinstance(packages[0], freebsd.FreeBSDPackageData)
 
     def test_recognize_nuget(self):
         test_file = self.get_test_loc('recon/bootstrap.nuspec')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], nuget.NugetPackage)
+        assert isinstance(packages[0], nuget.NugetPackageData)
 
     def test_recognize_winexe(self):
         test_file = self.get_test_loc('win_pe/tre4.dll')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], win_pe.WindowsExecutable)
+        assert isinstance(packages[0], win_pe.WindowsExecutableData)
 
     def test_recognize_bower(self):
         test_file = self.get_test_loc('bower/basic/bower.json')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], bower.BowerPackage)
+        assert isinstance(packages[0], bower.BowerPackageData)
 
     def test_recognize_cpan(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
@@ -167,46 +167,46 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_python3(self):
         test_file = self.get_test_loc('recon/pypi/Six/METADATA')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_python5(self):
         test_file = self.get_test_loc('recon/pypi/TicketImport/PKG-INFO')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_python6(self):
         test_file = self.get_test_loc('recon/pypi/arpy/setup.py')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_python7(self):
         test_file = self.get_test_loc('recon/pypi/atomicwrites/Pipfile.lock')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_python8(self):
         test_file = self.get_test_loc('recon/pypi/requirements/requirements.txt')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], pypi.PythonPackage)
+        assert isinstance(packages[0], pypi.PythonPackageData)
 
     def test_recognize_go_mod(self):
         test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], golang.GolangPackage)
+        assert isinstance(packages[0], golang.GolangPackageData)
 
     def test_recognize_go_sum(self):
         test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], golang.GolangPackage)
+        assert isinstance(packages[0], golang.GolangPackageData)

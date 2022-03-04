@@ -64,7 +64,7 @@ class MavenPomPackageData(models.PackageData):
             if not package_data:
                 return manifest_resource
             package_data = package_data[0]
-            package = Package.create(**package_data)
+            package = cls.create(**package_data)
             ns = package.namespace
             name = package.name
             path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())

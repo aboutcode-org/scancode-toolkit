@@ -75,6 +75,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/servletapi/servletapi@2.3",
@@ -93,11 +98,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.jar",

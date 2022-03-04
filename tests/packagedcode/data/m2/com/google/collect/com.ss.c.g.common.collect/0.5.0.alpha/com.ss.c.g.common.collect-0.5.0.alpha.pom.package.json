@@ -25,12 +25,12 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
-  "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.google.collect/com.ss.c.g.common.collect@0.5.0.alpha?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [],
   "purl": "pkg:maven/com.google.collect/com.ss.c.g.common.collect@0.5.0.alpha",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/google/collect/com.ss.c.g.common.collect/0.5.0.alpha/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/google/collect/com.ss.c.g.common.collect/0.5.0.alpha/com.ss.c.g.common.collect-0.5.0.alpha.jar",

@@ -229,7 +229,7 @@ def get_package_columns(_columns=set()):
     if _columns:
         return _columns
 
-    from packagedcode.models import Package
+    from packagedcode.models import PackageData
 
     # exclude some columns for now that contain list of items
     excluded_columns = {
@@ -252,7 +252,7 @@ def get_package_columns(_columns=set()):
         'notice_url',
     ]
 
-    fields = Package.fields() + extra_columns
+    fields = PackageData.fields() + extra_columns
     _columns = set(f for f in fields if f not in excluded_columns)
     return _columns
 

@@ -25,6 +25,11 @@
   "declared_license": null,
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/org.apache.myfaces.tomahawk/tomahawk-project@1.1.5?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.myfaces.core/myfaces-api@1.1.5",
@@ -51,11 +56,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/org.apache.myfaces.tomahawk/tomahawk-project@1.1.5?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/org.apache.myfaces.tomahawk/tomahawk-project@1.1.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/myfaces/tomahawk/tomahawk-project/1.1.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/myfaces/tomahawk/tomahawk-project/1.1.5/tomahawk-project-1.1.5.jar",

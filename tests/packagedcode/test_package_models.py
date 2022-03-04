@@ -14,7 +14,7 @@ from packagedcode import PACKAGE_INSTANCE_TYPES
 from packagedcode import PACKAGE_DATA_TYPES
 from packagedcode import PACKAGE_DATA_BY_TYPE
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
-from packagedcode.models import Package
+from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packagedcode.models import DependentPackage
 from packages_test_utils import PackageTester
@@ -52,10 +52,10 @@ class TestModels(PackageTester):
             ('declared_license', None),
             ('notice_text', None),
             ('root_path', None),
-            ('dependencies', []),
             ('contains_source_code', None),
             ('source_packages', []),
             ('extra_data', {}),
+            ('dependencies', []),
             ('purl', u'pkg:android/someAndroidPAcakge'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),
@@ -64,7 +64,7 @@ class TestModels(PackageTester):
         assert list(package.to_dict().items()) == expected
 
     def test_Package_simple(self):
-        package = Package(
+        package = PackageData(
             type='rpm',
             name='Sample',
             description='Some package',
@@ -82,7 +82,7 @@ class TestModels(PackageTester):
         self.check_package(package, expected_loc, regen=False)
 
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -91,7 +91,7 @@ class TestModels(PackageTester):
         assert package.to_dict()['qualifiers'] == dict(this='that')
 
     def test_Package_model_qualifiers_are_kept_as_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -100,7 +100,7 @@ class TestModels(PackageTester):
         assert package.qualifiers == dict(this='that')
 
     def test_Package_model_qualifiers_are_converted_to_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -110,7 +110,7 @@ class TestModels(PackageTester):
 
 
     def test_Package_full(self):
-        package = Package(
+        package = PackageData(
             type='rpm',
             namespace='fedora',
             name='Sample',
@@ -143,24 +143,6 @@ class TestModels(PackageTester):
             declared_license=u'apache-2.0',
             notice_text='licensed under the apacche 2.0 \nlicense',
             root_path='',
-            dependencies=[
-                DependentPackage(
-                  purl='pkg:maven/org.aspectj/aspectjtools',
-                  requirement='1.5.4',
-                  scope='relocation',
-                  is_runtime=True,
-                  is_optional=False,
-                  is_resolved=False
-                ),
-                DependentPackage(
-                  purl='pkg:maven/org.aspectj/aspectjruntime',
-                  requirement='1.5.4-release',
-                  scope='runtime',
-                  is_runtime=True,
-                  is_optional=False,
-                  is_resolved=True
-                )
-            ],
             contains_source_code=True,
             source_packages=[
                 "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
@@ -178,7 +160,7 @@ class TestModels(PackageTester):
         for resource in codebase.walk():
             for package_data in resource.packages:
                 package = get_package_instance(package_data)
-                assert isinstance(package, npm.NpmPackage)
+                assert isinstance(package, npm.NpmPackageData)
                 package_resources = list(package.get_package_resources(resource, codebase))
                 assert any(r.name == 'package.json' for r in package_resources), resource.path
 

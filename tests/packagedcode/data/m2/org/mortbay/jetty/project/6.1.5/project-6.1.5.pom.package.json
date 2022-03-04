@@ -96,6 +96,11 @@
   ],
   "notice_text": null,
   "root_path": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/org.mortbay.jetty/project@6.1.5?classifier=sources"
+  ],
+  "extra_data": {},
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-tools-api@2.0",
@@ -186,11 +191,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
-  "source_packages": [
-    "pkg:maven/org.mortbay.jetty/project@6.1.5?classifier=sources"
-  ],
-  "extra_data": {},
   "purl": "pkg:maven/org.mortbay.jetty/project@6.1.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/project-6.1.5.jar",

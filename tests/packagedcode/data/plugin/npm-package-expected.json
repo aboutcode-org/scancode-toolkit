@@ -14,7 +14,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
@@ -83,24 +83,6 @@
       "declared_license": null,
       "notice_text": null,
       "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:npm/mocha",
-          "requirement": "*",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:npm/should",
-          "requirement": "*",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -161,6 +143,9 @@
           "declared_license": [],
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:npm/mocha",
@@ -179,9 +164,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": "pkg:npm/cookie-signature@1.0.3",
           "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
           "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",

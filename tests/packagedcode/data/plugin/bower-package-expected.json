@@ -14,7 +14,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
@@ -96,32 +96,6 @@
       ],
       "notice_text": null,
       "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:bower/get-size",
-          "requirement": "~1.2.2",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:bower/eventEmitter",
-          "requirement": "~4.2.11",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:bower/qunit",
-          "requirement": "~1.16.0",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -184,6 +158,9 @@
           ],
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:bower/get-size",
@@ -210,9 +187,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": "pkg:bower/blue-leaf",
           "repository_homepage_url": null,
           "repository_download_url": null,

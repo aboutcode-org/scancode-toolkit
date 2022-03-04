@@ -42,5 +42,5 @@ class TestConda(PackageTester):
         test_dir = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract')
         codebase = Codebase(test_dir)
         manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
-        proot = conda.CondaPackage.get_package_root(manifest_resource, codebase)
+        proot = conda.CondaPackageData.get_package_root(manifest_resource, codebase)
         assert proot.location == test_dir

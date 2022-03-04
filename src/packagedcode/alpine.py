@@ -40,7 +40,7 @@ class AlpinePackage(models.PackageData, models.PackageDataFile):
         return detected
 
     def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
+        data = super().to_dict(**kwargs)
         if _detailed:
             #################################################
             data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
