@@ -12,88 +12,63 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
   ],
-  "packages": [
+  "dependencies": [
     {
-      "type": "build.gradle",
-      "namespace": null,
-      "name": null,
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:build.gradle/com.google/guava@1.0",
-          "requirement": "1.0",
-          "scope": "api",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:build.gradle/org.apache/commons@1.0",
-          "requirement": "1.0",
-          "scope": "usageDependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
-          "requirement": "0.7.4.201502262128",
-          "scope": "",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
-          "requirement": "0.7.4.201502262128",
-          "scope": "",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
-      ],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": null,
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
+      "purl": "pkg:build.gradle/com.google/guava@1.0",
+      "requirement": "1.0",
+      "scope": "api",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:build.gradle/com.google/guava@1.0",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.apache/commons@1.0",
+      "requirement": "1.0",
+      "scope": "usageDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:build.gradle/org.apache/commons@1.0",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "requirement": "0.7.4.201502262128",
+      "scope": "",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "requirement": "0.7.4.201502262128",
+      "scope": "",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "for_package": null,
+      "lockfile": "build.gradle"
     }
   ],
+  "packages": [],
   "files": [
     {
       "path": "build.gradle",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "build.gradle",
           "namespace": null,
@@ -121,6 +96,9 @@
           "declared_license": null,
           "notice_text": null,
           "root_path": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:build.gradle/com.google/guava@1.0",
@@ -155,15 +133,13 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
           "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

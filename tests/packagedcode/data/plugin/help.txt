@@ -50,6 +50,12 @@ Package: buck
   file_patterns: BUCK
 
 --------------------------------------------
+Package: build.gradle
+  class: packagedcode.build_gradle:BuildGradle
+  file_patterns: build.gradle
+  extensions: .gradle
+
+--------------------------------------------
 Package: cab
   class: packagedcode.models:CabPackage
   extensions: .cab

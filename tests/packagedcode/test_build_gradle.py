@@ -24,7 +24,7 @@ class TestBuildGradle(PackageTester):
         expected_file = self.get_test_loc('end2end-expected.json')
         result_file = self.get_temp_file()
         run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=False)
 
     def test_build_gradle_recognize(self):
         test_file = self.get_test_loc('build.gradle')
