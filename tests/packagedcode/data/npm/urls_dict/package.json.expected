@@ -49,11 +49,12 @@
     "dependencies": [
       {
         "purl": "pkg:npm/styout",
-        "requirement": ">= 0.6.0",
+        "extracted_requirement": ">= 0.6.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/jsonp-filter@0.0.3",

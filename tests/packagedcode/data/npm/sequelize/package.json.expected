@@ -78,339 +78,381 @@
     "dependencies": [
       {
         "purl": "pkg:npm/bluebird",
-        "requirement": "^3.3.4",
+        "extracted_requirement": "^3.3.4",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/depd",
-        "requirement": "^1.1.0",
+        "extracted_requirement": "^1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/dottie",
-        "requirement": "^1.0.0",
+        "extracted_requirement": "^1.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/generic-pool",
-        "requirement": "2.4.2",
+        "extracted_requirement": "2.4.2",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/inflection",
-        "requirement": "^1.6.0",
+        "extracted_requirement": "^1.6.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/lodash",
-        "requirement": "4.12.0",
+        "extracted_requirement": "4.12.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/moment",
-        "requirement": "^2.13.0",
+        "extracted_requirement": "^2.13.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/moment-timezone",
-        "requirement": "^0.5.4",
+        "extracted_requirement": "^0.5.4",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/retry-as-promised",
-        "requirement": "^2.0.0",
+        "extracted_requirement": "^2.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/semver",
-        "requirement": "^5.0.1",
+        "extracted_requirement": "^5.0.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/shimmer",
-        "requirement": "1.1.0",
+        "extracted_requirement": "1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/terraformer-wkt-parser",
-        "requirement": "^1.1.0",
+        "extracted_requirement": "^1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/toposort-class",
-        "requirement": "^1.0.1",
+        "extracted_requirement": "^1.0.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/uuid",
-        "requirement": "^3.0.0",
+        "extracted_requirement": "^3.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/validator",
-        "requirement": "^5.2.0",
+        "extracted_requirement": "^5.2.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/wkx",
-        "requirement": "0.2.0",
+        "extracted_requirement": "0.2.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/chai",
-        "requirement": "^3.5.0",
+        "extracted_requirement": "^3.5.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/chai-as-promised",
-        "requirement": "^5.1.0",
+        "extracted_requirement": "^5.1.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/chai-datetime",
-        "requirement": "^1.4.0",
+        "extracted_requirement": "^1.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/chai-spies",
-        "requirement": "^0.7.0",
+        "extracted_requirement": "^0.7.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/commander",
-        "requirement": "^2.6.0",
+        "extracted_requirement": "^2.6.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/continuation-local-storage",
-        "requirement": "^3.1.4",
+        "extracted_requirement": "^3.1.4",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/cross-env",
-        "requirement": "^2.0.1",
+        "extracted_requirement": "^2.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/dox",
-        "requirement": "~0.8.0",
+        "extracted_requirement": "~0.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/git",
-        "requirement": "^0.1.5",
+        "extracted_requirement": "^0.1.5",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/hints",
-        "requirement": "^0.2.0",
+        "extracted_requirement": "^0.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/istanbul",
-        "requirement": "^0.4.3",
+        "extracted_requirement": "^0.4.3",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/jshint",
-        "requirement": "^2.9.2",
+        "extracted_requirement": "^2.9.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/lcov-result-merger",
-        "requirement": "^1.2.0",
+        "extracted_requirement": "^1.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/mocha",
-        "requirement": "^2.4.2",
+        "extracted_requirement": "^2.4.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/mysql",
-        "requirement": "~2.10.1",
+        "extracted_requirement": "~2.10.1",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/pg",
-        "requirement": "^4.4.6",
+        "extracted_requirement": "^4.4.6",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/pg-hstore",
-        "requirement": "^2.3.1",
+        "extracted_requirement": "^2.3.1",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/pg-native",
-        "requirement": "^1.8.0",
+        "extracted_requirement": "^1.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/pg-types",
-        "requirement": "^1.11.0",
+        "extracted_requirement": "^1.11.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/rimraf",
-        "requirement": "^2.5.4",
+        "extracted_requirement": "^2.5.4",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/sinon",
-        "requirement": "^1.17.4",
+        "extracted_requirement": "^1.17.4",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/sinon-chai",
-        "requirement": "^2.8.0",
+        "extracted_requirement": "^2.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/sqlite3",
-        "requirement": "^3.1.4",
+        "extracted_requirement": "^3.1.4",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/tedious",
-        "requirement": "^1.13.2",
+        "extracted_requirement": "^1.13.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/uuid-validate",
-        "requirement": "^0.0.2",
+        "extracted_requirement": "^0.0.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/watchr",
-        "requirement": "~2.4.11",
+        "extracted_requirement": "~2.4.11",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/sequelize@3.30.2",

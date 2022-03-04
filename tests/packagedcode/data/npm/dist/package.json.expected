@@ -41,43 +41,48 @@
     "dependencies": [
       {
         "purl": "pkg:npm/%40angular/core",
-        "requirement": ">=2.0.0",
+        "extracted_requirement": ">=2.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/%40angular/forms",
-        "requirement": ">=2.0.0",
+        "extracted_requirement": ">=2.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/%40angular/common",
-        "requirement": ">=2.0.0",
+        "extracted_requirement": ">=2.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/rxjs",
-        "requirement": ">=5.0.0-beta.12",
+        "extracted_requirement": ">=5.0.0-beta.12",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/zone.js",
-        "requirement": ">=0.6.21",
+        "extracted_requirement": ">=0.6.21",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/angular-compare-validator@0.1.1",

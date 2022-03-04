@@ -51,59 +51,66 @@
     "dependencies": [
       {
         "purl": "pkg:npm/imagesize",
-        "requirement": "~1.0.0",
+        "extracted_requirement": "~1.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-jshint",
-        "requirement": "~0.2.0",
+        "extracted_requirement": "~0.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-nodeunit",
-        "requirement": "~0.1.2",
+        "extracted_requirement": "~0.1.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-clean",
-        "requirement": "~0.4.0",
+        "extracted_requirement": "~0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt",
-        "requirement": "~0.4.0",
+        "extracted_requirement": "~0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-copy",
-        "requirement": "~0.4.1",
+        "extracted_requirement": "~0.4.1",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/grunt",
-        "requirement": "~0.4.0",
+        "extracted_requirement": "~0.4.0",
         "scope": "peerDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/grunt-inline-imgsize@0.0.1",

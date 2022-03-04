@@ -39,11 +39,12 @@
     "dependencies": [
       {
         "purl": "pkg:chef/nodejs",
-        "requirement": ">= 0.0.0",
+        "extracted_requirement": ">= 0.0.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:chef/301@0.1.0",

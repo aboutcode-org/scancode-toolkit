@@ -47,131 +47,147 @@
   "dependencies": [
     {
       "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",
-      "requirement": "1.5.4",
+      "extracted_requirement": "1.5.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/aspectj/aspectjweaver@1.5.4",
-      "requirement": "1.5.4",
+      "extracted_requirement": "1.5.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
-      "requirement": "1.1.1",
+      "extracted_requirement": "1.1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/taglibs/standard@1.1.2",
-      "requirement": "1.1.2",
+      "extracted_requirement": "1.1.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-tx@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.persistence/persistence-api@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.portlet/portlet-api@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
-      "requirement": "2.4",
+      "extracted_requirement": "2.4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.springframework/spring-test@2.5.3",

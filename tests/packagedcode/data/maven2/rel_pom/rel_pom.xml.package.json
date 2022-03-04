@@ -32,75 +32,84 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
-      "requirement": "1.7.0",
+      "extracted_requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/dom4j/dom4j@1.6.1",
-      "requirement": "1.6.1",
+      "extracted_requirement": "1.6.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
-      "requirement": "3.4.0.GA",
+      "extracted_requirement": "3.4.0.GA",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
-      "requirement": "3.4.0.GA",
+      "extracted_requirement": "3.4.0.GA",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
-      "requirement": "3.3.2.Beta1",
+      "extracted_requirement": "3.3.2.Beta1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
-      "requirement": "1.4.2",
+      "extracted_requirement": "1.4.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
-      "requirement": "8.3-603.jdbc4",
+      "extracted_requirement": "8.3-603.jdbc4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.modeler/modeler@0.1",

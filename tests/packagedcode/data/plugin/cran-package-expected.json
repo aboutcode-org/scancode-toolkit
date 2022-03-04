@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -22,11 +22,12 @@
   "dependencies": [
     {
       "purl": "pkg:cran/R",
-      "requirement": ">= 2.1",
+      "extracted_requirement": ">= 2.1",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:cran/R",
       "for_package": "pkg:cran/codetools@0.2-16",
       "lockfile": "DESCRIPTION"
@@ -142,11 +143,12 @@
           "dependencies": [
             {
               "purl": "pkg:cran/R",
-              "requirement": ">= 2.1",
+              "extracted_requirement": ">= 2.1",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": "pkg:cran/codetools@0.2-16",

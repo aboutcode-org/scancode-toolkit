@@ -40,51 +40,57 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.surefire/surefire-booter",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-core@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.plugins/maven-surefire-plugin@2.4.2",

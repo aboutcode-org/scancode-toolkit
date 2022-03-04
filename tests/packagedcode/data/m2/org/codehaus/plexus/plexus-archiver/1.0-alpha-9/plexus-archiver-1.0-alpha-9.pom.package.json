@@ -47,35 +47,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.1",
-      "requirement": "1.4.1",
+      "extracted_requirement": "1.4.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-15",
-      "requirement": "1.0-alpha-15",
+      "extracted_requirement": "1.0-alpha-15",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-15",
-      "requirement": "1.0-alpha-15",
+      "extracted_requirement": "1.0-alpha-15",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-1",
-      "requirement": "1.0-alpha-1",
+      "extracted_requirement": "1.0-alpha-1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver@1.0-alpha-9",

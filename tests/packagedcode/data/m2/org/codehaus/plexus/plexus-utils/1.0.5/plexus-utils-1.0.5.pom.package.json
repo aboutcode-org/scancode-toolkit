@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
-      "requirement": "1.1-alpha-2",
+      "extracted_requirement": "1.1-alpha-2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.5",

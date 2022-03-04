@@ -46,11 +46,12 @@
     "dependencies": [
       {
         "purl": "pkg:cran/R",
-        "requirement": ">= 2.1",
+        "extracted_requirement": ">= 2.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:cran/codetools@0.2-16",

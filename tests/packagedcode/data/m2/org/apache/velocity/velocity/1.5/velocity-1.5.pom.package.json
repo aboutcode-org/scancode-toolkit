@@ -82,75 +82,84 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.1",
-      "requirement": "3.1",
+      "extracted_requirement": "3.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.1",
-      "requirement": "2.1",
+      "extracted_requirement": "2.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/oro/oro@2.0.8",
-      "requirement": "2.0.8",
+      "extracted_requirement": "2.0.8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jdom/jdom@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.12",
-      "requirement": "1.2.12",
+      "extracted_requirement": "1.2.12",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.3",
-      "requirement": "2.3",
+      "extracted_requirement": "2.3",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/logkit/logkit@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/ant/ant@1.6",
-      "requirement": "1.6",
+      "extracted_requirement": "1.6",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/werken-xpath/werken-xpath@0.9.4",
-      "requirement": "0.9.4",
+      "extracted_requirement": "0.9.4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.velocity/velocity@1.5",

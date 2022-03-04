@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.velocity/velocity@1.5",
-      "requirement": "1.5",
+      "extracted_requirement": "1.5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.uncommons/reportng@0.9.5",

@@ -46,35 +46,39 @@
     "dependencies": [
       {
         "purl": "pkg:gem/rake-compiler",
-        "requirement": ">= 0.9, < 2.0",
+        "extracted_requirement": ">= 0.9, < 2.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/minitest",
-        "requirement": "~> 5",
+        "extracted_requirement": "~> 5",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/test-unit",
-        "requirement": "~> 3.0",
+        "extracted_requirement": "~> 3.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/wwtd",
-        "requirement": "~> 0",
+        "extracted_requirement": "~> 0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/oj@::Oj::VERSION",

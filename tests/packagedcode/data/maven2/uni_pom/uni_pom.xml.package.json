@@ -32,43 +32,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
-      "requirement": "2.0.4-SNAPSHOT",
+      "extracted_requirement": "2.0.4-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
-      "requirement": "2.0.5-SNAPSHOT",
+      "extracted_requirement": "2.0.5-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
-      "requirement": "2.0.5-SNAPSHOT",
+      "extracted_requirement": "2.0.5-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
-      "requirement": "0.0.2-SNAPSHOT",
+      "extracted_requirement": "0.0.2-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",

@@ -54,11 +54,12 @@
     "dependencies": [
       {
         "purl": "pkg:npm/mime-db",
-        "requirement": "^1.2.0",
+        "extracted_requirement": "^1.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/mime@1.3.4",

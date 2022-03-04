@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
-      "requirement": "4aug2000r7-dev",
+      "extracted_requirement": "4aug2000r7-dev",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-shared@1.0-beta-2",

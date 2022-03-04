@@ -32,43 +32,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/ant/ant",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jetty/org.mortbay.jetty",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.openqa.selenium.server/selenium-server-coreless@0.9.1",

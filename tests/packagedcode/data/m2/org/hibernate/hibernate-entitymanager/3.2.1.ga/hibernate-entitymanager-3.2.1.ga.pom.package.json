@@ -39,27 +39,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.2.1.ga",
-      "requirement": "3.2.1.ga",
+      "extracted_requirement": "3.2.1.ga",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jboss/javassist@3.3.ga",
-      "requirement": "3.3.ga",
+      "extracted_requirement": "3.3.ga",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jboss/jboss-archive-browsing@5.0.0alpha-200607201-119",
-      "requirement": "5.0.0alpha-200607201-119",
+      "extracted_requirement": "5.0.0alpha-200607201-119",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.2.1.ga",

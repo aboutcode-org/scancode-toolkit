@@ -32,75 +32,84 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact-manager@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@1.0-alpha-1",
-      "requirement": "1.0-alpha-1",
+      "extracted_requirement": "1.0-alpha-1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-test-tools@1.0-alpha-1",
-      "requirement": "1.0-alpha-1",
+      "extracted_requirement": "1.0-alpha-1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
-      "requirement": "1.2_Java1.3",
+      "extracted_requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-beta-2",
-      "requirement": "1.0-beta-2",
+      "extracted_requirement": "1.0-beta-2",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight@1.0-beta-2",
-      "requirement": "1.0-beta-2",
+      "extracted_requirement": "1.0-beta-2",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.shared/maven-repository-builder@1.0-alpha-2",

@@ -47,11 +47,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/velocity/velocity-dep@1.4",
-      "requirement": "1.4",
+      "extracted_requirement": "1.4",
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/velocity/velocity@1.4",

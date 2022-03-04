@@ -31,27 +31,30 @@
     "dependencies": [
       {
         "purl": "pkg:npm/jszip",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/mkdirp",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/semver",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/pahub@0.4.0",

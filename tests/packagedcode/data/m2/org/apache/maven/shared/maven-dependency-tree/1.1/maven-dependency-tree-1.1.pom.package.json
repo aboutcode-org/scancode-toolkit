@@ -32,27 +32,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.8",
-      "requirement": "2.0.8",
+      "extracted_requirement": "2.0.8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jmock/jmock@1.2.0",
-      "requirement": "1.2.0",
+      "extracted_requirement": "1.2.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.shared/maven-dependency-tree@1.1",

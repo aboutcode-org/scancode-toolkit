@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.glassfish.jersey.media/jersey-media-json-jackson@2.25.1",
-      "requirement": "2.25.1",
+      "extracted_requirement": "2.25.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/com.github.simondan.ojcms/ojcms-beans@%24%7Bproject.version%7D",

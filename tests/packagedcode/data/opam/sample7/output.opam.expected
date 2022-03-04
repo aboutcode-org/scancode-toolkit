@@ -53,35 +53,39 @@
     "dependencies": [
       {
         "purl": "pkg:opam/ocaml",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/jbuilder",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/base-bytes",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/base-unix",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": null,

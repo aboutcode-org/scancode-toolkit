@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -22,44 +22,48 @@
   "dependencies": [
     {
       "purl": "pkg:opam/ocaml",
-      "requirement": "= 4.11.0 & post",
+      "extracted_requirement": "= 4.11.0 & post",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:opam/ocaml",
       "for_package": null,
       "lockfile": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-unix",
-      "requirement": "post",
+      "extracted_requirement": "post",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:opam/base-unix",
       "for_package": null,
       "lockfile": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-bigarray",
-      "requirement": "post",
+      "extracted_requirement": "post",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:opam/base-bigarray",
       "for_package": null,
       "lockfile": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-threads",
-      "requirement": "post",
+      "extracted_requirement": "post",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:opam/base-threads",
       "for_package": null,
       "lockfile": "ocaml-variants.opam"
@@ -153,35 +157,39 @@
           "dependencies": [
             {
               "purl": "pkg:opam/ocaml",
-              "requirement": "= 4.11.0 & post",
+              "extracted_requirement": "= 4.11.0 & post",
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:opam/base-unix",
-              "requirement": "post",
+              "extracted_requirement": "post",
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:opam/base-bigarray",
-              "requirement": "post",
+              "extracted_requirement": "post",
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:opam/base-threads",
-              "requirement": "post",
+              "extracted_requirement": "post",
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": null,

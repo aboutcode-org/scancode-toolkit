@@ -79,7 +79,7 @@ class GoMod(GolangPackageData, models.PackageDataFile):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
-                    requirement=gomod.version,
+                    extracted_requirement=gomod.version,
                     scope='require',
                     is_runtime=True,
                     is_optional=False,
@@ -92,7 +92,7 @@ class GoMod(GolangPackageData, models.PackageDataFile):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
-                    requirement=gomod.version,
+                    extracted_requirement=gomod.version,
                     scope='exclude',
                     is_runtime=True,
                     is_optional=False,
@@ -141,7 +141,7 @@ class GoSum(GolangPackageData, models.PackageDataFile):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gosum.purl(),
-                    requirement=gosum.version,
+                    extracted_requirement=gosum.version,
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,

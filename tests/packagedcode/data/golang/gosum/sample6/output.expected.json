@@ -31,11 +31,12 @@
     "dependencies": [
       {
         "purl": "pkg:golang/go.opencensus.io@v0.21.0",
-        "requirement": "v0.21.0",
+        "extracted_requirement": "v0.21.0",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": null,

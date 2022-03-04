@@ -236,11 +236,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-io/commons-io@1.3.1",

@@ -361,13 +361,13 @@ class DependentPackage(BaseModel):
              'If the dependency is resolved, the version should be added to '
              'the purl')
 
-    # ToDo: rename to `extracted_requirement`  * as found in the package manifest *
-    requirement = String(
+    extracted_requirement = String(
         repr=True,
         label='dependent package version requirement',
-        help='A string defining version(s)requirements. Package-type specific.')
+        help='A string defining version(s)requirements. Package-type specific '
+             'and as found in the lockfile/package-data.')
 
-    # ToDo: add `vers` See https://github.com/nexB/univers/blob/main/src/univers/version_range.py
+    # ToDo: add `vers` support. See https://github.com/nexB/univers/blob/main/src/univers/version_range.py
 
     scope = String(
         repr=True,
@@ -392,7 +392,10 @@ class DependentPackage(BaseModel):
              'been resolved and this dependency url points to an '
              'exact version.')
 
-    #ToDo: add `resolved_package` -> (PackageData)
+    resolved_package = Mapping(
+        label='resolved package data',
+        help='A mapping containing the package data for this DependentPackage, '
+             'resolved from the lockfile itself or by fetching from other sources.')
 
 
 @attr.s
@@ -1011,7 +1014,7 @@ class Package:
                     for dependency in dependencies:
                         dep_new = DependentPackage(
                             purl=dependency['purl'],
-                            requirement=dependency['requirement'],
+                            extracted_requirement=dependency['requirement'],
                             scope=dependency['scope'],
                             is_runtime=dependency['is_runtime'],
                             is_optional=dependency['is_optional'],

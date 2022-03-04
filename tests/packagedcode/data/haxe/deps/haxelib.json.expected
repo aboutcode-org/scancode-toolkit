@@ -52,19 +52,21 @@
     "dependencies": [
       {
         "purl": "pkg:haxe/tink_core",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:haxe/tink_macro@3.23",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:haxe/selecthxml@0.5.1",

@@ -59,11 +59,12 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pyyaml",
-        "requirement": "<=3.13,>=3.11",
+        "extracted_requirement": "<=3.13,>=3.11",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:pypi/saneyaml@0.2dev",

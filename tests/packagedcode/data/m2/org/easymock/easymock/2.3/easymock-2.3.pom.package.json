@@ -39,11 +39,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@4.3.1",
-      "requirement": "4.3.1",
+      "extracted_requirement": "4.3.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.easymock/easymock@2.3",

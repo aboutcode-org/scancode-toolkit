@@ -32,75 +32,84 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-project",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-api",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-javah",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-generic-c",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-msvc",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-bcc",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-manager",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.0-beta-1",
-      "requirement": "1.0-beta-1",
+      "extracted_requirement": "1.0-beta-1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.mojo/native-maven-plugin@1.0-alpha-2",

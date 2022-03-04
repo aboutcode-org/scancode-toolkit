@@ -82,147 +82,165 @@
   "dependencies": [
     {
       "purl": "pkg:maven/javax.mail/javax.mail-api@1.4.5",
-      "requirement": "1.4.5",
+      "extracted_requirement": "1.4.5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/bouncycastle/bcprov-jdk16@140",
-      "requirement": "140",
+      "extracted_requirement": "140",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.8.8",
-      "requirement": "2.8.8",
+      "extracted_requirement": "2.8.8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax/javaee-api@7.0",
-      "requirement": "7.0",
+      "extracted_requirement": "7.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.8.8",
-      "requirement": "2.8.8",
+      "extracted_requirement": "2.8.8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.module/jackson-module-jaxb-annotations@2.8.8",
-      "requirement": "2.8.8",
+      "extracted_requirement": "2.8.8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-net/commons-net@3.4",
-      "requirement": "3.4",
+      "extracted_requirement": "3.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.25",
-      "requirement": "1.7.25",
+      "extracted_requirement": "1.7.25",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.antlr/antlr4-runtime@4.5.3",
-      "requirement": "4.5.3",
+      "extracted_requirement": "4.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@3.1.2.Final",
-      "requirement": "3.1.2.Final",
+      "extracted_requirement": "3.1.2.Final",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-validator-provider-11@3.1.2.Final",
-      "requirement": "3.1.2.Final",
+      "extracted_requirement": "3.1.2.Final",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.projectlombok/lombok@1.16.16",
-      "requirement": "1.16.16",
+      "extracted_requirement": "1.16.16",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@3.1.2.Final",
-      "requirement": "3.1.2.Final",
+      "extracted_requirement": "3.1.2.Final",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jackson2-provider@3.1.2.Final",
-      "requirement": "3.1.2.Final",
+      "extracted_requirement": "3.1.2.Final",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@4.12",
-      "requirement": "4.12",
+      "extracted_requirement": "4.12",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/pl.pragmatists/JUnitParams@1.1.0",
-      "requirement": "1.1.0",
+      "extracted_requirement": "1.1.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-all@1.10.19",
-      "requirement": "1.10.19",
+      "extracted_requirement": "1.10.19",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-simple@1.7.25",
-      "requirement": "1.7.25",
+      "extracted_requirement": "1.7.25",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/edu.psu.swe.commons/commons-jaxrs@1.22",

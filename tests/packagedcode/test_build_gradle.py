@@ -36,7 +36,7 @@ class TestBuildGradle(PackageTester):
                 dependencies = [
                     models.DependentPackage(
                         purl='pkg:build.gradle/com.google/guava@1.0',
-                        requirement='1.0',
+                        extracted_requirement='1.0',
                         scope='api',
                         is_runtime=True,
                         is_optional=False,
@@ -44,7 +44,7 @@ class TestBuildGradle(PackageTester):
                     ),
                     models.DependentPackage(
                         purl='pkg:build.gradle/org.apache/commons@1.0',
-                        requirement='1.0',
+                        extracted_requirement='1.0',
                         scope='usageDependencies',
                         is_runtime=True,
                         is_optional=False,
@@ -52,7 +52,7 @@ class TestBuildGradle(PackageTester):
                     ),
                     models.DependentPackage(
                         purl='pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128',
-                        requirement='0.7.4.201502262128',
+                        extracted_requirement='0.7.4.201502262128',
                         scope='',
                         is_runtime=True,
                         is_optional=False,
@@ -60,7 +60,7 @@ class TestBuildGradle(PackageTester):
                     ),
                     models.DependentPackage(
                         purl='pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128',
-                        requirement='0.7.4.201502262128',
+                        extracted_requirement='0.7.4.201502262128',
                         scope='',
                         is_runtime=True,
                         is_optional=False,

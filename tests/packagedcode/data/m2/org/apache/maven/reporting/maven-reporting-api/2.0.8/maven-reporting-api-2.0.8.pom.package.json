@@ -40,11 +40,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@1.0-alpha-9",
-      "requirement": "1.0-alpha-9",
+      "extracted_requirement": "1.0-alpha-9",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.8",

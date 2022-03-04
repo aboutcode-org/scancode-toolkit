@@ -207,7 +207,7 @@ class GemSpec(RubyGemData, models.PackageDataFile):
                         type='gem',
                         name=name
                     ).to_string(),
-                    requirement=', '.join(version),
+                    extracted_requirement=', '.join(version),
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
@@ -269,7 +269,7 @@ class GemfileLock(RubyGemData, models.PackageDataFile):
                         name=gem.name,
                         version=gem.version
                     ).to_string(),
-                    requirement=', '.join(gem.requirements),
+                    extracted_requirement=', '.join(gem.requirements),
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
@@ -289,7 +289,7 @@ class GemfileLock(RubyGemData, models.PackageDataFile):
                             name=dep.name,
                             version=dep.version
                         ).to_string(),
-                        requirement=', '.join(dep.requirements),
+                        extracted_requirement=', '.join(dep.requirements),
                         scope='dependencies',
                         is_runtime=True,
                         is_optional=False,
@@ -663,7 +663,7 @@ def get_dependencies(dependencies):
 
         dep = models.DependentPackage(
             purl=RubyGemData.create(name=name).purl,
-            requirement=version_constraint or None,
+            extracted_requirement=version_constraint or None,
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional,

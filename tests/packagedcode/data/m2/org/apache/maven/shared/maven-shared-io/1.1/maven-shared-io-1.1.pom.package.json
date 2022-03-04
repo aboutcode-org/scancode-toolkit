@@ -40,59 +40,66 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.2",
-      "requirement": "2.0.2",
+      "extracted_requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact-manager@2.0.2",
-      "requirement": "2.0.2",
+      "extracted_requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api@1.0-alpha-6",
-      "requirement": "1.0-alpha-6",
+      "extracted_requirement": "1.0-alpha-6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.6",
-      "requirement": "1.4.6",
+      "extracted_requirement": "1.4.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
-      "requirement": "1.0-alpha-9",
+      "extracted_requirement": "1.0-alpha-9",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
-      "requirement": "1.2_Java1.3",
+      "extracted_requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.shared/maven-shared-io@1.1",

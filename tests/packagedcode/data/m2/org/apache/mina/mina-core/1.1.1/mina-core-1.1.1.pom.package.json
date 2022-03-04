@@ -32,27 +32,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.slf4j/slf4j-api@1.4.2",
-      "requirement": "1.4.2",
+      "extracted_requirement": "1.4.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-simple@1.4.2",
-      "requirement": "1.4.2",
+      "extracted_requirement": "1.4.2",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
-      "requirement": "1.2_Java1.3",
+      "extracted_requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.mina/mina-core@1.1.1",

@@ -46,19 +46,21 @@
     "dependencies": [
       {
         "purl": "pkg:npm/mocha",
-        "requirement": "1.x.x",
+        "extracted_requirement": "1.x.x",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/chai",
-        "requirement": "1.x.x",
+        "extracted_requirement": "1.x.x",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/utils-merge@1.0.0",

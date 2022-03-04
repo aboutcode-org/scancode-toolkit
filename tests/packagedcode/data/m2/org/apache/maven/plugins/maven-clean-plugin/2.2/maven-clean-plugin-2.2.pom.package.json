@@ -40,43 +40,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/file-management@1.2",
-      "requirement": "1.2",
+      "extracted_requirement": "1.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.plugins/maven-clean-plugin@2.2",

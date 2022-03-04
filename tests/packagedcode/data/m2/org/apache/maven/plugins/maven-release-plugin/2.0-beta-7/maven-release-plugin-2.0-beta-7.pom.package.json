@@ -32,43 +32,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.release/maven-release-manager@1.0-alpha-4",
-      "requirement": "1.0-alpha-4",
+      "extracted_requirement": "1.0-alpha-4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jmock/jmock-cglib@1.0.1",
-      "requirement": "1.0.1",
+      "extracted_requirement": "1.0.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-test@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.0-beta-1",
-      "requirement": "1.0-beta-1",
+      "extracted_requirement": "1.0-beta-1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.plugins/maven-release-plugin@2.0-beta-7",

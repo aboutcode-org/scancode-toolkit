@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jsp_2.0_spec@1.1",

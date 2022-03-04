@@ -268,13 +268,14 @@ def create_dependency_instances(path, dependencies):
         dependency_instances.append(
             Dependency(
                 dependency_uuid=purl.to_string(),
+                lockfile=path,
                 purl=dependency['purl'],
-                requirement=dependency['requirement'],
+                extracted_requirement=dependency['extracted_requirement'],
                 scope=dependency['scope'],
                 is_runtime=dependency['is_runtime'],
                 is_optional=dependency['is_optional'],
                 is_resolved=dependency['is_resolved'],
-                lockfile=path,
+                resolved_package=dependency['resolved_package']
             )
         )
 

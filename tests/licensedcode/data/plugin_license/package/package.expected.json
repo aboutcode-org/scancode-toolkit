@@ -9,7 +9,7 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -21,22 +21,24 @@
   "dependencies": [
     {
       "purl": "pkg:npm/dicer",
-      "requirement": "0.2.5",
+      "extracted_requirement": "0.2.5",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:npm/dicer",
       "for_package": "pkg:npm/busboy@0.2.14",
       "lockfile": "package.json"
     },
     {
       "purl": "pkg:npm/readable-stream",
-      "requirement": "1.1.x",
+      "extracted_requirement": "1.1.x",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:npm/readable-stream",
       "for_package": "pkg:npm/busboy@0.2.14",
       "lockfile": "package.json"
@@ -202,19 +204,21 @@
           "dependencies": [
             {
               "purl": "pkg:npm/dicer",
-              "requirement": "0.2.5",
+              "extracted_requirement": "0.2.5",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:npm/readable-stream",
-              "requirement": "1.1.x",
+              "extracted_requirement": "1.1.x",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": "pkg:npm/busboy@0.2.14",

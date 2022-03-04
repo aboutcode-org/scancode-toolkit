@@ -40,83 +40,93 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
-      "requirement": "1.0-alpha-9",
+      "extracted_requirement": "1.0-alpha-9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-api@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-javah@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-generic-c@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-msvc@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-bcc@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-manager@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native@1.0-alpha-2",

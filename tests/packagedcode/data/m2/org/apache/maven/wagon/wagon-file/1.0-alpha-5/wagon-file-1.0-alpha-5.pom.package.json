@@ -68,51 +68,57 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.4",
-      "requirement": "1.0.4",
+      "extracted_requirement": "1.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api@1.0-alpha-5",
-      "requirement": "1.0-alpha-5",
+      "extracted_requirement": "1.0-alpha-5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-8",
-      "requirement": "1.0-alpha-8",
+      "extracted_requirement": "1.0-alpha-8",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
-      "requirement": "1.1-alpha-2",
+      "extracted_requirement": "1.1-alpha-2",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-test@1.0-alpha-5",
-      "requirement": "1.0-alpha-5",
+      "extracted_requirement": "1.0-alpha-5",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5",

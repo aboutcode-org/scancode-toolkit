@@ -32,19 +32,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/xerces/xercesImpl@2.6.2",
-      "requirement": "2.6.2",
+      "extracted_requirement": "2.6.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/xml-apis/xml-apis@1.3.04",
-      "requirement": "1.3.04",
+      "extracted_requirement": "1.3.04",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/ant/ant@1.6.5",

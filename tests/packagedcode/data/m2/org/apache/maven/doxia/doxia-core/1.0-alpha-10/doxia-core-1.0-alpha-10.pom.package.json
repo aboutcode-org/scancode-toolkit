@@ -32,27 +32,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-10",

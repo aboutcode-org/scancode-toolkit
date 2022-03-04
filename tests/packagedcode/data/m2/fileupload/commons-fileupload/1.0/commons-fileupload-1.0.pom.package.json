@@ -82,19 +82,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/servletapi/servletapi@2.3",
-      "requirement": "2.3",
+      "extracted_requirement": "2.3",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.0",

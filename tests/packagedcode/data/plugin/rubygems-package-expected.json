@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -22,143 +22,156 @@
   "dependencies": [
     {
       "purl": "pkg:gem/ffi-rzmq",
-      "requirement": ">= 1.0.1",
+      "extracted_requirement": ">= 1.0.1",
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/ffi-rzmq",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/ffi",
-      "requirement": ">= 1.0.0",
+      "extracted_requirement": ">= 1.0.0",
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/ffi",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/multi_json",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/multi_json",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/tnetstring",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/tnetstring",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/rack",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/rack",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/rake",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/rake",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/minitest",
-      "requirement": "= 3.2.0",
+      "extracted_requirement": "= 3.2.0",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/minitest",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/mocha",
-      "requirement": ">= 0.14.0",
+      "extracted_requirement": ">= 0.14.0",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/mocha",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/bbq",
-      "requirement": "= 0.0.4",
+      "extracted_requirement": "= 0.0.4",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/bbq",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/capybara-mechanize",
-      "requirement": "= 0.3.0",
+      "extracted_requirement": "= 0.3.0",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/capybara-mechanize",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/activesupport",
-      "requirement": "~> 3.2.7",
+      "extracted_requirement": "~> 3.2.7",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/activesupport",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/yard",
-      "requirement": "~> 0.8.2",
+      "extracted_requirement": "~> 0.8.2",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/yard",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/kramdown",
-      "requirement": "~> 0.13.7",
+      "extracted_requirement": "~> 0.13.7",
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "resolved_package": {},
       "dependency_uuid": "pkg:gem/kramdown",
       "for_package": "pkg:gem/m2r@2.1.0",
       "lockfile": "m2r-2.1.0.gem"
@@ -307,107 +320,120 @@
           "dependencies": [
             {
               "purl": "pkg:gem/ffi-rzmq",
-              "requirement": ">= 1.0.1",
+              "extracted_requirement": ">= 1.0.1",
               "scope": "runtime",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/ffi",
-              "requirement": ">= 1.0.0",
+              "extracted_requirement": ">= 1.0.0",
               "scope": "runtime",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/multi_json",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "runtime",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/tnetstring",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "runtime",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/rack",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/rake",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/minitest",
-              "requirement": "= 3.2.0",
+              "extracted_requirement": "= 3.2.0",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true
+              "is_resolved": true,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/mocha",
-              "requirement": ">= 0.14.0",
+              "extracted_requirement": ">= 0.14.0",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/bbq",
-              "requirement": "= 0.0.4",
+              "extracted_requirement": "= 0.0.4",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true
+              "is_resolved": true,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/capybara-mechanize",
-              "requirement": "= 0.3.0",
+              "extracted_requirement": "= 0.3.0",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true
+              "is_resolved": true,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/activesupport",
-              "requirement": "~> 3.2.7",
+              "extracted_requirement": "~> 3.2.7",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/yard",
-              "requirement": "~> 0.8.2",
+              "extracted_requirement": "~> 0.8.2",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:gem/kramdown",
-              "requirement": "~> 0.13.7",
+              "extracted_requirement": "~> 0.13.7",
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": "pkg:gem/m2r@2.1.0",

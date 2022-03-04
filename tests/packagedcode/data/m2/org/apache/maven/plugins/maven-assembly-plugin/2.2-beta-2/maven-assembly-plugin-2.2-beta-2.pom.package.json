@@ -32,179 +32,201 @@
   "dependencies": [
     {
       "purl": "pkg:maven/aspectj/aspectjrt@1.5.3",
-      "requirement": "1.5.3",
+      "extracted_requirement": "1.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver@1.0-alpha-10",
-      "requirement": "1.0-alpha-10",
+      "extracted_requirement": "1.0-alpha-10",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/file-management@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-shared-io@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-active-collections@1.0-beta-2",
-      "requirement": "1.0-beta-2",
+      "extracted_requirement": "1.0-beta-2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-archiver@2.2",
-      "requirement": "2.2",
+      "extracted_requirement": "2.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9-stable-1",
-      "requirement": "1.0-alpha-9-stable-1",
+      "extracted_requirement": "1.0-alpha-9-stable-1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.5.1",
-      "requirement": "1.5.1",
+      "extracted_requirement": "1.5.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-model@2.0.4",
-      "requirement": "2.0.4",
+      "extracted_requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-repository-builder@1.0-alpha-2",
-      "requirement": "1.0-alpha-2",
+      "extracted_requirement": "1.0-alpha-2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-tools@1.0-alpha-1",
-      "requirement": "1.0-alpha-1",
+      "extracted_requirement": "1.0-alpha-1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-test-tools@1.0-alpha-1",
-      "requirement": "1.0-alpha-1",
+      "extracted_requirement": "1.0-alpha-1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
-      "requirement": "1.2_Java1.3",
+      "extracted_requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jdom/jdom@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jaxen/jaxen@1.0-FCS",
-      "requirement": "1.0-FCS",
+      "extracted_requirement": "1.0-FCS",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/saxpath/saxpath@1.0-FCS",
-      "requirement": "1.0-FCS",
+      "extracted_requirement": "1.0-FCS",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.plugins/maven-assembly-plugin@2.2-beta-2",

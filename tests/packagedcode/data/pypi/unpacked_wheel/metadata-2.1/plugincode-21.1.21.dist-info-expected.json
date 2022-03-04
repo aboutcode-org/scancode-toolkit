@@ -53,67 +53,75 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/click",
-        "requirement": ">=6",
+        "extracted_requirement": ">=6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/commoncode",
-        "requirement": ">=21.1.21",
+        "extracted_requirement": ">=21.1.21",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/pluggy",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "requirement": ">=3.3.1",
+        "extracted_requirement": ">=3.3.1",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/sphinx-rtd-theme",
-        "requirement": ">=0.5.0",
+        "extracted_requirement": ">=0.5.0",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/doc8",
-        "requirement": ">=0.8.1",
+        "extracted_requirement": ">=0.8.1",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/pytest",
-        "requirement": ">=6",
+        "extracted_requirement": ">=6",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/pytest-xdist",
-        "requirement": ">=2",
+        "extracted_requirement": ">=2",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:pypi/plugincode@21.1.21",

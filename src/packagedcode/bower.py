@@ -114,7 +114,7 @@ class BowerJson(BowerPackageData, models.PackageDataFile):
                 models.DependentPackage(
                     purl=PackageURL(type='bower', name=dep_name).to_string(),
                     scope='dependencies',
-                    requirement=requirement,
+                    extracted_requirement=requirement,
                     is_runtime=True,
                     is_optional=False,
                 )
@@ -126,7 +126,7 @@ class BowerJson(BowerPackageData, models.PackageDataFile):
                 models.DependentPackage(
                     purl=PackageURL(type='bower', name=dep_name).to_string(),
                     scope='devDependencies',
-                    requirement=requirement,
+                    extracted_requirement=requirement,
                     is_runtime=False,
                     is_optional=True,
                 )

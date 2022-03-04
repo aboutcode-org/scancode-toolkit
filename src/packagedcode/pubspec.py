@@ -311,7 +311,7 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
-        requirement=version,
+        extracted_requirement=version,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,

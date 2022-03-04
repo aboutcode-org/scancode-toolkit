@@ -32,19 +32,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-collections/commons-collections@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/velocity/velocity@1.4",
-      "requirement": "1.4",
+      "extracted_requirement": "1.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.3",

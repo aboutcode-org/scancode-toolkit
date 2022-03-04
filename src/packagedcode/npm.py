@@ -229,7 +229,7 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires-dev',
-                            requirement=dep_req,
+                            extracted_requirement=dep_req,
                             is_runtime=False,
                             is_optional=True,
                             is_resolved=True,
@@ -240,7 +240,7 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires',
-                            requirement=dep_req,
+                            extracted_requirement=dep_req,
                             is_runtime=True,
                             is_optional=False,
                             is_resolved=True,
@@ -264,7 +264,7 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                             version=dep_version,
                         ).to_string(),
                         scope='dependencies',
-                        requirement=requirement,
+                        extracted_requirement=requirement,
                         is_runtime=True,
                         is_optional=False,
                         is_resolved=True,
@@ -396,7 +396,7 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                                 models.DependentPackage(
                                     purl=PackageURL(type='npm', name=dep).to_string(),
                                     scope='dependencies',
-                                    requirement=req,
+                                    extracted_requirement=req,
                                     is_runtime=True,
                                     is_optional=False,
                                     is_resolved=True,
@@ -421,7 +421,7 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                         models.DependentPackage(
                             purl=PackageURL(type='npm', name=dep).to_string(),
                             scope='dependencies',
-                            requirement=req,
+                            extracted_requirement=req,
                             is_runtime=True,
                             is_optional=False,
                             is_resolved=True,
@@ -447,7 +447,7 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                             name=package.name,
                             version=package.version
                         ).to_string(),
-                        requirement=requirement,
+                        extracted_requirement=requirement,
                         scope='dependencies',
                         is_runtime=True,
                         is_optional=False,
@@ -924,7 +924,7 @@ def deps_mapper(deps, package, field_name):
             dep = models.DependentPackage(
                 purl=purl,
                 scope=field_name,
-                requirement=requirement,
+                extracted_requirement=requirement,
                 **dependency_attributes
             )
             dependencies.append(dep)

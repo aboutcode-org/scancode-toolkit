@@ -34,91 +34,102 @@
   "dependencies": [
     {
       "purl": "pkg:maven/com.salesforce.argus/argus",
-      "requirement": "${project.version}",
+      "extracted_requirement": "${project.version}",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.1.0",
-      "requirement": "3.1.0",
+      "extracted_requirement": "3.1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.glassfish.jersey.containers/jersey-container-servlet@2.6",
-      "requirement": "2.6",
+      "extracted_requirement": "2.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.glassfish.jersey.media/jersey-media-json-jackson@2.6",
-      "requirement": "2.6",
+      "extracted_requirement": "2.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.salesforce.argus/argus-core",
-      "requirement": "${project.version}",
+      "extracted_requirement": "${project.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.3.2",
-      "requirement": "2.3.2",
+      "extracted_requirement": "2.3.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base@2.3.2",
-      "requirement": "2.3.2",
+      "extracted_requirement": "2.3.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider@2.3.2",
-      "requirement": "2.3.2",
+      "extracted_requirement": "2.3.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.6",
-      "requirement": "2.6",
+      "extracted_requirement": "2.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/io.jsonwebtoken/jjwt@0.7.0",
-      "requirement": "0.7.0",
+      "extracted_requirement": "0.7.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@4.10",
-      "requirement": "4.10",
+      "extracted_requirement": "4.10",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war",

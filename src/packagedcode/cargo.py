@@ -134,7 +134,7 @@ class CargoLock(RustCargoCrate, models.PackageDataFile):
                         name=dep.get('name'),
                         version=dep.get('version')
                     ).to_string(),
-                    requirement=dep.get('version'),
+                    extracted_requirement=dep.get('version'),
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,

@@ -39,67 +39,75 @@
   "dependencies": [
     {
       "purl": "pkg:maven/xerces/xmlParserAPIs@2.2.1",
-      "requirement": "2.2.1",
+      "extracted_requirement": "2.2.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/xerces/xercesImpl@2.6.2",
-      "requirement": "2.6.2",
+      "extracted_requirement": "2.6.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/nekohtml/nekohtml@0.9.1",
-      "requirement": "0.9.1",
+      "extracted_requirement": "0.9.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/rhino/js@1.5R4.1",
-      "requirement": "1.5R4.1",
+      "extracted_requirement": "1.5R4.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.3",
-      "requirement": "2.3",
+      "extracted_requirement": "2.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
-      "requirement": "4aug2000r7-dev",
+      "extracted_requirement": "4aug2000r7-dev",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
-      "requirement": "1.4",
+      "extracted_requirement": "1.4",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/httpunit/httpunit@1.6.2",

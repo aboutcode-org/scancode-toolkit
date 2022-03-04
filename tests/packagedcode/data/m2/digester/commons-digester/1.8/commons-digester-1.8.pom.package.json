@@ -201,35 +201,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
-      "requirement": "1.7.0",
+      "extracted_requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2",
-      "requirement": "1.0.b2",
+      "extracted_requirement": "1.0.b2",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-digester/commons-digester@1.8",

@@ -40,27 +40,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-api@1.4.2",
-      "requirement": "1.4.2",
+      "extracted_requirement": "1.4.2",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.13",
-      "requirement": "1.2.13",
+      "extracted_requirement": "1.2.13",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.slf4j/slf4j-parent@1.4.2",

@@ -31,11 +31,12 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/req@1.0",
-        "requirement": "==1.0",
+        "extracted_requirement": "==1.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": null,

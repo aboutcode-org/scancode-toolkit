@@ -113,7 +113,7 @@ class DescriptionFile(CranPackageData, models.PackageDataFile):
                         models.DependentPackage(
                             purl=PackageURL(
                                 type='cran', name=dependency).to_string(),
-                            requirement=requirement,
+                            extracted_requirement=requirement,
                             scope='dependencies',
                             is_runtime=True,
                             is_optional=False,

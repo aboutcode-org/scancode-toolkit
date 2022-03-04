@@ -217,7 +217,7 @@ class PodfileLock(CocoapodsPackageData, models.PackageDataFile):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires-dev',
-                            requirement=version,
+                            extracted_requirement=version,
                             is_runtime=False,
                             is_optional=True,
                             is_resolved=True,
@@ -237,7 +237,7 @@ class PodfileLock(CocoapodsPackageData, models.PackageDataFile):
                     models.DependentPackage(
                         purl=purl,
                         scope='requires-dev',
-                        requirement=version,
+                        extracted_requirement=version,
                         is_runtime=False,
                         is_optional=True,
                         is_resolved=True,

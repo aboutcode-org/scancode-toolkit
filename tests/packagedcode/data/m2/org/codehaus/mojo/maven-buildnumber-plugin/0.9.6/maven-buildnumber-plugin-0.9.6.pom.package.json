@@ -47,83 +47,93 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.2",
-      "requirement": "2.0.2",
+      "extracted_requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-settings@2.0.2",
-      "requirement": "2.0.2",
+      "extracted_requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.2",
-      "requirement": "2.0.2",
+      "extracted_requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-api@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-manager-plexus@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-svnexe@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvsexe@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-starteam@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-clearcase@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-perforce@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.mojo/maven-buildnumber-plugin@0.9.6",

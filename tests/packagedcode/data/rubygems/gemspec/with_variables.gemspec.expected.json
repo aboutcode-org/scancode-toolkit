@@ -46,75 +46,84 @@
     "dependencies": [
       {
         "purl": "pkg:gem/rake",
-        "requirement": "~> 11.3",
+        "extracted_requirement": "~> 11.3",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rubocop",
-        "requirement": "~> 0.44.1",
+        "extracted_requirement": "~> 0.44.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rspec",
-        "requirement": "~> 3.5",
+        "extracted_requirement": "~> 3.5",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rspec-mocks",
-        "requirement": "~> 3.5",
+        "extracted_requirement": "~> 3.5",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/ipaddress",
-        "requirement": "~> 0.8.3",
+        "extracted_requirement": "~> 0.8.3",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/gandi",
-        "requirement": "~> 3.3, >= 3.3.27",
+        "extracted_requirement": "~> 3.3, >= 3.3.27",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/gcloud",
-        "requirement": "~> 0.21.0",
+        "extracted_requirement": "~> 0.21.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/google-cloud-error_reporting",
-        "requirement": "~> 0.21.0",
+        "extracted_requirement": "~> 0.21.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/map",
-        "requirement": "~> 6.6",
+        "extracted_requirement": "~> 6.6",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/ProviderDSL::GemDescription::NAME@ProviderDSL::GemDescription::VERSION",

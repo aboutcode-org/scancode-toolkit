@@ -32,35 +32,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jmock/jmock@1.0.1",
-      "requirement": "1.0.1",
+      "extracted_requirement": "1.0.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-15",

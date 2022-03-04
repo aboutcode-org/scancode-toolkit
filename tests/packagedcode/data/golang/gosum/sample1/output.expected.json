@@ -31,19 +31,21 @@
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/BurntSushi/toml@v0.3.1",
-        "requirement": "v0.3.1",
+        "extracted_requirement": "v0.3.1",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:golang/github.com/cznic/golex@v0.0.0-20181122101858-9c343928389c",
-        "requirement": "v0.0.0-20181122101858-9c343928389c",
+        "extracted_requirement": "v0.0.0-20181122101858-9c343928389c",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": null,

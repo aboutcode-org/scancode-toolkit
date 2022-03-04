@@ -39,43 +39,48 @@
     "dependencies": [
       {
         "purl": "pkg:gem/sprockets",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rake",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rspec",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mocha",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/fakefs",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/sprockets-vendor_gems@0.1.3",

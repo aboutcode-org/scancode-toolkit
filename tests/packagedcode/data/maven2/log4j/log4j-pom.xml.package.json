@@ -47,51 +47,57 @@
   "dependencies": [
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
-      "requirement": "1.4",
+      "extracted_requirement": "1.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.jms/jms@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
-      "requirement": "1.2.1",
+      "extracted_requirement": "1.2.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
-      "requirement": "1.2.1",
+      "extracted_requirement": "1.2.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/oro/oro@2.0.8",
-      "requirement": "2.0.8",
+      "extracted_requirement": "2.0.8",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/log4j/log4j@1.2.15",

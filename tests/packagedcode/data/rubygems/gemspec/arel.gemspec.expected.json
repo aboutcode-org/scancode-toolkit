@@ -88,19 +88,21 @@
     "dependencies": [
       {
         "purl": "pkg:gem/minitest",
-        "requirement": ">= 2.0.2",
+        "extracted_requirement": ">= 2.0.2",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/hoe",
-        "requirement": ">= 2.9.1",
+        "extracted_requirement": ">= 2.9.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/arel@2.0.7.beta.20110429111451",

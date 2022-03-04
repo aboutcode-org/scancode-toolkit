@@ -32,59 +32,66 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.6",
-      "requirement": "2.0.6",
+      "extracted_requirement": "2.0.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.6",
-      "requirement": "2.0.6",
+      "extracted_requirement": "2.0.6",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-archiver@2.2",
-      "requirement": "2.2",
+      "extracted_requirement": "2.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.7",
-      "requirement": "1.4.7",
+      "extracted_requirement": "1.4.7",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2",
-      "requirement": "1.2.2",
+      "extracted_requirement": "1.2.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.plugins/maven-war-plugin@2.1-alpha-1",

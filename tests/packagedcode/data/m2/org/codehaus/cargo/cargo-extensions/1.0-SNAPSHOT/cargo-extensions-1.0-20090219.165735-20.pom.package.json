@@ -32,91 +32,102 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-api-generic@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-geronimo@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-jboss@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-jetty@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-jo@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-jonas@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-orion@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-resin@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-tomcat@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-container-weblogic@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.cargo/cargo-extensions@1.0-SNAPSHOT",

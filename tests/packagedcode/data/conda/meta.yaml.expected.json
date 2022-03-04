@@ -31,67 +31,75 @@
     "dependencies": [
       {
         "purl": "pkg:conda/mccortex",
-        "requirement": "==1.0",
+        "extracted_requirement": "==1.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/nextflow",
-        "requirement": "==19.01.0",
+        "extracted_requirement": "==19.01.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/cortexpy",
-        "requirement": "==0.45.7",
+        "extracted_requirement": "==0.45.7",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/kallisto",
-        "requirement": "==0.44.0",
+        "extracted_requirement": "==0.44.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/bwa",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/pandas",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/progressbar2",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:conda/python",
-        "requirement": ">=3.6",
+        "extracted_requirement": ">=3.6",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:conda/abeona@0.45.0",

@@ -39,51 +39,57 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
-      "requirement": "3.2.6.ga",
+      "extracted_requirement": "3.2.6.ga",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.3.1.GA",
-      "requirement": "3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga",
-      "requirement": "3.0.0.ga",
+      "extracted_requirement": "3.0.0.ga",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/ejb3-persistence@1.0.1.GA",
-      "requirement": "1.0.1.GA",
+      "extracted_requirement": "1.0.1.GA",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
-      "requirement": "1.0.4",
+      "extracted_requirement": "1.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javassist/javassist@3.4.GA",
-      "requirement": "3.4.GA",
+      "extracted_requirement": "3.4.GA",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA",

@@ -62,107 +62,120 @@
     "dependencies": [
       {
         "purl": "pkg:gem/ffi-rzmq",
-        "requirement": ">= 1.0.1",
+        "extracted_requirement": ">= 1.0.1",
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/ffi",
-        "requirement": ">= 1.0.0",
+        "extracted_requirement": ">= 1.0.0",
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/multi_json",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/tnetstring",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rack",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rake",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/minitest",
-        "requirement": "= 3.2.0",
+        "extracted_requirement": "= 3.2.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mocha",
-        "requirement": ">= 0.14.0",
+        "extracted_requirement": ">= 0.14.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/bbq",
-        "requirement": "= 0.0.4",
+        "extracted_requirement": "= 0.0.4",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/capybara-mechanize",
-        "requirement": "= 0.3.0",
+        "extracted_requirement": "= 0.3.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/activesupport",
-        "requirement": "~> 3.2.7",
+        "extracted_requirement": "~> 3.2.7",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/yard",
-        "requirement": "~> 0.8.2",
+        "extracted_requirement": "~> 0.8.2",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/kramdown",
-        "requirement": "~> 0.13.7",
+        "extracted_requirement": "~> 0.13.7",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/m2r@2.1.0",

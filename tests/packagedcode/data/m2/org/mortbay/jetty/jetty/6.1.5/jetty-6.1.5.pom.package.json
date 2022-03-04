@@ -32,27 +32,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty-util@6.1.5",
-      "requirement": "6.1.5",
+      "extracted_requirement": "6.1.5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5@6.1.5",
-      "requirement": "6.1.5",
+      "extracted_requirement": "6.1.5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.mortbay.jetty/jetty@6.1.5",

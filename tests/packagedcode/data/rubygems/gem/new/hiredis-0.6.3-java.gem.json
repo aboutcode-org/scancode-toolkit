@@ -43,27 +43,30 @@
     "dependencies": [
       {
         "purl": "pkg:gem/rake",
-        "requirement": "= 10.0",
+        "extracted_requirement": "= 10.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rake-compiler",
-        "requirement": "~> 0.7.1",
+        "extracted_requirement": "~> 0.7.1",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/minitest",
-        "requirement": "~> 5.5.1",
+        "extracted_requirement": "~> 5.5.1",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/hiredis@0.6.3?platform=java",

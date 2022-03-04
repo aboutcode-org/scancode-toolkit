@@ -31,251 +31,282 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
-        "requirement": "7.1.*",
+        "extracted_requirement": "7.1.*",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/symfony/symfony",
-        "requirement": "3.2.*",
+        "extracted_requirement": "3.2.*",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/sensio/distribution-bundle",
-        "requirement": "^5.0",
+        "extracted_requirement": "^5.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/doctrine/orm",
-        "requirement": "^2.5",
+        "extracted_requirement": "^2.5",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-bundle",
-        "requirement": "^1.6",
+        "extracted_requirement": "^1.6",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-cache-bundle",
-        "requirement": "^1.2",
+        "extracted_requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/symfony/swiftmailer-bundle",
-        "requirement": "^2.3.10",
+        "extracted_requirement": "^2.3.10",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/symfony/monolog-bundle",
-        "requirement": "^3.0.2",
+        "extracted_requirement": "^3.0.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-apcu",
-        "requirement": "^1.0",
+        "extracted_requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/sensio/framework-extra-bundle",
-        "requirement": "^3.0.2",
+        "extracted_requirement": "^3.0.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/incenteev/composer-parameter-handler",
-        "requirement": "^2.0",
+        "extracted_requirement": "^2.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/twig/twig",
-        "requirement": "^1.0||^2.0",
+        "extracted_requirement": "^1.0||^2.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-migrations-bundle",
-        "requirement": "^1.0",
+        "extracted_requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/greenlion/php-sql-parser",
-        "requirement": "^4.1",
+        "extracted_requirement": "^4.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/eightpoints/guzzle-bundle",
-        "requirement": "^5.3",
+        "extracted_requirement": "^5.3",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/jms/serializer-bundle",
-        "requirement": "^1.1",
+        "extracted_requirement": "^1.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/friendsofsymfony/rest-bundle",
-        "requirement": "^2.1",
+        "extracted_requirement": "^2.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/nelmio/api-doc-bundle",
-        "requirement": "^2.13",
+        "extracted_requirement": "^2.13",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/snc/redis-bundle",
-        "requirement": "^2.0",
+        "extracted_requirement": "^2.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/predis/predis",
-        "requirement": "^1.0",
+        "extracted_requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/paragonie/halite",
-        "requirement": "^3.2",
+        "extracted_requirement": "^3.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/knplabs/knp-paginator-bundle",
-        "requirement": "^2.5",
+        "extracted_requirement": "^2.5",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/egeloen/base64-file-bundle",
-        "requirement": "^1.0",
+        "extracted_requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/liip/imagine-bundle",
-        "requirement": "^1.7",
+        "extracted_requirement": "^1.7",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/sonata-project/admin-bundle",
-        "requirement": "^3.17",
+        "extracted_requirement": "^3.17",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/sonata-project/doctrine-orm-admin-bundle",
-        "requirement": "^3.1",
+        "extracted_requirement": "^3.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-fixtures-bundle",
-        "requirement": "^2.3",
+        "extracted_requirement": "^2.3",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/php-amqplib/rabbitmq-bundle",
-        "requirement": "^1.12",
+        "extracted_requirement": "^1.12",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/mtdowling/cron-expression",
-        "requirement": "^1.2",
+        "extracted_requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/sensio/generator-bundle",
-        "requirement": "^3.0",
+        "extracted_requirement": "^3.0",
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/symfony/phpunit-bridge",
-        "requirement": "^3.2",
+        "extracted_requirement": "^3.2",
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:composer/integration-hub",

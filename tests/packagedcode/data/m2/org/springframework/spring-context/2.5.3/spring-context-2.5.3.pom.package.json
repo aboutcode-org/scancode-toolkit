@@ -47,91 +47,102 @@
   "dependencies": [
     {
       "purl": "pkg:maven/aopalliance/aopalliance@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
-      "requirement": "3.0",
+      "extracted_requirement": "3.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
-      "requirement": "1.1.1",
+      "extracted_requirement": "1.1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-agent@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-aop@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
-      "requirement": "2.5.3",
+      "extracted_requirement": "2.5.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.ejb/ejb@3.0",
-      "requirement": "3.0",
+      "extracted_requirement": "3.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.jms/jms@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.xml/jaxrpc-api@1.1",
-      "requirement": "1.1",
+      "extracted_requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.springframework/spring-context@2.5.3",

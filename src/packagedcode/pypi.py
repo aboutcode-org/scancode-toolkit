@@ -421,7 +421,7 @@ def get_requirements_txt_dependencies(location):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=req.is_pinned or False,
-                requirement=requirement
+                extracted_requirement=requirement
             )
         )
 
@@ -734,7 +734,7 @@ def get_requires_dependencies(requires, default_scope='install'):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                requirement=requirement,
+                extracted_requirement=requirement,
         ))
 
     return dependent_packages
@@ -878,7 +878,7 @@ def parse_with_dparse2(location, file_name=None):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                requirement=requirement
+                extracted_requirement=requirement
             )
         )
 

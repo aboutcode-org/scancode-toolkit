@@ -41,99 +41,111 @@
     "dependencies": [
       {
         "purl": "pkg:npm/babel-eslint",
-        "requirement": "^7.2.3",
+        "extracted_requirement": "^7.2.3",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-config-airbnb",
-        "requirement": "^15.0.2",
+        "extracted_requirement": "^15.0.2",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-config-prettier",
-        "requirement": "^2.3.0",
+        "extracted_requirement": "^2.3.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-plugin-flowtype",
-        "requirement": "^2.34.1",
+        "extracted_requirement": "^2.34.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-plugin-import",
-        "requirement": "^2.6.1",
+        "extracted_requirement": "^2.6.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-plugin-jsx-a11y",
-        "requirement": "^5.1.1",
+        "extracted_requirement": "^5.1.1",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-plugin-prettier",
-        "requirement": "^2.1.2",
+        "extracted_requirement": "^2.1.2",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint-plugin-react",
-        "requirement": "^7.1.0",
+        "extracted_requirement": "^7.1.0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint",
-        "requirement": "^3.19.0",
+        "extracted_requirement": "^3.19.0",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/prettier",
-        "requirement": "^1.5.2",
+        "extracted_requirement": "^1.5.2",
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/eslint",
-        "requirement": "^3.19.0",
+        "extracted_requirement": "^3.19.0",
         "scope": "peerDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:npm/prettier",
-        "requirement": "^1.5.2",
+        "extracted_requirement": "^1.5.2",
         "scope": "peerDependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:npm/%40invisionag/eslint-config-ivx@0.0.2",

@@ -31,107 +31,120 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git+git://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "--editable git+git://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git+https://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "--editable git+https://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git+ssh://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "--editable git+ssh://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git+ssh://git@git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "--editable git+ssh://git@git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git://git.myproject.org/MyProject.git@master#egg=MyProject",
+        "extracted_requirement": "--editable git://git.myproject.org/MyProject.git@master#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git://git.myproject.org/MyProject.git@v1.0#egg=MyProject",
+        "extracted_requirement": "--editable git://git.myproject.org/MyProject.git@v1.0#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "--editable git://git.myproject.org/MyProject.git@da39a3ee5e6b4b0d3255bfef95601890afd80709#egg=MyProject",
+        "extracted_requirement": "--editable git://git.myproject.org/MyProject.git@da39a3ee5e6b4b0d3255bfef95601890afd80709#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git+git://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "git+git://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git+https://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "git+https://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git+ssh://git.myproject.org/MyProject#egg=MyProject",
+        "extracted_requirement": "git+ssh://git.myproject.org/MyProject#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git://git.myproject.org/MyProject.git@master#egg=MyProject",
+        "extracted_requirement": "git://git.myproject.org/MyProject.git@master#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git://git.myproject.org/MyProject.git@v1.0#egg=MyProject",
+        "extracted_requirement": "git://git.myproject.org/MyProject.git@v1.0#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/myproject",
-        "requirement": "git://git.myproject.org/MyProject.git@da39a3ee5e6b4b0d3255bfef95601890afd80709#egg=MyProject",
+        "extracted_requirement": "git://git.myproject.org/MyProject.git@da39a3ee5e6b4b0d3255bfef95601890afd80709#egg=MyProject",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": null,

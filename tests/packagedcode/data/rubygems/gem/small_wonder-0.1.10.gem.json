@@ -39,91 +39,102 @@
     "dependencies": [
       {
         "purl": "pkg:gem/mixlib-config",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mixlib-cli",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mixlib-log",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/excon",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/yajl-ruby",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/chef",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/highline",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/salticid",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/net-ssh",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/net-scp",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/colorize",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/small_wonder@0.1.10",

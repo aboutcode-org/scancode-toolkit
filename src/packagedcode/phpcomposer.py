@@ -372,7 +372,7 @@ def _deps_mapper(deps, package, scope, is_runtime=False, is_optional=False):
         purl = models.PackageURL(type='composer', namespace=ns, name=name).to_string()
         dep = models.DependentPackage(
             purl=purl,
-            requirement=requirement,
+            extracted_requirement=requirement,
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional)

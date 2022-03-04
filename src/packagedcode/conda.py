@@ -157,7 +157,7 @@ class Condayml(CondaPackageData, models.PackageDataFile):
                             models.DependentPackage(
                                 purl=PackageURL(
                                     type='conda', name=dependency).to_string(),
-                                requirement=requirement,
+                                extracted_requirement=requirement,
                                 scope='dependencies',
                                 is_runtime=True,
                                 is_optional=False,

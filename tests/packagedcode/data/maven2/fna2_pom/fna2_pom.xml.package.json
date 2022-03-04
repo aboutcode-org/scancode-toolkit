@@ -32,83 +32,93 @@
   "dependencies": [
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",
-      "requirement": "${flex-mojos.version}",
+      "extracted_requirement": "${flex-mojos.version}",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit",
-      "requirement": "${flexUnit.version}",
+      "extracted_requirement": "${flexUnit.version}",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional",
-      "requirement": "${flexUnit.version}",
+      "extracted_requirement": "${flexUnit.version}",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
-      "requirement": "1.0-SNAPSHOT",
+      "extracted_requirement": "1.0-SNAPSHOT",
       "scope": "internal",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.flex/compiler",
-      "requirement": "${flex.sdk.version}",
+      "extracted_requirement": "${flex.sdk.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
-      "requirement": "${flex.sdk.version}",
+      "extracted_requirement": "${flex.sdk.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
-      "requirement": "${cairngorm.version}",
+      "extracted_requirement": "${cairngorm.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
-      "requirement": "${cairngorm.version}",
+      "extracted_requirement": "${cairngorm.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.adobe.lcds/fds",
-      "requirement": "${lcds.version}",
+      "extracted_requirement": "${lcds.version}",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": false,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",

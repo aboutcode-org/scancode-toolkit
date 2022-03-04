@@ -75,27 +75,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0",
-      "requirement": "1.0",
+      "extracted_requirement": "1.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@2.0",
-      "requirement": "2.0",
+      "extracted_requirement": "2.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.7",
-      "requirement": "3.7",
+      "extracted_requirement": "3.7",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.6",

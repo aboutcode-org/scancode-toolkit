@@ -891,7 +891,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
         dependency = models.DependentPackage(
             purl=purl,
             scope=scope,
-            requirement=requirement,
+            extracted_requirement=requirement,
             is_resolved=is_resolved,
         )
         if dependency not in dependencies:

@@ -31,19 +31,21 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/distutils2@1.0a3",
-        "requirement": "==1.0a3",
+        "extracted_requirement": "==1.0a3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/django-haystack",
-        "requirement": "git+git://github.com/toastdriven/django-haystack@259274e4127f723d76b893c87a82777f9490b960#egg=django_haystack",
+        "extracted_requirement": "git+git://github.com/toastdriven/django-haystack@259274e4127f723d76b893c87a82777f9490b960#egg=django_haystack",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": null,

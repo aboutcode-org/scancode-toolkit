@@ -39,35 +39,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/ant/ant@1.6.5",
-      "requirement": "1.6.5",
+      "extracted_requirement": "1.6.5",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/qdox/qdox@1.6.1",
-      "requirement": "1.6.1",
+      "extracted_requirement": "1.6.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
-      "requirement": "2.0b4",
+      "extracted_requirement": "2.0b4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.testng/testng@5.7",

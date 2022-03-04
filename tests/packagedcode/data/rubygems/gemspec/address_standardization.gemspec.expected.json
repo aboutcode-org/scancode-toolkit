@@ -46,27 +46,30 @@
     "dependencies": [
       {
         "purl": "pkg:gem/mcmire-context",
-        "requirement": ">= 0",
+        "extracted_requirement": ">= 0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mcmire-matchy",
-        "requirement": ">= 0",
+        "extracted_requirement": ">= 0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/mechanize",
-        "requirement": ">= 0",
+        "extracted_requirement": ">= 0",
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/mysmallidea-address_standardization@0.4.1",

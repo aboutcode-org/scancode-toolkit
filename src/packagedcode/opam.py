@@ -81,7 +81,7 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=dep.purl,
-                    requirement=dep.version,
+                    extracted_requirement=dep.version,
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,

@@ -39,11 +39,12 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pip@7.1.2",
-        "requirement": "==7.1.2",
+        "extracted_requirement": "==7.1.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:pypi/pydep@0.0",

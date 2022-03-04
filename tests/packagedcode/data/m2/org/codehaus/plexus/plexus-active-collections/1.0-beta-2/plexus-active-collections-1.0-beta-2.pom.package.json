@@ -32,27 +32,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-22",
-      "requirement": "1.0-alpha-22",
+      "extracted_requirement": "1.0-alpha-22",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22",
-      "requirement": "1.0-alpha-22",
+      "extracted_requirement": "1.0-alpha-22",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-active-collections@1.0-beta-2",

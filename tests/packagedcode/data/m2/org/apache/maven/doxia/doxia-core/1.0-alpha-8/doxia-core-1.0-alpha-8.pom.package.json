@@ -32,35 +32,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/oro/oro@2.0.7",
-      "requirement": "2.0.7",
+      "extracted_requirement": "2.0.7",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@1.0-alpha-8",
-      "requirement": "1.0-alpha-8",
+      "extracted_requirement": "1.0-alpha-8",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.4",
-      "requirement": "1.0.4",
+      "extracted_requirement": "1.0.4",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-8",
-      "requirement": "1.0-alpha-8",
+      "extracted_requirement": "1.0-alpha-8",
       "scope": "runtime",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",

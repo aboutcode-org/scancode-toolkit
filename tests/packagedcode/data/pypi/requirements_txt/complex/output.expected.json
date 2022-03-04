@@ -31,35 +31,39 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/babel@0.9.6",
-        "requirement": "==0.9.6",
+        "extracted_requirement": "==0.9.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/crate.web",
-        "requirement": "--editable git+https://github.com/crateio/crate.web.git#egg=crate.web",
+        "extracted_requirement": "--editable git+https://github.com/crateio/crate.web.git#egg=crate.web",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/django-uuidfield@0.2",
-        "requirement": "==0.2",
+        "extracted_requirement": "==0.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/jutils",
-        "requirement": "--editable git+https://github.com/dstufft/jutils.git#egg=jutils",
+        "extracted_requirement": "--editable git+https://github.com/dstufft/jutils.git#egg=jutils",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": null,

@@ -47,59 +47,66 @@
   "dependencies": [
     {
       "purl": "pkg:maven/asm/asm@2.2.3",
-      "requirement": "2.2.3",
+      "extracted_requirement": "2.2.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/asm/asm-commons@2.2.3",
-      "requirement": "2.2.3",
+      "extracted_requirement": "2.2.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/asm/asm-util@2.2.3",
-      "requirement": "2.2.3",
+      "extracted_requirement": "2.2.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
-      "requirement": "3.0",
+      "extracted_requirement": "3.0",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.2",
-      "requirement": "3.2",
+      "extracted_requirement": "3.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
-      "requirement": "1.1.1",
+      "extracted_requirement": "1.1.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.13",
-      "requirement": "1.2.13",
+      "extracted_requirement": "1.2.13",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.springframework/spring-core@2.5.3",

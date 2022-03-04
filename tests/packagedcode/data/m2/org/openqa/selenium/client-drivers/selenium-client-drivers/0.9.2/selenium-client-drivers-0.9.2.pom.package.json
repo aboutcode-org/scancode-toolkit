@@ -32,19 +32,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.openqa.selenium.core/selenium-core",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.openqa.selenium.server/selenium-server@0.9.2",
-      "requirement": "0.9.2",
+      "extracted_requirement": "0.9.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.openqa.selenium.client-drivers/selenium-client-drivers@0.9.2",

@@ -49,11 +49,12 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/publicsuffix2",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:pypi/urlpy@0.2.0.2",

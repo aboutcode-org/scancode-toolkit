@@ -117,43 +117,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.12",
-      "requirement": "1.2.12",
+      "extracted_requirement": "1.2.12",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/logkit/logkit@1.0.1",
-      "requirement": "1.0.1",
+      "extracted_requirement": "1.0.1",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/avalon-framework/avalon-framework@4.1.3",
-      "requirement": "4.1.3",
+      "extracted_requirement": "4.1.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.3",
-      "requirement": "2.3",
+      "extracted_requirement": "2.3",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",

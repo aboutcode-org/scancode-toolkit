@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
-      "requirement": "1.0-alpha-9",
+      "extracted_requirement": "1.0-alpha-9",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-1",

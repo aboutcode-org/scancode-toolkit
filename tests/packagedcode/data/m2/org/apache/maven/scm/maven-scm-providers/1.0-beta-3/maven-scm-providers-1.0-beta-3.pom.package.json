@@ -32,19 +32,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-api@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-test@1.0-beta-3",
-      "requirement": "1.0-beta-3",
+      "extracted_requirement": "1.0-beta-3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.scm/maven-scm-providers@1.0-beta-3",

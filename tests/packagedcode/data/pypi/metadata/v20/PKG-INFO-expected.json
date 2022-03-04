@@ -65,27 +65,30 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pykerberos",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "gssapi",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/dnspython",
-        "requirement": "<2.0.0,>=1.8.0",
+        "extracted_requirement": "<2.0.0,>=1.8.0",
         "scope": "srv",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:pypi/ipaddress",
-        "requirement": null,
+        "extracted_requirement": null,
         "scope": "tls",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:pypi/pymongo@3.6.1",

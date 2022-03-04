@@ -243,67 +243,75 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
+      "extracted_requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-core@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-mock@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-remoting@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-web@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-jdbc@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.springframework/spring-support@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.9",
-      "requirement": "1.2.9",
+      "extracted_requirement": "1.2.9",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.5",

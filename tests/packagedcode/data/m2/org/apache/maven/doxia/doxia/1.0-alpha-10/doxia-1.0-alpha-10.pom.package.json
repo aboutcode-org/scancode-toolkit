@@ -32,43 +32,48 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.2",
-      "requirement": "3.8.2",
+      "extracted_requirement": "3.8.2",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@1.0-alpha-10",
-      "requirement": "1.0-alpha-10",
+      "extracted_requirement": "1.0-alpha-10",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-10",
-      "requirement": "1.0-alpha-10",
+      "extracted_requirement": "1.0-alpha-10",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-30",
-      "requirement": "1.0-alpha-30",
+      "extracted_requirement": "1.0-alpha-30",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.5",
-      "requirement": "1.4.5",
+      "extracted_requirement": "1.4.5",
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.apache.maven.doxia/doxia@1.0-alpha-10",

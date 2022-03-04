@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2",
-      "requirement": "1.0.b2",
+      "extracted_requirement": "1.0.b2",
       "scope": "relocation",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/xml-apis/xml-apis@2.0.2",

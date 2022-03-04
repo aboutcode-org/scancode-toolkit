@@ -267,7 +267,7 @@ def build_package(cls, package_data):
             models.DependentPackage(
                 purl=PackageURL(type='chef', name=dependency_name).to_string(),
                 scope='dependencies',
-                requirement=requirement,
+                extracted_requirement=requirement,
                 is_runtime=True,
                 is_optional=False,
             )

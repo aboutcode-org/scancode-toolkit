@@ -47,35 +47,39 @@
   "dependencies": [
     {
       "purl": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414",
-      "requirement": "20020414",
+      "extracted_requirement": "20020414",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11",
-      "requirement": "2.1.11",
+      "extracted_requirement": "2.1.11",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11",
-      "requirement": "2.1.11",
+      "extracted_requirement": "2.1.11",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/com.sun.xsom/xsom@20081112",
-      "requirement": "20081112",
+      "extracted_requirement": "20081112",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",

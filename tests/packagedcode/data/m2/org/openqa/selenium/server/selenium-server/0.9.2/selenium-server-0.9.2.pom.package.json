@@ -32,19 +32,21 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.openqa.selenium.server/selenium-server-coreless",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/org.openqa.selenium.core/selenium-core",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": null,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.openqa.selenium.server/selenium-server@0.9.2",

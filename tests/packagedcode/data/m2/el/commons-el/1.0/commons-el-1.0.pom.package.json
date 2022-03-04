@@ -82,27 +82,30 @@
   "dependencies": [
     {
       "purl": "pkg:maven/servletapi/servletapi@2.4-20040521",
-      "requirement": "2.4-20040521",
+      "extracted_requirement": "2.4-20040521",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/jspapi/jsp-api@2.0-20040521",
-      "requirement": "2.0-20040521",
+      "extracted_requirement": "2.0-20040521",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.3",
-      "requirement": "1.0.3",
+      "extracted_requirement": "1.0.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-el/commons-el@1.0",

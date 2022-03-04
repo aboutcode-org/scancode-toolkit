@@ -116,83 +116,93 @@
     "dependencies": [
       {
         "purl": "pkg:opam/ocaml",
-        "requirement": ">= 4.06.0",
+        "extracted_requirement": ">= 4.06.0",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/dune",
-        "requirement": ">= 2.0.0",
+        "extracted_requirement": ">= 2.0.0",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/ipaddr",
-        "requirement": ">= 3.0.0",
+        "extracted_requirement": ">= 3.0.0",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/functoria",
-        "requirement": ">= 3.0.2",
+        "extracted_requirement": ">= 3.0.2",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/bos",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/astring",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/logs",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/stdlib-shims",
-        "requirement": "",
+        "extracted_requirement": "",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/mirage-runtime",
-        "requirement": ">= 3.7.0 & <= version",
+        "extracted_requirement": ">= 3.7.0 & <= version",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:opam/alcotest",
-        "requirement": "with-test",
+        "extracted_requirement": "with-test",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": null,

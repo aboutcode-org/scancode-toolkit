@@ -31,19 +31,21 @@
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/cznic/parser@v0.0.0-20160622100904-31edd927e5b1",
-        "requirement": "v0.0.0-20160622100904-31edd927e5b1",
+        "extracted_requirement": "v0.0.0-20160622100904-31edd927e5b1",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:golang/github.com/cznic/sortutil@v0.0.0-20181122101858-f5f958428db8",
-        "requirement": "v0.0.0-20181122101858-f5f958428db8",
+        "extracted_requirement": "v0.0.0-20181122101858-f5f958428db8",
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": true,
+        "resolved_package": {}
       }
     ],
     "purl": null,

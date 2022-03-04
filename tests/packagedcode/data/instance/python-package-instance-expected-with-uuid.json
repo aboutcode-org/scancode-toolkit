@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -22,57 +22,62 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/colorama",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=2e60624d-c156-48f7-b5b1-3d3600f93d34",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/colorama?uuid=7424c04d-8d58-4573-b6cf-7a3cc08f8348",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "lockfile": "METADATA"
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=3ee0314c-8757-4236-b6d8-3469846a8807",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=0910d9ea-5b43-4bd8-bff4-3c9297e6d12e",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "lockfile": "METADATA"
     },
     {
       "purl": "pkg:pypi/colorama",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=a1b2347f-2ba0-4e39-95ab-803fe25c2ebc",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/colorama?uuid=953ceae5-6f73-42e3-962f-42553646086a",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "lockfile": "setup.py"
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
-      "requirement": null,
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=0a50de2b-dc97-4514-91ba-f6ef0e1ea1c4",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=679d8571-4893-45af-b629-5d2be3e52788",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "lockfile": "setup.py"
     },
     {
       "purl": "pkg:pypi/pre-commit",
-      "requirement": "pre-commit",
+      "extracted_requirement": "pre-commit",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/pre-commit?uuid=051e0aa6-66a1-4b81-a2cc-307aafbad708",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/pre-commit?uuid=88de6ab9-d253-4fcf-ac9a-2f7d9cf8e04f",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "lockfile": "tox.ini"
     }
   ],
@@ -131,7 +136,7 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c",
+      "package_uuid": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
       "package_data_files": [
         "METADATA",
         "setup.cfg",
@@ -159,7 +164,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -168,7 +173,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -233,19 +238,21 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": "pkg:pypi/click@8.0.1",
@@ -255,7 +262,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -264,7 +271,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -309,7 +316,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -349,19 +356,21 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "requirement": null,
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": "pkg:pypi/click",
@@ -371,7 +380,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     },
@@ -411,11 +420,12 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pre-commit",
-              "requirement": "pre-commit",
+              "extracted_requirement": "pre-commit",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false
+              "is_resolved": false,
+              "resolved_package": {}
             }
           ],
           "purl": null,
@@ -425,7 +435,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=1f26e329-5ec2-4bbd-81e9-ee62e103ca4c"
+        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
       ],
       "scan_errors": []
     }

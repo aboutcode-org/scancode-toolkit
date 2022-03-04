@@ -278,7 +278,7 @@ def build_package(cls, dependencies):
                     version=version
                 ).to_string(),
                 scope=scope,
-                requirement=version,
+                extracted_requirement=version,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
             )

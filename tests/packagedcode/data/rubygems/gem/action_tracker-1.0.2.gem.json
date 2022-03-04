@@ -48,83 +48,93 @@
     "dependencies": [
       {
         "purl": "pkg:gem/activesupport",
-        "requirement": ">= 3.2, < 6.0",
+        "extracted_requirement": ">= 3.2, < 6.0",
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/devise",
-        "requirement": "~> 4",
+        "extracted_requirement": "~> 4",
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/bundler",
-        "requirement": "~> 1.11",
+        "extracted_requirement": "~> 1.11",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rake",
-        "requirement": "~> 10.0",
+        "extracted_requirement": "~> 10.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rspec-rails",
-        "requirement": "~> 3.0",
+        "extracted_requirement": "~> 3.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/rails",
-        "requirement": ">= 3.2, < 6.0",
+        "extracted_requirement": ">= 3.2, < 6.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/guard",
-        "requirement": "~> 2.13",
+        "extracted_requirement": "~> 2.13",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/byebug",
-        "requirement": "~> 5.0",
+        "extracted_requirement": "~> 5.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/guard-rspec",
-        "requirement": "~> 4.6",
+        "extracted_requirement": "~> 4.6",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:gem/jasmine",
-        "requirement": "~> 2.4",
+        "extracted_requirement": "~> 2.4",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:gem/action_tracker@1.0.2",

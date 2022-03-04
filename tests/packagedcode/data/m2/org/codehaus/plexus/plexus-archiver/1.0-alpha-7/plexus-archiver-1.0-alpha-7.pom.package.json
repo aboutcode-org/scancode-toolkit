@@ -47,11 +47,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.2",
-      "requirement": "1.2",
+      "extracted_requirement": "1.2",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver@1.0-alpha-7",

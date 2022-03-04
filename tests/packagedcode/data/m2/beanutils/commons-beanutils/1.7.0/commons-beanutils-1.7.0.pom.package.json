@@ -32,11 +32,12 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.3",
-      "requirement": "1.0.3",
+      "extracted_requirement": "1.0.3",
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true
+      "is_resolved": true,
+      "resolved_package": {}
     }
   ],
   "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",

@@ -31,27 +31,30 @@
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/davecgh/go-spew@v1.1.1",
-        "requirement": "v1.1.1",
+        "extracted_requirement": "v1.1.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:golang/github.com/stretchr/testify@v1.4.0",
-        "requirement": "v1.4.0",
+        "extracted_requirement": "v1.4.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       },
       {
         "purl": "pkg:golang/github.com/alecthomas/repr@v0.0.0",
-        "requirement": "v0.0.0",
+        "extracted_requirement": "v0.0.0",
         "scope": "exclude",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "purl": "pkg:golang/github.com/alecthomas/sample",

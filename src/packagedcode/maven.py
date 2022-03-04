@@ -936,7 +936,7 @@ def get_dependencies(pom):
 
             dep_pack = models.DependentPackage(
                 purl=str(dpurl),
-                requirement=dversion,
+                extracted_requirement=dversion,
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
