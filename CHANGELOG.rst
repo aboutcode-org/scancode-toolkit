@@ -14,7 +14,7 @@ Important API changes:
   instead under the ``venv`` subdirectory.
 
 - Main package API function `get_package_infos` is now deprecated, and is
-  replaced by `get_package_manifests`.
+  replaced by `get_package_data`.
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders: we now use proper name for attributes and not a generic "value".
@@ -27,10 +27,18 @@ Important API changes:
   as an option.
 
 - The data structure of the JSON output has changed for packages: we now
-  return "package_manifests" package information at the manifest file-level
-  rather than "packages". There is a a new top-level "packages" attribute
-  that contains each package instance that can be aggregating data from
-  multiple manifests for a single package instance.
+  return "package_data" package information at the manifest file-level
+  rather than "packages". This has all the data attributes of a "package_data"
+  field plus others: "package_uuid", "package_data_files" and "files".
+  
+- There is a a new top-level "packages" attribute that contains package
+  instances that can be aggregating data from multiple manifests.
+
+- There is a a new top-level "dependencies" attribute that contains each dependency
+  instance, these can be standalone or releated to a package.
+
+- There is a new resource-level attribute "for_packages" which refers to packages
+  through package_uuids (pURL + uuid string).
 
 - The data structure for HTML output has been changed to include emails and
   urls under the  "infos" object. Now HTML template will output holders,
@@ -136,17 +144,31 @@ Package detection:
   - Yocto/BitBake .bb recipes.
 
 - Major changes in packages detection and reporting, codebase-level attribute `packages`
-  with one or more "package_manifests" and files for the packages are reported.
+  with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
 
-  - The resource level attribute `packages` has been renamed to `package_manifests`,
-    as these are really package manifests that are being detected.
+  - The resource level attribute `packages` has been renamed to `package_data`,
+    as these are really package data that are being detected, and can be manifests,
+    lockfiles or other package data. This has all the data attributes of a `package_data`
+    field plus others: `package_uuid`, `package_data_files` and `files`.
+  
 
   - A new top-level attribute `packages` has been added which contains package
-    instances created from package_manifests detected in the codebase.
+    instances created from `package_data` detected in the codebase.
 
-  - A new codebase level attribute `packages` has been added which contains package
-    instances created from package_manifests detected in the codebase.
+  - A new codebase level attribute `dependencies` has been added which contains dependency
+    instances created from lockfiles detected in the codebase.
+
+  - The package attribute `root_path` has been deleted from `package_data` in favour
+    of the new format where there is no root conceptually, just a list of files for each
+    package.
+
+  - There is a new resource-level attribute `for_packages` which refers to packages
+    through package_uuids (pURL + uuid string).
+  
+  - The package_data attribute `dependencies` (which is a list of DependentPackages),
+    now has a new attribute `resolved_package` having a package data mapping.
+    Also the `requirement` attribute here is renamed to `extracted_requirement`.
 
 
 Outputs:
@@ -159,16 +181,19 @@ Outputs:
 Output version
 --------------
 
-Scancode Data Output Version is now 2.0.0.
+Scancode Data Output Version is now 3.0.0.
 
 Changes:
 
-- rename resource level attribute `packages` to `package_manifests`.
+- rename resource level attribute `packages` to `package_data`.
 - add top-level attribute `packages`.
-
+- add top-level attribute `dependencies`.
+- add resource-level attribute `for_packages`.
+- remove `package-data` attribute `root_path`.
 
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Various documentations have been updated to reflects API changes and
   correct minor documentation issues.
 
