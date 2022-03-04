@@ -159,8 +159,7 @@ def all_rule_by_tokens():
             df = f"  file://{rule.data_file}"
             tf = f"  file://{rule.text_file}"
             raise Exception(
-                f"Failed to to get tokens from rule:: {rule.identifier}\n"
-                f"{df}\n{tf}"
+                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{df}\n{tf}"
             ) from e
     return rule_tokens
 

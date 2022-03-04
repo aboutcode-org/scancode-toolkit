@@ -47,7 +47,9 @@ def cli(
     scancode_licenses = synclic.ScanCodeLicenses()
     sc_by_key = scancode_licenses.by_key
 
-    for license_key, spdx_license_key, api_url in deja.fetch_spdx_license_details(scancode_licenses):
+    for license_key, spdx_license_key, api_url in deja.fetch_spdx_license_details(
+        scancode_licenses
+    ):
         if spdx_license_key:
             continue
         if TRACE or dry_run:

@@ -25,7 +25,6 @@ import cluecode_test_utils  # NOQA
 TRACE = True
 
 
-
 def load_data(location="00-new-copyright-tests.txt"):
     with io.open(location, encoding="utf-8") as o:
         data = [l.strip() for l in o.read().splitlines(False)]
@@ -71,8 +70,12 @@ def build_dupe_index():
 
 
 @click.command()
-@click.argument('copyrights_file', type=click.Path(), metavar='FILE',)
-@click.help_option('-h', '--help')
+@click.argument(
+    "copyrights_file",
+    type=click.Path(),
+    metavar="FILE",
+)
+@click.help_option("-h", "--help")
 @click.help_option("-h", "--help")
 def cli(copyrights_file):
     """
