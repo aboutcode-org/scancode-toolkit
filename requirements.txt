@@ -2,7 +2,6 @@ attrs==21.2.0
 banal==1.0.6
 beautifulsoup4==4.9.3
 binaryornot==0.4.4
-bitarray==2.1.0
 boolean.py==3.8
 certifi==2021.5.30
 cffi==1.14.5
