@@ -8,38 +8,30 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
+
 import openhub_scraper
 
 
 def test_scraping_unicode_and_ascii():
-    license_result = openhub_scraper.extract_openhub_licenses(
-        start_pg=15, end_pg=15, write_to_file=False, parse_website=False
+    test_file = os.path.join(
+        os.path.dirname(__file__), "testdata/openhub_html.html"
     )
-    observed_result_1 = (
-        item
-        for item in license_result
-        if item["name"] == u"Культурный центр Союза Десантников России"
-    ).next()
-    expected_result_1 = {
-        "openhub_url": u"https://www.openhub.net/licenses/sdrvdvkc",
-        "name": u"Культурный центр Союза Десантников России",
-    }
-    assert observed_result_1 == expected_result_1
+    with open(test_file, "r") as f:
+        test_content = f.read()
 
-    observed_result_2 = (
-        item for item in license_result if item["name"] == "Sleepycat License"
-    ).next()
-    expected_result_2 = {
-        "openhub_url": "https://www.openhub.net/licenses/sleepycat",
+    licenses = list(openhub_scraper.list_licenses_on_page(test_content))
+
+    result = [i for i in licenses if i["name"] == "Sleepycat License"]
+    expected = [{
+        "url": "https://www.openhub.net/licenses/sleepycat",
         "name": "Sleepycat License",
-    }
-    assert observed_result_2 == expected_result_2
+    }]
+    assert result == expected
 
-    observed_result_3 = (
-        item for item in license_result if item["name"] == "Sun Public License v1.0"
-    ).next()
-    expected_result_3 = {
-        "openhub_url": u"https://www.openhub.net/licenses/sun_public",
-        "name": u"Sun Public License v1.0",
-    }
-    assert observed_result_3 == expected_result_3
+    result = [i for i in licenses if i["name"] == "Sun Public License v1.0"]
+    expected = [{
+        "url": "https://www.openhub.net/licenses/sun_public",
+        "name": "Sun Public License v1.0",
+    }]
+    assert result == expected

@@ -10,73 +10,90 @@
 import io
 import json
 import os
+import time
 
 from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 
+LICENSES_LIST_FILE = "openhub_licenses.json"
 
-def write_license_info_to_file(license_list):
+
+def get_page(page_no):
     """
-    Neatly format all the scrapped license information in the json format and
-    write it to a file.
+    Return the text content of an openhub ``page_no`` page number.
     """
-    with io.open("openhub_licenses.json", "wb") as f:
-        f.write(json.dumps(license_list, indent=4))
+    url = f"https://www.openhub.net/licenses?page={page_no}"
+    print(f"Fetching: {url}")
+    return urlopen(url).read()
 
 
-def parse_local_file():
+def fetch_all_licenses():
     """
-    Parses the given file using 'BeautifulSoup' and returns html content of
-    that file.
+    Save list of license and all license texts
     """
-    local_test_file = os.path.join(
-        os.path.dirname(__file__), "testdata/openhub_scraper/openhub_html.html"
-    )
-    with open(local_test_file, "r") as f:
-        parsed_page = BeautifulSoup(f.read(), "html.parser")
-    return parsed_page
-
-
-def parse_webpage(url, page_no):
-    """
-    Parses the given webpage using 'BeautifulSoup' and returns html content of
-    that webpage.
-    """
-    page = urlopen(url + page_no)
-    parsed_page = BeautifulSoup(page, "html.parser")
-    return parsed_page
-
-
-def extract_openhub_licenses(start_pg, end_pg, write_to_file, parse_website):
-    """
-    Extract openhub license names, their urls, and save it in a json file or
-    return the list of the license dictionary.
-    """
-    license_dict = {}
-    license_list = []
-
-    for i in range(start_pg, end_pg + 1):
-        if parse_website:
-            parsed_page = parse_webpage(
-                url="https://www.openhub.net/licenses?page=", page_no=str(i)
-            )
-        else:
-            parsed_page = parse_local_file()
-        all_licenses = parsed_page.find(id="license").select(
-            "table.table-condensed.table-striped.table"
-        )
-        license_rows = all_licenses[0].find_all("a", href=True)
-        for license in license_rows:  # NOQA
-            license_dict["openhub_url"] = license["href"]
-            license_dict["name"] = license.get_text()
-            license_list.append(license_dict.copy())
-
-    if write_to_file:
-        write_license_info_to_file(license_list)
+    if not os.path.exists(LICENSES_LIST_FILE):
+        licenses = save_licenses(filename=LICENSES_LIST_FILE)
     else:
-        return license_list
+        with open(LICENSES_LIST_FILE) as ip:
+            licenses = json.load(ip)
+    print()
+    for lic in licenses:
+        fetch_and_save_license(lic["url"])
+
+
+def list_all_licenses(pages_count=18):
+    """
+    Yield mappings of openhub license {name:xxx, url:zzz} extracted from the
+    all the openhub license pages
+    """
+    for page_no in range(1, pages_count + 1):
+        time.sleep(5)
+        page = get_page(page_no)
+        for lic in list_licenses_on_page(page):
+            yield lic
+
+
+def fetch_and_save_license(url, force=False, directory="openhub_licenses"):
+    """
+    Return the text for license page at url
+    """
+    filename = url.split("/")[-1]
+    lic_file = os.path.join(directory, filename)
+    if not force and os.path.exists(lic_file):
+        return
+
+    os.makedirs(directory, exist_ok=True)
+    print(f" Fetching: {url}")
+    time.sleep(.1)
+    content = urlopen(url).read()
+    with open(lic_file, "wb") as of:
+        of.write(content)
+
+
+def list_licenses_on_page(page):
+    """
+    Yield mappings of openhub license {name:xxx, url:zzz} extracted from the
+    ``page`` text of an HTML page.
+    """
+    parsed_page = BeautifulSoup(page, "html.parser")
+    all_licenses = parsed_page.find(id="license").select(
+        "table.table-striped.table-condensed.table"
+    )
+    licenses = all_licenses[0].find_all("a", href=True)
+    for license in licenses:  # NOQA
+        yield dict(url=license["href"], name=license.get_text())
+
+
+def save_licenses(filename=LICENSES_LIST_FILE):
+    """
+    Write to the ``filename`` file the list of scrapped openhub license as JSON.
+    """
+    licenses = list(list_all_licenses())
+    with io.open(filename, "w") as f:
+        json.dump(licenses, f, indent=2)
+    return licenses
 
 
 if __name__ == "__main__":
-    extract_openhub_licenses(start_pg=1, end_pg=17, write_to_file=True, parse_website=True)
+    fetch_all_licenses()
