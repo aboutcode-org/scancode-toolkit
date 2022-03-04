@@ -10,8 +10,8 @@
 import os.path
 
 from packagedcode import models
-from packagedcode import PACKAGE_INSTANCE_TYPES
-from packagedcode import PACKAGE_DATA_TYPES
+from packagedcode import PACKAGE_INSTANCE_CLASSES
+from packagedcode import PACKAGE_DATA_CLASSES
 from packagedcode import PACKAGE_DATA_BY_TYPE
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 from packagedcode.models import PackageData
@@ -181,12 +181,12 @@ def check_package_instance_classes():
     """
     package_instances_by_type = {
         cls.default_type: cls
-        for cls in PACKAGE_INSTANCE_TYPES
+        for cls in PACKAGE_INSTANCE_CLASSES
     }
 
-    if len(package_instances_by_type) != len(PACKAGE_INSTANCE_TYPES):
+    if len(package_instances_by_type) != len(PACKAGE_INSTANCE_CLASSES):
         seen_types = {}
-        for pt in PACKAGE_INSTANCE_TYPES:
+        for pt in PACKAGE_INSTANCE_CLASSES:
             pk_instance = pt()
             assert pk_instance.default_type
             seen = seen_types.get(pk_instance.default_type)
@@ -206,12 +206,12 @@ def check_package_data_classes():
     """
     package_data_by_type = {
         cls.default_type: cls
-        for cls in PACKAGE_DATA_TYPES
+        for cls in PACKAGE_DATA_CLASSES
     }
 
-    if len(package_data_by_type) != len(PACKAGE_DATA_TYPES):
+    if len(package_data_by_type) != len(PACKAGE_DATA_CLASSES):
         seen_types = {}
-        for pmt in PACKAGE_DATA_TYPES:
+        for pmt in PACKAGE_DATA_CLASSES:
             manifest = pmt()
             assert manifest.package_data_type
             seen = seen_types.get(manifest.package_data_type)

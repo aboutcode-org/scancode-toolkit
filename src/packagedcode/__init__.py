@@ -41,7 +41,7 @@ from packagedcode import windows
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
-PACKAGE_DATA_TYPES = [
+PACKAGE_DATA_CLASSES = [
     rpm.RpmManifest,
     debian.DebianPackage,
 
@@ -115,7 +115,7 @@ PACKAGE_DATA_TYPES = [
 ]
 
 
-PACKAGE_INSTANCE_TYPES = [
+PACKAGE_INSTANCE_CLASSES = [
     rpm.RpmPackage,
     maven.MavenPackage,
     npm.NpmPackage,
@@ -139,13 +139,13 @@ PACKAGE_INSTANCE_TYPES = [
 
 PACKAGE_DATA_BY_TYPE = {
     cls.default_type: cls
-    for cls in PACKAGE_DATA_TYPES
+    for cls in PACKAGE_DATA_CLASSES
 }
 
 
 PACKAGE_INSTANCES_BY_TYPE = {
     cls.default_type: cls
-    for cls in PACKAGE_INSTANCE_TYPES
+    for cls in PACKAGE_INSTANCE_CLASSES
 }
 
 

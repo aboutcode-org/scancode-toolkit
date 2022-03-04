@@ -22,7 +22,7 @@ from commoncode.cliutils import SCAN_GROUP
 
 from packageurl import PackageURL
 from packagedcode import get_package_instance
-from packagedcode import PACKAGE_DATA_TYPES
+from packagedcode import PACKAGE_DATA_CLASSES
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 from packagedcode.models import Dependency
 
@@ -51,7 +51,7 @@ if TRACE:
 def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    for package_cls in sorted(PACKAGE_DATA_TYPES, key=lambda pc: (pc.default_type)):
+    for package_cls in sorted(PACKAGE_DATA_CLASSES, key=lambda pc: (pc.default_type)):
         click.echo('--------------------------------------------')
         click.echo('Package: {self.default_type}'.format(self=package_cls))
         click.echo(

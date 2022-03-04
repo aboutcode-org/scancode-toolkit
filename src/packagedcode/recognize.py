@@ -12,7 +12,7 @@ import os
 import sys
 
 from commoncode import filetype
-from packagedcode import PACKAGE_DATA_TYPES
+from packagedcode import PACKAGE_DATA_CLASSES
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
@@ -50,7 +50,7 @@ def recognize_package_data(location):
         return
 
     recognized_package_data = []
-    for package_data_type in PACKAGE_DATA_TYPES:
+    for package_data_type in PACKAGE_DATA_CLASSES:
         if not package_data_type.is_package_data_file(location):
             continue
 

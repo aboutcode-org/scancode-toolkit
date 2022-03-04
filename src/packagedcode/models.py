@@ -600,8 +600,8 @@ class PackageData(BasePackageData):
 
     @staticmethod
     def is_ignored_package_resource(resource, codebase):
-        from packagedcode import PACKAGE_DATA_TYPES
-        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_DATA_TYPES)
+        from packagedcode import PACKAGE_DATA_CLASSES
+        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_DATA_CLASSES)
 
     def compute_normalized_license(self):
         """
