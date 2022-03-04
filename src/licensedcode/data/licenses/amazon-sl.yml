@@ -5,7 +5,7 @@ category: Proprietary Free
 owner: Amazon Web Services
 homepage_url: http://aws.amazon.com/asl/
 spdx_license_key: LicenseRef-.amazon.com.-AmznSL-1.0
-other_spdx_license_key:
+other_spdx_license_keys:
     - LicenseRef-scancode-amazon-sl
 text_urls:
     - http://aws.amazon.com/asl/
