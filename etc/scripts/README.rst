@@ -15,10 +15,10 @@ Pre-requisites
 
   * To generate or update pip requirement files, you need to start with a clean
     virtualenv as instructed below (This is to avoid injecting requirements
-    specific to the tools here in the main requirements).
+    specific to the tools used here in the main requirements).
 
   * For other usages, the tools here can run either in their own isolated
-    virtualenv best or in the the main configured development virtualenv.
+    virtualenv or in the the main configured development virtualenv.
     These requireements need to be installed::
 
         pip install --requirement etc/release/requirements.txt
@@ -82,44 +82,13 @@ Populate a thirdparty directory with wheels, sources, .ABOUT and license files
 Scripts
 ~~~~~~~
 
-* **fetch_requirements.py** will fetch package wheels, their ABOUT, LICENSE and
-  NOTICE files to populate a local a thirdparty directory strictly from our
-  remote repo and using only pinned packages listed in one or more pip
-  requirements file(s). Fetch only requirements for specific python versions and
-  operating systems. Optionally fetch the corresponding source distributions.
-
-* **publish_files.py** will upload/sync a thirdparty directory of files to our
-  remote repo. Requires a GitHub personal access token.
-
-* **build_wheels.py** will build a package binary wheel for multiple OS and
-  python versions. Optionally wheels that contain native code are built
-  remotely. Dependent wheels are optionally included. Requires Azure credentials
-  and tokens if building wheels remotely on multiple operatin systems.
-
-* **fix_thirdparty.py** will fix a thirdparty directory with a best effort to
-  add missing wheels, sources archives, create or fetch or fix .ABOUT, .NOTICE
-  and .LICENSE files. Requires Azure credentials and tokens if requesting the
-  build of missing wheels remotely on multiple operatin systems.
+* **fetch_thirdparty.py** will fetch package wheels, source sdist tarballs
+  and their ABOUT, LICENSE and NOTICE files to populate a local directory from
+  a list of PyPI simple URLs (typically PyPI.org proper and our self-hosted PyPI)
+  using pip requirements file(s), specifiers or pre-existing packages files.
+  Fetch wheels for specific python version and operating system combinations.
 
 * **check_thirdparty.py** will check a thirdparty directory for errors.
-
-* **bootstrap.py** will bootstrap a thirdparty directory from a requirements
-  file(s) to add or build missing wheels, sources archives and create .ABOUT,
-  .NOTICE and .LICENSE files. Requires Azure credentials and tokens if
-  requesting the build of missing wheels remotely on multiple operatin systems.
-
-
-
-Usage
-~~~~~
-
-See each command line --help option for details.
-
-* (TODO) **add_package.py** will add or update a Python package including wheels,
-  sources and ABOUT files and this for multiple Python version and OSes(for use
-  with upload_packages.py afterwards) You will need an Azure personal access
-  token for buidling binaries and an optional DejaCode API key to post and fetch
-  new package versions there. TODO: explain how we use romp
 
 
 Upgrade virtualenv app
