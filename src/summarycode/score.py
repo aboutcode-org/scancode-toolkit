@@ -48,11 +48,9 @@ class LicenseClarityScore(PostScanPlugin):
     """
     Compute a License clarity score at the codebase level.
     """
-    codebase_attributes = dict(license_clarity_score=Mapping(
-        help='Computed license clarity score as mapping containing the score '
-             'proper and each scoring elements.'))
+    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
-    sort_order = 110
+    sort_order = 5
 
     options = [
         PluggableCommandLineOption(('--license-clarity-score',),
@@ -66,14 +64,13 @@ class LicenseClarityScore(PostScanPlugin):
         )
     ]
 
-    def is_enabled(self, license_clarity_score, **kwargs):
-        return license_clarity_score
+    def is_enabled(self, license_clarity_score, summary2, **kwargs):
+        return license_clarity_score or summary2
 
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        scoring_elements = compute_license_score(codebase)
-        codebase.attributes.license_clarity_score.update(scoring_elements)
+        compute_license_score(codebase)
 
 
 def compute_license_score(codebase):
@@ -126,6 +123,7 @@ def compute_license_score(codebase):
     scoring_elements = ScoringElements()
     declared_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=True)
     declared_license_expressions = get_field_values_from_codebase_resources(codebase, 'license_expressions', key_files_only=True)
+    unique_declared_license_expressions = list(set(declared_license_expressions))
     declared_license_categories = get_license_categories(declared_licenses)
     copyrights = get_field_values_from_codebase_resources(codebase, 'copyrights', key_files_only=True)
     other_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=False)
@@ -155,14 +153,17 @@ def compute_license_score(codebase):
         ):
             scoring_elements.score -= 20
 
-    scoring_elements.ambigous_compound_licensing = check_for_license_ambiguity(declared_license_expressions)
+    primary_license = get_primary_license(declared_license_expressions)
     if (
-        scoring_elements.ambigous_compound_licensing
+        not primary_license
         and scoring_elements.score > 0
     ):
+        scoring_elements.ambigous_compound_licensing = True
         scoring_elements.score -= 10
 
-    return scoring_elements.to_dict()
+    codebase.attributes.summary['primary_license_expression'] = primary_license
+    codebase.attributes.summary['declared_license_expressions'] = unique_declared_license_expressions
+    codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
 @attr.s()
@@ -378,11 +379,10 @@ def group_license_expressions(unique_license_expressions):
     unique_joined_expressions = []
     seen_joined_expression = []
     len_joined_expressions = len(joined_expressions)
-    for i, j in enumerate(joined_expressions):
-        starting_index = i + 1
-        if starting_index > len_joined_expressions:
+    for i, j in enumerate(joined_expressions, start=1):
+        if i > len_joined_expressions:
             break
-        for j1 in joined_expressions[starting_index:]:
+        for j1 in joined_expressions[i:]:
             if licensing.is_equivalent(j, j1):
                 if (
                     j not in unique_joined_expressions
@@ -394,21 +394,21 @@ def group_license_expressions(unique_license_expressions):
     return unique_joined_expressions, single_expressions
 
 
-def check_for_license_ambiguity(declared_license_expressions):
+def get_primary_license(declared_license_expressions):
     """
-    License ambiguity is the situation where there is a license declaration that makes
-    it difficult to construct a reliable license expression, such as in the case
-    of multiple licenses where the conjunctive versus disjunctive relationship
-    is not well defined.
+    Return a primary license expression string from
+    `declared_license_expressions` or an empty string if a primary license
+    expression cannot be determined.
 
-    We determine if a list of `declared_license_expressions` has license ambiguity if
-    we cannot resolve the `declared_license_expressions` into one expression.
+    We determine if a list of `declared_license_expressions` has a primary
+    license if we can resolve the `declared_license_expressions` into one
+    expression.
     """
     unique_declared_license_expressions = set(declared_license_expressions)
     # If we only have a single unique license expression, then we do not have
     # any ambiguity about the licensing
     if len(unique_declared_license_expressions) == 1:
-        return False
+        return unique_declared_license_expressions[0]
 
     unique_joined_expressions, single_expressions = group_license_expressions(
         unique_declared_license_expressions
@@ -417,10 +417,10 @@ def check_for_license_ambiguity(declared_license_expressions):
     if not unique_joined_expressions:
         # If we do not have any joined expressions, but multiple single
         # expressions remaining, then we have license ambiguity
-        if len(single_expressions) > 1:
-            return True
+        if len(single_expressions) == 1:
+            return single_expressions[0]
         else:
-            return False
+            return ''
 
     # Group single expressions to joined expressions to see if single
     # expressions are accounted for in a joined expression
@@ -442,6 +442,6 @@ def check_for_license_ambiguity(declared_license_expressions):
     # that have not been associated with a joined license expression, then we do
     # not have any ambiguity about the license
     if len(single_expressions_by_joined_expressions) == 1 and not not_in_joined_expressions:
-        return False
+        return next(iter(single_expressions_by_joined_expressions))
     else:
-        return True
+        return ''
