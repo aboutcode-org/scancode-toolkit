@@ -16,6 +16,8 @@ set -e
 # Source this script for initial configuration
 # Use configure --help for details
 #
+# NOTE: please keep in sync with Windows script configure.bat
+#
 # This script will search for a virtualenv.pyz app in etc/thirdparty/virtualenv.pyz
 # Otherwise it will download the latest from the VIRTUALENV_PYZ_URL default
 ################################
@@ -32,10 +34,8 @@ DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --con
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
 
-# Cleanable files and directories with the --clean option
-CLEANABLE="
-    build
-	venv"
+# Cleanable files and directories to delete with the --clean option
+CLEANABLE="build venv"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "
@@ -50,15 +50,16 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
-if [ -f "$CFG_ROOT_DIR/thirdparty" ]; then
-    # offline mode
-    PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty "
-else
-    # online mode
-    PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS --index https://thirdparty.aboutcode.org/pypi/simple"
-fi
 
+################################
+# Thirdparty package locations and index handling
+# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+# offline mode for scancode installation with no index at all
+if [ -f "$CFG_ROOT_DIR/thirdparty" ]; then
+    PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
+else
+    PIP_EXTRA_ARGS="--find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
+fi
 
 ################################
 # Set the quiet flag to empty if not defined
@@ -68,56 +69,50 @@ fi
 
 
 ################################
-# find a proper Python to run
-# Use environment variables or a file if available.
-# Otherwise the latest Python by default.
-if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
-    # check for a file named PYTHON_EXECUTABLE
-    if [ -f "$CFG_ROOT_DIR/PYTHON_EXECUTABLE" ]; then
-        PYTHON_EXECUTABLE=$(cat "$CFG_ROOT_DIR/PYTHON_EXECUTABLE")
-    else
-        PYTHON_EXECUTABLE=python3
-    fi
-fi
+# Main command line entry point
+main() {
+    CFG_REQUIREMENTS=$REQUIREMENTS
+    NO_INDEX="--no-index"
+    
+    # We are using getopts to parse option arguments that start with "-"
+    while getopts :-: optchar; do
+        case "${optchar}" in
+            -)
+                case "${OPTARG}" in
+                    help  ) cli_help;;
+                    clean ) find_python && clean;;
+                    dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
+                    init  ) NO_INDEX="";;
+                esac;;
+        esac
+    done
+
+    PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
+
+    find_python
+    create_virtualenv "$VIRTUALENV_DIR"
+    install_packages "$CFG_REQUIREMENTS"
+    . "$CFG_BIN_DIR/activate"
+}
 
 
 ################################
-cli_help() {
-    echo An initial configuration script
-    echo "  usage: ./configure [options]"
-    echo
-    echo The default is to configure for regular use. Use --dev for development.
-    echo Use the --init option if starting a new project and the project
-    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
-    echo and requirements.txt and/or requirements-dev.txt has not been generated.
-    echo
-    echo The options are:
-    echo " --clean: clean built and installed files and exit."
-    echo " --dev:   configure the environment for development."
-    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
-    echo " --help:  display this help message and exit."
-    echo
-    echo By default, the python interpreter version found in the path is used.
-    echo Alternatively, the PYTHON_EXECUTABLE environment variable can be set to
-    echo configure another Python executable interpreter to use. If this is not
-    echo set, a file named PYTHON_EXECUTABLE containing a single line with the
-    echo path of the Python executable to use will be checked last.
-    set +e
-    exit
+# Find a proper Python to run
+# Use environment variables or a file if available.
+# Otherwise the latest Python by default.
+find_python() {
+    if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
+        # check for a file named PYTHON_EXECUTABLE
+        if [ -f "$CFG_ROOT_DIR/PYTHON_EXECUTABLE" ]; then
+            PYTHON_EXECUTABLE=$(cat "$CFG_ROOT_DIR/PYTHON_EXECUTABLE")
+        else
+            PYTHON_EXECUTABLE=python3
+        fi
+    fi
 }
 
 
-clean() {
-    # Remove cleanable file and directories and files from the root dir.
-    echo "* Cleaning ..."
-    for cln in $CLEANABLE;
-        do rm -rf "${CFG_ROOT_DIR:?}/${cln:?}";
-    done
-    set +e
-    exit
-}
-
-
+################################
 create_virtualenv() {
     # create a virtualenv for Python
     # Note: we do not use the bundled Python 3 "venv" because its behavior and
@@ -148,6 +143,7 @@ create_virtualenv() {
 }
 
 
+################################
 install_packages() {
     # install requirements in virtualenv
     # note: --no-build-isolation means that pip/wheel/setuptools will not
@@ -165,26 +161,43 @@ install_packages() {
 
 
 ################################
-# Main command line entry point
-CFG_REQUIREMENTS=$REQUIREMENTS
+cli_help() {
+    echo An initial configuration script
+    echo "  usage: ./configure [options]"
+    echo
+    echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
+    echo
+    echo The options are:
+    echo " --clean: clean built and installed files and exit."
+    echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
+    echo " --help:  display this help message and exit."
+    echo
+    echo By default, the python interpreter version found in the path is used.
+    echo Alternatively, the PYTHON_EXECUTABLE environment variable can be set to
+    echo configure another Python executable interpreter to use. If this is not
+    echo set, a file named PYTHON_EXECUTABLE containing a single line with the
+    echo path of the Python executable to use will be checked last.
+    set +e
+    exit
+}
 
-# We are using getopts to parse option arguments that start with "-"
-while getopts :-: optchar; do
-    case "${optchar}" in
-        -)
-            case "${OPTARG}" in
-                help  ) cli_help;;
-                clean ) clean;;
-                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
-                init  ) PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS --extra-index-url https://pypi.org/simple/";;
-            esac;;
-    esac
-done
 
-PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
+################################
+clean() {
+    # Remove cleanable file and directories and files from the root dir.
+    echo "* Cleaning ..."
+    for cln in $CLEANABLE;
+        do rm -rf "${CFG_ROOT_DIR:?}/${cln:?}";
+    done
+    set +e
+    exit
+}
 
-create_virtualenv "$VIRTUALENV_DIR"
-install_packages "$CFG_REQUIREMENTS"
-. "$CFG_BIN_DIR/activate"
+
+main
 
 set +e
