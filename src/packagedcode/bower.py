@@ -30,7 +30,7 @@ if TRACE:
 
 
 @attr.s()
-class BowerPackage(models.Package):
+class BowerPackageData(models.PackageData):
     
     default_type = 'bower'
 
@@ -43,13 +43,13 @@ class BowerPackage(models.Package):
 
 
 @attr.s()
-class BowerJson(BowerPackage, models.PackageManifest):
+class BowerJson(BowerPackageData, models.PackageDataFile):
 
     file_patterns = ('bower.json', '.bower.json')
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -114,7 +114,7 @@ class BowerJson(BowerPackage, models.PackageManifest):
                 models.DependentPackage(
                     purl=PackageURL(type='bower', name=dep_name).to_string(),
                     scope='dependencies',
-                    requirement=requirement,
+                    extracted_requirement=requirement,
                     is_runtime=True,
                     is_optional=False,
                 )
@@ -126,7 +126,7 @@ class BowerJson(BowerPackage, models.PackageManifest):
                 models.DependentPackage(
                     purl=PackageURL(type='bower', name=dep_name).to_string(),
                     scope='devDependencies',
-                    requirement=requirement,
+                    extracted_requirement=requirement,
                     is_runtime=False,
                     is_optional=True,
                 )
@@ -143,6 +143,20 @@ class BowerJson(BowerPackage, models.PackageManifest):
             vcs_url=vcs_url,
             dependencies=dependencies
         )
+
+
+@attr.s()
+class BowerPackage(BowerPackageData, models.Package):
+    """
+    A Bower Package that is created out of one/multiple bower package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            BowerJson
+        ]
 
 
 def compute_normalized_license(declared_license):

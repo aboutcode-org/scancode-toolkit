@@ -53,60 +53,65 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:npm/open",
-        "requirement": "0.0.2",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/request",
-        "requirement": "~2.11.4",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/colors",
-        "requirement": "~0.6.0-1",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/batchflow",
-        "requirement": "~0.2.0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/vcsurl",
-        "requirement": "0.0.1",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/string",
-        "requirement": "~1.1.0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/open",
+        "extracted_requirement": "0.0.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/request",
+        "extracted_requirement": "~2.11.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/colors",
+        "extracted_requirement": "~0.6.0-1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/batchflow",
+        "extracted_requirement": "~0.2.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/vcsurl",
+        "extracted_requirement": "0.0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/string",
+        "extracted_requirement": "~1.1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:npm/npm-research@0.0.1",
     "repository_homepage_url": "https://www.npmjs.com/package/npm-research",
     "repository_download_url": "https://registry.npmjs.org/npm-research/-/npm-research-0.0.1.tgz",

@@ -37,8 +37,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/debian/ncurses"
@@ -80,6 +78,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/debian/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -123,8 +122,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/debian/libndp"
@@ -158,6 +155,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/debian/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

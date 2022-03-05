@@ -58,7 +58,7 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 
 
 @attr.s()
-class PubspecPackage(models.Package):
+class PubspecPackageData(models.PackageData):
     default_type = 'pubspec'
     default_primary_language = 'dart'
     default_web_baseurl = 'https://pub.dev/packages'
@@ -107,13 +107,13 @@ def compute_normalized_license(declared_license, location=None):
 
 
 @attr.s()
-class PubspecYaml(PubspecPackage, models.PackageManifest):
+class PubspecYaml(PubspecPackageData, models.PackageDataFile):
 
-    file_patterns = ('pubspec.yaml',)
+    file_patterns = ('*pubspec.yaml',)
     extensions = ('.yaml',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -142,13 +142,13 @@ def file_endswith(location, endswith):
 
 
 @attr.s()
-class PubspecLock(PubspecPackage, models.PackageManifest):
+class PubspecLock(PubspecPackageData, models.PackageDataFile):
 
-    file_patterns = ('pubspec.lock',)
+    file_patterns = ('*pubspec.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -164,6 +164,21 @@ class PubspecLock(PubspecPackage, models.PackageManifest):
             locks_data = saneyaml.load(inp.read())
 
         yield cls(dependencies=list(collect_locks(locks_data)))
+
+
+@attr.s()
+class PubspecPackage(PubspecPackageData, models.Package):
+    """
+    A Pubspec Package that is created out of one/multiple pubspec package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            PubspecYaml,
+            PubspecLock
+        ]
 
 
 def collect_locks(locks_data):
@@ -296,7 +311,7 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
-        requirement=version,
+        extracted_requirement=version,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,

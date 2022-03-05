@@ -24,8 +24,6 @@
   "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
   "declared_license": "LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0",
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
   "extra_data": {
@@ -42,6 +40,7 @@
       }
     ]
   },
+  "dependencies": [],
   "purl": "pkg:alpine/plasma-systemmonitor@5.22.0-r0",
   "repository_homepage_url": null,
   "repository_download_url": null,

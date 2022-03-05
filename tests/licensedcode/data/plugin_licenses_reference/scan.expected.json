@@ -15,11 +15,11 @@
       "errors": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 31.0.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
         "files_count": 2
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "npm",
@@ -62,11 +62,17 @@
         "Artistic-2.0 OR MIT"
       ],
       "notice_text": null,
-      "root_path": "scan",
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/npm@2.13.5",
+      "package_data_files": [
+        "scan/package.json"
+      ],
+      "files": [
+        "scan/copyr.java",
+        "scan/package.json"
+      ],
       "purl": "pkg:npm/npm@2.13.5",
       "repository_homepage_url": "https://www.npmjs.com/package/npm",
       "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
@@ -177,7 +183,8 @@
       "licenses": [],
       "license_expressions": [],
       "percentage_of_license_text": 0,
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -308,7 +315,10 @@
         "mit OR bsd-simplified"
       ],
       "percentage_of_license_text": 100.0,
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "scan_errors": []
     },
     {
@@ -358,7 +368,7 @@
         "artistic-2.0"
       ],
       "percentage_of_license_text": 5.0,
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -400,16 +410,18 @@
             "Artistic-2.0 OR MIT"
           ],
           "notice_text": null,
-          "root_path": "scan",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:npm/npm@2.13.5",
           "repository_homepage_url": "https://www.npmjs.com/package/npm",
           "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
           "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
       ],
       "scan_errors": []
     }

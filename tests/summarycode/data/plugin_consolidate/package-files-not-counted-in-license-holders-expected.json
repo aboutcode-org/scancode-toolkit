@@ -16,11 +16,12 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
+        "spdx_license_list_version": "3.16",
         "files_count": 6
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "npm",
@@ -50,11 +51,19 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "root_path": "package-files-not-counted-in-license-holders/package",
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/test-package@0.0.1",
+      "package_data_files": [
+        "package-files-not-counted-in-license-holders/package/package.json"
+      ],
+      "files": [
+        "package-files-not-counted-in-license-holders/package/package.json",
+        "package-files-not-counted-in-license-holders/package/src1",
+        "package-files-not-counted-in-license-holders/package/src2",
+        "package-files-not-counted-in-license-holders/package/src3"
+      ],
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
@@ -122,7 +131,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -156,7 +166,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_software_1"
       ],
@@ -243,7 +254,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -272,16 +283,18 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "root_path": "package-files-not-counted-in-license-holders/package",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:npm/test-package@0.0.1",
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
       ],
       "consolidated_to": [
         "apache_software_1"
@@ -369,7 +382,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -456,7 +472,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -543,7 +562,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -630,7 +652,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -717,7 +740,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],

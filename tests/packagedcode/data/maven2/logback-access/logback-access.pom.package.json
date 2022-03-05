@@ -1,0 +1,90 @@
+{
+  "type": "maven",
+  "namespace": "ch.qos.logback",
+  "name": "logback-access",
+  "version": "0.2.5",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Java",
+  "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": "http://logback.qos.ch/access",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
+  "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
+  "copyright": null,
+  "license_expression": "lgpl-2.0-plus",
+  "declared_license": [
+    {
+      "name": "GNU Lesser General Public License",
+      "url": "http://www.gnu.org/licenses/lgpl.html",
+      "comments": null,
+      "distribution": null
+    }
+  ],
+  "notice_text": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
+  ],
+  "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/ch.qos.logback/logback-core",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/tomcat/catalina",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.mortbay.jetty/jetty",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.caucho/resin",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    }
+  ],
+  "purl": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
+  "repository_homepage_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/",
+  "repository_download_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.jar",
+  "api_data_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.pom"
+}

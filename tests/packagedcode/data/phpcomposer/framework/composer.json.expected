@@ -40,1132 +40,1271 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:composer/php",
-        "requirement": "7.0.0 - 7.0.5 || ^7.0.7",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-openssl",
-        "requirement": "*",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/chain-adapter",
-        "requirement": "^0.4",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/namespaced-cache",
-        "requirement": "^0.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cakephp/chronos",
-        "requirement": "^1.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/classpreloader/classpreloader",
-        "requirement": "^3.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/container-interop/container-interop",
-        "requirement": "^1.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/container-interop/service-provider",
-        "requirement": "^0.3",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/danielstjules/stringy",
-        "requirement": "^2.3",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/defuse/php-encryption",
-        "requirement": "^2.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/doctrine/dbal",
-        "requirement": "^2.5",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/doctrine/migrations",
-        "requirement": "^1.4",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/egulias/email-validator",
-        "requirement": "^2.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/filp/whoops",
-        "requirement": "^2.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/http-interop/http-factory",
-        "requirement": "^0.2",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/http-interop/http-middleware",
-        "requirement": "^0.3",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem",
-        "requirement": "^1.0.27",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/monolog/monolog",
-        "requirement": "^1.17",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/narrowspark/arr",
-        "requirement": "^2.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/narrowspark/collection",
-        "requirement": "^0.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/narrowspark/http-status",
-        "requirement": "^2.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/mtdowling/cron-expression",
-        "requirement": "^1.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/opis/closure",
-        "requirement": "^2.2.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ocramius/proxy-manager",
-        "requirement": "^2",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/php-di/invoker",
-        "requirement": "^1.3",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/paragonie/password_lock",
-        "requirement": "^3.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/http-message",
-        "requirement": "^1.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psy/psysh",
-        "requirement": "^0.6",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ramsey/uuid",
-        "requirement": "^3.4",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/respect/validation",
-        "requirement": "^1.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/schnittstabil/csrf-tokenservice",
-        "requirement": "^2.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/stecman/symfony-console-completion",
-        "requirement": "^0.6",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/console",
-        "requirement": "^3.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/debug",
-        "requirement": "^3.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/finder",
-        "requirement": "^3.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/filesystem",
-        "requirement": "^3.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/polyfill-intl-icu",
-        "requirement": "^1.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/polyfill-mbstring",
-        "requirement": "^1.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/var-dumper",
-        "requirement": "^3.1",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/swiftmailer/swiftmailer",
-        "requirement": "^5.4",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/vlucas/phpdotenv",
-        "requirement": "^2.3",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/aws/aws-sdk-php",
-        "requirement": "^3.18",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/array-adapter",
-        "requirement": "^0.4",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/filesystem-adapter",
-        "requirement": "^0.3",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/session-handler",
-        "requirement": "^0.2",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/void-adapter",
-        "requirement": "^0.3",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/guzzlehttp/guzzle",
-        "requirement": "^6.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-aws-s3-v3",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-cached-adapter",
-        "requirement": "^1.0.3",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-dropbox",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-gridfs",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-rackspace",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-sftp",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-webdav",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-vfs",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-ziparchive",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/plates",
-        "requirement": "^3.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/mikey179/vfsStream",
-        "requirement": "^1.6",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/mouf/picotainer",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/narrowspark/php-cs-fixer-config",
-        "requirement": "^2.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/narrowspark/testing-helper",
-        "requirement": "^2.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/mockery/mockery",
-        "requirement": "^0.9.5",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/phpunit/phpunit",
-        "requirement": "^5.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/phpbench/phpbench",
-        "requirement": "^0.12",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/predis/predis",
-        "requirement": "^1.0",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/php-amqplib/php-amqplib",
-        "requirement": "^2.6",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/pda/pheanstalk",
-        "requirement": "^3.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/spatie/array-to-xml",
-        "requirement": "^2.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/twig/twig",
-        "requirement": "^1.24",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/sepia/po-parser",
-        "requirement": "^4.2",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/yaml",
-        "requirement": "^3.1",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/yosymfony/toml",
-        "requirement": "^0.3",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/container-interop/container-interop-implementation",
-        "requirement": "^1.1",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/cache-implementation",
-        "requirement": "^1.0",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/container-implementation",
-        "requirement": "^1.0",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/http-message",
-        "requirement": "^1.0",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/http-message-implementation",
-        "requirement": "^1.0",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/psr/log-implementation",
-        "requirement": "^1.0",
-        "scope": "provide",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/cache",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/conifg",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/console",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/container",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/contracts",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/cookie",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/database",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/encrypter",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/events",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/exception",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/filessystem",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/hashing",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/http",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/http-factory",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/log",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/mail",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/parsers",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/pipeline",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/routing",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/session",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/statical-proxy",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/support",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/translator",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/validation",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/viserio/view",
-        "requirement": "self.version",
-        "scope": "replace",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/alcaeus/mongo-php-adapter",
-        "requirement": "Required to use the ext-mongo interface on ext-mongodb interface (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/aws/aws-sdk-php",
-        "requirement": "Required to use the SQS queue driver and SES mail driver (^3.18).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/apc-adapter",
-        "requirement": "Required to use the Apc cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/apcu-adapter",
-        "requirement": "Required to use the Apcu cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/array-adapter",
-        "requirement": "Required to use the Array cache (^0.2)",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/filesystem-adapter",
-        "requirement": "Required to use the Filesystem cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/memcache-adapter",
-        "requirement": "Required to use the Memcache cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/memcached-adapter",
-        "requirement": "Required to use the Memcached cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/mongodb-adapter",
-        "requirement": "Required to use the Mongodb cache (^0.2).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/predis-adapter",
-        "requirement": "Required to use the Predis cache (^0.4).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/session-handler",
-        "requirement": "Required to use the Session cache (^0.1).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/cache/void-adapter",
-        "requirement": "Required to use the Void cache (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo",
-        "requirement": "Required to use PDO adapters",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo_dblib",
-        "requirement": "Required to use MSSQL databases on Liunx/UNIX platform",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo-firebird",
-        "requirement": "Required to use Firebird databases",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo-mysql",
-        "requirement": "Required to use MySQL or MariaDB databases",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo-pqsql",
-        "requirement": "Required to use PostgreSQL databases",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo-sqlite",
-        "requirement": "Required to use SQLite databases",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/ext-pdo_sqlsrv",
-        "requirement": "Required to use MSSQL databases on Windows platform",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/guzzlehttp/guzzle",
-        "requirement": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (^6.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-aws-s3-v3",
-        "requirement": "Required to use the Flysystem S3 adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-cached-adapter",
-        "requirement": "Required to use the Flysystem Caching adapter (^1.0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-dropbox",
-        "requirement": "Required to use the Flysystem Dropbox adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-gridfs",
-        "requirement": "Required to use the Flysystem GridFS adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-rackspace",
-        "requirement": "Required to use the Flysystem Rackspace adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-replicate-adapter",
-        "requirement": "Required to use the Flysystem Replicate adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-sftp",
-        "requirement": "Required to use the Flysystem SFTP adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-webdav",
-        "requirement": "Required to use the Flysystem WebDav adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-vfs",
-        "requirement": "Required to use the Flysystem VFS adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/flysystem-ziparchive",
-        "requirement": "Required to use the Flysystem ZipArchive adapter (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/league/plates",
-        "requirement": "Required to use the League Plates view adapter (^3.1).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/pda/pheanstalk",
-        "requirement": "Required to use the Beanstalk queue driver (^3.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/predis/predis",
-        "requirement": "Required to use the Redis cache and Queue drivers (^1.0).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/twig/twig",
-        "requirement": "Required to use the Twig view adapter (^1.24).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/spatie/array-to-xml",
-        "requirement": "Required to use the XML dump (^2.1.1).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/yosymfony/toml",
-        "requirement": "Required to use the TOML parser (^0.3).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/symfony/yaml",
-        "requirement": "Required to use the Yaml parser (^3.1).",
-        "scope": "suggest",
-        "is_runtime": true,
-        "is_optional": true,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:composer/php",
+        "extracted_requirement": "7.0.0 - 7.0.5 || ^7.0.7",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-openssl",
+        "extracted_requirement": "*",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/chain-adapter",
+        "extracted_requirement": "^0.4",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/namespaced-cache",
+        "extracted_requirement": "^0.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cakephp/chronos",
+        "extracted_requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/classpreloader/classpreloader",
+        "extracted_requirement": "^3.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/container-interop/container-interop",
+        "extracted_requirement": "^1.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/container-interop/service-provider",
+        "extracted_requirement": "^0.3",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/danielstjules/stringy",
+        "extracted_requirement": "^2.3",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/defuse/php-encryption",
+        "extracted_requirement": "^2.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/doctrine/dbal",
+        "extracted_requirement": "^2.5",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/doctrine/migrations",
+        "extracted_requirement": "^1.4",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/egulias/email-validator",
+        "extracted_requirement": "^2.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/filp/whoops",
+        "extracted_requirement": "^2.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/http-interop/http-factory",
+        "extracted_requirement": "^0.2",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/http-interop/http-middleware",
+        "extracted_requirement": "^0.3",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem",
+        "extracted_requirement": "^1.0.27",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/monolog/monolog",
+        "extracted_requirement": "^1.17",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/narrowspark/arr",
+        "extracted_requirement": "^2.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/narrowspark/collection",
+        "extracted_requirement": "^0.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/narrowspark/http-status",
+        "extracted_requirement": "^2.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/mtdowling/cron-expression",
+        "extracted_requirement": "^1.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/opis/closure",
+        "extracted_requirement": "^2.2.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ocramius/proxy-manager",
+        "extracted_requirement": "^2",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/php-di/invoker",
+        "extracted_requirement": "^1.3",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/paragonie/password_lock",
+        "extracted_requirement": "^3.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/http-message",
+        "extracted_requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psy/psysh",
+        "extracted_requirement": "^0.6",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ramsey/uuid",
+        "extracted_requirement": "^3.4",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/respect/validation",
+        "extracted_requirement": "^1.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/schnittstabil/csrf-tokenservice",
+        "extracted_requirement": "^2.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/stecman/symfony-console-completion",
+        "extracted_requirement": "^0.6",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/console",
+        "extracted_requirement": "^3.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/debug",
+        "extracted_requirement": "^3.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/finder",
+        "extracted_requirement": "^3.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/filesystem",
+        "extracted_requirement": "^3.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-intl-icu",
+        "extracted_requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-mbstring",
+        "extracted_requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/var-dumper",
+        "extracted_requirement": "^3.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/swiftmailer/swiftmailer",
+        "extracted_requirement": "^5.4",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/vlucas/phpdotenv",
+        "extracted_requirement": "^2.3",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/aws/aws-sdk-php",
+        "extracted_requirement": "^3.18",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/array-adapter",
+        "extracted_requirement": "^0.4",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/filesystem-adapter",
+        "extracted_requirement": "^0.3",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/session-handler",
+        "extracted_requirement": "^0.2",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/void-adapter",
+        "extracted_requirement": "^0.3",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/guzzle",
+        "extracted_requirement": "^6.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-aws-s3-v3",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-cached-adapter",
+        "extracted_requirement": "^1.0.3",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-dropbox",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-gridfs",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-rackspace",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-sftp",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-webdav",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-vfs",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-ziparchive",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/plates",
+        "extracted_requirement": "^3.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/mikey179/vfsStream",
+        "extracted_requirement": "^1.6",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/mouf/picotainer",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/narrowspark/php-cs-fixer-config",
+        "extracted_requirement": "^2.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/narrowspark/testing-helper",
+        "extracted_requirement": "^2.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/mockery/mockery",
+        "extracted_requirement": "^0.9.5",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/phpunit/phpunit",
+        "extracted_requirement": "^5.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/phpbench/phpbench",
+        "extracted_requirement": "^0.12",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/predis/predis",
+        "extracted_requirement": "^1.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/php-amqplib/php-amqplib",
+        "extracted_requirement": "^2.6",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/pda/pheanstalk",
+        "extracted_requirement": "^3.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/spatie/array-to-xml",
+        "extracted_requirement": "^2.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/twig/twig",
+        "extracted_requirement": "^1.24",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/sepia/po-parser",
+        "extracted_requirement": "^4.2",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/yaml",
+        "extracted_requirement": "^3.1",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/yosymfony/toml",
+        "extracted_requirement": "^0.3",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/container-interop/container-interop-implementation",
+        "extracted_requirement": "^1.1",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/cache-implementation",
+        "extracted_requirement": "^1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/container-implementation",
+        "extracted_requirement": "^1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/http-message",
+        "extracted_requirement": "^1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/http-message-implementation",
+        "extracted_requirement": "^1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/psr/log-implementation",
+        "extracted_requirement": "^1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/cache",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/conifg",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/console",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/container",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/contracts",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/cookie",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/database",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/encrypter",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/events",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/exception",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/filessystem",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/hashing",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/http",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/http-factory",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/log",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/mail",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/parsers",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/pipeline",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/routing",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/session",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/statical-proxy",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/support",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/translator",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/validation",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/viserio/view",
+        "extracted_requirement": "self.version",
+        "scope": "replace",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/alcaeus/mongo-php-adapter",
+        "extracted_requirement": "Required to use the ext-mongo interface on ext-mongodb interface (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/aws/aws-sdk-php",
+        "extracted_requirement": "Required to use the SQS queue driver and SES mail driver (^3.18).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/apc-adapter",
+        "extracted_requirement": "Required to use the Apc cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/apcu-adapter",
+        "extracted_requirement": "Required to use the Apcu cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/array-adapter",
+        "extracted_requirement": "Required to use the Array cache (^0.2)",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/filesystem-adapter",
+        "extracted_requirement": "Required to use the Filesystem cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/memcache-adapter",
+        "extracted_requirement": "Required to use the Memcache cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/memcached-adapter",
+        "extracted_requirement": "Required to use the Memcached cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/mongodb-adapter",
+        "extracted_requirement": "Required to use the Mongodb cache (^0.2).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/predis-adapter",
+        "extracted_requirement": "Required to use the Predis cache (^0.4).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/session-handler",
+        "extracted_requirement": "Required to use the Session cache (^0.1).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/cache/void-adapter",
+        "extracted_requirement": "Required to use the Void cache (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo",
+        "extracted_requirement": "Required to use PDO adapters",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo_dblib",
+        "extracted_requirement": "Required to use MSSQL databases on Liunx/UNIX platform",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo-firebird",
+        "extracted_requirement": "Required to use Firebird databases",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo-mysql",
+        "extracted_requirement": "Required to use MySQL or MariaDB databases",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo-pqsql",
+        "extracted_requirement": "Required to use PostgreSQL databases",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo-sqlite",
+        "extracted_requirement": "Required to use SQLite databases",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/ext-pdo_sqlsrv",
+        "extracted_requirement": "Required to use MSSQL databases on Windows platform",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/guzzle",
+        "extracted_requirement": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (^6.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-aws-s3-v3",
+        "extracted_requirement": "Required to use the Flysystem S3 adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-cached-adapter",
+        "extracted_requirement": "Required to use the Flysystem Caching adapter (^1.0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-dropbox",
+        "extracted_requirement": "Required to use the Flysystem Dropbox adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-gridfs",
+        "extracted_requirement": "Required to use the Flysystem GridFS adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-rackspace",
+        "extracted_requirement": "Required to use the Flysystem Rackspace adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-replicate-adapter",
+        "extracted_requirement": "Required to use the Flysystem Replicate adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-sftp",
+        "extracted_requirement": "Required to use the Flysystem SFTP adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-webdav",
+        "extracted_requirement": "Required to use the Flysystem WebDav adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-vfs",
+        "extracted_requirement": "Required to use the Flysystem VFS adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/flysystem-ziparchive",
+        "extracted_requirement": "Required to use the Flysystem ZipArchive adapter (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/league/plates",
+        "extracted_requirement": "Required to use the League Plates view adapter (^3.1).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/pda/pheanstalk",
+        "extracted_requirement": "Required to use the Beanstalk queue driver (^3.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/predis/predis",
+        "extracted_requirement": "Required to use the Redis cache and Queue drivers (^1.0).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/twig/twig",
+        "extracted_requirement": "Required to use the Twig view adapter (^1.24).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/spatie/array-to-xml",
+        "extracted_requirement": "Required to use the XML dump (^2.1.1).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/yosymfony/toml",
+        "extracted_requirement": "Required to use the TOML parser (^0.3).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/symfony/yaml",
+        "extracted_requirement": "Required to use the Yaml parser (^3.1).",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:composer/narrowspark/framework",
     "repository_homepage_url": "https://packagist.org/packages/narrowspark/framework",
     "repository_download_url": null,

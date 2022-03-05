@@ -20,6 +20,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [],
   "files": [
     {
@@ -47,7 +48,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 55,
@@ -90,7 +92,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

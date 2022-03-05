@@ -32,126 +32,139 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-i18n",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.7",
-      "requirement": "1.1.7",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.velocity/velocity@1.5",
-      "requirement": "1.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-decoration-model",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
-      "requirement": "3.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-apt",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-fml",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/htmlunit/htmlunit@1.9",
-      "requirement": "1.9",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@1.0-alpha-10?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-i18n",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.7",
+      "extracted_requirement": "1.1.7",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.velocity/velocity@1.5",
+      "extracted_requirement": "1.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-decoration-model",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
+      "extracted_requirement": "3.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-apt",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-fml",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/htmlunit/htmlunit@1.9",
+      "extracted_requirement": "1.9",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@1.0-alpha-10",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.jar",

@@ -24,6 +24,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [],
   "files": [
     {
@@ -51,7 +52,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "files_count": 3,
@@ -84,7 +86,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -117,7 +120,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -150,7 +154,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "files_count": 0,

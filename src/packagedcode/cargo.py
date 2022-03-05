@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class RustCargoCrate(models.Package):
+class RustCargoCrate(models.PackageData):
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'
@@ -59,13 +59,13 @@ class RustCargoCrate(models.Package):
 
 
 @attr.s()
-class CargoToml(RustCargoCrate, models.PackageManifest):
+class CargoToml(RustCargoCrate, models.PackageDataFile):
 
     file_patterns = ('Cargo.toml',)
     extensions = ('.toml',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -103,13 +103,13 @@ class CargoToml(RustCargoCrate, models.PackageManifest):
 
 
 @attr.s()
-class CargoLock(RustCargoCrate, models.PackageManifest):
+class CargoLock(RustCargoCrate, models.PackageDataFile):
 
     file_patterns = ('Cargo.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -134,7 +134,7 @@ class CargoLock(RustCargoCrate, models.PackageManifest):
                         name=dep.get('name'),
                         version=dep.get('version')
                     ).to_string(),
-                    requirement=dep.get('version'),
+                    extracted_requirement=dep.get('version'),
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
@@ -143,6 +143,21 @@ class CargoLock(RustCargoCrate, models.PackageManifest):
             )
         
         yield cls(dependencies=package_dependencies)
+
+
+@attr.s()
+class RustPackage(RustCargoCrate, models.Package):
+    """
+    A Rust Package that is created out of one/multiple rust package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            CargoToml,
+            CargoLock
+        ]
 
 
 def party_mapper(party, party_role):

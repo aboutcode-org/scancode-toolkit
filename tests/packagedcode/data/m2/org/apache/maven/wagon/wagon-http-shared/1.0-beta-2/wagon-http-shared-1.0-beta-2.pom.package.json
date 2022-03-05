@@ -24,22 +24,22 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
-      "requirement": "4aug2000r7-dev",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.wagon/wagon-http-shared@1.0-beta-2?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
+      "extracted_requirement": "4aug2000r7-dev",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-shared@1.0-beta-2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0-beta-2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0-beta-2/wagon-http-shared-1.0-beta-2.jar",

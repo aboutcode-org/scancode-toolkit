@@ -25,28 +25,29 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.2",
-        "requirement": "v2.2.2",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:golang/honnef.co/go/tools@v0.0.1-2019.2.3",
-        "requirement": "v0.0.1-2019.2.3",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.2",
+        "extracted_requirement": "v2.2.2",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/honnef.co/go/tools@v0.0.1-2019.2.3",
+        "extracted_requirement": "v0.0.1-2019.2.3",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      }
+    ],
     "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,

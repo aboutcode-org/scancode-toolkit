@@ -41,92 +41,101 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:npm/bluebird",
-        "requirement": "^2.9.30",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/cli-color",
-        "requirement": "~0.3.2",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/cli-table",
-        "requirement": "~0.3.0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/libesvm",
-        "requirement": "^3.8.2",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/lodash",
-        "requirement": "^3.9.3",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/moment",
-        "requirement": "^2.10.3",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/wreck",
-        "requirement": "^5.6.0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt",
-        "requirement": ">=0.4.0",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/load-grunt-config",
-        "requirement": "~0.19.0",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt",
-        "requirement": ">=0.4.0",
-        "scope": "peerDependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/bluebird",
+        "extracted_requirement": "^2.9.30",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/cli-color",
+        "extracted_requirement": "~0.3.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/cli-table",
+        "extracted_requirement": "~0.3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/libesvm",
+        "extracted_requirement": "^3.8.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/lodash",
+        "extracted_requirement": "^3.9.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/moment",
+        "extracted_requirement": "^2.10.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/wreck",
+        "extracted_requirement": "^5.6.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt",
+        "extracted_requirement": ">=0.4.0",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/load-grunt-config",
+        "extracted_requirement": "~0.19.0",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt",
+        "extracted_requirement": ">=0.4.0",
+        "scope": "peerDependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:npm/grunt-esvm@3.2.8",
     "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
     "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",

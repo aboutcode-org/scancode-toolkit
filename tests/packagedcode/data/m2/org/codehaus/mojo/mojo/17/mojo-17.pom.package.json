@@ -32,30 +32,31 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.2",
-      "requirement": "3.8.2",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/mojo@17?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
+      "extracted_requirement": "2.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.2",
+      "extracted_requirement": "3.8.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.mojo/mojo@17",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/17/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/17/mojo-17.jar",

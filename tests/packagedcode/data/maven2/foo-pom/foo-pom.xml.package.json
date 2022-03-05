@@ -1,0 +1,125 @@
+{
+  "type": "maven",
+  "namespace": "com.myco.foo.bar.baz",
+  "name": "baz-bar-parent",
+  "version": "1.0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Java",
+  "description": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "developper",
+      "name": "John Doe",
+      "email": "jdoe@myco.com",
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
+  "vcs_url": "git://github.com/jode/baz-bar-parent.git",
+  "copyright": null,
+  "license_expression": "epl-1.0",
+  "declared_license": [
+    {
+      "name": "Eclipse Public License - v 1.0",
+      "url": "http://www.eclipse.org/legal/epl-v10.html",
+      "comments": null,
+      "distribution": null
+    }
+  ],
+  "notice_text": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+  ],
+  "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "import",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+      "extracted_requirement": "1.4.2.RELEASE",
+      "scope": "import",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+      "extracted_requirement": "Camden.SR5",
+      "scope": "import",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+      "extracted_requirement": "1.4.2.RELEASE",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
+      "extracted_requirement": "1.4.2.RELEASE",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+      "extracted_requirement": "Camden.SR5",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
+  "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
+  "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
+  "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
+  "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom"
+}

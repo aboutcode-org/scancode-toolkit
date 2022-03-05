@@ -10,13 +10,51 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:bower/get-size",
+      "extracted_requirement": "~1.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:bower/get-size",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
+    },
+    {
+      "purl": "pkg:bower/eventEmitter",
+      "extracted_requirement": "~4.2.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:bower/eventEmitter",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
+    },
+    {
+      "purl": "pkg:bower/qunit",
+      "extracted_requirement": "~1.16.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:bower/qunit",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
     }
   ],
   "packages": [
@@ -60,36 +98,16 @@
         "MIT"
       ],
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:bower/get-size",
-          "requirement": "~1.2.2",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:bower/eventEmitter",
-          "requirement": "~4.2.11",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:bower/qunit",
-          "requirement": "~1.16.0",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:bower/blue-leaf",
+      "package_data_files": [
+        "bower.json"
+      ],
+      "files": [
+        "bower.json"
+      ],
       "purl": "pkg:bower/blue-leaf",
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -100,7 +118,7 @@
     {
       "path": "bower.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "bower",
           "namespace": null,
@@ -141,41 +159,46 @@
             "MIT"
           ],
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [
-            {
-              "purl": "pkg:bower/get-size",
-              "requirement": "~1.2.2",
-              "scope": "dependencies",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:bower/eventEmitter",
-              "requirement": "~4.2.11",
-              "scope": "dependencies",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:bower/qunit",
-              "requirement": "~1.16.0",
-              "scope": "devDependencies",
-              "is_runtime": false,
-              "is_optional": true,
-              "is_resolved": false
-            }
-          ],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:bower/get-size",
+              "extracted_requirement": "~1.2.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:bower/eventEmitter",
+              "extracted_requirement": "~4.2.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:bower/qunit",
+              "extracted_requirement": "~1.16.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
           "purl": "pkg:bower/blue-leaf",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
+      ],
+      "for_packages": [
+        "pkg:bower/blue-leaf"
       ],
       "scan_errors": []
     }

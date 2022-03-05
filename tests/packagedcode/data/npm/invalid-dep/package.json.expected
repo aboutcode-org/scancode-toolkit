@@ -44,20 +44,20 @@
       "MIT"
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:npm/typescript",
-        "requirement": "^1.7.3",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/typescript",
+        "extracted_requirement": "^1.7.3",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:npm/angular2-autosize@1.0.0",
     "repository_homepage_url": "https://www.npmjs.com/package/angular2-autosize",
     "repository_download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",

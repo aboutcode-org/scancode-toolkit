@@ -27,7 +27,7 @@ from textcode.analysis import as_unicode
 
 
 @attr.s()
-class AlpinePackage(models.Package, models.PackageManifest):
+class AlpinePackage(models.PackageData, models.PackageDataFile):
     extensions = ('.apk', 'APKBUILD')
     default_type = 'alpine'
 
@@ -40,7 +40,7 @@ class AlpinePackage(models.Package, models.PackageManifest):
         return detected
 
     def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
+        data = super().to_dict(**kwargs)
         if _detailed:
             #################################################
             data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
@@ -891,7 +891,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
         dependency = models.DependentPackage(
             purl=purl,
             scope=scope,
-            requirement=requirement,
+            extracted_requirement=requirement,
             is_resolved=is_resolved,
         )
         if dependency not in dependencies:

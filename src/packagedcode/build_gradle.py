@@ -17,7 +17,7 @@ from pygments.lexers import GroovyLexer
 import attr
 
 from packagedcode import models
-from packagedcode.build import BaseBuildManifestPackage
+from packagedcode.build import BaseBuildManifestPackageData
 
 
 TRACE = False
@@ -278,7 +278,7 @@ def build_package(cls, dependencies):
                     version=version
                 ).to_string(),
                 scope=scope,
-                requirement=version,
+                extracted_requirement=version,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
             )
@@ -290,7 +290,7 @@ def build_package(cls, dependencies):
 
 
 @attr.s()
-class BuildGradle(BaseBuildManifestPackage, models.PackageManifest):
+class BuildGradle(BaseBuildManifestPackageData, models.PackageDataFile):
     file_patterns = ('build.gradle',)
     extensions = ('.gradle',)
     # TODO: Not sure what the default type should be, change this to something
@@ -299,7 +299,7 @@ class BuildGradle(BaseBuildManifestPackage, models.PackageManifest):
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_manifest(location):
+        if not cls.is_package_data_file(location):
             return
         dependencies = get_dependencies(location)
         return build_package(cls, dependencies)
