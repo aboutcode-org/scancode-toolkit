@@ -176,6 +176,7 @@ Other contributors, listed alphabetically, are:
 * Clément Prévost -- UrbiScript lexer
 * Tanner Prynn -- cmdline -x option and loading lexers from files
 * Oleh Prypin -- Crystal lexer (based on Ruby lexer)
+* Nick Psaris -- K and Q lexers
 * Xidorn Quan -- Web IDL lexer
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
