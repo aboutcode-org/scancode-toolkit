@@ -15,7 +15,7 @@ jobs:
       parameters:
           job_name: core_tests
           image_name: ubuntu-20.04
-          python_versions: ['3.6']
+          python_versions: ['3.8']
           test_suites:
               misc: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
@@ -24,13 +24,14 @@ jobs:
                   --ignore=tests/licensedcode
 
               scancode: |
+               # cli tests are launched below on all OSes
                 venv/bin/pytest -vvs --test-suite=all \
+                  --ignore=tests/scancode/test_cli.py \
                   tests/scancode
 
               cluecode: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  tests/cluecode \
-                  --cov=src --cov-report=term
+                  tests/cluecode
 
               license_base: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
@@ -95,58 +96,44 @@ jobs:
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: mac11
-          image_name: macOS-11
-          python_versions: ['3.7', '3.8', '3.9']
+          image_name: macos-11
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
 
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: mac1015
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-
-#    - template: etc/ci/azure-posix.yml
-#      parameters:
-#          job_name: mac1100
-#          image_name: macos-11.0
-#          python_versions: ['3.6', '3.7', '3.8', '3.9']
-#          python_architecture: x64
-#          test_suites:
-#              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
 
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2022
           image_name: windows-2022
-          python_versions: ['3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
-
 
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2019
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
-
 
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: ubuntu18
           image_name: ubuntu-18.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -155,14 +142,14 @@ jobs:
       parameters:
           job_name: ubuntu20
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
 ################################################################################
-# Test using many version of Click to work around regressions in API
+# Test using many version of Click to work around any regressions in their API
 ################################################################################
 
 
@@ -170,17 +157,16 @@ jobs:
       parameters:
           job_name: ubuntu20_test_all_supported_click_versions
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               click_versions: |
-                for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; 
+                for clk_ver in 8.0.4 8.0.3 8.0.2 8.0.1 7.1.2 7.1.1 7.1 6.7; 
                  do
                   venv/bin/pip install click==$clk_ver;
                   venv/bin/scancode -i samples/ -n3 --json foo.json; 
                   venv/bin/scancode -i --verbose samples/ -n3 --json foo.json; 
                  done
-
 
 
 ################################################################################
@@ -336,7 +322,15 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython_latest_from_pip
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          test_suites:
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: ubuntu18_cpython_latest_from_pip
+          image_name: ubuntu-18.04
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -344,7 +338,15 @@ jobs:
       parameters:
           job_name: win2019_cpython_latest_from_pip
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          test_suites:
+              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2022_cpython_latest_from_pip
+          image_name: windows-2022
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
@@ -352,6 +354,46 @@ jobs:
       parameters:
           job_name: macos1015_cpython_latest_from_pip
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos11_cpython_latest_from_pip
+          image_name: macos-11
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          test_suites:
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2019_cpython_latest_from_pip
+          image_name: windows-2019
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          test_suites:
+              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
+
+################################################################################
+# Temp Tests using Windows-2016 (to remove before March 15th)
+################################################################################
+
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2016_cpython_latest_from_pip
+          image_name: windows-2016
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          test_suites:
+              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2016
+          image_name: windows-2016
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_architecture: x64
+          test_suites:
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+
