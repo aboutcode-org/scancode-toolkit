@@ -50,6 +50,7 @@ Other contributors, listed alphabetically, are:
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
 * Bruno Deferrari -- Shen lexer
+* Walter Dörwald -- UL4 lexer
 * Luke Drummond -- Meson lexer
 * Giedrius Dubinskas -- HTML formatter improvements
 * Owen Durni -- Haxe lexer
