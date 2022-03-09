@@ -5,65 +5,25 @@
 # Copyright (c) 2010 David Wolever <david@wolever.net>. All rights reserved.
 # originally from https://github.com/wolever/pip2pi
 
+import hashlib
 import os
 import re
 import shutil
-
+from collections import defaultdict
 from html import escape
 from pathlib import Path
+from typing import NamedTuple
 
 """
-name: pip compatibility tags
-version: 20.3.1
-download_url: https://github.com/pypa/pip/blob/20.3.1/src/pip/_internal/models/wheel.py
-copyright: Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
-license_expression: mit
-notes: the weel name regex is copied from pip-20.3.1 pip/_internal/models/wheel.py
-
-Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Generate a PyPI simple index froma  directory.
 """
-get_wheel_from_filename = re.compile(
-    r"""^(?P<namever>(?P<name>.+?)-(?P<version>.*?))
-    ((-(?P<build>\d[^-]*?))?-(?P<pyvers>.+?)-(?P<abis>.+?)-(?P<plats>.+?)
-    \.whl)$""",
-    re.VERBOSE,
-).match
-
-sdist_exts = (
-    ".tar.gz",
-    ".tar.bz2",
-    ".zip",
-    ".tar.xz",
-)
-wheel_ext = ".whl"
-app_ext = ".pyz"
-dist_exts = sdist_exts + (wheel_ext, app_ext)
 
 
 class InvalidDistributionFilename(Exception):
     pass
 
 
-def get_package_name_from_filename(filename, normalize=True):
+def get_package_name_from_filename(filename):
     """
     Return the package name extracted from a package ``filename``.
     Optionally ``normalize`` the name according to distribution name rules.
@@ -132,18 +92,99 @@ def get_package_name_from_filename(filename, normalize=True):
         if not name:
             raise InvalidDistributionFilename(filename)
 
-    if normalize:
-        name = name.lower().replace("_", "-")
+    name = normalize_name(name)
     return name
 
 
-def build_pypi_index(directory, write_index=False):
+def normalize_name(name):
     """
-    Using a ``directory`` directory of wheels and sdists, create the a PyPI simple
-    directory index at ``directory``/simple/ populated with the proper PyPI simple
-    index directory structure crafted using symlinks.
+    Return a normalized package name per PEP503, and copied from
+    https://www.python.org/dev/peps/pep-0503/#id4
+    """
+    return name and re.sub(r"[-_.]+", "-", name).lower() or name
+
+
+def build_per_package_index(pkg_name, packages, base_url):
+    """
+    Return an HTML document as string representing the index for a package
+    """
+    document = []
+    header = f"""<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="pypi:repository-version" content="1.0">
+    <title>Links for {pkg_name}</title>
+  </head>
+  <body>"""
+    document.append(header)
+
+    for package in packages:
+        document.append(package.simple_index_entry(base_url))
+
+    footer = """  </body>
+</html>
+"""
+    document.append(footer)
+    return "\n".join(document)
+
+
+def build_links_package_index(packages_by_package_name, base_url):
+    """
+    Return an HTML document as string which is a links index of all packages
+    """
+    document = []
+    header = f"""<!DOCTYPE html>
+<html>
+  <head>
+    <title>Links for all packages</title>
+  </head>
+  <body>"""
+    document.append(header)
+
+    for _name, packages in packages_by_package_name.items():
+        for package in packages:
+            document.append(package.simple_index_entry(base_url))
+
+    footer = """  </body>
+</html>
+"""
+    document.append(footer)
+    return "\n".join(document)
+
+
+class Package(NamedTuple):
+    name: str
+    index_dir: Path
+    archive_file: Path
+    checksum: str
+
+    @classmethod
+    def from_file(cls, name, index_dir, archive_file):
+        with open(archive_file, "rb") as f:
+            checksum = hashlib.sha256(f.read()).hexdigest()
+        return cls(
+            name=name,
+            index_dir=index_dir,
+            archive_file=archive_file,
+            checksum=checksum,
+        )
+
+    def simple_index_entry(self, base_url):
+        return (
+            f'    <a href="{base_url}/{self.archive_file.name}#sha256={self.checksum}">'
+            f"{self.archive_file.name}</a><br/>"
+        )
+
+
+def build_pypi_index(directory, base_url="https://thirdparty.aboutcode.org/pypi"):
+    """
+    Using a ``directory`` directory of wheels and sdists, create the a PyPI
+    simple directory index at ``directory``/simple/ populated with the proper
+    PyPI simple index directory structure crafted using symlinks.
 
     WARNING: The ``directory``/simple/ directory is removed if it exists.
+    NOTE: in addition to the a PyPI simple index.html there is also a links.html
+    index file generated which is suitable to use with pip's --find-links
     """
 
     directory = Path(directory)
@@ -153,14 +194,15 @@ def build_pypi_index(directory, write_index=False):
         shutil.rmtree(str(index_dir), ignore_errors=True)
 
     index_dir.mkdir(parents=True)
+    packages_by_package_name = defaultdict(list)
 
-    if write_index:
-        simple_html_index = [
-            "<html><head><title>PyPI Simple Index</title>",
-            "<meta name='api-version' value='2' /></head><body>",
-        ]
+    # generate the main simple index.html
+    simple_html_index = [
+        "<!DOCTYPE html>",
+        "<html><head><title>PyPI Simple Index</title>",
+        '<meta charset="UTF-8">' '<meta name="api-version" value="2" /></head><body>',
+    ]
 
-    package_names = set()
     for pkg_file in directory.iterdir():
 
         pkg_filename = pkg_file.name
@@ -172,23 +214,99 @@ def build_pypi_index(directory, write_index=False):
         ):
             continue
 
-        pkg_name = get_package_name_from_filename(pkg_filename)
+        pkg_name = get_package_name_from_filename(
+            filename=pkg_filename,
+        )
         pkg_index_dir = index_dir / pkg_name
         pkg_index_dir.mkdir(parents=True, exist_ok=True)
         pkg_indexed_file = pkg_index_dir / pkg_filename
+
         link_target = Path("../..") / pkg_filename
         pkg_indexed_file.symlink_to(link_target)
 
-        if write_index and pkg_name not in package_names:
+        if pkg_name not in packages_by_package_name:
             esc_name = escape(pkg_name)
             simple_html_index.append(f'<a href="{esc_name}/">{esc_name}</a><br/>')
-            package_names.add(pkg_name)
 
-    if write_index:
-        simple_html_index.append("</body></html>")
-        index_html = index_dir / "index.html"
-        index_html.write_text("\n".join(simple_html_index))
+        packages_by_package_name[pkg_name].append(
+            Package.from_file(
+                name=pkg_name,
+                index_dir=pkg_index_dir,
+                archive_file=pkg_file,
+            )
+        )
 
+    # finalize main index
+    simple_html_index.append("</body></html>")
+    index_html = index_dir / "index.html"
+    index_html.write_text("\n".join(simple_html_index))
+
+    # also generate the simple index.html of each package, listing all its versions.
+    for pkg_name, packages in packages_by_package_name.items():
+        per_package_index = build_per_package_index(
+            pkg_name=pkg_name,
+            packages=packages,
+            base_url=base_url,
+        )
+        pkg_index_dir = packages[0].index_dir
+        ppi_html = pkg_index_dir / "index.html"
+        ppi_html.write_text(per_package_index)
+
+    # also generate the a links.html page with all packages.
+    package_links = build_links_package_index(
+        packages_by_package_name=packages_by_package_name,
+        base_url=base_url,
+    )
+    links_html = index_dir / "links.html"
+    links_html.write_text(package_links)
+
+
+"""
+name: pip-wheel
+version: 20.3.1
+download_url: https://github.com/pypa/pip/blob/20.3.1/src/pip/_internal/models/wheel.py
+copyright: Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
+license_expression: mit
+notes: the wheel name regex is copied from pip-20.3.1 pip/_internal/models/wheel.py
+
+Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+"""
+get_wheel_from_filename = re.compile(
+    r"""^(?P<namever>(?P<name>.+?)-(?P<version>.*?))
+    ((-(?P<build>\d[^-]*?))?-(?P<pyvers>.+?)-(?P<abis>.+?)-(?P<plats>.+?)
+    \.whl)$""",
+    re.VERBOSE,
+).match
+
+sdist_exts = (
+    ".tar.gz",
+    ".tar.bz2",
+    ".zip",
+    ".tar.xz",
+)
+
+wheel_ext = ".whl"
+app_ext = ".pyz"
+dist_exts = sdist_exts + (wheel_ext, app_ext)
 
 if __name__ == "__main__":
     import sys

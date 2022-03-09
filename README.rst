@@ -1,11 +1,12 @@
 A Simple Python Project Skeleton
 ================================
-This repo attempts to standardize our python repositories using modern python
-packaging and configuration techniques. Using this `blog post`_ as inspiration, this
-repository will serve as the base for all new python projects and will be adopted to all
-our existing ones as well.
+This repo attempts to standardize the structure of the Python-based project's
+repositories using modern Python packaging and configuration techniques. 
+Using this `blog post`_ as inspiration, this repository serves as the base for
+all new Python projects and is mergeable in existing repositories as well.
 
 .. _blog post: https://blog.jaraco.com/a-project-skeleton-for-python-projects/
+
 
 Usage
 =====
@@ -36,8 +37,15 @@ This is also the workflow to use when updating the skeleton files in any given r
 
 More usage instructions can be found in ``docs/skeleton-usage.rst``.
 
+
 Release Notes
 =============
+
+- 2022-03-04:
+    - Synchronize configure and configure.bat scripts for sanity
+    - Update CI operating system support with latest Azure OS images
+    - Streamline utility scripts in etc/scripts/ to create, fetch and manage third-party dependencies
+      There are now fewer scripts. See etc/scripts/README.rst for details
 
 - 2021-09-03:
     - ``configure`` now requires pinned dependencies via the use of ``requirements.txt`` and ``requirements-dev.txt``
