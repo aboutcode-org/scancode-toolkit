@@ -77,14 +77,11 @@ if not "%1" == "" (
     if "%1" EQU "--dev"    (
         set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     )
-    if "%1" EQU "--init"   (
-        set "NO_INDEX= "
-    )
     shift
     goto again
 )
 
-set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS%"
 
 
 @rem ################################
