@@ -47,7 +47,7 @@ except ImportError:
 """
 Detect and collect Python packages information.
 """
-# TODO: add support for poetry and setup.cfg
+# TODO: add support for poetry and setup.cfg and metadata.json
 
 TRACE = False
 
@@ -67,7 +67,7 @@ if TRACE:
 
 
 @attr.s()
-class PythonPackage(models.Package):
+class PythonPackageData(models.PackageData):
     default_type = 'pypi'
     default_primary_language = 'Python'
     default_web_baseurl = 'https://pypi.org'
@@ -100,12 +100,12 @@ meta_file_names = 'PKG-INFO', 'METADATA',
 
 
 @attr.s()
-class MetadataFile(PythonPackage, models.PackageManifest):
+class MetadataFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = meta_file_names
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -158,13 +158,13 @@ bdist_file_suffixes = '.whl', '.egg',
 
 
 @attr.s()
-class BinaryDistArchive(PythonPackage, models.PackageManifest):
+class BinaryDistArchive(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('*.whl', '*.egg',)
     extensions = bdist_file_suffixes
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -189,13 +189,13 @@ sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
 
 
 @attr.s()
-class SourceDistArchive(PythonPackage, models.PackageManifest):
+class SourceDistArchive(PythonPackageData, models.PackageDataFile):
     # TODO: we are ignoing sdists such as pex, pyz, etc.
     file_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
     extensions = sdist_file_suffixes
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -228,13 +228,13 @@ class SourceDistArchive(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class SetupPy(PythonPackage, models.PackageManifest):
+class SetupPy(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('setup.py',)
     extensions = ('.py',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -271,7 +271,7 @@ class SetupPy(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class DependencyFile(PythonPackage, models.PackageManifest):
+class DependencyFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = (
         'Pipfile',
@@ -281,7 +281,7 @@ class DependencyFile(PythonPackage, models.PackageManifest):
     )
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         for file_pattern in cls.file_patterns:
             if filetype.is_file(location) and location.endswith(file_pattern):
                 return True
@@ -300,19 +300,19 @@ class DependencyFile(PythonPackage, models.PackageManifest):
 
         dependent_packages = parse_with_dparse2(
             location=location,
-            dependency_type=dependency_type,
+            file_name=dependency_type,
         )
         yield cls(dependencies=dependent_packages)
 
 
 @attr.s()
-class PipfileLock(PythonPackage, models.PackageManifest):
+class PipfileLock(PythonPackageData, models.PackageDataFile):
 
     file_patterns = ('Pipfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -343,7 +343,7 @@ class PipfileLock(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class RequirementsFile(PythonPackage, models.PackageManifest):
+class RequirementsFile(PythonPackageData, models.PackageDataFile):
 
     file_patterns = (
         '*requirement*.txt',
@@ -356,7 +356,7 @@ class RequirementsFile(PythonPackage, models.PackageManifest):
     )
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the ``location`` is likely a pip requirements file.
         """
@@ -421,11 +421,30 @@ def get_requirements_txt_dependencies(location):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=req.is_pinned or False,
-                requirement=requirement
+                extracted_requirement=requirement
             )
         )
 
     return dependent_packages
+
+@attr.s()
+class PythonPackage(PythonPackageData, models.Package):
+    """
+    A Python Package that is created out of one/multiple python package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            MetadataFile,
+            RequirementsFile,
+            PipfileLock,
+            DependencyFile,
+            SetupPy,
+            BinaryDistArchive,
+            SourceDistArchive
+        ]
 
 
 def get_attribute(metainfo, name, multiple=False):
@@ -715,7 +734,7 @@ def get_requires_dependencies(requires, default_scope='install'):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                requirement=requirement,
+                extracted_requirement=requirement,
         ))
 
     return dependent_packages
@@ -859,7 +878,7 @@ def parse_with_dparse2(location, file_name=None):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                requirement=requirement
+                extracted_requirement=requirement
             )
         )
 

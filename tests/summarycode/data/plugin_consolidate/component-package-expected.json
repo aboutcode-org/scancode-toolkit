@@ -4,6 +4,7 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
+        "--consolidate": true,
         "--copyright": true,
         "--info": true,
         "--json": "<file>",
@@ -15,46 +16,12 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": true,
-        "--json": "<file>"
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "spdx_license_list_version": "3.15",
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": true,
-        "--json": "<file>"
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "spdx_license_list_version": "3.15",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
+        "spdx_license_list_version": "3.16",
         "files_count": 7
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "npm",
@@ -84,11 +51,18 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "root_path": "component-package/package",
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/test-package@0.0.1",
+      "package_data_files": [
+        "component-package/package/package.json"
+      ],
+      "files": [
+        "component-package/package/package.json",
+        "component-package/package/src1",
+        "component-package/package/src2"
+      ],
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
@@ -188,7 +162,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 7,
       "dirs_count": 2,
@@ -220,7 +195,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -308,7 +284,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -395,7 +372,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -482,7 +460,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -569,7 +548,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -603,7 +583,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_software_1",
         "corp_ibm_1"
@@ -691,7 +672,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -720,16 +701,18 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "root_path": "component-package/package",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:npm/test-package@0.0.1",
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
       ],
       "consolidated_to": [
         "apache_software_1"
@@ -817,7 +800,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -902,7 +888,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "corp_ibm_1"
       ],

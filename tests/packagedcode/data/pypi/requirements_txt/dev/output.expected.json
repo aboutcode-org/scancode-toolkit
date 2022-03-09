@@ -25,36 +25,38 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:pypi/prompt-toolkit",
-        "requirement": ">=1.0.14",
-        "scope": "development",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/pygments@2.2.0",
-        "requirement": "==2.2.0",
-        "scope": "development",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:pypi/regex",
-        "requirement": "",
-        "scope": "development",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/prompt-toolkit",
+        "extracted_requirement": ">=1.0.14",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pygments@2.2.0",
+        "extracted_requirement": "==2.2.0",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/regex",
+        "extracted_requirement": "",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,

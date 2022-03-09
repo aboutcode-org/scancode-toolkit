@@ -35,7 +35,7 @@ if TRACE:
 
 
 @attr.s()
-class GolangPackage(models.Package):
+class GolangPackageData(models.PackageData):
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
@@ -52,13 +52,13 @@ class GolangPackage(models.Package):
 
 
 @attr.s()
-class GoMod(GolangPackage, models.PackageManifest):
+class GoMod(GolangPackageData, models.PackageDataFile):
 
     file_patterns = ('go.mod',)
     extensions = ('.mod',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -79,7 +79,7 @@ class GoMod(GolangPackage, models.PackageManifest):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
-                    requirement=gomod.version,
+                    extracted_requirement=gomod.version,
                     scope='require',
                     is_runtime=True,
                     is_optional=False,
@@ -92,7 +92,7 @@ class GoMod(GolangPackage, models.PackageManifest):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
-                    requirement=gomod.version,
+                    extracted_requirement=gomod.version,
                     scope='exclude',
                     is_runtime=True,
                     is_optional=False,
@@ -115,13 +115,13 @@ class GoMod(GolangPackage, models.PackageManifest):
 
 
 @attr.s()
-class GoSum(GolangPackage, models.PackageManifest):
+class GoSum(GolangPackageData, models.PackageDataFile):
 
     file_patterns = ('go.sum',)
     extensions = ('.sum',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -141,7 +141,7 @@ class GoSum(GolangPackage, models.PackageManifest):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=gosum.purl(),
-                    requirement=gosum.version,
+                    extracted_requirement=gosum.version,
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
@@ -150,3 +150,18 @@ class GoSum(GolangPackage, models.PackageManifest):
             )
 
         yield cls(dependencies=package_dependencies)
+
+
+@attr.s()
+class GoPackage(GolangPackageData, models.Package):
+    """
+    A Golang Package that is created out of one/multiple go package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            GoMod,
+            GoSum
+        ]

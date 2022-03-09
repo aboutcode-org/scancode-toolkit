@@ -109,70 +109,76 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7",
-      "requirement": "1.0-alpha-7",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
-      "requirement": "1.1-alpha-2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/plexus/plexus-utils@1.0.2",
-      "requirement": "1.0.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-collections/commons-collections@2.0",
-      "requirement": "2.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-logging/commons-logging-api@1.0.4",
-      "requirement": "1.0.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/velocity/velocity@1.4",
-      "requirement": "1.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.2?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7",
+      "extracted_requirement": "1.0-alpha-7",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
+      "extracted_requirement": "1.1-alpha-2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/plexus/plexus-utils@1.0.2",
+      "extracted_requirement": "1.0.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-collections/commons-collections@2.0",
+      "extracted_requirement": "2.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging-api@1.0.4",
+      "extracted_requirement": "1.0.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/velocity/velocity@1.4",
+      "extracted_requirement": "1.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-velocity/1.1.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-velocity/1.1.2/plexus-velocity-1.1.2.jar",

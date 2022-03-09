@@ -1,0 +1,5 @@
+license_expression: generic-cla AND public-domain AND proprietary-license AND warranty-disclaimer
+is_license_notice: yes
+ignorable_urls:
+    - http://osvdb.org/
+    - http://www.osvdb.org/osvdb_license

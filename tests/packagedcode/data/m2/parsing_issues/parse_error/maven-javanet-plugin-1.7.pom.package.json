@@ -46,68 +46,74 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/httpunit/httpunit@1.5.4",
-      "requirement": "1.5.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/xml-apis/xml-apis@2.0.0",
-      "requirement": "2.0.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/xerces/xerces@2.2.1",
-      "requirement": "2.2.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
-      "requirement": "4aug2000r7-dev",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/nekohtml/nekohtml@0.9.5",
-      "requirement": "0.9.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/dom4j/dom4j@1.4",
-      "requirement": "1.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jaxen/jaxen@1.0-FCS-full",
-      "requirement": "1.0-FCS-full",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/httpunit/httpunit@1.5.4",
+      "extracted_requirement": "1.5.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/xml-apis/xml-apis@2.0.0",
+      "extracted_requirement": "2.0.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/xerces/xerces@2.2.1",
+      "extracted_requirement": "2.2.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
+      "extracted_requirement": "4aug2000r7-dev",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/nekohtml/nekohtml@0.9.5",
+      "extracted_requirement": "0.9.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/dom4j/dom4j@1.4",
+      "extracted_requirement": "1.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jaxen/jaxen@1.0-FCS-full",
+      "extracted_requirement": "1.0-FCS-full",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/maven-javanet-plugin/maven-javanet-plugin",
   "repository_homepage_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/",
   "repository_download_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/maven-javanet-plugin-None.jar",

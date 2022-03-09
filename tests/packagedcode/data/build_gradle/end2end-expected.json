@@ -1,0 +1,153 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json-pp": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "3.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 1
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:build.gradle/com.google/guava@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "api",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:build.gradle/com.google/guava@1.0",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.apache/commons@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "usageDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:build.gradle/org.apache/commons@1.0",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "extracted_requirement": "0.7.4.201502262128",
+      "scope": "",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    },
+    {
+      "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "extracted_requirement": "0.7.4.201502262128",
+      "scope": "",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "for_package": null,
+      "lockfile": "build.gradle"
+    }
+  ],
+  "packages": [],
+  "files": [
+    {
+      "path": "build.gradle",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "build.gradle",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:build.gradle/com.google/guava@1.0",
+              "extracted_requirement": "1.0",
+              "scope": "api",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:build.gradle/org.apache/commons@1.0",
+              "extracted_requirement": "1.0",
+              "scope": "usageDependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+              "extracted_requirement": "0.7.4.201502262128",
+              "scope": "",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+              "extracted_requirement": "0.7.4.201502262128",
+              "scope": "",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "type": "maven",
+  "namespace": "au.com.acegi",
+  "name": "xml-format-maven-plugin",
+  "version": "3.0.6",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Java",
+  "description": "XML Format Maven Plugin\nAutomatically formats XML files in a project.",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": "https://github.com/acegi/xml-format-maven-plugin/issues",
+  "code_view_url": "https://github.com/acegi/xml-format-maven-plugin.git",
+  "vcs_url": "git+https://github.com/acegi/xml-format-maven-plugin.git",
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": null,
+  "notice_text": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
+  ],
+  "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.hamcrest/hamcrest-core",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.mockito/mockito-core",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.dom4j/dom4j@2.0.1",
+      "extracted_requirement": "2.0.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
+  "purl": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
+  "repository_homepage_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/",
+  "repository_download_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.jar",
+  "api_data_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.pom"
+}

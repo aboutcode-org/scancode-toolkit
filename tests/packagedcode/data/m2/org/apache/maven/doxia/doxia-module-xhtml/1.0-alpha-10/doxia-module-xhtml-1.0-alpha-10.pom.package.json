@@ -24,22 +24,22 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml@1.0-alpha-10?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml@1.0-alpha-10",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/doxia-module-xhtml-1.0-alpha-10.jar",

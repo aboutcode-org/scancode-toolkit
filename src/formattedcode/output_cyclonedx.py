@@ -268,7 +268,7 @@ class CycloneDxComponent:
             properties.append(
                 CycloneDxProperty(
                     name='WARNING',
-                    value=f'WARNING: component skipped in CycloneDX output: {self!r}'
+                    value=f'WARNING: component skipped in CycloneDX output: {package!r}'
                 )
             )
 

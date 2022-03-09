@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: "Seen in old webmin and https://fedoraproject.org/wiki/Licensing:Webmin?rd=Licensing/Webmin\n\
+    rarely seen in the wild.\nPer Fedora: \"This is not compatible with either GPLv2 or GPLv3.\
+    \ \nThis goes much further than the patent termination provision in GPLv3. \""

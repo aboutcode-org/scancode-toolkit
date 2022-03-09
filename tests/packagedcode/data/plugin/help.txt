@@ -50,6 +50,12 @@ Package: buck
   file_patterns: BUCK
 
 --------------------------------------------
+Package: build.gradle
+  class: packagedcode.build_gradle:BuildGradle
+  file_patterns: build.gradle
+  extensions: .gradle
+
+--------------------------------------------
 Package: cab
   class: packagedcode.models:CabPackage
   extensions: .cab
@@ -110,6 +116,11 @@ Package: cpan
   class: packagedcode.models:CpanModule
   file_patterns: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
   extensions: .tar.gz
+
+--------------------------------------------
+Package: cran
+  class: packagedcode.cran:DescriptionFile
+  file_patterns: DESCRIPTION
 
 --------------------------------------------
 Package: deb
@@ -229,7 +240,7 @@ Package: jboss
 
 --------------------------------------------
 Package: maven
-  class: packagedcode.maven:MavenPomPackage
+  class: packagedcode.maven:PomXml
   file_patterns: *.pom, pom.xml
   extensions: .pom
 
@@ -314,13 +325,13 @@ Package: pods
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecYaml
-  file_patterns: pubspec.yaml
+  file_patterns: *pubspec.yaml
   extensions: .yaml
 
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecLock
-  file_patterns: pubspec.lock
+  file_patterns: *pubspec.lock
   extensions: .lock
 
 --------------------------------------------
@@ -400,7 +411,7 @@ Package: windows-update
 
 --------------------------------------------
 Package: winexe
-  class: packagedcode.win_pe:WindowsExecutableManifest
+  class: packagedcode.win_pe:WindowsExecutable
   extensions: .exe, .dll, .mui, .mun, .com, .winmd, .sys, .tlb, .exe_*, .dll_*, .mui_*, .mun_*, .com_*, .winmd_*, .sys_*, .tlb_*
   filetypes: pe32, for ms windows
 

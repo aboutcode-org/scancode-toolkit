@@ -1,0 +1,9 @@
+key: tanuki-maintenance
+short_name: Tanuki Maintenance Addendum 1.3
+name: Tanuki Maintenance Support Services Addendum 1.3
+category: Commercial
+owner: Tanuki Software
+homepage_url: https://wrapper.tanukisoftware.com/doc/english/licenseDevelopment.html#maintenance
+spdx_license_key: LicenseRef-scancode-tanuki-maintenance
+ignorable_emails:
+    - wrapper-support@tanukisoftware.com

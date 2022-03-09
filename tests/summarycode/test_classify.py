@@ -52,7 +52,7 @@ class TestClassify(FileDrivenTesting):
             set_classification_flags(res)
             assert not res.is_legal
 
-    def test_set_classification_flags_is_manifest(self):
+    def test_set_classification_flags_is_package_data_file(self):
         test_dir = self.get_test_loc('classify/manifest')
         codebase = Codebase(
             test_dir, resource_attributes=FileClassifier.resource_attributes)

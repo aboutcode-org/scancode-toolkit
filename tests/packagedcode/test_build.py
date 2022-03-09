@@ -43,7 +43,7 @@ class TestBuild(PackageTester):
             'get_package_resources/BUCK',
             'get_package_resources/file1',
         ]
-        results = [r.path for r in build.BaseBuildManifestPackage.get_package_resources(root, codebase)]
+        results = [r.path for r in build.BaseBuildManifestPackageData.get_package_resources(root, codebase)]
         assert results == expected
 
     def test_BazelPackage_recognize(self):
@@ -71,6 +71,7 @@ class TestBuild(PackageTester):
             build.BuckPackage(
                 name='app',
                 declared_license=['LICENSE'],
+                license_expression= 'apache-2.0',
             )
         ]
         compare_package_results(expected_packages, result_packages)
@@ -103,11 +104,9 @@ def compare_package_results(expected, result):
     result_packages = []
     for result_package in result:
         r = result_package.to_dict()
-        r.pop('root_path')
         result_packages.append(r)
     expected_packages = []
     for expected_package in expected:
         e = expected_package.to_dict()
-        e.pop('root_path')
         expected_packages.append(e)
     assert result_packages == expected_packages

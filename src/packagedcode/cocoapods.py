@@ -43,7 +43,7 @@ if TRACE:
 
 
 @attr.s()
-class CocoapodsPackage(models.Package):
+class CocoapodsPackageData(models.PackageData):
     default_type = 'pods'
     default_primary_language = 'Objective-C'
     default_web_baseurl = 'https://cocoapods.org'
@@ -117,13 +117,13 @@ class CocoapodsPackage(models.Package):
 
 
 @attr.s()
-class Podspec(CocoapodsPackage, models.PackageManifest):
+class Podspec(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*.podspec',)
     extensions = ('.podspec',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -176,13 +176,13 @@ class Podspec(CocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class PodfileLock(CocoapodsPackage, models.PackageManifest):
+class PodfileLock(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*podfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -217,7 +217,7 @@ class PodfileLock(CocoapodsPackage, models.PackageManifest):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires-dev',
-                            requirement=version,
+                            extracted_requirement=version,
                             is_runtime=False,
                             is_optional=True,
                             is_resolved=True,
@@ -237,7 +237,7 @@ class PodfileLock(CocoapodsPackage, models.PackageManifest):
                     models.DependentPackage(
                         purl=purl,
                         scope='requires-dev',
-                        requirement=version,
+                        extracted_requirement=version,
                         is_runtime=False,
                         is_optional=True,
                         is_resolved=True,
@@ -262,13 +262,13 @@ class PodfileLock(CocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class PodspecJson(CocoapodsPackage, models.PackageManifest):
+class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
 
     file_patterns = ('*.podspec.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -349,7 +349,7 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
             extra_data['dependencies'] = dependencies
         extra_data['podspec.json'] = data
 
-        package_manifest = cls(
+        package_data = cls(
             name=name,
             version=version,
             vcs_url=vcs_url,
@@ -361,9 +361,9 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
             parties=parties,
         )
 
-        package_manifest.api_data_url = package_manifest.get_api_data_url()
+        package_data.api_data_url = package_data.get_api_data_url()
 
-        yield package_manifest
+        yield package_data
 
     @staticmethod
     def read_podspec_json(location):
@@ -374,6 +374,22 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
             data = json.load(file)
 
         return data
+
+
+@attr.s()
+class CocoapodsPackage(CocoapodsPackageData, models.Package):
+    """
+    A cocoapods Package that is created out of one/multiple cocoapods package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            Podspec,
+            PodspecJson,
+            PodfileLock
+        ]
 
 
 def party_mapper(author, email):

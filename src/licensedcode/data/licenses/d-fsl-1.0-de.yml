@@ -1,0 +1,35 @@
+key: d-fsl-1.0-de
+language: de
+short_name: Deutsche Freie Software Lizenz
+name: Deutsche Freie Software Lizenz
+category: Copyleft
+owner: Institute for Legal Issues On Free and Open Source Software
+homepage_url: http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/de/D-FSL-1_0_de.txt
+notes: |
+    Per SPDX.org, this license was created for and is backed by the German
+    state. The English translation can be found here
+    http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
+spdx_license_key: D-FSL-1.0
+text_urls:
+    - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/de/D-FSL-1_0_de.txt
+faq_url: http://www.d-fsl.org/
+other_urls:
+    - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
+    - http://www.dipp.nrw.de/d-fsl/lizenzen/
+    - http://www.dipp.nrw.de/d-fsl/nutzer/
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/D-FSL-1_0_de.txt/at_download/file
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/D-FSL-1_0_en.txt/at_download/file
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/deutsche-freie-software-lizenz
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/german-free-software-license
+minimum_coverage: 10
+ignorable_copyrights:
+    - (c) Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen 2004 Erstellt von Axel
+        Metzger und Till Jaeger
+ignorable_holders:
+    - Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen Erstellt von Axel Metzger
+        und Till Jaeger
+ignorable_urls:
+    - http://www.d-fsl.de/
+    - http://www.fsf.org/licenses/gpl
+    - http://www.ifross.de/

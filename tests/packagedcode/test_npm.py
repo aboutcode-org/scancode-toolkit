@@ -59,7 +59,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_package_json(self):
         test_file = self.get_test_loc('npm/dist/package.json')
-        assert npm.PackageJson.is_manifest(test_file)
+        assert npm.PackageJson.is_package_data_file(test_file)
 
     def test_parse_dist_with_string_values(self):
         test_file = self.get_test_loc('npm/dist/package.json')
@@ -239,7 +239,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_package_lock_json(self):
         test_file = self.get_test_loc('npm/package-lock/package-lock.json')
-        assert npm.PackageLockJson.is_manifest(test_file)
+        assert npm.PackageLockJson.is_package_data_file(test_file)
 
     def test_parse_package_lock(self):
         test_file = self.get_test_loc('npm/package-lock/package-lock.json')
@@ -250,7 +250,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_npm_shrinkwrap_json(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
-        assert npm.PackageLockJson.is_manifest(test_file)
+        assert npm.PackageLockJson.is_package_data_file(test_file)
 
     def test_parse_npm_shrinkwrap(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
@@ -274,7 +274,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
-        assert npm.YarnLockJson.is_manifest(test_file)
+        assert npm.YarnLockJson.is_package_data_file(test_file)
 
     def test_parse_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
@@ -321,19 +321,24 @@ class TestNpm(PackageTester):
 test_data = [
     (['MIT'], 'mit'),
     (['(MIT OR Apache-2.0)'], 'mit OR apache-2.0'),
-    (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
-    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference AND unknown'),
-    (['See License in ./LICENSE file'], 'unknown-license-reference AND unknown'),
-    # FIXME: Apache2 is a valid license
     (['MIT', 'Apache2'], 'mit AND unknown'),
     ([{'type': 'MIT', 'url': 'https://github.com/jonschlinkert/repeat-element/blob/master/LICENSE'}], 'mit'),
     ([{'type': 'Freeware', 'url': 'https://github.com/foor/bar'}], 'unknown-license-reference'),
     ([{'type': 'patent grant', 'url': 'Freeware'}], 'unknown'),
-    ([{'type': 'GPLv2', 'url': 'https://example.com/licenses/GPLv2'}, {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
-     '(gpl-2.0 AND (gpl-2.0 AND unknown)) AND mit'),
+
+    ([{'type': 'GPLv2', 'url': 'https://example.com/licenses/GPLv2'}, 
+      {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
+     '(gpl-2.0 AND (gpl-2.0 AND unknown)) AND (mit AND (mit AND unknown))'),
+
+    ([{'type': 'GPLv2', 'url': 'http://www.gnu.org/licenses/gpl-2.0.html'}, 
+      {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
+     'gpl-2.0 AND (mit AND (mit AND unknown))'),
+
+    # FIXME: we should follow the LICENSE file
+    (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
+    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference AND unknown'),
+    (['See License in ./LICENSE file'], 'unknown-license-reference AND unknown'),
 ]
-
-
 @pytest.mark.parametrize('declared_license,expected_expression', test_data)
 def test_compute_normalized_license_from_declared(declared_license, expected_expression):
     result = npm.compute_normalized_license(declared_license)

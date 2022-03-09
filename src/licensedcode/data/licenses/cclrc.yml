@@ -1,0 +1,9 @@
+key: cclrc
+short_name: CCLRC License
+name: CCLRC License
+category: Free Restricted
+owner: Lawrence Livermore National Laboratory
+homepage_url: https://github.com/PCMDI/cmor/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-cclrc
+other_urls:
+    - https://tracker.debian.org/pkg/cmor

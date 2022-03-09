@@ -19,7 +19,7 @@ class TestReadme(PackageTester):
 
     def test_is_manifest_readme_facebook(self):
         test_file = self.get_test_loc('readme/facebook/downloaded-from-as-download_url/README.facebook')
-        assert readme.ReadmeManifest.is_manifest(test_file)
+        assert readme.ReadmeManifest.is_package_data_file(test_file)
 
     def test_parse_facebook_downloaded_from_as_download_url(self):
         test_file = self.get_test_loc('readme/facebook/downloaded-from-as-download_url/README.facebook')
@@ -83,7 +83,7 @@ class TestReadme(PackageTester):
 
     def test_is_manifest_readme_google(self):
         test_file = self.get_test_loc('readme/google/basic/README.google')
-        assert readme.ReadmeManifest.is_manifest(test_file)
+        assert readme.ReadmeManifest.is_package_data_file(test_file)
 
     def test_parse_google_basic(self):
         test_file = self.get_test_loc('readme/google/basic/README.google')
@@ -111,4 +111,4 @@ class TestReadme(PackageTester):
 
     def test_is_manifest_not_readme(self):
         test_file = self.get_test_loc('readme/invalid/invalid_file')
-        assert not readme.ReadmeManifest.is_manifest(test_file)
+        assert not readme.ReadmeManifest.is_package_data_file(test_file)

@@ -39,206 +39,229 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
-      "requirement": "1.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",
-      "requirement": "2.1_3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
-      "requirement": "3.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
-      "requirement": "1.1.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
-      "requirement": "1.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/freemarker/freemarker@2.3.12",
-      "requirement": "2.3.12",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/groovy/groovy@1.5.1",
-      "requirement": "1.5.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jasperreports/jasperreports@2.0.2",
-      "requirement": "2.0.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jruby/jruby-bin@1.0.1",
-      "requirement": "1.0.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/net.sf.ehcache/ehcache@1.3.0",
-      "requirement": "1.3.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/com.oracle/oc4j@1.0",
-      "requirement": "1.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
-      "requirement": "2.0b4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/opensymphony/quartz-all@1.6.0",
-      "requirement": "1.6.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/velocity/velocity@1.5",
-      "requirement": "1.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
-      "requirement": "1.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
-      "requirement": "1.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-aop@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-tx@2.5.3",
-      "requirement": "2.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/javax.activation/activation@1.1",
-      "requirement": "1.1",
-      "scope": "provided",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/javax.mail/mail@1.4",
-      "requirement": "1.4",
-      "scope": "provided",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.springframework/spring-context-support@2.5.3?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",
+      "extracted_requirement": "2.1_3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
+      "extracted_requirement": "3.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "extracted_requirement": "1.1.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/freemarker/freemarker@2.3.12",
+      "extracted_requirement": "2.3.12",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/groovy/groovy@1.5.1",
+      "extracted_requirement": "1.5.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jasperreports/jasperreports@2.0.2",
+      "extracted_requirement": "2.0.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jruby/jruby-bin@1.0.1",
+      "extracted_requirement": "1.0.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/net.sf.ehcache/ehcache@1.3.0",
+      "extracted_requirement": "1.3.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.oracle/oc4j@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
+      "extracted_requirement": "2.0b4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/opensymphony/quartz-all@1.6.0",
+      "extracted_requirement": "1.6.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/velocity/velocity@1.5",
+      "extracted_requirement": "1.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
+      "extracted_requirement": "1.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
+      "extracted_requirement": "1.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-aop@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-tx@2.5.3",
+      "extracted_requirement": "2.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.activation/activation@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.mail/mail@1.4",
+      "extracted_requirement": "1.4",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.springframework/spring-context-support@2.5.3",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-context-support/2.5.3/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-context-support/2.5.3/spring-context-support-2.5.3.jar",

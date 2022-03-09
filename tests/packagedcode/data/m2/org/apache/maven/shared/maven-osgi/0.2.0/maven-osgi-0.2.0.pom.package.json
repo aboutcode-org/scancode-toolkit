@@ -24,38 +24,40 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.6",
-      "requirement": "2.0.6",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/biz.aQute/bndlib@0.0.203",
-      "requirement": "0.0.203",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.0",
-      "requirement": "1.0",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/maven-osgi@0.2.0?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.6",
+      "extracted_requirement": "2.0.6",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/biz.aQute/bndlib@0.0.203",
+      "extracted_requirement": "0.0.203",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.shared/maven-osgi@0.2.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-osgi/0.2.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-osgi/0.2.0/maven-osgi-0.2.0.jar",

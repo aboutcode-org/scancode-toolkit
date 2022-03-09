@@ -12,11 +12,13 @@ import attr
 from packagedcode import about
 from packagedcode import bower
 from packagedcode import build
+from packagedcode import build_gradle
 from packagedcode import cargo
 from packagedcode import chef
 from packagedcode import debian
 from packagedcode import conda
 from packagedcode import cocoapods
+from packagedcode import cran
 from packagedcode import freebsd
 from packagedcode import golang
 from packagedcode import haxe
@@ -40,7 +42,7 @@ from packagedcode import windows
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
-PACKAGE_MANIFEST_TYPES = [
+PACKAGE_DATA_CLASSES = [
     rpm.RpmManifest,
     debian.DebianPackage,
 
@@ -48,7 +50,7 @@ PACKAGE_MANIFEST_TYPES = [
     jar_manifest.JavaManifest,
     models.JavaEar,
     models.JavaWar,
-    maven.MavenPomPackage,
+    maven.PomXml,
     jar_manifest.IvyJar,
     models.JBossSar,
     models.Axis2Mar,
@@ -102,38 +104,51 @@ PACKAGE_MANIFEST_TYPES = [
     build.BuckPackage,
     build.AutotoolsPackage,
     conda.Condayml,
-    win_pe.WindowsExecutableManifest,
+    win_pe.WindowsExecutable,
     readme.ReadmeManifest,
     build.MetadataBzl,
     msi.MsiInstallerPackage,
     windows.MicrosoftUpdateManifest,
     pubspec.PubspecYaml,
-    pubspec.PubspecLock
+    pubspec.PubspecLock,
+    cran.DescriptionFile,
+    build_gradle.BuildGradle
+]
+
+
+PACKAGE_INSTANCE_CLASSES = [
+    rpm.RpmPackage,
+    maven.MavenPackage,
+    npm.NpmPackage,
+    phpcomposer.PhpPackage,
+    haxe.HaxePackage,
+    cargo.RustPackage,
+    cocoapods.CocoapodsPackage,
+    opam.OpamPackage,
+    bower.BowerPackage,
+    freebsd.FreebsdPackage,
+    rubygems.RubyPackage,
+    pypi.PythonPackage,
+    golang.GoPackage,
+    nuget.NugetPackage,
+    chef.ChefPackage,
+    win_pe.WindowsPackage,
+    pubspec.PubspecPackage,
+    cran.CranPackage
     openwrt.OpenwrtPackage,
 ]
 
-PACKAGE_MANIFESTS_BY_TYPE = {
-    (
-        cls.package_manifest_type
-        if isinstance(cls, models.PackageManifest)
-        else cls.default_type
-    ): cls
-    for cls in PACKAGE_MANIFEST_TYPES
+
+PACKAGE_DATA_BY_TYPE = {
+    cls.default_type: cls
+    for cls in PACKAGE_DATA_CLASSES
 }
-# We cannot have two package classes with the same type
-if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
-    seen_types = {}
-    for pmt in PACKAGE_MANIFEST_TYPES:
-        manifest = pmt()
-        assert manifest.package_manifest_type
-        seen = seen_types.get(manifest.package_manifest_type)
-        if seen:
-            msg = ('Invalid duplicated packagedcode.Package types: '
-                   '"{}:{}" and "{}:{}" have the same type.'
-                  .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
-            raise Exception(msg)
-        else:
-            seen_types[manifest.package_manifest_type] = manifest
+
+
+PACKAGE_INSTANCES_BY_TYPE = {
+    cls.default_type: cls
+    for cls in PACKAGE_INSTANCE_CLASSES
+}
 
 
 def get_package_class(scan_data, default=models.Package):
@@ -159,7 +174,7 @@ def get_package_class(scan_data, default=models.Package):
     if not ptype:
         # basic type for default package types
         return default
-    ptype_class = PACKAGE_MANIFESTS_BY_TYPE.get(ptype)
+    ptype_class = PACKAGE_DATA_BY_TYPE.get(ptype)
     return ptype_class or default
 
 

@@ -10,13 +10,51 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:composer/php",
+      "extracted_requirement": ">=5.6.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:composer/php",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/phpunit/phpunit",
+      "extracted_requirement": "^5.6",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:composer/phpunit/phpunit",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/squizlabs/php_codesniffer",
+      "extracted_requirement": "^2.7",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:composer/squizlabs/php_codesniffer",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
     }
   ],
   "packages": [
@@ -61,36 +99,16 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:composer/php",
-          "requirement": ">=5.6.0",
-          "scope": "require",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:composer/phpunit/phpunit",
-          "requirement": "^5.6",
-          "scope": "require-dev",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:composer/squizlabs/php_codesniffer",
-          "requirement": "^2.7",
-          "scope": "require-dev",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:composer/jandreasn/a-timer",
+      "package_data_files": [
+        "composer.json"
+      ],
+      "files": [
+        "composer.json"
+      ],
       "purl": "pkg:composer/jandreasn/a-timer",
       "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
       "repository_download_url": null,
@@ -101,7 +119,7 @@
     {
       "path": "composer.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "composer",
           "namespace": "jandreasn",
@@ -143,41 +161,46 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [
-            {
-              "purl": "pkg:composer/php",
-              "requirement": ">=5.6.0",
-              "scope": "require",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:composer/phpunit/phpunit",
-              "requirement": "^5.6",
-              "scope": "require-dev",
-              "is_runtime": false,
-              "is_optional": true,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:composer/squizlabs/php_codesniffer",
-              "requirement": "^2.7",
-              "scope": "require-dev",
-              "is_runtime": false,
-              "is_optional": true,
-              "is_resolved": false
-            }
-          ],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:composer/php",
+              "extracted_requirement": ">=5.6.0",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:composer/phpunit/phpunit",
+              "extracted_requirement": "^5.6",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:composer/squizlabs/php_codesniffer",
+              "extracted_requirement": "^2.7",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
           "purl": "pkg:composer/jandreasn/a-timer",
           "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
           "repository_download_url": null,
           "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
         }
+      ],
+      "for_packages": [
+        "pkg:composer/jandreasn/a-timer"
       ],
       "scan_errors": []
     }

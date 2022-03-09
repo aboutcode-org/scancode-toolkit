@@ -1,0 +1,11 @@
+key: odmg
+short_name: ODMG License
+name: ODMG License
+category: Permissive
+owner: ODBMS.org
+homepage_url: http://www.odbms.org/odmg-standard/wray-johnson/
+spdx_license_key: LicenseRef-scancode-odmg
+ignorable_authors:
+    - E. Wray Johnson
+ignorable_urls:
+    - http://www.odmg.org/

@@ -10,7 +10,11 @@
 import os.path
 
 from packagedcode import models
-from packagedcode.models import Package
+from packagedcode import PACKAGE_INSTANCE_CLASSES
+from packagedcode import PACKAGE_DATA_CLASSES
+from packagedcode import PACKAGE_DATA_BY_TYPE
+from packagedcode import PACKAGE_INSTANCES_BY_TYPE
+from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packagedcode.models import DependentPackage
 from packages_test_utils import PackageTester
@@ -47,11 +51,10 @@ class TestModels(PackageTester):
             ('license_expression', None),
             ('declared_license', None),
             ('notice_text', None),
-            ('root_path', None),
-            ('dependencies', []),
             ('contains_source_code', None),
             ('source_packages', []),
             ('extra_data', {}),
+            ('dependencies', []),
             ('purl', u'pkg:android/someAndroidPAcakge'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),
@@ -60,7 +63,7 @@ class TestModels(PackageTester):
         assert list(package.to_dict().items()) == expected
 
     def test_Package_simple(self):
-        package = Package(
+        package = PackageData(
             type='rpm',
             name='Sample',
             description='Some package',
@@ -78,7 +81,7 @@ class TestModels(PackageTester):
         self.check_package(package, expected_loc, regen=False)
 
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -87,7 +90,7 @@ class TestModels(PackageTester):
         assert package.to_dict()['qualifiers'] == dict(this='that')
 
     def test_Package_model_qualifiers_are_kept_as_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -96,7 +99,7 @@ class TestModels(PackageTester):
         assert package.qualifiers == dict(this='that')
 
     def test_Package_model_qualifiers_are_converted_to_mappings(self):
-        package = models.Package(
+        package = models.PackageData(
             type='maven',
             name='this',
             version='23',
@@ -106,7 +109,7 @@ class TestModels(PackageTester):
 
 
     def test_Package_full(self):
-        package = Package(
+        package = PackageData(
             type='rpm',
             namespace='fedora',
             name='Sample',
@@ -138,25 +141,6 @@ class TestModels(PackageTester):
             license_expression='apache-2.0',
             declared_license=u'apache-2.0',
             notice_text='licensed under the apacche 2.0 \nlicense',
-            root_path='',
-            dependencies=[
-                DependentPackage(
-                  purl='pkg:maven/org.aspectj/aspectjtools',
-                  requirement='1.5.4',
-                  scope='relocation',
-                  is_runtime=True,
-                  is_optional=False,
-                  is_resolved=False
-                ),
-                DependentPackage(
-                  purl='pkg:maven/org.aspectj/aspectjruntime',
-                  requirement='1.5.4-release',
-                  scope='runtime',
-                  is_runtime=True,
-                  is_optional=False,
-                  is_resolved=True
-                )
-            ],
             contains_source_code=True,
             source_packages=[
                 "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
@@ -174,6 +158,65 @@ class TestModels(PackageTester):
         for resource in codebase.walk():
             for package_data in resource.packages:
                 package = get_package_instance(package_data)
-                assert isinstance(package, npm.NpmPackage)
+                assert isinstance(package, npm.NpmPackageData)
                 package_resources = list(package.get_package_resources(resource, codebase))
                 assert any(r.name == 'package.json' for r in package_resources), resource.path
+
+
+class TestManifestInstanceModels(PackageTester):
+
+    def test_package_data_types(self):
+        check_package_data_classes()
+
+    def test_package_instance_types(self):
+        check_package_instance_classes()
+
+
+def check_package_instance_classes():
+    """
+    Check that we don't have two package instance classes with the same
+    default_type.
+    """
+    package_instances_by_type = {
+        cls.default_type: cls
+        for cls in PACKAGE_INSTANCE_CLASSES
+    }
+
+    if len(package_instances_by_type) != len(PACKAGE_INSTANCE_CLASSES):
+        seen_types = {}
+        for pt in PACKAGE_INSTANCE_CLASSES:
+            pk_instance = pt()
+            assert pk_instance.default_type
+            seen = seen_types.get(pk_instance.default_type)
+            if seen:
+                msg = ('Invalid duplicated packagedcode.Package types: '
+                    '"{}:{}" and "{}:{}" have the same type.'
+                    .format(pk_instance.default_type, pk_instance.__name__, seen.default_type, seen.__name__,))
+                raise Exception(msg)
+            else:
+                seen_types[pk_instance.default_type] = pk_instance
+
+
+def check_package_data_classes():
+    """
+    Check that we don't have two package manifest classes with the same
+    package_data_type.
+    """
+    package_data_by_type = {
+        cls.default_type: cls
+        for cls in PACKAGE_DATA_CLASSES
+    }
+
+    if len(package_data_by_type) != len(PACKAGE_DATA_CLASSES):
+        seen_types = {}
+        for pmt in PACKAGE_DATA_CLASSES:
+            manifest = pmt()
+            assert manifest.package_data_type
+            seen = seen_types.get(manifest.package_data_type)
+            if seen:
+                msg = ('Invalid duplicated packagedcode.Package types: '
+                    '"{}:{}" and "{}:{}" have the same type.'
+                    .format(manifest.package_data_type, manifest.__name__, seen.package_data_type, seen.__name__,))
+                raise Exception(msg)
+            else:
+                seen_types[manifest.package_data_type] = manifest

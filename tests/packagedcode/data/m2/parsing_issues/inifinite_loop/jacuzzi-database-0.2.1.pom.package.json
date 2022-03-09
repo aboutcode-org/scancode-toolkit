@@ -24,38 +24,40 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-core",
-      "requirement": "${version}",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:maven/org.javalite/activejdbc@1.4.12",
-      "requirement": "1.4.12",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.xerial/sqlite-jdbc@3.8.11.1",
-      "requirement": "3.8.11.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-core",
+      "extracted_requirement": "${version}",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.javalite/activejdbc@1.4.12",
+      "extracted_requirement": "1.4.12",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc@3.8.11.1",
+      "extracted_requirement": "3.8.11.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/jacuzzi-database-${version}.jar",

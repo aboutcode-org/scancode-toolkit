@@ -32,22 +32,22 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@1.0-alpha-7",
-      "requirement": "1.0-alpha-7",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@1.0-alpha-7",
+      "extracted_requirement": "1.0-alpha-7",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.4/maven-reporting-api-2.0.4.jar",

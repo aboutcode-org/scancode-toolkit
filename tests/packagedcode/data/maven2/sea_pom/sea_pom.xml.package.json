@@ -1,0 +1,393 @@
+{
+  "type": "maven",
+  "namespace": "no.knowit.seam",
+  "name": "root",
+  "version": "2.2.0-SNAPSHOT",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Java",
+  "description": "no.knowit.seam : root : 2.2.0-SNAPSHOT\nThe Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "developper",
+      "name": "Leif Olsen",
+      "email": "loo@knowit.no",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "developper",
+      "name": "Ken Gullaksen",
+      "email": "krg@knowit.no",
+      "url": null
+    },
+    {
+      "type": "organization",
+      "role": "owner",
+      "name": "Know IT Objectnet AS",
+      "email": null,
+      "url": "http://www.knowit.no/"
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "http://code.google.com/p/seam-maven-refimpl/",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
+  "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": null,
+  "notice_text": null,
+  "contains_source_code": null,
+  "source_packages": [
+    "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
+  ],
+  "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
+      "extracted_requirement": "2.2.0.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
+      "extracted_requirement": "3.2.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
+      "extracted_requirement": "1.4.1.SP9",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
+      "extracted_requirement": "1.1-RC2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
+      "extracted_requirement": "1.1-RC2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
+      "extracted_requirement": "3.1.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.transaction/jta@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
+      "extracted_requirement": "1.6.3",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.drools/drools-core@5.0.1",
+      "extracted_requirement": "5.0.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
+      "extracted_requirement": "1.0_02.CR4",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
+      "extracted_requirement": "3.1.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
+      "extracted_requirement": "3.3.1.GA",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.drools/drools-api@5.0.1",
+      "extracted_requirement": "5.0.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
+      "extracted_requirement": "3.3.0.ga",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.antlr/antlr@3.2",
+      "extracted_requirement": "3.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.antlr/antlr-runtime@3.2",
+      "extracted_requirement": "3.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-digester/commons-digester@1.8.1",
+      "extracted_requirement": "1.8.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-lang/commons-lang@2.3",
+      "extracted_requirement": "2.3",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/com.h2database/h2@1.1.118",
+      "extracted_requirement": "1.1.118",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/mysql/mysql-connector-java@5.1.10",
+      "extracted_requirement": "5.1.10",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
+      "extracted_requirement": "3.1.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@4.7",
+      "extracted_requirement": "4.7",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.testng/testng@5.9",
+      "extracted_requirement": "5.9",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
+  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
+  "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
+  "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
+  "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom"
+}

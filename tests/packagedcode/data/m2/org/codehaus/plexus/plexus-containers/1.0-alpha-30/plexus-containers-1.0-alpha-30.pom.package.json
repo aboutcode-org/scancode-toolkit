@@ -24,46 +24,49 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds@1.2-alpha-9",
-      "requirement": "1.2-alpha-9",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.5",
-      "requirement": "1.4.5",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-30",
-      "requirement": "1.0-alpha-30",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-containers@1.0-alpha-30?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds@1.2-alpha-9",
+      "extracted_requirement": "1.2-alpha-9",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.5",
+      "extracted_requirement": "1.4.5",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-30",
+      "extracted_requirement": "1.0-alpha-30",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-containers@1.0-alpha-30",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.jar",

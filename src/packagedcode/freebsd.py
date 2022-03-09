@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class FreeBSDPackage(models.Package):
+class FreeBSDPackageData(models.PackageData):
     file_patterns = ('+COMPACT_MANIFEST',)
     default_type = 'freebsd'
 
@@ -47,12 +47,12 @@ class FreeBSDPackage(models.Package):
 
 
 @attr.s()
-class CompactManifest(FreeBSDPackage, models.PackageManifest):
+class CompactManifest(FreeBSDPackageData, models.PackageDataFile):
 
     file_patterns = ('+COMPACT_MANIFEST',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -114,6 +114,20 @@ class CompactManifest(FreeBSDPackage, models.PackageManifest):
         license_mapper(freebsd_manifest, package)
 
         yield package
+
+
+@attr.s()
+class FreebsdPackage(FreeBSDPackageData, models.Package):
+    """
+    A Freebsd Package that is created out of one/multiple Freebsd package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            CompactManifest
+        ]
 
 
 def compute_normalized_license(declared_license):

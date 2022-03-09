@@ -1,0 +1,191 @@
+X12 License
+
+All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.
+
+Introduction
+
+X12 has developed standards and associated products to facilitate the transmission of electronic business messages for over 40 years. X12 manages the exclusive copyright to all standards, publications, and products, and such works do not constitute joint works of authorship eligible for joint copyright.
+
+All X12 products are subject to this IP policy, including published and draft works.
+
+X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+
+Fair Use
+
+U.S. Copyright laws and X12 Intellectual Property (IP) policies apply to the use and distribution of any X12 product, including published and draft works. X12's copyrighted products, include but are not limited to, standards, technical reports, guidelines, workbooks, segment directories, element directories, data element dictionaries, table data, schema, and mapping instructions.
+
+Any use of X12 IP is predicated on the party holding an active license permitting the specific use of the associated X12 product's content. From time to time, X12 may make certain products available for public use at no cost. U.S. Copyright laws and these IP policies shall apply to such products.
+
+If written permission is required for a use of copyrighted content, distribution of an artifact(s) using the X12 copyrighted content is prohibited until X12 grants permission for the use in writing. Once permission for use of X12 content has been granted, an organization may distribute a permitted artifact to its trading partners via printed document, electronic document or a website.
+
+Written permission of the copyright holder is required in the following situations:
+
+For any use that includes distribution of information based on the copyrighted content outside the corporate structure of the organization holding the active license, regardless of the method of distribution or format of the distributed information.
+
+For any use that reproduces portions of the product, excepting short citations intended as support for comment, news reporting, criticism, teaching or scholarship, or research.
+
+For any other use not expressly allowed as not requiring written permission. Provided that a proper citation is included, written permission is not required in the following situations:
+
+For internal purposes, that is for use within the corporate structure of the organization holding the active license
+
+To reproduce short citations intended as support for comment, news reporting, criticism, teaching or scholarship, or research.
+
+Posting of X12's copyrighted products on another organization's public website is strictly prohibited.
+
+Direct distribution of X12's copyrighted products by any organization or individual to another organization or individual is strictly prohibited.
+
+Draft versions of X12 products may only be used by X12 members, and then only for the purposes of official X12 collaboration and internal discussion or evaluation within the member's own organization. Distribution of X12 drafts outside of the member's own organization and any use of the IP intended for distribution outside of the member's own organization are strictly forbidden.
+
+Requesting Permission for External Use of X12 Work Products
+
+All parties requesting permission to use X12 copyrighted products under X12's Fair Use policies must follow the procedures listed below. X12 will handle requests and related artifacts as confidential, available only to designated reviewers. An organization may have up to three (3) active permission requests at any time. If you have more than 3 artifacts to submit, please allocate time for multiple review cycles.
+
+Review X12's Fair Use policies and ensure the request falls under the parameters of Fair Use. If so, use the instructions in the Request Permission Form section found at the bottom of this page to submit a request to reproduce or use content from a copyrighted X12 product in a proprietary artifact. An advance copy of each artifact must be submitted with the request form via email to ip@x12.org with the Subject line of "Request to Use X12 Copyrighted IP: [[YOUR COMPANY NAME]]."
+
+X12 will review your submission and ensure that the use of content from an X12 product is compliant with applicable X12 policies, generally accurate in the context presented, and that style requirements have been met.
+
+NOTE: The review of submitted artifacts is focused on X12 IP use and compliance with X12 policy. The review does not include evaluation of compliance with any applicable State or Federal mandate, including HIPAA, or evaluation of the accuracy or validity of the X12 products within the context of your submission.
+
+Following review of a submitted artifact, X12 will make a determination of permission.
+
+If permission is granted, the requesting party may use or cite the X12 content under the following conditions:
+
+Permission is for the specific artifact submitted and for the specific use cited in the request. Permission is not granted for other artifacts, including revisions to the approved artifact, or for other uses.
+
+The artifact must include a statement referencing X12's copyright and that explicit permission to use or cite the material was granted for this use. Permission is not transferable.
+
+The preceding conditions are continuing, and X12 reserves the right to revoke the permission at any time if the preceding conditions are not met If permission is not granted, the reasons will be conveyed to the requesting party and the requesting party will be given an opportunity to revise and resubmit the artifact or the use statement as necessary to meet the requirements for use.
+
+Guidance for Use of X12 Content in Artifacts Based on X12 TR3s
+
+Many organizations produce artifacts which contain proprietary instructions for creating transactions based on an associated X12 Type 3 Technical Report (TR3), also known as an X12 Implementation Guide (IG). Such artifacts are often called Companion Guides. These artifacts must adhere to U.S. Copyright laws and X12 IP policies.
+
+This section outlines the requirements for artifacts that use or are based on the contents of TR3s. These requirements supplement, but do not replace or overrule, the associated copyrights and X12's Fair Use policies. Artifacts must conform to these restrictions to avoid infringing on X12 copyrights and related intellectual property rights.
+
+It is recognized that artifacts may also include information that is unrelated to X12 intellectual property; X12 has no jurisdiction over that portion of an artifact and does not review that information during an IP Review.
+
+Content Guidelines
+
+Such Artifacts must:
+
+Abide by US Copyright Law.
+
+Abide by X12's Fair Use and Copyright policies.
+
+Correctly identify the X12 organization and any referenced X12 products. Include a statement about where to purchase a license for the underlying TR3 and the associated URL.
+
+Example: The X12 TR3 that details the full requirements for this transaction can be licensed at x12.org/licensing.
+
+Include a disclaimer that the TR3 retains ultimate authority over the requirements of the transmission.
+
+Example: Every effort has been made to ensure consistency between this document and the X12 TR3. However, if there is a discrepancy between the documents, the X12 TR3 is the final authority.
+
+Be used in conjunction with an associated X12 TR3; they must not be stand-alone requirements documents
+
+Conform to all the requirements of the associated TR3. Use the full official name, including the unique identifier, at the first reference to any TR3.
+
+Example: X12/006020X267 Health Care Claim Status Request and Response (276/277). If a shortened TR3 title will be used in the Artifact, it may either be the unique identifier or the TR3 name.
+
+Example: 006020X267, 6020X212 or Health Care Claim Status Request and Response. Once permission for use of X12 copyrighted material has been granted, the Artifact must include a statement at the beginning of the document noting "X12 has granted express permission for use of X12 copyrighted materials within this document."
+
+Such Artifacts may:
+
+Include proprietary information or instructions that clarify the TR3 instructions for specific trading partners.
+
+Clarify a TR3 example, based on proprietary instructions. Add examples specific to proprietary instructions.
+
+Clarify specific processing intentions related to TR3 requirements . Codes allowed in the TR3 must be accepted if transmitted however the Artifact may note that one or more codes from the TR3 code list are preferred or not processed.
+
+"Not processed" means it will not be recognized in internal processing, it does not mean the transaction can be rejected if the code is transmitted. "Preferred" means that internal processes require a specific value, it does not mean the transaction can be rejected if the specified code is not transmitted. Clarification of the use of loops/segments/elements in the TR3 identified by situational rules stating trading partner requirements control usage: Examples of such situational rules:
+
+"Required when the payer's adjudication is known to be impacted"
+
+"Required when such transmission is required under the insurance contract" Indicate the number of repetitions which will be applied in the transaction processing application for loops or segments without repetition limitations in the TR3.
+
+Identify trading partner information necessary to initiate or enable the communications between trading partners. Example: "GS02 – send your TPID in this element".
+
+Include information from X12 Requests for Interpretation (RFIs) as a reference for trading partner specific instructions as long as the RFI is explicitly referenced.
+
+Artifacts must not:
+
+Replicate the information presented in the associated TR3.
+
+Contradict, countermand or duplicate any requirement of the associated TR3.
+
+Contain material duplication of a section of the associated TR3, unless permission for the citation has been granted.
+
+Add, modify or delete any requirements, including loop, segment or element names, notes or rules, examples, appendix, or code list subsets from Section 2 of the associated TR3.
+
+Use the unique identifier listed in GS08 unless the transaction conforms to the requirements documented in the associated TR3, within the parameters of the Compliance in X12 document.
+
+Add, modify or disallow any defining, explanatory, or clarifying content (within Section 1), example (within Sections 2 and 3) or Appendix (within Section 4). Include tutorial information about X12 syntax, the underlying transaction set or related transaction sets.
+
+Include tutorial information about the use or interpretation of a TR3.
+
+Guidance for Use of X12 Materials in Artifacts Based on Any Other X12 Product Many organizations produce artifacts which contain proprietary instructions for creating transactions based on an X12 product. Such artifacts must adhere to U.S. Copyright laws and X12 IP policies.
+
+A separate section outlines the requirements for artifacts based on X12 TR3s. This section outlines the requirements for artifacts that use or are based on all other X12 products. These requirements supplement, but do not replace or overrule, the associated copyrights and X12's Fair Use statement. Artifacts must conform to these restrictions to avoid infringing on X12 copyrights and related intellectual property rights. Artifacts may also include information that is unrelated to X12 products; X12 has no jurisdiction over that portion of an artifact and does not review that information during an IP Review.
+
+Artifact Distribution
+
+By definition, artifacts are intended for distribution outside of the developing organization. Once permission for use of X12 products has been granted; an organization may distribute an artifact to its trading partners via printed document, electronic document or via a website.
+
+No organization may post X12 Standards, Technical Reports, Guidelines, Workbooks, Segment Directories, Element Directories, Data Element Dictionaries, Table Data, Schema or any other X12 product on its website for public reference at any time.
+
+Content Guidelines
+
+Artifacts must:
+
+Abide by US Copyright Law.
+
+Abide by X12's Fair Use and Copyright statements.
+
+Use the full name "X12" to identify the X12 organization or products. Be used in conjunction with an associated X12 product; they must not be stand-alone requirements documents.
+
+Include a statement about where to purchase the underlying X12 product and the associated URL.
+
+Example: The X12 Standard that details the full requirements for this transaction is available at nex12.org/index.php/licensing. Conform to all the requirements of the associated X12 product. Use the full official name at the first reference to any X12 product. Example: X12 006020 Once permission for use of X12 copyrighted material has been granted, the artifact must include a statement at the beginning of the document noting "Express permission to use X12 copyrighted materials within this document has been granted." Artifacts may:
+
+Include proprietary information or instructions that clarify the X12 instructions. Add examples specific to a proprietary implementation. Add specific processing instructions not otherwise contained in the X12 product. Indicate the number of repetitions which are allowed in a proprietary implementation. Identify trading partner information necessary to initiate or enable the communications between trading partners. Include information from X12 Requests for Interpretation (RFIs) as a reference for trading partner specific instructions as long as the RFI is explicitly referenced.
+
+Artifacts must not:
+
+Replicate the information presented in the associated X12 product.
+
+Contradict, countermand or duplicate any requirement of the associated X12 product.
+
+Contain material duplication of a section of the associated X12 product, unless permission for the citation has been granted.
+
+Include tutorial information about X12 syntax, the underlying transaction set or related transaction sets.
+
+Include tutorial information about the use or interpretation of an X12 product. Guidance for Citation of X12 Content in Artifacts Organizations may on occasion wish to produce artifacts which contain a limited number of exact quotes of X12 copyrighted products. These artifacts must adhere to U.S. Copyright laws and X12 IP policies.
+
+This section outlines the requirements for citing, or exactly quoting, X12 copyrighted content in an artifact. These requirements supplement, but do not replace or overrule, the associated copyrights and X12's Fair Use statement. Artifacts must conform to these restrictions to avoid infringing on X12 copyrights and related intellectual property rights.
+
+Artifacts may also include information that is unrelated to X12 copyrighted content, X12 has no jurisdiction over that portion of the artifact and does not review that information during an IP Review.
+
+Citation Format
+
+The basic style below is adapted from the Modern Language Association (MLA) Style Manual and by convention includes line breaks and an indent for each successive line:
+
+Author Name. "Title: Subtitle, Figure number, if appropriate, Segment ID - Name, if appropriate." Title of Book, identifier. Publisher, Date of publication. . Page Number(s) [if applicable].
+
+Examples
+
+If someone wants to reproduce figure 1.1 of 006020X258, the choices are:
+
+Place a footnote reference number in relation to the reproduced figure and place the following as the footnote, or place the following directly below the figure:
+
+Accredited Standards Committee X12, Insurance Subcommittee, X12N. "1.4.1 Information Flows, Fig. 1.1." Health Care Claim Payment/Advice (835), 006020X258. X12 Incorporated, June 2012. . 3.
+
+Or place in-line with the text an abbreviated citation:
+
+The 835 presents an "Information Flow" figure, reproduced below, illustrating the flow of information from payer to payee (006020X258 1).
+
+The style above requires that a works-cited list be created and placed at the end of the document. Each citation is assigned a number. In the example above, the 1 refers to the first citation in the list; which appears in the works cited list like this:
+
+Accredited Standards Committee X12, Insurance Subcommittee, X12N. "1.4.1 Information Flows, Fig. 1.1." Health Care Claim Payment/Advice (835), 006020X258. X12 Incorporated, June 2012. . 3.
+
+A span of page numbers is appropriate when the quoted material is on consecutive pages. For example, to refer to the payer business contact information segment:
+
+Accredited Standards Committee X12, Insurance Subcommittee, X12N. "PER – Payer Business Contact Information." Health Care Claim Payment/Advice (835), 006020X258. X12 Incorporated, June 2012. . 94-96.

@@ -46,62 +46,67 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/asm/asm@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-tree@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-analysis@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-commons@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-util@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-xml@3.0",
-      "requirement": "3.0",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/asm/asm-parent@3.0?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/asm/asm@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-tree@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-analysis@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-commons@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-util@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-xml@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/asm/asm-parent@3.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm-parent/3.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/asm/asm-parent/3.0/asm-parent-3.0.jar",

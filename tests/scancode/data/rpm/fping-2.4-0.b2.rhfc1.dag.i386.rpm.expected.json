@@ -8,15 +8,16 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "rpm",
@@ -52,13 +53,18 @@
       "license_expression": "unknown",
       "declared_license": "distributable",
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
       ],
       "extra_data": {},
+      "package_uuid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
+      "package_data_files": [
+        "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
+      ],
+      "files": [
+        "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
+      ],
       "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -69,7 +75,7 @@
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "rpm",
           "namespace": null,
@@ -104,18 +110,20 @@
           "license_expression": "unknown",
           "declared_license": "distributable",
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
           ],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
+      ],
+      "for_packages": [
+        "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
       ],
       "scan_errors": []
     }

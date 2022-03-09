@@ -355,6 +355,14 @@ class TestTokenizers(FileBasedTesting):
             u'love', u'is', u'not', u'subject', u'to', u'law']
         assert list(query_tokenizer(text)) == expected
 
+    def test_query_tokenizer_handles_rarer_unicode_typographic_quotes(self):
+        text = 'a “bar” is “open„ not “closed” ‘free‚ not ‘foo’ „Gänsefüßchen“'
+        expected = [
+            'a', 'bar', 'is', 'open', 'not', 'closed',
+            'free', 'not', 'foo', 'gänsefüßchen',
+        ]
+        assert list(query_tokenizer(text)) == expected
+
     def test_query_lines_on_html_like_texts(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.query_lines.json'

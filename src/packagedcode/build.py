@@ -14,7 +14,6 @@ import os
 
 import attr
 
-from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
@@ -38,12 +37,12 @@ gradle, Buck, Bazel, Pants, etc.
 
 
 @attr.s()
-class BaseBuildManifestPackage(models.Package):
+class BaseBuildManifestPackageData(models.PackageData):
     file_patterns = tuple()
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_manifest(location):
+        if not cls.is_package_data_file(location):
             return
 
         # we use the parent directory as a name
@@ -65,7 +64,7 @@ class BaseBuildManifestPackage(models.Package):
 
 
 @attr.s()
-class AutotoolsPackage(BaseBuildManifestPackage, models.PackageManifest):
+class AutotoolsPackage(BaseBuildManifestPackageData, models.PackageDataFile):
     file_patterns = ('configure', 'configure.ac',)
     default_type = 'autotools'
 
@@ -89,11 +88,11 @@ def check_rule_name_ending(rule_name):
 
 
 @attr.s()
-class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
+class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFile):
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_manifest(location):
+        if not cls.is_package_data_file(location):
             return
 
         # Thanks to Starlark being a Python dialect, we can use the `ast`
@@ -134,11 +133,15 @@ class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
                     if not name:
                         continue
                     license_files = args.get('licenses')
-                    yield cls(
+
+                    manifest = cls(
                         name=name,
                         declared_license=license_files,
-                        root_path=fileutils.parent_directory(location)
                     )
+                    manifest.license_expression = manifest.compute_normalized_license(
+                        manifest_parent_path=fileutils.parent_directory(location)
+                    )
+                    yield manifest
         else:
             # If we don't find anything in the manifest file, we yield a Package with
             # the parent directory as the name
@@ -146,13 +149,12 @@ class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
 
-    def compute_normalized_license(self):
+    def compute_normalized_license(self, manifest_parent_path):
         """
         Return a normalized license expression string detected from a list of
         declared license items.
         """
         declared_license = self.declared_license
-        manifest_parent_path = self.root_path
 
         if not declared_license or not manifest_parent_path:
             return
@@ -180,7 +182,7 @@ class BuckPackage(StarlarkManifestPackage):
 
 
 @attr.s()
-class MetadataBzl(BaseBuildManifestPackage, models.PackageManifest):
+class MetadataBzl(BaseBuildManifestPackageData, models.PackageDataFile):
     file_patterns = ('METADATA.bzl',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
@@ -188,7 +190,7 @@ class MetadataBzl(BaseBuildManifestPackage, models.PackageManifest):
 
     @classmethod
     def recognize(cls, location):
-        if not cls.is_manifest(location):
+        if not cls.is_package_data_file(location):
             return
 
         with open(location, 'rb') as f:

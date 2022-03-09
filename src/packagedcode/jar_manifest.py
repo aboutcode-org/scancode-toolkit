@@ -28,7 +28,7 @@ See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres
 
 
 @attr.s()
-class JavaArchive(models.Package):
+class JavaArchive(models.PackageData):
 
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
@@ -45,24 +45,24 @@ class JavaArchive(models.Package):
 
 
 @attr.s()
-class IvyJar(JavaArchive, models.PackageManifest):
+class IvyJar(JavaArchive, models.PackageDataFile):
     file_patterns = ('ivy.xml',)
     default_type = 'ivy'
     default_primary_language = 'Java'
 
 
 @attr.s()
-class JavaManifest(JavaArchive, models.PackageManifest):
+class JavaManifest(JavaArchive, models.PackageDataFile):
     file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar', '.war', '.ear')
 
     @classmethod
     def get_manifest_data(cls, location):
-        if cls.is_manifest(location):
+        if cls.is_package_data_file(location):
             yield parse_manifest(location)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return Trye if the file at location is a Manifest.
         """

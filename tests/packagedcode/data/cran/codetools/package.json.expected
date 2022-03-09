@@ -1,60 +1,62 @@
-{
-  "type": "cran",
-  "namespace": null,
-  "name": "codetools",
-  "version": "0.2-16",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": "Code analysis tools for R.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": null,
-      "role": "maintainer",
-      "name": "Luke Tierney",
-      "email": "luke-tierney@uiowa.edu",
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Luke Tierney",
-      "email": "luke-tierney@uiowa.edu",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": null,
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "gpl-1.0-plus",
-  "declared_license": "GPL",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:cran/R",
-      "requirement": ">= 2.1",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:cran/codetools@0.2-16",
-  "repository_homepage_url": "https://cran.r-project.org/package=codetools",
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[
+  {
+    "type": "cran",
+    "namespace": null,
+    "name": "codetools",
+    "version": "0.2-16",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Code analysis tools for R.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Luke Tierney",
+        "email": "luke-tierney@uiowa.edu",
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Luke Tierney",
+        "email": "luke-tierney@uiowa.edu",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-1.0-plus",
+    "declared_license": "GPL",
+    "notice_text": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:cran/R",
+        "extracted_requirement": ">= 2.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "purl": "pkg:cran/codetools@0.2-16",
+    "repository_homepage_url": "https://cran.r-project.org/package=codetools",
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]
