@@ -8,51 +8,59 @@
 # See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-import click
+import argparse
+import pathlib
+
 import utils_requirements
 
+"""
+Utilities to manage requirements files.
+NOTE: this should use ONLY the standard library and not import anything else
+because this is used for boostrapping with no requirements installed.
+"""
 
-@click.command()
-@click.option(
-    "-s",
-    "--site-packages-dir",
-    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False, resolve_path=True),
-    required=True,
-    metavar="DIR",
-    help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
-)
-@click.option(
-    "-d",
-    "--dev-requirements-file",
-    type=click.Path(path_type=str, dir_okay=False),
-    metavar="FILE",
-    default="requirements-dev.txt",
-    show_default=True,
-    help="Path to the dev requirements file to update or create.",
-)
-@click.option(
-    "-r",
-    "--main-requirements-file",
-    type=click.Path(path_type=str, dir_okay=False),
-    default="requirements.txt",
-    metavar="FILE",
-    show_default=True,
-    help="Path to the main requirements file. Its requirements will be excluded "
-    "from the generated dev requirements.",
-)
-@click.help_option("-h", "--help")
-def gen_dev_requirements(site_packages_dir, dev_requirements_file, main_requirements_file):
-    """
+
+def gen_dev_requirements():
+    description = """
     Create or overwrite the `--dev-requirements-file` pip requirements FILE with
     all Python packages found installed in `--site-packages-dir`. Exclude
     package names also listed in the --main-requirements-file pip requirements
     FILE (that are assume to the production requirements and therefore to always
     be present in addition to the development requirements).
     """
+    parser = argparse.ArgumentParser(description=description)
+
+    parser.add_argument(
+        "-s",
+        "--site-packages-dir",
+        type=pathlib.Path,
+        required=True,
+        metavar="DIR",
+        help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
+    )
+    parser.add_argument(
+        "-d",
+        "--dev-requirements-file",
+        type=pathlib.Path,
+        metavar="FILE",
+        default="requirements-dev.txt",
+        help="Path to the dev requirements file to update or create.",
+    )
+    parser.add_argument(
+        "-r",
+        "--main-requirements-file",
+        type=pathlib.Path,
+        default="requirements.txt",
+        metavar="FILE",
+        help="Path to the main requirements file. Its requirements will be excluded "
+        "from the generated dev requirements.",
+    )
+    args = parser.parse_args()
+
     utils_requirements.lock_dev_requirements(
-        dev_requirements_file=dev_requirements_file,
-        main_requirements_file=main_requirements_file,
-        site_packages_dir=site_packages_dir,
+        dev_requirements_file=args.dev_requirements_file,
+        main_requirements_file=args.main_requirements_file,
+        site_packages_dir=args.site_packages_dir,
     )
 
 
