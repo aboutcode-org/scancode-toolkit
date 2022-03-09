@@ -9,7 +9,32 @@ our existing ones as well.
 
 Usage
 =====
-Usage instructions can be found in ``docs/skeleton-usage.rst``.
+
+A brand new project
+-------------------
+.. code-block:: bash
+
+    git init my-new-repo
+    cd my-new-repo
+    git pull git@github.com:nexB/skeleton
+
+    # Create the new repo on GitHub, then update your remote
+    git remote set-url origin git@github.com:nexB/your-new-repo.git
+
+From here, you can make the appropriate changes to the files for your specific project.
+
+Update an existing project
+---------------------------
+.. code-block:: bash
+
+    cd my-existing-project
+    git remote add skeleton git@github.com:nexB/skeleton
+    git fetch skeleton
+    git merge skeleton/main --allow-unrelated-histories
+
+This is also the workflow to use when updating the skeleton files in any given repository.
+
+More usage instructions can be found in ``docs/skeleton-usage.rst``.
 
 Release Notes
 =============
