@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import hashlib
 import io
 import re
 import shutil
@@ -39,7 +40,6 @@ from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from textcode.analysis import numbered_text_lines
-import hashlib
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -111,7 +111,6 @@ class License:
             'updated accordingly to point to a new license expression.')
     )
 
-    # TODO: this is not yet supported.
     language = attr.ib(
         default='en',
         repr=False,
@@ -396,10 +395,12 @@ class License:
         """
         return self._read_text(self.text_file)
 
-    def to_dict(self):
+    def to_dict(self, include_ignorables=True, include_text=False):
         """
-        Return an ordered mapping of license data (excluding texts).
-        Fields with empty values are not included.
+        Return an ordered mapping of license data (excluding text, unless
+        ``include_text`` is True). Fields with empty values are not included.
+        Optionally include the "ignorable*" attributes if ``include_ignorables``
+        is True.
         """
 
         # do not dump false, empties and paths
@@ -410,18 +411,25 @@ class License:
             if attr.name in ('data_file', 'text_file', 'src_dir',):
                 return False
 
-            # default to English
+            # default to English which is implied
             if attr.name == 'language' and value == 'en':
                 return False
 
             if attr.name == 'minimum_coverage' and value == 100:
                 return False
+
+            if not include_ignorables and  attr.name.startswith('ignorable_'):
+                return False
+
             return True
 
         data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
         cv = data.get('minimum_coverage', 0)
         if cv:
             data['minimum_coverage'] = as_int(cv)
+
+        if include_text:
+            data['text'] = self.text
         return data
 
     def dump(self):
@@ -523,10 +531,13 @@ class License:
             if lic.key != lic.key.lower():
                 error('Incorrect license key case. Should be lowercase.')
 
+            if len(lic.key) > 50:
+                error('key must be 50 characters or less.')
+
             if not lic.short_name:
                 error('No short name')
             elif len(lic.short_name) > 50:
-                error('short name must be under 50 characters.')
+                error('short name must be 50 characters or less.')
 
             if not lic.name:
                 error('No name')
@@ -594,6 +605,9 @@ class License:
 
             # SPDX consistency
             if lic.spdx_license_key:
+                if len(lic.spdx_license_key) > 50:
+                    error('spdx_license_key must be 50 characters or less.')
+
                 by_spdx_key[lic.spdx_license_key].append(key)
             else:
                 # SPDX license key is now mandatory
@@ -665,11 +679,15 @@ def ignore_editor_tmp_files(location):
     return location.endswith('.swp')
 
 
-def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
+def load_licenses(
+    licenses_data_dir=licenses_data_dir,
+    with_deprecated=False,
+):
     """
     Return a mapping of {key: License} loaded from license data and text files
     found in ``licenses_data_dir``. Raise Exceptions if there are dangling or
-    orphaned files. Optionally include deprecated license if ``with_deprecated``
+    orphaned files.
+    Optionally include deprecated license if ``with_deprecated``
     is True.
     """
     licenses = {}
@@ -684,7 +702,10 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
-            lic = License(key=key, src_dir=licenses_data_dir)
+            try:
+                lic = License(key=key, src_dir=licenses_data_dir)
+            except Exception as e:
+                raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
             used_files.add(data_file)
             if exists(lic.text_file):
                 used_files.add(lic.text_file)
@@ -713,15 +734,21 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 def get_rules(
     licenses_db=None,
     licenses_data_dir=licenses_data_dir,
-    rules_data_dir=rules_data_dir
+    rules_data_dir=rules_data_dir,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
     ``licenses_data_dir`` and rule files found in `rules_data_dir`. Raise an
     Exception if a rule is inconsistent or incorrect.
     """
-    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
-    rules = list(load_rules(rules_data_dir=rules_data_dir))
+    licenses_db = licenses_db or load_licenses(
+        licenses_data_dir=licenses_data_dir,
+    )
+
+    rules = list(load_rules(
+        rules_data_dir=rules_data_dir,
+    ))
+
     validate_rules(rules, licenses_db)
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
@@ -775,30 +802,40 @@ def build_rules_from_licenses(licenses):
     Return an iterable of rules built from each license text from a ``licenses``
     iterable of License objects.
     """
-    for license_key, license_obj in licenses.items():
-        text_file = join(license_obj.src_dir, license_obj.text_file)
-        if exists(text_file):
-            minimum_coverage = license_obj.minimum_coverage or 0
-            yield Rule(
-                text_file=text_file,
-                license_expression=license_key,
+    for license_obj in licenses.values():
+        rule = build_rule_from_license(license_obj)
+        if rule:
+            yield rule
 
-                # a license text is always 100% relevant
-                has_stored_relevance=True,
-                relevance=100,
 
-                has_stored_minimum_coverage=bool(minimum_coverage),
-                minimum_coverage=minimum_coverage,
+def build_rule_from_license(license_obj):
+    """
+    Return a Rule built from a ``license`` License object, or None.
+    """
+    text_file = join(license_obj.src_dir, license_obj.text_file)
+    if exists(text_file):
+        minimum_coverage = license_obj.minimum_coverage or 0
+        return Rule(
+            text_file=text_file,
+            license_expression=license_obj.key,
 
-                is_from_license=True,
-                is_license_text=True,
+            # a license text is always 100% relevant
+            has_stored_relevance=True,
+            relevance=100,
 
-                ignorable_copyrights=license_obj.ignorable_copyrights,
-                ignorable_holders=license_obj.ignorable_holders,
-                ignorable_authors=license_obj.ignorable_authors,
-                ignorable_urls=license_obj.ignorable_urls,
-                ignorable_emails=license_obj.ignorable_emails,
-            )
+            has_stored_minimum_coverage=bool(minimum_coverage),
+            minimum_coverage=minimum_coverage,
+
+            is_from_license=True,
+            is_license_text=True,
+
+            ignorable_copyrights=license_obj.ignorable_copyrights,
+            ignorable_holders=license_obj.ignorable_holders,
+            ignorable_authors=license_obj.ignorable_authors,
+            ignorable_urls=license_obj.ignorable_urls,
+            ignorable_emails=license_obj.ignorable_emails,
+        )
+
 
 
 def get_all_spdx_keys(licenses_db):
@@ -898,7 +935,7 @@ def load_rules(rules_data_dir=rules_data_dir):
             )
 
         if unknown_files:
-            files = '\n'.join(sorted(f'f"ile://{f}"' for f in unknown_files))
+            files = '\n'.join(sorted(f'file://{f}"' for f in unknown_files))
             msg += (
                 '\nOrphaned files in rule directory: '
                 f'{rules_data_dir!r}\n{files}'
@@ -1048,6 +1085,14 @@ class BasicRule:
             'license text, notice or tag but is not actually it. '
             'Mutually exclusive from any other is_license_* flag')
     )
+
+    language = attr.ib(
+        default='en',
+        repr=False,
+        metadata=dict(
+            help='Two-letter ISO 639-1 language code if this license text is '
+            'not in English. See https://en.wikipedia.org/wiki/ISO_639-1 .')
+        )
 
     minimum_coverage = attr.ib(
         default=0,
@@ -1529,6 +1574,10 @@ class BasicRule:
             'is_license_intro',
             'is_continuous',
         )
+
+        # default to English which is implied
+        if self.language != 'en':
+            data['language'] = self.language
 
         for flag in flags:
             tag_value = getattr(self, flag, False)
@@ -2089,7 +2138,7 @@ class UnknownRule(Rule):
     def compute_unique_id(self):
         """
         Return a a unique id string based on this rule content. (Today this is
-        a MD5 of the text, but that's an implementation detail)
+        an MD5 checksum of the text, but that's an implementation detail)
         """
         return hashlib.md5(self.stored_text.encode('utf-8')).hexdigest()
 

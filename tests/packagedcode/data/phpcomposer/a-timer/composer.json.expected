@@ -40,36 +40,38 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:composer/php",
-        "requirement": ">=5.6.0",
-        "scope": "require",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/phpunit/phpunit",
-        "requirement": "^5.6",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:composer/squizlabs/php_codesniffer",
-        "requirement": "^2.7",
-        "scope": "require-dev",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:composer/php",
+        "extracted_requirement": ">=5.6.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/phpunit/phpunit",
+        "extracted_requirement": "^5.6",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "extracted_requirement": "^2.7",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:composer/jandreasn/a-timer",
     "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
     "repository_download_url": null,

@@ -10,13 +10,39 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/mocha",
+      "extracted_requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:npm/mocha",
+      "for_package": "pkg:npm/cookie-signature@1.0.3",
+      "lockfile": "package.json"
+    },
+    {
+      "purl": "pkg:npm/should",
+      "extracted_requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:npm/should",
+      "for_package": "pkg:npm/cookie-signature@1.0.3",
+      "lockfile": "package.json"
     }
   ],
   "packages": [
@@ -56,30 +82,18 @@
       "vcs_url": "git+https://github.com/visionmedia/node-cookie-signature.git",
       "copyright": null,
       "license_expression": null,
-      "declared_license": [],
+      "declared_license": null,
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:npm/mocha",
-          "requirement": "*",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:npm/should",
-          "requirement": "*",
-          "scope": "devDependencies",
-          "is_runtime": false,
-          "is_optional": true,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/cookie-signature@1.0.3",
+      "package_data_files": [
+        "package.json"
+      ],
+      "files": [
+        "package.json"
+      ],
       "purl": "pkg:npm/cookie-signature@1.0.3",
       "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
       "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
@@ -90,7 +104,7 @@
     {
       "path": "package.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -129,33 +143,37 @@
           "license_expression": null,
           "declared_license": [],
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [
-            {
-              "purl": "pkg:npm/mocha",
-              "requirement": "*",
-              "scope": "devDependencies",
-              "is_runtime": false,
-              "is_optional": true,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:npm/should",
-              "requirement": "*",
-              "scope": "devDependencies",
-              "is_runtime": false,
-              "is_optional": true,
-              "is_resolved": false
-            }
-          ],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/mocha",
+              "extracted_requirement": "*",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/should",
+              "extracted_requirement": "*",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
           "purl": "pkg:npm/cookie-signature@1.0.3",
           "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
           "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
           "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/cookie-signature@1.0.3"
       ],
       "scan_errors": []
     }

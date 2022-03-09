@@ -24,22 +24,22 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
-      "requirement": "2.0",
-      "scope": "provided",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/javax.servlet/jstl@1.1.0?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
+      "extracted_requirement": "2.0",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/javax.servlet/jstl@1.1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/javax/servlet/jstl/1.1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/javax/servlet/jstl/1.1.0/jstl-1.1.0.jar",

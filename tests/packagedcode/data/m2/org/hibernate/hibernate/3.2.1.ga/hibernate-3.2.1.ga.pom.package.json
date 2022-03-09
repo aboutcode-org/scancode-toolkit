@@ -39,150 +39,166 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/net.sf.ehcache/ehcache@1.2.3",
-      "requirement": "1.2.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/swarmcache/swarmcache@1.0RC2",
-      "requirement": "1.0RC2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jboss/jboss-cache@1.2.2",
-      "requirement": "1.2.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jgroups/jgroups-all@2.2.8",
-      "requirement": "2.2.8",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/javax.transaction/jta@1.0.1B",
-      "requirement": "1.0.1B",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
-      "requirement": "1.0.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/c3p0/c3p0@0.9.0",
-      "requirement": "0.9.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm-attrs@1.5.3",
-      "requirement": "1.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/javax.security/jacc@1.0",
-      "requirement": "1.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/dom4j/dom4j@1.6.1",
-      "requirement": "1.6.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/antlr/antlr@2.7.6",
-      "requirement": "2.7.6",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/cglib/cglib@2.1_3",
-      "requirement": "2.1_3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/opensymphony/oscache@2.1",
-      "requirement": "2.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/asm/asm@1.5.3",
-      "requirement": "1.5.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-collections/commons-collections@2.1.1",
-      "requirement": "2.1.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/proxool/proxool@0.8.3",
-      "requirement": "0.8.3",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/ant/ant@1.6.5",
-      "requirement": "1.6.5",
-      "scope": "provided",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate@3.2.1.ga?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/net.sf.ehcache/ehcache@1.2.3",
+      "extracted_requirement": "1.2.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/swarmcache/swarmcache@1.0RC2",
+      "extracted_requirement": "1.0RC2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jboss/jboss-cache@1.2.2",
+      "extracted_requirement": "1.2.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jgroups/jgroups-all@2.2.8",
+      "extracted_requirement": "2.2.8",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.transaction/jta@1.0.1B",
+      "extracted_requirement": "1.0.1B",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
+      "extracted_requirement": "1.0.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/c3p0/c3p0@0.9.0",
+      "extracted_requirement": "0.9.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm-attrs@1.5.3",
+      "extracted_requirement": "1.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.security/jacc@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/dom4j/dom4j@1.6.1",
+      "extracted_requirement": "1.6.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/antlr/antlr@2.7.6",
+      "extracted_requirement": "2.7.6",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/cglib/cglib@2.1_3",
+      "extracted_requirement": "2.1_3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/opensymphony/oscache@2.1",
+      "extracted_requirement": "2.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/asm/asm@1.5.3",
+      "extracted_requirement": "1.5.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-collections/commons-collections@2.1.1",
+      "extracted_requirement": "2.1.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/proxool/proxool@0.8.3",
+      "extracted_requirement": "0.8.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/ant/ant@1.6.5",
+      "extracted_requirement": "1.6.5",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.hibernate/hibernate@3.2.1.ga",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.1.ga/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.1.ga/hibernate-3.2.1.ga.jar",

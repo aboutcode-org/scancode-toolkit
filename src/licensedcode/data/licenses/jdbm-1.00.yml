@@ -1,0 +1,11 @@
+key: jdbm-1.00
+short_name: JDBM License v1.00
+name: JDBM License v1.00
+category: Permissive
+owner: JovalCM
+homepage_url: https://github.com/joval/jdbm/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-jdbm-1.00
+ignorable_urls:
+    - http://jdbm.sourceforge.net/
+ignorable_emails:
+    - cg@cdegroot.com

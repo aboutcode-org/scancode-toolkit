@@ -1,102 +1,104 @@
-{
-  "type": "cran",
-  "namespace": null,
-  "name": "geometry",
-  "version": "0.4.2",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": "Makes the 'Qhull' library <http://www.qhull.org>\navailable in R, in a similar manner as in Octave and MATLAB. Qhull\ncomputes convex hulls, Delaunay triangulations, halfspace\nintersections about a point, Voronoi diagrams, furthest-site\nDelaunay triangulations, and furthest-site Voronoi diagrams. It\nruns in 2D, 3D, 4D, and higher dimensions. It implements the\nQuickhull algorithm for computing the convex hull. Qhull does not\nsupport constrained Delaunay triangulations, or mesh generation of\nnon-convex objects, but the package does include some R functions\nthat allow for this.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": null,
-      "role": "maintainer",
-      "name": "David C. Sterratt",
-      "email": "david.c.sterratt@ed.ac.uk",
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Jean-Romain Roussel [cph, ctb] (wrote tsearch function with QuadTrees)",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "C. B. Barber [cph]",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Kai Habel [cph, aut]",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Raoul Grasman [cph, aut]",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Robert B. Gramacy [cph, aut]",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "Pavlo Mozharovskyi [cph, aut]",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": null,
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "gpl-3.0",
-  "declared_license": "GPL (>= 3)",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:cran/R",
-      "requirement": ">= 3.0.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:cran/geometry@0.4.2",
-  "repository_homepage_url": "https://cran.r-project.org/package=geometry",
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[
+  {
+    "type": "cran",
+    "namespace": null,
+    "name": "geometry",
+    "version": "0.4.2",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Makes the 'Qhull' library <http://www.qhull.org>\navailable in R, in a similar manner as in Octave and MATLAB. Qhull\ncomputes convex hulls, Delaunay triangulations, halfspace\nintersections about a point, Voronoi diagrams, furthest-site\nDelaunay triangulations, and furthest-site Voronoi diagrams. It\nruns in 2D, 3D, 4D, and higher dimensions. It implements the\nQuickhull algorithm for computing the convex hull. Qhull does not\nsupport constrained Delaunay triangulations, or mesh generation of\nnon-convex objects, but the package does include some R functions\nthat allow for this.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "David C. Sterratt",
+        "email": "david.c.sterratt@ed.ac.uk",
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Jean-Romain Roussel [cph, ctb] (wrote tsearch function with QuadTrees)",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "C. B. Barber [cph]",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Kai Habel [cph, aut]",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Raoul Grasman [cph, aut]",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Robert B. Gramacy [cph, aut]",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "Pavlo Mozharovskyi [cph, aut]",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-3.0",
+    "declared_license": "GPL (>= 3)",
+    "notice_text": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:cran/R",
+        "extracted_requirement": ">= 3.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "purl": "pkg:cran/geometry@0.4.2",
+    "repository_homepage_url": "https://cran.r-project.org/package=geometry",
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

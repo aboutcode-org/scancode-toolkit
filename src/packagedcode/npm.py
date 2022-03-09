@@ -54,7 +54,7 @@ if TRACE:
 
 
 @attr.s()
-class NpmPackage(models.Package):
+class NpmPackageData(models.PackageData):
     # TODO: add new lock files and yarn lock files
     mimetypes = ('application/x-tar',)
     default_type = 'npm'
@@ -85,13 +85,13 @@ class NpmPackage(models.Package):
 
 
 @attr.s()
-class PackageJson(NpmPackage, models.PackageManifest):
+class PackageJson(NpmPackageData, models.PackageDataFile):
 
     file_patterns = ('package.json',)
     extensions = ('.tgz',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -121,7 +121,7 @@ class PackageJson(NpmPackage, models.PackageManifest):
             else:
                 homepage = ''
         namespace, name = split_scoped_package_name(name)
-        package = NpmPackage(
+        package = cls(
             namespace=namespace or None,
             name=name,
             version=version or None,
@@ -177,7 +177,7 @@ class PackageJson(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class PackageLockJson(NpmPackage, models.PackageManifest):
+class PackageLockJson(NpmPackageData, models.PackageDataFile):
 
     file_patterns = (
         'npm-shrinkwrap.json',
@@ -196,7 +196,7 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
             and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -229,7 +229,7 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires-dev',
-                            requirement=dep_req,
+                            extracted_requirement=dep_req,
                             is_runtime=False,
                             is_optional=True,
                             is_resolved=True,
@@ -240,7 +240,7 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
                         models.DependentPackage(
                             purl=purl,
                             scope='requires',
-                            requirement=dep_req,
+                            extracted_requirement=dep_req,
                             is_runtime=True,
                             is_optional=False,
                             is_resolved=True,
@@ -264,7 +264,7 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
                             version=dep_version,
                         ).to_string(),
                         scope='dependencies',
-                        requirement=requirement,
+                        extracted_requirement=requirement,
                         is_runtime=True,
                         is_optional=False,
                         is_resolved=True,
@@ -318,13 +318,13 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class YarnLockJson(NpmPackage, models.PackageManifest):
+class YarnLockJson(NpmPackageData, models.PackageDataFile):
 
     file_patterns = ('yarn.lock',)
     extensions = ('.tgz',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -396,7 +396,7 @@ class YarnLockJson(NpmPackage, models.PackageManifest):
                                 models.DependentPackage(
                                     purl=PackageURL(type='npm', name=dep).to_string(),
                                     scope='dependencies',
-                                    requirement=req,
+                                    extracted_requirement=req,
                                     is_runtime=True,
                                     is_optional=False,
                                     is_resolved=True,
@@ -421,7 +421,7 @@ class YarnLockJson(NpmPackage, models.PackageManifest):
                         models.DependentPackage(
                             purl=PackageURL(type='npm', name=dep).to_string(),
                             scope='dependencies',
-                            requirement=req,
+                            extracted_requirement=req,
                             is_runtime=True,
                             is_optional=False,
                             is_resolved=True,
@@ -447,7 +447,7 @@ class YarnLockJson(NpmPackage, models.PackageManifest):
                             name=package.name,
                             version=package.version
                         ).to_string(),
-                        requirement=requirement,
+                        extracted_requirement=requirement,
                         scope='dependencies',
                         is_runtime=True,
                         is_optional=False,
@@ -458,6 +458,28 @@ class YarnLockJson(NpmPackage, models.PackageManifest):
             yield cls(dependencies=packages_dependencies)
             for package in packages:
                 yield package
+
+
+@attr.s()
+class NpmPackage(NpmPackageData, models.Package):
+    """
+    A NPM Package that is created out of one/multiple npm package
+    manifests, lockfiles, build scripts and package-like data, with it's files.
+    """
+
+    @property
+    def ignore_paths(self):
+        return [
+            "node_modules"
+        ]
+
+    @property
+    def manifests(self):
+        return [
+            PackageJson,
+            PackageLockJson,
+            YarnLockJson
+        ]
 
 
 def compute_normalized_license(declared_license):
@@ -902,7 +924,7 @@ def deps_mapper(deps, package, field_name):
             dep = models.DependentPackage(
                 purl=purl,
                 scope=field_name,
-                requirement=requirement,
+                extracted_requirement=requirement,
                 **dependency_attributes
             )
             dependencies.append(dep)

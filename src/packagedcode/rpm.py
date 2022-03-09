@@ -112,7 +112,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
 
 @attr.s()
-class RpmPackage(models.Package, models.PackageManifest):
+class RpmPackageData(models.PackageData):
 
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
@@ -128,7 +128,7 @@ class RpmPackage(models.Package, models.PackageManifest):
         return detected
 
     def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
+        data = models.PackageData.to_dict(self, **kwargs)
         if _detailed:
             #################################################
             data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
@@ -151,18 +151,18 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
     # note that we also have file flags that can tell us which file is a license and doc.
 
     # dump the rpmdb to XMLish
-    xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
+    xmlish_loc = rpm_installed.collPackageDataWithect_installed_rpmdb_xmlish_from_rootfs(root_dir)
     return rpm_installed.parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
 
 
 @attr.s()
-class RpmManifest(RpmPackage, models.PackageManifest):
+class RpmManifest(RpmPackageData, models.PackageDataFile):
 
     file_patterns = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -211,7 +211,7 @@ class RpmManifest(RpmPackage, models.PackageManifest):
                 src_qualifiers['arch'] = sarch
 
             src_purl = models.PackageURL(
-                type=RpmPackage.default_type,
+                type=RpmPackageData.default_type,
                 name=sname,
                 version=src_evr,
                 qualifiers=src_qualifiers
@@ -265,10 +265,23 @@ class RpmManifest(RpmPackage, models.PackageManifest):
 
         yield package
 
+
+@attr.s()
+class RpmPackage(RpmPackageData, models.Package):
+    """
+    A RPM Package that is created out of one/multiple RPM package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            RpmManifest
+        ]
+
 ############################################################################
 # FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py
 ############################################################################
-
 
 def detect_declared_license(declared):
     """

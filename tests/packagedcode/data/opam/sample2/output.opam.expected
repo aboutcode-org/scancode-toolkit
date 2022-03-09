@@ -1,4 +1,4 @@
-[  
+[
   {
     "type": "opam",
     "namespace": null,
@@ -40,60 +40,65 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:opam/ocaml",
-        "requirement": ">= 4.02.0",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/dune",
-        "requirement": ">= 1.11.1",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/ocaml-migrate-parsetree",
-        "requirement": ">= 1.4",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/ppx_tools_versioned",
-        "requirement": ">= 5.2.3",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/uchar",
-        "requirement": "",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/js_of_ocaml-compiler",
-        "requirement": "= version",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "extracted_requirement": ">= 4.02.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/dune",
+        "extracted_requirement": ">= 1.11.1",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/ocaml-migrate-parsetree",
+        "extracted_requirement": ">= 1.4",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/ppx_tools_versioned",
+        "extracted_requirement": ">= 5.2.3",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/uchar",
+        "extracted_requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/js_of_ocaml-compiler",
+        "extracted_requirement": "= version",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:opam/js_of_ocaml",
     "repository_homepage_url": "https://opam.ocaml.org/packages/js_of_ocaml",
     "repository_download_url": null,

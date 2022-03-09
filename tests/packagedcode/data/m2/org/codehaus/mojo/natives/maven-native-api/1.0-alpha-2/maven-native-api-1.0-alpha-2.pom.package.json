@@ -24,38 +24,40 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/bcel/bcel@5.1",
-      "requirement": "5.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo.natives/maven-native-api@1.0-alpha-2?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/bcel/bcel@5.1",
+      "extracted_requirement": "5.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.mojo.natives/maven-native-api@1.0-alpha-2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/natives/maven-native-api/1.0-alpha-2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/natives/maven-native-api/1.0-alpha-2/maven-native-api-1.0-alpha-2.jar",

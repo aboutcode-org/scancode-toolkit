@@ -46,28 +46,29 @@
     "license_expression": "unknown",
     "declared_license": "BSD",
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:haxe/tink_core",
-        "requirement": null,
-        "scope": null,
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:haxe/tink_macro@3.23",
-        "requirement": null,
-        "scope": null,
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:haxe/tink_core",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:haxe/tink_macro@3.23",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:haxe/selecthxml@0.5.1",
     "repository_homepage_url": "https://lib.haxe.org/p/selecthxml",
     "repository_download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",

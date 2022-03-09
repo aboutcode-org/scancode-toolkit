@@ -1,0 +1,4 @@
+license_expression: mx4j
+is_license_text: yes
+ignorable_urls:
+    - http://mx4j.sourceforge.net/

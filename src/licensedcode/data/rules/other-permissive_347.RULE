@@ -1,0 +1,1 @@
+You may use this code any way you wish, private, educational, or commercial, as long as this whole comment accompanies it. See http://burtleburtle.net/bob/hash/evahash.html Use for hash table lookup, or anything where one collision in 2^^64 is acceptable. Do not use for cryptographic purposes.

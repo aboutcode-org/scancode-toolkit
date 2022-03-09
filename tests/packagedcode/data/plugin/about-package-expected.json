@@ -10,114 +10,22 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 2
       }
     }
   ],
-  "packages": [
-    {
-      "type": "about",
-      "namespace": null,
-      "name": "apipkg",
-      "version": "1.4",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "owner",
-          "name": "Holger Krekel",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "https://bitbucket.org/hpk42/apipkg",
-      "download_url": "https://pypi.python.org/packages/94/72/fd4f2e46ce7b0d388191c819ef691c8195fab09602bbf1a2f92aa5351444/apipkg-1.4-py2.py3-none-any.whl#md5=5644eb6aff3f19e13430251a820e987f",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": "Copyright (c) 2009 holger krekel",
-      "license_expression": "mit",
-      "declared_license": "mit",
-      "notice_text": null,
-      "root_path": "apipkg.ABOUT",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {
-        "about_resource": "apipkg-1.4-py2.py3-none-any.whl"
-      },
-      "purl": "pkg:about/apipkg@1.4",
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
-    },
-    {
-      "type": "about",
-      "namespace": null,
-      "name": "appdirs",
-      "version": "1.4.3",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "owner",
-          "name": "ActiveState",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "https://pypi.python.org/pypi/appdirs",
-      "download_url": "https://pypi.python.org/packages/56/eb/810e700ed1349edde4cbdc1b2a21e28cdf115f9faf263f6bbf8447c1abf3/appdirs-1.4.3-py2.py3-none-any.whl#md5=9ed4b51c9611775c3078b3831072e153",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
-      "license_expression": "mit",
-      "declared_license": "mit",
-      "notice_text": null,
-      "root_path": "appdirs.ABOUT",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {
-        "about_resource": "appdirs-1.4.3-py2.py3-none-any.whl"
-      },
-      "purl": "pkg:about/appdirs@1.4.3",
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
-    }
-  ],
+  "dependencies": [],
+  "packages": [],
   "files": [
     {
       "path": "apipkg.ABOUT",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "about",
           "namespace": null,
@@ -152,25 +60,25 @@
           "license_expression": "mit",
           "declared_license": "mit",
           "notice_text": null,
-          "root_path": "apipkg.ABOUT",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {
             "about_resource": "apipkg-1.4-py2.py3-none-any.whl"
           },
+          "dependencies": [],
           "purl": "pkg:about/apipkg@1.4",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "appdirs.ABOUT",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "about",
           "namespace": null,
@@ -205,19 +113,19 @@
           "license_expression": "mit",
           "declared_license": "mit",
           "notice_text": null,
-          "root_path": "appdirs.ABOUT",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {
             "about_resource": "appdirs-1.4.3-py2.py3-none-any.whl"
           },
+          "dependencies": [],
           "purl": "pkg:about/appdirs@1.4.3",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

@@ -58,60 +58,65 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:npm/csscomb",
-        "requirement": "~3.1.0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt",
-        "requirement": "^0.4.5",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt-contrib-clean",
-        "requirement": "^0.6.0",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt-contrib-jshint",
-        "requirement": "^0.11.2",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt-contrib-nodeunit",
-        "requirement": "^0.4.1",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/grunt",
-        "requirement": ">=0.4.0",
-        "scope": "peerDependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/csscomb",
+        "extracted_requirement": "~3.1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt",
+        "extracted_requirement": "^0.4.5",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt-contrib-clean",
+        "extracted_requirement": "^0.6.0",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt-contrib-jshint",
+        "extracted_requirement": "^0.11.2",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt-contrib-nodeunit",
+        "extracted_requirement": "^0.4.1",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/grunt",
+        "extracted_requirement": ">=0.4.0",
+        "scope": "peerDependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:npm/grunt-csscomb@3.1.1",
     "repository_homepage_url": "https://www.npmjs.com/package/grunt-csscomb",
     "repository_download_url": "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz",

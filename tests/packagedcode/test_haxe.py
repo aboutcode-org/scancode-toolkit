@@ -19,7 +19,7 @@ class TestHaxe(PackageTester):
 
     def test_is_manifest_haxelib_json(self):
         test_file = self.get_test_loc('haxe/basic/haxelib.json')
-        assert haxe.HaxelibJson.is_manifest(test_file)
+        assert haxe.HaxelibJson.is_package_data_file(test_file)
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('haxe/basic/haxelib.json')

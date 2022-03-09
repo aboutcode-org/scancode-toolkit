@@ -1,0 +1,14 @@
+key: tanuki-development
+short_name: Tanuki Development License 1.3
+name: Tanuki Development Software License Agreement 1.3
+category: Commercial
+owner: Tanuki Software
+homepage_url: https://wrapper.tanukisoftware.com/doc/english/licenseDevelopment.html#text
+spdx_license_key: LicenseRef-scancode-tanuki-development
+faq_url: https://wrapper.tanukisoftware.com/doc/english/licenseDevelopment.html#overview
+ignorable_copyrights:
+    - Copyright (c) 2001 Silver Egg Technology
+ignorable_holders:
+    - Silver Egg Technology
+ignorable_urls:
+    - http://wrapper.tanukisoftware.org/

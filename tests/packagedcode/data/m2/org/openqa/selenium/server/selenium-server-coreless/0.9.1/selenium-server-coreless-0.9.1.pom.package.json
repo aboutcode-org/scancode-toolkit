@@ -24,54 +24,58 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/ant/ant",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/jetty/org.mortbay.jetty",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/commons-logging/commons-logging",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/javax.servlet/servlet-api",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/junit/junit",
-      "requirement": null,
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.openqa.selenium.server/selenium-server-coreless@0.9.1?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/ant/ant",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jetty/org.mortbay.jetty",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/javax.servlet/servlet-api",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.openqa.selenium.server/selenium-server-coreless@0.9.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/openqa/selenium/server/selenium-server-coreless/0.9.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/server/selenium-server-coreless/0.9.1/selenium-server-coreless-0.9.1.jar",

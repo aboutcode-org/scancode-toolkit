@@ -1,0 +1,12 @@
+key: lal-1.2
+language: fr
+short_name: Licence Art Libre 1.2
+name: Licence Art Libre 1.2
+category: Copyleft
+owner: Licence Art Libre
+homepage_url: http://artlibre.org/licence/lal/licence-art-libre-12/
+spdx_license_key: LAL-1.2
+text_urls:
+    - http://artlibre.org/licence/lal/licence-art-libre-12/
+    - http://artlibre.org/licence/lal/it/
+    - http://artlibre.org/licence/lal/es/

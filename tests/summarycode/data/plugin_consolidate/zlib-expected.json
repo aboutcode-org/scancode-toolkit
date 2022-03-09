@@ -437,7 +437,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -474,7 +474,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -527,7 +527,7 @@
           "end_line": 1230
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -611,7 +611,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -710,7 +710,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -742,7 +742,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -822,7 +822,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -930,7 +930,7 @@
           "end_line": 111
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -1094,7 +1094,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1128,7 +1128,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1175,7 +1175,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1221,7 +1221,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "Osma.Ahvenlampi@hut.fi",
@@ -1309,7 +1309,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1343,7 +1343,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -1391,7 +1391,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -1519,7 +1519,7 @@
           "end_line": 78
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -1643,7 +1643,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1766,7 +1766,7 @@
           "end_line": 11
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "sjs@essex.ac.uk",
@@ -1889,7 +1889,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2006,7 +2006,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2046,7 +2046,7 @@
           "end_line": 63
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -2188,7 +2188,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2305,7 +2305,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2422,7 +2422,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2539,7 +2539,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2656,7 +2656,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2773,7 +2773,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2890,7 +2890,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2924,7 +2924,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -2956,7 +2956,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3024,7 +3024,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3056,7 +3056,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3090,7 +3090,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -3182,7 +3182,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -3222,7 +3222,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3254,7 +3254,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3286,7 +3286,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -3372,7 +3372,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3454,7 +3454,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -3494,7 +3494,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3526,7 +3526,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3558,7 +3558,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3610,7 +3610,7 @@
           "end_line": 10
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -3650,7 +3650,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3694,7 +3694,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -3734,7 +3734,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3766,7 +3766,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3800,7 +3800,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3832,7 +3832,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3864,7 +3864,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3896,7 +3896,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3940,7 +3940,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -4022,7 +4022,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4110,7 +4110,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4198,7 +4198,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4286,7 +4286,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4374,7 +4374,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4414,7 +4414,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -4494,7 +4494,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4582,7 +4582,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4670,7 +4670,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4751,7 +4751,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -4831,7 +4831,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -4871,7 +4871,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -4959,7 +4959,7 @@
           "end_line": 15
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -5024,7 +5024,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5056,7 +5056,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5136,7 +5136,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5218,7 +5218,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5252,7 +5252,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5332,7 +5332,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5424,7 +5424,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5506,7 +5506,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5540,7 +5540,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5632,7 +5632,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -5747,7 +5747,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -5799,7 +5799,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5831,7 +5831,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5863,7 +5863,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5895,7 +5895,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5927,7 +5927,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -6009,7 +6009,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -6049,7 +6049,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6081,7 +6081,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6155,7 +6155,7 @@
           "end_line": 13
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6193,7 +6193,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6236,7 +6236,7 @@
           "end_line": 5
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6290,7 +6290,7 @@
           "end_line": 5
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6344,7 +6344,7 @@
           "end_line": 5
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6387,7 +6387,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6419,7 +6419,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6505,7 +6505,7 @@
           "end_line": 11
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -6626,7 +6626,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -6682,7 +6682,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -6741,7 +6741,7 @@
           "end_line": 11
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -6784,7 +6784,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6816,7 +6816,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6906,7 +6906,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -7031,7 +7031,7 @@
           "end_line": 5
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -7090,7 +7090,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7133,7 +7133,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -7171,7 +7171,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -7203,7 +7203,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -7235,7 +7235,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -7321,7 +7321,7 @@
           "end_line": 35
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7376,7 +7376,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "autotools",
           "namespace": null,
@@ -7456,7 +7456,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7518,7 +7518,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7586,7 +7586,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7654,7 +7654,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7722,7 +7722,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7768,7 +7768,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -7838,7 +7838,7 @@
           "end_line": 191
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -7906,7 +7906,7 @@
           "end_line": 63
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -7960,7 +7960,7 @@
           "end_line": 45
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -8036,7 +8036,7 @@
           "end_line": 169
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8083,7 +8083,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -8151,7 +8151,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8225,7 +8225,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8377,7 +8377,7 @@
           "end_line": 58
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "cryogen@infoserve.net",
@@ -8510,7 +8510,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8589,7 +8589,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8698,7 +8698,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -8744,7 +8744,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -8848,7 +8848,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -8982,7 +8982,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9020,7 +9020,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9100,7 +9100,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9134,7 +9134,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9166,7 +9166,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9198,7 +9198,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -9284,7 +9284,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -9372,7 +9372,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -9460,7 +9460,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9494,7 +9494,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9526,7 +9526,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9558,7 +9558,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -9596,7 +9596,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9628,7 +9628,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9660,7 +9660,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9692,7 +9692,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9740,7 +9740,7 @@
           "end_line": 6
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "paag@tid.es",
@@ -9788,7 +9788,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9820,7 +9820,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -9869,7 +9869,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9901,7 +9901,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9933,7 +9933,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9965,7 +9965,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9997,7 +9997,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10029,7 +10029,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10061,7 +10061,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10093,7 +10093,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10125,7 +10125,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10169,7 +10169,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10203,7 +10203,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10235,7 +10235,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10267,7 +10267,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10299,7 +10299,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10331,7 +10331,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10363,7 +10363,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10395,7 +10395,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10427,7 +10427,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10459,7 +10459,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10491,7 +10491,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10523,7 +10523,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10567,7 +10567,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10601,7 +10601,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10633,7 +10633,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10665,7 +10665,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10697,7 +10697,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10729,7 +10729,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10761,7 +10761,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10793,7 +10793,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10825,7 +10825,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10857,7 +10857,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10901,7 +10901,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10935,7 +10935,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10967,7 +10967,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10999,7 +10999,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11031,7 +11031,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11063,7 +11063,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11095,7 +11095,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11127,7 +11127,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11159,7 +11159,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11191,7 +11191,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11235,7 +11235,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -11269,7 +11269,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11301,7 +11301,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11333,7 +11333,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11365,7 +11365,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11397,7 +11397,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11429,7 +11429,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11461,7 +11461,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11493,7 +11493,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11525,7 +11525,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11569,7 +11569,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -11603,7 +11603,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11635,7 +11635,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11667,7 +11667,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11699,7 +11699,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11779,7 +11779,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "rbrown64@csc.com.au",
@@ -11819,7 +11819,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11915,7 +11915,7 @@
           "end_line": 35
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -12037,7 +12037,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12071,7 +12071,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12106,7 +12106,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -12203,7 +12203,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -12327,7 +12327,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -12457,7 +12457,7 @@
           "end_line": 573
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "gzip@prep.ai.mit.edu",
@@ -12543,7 +12543,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12575,7 +12575,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12607,7 +12607,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12651,7 +12651,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12721,7 +12721,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12811,7 +12811,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12903,7 +12903,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -12991,7 +12991,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -13079,7 +13079,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13161,7 +13161,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -13259,7 +13259,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13329,7 +13329,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -13409,7 +13409,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13491,7 +13491,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13573,7 +13573,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13655,7 +13655,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13737,7 +13737,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13819,7 +13819,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13901,7 +13901,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13983,7 +13983,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14065,7 +14065,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14099,7 +14099,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14179,7 +14179,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14261,7 +14261,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14353,7 +14353,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14435,7 +14435,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14475,7 +14475,7 @@
           "end_line": 427
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "zinser@zinser.no-ip.info",
@@ -14518,7 +14518,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14550,7 +14550,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14630,7 +14630,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14712,7 +14712,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14746,7 +14746,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14778,7 +14778,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14810,7 +14810,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14842,7 +14842,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14874,7 +14874,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "eduardo.m.costa@gmail.com",
@@ -14918,7 +14918,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14998,7 +14998,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15032,7 +15032,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "rw@shadow.org.uk",
@@ -15070,7 +15070,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15108,7 +15108,7 @@
           "end_line": 2
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "m.zinser@gsi.de",
@@ -15146,7 +15146,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15214,7 +15214,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15246,7 +15246,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15278,7 +15278,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "jon-net@usa.net",
@@ -15326,7 +15326,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15358,7 +15358,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15390,7 +15390,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15434,7 +15434,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15468,7 +15468,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15500,7 +15500,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15532,7 +15532,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -15581,7 +15581,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15661,7 +15661,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15743,7 +15743,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15825,7 +15825,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "malbrech@eso.org",
@@ -15865,7 +15865,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15945,7 +15945,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -15985,7 +15985,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16065,7 +16065,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16099,7 +16099,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16131,7 +16131,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16163,7 +16163,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16195,7 +16195,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16227,7 +16227,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -16276,7 +16276,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16356,7 +16356,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16402,7 +16402,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16495,7 +16495,7 @@
           "end_line": 99
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -16561,7 +16561,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16593,7 +16593,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16637,7 +16637,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [
         {
@@ -16725,7 +16725,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16807,7 +16807,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16889,7 +16889,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16982,7 +16982,7 @@
           "end_line": 143
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -17137,7 +17137,7 @@
           "end_line": 117
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -17276,7 +17276,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -17327,7 +17327,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17359,7 +17359,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17391,7 +17391,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17429,7 +17429,7 @@
           "end_line": 7
         }
       ],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17509,7 +17509,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -17591,7 +17591,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [

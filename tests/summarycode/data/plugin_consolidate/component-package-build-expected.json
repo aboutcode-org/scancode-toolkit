@@ -16,48 +16,13 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
+        "spdx_license_list_version": "3.16",
         "files_count": 8
       }
     }
   ],
+  "dependencies": [],
   "packages": [
-    {
-      "type": "buck",
-      "namespace": null,
-      "name": "demo",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "root_path": "component-package-build/build",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:buck/demo",
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
-    },
     {
       "type": "npm",
       "namespace": null,
@@ -86,11 +51,18 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "root_path": "component-package-build/package",
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/test-package@0.0.1",
+      "package_data_files": [
+        "component-package-build/package/package.json"
+      ],
+      "files": [
+        "component-package-build/package/package.json",
+        "component-package-build/package/src1",
+        "component-package-build/package/src2"
+      ],
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
@@ -190,7 +162,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 8,
       "dirs_count": 3,
@@ -222,7 +195,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -254,7 +228,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "buck",
           "namespace": null,
@@ -278,20 +252,20 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "unknown",
           "declared_license": null,
           "notice_text": null,
-          "root_path": "component-package-build/build",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:buck/demo",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -323,7 +297,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -411,7 +386,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -498,7 +474,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -585,7 +562,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -672,7 +650,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -706,7 +685,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_software_1",
         "corp_ibm_1"
@@ -794,7 +774,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -823,16 +803,18 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "root_path": "component-package-build/package",
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:npm/test-package@0.0.1",
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
       ],
       "consolidated_to": [
         "apache_software_1"
@@ -920,7 +902,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -1005,7 +990,10 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "corp_ibm_1"
       ],

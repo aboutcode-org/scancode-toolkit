@@ -1,0 +1,5 @@
+// A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "external_dng_sdk_license"
+    // to get the below license kinds:
+    //   SPDX-license-identifier-MIT
+    //   legacy_by_exception_only (by exception only)

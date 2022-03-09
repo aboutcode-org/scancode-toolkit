@@ -1,0 +1,12 @@
+key: ms-office-extensible-file
+short_name: MS Office Extensible File License
+name: Microsoft Office Extensible File License
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-office-extensible-file
+text_urls:
+    - https://github.com/stephen-hardy/xlsx.js/blob/master/LICENSE.txt
+    - https://github.com/stephen-hardy/DOCX.js/blob/master/LICENSE.txt
+other_urls:
+    - https://github.com/stephen-hardy/DOCX.js/issues/8
+    - https://github.com/stephen-hardy/DOCX.js/issues/1

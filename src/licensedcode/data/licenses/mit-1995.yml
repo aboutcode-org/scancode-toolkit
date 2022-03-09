@@ -1,0 +1,11 @@
+key: mit-1995
+short_name: MIT 1995
+name: MIT INRIA W3C 1995
+category: Permissive
+owner: MIT
+homepage_url: https://github.com/robaho/lrmp/blob/master/java/main/inria/net/lrmp/Lrmp.java
+spdx_license_key: LicenseRef-scancode-mit-1995
+ignorable_copyrights:
+    - COPYRIGHT 1995 BY MASSACHUSETTS INSTITUTE OF TECHNOLOGY (MIT), INRIA
+ignorable_holders:
+    - MASSACHUSETTS INSTITUTE OF TECHNOLOGY (MIT), INRIA

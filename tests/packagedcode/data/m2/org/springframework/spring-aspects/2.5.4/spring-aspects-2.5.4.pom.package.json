@@ -39,54 +39,58 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",
-      "requirement": "1.5.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/aspectj/aspectjweaver@1.5.4",
-      "requirement": "1.5.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
-      "requirement": "1.1.1",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-beans@2.5.4",
-      "requirement": "2.5.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.springframework/spring-tx@2.5.4",
-      "requirement": "2.5.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.springframework/spring-aspects@2.5.4?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",
+      "extracted_requirement": "1.5.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/aspectj/aspectjweaver@1.5.4",
+      "extracted_requirement": "1.5.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "extracted_requirement": "1.1.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-beans@2.5.4",
+      "extracted_requirement": "2.5.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-tx@2.5.4",
+      "extracted_requirement": "2.5.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.springframework/spring-aspects@2.5.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.4/spring-aspects-2.5.4.jar",

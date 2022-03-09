@@ -32,54 +32,58 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
-      "requirement": "2.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.4",
-      "requirement": "1.0.4",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.shared/maven-shared-io@1.0",
-      "requirement": "1.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
-      "requirement": "1.0-alpha-9",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/file-management@1.1?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
+      "extracted_requirement": "2.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.4",
+      "extracted_requirement": "1.0.4",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.shared/maven-shared-io@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
+      "extracted_requirement": "1.0-alpha-9",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.shared/file-management@1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.jar",

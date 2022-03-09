@@ -59,36 +59,38 @@
       ]
     },
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:pypi/pykerberos",
-        "requirement": null,
-        "scope": "gssapi",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/dnspython",
-        "requirement": "<2.0.0,>=1.8.0",
-        "scope": "srv",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/ipaddress",
-        "requirement": null,
-        "scope": "tls",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pykerberos",
+        "extracted_requirement": null,
+        "scope": "gssapi",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/dnspython",
+        "extracted_requirement": "<2.0.0,>=1.8.0",
+        "scope": "srv",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/ipaddress",
+        "extracted_requirement": null,
+        "scope": "tls",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:pypi/pymongo@3.6.1",
     "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
     "repository_download_url": "https://pypi.org/packages/source/p/pymongo/pymongo-3.6.1.tar.gz",

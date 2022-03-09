@@ -1,0 +1,5 @@
+license_expression: unicode-dfs-2015
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/Unicode-DFS-2015

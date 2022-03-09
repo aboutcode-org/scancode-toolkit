@@ -44,7 +44,7 @@ import utils_thirdparty
 @click.option(
     "--strip-classifiers",
     is_flag=True,
-    help="Remove danglingf classifiers",
+    help="Remove dangling PyPI classifiers",
 )
 @click.help_option("-h", "--help")
 def fix_thirdparty_dir(

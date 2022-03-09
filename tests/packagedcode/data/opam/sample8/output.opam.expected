@@ -1,4 +1,4 @@
-[  
+[
   {
     "type": "opam",
     "namespace": null,
@@ -47,44 +47,47 @@
     "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
     "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:opam/ocaml",
-        "requirement": "< 4.05.0",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/base-unix",
-        "requirement": "",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/ocamlbuild",
-        "requirement": "build",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:opam/ocamlfind",
-        "requirement": "build",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "extracted_requirement": "< 4.05.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/base-unix",
+        "extracted_requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/ocamlbuild",
+        "extracted_requirement": "build",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:opam/ocamlfind",
+        "extracted_requirement": "build",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,

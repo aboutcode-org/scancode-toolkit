@@ -1,26 +1,10 @@
 primary_license:
 declared_license:
-license_expression: public-domain AND gpl-3.0-plus AND gpl-2.0-plus
+license_expression: gpl-3.0-plus AND gpl-2.0-plus
 copyright: |
   Copyright (c) 1988, 1992, 1993, 1994, 1995, 1996, 1997, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
   Copyright (c) 2006, 2007 Bdale Garbee <bdale@gag.com>
 matches:
-  - score: '70.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: public domain
   - score: '100.0'
     start_line: 20
     end_line: 26

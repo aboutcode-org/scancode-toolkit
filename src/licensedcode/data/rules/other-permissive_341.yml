@@ -1,0 +1,7 @@
+license_expression: other-permissive
+is_license_text: yes
+notes: https://github.com/DataJuggler/DataTier.Net/blob/cdd3493436b4c081db19829e7db3bed9389bf4b5/DataTier.Net/ProjectTemplates/DataTier.Net6.DataTemplate/Working/templates/DataTier.Net6.ClassLibrary/License/License.txt
+ignorable_copyrights:
+    - Copyright (c) 2022 - Data Juggler. Do
+ignorable_holders:
+    - Data Juggler. Do

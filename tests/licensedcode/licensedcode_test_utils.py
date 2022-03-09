@@ -50,6 +50,7 @@ class LicenseTest(object):
     license_expressions = attr.attrib(default=attr.Factory(list))
     notes = attr.attrib(default=None)
     expected_failure = attr.attrib(default=False)
+    language = attr.attrib(default='en')
 
     licensing = Licensing()
 
@@ -67,6 +68,7 @@ class LicenseTest(object):
                 raise Exception(f'Failed to read: file://{self.data_file}', e)
 
             self.license_expressions = data.pop('license_expressions', [])
+            self.language = data.pop('language', 'en')
             self.notes = data.pop('notes', None)
             # True if the test is expected to fail
             self.expected_failure = data.pop('expected_failure', False)
@@ -105,6 +107,8 @@ class LicenseTest(object):
         dct = {}
         if self.license_expressions:
             dct['license_expressions'] = self.license_expressions
+        if self.language and self.language != 'en':
+            dct['language'] = self.language
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
         if self.notes:

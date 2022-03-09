@@ -24,46 +24,49 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds",
-      "requirement": null,
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": null
-    },
-    {
-      "purl": "pkg:maven/jmock/jmock@1.0.1",
-      "requirement": "1.0.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jmock/jmock@1.0.1",
+      "extracted_requirement": "1.0.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-22/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-22/plexus-container-default-1.0-alpha-22.jar",

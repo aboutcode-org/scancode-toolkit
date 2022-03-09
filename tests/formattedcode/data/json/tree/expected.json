@@ -12,7 +12,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -21,6 +21,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [],
   "files": [
     {
@@ -60,7 +61,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -103,7 +105,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -146,7 +149,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -177,7 +181,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 361,
@@ -220,7 +225,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -263,7 +269,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -306,7 +313,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -349,7 +357,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

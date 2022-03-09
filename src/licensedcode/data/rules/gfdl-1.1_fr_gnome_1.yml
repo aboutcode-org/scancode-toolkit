@@ -1,0 +1,12 @@
+license_expression: gfdl-1.1
+is_license_notice: yes
+notes: plain text conversion with pandoc of desktop-docs/fdl/fr/index.docbook from https://download.gnome.org/sources/gnome-desktop/3.14/gnome-desktop-3.14.2.tar.xz
+ignorable_copyrights:
+    - Copyright (c) ANNEE
+ignorable_holders:
+    - ANNEE
+ignorable_urls:
+    - http://www.gnu.org/copyleft
+    - http://www.gnu.org/copyleft/
+    - http://www.gnu.org/copyleft/gpl.html
+    - http://www.gnu.org/fsf/fsf.html

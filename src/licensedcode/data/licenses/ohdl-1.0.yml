@@ -1,0 +1,10 @@
+key: ohdl-1.0
+short_name: OHDL-1.0
+name: Open Hardware Description License Version 1.0
+category: Copyleft Limited
+owner: FOSSi Foundation
+homepage_url: http://juliusbaxter.net/ohdl/ohdl.txt
+spdx_license_key: LicenseRef-scancode-ohdl-1.0
+faq_url: http://juliusbaxter.net/ohdl/
+ignorable_urls:
+    - http://juliusbaxter.net/ohdl/ohdl.txt

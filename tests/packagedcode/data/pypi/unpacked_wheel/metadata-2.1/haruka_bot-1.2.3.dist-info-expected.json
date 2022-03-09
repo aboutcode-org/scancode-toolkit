@@ -47,108 +47,119 @@
       ]
     },
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:pypi/click",
-        "requirement": "<8.0.0,>=7.1.2",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/httpx",
-        "requirement": "<0.18.0,>=0.17.0",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/nonebot-adapter-cqhttp",
-        "requirement": "<3.0.0,>=2.0.0-alpha.11",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/nonebot-plugin-apscheduler",
-        "requirement": "<0.2.0,>=0.1.2",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/nonebot2",
-        "requirement": "<3.0.0,>=2.0.0-alpha.11",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/packaging",
-        "requirement": "<21.0,>=20.9",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/pydantic",
-        "requirement": "<2.0.0,>=1.8.1",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/pyppeteer",
-        "requirement": "<0.3.0,>=0.2.5",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/python-dotenv",
-        "requirement": "<0.16.0,>=0.15.0",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/qrcode",
-        "requirement": "<7.0,>=6.1",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/rsa",
-        "requirement": "<5.0,>=4.7",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:pypi/tinydb",
-        "requirement": "<5.0.0,>=4.3.0",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/click",
+        "extracted_requirement": "<8.0.0,>=7.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/httpx",
+        "extracted_requirement": "<0.18.0,>=0.17.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/nonebot-adapter-cqhttp",
+        "extracted_requirement": "<3.0.0,>=2.0.0-alpha.11",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/nonebot-plugin-apscheduler",
+        "extracted_requirement": "<0.2.0,>=0.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/nonebot2",
+        "extracted_requirement": "<3.0.0,>=2.0.0-alpha.11",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/packaging",
+        "extracted_requirement": "<21.0,>=20.9",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pydantic",
+        "extracted_requirement": "<2.0.0,>=1.8.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pyppeteer",
+        "extracted_requirement": "<0.3.0,>=0.2.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/python-dotenv",
+        "extracted_requirement": "<0.16.0,>=0.15.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/qrcode",
+        "extracted_requirement": "<7.0,>=6.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/rsa",
+        "extracted_requirement": "<5.0,>=4.7",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/tinydb",
+        "extracted_requirement": "<5.0.0,>=4.3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:pypi/haruka-bot@1.2.3",
     "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
     "repository_download_url": "https://pypi.org/packages/source/h/haruka-bot/haruka-bot-1.2.3.tar.gz",

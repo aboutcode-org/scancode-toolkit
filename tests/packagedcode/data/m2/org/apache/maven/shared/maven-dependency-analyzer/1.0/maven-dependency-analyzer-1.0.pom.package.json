@@ -24,78 +24,85 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/asm/asm@3.0",
-      "requirement": "3.0",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.6",
-      "requirement": "1.4.6",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.5",
-      "requirement": "2.0.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-model@2.0.5",
-      "requirement": "2.0.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.5",
-      "requirement": "2.0.5",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-tools@1.0-alpha-3",
-      "requirement": "1.0-alpha-3",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/jmock/jmock@1.1.0",
-      "requirement": "1.1.0",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer@1.0?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/asm/asm@3.0",
+      "extracted_requirement": "3.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.6",
+      "extracted_requirement": "1.4.6",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.5",
+      "extracted_requirement": "2.0.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-model@2.0.5",
+      "extracted_requirement": "2.0.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.5",
+      "extracted_requirement": "2.0.5",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-tools@1.0-alpha-3",
+      "extracted_requirement": "1.0-alpha-3",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/jmock/jmock@1.1.0",
+      "extracted_requirement": "1.1.0",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.0/maven-dependency-analyzer-1.0.jar",

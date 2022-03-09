@@ -29,7 +29,7 @@ if TRACE:
 # TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
 
 @attr.s()
-class AboutPackage(models.Package):
+class AboutPackageData(models.PackageData):
 
     default_type = 'about'
 
@@ -44,13 +44,13 @@ class AboutPackage(models.Package):
 
 
 @attr.s()
-class Aboutfile(AboutPackage, models.PackageManifest):
+class Aboutfile(AboutPackageData, models.PackageDataFile):
 
     file_patterns = ('*.ABOUT',)
     extensions = ('.ABOUT',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

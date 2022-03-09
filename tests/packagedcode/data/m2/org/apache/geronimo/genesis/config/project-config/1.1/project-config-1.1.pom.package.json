@@ -39,54 +39,58 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.apache.geronimo.genesis.config/logging-config@1.1",
-      "requirement": "1.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/junit/junit@3.8.1",
-      "requirement": "3.8.1",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.geronimo.genesis.plugins/plugin-support@1.1",
-      "requirement": "1.1",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.apache.geronimo.genesis.config/logging-config@1.1",
-      "requirement": "1.1",
-      "scope": "dependencymanagement",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.geronimo.genesis.config/project-config@1.1?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.geronimo.genesis.config/logging-config@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.genesis.plugins/plugin-support@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.genesis.config/logging-config@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.apache.geronimo.genesis.config/project-config@1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/config/project-config/1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/config/project-config/1.1/project-config-1.1.jar",
