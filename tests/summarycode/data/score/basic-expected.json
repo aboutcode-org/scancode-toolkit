@@ -12,22 +12,23 @@
         "--license-clarity-score": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
-        "files_count": 3
+        "spdx_license_list_version": "3.16",
+        "files_count": 5
       }
     }
   ],
   "license_clarity_score": {
-    "score": 85,
-    "declared": true,
-    "discovered": 1.0,
-    "consistency": true,
-    "spdx": false,
-    "license_texts": true
+    "score": 90,
+    "declared_license": true,
+    "precise_license_detection": true,
+    "has_license_text": true,
+    "declared_copyrights": true,
+    "conflicting_license_categories": false,
+    "ambigous_compound_licensing": true
   },
   "files": [
     {
@@ -60,9 +61,120 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
-      "files_count": 3,
+      "files_count": 5,
       "dirs_count": 0,
-      "size_count": 4258,
+      "size_count": 4438,
+      "scan_errors": []
+    },
+    {
+      "path": "basic/Issues 9.desktop",
+      "type": "file",
+      "name": "Issues 9.desktop",
+      "base_name": "Issues 9",
+      "extension": ".desktop",
+      "size": 130,
+      "sha1": "a5c1c14a04a772ece820f5102547829f9e2825dc",
+      "md5": "0f4c458da9a63962580f062196ebe50d",
+      "sha256": "023132bf8f1bfa519790fd56a0bc2fa2c7a771f6390f04deee529def68e6c161",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "basic/Licence: public-.txt",
+      "type": "file",
+      "name": "Licence: public-.txt",
+      "base_name": "Licence: public-",
+      "extension": ".txt",
+      "size": 22,
+      "sha1": "ef7a232ef046ed4b960e40c958098b6c5b0f9153",
+      "md5": "c32a80bc1cd5e03ddd219f1002af830c",
+      "sha256": "b1ce3d34a2f0c7f07d6f6e6b6ae8d8cd2b0bd41d3229d184ad334e637e1dd82f",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with no line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "public-domain",
+          "score": 70.0,
+          "name": "Public Domain",
+          "short_name": "Public Domain",
+          "category": "Public Domain",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Unspecified",
+          "homepage_url": "http://www.linfo.org/publicdomain.html",
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml",
+          "spdx_license_key": "LicenseRef-scancode-public-domain",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "public-domain_bare_words.RULE",
+            "license_expression": "public-domain",
+            "licenses": [
+              "public-domain"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 70
+          }
+        }
+      ],
+      "license_expressions": [
+        "public-domain"
+      ],
+      "percentage_of_license_text": 66.67,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
       "scan_errors": []
     },
     {
@@ -71,10 +183,10 @@
       "name": "README.md",
       "base_name": "README",
       "extension": ".md",
-      "size": 1320,
-      "sha1": "00f197776bbbca2726c6f1ccf258b6f08e6d3455",
-      "md5": "c284e8c75f00df967ea1c26065937335",
-      "sha256": "632d6c3d76c21bcf0dc6a7042caf29606cc604d9d20812787ea6dd193498d474",
+      "size": 1348,
+      "sha1": "f4399249b905c17338eb06776a7205d6f643d396",
+      "md5": "d897358d498fd2dbb1efedfa297fc0f3",
+      "sha256": "63940bc96c0feeef3b22b96d7d6a4873cdb7f12151ce3362967afdc7f8ec6698",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -101,8 +213,8 @@
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
           "spdx_license_key": "MIT",
           "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 19,
-          "end_line": 36,
+          "start_line": 20,
+          "end_line": 37,
           "matched_rule": {
             "identifier": "mit.LICENSE",
             "license_expression": "mit",
@@ -127,9 +239,21 @@
       "license_expressions": [
         "mit"
       ],
-      "percentage_of_license_text": 80.9,
-      "copyrights": [],
-      "holders": [],
+      "percentage_of_license_text": 79.31,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) Example, Inc.",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Example, Inc.",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
