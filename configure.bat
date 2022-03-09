@@ -27,7 +27,7 @@
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
 set "REQUIREMENTS=--editable . --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
+set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
@@ -52,8 +52,9 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 @rem ################################
 @rem # Thirdparty package locations and index handling
 @rem # Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+@rem # offline mode for scancode installation with no index at all
 if exist "%CFG_ROOT_DIR%\thirdparty" (
-    set PIP_EXTRA_ARGS=--find-links "%CFG_ROOT_DIR%\thirdparty"
+    set PIP_EXTRA_ARGS=--no-index --find-links "%CFG_ROOT_DIR%\thirdparty"
 )
 set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% --find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
 
@@ -77,14 +78,11 @@ if not "%1" == "" (
     if "%1" EQU "--dev"    (
         set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     )
-    if "%1" EQU "--init"   (
-        set "NO_INDEX= "
-    )
     shift
     goto again
 )
 
-set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS%"
 
 
 @rem ################################

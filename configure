@@ -29,7 +29,7 @@ CLI_ARGS=$1
 
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --constraint requirements-dev.txt"
+DEV_REQUIREMENTS="--editable .[testing,packages] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -66,34 +66,6 @@ fi
 if [[ "$CFG_QUIET" == "" ]]; then
     CFG_QUIET=" "
 fi
-
-
-################################
-# Main command line entry point
-main() {
-    CFG_REQUIREMENTS=$REQUIREMENTS
-    NO_INDEX="--no-index"
-    
-    # We are using getopts to parse option arguments that start with "-"
-    while getopts :-: optchar; do
-        case "${optchar}" in
-            -)
-                case "${OPTARG}" in
-                    help  ) cli_help;;
-                    clean ) find_python && clean;;
-                    dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
-                    init  ) NO_INDEX="";;
-                esac;;
-        esac
-    done
-
-    PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
-
-    find_python
-    create_virtualenv "$VIRTUALENV_DIR"
-    install_packages "$CFG_REQUIREMENTS"
-    . "$CFG_BIN_DIR/activate"
-}
 
 
 ################################
@@ -198,6 +170,28 @@ clean() {
 }
 
 
-main
+################################
+# Main command line entry point
+CFG_REQUIREMENTS=$REQUIREMENTS
+
+# We are using getopts to parse option arguments that start with "-"
+while getopts :-: optchar; do
+    case "${optchar}" in
+        -)
+            case "${OPTARG}" in
+                help  ) cli_help;;
+                clean ) find_python && clean;;
+                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
+            esac;;
+    esac
+done
+
+PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS"
+
+find_python
+create_virtualenv "$VIRTUALENV_DIR"
+install_packages "$CFG_REQUIREMENTS"
+. "$CFG_BIN_DIR/activate"
+
 
 set +e
