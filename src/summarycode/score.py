@@ -404,7 +404,7 @@ def get_primary_license(declared_license_expressions):
     license if we can resolve the `declared_license_expressions` into one
     expression.
     """
-    unique_declared_license_expressions = set(declared_license_expressions)
+    unique_declared_license_expressions = list(set(declared_license_expressions))
     # If we only have a single unique license expression, then we do not have
     # any ambiguity about the licensing
     if len(unique_declared_license_expressions) == 1:
