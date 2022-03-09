@@ -137,14 +137,10 @@ cli_help() {
     echo "  usage: ./configure [options]"
     echo
     echo The default is to configure for regular use. Use --dev for development.
-    echo Use the --init option if starting a new project and the project
-    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
-    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
-    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo
     echo By default, the python interpreter version found in the path is used.
@@ -181,7 +177,6 @@ while getopts :-: optchar; do
                 help  ) cli_help;;
                 clean ) find_python && clean;;
                 dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
-                init  ) ;;
             esac;;
     esac
 done

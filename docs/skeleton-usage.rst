@@ -54,6 +54,7 @@ customizing the skeleton files to your project:
 This will initialize the virtual environment for the project, pull in the
 dependencies from PyPI and add them to the virtual environment.
 
+
 Generating requirements.txt and requirements-dev.txt
 ----------------------------------------------------
 
@@ -85,7 +86,7 @@ Note: on Windows, the ``site-packages`` directory is located at ``venv\Lib\site-
 .. code-block:: bash
 
     python .\\etc\\scripts\\gen_requirements.py -s .\\venv\\Lib\\site-packages\\
-    .\configure --init --dev
+    .\configure --dev
     python .\\etc\\scripts\\gen_requirements_dev.py -s .\\venv\\Lib\\site-packages\\
 
 
