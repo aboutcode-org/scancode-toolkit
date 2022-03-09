@@ -1,0 +1,88 @@
+HUGO LICENSE - December 19, 2003
+--------------------------------
+
+Copyright (c) 2003 by Kent Tessman
+The General Coffee Company Film Productions
+
+
+1.   Definitions
+
+"Copyright Holder" refers to Kent Tessman.
+
+"End User" refers to a user of the Software.
+
+"End User Program" refers to a computer program created by an End
+User, written using the Hugo Programming Language and compiled using
+the Hugo Compiler.
+
+"Hugo" refers to the Hugo Interactive Fiction Development System, created
+by the Copyright Holder.
+
+"Hugo Programming Language" refers to the Hugo programming language and
+its characteristic syntax.
+
+"Hugo Source Code" refers to the human-readable source code of the
+Software.
+
+"License" refers to this license.
+
+"Software" refers to the Hugo Compiler, the Hugo Engine, the Hugo
+Debugger, the Hugo Library, and any other related programs or files.
+
+
+2.   Ownership and Grant of Rights
+
+2.1  Hugo is the property of the Copyright Holder.  The Copyright Holder
+retains its copyright in the Software, without limitation.
+
+2.2  The Copyright Holder grants to the End User the right to use the
+Software solely for the purposes of:
+
+     (a) running programs created with the Software; and
+
+     (b) creating End User Programs.
+
+2.3  End User Programs are the property of the End User.
+
+
+3.   Provision of the Hugo Source Code
+
+3.1  The Copyright Holder has made available to the End User the Hugo
+Source Code for the purposes of:
+
+     (a) porting the Software to operating systems for which the
+         Software is not yet available; and
+
+     (b) investigating the functionality of the Software.
+
+3.2  In no way does the Copyright Holder's act of making available the
+Hugo Source code reduce or otherwise affect in any way its rights in
+the Hugo Source Code.
+
+
+4.   Modification and Distribution
+
+4.1  Distribution of the Software or the Hugo Source Code, in whole or
+in part, in a modified form without the express written consent of the
+Copyright Holder is prohibited.
+
+4.2  Distribution of the Software or the Hugo Source Code, in whole or
+in part, for profit or other commercial intent or monetary transaction
+without the express written consent of the Copyright Holder is
+prohibited.
+
+4.3  This License must be distributed with any distribution of the 
+Software or the Hugo Source Code.
+
+
+5.   Warranty
+
+The Software and the Hugo Source Code are provided "as is" without
+warranty of any kind, either expressed or implied, including but not
+limited to the implied warranties of merchantability and fitness for a
+particular purpose.  In no event shall the Copyright Holder or The 
+General Coffee Company Film Productions or any other related or
+unrelated party be liable to the End User or any other individual or
+entity for damages arising out of the use or inability to use these or
+other programs.  Use of the Software indicates acceptance of these
+terms.
