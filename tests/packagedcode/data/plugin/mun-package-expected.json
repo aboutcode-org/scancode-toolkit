@@ -10,15 +10,16 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "winexe",
@@ -58,11 +59,16 @@
         "License": null
       },
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256",
+      "package_data_files": [
+        "crypt32.dll.mun"
+      ],
+      "files": [
+        "crypt32.dll.mun"
+      ],
       "purl": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256",
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -73,7 +79,7 @@
     {
       "path": "crypt32.dll.mun",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "winexe",
           "namespace": null,
@@ -112,16 +118,18 @@
             "License": null
           },
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
+      ],
+      "for_packages": [
+        "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256"
       ],
       "scan_errors": []
     }

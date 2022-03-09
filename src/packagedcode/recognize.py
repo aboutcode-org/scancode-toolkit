@@ -12,10 +12,7 @@ import os
 import sys
 
 from commoncode import filetype
-from commoncode.fileutils import file_name
-from commoncode.fileutils import splitext_name
-from packagedcode import PACKAGE_MANIFEST_TYPES
-from typecode import contenttype
+from packagedcode import PACKAGE_DATA_CLASSES
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
@@ -39,29 +36,29 @@ if TRACE:
     logger_debug = print
 
 """
-Recognize package manifests in files.
+Recognize package data in files.
 """
 
 
-def recognize_package_manifests(location):
+def recognize_package_data(location):
     """
-    Return a list of Package objects if any package_manifests were recognized for this
+    Return a list of Package objects if any package_data were recognized for this
     `location`, or None if there were no Packages found. Raises Exceptions on errors.
     """
 
     if not filetype.is_file(location):
         return
 
-    recognized_package_manifests = []
-    for package_manifest_type in PACKAGE_MANIFEST_TYPES:
-        if not package_manifest_type.is_manifest(location):
+    recognized_package_data = []
+    for package_data_type in PACKAGE_DATA_CLASSES:
+        if not package_data_type.is_package_data_file(location):
             continue
 
         try:
-            for recognized in package_manifest_type.recognize(location):
+            for recognized in package_data_type.recognize(location):
                 if TRACE:
                     logger_debug(
-                        'recognize_package_manifests: metafile matching: recognized:',
+                        'recognize_package_data: metafile matching: recognized:',
                         recognized,
                     )
                 if recognized and not recognized.license_expression:
@@ -75,27 +72,28 @@ def recognize_package_manifests(location):
 
                     if TRACE:
                         logger_debug(
-                            'recognize_package_manifests: recognized.license_expression:',
+                            'recognize_package_data: recognized.license_expression:',
                             recognized.license_expression
                         )
-                recognized_package_manifests.append(recognized)
-            return recognized_package_manifests
+                recognized_package_data.append(recognized)
+            return recognized_package_data
 
         except NotImplementedError:
             # build a plain package if recognize is not yet implemented
-            recognized = package_manifest_type()
+            recognized = package_data_type()
             if TRACE:
                 logger_debug(
-                    'recognize_package_manifests: NotImplementedError: recognized', recognized
+                    'recognize_package_data: NotImplementedError: recognized', recognized
                 )
 
-            recognized_package_manifests.append(recognized)
+            recognized_package_data.append(recognized)
 
             if SCANCODE_DEBUG_PACKAGE_API:
                 raise
 
-        return recognized_package_manifests
+        if TRACE: 
+            logger_debug(
+                'recognize_package_data: no match for type:', package_data_type
+            )
 
-        if TRACE: logger_debug(
-            'recognize_package_manifests: no match for type:', package_manifest_type
-        )
+        return recognized_package_data

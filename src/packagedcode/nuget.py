@@ -42,7 +42,7 @@ if TRACE:
 
 
 @attr.s()
-class NugetPackage(models.Package):
+class NugetPackageData(models.PackageData):
     # file_patterns = ('[Content_Types].xml', '*.nuspec',)
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
@@ -95,13 +95,13 @@ nuspec_tags = [
 
 
 @attr.s()
-class Nuspec(NugetPackage, models.PackageManifest):
+class Nuspec(NugetPackageData, models.PackageDataFile):
 
     file_patterns = ('*.nuspec',)
     extensions = ('.nuspec',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -169,3 +169,17 @@ class Nuspec(NugetPackage, models.PackageManifest):
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
         )
+
+
+@attr.s()
+class NugetPackage(NugetPackageData, models.Package):
+    """
+    A Nuget Package that is created out of one/multiple nuget package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            Nuspec
+        ]

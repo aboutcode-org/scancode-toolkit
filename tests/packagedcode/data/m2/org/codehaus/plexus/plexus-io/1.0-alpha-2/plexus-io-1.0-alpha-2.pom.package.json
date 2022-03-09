@@ -24,38 +24,40 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.2",
-      "requirement": "1.2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-24",
-      "requirement": "1.0-alpha-24",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-24",
-      "requirement": "1.0-alpha-24",
-      "scope": "test",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-2?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.2",
+      "extracted_requirement": "1.2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-24",
+      "extracted_requirement": "1.0-alpha-24",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-24",
+      "extracted_requirement": "1.0-alpha-24",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-2/plexus-io-1.0-alpha-2.jar",

@@ -648,7 +648,7 @@ def test_scan_does_scan_php_composer():
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, regen=False)
+    check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=False)
 
 
 def test_scan_does_scan_rpm():
@@ -656,7 +656,7 @@ def test_scan_does_scan_rpm():
     expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, regen=False)
+    check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=False)
 
 
 def test_scan_cli_help(regen=False):
@@ -929,3 +929,14 @@ def test_VirtualCodebase_output_with_from_json_is_same_as_original():
 
     assert json.dumps(results , indent=2) == json.dumps(expected, indent=2)
     assert len(results_headers) == len(expected_headers) + 1
+
+def test_getting_version_returns_valid_yaml():
+    import saneyaml
+    import scancode_config
+    args = ['--version']
+    result = run_scan_click(args)
+    assert saneyaml.load(result.output) == {
+        'ScanCode version': f'{scancode_config.__version__}',
+        'ScanCode Output Format version': f'{scancode_config.__output_format_version__}',
+        'SPDX License list version': f'{scancode_config.spdx_license_list_version}'
+    }

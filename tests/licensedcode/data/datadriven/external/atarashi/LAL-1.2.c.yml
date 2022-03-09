@@ -1,4 +1,4 @@
 license_expressions:
   - lal-1.2
-expected_failure: yes
+  - lal-1.2
 notes: we do not handle yet the non-english licenses

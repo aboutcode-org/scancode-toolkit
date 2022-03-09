@@ -1,0 +1,17 @@
+key: ricebsd
+short_name: RiceBSD
+name: Rice BSD Software License
+category: Permissive
+owner: Rice University
+homepage_url: https://web.archive.org/web/20060907200326/http://www.caam.rice.edu/software/ARPACK/RiceBSD.doc
+spdx_license_key: LicenseRef-scancode-ricebsd
+other_urls:
+    - https://github.com/pisilinux/uludag/blob/d202a1ddc0f5855acbad532ae0cf319f9f280c55/tags/pisi/2.2.18/licenses/RiceBSD
+    - https://github.com/search?q="Also%2C+we+ask+that+use+of+ARPACK+is+properly"&type=code
+        have this
+ignorable_copyrights:
+    - (c) 2001, Rice University
+ignorable_holders:
+    - Rice University
+ignorable_authors:
+    - D.C. Sorensen, R.B. Lehoucq, C. Yang, and K. Maschhoff

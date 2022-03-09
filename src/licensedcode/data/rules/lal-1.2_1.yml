@@ -1,0 +1,5 @@
+license_expression: lal-1.2
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/LAL-1.2

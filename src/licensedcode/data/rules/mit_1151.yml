@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://img.shields.io/badge/license-MIT-9400d3.svg
+    - https://spdx.org/licenses

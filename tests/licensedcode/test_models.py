@@ -107,7 +107,7 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library(self):
         errors, warnings, infos = models.License.validate(
-            cache.get_licenses_db(),
+            licenses=models.load_licenses(),
             verbose=False,
         )
         assert errors == {}

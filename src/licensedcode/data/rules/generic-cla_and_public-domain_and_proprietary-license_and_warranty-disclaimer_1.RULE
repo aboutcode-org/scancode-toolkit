@@ -1,0 +1,5 @@
+If you submit code or data to the ruby-advisory-db that is copyrighted by yourself, upon submission you hereby agree to release it into the {{public domain}}.
+
+However, not all of the ruby-advisory-db can be considered public domain. The ruby-advisory-db may contain some information {{copyrighted by the Open Source Vulnerability Database (http://osvdb.org)}}. If you use ruby-advisory-db data to build a product or a service, it is your responsibility to familiarize yourself with the terms of their license: http://www.osvdb.org/osvdb_license
+
+{{THE SOFTWARE IS PROVIDED "AS IS", }}WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

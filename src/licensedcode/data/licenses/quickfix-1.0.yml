@@ -1,0 +1,13 @@
+key: quickfix-1.0
+short_name: QuickFix 1.0
+name: The QuickFIX Software License, Version 1.0
+category: Permissive
+owner: QuickFix Project
+homepage_url: https://www.quickfixj.org/documentation/license.html
+spdx_license_key: LicenseRef-scancode-quickfix-1.0
+ignorable_authors:
+    - quickfixengine.org (http://www.quickfixengine.org/)
+ignorable_urls:
+    - http://www.quickfixengine.org/
+ignorable_emails:
+    - ask@quickfixengine.org

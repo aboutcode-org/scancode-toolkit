@@ -1321,15 +1321,15 @@ matches:
       WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '99.79'
+  - score: '99.57'
     start_line: 2353
     end_line: 2407
     matcher: 3-seq
-    rule_length: 468
-    matched_length: 467
-    match_coverage: '99.79'
+    rule_length: 470
+    matched_length: 468
+    match_coverage: '99.57'
     rule_relevance: 100
-    identifier: unicode-dfs-2015_1.RULE
+    identifier: unicode-dfs-2015_9.RULE
     license_expression: unicode-dfs-2015
     is_license_text: yes
     is_license_notice: no
@@ -1357,7 +1357,7 @@ matches:
 
            COPYRIGHT AND PERMISSION NOTICE
 
-           Copyright © 1991-[2011] Unicode, Inc. All rights
+           Copyright © 1991-2011 Unicode, Inc. All rights
            reserved. Distributed under the Terms of Use in
            http://www.unicode.org/copyright.html.
 

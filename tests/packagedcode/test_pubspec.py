@@ -21,32 +21,32 @@ test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 class TestPubspecDatadriven(PackageTester):
     test_data_dir = test_data_dir
 
-    def test_pubspec_lock_is_manifest(self):
+    def test_pubspec_lock_is_package_data_file(self):
         test_file = self.get_test_loc('pubspec/locks/dart-pubspec.lock')
-        assert pubspec.PubspecLock.is_manifest(test_file)
+        assert pubspec.PubspecLock.is_package_data_file(test_file)
 
-    def test_pubspec_yaml_is_manifest(self):
+    def test_pubspec_yaml_is_package_data_file(self):
         test_file = self.get_test_loc('pubspec/specs/authors-pubspec.yaml')
-        assert pubspec.PubspecYaml.is_manifest(test_file)
+        assert pubspec.PubspecYaml.is_package_data_file(test_file)
 
     def test_parse_lock(self):
         test_loc = self.get_test_loc('pubspec/mini-pubspec.lock')
         expected_loc = self.get_test_loc('pubspec/mini-pubspec.lock-expected.json', must_exist=False)
-        package_manifests = pubspec.PubspecLock.recognize(test_loc)
-        self.check_packages(package_manifests, expected_loc, regen=False)
+        package_data = pubspec.PubspecLock.recognize(test_loc)
+        self.check_packages(package_data, expected_loc, regen=False)
 
 
 def pub_tester(location,):
     manifests = []
-    for package_manifest in pubspec.PubspecYaml.recognize(location):
-        manifests.append(package_manifest.to_dict())
+    for package_data in pubspec.PubspecYaml.recognize(location):
+        manifests.append(package_data.to_dict())
     return manifests
 
 
 def lock_tester(location,):
     manifests = []
-    for package_manifest in pubspec.PubspecLock.recognize(location):
-        manifests.append(package_manifest.to_dict())
+    for package_data in pubspec.PubspecLock.recognize(location):
+        manifests.append(package_data.to_dict())
     return manifests
 
 

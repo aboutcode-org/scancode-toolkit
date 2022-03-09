@@ -1,0 +1,6 @@
+license_expression: sun-no-high-risk-activities
+is_license_text: yes
+minimum_coverage: 95
+ignorable_urls:
+    - http://java.sun.com/nav/business/index.html
+    - http://www.sun.com/policies/trademarks/

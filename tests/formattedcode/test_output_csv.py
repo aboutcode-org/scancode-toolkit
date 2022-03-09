@@ -48,7 +48,7 @@ def check_json(result, expected_file, regen=False):
 
 
 def check_csvs(result_file, expected_file,
-               ignore_keys=('date', 'file_type', 'mime_type',),
+               ignore_keys=('date', 'file_type', 'mime_type', 'package_uuid'),
                regen=False):
     """
     Load and compare two CSVs.

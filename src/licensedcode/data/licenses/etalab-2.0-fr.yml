@@ -1,0 +1,12 @@
+key: etalab-2.0-fr
+language: fr
+short_name: Etalab Open License 2.0 French
+name: Etalab Open License 2.0 French
+category: Unstated License
+owner: France
+spdx_license_key: etalab-2.0
+other_urls:
+    - https://github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf
+    - https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
+ignorable_urls:
+    - http://www.data.gouv.fr/fr/datasets/xxx

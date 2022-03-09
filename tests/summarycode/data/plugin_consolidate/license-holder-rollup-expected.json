@@ -21,6 +21,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [],
   "consolidated_components": [
     {
@@ -99,7 +100,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 3,
       "dirs_count": 5,
@@ -131,7 +133,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 1,
@@ -163,7 +166,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -289,7 +293,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -323,7 +328,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 2,
       "dirs_count": 2,
@@ -355,7 +361,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -481,7 +488,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -515,7 +523,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],
@@ -641,7 +650,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],

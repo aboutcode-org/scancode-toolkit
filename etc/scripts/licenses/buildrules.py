@@ -156,11 +156,11 @@ def all_rule_by_tokens():
         try:
             rule_tokens[tuple(rule.tokens())] = rule.identifier
         except Exception as e:
-            df=('  file://' + rule.data_file)
-            tf=('  file://' + rule.text_file)
+            df = f"  file://{rule.data_file}"
+            tf = f"  file://{rule.text_file}"
             raise Exception(
-                f'Failed to to get tokens from rule:: {rule.identifier}\n'
-                f'{df}\n{tf}'
+                f"Failed to to get tokens from rule:: {rule.identifier}\n"
+                f"{df}\n{tf}"
             ) from e
     return rule_tokens
 
@@ -204,6 +204,10 @@ def cli(licenses_file):
         relevance = rdata.data.get("relevance")
         rdata.data["has_stored_relevance"] = bool(relevance)
 
+        license_expression = rdata.data.get("license_expression")
+        if license_expression:
+            rdata.data["license_expression"] = license_expression.lower().strip()
+
         minimum_coverage = rdata.data.get("minimum_coverage")
         rdata.data["has_stored_minimum_coverage"] = bool(minimum_coverage)
 
@@ -226,12 +230,12 @@ def cli(licenses_file):
         text = rule.text()
 
         existing_rule = rule_exists(text)
-        skinny_text = ' '.join(text[:80].split())
+        skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
 
         existing_msg = (
-            f'Skipping rule for: {base_name!r}, '
-            'dupe of: {existing_rule} '
-            f'with text: {skinny_text!r}...'
+            f"Skipping rule for: {base_name!r}, "
+            "dupe of: {existing_rule} "
+            f"with text: {skinny_text!r}..."
         )
 
         if existing_rule:
@@ -260,9 +264,11 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
         else:
-            print(f'Adding new rule: {base_name}')
-            print('  file://' + rulerec.data_file)
-            print('  file://' + rulerec.text_file)
+            print(f"Adding new rule: {base_name}")
+            print("  file://" + rulerec.data_file)
+            print(
+                "  file://" + rulerec.text_file,
+            )
             rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
             rulerec.dump()

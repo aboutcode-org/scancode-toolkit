@@ -1,0 +1,6 @@
+license_expression: ic-1.0
+is_license_notice: yes
+referenced_filenames:
+    - /licenses/IC-1.0.txt
+ignorable_urls:
+    - http://dfinity.org/licenses/IC-1.0

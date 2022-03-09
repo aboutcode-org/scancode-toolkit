@@ -17,7 +17,7 @@
         "--summary-key-files": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -26,6 +26,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [],
   "summary": {
     "license_expressions": [
@@ -113,7 +114,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -150,7 +152,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -187,7 +190,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -224,7 +228,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -302,7 +307,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [
         "core"
       ],
@@ -341,7 +347,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [
         "core"
       ],
@@ -380,7 +387,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -417,7 +425,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -454,7 +463,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -544,7 +554,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [
         "core"
       ],
@@ -595,7 +606,8 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
+      "for_packages": [],
       "facets": [
         "core"
       ],

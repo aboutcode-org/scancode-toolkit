@@ -24,22 +24,22 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
-      "requirement": "1.1-alpha-2",
-      "scope": "compile",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true
-    }
-  ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.5?classifier=sources"
   ],
   "extra_data": {},
+  "dependencies": [
+    {
+      "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
+      "extracted_requirement": "1.1-alpha-2",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {}
+    }
+  ],
   "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.0.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.0.5/plexus-utils-1.0.5.jar",

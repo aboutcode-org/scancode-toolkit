@@ -1,0 +1,14 @@
+key: cc-lgpl-2.1-pt
+language: pt
+short_name: CC-LGPL-2.1-PT
+name: Creative Commons Licença Pública Geral Menor do GNU
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/LGPL/2.1/
+spdx_license_key: LicenseRef-scancode-cc-lgpl-2.1-pt
+text_urls:
+    - https://creativecommons.org/licenses/LGPL/2.1/legalcode.pt
+ignorable_copyrights:
+    - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.

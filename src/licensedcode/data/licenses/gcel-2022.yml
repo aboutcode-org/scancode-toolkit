@@ -1,0 +1,12 @@
+key: gcel-2022
+short_name: GCEL 2022
+name: GridGain Community Edition License 2022
+category: Free Restricted
+owner: GridGain Systems
+homepage_url: https://www.gridgain.com/products/software/community-edition/gridgain-community-edition-license
+spdx_license_key: LicenseRef-scancode-gcel-2022
+other_urls:
+    - https://commonsclause.com/
+ignorable_urls:
+    - https://commonsclause.com/
+    - https://www.apache.org/licenses/LICENSE-2.0

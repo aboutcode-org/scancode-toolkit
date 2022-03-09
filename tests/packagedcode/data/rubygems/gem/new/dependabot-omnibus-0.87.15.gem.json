@@ -35,100 +35,110 @@
       "Nonstandard"
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:gem/dependabot-cargo",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-core",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-docker",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-elm",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-git_submodules",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-go_modules",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-gradle",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-maven",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-nuget",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-python",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      },
-      {
-        "purl": "pkg:gem/dependabot-terraform",
-        "requirement": "= 0.87.15",
-        "scope": "runtime",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:gem/dependabot-cargo",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-core",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-docker",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-elm",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-git_submodules",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-go_modules",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-gradle",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-maven",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-nuget",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-python",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/dependabot-terraform",
+        "extracted_requirement": "= 0.87.15",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:gem/dependabot-omnibus@0.87.15",
     "repository_homepage_url": "https://rubygems.org/gems/dependabot-omnibus/versions/0.87.15",
     "repository_download_url": "https://rubygems.org/downloads/dependabot-omnibus-0.87.15.gem",

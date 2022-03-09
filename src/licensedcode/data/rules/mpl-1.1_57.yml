@@ -1,0 +1,4 @@
+license_expression: mpl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - https://www.mozilla.org/en-US/MPL/1.1/

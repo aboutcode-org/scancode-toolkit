@@ -1,0 +1,5 @@
+license_expression: bsd-simplified
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://javolution.org/LICENSE.txt

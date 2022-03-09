@@ -1,0 +1,102 @@
+INTERNET COMPUTER COMMUNITY SOURCE LICENSE VERSION 1.0
+
+License text copyright © 2021 DFINITY Foundation, All Rights Reserved. “Internet
+Computer Community Source License” is a trademark of the DFINITY Foundation.
+
+TERMS AND CONDITIONS
+
+If you use this code (the “software”), you accept this license. If you do not
+accept the license, do not use the software.
+
+1. Definitions
+
+   The terms “reproduce,” “reproduction,” “derivative works,” and “distribution”
+   have the same meaning here as under U.S. copyright law.
+
+   A “contribution” is the original software, or any additions or changes to the
+   software.
+
+   A “contributor” is any person that distributes its contribution under this
+   license.
+
+   “Internet Computer” is the decentralized compute platform originated by the
+   DFINITY Foundation and stewarded by the Internet Computer Association.
+
+2. Grant of Rights
+
+   (A) Copyright Grant - Subject to the terms of this license, including the
+   license conditions and limitations in Section 3, each contributor grants you
+   a non-exclusive, worldwide, royalty-free copyright license to reproduce its
+   contribution, prepare derivative works of its contribution, and distribute
+   its contribution or any derivative works that you create.
+
+   (B) Patent Grant - Subject to the terms of this license, including the
+   license conditions and limitations in Section 3, each contributor grants you
+   a non-exclusive, worldwide, royalty-free license under its licensed patents
+   to make, have made, use, sell, offer for sale, import, and/or otherwise
+   dispose of its contribution in the software or derivative works of the
+   contribution in the software.
+
+3. Conditions and Limitations
+
+   (A) Platform Limitation - The licenses granted in sections 2(A) and 2(B)
+   extend only to the software or derivative works that you create that run
+   directly on the Internet Computer platform.
+
+   (B) This license does not grant you rights to use any contributors’ name,
+   logo, or trademarks.
+
+   (C) If you distribute any portion of the software, you must retain all
+   copyright, patent, trademark, and attribution notices that are present in the
+   software.
+
+   (D) If you distribute any portion of the software in source code form, you
+   may do so only under this license by including a complete copy of this
+   license with your distribution. If you distribute any portion of the software
+   in compiled or object code form, you may only do so under a license that
+   complies with this license.
+
+   (E) If you have modified the Software or created derivative works, and
+   distribute such modifications or derivative works, you will cause the
+   modified files to carry prominent notices so that recipients know that they
+   are not receiving the original software. Such notices must state: (i) that
+   you have changed the software; and (ii) the date of any changes.
+
+   (F) THE SOFTWARE COMES "AS IS", WITH NO WARRANTIES. THIS MEANS THE
+   CONTRIBUTORS GIVE NO EXPRESS, IMPLIED OR STATUTORY WARRANTY, INCLUDING
+   WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+   PURPOSE OR ANY WARRANTY OF TITLE OR NON-INFRINGEMENT. ALSO, YOU MUST PASS
+   THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE SOFTWARE OR DERIVATIVE WORKS.
+
+   (G) DFINITY WILL NOT BE LIABLE FOR ANY DAMAGES RELATED TO THE SOFTWARE OR
+   THIS LICENSE, INCLUDING DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL OR
+   INCIDENTAL DAMAGES, TO THE MAXIMUM EXTENT THE LAW PERMITS, NO MATTER WHAT
+   LEGAL THEORY IT IS BASED ON (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR
+   DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR
+   A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF YOU OR
+   OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ALSO, YOU
+   MUST PASS THIS LIMITATION OF LIABILITY ON WHENEVER YOU DISTRIBUTE THE
+   SOFTWARE OR DERIVATIVE WORKS.
+
+   (H) If you bring a patent claim against any contributor over patents that you
+   claim are infringed by the software or a claim against anyone for their use
+   of the software, your license the software automatically terminates.
+
+   (I) Your rights under this license automatically terminates if you breach it
+   in any way.
+
+   (J) Each contributor grants to the Foundation the right to distribute the
+   contribution of the contributor under a license which is more permissive than
+   this license. A more permissive license shall be in particular a license with
+   less restrictions on how the contribution can be reproduced, modified and
+   distributed than this license. A more permissive license may be in particular
+   understood as a license that sets asides the platform limitation in section 3
+   (A) of this license. A more permissive license shall include in particular
+   the Apache License Version 2.0 (or future versions thereof) and the MIT
+   License. The decision on such a distribution under a more permissive license
+   is at the sole discretion of the Foundation
+
+   (K) The Foundation reserves all rights not expressly granted to you in this
+   license.
+
+END OF TERMS AND CONDITIONS

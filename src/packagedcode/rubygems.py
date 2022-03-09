@@ -51,7 +51,7 @@ if TRACE:
 
 
 @attr.s()
-class RubyGem(models.Package):
+class RubyGemData(models.PackageData):
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     default_type = 'gem'
@@ -103,13 +103,13 @@ class RubyGem(models.Package):
 
 
 @attr.s()
-class GemArchive(RubyGem, models.PackageManifest):
+class GemArchive(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('*.gem',)
     extensions = ('.gem',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -127,13 +127,13 @@ class GemArchive(RubyGem, models.PackageManifest):
 
 
 @attr.s()
-class GemArchiveExtracted(RubyGem, models.PackageManifest):
+class GemArchiveExtracted(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('metadata.gz-extract',)
     extensions = ('.gz-extract',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -152,13 +152,13 @@ class GemArchiveExtracted(RubyGem, models.PackageManifest):
 
 
 @attr.s()
-class GemSpec(RubyGem, models.PackageManifest):
+class GemSpec(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('*.gemspec',)
     extensions = ('.gemspec',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -189,7 +189,7 @@ class GemSpec(RubyGem, models.PackageManifest):
         email = gemspec_data.get('email') or []
         parties = list(party_mapper(author, email))
 
-        package_manifest = cls(
+        package_data = cls(
             name=name,
             version=version,
             parties=parties,
@@ -207,25 +207,25 @@ class GemSpec(RubyGem, models.PackageManifest):
                         type='gem',
                         name=name
                     ).to_string(),
-                    requirement=', '.join(version),
+                    extracted_requirement=', '.join(version),
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=False,
                 )
             )
-        package_manifest.dependencies = package_dependencies
+        package_data.dependencies = package_dependencies
 
-        yield package_manifest
+        yield package_data
 
 
 @attr.s()
-class Gemfile(RubyGem, models.PackageManifest):
+class Gemfile(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('Gemfile',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -241,13 +241,13 @@ class Gemfile(RubyGem, models.PackageManifest):
         pass
 
 @attr.s()
-class GemfileLock(RubyGem, models.PackageManifest):
+class GemfileLock(RubyGemData, models.PackageDataFile):
 
     file_patterns = ('Gemfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -269,7 +269,7 @@ class GemfileLock(RubyGem, models.PackageManifest):
                         name=gem.name,
                         version=gem.version
                     ).to_string(),
-                    requirement=', '.join(gem.requirements),
+                    extracted_requirement=', '.join(gem.requirements),
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
@@ -289,7 +289,7 @@ class GemfileLock(RubyGem, models.PackageManifest):
                             name=dep.name,
                             version=dep.version
                         ).to_string(),
-                        requirement=', '.join(dep.requirements),
+                        extracted_requirement=', '.join(dep.requirements),
                         scope='dependencies',
                         is_runtime=True,
                         is_optional=False,
@@ -302,6 +302,24 @@ class GemfileLock(RubyGem, models.PackageManifest):
                 version=gem.version,
                 dependencies=deps
             )
+
+
+@attr.s()
+class RubyPackage(RubyGemData, models.Package):
+    """
+    A Ruby Package that is created out of one/multiple ruby package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            GemArchive,
+            GemArchiveExtracted,
+            Gemfile,
+            GemSpec,
+            GemfileLock
+        ]
 
 
 def compute_normalized_license(declared_license):
@@ -407,7 +425,7 @@ def get_gem_metadata(location):
             content= archive.get_gz_compressed_file_content(metadata_gz)
 
         else:
-            raise Exception('No gem metadata found in RubyGem .gem file.')
+            raise Exception('No gem metadata found in RubyGemData .gem file.')
 
         return content
 
@@ -441,7 +459,7 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
     licenses = gem_data.get('licenses')
     declared_license = licenses_mapper(lic, licenses)
 
-    package_manifest = cls(
+    package_data = cls(
         name=name,
         description=description,
         homepage_url=gem_data.get('homepage'),
@@ -458,7 +476,7 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
     for author in authors:
         if author and author.strip():
             party = models.Party(name=author, role='author')
-            package_manifest.parties.append(party)
+            package_data.parties.append(party)
 
     # TODO: we have a email that is either a string or a list of string
 
@@ -466,34 +484,34 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
     date = gem_data.get('date')
     if date and len(date) >= 10:
         date = date[:10]
-        package_manifest.release_date = date[:10]
+        package_data.release_date = date[:10]
 
 
     # there are two levels of nesting
     version1 = gem_data.get('version') or {}
     version = version1.get('version') or None
-    package_manifest.version = version
-    package_manifest.set_purl(package_url)
+    package_data.version = version
+    package_data.set_purl(package_url)
 
     metadata = gem_data.get('metadata') or {}
     if metadata:
         homepage_url = metadata.get('homepage_uri')
         if homepage_url:
-            if not package_manifest.homepage_url:
-                package_manifest.homepage_url = homepage_url
-            elif package_manifest.homepage_url == homepage_url:
+            if not package_data.homepage_url:
+                package_data.homepage_url = homepage_url
+            elif package_data.homepage_url == homepage_url:
                 pass
             else:
                 # we have both and one is wrong.
                 # we prefer the existing one from the metadata
                 pass
 
-        package_manifest.bug_tracking_url = metadata.get('bug_tracking_uri')
+        package_data.bug_tracking_url = metadata.get('bug_tracking_uri')
 
         source_code_url = metadata.get('source_code_uri')
         if source_code_url:
-            package_manifest.code_view_url = source_code_url
-            # TODO: infer purl and add purl to package_manifest.source_packages
+            package_data.code_view_url = source_code_url
+            # TODO: infer purl and add purl to package_data.source_packages
 
         # not used for now
         #   "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
@@ -504,26 +522,26 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
     platform = gem_data.get('platform')
     if platform != 'ruby':
         qualifiers = dict(platform=platform)
-        if not package_manifest.qualifiers:
-            package_manifest.qualifiers = {}
+        if not package_data.qualifiers:
+            package_data.qualifiers = {}
 
-        package_manifest.qualifiers.update(qualifiers)
+        package_data.qualifiers.update(qualifiers)
 
-    package_manifest.dependencies = get_dependencies(gem_data.get('dependencies'))
+    package_data.dependencies = get_dependencies(gem_data.get('dependencies'))
 
-    if not package_manifest.download_url:
-        package_manifest.download_url = package_manifest.repository_download_url()
+    if not package_data.download_url:
+        package_data.download_url = package_data.repository_download_url()
 
-    if not package_manifest.homepage_url:
-        package_manifest.homepage_url = package_manifest.repository_homepage_url()
+    if not package_data.homepage_url:
+        package_data.homepage_url = package_data.repository_homepage_url()
 
-    return package_manifest
+    return package_data
 
 
 def licenses_mapper(lic, lics):
     """
     Return a `declared_licenses` list based on the `lic` license and
-    `lics` licenses values found in a package_manifest.
+    `lics` licenses values found in a package_data.
     """
     declared_licenses = []
     if lic:
@@ -644,8 +662,8 @@ def get_dependencies(dependencies):
         version_constraint = ', '.join(constraints)
 
         dep = models.DependentPackage(
-            purl=RubyGem.create(name=name).purl,
-            requirement=version_constraint or None,
+            purl=RubyGemData.create(name=name).purl,
+            extracted_requirement=version_constraint or None,
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional,
@@ -698,7 +716,7 @@ LICENSES_MAPPING = {
 def spec_defaults():
     """
     Return a mapping with spec attribute defaults to ensure that the
-    returned results are the same on RubyGems 1.8 and RubyGems 2.0
+    returned results are the same on RubyGemDatas 1.8 and RubyGemDatas 2.0
     """
     return {
         'base_dir': None,

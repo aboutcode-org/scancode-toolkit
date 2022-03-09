@@ -144,6 +144,7 @@ class LicenseIndex(object):
         'approx_matchable_rids',
 
         'optimized',
+        'all_languages',
     )
 
     def __init__(
@@ -152,6 +153,7 @@ class LicenseIndex(object):
         _legalese=common_license_words,
         _spdx_tokens=frozenset(),
         _license_tokens=frozenset(),
+        _all_languages=False,
     ):
         """
         Initialize the index with an iterable of Rule objects.
@@ -218,6 +220,10 @@ class LicenseIndex(object):
         # no new rules can be added
         self.optimized = False
 
+        # For info only, set to True when the rules used to build this index are
+        # in all languages as opposed to be only in English.
+        self.all_languages = _all_languages
+
         if rules:
             if TRACE_INDEXING_PERF:
                 start = time()
@@ -278,10 +284,12 @@ class LicenseIndex(object):
         self.len_legalese = len_legalese = len(dictionary)
         highest_tid = len_legalese - 1
 
-        # Add SPDX key tokens to the dictionary
-        # these are always treated as non-legalese. This may seem weird
-        # but they are detected in expressions alright and some of their
-        # tokens exist as rules too (e.g. GPL)
+        # Add SPDX key tokens to the dictionary: these are always treated as
+        # non-legalese. This may seem weird but they are detected in expressions
+        # alright and some of their tokens exist as rules too (e.g. GPL).
+        # Treating their words as legalese by default creates problems as common
+        # words such as mit may become legalese words even though we do not want
+        # this to happen.
         ########################################################################
         for sts in sorted(_spdx_tokens):
             stid = dictionary_get(sts)

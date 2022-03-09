@@ -40,28 +40,29 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:npm/mocha",
-        "requirement": "1.x.x",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:npm/chai",
-        "requirement": "1.x.x",
-        "scope": "devDependencies",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": false
-      }
-    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/mocha",
+        "extracted_requirement": "1.x.x",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:npm/chai",
+        "extracted_requirement": "1.x.x",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "purl": "pkg:npm/utils-merge@1.0.0",
     "repository_homepage_url": "https://www.npmjs.com/package/utils-merge",
     "repository_download_url": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz",

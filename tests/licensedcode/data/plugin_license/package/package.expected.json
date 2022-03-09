@@ -9,13 +9,39 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "3.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/dicer",
+      "extracted_requirement": "0.2.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:npm/dicer",
+      "for_package": "pkg:npm/busboy@0.2.14",
+      "lockfile": "package.json"
+    },
+    {
+      "purl": "pkg:npm/readable-stream",
+      "extracted_requirement": "1.1.x",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:npm/readable-stream",
+      "for_package": "pkg:npm/busboy@0.2.14",
+      "lockfile": "package.json"
     }
   ],
   "packages": [
@@ -63,28 +89,16 @@
         }
       ],
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:npm/dicer",
-          "requirement": "0.2.5",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:npm/readable-stream",
-          "requirement": "1.1.x",
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
-      ],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/busboy@0.2.14",
+      "package_data_files": [
+        "package.json"
+      ],
+      "files": [
+        "package.json"
+      ],
       "purl": "pkg:npm/busboy@0.2.14",
       "repository_homepage_url": "https://www.npmjs.com/package/busboy",
       "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
@@ -139,7 +153,7 @@
         "mit"
       ],
       "percentage_of_license_text": 4.05,
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -184,33 +198,37 @@
             }
           ],
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [
-            {
-              "purl": "pkg:npm/dicer",
-              "requirement": "0.2.5",
-              "scope": "dependencies",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            },
-            {
-              "purl": "pkg:npm/readable-stream",
-              "requirement": "1.1.x",
-              "scope": "dependencies",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            }
-          ],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/dicer",
+              "extracted_requirement": "0.2.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/readable-stream",
+              "extracted_requirement": "1.1.x",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
           "purl": "pkg:npm/busboy@0.2.14",
           "repository_homepage_url": "https://www.npmjs.com/package/busboy",
           "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
           "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/busboy@0.2.14"
       ],
       "scan_errors": []
     }

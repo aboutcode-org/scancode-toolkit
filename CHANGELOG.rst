@@ -14,7 +14,7 @@ Important API changes:
   instead under the ``venv`` subdirectory.
 
 - Main package API function `get_package_infos` is now deprecated, and is
-  replaced by `get_package_manifests`.
+  replaced by `get_package_data`.
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders: we now use proper name for attributes and not a generic "value".
@@ -27,10 +27,18 @@ Important API changes:
   as an option.
 
 - The data structure of the JSON output has changed for packages: we now
-  return "package_manifests" package information at the manifest file-level
-  rather than "packages". There is a a new top-level "packages" attribute
-  that contains each package instance that can be aggregating data from
-  multiple manifests for a single package instance.
+  return "package_data" package information at the manifest file-level
+  rather than "packages". This has all the data attributes of a "package_data"
+  field plus others: "package_uuid", "package_data_files" and "files".
+  
+- There is a a new top-level "packages" attribute that contains package
+  instances that can be aggregating data from multiple manifests.
+
+- There is a a new top-level "dependencies" attribute that contains each dependency
+  instance, these can be standalone or releated to a package.
+
+- There is a new resource-level attribute "for_packages" which refers to packages
+  through package_uuids (pURL + uuid string).
 
 - The data structure for HTML output has been changed to include emails and
   urls under the  "infos" object. Now HTML template will output holders,
@@ -38,6 +46,14 @@ Important API changes:
 
 - The data structure for CSV output has been changed to rename the Resource
   column to "path". The "copyright_holder" has been ranmed to "holder"
+
+
+Development environment changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - The license cache consistency is not checked anymore when you are using a Git
+   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
+   instead the --reindex-licenses option to rebuild the license index.
 
 
 Copyright detection:
@@ -55,7 +71,7 @@ License detection:
 
 - There have been significant license detection rules and licenses updates:
 
-  - XX new licenses have been added, 
+  - XX new licenses have been added,
   - XX existing license metadata have been updated,
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
@@ -65,7 +81,7 @@ License detection:
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
   be matched if there are no gaps between matched words, be they stopwords, extra
-  unknown or known words. This improves several false positive license detections. 
+  unknown or known words. This improves several false positive license detections.
   The processing for "is_continous" has been merged in "key phrases" processing
   below.
 
@@ -107,6 +123,19 @@ License detection:
   by the word "license" and assimilated are now filtered as false matches.
 
 
+- The new --licenses-reference option adds a new "licenses_reference" top
+  level attribute to a scan when using the JSON and YAML outputs. This contains
+  all the details and the full text of every licenses seen in a file or
+  package license expression of a scan. This can be added added after the fact
+  using the --from-json option.
+
+- New experimental support for non-English licenses. Use the command
+  ./scancode --reindex-licenses-for-all-languages to index all known non-English
+  licenses and rules. From that point on, they will be detected. Because of this
+  some licenses that were not tagged with their languages are now correctly
+  tagged and they may not be detected unless you activate this new indexing
+  feature.
+
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
@@ -115,17 +144,91 @@ Package detection:
   - Yocto/BitBake .bb recipes.
 
 - Major changes in packages detection and reporting, codebase-level attribute `packages`
-  with one or more "package_manifests" and files for the packages are reported.
+  with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
 
-  - The resource level attribute `packages` has been renamed to `package_manifests`,
-    as these are really package manifests that are being detected.
+  - The resource level attribute `packages` has been renamed to `package_data`,
+    as these are really package data that are being detected, and can be manifests,
+    lockfiles or other package data. This has all the data attributes of a `package_data`
+    field plus others: `package_uuid`, `package_data_files` and `files`.
+  
 
   - A new top-level attribute `packages` has been added which contains package
-    instances created from package_manifests detected in the codebase.
+    instances created from `package_data` detected in the codebase.
 
-  - A new codebase level attribute `packages` has been added which contains package
-    instances created from package_manifests detected in the codebase.
+  - A new codebase level attribute `dependencies` has been added which contains dependency
+    instances created from lockfiles detected in the codebase.
+
+  - The package attribute `root_path` has been deleted from `package_data` in favour
+    of the new format where there is no root conceptually, just a list of files for each
+    package.
+
+  - There is a new resource-level attribute `for_packages` which refers to packages
+    through package_uuids (pURL + uuid string).
+  
+  - The package_data attribute `dependencies` (which is a list of DependentPackages),
+    now has a new attribute `resolved_package` having a package data mapping.
+    Also the `requirement` attribute here is renamed to `extracted_requirement`.
+
+
+License Clarity Scoring Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - We are moving away from the license clarity scoring defined by ClearlyDefined
+   in the license clarity score plugin. The previous license clarity scoring
+   logic produced a score that was misleading, where it would return a low score
+   when scanning packages due to the stringent scoring criteria. We are now
+   using more general criteria to get a sense of what provenance information has
+   been provided and whether or not there is a conflict in licensing between
+   what licenses were declared at the top-level key files and what licenses have
+   been detected in the files under the top-level.
+
+ - The license clarity score is a value from 0-100 calculated by combining the
+   weighted values determined for each of the scoring elements:
+
+   - Declared license:
+
+     - When true, indicates that the software package licensing is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 40
+
+   - Identification precision:
+
+     - Indicates how well the license statement(s) of the software identify known
+       licenses that can be designated by precise keys (identifiers) as provided in
+       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
+       license list, the OSI license list, or a URL pointing to a specific license
+       text in a project or organization website.
+     - Scoring Weight = 40
+
+   - License texts:
+
+     - License texts are provided to support the declared license expression in
+       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
+     - Scoring Weight = 10
+
+   - Declared copyright:
+
+     - When true, indicates that the software package copyright is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 10
+
+   - Ambiguous compound licensing:
+
+     - When true, indicates that the software has a license declaration that
+       makes it difficult to construct a reliable license expression, such as in
+       the case of multiple licenses where the conjunctive versus disjunctive
+       relationship is not well defined.
+     - Scoring Weight = -10
+
+   - Conflicting license categories:
+
+     - When true, indicates the declared license expression of the software is in
+       the permissive category, but that other potentially conflicting categories,
+       such as copyleft and proprietary, have been detected in lower level code.
+     - Scoring Weight = -20
 
 
 Outputs:
@@ -138,16 +241,19 @@ Outputs:
 Output version
 --------------
 
-Scancode Data Output Version is now 2.0.0.
+Scancode Data Output Version is now 3.0.0.
 
 Changes:
 
-- rename resource level attribute `packages` to `package_manifests`.
+- rename resource level attribute `packages` to `package_data`.
 - add top-level attribute `packages`.
-
+- add top-level attribute `dependencies`.
+- add resource-level attribute `for_packages`.
+- remove `package-data` attribute `root_path`.
 
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Various documentations have been updated to reflects API changes and
   correct minor documentation issues.
 
@@ -166,7 +272,7 @@ values in the summaries for license, copyrights, etc.
 
 
 Thank you to:
-- Thomas Druez @tdruez 
+- Thomas Druez @tdruez
 
 
 
@@ -178,11 +284,11 @@ This is a minor bug fix release for these bugs:
 - https://github.com/nexB/commoncode/issues/31
 - https://github.com/nexB/scancode-toolkit/issues/2713
 
-We now correctly work with all supported Click versions. 
+We now correctly work with all supported Click versions.
 
 Thank you to:
 - Konstantin Kochin @vznncv
-- Thomas Druez @tdruez 
+- Thomas Druez @tdruez
 
 
 
@@ -236,7 +342,7 @@ License detection:
 There have been some significant updates in license detection. We now track
 34,164 license and license notices:
 
-  - 84 new licenses have been added, 
+  - 84 new licenses have been added,
   - 34 existing license metadata have been updated,
   - 2765 new license detection rules have been added, and
   - 2041 existing license rules have been updated.
@@ -296,13 +402,13 @@ Many thanks to the many contributors that made this release possible and in
 particular:
 
 - Akanksha Garg @akugarg
-- Armijn Hemel @armijnhemel 
+- Armijn Hemel @armijnhemel
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Bryan Sutula @sutula
 - Chin-Yeung Li @chinyeungli
 - Dennis Clark @DennisClark
 - dyh @yunhua-deng
-- Dr. Frank Heimes @FrankHeimes 
+- Dr. Frank Heimes @FrankHeimes
 - gunaztar @gunaztar
 - Helio Chissini de Castro @heliocastro
 - Henrik Sandklef @hesa
@@ -317,16 +423,16 @@ particular:
 - Michael Herzog @mjherzog
 - MMarwedel @MMarwedel
 - Mikko Murto @mmurto
-- Nishchith Shetty @inishchith 
+- Nishchith Shetty @inishchith
 - Peter Gardfjäll @petergardfjall
 - Philippe Ombredanne @pombredanne
-- Rainer Bieniek @rbieniek 
+- Rainer Bieniek @rbieniek
 - Roshan Thomas @Thomshan
 - Sadhana @s4-2
 - Sarita Singh @itssingh
 - Siddhant Khare @Siddhant-K-code
 - Soim Kim @soimkim
-- Thomas Druez @tdruez 
+- Thomas Druez @tdruez
 - Thorsten Godau @tgodau
 - Yunus Rahbar @yns88
 
@@ -366,7 +472,7 @@ Many thanks to every contributors that made this possible and in particular:
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Dennis Clark @DennisClark
 - Jono Yang @JonoYang
-- Mayur Agarwal @mrmayurgithub 
+- Mayur Agarwal @mrmayurgithub
 - Philippe Ombredanne @pombredanne
 - Pierre Tardy @tardyp
 
@@ -431,7 +537,7 @@ Many thanks to every contributors that made this possible and in particular:
 - Sarita Singh @itssingh
 - Sebastian Thomas @sebathomas
 - Steven Esser @majurg
-- Till Jaeger @LeChasseur 
+- Till Jaeger @LeChasseur
 - Thomas Druez @tdruez
 
 
@@ -500,7 +606,7 @@ Package detection:
 
  - The PyPI package detection and manifest parsing has been reworked and
    significantly improved.
-   
+
  - The detection of Windows executables and DLLs metadata has been enabled.
    These metadata are returned as packages.
 
@@ -582,8 +688,8 @@ Package scanning:
 
  - Improve handling of Debian copyright files with faster and more
    accurate license detection
-   Thank you to Thomas Druez @tdruez 
-   
+   Thank you to Thomas Druez @tdruez
+
  - Add new built-in support for installed_files report. Only available when
    used as a library.
 
@@ -594,7 +700,7 @@ Package scanning:
    - Steven Esser @majurg
 
  - Add new support to collect information from semi-structured Readme files
-   and related metadata files. 
+   and related metadata files.
    Thank you to Jonothan Yang @JonoYang and Steven Esser @majurg
 
 
@@ -603,7 +709,7 @@ Outputs:
 
  - Add new Debian copyright-formatted output.
    Thank you to Jelmer Vernooĳ @jelmer
-   
+
  - Fix bug in --include where directories where not skipped correctly
    Thank you to Pierre Tardy @tardyp
 
@@ -747,11 +853,11 @@ v3.2.0rc1 (2020-09-08)
  - Add and improve support for package lockfiles for Pipfile.lock, requirements.tx, Cargo.lock - Rohit Potter @rpotter12
  - Add new --max-depth option to limit sca depth - Hanif Ali @hanif-ali
  - Add initial Debian packaging - @aj4ayushjain
- - Add new documentation web site and documentation generation system 
+ - Add new documentation web site and documentation generation system
  - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
  - Rework packaging and third-party support handling: Create new scripts and
    process to provision, install and manage third-party dependencies - Abhishek Kumar @Abhishek-Dev09
- - Improve CSV output and fix manifest path bug #1718 Aditya Viki8 
+ - Improve CSV output and fix manifest path bug #1718 Aditya Viki8
  - Add new documentation, as well as tools and process. Ayan Sinha Mahapatra
  - Add new license detection rules - Ayan Sinha Mahapatra
  - Improve license detection #1999 - Bryan Sutula
@@ -779,9 +885,9 @@ v3.2.0rc1 (2020-09-08)
  - Add new checksum type for sha256 - Nitish @nitish81299
  - Improve documentation - Philippe Ombredanne
  - Add new license detection rules and improve detection #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
- - Add new license detection rules and improve detection #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911 
+ - Add new license detection rules and improve detection #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911
  - Add new license detection rules and improve detection #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
- - Allow to call "run_scan" as a function #1780 
+ - Allow to call "run_scan" as a function #1780
  - Update license data to SPDX 3.7 #1789
  - Collect matched license text correctly including with Turkish diacritics #1872
  - Detect SPDX license identifiers #2007
@@ -809,7 +915,7 @@ v3.2.0rc1 (2020-09-08)
  - Fix license name and data - Thomas Steenbergen
  - Improve runtime support for FreeBSD #1695  @knobix
  - Update macOS image on azure pipeline @TG1999
- - Improve documentation - @Vinay0001     
+ - Improve documentation - @Vinay0001
 
 
 v3.1.1 (2019-09-04)
@@ -834,7 +940,7 @@ Other features and fixes:
  - Improve handling of plugins for native binaries @aj4ayushjain
  - Add CODE OF CONDUCT @inishchith
  - Fix extractcode error #749
- - Add new version notification #111 #1688 @jdaguil 
+ - Add new version notification #111 #1688 @jdaguil
 
 
 v3.1.0 (2019-08-12)
@@ -844,7 +950,7 @@ v3.1.0 (2019-08-12)
  - Add plugin to collect dwarf references #1167 @licodeli
  - Add fingerprint plugin #1651 @arnav-mandal1234
  - Add summary and consolidation plugin #1673
- - Improve license detection #1606 #1659 #1675 
+ - Improve license detection #1606 #1659 #1675
  - Improve copyright detection #1672
  - Add owned files to package manifests #1554 @JonoYang
  - Improve package manifest support for Conda #1147, Bower and Python @licodeli
@@ -866,14 +972,14 @@ v3.0.0 (2019-02-14)
 -------------------
 
 License detection:
- - Add new and improved licenses and license detection rules #1334 #1335 #1336 #1337 ##1357 
+ - Add new and improved licenses and license detection rules #1334 #1335 #1336 #1337 ##1357
  - Fix-up the license text inside the `bsl-*.LICENSE` files #1338 by @fviernau
  - Add tests for commnon NuGet license bare URLs (until recently NuGet nupsec
-   only had a license URL as licensing documentation) 
+   only had a license URL as licensing documentation)
  - Add a license for the `PSK` contributions to OpenSSL #1341 by @fviernau
  - Improve License Match scoring and filtering for very short rules
  - Do not run license and copyright detection on media files: Media should not
-   contain text #1347 #1348 
+   contain text #1347 #1348
  - Detect scea-1.0 license correctly #1346
  - Do not detect warranty disclaimer as GPL #1345
  - Support quoted SPDX expressions and more comment marker prefixes
@@ -885,9 +991,9 @@ License detection:
 Packages:
  - Improve npm vcs_url handling #1314 by @majurg
  - Improve Maven POM license detection #1344
- - Add Maven POM URL detection 
- - Recognize .gem archives as packages 
- - Improve parsing of Pypi Python setup.py 
+ - Add Maven POM URL detection
+ - Recognize .gem archives as packages
+ - Improve parsing of Pypi Python setup.py
  - Improve package summaries. Add new plugin to improve package classification #1339
 
 Other:
@@ -906,9 +1012,9 @@ API changes:
 Other changes:
  - Copyright detection improvements #1305 by @JonoYang
  - Correct CC-BY V3.0 and V4.0 license texts by correct one by @sschuberth #1320
- - Add new and improved licenses and license detection rules including the latest SPDX list 3.4 and #1322 #1324 
- - Rename proprietary license key to proprietary-license 
- - Rename commercial license key to commercial-license 
+ - Add new and improved licenses and license detection rules including the latest SPDX list 3.4 and #1322 #1324
+ - Rename proprietary license key to proprietary-license
+ - Rename commercial license key to commercial-license
  - Improve npm package.json handling #1308 and #1314 by @majurg
 
 
@@ -918,7 +1024,7 @@ v2.9.8 (2018-12-12)
 This is a close-to-final pre-release of what will come up for 3.0 with some API change for packages.
 
 API changes:
- - In Package models, rename normalized_license to license_expression and 
+ - In Package models, rename normalized_license to license_expression and
    add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
 
 Outputs:
@@ -940,14 +1046,14 @@ License detection:
    as a rule.
  - Licenses have been synchronized with the latest v3.3 SPDX license list and the latest DejaCode licenses #1242
  - Duplicated SPDX keys have been fixed #1264
- - Add new and improved license detection rules #1313 #1306 #1302 #1298 #1293 
+ - Add new and improved license detection rules #1313 #1306 #1302 #1298 #1293
    #1291 #1289 #1270 #1269 #1192 #1186 #1170 #1164 #1128 #1124 #1112 #1110 #1108
    #1098 #1069 #1063 #1058 #1052 #1050 #1039 #987 #962 #929
 
 Packages:
  - Add support for haxe "haxelib" package manifests #1227
  - Remove code_type attribute from Package models
- - In Package models, rename normalized_license  to license_expression and 
+ - In Package models, rename normalized_license  to license_expression and
    add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
  - Improve data returned for PHP Composer packages
  - Add PackageURL to top level output for packages
@@ -961,10 +1067,10 @@ Misc:
  - Ensure all temporary directories are prefixed with "scancode-"
  - Drop support for Linux 32 bits #1259
  - Do not attempt to scan encrypted PDF documents
- - Improve "data" files detection 
+ - Improve "data" files detection
  - ScanCode can be installed from Pypi correctly #1214 #1183
- - Improve reporting of programming languages #1194 
- - Fix running post scan plugins #1141 
+ - Improve reporting of programming languages #1194
+ - Fix running post scan plugins #1141
 
 Command line:
  - Always delete temporary files when no longer needed. #1231
@@ -998,7 +1104,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
  - @geneh
  - @jonassmedegaard
 
-and many other that I may have missed. 
+and many other that I may have missed.
 
 
 
@@ -1012,7 +1118,7 @@ No changes.
 v2.9.6 (2018-10-25)
 -------------------
 
- - Add declared license normalization #1092 
+ - Add declared license normalization #1092
  - Add new and improved license rules
  - Add mising and clean up ABOUT files for all embedded third-party libraries
  - Improve npm package.json handling (better keuword support)
@@ -1042,7 +1148,7 @@ related to packages.
  - Add Package URL field to top-level package output #1149
  - --package option should collect homepage URL for packages #645
  - Support installation from Pypi and update various third-parties to their
-   latest version #1183 
+   latest version #1183
  - Fix bug where multiple outputs with --html would crash scancode #
  - Add new and improved licenses and license detection rules #1192 #1186
  - Ensure that plugin failure trigger a proper error exit code #1199
@@ -1052,15 +1158,15 @@ related to packages.
  - Fix incorrect copyright detection #1198
  - Detect programming language more strictly and efficiently #1194
  - Use simpler list of source package URLs/purls #1206
- - Add purl to the packages data #1149 
- - Use direct attributes for package checksums #1189 
+ - Add purl to the packages data #1149
+ - Use direct attributes for package checksums #1189
  - Remove package_manifest attribute for packages
  - Add new Package "manifest_path" attribute which is a relative path to
    the manifest file if any, such as a Maven .pom or a npm package.json.
- 
+
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
 
- - @MartinPetkov 
+ - @MartinPetkov
  - @majurg
  - @JonoYang
 
@@ -1077,7 +1183,7 @@ Licenses:
  - Add new license and rules and improve licene rules #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
  - Add new license clarity scoring #1180
    This is also for use in the ClearlyDefined project
- - Add is_exception to license scan results #1159 
+ - Add is_exception to license scan results #1159
 
 Copyrights:
  - Copyright detection  has been improved #930 #965 #1103
@@ -1090,7 +1196,7 @@ Packages:
 
 Misc:
 
- - Add facet, classification and summarizer plugins #357 
+ - Add facet, classification and summarizer plugins #357
  - Fix file counts #1055
  - Fix corrupted license cache error
  - Upgrade all thridparty libraries #1070
@@ -1104,7 +1210,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
  - @mueller-ma
  - @MartinPetkov
  - @techytushar
- 
+
 
 
 v2.9.2 (2018-05-08)
@@ -1113,14 +1219,14 @@ This is a major pre-release of what will come up for 3.0. with significant
 packages and license API changes.
 
 API changes:
- - Simplify output option names #789 
+ - Simplify output option names #789
  - Update the packages data structure and introduce Package URLs #275
  - Add support for license expressions #74 with full exceptions support
 
 Licenses:
  - Add support for license expressions #74 with full exceptions support
  - Enable SPDX license identifier match #81
- - Update and change handling of composite licenses now that we support expressions 
+ - Update and change handling of composite licenses now that we support expressions
  - Symchronize licenses with latest from SPDX and DejaCode #41
  - Add new licenses ofr odds and ends: other-permissive and other-copyleft
  - refine license index cache handling
@@ -1140,11 +1246,11 @@ Packages:
    - Rename asserted_license to declared_licensing #275
    - Add basic Godeps parsing support #275
    - Add basic gemspec and Rubygems parsing support #275
-   - Add basic Gemfile.lock parsing support #275 
+   - Add basic Gemfile.lock parsing support #275
    - Add basic Win DLL parsing support #275
-   - Replace MD5/SHA1 by a list of checksums #275 
-   - Use a single download_url, not a list #275 
-   - Add namespace to npm. Compute defaults URL #275 
+   - Replace MD5/SHA1 by a list of checksums #275
+   - Use a single download_url, not a list #275
+   - Add namespace to npm. Compute defaults URL #275
 
 Misc:
  - multiple minor bug fixes
@@ -1169,7 +1275,7 @@ Licenses:
 
 Copyrights:
  - Copyright detection  has been improved #930 #965
- 
+
 Misc:
  - Improve support for JavaScript map files: they may contain both debugging
    information and whole package source code.
@@ -1189,7 +1295,7 @@ v2.9.0b1 (2018-03-02)
 
 This is a major pre-release of what will come up for 3.0
 
-This has a lot of new changes including improved plugins, speed and detection 
+This has a lot of new changes including improved plugins, speed and detection
 that are not yet fully documented but it can be used for testing.
 
 API changes:
@@ -1233,7 +1339,7 @@ Licenses:
  - License match have a notion of "coverage" which is the number of matched
    words compared to the number of words in the matched rule.
  - The license cache is not checked anymore for consistency once created which
-   improved startup times. (unless you are using a Git checkout and you are 
+   improved startup times. (unless you are using a Git checkout and you are
    developping with a SCANCODE_DEV_MODE tag file present)
  - License catagory names have been improved
 
@@ -1252,7 +1358,7 @@ Misc:
    each file (with a default to 50) #384
  - When configuring in dev mode, VS Code settings are created
  - Archive detection has been improved
- - There is a new cache and temporary file configuration with --cache-dir and 
+ - There is a new cache and temporary file configuration with --cache-dir and
    --temp-dir CLI options. The --no-cache option has been removed
  - Add new --examples to show usage examples help
  - Move essential configuration to a scancode_config.py module
@@ -1260,10 +1366,10 @@ Misc:
  - Improve handling of files with weird characters in their names on all OSses
  - Improve detection of archive vs. comrpessed files
  - Make all copyright tests data driven using YAML files like for license tests
- 
+
 
 Plugins
- - Prescan plugins can now exclude files from the scans 
+ - Prescan plugins can now exclude files from the scans
  - Plugins can now contribute arbitrary command line options #787 and #748
  - there is a new plugin stage called output_filter to optionally filter a scan before output.
    One example is to keep "only findings" #787
@@ -1273,7 +1379,7 @@ Plugins
  - All scanners are also plugins #698 and now everything is a plugin including the scans
  - The interface for output plugins is the same as other plugins #715
 
- 
+
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
 (and this list is likely missing some)
 
@@ -1344,7 +1450,7 @@ Other changes:
  - Several other package types are now detected with --package even
    though only a few attribute may be returned for now until full parser
    are added.
- - Several parsing NPM packages bugs have been fixed. 
+ - Several parsing NPM packages bugs have been fixed.
  - There are some minor performance improvements when scanning some
    large file for licenses.
 
@@ -1404,14 +1510,14 @@ v2.0.1 (2017-07-03)
  - New "base_name" attribute returned with file information. Reported by
    @chinyeungli
  - Bug fixed in Maven POM package detection. Reported by @kalagp
- 
+
 
 v2.0.0 (2017-06-23)
 -------------------
 
  This is a major release with several new and improved features and bug
  fixes.
- 
+
  Some of the key highlights include:
 
 License detection:
@@ -1450,7 +1556,7 @@ Package and dependencies:
     considered API at this stage
 
 
-Scan outputs: 
+Scan outputs:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   - New SPDX tag/values and RDF outputs.
@@ -1479,7 +1585,7 @@ Performance:
   - Everything is generally faster, and license detection performance
     has been significantly improved.
 
-  - Scans can run on multiple processes in parallel with the new 
+  - Scans can run on multiple processes in parallel with the new
     `--processes` option speeding up things even further. A scan of a
     full Debian pool of source packages was reported to scan in about
     11 hours (on a rather beefy 144 cores, 256GB machine)
@@ -1500,7 +1606,7 @@ Other notes:
    - New `--diag option`: display additional debug and diagnostic data
    - The scanned file paths can now reported as relative, rooted or
      absolute with new command line options with a default to a rooted
-     path. 
+     path.
 
 
  Thank you to all contributors to this release and the 200+ stars
@@ -1562,7 +1668,7 @@ New features
  - New email and url scan options: scan for URLs and emails
  - New and improved license and detection rules
 
-These scans are for now only available in the JSON output 
+These scans are for now only available in the JSON output
 
 
 v1.4.3 (2015-12-03)
@@ -1655,7 +1761,7 @@ v1.2.3 (2015-07-16)
 Major bug fixes on Windows.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - This is a major bug fix release for Windows. 
+ - This is a major bug fix release for Windows.
    The -extract option was not working on Windows in previous 1.2.x pre-releases
 
 

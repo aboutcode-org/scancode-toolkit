@@ -33,7 +33,7 @@ if TRACE:
 
 
 @attr.s()
-class OpamPackage(models.Package):
+class OpamPackageData(models.PackageData):
 
     default_type = 'opam'
     default_primary_language = 'Ocaml'
@@ -55,13 +55,13 @@ class OpamPackage(models.Package):
 
 
 @attr.s()
-class OpamFile(OpamPackage, models.PackageManifest):
+class OpamFile(OpamPackageData, models.PackageDataFile):
 
     file_patterns = ('*opam',)
     extensions = ('.opam',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -81,7 +81,7 @@ class OpamFile(OpamPackage, models.PackageManifest):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=dep.purl,
-                    requirement=dep.version,
+                    extracted_requirement=dep.version,
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
@@ -146,6 +146,21 @@ class OpamFile(OpamPackage, models.PackageManifest):
         )
 
         yield package
+
+
+@attr.s()
+class OpamPackage(OpamPackageData, models.Package):
+    """
+    A Opam Package that is created out of one/multiple opam package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            OpamFile
+        ]
+
 
 """
 Example:- 

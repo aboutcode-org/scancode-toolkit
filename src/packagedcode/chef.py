@@ -38,7 +38,7 @@ if TRACE:
 
 
 @attr.s()
-class ChefPackage(models.Package):
+class ChefPackageData(models.PackageData):
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'chef'
@@ -156,13 +156,13 @@ class ChefMetadataFormatter(Formatter):
 
 
 @attr.s()
-class MetadataJson(ChefPackage, models.PackageManifest):
+class MetadataJson(ChefPackageData, models.PackageDataFile):
 
     file_patterns = ('metadata.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'
@@ -187,13 +187,13 @@ class MetadataJson(ChefPackage, models.PackageManifest):
 
 
 @attr.s()
-class Metadatarb(ChefPackage, models.PackageManifest):
+class Metadatarb(ChefPackageData, models.PackageDataFile):
 
     file_patterns = ('metadata.rb',)
     extensions = ('.rb',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data_file(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'
@@ -214,6 +214,21 @@ class Metadatarb(ChefPackage, models.PackageManifest):
             file_contents, RubyLexer(), ChefMetadataFormatter())
         package_data = json.loads(formatted_file_contents)
         return build_package(cls, package_data)
+
+
+@attr.s()
+class ChefPackage(ChefPackageData, models.Package):
+    """
+    A Chef Package that is created out of one/multiple chef package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            MetadataJson,
+            Metadatarb
+        ]
 
 
 def build_package(cls, package_data):
@@ -252,7 +267,7 @@ def build_package(cls, package_data):
             models.DependentPackage(
                 purl=PackageURL(type='chef', name=dependency_name).to_string(),
                 scope='dependencies',
-                requirement=requirement,
+                extracted_requirement=requirement,
                 is_runtime=True,
                 is_optional=False,
             )

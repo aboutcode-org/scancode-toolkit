@@ -79,7 +79,7 @@ license_expressions:
   - bsd-original-uc
   - pcre
   - pcre
-  - x11-xconsortium_veillard
+  - x11-xconsortium-veillard
   - bsd-simplified
   - libpng
   - bsd-new AND lgpl-2.0

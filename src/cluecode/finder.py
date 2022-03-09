@@ -152,10 +152,39 @@ def junk_email_domains_filter(matches):
     or example.com emails.
     """
     for key, email, line, line_number in matches:
-        domain = email.split('@')[-1]
-        if not is_good_host(domain):
-            continue
-        yield key, email, line, line_number
+        if is_good_email_domain(email):
+            yield key, email, line, line_number
+        else:
+            if TRACE:
+                logger_debug(f'junk_email_domains_filter: !is_good_host: {email!r}')
+
+
+def is_good_email_domain(email):
+    """
+    Return True if the domain of the ``email`` string is valid, False otherwise
+    such as for local, non public domains.
+
+    For example::
+    >>> is_good_email_domain("foo@nexb.com")
+    True
+    >>> is_good_email_domain("foo@example.com")
+    False
+    >>> is_good_email_domain("foo@nexb.foobar")
+    False
+    """
+    if not email:
+        return False
+
+    _dest, _, server = email.partition('@')
+    if not is_good_host(server):
+        return False
+
+    fake_url = f'http://{server}'
+    _host, domain = url_host_domain(fake_url)
+    if not is_good_host(domain):
+        return False
+
+    return True
 
 
 def uninteresting_emails_filter(matches):

@@ -10,15 +10,16 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "nuget",
@@ -61,11 +62,16 @@
       "license_expression": "apache-2.0",
       "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
       "notice_text": null,
-      "root_path": null,
-      "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:nuget/Castle.Core@4.2.1",
+      "package_data_files": [
+        "Castle.Core.nuspec"
+      ],
+      "files": [
+        "Castle.Core.nuspec"
+      ],
       "purl": "pkg:nuget/Castle.Core@4.2.1",
       "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
       "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
@@ -76,7 +82,7 @@
     {
       "path": "Castle.Core.nuspec",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "nuget",
           "namespace": null,
@@ -118,16 +124,18 @@
           "license_expression": "apache-2.0",
           "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
           "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
+          "dependencies": [],
           "purl": "pkg:nuget/Castle.Core@4.2.1",
           "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
           "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
           "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
         }
+      ],
+      "for_packages": [
+        "pkg:nuget/Castle.Core@4.2.1"
       ],
       "scan_errors": []
     }

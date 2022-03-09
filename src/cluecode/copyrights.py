@@ -639,6 +639,9 @@ patterns = [
     # SPDX-FileCopyrightText as defined by the FSFE Reuse project
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
 
+    # SPDX-FileContributor as defined in SPDX and seen used in KDE
+    (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]ontributor', 'SPDX-CONTRIB'),
+
     ############################################################################
     # ALL Rights Reserved.
     ############################################################################
@@ -2562,9 +2565,15 @@ grammar = """
     #holder is Tim Hudson (tjh@mincom.oz.au).
     COPYRIGHT: {<HOLDER> <JUNK> <NAME-EMAIL>}       #83001
 
+    # Copyright lowRISC contributors.
+    COPYRIGHT: {<COPY> <NN> <CONTRIBUTORS>}
+
 #######################################
 # Authors
 #######################################
+
+    # SPDX-FileContributor special case
+    AUTHOR: {<SPDX-CONTRIB> <CCOMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL> <COMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL|NN>? }        #264000
 
     # developed by Project Mayo.
     AUTHOR: {<AUTH2>+ <BY> <COMPANY> <NNP>}        #2645-1
@@ -2923,6 +2932,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'authors,',
         'authorship',
         'or',
+        'spdx-filecontributor',
     ])
 ))
 
