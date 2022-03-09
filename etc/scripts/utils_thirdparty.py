@@ -330,6 +330,7 @@ def get_package_versions(
         except RemoteNotFetchedException as e:
             print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
 
+
 ################################################################################
 #
 # Core models
@@ -1617,6 +1618,7 @@ class Environment:
             )
         )
 
+
 ################################################################################
 #
 # PyPI repo and link index for package wheels and sources
@@ -1801,6 +1803,7 @@ class LinksRepository:
             _LINKS_REPO[url] = cls(url=url)
         return _LINKS_REPO[url]
 
+
 ################################################################################
 # Globals for remote repos to be lazily created and cached on first use for the
 # life of the session together with some convenience functions.
@@ -1833,6 +1836,7 @@ def get_pypi_package(name, version, index_url, verbose=TRACE_DEEP):
 
     except RemoteNotFetchedException as e:
         print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
+
 
 ################################################################################
 #
@@ -1994,6 +1998,7 @@ def fetch_and_save_path_or_url(
         fo.write(content)
     return content
 
+
 ################################################################################
 # Requirements processing
 ################################################################################
@@ -2030,6 +2035,7 @@ def get_required_packages(
         if TRACE:
             print("  get_required_packages: name:", name, "version:", version)
         yield repo.get_package(name, version)
+
 
 ################################################################################
 # Functions to update or fetch ABOUT and license files
@@ -2181,6 +2187,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
                 lic_errs = "\n".join(lic_errs)
                 print(f"Failed to fetch some licenses:: {lic_errs}")
 
+
 ################################################################################
 #
 # Functions to build new Python wheels including native on multiple OSes
@@ -2311,9 +2318,9 @@ def build_wheels_locally_if_pure_python(
             "--wheel-dir",
             wheel_dir,
         ]
-        +deps
-        +verbose
-        +[requirements_specifier]
+        + deps
+        + verbose
+        + [requirements_specifier]
     )
 
     print(f"Building local wheels for: {requirements_specifier}")
