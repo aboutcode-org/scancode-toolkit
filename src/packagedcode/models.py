@@ -86,14 +86,14 @@ package type or ecosystem `dummy`.
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 TRACE = False or SCANCODE_DEBUG_PACKAGE_API
-TRACE_MERGING = True or SCANCODE_DEBUG_PACKAGE_API
+TRACE_MERGING = False or SCANCODE_DEBUG_PACKAGE_API
 
 def logger_debug(*args):
     pass
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
+if TRACE or TRACE_MERGING:
     import logging
 
     logging.basicConfig(stream=sys.stdout)
@@ -838,12 +838,26 @@ class Package:
         """
         Create a package instance object from one or multiple package data.
         """
+        paths_with_mismatch = []
+
         for path, package_data in package_data_by_path.items():
+            success = True
             if TRACE:
                 logger.debug('Merging package manifest data for: {}'.format(path))
                 logger.debug('package manifest data: {}'.format(repr(package_data)))
+
+            success = self.update(package_data.copy())
+            if not success:
+                paths_with_mismatch.append(path)
+                
+                if TRACE:
+                    logger.debug('Failed to merge package manifest data for: {}'.format(path))
+                continue
+
             self.package_data_files.append(path)
-            self.update(package_data.copy())
+        
+        for path in paths_with_mismatch:
+            package_data_by_path.pop(path)
 
         self.package_data_files = tuple(self.package_data_files)
 
@@ -931,6 +945,9 @@ class Package:
 
     def update(self, package_data, replace=False):
         """
+        Returns False if there's a type/name/version mismatch between the package
+        and the package_data, otherwise returns True if update is successful.
+
         Update the Package object with data from the `package_data`
         object.
         When an `package_instance` field has no value one side and and the
@@ -963,13 +980,15 @@ class Package:
             # These fields has to be same across the package_data
             if existing_field in ('name', 'version', 'type', 'primary_language'):
                 if existing_value and new_value and existing_value != new_value:
-                    raise Exception(
-                        '\n'.join([
-                            'Mismatched {}:'.format(existing_field),
-                            '    existing_value: {}'.format(existing_value),
-                            '    new_value: {}'.format(new_value)
-                        ])
-                    )
+                    if TRACE_MERGING:
+                        logger.debug(
+                            '\n'.join([
+                                'Mismatched {}:'.format(existing_field),
+                                '    existing_value: {}'.format(existing_value),
+                                '    new_value: {}'.format(new_value)
+                            ])
+                        )
+                    return False
 
             if not new_value:
                 if TRACE_MERGING:
@@ -1058,6 +1077,9 @@ class Package:
 
             if TRACE_MERGING:
                 logger.debug('  Nothing done')
+
+        # Return True if package data update is successful
+        return True
 
 
 # Package types
