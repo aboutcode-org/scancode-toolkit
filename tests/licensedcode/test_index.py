@@ -182,8 +182,8 @@ class TestIndexing(IndexTesting):
         try:
             MiniLicenseIndex(models.load_rules(rule_dir))
             self.fail('Exception on dupes not raised')
-        except AssertionError as e:
-            assert u'Duplicate rules' in str(e)
+        except index.DuplicateRuleError as e:
+            assert 'Duplicate rules' in str(e)
 
     @pytest.mark.scanslow
     def test_index_does_not_fail_on_rules_with_similar_normalized_names(self):
@@ -191,6 +191,19 @@ class TestIndexing(IndexTesting):
         lics_dir = self.get_test_loc('index/similar_names/licenses')
         rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
         index.LicenseIndex(rules)
+
+    @pytest.mark.scanslow
+    def test_index_rules_with_key_phrases_and_without_are_duplicates(self):
+        rules_dir = self.get_test_loc('index/duplicate-key-phrases/rules')
+        lics_dir = self.get_test_loc('index/duplicate-key-phrases/licenses')
+        rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
+        try:
+            idx = index.LicenseIndex(rules)
+            for rid, tids in enumerate(idx.tids_by_rid):
+                print(idx.rules_by_rid[rid].rid, repr(" ".join(idx.tokens_by_tid[t] for t in tids)))
+            raise Exception("Exception not raised for duplicated rules")
+        except index.DuplicateRuleError as e:
+            assert str(e).startswith('Duplicate rules')
 
 
 class TestMatchNoTemplates(IndexTesting):

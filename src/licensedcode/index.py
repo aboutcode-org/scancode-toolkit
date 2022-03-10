@@ -110,6 +110,10 @@ USE_DMP = False
 MAX_TOKENS = (2 ** 15) - 1
 
 
+class DuplicateRuleError(Exception):
+    pass
+
+
 class LicenseIndex(object):
     """
     A license detection index. An index is queried for license matches found in
@@ -567,7 +571,7 @@ class LicenseIndex(object):
                 for rules in dupe_rules
             ]
             msg = ('Duplicate rules: \n' + '\n\n'.join(dupe_rule_paths))
-            raise AssertionError(msg)
+            raise DuplicateRuleError(msg)
 
         self.optimized = True
 
