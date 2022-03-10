@@ -110,7 +110,7 @@ class FileClassifier(PreScanPlugin):
     ]
 
     def is_enabled(self, classify, **kwargs):
-        return True
+        return classify
 
     def process_codebase(self, codebase, classify, **kwargs):
         # find the real root directory
