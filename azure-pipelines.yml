@@ -140,7 +140,7 @@ jobs:
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2022_cpython
-          image_name: win2022-2022
+          image_name: windows-2022
           python_versions: ['3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
