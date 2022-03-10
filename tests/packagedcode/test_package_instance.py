@@ -37,6 +37,13 @@ class TestPackageAndDependency(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, ignore_instance_uuid=True)
 
+    def test_package_instance_scan_python_with_test_manifests(self):
+        test_dir = self.get_test_loc('instance/pypi-with-test-manifests')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=True, remove_instance_uuid=True)
+
     def test_package_data_merge_generic(self, regen=False):
         input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')
         expected_file = self.get_test_loc('instance/python-manifests-click-scanned-result.json')

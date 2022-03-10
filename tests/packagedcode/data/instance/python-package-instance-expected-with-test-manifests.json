@@ -1,0 +1,524 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true,
+        "--processes": "-1",
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "3.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 9
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/towncrier",
+      "extracted_requirement": "towncrier",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/towncrier",
+      "for_package": "pkg:pypi/setuptools@58.2.0",
+      "lockfile": "tox.ini"
+    },
+    {
+      "purl": "pkg:pypi/bump2version",
+      "extracted_requirement": "bump2version",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/bump2version",
+      "for_package": "pkg:pypi/setuptools@58.2.0",
+      "lockfile": "tox.ini"
+    },
+    {
+      "purl": "pkg:pypi/build",
+      "extracted_requirement": "build",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/build",
+      "for_package": "pkg:pypi/setuptools@58.2.0",
+      "lockfile": "tox.ini"
+    },
+    {
+      "purl": "pkg:pypi/twine",
+      "extracted_requirement": ">=3",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/twine",
+      "for_package": "pkg:pypi/setuptools@58.2.0",
+      "lockfile": "tox.ini"
+    },
+    {
+      "purl": "pkg:pypi/jaraco.develop",
+      "extracted_requirement": ">=7.1",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uuid": "pkg:pypi/jaraco.develop",
+      "for_package": "pkg:pypi/setuptools@58.2.0",
+      "lockfile": "tox.ini"
+    }
+  ],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "setuptools",
+      "version": "58.2.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Easily download, build, install, upgrade, and uninstall Python packages\n.. image:: https://img.shields.io/pypi/v/setuptools.svg\n   :target: `PyPI link`_\n\n.. image:: https://img.shields.io/pypi/pyversions/setuptools.svg\n   :target: `PyPI link`_\n\n.. _PyPI link: https://pypi.org/project/setuptools\n\n.. image:: https://github.com/pypa/setuptools/workflows/tests/badge.svg\n   :target: https://github.com/pypa/setuptools/actions?query=workflow%3A%22tests%22\n   :alt: tests\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n   :target: https://github.com/psf/black\n   :alt: Code style: Black\n\n.. image:: https://img.shields.io/readthedocs/setuptools/latest.svg\n    :target: https://setuptools.readthedocs.io\n\n.. image:: https://img.shields.io/badge/skeleton-2021-informational\n   :target: https://blog.jaraco.com/skeleton\n\n.. image:: https://img.shields.io/codecov/c/github/pypa/setuptools/master.svg?logo=codecov&logoColor=white\n   :target: https://codecov.io/gh/pypa/setuptools\n\n.. image:: https://tidelift.com/badges/github/pypa/setuptools?style=flat\n   :target: https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=readme\n\nSee the `Installation Instructions\n<https://packaging.python.org/installing/>`_ in the Python Packaging\nUser's Guide for instructions on installing, upgrading, and uninstalling\nSetuptools.\n\nQuestions and comments should be directed to the `distutils-sig\nmailing list <http://mail.python.org/pipermail/distutils-sig/>`_.\nBug reports and especially tested patches may be\nsubmitted directly to the `bug tracker\n<https://github.com/pypa/setuptools/issues>`_.\n\n\nCode of Conduct\n===============\n\nEveryone interacting in the setuptools project's codebases, issue trackers,\nchat rooms, and mailing lists is expected to follow the\n`PSF Code of Conduct <https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md>`_.\n\n\nFor Enterprise\n==============\n\nAvailable as part of the Tidelift Subscription.\n\nSetuptools and the maintainers of thousands of other packages are working with Tidelift to deliver one enterprise subscription that covers all of the open source you use.\n\n`Learn more <https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=referral&utm_campaign=github>`_.\n\n\nSecurity Contact\n================\n\nTo report a security vulnerability, please use the\n`Tidelift security contact <https://tidelift.com/security>`_.\nTidelift will coordinate the fix and disclosure.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Python Packaging Authority",
+          "email": "distutils-sig@python.org",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "CPAN PyPI distutils eggs package management",
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: System :: Archiving :: Packaging",
+        "Topic :: System :: Systems Administration",
+        "Topic :: Utilities"
+      ],
+      "homepage_url": "https://github.com/pypa/setuptools",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": {
+        "classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "notice_text": null,
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:pypi/setuptools@58.2.0",
+      "package_data_files": [
+        "PKG-INFO",
+        "setup.py",
+        "tox.ini"
+      ],
+      "files": [
+        "LICENSE",
+        "MANIFEST.in",
+        "PKG-INFO",
+        "pyproject.toml",
+        "README.rst",
+        "setup.cfg",
+        "setup.py",
+        "tox.ini",
+        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
+      ],
+      "purl": "pkg:pypi/setuptools@58.2.0",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json"
+    },
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "my-test-package",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:pypi/my-test-package@1.0",
+      "package_data_files": [
+        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
+      ],
+      "files": [
+        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
+      ],
+      "purl": "pkg:pypi/my-test-package@1.0",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "MANIFEST.in",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "PKG-INFO",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "setuptools",
+          "version": "58.2.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Easily download, build, install, upgrade, and uninstall Python packages\n.. image:: https://img.shields.io/pypi/v/setuptools.svg\n   :target: `PyPI link`_\n\n.. image:: https://img.shields.io/pypi/pyversions/setuptools.svg\n   :target: `PyPI link`_\n\n.. _PyPI link: https://pypi.org/project/setuptools\n\n.. image:: https://github.com/pypa/setuptools/workflows/tests/badge.svg\n   :target: https://github.com/pypa/setuptools/actions?query=workflow%3A%22tests%22\n   :alt: tests\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n   :target: https://github.com/psf/black\n   :alt: Code style: Black\n\n.. image:: https://img.shields.io/readthedocs/setuptools/latest.svg\n    :target: https://setuptools.readthedocs.io\n\n.. image:: https://img.shields.io/badge/skeleton-2021-informational\n   :target: https://blog.jaraco.com/skeleton\n\n.. image:: https://img.shields.io/codecov/c/github/pypa/setuptools/master.svg?logo=codecov&logoColor=white\n   :target: https://codecov.io/gh/pypa/setuptools\n\n.. image:: https://tidelift.com/badges/github/pypa/setuptools?style=flat\n   :target: https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=readme\n\nSee the `Installation Instructions\n<https://packaging.python.org/installing/>`_ in the Python Packaging\nUser's Guide for instructions on installing, upgrading, and uninstalling\nSetuptools.\n\nQuestions and comments should be directed to the `distutils-sig\nmailing list <http://mail.python.org/pipermail/distutils-sig/>`_.\nBug reports and especially tested patches may be\nsubmitted directly to the `bug tracker\n<https://github.com/pypa/setuptools/issues>`_.\n\n\nCode of Conduct\n===============\n\nEveryone interacting in the setuptools project's codebases, issue trackers,\nchat rooms, and mailing lists is expected to follow the\n`PSF Code of Conduct <https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md>`_.\n\n\nFor Enterprise\n==============\n\nAvailable as part of the Tidelift Subscription.\n\nSetuptools and the maintainers of thousands of other packages are working with Tidelift to deliver one enterprise subscription that covers all of the open source you use.\n\n`Learn more <https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=referral&utm_campaign=github>`_.\n\n\nSecurity Contact\n================\n\nTo report a security vulnerability, please use the\n`Tidelift security contact <https://tidelift.com/security>`_.\nTidelift will coordinate the fix and disclosure.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Python Packaging Authority",
+              "email": "distutils-sig@python.org",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "CPAN PyPI distutils eggs package management",
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3 :: Only",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: System :: Archiving :: Packaging",
+            "Topic :: System :: Systems Administration",
+            "Topic :: Utilities"
+          ],
+          "homepage_url": "https://github.com/pypa/setuptools",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "mit",
+          "declared_license": {
+            "classifiers": [
+              "License :: OSI Approved :: MIT License"
+            ]
+          },
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [],
+          "purl": "pkg:pypi/setuptools@58.2.0",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "README.rst",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "pkg_resources",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "pkg_resources/tests",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "pkg_resources/tests/data",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "pkg_resources/tests/data/my-test-package-zip",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "my-test-package",
+          "version": "1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": {},
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [],
+          "purl": "pkg:pypi/my-test-package@1.0",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0",
+        "pkg:pypi/my-test-package@1.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "pyproject.toml",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "setup.cfg",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "setup.py",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": {},
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [],
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "tox.ini",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/towncrier",
+              "extracted_requirement": "towncrier",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:pypi/bump2version",
+              "extracted_requirement": "bump2version",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:pypi/build",
+              "extracted_requirement": "build",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:pypi/twine",
+              "extracted_requirement": ">=3",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:pypi/jaraco.develop",
+              "extracted_requirement": ">=7.1",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
