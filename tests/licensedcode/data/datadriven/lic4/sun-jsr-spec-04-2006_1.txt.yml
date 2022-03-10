@@ -1,6 +1,5 @@
 license_expressions:
   - proprietary-license
-expected_failure: yes
 notes: this is not really the EJB or SDk spec but is essentially the same license as the sun-jsr-spec-04-2006
   but from BEA. The detection is not perfect, but we do not want to add such a rare full text
   for now.
