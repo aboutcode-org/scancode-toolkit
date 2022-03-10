@@ -222,6 +222,66 @@ License Clarity Scoring Update
      - Scoring Weight = -20
 
 
+License Clarity Scoring Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - We are moving away from the license clarity scoring defined by ClearlyDefined
+   in the license clarity score plugin. The previous license clarity scoring
+   logic produced a score that was misleading, where it would return a low score
+   when scanning packages due to the stringent scoring criteria. We are now
+   using more general criteria to get a sense of what provenance information has
+   been provided and whether or not there is a conflict in licensing between
+   what licenses were declared at the top-level key files and what licenses have
+   been detected in the files under the top-level.
+
+ - The license clarity score is a value from 0-100 calculated by combining the
+   weighted values determined for each of the scoring elements:
+
+   - Declared license:
+
+     - When true, indicates that the software package licensing is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 40
+
+   - Identification precision:
+
+     - Indicates how well the license statement(s) of the software identify known
+       licenses that can be designated by precise keys (identifiers) as provided in
+       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
+       license list, the OSI license list, or a URL pointing to a specific license
+       text in a project or organization website.
+     - Scoring Weight = 40
+
+   - License texts:
+
+     - License texts are provided to support the declared license expression in
+       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
+     - Scoring Weight = 10
+
+   - Declared copyright:
+
+     - When true, indicates that the software package copyright is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 10
+
+   - Ambiguous compound licensing:
+
+     - When true, indicates that the software has a license declaration that
+       makes it difficult to construct a reliable license expression, such as in
+       the case of multiple licenses where the conjunctive versus disjunctive
+       relationship is not well defined.
+     - Scoring Weight = -10
+
+   - Conflicting license categories:
+
+     - When true, indicates the declared license expression of the software is in
+       the permissive category, but that other potentially conflicting categories,
+       such as copyleft and proprietary, have been detected in lower level code.
+     - Scoring Weight = -20
+
+
 Outputs:
 ~~~~~~~~
 
