@@ -21,14 +21,20 @@
       }
     }
   ],
-  "license_clarity_score": {
-    "score": 90,
-    "declared_license": true,
-    "precise_license_detection": true,
-    "has_license_text": false,
-    "declared_copyrights": true,
-    "conflicting_license_categories": false,
-    "ambigous_compound_licensing": false
+  "summary": {
+    "primary_license_expression": "mit",
+    "declared_license_expressions": [
+      "mit"
+    ],
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "precise_license_detection": true,
+      "has_license_text": false,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambigous_compound_licensing": false
+    }
   },
   "files": [
     {
