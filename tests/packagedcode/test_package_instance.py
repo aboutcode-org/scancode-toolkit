@@ -42,7 +42,7 @@ class TestPackageAndDependency(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=True, remove_instance_uuid=True)
+        check_json_scan(expected_file, result_file, regen=False, remove_instance_uuid=True)
 
     def test_package_data_merge_generic(self, regen=False):
         input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')

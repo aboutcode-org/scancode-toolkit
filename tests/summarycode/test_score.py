@@ -96,4 +96,4 @@ class TestLicenseScore(FileDrivenTesting):
     pass
 
 
-build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=True)
+build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=False)
