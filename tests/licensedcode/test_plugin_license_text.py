@@ -9,12 +9,12 @@
 
 import os
 
-import click
-
 from commoncode.testcase import FileDrivenTesting
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -33,4 +33,4 @@ def test_is_licensing_works():
         test_dir, '--json-pp', result_file, '--verbose']
     run_scan_click(args)
     check_json_scan(test_env.get_test_loc('plugin_license_text/scan.expected.json'),
-                    result_file, remove_file_date=True, regen=False)
+                    result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

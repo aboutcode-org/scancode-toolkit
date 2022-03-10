@@ -10,9 +10,12 @@
 
 import pytest
 
+from commoncode.testcase import FileBasedTesting
+
 from cluecode_test_utils import build_tests
 from cluecode_test_utils import load_copyright_tests
-from commoncode.testcase import FileBasedTesting
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 pytestmark = pytest.mark.scanslow
 
@@ -28,4 +31,4 @@ class TestCopyrightDataDriven(FileBasedTesting):
     pass
 
 
-build_tests(copyright_tests=load_copyright_tests(), clazz=TestCopyrightDataDriven, regen=False)
+build_tests(copyright_tests=load_copyright_tests(), clazz=TestCopyrightDataDriven, regen=REGEN_TEST_FIXTURES)

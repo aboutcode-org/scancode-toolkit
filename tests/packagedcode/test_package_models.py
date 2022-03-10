@@ -12,12 +12,10 @@ import os.path
 from packagedcode import models
 from packagedcode import PACKAGE_INSTANCE_CLASSES
 from packagedcode import PACKAGE_DATA_CLASSES
-from packagedcode import PACKAGE_DATA_BY_TYPE
-from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 from packagedcode.models import PackageData
 from packagedcode.models import Party
-from packagedcode.models import DependentPackage
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestModels(PackageTester):
@@ -78,7 +76,7 @@ class TestModels(PackageTester):
             declared_license='apache-2.0'
         )
         expected_loc = 'models/simple-expected.json'
-        self.check_package(package, expected_loc, regen=False)
+        self.check_package(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
         package = models.PackageData(
@@ -106,7 +104,6 @@ class TestModels(PackageTester):
             qualifiers='this=that'
         )
         assert package.qualifiers == dict(this='that')
-
 
     def test_Package_full(self):
         package = PackageData(
@@ -147,7 +144,7 @@ class TestModels(PackageTester):
             ],
         )
         expected_loc = 'models/full-expected.json'
-        self.check_package(package, expected_loc, regen=False)
+        self.check_package(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_Package_get_package_resource_works_with_nested_packages_and_ignores(self):
         from packagedcode import get_package_instance

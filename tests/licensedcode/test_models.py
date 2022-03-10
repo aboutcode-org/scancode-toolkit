@@ -13,7 +13,6 @@ from unittest import TestCase as TestCaseClass
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.models import get_key_phrase_spans
@@ -21,11 +20,13 @@ from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_json(expected, results, regen=False):
+def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
     if regen:
         mode = 'w'
         with open(expected, mode) as ex:

@@ -170,3 +170,7 @@ if not __scancode_temp_base_dir:
 _create_dir(__scancode_temp_base_dir)
 _prefix = 'scancode-tk-' + __version__ + '-'
 scancode_temp_dir = tempfile.mkdtemp(prefix=_prefix, dir=__scancode_temp_base_dir)
+
+
+# Used for tests to regenerate fixtures with regen=True
+REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)

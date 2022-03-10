@@ -12,13 +12,15 @@ import os
 import shutil
 
 from commoncode.testcase import FileBasedTesting
+
 from packagedcode import gemfile_lock
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestGemfileLock(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_results(self, results, expected_loc, regen=False):
+    def check_results(self, results, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
         Helper to test a Gemfile object against an expected JSON file.
         """
@@ -42,7 +44,7 @@ class TestGemfileLock(FileBasedTesting):
         except AssertionError:
             assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)
 
-    def check_gemfile_lock(self, test_file, expected_loc, regen=False):
+    def check_gemfile_lock(self, test_file, expected_loc, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc(test_file)
         gfl = gemfile_lock.GemfileLockParser(test_file)
         results = [g.to_dict() for g in gfl.all_gems.values()]
@@ -348,104 +350,104 @@ class TestGemfileLock(FileBasedTesting):
     def test_GemfileLockParser_can_parse_a_flat_list_of_deps(self):
         test_file = 'gemfile_lock/as_deps/Gemfile.lock'
         expected_loc = 'gemfile_lock/as_deps/Gemfile.lock.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_simple_files(self):
         test_file = 'gemfile_lock/complete/Gemfile.lock_simple'
         expected_loc = 'gemfile_lock/complete/Gemfile.lock_simple.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_complex_files(self):
         test_file = 'gemfile_lock/complete/Gemfile.lock_complex'
         expected_loc = 'gemfile_lock/complete/Gemfile.lock_complex.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_dependency(self):
         test_file = 'gemfile_lock/dependency/Gemfile.lock'
         expected_loc = 'gemfile_lock/dependency/Gemfile.lock.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_platform(self):
         test_file = 'gemfile_lock/platform/Gemfile.lock'
         expected_loc = 'gemfile_lock/platform/Gemfile.lock.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_spec_single_level(self):
         test_file = 'gemfile_lock/spec/Gemfile.lock1'
         expected_loc = 'gemfile_lock/spec/Gemfile.lock1.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_spec_two_levels(self):
         test_file = 'gemfile_lock/spec/Gemfile.lock2'
         expected_loc = 'gemfile_lock/spec/Gemfile.lock2.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_spec_multi_levels(self):
         test_file = 'gemfile_lock/spec/Gemfile.lock3'
         expected_loc = 'gemfile_lock/spec/Gemfile.lock3.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_complex_multi_levels_deps(self):
         test_file = 'gemfile_lock/spec/Gemfile.lock4'
         expected_loc = 'gemfile_lock/spec/Gemfile.lock4.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_gem(self):
         test_file = 'gemfile_lock/gem/Gemfile.lock1'
         expected_loc = 'gemfile_lock/gem/Gemfile.lock1.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_gem_with_two_remotes(self):
         test_file = 'gemfile_lock/gem/Gemfile.lock3'
         expected_loc = 'gemfile_lock/gem/Gemfile.lock3.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_gem_with_path_before(self):
         test_file = 'gemfile_lock/gem/Gemfile.lock2'
         expected_loc = 'gemfile_lock/gem/Gemfile.lock2.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_one_path(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_path1'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_path1.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_with_two_paths(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_path2'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_path2.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_tag_and_remote_mixed_step1(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_mixed1'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_mixed1.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_remote(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_mixed2'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_mixed2.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_vcs_refs_mixed_step3(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_mixed3'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_mixed3.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_vsc_mixed_step4(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_mixed4'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_mixed4.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_mixed_step5(self):
         test_file = 'gemfile_lock/source/Gemfile.lock_mixed5'
         expected_loc = 'gemfile_lock/source/Gemfile.lock_mixed5.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_with_multi_paths_in_git(self):
         test_file = 'gemfile_lock/git/Gemfile.lock'
         expected_loc = 'gemfile_lock/git/Gemfile.lock.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_GemfileLockParser_can_parse_source_source_with_git_and_no_deps(self):
         test_file = 'gemfile_lock/git/Gemfile.lock_single'
         expected_loc = 'gemfile_lock/git/Gemfile.lock_single.expected.json'
-        self.check_gemfile_lock(test_file, expected_loc, regen=False)
+        self.check_gemfile_lock(test_file, expected_loc, regen=REGEN_TEST_FIXTURES)

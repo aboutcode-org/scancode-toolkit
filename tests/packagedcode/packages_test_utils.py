@@ -15,6 +15,9 @@ import saneyaml
 from commoncode import testcase
 from commoncode import text
 
+from scancode_config import REGEN_TEST_FIXTURES
+
+
 
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -24,7 +27,7 @@ class PackageTester(testcase.FileBasedTesting):
         package_function,
         manifest_loc,
         expected_loc,
-        regen=False,
+        regen=REGEN_TEST_FIXTURES,
     ):
         """
         Helper to test the creation of a package object with ``package_function``
@@ -36,7 +39,7 @@ class PackageTester(testcase.FileBasedTesting):
             raise Exception(f'Failed to parse package: {manifest_loc}')
         return self.check_package(package, expected_loc, regen)
 
-    def check_package(self, package, expected_loc, regen=False):
+    def check_package(self, package, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
         Helper to test a package object against an expected JSON file.
         """
@@ -51,7 +54,7 @@ class PackageTester(testcase.FileBasedTesting):
             regen=regen,
         )
 
-    def check_packages(self, packages, expected_loc, regen=False):
+    def check_packages(self, packages, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
         Helper to test a list of package objects against an expected JSON file.
         """
@@ -69,7 +72,7 @@ class PackageTester(testcase.FileBasedTesting):
         )
 
 
-def check_result_equals_expected_json(result, expected_loc, regen=False):
+def check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES):
     """
     Check equality between a result collection and the data in an expected_loc
     JSON file. Regen the expected file if regen is True.
@@ -114,7 +117,7 @@ def create_test_function(
     test_file_loc,
     tested_function,
     test_name,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 ):
     """
     Return a test function closed on test arguments to run
@@ -140,7 +143,7 @@ def build_tests(
     clazz,
     tested_function,
     test_method_prefix,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 ):
     """
     Dynamically build test methods from files in ``test_dir`` ending with

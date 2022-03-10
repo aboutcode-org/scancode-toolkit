@@ -10,10 +10,11 @@
 import os.path
 
 from packagedcode import alpine
-
 from packages_test_utils  import build_tests
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -26,21 +27,21 @@ class TestAlpineInstalledPackage(PackageTester):
         result = [package.to_dict(_detailed=True)
             for package in alpine.parse_alpine_installed_db(test_installed)]
         expected = test_installed + '-expected.json'
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_alpine_installed_db_single(self):
         test_installed = self.get_test_loc('alpine/single-installed/installed')
         result = [package.to_dict(_detailed=True)
             for package in alpine.parse_alpine_installed_db(test_installed)]
         expected = test_installed + '-expected.json'
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_alpine_installed_db_full(self):
         test_installed = self.get_test_loc('alpine/full-installed/installed')
         result = [package.to_dict(_detailed=True)
             for package in alpine.parse_alpine_installed_db(test_installed)]
         expected = test_installed + '-expected.json'
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
 
 def apkbuild_tester(location):
@@ -57,7 +58,7 @@ build_tests(
     test_method_prefix='test_',
     tested_function=apkbuild_tester,
     test_file_suffix='APKBUILD',
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 
@@ -75,5 +76,5 @@ build_tests(
     test_method_prefix='test_',
     tested_function=apkbuild_problems_tester,
     test_file_suffix='APKBUILD',
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )

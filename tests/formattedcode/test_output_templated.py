@@ -14,13 +14,15 @@ import re
 
 import pytest
 
-from scancode_config import __version__
-
 from commoncode import fileutils
 from commoncode.resource import VirtualCodebase
 from commoncode.testcase import FileDrivenTesting
+
 from formattedcode.output_html import HtmlOutput
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import __version__
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 
 test_env = FileDrivenTesting()
@@ -115,7 +117,7 @@ def normalize_quotes(s):
     return s.replace("'", '"')
 
 
-def assert_results_equal_expected_file(result_file, expected_file, regen=False):
+def assert_results_equal_expected_file(result_file, expected_file, regen=REGEN_TEST_FIXTURES):
     with open(result_file) as rf:
         results = rf.read()
     if regen:
@@ -136,7 +138,7 @@ def test_scan_custom_html_output_for_a_directory():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--strip-root', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    assert_results_equal_expected_file(result_file, expected_file, regen=False)
+    assert_results_equal_expected_file(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -147,7 +149,7 @@ def test_custom_format_with_custom_filename():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    assert_results_equal_expected_file(result_file, expected_file, regen=False)
+    assert_results_equal_expected_file(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow

@@ -12,7 +12,9 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+
 from packagedcode import godeps
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestGodeps(FileBasedTesting):
@@ -56,7 +58,7 @@ class TestGodeps(FileBasedTesting):
         results = gd.to_dict()
         assert results == expected
 
-    def check_package(self, test_file, expected_file, regen=False):
+    def check_package(self, test_file, expected_file, regen=REGEN_TEST_FIXTURES):
         test_loc = self.get_test_loc(test_file)
         results = godeps.parse(location=test_loc)
         expected_loc = self.get_test_loc(expected_file)

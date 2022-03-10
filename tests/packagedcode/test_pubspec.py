@@ -10,10 +10,10 @@
 import os.path
 
 from packagedcode import pubspec
-
-from packages_test_utils  import check_result_equals_expected_json
 from packages_test_utils  import build_tests
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -33,7 +33,7 @@ class TestPubspecDatadriven(PackageTester):
         test_loc = self.get_test_loc('pubspec/mini-pubspec.lock')
         expected_loc = self.get_test_loc('pubspec/mini-pubspec.lock-expected.json', must_exist=False)
         package_data = pubspec.PubspecLock.recognize(test_loc)
-        self.check_packages(package_data, expected_loc, regen=False)
+        self.check_packages(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 def pub_tester(location,):
@@ -56,7 +56,7 @@ build_tests(
     test_method_prefix='test_pubspec_yaml',
     tested_function=pub_tester,
     test_file_suffix='pubspec.yaml',
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 build_tests(
@@ -65,5 +65,5 @@ build_tests(
     test_method_prefix='test_pubspec_lock',
     tested_function=lock_tester,
     test_file_suffix='pubspec.lock',
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )

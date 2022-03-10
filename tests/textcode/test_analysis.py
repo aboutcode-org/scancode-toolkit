@@ -13,16 +13,16 @@ import io
 import json
 import os.path
 
+from commoncode.fileutils import resource_iter
 from commoncode.testcase import FileBasedTesting
 
-from commoncode.fileutils import resource_iter
-
+from scancode_config import REGEN_TEST_FIXTURES
 from textcode.analysis import as_unicode
-from textcode.analysis import unicode_text_lines
 from textcode.analysis import numbered_text_lines
+from textcode.analysis import unicode_text_lines
 
 
-def check_text_lines(result, expected_file, regen=False):
+def check_text_lines(result, expected_file, regen=REGEN_TEST_FIXTURES):
         if regen:
             with open(expected_file, 'w') as tf:
                 json.dump(result, tf, indent=2)
@@ -134,7 +134,7 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/text-with-trailing-null-bytes.txt')
         result = list(unicode_text_lines(test_file))
         expected_file = self.get_test_loc('analysis/text-with-trailing-null-bytes.txt.expected')
-        check_text_lines(result, expected_file, regen=False)
+        check_text_lines(result, expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_as_unicode_from_bytes_replaces_null_bytes_with_space(self):
         test = b'\x00is designed to give them, \x00BEFORE the\x00\x00\x00\x00\x00\x00'

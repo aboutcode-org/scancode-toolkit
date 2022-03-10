@@ -10,8 +10,8 @@
 import os
 
 from packagedcode import windows
-
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestWindows(PackageTester):
@@ -25,4 +25,4 @@ class TestWindows(PackageTester):
         test_file = self.get_test_loc('windows/mum/test.mum')
         expected_loc = self.get_test_loc('windows/mum/test.mum.expected')
         package_data = windows.MicrosoftUpdateManifest.recognize(test_file)
-        self.check_packages(package_data, expected_loc, regen=False)
+        self.check_packages(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)

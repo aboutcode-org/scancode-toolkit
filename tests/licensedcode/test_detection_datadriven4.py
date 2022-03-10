@@ -15,6 +15,8 @@ import unittest
 import pytest
 
 from licensedcode_test_utils import build_tests  # NOQA
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 pytestmark = pytest.mark.scanslow
 
@@ -32,4 +34,4 @@ class TestLicenseDataDriven4(unittest.TestCase):
 
 build_tests(
     join(TEST_DIR, 'datadriven/lic4'),
-    clazz=TestLicenseDataDriven4, regen=False)
+    clazz=TestLicenseDataDriven4, regen=REGEN_TEST_FIXTURES)

@@ -13,8 +13,10 @@ import json
 import os
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import check_jsonlines_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 test_env = FileDrivenTesting()
@@ -28,7 +30,7 @@ def test_jsonlines():
     expected = test_env.get_test_loc('json/simple-expected.jsonlines')
     check_jsonlines_scan(
         test_env.get_test_loc(expected), result_file,
-        remove_file_date=True, regen=False)
+        remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 
 def test_jsonlines_with_timing():

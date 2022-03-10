@@ -12,6 +12,7 @@ import os
 from collections import defaultdict
 
 from commoncode.testcase import FileBasedTesting
+
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
@@ -19,11 +20,13 @@ from licensedcode.models import Rule
 from licensedcode.query import Query
 from licensedcode_test_utils import query_tokens_with_unknowns  # NOQA
 from licensedcode_test_utils import query_run_tokens_with_unknowns  # NOQA
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_result_equals_expected_json(result, expected, regen=False):
+def check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES):
     """
     Check equality between a result collection and an expected JSON file.
     Regen the expected file if regen is True.

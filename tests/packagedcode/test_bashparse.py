@@ -13,9 +13,10 @@ import pygmars
 
 from packagedcode import bashparse
 from packagedcode.bashparse import ShellVariable
-
 from packages_test_utils  import build_tests
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -37,7 +38,7 @@ build_tests(
     clazz=TestBashParserDatadriven,
     tested_function=lambda loc: list(bashparse.collect_shell_variables(loc, resolve=True)),
     test_method_prefix='test_collect_shell_variables_',
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 

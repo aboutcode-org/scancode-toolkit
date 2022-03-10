@@ -9,9 +9,12 @@
 
 import os
 
+from commoncode.resource import Codebase
+
 from packages_test_utils import PackageTester
 from packagedcode import conda
-from commoncode.resource import Codebase
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 
 class TestConda(PackageTester):
@@ -35,7 +38,7 @@ class TestConda(PackageTester):
         test_file = self.get_test_loc('conda/meta.yaml')
         package = conda.Condayml.recognize(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_root_dir(self):
         test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')

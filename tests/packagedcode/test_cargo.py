@@ -11,8 +11,9 @@ import os
 import pytest
 
 from packagedcode import cargo
-
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 
 class TestCargo(PackageTester):
@@ -26,31 +27,31 @@ class TestCargo(PackageTester):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml.expected')
         package = cargo.CargoToml.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_clippy(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clippy/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/clippy/Cargo.toml.expected')
         package = cargo.CargoToml.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_mdbook(self):
         test_file = self.get_test_loc('cargo/cargo_toml/mdbook/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/mdbook/Cargo.toml.expected')
         package = cargo.CargoToml.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_rustfmt(self):
         test_file = self.get_test_loc('cargo/cargo_toml/rustfmt/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/rustfmt/Cargo.toml.expected')
         package = cargo.CargoToml.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_rustup(self):
         test_file = self.get_test_loc('cargo/cargo_toml/rustup/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/rustup/Cargo.toml.expected')
         package = cargo.CargoToml.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
     
     def test_is_manifest_cargo_lock(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
@@ -60,31 +61,31 @@ class TestCargo(PackageTester):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
         package = cargo.CargoLock.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample2(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample2/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample2/output.expected.json')
         package = cargo.CargoLock.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample3(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample3/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample3/output.expected.json')
         package = cargo.CargoLock.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample4(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample4/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample4/output.expected.json')
         package = cargo.CargoLock.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample5(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample5/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample5/output.expected.json')
         package = cargo.CargoLock.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 PERSON_PARSER_TEST_TABLE = [

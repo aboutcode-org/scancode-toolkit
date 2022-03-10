@@ -11,8 +11,10 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestFacet(FileDrivenTesting):
@@ -29,4 +31,4 @@ class TestFacet(FileDrivenTesting):
             '--facet', 'data=*.json',
             '--facet', 'docs=*/docs/*',
             '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

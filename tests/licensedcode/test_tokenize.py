@@ -15,6 +15,7 @@ import os
 from time import time
 
 from commoncode.testcase import FileBasedTesting
+
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
@@ -24,11 +25,13 @@ from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_results(result, expected_file, regen=False):
+def check_results(result, expected_file, regen=REGEN_TEST_FIXTURES):
 
     # we dumps/loads to normalize tuples/etc
     result = json.loads(json.dumps(result))
@@ -204,7 +207,7 @@ class TestTokenizers(FileBasedTesting):
         text , expected = 'license_Dual+BSD-GPL', ['license', 'dual+bsd', 'gpl']
         assert list(query_tokenizer(text)) == expected
 
-    def test_query_tokenizer_behavior_from_file(self, regen=False):
+    def test_query_tokenizer_behavior_from_file(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
         with io.open(test_file, encoding='utf-8') as test:
             text = test.read()
@@ -319,7 +322,7 @@ class TestTokenizers(FileBasedTesting):
         text = u'abcd{{ddd'
         assert list(query_tokenizer(text)) == [u'abcd', u'ddd']
 
-    def test_query_tokenizer_can_parse_ill_formed_legacy_template_from_file(self, regen=False):
+    def test_query_tokenizer_can_parse_ill_formed_legacy_template_from_file(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/ill_formed_template/text.txt')
         with io.open(test_file, encoding='utf-8') as text:
             result = list(query_tokenizer(text.read()))
@@ -363,54 +366,54 @@ class TestTokenizers(FileBasedTesting):
         ]
         assert list(query_tokenizer(text)) == expected
 
-    def test_query_lines_on_html_like_texts(self, regen=False):
+    def test_query_lines_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.query_lines.json'
         result = list(query_lines(test_file))
         check_results(result, expected_file, regen=regen)
 
-    def test_query_lines_on_html_like_texts_2(self, regen=False):
+    def test_query_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.html')
         expected_file = test_file + '.expected.query_lines.json'
         result = list(query_lines(test_file))
         check_results(result, expected_file, regen=regen)
 
-    def test_query_tokenizer_on_html_like_texts(self, regen=False):
+    def test_query_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.query_tokenizer.json'
         lines = query_lines(test_file)
         result = [list(query_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_query_tokenizer_lines_on_html_like_texts_2(self, regen=False):
+    def test_query_tokenizer_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.html')
         expected_file = test_file + '.expected.query_tokenizer.json'
         lines = query_lines(test_file)
         result = [list(query_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_index_tokenizer_on_html_like_texts(self, regen=False):
+    def test_index_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.index_tokenizer.json'
         lines = query_lines(test_file)
         result = [list(index_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_index_tokenizer_lines_on_html_like_texts_2(self, regen=False):
+    def test_index_tokenizer_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.html')
         expected_file = test_file + '.expected.index_tokenizer.json'
         lines = query_lines(test_file)
         result = [list(index_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_key_phrase_tokenizer_on_html_like_texts(self, regen=False):
+    def test_key_phrase_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.key_phrase_tokenizer.json'
         lines = query_lines(test_file)
         result = [list(key_phrase_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_key_phrase_tokenizer_lines_on_html_like_texts_2(self, regen=False):
+    def test_key_phrase_tokenizer_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.html')
         expected_file = test_file + '.expected.key_phrase_tokenizer.json'
         lines = query_lines(test_file)

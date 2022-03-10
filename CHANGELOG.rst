@@ -48,14 +48,6 @@ Important API changes:
   column to "path". The "copyright_holder" has been ranmed to "holder"
 
 
-Development environment changes:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- - The license cache consistency is not checked anymore when you are using a Git
-   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
-   instead the --reindex-licenses option to rebuild the license index.
-
-
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -121,7 +113,6 @@ License detection:
 
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
-
 
 - The new --licenses-reference option adds a new "licenses_reference" top
   level attribute to a scan when using the JSON and YAML outputs. This contains
@@ -251,11 +242,24 @@ Changes:
 - add resource-level attribute `for_packages`.
 - remove `package-data` attribute `root_path`.
 
+
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Various documentations have been updated to reflects API changes and
   correct minor documentation issues.
+
+
+Development environment changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The license cache consistency is not checked anymore when you are using a Git
+  checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
+  instead the --reindex-licenses option to rebuild the license index.
+
+- We can now regenerate updated test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
+  environemnt variable. There is no need to replace the regen=False with regen=True
+  in the code.
 
 
 30.1.0 - 2021-09-25

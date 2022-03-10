@@ -18,11 +18,13 @@ import attr
 import saneyaml
 from license_expression import Licensing
 
-import packages_test_utils
 from commoncode import text
 from commoncode import fileutils
 
+import packages_test_utils
 from packagedcode import alpine
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 """
 Data-driven tests using tests and expectations stored in YAML files.
@@ -82,7 +84,7 @@ class AlpineLicenseTest(object):
         return map(AlpineLicenseTest.from_file, test_files)
 
 
-def build_tests(test_dir, clazz, regen=False):
+def build_tests(test_dir, clazz, regen=REGEN_TEST_FIXTURES):
     """
     Dynamically build license_test methods from a ``test_dir`` of AlpineLicenseTest
     and attach these method to the ``clazz ``license test class.
@@ -100,7 +102,7 @@ def build_tests(test_dir, clazz, regen=False):
         setattr(clazz, test_name, test_method)
 
 
-def make_test(license_test, regen=False):
+def make_test(license_test, regen=REGEN_TEST_FIXTURES):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.
@@ -132,4 +134,4 @@ class TestAlpineLicenseDataDriven(unittest.TestCase):
     pass
 
 
-build_tests(TEST_DIR, clazz=TestAlpineLicenseDataDriven, regen=False)
+build_tests(TEST_DIR, clazz=TestAlpineLicenseDataDriven, regen=REGEN_TEST_FIXTURES)

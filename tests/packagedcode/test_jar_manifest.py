@@ -13,8 +13,10 @@ import os.path
 
 from commoncode import text
 from commoncode import testcase
-from packagedcode.jar_manifest import parse_manifest
+
 from packagedcode.jar_manifest import get_normalized_package_data
+from packagedcode.jar_manifest import parse_manifest
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 mode = 'w'
@@ -23,7 +25,7 @@ mode = 'w'
 class BaseParseManifestCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_parse_manifest(self, test_manifest, regen=False):
+    def check_parse_manifest(self, test_manifest, regen=REGEN_TEST_FIXTURES):
         """
         Test the parsing of MANIFEST.MF at test_manifest against an expected JSON
         from the same name with a .json extension.
@@ -41,7 +43,7 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
 
         assert json.dumps(parsed_manifest) == json.dumps(expected)
 
-    def check_get_normalized_package_data(self, test_manifest, regen=False):
+    def check_get_normalized_package_data(self, test_manifest, regen=REGEN_TEST_FIXTURES):
         """
         Test the get_normalized_package_data() function using the MANIFEST  file
         at `test_manifest` against an expected JSON from the same name with a
@@ -80,7 +82,7 @@ def relative_walk(dir_path):
                 yield file_path
 
 
-def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=False):
+def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=REGEN_TEST_FIXTURES):
     """
     Return a test function closed on test arguments for `test_manifest_loc`
     location and with `test_name` method name..
@@ -104,7 +106,7 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=F
     return test_manifest
 
 
-def build_tests(test_dir, clazz, prefix='test_jar_manifest', check_parse=True, regen=False):
+def build_tests(test_dir, clazz, prefix='test_jar_manifest', check_parse=True, regen=REGEN_TEST_FIXTURES):
     """
     Dynamically build test methods for each MANIFEST.MF in `test_dir` and
     attach the test method to the `clazz` class.
@@ -130,9 +132,9 @@ class TestParseManifestDataDriven(BaseParseManifestCase):
 
 build_tests(test_dir='maven_misc/manifest', clazz=TestParseManifestDataDriven,
             prefix='test_jar_manifest_parse_manifest_',
-            check_parse=True, regen=False)
+            check_parse=True, regen=REGEN_TEST_FIXTURES)
 
 
 build_tests(test_dir='maven_misc/manifest', clazz=TestParseManifestDataDriven,
             prefix='test_jar_manifest_get_package_data_',
-            check_parse=False, regen=False)
+            check_parse=False, regen=REGEN_TEST_FIXTURES)
