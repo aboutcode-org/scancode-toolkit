@@ -123,7 +123,7 @@ jobs:
       parameters:
           job_name: macos11_cpython
           image_name: macos-11
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -345,7 +345,7 @@ jobs:
       parameters:
           job_name: macos11_cpython_latest_from_pip
           image_name: macos-11
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
