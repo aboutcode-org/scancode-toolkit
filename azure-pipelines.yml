@@ -17,24 +17,16 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.8']
           test_suites:
-              misc: |
-                venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  --ignore=tests/scancode \
-                  --ignore=tests/cluecode \
-                  --ignore=tests/licensedcode
-
-              scancode: |
+              misc_and_scancode: |
                # cli tests are launched below on all OSes
-                venv/bin/pytest -vvs --test-suite=all \
-                  --ignore=tests/scancode/test_cli.py \
-                  tests/scancode
-
-              cluecode: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  tests/cluecode
+                  --ignore=tests/cluecode \
+                  --ignore=tests/licensedcode \
+                  --ignore=tests/scancode/test_cli.py
 
-              license_base: |
+              cluecode_license_base: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
+                  tests/cluecode \
                   --ignore=tests/licensedcode/test_zzzz_cache.py \
                   --ignore=tests/licensedcode/test_detection_datadriven_external.py \
                   --ignore=tests/licensedcode/test_detection_datadriven1.py \
@@ -43,20 +35,14 @@ jobs:
                   --ignore=tests/licensedcode/test_detection_datadriven4.py \
                   tests/licensedcode
 
-              license_datadriven1: |
+              license_datadriven1_2: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven1.py
-
-              license_datadriven2: |
-                venv/bin/pytest -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven1.py \
                   tests/licensedcode/test_detection_datadriven2.py
 
-              license_datadriven3: |
+              license_datadriven3_4: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven3.py
-
-              license_datadriven4: |
-                venv/bin/pytest -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven3.py \
                   tests/licensedcode/test_detection_datadriven4.py
 
               license_datadriven_ext: |
@@ -112,9 +98,18 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython
+          job_name: macos1015_cpython_1
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.6', '3.7', '3.8']
+          python_architecture: x64
+          test_suites:
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos1015_cpython_2
+          image_name: macos-10.15
+          python_versions: ['3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -130,18 +125,36 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_cpython
+          job_name: win2019_cpython_1
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.6', '3.7', '3.8']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2022_cpython
+          job_name: win2019_cpython_2
+          image_name: windows-2019
+          python_versions: ['3.9', '3.10']
+          python_architecture: x64
+          test_suites:
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2022_cpython_1
           image_name: windows-2022
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8']
+          python_architecture: x64
+          test_suites:
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2022_cpython_2
+          image_name: windows-2022
+          python_versions: ['3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
@@ -290,28 +303,6 @@ jobs:
 #          test_suite: venv/bin/pytest -n 2 -vvs
 
 
-########################################################################
-# RELEASE on 3.6. Also check that we can pip install
-########################################################################
-#
-#    - job: Build_release_archive_py3
-#      pool:
-#          vmImage: ubuntu-18.04
-#      steps:
-#          - checkout: self
-#            fetchDepth: 10
-#
-#          - task: UsePythonVersion@0
-#            inputs:
-#                versionSpec: '3.6'
-#            displayName: 'Install Python 3.6'
-#
-#          - script: ./etc/release/scancode-test-pip-install.sh
-#            displayName: 'Test pip wheel installation'
-#
-#          - script: ./etc/release/scancode-test-pip-install-editable.sh
-#            displayName: 'Test pip editable installation'
-
 ################################################################################
 # Tests using a plain pip install to get the latest of all wheels
 ################################################################################
@@ -323,7 +314,7 @@ jobs:
           image_name: ubuntu-18.04
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
-              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -331,36 +322,69 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
-              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython_latest_from_pip
+          job_name: macos1015_cpython_latest_from_pip1
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.6', '3.7']
           test_suites:
-              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos11_cpython_latest_from_pip
+          job_name: macos1015_cpython_latest_from_pip2
+          image_name: macos-10.15
+          python_versions: ['3.8', '3.9', '3.10']
+          test_suites:
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos11_cpython_latest_from_pip1
           image_name: macos-11
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', ]
           test_suites:
-              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos11_cpython_latest_from_pip2
+          image_name: macos-11
+          python_versions: ['3.9', '3.10']
+          test_suites:
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_cpython_latest_from_pip
+          job_name: win2019_cpython_latest_from_pip1
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.6', '3.7']
           test_suites:
-              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2022_cpython_latest_from_pip
-          image_name: windows-2022
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          job_name: win2019_cpython_latest_from_pip2
+          image_name: windows-2019
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
-              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2022_cpython_latest_from_pip1
+          image_name: windows-2022
+          python_versions: ['3.7', '3.8']
+          test_suites:
+              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2022_cpython_latest_from_pip2
+          image_name: windows-2022
+          python_versions: ['3.9', '3.10']
+          test_suites:
+              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+
