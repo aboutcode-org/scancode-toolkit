@@ -68,7 +68,6 @@ class ScanSummary(PostScanPlugin):
         summarize_codebase(codebase, keep_details=False, **kwargs)
 
 
-
 def summarize_codebase(codebase, keep_details, **kwargs):
     """
     Summarize a scan at the codebase level for available scans.
@@ -95,7 +94,11 @@ def summarize_codebase(codebase, keep_details, **kwargs):
 
         for summarizer in summarizers:
             _summary_data = summarizer(resource, children, keep_details=keep_details)
-            if TRACE: logger_debug('summary for:', resource.path, 'after summarizer:', summarizer, 'is:', _summary_data)
+            if TRACE:
+                logger_debug(
+                    'summary for:', resource.path, 'after summarizer:',
+                    summarizer, 'is:', _summary_data,
+                )
 
         codebase.save_resource(resource)
 
@@ -104,6 +107,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
         summary = root.summary
     else:
         summary = root.extra_data.get('summary', {})
+
     codebase.attributes.summary.update(summary)
 
     if TRACE: logger_debug('codebase summary:', summary)
@@ -119,7 +123,7 @@ def license_summarizer(resource, children, keep_details=False):
     license_expressions = []
 
     # Collect current data
-    lic_expressions = getattr(resource, LIC_EXP  , [])
+    lic_expressions = getattr(resource, LIC_EXP, [])
     if not lic_expressions and resource.is_file:
         # also count files with no detection
         license_expressions.append(None)
