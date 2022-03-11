@@ -26,8 +26,8 @@
     "declared_license_expressions": [
       "mit OR apache-2.0",
       "apache-2.0",
-      "mit",
-      "apache-2.0 OR mit"
+      "apache-2.0 OR mit",
+      "mit"
     ],
     "license_clarity_score": {
       "score": 100,

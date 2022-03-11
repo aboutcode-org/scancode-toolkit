@@ -672,7 +672,8 @@ def test_scan_cli_help(regen=REGEN_TEST_FIXTURES):
     def no_spaces(s):
         return ' '.join(s.split())
 
-    expected = open(expected_file).read()
+    with open(expected_file) as ef:
+        expected = ef.read()
 
     if no_spaces(result) != no_spaces(expected):
         assert result == expected
