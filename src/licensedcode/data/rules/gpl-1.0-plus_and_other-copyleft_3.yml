@@ -1,0 +1,4 @@
+license_expression: gpl-1.0-plus AND other-copyleft
+is_license_notice: yes
+minimum_coverage: 90
+notes: This is ambiguous and may be a rider on top of the GPL

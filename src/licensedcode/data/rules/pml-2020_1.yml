@@ -1,0 +1,4 @@
+license_expression: pml-2020
+is_license_notice: yes
+ignorable_urls:
+    - https://developer.amazon.com/support/legal/pml
