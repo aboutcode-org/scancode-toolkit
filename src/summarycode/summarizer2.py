@@ -57,7 +57,9 @@ class ScanSummary(PostScanPlugin):
         PluggableCommandLineOption(('--summary2',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans at the codebase level.',
-            help_group=POST_SCAN_GROUP)
+            help_group=POST_SCAN_GROUP,
+            required_options=['classify', 'license_clarity_score']
+        )
     ]
 
     def is_enabled(self, summary2, **kwargs):

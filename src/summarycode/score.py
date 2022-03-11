@@ -65,7 +65,7 @@ class LicenseClarityScore(PostScanPlugin):
     ]
 
     def is_enabled(self, license_clarity_score, **kwargs):
-        return license_clarity_score or kwargs.get('summary2')
+        return license_clarity_score
 
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
