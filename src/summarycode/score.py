@@ -123,7 +123,7 @@ def compute_license_score(codebase):
     scoring_elements = ScoringElements()
     declared_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=True)
     declared_license_expressions = get_field_values_from_codebase_resources(codebase, 'license_expressions', key_files_only=True)
-    unique_declared_license_expressions = list(set(declared_license_expressions))
+    unique_declared_license_expressions = unique(declared_license_expressions)
     declared_license_categories = get_license_categories(declared_licenses)
     copyrights = get_field_values_from_codebase_resources(codebase, 'copyrights', key_files_only=True)
     other_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=False)
@@ -165,6 +165,19 @@ def compute_license_score(codebase):
     codebase.attributes.summary['declared_license_expressions'] = unique_declared_license_expressions
     codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
+
+
+def unique(objects):
+    """
+    Return a list of unique objects keeping the original order.
+    """
+    uniques = []
+    seen = set()
+    for obj in objects:
+        if obj not in seen:
+            uniques.append(obj)
+            seen.add(obj)
+    return uniques
 
 @attr.s()
 class ScoringElements:
@@ -404,7 +417,7 @@ def get_primary_license(declared_license_expressions):
     license if we can resolve the `declared_license_expressions` into one
     expression.
     """
-    unique_declared_license_expressions = list(set(declared_license_expressions))
+    unique_declared_license_expressions = unique(declared_license_expressions)
     # If we only have a single unique license expression, then we do not have
     # any ambiguity about the licensing
     if len(unique_declared_license_expressions) == 1:
