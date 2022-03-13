@@ -16,6 +16,7 @@ Other contributors, listed alphabetically, are:
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
 * Jeffrey Arnold -- R/S, Rd, BUGS, Jags, and Stan lexers
+* Eiríkr Åsheim -- Uxntal lexer
 * Jeremy Ashkenas -- CoffeeScript lexer
 * José Joaquín Atria -- Praat lexer
 * Stefan Matthias Aust -- Smalltalk lexer
