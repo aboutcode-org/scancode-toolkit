@@ -13,10 +13,8 @@ jobs:
 
       strategy:
           matrix:
-            ${{ each pyver in parameters.python_versions }}:
               ${{ each tsuite in parameters.test_suites }}:
-                 ${{ format('py{0} {1}', pyver, tsuite.key) }}:
-                     python_version: ${{ pyver }}
+                 ${{ tsuite.key }}:
                      test_suite_label: ${{ tsuite.key }}
                      test_suite: ${{ tsuite.value }}
 
@@ -24,19 +22,18 @@ jobs:
           - checkout: self
             fetchDepth: 10
 
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '$(python_version)'
-                architecture: '${{ parameters.python_architecture }}'
-            displayName: 'Install Python $(python_version)'
+          - ${{ each pyver in parameters.python_versions }}:
+              - task: UsePythonVersion@0
+                inputs:
+                    versionSpec: '${{ pyver }}'
+                    architecture: '${{ parameters.python_architecture }}'
+                displayName: '${{ pyver }} - Install Python'
 
-          - script: |
-                python --version
-                python3 --version
-                python$(python_version) --version
-                echo "python$(python_version)" > PYTHON_EXECUTABLE
-                ./configure --dev
-            displayName: 'Run Configure'
+              - script: |
+                    python${{ pyver }} --version
+                    echo "python${{ pyver }}" > PYTHON_EXECUTABLE
+                    ./configure --clean && ./configure --dev
+                displayName: '${{ pyver }} - Configure'
 
-          - script: $(test_suite)
-            displayName: 'Run $(test_suite_label) tests with py$(python_version) on ${{ parameters.job_name }}'
+              - script: $(test_suite)
+                displayName: '${{ pyver }} - $(test_suite_label) on ${{ parameters.job_name }}'
