@@ -1,0 +1,641 @@
+Intellectual Property Rights (IPR) Policy
+1. INTRODUCTION
+2. DEFINITIONS
+3. CONFIDENTIALITY
+4. TC FORMATION
+5. CONTRIBUTIONS
+6. LIMITED PATENT COVENANT FOR SPECIFICATION DEVELOPMENT
+7. FEEDBACK
+8. DISCLOSURE
+9. TYPES OF OBLIGATIONS
+10. LICENSING REQUIREMENTS
+11. WITHDRAWAL AND TERMINATION
+12. LIMITATIONS OF LIABILITY
+13. GENERAL
+14. NOTICES
+Appendix A. Feedback License
+Appendix B. Copyright License Grant
+
+
+1. INTRODUCTION
+The OASIS Intellectual Property Rights (IPR) Policy governs the treatment of intellectual property in the production
+of deliverables by OASIS Open (hereafter referred to as OASIS).
+This Policy applies to all members of OASIS and their Affiliates (as defined below). The OASIS Board of Directors
+may amend this Policy at any time in its sole discretion. In the event of such change to this Policy, the Board will
+provide instructions for transition of membership and Technical Committees to the new Policy; however, no
+amendment to this Policy will be effective in less than 60 calendar days from the date that written notice of such
+amendment is given to the Member at its address of record with OASIS.
+
+
+2. DEFINITIONS
+Each capitalized term within this document shall have the meaning provided below:
+
+1. Affiliate – any entity that directly or indirectly controls, is controlled by, or is under common control with,
+another entity, so long as such control exists. In the event that such control ceases to exist, such Affiliate will
+be deemed to have withdrawn from OASIS pursuant to the terms set forth in the withdrawal provisions in
+Section 11. For purposes of this definition, with respect to a business entity, control means direct or indirect
+beneficial ownership of or the right to exercise (i) greater than fifty percent (50%) of the voting stock or
+equity in an entity; or (ii) greater than fifty percent (50%) of the ownership interest representing the right to
+make the decisions for the subject entity in the event that there is no voting stock or equity.
+
+2. Beneficiary – any organization, including its Affiliates as defined in this Policy, or individual who benefits
+from the OASIS Non-Assertion Covenant with respect to Essential Claims from Obligated Parties for a
+particular OASIS Standards Final Deliverable. A Beneficiary need not be an OASIS member.
+
+3. Continuing Licensing or Non-Assertion Obligation – a licensing or non-assertion obligation, of the types
+defined by Section 9 of this Policy, which survives a TC Party’s withdrawal from an OASIS Technical
+Committee.
+
+4. Contribution – any material submitted to an OASIS Technical Committee by a TC Member in writing or
+electronically, whether in an in-person meeting or in any electronic conference or mailing list maintained by
+OASIS for the OASIS Technical Committee and which is or was proposed for inclusion in an OASIS Deliverable.
+
+5. Contribution Obligation – a licensing or non-assertion requirement, as described in Section 10 that results
+from making a Contribution as described in Section 9.1.
+
+6. Contributor – a TC Party on whose behalf a Contribution is made by the TC Party’s TC Member.
+
+7. Covered Product – includes only those specific portions of a product (hardware, software or combinations
+thereof) that (a) implement and are compliant with all Normative Portions of an OASIS Standards Final
+Deliverable produced by a Non-Assertion Mode TC that must be implemented to comply with such
+deliverable, and (b) to the extent that the product implements one or more optional portions of such
+deliverable, those portions that implement and are compliant with all Normative Portions that must be
+implemented to comply with such optional portions of the deliverable.
+
+8. Eligible Person – one of a class of individuals that include: persons holding individual memberships in
+OASIS, employees or designees of organizational members of OASIS, and such other persons as may be
+designated by the OASIS Board of Directors.
+
+9. Essential Claims – those claims in any patent or patent application in any jurisdiction in the world that
+would necessarily be infringed by an implementation of those portions of a particular OASIS Standards Final
+Deliverable created within the scope of the TC charter in effect at the time such deliverable was developed.
+A claim is necessarily infringed hereunder only when it is not possible to avoid infringing it because there is
+no non-infringing alternative for implementing the Normative Portions of that particular OASIS Standards
+Final Deliverable. Existence of a non-infringing alternative shall be judged based on the state of the art at
+the time the OASIS Standards Final Deliverable is approved.
+
+10. Feedback – any written or electronic input provided to an OASIS Technical Committee by individuals who
+are not TC Members and which is proposed for inclusion in an OASIS Deliverable. All such Feedback must be
+made under the terms of the Feedback License (Appendix A).
+
+11. Final Maintenance Deliverable – Any OASIS Standards Final Deliverable that results entirely from
+Maintenance Activity.
+
+12. IPR Mode – an element of an OASIS TC charter, which specifies the type of licenses or non-assertion
+covenants required for any Essential Claims associated with the output produced by a given Technical
+Committee. This is further described in Section 4.
+
+13. Licensed Products – include only those specific portions of a Licensee’s products (hardware, software or
+combinations thereof) that (a) implement and are compliant with all Normative Portions of an OASIS
+Standards Final Deliverable that must be implemented to comply with such deliverable, and (b) to the
+extent that the Licensee’s products implement one or more optional portions of such deliverable, those
+portions of Licensee’s products that implement and are compliant with all Normative Portions that must be
+implemented to comply with such optional portions of the deliverable.
+
+14. Licensee – any organization, including its Affiliates as defined in this Policy, or individual that licenses
+Essential Claims from Obligated Parties for a particular OASIS Standards Final Deliverable. Licensees need
+not be OASIS members.
+
+15. Maintenance Activity – Any drafting or development work to modify an OASIS Standards Final Deliverable
+that (a) constitutes only error corrections, bug fixes or editorial formatting changes to the OASIS Standards
+Final Deliverable; and (b) does not add any feature; and (c) is within the scope of the TC that approved the
+OASIS Standards Final Deliverable (whether or not the work is conducted by the same TC).
+
+16. Normative Portion – a portion of an OASIS Standards Final Deliverable that must be implemented to
+comply with such deliverable. If such deliverable defines optional parts, Normative Portions include those
+portions of the optional part that must be implemented if the implementation is to comply with such
+optional part. Examples and/or reference implementations and other specifications or standards that were
+developed outside the TC and which are referenced in the body of a particular OASIS Standards Final
+Deliverable that may be included in such deliverable are not Normative Portions.
+
+17. Non-Assertion Mode TC – an OASIS TC that is chartered under the Non-Assertion IPR Mode described in
+Section 4.
+
+18. OASIS Deliverable – a work product developed by a Technical Committee within the scope of its charter
+which is enumerated in and developed in accordance with the OASIS Technical Committee Process.
+
+19. OASIS Standards Draft Deliverable – an OASIS Deliverable that has been designated and approved by a
+Technical Committee as an OASIS Standards Draft Deliverable and which is enumerated in and developed
+in accordance with the OASIS Technical Committee Process.
+
+20. OASIS Standards Final Deliverable – an OASIS Deliverable that has been designated and approved by a
+Technical Committee as an OASIS Standards Final Deliverable and which is enumerated in and developed
+in accordance with the OASIS Technical Committee Process.
+
+21. OASIS Party – a member of OASIS (i.e., an entity that has executed an OASIS Membership Agreement) and
+its Affiliates.
+
+22. OASIS TC Administrator – the person(s) appointed to represent OASIS in administrative matters relating to
+TCs as provided by the OASIS Technical Committee Process.
+
+23. OASIS Technical Committee (TC) – a group of Eligible Persons formed, and whose actions are conducted,
+according to the provisions of the OASIS Technical Committee Process.
+
+24. OASIS Technical Committee Process – the "OASIS OPEN TECHNICAL COMMITTEE PROCESS", as from time to
+time amended, which describes the operation of Technical Committees at OASIS.
+
+25. Obligated Party – a TC Party that incurs a licensing or non-assertion obligation for its Essential Claims by
+either a Contribution Obligation or a Participation Obligation.
+
+26. Participation Obligation – a licensing or non-assertion requirement, as described in Section 10, that arises
+from membership in an OASIS Technical Committee, as described in Section 9.2.
+
+27. RAND Mode TC – an OASIS TC that is chartered under the RAND IPR Mode described in Section 4.
+
+28. RF Mode TC – an OASIS TC that is chartered under one of the RF IPR Modes described in Section 4.
+
+29. TC Member – an Eligible Person who has completed the requirements to join a TC during the period in which
+s/he maintains his or her membership as described by the OASIS Technical Committee Process. A TC
+Member may represent the interests of a TC Party in the TC.
+
+30. TC Party – an OASIS Party that is, or is represented by, a TC Member in the relevant Technical Committee.
+
+
+3. CONFIDENTIALITY
+Neither Contributions nor Feedback that are subject to any requirement of confidentiality may be considered in
+any part of the OASIS Technical Committee Process. All Contributions and Feedback will therefore be deemed to
+have been submitted on a non-confidential basis, notwithstanding any markings or representations to the
+contrary, and OASIS shall have no obligation to treat any such material as confidential.
+
+
+4. TC FORMATION
+At the time a TC is chartered, the proposal to form the TC must specify the IPR Mode under which the Technical
+Committee will operate. This Policy describes the following IPR Modes:
+
+1. RAND – requires all Obligated Parties to license their Essential Claims using the RAND licensing elements
+described in Section 10.1.
+
+2. RF on RAND Terms – requires all Obligated Parties to license their Essential Claims using the RF licensing
+elements described in Sections 10.2.1 and 10.2.2.
+
+3. RF on Limited Terms – requires all Obligated Parties to license their Essential Claims using the RF licensing
+elements described in Sections 10.2.1 and 10.2.3.
+
+4. Non-Assertion – requires all Obligated Parties to provide an OASIS Non-Assertion Covenant as described in
+Section 10.3.
+A TC may not change its IPR Mode without closing and submitting a new charter.
+
+
+5. CONTRIBUTIONS
+
+5.1 General
+At the time of submission of a Contribution for consideration by an OASIS Technical Committee, each named coContributor (and its respective Affiliates) is deemed to agree to the following terms and conditions and to make
+the following representations (based on the actual knowledge of the TC Member(s) making the Contribution, with
+respect to items 3 – 5 below, inclusive):
+
+1. OASIS has no duty to publish or otherwise use or disseminate any Contribution.
+
+2. OASIS may reference the name(s) of the Contributor(s) for the purpose of acknowledging and publishing
+the Contribution.
+
+3. The Contribution properly identifies any holders of copyright interests in the Contribution.
+
+4. No information in the Contribution is confidential, and OASIS may freely disclose any information in the
+Contribution.
+
+5. There are no limits to the Contributor’s ability to make the grants, acknowledgments, and agreements
+required by this Policy with respect to such Contribution.
+
+
+5.2 Copyright Licenses
+
+1. To the extent that a Contributor holds a copyright interest in its Contribution, such Contributor grants to
+OASIS a perpetual, irrevocable, non-exclusive, royalty-free, worldwide copyright license, with the right to
+directly and indirectly sublicense, to copy, publish, and distribute the Contribution in any way, and to
+prepare derivative works that are based on or incorporate all or part of the Contribution solely for the
+purpose of developing and promoting the OASIS Deliverable and enabling (subject to the rights of the
+owners of any Essential Claims) the implementation of the same by Licensees or Beneficiaries.
+
+2. To the extent that a Contribution is subject to copyright by parties that are not Contributors, the
+submitter(s) must provide OASIS with a signed “Copyright License Grant” (Appendix B) from each such
+copyright owner whose permission would be required to permit OASIS to exercise the rights described in
+Appendix B.
+
+
+5.3 Trademarks
+
+1. Trademarks or service marks that are not owned by OASIS shall not be used by OASIS, except as approved
+by the OASIS Board of Directors, to refer to work conducted at OASIS, including the use in the name of an
+OASIS TC, an OASIS Deliverable, or incorporated into such work.
+
+2. No OASIS Party may use an OASIS trademark or service mark in connection with an OASIS Deliverable or
+otherwise, except in compliance with such license and usage guidelines as OASIS may from time to time
+require.
+
+
+6. LIMITED PATENT COVENANT FOR DELIVERABLE DEVELOPMENT
+
+To permit TC Members and their TC Parties to develop implementations of OASIS Standards Draft Deliverables
+being developed by a TC, each TC Party represented by a TC Member in a TC, at such time that the TC Member
+joins the TC, grants to each other TC Party in that TC automatically and without further action on its part, and on
+an ongoing basis, a limited covenant not to assert any Essential Claims required to implement such OASIS
+Standards Draft Deliverable and covering making or using (but not selling or otherwise distributing) an
+implementation of such OASIS Standards Draft Deliverable, solely for the purpose of testing and developing such
+deliverable and only until either the OASIS Standards Draft Deliverable is approved as an OASIS Standards Final
+Deliverable or the Technical Committee is closed.
+
+
+7. FEEDBACK
+
+1. OASIS encourages Feedback to OASIS Deliverables from both OASIS Parties who are not TC Parties and the
+public at large. Feedback will be accepted only under the "Feedback License" (Appendix A).
+
+2. OASIS will require that submitters of Feedback agree to the terms of the Feedback License before
+transmitting submitted Feedback to the Technical Committee.
+
+
+8. DISCLOSURE
+
+1. Disclosure Obligations – Each TC Party shall disclose to OASIS in writing the existence of all patents and/or
+patent applications owned or claimed by such TC Party that are actually known to the TC Member directly
+participating in the TC, and which such TC Member believes may contain any Essential Claims or claims
+that might become Essential Claims upon approval of an OASIS Standards Final Deliverable as such
+document then exists (collectively, “Disclosed Claims”).
+
+2. Disclosure of Third Party Patent Claims – Each TC Party whose TC Members become aware of patents or
+patent applications owned or claimed by a third party that contain claims that might become Essential
+Claims upon approval of an OASIS Standards Final Deliverable should disclose them, provided that such
+disclosure is not prohibited by any confidentiality obligation binding upon them. It is understood that any TC
+Party that discloses third party patent claims to OASIS does not take a position on the essentiality or
+relevance of the third party claims to the OASIS Standards Final Deliverable in its then-current form.
+In both cases (Sections 8.1 and 8.2), it is understood and agreed that such TC Party(s)’ TC Member(s) do not
+represent that they know of all potentially pertinent claims of patents and patent applications owned or
+claimed by the TC Party or any third parties. For the avoidance of doubt, while the disclosure obligation
+under Sections 8.1 and 8.2 applies directly to all TC Parties, this obligation is triggered based on the actual
+knowledge of the TC Party’s TC Members regarding the TC Party’s patents or patent applications that may
+contain Essential Claims.
+
+3. Disclosure Requests – Disclosure requests will be included as described in Section 12 with all public review
+copies of OASIS Standards Final Deliverables. All OASIS Parties are encouraged to review such OASIS
+Standards Final Deliverables and make appropriate disclosures.
+
+4. Limitations – A disclosure request and the obligation to disclose set forth above do not imply any
+obligations on the recipients of disclosure requests (collectively or individually) or on any OASIS Party to
+perform or conduct patent searches. Nothing in this Policy nor the act of receiving a disclosure request for
+an OASIS Standards Final Deliverable, regardless of whether it is responded to, shall be construed or
+otherwise interpreted as any kind of express or implied representation with respect to the existence or nonexistence of patents or patent applications which contain Essential Claims, other than that such TC Party
+has acted in good faith with respect to its disclosure obligations.
+
+5. Information – Any disclosure of Disclosed Claims shall include (a) in the case of issued patents and
+published patent applications, the patent or patent application publication number, the associated country
+and, as reasonably practicable, the relevant portions of the applicable OASIS Standards Final Deliverable;
+and (b) in the case of unpublished patent applications, the existence of the unpublished application and, as
+reasonably practicable, the relevant portions of the applicable OASIS Standards Final Deliverable.
+
+
+9. TYPES OF OBLIGATIONS
+
+9.1 Contribution Obligation
+A TC Party has a Contribution Obligation, which arises at the time the Contribution is submitted to a TC, to license
+or provide under non-assertion covenants as appropriate for the IPR mode described in Section 10, any claims
+under its patents or patent applications that become Essential Claims when such Contribution is incorporated
+(either in whole or in part) into (a) the OASIS Standards Final Deliverable produced by the TC that received the
+Contribution, or (b) any Final Maintenance Deliverable with respect to that OASIS Standards Final Deliverable.
+
+9.2 Participation Obligation
+A TC Party has a Participation Obligation to license or provide under non-assertion covenant as appropriate for
+the IPR mode, as described in Section 10, any claims under its patents or patent applications that would be
+Essential Claims in the then current OASIS Standards Draft Deliverable, if that draft subsequently becomes an
+OASIS Standards Final Deliverable, even if the TC Party is not a Contributor, when all of the following conditions are
+met:
+
+- An OASIS Standards Final Deliverable is finally approved that incorporates such OASIS Standards Draft
+Deliverable, either in whole or in part;
+
+- The TC Party has been on, or has been represented by TC Member(s) on such TC for a total of sixty (60)
+calendar days, which need not be continuous;
+
+- The TC Party is on, or is represented by TC Member(s) on such TC after a period of seven (7) calendar days
+after the ballot to approve such OASIS Standards Draft Deliverable has elapsed.
+
+
+Once the foregoing conditions are met, that TC Party’s Participation Obligation so to license or provide a nonassertion covenant continues with respect to that OASIS Standards Final Deliverable, and any Final Maintenance
+
+Deliverable subsequently approved with respect to that OASIS Standards Final Deliverable.
+For organizational TC Parties, the membership threshold is met by one or more employees or organizational
+designees of such Parties having been a TC Member on any 60 calendar days, although any given calendar day
+is only one day of membership, regardless of the number of participants on that day.
+
+Each time a new OASIS Standards Draft Deliverable is approved by the TC, the Participation Obligation adjusts to
+encompass the material in the latest OASIS Standards Draft Deliverable seven days after such draft has been
+approved for publication.
+
+
+10. LICENSING REQUIREMENTS
+
+10.1 RAND Mode TC Requirements
+
+For an OASIS Standards Final Deliverable developed by a RAND Mode TC, except where a Licensee has a separate,
+signed agreement under which the Essential Claims are licensed to such Licensee on more favorable terms and
+conditions than set forth in this section (in which case such separate signed agreement shall supersede this
+Limited Patent License), each Obligated Party in such TC hereby covenants that, upon request and subject to
+Section 11, it will grant to any OASIS Party or third party: a nonexclusive, worldwide, non-sublicensable, perpetual
+patent license (or an equivalent non-assertion covenant) under its Essential Claims covered by its Contribution
+Obligations or Participation Obligations on fair, reasonable, and non-discriminatory terms to make, have made,
+use, market, import, offer to sell, and sell, and to otherwise directly or indirectly distribute (a) Licensed Products
+that implement such OASIS Standards Final Deliverable, and (b) Licensed Products that implement any Final
+Maintenance Deliverable with respect to that OASIS Standards Final Deliverable. Such license need not extend to
+features of a Licensed Product that are not required to comply with the Normative Portions of such OASIS
+Standards Final Deliverable or Final Maintenance Deliverable. For the sake of clarity, the rights set forth above
+include the right to directly or indirectly authorize a third party to make unmodified copies of the Licensee’s
+Licensed Products and to license (optionally under the third party’s license) the Licensee’s Licensed Products
+within the scope of, and subject to the terms of, the Obligated Party’s license.
+
+At the election of the Obligated Party, such license may include a term requiring the Licensee to grant a reciprocal
+license to its Essential Claims (if any) covering the same OASIS Standards Final Deliverable and any such Final
+Maintenance Deliverable. Such term may require the Licensee to grant licenses to all implementers of such
+deliverable. The Obligated Party may also include a term providing that such license may be suspended with
+respect to the Licensee if that Licensee first sues the Obligated Party for infringement by the Obligated Party of any
+of the Licensee’s Essential Claims covering the same OASIS Standards Final Deliverable or any such Final
+Maintenance Deliverable.
+
+License terms that are fair, reasonable, and non-discriminatory beyond those specifically mentioned above are
+left to the Licensees and Obligated Parties involved.
+
+10.2 RF Mode TC Requirements
+
+10.2.1 Common
+
+For an OASIS Standards Final Deliverable developed by an RF Mode TC, except where a Licensee has a separate,
+signed agreement under which the Essential Claims are licensed to such Licensee on more favorable terms and
+conditions than set forth in this section (in which case such separate signed agreement shall supersede this
+Limited Patent License), each Obligated Party in such TC hereby covenants that, upon request and subject to
+Section 11, it will grant to any OASIS Party or third party: a nonexclusive, worldwide, non-sublicensable, perpetual
+patent license (or an equivalent non-assertion covenant) under its Essential Claims covered by its Contribution
+Obligations or Participation Obligations without payment of royalties or fees, and subject to the applicable Section
+
+10.2.2 or 10.2.3, to make, have made, use, market, import, offer to sell, and sell, and to otherwise directly or indirectly
+distribute (a) Licensed Products that implement such OASIS Standards Final Deliverable, and (b) Licensed
+Products that implement any Final Maintenance Deliverable with respect to that OASIS Standards Final
+Deliverable. Such license need not extend to features of a Licensed Product that are not required to comply with
+the Normative Portions of such OASIS Standards Final Deliverable or Final Maintenance Deliverable. For the sake of
+clarity, the rights set forth above include the right to directly or indirectly authorize a third party to make
+unmodified copies of the Licensee’s Licensed Products and to license (optionally under the third party’s license)
+the Licensee’s Licensed Products, within the scope of, and subject to the terms of, the Obligated Party’s license.
+At the election of the Obligated Party, such license may include a term requiring the Licensee to grant a reciprocal
+license to its Essential Claims (if any) covering the same OASIS Standards Final Deliverable and any such Final
+Maintenance Deliverable. Such term may require the Licensee to grant licenses to all implementers of such
+deliverable. The Obligated Party may also include a term providing that such license may be suspended with
+respect to the Licensee if that Licensee first sues the Obligated Party for infringement by the Obligated Party of any
+of the Licensee’s Essential Claims covering the same OASIS Standards Final Deliverable and any such Final
+Maintenance Deliverable.
+
+10.2.2 RF on RAND Terms
+
+With TCs operating under the RF on RAND Terms IPR Mode, license terms that are fair, reasonable, and nondiscriminatory beyond those specifically mentioned in Section 10.2.1 may also be included, and such additional
+RAND terms are left to the Licensees and Obligated Parties involved.
+
+10.2.3 RF on Limited Terms
+
+With TCs operating under the RF on Limited Terms IPR Mode, Obligated Parties may not impose any further
+conditions or restrictions beyond those specifically mentioned in Section 10.2.1 on the use of any technology or
+intellectual property rights, or other restrictions on behavior of the Licensee, but may include reasonable,
+customary terms relating to operation or maintenance of the license relationship, including the following: choice
+of law and dispute resolution.
+
+10.3. Non-Assertion Mode TC Requirements
+
+10.3.1. For an OASIS Standards Final Deliverable developed by a Non-Assertion Mode TC, and any Final
+Maintenance Deliverable with respect to that OASIS Standards Final Deliverable, each Obligated Party in such TC
+hereby makes the following world-wide “OASIS Non-Assertion Covenant”.
+Each Obligated Party in a Non-Assertion Mode TC irrevocably covenants that, subject to Section 10.3.2 and Section
+11 of the OASIS IPR Policy, it will not assert any of its Essential Claims covered by its Contribution Obligations or
+Participation Obligations against any OASIS Party or third party for making, having made, using, marketing,
+importing, offering to sell, selling, and otherwise distributing Covered Products that implement an OASIS Standards
+Final Deliverable developed by that TC and Covered Products that implement any Final Maintenance Deliverable
+with respect to that OASIS Standards Final Deliverable.
+
+10.3.2. The covenant described in Section 10.3.1 may be suspended or revoked by the Obligated Party with respect
+to any OASIS Party or third party if that OASIS Party or third party asserts an Essential Claim in a suit first brought
+against, or attempts in writing to assert an Essential Claim against, a Beneficiary with respect to a Covered
+Product that implements the same OASIS Standards Final Deliverable or any such Final Maintenance Deliverable.
+
+
+11. WITHDRAWAL AND TERMINATION
+
+A TC Party may withdraw from a TC at any time by notifying the OASIS TC Administrator in writing of such decision
+to withdraw. Withdrawal shall be deemed effective when such written notice is sent.
+
+11.1 Withdrawal from a Technical Committee
+A TC Party that withdraws from an OASIS Technical Committee shall have Continuing Licensing or Non-Assertion
+Obligations based on its Contribution Obligations and Participation Obligations as follows:
+
+1. A TC Party that has incurred neither a Contribution Obligation nor a Participation Obligation prior to
+withdrawal has no licensing or non-assertion obligations for OASIS Standards Final Deliverable(s)
+originating from that OASIS TC.
+
+2. A TC Party that has incurred a Contribution Obligation prior to withdrawal continues to be subject to its
+Contribution Obligation.
+
+3. A TC Party that has incurred a Participation Obligation prior to withdrawal continues to be subject to its
+Participation Obligation but only with respect to OASIS Standards Draft Deliverable(s) approved more than
+seven (7) calendar days prior to its withdrawal.
+
+11.2 Termination of an OASIS Membership
+An OASIS Party that terminates its OASIS membership (voluntarily or involuntarily) is deemed to withdraw from all
+TCs in which that OASIS Party has TC Member(s) representing it, and such OASIS Party remains subject to
+Continuing Licensing or Non-Assertion Obligations for each such TC based on its Obligated Party status in that TC
+on the date that its membership termination becomes effective.
+
+
+12. LIMITATIONS OF LIABILITY
+
+All OASIS Deliverables are provided “as is”, without warranty of any kind, express or implied, and OASIS, as well as
+all OASIS Parties and TC Members, expressly disclaim any warranty of merchantability, fitness for a particular or
+intended purpose, accuracy, completeness, non-infringement of third party rights, or any other warranty.
+In no event shall OASIS or any of its constituent parts (including, but not limited to, the OASIS Board of Directors),
+be liable to any other person or entity for any loss of profits, loss of use, direct, indirect, incidental, consequential,
+punitive, or special damages, whether under contract, tort, warranty, or otherwise, arising in any way out of this
+Policy, whether or not such party had advance notice of the possibility of such damages.
+In addition, except for grossly negligent or intentionally fraudulent acts, OASIS Parties and TC Members (or their
+representatives), shall not be liable to any other person or entity for any loss of profits, loss of use, direct, indirect,
+incidental, consequential, punitive, or special damages, whether under contract, tort, warranty, or otherwise,
+arising in any way out of this Policy, whether or not such party had advance notice of the possibility of such
+damages.
+OASIS assumes no responsibility to compile, confirm, update or make public any assertions of Essential Claims or
+other intellectual property rights that might be infringed by an implementation of an OASIS Deliverable.
+If OASIS at any time refers to any such assertions by any owner of such claims, OASIS takes no position as to the
+validity or invalidity of such assertions, or that all such assertions that have or may be made have been referred
+to.
+
+
+13. GENERAL
+
+13.1. By ratifying this document, OASIS warrants that it will not inhibit the traditional open and free access to OASIS
+documents for which license and right have been assigned or obtained according to the procedures set forth in
+this section. This warranty is perpetual and will not be revoked by OASIS or its successors or assigns as to any
+already adopted OASIS Standards Final Deliverable; provided, however, that neither OASIS nor its assigns shall be
+obligated to:
+
+1. 13.1.1. Perpetually maintain its existence; nor
+
+2. 13.1.2. Provide for the perpetual existence of a website or other public means of accessing OASIS Standards
+Final Deliverables; nor
+
+3. 13.1.3. Maintain the public availability of any given OASIS Standards Final Deliverable that has been retired or
+superseded, or which is no longer being actively utilized in the marketplace.
+
+13.2. Where any copyrights, trademarks, patents, patent applications, or other proprietary rights are known, or
+claimed, with respect to any OASIS Deliverable and are formally brought to the attention of the OASIS TC
+Administrator, OASIS shall consider appropriate action, which may include disclosure of the existence of such
+rights, or claimed rights. The OASIS Technical Committee Process shall prescribe the method for providing this
+information.
+
+1. 13.2.1. OASIS disclaims any responsibility for identifying the existence of or for evaluating the applicability of
+any claimed copyrights, trademarks, patents, patent applications, or other rights, and will make no
+assurances on the validity or scope of any such rights.
+
+2. 13.2.2. Where the OASIS TC Administrator is formally notified of rights, or claimed rights under Section 8.8 with
+respect to entities other than Obligated Parties, the OASIS President shall attempt to obtain from the
+claimant of such rights a written assurance that any Licensee will be able to obtain the right to utilize, use,
+and distribute the technology or works when implementing, using, or distributing technology based upon
+the specific OASIS Standards Final Deliverable (or, in the case of an OASIS Standards Draft Deliverable, that
+any Licensee will then be able to obtain such a right) under terms that are consistent with this Policy. All
+such information will be made available to the TC that produced such deliverable, but the failure to obtain
+such written assurance shall not prevent votes from being conducted, except that the OASIS TC
+Administrator may defer approval for a reasonable period of time where a delay may facilitate the
+obtaining of such assurances. The results will, however, be recorded by the OASIS TC Administrator, and
+made available to the public. The OASIS Board of Directors may also direct that a summary of the results be
+included in any published OASIS Standards Final Deliverable.
+
+3. 13.2.3. Except for the rights expressly provided herein, neither OASIS nor any OASIS Party grants or receives, by
+implication, estoppel, or otherwise, any rights under any patents or other intellectual property rights of the
+OASIS Party, OASIS, any other OASIS Party, or any third party.
+
+13.3. Solely for purposes of Section 365(n) of Title 11, United States Bankruptcy Code, and any equivalent law in any
+foreign jurisdiction, the promises under Section 10 will be treated as if they were a license and any OASIS Party or
+third-party may elect to retain its rights under this promise if Obligated Party, as a debtor in possession, or a
+bankruptcy trustee in a case under the United States Bankruptcy Code, rejects any obligations stated in Section
+10.
+
+
+14. Required Notice
+
+14.1 Documents
+Any OASIS Deliverable shall include the following notices replacing [copyright year] with the year or range of years
+of publication (bracketed language, other than the date, need only appear in OASIS Standards Final Deliverable
+documents):
+
+Copyright © OASIS Open [copyright year]. All Rights Reserved.
+All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property
+
+Rights Policy (the "OASIS IPR Policy"). The full Policy may be found at the OASIS website: [http://www.oasisopen.org/policies-guidelines/ipr]
+This document and translations of it may be copied and furnished to others, and derivative works that comment
+on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in
+whole or in part, without restriction of any kind, provided that the above copyright notice and this section are
+included on all such copies and derivative works. However, this document itself may not be modified in any way,
+including by removing the copyright notice or references to OASIS, except as needed for the purpose of
+developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules
+applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into
+languages other than English.
+The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or
+assigns.
+This document and the information contained herein is provided on an “AS IS” basis and OASIS DISCLAIMS ALL
+
+WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY
+OR FITNESS FOR A PARTICULAR PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT,
+SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.
+
+[OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily
+be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and
+provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent with
+the IPR Mode of the OASIS Technical Committee that produced this deliverable.]
+[OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent
+claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a
+patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR
+Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include
+such claims on its website, but disclaims any obligation to do so.]
+
+[OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be
+claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final
+Deliverable or the extent to which any license under such rights might or might not be available; neither does it
+represent that it has made any effort to identify any such rights. Information on OASIS’ procedures with respect
+to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS
+website. Copies of claims of rights made available for publication and any assurances of licenses to be made
+available, or the result of an attempt made to obtain a general license or permission for the use of such
+proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the
+OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights
+will at any time be complete, or that any claims in such list are, in fact, Essential Claims.]
+
+
+14.2 Alternative Notice
+
+Other OASIS Deliverables that are primarily intended for machine rather than human consumption and whose
+format requires terse expression may, as an alternative to Section 14.1, include just the short-form notice as follows
+replacing [copyright year] with the year or year range of publication:
+Copyright © OASIS Open [copyright year]. All Rights Reserved.
+Distributed under the terms of the OASIS IPR Policy, [http://www.oasis-open.org/policies-guidelines/ipr], AS-IS,
+WITHOUT ANY IMPLIED OR EXPRESS WARRANTY; there is no warranty of MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE or NONINFRINGEMENT of the rights of others.
+
+14.3 Additional Copyright Notices
+
+Additional copyright notices identifying Contributors may also be included with the OASIS copyright notice.
+
+
+Appendix A. Feedback License
+
+The "OASIS ___________ Technical Committee" is developing technology (the "OASIS ____________
+Deliverable") as defined by its charter and welcomes input, suggestions and other feedback ("Feedback") on the
+OASIS ____________ Deliverable. By the act of submitting, you (on behalf of yourself if you are an individual,
+and your organization and its Affiliates if you are providing Feedback on behalf of that organization) agree to the
+following terms (all capitalized terms are defined in the OASIS Intellectual Property Rights ("IPR") Policy, see
+http://www.oasis-open.org/who/intellectualproperty.php):
+
+1. Copyright – You (and your represented organization and its Affiliates) grant to OASIS a perpetual,
+irrevocable, non-exclusive, royalty-free, worldwide copyright license, with the right to directly and indirectly
+sublicense, to copy, publish, and distribute the Feedback in any way, and to prepare derivative works that
+are based on or incorporate all or part of the Feedback, solely for the purpose of developing and promoting
+the OASIS Deliverable and enabling the implementation of the same by Licensees or Beneficiaries.
+
+2. Essential Claims – You covenant to grant a patent license or offer an OASIS Non-Assertion Covenant as
+appropriate under any patent claims that you (or your represented organization or its Affiliates) own or
+control that become Essential Claims because of the incorporation of such Feedback into the OASIS
+Standards Final Deliverable, and any Final Maintenance Deliverable with respect to that OASIS Standards
+Final Deliverable, on terms consistent with Section 10 of the OASIS IPR Policy for the IPR Mode specified in the
+charter of this OASIS Technical Committee.
+
+3. Right to Provide – You warrant to the best of your knowledge that you have rights to provide this Feedback,
+and if you are providing Feedback on behalf of an organization, you warrant that you have the rights to
+provide Feedback on behalf of your organization and to bind your organization and its Affiliates to the
+licensing or non-assertion obligations provided above.
+
+4. Confidentiality – You further warrant that no information in this Feedback is confidential, and that OASIS
+may freely disclose any information in the Feedback.
+
+5. No requirement to Use – You also acknowledge that OASIS is not required to incorporate your Feedback into
+any version of this OASIS Deliverable.
+Assent of Feedback Provider: By: _________________________ (Signature) Name:
+_______________________ Title: ________________________ Organization: ________________
+Date: ________________________ Email: _______________________
+
+Appendix B. Copyright License Grant
+
+The undersigned, on its own behalf and on behalf of its represented organization and its Affiliates, if any, with
+respect to their collective copyright ownership rights in the Contribution "__________________," grants to
+OASIS a perpetual, irrevocable, non-exclusive, royalty-free, world-wide copyright license, with the right to directly
+and indirectly sublicense, to copy, publish, and distribute the Contribution in any way, and to prepare derivative
+works that are based on or incorporate all or part of the Contribution solely for the purpose of developing and
+promoting the OASIS Deliverable and enabling the implementation of the same by Licensees or Beneficiaries (all
+above capitalized terms are defined in the OASIS Intellectual Property Rights ("IPR") Policy, see http://www.oasisopen.org/who/intellectualproperty.php).
+
+Assent of the Undersigned: By: __________________________ (Signature) Name:
+_______________________ Title: ________________________ Organization: ________________
+Date: ________________________ Email: _______________________
+
+Historical revisions of this policy
+Approved 07/31/2013
+Intellectual Property Rights (IPR) Policy
+
+Approved 05/02/2012
+Intellectual Property Rights (IPR) Policy (2 May 2012)
+
+Approved 05/02/2012
+Intellectual Property Rights (IPR) Policy (21 June 2012)
+
+Approved 07/28/2010
+Intellectual Property Rights (IPR) Policy (28 July 2010)
+
+Approved 05/19/2009
+IPR (19 May 2009)

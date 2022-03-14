@@ -1,0 +1,14 @@
+key: otn-early-adopter-2018
+short_name: OTN Early Adopter 2018
+name: OTN Early Adopter Development License 2018
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://www.oracle.com/downloads/licenses/solaris-ea-license.html
+spdx_license_key: LicenseRef-scancode-otn-early-adopter-2018
+other_urls:
+    - https://www.theregister.com/2022/03/04/solaris_common_build_environments_free/
+ignorable_urls:
+    - http://www.oracle.com/goto/opensourcecode
+    - http://www.oracle.com/legal/privacy/privacy-policy.html
+    - https://docs.oracle.com/en/
+    - https://oss.oracle.com/sources/

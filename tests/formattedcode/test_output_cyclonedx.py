@@ -14,8 +14,8 @@ import os
 
 import saneyaml
 from lxml import etree
-
 from commoncode.testcase import FileDrivenTesting
+
 from formattedcode.output_cyclonedx import CycloneDxComponent
 from formattedcode.output_cyclonedx import CycloneDxExternalRef
 from formattedcode.output_cyclonedx import CycloneDxHashObject
@@ -23,6 +23,8 @@ from formattedcode.output_cyclonedx import CycloneDxLicenseExpression
 from formattedcode.output_cyclonedx import CycloneDxMetadata
 from formattedcode.output_cyclonedx import get_author_from_parties
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -36,7 +38,7 @@ def load_and_clean_json(result_file):
     return result
 
 
-def check_cyclone_output(expected_file, result_file, regen=False):
+def check_cyclone_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     """
     Check that expected and result_file are equal. Ignore headers.
     If `regen` is True the expected_file is overwritten with `results_file`.
@@ -57,7 +59,7 @@ def check_cyclone_output(expected_file, result_file, regen=False):
         assert result == expected
 
 
-def check_cyclone_xml_output(expected_file, result_file, regen=False):
+def check_cyclone_xml_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     """
     Check that expected and result_file are equal. Ignore headers.
     If `regen` is True the expected_file is overwritten with `results_file`.
@@ -220,7 +222,7 @@ def test_cyclonedx_plugin_json():
     result_file = test_env.get_temp_file('cyclonedx.json')
     run_scan_click(['-p', test_dir, '--cyclonedx', result_file])
     expected_file = test_env.get_test_loc('cyclonedx/expected.json')
-    check_cyclone_output(expected_file, result_file, regen=False)
+    check_cyclone_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_cyclonedx_plugin_xml_components_and_dependencies_are_serialized_correctly():
@@ -228,4 +230,4 @@ def test_cyclonedx_plugin_xml_components_and_dependencies_are_serialized_correct
     result_file = test_env.get_temp_file('cyclonedx.xml')
     run_scan_click(['-p', test_dir, '--cyclonedx-xml', result_file])
     expected_file = test_env.get_test_loc('cyclonedx/expected.xml')
-    check_cyclone_xml_output(expected_file, result_file, regen=False)
+    check_cyclone_xml_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

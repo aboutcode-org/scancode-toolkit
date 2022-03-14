@@ -16,8 +16,11 @@ import pytest
 import xmltodict
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -110,7 +113,7 @@ def _sorter(data):
         return repr(data)
 
 
-def check_rdf_scan(expected_file, result_file, regen=False):
+def check_rdf_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     """
     Check that expected and result_file are equal.
     Both are paths to SPDX RDF XML files, UTF-8 encoded.
@@ -158,7 +161,7 @@ def load_and_clean_tv(location):
     return '\n'.join(lines)
 
 
-def check_tv_scan(expected_file, result_file, regen=False):
+def check_tv_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     """
     Check that expected and result_file are equal.
     Both are paths to plain spdx tv text files, UTF-8 encoded.
@@ -318,7 +321,7 @@ def test_spdx_tv_with_empty_scan():
     expected_file = test_env.get_test_loc('spdx/empty/expected.tv')
     args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--spdx-tv', result_file]
     run_scan_plain(args)
-    check_tv_scan(expected_file, result_file, regen=False)
+    check_tv_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow

@@ -1,0 +1,12 @@
+key: hugo
+short_name: Hugo License
+name: Hugo License
+category: Source-available
+owner: Kent Tessman
+spdx_license_key: LicenseRef-scancode-hugo
+ignorable_copyrights:
+    - Copyright (c) 2003 by Kent Tessman The General Coffee Company Film Productions
+ignorable_holders:
+    - Kent Tessman The General Coffee Company Film Productions
+ignorable_authors:
+    - an End User

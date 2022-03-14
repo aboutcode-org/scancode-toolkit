@@ -14,8 +14,11 @@ import pytest
 import saneyaml
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import cleanup_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -26,7 +29,7 @@ def test_yaml():
     result_file = test_env.get_temp_file('yaml')
     run_scan_click(['-clip', test_dir, '--yaml', result_file])
     expected = test_env.get_test_loc('yaml/simple-expected.yaml')
-    check_yaml_scan(expected, result_file, regen=False)
+    check_yaml_scan(expected, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -35,7 +38,7 @@ def test_scan_output_does_not_truncate_copyright_yaml():
     result_file = test_env.get_temp_file('test.yaml')
     run_scan_click(['-clip', '--strip-root', test_dir, '--yaml', result_file])
     expected = test_env.get_test_loc('yaml/tree/expected.yaml')
-    check_yaml_scan(expected, result_file, regen=False)
+    check_yaml_scan(expected, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -49,7 +52,7 @@ def test_scan_output_for_timestamp():
     assert 'end_timestamp' in header
 
 
-def check_yaml_scan(expected_file, result_file, regen=False):
+def check_yaml_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     """
     Check the scan `result_file` YAML results against the `expected_file`
     expected YAML results.

@@ -9,12 +9,12 @@
 
 import os
 
-import click
-
 from commoncode.testcase import FileDrivenTesting
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -25,7 +25,7 @@ def test_scan_email():
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_email_url/emails.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('plugin_email_url/emails.expected.json'), result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_scan_email_with_threshold():
@@ -33,7 +33,7 @@ def test_scan_email_with_threshold():
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--strip-root', '--max-email', '2', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_email_url/emails-threshold.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('plugin_email_url/emails-threshold.expected.json'), result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_scan_url():
@@ -41,7 +41,7 @@ def test_scan_url():
     result_file = test_env.get_temp_file('json')
     args = ['--url', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_email_url/urls.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('plugin_email_url/urls.expected.json'), result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_scan_url_with_threshold():
@@ -49,4 +49,4 @@ def test_scan_url_with_threshold():
     result_file = test_env.get_temp_file('json')
     args = ['--url', '--strip-root', '--max-url', '2', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_email_url/urls-threshold.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('plugin_email_url/urls-threshold.expected.json'), result_file, regen=REGEN_TEST_FIXTURES)

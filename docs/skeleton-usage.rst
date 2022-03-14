@@ -49,10 +49,11 @@ customizing the skeleton files to your project:
 
 .. code-block:: bash
 
-    ./configure --init
+    ./configure
 
 This will initialize the virtual environment for the project, pull in the
 dependencies from PyPI and add them to the virtual environment.
+
 
 Generating requirements.txt and requirements-dev.txt
 ----------------------------------------------------
@@ -77,7 +78,7 @@ Replace \<version\> with the version number of the Python being used, for exampl
 To generate requirements-dev.txt after requirements.txt has been generated:
 
 .. code-block:: bash
-    ./configure --init --dev
+    ./configure --dev
     python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/
 
 Note: on Windows, the ``site-packages`` directory is located at ``venv\Lib\site-packages\``
@@ -85,13 +86,14 @@ Note: on Windows, the ``site-packages`` directory is located at ``venv\Lib\site-
 .. code-block:: bash
 
     python .\\etc\\scripts\\gen_requirements.py -s .\\venv\\Lib\\site-packages\\
-    .\configure --init --dev
+    .\configure --dev
     python .\\etc\\scripts\\gen_requirements_dev.py -s .\\venv\\Lib\\site-packages\\
+
 
 Collecting and generating ABOUT files for dependencies
 ------------------------------------------------------
 
-Ensure that the dependencies used by ``etc/scripts/bootstrap.py`` are installed:
+Ensure that the dependencies used by ``etc/scripts/fetch_thirdparty.py`` are installed:
 
 .. code-block:: bash
 
@@ -102,7 +104,7 @@ dependencies as wheels and generate ABOUT files for them:
 
 .. code-block:: bash
 
-    python etc/scripts/bootstrap.py -r requirements.txt -r requirements-dev.txt --with-deps
+    python etc/scripts/fetch_thirdparty.py -r requirements.txt -r requirements-dev.txt
 
 There may be issues with the generated ABOUT files, which will have to be
 corrected. You can check to see if your corrections are valid by running:
@@ -122,8 +124,8 @@ Usage after project initialization
 
 Once the ``requirements.txt`` and ``requirements-dev.txt`` have been generated
 and the project dependencies and their ABOUT files have been uploaded to
-thirdparty.aboutcode.org/pypi, you can configure the project without using the
-``--init`` option.
+thirdparty.aboutcode.org/pypi, you can configure the project as needed, typically
+when you update dependencies or use a new checkout.
 
 If the virtual env for the project becomes polluted, or you would like to remove
 it, use the ``--clean`` option:
@@ -146,12 +148,11 @@ update the dependencies in ``setup.cfg``, then run:
 .. code-block:: bash
 
     ./configure --clean # Remove existing virtual environment
-    ./configure --init # Create project virtual environment, pull in new dependencies
     source venv/bin/activate # Ensure virtual environment is activated
     python etc/scripts/gen_requirements.py -s venv/lib/python<version>/site-packages/ # Regenerate requirements.txt
     python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/ # Regenerate requirements-dev.txt
     pip install -r etc/scripts/requirements.txt # Install dependencies needed by etc/scripts/bootstrap.py
-    python etc/scripts/bootstrap.py -r requirements.txt -r requirements-dev.txt --with-deps # Collect dependency wheels and their ABOUT files
+    python etc/scripts/fetch_thirdparty.py -r requirements.txt -r requirements-dev.txt # Collect dependency wheels and their ABOUT files
 
 Ensure that the generated ABOUT files are valid, then take the dependency wheels
 and ABOUT files and upload them to thirdparty.aboutcode.org/pypi.

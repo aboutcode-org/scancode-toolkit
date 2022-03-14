@@ -16,8 +16,11 @@ import saneyaml
 
 from commoncode.functional import flatten
 from commoncode import text
+
 from licensedcode import cache
 from licensedcode import models
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 """
 Validate that each license and rule text is properly detected with exact
@@ -29,7 +32,7 @@ sequence detections.
 """
 
 
-def make_validation_test(rule, test_name, regen=False):
+def make_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
     """
     Build and return a test function closing on tests arguments.
     """
@@ -118,7 +121,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         assert '\n'.join(failure_trace) == '\n'.join(expected)
 
 
-def check_ignorable_clues(licensish, regen=False, verbose=False):
+def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
     """
     Validate that all expected ignorable clues declared in a `licensish` License
     or Rule object are properly detected in that rule text file. Optionally
@@ -169,7 +172,7 @@ def check_ignorable_clues(licensish, regen=False, verbose=False):
         assert saneyaml.dump(result) == saneyaml.dump(expected)
 
 
-def build_validation_tests(rules, test_classes, regen=False):
+def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
     """
     Dynamically build an individual test method for each rule texts in a
     ``rules`` iterable of Rule objects then attach the test methods to the
@@ -246,7 +249,7 @@ build_validation_tests(
         TestValidateLicenseExtended4,
         TestValidateLicenseExtended5,
      ],
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 del _rules

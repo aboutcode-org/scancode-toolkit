@@ -14,19 +14,20 @@ import saneyaml
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 from debian_inspector.copyright import DebianCopyright
-
-from packagedcode import debian_copyright
-from license_expression import Licensing
 from debian_inspector.copyright import CatchAllParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import CopyrightFilesParagraph
+from license_expression import Licensing
+
+from packagedcode import debian_copyright
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 def check_expected_parse_copyright_file(
     test_loc,
     expected_loc,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
     simplified=False,
     _licensing=Licensing(),
 ):
@@ -156,7 +157,7 @@ def create_test_function(
     expected_loc,
     test_name,
     simplified=False,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 ):
     '''
     Return a test function closed on test arguments.
@@ -179,7 +180,7 @@ def create_test_function(
     return test_func
 
 
-def build_tests(test_dir, clazz, prefix='test_', regen=False):
+def build_tests(test_dir, clazz, prefix='test_', regen=REGEN_TEST_FIXTURES):
     '''
     Dynamically build test methods for each copyright file in `test_dir` and
     attach the test method to the `clazz` class.
@@ -211,7 +212,7 @@ build_tests(
     test_dir='debian/copyright/debian-2019-11-15',
     prefix='test_debian_parse_copyright_file_',
     clazz=TestDebianCopyrightLicenseDetection,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 
@@ -224,7 +225,7 @@ build_tests(
     test_dir='debian/copyright/debian-slim-2021-04-07',
     prefix='test_debian_slim_parse_copyright_file_',
     clazz=TestDebianSlimCopyrightLicenseDetection,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 
@@ -237,7 +238,7 @@ build_tests(
     test_dir='debian/copyright/debian-misc',
     prefix='test_debian_misc_parse_copyright_file_',
     clazz=TestDebianMiscCopyrightLicenseDetection,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 )
 
 
@@ -262,7 +263,7 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
             test_loc=test_loc,
             expected_loc=expected_loc,
             simplified=True,
-            regen=False,
+            regen=REGEN_TEST_FIXTURES,
         )
 
     def test_is_paragraph_debian_packaging(self):

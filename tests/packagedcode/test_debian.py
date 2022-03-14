@@ -11,10 +11,12 @@ import os.path
 from unittest.case import skipIf
 
 from commoncode.system import on_windows
+
 from packagedcode import debian
 from packagedcode import models
 from packages_test_utils import PackageTester
 from packages_test_utils import check_result_equals_expected_json
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 @skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
@@ -26,14 +28,14 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         result = [package.to_dict(_detailed=True)
             for package in debian.get_installed_packages(test_rootfs)]
         expected = self.get_test_loc('debian/basic-rootfs-expected.json')
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_basic_rootfs_with_licenses_and_copyrights(self):
         test_rootfs = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         result = [package.to_dict(_detailed=True)
             for package in debian.get_installed_packages(test_rootfs, detect_licenses=True)]
         expected = self.get_test_loc('debian/basic-rootfs-with-licenses-expected.json')
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_get_installed_packages_should_not_fail_on_rootfs_without_installed_debian_packages(self):
         test_rootfs = self.get_temp_dir()
@@ -62,13 +64,13 @@ class TestDebian(PackageTester):
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_status_file_perl_error(self):
         test_file = self.get_test_loc('debian/mini-status/status')
         expected_loc = self.get_test_loc('debian/mini-status/status.expected')
         packages = list(debian.parse_status_file(test_file, distro='debian'))
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_parse_end_to_end(self):
@@ -99,7 +101,7 @@ class TestDebian(PackageTester):
         packages = debian.get_installed_packages(root_dir=test_root_dir, distro='ubuntu', detect_licenses=False)
         result = [p.to_dict(_detailed=True) for p in packages]
         expected = self.get_test_loc('debian/ubuntu-var-lib-dpkg/expected.json')
-        check_result_equals_expected_json(result, expected, regen=False)
+        check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
 
 class TestDebianGetListOfInstalledFiles(PackageTester):

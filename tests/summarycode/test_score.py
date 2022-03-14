@@ -10,13 +10,14 @@
 import io
 import os
 
-import click
 import pytest
 
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
+
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 pytestmark = pytest.mark.scanslow
@@ -31,7 +32,7 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def make_test_function(test_name, test_dir, expected_file, regen=False):
+def make_test_function(test_name, test_dir, expected_file, regen=REGEN_TEST_FIXTURES):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -65,7 +66,7 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
     return closure_test_function, test_name
 
 
-def build_tests(test_base_dir, clazz, regen=False):
+def build_tests(test_base_dir, clazz, regen=REGEN_TEST_FIXTURES):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
@@ -96,4 +97,4 @@ class TestLicenseScore(FileDrivenTesting):
     pass
 
 
-build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=True)
+build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=REGEN_TEST_FIXTURES)

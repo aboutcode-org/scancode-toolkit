@@ -24,15 +24,20 @@ def logger_debug(*args): pass
 
 
 if TRACE or TRACE2 or TRACE3:
-    import logging
-
-    logger = logging.getLogger(__name__)
+    use_print = True
+    if use_print:
+        prn = print
+    else:
+        import logging
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        prn = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
 
 """
 Matching strategy using pair-wise multiple local sequences alignment and diff-

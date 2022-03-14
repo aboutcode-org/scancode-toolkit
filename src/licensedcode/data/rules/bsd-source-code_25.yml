@@ -1,0 +1,7 @@
+license_expression: bsd-source-code
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2010-2021, Deusty, LLC
+ignorable_holders:
+    - Deusty, LLC

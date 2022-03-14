@@ -157,7 +157,11 @@ class ExternalLicensesSource:
                     print(repr(lic))
                 raise
             if TRACE:
-                print(f"    Saving fetched license: {lic.key} in :", round(time.time() - start, 1), "s")
+                print(
+                    f"    Saving fetched license: {lic.key} in :",
+                    round(time.time() - start, 1),
+                    "s",
+                )
 
         print(
             "Stored %d external licenses in: %r."
@@ -485,6 +489,7 @@ class SpdxSource(ExternalLicensesSource):
         text = text.strip()
         return lic, text
 
+
 # these licenses are rare commercial license with no text and only a
 # link or these licenses may be combos of many others or are ignored
 # because of some weirdness we detect instead each part of the combos
@@ -747,9 +752,7 @@ def create_or_update_license(api_url, api_key, lico, update=False):
     if not response.ok:
         content = response.content
         headers = response.headers
-        raise Exception(
-            f"Failed to fetch license for {lico.key} at {url}:\n{headers}\n{content}"
-        )
+        raise Exception(f"Failed to fetch license for {lico.key} at {url}:\n{headers}\n{content}")
 
     results = response.json().get("results", [])
 
@@ -761,9 +764,7 @@ def create_or_update_license(api_url, api_key, lico, update=False):
         if not response.ok:
             content = response.content
             headers = response.headers
-            raise Exception(
-                f"Failed to create license: {lico.key} at {url}:\n{headers}\n{content}"
-            )
+            raise Exception(f"Failed to create license: {lico.key} at {url}:\n{headers}\n{content}")
 
         print("Created new license:", lico)
         created = response.json()
@@ -790,9 +791,7 @@ def create_or_update_license(api_url, api_key, lico, update=False):
         if not response.ok:
             content = response.content
             headers = response.headers
-            raise Exception(
-                f"Failed to update license: {lico.key} at {url}:\n{headers}\n{content}"
-            )
+            raise Exception(f"Failed to update license: {lico.key} at {url}:\n{headers}\n{content}")
 
         new_results = response.json().get("results", [])
         if TRACE:
@@ -1120,12 +1119,14 @@ def synchronize_licenses(
     # mappings of key -> License
     scancodes_by_key = scancode_licenses.by_key
 
-    if TRACE: start = time.time()
+    if TRACE:
+        start = time.time()
     externals_by_key = external_source.get_licenses(
         scancode_licenses,
         commitish=commitish,
     )
-    if TRACE: print("Fetched all externals_by_key licenses in :", int(time.time() - start))
+    if TRACE:
+        print("Fetched all externals_by_key licenses in :", int(time.time() - start))
 
     if use_spdx_key:
         scancodes_by_key = scancode_licenses.by_spdx_key

@@ -1,0 +1,15 @@
+key: ogl-1.0a
+short_name: OGL 1.0a
+name: Open Game License v1.0a
+category: Permissive
+owner: Anthony Ronda
+homepage_url: https://raw.githubusercontent.com/anthonyronda/LicenseRef-OGL-1.0a/main/LICENSE
+spdx_license_key: LicenseRef-scancode-ogl-1.0a
+other_urls:
+    - https://github.com/anthonyronda/awesome-ogl
+ignorable_copyrights:
+    - Copyright 2000 Wizards of the Coast, Inc 'Wizards
+    - Copyright 2000, Wizards of the Coast, Inc.
+ignorable_holders:
+    - Wizards of the Coast, Inc 'Wizards
+    - Wizards of the Coast, Inc.

@@ -9,12 +9,15 @@
 
 import os.path
 
+from commoncode.resource import Codebase
+
 from packagedcode import build
 from packagedcode import models
+from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
-from commoncode.resource import Codebase
-from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 
 class TestBuild(PackageTester):
@@ -25,14 +28,14 @@ class TestBuild(PackageTester):
         expected_file = self.get_test_loc('bazel/end2end-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
     def test_end2end_scan_can_detect_buck(self):
         test_file = self.get_test_loc('buck/end2end')
         expected_file = self.get_test_loc('buck/end2end-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
     def test_build_get_package_resources(self):
         test_loc = self.get_test_loc('get_package_resources')

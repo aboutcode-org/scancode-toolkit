@@ -13,15 +13,15 @@ import os
 import pytest
 
 from commoncode.system import on_linux
-from packagedcode.models import PackageFile
+
 from packagedcode.win_reg import create_absolute_installed_file_path
 from packagedcode.win_reg import get_installed_packages
 from packagedcode.win_reg import _report_installed_dotnet_versions
 from packagedcode.win_reg import _report_installed_programs
 from packagedcode.win_reg import remove_drive_letter
-
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 @pytest.mark.skipif(not on_linux, reason='We only configure regipy for use on Linux')
@@ -35,7 +35,7 @@ class TestWinReg(PackageTester):
             software_registry_entries = json.load(f)
         results = [p.to_dict(_detailed=True)
             for p in _report_installed_dotnet_versions(software_registry_entries)]
-        check_result_equals_expected_json(results, expected_loc, regen=False)
+        check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_win_reg__report_installed_programs(self):
         test_file = self.get_test_loc('win_reg/SOFTWARE-registry-entries.json')
@@ -44,7 +44,7 @@ class TestWinReg(PackageTester):
             software_registry_entries = json.load(f)
         results = [p.to_dict(_detailed=True)
             for p in _report_installed_programs(software_registry_entries)]
-        check_result_equals_expected_json(results, expected_loc, regen=False)
+        check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_win_reg_remove_drive_letter(self):
         test_path = 'C:\\Users\\Test\\Desktop'
@@ -63,4 +63,4 @@ class TestWinReg(PackageTester):
         test_root_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')
         expected_loc = self.get_test_loc('win_reg/get_installed_packages_docker/expected-results')
         results = list(p.to_dict(_detailed=True) for p in get_installed_packages(test_root_dir))
-        check_result_equals_expected_json(results, expected_loc, regen=False)
+        check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)

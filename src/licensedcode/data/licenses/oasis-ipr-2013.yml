@@ -1,0 +1,18 @@
+key: oasis-ipr-2013
+short_name: OASIS IPR 2013
+name: OASIS Intellectual Property Rights (IPR) Policy 2013
+category: Proprietary Free
+owner: OASIS
+homepage_url: https://www.oasis-open.org/policies-guidelines/ipr/
+spdx_license_key: LicenseRef-scancode-oasis-ipr-2013
+other_urls:
+    - https://github.com/alexa/avs-device-sdk/blob/703b06188eae146af396f58be4e47442d7ce5b1e/NOTICE.txt#L103Attac
+ignorable_copyrights:
+    - Copyright (c) OASIS Open
+ignorable_holders:
+    - OASIS Open
+ignorable_urls:
+    - http://www.oasis-open.org/policies-guidelines/ipr
+    - http://www.oasis-open.org/who/intellectualproperty.php
+    - http://www.oasisopen.org/policies-guidelines/ipr
+    - http://www.oasisopen.org/who/intellectualproperty.php

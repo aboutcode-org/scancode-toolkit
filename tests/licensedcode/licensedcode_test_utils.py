@@ -19,6 +19,9 @@ import saneyaml
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
+from scancode_config import REGEN_TEST_FIXTURES
+
+
 """
 Data-driven tests using expectations stored in YAML files.
 """
@@ -151,7 +154,7 @@ class LicenseTest(object):
         ]
 
 
-def build_tests(test_dir, clazz, unknown_detection=False, regen=False):
+def build_tests(test_dir, clazz, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
     """
     Dynamically build license_test methods from a sequence of LicenseTest and
     attach these method to the clazz license test class.
@@ -183,7 +186,7 @@ def build_tests(test_dir, clazz, unknown_detection=False, regen=False):
         setattr(clazz, test_name, test_method)
 
 
-def make_test(license_test, unknown_detection=False, regen=False):
+def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.

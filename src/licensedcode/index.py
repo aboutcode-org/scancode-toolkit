@@ -110,6 +110,10 @@ USE_DMP = False
 MAX_TOKENS = (2 ** 15) - 1
 
 
+class DuplicateRuleError(Exception):
+    pass
+
+
 class LicenseIndex(object):
     """
     A license detection index. An index is queried for license matches found in
@@ -567,7 +571,7 @@ class LicenseIndex(object):
                 for rules in dupe_rules
             ]
             msg = ('Duplicate rules: \n' + '\n\n'.join(dupe_rule_paths))
-            raise AssertionError(msg)
+            raise DuplicateRuleError(msg)
 
         self.optimized = True
 
@@ -987,7 +991,7 @@ class LicenseIndex(object):
         for matcher, include_low, matcher_name in matchers:
             if TRACE:
                 logger_debug()
-                logger_debug('matching with matcher:', matcher_name)
+                logger_debug('match_query: matching with matcher:', matcher_name)
 
             matched = matcher(
                 qry,
@@ -1015,7 +1019,7 @@ class LicenseIndex(object):
                 ):
                     qry.subtract(m.qspan)
 
-            # Check if we have some matchable left do not match futher if we do
+            # Check if we have some matchable left: do not match futher if we do
             # not need to collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match
             # fragments (unused for now).
@@ -1024,7 +1028,11 @@ class LicenseIndex(object):
                 m.qspan for m in matched if m.coverage() == 100)
 
             if not whole_query_run.is_matchable(
-                include_low=include_low, qspans=already_matched_qspans):
+                include_low=include_low,
+                qspans=already_matched_qspans,
+            ):
+                if TRACE:
+                    logger_debug('  match_query: no more matchable ... stop matching after matcher:', matcher_name)
                 break
 
             # break if deadline has passed

@@ -12,13 +12,15 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+
+from scancode_config import REGEN_TEST_FIXTURES
 from textcode import strings
 
 
 class TestStrings(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_file_strings(self, test_file, expected_file, regen=False):
+    def check_file_strings(self, test_file, expected_file, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc(test_file)
         results = list(strings.strings_from_file(test_file))
         expected = self.get_test_loc(expected_file)
@@ -169,4 +171,4 @@ class TestStrings(FileBasedTesting):
     def test_strings_with_lf(self):
         test_file = 'strings/with-lf/strings.exe'
         expected_file = 'strings/with-lf/strings.exe.results'
-        self.check_file_strings(test_file, expected_file, regen=False)
+        self.check_file_strings(test_file, expected_file, regen=REGEN_TEST_FIXTURES)

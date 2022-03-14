@@ -11,6 +11,7 @@ import os
 
 from packagedcode import cran
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestCran(PackageTester):
@@ -21,11 +22,11 @@ class TestCran(PackageTester):
         packages = cran.DescriptionFile.recognize(test_file)
         expected_loc = self.get_test_loc(
             'cran/codetools/package.json.expected')
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_as_package2(self):
         test_file = self.get_test_loc('cran/geometry/DESCRIPTION')
         packages = cran.DescriptionFile.recognize(test_file)
         expected_loc = self.get_test_loc(
             'cran/geometry/package.json.expected')
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)

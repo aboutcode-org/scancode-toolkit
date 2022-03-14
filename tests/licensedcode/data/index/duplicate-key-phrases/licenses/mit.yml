@@ -1,0 +1,16 @@
+key: mit
+short_name: MIT License
+name: MIT License
+category: Permissive
+owner: MIT
+homepage_url: http://opensource.org/licenses/mit-license.php
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: MIT
+text_urls:
+    - http://opensource.org/licenses/mit-license.php
+osi_url: http://www.opensource.org/licenses/MIT
+faq_url: https://ieeexplore.ieee.org/document/9263265
+other_urls:
+    - https://opensource.com/article/18/3/patent-grant-mit-license
+    - https://opensource.com/article/19/4/history-mit-license
+    - https://opensource.org/licenses/MIT

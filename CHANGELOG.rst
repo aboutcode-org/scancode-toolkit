@@ -48,14 +48,6 @@ Important API changes:
   column to "path". The "copyright_holder" has been ranmed to "holder"
 
 
-Development environment changes:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- - The license cache consistency is not checked anymore when you are using a Git
-   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
-   instead the --reindex-licenses option to rebuild the license index.
-
-
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -121,7 +113,6 @@ License detection:
 
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
-
 
 - The new --licenses-reference option adds a new "licenses_reference" top
   level attribute to a scan when using the JSON and YAML outputs. This contains
@@ -231,6 +222,66 @@ License Clarity Scoring Update
      - Scoring Weight = -20
 
 
+License Clarity Scoring Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - We are moving away from the license clarity scoring defined by ClearlyDefined
+   in the license clarity score plugin. The previous license clarity scoring
+   logic produced a score that was misleading, where it would return a low score
+   when scanning packages due to the stringent scoring criteria. We are now
+   using more general criteria to get a sense of what provenance information has
+   been provided and whether or not there is a conflict in licensing between
+   what licenses were declared at the top-level key files and what licenses have
+   been detected in the files under the top-level.
+
+ - The license clarity score is a value from 0-100 calculated by combining the
+   weighted values determined for each of the scoring elements:
+
+   - Declared license:
+
+     - When true, indicates that the software package licensing is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 40
+
+   - Identification precision:
+
+     - Indicates how well the license statement(s) of the software identify known
+       licenses that can be designated by precise keys (identifiers) as provided in
+       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
+       license list, the OSI license list, or a URL pointing to a specific license
+       text in a project or organization website.
+     - Scoring Weight = 40
+
+   - License texts:
+
+     - License texts are provided to support the declared license expression in
+       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
+     - Scoring Weight = 10
+
+   - Declared copyright:
+
+     - When true, indicates that the software package copyright is documented at
+       top-level or well-known locations in the software project, typically in a
+       package manifest, NOTICE, LICENSE, COPYING or README file.
+     - Scoring Weight = 10
+
+   - Ambiguous compound licensing:
+
+     - When true, indicates that the software has a license declaration that
+       makes it difficult to construct a reliable license expression, such as in
+       the case of multiple licenses where the conjunctive versus disjunctive
+       relationship is not well defined.
+     - Scoring Weight = -10
+
+   - Conflicting license categories:
+
+     - When true, indicates the declared license expression of the software is in
+       the permissive category, but that other potentially conflicting categories,
+       such as copyleft and proprietary, have been detected in lower level code.
+     - Scoring Weight = -20
+
+
 Outputs:
 ~~~~~~~~
 
@@ -251,11 +302,24 @@ Changes:
 - add resource-level attribute `for_packages`.
 - remove `package-data` attribute `root_path`.
 
+
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Various documentations have been updated to reflects API changes and
   correct minor documentation issues.
+
+
+Development environment changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The license cache consistency is not checked anymore when you are using a Git
+  checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
+  instead the --reindex-licenses option to rebuild the license index.
+
+- We can now regenerate updated test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
+  environemnt variable. There is no need to replace the regen=False with regen=True
+  in the code.
 
 
 30.1.0 - 2021-09-25

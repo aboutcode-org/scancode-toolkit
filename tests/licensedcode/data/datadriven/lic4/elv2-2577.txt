@@ -1,0 +1,4 @@
+## License
+Copyright (c) 2012 Niklas von Hertzen
+Licensed under the MIT license.
+

@@ -13,6 +13,7 @@ from packagedcode.cocoapods import Podspec
 from packagedcode.cocoapods import PodfileLock
 from packagedcode.cocoapods import PodspecJson
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestCocoaPodspec(PackageTester):
@@ -26,31 +27,31 @@ class TestCocoaPodspec(PackageTester):
         test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec.expected.json')
         packages = Podspec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_LoadingShimmer(self):
         test_file = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec.expected.json')
         packages = Podspec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_nanopb(self):
         test_file = self.get_test_loc('cocoapods/podspec/nanopb.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec.expected.json')
         packages = Podspec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_Starscream(self):
         test_file = self.get_test_loc('cocoapods/podspec/Starscream.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/Starscream.podspec.expected.json')
         packages = Podspec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_SwiftLib(self):
         test_file = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec.expected.json')
         packages = Podspec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestCocoaPodspecJson(PackageTester):
@@ -64,7 +65,7 @@ class TestCocoaPodspecJson(PackageTester):
         test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
         expected_loc = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json.expected.json')
         packages = PodspecJson.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestCocoaPodfileLock(PackageTester):
@@ -78,4 +79,4 @@ class TestCocoaPodfileLock(PackageTester):
         test_file = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock')
         expected_loc = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock.expected.json')
         packages = PodfileLock.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)

@@ -8,11 +8,12 @@
 #
 
 import os
+
 import pytest
 
 from packagedcode import opam
-
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestOcaml(PackageTester):
@@ -26,49 +27,49 @@ class TestOcaml(PackageTester):
         test_file = self.get_test_loc('opam/sample1/sample1.opam')
         expected_loc = self.get_test_loc('opam/sample1/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample2(self):
         test_file = self.get_test_loc('opam/sample2/sample2.opam')
         expected_loc = self.get_test_loc('opam/sample2/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample3(self):
         test_file = self.get_test_loc('opam/sample3/sample3.opam')
         expected_loc = self.get_test_loc('opam/sample3/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample4(self):
         test_file = self.get_test_loc('opam/sample4/opam')
         expected_loc = self.get_test_loc('opam/sample4/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample5(self):
         test_file = self.get_test_loc('opam/sample5/opam')
         expected_loc = self.get_test_loc('opam/sample5/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample6(self):
         test_file = self.get_test_loc('opam/sample6/sample6.opam')
         expected_loc = self.get_test_loc('opam/sample6/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample7(self):
         test_file = self.get_test_loc('opam/sample7/sample7.opam')
         expected_loc = self.get_test_loc('opam/sample7/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sample8(self):
         test_file = self.get_test_loc('opam/sample8/opam')
         expected_loc = self.get_test_loc('opam/sample8/output.opam.expected')
         packages = opam.OpamFile.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 FILE_LINE = [

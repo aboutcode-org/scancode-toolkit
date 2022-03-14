@@ -10,8 +10,8 @@
 import os
 
 from packagedcode import nuget
-
 from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestNuget(PackageTester):
@@ -25,34 +25,34 @@ class TestNuget(PackageTester):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/bootstrap.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_creates_package_from_nuspec_entity_framework(self):
         test_file = self.get_test_loc('nuget/EntityFramework.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/EntityFramework.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_creates_package_from_nuspec_jquery_ui(self):
         test_file = self.get_test_loc('nuget/jQuery.UI.Combined.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/jQuery.UI.Combined.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_creates_package_from_nuspec_microsoft_asp_mvc(self):
         test_file = self.get_test_loc('nuget/Microsoft.AspNet.Mvc.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/Microsoft.AspNet.Mvc.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_creates_package_from_nuspec(self):
         test_file = self.get_test_loc('nuget/Microsoft.Net.Http.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/Microsoft.Net.Http.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_as_package(self):
         test_file = self.get_test_loc('nuget/Castle.Core.nuspec')
         package = nuget.Nuspec.recognize(test_file)
         expected_loc = self.get_test_loc('nuget/Castle.Core.nuspec.json.expected')
-        self.check_packages(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)

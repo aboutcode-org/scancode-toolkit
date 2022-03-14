@@ -11,9 +11,11 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.plugin_mark_source import is_source_directory
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestMarkSource(FileDrivenTesting):
@@ -42,4 +44,4 @@ class TestMarkSource(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_mark_source/with_info.expected.json')
         run_scan_click(['--info', '--mark-source', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

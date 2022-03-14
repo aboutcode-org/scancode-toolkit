@@ -12,13 +12,16 @@ import os
 import shutil
 
 from commoncode.testcase import FileDrivenTesting
+
 from scancode.cli_test_utils import run_scan_plain
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_debian_copyright_output(test_dir, expected_file, regen=False):
+def check_debian_copyright_output(test_dir, expected_file, regen=REGEN_TEST_FIXTURES):
     """
     Rrun a scan on ``test_dir`` with a debian output and check if the created
     file matches ``expected_file``.
@@ -49,10 +52,10 @@ def check_debian_copyright_output(test_dir, expected_file, regen=False):
 def test_debian_basic():
     test_dir = test_env.get_test_loc('debian/basic/scan')
     expected_file = test_env.get_test_loc('debian/basic/expected.copyright')
-    check_debian_copyright_output(test_dir, expected_file, regen=False)
+    check_debian_copyright_output(test_dir, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_debian_multiple_files():
     test_dir = test_env.get_test_loc('debian/multiple_files/scan')
     expected_file = test_env.get_test_loc('debian/multiple_files/expected.copyright')
-    check_debian_copyright_output(test_dir, expected_file, regen=False)
+    check_debian_copyright_output(test_dir, expected_file, regen=REGEN_TEST_FIXTURES)

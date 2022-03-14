@@ -21,6 +21,8 @@ from commoncode.text import python_safe_name
 
 from cluecode.copyrights import detect_copyrights
 from cluecode.copyrights import Detection
+from scancode_config import REGEN_TEST_FIXTURES
+
 
 """
 Data-driven Copyright test utilities.
@@ -166,7 +168,7 @@ def make_copyright_test_functions(
     test,
     index,
     test_data_dir=test_env.test_data_dir,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 ):
     """
     Build and return a test function closing on tests arguments and the function
@@ -234,7 +236,7 @@ def build_tests(
     copyright_tests,
     clazz,
     test_data_dir=test_env.test_data_dir,
-    regen=False,
+    regen=REGEN_TEST_FIXTURES,
 ):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach

@@ -13,8 +13,9 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
-from packagedcode import rpm
 
+from packagedcode import rpm
+from scancode_config import REGEN_TEST_FIXTURES
 
 class TestRpmBasics(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -136,7 +137,7 @@ class TestRpmBasics(FileBasedTesting):
         assert rpm.RpmManifest.is_package_data_file(test_file)
 
 
-def check_json(result, expected_file, regen=False):
+def check_json(result, expected_file, regen=REGEN_TEST_FIXTURES):
     if regen:
         mode = 'w'
         with io.open(expected_file, mode) as reg:
@@ -154,7 +155,7 @@ class TestRpmTags(FileBasedTesting):
         suffix = '-expected.json'
         expected_file = test_file + suffix
         result = rpm.get_rpm_tags(test_file)._asdict()
-        check_json(result, expected_file, regen=False)
+        check_json(result, expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_rpm_tags_alfandega_2_0_1_7_3_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/alfandega-2.0-1.7.3.noarch.rpm')

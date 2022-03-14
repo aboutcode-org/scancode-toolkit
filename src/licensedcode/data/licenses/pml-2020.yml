@@ -1,0 +1,9 @@
+key: pml-2020
+short_name: Amazon PML 2020
+name: Amazon Program Materials License Agreement 2020
+category: Proprietary Free
+owner: Amazon Web Services
+homepage_url: https://developer.amazon.com/support/legal/pml
+spdx_license_key: LicenseRef-scancode-pml-2020
+other_urls:
+    - https://github.com/alexa/avs-device-sdk/blob/703b06188eae146af396f58be4e47442d7ce5b1e/NOTICE.txt#L67

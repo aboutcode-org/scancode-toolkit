@@ -14,11 +14,12 @@ import json
 import os
 
 import pytest
-
 from commoncode.testcase import FileDrivenTesting
+
 from formattedcode.output_csv import flatten_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
+from scancode_config import REGEN_TEST_FIXTURES
 
 
 test_env = FileDrivenTesting()
@@ -38,7 +39,7 @@ def load_scan(json_input):
     return scan_results
 
 
-def check_json(result, expected_file, regen=False):
+def check_json(result, expected_file, regen=REGEN_TEST_FIXTURES):
     if regen:
         with io.open(expected_file, 'w', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
@@ -49,7 +50,7 @@ def check_json(result, expected_file, regen=False):
 
 def check_csvs(result_file, expected_file,
                ignore_keys=('date', 'file_type', 'mime_type', 'package_uuid'),
-               regen=False):
+               regen=REGEN_TEST_FIXTURES):
     """
     Load and compare two CSVs.
     `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
@@ -93,7 +94,7 @@ def test_flatten_scan_minimal():
         ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/minimal.json-expected')
-    check_json(result, expected_file, regen=False)
+    check_json(result, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_flatten_scan_can_process_path_with_and_without_leading_slash():
@@ -119,7 +120,7 @@ def test_can_process_live_scan_for_packages_with_root():
     args = ['--package', test_dir, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/packages/expected.csv')
-    check_csvs(result_file, expected_file, regen=False)
+    check_csvs(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_output_can_handle_non_ascii_paths():
@@ -234,7 +235,7 @@ def test_can_process_live_scan_with_all_options():
     args = ['-clip', '--email', '--url', '--strip-root', test_dir, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/livescan/expected.csv')
-    check_csvs(result_file, expected_file, regen=False)
+    check_csvs(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -244,7 +245,7 @@ def test_can_process_live_scan_for_packages_strip_root():
     args = ['--package', '--strip-root', test_dir, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/packages/expected-no-root.csv')
-    check_csvs(result_file, expected_file, regen=False)
+    check_csvs(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -254,7 +255,7 @@ def test_output_contains_license_expression():
     args = ['--from-json', test_file, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/expressions/expected.csv')
-    check_csvs(result_file, expected_file, regen=False)
+    check_csvs(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.scanslow
@@ -264,4 +265,4 @@ def test_output_handles_non_standard_data():
     args = ['--from-json', test_file, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/non-standard/identified.csv')
-    check_csvs(result_file, expected_file, regen=False)
+    check_csvs(result_file, expected_file, regen=REGEN_TEST_FIXTURES)
