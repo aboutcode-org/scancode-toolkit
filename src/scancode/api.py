@@ -315,7 +315,8 @@ def _get_package_data(location):
             raise
         else:
             # attention: we are swallowing ALL exceptions here!
-            pass
+            print(logger.error)
+            
 
 
 def get_package_info(location, **kwargs):
