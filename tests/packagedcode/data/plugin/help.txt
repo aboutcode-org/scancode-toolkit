@@ -299,6 +299,12 @@ Package: opam
   extensions: .opam
 
 --------------------------------------------
+Package: openwrt
+  class: packagedcode.openwrt:OpenwrtPackage
+  extensions: .ipk
+  filetypes: gzip compressed data
+
+--------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:Podspec
   file_patterns: *.podspec

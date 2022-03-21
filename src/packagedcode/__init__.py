@@ -29,6 +29,7 @@ from packagedcode import msi
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
+from packagedcode import openwrt
 from packagedcode import phpcomposer
 from packagedcode import pubspec
 from packagedcode import pypi
@@ -134,6 +135,7 @@ PACKAGE_INSTANCE_CLASSES = [
     win_pe.WindowsPackage,
     pubspec.PubspecPackage,
     cran.CranPackage
+    openwrt.OpenwrtPackage,
 ]
 
 
