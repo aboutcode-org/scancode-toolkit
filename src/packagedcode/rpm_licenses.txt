@@ -1,2 +1,5 @@
 # TODO: populate me!
-public domain	public-domain
+public domain   public-domain
+lgplv2+   lgpl-2.0-plus
+gplv2+   gpl-2.0-plus
+lgplv2+ and gplv2+   lgpl-2.0-plus and gpl-2.0-plus  

@@ -347,7 +347,7 @@ def get_declared_to_detected(data_file=None):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            decl, _, detect = line.partition('\t')
+            decl, _, detect = line.partition('   ')
             if detect and detect.strip():
                 decl = decl.strip()
                 _DECLARED_TO_DETECTED[decl] = detect
