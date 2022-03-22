@@ -74,3 +74,24 @@ html_context = {
     "github_version": "develop",  # branch
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
+
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
+html_show_sphinx = True
+
+# Define CSS and HTML abbreviations used in .rst files.  These are examples.
+# .. role:: is used to refer to styles defined in _static/theme_overrides.css and is used like this: :red:`text`
+rst_prolog = """
+.. |psf| replace:: Python Software Foundation
+
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
+.. role:: red
+
+.. role:: img-title
+
+.. role:: img-title-para
+
+"""
