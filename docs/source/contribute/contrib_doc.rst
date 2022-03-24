@@ -18,10 +18,10 @@ That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::
 
     cd scancode-toolkit
-    virtualenv -p /usr/bin/python3 docs-venv
-    source docs-venv/bin/activate
+    ./configure --dev
+    source venv/bin/activate
 
-Now, the following prerequisites are installed
+Now, the following prerequisites should be installed
 
 - Sphinx
 - sphinx_rtd_theme (the format theme used by ReadTheDocs)
@@ -29,7 +29,9 @@ Now, the following prerequisites are installed
 
 ::
 
-    pip install Sphinx sphinx_rtd_theme doc8
+    pip install -e .[docs]
+
+These requirements are already present in setup.cfg and this installs them.
 
 Now you can build the HTML documents locally::
 
@@ -101,6 +103,10 @@ So run these scripts at your local system before creating a Pull Request::
     cd docs
     ./scripts/sphinx_build_link_check.sh
     ./scripts/doc8_style_check.sh
+
+If you don't have permission to run the scripts, run::
+
+    chmod u+x ./scripts/doc8_style_check.sh
 
 .. _doc_style_docs8:
 
