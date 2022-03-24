@@ -65,15 +65,17 @@ html_static_path = ["_static"]
 master_doc = 'index'
 
 html_context = {
-    "css_files": [
-        "_static/theme_overrides.css",  # override wide tables in RTD theme
-    ],
     "display_github": True,
     "github_user": "nexB",
     "github_repo": "nexb-skeleton",
     "github_version": "develop",  # branch
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
+
+html_css_files = [
+    '_static/theme_overrides.css'
+    ]
+
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = True
