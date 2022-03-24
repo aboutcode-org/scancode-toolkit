@@ -8,6 +8,7 @@
 #
 
 from collections import Counter
+import warnings
 
 import attr
 
@@ -44,6 +45,10 @@ Create summarized scan data.
 """
 
 
+class SummaryPluginDeprecationWarning(DeprecationWarning):
+    pass
+
+
 @post_scan_impl
 class ScanSummary(PostScanPlugin):
     """
@@ -61,11 +66,22 @@ class ScanSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary, **kwargs):
+        warnings.simplefilter('always', SummaryPluginDeprecationWarning)
+        warnings.warn(
+            "\nThe --summary option will be deprecated "
+            "in a future version of scancode-toolkit.\n",
+            SummaryPluginDeprecationWarning,
+            stacklevel=2,
+        )
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
         summarize_codebase(codebase, keep_details=False, **kwargs)
+
+
+class SummaryWithDetailsDeprecationWarning(DeprecationWarning):
+    pass
 
 
 @post_scan_impl
@@ -89,6 +105,13 @@ class ScanSummaryWithDetails(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_with_details, **kwargs):
+        warnings.simplefilter('always', SummaryWithDetailsDeprecationWarning)
+        warnings.warn(
+            "\nThe --summary-with-details option will be deprecated "
+            "in a future version of scancode-toolkit.\n",
+            SummaryWithDetailsDeprecationWarning,
+            stacklevel=2,
+        )
         return summary_with_details
 
     def process_codebase(self, codebase, summary_with_details, **kwargs):
@@ -256,6 +279,10 @@ def summarize_values(values, attribute):
     return value_summarizers_by_attr[attribute](values)
 
 
+class SummaryKeyFilesDeprecationWarning(DeprecationWarning):
+    pass
+
+
 @post_scan_impl
 class ScanKeyFilesSummary(PostScanPlugin):
     """
@@ -280,6 +307,13 @@ class ScanKeyFilesSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_key_files, **kwargs):
+        warnings.simplefilter('always', SummaryKeyFilesDeprecationWarning)
+        warnings.warn(
+            "\nThe --summary-key-files option will be deprecated "
+            "in a future version of scancode-toolkit.\n",
+            SummaryKeyFilesDeprecationWarning,
+            stacklevel=2,
+        )
         return summary_key_files
 
     def process_codebase(self, codebase, summary_key_files, **kwargs):
@@ -330,6 +364,10 @@ def summarize_codebase_key_files(codebase, **kwargs):
     if TRACE: logger_debug('codebase summary_of_key_files:', sorted_summaries)
 
 
+class SummaryByFacetPluginDeprecationWarning(DeprecationWarning):
+    pass
+
+
 @post_scan_impl
 class ScanByFacetSummary(PostScanPlugin):
     """
@@ -349,6 +387,13 @@ class ScanByFacetSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_by_facet, **kwargs):
+        warnings.simplefilter('always', SummaryByFacetPluginDeprecationWarning)
+        warnings.warn(
+            "\nThe --summary-by-facet option will be deprecated "
+            "in a future version of scancode-toolkit.\n",
+            SummaryByFacetPluginDeprecationWarning,
+            stacklevel=2,
+        )
         return summary_by_facet
 
     def process_codebase(self, codebase, summary_by_facet, **kwargs):

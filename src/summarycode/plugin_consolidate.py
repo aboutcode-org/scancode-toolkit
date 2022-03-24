@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import warnings
 from collections import Counter
 
 import attr
@@ -109,6 +110,10 @@ class ConsolidatedPackage(object):
         return package
 
 
+class ConsolidatorPluginDeprecationWarning(DeprecationWarning):
+    pass
+
+
 @post_scan_impl
 class Consolidator(PostScanPlugin):
     """
@@ -149,6 +154,13 @@ class Consolidator(PostScanPlugin):
     ]
 
     def is_enabled(self, consolidate, **kwargs):
+        warnings.simplefilter('always', ConsolidatorPluginDeprecationWarning)
+        warnings.warn(
+            "\nThe --consolidate option will be deprecated "
+            "in a future version of scancode-toolkit.\n",
+            ConsolidatorPluginDeprecationWarning,
+            stacklevel=2,
+        )
         return consolidate
 
     def process_codebase(self, codebase, **kwargs):
