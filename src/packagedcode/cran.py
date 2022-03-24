@@ -8,146 +8,112 @@
 #
 
 import io
-import logging
 
-import attr
 import saneyaml
-
-from commoncode import filetype
-from commoncode import fileutils
-from packagedcode import models
 from packageurl import PackageURL
 
+from packagedcode import models
 
 """
-Handle CRAN package.
-R is a programming languages and CRAN its package repository.
-https://cran.r-project.org/
+Handle CRAN packages.
+R is a programming languages and CRAN is its package repository.
+See https://cran.r-project.org/
 """
 
-TRACE = False
 
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-
-@attr.s()
-class CranPackageData(models.PackageData):
-    default_type = 'cran'
-    default_web_baseurl = 'https://cran.r-project.org/package='
+class CranDescriptionFileHandler(models.DatafileHandler):
+    datasource_id = 'cran_description'
+    default_package_type = 'cran'
+    path_patterns = ('*/DESCRIPTION',)
+    default_primary_language = 'R'
+    description = 'CRAN package DESCRIPTION'
+    documentation_url = 'https://r-pkgs.org/description.html'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
+    def parse(cls, location):
+        cran_desc = get_cran_description(location)
 
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}{}'.format(baseurl, self.name)
+        name = cran_desc.get('Package')
+        if not name:
+            return
 
-
-@attr.s()
-class DescriptionFile(CranPackageData, models.PackageDataFile):
-
-    file_patterns = ('DESCRIPTION',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if `location` path is for a Cran DESCRIPTION file.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location) == 'DESCRIPTION')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        package_data = get_yaml_data(location)
-
-        name = package_data.get('Package')
-        if name:
-            parties = []
-            maintainers = package_data.get('Maintainer')
-            if maintainers:
-                for maintainer in maintainers.split(',\n'):
-                    maintainer_name, maintainer_email = get_party_info(maintainer)
-                    if maintainer_name or maintainer_email:
-                        parties.append(
-                            models.Party(
-                                name=maintainer_name,
-                                role='maintainer',
-                                email=maintainer_email,
-                            )
-                        )
-            authors = package_data.get('Author')
-            if authors:
-                for author in authors.split(',\n'):
-                    author_name, author_email = get_party_info(author)
-                    if author_name or author_email:
-                        parties.append(
-                            models.Party(
-                                name=author_name,
-                                role='author',
-                                email=author_email,
-                            )
-                        )
-            package_dependencies = []
-            dependencies = package_data.get('Depends')
-            if dependencies:
-                for dependency in dependencies.split(',\n'):
-                    requirement = None
-                    for splitter in ('==', '>=', '<=', '>', '<'):
-                        if splitter in dependency:
-                            splits = dependency.split(splitter)
-                            # Replace the package name and keep the relationship and version
-                            # For example: R (>= 2.1)
-                            requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
-                            dependency = splits[0].strip().strip('(').strip()
-                            break
-                    package_dependencies.append(
-                        models.DependentPackage(
-                            purl=PackageURL(
-                                type='cran', name=dependency).to_string(),
-                            extracted_requirement=requirement,
-                            scope='dependencies',
-                            is_runtime=True,
-                            is_optional=False,
-                        )
+        parties = []
+        maintainers = cran_desc.get('Maintainer') or ''
+        for maintainer in maintainers.split(',\n'):
+            maintainer_name, maintainer_email = get_party_info(maintainer)
+            if maintainer_name or maintainer_email:
+                parties.append(
+                    models.Party(
+                        name=maintainer_name,
+                        role='maintainer',
+                        email=maintainer_email,
                     )
-            yield cls(
-                name=name,
-                version=package_data.get('Version'),
-                description=package_data.get('Description', '') or package_data.get('Title', ''),
-                declared_license=package_data.get('License'),
-                parties=parties,
-                dependencies=package_dependencies,
-                # TODO: Let's handle the release date as a Date type
-                # release_date = package_data.get('Date/Publication'),
+                )
+
+        authors = cran_desc.get('Author') or ''
+        for author in authors.split(',\n'):
+            author_name, author_email = get_party_info(author)
+            if author_name or author_email:
+                parties.append(
+                    models.Party(
+                        name=author_name,
+                        role='author',
+                        email=author_email,
+                    )
+                )
+
+        package_dependencies = []
+        dependencies = cran_desc.get('Depends') or ''
+        for dependency in dependencies.split(',\n'):
+            requirement = None
+            # TODO: IMHO we could do simpler and better here
+
+            for splitter in ('==', '>=', '<=', '>', '<'):
+                if splitter in dependency:
+                    splits = dependency.split(splitter)
+                    # Replace the package name and keep the relationship and version
+                    # For example: R (>= 2.1)
+                    requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
+                    dependency = splits[0].strip().strip('(').strip()
+                    break
+
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='cran', name=dependency).to_string(),
+                    extracted_requirement=requirement,
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                )
             )
 
+        # TODO: Let's handle the release date as a Date type
+        # release_date = cran_desc.get('Date/Publication'),
 
-@attr.s()
-class CranPackage(CranPackageData, models.Package):
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=cran_desc.get('Version'),
+            # TODO: combine both together
+            description=cran_desc.get('Description', '') or cran_desc.get('Title', ''),
+            declared_license=cran_desc.get('License'),
+            parties=parties,
+            dependencies=package_dependencies,
+            repository_homepage_url=f'https://cran.r-project.org/package={name}',
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return super().assign_package_to_parent_tree(package, resource, codebase)
+
+# FIXME: THIS IS NOT YAML but RFC 822
+
+
+def get_cran_description(location):
     """
-    A cran Package that is created out of one/multiple cran package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            DescriptionFile
-        ]
-
-
-def get_yaml_data(location):
-    """
-    Parse the yaml file and return the metadata in dictionary format.
+    Parse a CRAN DESCRIPTION file as YAML and return a mapping of metadata.
     """
     yaml_lines = []
     with io.open(location, encoding='utf-8') as loc:

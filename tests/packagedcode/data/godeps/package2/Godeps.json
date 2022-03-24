@@ -1,0 +1,8 @@
+{
+	"ImportPath": "_/Users/Daryl/Go/src/daryl.im",
+	"GoVersion": "go1.3.1",
+	"Packages": [
+		"daryl.im"
+	],
+	"Deps": []
+}

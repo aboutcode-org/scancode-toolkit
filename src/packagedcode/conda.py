@@ -8,189 +8,159 @@
 #
 
 import io
-import logging
-import sys
 
-import attr
 import saneyaml
-
-from commoncode import filetype
-from commoncode import fileutils
-
-from packagedcode import models
 from packageurl import PackageURL
 
+from packagedcode import models
+from packagedcode.pypi import BaseDependencyFileHandler
 
 """
-Parse Conda manifests, see https://docs.conda.io/en/latest/
+Handle Conda manifests and metadata, see https://docs.conda.io/en/latest/
+https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html
 
+See https://repo.continuum.io/pkgs/free for examples.
 """
 
-TRACE = False
+# TODO: there are likely other package data files for Conda
+# TODO: report platform
 
 
-def logger_debug(*args):
-    pass
+class CondaYamlHandler(BaseDependencyFileHandler):
+    # TODO: there are several other manifests worth adding
+    datasource_id = 'conda_yaml'
+    path_patterns = ('*conda.yaml', '*conda.yml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Conda yaml manifest'
+    documentation_url = 'https://docs.conda.io/'
 
 
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-@attr.s()
-class CondaPackageData(models.PackageData):
-    default_type = 'conda'
-    default_web_baseurl = None
-    default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
-    default_api_baseurl = None
+class CondaMetaYamlHandler(models.DatafileHandler):
+    datasource_id = 'conda_meta_yaml'
+    default_package_type = 'conda'
+    path_patterns = ('*/meta.yaml',)
+    description = 'Conda meta.yml manifest'
+    documentation_url = 'https://docs.conda.io/'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.lower().endswith(('.yaml', '.yml')):
-            # the root is either the parent or further up for yaml stored under
-            # a INFO dir
-            path = 'info/recipe.tar-extract/recipe/meta.yaml'
-            if manifest_resource.path.endswith(path):
-                for ancestor in manifest_resource.ancestors(codebase):
-                    if ancestor.name == 'info':
-                        root_dir = ancestor.parent(codebase)
-                        return root_dir
-            return manifest_resource.parent(codebase)
-        else:
-            return manifest_resource
+    def get_conda_root(cls, resource, codebase):
+        """
+        Return a root Resource given a meta.yaml ``resource``.
+        """
+        # the root is either the parent or further up for yaml stored under
+        # an "info" dir. We support extractcode extraction.
+        # in a source repo it would be in <repo>/conda.recipe/meta.yaml
+        paths = (
+            'info/recipe.tar-extract/recipe/meta.yaml',
+            'info/recipe/recipe/meta.yaml',
+            'conda.recipe/meta.yaml',
+        )
+        res = resource
+        for pth in paths:
+            if not res.path.endswith(pth):
+                continue
+            for _seg in pth.split('/'):
+                res = res.parent(codebase)
+                if not res:
+                    break
+
+            return res
+
+        return resource.parent(codebase)
 
     @classmethod
-    def extra_root_dirs(cls):
-        return ['**/recipe.tar-extract/recipe']
-
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
-@attr.s()
-class Condayml(CondaPackageData, models.PackageDataFile):
-
-    file_patterns = ('meta.yaml', 'META.yml',)
-    extensions = ('.yml', '.yaml',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return (filetype.is_file(location) 
-            and fileutils.file_name(location).lower().endswith(('.yaml', '.yml')))
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        package_data = get_yaml_data(location)
-
-        name = None
-        version = None
-
-        # Handle the package element
-        package_element = package_data.get('package')
-        if package_element:
-            for key, value in package_element.items():
-                if key == 'name':
-                    name = value
-                elif key == 'version':
-                    version = value
-        if not name:
-            return
-
-        package_manifest = cls(
-            name=name,
-            version=version or None,
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return super().assign_package_to_resources(
+            package=package,
+            resource=cls.get_conda_root(resource, codebase),
+            codebase=codebase,
         )
 
-        # Handle the source element
-        source_element = package_data.get('source')
-        if source_element:
-            for key, value in source_element.items():
-                if key == 'url' and value:
-                    package_manifest.download_url = value
-                elif key == 'sha256' and value:
-                    package_manifest.sha256 = value
+    @classmethod
+    def parse(cls, location):
+        metayaml = get_meta_yaml_data(location)
+        package_element = metayaml.get('package') or {}
+        name = package_element.get('name')
+        if not name:
+            return
+        version = package_element.get('version')
 
-        # Handle the about element
-        about_element = package_data.get('about')
-        if about_element:
-            for key, value in about_element.items():
-                if key == 'home' and value:
-                    package_manifest.homepage_url = value
-                elif key == 'license' and value:
-                    package_manifest.declared_license = value
-                elif key == 'summary' and value:
-                    package_manifest.description = value
-                elif key == 'dev_url' and value:
-                    package_manifest.vcs_url = value
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+        )
 
-        # Handle the about element
-        requirements_element = package_data.get('requirements')
-        if requirements_element:
-            for key, value in requirements_element.items():
-                # Run element format is like:
-                # (u'run', [u'mccortex ==1.0', u'nextflow ==19.01.0', u'cortexpy ==0.45.7', u'kallisto ==0.44.0', u'bwa', u'pandas', u'progressbar2', u'python >=3.6'])])
-                if key == 'run' and value and isinstance(value, (list, tuple)):
-                    package_dependencies = []
-                    for dependency in value:
-                        requirement = None
-                        for splitter in ('==', '>=', '<=', '>', '<'):
-                            if splitter in dependency:
-                                splits = dependency.split(splitter)
-                                # Replace the package name and keep the relationship and version
-                                # For example: keep ==19.01.0
-                                requirement = dependency.replace(splits[0], '').strip()
-                                dependency = splits[0].strip()
-                                break
-                        package_dependencies.append(
-                            models.DependentPackage(
-                                purl=PackageURL(
-                                    type='conda', name=dependency).to_string(),
-                                extracted_requirement=requirement,
-                                scope='dependencies',
-                                is_runtime=True,
-                                is_optional=False,
-                            )
-                        )
-                    package_manifest.dependencies = package_dependencies
-        yield package_manifest
+        # FIXME: source is source, not download
+        source = metayaml.get('source') or {}
+        package.download_url = source.get('url')
+        package.sha256 = source.get('sha256')
+
+        about = metayaml.get('about') or {}
+        package.homepage_url = about.get('home')
+        package.declared_license = about.get('license')
+        package.description = about.get('summary')
+        package.vcs_url = about.get('dev_url')
+
+        requirements = metayaml.get('requirements') or {}
+        for scope, reqs in requirements.items():
+            # requirements format is like:
+            # (u'run', [u'mccortex ==1.0', u'nextflow ==19.01.0', u'cortexpy
+            # ==0.45.7', u'kallisto ==0.44.0', u'bwa', u'pandas',
+            # u'progressbar2', u'python >=3.6'])])
+            for req in reqs:
+                name, _, requirement = req.partition(" ")
+                purl = PackageURL(type=cls.default_package_type, name=name)
+                package.dependencies.append(
+                    models.DependentPackage(
+                        purl=purl.to_string(),
+                        extracted_requirement=requirement,
+                        scope=scope,
+                        is_runtime=True,
+                        is_optional=False,
+                    )
+                )
+
+        yield package
 
 
-def get_yaml_data(location):
+def get_meta_yaml_data(location):
     """
-    Get variables and parse the yaml file, replace the variable with the value and return dictionary.
+    Return a mapping of conda metadata loaded from a meta.yaml files. The format
+    support Jinja-based templating and we try a crude resolution of variables
+    before loading the data as YAML.
     """
+    # FIXME: use Jinja to process these
     variables = get_variables(location)
     yaml_lines = []
-    with io.open(location, encoding='utf-8') as loc:
-        for line in loc.readlines():
+    with io.open(location, encoding='utf-8') as metayaml:
+        for line in metayaml:
             if not line:
                 continue
             pure_line = line.strip()
-            if pure_line.startswith('{%') and pure_line.endswith('%}') and '=' in pure_line:
+            if (
+                pure_line.startswith('{%')
+                and pure_line.endswith('%}')
+                and '=' in pure_line
+            ):
                 continue
+
             # Replace the variable with the value
             if '{{' in line and '}}' in line:
                 for variable, value in variables.items():
                     line = line.replace('{{ ' + variable + ' }}', value)
             yaml_lines.append(line)
+
     return saneyaml.load('\n'.join(yaml_lines))
 
 
 def get_variables(location):
     """
-    Conda yaml will have variables defined at the beginning of the file, the idea is to parse it and return a dictionary of the variable and value
+    Conda yaml will have variables defined at the beginning of the file, the
+    idea is to parse it and return a dictionary of the variable and value
+
     For example:
     {% set version = "0.45.0" %}
     {% set sha256 = "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f" %}

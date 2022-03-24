@@ -19,6 +19,7 @@ from commoncode import testcase
 from commoncode.resource import Codebase
 
 from packagedcode import maven
+from packagedcode import models
 from scancode_config import REGEN_TEST_FIXTURES
 
 
@@ -28,7 +29,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
     def test_is_pom_non_pom(self):
         test_file = self.get_test_loc('maven_misc/non-maven.pom')
-        assert not maven.PomXml.is_package_data_file(test_file)
+        assert not maven.PomXmlHandler.is_datafile(test_file)
 
     def test_is_pom_maven2(self):
         test_dir = self.get_test_loc('maven2')
@@ -37,11 +38,11 @@ class TestIsPom(testcase.FileBasedTesting):
                 continue
 
             loc = os.path.join(test_dir, test_file)
-            assert maven.PomXml.is_package_data_file(loc), loc + ' should be a POM'
+            assert maven.PomXmlHandler.is_datafile(loc), loc + ' should be a POM'
 
     def test_is_pom_not_misc2(self):
         test_file = self.get_test_loc('maven_misc/properties-section-single.xml')
-        assert not maven.PomXml.is_package_data_file(test_file)
+        assert not maven.PomXmlHandler.is_datafile(test_file)
 
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
@@ -50,11 +51,11 @@ class TestIsPom(testcase.FileBasedTesting):
                 continue
 
             loc = os.path.join(test_dir, test_file)
-            assert maven.PomXml.is_package_data_file(loc), 'file://' + loc + ' should be a POM'
+            assert maven.PomXmlHandler.is_datafile(loc), 'file://' + loc + ' should be a POM'
 
     def test_is_pom_not_misc(self):
         test_file = self.get_test_loc('maven_misc/properties-section.xml')
-        assert not maven.PomXml.is_package_data_file(test_file)
+        assert not maven.PomXmlHandler.is_datafile(test_file)
 
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=REGEN_TEST_FIXTURES):
@@ -76,14 +77,11 @@ def compare_results(results, test_pom_loc, expected_json_loc, regen=REGEN_TEST_F
         assert results_dump == '\n'.join(expected)
 
 
-def parse_pom(location=None, text=None, check_is_pom=False):
+def parse_pom(location=None):
     """
     Return a POM mapping from the Maven POM file at location.
     """
-    pom = maven.get_maven_pom(location, text, check_is_pom)
-    if not pom:
-        return {}
-    return pom.to_dict()
+    return maven.get_maven_pom(location=location).to_dict()
 
 
 class BaseMavenCase(testcase.FileBasedTesting):
@@ -95,8 +93,8 @@ class BaseMavenCase(testcase.FileBasedTesting):
         from the same name with a .json extension.
         """
         test_pom_loc = self.get_test_loc(test_pom)
-        expected_json_loc = test_pom_loc + '.json'
-        results = parse_pom(location=test_pom_loc)
+        expected_json_loc = f'{test_pom_loc}.json'
+        results = maven.get_maven_pom(location=test_pom_loc).to_dict()
         compare_results(results, test_pom_loc, expected_json_loc, regen)
 
     def check_parse_to_package(self, test_pom, regen=REGEN_TEST_FIXTURES):
@@ -105,12 +103,14 @@ class BaseMavenCase(testcase.FileBasedTesting):
         expected JSON from the same name with a .package.json extension.
         """
         test_pom_loc = self.get_test_loc(test_pom)
-        expected_json_loc = test_pom_loc + '.package.json'
-        packages = list(maven.PomXml.recognize(location=test_pom_loc))
-        if not packages:
+        expected_json_loc = f'{test_pom_loc}.package.json'
+        packages_data = list(maven.MavenPomXmlHandler.parse(location=test_pom_loc))
+        if not packages_data:
             results = {}
         else:
-            package = packages.pop()
+            package_data = packages_data.pop()
+            # We need to call maven.PomXmlHandler.assemble AND we need a codebase????!!!!
+            
             package.license_expression = package.compute_normalized_license()
             results = package.to_dict()
         compare_results(results, test_pom_loc, expected_json_loc, regen)
@@ -119,11 +119,13 @@ class BaseMavenCase(testcase.FileBasedTesting):
 class TestMavenMisc(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_pom_non_pom(self):
+    def test_parse_pom_non_pom_raise_expection(self):
         test_pom_loc = self.get_test_loc('maven_misc/non-maven.pom')
-        results = parse_pom(location=test_pom_loc, check_is_pom=True)
-        assert results == {}
-        self.check_parse_pom(test_pom_loc, regen=REGEN_TEST_FIXTURES)
+        try:
+            maven.get_maven_pom(location=test_pom_loc)
+            raise Exception('Exception not raised')
+        except Exception:
+            pass
 
     def test_MavenPom_simple_creation(self):
         test_loc = self.get_test_loc('maven_misc/mini-pom.xml')
@@ -199,29 +201,23 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         self.check_parse_pom(test_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_to_package_and_validate(self):
-        test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
-        packages = maven.PomXml.recognize(test_file)
-        package = list(packages).pop()
-        assert isinstance(package, maven.PomXml)
-
     def test_parse_to_package_then_back(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
-        packages = maven.PomXml.recognize(test_file)
+        packages = maven.MavenPomXmlHandler.parse(location=test_file)
         package = list(packages).pop()
-        package2 = maven.MavenPomPackageData.create(**package.to_dict())
+        package2 = models.PackageData.from_dict(**package.to_dict())
         assert package2.to_dict().items() == package.to_dict().items()
 
     def test_package_root_is_properly_returned_for_metainf_poms(self):
         from packagedcode.plugin_package import PackageScanner
         test_dir = self.get_test_loc('maven_misc/package_root')
         codebase = Codebase(test_dir, resource_attributes=PackageScanner.resource_attributes)
-        manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
-        packages = list(maven.PomXml.recognize(manifest_resource.location))
+        resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
+        packages = list(maven.MavenPomXmlHandler.parse(resource.location))
         assert packages
-        manifest_resource.package_data.append(packages[0].to_dict())
-        manifest_resource.save(codebase)
-        proot = maven.MavenPomPackageData.get_package_root(manifest_resource, codebase)
+        resource.package_data.append(packages[0].to_dict())
+        resource.save(codebase)
+        proot = maven.MavenPomPackageData.get_package_root(resource, codebase)
         assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'
 
     def test_package_dependency_not_missing(self):
@@ -342,17 +338,17 @@ class TestPomProperties(testcase.FileBasedTesting):
 
     def test_parse_can_run_without_pom_check(self):
         test_loc = self.get_test_loc('maven_misc/ant-1.6.5.maven')
-        poms = maven.PomXml.recognize(test_loc, check_is_pom=False)
+        poms = maven.MavenPomXmlHandler.parse(test_loc)
         pom = list(poms).pop()
         assert pom
-        poms = maven.PomXml.recognize(test_loc, check_is_pom=True)
+        poms = maven.MavenPomXmlHandler.parse(test_loc)
         pom = list(poms)
         assert not pom
 
     def test_parse_will_load_extra_pom_properties_if_file_present(self):
         # there is a file at maven2_props/props_file/activiti-image-generator/pom.properties
         test_loc = self.get_test_loc('maven2_props/props_file/activiti-image-generator/pom.xml')
-        poms = maven.PomXml.recognize(test_loc, check_is_pom=False)
+        poms = maven.MavenPomXmlHandler.parse(test_loc)
         pom = list(poms).pop()
         assert pom.namespace == 'org.activiti'
 

@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-artifact@2.0?classifier=sources"
   ],

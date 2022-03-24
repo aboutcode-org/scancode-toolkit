@@ -43,8 +43,7 @@ class PackageTester(testcase.FileBasedTesting):
         """
         Helper to test a package object against an expected JSON file.
         """
-
-        package.license_expression = package.compute_normalized_license()
+        package.license_expression = get_detected_license_expression(package_data=package)
         results = package.to_dict()
 
         expected_loc = self.get_test_loc(expected_loc, must_exist=False)
@@ -62,7 +61,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         results = []
         for package in packages:
-            package.license_expression = package.compute_normalized_license()
+            package.license_expression = get_detected_license_expression(package_data=package)
             results.append(package.to_dict())
 
         check_result_equals_expected_json(
@@ -70,6 +69,11 @@ class PackageTester(testcase.FileBasedTesting):
             expected_loc=expected_loc,
             regen=regen,
         )
+
+def get_detected_license_expression(package_data):
+    from packagedcode import HANDLER_BY_DATASOURCE_ID
+    handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
+    return handler.compute_normalized_license(package_data)
 
 
 def check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES):
@@ -170,3 +174,9 @@ def build_tests(
             regen=regen,
         )
         setattr(clazz, test_name, test_method)
+
+
+def compare_package_results(expected, result):
+    result_packages = [r.to_dict() for r in result]
+    expected_packages = [e.to_dict() for e in expected]
+    assert result_packages == expected_packages

@@ -24,7 +24,6 @@ from commoncode.datautils import String
 from commoncode.datautils import TriBoolean
 from textcode import analysis
 
-
 """
 Handle Gemfile.lock Rubygems lockfile.
 
@@ -104,15 +103,14 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-
 # Section headings: these are also used as switches to track a parsing state
-PATH = u'PATH'
-GIT = u'GIT'
-SVN = u'SVN'
-GEM = u'GEM'
-PLATFORMS = u'PLATFORMS'
-DEPENDENCIES = u'DEPENDENCIES'
-SPECS = u'  specs:'
+PATH = 'PATH'
+GIT = 'GIT'
+SVN = 'SVN'
+GEM = 'GEM'
+PLATFORMS = 'PLATFORMS'
+DEPENDENCIES = 'DEPENDENCIES'
+SPECS = '  specs:'
 
 # types of Gems, which is really where they are provisioned from
 # RubyGems repo, local path or VCS
@@ -184,7 +182,7 @@ class Gem(object):
 
         if self.type in (GIT, SVN,):
             # FIXME: this likely WRONG
-            # TODO: this may not be correct for SVN BUT SVN has been abandoned
+            # TODO: this may not be correct for SVN but SVN has been abandoned
             self.spec_version = self.version
             if self.revision and not self.ref:
                 self.version = self.revision
@@ -344,7 +342,7 @@ SPEC_SUB_DEPS = re.compile(
 PLATS = re.compile('^  (?P<platform>.*)$').match
 
 
-class GemfileLockParser(object):
+class GemfileLockParser:
     """
     Parse a Gemfile.lock. Code originally derived from Bundler's
     /bundler/lib/bundler/lockfile_parser.rb parser

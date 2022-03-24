@@ -14,7 +14,7 @@ import pytest
 from commoncode.system import on_linux
 
 from packagedcode.models import Party
-from packagedcode.msi import create_package_from_msiinfo_results
+from packagedcode.msi import create_package_data_from_msiinfo_results
 from packagedcode.msi import MsiInstallerPackage
 from packagedcode.msi import parse_msiinfo_suminfo_output
 
@@ -49,8 +49,8 @@ class TestMsi(PackageTester):
         result = parse_msiinfo_suminfo_output(msiinfo_results)
         self.assertEqual(result, self.python_3_9_5_add_to_path_results)
 
-    def test_msi_create_package_from_msiinfo_results(self):
-        result = create_package_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
+    def test_msi_create_package_data_from_msiinfo_results(self):
+        result = create_package_data_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
         expected = MsiInstallerPackage(
             name='Python 3.9.5 Add to Path (64-bit)',
             version='v 3.9.5',

@@ -38,7 +38,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('archives/adduser_3.112ubuntu1_all.deb')
         packages = recognize_package_data(test_file)
         assert packages
-        assert isinstance(packages[0], packagedcode.debian.DebianPackage)
+        assert isinstance(packages[0], packagedcode.debian.DebianPackageRecognizer)
 
     def test_recognize_package_data_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')

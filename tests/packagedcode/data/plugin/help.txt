@@ -1,12 +1,12 @@
 --------------------------------------------
 Package: METADATA.bzl
   class: packagedcode.build:MetadataBzl
-  file_patterns: METADATA.bzl
+  filename_patterns: METADATA.bzl
 
 --------------------------------------------
 Package: about
   class: packagedcode.about:Aboutfile
-  file_patterns: *.ABOUT
+  filename_patterns: *.ABOUT
   extensions: .ABOUT
 
 --------------------------------------------
@@ -24,35 +24,35 @@ Package: android-lib
 --------------------------------------------
 Package: autotools
   class: packagedcode.build:AutotoolsPackage
-  file_patterns: configure, configure.ac
+  filename_patterns: configure, configure.ac
 
 --------------------------------------------
 Package: axis2
   class: packagedcode.models:Axis2Mar
-  file_patterns: META-INF/module.xml
+  filename_patterns: META-INF/module.xml
   extensions: .mar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: bazel
   class: packagedcode.build:BazelPackage
-  file_patterns: BUILD
+  filename_patterns: BUILD
 
 --------------------------------------------
 Package: bower
   class: packagedcode.bower:BowerJson
-  file_patterns: bower.json, .bower.json
+  filename_patterns: bower.json, .bower.json
   extensions: .json
 
 --------------------------------------------
 Package: buck
   class: packagedcode.build:BuckPackage
-  file_patterns: BUCK
+  filename_patterns: BUCK
 
 --------------------------------------------
 Package: build.gradle
   class: packagedcode.build_gradle:BuildGradle
-  file_patterns: build.gradle
+  filename_patterns: build.gradle
   extensions: .gradle
 
 --------------------------------------------
@@ -64,26 +64,26 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:CargoToml
-  file_patterns: Cargo.toml
+  filename_patterns: Cargo.toml
   extensions: .toml
 
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:CargoLock
-  file_patterns: Cargo.lock
+  filename_patterns: Cargo.lock
   extensions: .lock
 
 --------------------------------------------
 Package: chef
   class: packagedcode.chef:MetadataJson
-  file_patterns: metadata.json
+  filename_patterns: metadata.json
   extensions: .json
   filetypes: .tgz
 
 --------------------------------------------
 Package: chef
   class: packagedcode.chef:Metadatarb
-  file_patterns: metadata.rb
+  filename_patterns: metadata.rb
   extensions: .rb
   filetypes: .tgz
 
@@ -96,36 +96,36 @@ Package: chrome
 --------------------------------------------
 Package: composer
   class: packagedcode.phpcomposer:ComposerJson
-  file_patterns: composer.json
+  filename_patterns: composer.json
   extensions: .json
 
 --------------------------------------------
 Package: composer
   class: packagedcode.phpcomposer:ComposerLock
-  file_patterns: composer.lock
+  filename_patterns: composer.lock
   extensions: .lock
 
 --------------------------------------------
 Package: conda
   class: packagedcode.conda:Condayml
-  file_patterns: meta.yaml, META.yml
+  filename_patterns: meta.yaml, META.yml
   extensions: .yml, .yaml
 
 --------------------------------------------
 Package: cpan
   class: packagedcode.models:CpanModule
-  file_patterns: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
+  filename_patterns: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
   extensions: .tar.gz
 
 --------------------------------------------
 Package: cran
   class: packagedcode.cran:DescriptionFile
-  file_patterns: DESCRIPTION
+  filename_patterns: DESCRIPTION
 
 --------------------------------------------
 Package: deb
   class: packagedcode.debian:DebianPackage
-  file_patterns: *.control
+  filename_patterns: *.control
   extensions: .deb
   filetypes: debian binary package
 
@@ -138,59 +138,59 @@ Package: dmg
 --------------------------------------------
 Package: ear
   class: packagedcode.models:JavaEar
-  file_patterns: META-INF/application.xml, META-INF/ejb-jar.xml
+  filename_patterns: META-INF/application.xml, META-INF/ejb-jar.xml
   extensions: .ear
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: freebsd
   class: packagedcode.freebsd:CompactManifest
-  file_patterns: +COMPACT_MANIFEST
+  filename_patterns: +COMPACT_MANIFEST
 
 --------------------------------------------
 Package: gem
   class: packagedcode.rubygems:GemArchive
-  file_patterns: *.gem
+  filename_patterns: *.gem
   extensions: .gem
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
   class: packagedcode.rubygems:GemArchiveExtracted
-  file_patterns: metadata.gz-extract
+  filename_patterns: metadata.gz-extract
   extensions: .gz-extract
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
   class: packagedcode.rubygems:GemSpec
-  file_patterns: *.gemspec
+  filename_patterns: *.gemspec
   extensions: .gemspec
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
   class: packagedcode.rubygems:GemfileLock
-  file_patterns: Gemfile.lock
+  filename_patterns: Gemfile.lock
   extensions: .lock
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: golang
   class: packagedcode.golang:GoMod
-  file_patterns: go.mod
+  filename_patterns: go.mod
   extensions: .mod
 
 --------------------------------------------
 Package: golang
   class: packagedcode.golang:GoSum
-  file_patterns: go.sum
+  filename_patterns: go.sum
   extensions: .sum
 
 --------------------------------------------
 Package: haxe
   class: packagedcode.haxe:HaxelibJson
-  file_patterns: haxelib.json
+  filename_patterns: haxelib.json
   extensions: .json
 
 --------------------------------------------
@@ -214,40 +214,40 @@ Package: iso
 --------------------------------------------
 Package: ivy
   class: packagedcode.jar_manifest:IvyJar
-  file_patterns: ivy.xml
+  filename_patterns: ivy.xml
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: jar
   class: packagedcode.models:JavaJar
-  file_patterns: META-INF/MANIFEST.MF
+  filename_patterns: META-INF/MANIFEST.MF
   extensions: .jar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: jar
   class: packagedcode.jar_manifest:JavaManifest
-  file_patterns: META-INF/MANIFEST.MF
+  filename_patterns: META-INF/MANIFEST.MF
   extensions: .jar, .war, .ear
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: jboss
   class: packagedcode.models:JBossSar
-  file_patterns: META-INF/jboss-service.xml
+  filename_patterns: META-INF/jboss-service.xml
   extensions: .sar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: maven
   class: packagedcode.maven:PomXml
-  file_patterns: *.pom, pom.xml
+  filename_patterns: *.pom, pom.xml
   extensions: .pom
 
 --------------------------------------------
 Package: meteor
   class: packagedcode.models:MeteorPackage
-  file_patterns: package.js
+  filename_patterns: package.js
 
 --------------------------------------------
 Package: mozilla
@@ -264,19 +264,19 @@ Package: msi
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:PackageJson
-  file_patterns: package.json
+  filename_patterns: package.json
   extensions: .tgz
 
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:PackageLockJson
-  file_patterns: npm-shrinkwrap.json, package-lock.json
+  filename_patterns: npm-shrinkwrap.json, package-lock.json
   extensions: .tgz
 
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:YarnLockJson
-  file_patterns: yarn.lock
+  filename_patterns: yarn.lock
   extensions: .tgz
 
 --------------------------------------------
@@ -288,94 +288,94 @@ Package: nsis
 --------------------------------------------
 Package: nuget
   class: packagedcode.nuget:Nuspec
-  file_patterns: *.nuspec
+  filename_patterns: *.nuspec
   extensions: .nuspec
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
 Package: opam
   class: packagedcode.opam:OpamFile
-  file_patterns: *opam
+  filename_patterns: *opam
   extensions: .opam
 
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:Podspec
-  file_patterns: *.podspec
+  filename_patterns: *.podspec
   extensions: .podspec
 
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:PodfileLock
-  file_patterns: *podfile.lock
+  filename_patterns: *podfile.lock
   extensions: .lock
 
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:PodspecJson
-  file_patterns: *.podspec.json
+  filename_patterns: *.podspec.json
   extensions: .json
 
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecYaml
-  file_patterns: *pubspec.yaml
+  filename_patterns: *pubspec.yaml
   extensions: .yaml
 
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecLock
-  file_patterns: *pubspec.lock
+  filename_patterns: *pubspec.lock
   extensions: .lock
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:MetadataFile
-  file_patterns: PKG-INFO, METADATA
+  filename_patterns: PKG-INFO, METADATA
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:BinaryDistArchive
-  file_patterns: *.whl, *.egg
+  filename_patterns: *.whl, *.egg
   extensions: .whl, .egg
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:SourceDistArchive
-  file_patterns: *.tar.gz, *.tar.bz2, *.zip
+  filename_patterns: *.tar.gz, *.tar.bz2, *.zip
   extensions: .tar.gz, .tar.bz2, .zip
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:SetupPy
-  file_patterns: setup.py
+  filename_patterns: setup.py
   extensions: .py
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:DependencyFile
-  file_patterns: Pipfile, conda.yml, setup.cfg, tox.ini
+  filename_patterns: Pipfile, conda.yml, setup.cfg, tox.ini
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PipfileLock
-  file_patterns: Pipfile.lock
+  filename_patterns: Pipfile.lock
   extensions: .lock
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:RequirementsFile
-  file_patterns: *requirement*.txt, *requirement*.pip, *requirement*.in, requires.txt, requirements/*.txt, requirements/*.pip, requirements/*.in
+  filename_patterns: *requirement*.txt, *requirement*.pip, *requirement*.in, requires.txt, requirements/*.txt, requirements/*.pip, requirements/*.in
 
 --------------------------------------------
 Package: readme
   class: packagedcode.readme:ReadmeManifest
-  file_patterns: README.android, README.chromium, README.facebook, README.google, README.thirdparty
+  filename_patterns: README.android, README.chromium, README.facebook, README.google, README.thirdparty
 
 --------------------------------------------
 Package: rpm
   class: packagedcode.rpm:RpmManifest
-  file_patterns: *.spec
+  filename_patterns: *.spec
   extensions: .rpm, .srpm, .mvl, .vip
   filetypes: rpm 
 
@@ -393,7 +393,7 @@ Package: squashfs
 --------------------------------------------
 Package: war
   class: packagedcode.models:JavaWar
-  file_patterns: WEB-INF/web.xml
+  filename_patterns: WEB-INF/web.xml
   extensions: .war
   filetypes: java archive , zip archive
 

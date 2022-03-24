@@ -28,9 +28,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging-api",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging-api",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-jms",
@@ -40,9 +40,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.camel/camel-jms",
+      "dependency_uid": "pkg:maven/org.apache.camel/camel-jms",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-core",
@@ -52,9 +52,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.activemq/activemq-core",
+      "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-pool",
@@ -64,9 +64,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.activemq/activemq-pool",
+      "dependency_uid": "pkg:maven/org.apache.activemq/activemq-pool",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
@@ -76,9 +76,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-core",
@@ -88,9 +88,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.activemq/activemq-core",
+      "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-core",
@@ -100,9 +100,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.camel/camel-core",
+      "dependency_uid": "pkg:maven/org.apache.camel/camel-core",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-spring",
@@ -112,9 +112,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.camel/camel-spring",
+      "dependency_uid": "pkg:maven/org.apache.camel/camel-spring",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-test",
@@ -124,9 +124,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-test",
+      "dependency_uid": "pkg:maven/org.springframework/spring-test",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit",
@@ -136,9 +136,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit",
+      "dependency_uid": "pkg:maven/junit/junit",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-all",
@@ -148,9 +148,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hamcrest/hamcrest-all",
+      "dependency_uid": "pkg:maven/org.hamcrest/hamcrest-all",
       "for_package": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
-      "lockfile": "activemq-camel/activemq-camel-pom.xml"
+      "datafile_path": "activemq-camel/activemq-camel-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
@@ -160,9 +160,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.ant/ant@1.7.0",
+      "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0",
       "for_package": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
-      "lockfile": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
+      "datafile_path": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
     },
     {
       "purl": "pkg:maven/javax.media/jai-core@1.1.2_01",
@@ -172,9 +172,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.media/jai-core@1.1.2_01",
+      "dependency_uid": "pkg:maven/javax.media/jai-core@1.1.2_01",
       "for_package": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
-      "lockfile": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
+      "datafile_path": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
     },
     {
       "purl": "pkg:maven/jai/jai-codec@1.1.2.1",
@@ -184,9 +184,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jai/jai-codec@1.1.2.1",
+      "dependency_uid": "pkg:maven/jai/jai-codec@1.1.2.1",
       "for_package": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
-      "lockfile": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
+      "datafile_path": "ant-jai-1.7.0/ant-jai-1.7.0.pom"
     },
     {
       "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
@@ -196,9 +196,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.ant/ant@1.7.0",
+      "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0",
       "for_package": "pkg:maven/org.apache.ant/ant-jsch@1.7.0",
-      "lockfile": "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
+      "datafile_path": "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
     },
     {
       "purl": "pkg:maven/com.jcraft/jsch@0.1.29",
@@ -208,9 +208,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.jcraft/jsch@0.1.29",
+      "dependency_uid": "pkg:maven/com.jcraft/jsch@0.1.29",
       "for_package": "pkg:maven/org.apache.ant/ant-jsch@1.7.0",
-      "lockfile": "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
+      "datafile_path": "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
     },
     {
       "purl": "pkg:maven/servletapi/servletapi@2.3",
@@ -220,9 +220,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/servletapi/servletapi@2.3",
+      "dependency_uid": "pkg:maven/servletapi/servletapi@2.3",
       "for_package": "pkg:maven/commons-fileupload/commons-fileupload@1.0",
-      "lockfile": "commons-fileupload-1.0/commons-fileupload-1.0.pom"
+      "datafile_path": "commons-fileupload-1.0/commons-fileupload-1.0.pom"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -232,9 +232,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/commons-fileupload/commons-fileupload@1.0",
-      "lockfile": "commons-fileupload-1.0/commons-fileupload-1.0.pom"
+      "datafile_path": "commons-fileupload-1.0/commons-fileupload-1.0.pom"
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
@@ -244,9 +244,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
+      "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@1.6",
@@ -256,9 +256,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-digester/commons-digester@1.6",
+      "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.6",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
@@ -268,9 +268,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging@1.0.4",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.0.4",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/oro/oro@2.0.8",
@@ -280,9 +280,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/oro/oro@2.0.8",
+      "dependency_uid": "pkg:maven/oro/oro@2.0.8",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/xml-apis/xml-apis@2.0.2",
@@ -292,9 +292,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/xml-apis/xml-apis@2.0.2",
+      "dependency_uid": "pkg:maven/xml-apis/xml-apis@2.0.2",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -304,9 +304,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/commons-validator/commons-validator@1.2.0",
-      "lockfile": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
+      "datafile_path": "commons-validator-1.2.0/commons-validator-1.2.0.pom"
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.8",
@@ -316,9 +316,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/log4j/log4j@1.2.8",
+      "dependency_uid": "pkg:maven/log4j/log4j@1.2.8",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/servletapi/servletapi@2.3",
@@ -328,9 +328,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/servletapi/servletapi@2.3",
+      "dependency_uid": "pkg:maven/servletapi/servletapi@2.3",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/struts/struts@1.1",
@@ -340,9 +340,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/struts/struts@1.1",
+      "dependency_uid": "pkg:maven/struts/struts@1.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-configuration/commons-configuration@1.1",
@@ -352,9 +352,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-configuration/commons-configuration@1.1",
+      "dependency_uid": "pkg:maven/commons-configuration/commons-configuration@1.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.1",
@@ -364,9 +364,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-collections/commons-collections@3.1",
+      "dependency_uid": "pkg:maven/commons-collections/commons-collections@3.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.0",
@@ -376,9 +376,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-lang/commons-lang@2.0",
+      "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.0",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/dom4j/dom4j@1.4",
@@ -388,9 +388,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/dom4j/dom4j@1.4",
+      "dependency_uid": "pkg:maven/dom4j/dom4j@1.4",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
@@ -400,9 +400,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging@1.0.4",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.0.4",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@1.6",
@@ -412,9 +412,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-digester/commons-digester@1.6",
+      "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.6",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/xerces/xerces@2.2.1",
@@ -424,9 +424,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/xerces/xerces@2.2.1",
+      "dependency_uid": "pkg:maven/xerces/xerces@2.2.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/xml-apis/xml-apis@2.0.2",
@@ -436,9 +436,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/xml-apis/xml-apis@2.0.2",
+      "dependency_uid": "pkg:maven/xml-apis/xml-apis@2.0.2",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/xdoclet/xdoclet@1.2.1",
@@ -448,9 +448,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/xdoclet/xdoclet@1.2.1",
+      "dependency_uid": "pkg:maven/xdoclet/xdoclet@1.2.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -460,9 +460,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils-core@1.7.0",
@@ -472,9 +472,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-beanutils/commons-beanutils-core@1.7.0",
+      "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils-core@1.7.0",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections@1.7.0",
@@ -484,9 +484,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections@1.7.0",
+      "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections@1.7.0",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/xdoclet/xdoclet-web-module@1.2.1",
@@ -496,9 +496,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/xdoclet/xdoclet-web-module@1.2.1",
+      "dependency_uid": "pkg:maven/xdoclet/xdoclet-web-module@1.2.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/mx4j/mx4j-jmx@2.1.1",
@@ -508,9 +508,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/mx4j/mx4j-jmx@2.1.1",
+      "dependency_uid": "pkg:maven/mx4j/mx4j-jmx@2.1.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/mx4j/mx4j-impl@2.1.1",
@@ -520,9 +520,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/mx4j/mx4j-impl@2.1.1",
+      "dependency_uid": "pkg:maven/mx4j/mx4j-impl@2.1.1",
       "for_package": "pkg:maven/easyconf/easyconf@0.9.0",
-      "lockfile": "easyconf-0.9.0/easyconf-0.9.0.pom"
+      "datafile_path": "easyconf-0.9.0/easyconf-0.9.0.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
@@ -532,9 +532,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
+      "dependency_uid": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
       "for_package": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
-      "lockfile": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
+      "datafile_path": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@2.0.4",
@@ -544,9 +544,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@2.0.4",
+      "dependency_uid": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@2.0.4",
       "for_package": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
-      "lockfile": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
+      "datafile_path": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4",
@@ -556,9 +556,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4",
+      "dependency_uid": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4",
       "for_package": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
-      "lockfile": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
+      "datafile_path": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",
@@ -568,9 +568,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",
+      "dependency_uid": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",
       "for_package": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
-      "lockfile": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
+      "datafile_path": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
     },
     {
       "purl": "pkg:maven/net.sourceforge.findbugs/findbugs@1.2.0",
@@ -580,9 +580,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/net.sourceforge.findbugs/findbugs@1.2.0",
+      "dependency_uid": "pkg:maven/net.sourceforge.findbugs/findbugs@1.2.0",
       "for_package": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
-      "lockfile": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
+      "datafile_path": "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
     },
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",
@@ -592,9 +592,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/info.flex-mojos/testing-support",
+      "dependency_uid": "pkg:maven/info.flex-mojos/testing-support",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit",
@@ -604,9 +604,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flexunit/flexunit",
+      "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional",
@@ -616,9 +616,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flexunit/flexunit-optional",
+      "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit-optional",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
@@ -628,9 +628,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
@@ -640,9 +640,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flex/compiler",
@@ -652,9 +652,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flex/compiler",
+      "dependency_uid": "pkg:maven/com.adobe.flex/compiler",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
@@ -664,9 +664,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flex.framework/flex-framework",
+      "dependency_uid": "pkg:maven/com.adobe.flex.framework/flex-framework",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
@@ -676,9 +676,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.cairngorm/cairngorm",
+      "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
@@ -688,9 +688,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
+      "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.lcds/fds",
@@ -700,9 +700,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.lcds/fds",
+      "dependency_uid": "pkg:maven/com.adobe.lcds/fds",
       "for_package": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
-      "lockfile": "fna2_pom/fna2_pom.xml"
+      "datafile_path": "fna2_pom/fna2_pom.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",
@@ -712,9 +712,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",
+      "dependency_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0",
@@ -724,9 +724,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0",
+      "dependency_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flex/compiler",
@@ -736,9 +736,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flex/compiler",
+      "dependency_uid": "pkg:maven/com.adobe.flex/compiler",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
@@ -748,9 +748,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flex.framework/flex-framework",
+      "dependency_uid": "pkg:maven/com.adobe.flex.framework/flex-framework",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
@@ -760,9 +760,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.cairngorm/cairngorm",
+      "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit",
@@ -772,9 +772,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.adobe.flexunit/flexunit",
+      "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",
@@ -784,9 +784,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/info.flex-mojos/testing-support",
+      "dependency_uid": "pkg:maven/info.flex-mojos/testing-support",
       "for_package": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
-      "lockfile": "fna_pom_project/fna_pom_project.xml"
+      "datafile_path": "fna_pom_project/fna_pom_project.xml"
     },
     {
       "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
@@ -796,9 +796,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+      "dependency_uid": "pkg:maven/com.myco.foo/common-dependencies@1.1",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
@@ -808,9 +808,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+      "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
@@ -820,9 +820,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+      "dependency_uid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
@@ -832,9 +832,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
+      "dependency_uid": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
@@ -844,9 +844,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+      "dependency_uid": "pkg:maven/com.myco.foo/common-dependencies@1.1",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
@@ -856,9 +856,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+      "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
@@ -868,9 +868,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
+      "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
@@ -880,9 +880,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+      "dependency_uid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
       "for_package": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
-      "lockfile": "foo-pom/foo-pom.xml"
+      "datafile_path": "foo-pom/foo-pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.axis/axis@1.4",
@@ -892,9 +892,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.axis/axis@1.4",
+      "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4",
       "for_package": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
-      "lockfile": "gero_pom/gero_pom.xml"
+      "datafile_path": "gero_pom/gero_pom.xml"
     },
     {
       "purl": "pkg:maven/com.idega.block.platform/com.idega.core",
@@ -904,9 +904,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.idega.block.platform/com.idega.core",
+      "dependency_uid": "pkg:maven/com.idega.block.platform/com.idega.core",
       "for_package": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
-      "lockfile": "idega_pom/idega_pom.xml"
+      "datafile_path": "idega_pom/idega_pom.xml"
     },
     {
       "purl": "pkg:maven/com.idega.block.platform/com.idega.block.media",
@@ -916,9 +916,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.idega.block.platform/com.idega.block.media",
+      "dependency_uid": "pkg:maven/com.idega.block.platform/com.idega.block.media",
       "for_package": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
-      "lockfile": "idega_pom/idega_pom.xml"
+      "datafile_path": "idega_pom/idega_pom.xml"
     },
     {
       "purl": "pkg:maven/itextpdf/itext-paulo",
@@ -928,9 +928,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/itextpdf/itext-paulo",
+      "dependency_uid": "pkg:maven/itextpdf/itext-paulo",
       "for_package": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
-      "lockfile": "idega_pom/idega_pom.xml"
+      "datafile_path": "idega_pom/idega_pom.xml"
     },
     {
       "purl": "pkg:maven/itext/itext-xml",
@@ -940,9 +940,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/itext/itext-xml",
+      "dependency_uid": "pkg:maven/itext/itext-xml",
       "for_package": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
-      "lockfile": "idega_pom/idega_pom.xml"
+      "datafile_path": "idega_pom/idega_pom.xml"
     },
     {
       "purl": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414",
@@ -952,9 +952,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414",
+      "dependency_uid": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414",
       "for_package": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
-      "lockfile": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
+      "datafile_path": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11",
@@ -964,9 +964,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11",
+      "dependency_uid": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11",
       "for_package": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
-      "lockfile": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
+      "datafile_path": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11",
@@ -976,9 +976,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11",
+      "dependency_uid": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11",
       "for_package": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
-      "lockfile": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
+      "datafile_path": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
     },
     {
       "purl": "pkg:maven/com.sun.xsom/xsom@20081112",
@@ -988,9 +988,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.sun.xsom/xsom@20081112",
+      "dependency_uid": "pkg:maven/com.sun.xsom/xsom@20081112",
       "for_package": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
-      "lockfile": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
+      "datafile_path": "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
     },
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
@@ -1000,9 +1000,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.mail/mail@1.4",
+      "dependency_uid": "pkg:maven/javax.mail/mail@1.4",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/javax.jms/jms@1.1",
@@ -1012,9 +1012,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.jms/jms@1.1",
+      "dependency_uid": "pkg:maven/javax.jms/jms@1.1",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
@@ -1024,9 +1024,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
+      "dependency_uid": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
@@ -1036,9 +1036,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
+      "dependency_uid": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/oro/oro@2.0.8",
@@ -1048,9 +1048,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/oro/oro@2.0.8",
+      "dependency_uid": "pkg:maven/oro/oro@2.0.8",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -1060,9 +1060,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/log4j/log4j@1.2.15",
-      "lockfile": "log4j/log4j-pom.xml"
+      "datafile_path": "log4j/log4j-pom.xml"
     },
     {
       "purl": "pkg:maven/ch.qos.logback/logback-core",
@@ -1072,9 +1072,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/ch.qos.logback/logback-core",
+      "dependency_uid": "pkg:maven/ch.qos.logback/logback-core",
       "for_package": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
-      "lockfile": "logback-access/logback-access.pom"
+      "datafile_path": "logback-access/logback-access.pom"
     },
     {
       "purl": "pkg:maven/tomcat/catalina",
@@ -1084,9 +1084,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/tomcat/catalina",
+      "dependency_uid": "pkg:maven/tomcat/catalina",
       "for_package": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
-      "lockfile": "logback-access/logback-access.pom"
+      "datafile_path": "logback-access/logback-access.pom"
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty",
@@ -1096,9 +1096,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.mortbay.jetty/jetty",
+      "dependency_uid": "pkg:maven/org.mortbay.jetty/jetty",
       "for_package": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
-      "lockfile": "logback-access/logback-access.pom"
+      "datafile_path": "logback-access/logback-access.pom"
     },
     {
       "purl": "pkg:maven/com.caucho/resin",
@@ -1108,9 +1108,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.caucho/resin",
+      "dependency_uid": "pkg:maven/com.caucho/resin",
       "for_package": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
-      "lockfile": "logback-access/logback-access.pom"
+      "datafile_path": "logback-access/logback-access.pom"
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
@@ -1120,9 +1120,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
+      "dependency_uid": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
       "for_package": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
-      "lockfile": "logback-access/logback-access.pom"
+      "datafile_path": "logback-access/logback-access.pom"
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7",
@@ -1132,9 +1132,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7",
+      "dependency_uid": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7",
       "for_package": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
-      "lockfile": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
+      "datafile_path": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
     },
     {
       "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
@@ -1144,9 +1144,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
+      "dependency_uid": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
       "for_package": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
-      "lockfile": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
+      "datafile_path": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
     },
     {
       "purl": "pkg:maven/plexus/plexus-utils@1.0.2",
@@ -1156,9 +1156,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/plexus/plexus-utils@1.0.2",
+      "dependency_uid": "pkg:maven/plexus/plexus-utils@1.0.2",
       "for_package": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
-      "lockfile": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
+      "datafile_path": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -1168,9 +1168,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
-      "lockfile": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
+      "datafile_path": "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.axis/axis@1.4",
@@ -1180,9 +1180,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.axis/axis@1.4",
+      "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4",
       "for_package": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
-      "lockfile": "proper-pom/proper_pom.xml"
+      "datafile_path": "proper-pom/proper_pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
@@ -1192,9 +1192,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.ant/ant@1.7.0",
+      "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.0",
@@ -1204,9 +1204,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-lang/commons-lang@2.0",
+      "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.0",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@2.0",
@@ -1216,9 +1216,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-digester/commons-digester@2.0",
+      "dependency_uid": "pkg:maven/commons-digester/commons-digester@2.0",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/dom4j/dom4j@1.6.1",
@@ -1228,9 +1228,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/dom4j/dom4j@1.6.1",
+      "dependency_uid": "pkg:maven/dom4j/dom4j@1.6.1",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
@@ -1240,9 +1240,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
@@ -1252,9 +1252,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
@@ -1264,9 +1264,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
+      "dependency_uid": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
@@ -1276,9 +1276,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
+      "dependency_uid": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
@@ -1288,9 +1288,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
+      "dependency_uid": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
       "for_package": "pkg:maven/org.modeler/modeler@0.1",
-      "lockfile": "rel_pom/rel_pom.xml"
+      "datafile_path": "rel_pom/rel_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
@@ -1300,9 +1300,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
@@ -1312,9 +1312,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
@@ -1324,9 +1324,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
@@ -1336,9 +1336,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
@@ -1348,9 +1348,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
@@ -1360,9 +1360,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
@@ -1372,9 +1372,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
@@ -1384,9 +1384,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
@@ -1396,9 +1396,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
@@ -1408,9 +1408,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
+      "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
@@ -1420,9 +1420,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
@@ -1432,9 +1432,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
@@ -1444,9 +1444,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
@@ -1456,9 +1456,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
+      "dependency_uid": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
@@ -1468,9 +1468,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
+      "dependency_uid": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
@@ -1480,9 +1480,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
+      "dependency_uid": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
@@ -1492,9 +1492,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
+      "dependency_uid": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
@@ -1504,9 +1504,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
@@ -1516,9 +1516,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/javax.transaction/jta@1.1",
@@ -1528,9 +1528,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.transaction/jta@1.1",
+      "dependency_uid": "pkg:maven/javax.transaction/jta@1.1",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
@@ -1540,9 +1540,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
+      "dependency_uid": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.drools/drools-core@5.0.1",
@@ -1552,9 +1552,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.drools/drools-core@5.0.1",
+      "dependency_uid": "pkg:maven/org.drools/drools-core@5.0.1",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
@@ -1564,9 +1564,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
+      "dependency_uid": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
@@ -1576,9 +1576,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
+      "dependency_uid": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
@@ -1588,9 +1588,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
@@ -1600,9 +1600,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
+      "dependency_uid": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.drools/drools-api@5.0.1",
@@ -1612,9 +1612,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.drools/drools-api@5.0.1",
+      "dependency_uid": "pkg:maven/org.drools/drools-api@5.0.1",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
@@ -1624,9 +1624,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.antlr/antlr@3.2",
@@ -1636,9 +1636,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.antlr/antlr@3.2",
+      "dependency_uid": "pkg:maven/org.antlr/antlr@3.2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.antlr/antlr-runtime@3.2",
@@ -1648,9 +1648,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.antlr/antlr-runtime@3.2",
+      "dependency_uid": "pkg:maven/org.antlr/antlr-runtime@3.2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@1.8.1",
@@ -1660,9 +1660,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-digester/commons-digester@1.8.1",
+      "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.8.1",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.3",
@@ -1672,9 +1672,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-lang/commons-lang@2.3",
+      "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.3",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/com.h2database/h2@1.1.118",
@@ -1684,9 +1684,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.h2database/h2@1.1.118",
+      "dependency_uid": "pkg:maven/com.h2database/h2@1.1.118",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/mysql/mysql-connector-java@5.1.10",
@@ -1696,9 +1696,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/mysql/mysql-connector-java@5.1.10",
+      "dependency_uid": "pkg:maven/mysql/mysql-connector-java@5.1.10",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
@@ -1708,9 +1708,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
+      "dependency_uid": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit@4.7",
@@ -1720,9 +1720,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@4.7",
+      "dependency_uid": "pkg:maven/junit/junit@4.7",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/org.testng/testng@5.9",
@@ -1732,9 +1732,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.testng/testng@5.9",
+      "dependency_uid": "pkg:maven/org.testng/testng@5.9",
       "for_package": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
-      "lockfile": "sea_pom/sea_pom.xml"
+      "datafile_path": "sea_pom/sea_pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -1744,9 +1744,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/org.apache.geronimo.specs/specs@1.3",
-      "lockfile": "specs-1.3/specs-1.3.pom"
+      "datafile_path": "specs-1.3/specs-1.3.pom"
     },
     {
       "purl": "pkg:maven/aopalliance/aopalliance@1.0",
@@ -1756,9 +1756,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
+      "dependency_uid": "pkg:maven/aopalliance/aopalliance@1.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/asm/asm@2.2.3",
@@ -1768,9 +1768,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/asm/asm@2.2.3",
+      "dependency_uid": "pkg:maven/asm/asm@2.2.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/asm/asm-commons@2.2.3",
@@ -1780,9 +1780,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/asm/asm-commons@2.2.3",
+      "dependency_uid": "pkg:maven/asm/asm-commons@2.2.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/asm/asm-util@2.2.3",
@@ -1792,9 +1792,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/asm/asm-util@2.2.3",
+      "dependency_uid": "pkg:maven/asm/asm-util@2.2.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",
@@ -1804,9 +1804,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/aspectj/aspectjrt@1.5.4",
+      "dependency_uid": "pkg:maven/aspectj/aspectjrt@1.5.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/aspectj/aspectjweaver@1.5.4",
@@ -1816,9 +1816,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/aspectj/aspectjweaver@1.5.4",
+      "dependency_uid": "pkg:maven/aspectj/aspectjweaver@1.5.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
@@ -1828,9 +1828,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
+      "dependency_uid": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/c3p0/c3p0@0.9.1.2",
@@ -1840,9 +1840,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/c3p0/c3p0@0.9.1.2",
+      "dependency_uid": "pkg:maven/c3p0/c3p0@0.9.1.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",
@@ -1852,9 +1852,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/cglib/cglib-nodep@2.1_3",
+      "dependency_uid": "pkg:maven/cglib/cglib-nodep@2.1_3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
@@ -1864,9 +1864,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
+      "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
@@ -1876,9 +1876,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
+      "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
@@ -1888,9 +1888,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
+      "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.2",
@@ -1900,9 +1900,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-collections/commons-collections@3.2",
+      "dependency_uid": "pkg:maven/commons-collections/commons-collections@3.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-dbcp/commons-dbcp@1.2.2",
@@ -1912,9 +1912,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-dbcp/commons-dbcp@1.2.2",
+      "dependency_uid": "pkg:maven/commons-dbcp/commons-dbcp@1.2.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.2",
@@ -1924,9 +1924,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-fileupload/commons-fileupload@1.2",
+      "dependency_uid": "pkg:maven/commons-fileupload/commons-fileupload@1.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
@@ -1936,9 +1936,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+      "dependency_uid": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
@@ -1948,9 +1948,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/commons-pool/commons-pool@1.3",
@@ -1960,9 +1960,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-pool/commons-pool@1.3",
+      "dependency_uid": "pkg:maven/commons-pool/commons-pool@1.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
@@ -1972,9 +1972,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
+      "dependency_uid": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.experlog/xapool@1.5.0",
@@ -1984,9 +1984,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.experlog/xapool@1.5.0",
+      "dependency_uid": "pkg:maven/com.experlog/xapool@1.5.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0.677",
@@ -1996,9 +1996,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0.677",
+      "dependency_uid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0.677",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.jamonapi/jamon@2.4",
@@ -2008,9 +2008,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.jamonapi/jamon@2.4",
+      "dependency_uid": "pkg:maven/com.jamonapi/jamon@2.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.lowagie/itext@2.0.7",
@@ -2020,9 +2020,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.lowagie/itext@2.0.7",
+      "dependency_uid": "pkg:maven/com.lowagie/itext@2.0.7",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
@@ -2032,9 +2032,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
+      "dependency_uid": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.oracle/toplink-essentials@2.41",
@@ -2044,9 +2044,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.oracle/toplink-essentials@2.41",
+      "dependency_uid": "pkg:maven/com.oracle/toplink-essentials@2.41",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/com.oracle/oc4j@1.0",
@@ -2056,9 +2056,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.oracle/oc4j@1.0",
+      "dependency_uid": "pkg:maven/com.oracle/oc4j@1.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/freemarker/freemarker@2.3.12",
@@ -2068,9 +2068,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/freemarker/freemarker@2.3.12",
+      "dependency_uid": "pkg:maven/freemarker/freemarker@2.3.12",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/groovy/groovy@1.5.5",
@@ -2080,9 +2080,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/groovy/groovy@1.5.5",
+      "dependency_uid": "pkg:maven/groovy/groovy@1.5.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/hessian/hessian@3.1.3",
@@ -2092,9 +2092,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/hessian/hessian@3.1.3",
+      "dependency_uid": "pkg:maven/hessian/hessian@3.1.3",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/jasperreports/jasperreports@2.0.5",
@@ -2104,9 +2104,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jasperreports/jasperreports@2.0.5",
+      "dependency_uid": "pkg:maven/jasperreports/jasperreports@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/jexcelapi/jxl@2.6.6",
@@ -2116,9 +2116,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jexcelapi/jxl@2.6.6",
+      "dependency_uid": "pkg:maven/jexcelapi/jxl@2.6.6",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/jotm/jotm@2.0.10",
@@ -2128,9 +2128,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jotm/jotm@2.0.10",
+      "dependency_uid": "pkg:maven/jotm/jotm@2.0.10",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/jruby/jruby-bin@1.0.1",
@@ -2140,9 +2140,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jruby/jruby-bin@1.0.1",
+      "dependency_uid": "pkg:maven/jruby/jruby-bin@1.0.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -2152,9 +2152,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.15",
@@ -2164,9 +2164,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/log4j/log4j@1.2.15",
+      "dependency_uid": "pkg:maven/log4j/log4j@1.2.15",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/net.sf.ehcache/ehcache@1.4.1",
@@ -2176,9 +2176,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/net.sf.ehcache/ehcache@1.4.1",
+      "dependency_uid": "pkg:maven/net.sf.ehcache/ehcache@1.4.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.axis/axis@1.4",
@@ -2188,9 +2188,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.axis/axis@1.4",
+      "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
@@ -2200,9 +2200,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
@@ -2212,9 +2212,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
@@ -2224,9 +2224,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
@@ -2236,9 +2236,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.beanshell/bsh@2.0b4",
+      "dependency_uid": "pkg:maven/org.beanshell/bsh@2.0b4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
@@ -2248,9 +2248,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.ga",
@@ -2260,9 +2260,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.ga",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.ga",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/poi/poi@3.0.1",
@@ -2272,9 +2272,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/poi/poi@3.0.1",
+      "dependency_uid": "pkg:maven/poi/poi@3.0.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/opensymphony/quartz-all@1.6.0",
@@ -2284,9 +2284,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/opensymphony/quartz-all@1.6.0",
+      "dependency_uid": "pkg:maven/opensymphony/quartz-all@1.6.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/struts/struts@1.2.9",
@@ -2296,9 +2296,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/struts/struts@1.2.9",
+      "dependency_uid": "pkg:maven/struts/struts@1.2.9",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/taglibs/standard@1.1.2",
@@ -2308,9 +2308,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/taglibs/standard@1.1.2",
+      "dependency_uid": "pkg:maven/taglibs/standard@1.1.2",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/tomcat/catalina@5.5.23",
@@ -2320,9 +2320,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/tomcat/catalina@5.5.23",
+      "dependency_uid": "pkg:maven/tomcat/catalina@5.5.23",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/velocity/velocity@1.5",
@@ -2332,9 +2332,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity/velocity@1.5",
+      "dependency_uid": "pkg:maven/velocity/velocity@1.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
@@ -2344,9 +2344,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
+      "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
@@ -2356,9 +2356,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
+      "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.activation/activation@1.1",
@@ -2368,9 +2368,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.activation/activation@1.1",
+      "dependency_uid": "pkg:maven/javax.activation/activation@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.ejb/ejb@3.0",
@@ -2380,9 +2380,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.ejb/ejb@3.0",
+      "dependency_uid": "pkg:maven/javax.ejb/ejb@3.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.faces/jsf-api@1.1",
@@ -2392,9 +2392,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.faces/jsf-api@1.1",
+      "dependency_uid": "pkg:maven/javax.faces/jsf-api@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.jdo/jdo2-api@2.0",
@@ -2404,9 +2404,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.jdo/jdo2-api@2.0",
+      "dependency_uid": "pkg:maven/javax.jdo/jdo2-api@2.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.jms/jms@1.1",
@@ -2416,9 +2416,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.jms/jms@1.1",
+      "dependency_uid": "pkg:maven/javax.jms/jms@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
@@ -2428,9 +2428,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.mail/mail@1.4",
+      "dependency_uid": "pkg:maven/javax.mail/mail@1.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.persistence/persistence-api@1.0",
@@ -2440,9 +2440,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.persistence/persistence-api@1.0",
+      "dependency_uid": "pkg:maven/javax.persistence/persistence-api@1.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.portlet/portlet-api@1.0",
@@ -2452,9 +2452,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.portlet/portlet-api@1.0",
+      "dependency_uid": "pkg:maven/javax.portlet/portlet-api@1.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.resource/connector-api@1.5",
@@ -2464,9 +2464,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.resource/connector-api@1.5",
+      "dependency_uid": "pkg:maven/javax.resource/connector-api@1.5",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
@@ -2476,9 +2476,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/jsp-api@2.0",
+      "dependency_uid": "pkg:maven/javax.servlet/jsp-api@2.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/jstl@1.1.0",
@@ -2488,9 +2488,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/jstl@1.1.0",
+      "dependency_uid": "pkg:maven/javax.servlet/jstl@1.1.0",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
@@ -2500,9 +2500,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/servlet-api@2.4",
+      "dependency_uid": "pkg:maven/javax.servlet/servlet-api@2.4",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.transaction/jta@1.1",
@@ -2512,9 +2512,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.transaction/jta@1.1",
+      "dependency_uid": "pkg:maven/javax.transaction/jta@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/javax.xml/jaxrpc-api@1.1",
@@ -2524,9 +2524,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.xml/jaxrpc-api@1.1",
+      "dependency_uid": "pkg:maven/javax.xml/jaxrpc-api@1.1",
       "for_package": "pkg:maven/org.springframework/spring@2.5.4",
-      "lockfile": "spring-2.5.4/spring-2.5.4.pom"
+      "datafile_path": "spring-2.5.4/spring-2.5.4.pom"
     },
     {
       "purl": "pkg:maven/aopalliance/aopalliance@1.0",
@@ -2536,9 +2536,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
+      "dependency_uid": "pkg:maven/aopalliance/aopalliance@1.0",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
@@ -2548,9 +2548,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/com.oracle/toplink-essentials@2.41",
@@ -2560,9 +2560,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.oracle/toplink-essentials@2.41",
+      "dependency_uid": "pkg:maven/com.oracle/toplink-essentials@2.41",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
@@ -2572,9 +2572,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
+      "dependency_uid": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0",
@@ -2584,9 +2584,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0",
+      "dependency_uid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
@@ -2596,9 +2596,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.1.ga",
@@ -2608,9 +2608,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.1.ga",
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.1.ga",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-aop@2.5.3",
@@ -2620,9 +2620,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-aop@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-aop@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
@@ -2632,9 +2632,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-beans@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-beans@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
@@ -2644,9 +2644,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-context@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-context@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
@@ -2656,9 +2656,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-core@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-core@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
@@ -2668,9 +2668,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-jdbc@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-tx@2.5.3",
@@ -2680,9 +2680,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-tx@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-tx@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-web@2.5.3",
@@ -2692,9 +2692,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-web@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-web@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/javax.jdo/jdo2-api@2.0",
@@ -2704,9 +2704,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.jdo/jdo2-api@2.0",
+      "dependency_uid": "pkg:maven/javax.jdo/jdo2-api@2.0",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/javax.persistence/persistence-api@1.0",
@@ -2716,9 +2716,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.persistence/persistence-api@1.0",
+      "dependency_uid": "pkg:maven/javax.persistence/persistence-api@1.0",
       "for_package": "pkg:maven/org.springframework/spring-orm@2.5.3",
-      "lockfile": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
+      "datafile_path": "spring-orm-2.5.3/spring-orm-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
@@ -2728,9 +2728,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
+      "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
@@ -2740,9 +2740,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
+      "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
@@ -2752,9 +2752,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/com.lowagie/itext@2.0.7",
@@ -2764,9 +2764,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.lowagie/itext@2.0.7",
+      "dependency_uid": "pkg:maven/com.lowagie/itext@2.0.7",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/freemarker/freemarker@2.3.12",
@@ -2776,9 +2776,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/freemarker/freemarker@2.3.12",
+      "dependency_uid": "pkg:maven/freemarker/freemarker@2.3.12",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/jasperreports/jasperreports@2.0.2",
@@ -2788,9 +2788,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jasperreports/jasperreports@2.0.2",
+      "dependency_uid": "pkg:maven/jasperreports/jasperreports@2.0.2",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/jexcelapi/jxl@2.6.6",
@@ -2800,9 +2800,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/jexcelapi/jxl@2.6.6",
+      "dependency_uid": "pkg:maven/jexcelapi/jxl@2.6.6",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
@@ -2812,9 +2812,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
@@ -2824,9 +2824,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
@@ -2836,9 +2836,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
+      "dependency_uid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/poi/poi@3.0.1",
@@ -2848,9 +2848,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/poi/poi@3.0.1",
+      "dependency_uid": "pkg:maven/poi/poi@3.0.1",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/velocity/velocity@1.5",
@@ -2860,9 +2860,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity/velocity@1.5",
+      "dependency_uid": "pkg:maven/velocity/velocity@1.5",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
@@ -2872,9 +2872,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
+      "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
@@ -2884,9 +2884,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
+      "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
@@ -2896,9 +2896,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-beans@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-beans@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
@@ -2908,9 +2908,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-context@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-context@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-context-support@2.5.3",
@@ -2920,9 +2920,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-context-support@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-context-support@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
@@ -2932,9 +2932,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-core@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-core@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.springframework/spring-web@2.5.3",
@@ -2944,9 +2944,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.springframework/spring-web@2.5.3",
+      "dependency_uid": "pkg:maven/org.springframework/spring-web@2.5.3",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
@@ -2956,9 +2956,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/jsp-api@2.0",
+      "dependency_uid": "pkg:maven/javax.servlet/jsp-api@2.0",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/jstl@1.1.0",
@@ -2968,9 +2968,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/jstl@1.1.0",
+      "dependency_uid": "pkg:maven/javax.servlet/jstl@1.1.0",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
@@ -2980,9 +2980,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/javax.servlet/servlet-api@2.4",
+      "dependency_uid": "pkg:maven/javax.servlet/servlet-api@2.4",
       "for_package": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
-      "lockfile": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
+      "datafile_path": "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-all@1.8.1",
@@ -2992,9 +2992,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.mockito/mockito-all@1.8.1",
+      "dependency_uid": "pkg:maven/org.mockito/mockito-all@1.8.1",
       "for_package": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1",
-      "lockfile": "startup-trigger-plugin-0.1/startup-trigger-plugin-0.1.pom"
+      "datafile_path": "startup-trigger-plugin-0.1/startup-trigger-plugin-0.1.pom"
     },
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
@@ -3004,9 +3004,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
       "for_package": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
-      "lockfile": "uni_pom/uni_pom.xml"
+      "datafile_path": "uni_pom/uni_pom.xml"
     },
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
@@ -3016,9 +3016,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
       "for_package": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
-      "lockfile": "uni_pom/uni_pom.xml"
+      "datafile_path": "uni_pom/uni_pom.xml"
     },
     {
       "purl": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
@@ -3028,9 +3028,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
       "for_package": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
-      "lockfile": "uni_pom/uni_pom.xml"
+      "datafile_path": "uni_pom/uni_pom.xml"
     },
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
@@ -3040,9 +3040,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
+      "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
       "for_package": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
-      "lockfile": "uni_pom/uni_pom.xml"
+      "datafile_path": "uni_pom/uni_pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -3052,9 +3052,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit@3.8.1",
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1",
       "for_package": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
-      "lockfile": "uni_pom/uni_pom.xml"
+      "datafile_path": "uni_pom/uni_pom.xml"
     },
     {
       "purl": "pkg:maven/junit/junit",
@@ -3064,9 +3064,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/junit/junit",
+      "dependency_uid": "pkg:maven/junit/junit",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-core",
@@ -3076,9 +3076,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.hamcrest/hamcrest-core",
+      "dependency_uid": "pkg:maven/org.hamcrest/hamcrest-core",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-core",
@@ -3088,9 +3088,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.mockito/mockito-core",
+      "dependency_uid": "pkg:maven/org.mockito/mockito-core",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
@@ -3100,9 +3100,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "dependency_uid": "pkg:maven/org.apache.maven/maven-plugin-api",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
@@ -3112,9 +3112,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
+      "dependency_uid": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
@@ -3124,9 +3124,9 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "dependency_uid": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     },
     {
       "purl": "pkg:maven/org.dom4j/dom4j@2.0.1",
@@ -3136,9 +3136,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:maven/org.dom4j/dom4j@2.0.1",
+      "dependency_uid": "pkg:maven/org.dom4j/dom4j@2.0.1",
       "for_package": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
-      "lockfile": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
+      "datafile_path": "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
     }
   ],
   "packages": [
@@ -3168,12 +3168,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
+      "package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
       "package_data_files": [
         "activemq-camel/activemq-camel-pom.xml"
       ],
@@ -3213,12 +3212,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/adarwin/adarwin@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/adarwin/adarwin@1.0",
+      "package_uid": "pkg:maven/adarwin/adarwin@1.0",
       "package_data_files": [
         "adarwin-1.0/adarwin-1.0.pom"
       ],
@@ -3258,12 +3256,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
+      "package_uid": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
       "package_data_files": [
         "ant-jai-1.7.0/ant-jai-1.7.0.pom"
       ],
@@ -3303,12 +3300,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.ant/ant-jsch@1.7.0",
+      "package_uid": "pkg:maven/org.apache.ant/ant-jsch@1.7.0",
       "package_data_files": [
         "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
       ],
@@ -3361,12 +3357,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
+      "package_uid": "pkg:maven/aopalliance/aopalliance@1.0",
       "package_data_files": [
         "aopalliance-1.0/aopalliance-1.0.pom"
       ],
@@ -3406,12 +3401,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/bcel/bcel@5.1?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/bcel/bcel@5.1",
+      "package_uid": "pkg:maven/bcel/bcel@5.1",
       "package_data_files": [
         "bcel-5.1/bcel-5.1.pom"
       ],
@@ -3480,12 +3474,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
+      "package_uid": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
       "package_data_files": [
         "classworlds-1.1-alpha2/classworlds-1.1-alpha-2.pom"
       ],
@@ -3575,12 +3568,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/commons-fileupload/commons-fileupload@1.0",
+      "package_uid": "pkg:maven/commons-fileupload/commons-fileupload@1.0",
       "package_data_files": [
         "commons-fileupload-1.0/commons-fileupload-1.0.pom"
       ],
@@ -3852,12 +3844,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/commons-validator/commons-validator@1.2.0",
+      "package_uid": "pkg:maven/commons-validator/commons-validator@1.2.0",
       "package_data_files": [
         "commons-validator-1.2.0/commons-validator-1.2.0.pom"
       ],
@@ -3897,12 +3888,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT",
+      "package_uid": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT",
       "package_data_files": [
         "dbwebx_pom/dbwebx_pom.xml"
       ],
@@ -3978,12 +3968,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/easyconf/easyconf@0.9.0",
+      "package_uid": "pkg:maven/easyconf/easyconf@0.9.0",
       "package_data_files": [
         "easyconf-0.9.0/easyconf-0.9.0.pom"
       ],
@@ -4059,12 +4048,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
+      "package_uid": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
       "package_data_files": [
         "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
       ],
@@ -4104,12 +4092,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
+      "package_uid": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
       "package_data_files": [
         "fna2_pom/fna2_pom.xml"
       ],
@@ -4149,12 +4136,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
+      "package_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
       "package_data_files": [
         "fna_pom_project/fna_pom_project.xml"
       ],
@@ -4209,12 +4195,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
+      "package_uid": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
       "package_data_files": [
         "foo-pom/foo-pom.xml"
       ],
@@ -4254,12 +4239,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+      "package_uid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
       "package_data_files": [
         "gero_pom/gero_pom.xml"
       ],
@@ -4328,12 +4312,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
+      "package_uid": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
       "package_data_files": [
         "idega_pom/idega_pom.xml"
       ],
@@ -4388,12 +4371,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
+      "package_uid": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4",
       "package_data_files": [
         "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
       ],
@@ -4448,12 +4430,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/log4j/log4j@1.2.15",
+      "package_uid": "pkg:maven/log4j/log4j@1.2.15",
       "package_data_files": [
         "log4j/log4j-pom.xml"
       ],
@@ -4500,12 +4481,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
+      "package_uid": "pkg:maven/ch.qos.logback/logback-access@0.2.5",
       "package_data_files": [
         "logback-access/logback-access.pom"
       ],
@@ -4630,12 +4610,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
+      "package_uid": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
       "package_data_files": [
         "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
       ],
@@ -4675,12 +4654,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT",
+      "package_uid": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT",
       "package_data_files": [
         "pom-generic/pom.xml"
       ],
@@ -4720,12 +4698,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+      "package_uid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
       "package_data_files": [
         "proper-pom/proper_pom.xml"
       ],
@@ -4765,12 +4742,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.modeler/modeler@0.1",
+      "package_uid": "pkg:maven/org.modeler/modeler@0.1",
       "package_data_files": [
         "rel_pom/rel_pom.xml"
       ],
@@ -4832,12 +4808,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
+      "package_uid": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
       "package_data_files": [
         "sea_pom/sea_pom.xml"
       ],
@@ -4877,12 +4852,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.specs/specs@1.3?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.apache.geronimo.specs/specs@1.3",
+      "package_uid": "pkg:maven/org.apache.geronimo.specs/specs@1.3",
       "package_data_files": [
         "specs-1.3/specs-1.3.pom"
       ],
@@ -4937,12 +4911,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.springframework/spring@2.5.4",
+      "package_uid": "pkg:maven/org.springframework/spring@2.5.4",
       "package_data_files": [
         "spring-2.5.4/spring-2.5.4.pom"
       ],
@@ -4997,12 +4970,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.springframework/spring-orm@2.5.3",
+      "package_uid": "pkg:maven/org.springframework/spring-orm@2.5.3",
       "package_data_files": [
         "spring-orm-2.5.3/spring-orm-2.5.3.pom"
       ],
@@ -5057,12 +5029,11 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
+      "package_uid": "pkg:maven/org.springframework/spring-webmvc@2.5.3",
       "package_data_files": [
         "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
       ],
@@ -5110,12 +5081,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1",
+      "package_uid": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1",
       "package_data_files": [
         "startup-trigger-plugin-0.1/startup-trigger-plugin-0.1.pom"
       ],
@@ -5155,12 +5125,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
+      "package_uid": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
       "package_data_files": [
         "uni_pom/uni_pom.xml"
       ],
@@ -5200,12 +5169,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0",
+      "package_uid": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0",
       "package_data_files": [
         "urwerky_pom/urwerky_pom.xml"
       ],
@@ -5245,12 +5213,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT",
+      "package_uid": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT",
       "package_data_files": [
         "webre_pom/webre_pom.xml"
       ],
@@ -5290,12 +5257,11 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
+      "package_uid": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
       "package_data_files": [
         "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
       ],
@@ -5348,7 +5314,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
           ],
@@ -5520,7 +5485,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/adarwin/adarwin@1.0?classifier=sources"
           ],
@@ -5592,7 +5556,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
           ],
@@ -5692,7 +5655,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
           ],
@@ -5796,7 +5758,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
           ],
@@ -5868,7 +5829,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/bcel/bcel@5.1?classifier=sources"
           ],
@@ -5969,7 +5929,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
           ],
@@ -6091,7 +6050,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
           ],
@@ -6414,7 +6372,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
           ],
@@ -6541,7 +6498,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
           ],
@@ -6649,7 +6605,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
           ],
@@ -6920,7 +6875,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
           ],
@@ -7038,7 +6992,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
           ],
@@ -7201,7 +7154,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
           ],
@@ -7352,7 +7304,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
           ],
@@ -7497,7 +7448,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
           ],
@@ -7608,7 +7558,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
           ],
@@ -7732,7 +7681,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
           ],
@@ -7856,7 +7804,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
           ],
@@ -7990,7 +7937,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
           ],
@@ -8193,7 +8139,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?classifier=sources"
           ],
@@ -8302,7 +8247,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
           ],
@@ -8374,7 +8318,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
           ],
@@ -8456,7 +8399,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
           ],
@@ -8632,7 +8574,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
           ],
@@ -9038,7 +8979,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.specs/specs@1.3?classifier=sources"
           ],
@@ -9135,7 +9075,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
           ],
@@ -9808,7 +9747,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
           ],
@@ -10040,7 +9978,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
           ],
@@ -10319,7 +10256,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
           ],
@@ -10401,7 +10337,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
           ],
@@ -10519,7 +10454,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
           ],
@@ -10591,7 +10525,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
           ],
@@ -10663,7 +10596,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
           ],

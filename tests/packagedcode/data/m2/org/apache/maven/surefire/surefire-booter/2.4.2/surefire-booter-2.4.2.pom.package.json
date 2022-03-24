@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.surefire/surefire-booter@2.4.2?classifier=sources"
   ],

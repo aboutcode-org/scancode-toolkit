@@ -37,9 +37,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
-    "installed_files": [
+    "file_references": [
       {
         "path": "/etc/debian_version",
         "size": 0,
@@ -496,9 +495,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
-    "installed_files": [
+    "file_references": [
       {
         "path": "/usr/sbin/update-passwd",
         "size": 0,
@@ -683,9 +681,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
-    "installed_files": [
+    "file_references": [
       {
         "path": "/bin/bash",
         "size": 0,
@@ -910,9 +907,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
-    "installed_files": [],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "foreign"
     },

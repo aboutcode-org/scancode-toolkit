@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/get-size",
+      "dependency_uid": "pkg:bower/get-size",
       "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "datafile_path": "bower.json"
     },
     {
       "purl": "pkg:bower/eventEmitter",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/eventEmitter",
+      "dependency_uid": "pkg:bower/eventEmitter",
       "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "datafile_path": "bower.json"
     },
     {
       "purl": "pkg:bower/qunit",
@@ -52,9 +52,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/qunit",
+      "dependency_uid": "pkg:bower/qunit",
       "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "datafile_path": "bower.json"
     }
   ],
   "packages": [
@@ -98,10 +98,9 @@
         "MIT"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:bower/blue-leaf",
+      "package_uid": "pkg:bower/blue-leaf",
       "package_data_files": [
         "bower.json"
       ],
@@ -159,7 +158,6 @@
             "MIT"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

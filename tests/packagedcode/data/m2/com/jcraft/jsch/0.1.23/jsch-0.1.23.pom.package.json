@@ -39,7 +39,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.23?classifier=sources"
   ],

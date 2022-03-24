@@ -7,12 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import fnmatch
 import os
 import sys
 
 from commoncode import filetype
-from packagedcode import PACKAGE_DATA_CLASSES
+from packagedcode import PACKAGE_DATAFILE_HANDLERS
+from packagedcode import models
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
@@ -36,64 +36,52 @@ if TRACE:
     logger_debug = print
 
 """
-Recognize package data in files.
+Recognize and parse package datafiles, manifests, or lockfiles.
 """
 
 
 def recognize_package_data(location):
     """
-    Return a list of Package objects if any package_data were recognized for this
-    `location`, or None if there were no Packages found. Raises Exceptions on errors.
+    Return a list of Package objects if any package_data were recognized for
+    this `location`, or None if there were no Packages found. Raises Exceptions
+    on errors.
     """
 
     if not filetype.is_file(location):
-        return
+        return []
 
-    recognized_package_data = []
-    for package_data_type in PACKAGE_DATA_CLASSES:
-        if not package_data_type.is_package_data_file(location):
+    return list(_parse(location))
+
+
+def _parse(location):
+    """
+    Yield parsed PackageData objects from ``location``. Raises Exceptions on errors.
+    """
+
+    for handler in PACKAGE_DATAFILE_HANDLERS:
+        if not handler.is_datafile(location):
             continue
 
-        try:
-            for recognized in package_data_type.recognize(location):
-                if TRACE:
-                    logger_debug(
-                        'recognize_package_data: metafile matching: recognized:',
-                        recognized,
-                    )
-                if recognized and not recognized.license_expression:
-                    # compute and set a normalized license expression
-                    try:
-                        recognized.license_expression = recognized.compute_normalized_license()
-                    except Exception:
-                        if SCANCODE_DEBUG_PACKAGE_API:
-                            raise
-                        recognized.license_expression = 'unknown'
+        if TRACE:
+            logger_debug(f'_parse:.is_datafile: {location}')
 
-                    if TRACE:
-                        logger_debug(
-                            'recognize_package_data: recognized.license_expression:',
-                            recognized.license_expression
-                        )
-                recognized_package_data.append(recognized)
-            return recognized_package_data
+        try:
+            for parsed in handler.parse(location):
+                if TRACE:
+                    logger_debug(f' _parse: parsed: {parsed!r}')
+                yield parsed
 
         except NotImplementedError:
-            # build a plain package if recognize is not yet implemented
-            recognized = package_data_type()
+            # build a plain package if parse is not yet implemented
+            pkg = models.PackageData(
+                type=handler.default_package_type,
+                datasource_id=handler.datasource_id,
+                primary_language=handler.default_primary_language,
+            )
             if TRACE:
-                logger_debug(
-                    'recognize_package_data: NotImplementedError: recognized', recognized
-                )
+                logger_debug('_parse: NotImplementedError: parsed', parsed)
 
-            recognized_package_data.append(recognized)
+            yield pkg
 
             if SCANCODE_DEBUG_PACKAGE_API:
                 raise
-
-        if TRACE: 
-            logger_debug(
-                'recognize_package_data: no match for type:', package_data_type
-            )
-
-        return recognized_package_data

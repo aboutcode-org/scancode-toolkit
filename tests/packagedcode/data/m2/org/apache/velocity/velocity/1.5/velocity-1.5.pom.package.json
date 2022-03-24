@@ -74,7 +74,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.velocity/velocity@1.5?classifier=sources"
   ],

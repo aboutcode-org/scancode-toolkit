@@ -7,15 +7,18 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import fnmatch
 import logging
 import os
 import sys
+import uuid
+from fnmatch import fnmatch
+from fnmatch import fnmatchcase
 
 import attr
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
 
+from commoncode import filetype
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
@@ -23,117 +26,155 @@ from commoncode.datautils import Integer
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
-from commoncode.datautils import TriBoolean
-
-from commoncode import filetype
-from commoncode.fileutils import file_name
-from commoncode.fileutils import splitext_name
+from commoncode.fileutils import as_posixpath
 from typecode import contenttype
 
-
 """
-Data models for package information and dependencies, and also data models
-for package data for abstracting the differences existing between
-package formats and tools.
+This module contain data models for package and dependencies, abstracting and
+normalizing the small differences that exist across different package types
+(aka. ecosystems), manifest file formats and tools.
 
-A package has a somewhat fuzzy definition and is code that can be consumed and
-provisioned by a package manager or can be installed.
-
-It can be a single file such as script; more commonly a package is stored in an
-archive or directory.
+A package is a unit of code that is provisioned and installable. More commonly a
+package is stored in an archive and found in a package repository, though it can
+be as simple as a single file such as a script or may be stored in a VCS
+repository such as git.
 
 A package contains:
- - information typically in a "manifest" file,
- - a payload of code, doc, data.
 
-Structured package information are found in multiple places:
-- in manifest file proper (such as a Maven POM, NPM package.json and many others)
-- in binaries (such as an Elf or LKM, Windows PE or RPM header).
-- in code (JavaDoc tags or Python __copyright__ magic)
+ - package information and metadata in some "manifest" file,
+ - a payload such as code, documentation, or data.
 
-There are collectively named "manifests" in ScanCode.
+
+Structured package information come in three primary kinds:
+
+- "metadata" such as a name, version or description,
+
+- "dependencies" on other packages either potential with version requirements or
+  resolved and locked with concrete versions), and
+
+- "build" and packaging scripts and instructions.
+
+Package types combine these in one or more manifest or script that we
+collectively call datafiles. For instance a Maven POM XML file contains combined
+metadata, dependencies and build instructions in an XML file while a pip
+requirements.txt file contains only dependencies.
+
+These package "data" files come in many different shapes:
+
+- Manifest files proper such as a Maven POM, NPM package.json and several others.
+- Dependency lockfiles such as pip requirements.txt or Go go.sum.
+- Build scripts such as Makefile.
+- Various structured or semi-structured metadata files in JSON, YAML or plain text
+- Property files that supplement manifests such as a pom.properties
+- Structured data headers or sections in binaries such as in an ELF, LKM or
+  Windows PE; or the header of an RPM archive.
+- Code tags or conventional variables such JavaDoc tags or Python __copyright__
+  magic variables and variable in Yocto/Bitbake.
+- In JSON datafiles (or similar) fetched from registry or package repository APIs.
 
 We handle package information at two levels:
 
-1. package data information collected in a "manifest" or similar at a file level
-2. packages at the codebase level, where a package contains
-   one or more package data, and files for that package.
+- First, we parse manifests or lockfiles in a common package data model.
 
-The second requires the first to be computed.
+- Second, we assemble lists of top-level Package and Dependency by aggregating
+  the data from one or more parsed package datafiles.
 
-These are case classes to extend:
+The key models defined here are:
 
-- PackageData:
-    Base class with shared package attributes and methods.
-- PackageDataFile:
-    Mixin class that represents a specific package manifest file.
-- Package:
-    Mixin class that represents a package that's constructed from one or more
-    package data. It also tracks package files. Basically a package instance.
+- PackageData: a class holding package data as parsed from a package datafile
+  such as a manifest or lockfile.
 
-Here is an example of the classes that would need to exist to support a new fictitious
-package type or ecosystem `dummy`.
+- Package: a class for a top level package instance  with a UUID.
+- Dependency: class used for a top level dependency instance with a UUID
 
-- DummyPackageData(PackageData):
-    This class provides type wide defaults and basic implementation for type specific methods.
-- DummyManifest(DummyPackageData, PackageDataFile) or DummyLockFile(DummyPackageData, PackageDataFile):
-    This class provides methods to recognize and parse a package manifest file format.
-- DummyPackage(DummyPackageData, Package):
-    This class provides methods to create package instances for one or more manifests and to
-    collect package file paths.
+- DatafileHandler: a base class for datafile handlers. Each handler can parse()
+  manifest file format in PackageData and can optionally assemble() packages and
+  dependencies. When implementing a new package type and manifest file format,
+  subclass DatafileHandler and implement the parse() and assemble() methods for
+  this package datafile format and package type. Then register this class in
+  ``packagedcode.PACKAGE_DATAFILE_HANDLERS``.
+
+
+Beyond these we have a few secondary models:
+
+- ModelMixin: the base mixin for all models with generic creation and
+  serialization to a dict methods.
+
+- Party, DependentPackage, FileReference: lists of these objects used in PackageData
+
+- IdentifiablePackageData: a base class for a Package-like class with a Package URL.
 """
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 TRACE = False or SCANCODE_DEBUG_PACKAGE_API
-TRACE_MERGING = False or SCANCODE_DEBUG_PACKAGE_API
+TRACE_UPDATE = False or SCANCODE_DEBUG_PACKAGE_API
+
 
 def logger_debug(*args):
     pass
 
+
 logger = logging.getLogger(__name__)
 
-if TRACE or TRACE_MERGING:
-    import logging
+if TRACE or TRACE_UPDATE:
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger_debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
     logger_debug = print
 
 
-class BaseModel(object):
+class ModelMixin:
     """
-    Base class for all package models.
+    Base mixin for all package models.
     """
 
     def to_dict(self, **kwargs):
         """
-        Return an dict of primitive Python types.
+        Return a mapping of primitive Python types.
         """
         return attr.asdict(self)
 
+    def to_tuple(self, **kwargs):
+        """
+        Return a hashable tuple of primitive Python types.
+        """
+        return to_tuple(self.to_dict(**kwargs))
+
     @classmethod
-    def create(cls, **kwargs):
+    def from_dict(cls, mapping):
         """
-        Return an object built from ``kwargs``. Always ignore unknown attributes
-        provided in ``kwargs`` that do not exist as declared attr fields in
-        ``cls``.
+        Return an object built from ``kwargs`` mapping. Always ignore unknown
+        attributes provided in ``kwargs`` that do not exist as declared attributes
+        in the ``cls`` class.
         """
-        known_attr = cls.fields()
-        kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
+        known_attr = attr.fields_dict(cls)
+        kwargs = {k: v for k, v in mapping.items() if k in known_attr}
         return cls(**kwargs)
 
 
-    @classmethod
-    def fields(cls):
-        """
-        Return a list of field names defined on this model.
-        """
-        return list(attr.fields_dict(cls))
+def to_tuple(collection):
+    """
+    Return a tuple of basic Python values by recursively converting a mapping
+    and all its sub-mappings.
+    For example::
+    >>> as_tuple({7: [1,2,3], 9: {1: [2,6,8]}})
+    ((7, (1, 2, 3)), (9, ((1, (2, 6, 8)),)))
+    """
+    if isinstance(collection, dict):
+        collection = tuple(collection.items())
+    assert isinstance(collection, (tuple, list))
+    results = []
+    for item in collection:
+        if isinstance(item, (list, tuple, dict)):
+            results.append(to_tuple(item))
+        else:
+            results.append(item)
+    return tuple(results)
 
 
 party_person = 'person'
@@ -149,8 +190,8 @@ PARTY_TYPES = (
 )
 
 
-@attr.s()
-class Party(BaseModel):
+@attr.attributes(slots=True)
+class Party(ModelMixin):
     """
     A party is a person, project or organization related to a package.
     """
@@ -185,35 +226,16 @@ class Party(BaseModel):
         help='URL to a primary web page for this party.')
 
 
-@attr.s()
-class BasePackageData(BaseModel):
+@attr.attributes(slots=True)
+class IdentifiablePackageData(ModelMixin):
     """
-    A base identifiable package object using discrete identifying attributes as
+    Identifiable package data object using purl as identifying attribute as
     specified here https://github.com/package-url/purl-spec.
+    This base class is used for all package-like objects be they a manifest
+    or an actual package instance.
     """
-
-    # class-level attributes used to recognize a package
-    filetypes = tuple()
-    mimetypes = tuple()
-    extensions = tuple()
-
-    # list of known metafiles for a package type
-    file_patterns = tuple()
-
-    # Optional. Public default web base URL for package homepages of this
-    # package type on the default repository.
-    default_web_baseurl = None
-
-    # Optional. Public default download base URL for direct downloads of this
-    # package type the default repository.
-    default_download_baseurl = None
-
-    # Optional. Public default API repository base URL for package API calls of
-    # this package type on the default repository.
-    default_api_baseurl = None
-
     # Optional. Public default type for a package class.
-    default_type = None
+    default_package_type = None
 
     # TODO: add description of the Package type for info
     # type_description = None
@@ -221,7 +243,7 @@ class BasePackageData(BaseModel):
     type = String(
         repr=True,
         label='package type',
-        help='Optional. A short code to identify what is the type of this '
+        help='A short code to identify what is the type of this '
              'package. For instance gem for a Rubygem, docker for container, '
              'pypi for Python Wheel or Egg, maven for a Maven Jar, '
              'deb for a Debian package, etc.')
@@ -229,7 +251,7 @@ class BasePackageData(BaseModel):
     namespace = String(
         repr=True,
         label='package namespace',
-        help='Optional namespace for this package.')
+        help='Namespace for this package.')
 
     name = String(
         repr=True,
@@ -239,65 +261,43 @@ class BasePackageData(BaseModel):
     version = String(
         repr=True,
         label='package version',
-        help='Optional version of the package as a string.')
+        help='Version of the package as a string.')
 
     qualifiers = Mapping(
         default=None,
         value_type=str,
         converter=lambda v: normalize_qualifiers(v, encode=False),
         label='package qualifiers',
-        help='Optional mapping of key=value pairs qualifiers for this package')
+        help='Mapping of key=value pairs qualifiers for this package')
 
     subpath = String(
         label='extra package subpath',
-        help='Optional extra subpath inside a package and relative to the root '
+        help='Subpath inside a package and relative to the root '
              'of this package')
 
     def __attrs_post_init__(self, *args, **kwargs):
-        if not self.type and hasattr(self, 'default_type'):
-            self.type = self.default_type
+        if not self.type and hasattr(self, 'default_package_type'):
+            self.type = self.default_package_type
 
     @property
     def purl(self):
         """
-        Return a compact purl package URL string.
+        Return a compact Package URL string or None.
         """
-        if not self.name:
-            return
-        return PackageURL(
-            self.type, self.namespace, self.name, self.version,
-            self.qualifiers, self.subpath).to_string()
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        """
-        Return the package repository homepage URL for this package, e.g. the
-        URL to the page for this package in its package repository. This is
-        typically different from the package homepage URL proper.
-        Subclasses should override to provide a proper value.
-        """
-        return
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        """
-        Return the package repository download URL to download the actual
-        archive of code of this package. This may be different than the actual
-        download URL and is computed from the default public respoitory baseurl.
-        Subclasses should override to provide a proper value.
-        """
-        return
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        """
-        Return the package repository API URL to obtain structured data for this
-        package such as the URL to a JSON or XML api.
-        Subclasses should override to provide a proper value.
-        """
-        return
+        if self.name:
+            return PackageURL(
+                type=self.type,
+                namespace=self.namespace,
+                name=self.name,
+                version=self.version,
+                qualifiers=self.qualifiers,
+                subpath=self.subpath,
+            ).to_string()
 
     def set_purl(self, package_url):
         """
-        Update this Package object with the `package_url` purl string or
-        PackageURL attributes.
+        Update this object with the ``package_url`` purl string or PackageURL if
+        there is no pre-existing value for a given purl attribute.
         """
         if not package_url:
             return
@@ -305,50 +305,26 @@ class BasePackageData(BaseModel):
         if not isinstance(package_url, PackageURL):
             package_url = PackageURL.from_string(package_url)
 
-        attribs = ['type', 'namespace', 'name', 'version', 'qualifiers', 'subpath']
-        for att in attribs:
-            self_val = getattr(self, att)
-            purl_val = getattr(package_url, att)
-            if not self_val and purl_val:
-                setattr(self, att, purl_val)
+        for key, value in package_url.to_dict().items():
+            self_val = getattr(self, key)
+            if not self_val and value:
+                setattr(self, attr, value)
 
     def to_dict(self, **kwargs):
-        """
-        Return an dict of primitive Python types.
-        """
-        mapping = attr.asdict(self)
-        if self.name:
-            mapping['purl'] = self.purl
-            mapping['repository_homepage_url'] = self.repository_homepage_url()
-            mapping['repository_download_url'] = self.repository_download_url()
-            mapping['api_data_url'] = self.api_data_url()
-        else:
-            mapping['purl'] = None
-            mapping['repository_homepage_url'] = None
-            mapping['repository_download_url'] = None
-            mapping['api_data_url'] = None
+        mapping = super().to_dict(**kwargs)
+        mapping['purl'] = self.purl
 
         if self.qualifiers:
             mapping['qualifiers'] = normalize_qualifiers(
                 qualifiers=self.qualifiers,
                 encode=False,
             )
+
         return mapping
 
-    @classmethod
-    def create(cls, **kwargs):
-        """
-        Return a Package built from ``kwargs``. Always ignore unknown attributes
-        provided in ``kwargs`` that do not exist as declared attr fields in
-        ``cls``.
-        """
-        from packagedcode import get_package_class
-        type_cls = get_package_class(kwargs, default=cls)
-        return super(BasePackageData, type_cls).create(**kwargs)
 
-
-@attr.s()
-class DependentPackage(BaseModel):
+@attr.attributes(slots=True)
+class DependentPackage(ModelMixin):
     """
     An identifiable dependent package package object.
     """
@@ -363,9 +339,9 @@ class DependentPackage(BaseModel):
 
     extracted_requirement = String(
         repr=True,
-        label='dependent package version requirement',
-        help='A string defining version(s)requirements. Package-type specific '
-             'and as found in the lockfile/package-data.')
+        label='extracted version requirement',
+        help='String for the original version requirements and constraints. '
+             'Package-type specific and as found originally in a datafile.')
 
     # ToDo: add `vers` support. See https://github.com/nexB/univers/blob/main/src/univers/version_range.py
 
@@ -394,76 +370,173 @@ class DependentPackage(BaseModel):
 
     resolved_package = Mapping(
         label='resolved package data',
-        help='A mapping containing the package data for this DependentPackage, '
-             'resolved from the lockfile itself or by fetching from other sources.')
+        help='A mapping of resolved package data for this dependent package, '
+             'either from the datafile or collected from another source. Some '
+             'lockfiles for Composer or Cargo contain extra dependency data.'
+         )
 
 
-@attr.s
+@attr.attributes(slots=True)
 class Dependency(DependentPackage):
-
-    dependency_uuid = String(
-        label='Dependency instance UUID',
-        help='A unique ID for dependency instances in a codebase scan.'
-             'Consists of a pURL and an UUID field as a pURL qualifier.'
-    )
-
-    for_package = String(
-        label='A Package UUID',
-        help='The UUID of the package instance to which this dependency file belongs'
-    )
-
-    lockfile = String(
-        label='path to a lockfile',
-        help='A path string from where this dependency instance was created'
-             'Consists of a pURL and an UUID field as a pURL qualifier.'
-    )
-
-
-@attr.s()
-class PackageFile(BaseModel):
     """
-    A file that belongs to a package.
-    """
+    Top-level dependency instance from parsed package data collected from data
+    files such as a package manifest or lockfile.
 
+    Subclasses can extend for each package type.
+    """
+    uuid = String(
+        default=attr.Factory(uuid.uuid4),
+        label='Dependency UUID',
+        help='A unique identifier for this dependency instance.'
+    )
+
+    # TODO: should we also repeat the purl here: this may be redundant but this
+    # would help avoid lookups
+    for_package_uid = String(
+        label='A Package unique id',
+        help='The unique id of the package instance to which this dependency '
+             'file belongs. This is the purl with a uuid qualifier.'
+    )
+
+    datafile_path = String(
+        label='Path to datafile.',
+        help='A POSIX path string to the package datafile that describes this '
+        'dependency.'
+    )
+
+    datasource_id = String(
+        label='datasource id',
+        help='Datasource identifier for the source of these package data.'
+    )
+
+    @classmethod
+    def from_dependent_package(
+        cls,
+        dependent_package,
+        datafile_path,
+        datasource_id,
+        package_uid=None,
+    ):
+        """
+        Return a Dependency from a ``dependent_package`` DependentPackage object
+        or mapping.
+        """
+        if isinstance(dependent_package, DependentPackage):
+            dependent_package = dependent_package.to_dict()
+        else:
+            # make a copy
+            dependent_package = dict(dependent_package)
+
+        dependent_package['datafile_path'] = datafile_path
+        dependent_package['datasource_id'] = datasource_id
+        dependent_package['for_package_uid'] = package_uid
+
+        return cls.from_dict(dependent_package)
+
+    @classmethod
+    def from_dependent_packages(
+        cls,
+        dependent_packages,
+        datafile_path,
+        datasource_id,
+        package_uid=None,
+    ):
+        """
+        Yield Dependency objects from a ``dependent_packages`` list of
+        DependentPackage object or mappings found in the ``datafile_path`` with
+        ``datasource_id`` for the ``package_uid``.
+        """
+        dependent_packages = dependent_packages or []
+        for dependent_package in dependent_packages:
+            yield Dependency.from_dependent_package(
+                dependent_package=dependent_package,
+                datafile_path=datafile_path,
+                datasource_id=datasource_id,
+                package_uid=package_uid,
+            )
+
+
+@attr.attributes(slots=True)
+class FileReference(ModelMixin):
+    """
+    A reference to a file in a files listing from a manifest or data file.
+    """
     path = String(
-        label='Path of this installed file',
-        help='The path of this installed file either relative to a rootfs '
-             '(typical for system packages) or a path in this scan (typical '
-             'for application packages).',
+        label='Path of this file.',
+        help='The file or directory POSIX path. The actual root for this path '
+             'is specific to a datafile format. For instance it is the rootfs '
+             'root for Linux system packages.',
         repr=True,
+    )
+
+    is_file = Boolean(
+        label='file or directory',
+        help='True if this is a file, false if thif is a directory',
+        repr=False,
     )
 
     size = Integer(
         label='file size',
-        help='size of the file in bytes')
+        help='size of the file in bytes',
+        repr=False,
+    )
 
     sha1 = String(
         label='SHA1 checksum',
-        help='SHA1 checksum for this file in hexadecimal')
+        help='SHA1 checksum for this file in hexadecimal',
+        repr=False,
+    )
 
     md5 = String(
         label='MD5 checksum',
-        help='MD5 checksum for this file in hexadecimal')
+        help='MD5 checksum for this file in hexadecimal',
+        repr=False,
+    )
 
     sha256 = String(
         label='SHA256 checksum',
-        help='SHA256 checksum for this file in hexadecimal')
+        help='SHA256 checksum for this file in hexadecimal',
+        repr=False,
+    )
 
     sha512 = String(
         label='SHA512 checksum',
-        help='SHA512 checksum for this file in hexadecimal')
+        help='SHA512 checksum for this file in hexadecimal',
+        repr=False,
+    )
+
+    extra_data = Mapping(
+        label='extra data',
+        help='A mapping of arbitrary extra file reference data.',
+    )
+
+    def to_dict(self, with_details=True, **kwargs):
+        mapping = super().to_dict(**kwargs)
+        if not with_details:
+            mapping.pop('is_file', None)
+        return mapping
+
+    def update(self, other):
+        """
+        Update this reference with an other file reference only for non-empty
+        values.
+        """
+        for name, value in other.to_dict().items():
+            if not value:
+                continue
+            current = getattr(self, name, None)
+            if not current:
+                setattr(self, name, value)
+        return self
 
 
-@attr.s()
-class PackageData(BasePackageData):
+@attr.attributes(slots=True)
+class PackageData(IdentifiablePackageData):
     """
-    A package object as represented by either data from one of its different types of
-    package data or that of a package instance created from one or more of these
-    package data, and files for that package.
+    The data of a given package type. This is the core model to store normalized
+    package data parsed from package datafiles (such as a manifest) or stored in
+    a top-level package.
     """
-
-    # Optional. Public default type for a package class.
-    default_primary_language = None
 
     primary_language = String(
         label='Primary programming language',
@@ -503,19 +576,19 @@ class PackageData(BasePackageData):
 
     sha1 = String(
         label='SHA1 checksum',
-        help='SHA1 checksum for this download in hexadecimal')
+        help='SHA1 checksum for this package download in hexadecimal')
 
     md5 = String(
         label='MD5 checksum',
-        help='MD5 checksum for this download in hexadecimal')
+        help='MD5 checksum for this package download in hexadecimal')
 
     sha256 = String(
         label='SHA256 checksum',
-        help='SHA256 checksum for this download in hexadecimal')
+        help='SHA256 checksum for this package download in hexadecimal')
 
     sha512 = String(
         label='SHA512 checksum',
-        help='SHA512 checksum for this download in hexadecimal')
+        help='SHA512 checksum for this package download in hexadecimal')
 
     bug_tracking_url = String(
         label='bug tracking URL',
@@ -551,108 +624,149 @@ class PackageData(BasePackageData):
         label='notice text',
         help='A notice text for this package.')
 
-    contains_source_code = TriBoolean(
-        label='contains source code',
-        help='Flag set to True if this package contains its own source code, None '
-             'if this is unknown, False if not.')
-
     source_packages = List(
-        item_type=String,
-        label='List of related source code packages',
+        item_type=str,
+        label='List of related source code package purls',
         help='A list of related  source code Package URLs (aka. "purl") for '
              'this package. For instance an SRPM is the "source package" for a '
-             'binary RPM.')
+             'binary RPM.'
+     )
 
-    installed_files = List(
-        item_type=PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
+    file_references = List(
+        item_type=FileReference,
+        label='referenced files',
+        help='List of file paths and details for files referenced in a package '
+             'manifest. These may not actually exist on the filesystem. '
+             'The exact semantics and base of these paths is specific to a '
+             'package type or datafile format.'
+    )
 
     extra_data = Mapping(
         label='extra data',
-        help='A mapping of arbitrary extra Package data.')
+        help='A mapping of arbitrary extra package data.',
+    )
 
-    def __attrs_post_init__(self, *args, **kwargs):
-        if not self.type and hasattr(self, 'default_type'):
-            self.type = self.default_type
+    dependencies = List(
+        item_type=DependentPackage,
+        label='dependencies',
+        help='A list of DependentPackage for this package.'
+    )
 
-        if not self.primary_language and hasattr(self, 'default_primary_language'):
-            self.primary_language = self.default_primary_language
+    repository_homepage_url = String(
+        label='package repository homepage URL.',
+        help='URL to the page for this package in its package repository. '
+             'This is typically different from the package homepage URL proper.'
+     )
 
-    @classmethod
-    def get_package_resources(cls, package_root, codebase):
-        """
-        Yield the Resources of a Package starting from `package_root`
-        """
-        if not cls.is_ignored_package_resource(package_root, codebase):
-            yield package_root
-        for resource in package_root.walk(codebase, topdown=True, ignored=cls.is_ignored_package_resource):
-            yield resource
+    repository_download_url = String(
+        label='package repository download URL.',
+        help='download URL to download the actual archive of code of this '
+             'package in its package repository. '
+             'This may be different from the actual download URL.'
+     )
 
-    @classmethod
-    def ignore_resource(cls, resource, codebase):
-        """
-        Return True if `resource` should be ignored.
-        """
-        return False
+    api_data_url = String(
+        label='package repository API URL.',
+        help='API URL to obtain structured data for this package such as the '
+             'URL to a JSON or XML api its package repository.'
+     )
 
-    @staticmethod
-    def is_ignored_package_resource(resource, codebase):
-        from packagedcode import PACKAGE_DATA_CLASSES
-        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_DATA_CLASSES)
+    datasource_id = String(
+        label='datasource id',
+        help='Datasource identifier for the source of these package data.'
+    )
 
-    def compute_normalized_license(self):
-        """
-        Return a normalized license_expression string using the declared_license
-        field. Return 'unknown' if there is a declared license but it cannot be
-        detected and return None if there is no declared license
+    def to_dict(self, with_details=True, **kwargs):
+        mapping = super().to_dict(with_details=with_details, **kwargs)
+        if not with_details:
+            # these are not used in the Package subclass
+            mapping.pop('file_references', None)
+            mapping.pop('dependencies', None)
+            mapping.pop('datasource_id', None)
 
-        Subclasses can override to handle specifics such as supporting specific
-        license ids and conventions.
-        """
-        return compute_normalized_license(self.declared_license)
-
-    @classmethod
-    def extra_key_files(cls):
-        """
-        Return a list of extra key file paths (or path glob patterns) beyond
-        standard, well known key files for this Package. List items are strings
-        that are either paths or glob patterns and are relative to the package
-        root.
-
-        Knowing if a file is a "key-file" file is important for classification
-        and summarization. For instance, a JAR can have key files that are not
-        top level under the META-INF directory. Or a .gem archive contains a
-        metadata.gz file.
-
-        Sub-classes can implement as needed.
-        """
-        return []
+        return mapping
 
     @classmethod
-    def extra_root_dirs(cls):
+    def from_dict(cls, mapping):
         """
-        Return a list of extra package root-like directory paths (or path glob
-        patterns) that should be considered to determine if a files is a top
-        level file or not. List items are strings that are either paths or glob
-        patterns and are relative to the package root.
+        Return an instance of PackageData instance re-built from a mapping of
+        ``scan_data`` native Python data. Known attributes that store a list of
+        objects are also "rehydrated" (such as models.Party).
 
-        Knowing if a file is a "top-level" file is important for classification
-        and summarization.
+        Unknown attributes provided in ``scan_data`` that do not exist as fields in
+        the class are kept as items in the extra_data mapping. An Exception is
+        raised if an "unknown attribute" name already exists as a extra_data name.
 
-        Sub-classes can implement as needed.
+        ``list_item_types_by_name`` is a mapping of extra list items.
         """
-        return []
+        # TODO: consider using a proper library for this such as cattrs,
+        # marshmallow, etc. or use the field type that we declare.
 
-    def to_dict(self, _detailed=False, **kwargs):
-        data = super().to_dict(**kwargs)
-        if _detailed:
-            data['installed_files'] = [
-                istf.to_dict() for istf in (self.installed_files or [])
-            ]
-        else:
-            data.pop('installed_files', None)
-        return data
+        # Each of these are lists of class instances tracked here, which are stored
+        # as a list of mappings in scanc_data
+
+        # these are computed attributes serialized on a package
+        # that should not be recreated when de-serializing
+        computed_attributes = set(['purl', ])
+
+        fields_by_name = attr.fields_dict(cls)
+
+        extra_data = mapping.get('extra_data', {}) or {}
+        package_data = {}
+
+        list_fields_by_item = {
+            'parties': Party,
+            'dependencies': DependentPackage,
+            'file_references': FileReference,
+        }
+
+        for name, value in mapping.items():
+            if not value:
+                continue
+
+            if name in computed_attributes:
+                continue
+
+            field = fields_by_name.get(name)
+            if not field:
+                # keep unknown fields as extra data
+                if name not in extra_data:
+                    extra_data[name] = value
+                    continue
+                else:
+                    raise Exception(
+                        f'Invalid package "scan_data" with duplicated name: {name!r}={value!r} '
+                        f'present both as attribute AND as extra_data: {name!r}={extra_data[name]!r}'
+                    )
+
+            # re-hydrate lists of typed objects
+            list_item_type = is_list_field = list_fields_by_item.get(name)
+
+            if is_list_field:
+                items = list(_rehydrate_list(cls=list_item_type, values=value))
+                package_data[name] = items
+            else:
+                # this is a plain, non-nested field
+                package_data[name] = value
+
+        return super().from_dict(package_data)
+
+
+def _rehydrate_list(cls, values):
+    """
+    Yield ``cls`` objects built from a ``values`` list of mappings.
+    """
+    # Since we have a list_item_type, value must be a list of mappings:
+    # we transform it in a list of objects.
+    base_msg = 'Invalid package "scan_data "with unknown data structure.'
+    if not isinstance(values, list) and not all(isinstance(v, dict) for v in values):
+        raise Exception(
+            f'{base_msg}. Expected the value to be a list of dicts and not: '
+            f'{type(values)!r} for class: {cls!r}'
+        )
+
+    for val in values:
+        yield cls.from_dict(val)
 
 
 def compute_normalized_license(declared_license, expression_symbols=None):
@@ -674,603 +788,503 @@ def compute_normalized_license(declared_license, expression_symbols=None):
             query_string=declared_license,
             expression_symbols=expression_symbols
         )
-    except Exception:
-        # FIXME: add logging
+    except Exception as e:
         # we never fail just for this
+        if TRACE:
+            logger_debug(f'Failed to compute license for {declared_license!r}: {e!r}')
+        # FIXME: add logging
         return 'unknown'
 
 
-@attr.s
-class PackageDataFile:
+class DatafileHandler:
     """
-    A mixin for package manifests, lockfiles and other package data files
-    that can be recognized.
+    A base handler class to handle any package manifests, lockfiles and data
+    files. Each subclass handles a package datafile format to parse datafiles
+    and assemble Package and Depdencies from these:
 
-    When creating a new package data, a class should be created that extends
-    both PackageDataFile and PackageData.
+    - parses a datafile format and yields package data.
+
+    - assembles this datafile package data in top-level packages and dependencies
+    - assigns package files to their package
     """
 
-    dependencies = List(
-        item_type=DependentPackage,
-        label='dependencies',
-        help='A list of DependentPackage for this package. ')
+    # A string to uniquely identify the datasource of this parser. Every parser
+    # must fill this with a unique and descriptive string if (unique ignoring
+    # case). Must be a valid Python identifier: must start with an ASCII letter,
+    # can only contain ASCII letters, digits and underscore. Must be lowercase
+    datasource_id = None
 
+    # Sequence of known fnmatch-style case-insensitive glob patterns (e.g., Unix
+    # shell style patterns) that apply on the whole POSIX path for package
+    # datafiles recognized and parsed by this parser. See fnmatch.fnmatch().
+    # *       matches everything
+    # ?       matches any single character
+    # Used by the default is_datafile() method. If not using this, a subclass
+    # must override is_datafile()
+    path_patterns = tuple()
 
-    # class-level attributes used to recognize a package
+    # Sequence of file types fragments: one of these must be contained in the
+    # resource filetype
     filetypes = tuple()
-    mimetypes = tuple()
-    extensions = tuple()
 
-    # list of known file_patterns for a package manifest type
-    file_patterns = tuple()
+    # Informational: Default package type for this parser. Some parsers may
+    # yield more than one package type
+    default_package_type = None
 
-    @property
-    def package_data_type(self):
-        """
-        A tuple unique across package data, created from the default package type
-        and the manifest type.
-        """
-        return self.default_type, self.manifest_type()
+    # Informational: Default primary language for this parser.
+    default_primary_language = None
 
-    @classmethod
-    def manifest_type(cls):
-        return f"{cls.__module__}.{cls.__qualname__}"
+    # Informational: Description of this parser
+    description = None
+
+    # Informational: URL that documents this file format
+    documentation_url = None
 
     @classmethod
-    def is_package_data_file(cls, location):
+    def is_datafile(cls, location):
         """
-        Return True if the file at ``location`` is likely a manifest/lockfile/other
-        package data file of this type.
+        Return True if the file at ``location`` is likely a package data file
+        that this parser can handle. This implementation is based on:
 
-        Sub-classes should override to implement their own package data file recognition.
+        - matching the ``location`` as a whole with any one of the
+          ``path_patterns`` sequence of patterns defined as a class attributes.
+          The path patterns are for POSIX paths.
+
+        - if defined, ensuring that the filetype of the file at ``location``
+          contains any of the type listed in the ``filetypes`` class attribute.
+
+        Subclasses can override to implement more complex data file recognition.
         """
-        if not filetype.is_file(location):
-            return
-
-        filename = file_name(location)
-
-        file_patterns = cls.file_patterns
-        if any(fnmatch.fnmatchcase(filename, metaf) for metaf in file_patterns):
-            return True
-
-        T = contenttype.get_type(location)
-        ftype = T.filetype_file.lower()
-        mtype = T.mimetype_file
-
-        _base_name, extension = splitext_name(location, is_file=True)
-        extension = extension.lower()
-
-        if TRACE:
-            logger_debug(
-                'is_manifest: ftype:', ftype, 'mtype:', mtype,
-                'pygtype:', T.filetype_pygment,
-                'fname:', filename, 'ext:', extension,
-            )
-
-        type_matched = False
-        if cls.filetypes:
-            type_matched = any(t in ftype for t in cls.filetypes)
-
-        mime_matched = False
-        if cls.mimetypes:
-            mime_matched = any(m in mtype for m in cls.mimetypes)
-
-        extension_matched = False
-        extensions = cls.extensions
-        if extensions:
-            extensions = (e.lower() for e in extensions)
-            extension_matched = any(
-                fnmatch.fnmatchcase(extension, ext_pat)
-                for ext_pat in extensions
-            )
-
-        if type_matched and mime_matched and extension_matched:
-            return True
+        if filetype.is_file(location):
+            loc = as_posixpath(location)
+            if any(fnmatch(loc, pat) for pat in cls.path_patterns):
+                if cls.filetypes:
+                    T = contenttype.get_type(location)
+                    actual_type = T.filetype_file.lower()
+                    return any(ft in actual_type for ft in cls.filetypes)
+                return True
 
     @classmethod
-    def recognize(cls, location):
+    def parse(cls, location):
         """
-        Yield one or more PackageData objects given a file at `location`
-        pointing to a package archive, manifest, lockfile or other package data.
+        Yield one or more PackageData objects given a package data file at
+        ``location``.
 
-        Sub-classes should override to implement their own package recognition and creation.
- 
-        This should be called on the file at `location` only if `is_manifest` function
-        of the same class returns True.
+        Subclasses must implement and are responsible for returning proper
+        computed license fields and list of resources and files.
         """
         raise NotImplementedError
 
-
-@attr.s()
-class Package:
-    """
-    A package mixin as represented by its package data, files and data
-    from its package data. Here package obviously represents a package
-    instance.
-
-    Subclasses must extend a Package subclass for a given ecosystem.
-    """
-
-    package_uuid = String(
-        label='Package instance UUID',
-        help='A unique ID for package instances in a codebase scan.'
-             'Consists of a pURL and an UUID field as a pURL qualifier.'
-    )
-
-    package_data_files = List(
-        item_type=String,
-        label='Package data paths',
-        help='List of package data file paths for this package'
-    )
-
-    files = List(
-        item_type=PackageFile,
-        label='Provided files',
-        help='List of files provided by this package.'
-    )
-
-    @property
-    def ignore_paths(self):
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
         """
-        Paths to ignore when looking for other package_data files.
+        Given a ``package_data`` PackageData found in the ``resource`` datafile
+        of the ``codebase``, assemble package their files and dependencies
+        from one or more datafiles.
 
-        Override the default empty list by defining for each package ecosystems specifically.
+        Update ``codebase`` Resources with the package they are for.
+
+        Yield items that can be of these types:
+
+        - a Package to add to top-level packages with its list of Files.
+        - Resources that have been handled --such as this datafiles-- that should
+          not be further processed,
+        - a Dependency to add to top-level dependencies
+
+        The approach is to find and process all the neighboring related datafiles
+         to this datafile at once.
+
+        The default implementation handles this datafile only:
+
+        - It does not include other related datafiles and manifests.
+        - It considers only this datafile as a package file
+        - It returns only this datafile resource as having been processed
+
+        Subclasses should override to implement more complex cases where
+        multiple datafiles are combined and some files can be ignored.
         """
-        return []
+        datafile_path = resource.path
+        # do we have enough to create a package?
+        if package_data.purl:
+            package = Package.from_package_data(
+                package_data=package_data,
+                datafile_path=datafile_path,
+            )
+            package_uid = package.package_uid
 
-    def get_package_data(self):
+            package.license_expression = cls.compute_normalized_license(
+                package=package,
+                resource=resource,
+                codebase=codebase,
+            )
+
+            cls.assign_package_to_resources(
+                package_uid=package_uid,
+                resource=resource,
+                codebase=codebase,
+            )
+
+            yield package
+        else:
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        # in all cases yield possible dependencies
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=datafile_path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            )
+        # we yield this as we do not want this further processed
+        yield resource
+
+    @classmethod
+    def compute_normalized_license(cls, package):
         """
-        Returns a mapping of package data attributes and corresponding values.
+        Return a computed license expression string or None given a ``package``
+        Package object.
+
+        Called only when using the default assemble() implementation.
+        Subclass can override as needed.
         """
-        mapping = self.to_dict()
+        if package.declared_license and not package.license_expression:
+            try:
+                license_expression = compute_normalized_license(package.declared_license)
+            except Exception:
+                if SCANCODE_DEBUG_PACKAGE_API:
+                    raise
+                license_expression = 'unknown'
 
-        # Removes Package specific attributes
-        for attribute in ('package_uuid', 'package_data_files', 'files'):
-            mapping.pop(attribute, None)
-
-        # Remove attributes which are BasePackageData functions
-        for attribute in ('repository_homepage_url', 'repository_download_url', 'api_data_url'):
-            mapping.pop(attribute, None)
-
-        return mapping
-
-    def populate_package_data(self, package_data_by_path, uuid):
-        """
-        Create a package instance object from one or multiple package data.
-        """
-        paths_with_mismatch = []
-
-        for path, package_data in package_data_by_path.items():
-            success = True
             if TRACE:
-                logger.debug('Merging package manifest data for: {}'.format(path))
-                logger.debug('package manifest data: {}'.format(repr(package_data)))
+                logger_debug(f' compute_normalized_license: license_expression: {license_expression}')
 
-            success = self.update(package_data.copy())
-            if not success:
-                paths_with_mismatch.append(path)
-                
-                if TRACE:
-                    logger.debug('Failed to merge package manifest data for: {}'.format(path))
-                continue
+            return license_expression
 
-            self.package_data_files.append(path)
-        
-        for path in paths_with_mismatch:
-            package_data_by_path.pop(path)
-
-        self.package_data_files = tuple(self.package_data_files)
-
-        # Set `package_uuid` as pURL for the package + it's uuid as a qualifier
-        # in the pURL string
-        try:
-            purl_with_uuid = PackageURL.from_string(self.purl)
-        except ValueError:
-            if TRACE:
-                logger.debug("Couldn't create purl for: {}".format(path))
-            return
-
-        purl_with_uuid.qualifiers["uuid"] = str(uuid)
-        self.package_uuid = purl_with_uuid.to_string()
-
-    def get_package_files(self, resource, codebase):
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
         """
-        Return a list of all the file paths for a package instance.
- 
-        Sub-classes should override to implement their own package files finding methods.
+        Set the "for_packages" attributes to ``package`` given a
+        starting ``resource`` in the ``codebase``.
+
+        This default implementation  assigns the package to the whole
+        ``resource`` tree. Since ``resource`` is a file y default, this means
+        that only the datafile ``resource`` is assigned to the ``package`` by
+        default.
+
+        Called only when using the default assemble() implementation.
+        Subclass can override as needed to assign a package to its files.
         """
-        files = []
+        # NOTE: we do not attach files to the Package level. Instead we
+        # update `for_packages` of a codebase resource.
+        package_uid = package.package_uid
+        if resource:
+            resource.for_packages.append(package_uid)
+            resource.save(codebase)
+            for res in resource.walk(codebase):
+                res.for_packages.append(package_uid)
+                res.save(codebase)
 
-        if codebase.has_single_resource:
-            files.append(resource.path)
-            return files
+    @classmethod
+    def assign_package_to_parent_tree(cls, package, resource, codebase):
+        """
+        Set the "for_packages" attributes to ``package``  for the whole
+        resource tree of the parent of a ``resource`` object in the
+        ``codebase``.
 
+        This is a convenience method that subclasses can reuse when overriding
+        `assign_package_to_resources()`
+        """
         parent = resource.parent(codebase)
+        cls.assign_package_to_resources(package, parent, codebase)
 
-        for resource in parent.walk(codebase):
-            if resource.is_dir:
-                continue
-
-            files.append(resource.path)
-        
-        return files
-
-    def get_other_package_data(self, resource, codebase):
+    @classmethod
+    def assemble_from_many(cls, pkgdata_resources, codebase,):
         """
-        Return a dictionary of other package data by their paths for a given package instance.
+        Yield Package, Resources or Dependency given a ``pkgdata_resources``
+        list of tuple (package_data, resource) in ``codebase``.
 
-        Sub-classes can override to implement their own package manifest finding methods.
+        Create a Package from the first package_data item. Update this package
+        with other items. Assign to this Package the file tree from the parent
+        of the first resource item.
+
+        Because of this, set the order of ``pkgdata_resources``  items carefully.
+
+        This is a convenience method that subclasses can reuse when overriding
+        `assemble()`
+
+        NOTE: ATTENTION!: this may not work well for datafile that yield
+        multiple PackageData for unrelated Packages
         """
-        package_data_by_path = {}
+        package = None
+        base_resource = None
 
-        if codebase.has_single_resource:
-            return package_data_by_path
+        # process each package in sequence. The first item creates a package and
+        # the other only update
+        for package_data, resource in pkgdata_resources:
+            if not base_resource:
+                base_resource = resource
 
-        parent = resource.parent(codebase)
+            if not package:
+                # create package from the first item first package_data
+                for pkgdt in package_data:
+                    package = Package.from_package_data(
+                        package_data=pkgdt,
+                        datafile_path=resource.path,
+                    )
+                    break
 
-        paths_to_ignore = self.ignore_paths
-
-        for resource in parent.walk(codebase):
-            if resource.is_dir:
-                continue
-
-            if paths_to_ignore:
-                if any(
-                    path in resource.path
-                    for path in paths_to_ignore
-                ):
-                    continue
-
-            filename = file_name(resource.location)
-            file_patterns = self.get_file_patterns(manifests=self.manifests)
-            if any(fnmatch.fnmatchcase(filename, pattern) for pattern in file_patterns):
-                if not resource.package_data:
-                    continue # Raise Exception(?)
-
-                #ToDo: Implement for multiple package data per path
-                package_data_by_path[resource.path] = resource.package_data[0]
-
-        return package_data_by_path
-    
-    def get_file_patterns(self, manifests):
-        """
-        Return a list of all `file_patterns` for all the PackageData classes
-        in `manifests`.
-        """
-        manifest_file_patterns = []
-        for manifest in manifests:
-            manifest_file_patterns.extend(manifest.file_patterns)
-        
-        return manifest_file_patterns
-
-    def update(self, package_data, replace=False):
-        """
-        Returns False if there's a type/name/version mismatch between the package
-        and the package_data, otherwise returns True if update is successful.
-
-        Update the Package object with data from the `package_data`
-        object.
-        When an `package_instance` field has no value one side and and the
-        `package_data` field has a value, the `package_instance` field is always
-        set to this value.
-        If `replace` is True and a field has a value on both sides, then
-        package_instance field value will be replaced by the package_data
-        field value. Otherwise if `replace` is False, the package_instance
-        field value is left unchanged in this case.
-        """
-        existing_mapping = self.get_package_data()
-
-        # Remove PackageData specific attributes
-        for attribute in ['root_path']:
-            package_data.pop(attribute, None)
-            existing_mapping.pop(attribute, None)
-
-        for existing_field, existing_value in existing_mapping.items():
-            new_value = package_data[existing_field]
-            if TRACE_MERGING:
-                logger.debug(
-                    '\n'.join([
-                        'existing_field:', repr(existing_field),
-                        '    existing_value:', repr(existing_value),
-                        '    new_value:', repr(new_value)])
+            for pkgdt in package_data:
+                package.update(
+                    package_data=pkgdt,
+                    datafile_path=resource.path,
                 )
 
-            # FIXME: handle Booleans???
+            package_uid = package.package_uid
 
-            # These fields has to be same across the package_data
-            if existing_field in ('name', 'version', 'type', 'primary_language'):
-                if existing_value and new_value and existing_value != new_value:
-                    if TRACE_MERGING:
-                        logger.debug(
-                            '\n'.join([
-                                'Mismatched {}:'.format(existing_field),
-                                '    existing_value: {}'.format(existing_value),
-                                '    new_value: {}'.format(new_value)
-                            ])
-                        )
-                    return False
+            resource.for_packages.append(package_uid)
+            resource.save(codebase)
+
+            yield package
+
+            # in all cases yield possible dependencies
+            dependent_packages = package_data.dependencies
+            if dependent_packages:
+                yield from Dependency.from_dependent_packages(
+                    dependent_packages=dependent_packages,
+                    datafile_path=resource.path,
+                    datasource_id=package_data.datasource_id,
+                    package_uid=package_uid,
+                )
+
+            # we yield this as we do not want this further processed
+            yield resource
+
+        # the whole parent subtree of the base_resource is for this package
+        for res in base_resource.walk(codebase):
+            res.for_packages.append(package_uid)
+            res.save()
+
+    @classmethod
+    def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
+        """
+        Assemble Package from package data of the datafiles found in multiple
+        ``datafile_name_patterns`` name patterns (case-sensitive) found in the
+        ``directory`` Resource.
+
+        Create a Package from the first package data item. Update this package
+        with other items. Assign to this Package the file tree from the parent
+        of the first resource item.
+
+        Because of this, set the order of ``datafile_name_patterns`` items carefully.
+
+        This is a convenience method that subclasses can reuse when overriding
+        `assemble()`
+
+        NOTE: ATTENTION!: this will not work well for datafile that yields
+        multiple PackageData for unrelated Packages
+        """
+
+        siblings = {
+            child.name: child
+            for child in directory.children(codebase)
+            if any(
+                fnmatchcase(name=child.name, path=dfnp)
+                for dfnp in datafile_name_patterns
+            )
+        }
+
+        pkgdata_resources = []
+
+        # we iterate on datafile_name_patterns because their order matters
+        for datafile_name in datafile_name_patterns:
+            resource = siblings.get(datafile_name)
+            if resource:
+                for package_data in resource.package_data:
+                    pkgdata_resources.append(package_data, resource)
+
+        yield from cls.assemble_from_many(
+            pkgdata_resources=pkgdata_resources,
+            codebase=codebase,
+        )
+
+
+class NonAssemblableDatafileHandler(DatafileHandler):
+    """
+    A handler that has no default implmentation for the assemble method, e.g.,
+    it will not alone trigger the creation of a top-level Pacakge.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        pass
+
+
+def build_package_uid(purl):
+    """
+    Return a purl string with a UUID qualifier given a ``purl`` string .
+    """
+    purl = PackageURL.from_string(purl)
+    purl.qualifiers["uuid"] = str(uuid.uuid4())
+    return str(purl)
+
+
+@attr.attributes(slots=True)
+class Package(PackageData):
+    """
+    Top-level package instance assembled from parsed package data collected
+    from one or more data files such as manifests or lockfiles.
+    """
+
+    package_uid = String(
+        label='Package unique id',
+        help='A unique identifier for this package instance.'
+             'Consists of the package purl with a UUID qualifier.'
+    )
+
+    datafile_paths = List(
+        item_type=str,
+        label='List of datafile paths',
+        help='List of datafile paths used to create this package.'
+    )
+
+    datasource_ids = List(
+        item_type=str,
+        label='datasource ids',
+        help='List of the datasource ids used to create this package.'
+    )
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        if not self.package_uid:
+            self.package_uid = build_package_uid(self.purl)
+
+    def to_dict(self):
+        return  super().to_dict(with_details=False)
+
+    @classmethod
+    def from_package_data(cls, package_data, datafile_path):
+        """
+        Return a Package from a ``package_data`` PackageData object
+        or mapping.
+        """
+        if isinstance(package_data, PackageData):
+            package_data_mapping = package_data.to_dict()
+        else:
+            # make a copy
+            package_data_mapping = dict(package_data)
+
+        package_data_mapping['datafile_paths'] = [datafile_path]
+        package_data_mapping['datasource_ids'] = [package_data.datasource_id]
+
+        return cls.from_dict(package_data_mapping)
+
+    def is_compatible(self, package_data,):
+        """
+        Return True if the ``package_data`` PackageData is compatible with
+        this Package, e.g. it is about the same package.
+        """
+        return (
+            self.type == package_data.type
+            and self.namespace == package_data.namespace
+            and self.name == package_data.name
+            and self.version == package_data.version
+            and self.qualifier == package_data.qualifier
+            and self.subpath == package_data.subpath
+            and self.primary_language == package_data.primary_language
+        )
+
+    def update(self, package_data, datafile_path, replace=False):
+        """
+        Update this Package with data from the ``package_data`` PackageData.
+
+        If a field does not have a value and the ``package_data`` field has a
+        value, set this package field to the ``package_data`` field value.
+
+        If there is a value on both side, update the value according to the
+        ``replace`` flag.
+
+        If ``replace`` is True, replace a value with the ``package_data`` value.
+        Otherwise existing, non-empty values are left unchanged.
+
+        List of values are merged, keeping the original order and avoiding duplicates.
+
+        Return True if update is successful.
+
+        Return False if there is a type, name or version mismatch between this
+        package and the provided ``package_data``
+        """
+        if not package_data:
+            return
+
+        if not self.is_compatible(package_data, include_qualifiers=False):
+            if TRACE_UPDATE:
+                logger_debug(f'update: {self.purl} not compatible with: {package_data.purl}')
+            return False
+
+        # always append these new items
+        self.datasource_ids.append(package_data.datasource_id)
+        self.datafile_paths.append(datafile_path)
+
+        existing = self.to_package_data().to_dict()
+        new_package_data = package_data.to_dict()
+
+        # update for these means combining lists of items from both sides
+        list_fields = set([
+            'parties',
+            'dependencies',
+            'file_references',
+        ])
+
+        for name, value in existing.items():
+            new_value = new_package_data.get(name)
+
+            if TRACE_UPDATE:
+                logger_debug(f'update: {name!r}={value!r} with new_value: {new_value!r}')
 
             if not new_value:
-                if TRACE_MERGING:
-                    logger.debug('  No new value for {}: skipping'.format(existing_field))
+                if TRACE_UPDATE: logger_debug('  No new value: skipping')
                 continue
 
-            if not existing_value or replace:
-                if TRACE_MERGING and not existing_value:
-                    logger.debug(
-                        '  No existing value: set to new: {}'.format(new_value))
+            if not value:
+                if TRACE_UPDATE: logger_debug('  set existing value to new')
+                setattr(self, name, new_value)
+                continue
 
-                if TRACE_MERGING and replace:
-                    logger.debug(
-                        '  Existing value and replace: set to new: {}'.format(new_value))
+            if replace:
+                if TRACE_UPDATE: logger_debug('  replace existing value to new')
+                setattr(self, name, new_value)
+                continue
 
-                if existing_field == 'parties':
-                    # If `existing_field` is `parties`, then we update the `Party` table
-                    parties = new_value
-                    parties_new = []
+            # here we do not replace... but we still merge lists/mappings
+            if name == 'extra_data':
+                value.update(new_value)
 
-                    for party in parties:
-                        party_new = Party(
-                            type=party['type'],
-                            role=party['role'],
-                            name=party['name'],
-                            email=party['email'],
-                            url=party['url'],
-                        )
-                        parties_new.append(party_new)
+            if name in list_fields:
+                if TRACE_UPDATE: logger_debug('  merge lists of values')
+                merged = merge_sequences(list1=value, list2=new_value)
+                setattr(self, name, merged)
 
-                    if replace:
-                        setattr(self, existing_field, parties_new)
-                    else:
-                        existing_value.extend(parties_new)
-                        setattr(self, existing_field, existing_value)
+            elif TRACE_UPDATE and value != new_value:
+                if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
-                elif existing_field == 'dependencies':
-                    # If `existing_field` is `dependencies`, then we update the `DependentPackage` table
-                    dependencies = new_value
-                    deps_new = []
-
-                    for dependency in dependencies:
-                        dep_new = DependentPackage(
-                            purl=dependency['purl'],
-                            extracted_requirement=dependency['requirement'],
-                            scope=dependency['scope'],
-                            is_runtime=dependency['is_runtime'],
-                            is_optional=dependency['is_optional'],
-                            is_resolved=dependency['is_resolved'],
-                        )
-                        deps_new.append(dep_new)
-
-                    if replace:
-                        setattr(self, existing_field, deps_new)
-                    else:
-                        existing_value.extend(deps_new)
-                        setattr(self, existing_field, existing_value)
-
-                    if TRACE_MERGING:
-                        logger.debug("Set value to self: {} at {}".format(new_value, existing_field))
-                        logger.debug("Set value to self: types: {} at {}".format(type(new_value), type(existing_field)))
-
-                elif existing_field == 'purl':
-                    self.set_purl(package_url=new_value)
-
-                else:
-                    # If `existing_field` is not `parties` or `dependencies`, then the
-                    # `existing_field` is a regular field on the Package model and can
-                    # be updated normally.
-                    if TRACE_MERGING:
-                        logger.debug("Set value to self: {} at {}".format(new_value, existing_field))
-                        logger.debug("Set value to self: types: {} at {}".format(type(new_value), type(existing_field)))  
-                    setattr(self, existing_field, new_value)
-
-            if existing_value and new_value and existing_value != new_value:
-                # ToDo: What to do when conflicting values are present
-                # license_expression: do AND?
-                if TRACE_MERGING:
-                    logger.debug("Value mismatch between new and existing: ")  
-                    logger.debug(
-                        '\n'.join([
-                            'existing_field:', repr(existing_field),
-                            '    existing_value:', repr(existing_value),
-                            '    new_value:', repr(new_value)])
-                    )              
-
-            if TRACE_MERGING:
-                logger.debug('  Nothing done')
-
-        # Return True if package data update is successful
         return True
 
 
-# Package types
-# NOTE: this is somewhat redundant with extractcode archive handlers
-# yet the purpose and semantics are rather different here
-
-
-@attr.s()
-class JavaJar(PackageData, PackageDataFile):
-    file_patterns = ('META-INF/MANIFEST.MF',)
-    extensions = ('.jar',)
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip',)
-    default_type = 'jar'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class JavaWar(PackageData, PackageDataFile):
-    file_patterns = ('WEB-INF/web.xml',)
-    extensions = ('.war',)
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip')
-    default_type = 'war'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class JavaEar(PackageData, PackageDataFile):
-    file_patterns = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
-    extensions = ('.ear',)
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip')
-    default_type = 'ear'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class Axis2Mar(PackageData, PackageDataFile):
-    """Apache Axis2 module"""
-    file_patterns = ('META-INF/module.xml',)
-    extensions = ('.mar',)
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip')
-    default_type = 'axis2'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class JBossSar(PackageData, PackageDataFile):
-    file_patterns = ('META-INF/jboss-service.xml',)
-    extensions = ('.sar',)
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip')
-    default_type = 'jboss'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class MeteorPackage(PackageData, PackageDataFile):
-    file_patterns = ('package.js',)
-    default_type = 'meteor'
-    default_primary_language = 'JavaScript'
-
-
-@attr.s()
-class CpanModule(PackageData, PackageDataFile):
-    file_patterns = (
-        '*.pod',
-        # TODO: .pm is not a package manifest
-        '*.pm',
-        'MANIFEST',
-        'Makefile.PL',
-        'META.yml',
-        'META.json',
-        '*.meta',
-        'dist.ini',)
-    # TODO: refine me
-    extensions = ('.tar.gz',)
-    default_type = 'cpan'
-    default_primary_language = 'Perl'
-
-
-# TODO: refine me: Go packages are a mess but something is emerging
-# TODO: move to and use godeps.py
-@attr.s()
-class Godep(PackageData, PackageDataFile):
-    file_patterns = ('Godeps',)
-    default_type = 'golang'
-    default_primary_language = 'Go'
-
-
-@attr.s()
-class AndroidApp(PackageData, PackageDataFile):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
-    extensions = ('.apk',)
-    default_type = 'android'
-    default_primary_language = 'Java'
-
-
-# see http://tools.android.com/tech-docs/new-build-system/aar-formats
-@attr.s()
-class AndroidLibrary(PackageData, PackageDataFile):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
-    # note: Apache Axis also uses AAR extensions for plain Jars.
-    # this could be decided based on internal structure
-    extensions = ('.aar',)
-    default_type = 'android-lib'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class MozillaExtension(PackageData, PackageDataFile):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
-    extensions = ('.xpi',)
-    default_type = 'mozilla'
-    default_primary_language = 'JavaScript'
-
-
-@attr.s()
-class ChromeExtension(PackageData, PackageDataFile):
-    filetypes = ('data',)
-    mimetypes = ('application/octet-stream',)
-    extensions = ('.crx',)
-    default_type = 'chrome'
-    default_primary_language = 'JavaScript'
-
-
-@attr.s()
-class IOSApp(PackageData, PackageDataFile):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
-    extensions = ('.ipa',)
-    default_type = 'ios'
-    default_primary_language = 'Objective-C'
-
-
-@attr.s()
-class CabPackage(PackageData, PackageDataFile):
-    filetypes = ('microsoft cabinet',)
-    mimetypes = ('application/vnd.ms-cab-compressed',)
-    extensions = ('.cab',)
-    default_type = 'cab'
-
-
-@attr.s()
-class InstallShieldPackage(PackageData, PackageDataFile):
-    filetypes = ('installshield',)
-    mimetypes = ('application/x-dosexec',)
-    extensions = ('.exe',)
-    default_type = 'installshield'
-
-
-@attr.s()
-class NSISInstallerPackage(PackageData, PackageDataFile):
-    filetypes = ('nullsoft installer',)
-    mimetypes = ('application/x-dosexec',)
-    extensions = ('.exe',)
-    default_type = 'nsis'
-
-
-@attr.s()
-class SharPackage(PackageData, PackageDataFile):
-    filetypes = ('posix shell script',)
-    mimetypes = ('text/x-shellscript',)
-    extensions = ('.sha', '.shar', '.bin',)
-    default_type = 'shar'
-
-
-@attr.s()
-class AppleDmgPackage(PackageData, PackageDataFile):
-    filetypes = ('zlib compressed',)
-    mimetypes = ('application/zlib',)
-    extensions = ('.dmg', '.sparseimage',)
-    default_type = 'dmg'
-
-
-@attr.s()
-class IsoImagePackage(PackageData, PackageDataFile):
-    filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
-    mimetypes = ('application/x-iso9660-image',)
-    extensions = ('.iso', '.udf', '.img',)
-    default_type = 'iso'
-
-
-@attr.s()
-class SquashfsPackage(PackageData, PackageDataFile):
-    filetypes = ('squashfs',)
-    default_type = 'squashfs'
-
-# TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
+def merge_sequences(list1, list2, **kwargs):
+    """
+    Return a new list of model objects merging the lists ``list1`` and
+    ``list2`` keeping the original ``list1`` order and discarding
+    duplicates.
+    """
+    list1 = list1 or []
+    list2 = list2 or []
+    merged = []
+    existing = set()
+    for item in list1 + list2:
+        key = item.to_tuple(**kwargs)
+        if not key in existing:
+            merged.append(item)
+            existing.add(key)
+    return merged

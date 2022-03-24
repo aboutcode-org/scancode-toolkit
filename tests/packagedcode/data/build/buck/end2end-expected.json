@@ -57,7 +57,6 @@
           "license_expression": "unknown",
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -137,7 +136,6 @@
             "LICENSE"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],

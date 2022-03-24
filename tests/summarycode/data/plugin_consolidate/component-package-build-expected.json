@@ -51,10 +51,9 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/test-package@0.0.1",
+      "package_uid": "pkg:npm/test-package@0.0.1",
       "package_data_files": [
         "component-package-build/package/package.json"
       ],
@@ -255,7 +254,6 @@
           "license_expression": "unknown",
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -803,7 +801,6 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],

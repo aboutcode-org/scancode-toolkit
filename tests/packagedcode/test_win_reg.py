@@ -16,8 +16,8 @@ from commoncode.system import on_linux
 
 from packagedcode.win_reg import create_absolute_installed_file_path
 from packagedcode.win_reg import get_installed_packages
-from packagedcode.win_reg import _report_installed_dotnet_versions
-from packagedcode.win_reg import _report_installed_programs
+from packagedcode.win_reg import get_installed_dotnet_versions
+from packagedcode.win_reg import report_installed_windows_programs_from_regtree
 from packagedcode.win_reg import remove_drive_letter
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
@@ -34,7 +34,7 @@ class TestWinReg(PackageTester):
         with open(test_file) as f:
             software_registry_entries = json.load(f)
         results = [p.to_dict(_detailed=True)
-            for p in _report_installed_dotnet_versions(software_registry_entries)]
+            for p in get_installed_dotnet_versions(software_registry_entries)]
         check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_win_reg__report_installed_programs(self):
@@ -43,7 +43,7 @@ class TestWinReg(PackageTester):
         with open(test_file) as f:
             software_registry_entries = json.load(f)
         results = [p.to_dict(_detailed=True)
-            for p in _report_installed_programs(software_registry_entries)]
+            for p in report_installed_windows_programs_from_regtree(software_registry_entries)]
         check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_win_reg_remove_drive_letter(self):

@@ -24,7 +24,6 @@
   "license_expression": "mit AND x11 AND unicode-tou",
   "declared_license": "MIT ICU Unicode-TOU",
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [],
   "extra_data": {
     "sources": [

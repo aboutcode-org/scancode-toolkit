@@ -51,10 +51,9 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/test-package@0.0.1",
+      "package_uid": "pkg:npm/test-package@0.0.1",
       "package_data_files": [
         "component-package/package/package.json"
       ],
@@ -701,7 +700,6 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],

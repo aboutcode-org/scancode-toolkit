@@ -26,9 +26,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/com.google/guava@1.0",
+      "dependency_uid": "pkg:build.gradle/com.google/guava@1.0",
       "for_package": null,
-      "lockfile": "build.gradle"
+      "datafile_path": "build.gradle"
     },
     {
       "purl": "pkg:build.gradle/org.apache/commons@1.0",
@@ -38,9 +38,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.apache/commons@1.0",
+      "dependency_uid": "pkg:build.gradle/org.apache/commons@1.0",
       "for_package": null,
-      "lockfile": "build.gradle"
+      "datafile_path": "build.gradle"
     },
     {
       "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
@@ -50,9 +50,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "dependency_uid": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
       "for_package": null,
-      "lockfile": "build.gradle"
+      "datafile_path": "build.gradle"
     },
     {
       "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
@@ -62,9 +62,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "dependency_uid": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
       "for_package": null,
-      "lockfile": "build.gradle"
+      "datafile_path": "build.gradle"
     }
   ],
   "packages": [],
@@ -99,7 +99,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

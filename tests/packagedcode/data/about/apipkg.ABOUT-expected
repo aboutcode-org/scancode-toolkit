@@ -33,7 +33,6 @@
     "license_expression": "mit",
     "declared_license": "mit",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {
       "about_resource": "apipkg-1.4-py2.py3-none-any.whl"

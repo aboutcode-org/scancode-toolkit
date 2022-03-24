@@ -123,7 +123,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/commons-logging/commons-logging@1.1?classifier=sources"
   ],

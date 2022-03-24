@@ -26,9 +26,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/php",
+      "dependency_uid": "pkg:composer/php",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/fideloper/proxy",
@@ -38,9 +38,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/fideloper/proxy",
+      "dependency_uid": "pkg:composer/fideloper/proxy",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/laravel/framework",
@@ -50,9 +50,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/laravel/framework",
+      "dependency_uid": "pkg:composer/laravel/framework",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/laravel/tinker",
@@ -62,9 +62,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/laravel/tinker",
+      "dependency_uid": "pkg:composer/laravel/tinker",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/filp/whoops",
@@ -74,9 +74,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/filp/whoops",
+      "dependency_uid": "pkg:composer/filp/whoops",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/fzaninotto/faker",
@@ -86,9 +86,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/fzaninotto/faker",
+      "dependency_uid": "pkg:composer/fzaninotto/faker",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/mockery/mockery",
@@ -98,9 +98,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/mockery/mockery",
+      "dependency_uid": "pkg:composer/mockery/mockery",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/phpunit/phpunit",
@@ -110,9 +110,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/phpunit/phpunit",
+      "dependency_uid": "pkg:composer/phpunit/phpunit",
       "for_package": "pkg:composer/laravel/laravel",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     }
   ],
   "packages": [
@@ -150,10 +150,9 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:composer/laravel/laravel",
+      "package_uid": "pkg:composer/laravel/laravel",
       "package_data_files": [
         "composer.json"
       ],
@@ -205,7 +204,6 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

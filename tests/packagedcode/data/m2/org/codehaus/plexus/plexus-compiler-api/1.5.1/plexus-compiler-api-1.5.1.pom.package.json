@@ -109,7 +109,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-compiler-api@1.5.1?classifier=sources"
   ],

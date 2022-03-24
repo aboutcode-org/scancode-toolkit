@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/atomicwrites@1.1.5",
+      "dependency_uid": "pkg:pypi/atomicwrites@1.1.5",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/attrs@18.1.0",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/attrs@18.1.0",
+      "dependency_uid": "pkg:pypi/attrs@18.1.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/contextlib2@0.5.5",
@@ -52,9 +52,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/contextlib2@0.5.5",
+      "dependency_uid": "pkg:pypi/contextlib2@0.5.5",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/coverage@4.5.1",
@@ -64,9 +64,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/coverage@4.5.1",
+      "dependency_uid": "pkg:pypi/coverage@4.5.1",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/funcsigs@1.0.2",
@@ -76,9 +76,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/funcsigs@1.0.2",
+      "dependency_uid": "pkg:pypi/funcsigs@1.0.2",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/mock@2.0.0",
@@ -88,9 +88,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/mock@2.0.0",
+      "dependency_uid": "pkg:pypi/mock@2.0.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/more-itertools@4.2.0",
@@ -100,9 +100,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/more-itertools@4.2.0",
+      "dependency_uid": "pkg:pypi/more-itertools@4.2.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pbr@4.2.0",
@@ -112,9 +112,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pbr@4.2.0",
+      "dependency_uid": "pkg:pypi/pbr@4.2.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pluggy@0.6.0",
@@ -124,9 +124,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pluggy@0.6.0",
+      "dependency_uid": "pkg:pypi/pluggy@0.6.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/py@1.5.4",
@@ -136,9 +136,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/py@1.5.4",
+      "dependency_uid": "pkg:pypi/py@1.5.4",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pytest@3.6.3",
@@ -148,9 +148,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pytest@3.6.3",
+      "dependency_uid": "pkg:pypi/pytest@3.6.3",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pytest-cov@2.5.1",
@@ -160,9 +160,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pytest-cov@2.5.1",
+      "dependency_uid": "pkg:pypi/pytest-cov@2.5.1",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pytest-vcr@0.3.0",
@@ -172,9 +172,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pytest-vcr@0.3.0",
+      "dependency_uid": "pkg:pypi/pytest-vcr@0.3.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/pyyaml@3.13",
@@ -184,9 +184,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pyyaml@3.13",
+      "dependency_uid": "pkg:pypi/pyyaml@3.13",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/six@1.11.0",
@@ -196,9 +196,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/six@1.11.0",
+      "dependency_uid": "pkg:pypi/six@1.11.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/vcrpy@1.13.0",
@@ -208,9 +208,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/vcrpy@1.13.0",
+      "dependency_uid": "pkg:pypi/vcrpy@1.13.0",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/wrapt@1.10.11",
@@ -220,9 +220,9 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/wrapt@1.10.11",
+      "dependency_uid": "pkg:pypi/wrapt@1.10.11",
       "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "lockfile": "atomicwrites/Pipfile.lock"
+      "datafile_path": "atomicwrites/Pipfile.lock"
     },
     {
       "purl": "pkg:pypi/setuptools",
@@ -232,9 +232,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/setuptools",
+      "dependency_uid": "pkg:pypi/setuptools",
       "for_package": null,
-      "lockfile": "requirements/requirements.txt"
+      "datafile_path": "requirements/requirements.txt"
     },
     {
       "purl": "pkg:pypi/nose",
@@ -244,9 +244,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/nose",
+      "dependency_uid": "pkg:pypi/nose",
       "for_package": null,
-      "lockfile": "requirements/requirements.txt"
+      "datafile_path": "requirements/requirements.txt"
     },
     {
       "purl": "pkg:pypi/chardet",
@@ -256,9 +256,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/chardet",
+      "dependency_uid": "pkg:pypi/chardet",
       "for_package": null,
-      "lockfile": "requirements/requirements.txt"
+      "datafile_path": "requirements/requirements.txt"
     }
   ],
   "packages": [
@@ -298,10 +298,9 @@
         "license": "Simplified BSD"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/arpy@0.1.1",
+      "package_uid": "pkg:pypi/arpy@0.1.1",
       "package_data_files": [
         "arpy/setup.py"
       ],
@@ -360,10 +359,9 @@
         ]
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/atomicwrites@1.2.1",
+      "package_uid": "pkg:pypi/atomicwrites@1.2.1",
       "package_data_files": [
         "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
         "atomicwrites/Pipfile.lock"
@@ -422,10 +420,9 @@
         ]
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/six@1.10.0",
+      "package_uid": "pkg:pypi/six@1.10.0",
       "package_data_files": [
         "Six/METADATA"
       ],
@@ -465,10 +462,9 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:chef/six@1.10.0",
+      "package_uid": "pkg:chef/six@1.10.0",
       "package_data_files": [
         "Six/metadata.json"
       ],
@@ -518,10 +514,9 @@
         "license": "BSD"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/ticketimport@0.7a",
+      "package_uid": "pkg:pypi/ticketimport@0.7a",
       "package_data_files": [
         "TicketImport/PKG-INFO"
       ],
@@ -601,7 +596,6 @@
             ]
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -647,7 +641,6 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -710,7 +703,6 @@
             "license": "BSD"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -772,7 +764,6 @@
             "license": "Simplified BSD"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -824,7 +815,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [
@@ -1044,7 +1034,6 @@
             ]
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -1096,7 +1085,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

@@ -31,11 +31,11 @@ Taking Python as a main example a package can exist in multiple forms:
     file type with metadata such as Windows DLLs. Additional markers may also include
     "namespaces" such as Java or Python imports, C/C++ namespace declarations.
 
-2. **parse and collect the package manifest(s)** metadata. For Python, this means
+2. **parse and collect the package datafile or manifest(s)** metadata. For Python, this means
 extracting name, version, authorship, declared licensing and declared dependencies as
 found in the any of the package descriptor files (e.g. a `setup.py` file,
 `requirements` file(s) or any of the `*-dist-info` or `*-egg-info` dir files such as
-a `metadata.json`). Other package formats have their own metatada that may be more or
+a `metadata.json`). Other package datafile formats have their own metatada that may be more or
 less comprehensive in the breadth and depth of information they offer (e.g.
 `.nuspec`, `package.json`, `bower.json`, Godeps, etc...). These metadata include the
 declared dependencies (and in some cases the fully resolved dependencies too such as
@@ -43,7 +43,12 @@ with Gemfile.lock). Finally, all the different packages formats and data are
 normalized and stored in a common data structure abstracting the small differences of
 naming and semantics that may exists between all the different package formats.
 
-Once collected, these data are then injected in the `packages` section of the scan. 
+Once collected, these data are then injected in the `package_data` section of a file scan
+for each recognized package datafile. 
+
+3. **assemble multiple package datafile** as top level packages.
+
+
 
 What code in `packagedcode` is not meant to do:
 

@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/towncrier",
+      "dependency_uid": "pkg:pypi/towncrier",
       "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     },
     {
       "purl": "pkg:pypi/bump2version",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/bump2version",
+      "dependency_uid": "pkg:pypi/bump2version",
       "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     },
     {
       "purl": "pkg:pypi/build",
@@ -52,9 +52,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/build",
+      "dependency_uid": "pkg:pypi/build",
       "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     },
     {
       "purl": "pkg:pypi/twine",
@@ -64,9 +64,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/twine",
+      "dependency_uid": "pkg:pypi/twine",
       "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     },
     {
       "purl": "pkg:pypi/jaraco.develop",
@@ -76,9 +76,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/jaraco.develop",
+      "dependency_uid": "pkg:pypi/jaraco.develop",
       "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     }
   ],
   "packages": [
@@ -130,10 +130,9 @@
         ]
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/setuptools@58.2.0",
+      "package_uid": "pkg:pypi/setuptools@58.2.0",
       "package_data_files": [
         "PKG-INFO",
         "setup.py",
@@ -181,10 +180,9 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/my-test-package@1.0",
+      "package_uid": "pkg:pypi/my-test-package@1.0",
       "package_data_files": [
         "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
       ],
@@ -268,7 +266,6 @@
             ]
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -350,7 +347,6 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -414,7 +410,6 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -459,7 +454,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

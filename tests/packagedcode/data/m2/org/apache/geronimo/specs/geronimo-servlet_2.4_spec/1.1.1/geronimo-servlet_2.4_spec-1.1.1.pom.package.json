@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec@1.1.1?classifier=sources"
   ],

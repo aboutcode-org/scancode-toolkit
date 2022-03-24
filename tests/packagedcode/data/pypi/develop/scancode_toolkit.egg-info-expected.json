@@ -55,7 +55,6 @@
       "license": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [

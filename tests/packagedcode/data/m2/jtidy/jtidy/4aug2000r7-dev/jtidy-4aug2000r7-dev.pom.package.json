@@ -39,7 +39,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/jtidy/jtidy@4aug2000r7-dev?classifier=sources"
   ],

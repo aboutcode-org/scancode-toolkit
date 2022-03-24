@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:chef/nodejs",
+      "dependency_uid": "pkg:chef/nodejs",
       "for_package": "pkg:chef/301@0.1.0",
-      "lockfile": "metadata.json"
+      "datafile_path": "metadata.json"
     },
     {
       "purl": "pkg:chef/nodejs",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:chef/nodejs",
+      "dependency_uid": "pkg:chef/nodejs",
       "for_package": "pkg:chef/301@0.1.0",
-      "lockfile": "metadata.rb"
+      "datafile_path": "metadata.rb"
     }
   ],
   "packages": [
@@ -80,10 +80,9 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:chef/301@0.1.0",
+      "package_uid": "pkg:chef/301@0.1.0",
       "package_data_files": [
         "metadata.json",
         "metadata.rb"
@@ -137,7 +136,6 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [
@@ -200,7 +198,6 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

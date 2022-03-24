@@ -103,13 +103,9 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
 
     if len(repo_url.split('/')) == 2:
         # implicit github, but that's only on NPM?
-        return 'https://github.com/%(repo_url)s' % locals()
+        return f'https://github.com/{repo_url}'
 
     return repo_url
-
-
-# for legacy compat
-parse_repo_url = normalize_vcs_url
 
 
 def build_description(summary, description):
@@ -129,9 +125,9 @@ def build_description(summary, description):
 
 
 def combine_expressions(
-    expressions, 
-    relation='AND', 
-    unique=True, 
+    expressions,
+    relation='AND',
+    unique=True,
     licensing=Licensing(),
 ):
     """
@@ -139,3 +135,52 @@ def combine_expressions(
     license ``expressions`` strings or LicenseExpression objects.
     """
     return expressions and str(le_combine_expressions(expressions, relation, unique, licensing)) or None
+
+
+
+def get_ancestor(levels_up, resource, codebase):
+    """
+    Return the nth-``levels_up`` ancestor Resource of ``resource`` in ``codebase``
+    or None.
+
+    For example, with levels_up=2 and starting  with a resource path of
+    `gem-extract/metadata.gz-extract/metadata.gz-extract`, gem-extract/ should be
+    returned.
+    """
+    rounds = 0
+    while rounds < levels_up:
+        resource = resource.parent(codebase)
+        if not resource:
+            return
+        rounds += 1
+    return resource
+
+
+def find_root_from_paths(paths, resource, codebase):
+    """
+    Return the resource for the root directory of this filesystem or None, given
+    a ``resource`` in ``codebase`` with a list of possible resource root-
+    relative  ``paths`` (e.g. extending from the root directory we are looking
+    for).
+    """
+    for path in paths:
+        if not resource.path.endswith(path):
+            continue
+        return find_root_resource(path=path, resource=resource, codebase=codebase)
+
+
+def find_root_resource(path, resource, codebase):
+    """
+    Return the resource for the root directory of this filesystem or None, given
+    a ``resource`` in ``codebase`` with a possible resource root-relative
+    ``path`` (e.g. extending from the root directory we are looking for).
+    """
+    if not resource.path.endswith(path):
+        return
+    for _seg in path.split('/'):
+        resource = resource.parent(codebase)
+        if not resource:
+            return
+    return resource
+
+

@@ -58,64 +58,61 @@ class TestGodeps(FileBasedTesting):
         results = gd.to_dict()
         assert results == expected
 
-    def check_package(self, test_file, expected_file, regen=REGEN_TEST_FIXTURES):
+    def check_parse(self, test_file, regen=REGEN_TEST_FIXTURES):
+        """
+        Test godeps parsing and package data creation
+        """
+
         test_loc = self.get_test_loc(test_file)
+
+        expected_parse_file = f'{test_file}-expected'
+        expected_loc = self.get_test_loc(expected_parse_file)
         results = godeps.parse(location=test_loc)
-        expected_loc = self.get_test_loc(expected_file)
+
         if regen:
-            wmode = 'w'
-            with open(expected_loc, wmode) as ex:
+            with open(expected_loc, 'w') as ex:
+                json.dump(results, ex, indent=2)
+        with io.open(expected_loc, encoding='utf-8') as ex:
+            expected = json.load(ex)
+        assert sorted(results.items()) == sorted(expected.items())
+
+        expected_package_file = f'{test_file}-expected-package'
+        expected_loc = self.get_test_loc(expected_package_file)
+        results = list(godeps.GodepsHandler.parse(location=test_loc))
+
+        if regen:
+            with open(expected_loc, 'w') as ex:
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
         assert sorted(results.items()) == sorted(expected.items())
 
     def test_godeps_godeps_godeps_json_comments(self):
-        self.check_package(
-            'godeps/Godeps.json-comments',
-            'godeps/expected/Godeps.json-commentsexpected.json')
+        self.check_parse('godeps/comments/Godeps.json')
 
     def test_godeps_godeps_godeps_json_full(self):
-        self.check_package(
-            'godeps/Godeps.json-full',
-            'godeps/expected/Godeps.json-fullexpected.json')
+        self.check_parse('godeps/full/Godeps.json')
 
     def test_godeps_godeps_godeps_json_full2(self):
-        self.check_package(
-            'godeps/Godeps.json-full2',
-            'godeps/expected/Godeps.json-full2expected.json')
+        self.check_parse('godeps/full2/Godeps.json')
 
     def test_godeps_godeps_godeps_json_medium(self):
-        self.check_package(
-            'godeps/Godeps.json-medium',
-            'godeps/expected/Godeps.json-mediumexpected.json')
+        self.check_parse('godeps/medium/Godeps.json')
 
     def test_godeps_godeps_godeps_json_medium2(self):
-        self.check_package(
-            'godeps/Godeps.json-medium2',
-            'godeps/expected/Godeps.json-medium2expected.json')
+        self.check_parse('godeps/medium2/Godeps.json')
 
     def test_godeps_godeps_godeps_json_mini(self):
-        self.check_package(
-            'godeps/Godeps.json-mini',
-            'godeps/expected/Godeps.json-miniexpected.json')
+        self.check_parse('godeps/mini/Godeps.json')
 
     def test_godeps_godeps_godeps_json_package1(self):
-        self.check_package(
-            'godeps/Godeps.json-package1',
-            'godeps/expected/Godeps.json-package1expected.json')
+        self.check_parse('godeps/package1/Godeps.json')
 
     def test_godeps_godeps_godeps_json_package2(self):
-        self.check_package(
-            'godeps/Godeps.json-package2',
-            'godeps/expected/Godeps.json-package2expected.json')
+        self.check_parse('godeps/package2/Godeps.json')
 
     def test_godeps_godeps_godeps_json_package3(self):
-        self.check_package(
-            'godeps/Godeps.json-package3',
-            'godeps/expected/Godeps.json-package3expected.json')
+        self.check_parse('godeps/-package3/Godeps.json')
 
     def test_godeps_godeps_godeps_json_simple(self):
-        self.check_package(
-            'godeps/Godeps.json-simple',
-            'godeps/expected/Godeps.json-simpleexpected.json')
+        self.check_parse('godeps/simple/Godeps.json')

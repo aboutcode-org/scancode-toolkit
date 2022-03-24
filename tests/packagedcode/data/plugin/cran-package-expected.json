@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:cran/R",
+      "dependency_uid": "pkg:cran/R",
       "for_package": "pkg:cran/codetools@0.2-16",
-      "lockfile": "DESCRIPTION"
+      "datafile_path": "DESCRIPTION"
     }
   ],
   "packages": [
@@ -75,10 +75,9 @@
       "license_expression": "gpl-1.0-plus",
       "declared_license": "GPL",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:cran/codetools@0.2-16",
+      "package_uid": "pkg:cran/codetools@0.2-16",
       "package_data_files": [
         "DESCRIPTION"
       ],
@@ -137,7 +136,6 @@
           "license_expression": "gpl-1.0-plus",
           "declared_license": "GPL",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

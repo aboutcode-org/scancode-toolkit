@@ -39,7 +39,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.geronimo.genesis.config/project-config@1.1?classifier=sources"
   ],

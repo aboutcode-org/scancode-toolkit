@@ -7,40 +7,18 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
-import sys
 import warnings
 
-import attr
 import saneyaml
 from commoncode import filetype
 from packageurl import PackageURL
 
 from packagedcode import models
 from packagedcode.utils import combine_expressions
-
-TRACE = False
-
-
-def logger_debug(*args):
-    pass
-
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(''.join(isinstance(a, str) and a or repr(a) for a in args))
-
 """
 Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
-"""
 
-"""
 TODO:
 - license is only in a LICENSE file
   https://dart.dev/tools/pub/publishing#preparing-to-publish
@@ -56,31 +34,49 @@ is limited and only returns all versions of a package
 See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 """
 
+# FIXME: warnings reported here DO NOT work. We should have a better way
 
-@attr.s()
-class PubspecPackageData(models.PackageData):
-    default_type = 'pubspec'
+
+class BaseDartPubspecHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        datafile_names = (
+            'pubspec.yaml',
+            'pubspec.lock',
+        )
+
+        yield from cls.assemble_from_many_datafiles(
+            datafile_names=datafile_names,
+            directory=resource.parent(codebase),
+            codebase=codebase,
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return super().assign_package_to_parent_tree(package, resource, codebase)
+
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return compute_normalized_license(package.declared_license)
+
+
+class DartPubspecYamlHandler(BaseDartPubspecHandler):
+    datasource_id = 'pubspec_yaml'
+    path_patterns = ('*pubspec.yaml',)
+    default_package_type = 'pubspec'
     default_primary_language = 'dart'
-    default_web_baseurl = 'https://pub.dev/packages'
-    default_download_baseurl = 'https://pub.dartlang.org/packages'
-    default_api_baseurl = 'https://pub.dev/api/packages'
+    description = 'Dart pubspec manifest'
+    documentation_url = 'https://dart.dev/tools/pub/pubspec'
 
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return f'{baseurl}/{self.name}/versions/{self.version}'
+    @classmethod
+    def parse(cls, location):
+        with open(location) as inp:
+            pubspec_data = saneyaml.load(inp.read())
 
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        # A URL should be in the form of:
-        # https://pub.dartlang.org/packages/url_launcher/versions/6.0.9.tar.gz
-        # And it may resolve to:
-        # https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
-        # as seen in the pub.dev web pages
-        return f'{baseurl}/{self.name}/versions/{self.version}.tar.gz'
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        return f'{baseurl}/{self.name}/versions/{self.version}'
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
+        package_data = build_package(pubspec_data)
+        if package_data:
+            yield package_data
 
 
 def compute_normalized_license(declared_license, location=None):
@@ -106,79 +102,27 @@ def compute_normalized_license(declared_license, location=None):
         return combine_expressions(detected_licenses)
 
 
-@attr.s()
-class PubspecYaml(PubspecPackageData, models.PackageDataFile):
-
-    file_patterns = ('*pubspec.yaml',)
-    extensions = ('.yaml',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return file_endswith(location, 'pubspec.yaml')
+class PubspecLockHandler(BaseDartPubspecHandler):
+    datasource_id = 'pubspec_lock'
+    path_patterns = ('*pubspec.lock',)
+    default_package_type = 'pubspec'
+    default_primary_language = 'dart'
+    description = 'Dart pubspec lockfile'
+    documentation_url = 'https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/'
 
     @classmethod
-    def recognize(cls, location, compute_normalized_license=False):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        with open(location) as inp:
-            package_data = saneyaml.load(inp.read())
-
-        package = build_package(cls, package_data)
-        if package and compute_normalized_license:
-            package.compute_normalized_license()
-        yield package
-
-
-def file_endswith(location, endswith):
-    """
-    Check if the file at ``location`` ends with ``endswith`` string or tuple.
-    """
-    return filetype.is_file(location) and location.endswith(endswith)
-
-
-@attr.s()
-class PubspecLock(PubspecPackageData, models.PackageDataFile):
-
-    file_patterns = ('*pubspec.lock',)
-    extensions = ('.lock',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return file_endswith(location, 'pubspec.lock')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location) as inp:
             locks_data = saneyaml.load(inp.read())
 
-        yield cls(dependencies=list(collect_locks(locks_data)))
+        dependencies = list(collect_locks(locks_data))
 
-
-@attr.s()
-class PubspecPackage(PubspecPackageData, models.Package):
-    """
-    A Pubspec Package that is created out of one/multiple pubspec package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            PubspecYaml,
-            PubspecLock
-        ]
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies
+        )
 
 
 def collect_locks(locks_data):
@@ -303,10 +247,17 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
 
     if version.replace('.', '').isdigit():
         # version is pinned exactly if it is only made of dots and digits
-        purl = PackageURL(type='pubspec', name=name, version=version)
+        purl = PackageURL(
+            type='pubspec',
+            name=name,
+            version=version,
+        )
         is_resolved = True
     else:
-        purl = PackageURL(type='pubspec', name=name)
+        purl = PackageURL(
+            type='pubspec',
+            name=name,
+        )
         is_resolved = False
 
     dep = models.DependentPackage(
@@ -320,7 +271,7 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     return dep
 
 
-def build_package(cls, pubspec_data):
+def build_package(pubspec_data):
     """
     Return a package object from a package data mapping or None
     """
@@ -331,6 +282,18 @@ def build_package(cls, pubspec_data):
     declared_license = pubspec_data.get('license')
     vcs_url = pubspec_data.get('repository')
     download_url = pubspec_data.get('archive_url')
+
+    api_data_url = name and version and f'https://pub.dev/api/packages/{name}/versions/{version}'
+    repository_homepage_url = name and version and f'https://pub.dev/packages/{name}/versions/{version}'
+
+    # A URL should be in the form of:
+    # https://pub.dartlang.org/packages/url_launcher/versions/6.0.9.tar.gz
+    # And it may resolve to:
+    # https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
+    # as seen in the pub.dev web pages
+    repository_download_url = name and version and f'https://pub.dartlang.org/packages/{name}/versions/{version}.tar.gz'
+
+    download_url = download_url or repository_download_url
 
     # Author and authors are deprecated
     authors = []
@@ -385,9 +348,13 @@ def build_package(cls, pubspec_data):
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
 
-    package = cls(
+    package = models.PackageData(
+        datasource_id=DartPubspecYamlHandler.datasource_id,
+        type=DartPubspecYamlHandler.default_primary_language,
+        primary_language=DartPubspecYamlHandler.default_primary_language,
         name=name,
         version=version,
+        download_url=download_url,
         vcs_url=vcs_url,
         description=description,
         declared_license=declared_license,
@@ -395,10 +362,10 @@ def build_package(cls, pubspec_data):
         homepage_url=homepage_url,
         dependencies=package_dependencies,
         extra_data=extra_data,
+        repository_homepage_url=repository_homepage_url,
+        api_data_url=api_data_url,
+        repository_download_url=repository_download_url,
     )
-
-    if not download_url:
-        package.download_url = package.repository_download_url()
 
     return package
 

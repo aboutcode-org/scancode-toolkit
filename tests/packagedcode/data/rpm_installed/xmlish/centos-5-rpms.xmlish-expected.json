@@ -27,14 +27,13 @@
     "license_expression": null,
     "declared_license": "public domain",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": "pkg:rpm/setup@2.5.58?arch=noarch",
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "/etc/aliases",
         "size": 0,
@@ -289,13 +288,12 @@
     "license_expression": null,
     "declared_license": "public domain",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": "pkg:rpm/basesystem@8.0?arch=noarch",
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": []
+    "file_references": []
   }
 ]

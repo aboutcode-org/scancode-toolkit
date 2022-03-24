@@ -53,12 +53,11 @@
       "license_expression": "unknown",
       "declared_license": "distributable",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
+      "package_uid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
       "package_data_files": [
         "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
       ],
@@ -110,7 +109,6 @@
           "license_expression": "unknown",
           "declared_license": "distributable",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
           ],

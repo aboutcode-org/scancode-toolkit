@@ -50,7 +50,6 @@
           ]
         },
         "notice_text": null,
-        "root_path": "METADATA",
         "dependencies": [
           {
             "purl": "pkg:pypi/colorama",
@@ -69,7 +68,6 @@
             "is_resolved": false
           }
         ],
-        "contains_source_code": null,
         "source_packages": [],
         "extra_data": {},
         "purl": "pkg:pypi/click@8.0.1",
@@ -103,9 +101,7 @@
         "license_expression": null,
         "declared_license": null,
         "notice_text": null,
-        "root_path": "setup.cfg",
         "dependencies": [],
-        "contains_source_code": null,
         "source_packages": [],
         "extra_data": {},
         "purl": null,
@@ -139,7 +135,6 @@
         "license_expression": null,
         "declared_license": {},
         "notice_text": null,
-        "root_path": "setup.py",
         "dependencies": [
           {
             "purl": "pkg:pypi/colorama",
@@ -158,7 +153,6 @@
             "is_resolved": false
           }
         ],
-        "contains_source_code": null,
         "source_packages": [],
         "extra_data": {},
         "purl": "pkg:pypi/click",
@@ -192,7 +186,6 @@
         "license_expression": null,
         "declared_license": null,
         "notice_text": null,
-        "root_path": "tox.ini",
         "dependencies": [
           {
             "purl": "pkg:pypi/pre-commit",
@@ -203,7 +196,6 @@
             "is_resolved": false
           }
         ],
-        "contains_source_code": null,
         "source_packages": [],
         "extra_data": {},
         "purl": null,

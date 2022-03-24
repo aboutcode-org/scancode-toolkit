@@ -84,10 +84,10 @@ class TestDebian(PackageTester):
         test_package = packages[0]
 
         expected = [
-            models.PackageFile('/lib/x86_64-linux-gnu/libncurses.so.5.9', md5='23c8a935fa4fc7290d55cc5df3ef56b1'),
-            models.PackageFile('/usr/lib/x86_64-linux-gnu/libform.so.5.9', md5='98b70f283324e89db5787a018a54adf4'),
-            models.PackageFile('/usr/lib/x86_64-linux-gnu/libmenu.so.5.9', md5='e3a0f5154928da2da234920343ac14b2'),
-            models.PackageFile('/usr/lib/x86_64-linux-gnu/libpanel.so.5.9', md5='a927e7d76753bb85f5a784b653d337d2')
+            models.FileReference('/lib/x86_64-linux-gnu/libncurses.so.5.9', md5='23c8a935fa4fc7290d55cc5df3ef56b1'),
+            models.FileReference('/usr/lib/x86_64-linux-gnu/libform.so.5.9', md5='98b70f283324e89db5787a018a54adf4'),
+            models.FileReference('/usr/lib/x86_64-linux-gnu/libmenu.so.5.9', md5='e3a0f5154928da2da234920343ac14b2'),
+            models.FileReference('/usr/lib/x86_64-linux-gnu/libpanel.so.5.9', md5='a927e7d76753bb85f5a784b653d337d2')
         ]
 
         resources = test_package.get_list_of_installed_files(test_info_dir)
@@ -110,7 +110,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
     def test_missing_md5sum_file(self):
         test_info_dir = self.get_test_loc('debian/missing-md5sum-file')
 
-        test_pkg = debian.DebianPackage(
+        test_pkg = debian.DebianPackageRecognizer(
             name='libatk-adaptor',
             qualifiers={'arch':'amd64'}
         )
@@ -123,19 +123,19 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         test_dir = self.extract_test_tar('debian/same-multi-arch.tgz')
         test_info_dir = os.path.join(test_dir, 'same-multi-arch')
 
-        test_pkg = debian.DebianPackage(
+        test_pkg = debian.DebianPackageRecognizer(
             name='libatk-adaptor',
             qualifiers={'arch':'amd64'}
         )
         test_pkg.set_multi_arch('same')
 
         expected = [
-             models.PackageFile('/usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop', md5='34900bd11562f427776ed2c05ba6002d'),
-             models.PackageFile('/usr/lib/unity-settings-daemon-1.0/gtk-modules/at-spi2-atk.desktop', md5='34900bd11562f427776ed2c05ba6002d'),
-             models.PackageFile('/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so', md5='6ddbc10b64afe708945c3b1497714aaa'),
-             models.PackageFile('/usr/share/doc/libatk-adaptor/NEWS.gz', md5='3a24add33624132b6b3b4c2ed08a4394'),
-             models.PackageFile('/usr/share/doc/libatk-adaptor/README', md5='452c2e9db46c9ac92a10e700d116b120'),
-             models.PackageFile('/usr/share/doc/libatk-adaptor/copyright', md5='971e4b2093741db8c51d263cd5c3ee48'),
+             models.FileReference('/usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop', md5='34900bd11562f427776ed2c05ba6002d'),
+             models.FileReference('/usr/lib/unity-settings-daemon-1.0/gtk-modules/at-spi2-atk.desktop', md5='34900bd11562f427776ed2c05ba6002d'),
+             models.FileReference('/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so', md5='6ddbc10b64afe708945c3b1497714aaa'),
+             models.FileReference('/usr/share/doc/libatk-adaptor/NEWS.gz', md5='3a24add33624132b6b3b4c2ed08a4394'),
+             models.FileReference('/usr/share/doc/libatk-adaptor/README', md5='452c2e9db46c9ac92a10e700d116b120'),
+             models.FileReference('/usr/share/doc/libatk-adaptor/copyright', md5='971e4b2093741db8c51d263cd5c3ee48'),
         ]
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
@@ -146,27 +146,27 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
     def test_multi_arch_is_foreign(self):
         test_info_dir = self.get_test_loc('debian/foreign-multi-arch')
 
-        test_pkg = debian.DebianPackage(
+        test_pkg = debian.DebianPackageRecognizer(
             name='fonts-sil-abyssinica',
             qualifiers={'arch':'amd64'}
         )
         test_pkg.set_multi_arch('foreign')
 
         expected = [
-            models.PackageFile('/usr/share/bug/fonts-sil-abyssinica/presubj', md5='7faf213b3c06e818b9976cc2ae5af51a'),
-            models.PackageFile('/usr/share/bug/fonts-sil-abyssinica/script', md5='672370efca8bffa183e2828907e0365d'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/OFL-FAQ.txt.gz', md5='ea72ae1d2ba5471ef54b132c79b1a03b'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/README.Debian', md5='f497d6bfc7ca4d423d703fabb7ff2e4c'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/changelog.Debian.gz', md5='7f81bc6ed7506b95af01b5eef76662bb'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/copyright', md5='13d9a840b6db71f7060670be0aafa953'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.odt', md5='0e4a5ad6839067740e81a3e1244b0b16'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.pdf.gz', md5='8fee9c92ecd425c71217418b8370c5ae'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILOpenTypeFontFeatures.pdf.gz', md5='2cc8cbe21730258dd03a465e045066cc'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeSample.pdf.gz', md5='40948ce7d8e4b1ba1c7043ec8926edf9'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeTunerGuide.pdf.gz', md5='36ca1d62ca7365216e8bda952d2461e6'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/DOCUMENTATION.txt', md5='491295c116dbcb74bcad2d78a56aedbe'),
-            models.PackageFile('/usr/share/doc/fonts-sil-abyssinica/documentation/SILEthiopicPrivateUseAreaBlock.pdf.gz', md5='bea5aeeb76a15c2c1b8189d1b2437b31'),
-            models.PackageFile('/usr/share/fonts/truetype/abyssinica/AbyssinicaSIL-R.ttf', md5='9e3d4310af3892a739ba7b1189c44dca'),
+            models.FileReference('/usr/share/bug/fonts-sil-abyssinica/presubj', md5='7faf213b3c06e818b9976cc2ae5af51a'),
+            models.FileReference('/usr/share/bug/fonts-sil-abyssinica/script', md5='672370efca8bffa183e2828907e0365d'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/OFL-FAQ.txt.gz', md5='ea72ae1d2ba5471ef54b132c79b1a03b'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/README.Debian', md5='f497d6bfc7ca4d423d703fabb7ff2e4c'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/changelog.Debian.gz', md5='7f81bc6ed7506b95af01b5eef76662bb'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/copyright', md5='13d9a840b6db71f7060670be0aafa953'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.odt', md5='0e4a5ad6839067740e81a3e1244b0b16'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.pdf.gz', md5='8fee9c92ecd425c71217418b8370c5ae'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILOpenTypeFontFeatures.pdf.gz', md5='2cc8cbe21730258dd03a465e045066cc'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeSample.pdf.gz', md5='40948ce7d8e4b1ba1c7043ec8926edf9'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeTunerGuide.pdf.gz', md5='36ca1d62ca7365216e8bda952d2461e6'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/DOCUMENTATION.txt', md5='491295c116dbcb74bcad2d78a56aedbe'),
+            models.FileReference('/usr/share/doc/fonts-sil-abyssinica/documentation/SILEthiopicPrivateUseAreaBlock.pdf.gz', md5='bea5aeeb76a15c2c1b8189d1b2437b31'),
+            models.FileReference('/usr/share/fonts/truetype/abyssinica/AbyssinicaSIL-R.ttf', md5='9e3d4310af3892a739ba7b1189c44dca'),
         ]
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
@@ -177,17 +177,17 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
     def test_multi_arch_is_missing(self):
         test_info_dir = self.get_test_loc('debian/missing-multi-arch')
 
-        test_pkg = debian.DebianPackage(
+        test_pkg = debian.DebianPackageRecognizer(
             name='mokutil',
             qualifiers={'arch':'amd64'}
         )
 
         expected = [
-            models.PackageFile('/usr/bin/mokutil', md5='7a1a2629613d260e43dabc793bebdf19'),
-            models.PackageFile('/usr/share/bash-completion/completions/mokutil', md5='9086049384eaf0360dca4371ca50acbf'),
-            models.PackageFile('/usr/share/doc/mokutil/changelog.Debian.gz', md5='b3f4bb874bd61e4609823993857b9c17'),
-            models.PackageFile('/usr/share/doc/mokutil/copyright', md5='24dd593b630976a785b4c5ed097bbd96'),
-            models.PackageFile('/usr/share/man/man1/mokutil.1.gz', md5='b608675058a943d834129b6972b8509a'),
+            models.FileReference('/usr/bin/mokutil', md5='7a1a2629613d260e43dabc793bebdf19'),
+            models.FileReference('/usr/share/bash-completion/completions/mokutil', md5='9086049384eaf0360dca4371ca50acbf'),
+            models.FileReference('/usr/share/doc/mokutil/changelog.Debian.gz', md5='b3f4bb874bd61e4609823993857b9c17'),
+            models.FileReference('/usr/share/doc/mokutil/copyright', md5='24dd593b630976a785b4c5ed097bbd96'),
+            models.FileReference('/usr/share/man/man1/mokutil.1.gz', md5='b608675058a943d834129b6972b8509a'),
         ]
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 

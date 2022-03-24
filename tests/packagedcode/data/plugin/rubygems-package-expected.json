@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/ffi-rzmq",
+      "dependency_uid": "pkg:gem/ffi-rzmq",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/ffi",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/ffi",
+      "dependency_uid": "pkg:gem/ffi",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/multi_json",
@@ -52,9 +52,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/multi_json",
+      "dependency_uid": "pkg:gem/multi_json",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/tnetstring",
@@ -64,9 +64,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/tnetstring",
+      "dependency_uid": "pkg:gem/tnetstring",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/rack",
@@ -76,9 +76,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/rack",
+      "dependency_uid": "pkg:gem/rack",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/rake",
@@ -88,9 +88,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/rake",
+      "dependency_uid": "pkg:gem/rake",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/minitest",
@@ -100,9 +100,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/minitest",
+      "dependency_uid": "pkg:gem/minitest",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/mocha",
@@ -112,9 +112,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/mocha",
+      "dependency_uid": "pkg:gem/mocha",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/bbq",
@@ -124,9 +124,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/bbq",
+      "dependency_uid": "pkg:gem/bbq",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/capybara-mechanize",
@@ -136,9 +136,9 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/capybara-mechanize",
+      "dependency_uid": "pkg:gem/capybara-mechanize",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/activesupport",
@@ -148,9 +148,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/activesupport",
+      "dependency_uid": "pkg:gem/activesupport",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/yard",
@@ -160,9 +160,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/yard",
+      "dependency_uid": "pkg:gem/yard",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     },
     {
       "purl": "pkg:gem/kramdown",
@@ -172,9 +172,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/kramdown",
+      "dependency_uid": "pkg:gem/kramdown",
       "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "datafile_path": "m2r-2.1.0.gem"
     }
   ],
   "packages": [
@@ -235,10 +235,9 @@
         "MIT"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:gem/m2r@2.1.0",
+      "package_uid": "pkg:gem/m2r@2.1.0",
       "package_data_files": [
         "m2r-2.1.0.gem"
       ],
@@ -314,7 +313,6 @@
             "MIT"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

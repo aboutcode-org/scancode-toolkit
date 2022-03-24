@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/colorama",
+      "dependency_uid": "pkg:pypi/colorama",
       "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "METADATA"
+      "datafile_path": "METADATA"
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/importlib-metadata",
+      "dependency_uid": "pkg:pypi/importlib-metadata",
       "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "METADATA"
+      "datafile_path": "METADATA"
     },
     {
       "purl": "pkg:pypi/colorama",
@@ -52,9 +52,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/colorama",
+      "dependency_uid": "pkg:pypi/colorama",
       "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "setup.py"
+      "datafile_path": "setup.py"
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
@@ -64,9 +64,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/importlib-metadata",
+      "dependency_uid": "pkg:pypi/importlib-metadata",
       "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "setup.py"
+      "datafile_path": "setup.py"
     },
     {
       "purl": "pkg:pypi/pre-commit",
@@ -76,9 +76,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pre-commit",
+      "dependency_uid": "pkg:pypi/pre-commit",
       "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "tox.ini"
+      "datafile_path": "tox.ini"
     }
   ],
   "packages": [
@@ -133,10 +133,9 @@
         ]
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/click@8.0.1",
+      "package_uid": "pkg:pypi/click@8.0.1",
       "package_data_files": [
         "METADATA",
         "setup.cfg",
@@ -232,7 +231,6 @@
             ]
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [
@@ -305,7 +303,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],
@@ -350,7 +347,6 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [
@@ -414,7 +410,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

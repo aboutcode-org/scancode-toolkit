@@ -1,0 +1,49 @@
+{
+	"ImportPath": "github.com/calmh/mole",
+	"GoVersion": "devel +67f9ef140028 Sat Jul 12 15:18:36 2014 +1000",
+	"Packages": [
+		"./cmd/..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "bitbucket.org/kardianos/osext",
+			"Comment": "null-9",
+			"Rev": "364fb577de68fb646c4cb39cc0e09c887ee16376"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.crypto/ssh",
+			"Comment": "null-185",
+			"Rev": "6478cc9340cbbe6c04511280c5007722269108e9"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.crypto/twofish",
+			"Comment": "null-185",
+			"Rev": "6478cc9340cbbe6c04511280c5007722269108e9"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.net/proxy",
+			"Comment": "null-88",
+			"Rev": "55437409069bb181ad562b1ad1e5f361c44aff17"
+		},
+		{
+			"ImportPath": "github.com/calmh/ini",
+			"Rev": "1020b6d8618a7dc6031cda4a7782324eac346875"
+		},
+		{
+			"ImportPath": "github.com/calmh/randomart",
+			"Rev": "c93aeb3ba3f3e6081cd41b1f2c46e95403491ec5"
+		},
+		{
+			"ImportPath": "github.com/mavricknz/asn1-ber",
+			"Rev": "e10e7f5ff26c0805e6dd35fe3f5ec0d6de09c160"
+		},
+		{
+			"ImportPath": "github.com/mavricknz/ldap",
+			"Rev": "6e4860d2f38e0a6ccbbb8eda955d80ab4e39f692"
+		},
+		{
+			"ImportPath": "github.com/sbinet/liner",
+			"Rev": "3d8e6ee550f5d4f4105967410a16fd5c8b47bde4"
+		}
+	]
+}

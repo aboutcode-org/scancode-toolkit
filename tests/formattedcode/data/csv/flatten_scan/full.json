@@ -192,7 +192,6 @@
           "declared_licensing": null,
           "notice_text": null,
           "dependencies": [],
-          "contains_source_code": null,
           "source_packages": []
         }
       ],
@@ -1688,7 +1687,6 @@
               "is_resolved": false
             }
           ],
-          "contains_source_code": null,
           "source_packages": []
         }
       ],

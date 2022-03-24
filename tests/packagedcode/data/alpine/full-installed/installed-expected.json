@@ -35,7 +35,6 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
@@ -45,7 +44,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "lib/ld-musl-x86_64.so.1",
         "size": 0,
@@ -100,7 +99,6 @@
     "license_expression": "gpl-2.0",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
@@ -110,7 +108,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "bin/busybox",
         "size": 0,
@@ -205,7 +203,6 @@
     "license_expression": "gpl-2.0",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/alpine-baselayout@3.2.0-r6"
     ],
@@ -215,7 +212,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "etc/fstab",
         "size": 0,
@@ -470,7 +467,6 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/alpine-keys@2.2-r0"
     ],
@@ -480,7 +476,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "etc/apk/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
         "size": 0,
@@ -679,7 +675,6 @@
     "license_expression": "openssl-ssleay",
     "declared_license": "OpenSSL",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
@@ -689,7 +684,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "etc/ssl/ct_log_list.cnf",
         "size": 0,
@@ -824,7 +819,6 @@
     "license_expression": "openssl-ssleay",
     "declared_license": "OpenSSL",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
@@ -834,7 +828,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "lib/libssl.so.1.1",
         "size": 0,
@@ -889,7 +883,6 @@
     "license_expression": "mpl-2.0 AND gpl-2.0-plus",
     "declared_license": "MPL-2.0 GPL-2.0-or-later",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/ca-certificates@20191127-r2"
     ],
@@ -899,7 +892,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "etc/ssl/cert.pem",
         "size": 0,
@@ -946,7 +939,6 @@
     "license_expression": "isc",
     "declared_license": "ISC",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/libtls-standalone@2.9.1-r1"
     ],
@@ -966,7 +958,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "usr/lib/libtls-standalone.so.1",
         "size": 0,
@@ -1021,7 +1013,6 @@
     "license_expression": "gpl-2.0",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
@@ -1031,7 +1022,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "usr/bin/ssl_client",
         "size": 0,
@@ -1078,7 +1069,6 @@
     "license_expression": "zlib",
     "declared_license": "Zlib",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/zlib@1.2.11-r3"
     ],
@@ -1088,7 +1078,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "lib/libz.so.1",
         "size": 0,
@@ -1143,7 +1133,6 @@
     "license_expression": "gpl-2.0",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/apk-tools@2.10.5-r1"
     ],
@@ -1153,7 +1142,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "sbin/apk",
         "size": 0,
@@ -1200,7 +1189,6 @@
     "license_expression": "gpl-2.0",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/pax-utils@1.2.6-r0"
     ],
@@ -1210,7 +1198,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "usr/bin/scanelf",
         "size": 0,
@@ -1257,7 +1245,6 @@
     "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
     "declared_license": "MIT BSD GPL2+",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
@@ -1277,7 +1264,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "sbin/ldconfig",
         "size": 0,
@@ -1356,7 +1343,6 @@
     "license_expression": "bsd-simplified AND bsd-new",
     "declared_license": "BSD-2-Clause AND BSD-3-Clause",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
@@ -1376,6 +1362,6 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": []
+    "file_references": []
   }
 ]

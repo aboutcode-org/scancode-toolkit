@@ -12,6 +12,7 @@ import os.path
 from packagedcode import build_gradle
 from packagedcode import models
 from packages_test_utils import PackageTester
+from packages_test_utils import compare_package_results
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -27,9 +28,9 @@ class TestBuildGradle(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_build_gradle_recognize(self):
+    def test_build_gradle_parse(self):
         test_file = self.get_test_loc('build.gradle')
-        result_packages = build_gradle.BuildGradle.recognize(test_file)
+        result_packages = build_gradle.BuildGradle.parse(test_file)
 
         expected_packages = [
             build_gradle.BuildGradle(
@@ -72,16 +73,3 @@ class TestBuildGradle(PackageTester):
         ]
         compare_package_results(expected_packages, result_packages)
 
-
-def compare_package_results(expected, result):
-    # We don't want to compare `root_path`, since the result will always
-    # have a different `root_path` than the expected result
-    result_packages = []
-    for result_package in result:
-        r = result_package.to_dict()
-        result_packages.append(r)
-    expected_packages = []
-    for expected_package in expected:
-        e = expected_package.to_dict()
-        expected_packages.append(e)
-    assert result_packages == expected_packages

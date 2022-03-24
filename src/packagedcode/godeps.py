@@ -7,45 +7,90 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import namedtuple
 import io
 import json
-import logging
+from collections import namedtuple
 
+from commoncode import datautils
+
+from packagedcode import models
+import attr
+from packageurl import PackageURL
 
 """
 Handle Godeps-like Go package dependency data.
 
-Note: there are other dependency tools for Go beside Godeps, yet
-several use the same format.
+Note: there are other dependency tools for Go beside Godeps, yet several use the
+same format. Godeps (and glide, etc.) is mostly legacy today and replaced by Go
+modules.
 """
 # FIXME: update to use the latest vendor conventions.
-
-TRACE = False
-
-
-def logger_debug(*args):
-    pass
+# TODO: Use attrs
+# consider other legacy format?
+# https://github.com/golang/dep/blob/master/Gopkg.lock
+# https://github.com/golang/dep/blob/master/Gopkg.toml
 
 
-logger = logging.getLogger(__name__)
+class GodepsHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'godeps'
+    default_package_type = 'golang'
+    default_primary_language = 'Go'
+    path_patterns = ('*/Godeps.json',)
+    description = 'Go Godeps'
+    documentation_url = 'https://github.com/tools/godep'
 
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    @classmethod
+    def parse(cls, location):
+        godeps = Godep(location)
 
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        if godeps.import_path:
+            # we create a purl from the import path to parse ns/name nicely
+            purl = PackageURL.from_string(f'pkg:golang/{godeps.import_path}')
+            namespace = purl.namespace
+            name = purl.name
+        else:
+            namespace = None
+            name = None
+
+        dependencies = []
+        deps = godeps.dependencies or []
+        for dep in deps:
+            dependencies.append(
+                models.DependentPackage(
+                    purl=str(PackageURL.from_string(f'pkg:golang/{dep.import_path}')),
+                    extracted_requirement=dep.revision,
+                    scope='Deps',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
+            )
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            namespace=namespace,
+            name=name,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+         )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        super().assign_package_to_parent_tree(package, resource, codebase)
 
 
+@attr.s
 class Dep(namedtuple('Dep', 'import_path revision comment')):
+    import_path = datautils.String()
+    revision = datautils.String()
+    comment = datautils.String()
 
-    def __new__(cls, import_path=None, revision=None, comment=None):
-        return super(Dep, cls).__new__(cls, import_path, revision, comment)
+    def to_dict(self):
+        return attr.asdict(self)
 
 
-# map Godep names to our own attribute names
+# map of Godep names to our own attribute names
 NAMES = {
     'ImportPath': 'import_path',
     'GoVersion': 'go_version',
@@ -56,9 +101,10 @@ NAMES = {
 }
 
 
-class Godep(object):
+@attr.s
+class Godep:
     """
-    A JSON dep file with this structure:
+    Represent JSON dep file with this structure:
         type Godeps struct {
             ImportPath string
             GoVersion  string   // Abridged output of 'go version'.
@@ -78,34 +124,30 @@ class Godep(object):
         Comment
         Rev
     """
+    location = datautils.String()
+    import_path = datautils.String()
+    go_version = datautils.String()
+    packages = datautils.List(item_type=str)
+    dependencies = datautils.List(item_type=Dep)
 
-    def __init__(self, location=None, import_path=None, go_version=None,
-                 packages=None, dependencies=None):
-
-        self.location = location
-        self.import_path = None
-        self.go_version = None
-        self.dependencies = []
-        self.packages = []
-
-        if location:
-            self.load(location)
-        else:
-            self.import_path = import_path
-            self.go_version = go_version
-            self.dependencies = dependencies or []
-            self.packages = packages or []
+    def __attrs_post_init__(self, *args, **kwargs):
+        if self.location:
+            self.load(self.location)
 
     def load(self, location):
         """
-        Load self from a location string or a file-like object
-        containing a Godeps JSON.
+        Load self from a location string or a file-like object containing a
+        Godeps JSON.
         """
-        if isinstance(location, str):
-            with io.open(location, encoding='utf-8') as godep:
-                data = json.load(godep)
-        else:
-            data = json.load(location)
+        with io.open(location, encoding='utf-8') as godep:
+            text = godep.read()
+        return self.loads(text)
+
+    def loads(self, text):
+        """
+        Load a Godeps JSON text.
+        """
+        data = json.loads(text)
 
         for key, value in data.items():
             name = NAMES.get(key)
@@ -115,15 +157,10 @@ class Godep(object):
                 setattr(self, name, value)
         return self
 
-    def loads(self, string):
-        """
-        Load a Godeps JSON string.
-        """
-        from io import StringIO
-        self.load(StringIO(string))
-        return self
-
     def parse_deps(self, deps):
+        """
+        Return a list of Dep from a ``deps`` list of dependency mappings.
+        """
         deps_list = []
         for dep in deps:
             data = dict((NAMES[key], value) for key, value in dep.items())
@@ -131,19 +168,12 @@ class Godep(object):
         return deps_list or []
 
     def to_dict(self):
-        dct = {}
-        dct.update([
-            ('import_path', self.import_path),
-            ('go_version', self.go_version),
-            ('packages', self.packages),
-            ('dependencies', [d._asdict() for d in self.dependencies]),
-        ])
-        return dct
-
-    def __repr__(self):
-        return ('Godep(%r)' % self.to_dict())
-
-    __str__ = __repr__
+        return {
+            'import_path': self.import_path,
+            'go_version': self.go_version,
+            'packages': self.packages,
+            'dependencies': [d.to_dict() for d in self.dependencies],
+        }
 
 
 def parse(location):

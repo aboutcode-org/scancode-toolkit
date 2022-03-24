@@ -23,20 +23,24 @@ class TestConda(PackageTester):
     def test_parse_get_varialble(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_variables(test_file)
-        assert results == dict([(u'version', u'0.45.0'), (u'sha256', u'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f')])
+        expected = {
+            'version': '0.45.0', 
+            'sha256': 'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f',
+        }
+        assert results == expected
 
-    def test_get_yaml_data(self):
+    def test_get_meta_yaml_data(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        results = conda.get_yaml_data(test_file)
+        results = conda.get_meta_yaml_data(test_file)
         assert  list(results.items())[0] == (u'package', dict([(u'name', u'abeona'), (u'version', u'0.45.0')]))
 
     def test_condayml_is_package_data_file(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        assert conda.Condayml.is_package_data_file(test_file)
+        assert conda.Condayml.is_datafile(test_file)
 
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        package = conda.Condayml.recognize(test_file)
+        package = conda.Condayml.parse(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
         self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -44,6 +48,6 @@ class TestConda(PackageTester):
         test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')
         test_dir = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract')
         codebase = Codebase(test_dir)
-        manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
-        proot = conda.CondaPackageData.get_package_root(manifest_resource, codebase)
+        resource = codebase.get_resource_from_path(test_file, absolute=True)
+        proot = conda.CondaPackageData.get_package_root(resource, codebase)
         assert proot.location == test_dir

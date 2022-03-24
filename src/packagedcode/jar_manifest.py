@@ -9,13 +9,9 @@
 
 import re
 
-import attr
-
-from commoncode.fileutils import as_posixpath
-from packagedcode.utils import normalize_vcs_url
-from packagedcode.maven import parse_scm_connection
 from packagedcode import models
-
+from packagedcode.maven import parse_scm_connection
+from packagedcode.utils import normalize_vcs_url
 
 """
 A JAR/WAR/EAR and OSGi MANIFEST.MF parser and handler.
@@ -27,90 +23,81 @@ See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres
 """
 
 
-@attr.s()
-class JavaArchive(models.PackageData):
-
-    filetypes = ('java archive ', 'zip archive',)
-    mimetypes = ('application/java-archive', 'application/zip',)
-    default_type = 'jar'
+class JavaJarManifestHandler(models.DatafileHandler):
+    datasource_id = 'java_jar_manifest'
+    path_patterns = ('*/META-INF/MANIFEST.MF',)
+    default_package_type = 'jar'
     default_primary_language = 'Java'
+    description='Java JAR MANIFEST.MF'
+    documentation_url='https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.path.lower().endswith('meta-inf/manifest.mf'):
-            # the root is the parent of META-INF
-            return manifest_resource.parent(codebase).parent(codebase)
-        else:
-            return manifest_resource
-
-
-@attr.s()
-class IvyJar(JavaArchive, models.PackageDataFile):
-    file_patterns = ('ivy.xml',)
-    default_type = 'ivy'
-    default_primary_language = 'Java'
-
-
-@attr.s()
-class JavaManifest(JavaArchive, models.PackageDataFile):
-    file_patterns = ('META-INF/MANIFEST.MF',)
-    extensions = ('.jar', '.war', '.ear')
+    def parse(cls, location):
+        sections = parse_manifest(location)
+        if sections:
+            main_section = sections[0]
+            manifest = get_normalized_java_manifest_data(main_section)
+            if manifest:
+                return models.PackageData(
+                    
+                    **manifest,
+                )
 
     @classmethod
-    def get_manifest_data(cls, location):
-        if cls.is_package_data_file(location):
-            yield parse_manifest(location)
+    def assign_package_to_resources(cls, package, resource, codebase):
+        # we want to root of the jar, two levels up
+        parent = resource.parent(codebase)
+        if parent:
+            parent = resource.parent(codebase)
 
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return Trye if the file at location is a Manifest.
-        """
-        return as_posixpath(location).lower().endswith('meta-inf/manifest.mf')
+        if parent:
+            super().assign_package_to_resources(package, resource=parent, codebase=codebase)
+
 
 
 def parse_manifest(location):
     """
     Return a Manifest parsed from the file at `location` or None if this
     cannot be parsed.         """
-    mode = 'r'
-    with open(location, mode) as manifest:
+    with open(location) as manifest:
         return parse_manifest_data(manifest.read())
 
 
-def parse_manifest_data(manifest):
+def parse_manifest_data(manifest_content):
     """
     Return a list of mapping, one for each manifest section (where the first
     entry is the main section) parsed from a `manifest` string.
     """
     # normalize line endings then split each section: they are separated by two LF
-    lines = '\n'.join(manifest.splitlines(False))
-    sections = re.split('\n\n+', lines)
+    lines = '\n'.join(manifest_content.splitlines(False))
+    sections = re.split(r'\n\n+', lines)
     return [parse_section(s) for s in sections]
 
 
 def parse_section(section):
     """
-    Return a mapping of key/values for a manifest `section` string
+    Return a mapping of key/values for a manifest ``section`` string
     """
     data = {}
     for line in section.splitlines(False):
         if not line:
             continue
+
         if not line.startswith(' '):
             # new key/value
             key, _, value = line.partition(': ')
             data[key] = value
+
         else:
             # continuation of the previous value
             data[key] += line[1:]
     return data
 
 
-def get_normalized_package_data(manifest_main_section):
+def get_normalized_java_manifest_data(manifest_mapping):
     """
     Return a mapping of package-like data normalized from a mapping of the
-    `manifest_main_section` data or None.
+    `manifest_mapping` data mapping or None.
 
     Maven Archiver does this:
         Manifest-Version: 1.0
@@ -126,12 +113,12 @@ def get_normalized_package_data(manifest_main_section):
         Implementation-URL: ${project.url}
     See https://maven.apache.org/shared/maven-archiver/examples/manifest.html
     """
-    if not manifest_main_section or len(manifest_main_section) == 1:
+    if not manifest_mapping or len(manifest_mapping) == 1:
         # only a manifest version
         return
 
     def dget(s):
-        v = manifest_main_section.get(s)
+        v = manifest_mapping.get(s)
         if v and v.startswith(('%', '$', '{')):
             v = None
         return v
@@ -333,7 +320,6 @@ def get_normalized_package_data(manifest_main_section):
     #########################
     vcs_url = None
     code_view_url = None
-
 
     m_vcs_url = dget('Module-Origin') or ''
     if m_vcs_url.strip():

@@ -7,18 +7,15 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import base64
-from collections import defaultdict
-from functools import partial
 import io
 import json
-import logging
 import re
+from collections import defaultdict
+from functools import partial
+from itertools import islice
 
-import attr
 from packageurl import PackageURL
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
@@ -32,101 +29,105 @@ per https://docs.npmjs.com/files/package.json
 To check https://github.com/npm/normalize-package-data
 """
 
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-
-def logger_debug(*args):
-    pass
-
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
 # TODO: add os and engines from package.json??
-# add lock files and yarn details
+# TODO: add new yarn v2 lock file format
+# TODO: add pnp.js from yarn.lock?
 
 
-@attr.s()
-class NpmPackageData(models.PackageData):
-    # TODO: add new lock files and yarn lock files
-    mimetypes = ('application/x-tar',)
-    default_type = 'npm'
+class BaseNpmHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        datafile_name_patterns = (
+            'package.json',
+            'package-lock.json',
+            'npm-shrinkwrap.json',
+            'yarn.lock',
+        )
+
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=datafile_name_patterns,
+            directory=resource.parent(codebase),
+            codebase=codebase,
+        )
+
+    @classmethod
+    def walk_npm(cls, resource, codebase, depth=0):
+        """
+        Walk the ``codebase`` Codebase top-down, breadth-first starting from the
+        ``resource`` Resource.
+
+        Skip a first level child directory named "node_modules": this avoids
+        reporting nested vendored packages as being part of their parent.
+        Instead they will be reported on their own.
+        """
+        for child in resource.children(codebase):
+            if depth == 0 and child.name == 'node_modules':
+                continue
+
+            yield child
+
+            if child.is_dir:
+                depth += 1
+                for subchild in cls.walk_skip(child, codebase, depth=depth):
+                    yield subchild
+
+    # TODO: this MUST BE USED
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        """
+        Yield the Resources of an npm Package, ignoring nested mode_modules.
+        """
+        root = resource.parent(codebase)
+        if root:
+            yield from cls.walk_npm(resource=root, codebase=codebase)
+
+
+def get_urls(namespace, name, version):
+    return dict(
+        repository_homepage_url=npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'),
+        repository_download_url=npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'),
+        api_data_url=npm_api_url(namespace, name, version, registry='https://registry.npmjs.org'),
+    )
+
+
+class NpmPackageJsonHandler(BaseNpmHandler):
+    datasource_id = 'npm_package_json'
+    path_patterns = ('*/package.json',)
+    default_package_type = 'npm'
     default_primary_language = 'JavaScript'
-    default_web_baseurl = 'https://www.npmjs.com/package'
-    default_download_baseurl = 'https://registry.npmjs.org'
-    default_api_baseurl = 'https://registry.npmjs.org'
+    description = 'npm package.json'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    @classmethod
-    def ignore_resource(cls, resource, codebase):
-        return resource.is_dir and resource.name == 'node_modules'
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return npm_homepage_url(self.namespace, self.name, registry=baseurl)
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        return npm_download_url(self.namespace, self.name, self.version, registry=baseurl)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
-
-
-@attr.s()
-class PackageJson(NpmPackageData, models.PackageDataFile):
-
-    file_patterns = ('package.json',)
-    extensions = ('.tgz',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'package.json'
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        
+
         name = package_data.get('name')
         version = package_data.get('version')
-        homepage = package_data.get('homepage', '')
+        homepage_url = package_data.get('homepage', '')
 
-        if not name:
-            # a package.json without name and version is not a usable npm package
-            # FIXME: raise error?
-            return
+        # a package.json without name and version can be a private package
 
-        if isinstance(homepage, list):
-            if homepage:
-                homepage = homepage[0]
-            else:
-                homepage = ''
+        if homepage_url and isinstance(homepage_url, list):
+            # TODO: should we keep other URLs
+            homepage_url = homepage_url[0]
+        homepage_url = homepage_url.strip() or None
+
         namespace, name = split_scoped_package_name(name)
-        package = cls(
+
+        urls = get_urls(namespace, name, version)
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
             namespace=namespace or None,
             name=name,
             version=version or None,
             description=package_data.get('description', '').strip() or None,
-            homepage_url=homepage.strip() or None,
+            homepage_url=homepage_url,
+            **urls,
         )
         vcs_revision = package_data.get('gitHead') or None
 
@@ -150,7 +151,6 @@ class PackageJson(NpmPackageData, models.PackageDataFile):
         ]
 
         for source, func in field_mappers:
-            if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
             value = package_data.get(source) or None
             if value:
                 if isinstance(value, str):
@@ -167,47 +167,19 @@ class PackageJson(NpmPackageData, models.PackageDataFile):
         lic = package_data.get('license')
         lics = package_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
-        if TRACE:
-            declared_license = package.declared_license
-            logger.debug(
-                'parse: license: {lic} licenses: {lics} '
-                'declared_license: {declared_license}'.format(locals()))
 
         yield package
 
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return compute_normalized_license(package.declared_license)
 
-@attr.s()
-class PackageLockJson(NpmPackageData, models.PackageDataFile):
 
-    file_patterns = (
-        'npm-shrinkwrap.json',
-        'package-lock.json',
-    )
-    extensions = ('.tgz',)
-
-    @staticmethod
-    def is_package_lock(location):
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'package-lock.json')
-
-    @staticmethod
-    def is_npm_shrinkwrap(location):
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
+class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return cls.is_package_lock(location) or cls.is_npm_shrinkwrap(location)
+    def parse(cls, location):
 
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
@@ -254,7 +226,8 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                 requirement = None
                 split_requirement = dep_values.get('from', '').rsplit('@')
                 if len(split_requirement) == 2:
-                    # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
+                    # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so
+                    # we just want what is right of @
                     _, requirement = split_requirement
                 dep_deps.append(
                     models.DependentPackage(
@@ -271,7 +244,10 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                     )
                 )
 
-            p = cls(
+            p = models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_langauge=cls.default_primary_language,
                 namespace=namespace,
                 name=name,
                 version=values.get('version'),
@@ -307,7 +283,10 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
                 )
             )
 
-        yield cls(
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_langauge=cls.default_primary_language,
             name=package_data.get('name'),
             version=package_data.get('version'),
             dependencies=package_deps + dev_package_deps,
@@ -317,26 +296,93 @@ class PackageLockJson(NpmPackageData, models.PackageDataFile):
             yield package
 
 
-@attr.s()
-class YarnLockJson(NpmPackageData, models.PackageDataFile):
+class NpmPackageLockJsonHandler(BaseNpmLockHandler):
+    datasource_id = 'npm_package_lock_json'
+    path_patterns = ('*/package-lock.json',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'npm package-lock.json lockfile'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json'
 
-    file_patterns = ('yarn.lock',)
-    extensions = ('.tgz',)
+
+class NpmShrinkwrapJsonHandler(BaseNpmLockHandler):
+    datasource_id = 'npm_shrinkwrap_json'
+    path_patterns = ('*/npm-shrinkwrap.json',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'npm shrinkwrap.json lockfile'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json'
+
+# FIXME: we DO NOT process @scope /namespace of dependencies correctly
+
+
+class UnknownYarnLockFormat(Exception):
+    pass
+
+
+def is_yarn_v2(location):
+    """
+    Return True if this is a yarn.lock format version 2 and False if this is
+    version 1. Raise an UnknownYarnLockFormat exception if neither v1 or v2.
+
+    v1 is a custom, almost-like-YAMl format. v2 is a proper subset of YAML.
+
+    The start of v1 file has this:
+        # THIS IS AN AUTOGENERATED FILE. DO NOT EDIT THIS FILE DIRECTLY.
+        # yarn lockfile v1
+
+    The start of v2 file has this:
+        # This file is generated by running "yarn install" inside your project.
+        # Manual changes might be lost - proceed with caution!
+
+        __metadata:
+    """
+    with open(location) as ylf:
+        # check only in the first 10 lines
+        for line in islice(ylf, start=0, stop=10):
+            if '__metadata:' in line:
+                return True
+            if 'yarn lockfile v1' in line:
+                return False
+
+    raise UnknownYarnLockFormat(location)
+
+
+class YarnLockV2Handler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'yarn_lock_v2'
+    path_patterns = ('*/yarn.lock',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'yarn.lock lockfile v2 format'
+    documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'yarn.lock')
+    def is_datafile(cls, location):
+        return super().is_datafile(location) and is_yarn_v2(location)
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
+        return NotImplementedError
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        return NotImplementedError
+
+
+class YarnLockV1Handler(BaseNpmHandler):
+    datasource_id = 'yarn_lock_v1'
+    path_patterns = ('*/yarn.lock',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'yarn.lock lockfile v1 format'
+    documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
+
+    @classmethod
+    def is_datafile(cls, location):
+        return super().is_datafile(location) and not is_yarn_v2(location)
+
+    @classmethod
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as yarn_lock_lines:
 
             packages = []
@@ -388,13 +434,21 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                             else:
                                 current_package_data['name'] = dep
                             current_package_data['requirement'] = ', '.join(req)
+
+                # we have an empty line or comment, which signla the end of a
+                # block and start of a new one
                 else:
+
                     deps = []
                     if current_package_data:
                         for dep, req in current_package_data.get('dependencies', []):
                             deps.append(
                                 models.DependentPackage(
-                                    purl=PackageURL(type='npm', name=dep).to_string(),
+                                    purl=PackageURL(
+                                        type=cls.default_package_type,
+                                        # FIXME: scope/namespace is missing!
+                                        name=dep
+                                        ).to_string(),
                                     scope='dependencies',
                                     extracted_requirement=req,
                                     is_runtime=True,
@@ -403,7 +457,10 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                                 )
                             )
                         packages.append(
-                            cls(
+                            models.PackageData(
+                                datasource_id=cls.datasource_id,
+                                type=cls.default_package_type,
+                                primary_language=cls.default_primary_language,
                                 namespace=current_package_data.get('namespace'),
                                 name=current_package_data.get('name'),
                                 version=current_package_data.get('version'),
@@ -419,7 +476,11 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                 for dep, req in current_package_data.get('dependencies', []):
                     deps.append(
                         models.DependentPackage(
-                            purl=PackageURL(type='npm', name=dep).to_string(),
+                            purl=PackageURL(
+                                type=cls.default_package_type,
+                                # FIXME: scope/namespace is missing!
+                                name=dep,
+                            ).to_string(),
                             scope='dependencies',
                             extracted_requirement=req,
                             is_runtime=True,
@@ -427,8 +488,12 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                             is_resolved=True,
                         )
                     )
+
                 packages.append(
-                    cls(
+                    models.PackageData(
+                        datasource_id=cls.datasource_id,
+                        type=cls.default_package_type,
+                        primary_language=cls.default_primary_language,
                         namespace=current_package_data.get('namespace'),
                         name=current_package_data.get('name'),
                         version=current_package_data.get('version'),
@@ -443,7 +508,8 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                 packages_dependencies.append(
                     models.DependentPackage(
                         purl=PackageURL(
-                            type='npm',
+                            type=cls.default_package_type,
+                            # FIXME: scope/namespace is missing!
                             name=package.name,
                             version=package.version
                         ).to_string(),
@@ -455,31 +521,16 @@ class YarnLockJson(NpmPackageData, models.PackageDataFile):
                     )
                 )
 
-            yield cls(dependencies=packages_dependencies)
+            # for dependencies
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                dependencies=packages_dependencies,
+            )
+            # FIXME: do not double yield as packag and as deps!!!
             for package in packages:
                 yield package
-
-
-@attr.s()
-class NpmPackage(NpmPackageData, models.Package):
-    """
-    A NPM Package that is created out of one/multiple npm package
-    manifests, lockfiles, build scripts and package-like data, with it's files.
-    """
-
-    @property
-    def ignore_paths(self):
-        return [
-            "node_modules"
-        ]
-
-    @property
-    def manifests(self):
-        return [
-            PackageJson,
-            PackageLockJson,
-            YarnLockJson
-        ]
 
 
 def compute_normalized_license(declared_license):
@@ -536,19 +587,26 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     version and a base registry web interface URL.
 
     For example:
-    >>> assert npm_homepage_url('@invisionag', 'eslint-config-ivx') == 'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
-    >>> assert npm_homepage_url(None, 'angular') == 'https://www.npmjs.com/package/angular'
-    >>> assert npm_homepage_url('', 'angular') == 'https://www.npmjs.com/package/angular'
-    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/') == 'https://yarnpkg.com/en/package/angular'
-    >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == 'https://yarnpkg.com/en/package/@ang/angular'
-    """
-    registry = registry.rstrip('/')
+    >>> expected = 'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> assert npm_homepage_url('@invisionag', 'eslint-config-ivx') == expected
 
+    >>> expected = 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url(None, 'angular') == expected
+
+    >>> expected = 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url('', 'angular') == expected
+
+    >>> expected = 'https://yarnpkg.com/en/package/angular'
+    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/') == expected
+
+    >>> expected = 'https://yarnpkg.com/en/package/@ang/angular'
+    >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == expected
+    """
     if namespace:
-        ns_name = '/'.join([namespace, name])
+        ns_name = f'{namespace}/{name}'
     else:
         ns_name = name
-    return '%(registry)s/%(ns_name)s' % locals()
+    return f'{registry}/{ns_name}'
 
 
 def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
@@ -557,16 +615,21 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
     and a base registry URL.
 
     For example:
-    >>> assert npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4') == 'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
-    >>> assert npm_download_url('', 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
-    >>> assert npm_download_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> expected = 'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> assert npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4') == expected
+
+    >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url('', 'angular', '1.6.6') == expected
+
+    >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url(None, 'angular', '1.6.6') == expected
     """
-    registry = registry.rstrip('/')
     if namespace:
-        ns_name = '/'.join([namespace, name])
+        ns_name = f'{namespace}/{name}'
+
     else:
         ns_name = name
-    return '{registry}/{ns_name}/-/{name}-{version}.tgz'.format(**locals())
+    return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
 
 
 def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
@@ -580,15 +643,15 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     applied for scoped npms.
 
     For example:
-    >>> x = npm_api_url(
-    ... '@invisionag', 'eslint-config-ivx', '0.1.4',
-    ... 'https://registry.yarnpkg.com')
-    >>> assert x == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
+    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
     """
-    registry = registry.rstrip('/')
     version = version or ''
     if namespace:
+        # this is a legacy wart: older registries used to always encode this /
+        # FIXME: do NOT encode and use plain / instead
         ns_name = '%2f'.join([namespace, name])
         # there is no version-specific URL for scoped packages
         version = ''
@@ -596,8 +659,8 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
         ns_name = name
 
     if version:
-        version = '/' + version
-    return '{registry}/{ns_name}{version}'.format(**locals())
+        version = f'/{version}'
+    return f'{registry}/{ns_name}{version}'
 
 
 def is_scoped_package(name):
@@ -648,6 +711,7 @@ def split_scoped_package_name(name):
     if not name:
         return None, None
 
+    # FIXME: this legacy percent encoding/decoding should no longer be needed
     name = name.replace('%40', '@').replace('%2f', '/').replace('%2F', '/')
     name = name.rstrip('@').strip('/').strip()
     if not name:

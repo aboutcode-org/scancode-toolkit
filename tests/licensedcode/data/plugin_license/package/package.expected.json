@@ -27,7 +27,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/dicer",
+      "dependency_uid": "pkg:npm/dicer",
       "for_package": "pkg:npm/busboy@0.2.14",
       "lockfile": "package.json"
     },
@@ -39,7 +39,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/readable-stream",
+      "dependency_uid": "pkg:npm/readable-stream",
       "for_package": "pkg:npm/busboy@0.2.14",
       "lockfile": "package.json"
     }
@@ -89,10 +89,9 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/busboy@0.2.14",
+      "package_uid": "pkg:npm/busboy@0.2.14",
       "package_data_files": [
         "package.json"
       ],
@@ -198,7 +197,6 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

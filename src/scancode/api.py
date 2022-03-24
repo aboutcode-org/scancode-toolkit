@@ -17,7 +17,7 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-TRACE = False
+TRACE = True
 
 logger = logging.getLogger(__name__)
 
@@ -295,7 +295,7 @@ def _licenses_data_from_match(
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
-def _get_package_data(location):
+def _get_package_data(location, **kwargs):
     """
     Return a mapping of package manifest information detected in the file at `location`.
 
@@ -304,12 +304,10 @@ def _get_package_data(location):
     """
     from packagedcode.recognize import recognize_package_data
     try:
-        recognized_package_data = recognize_package_data(location)
-        if recognized_package_data:
-            return recognized_package_data
+        return recognize_package_data(location) or []
     except Exception as e:
         if TRACE:
-            logger.error('_get_package_data: {}: Exception: {}'.format(location, e))
+            logger.error(f'_get_package_data: location: {location!r}: Exception: {e}')
 
         if SCANCODE_DEBUG_PACKAGE_API:
             raise
@@ -329,31 +327,20 @@ def get_package_info(location, **kwargs):
         DeprecationWarning,
         stacklevel=1
     )
-    
-    recognized_packages = _get_package_data(location)
-    
-    if recognized_packages:
-        return dict(packages=[
-            packages.to_dict()
-            for packages in recognized_packages
-        ])
 
-    return dict(packages=[])
+    packages = _get_package_data(location, **kwargs) or []
+    return dict(packages=[p.to_dict() for p in packages])
 
 
 def get_package_data(location, **kwargs):
     """
     Return a mapping of package manifest information detected in the file at `location`.
     """
-    recognized_package_data = _get_package_data(location)
-    
-    if recognized_package_data:
-        return dict(package_data=[
-            package_data.to_dict()
-            for package_data in recognized_package_data
-        ])
+    if TRACE:
+        print('kwargs', kwargs)
 
-    return dict(package_data=[])
+    package_data = _get_package_data(location, **kwargs) or []
+    return dict([pd.to_dict() for pd in package_data])
 
 
 def get_file_info(location, **kwargs):

@@ -40,7 +40,6 @@
     "license_expression": "ms-net-library",
     "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [],

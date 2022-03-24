@@ -13,8 +13,8 @@ import posixpath
 import sys
 
 import xmltodict
-
 from commoncode import command
+
 from packagedcode import models
 from textcode.analysis import as_unicode
 
@@ -35,10 +35,10 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def parse_rpm_xmlish(location, detect_licenses=False):
+def parse_rpm_xmlish(location):
     """
     Yield RpmPackage(s) from a RPM XML'ish file at `location`. This is a file
-    created with rpm and the xml query option.
+    created with the rpm CLI with the xml query option.
     """
     if not location or not os.path.exists(location):
         return
@@ -53,10 +53,7 @@ def parse_rpm_xmlish(location, detect_licenses=False):
 
     for rpm_raw_tags in collect_rpms(rpms):
         tags = collect_tags(rpm_raw_tags)
-        pkg = build_package(tags)
-        if detect_licenses:
-            pkg.license_expression = pkg.compute_normalized_license()
-        yield pkg
+        yield build_package(tags)
 
 
 def collect_rpms(text):
@@ -131,33 +128,33 @@ def collect_tags(raw_tags):
         yield name, value_type, value
 
 
-def build_package(rpm_tags):
+def build_package(rpm_tags, datasource_id, package_type, package_namespace):
     """
-    Return an RpmPackage object from an `rpm_tags` iterable of (name,
+    Return a PackageData object from an ``rpm_tags`` iterable of (name,
     value_type, value) tuples.
     """
-    # guard from circular import
-    from packagedcode.rpm import RpmPackageData
 
     # mapping of real Package field name -> value converted to expected format
     converted = {}
     for name, value_type, value in rpm_tags:
-        handler = handler_by_name.get(name)
+        handler = RPM_TAG_HANDLER_BY_NAME.get(name)
         # FIXME: we need to handle EVRA correctly
         # TODO: add more fields
-        # TODO: mereg with tag handling in rpm.py
+        # TODO: merge with tag handling in rpm.py
         if handler:
             handled = handler(value, **converted)
             converted.update(handled)
 
-    # construct the package: we ignore unknown as we added a few technical fields
-    package = RpmPackageData.create(**converted)
-    return package
+    return models.PackageData.from_dict(**converted)
 
 ################################################################################
 # Each handler function accepts a value and returns a {name: value} mapping
-# Note handlers MUST accept **kwargs as they also receive the current data
-# being processed so far as a processed_data kwarg, but most do not use it
+# and handlers MUST accept **kwargs as they also receive the whole current data
+# being processed so far as kwargs.
+
+# TODO: process lists in a more explict way
+# Most handler do not use it, but parallel list handlers (such as for files) use
+# this to process such lists
 
 
 def name_value_str_handler(name):
@@ -179,42 +176,63 @@ def arch_handler(value, **kwargs):
     """
     Return a Package URL qualifier for the arch.
     """
-    return {'qualifiers': 'arch={}'.format(value)}
+    return {'qualifiers': f'arch={value}'}
 
 
-def checksum_handler(value, **kwargs):
+def checksum_handler(value, current_filerefs, **kwargs):
     """
-    Return a list which contains the MD5 hash
+    Return a list which contains the a checksum hash
     """
-    return {'current_file': value}
+    return {'current_filerefs': value}
 
 
-def dir_index_handler(value, current_file, **kwargs):
+def dir_index_handler(value, current_filerefs, **kwargs):
     """
     Return a list of tuples with (dirindexes, md5)
     """
-    return {'current_file': list(zip(value, current_file))}
+    return {'current_filerefs': list(zip(value, current_filerefs))}
 
 
-def basename_handler(value, current_file, **kwargs):
+def basename_handler(value, current_filerefs, **kwargs):
     """
     Return a list of tuples with (dirindexes, md5, basename)
     """
     data = []
-    for index, file in enumerate(current_file):
+    for index, file in enumerate(current_filerefs):
         basename = (value[index],)
         data.append(file + basename)
-    return {'current_file': data}
+    return {'current_filerefs': data}
 
 
-def dirname_handler(value, current_file, **kwargs):
+ALGO_BY_HEX_LEN = {
+    32: 'md5',
+    40: 'sha1',
+    64: 'sha256',
+    96: 'sha384',
+    128: 'sha512',
+}
+
+
+def infer_digest_algo(digest):
     """
-    Update the current_file by adding the correct dir and basename
-    along with the md5 value. Add to installed_files
+    Given a ``digest`` string, return an inferred digest algorightm.
+
+    We assume hex encoding for now (base64 with or without padding is common these days)
+
+    For example:
+    >>> assert infer_digest_algo('acd15e34cce4a29542d98007c7eff6ee') == 'md5'
     """
-    installed_files = []
-    for file in current_file:
-        dirindexes, md5, basename = file
+    return digest and ALGO_BY_HEX_LEN.get(len(digest))
+
+
+def dirname_handler(value, current_filerefs, **kwargs):
+    """
+    Update the ``current_filerefs`` by adding the correct dir and basename along
+    with the md5 value. Add to file_references and return a mapping of
+    {'file_references': <list of FileReference>}
+    """
+    file_references = []
+    for dirindexes, checksum, basename in current_filerefs:
         dirname = value[int(dirindexes)]
         # TODO: review this. Empty filename does not make sense, unless these
         # are directories that we might ignore OK.
@@ -226,19 +244,27 @@ def dirname_handler(value, current_file, **kwargs):
         if basename == None:
             basename = ''
 
-        rpm_file = models.PackageFile(
+        file_reference = models.FileReference(
             path=posixpath.join(dirname, basename),
-            md5=md5,
+            # TODO: add size and fileclass as extra data
         )
-        installed_files.append(rpm_file)
 
-    return {'installed_files': installed_files}
+        # TODO: we could/should use instead the filedigestalgo RPM tag
+        algo = infer_digest_algo(checksum)
+        if algo:
+            setattr(file_reference, algo, checksum)
+        file_references.append(file_reference)
+
+    return {'file_references': file_references}
+
+#
+# Mapping of:
+# - the package field name in the installed db XMLis dump,
+# - an handler function/callable for this field that implies also a target
+#   PackageData field name
 
 
-# mapping of:
-# - the package field one letter name in the installed db,
-# - an handler for that field
-handler_by_name = {
+RPM_TAG_HANDLER_BY_NAME = {
 
     ############################################################################
     # per-package fields
@@ -247,7 +273,7 @@ handler_by_name = {
     'Name': name_value_str_handler('name'),
     # TODO: add these
     #  'Epoch'
-    #  'Release'
+    #  'Release' 11.3.2
     'Version': name_value_str_handler('version'),
     'Description': name_value_str_handler('description'),
     'Sha1header': name_value_str_handler('sha1'),
@@ -256,38 +282,101 @@ handler_by_name = {
     'Arch':  arch_handler,
     'Size': size_handler,
 
+    # TODO:
+    #  'Summary' to combine with description!
+
+    #  'Distribution'
+    #     SUSE Linux Enterprise 15
+    #     Mariner
+    #     (not on Centos 5/6/7)
+    #     CentOS (in CentOS 8)
+    #     Fedora Project
+
+    #  'Vendor'
+    #     SUSE LLC &lt;https://www.suse.com/&gt;
+    #     CentOS
+
+    #  'Packager'
+    #     https://www.suse.com/
+    #     CentOS BuildSystem &lt;http://bugs.centos.org&gt;
+
+    #  'Group' System/Fhs --> keywords
+    #  'Os' linux
+    #  'Platform' noarch-suse-linux
+    #  'Sourcerpm' system-user-root-20190513-3.3.1.src.rpm
+    #  'Disturl' in Suse: obs://build.suse.de/SUSE:Maintenance:11304/
+    #     SUSE_SLE-15_Update/04b28aa8ff6101d2615ad6d102b6f09b-system-user-root.SUSE_SLE-15_Update
+
+    ############################################################################
+    # dependency fields
+    ############################################################################
+    #  'Requirename' <string>rpmlib(BuiltinLuaScripts)</string>
+    #                <string>rpmlib(CompressedFileNames)</string>
+    #  'Requireversion' <string>4.2.2-1</string>
+    #                   <string>3.0.4-1</string>
+    #  'Requireflags'
+
+    #  'Providename' <string>group(root)</string>
+    #                <string>group(shadow)</string>
+    #  'Provideversion' <string/>
+    #                   <string>20190513-3.3.1</string>
+    #  'Provideflags'
+
+    #  'Conflictflags'
+    #  'Conflictname'
+    #  'Conflictversion'
+
+    #  'Obsoleteflags'
+    #  'Obsoletename'
+    #  'Obsoleteversion'
+
     ############################################################################
     # per-file fields
     ############################################################################
     # TODO: these two are needed:
-    #  'Fileflags' -> contains if a file is doc or license
     #  'Filesizes' -> useful info
+    #  'Filelinktos' -> links!
 
-    'Filedigests': checksum_handler,
+    #  'Fileflags' -> contains if a file is doc or license
+    # <rpmTag name="Fileflags">     <rpmTag name="Basenames">
+    #       <integer>0</integer>          <string>libpopt.so.0</string>
+    #       <integer>0</integer>          <string>libpopt.so.0.0.0</string>
+    #       <integer>0</integer>          <string>popt</string>
+    #       <integer>128</integer>        <string>COPYING</string>
+    # values:
+    #     128: license
+    #     2: documentation
+    #     0: regular file
+
+    #  'Classdict' -> filetype from "file" libmagic for each file. The position is an index
+    #  'Fileclass' -> the position is a fileindex and the value is a classdict index
+    # <rpmTag name="Classdict">               <rpmTag name="Basenames">
+    #     <string/>                                 <string>libpopt.so.0</string>
+    #     <string>ELF 64-bit LSB ..</string>        <string>libpopt.so.0.0.0</string>
+    #     <string>directory</string>                <string>popt</string>
+    #     <string>ASCII text</string>               <string>COPYING</string>
+
     'Dirindexes': dir_index_handler,
     'Basenames': basename_handler,
     'Dirnames': dirname_handler,
+
+    'Filedigests': checksum_handler,
+
     ############################################################################
 
     ############################################################################
-    # TODO: ignored per-package fields. from here on, these fields are not used yet
+    # TODO: ignored per-package fields. From here on, these fields are not used yet
     ############################################################################
     #  '(unknown)'
     #  'Archivesize'
     #  'Buildhost'
     #  'Buildtime'
-    #  'Changelogname'
-    #  'Changelogtext'
-    #  'Changelogtime'
-    #  'Classdict'
-    #  'Conflictflags'
-    #  'Conflictname'
-    #  'Conflictversion'
+    #  'Changelogname' <string>fvogt@suse.com</string> <string>kukuk@suse.de</string>
+    #  'Changelogtext' <string>- Add some BuildIgnores for bootstrapping</string> <string>- Add group trusted [bsc#1044014]</string>
+    #  'Changelogtime' <integer>1557748800</integer> <integer>1498046400</integer>
     #  'Cookie'
     #  'Dependsdict'
-    #  'Distribution'
     #  'Dsaheader'
-    #  'Fileclass'
     #  'Filecolors'
     #  'Filecontexts'
     #  'Filedependsn'
@@ -303,21 +392,14 @@ handler_by_name = {
     #  'Filestates'
     #  'Fileusername'
     #  'Fileverifyflags'
-    #  'Group'
     #  'Installcolor'
     #  'Installtid'
     #  'Installtime'
     #  'Instprefixes'
-    #  'Obsoleteflags'
-    #  'Obsoletename'
-    #  'Obsoleteversion'
     #  'Optflags'
-    #  'Os'
-    #  'Packager'
     #  'Payloadcompressor'
     #  'Payloadflags'
     #  'Payloadformat'
-    #  'Platform'
     #  'Postin'
     #  'Postinprog'
     #  'Postun'
@@ -327,24 +409,15 @@ handler_by_name = {
     #  'Preinprog']
     #  'Preun'
     #  'Preunprog'
-    #  'Provideflags'
-    #  'Providename'
-    #  'Provideversion'
-    #  'Requireflags'
-    #  'Requirename'
-    #  'Requireversion'
-    #  'Rpmversion'
+    #  'Rpmversion' 4.14.1
     #  'Sigmd5'
     #  'Sigsize'
-    #  'Sourcerpm'
-    #  'Summary'
     #  'Triggerflags'
     #  'Triggerindex'
     #  'Triggername'
     #  'Triggerscriptprog'
     #  'Triggerscripts'
     #  'Triggerversion'
-    #  'Vendor'
     #  'Headeri18ntable'
     ############################################################################
 
@@ -452,7 +525,10 @@ def collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc):
         with open(stderr_loc) as st:
             stde = st.read()
         full_cmd = ' '.join([cmd_loc] + args)
-        msg = f'collect_installed_rpmdb_xmlish_from_rpmdb_loc: Failed to execute RPM command: {full_cmd}\n{stde}'
+        msg = (
+            f'collect_installed_rpmdb_xmlish_from_rpmdb_loc: '
+            f'Failed to execute RPM command: {full_cmd}\n{stde}'
+        )
         raise Exception(msg)
 
     return stdout_loc

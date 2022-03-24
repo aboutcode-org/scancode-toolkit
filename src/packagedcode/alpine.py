@@ -14,6 +14,7 @@ import re
 from functools import partial
 from datetime import datetime
 from os import path
+from pathlib import Path
 
 import attr
 from license_expression import LicenseSymbolLike
@@ -23,69 +24,145 @@ from packageurl import PackageURL
 from packagedcode import bashparse
 from packagedcode import models
 from packagedcode.utils import combine_expressions
+from packagedcode.utils import get_ancestor
 from textcode.analysis import as_unicode
 
 
-@attr.s()
-class AlpinePackage(models.PackageData, models.PackageDataFile):
-    extensions = ('.apk', 'APKBUILD')
-    default_type = 'alpine'
+# TODO: implement me! See parse_pkginfo
+class AlpineApkArchiveHandler(models.DatafileHandler):
+    # NOTE that Android .apk are zip and Alpine .apk tar gzipped tarball
+    datasource_id = 'alpine_apk_archive'
+    path_patterns = ('*.apk',)
+    filetypes = ('gzip compressed data',)
+    default_package_type = 'alpine'
+    description = 'Alpine Linux .apk package archive'
+    documentation_url = 'https://wiki.alpinelinux.org/wiki/Alpine_package_format'
 
     @classmethod
-    def recognize(cls, location):
-        return parse_apkbuild(location, strict=True)
-
-    def compute_normalized_license(self):
-        _declared, detected = detect_declared_license(self.declared_license)
+    def compute_normalized_license(cls, package):
+        _declared, detected = detect_declared_license(package.declared_license)
         return detected
 
-    def to_dict(self, _detailed=False, **kwargs):
-        data = super().to_dict(**kwargs)
-        if _detailed:
-            #################################################
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('installed_files', None)
-            #################################################
 
-        return data
+class AlpineInstalledDatabaseHandler(models.DatafileHandler):
+    datasource_id = 'alpine_installed_db'
+    path_patterns = ('*lib/apk/db/installed',)
+    default_package_type = 'alpine'
+    description = 'Alpine Linux installed package database'
 
+    @classmethod
+    def parse(cls, location):
+        yield from parse_alpine_installed_db(location)
 
-def get_installed_packages(root_dir, **kwargs):
-    """
-    Yield Package objects given a ``root_dir`` rootfs directory.
-    """
-    installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
-    if not path.exists(installed_file_loc):
-        return
-    for package in parse_alpine_installed_db(installed_file_loc):
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        # get the root resource of the rootfs
+        levels_up = len('lib/apk/db/installed'.split('/'))
+        root_resource = get_ancestor(
+            levels_up=levels_up,
+            resource=resource,
+            codebase=codebase,
+        )
+
+        package = models.Package.from_package_data(
+            package_data=package_data,
+            datafile_path=resource.path,
+        )
+        package_uid = package.package_uid
+
+        package.license_expression = cls.compute_normalized_license(
+            package=package, resource=resource, codebase=codebase,
+        )
+
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            )
+
+        root_path = Path(root_resource.path)
+        # a file ref extends from the root of the filesystem
+        file_references_by_path = {
+            str(root_path / ref.path): ref
+            for ref in package.file_references
+        }
+
+        for res in root_resource.walk(codebase):
+            ref = file_references_by_path.get(res.path)
+            if not ref:
+                continue
+
+            # path is found and processed: remove it, so we can check if we
+            # found all of them
+            del file_references_by_path[res.path]
+            res.for_packages.append(package_uid)
+            res.save()
+
+            yield res
+
+        # if we have left over file references, add these to extra data
+        if file_references_by_path:
+            missing = sorted(file_references_by_path.values(), key=lambda r:r.path)
+            package.extra_data['missing_file_references'] = missing
+
         yield package
 
 
-def parse_alpine_installed_db(location):
+class AlpineApkbuildHandler(models.DatafileHandler):
+    datasource_id = 'alpine_apkbuild'
+    path_patterns = ('*APKBUILD',)
+    default_package_type = 'alpine'
+    description = 'Alpine Linux APKBUILD package script'
+    documentation_url = 'https://wiki.alpinelinux.org/wiki/APKBUILD_Reference'
+
+    @classmethod
+    def parse(cls, location):
+        parsed = parse_apkbuild(location, strict=True)
+        if parsed:
+            yield parsed
+
+    @classmethod
+    def compute_normalized_license(cls, package):
+        _declared, detected = detect_declared_license(package.declared_license)
+        return detected
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        cls.assign_package_to_parent_tree(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+        )
+
+
+def parse_alpine_installed_db(location, datasource_id, package_type):
     """
-    Yield AlpinePackage objects from an installed database file at `location`
+    Yield PackageData objects from an installed database file at `location`
     or None. Typically found at '/lib/apk/db/installed' in an Alpine
     installation.
 
-    Note: http://uk.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz are
+    Note: http://uk.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz are
     also in the same format as an installed database.
     """
-    for fields in get_alpine_installed_db_fields(location):
-        yield build_package(fields)
+    for package_fields in get_alpine_installed_db_fields(location):
+        yield build_package_data(
+            datasource_id=datasource_id,
+            package_type=package_type,
+            fields=package_fields,
+        )
 
 
 def get_alpine_installed_db_fields(location):
     """
-    Yield lists of (name, value) pairsfrom an installed database file at `location`
-    Typically found at '/lib/apk/db/installed' in an Alpine
-    installation.
+    Yield lists of (name, value) pairs, one list for each package found in an
+    installed Alpine packages database file at `location` (typically found at
+    '/lib/apk/db/installed' in an Alpine installation.)
 
-    Note: http://uk.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz are
-    also in the same format as an installed database.
+    Note: APKINDEX index files are also in the same format.
+    See: http://uk.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
     """
     if not path.exists(location):
         return
@@ -102,10 +179,6 @@ def get_alpine_installed_db_fields(location):
             except UnicodeEncodeError:
                 fields = email.message_from_string(pkg.encode('utf-8'))
             yield [(n.strip(), v.strip(),) for n, v in fields.items()]
-
-
-def is_apkbuild(location):
-    return location and location.endswith('APKBUILD')
 
 
 # these variables need to be resolved or else this is a parsing error
@@ -143,15 +216,20 @@ ESSENTIAL_APKBUILD_VARIABLES = set([
 
 def parse_apkbuild(location, strict=False):
     """
-    Return an AlpinePackage object from an APKBUILD file at `location` or None.
-    """
-    if not path.exists(location) or not is_apkbuild(location):
-        return
+    Return a PackageData object from an APKBUILD file at ``location`` or None.
 
+    If ``strict`` is True, raise ApkbuildParseFailure error if any attribute
+    value cannot be fully resolved for shell variables.
+    """
     with open(location, 'rb') as f:
         apkbuild = as_unicode(f.read())
 
-    return parse_apkbuild_text(text=apkbuild, strict=strict)
+    return parse_apkbuild_text(
+        text=apkbuild,
+        datasource_id=AlpineApkbuildHandler.datasource_id,
+        package_type=AlpineApkbuildHandler.default_package_type,
+        strict=strict,
+    )
 
 
 class ApkbuildParseFailure(Exception):
@@ -516,7 +594,7 @@ def fix_mpd(text, *args):
 @attr.s
 class ApkBuildFixer:
     """
-    Represent a syntax fix:
+    Represent an APKBUILD syntax fix:
 
     ``if_these_strings_are_present`` in ``text``, call ``function(text, *args)``
     that returns ``text``.
@@ -627,10 +705,13 @@ def fix_apkbuild(text):
     return text
 
 
-def parse_apkbuild_text(text, strict=False,):
+def parse_apkbuild_text(text, datasource_id, package_type, strict=False):
     """
-    Return an AlpinePackage object from an APKBUILD text context or None. Only
+    Return a PackageData object from an APKBUILD text context or None. Only
     consider variables with a name listed in the ``names`` set.
+
+    If ``strict`` is True, raise ApkbuildParseFailure error if any attribute
+    value cannot be fully resolved for shell variables.
     """
     if not text:
         return
@@ -650,7 +731,11 @@ def parse_apkbuild_text(text, strict=False,):
             f'errors: {errors}',
         )
     variables = ((v.name, v.value,) for v in variables)
-    package = build_package(variables)
+    package = build_package_data(
+        variables,
+        datasource_id=datasource_id,
+        package_type=package_type
+    )
 
     if package and unresolved:
         unresolved = [v.to_dict() for v in unresolved]
@@ -660,9 +745,9 @@ def parse_apkbuild_text(text, strict=False,):
 
 def parse_pkginfo(location):
     """
-    Return an AlpinePackage object from aa .PKGINFO file at ``location`` or None.
-    .PKGINFO  is a file created by abuild from package metadata in APKBUILD
-    and that is found at the root of a package .apk tarball.
+    Return a PackageData object from a .PKGINFO file at ``location`` or None.
+    .PKGINFO is a metadata is found at the root of an .apk tarball and is
+    derived from the package metadata in APKBUILD
 
     Each lines are in the format of  "name = value" such as in::
 
@@ -688,11 +773,18 @@ def parse_pkginfo(location):
     raise NotImplementedError('TODO: implement me')
 
 
-def build_package(package_fields):
+def build_package_data(package_fields, datasource_id, package_type):
     """
-    Return an AlpinePackage object from a `package_fields` iterable of (name,
-    value) tuples. The package_fields comes from the APKINDEX and installed
-    database files that use one-letter field names.
+    Return a PackageData object from a ``package_fields`` iterable of (name,
+    value) tuples.
+
+    The ``package_fields`` names are either:
+
+    - the short form one-letter field names used in an APKINDEX and an installed
+      database file
+
+    - the long form field names seen in an APKBUILD build manifest/script and an
+      APKINFO data file.
 
     Note: we do NOT use a dict for ``package_fields`` because some fields names
     may occur more than once.
@@ -705,9 +797,13 @@ def build_package(package_fields):
     """
     package_fields = list(package_fields)
     all_fields = dict(package_fields)
+
     # mapping of actual Package field name -> value that have been converted to
     # the expected normalized format
-    converted_fields = {}
+    converted_fields = {
+        'datasource_id': datasource_id,
+        'type': package_type,
+    }
     for name, value in package_fields:
         handler = package_handlers_by_field_name.get(name)
         if handler:
@@ -727,9 +823,10 @@ def build_package(package_fields):
 
             converted_fields.update(converted)
 
-    return AlpinePackage.create(**converted_fields)
+    return models.PackageData.from_dict(converted_fields)
 
-# Note handlers MUST accept **kwargs as they also receive the current data
+#####################################
+# Note: all handlers MUST accept **kwargs as they also receive the current data
 # being processed so far as a processed_data kwarg, but most do not use it
 
 
@@ -746,6 +843,11 @@ def build_name_value_str_handler(name):
 
 
 def apkbuild_version_handler(value, all_fields, **kwargs):
+    """
+    Return a version suffixed with its release.
+
+    TODO: should this be used everywhere?
+    """
     pkgrel = all_fields.get('pkgrel')
     rel_suffix = f'-r{pkgrel}' if pkgrel else ''
     return {'version': f'{value}{rel_suffix}'}
@@ -922,36 +1024,41 @@ def A_arch_handler(value, **kwargs):
     """
     return {'qualifiers': f'arch={value}'}
 
-# Note that we use a little trick for handling files.
-# Each handler receives a copy of the data processed so far.
-# As it happens, the data about files start with a directory enry
-# then one or more files, each normally followed by their checksums
-# We return and use the current_dir and current_file from these handlers
-# to properly create a file for its directory (which is the current one)
-# and add the checksum to its file (which is the current one).
-# 'current_file' and 'current_dir' are not actual package fields, but we ignore
-# these when we create the AlpinePcakge object
+# Note that we use a little trick for handling package file references. Each
+# handler receives a copy of the data processed so far. As it happens, the data
+# about files starts with a directory entry then one or more files, each
+# normally followed by their checksums We return and use the current_dir and
+# current_file from these handlers to properly create a file in its directory
+# (which is the current one) and add the checksum to its file (which is the
+# current one). 'current_file' and 'current_dir' are not actual package fields,
+# but we ignore these when we create the PackageData object.
 
 
 def F_directory_handler(value, **kwargs):
     return {'current_dir': value}
 
 
-def R_filename_handler(value, current_dir, installed_files=None, **kwargs):
+def R_filename_handler(value, current_dir, file_references=None, **kwargs):
     """
-    Return a new current_file PackageFile in current_dir.  Add to installed_files
+    Return a new current_file FileReference in current_dir.  Add to the
+    ``file_references`` list (create it if not provided)
+
+    Return a mapping of {'current_file': current_file, 'file_references': file_references}
     """
     # operate on a copy for safety and create an empty list on first use
-    installed_files = installed_files[:] if installed_files else []
+    file_references = file_references[:] if file_references else []
 
-    current_file = models.PackageFile(path=posixpath.join(current_dir, value))
-    installed_files.append(current_file)
-    return {'current_file': current_file, 'installed_files': installed_files}
+    current_file = models.FileReference(path=posixpath.join(current_dir, value))
+    file_references.append(current_file)
+    return {'current_file': current_file, 'file_references': file_references}
 
 
 def Z_checksum_handler(value, current_file, **kwargs):
     """
-    Update the current PackageFile with its updated SHA1 hex-encoded checksum.
+    Update the ``current_file`` FileReference with its updated SHA1 hex-encoded
+    checksum.
+
+    Return a mapping of {'current_file': current_file}
 
     'Z' is a file checksum (for files and links)
     For example: Z:Q1WTc55xfvPogzA0YUV24D0Ym+MKE=
@@ -1025,7 +1132,6 @@ def get_source_entries(source):
     or::
 
     source="lua-mqtt-publish-$pkgver.tar.gz::https://github.com/ncopa/lua-mqtt-publish/archive/v$pkgver.tar.gz"
-
     """
     schemes = 'https://', 'http://', 'ftp://',
     for entry in source.strip().splitlines(False):
@@ -1073,6 +1179,7 @@ package_handlers_by_field_name = {
     # 'pkgname' in .PKGINFO and APKBUILD
     'P': build_name_value_str_handler('name'),
     'pkgname': build_name_value_str_handler('name'),
+
     # TODO: add subpackages
     # this can be composed of two or three segments: epoch:version-release
     # For example: V:1.31.1-r9
@@ -1084,10 +1191,12 @@ package_handlers_by_field_name = {
     # 'pkgdesc' in .PKGINFO and APKBUILD
     'T': build_name_value_str_handler('description'),
     'pkgdesc': build_name_value_str_handler('description'),
+
     # For example: U:https://busybox.net/
     # 'url' in .PKGINFO and APKBUILD
     'U': build_name_value_str_handler('homepage_url'),
     'url': build_name_value_str_handler('homepage_url'),
+
     # The license. For example: L:GPL2
     # 'license' in .PKGINFO and APKBUILD
     'L': L_license_handler,
@@ -1096,7 +1205,7 @@ package_handlers_by_field_name = {
     # For example: m:Natanael Copa <ncopa@alpinelinux.org>
     # 'maintainer' in .PKGINFO and APKBUILD
     'm': m_maintainer_handler,
-    # TODO: this is more often than a comment in the APKBUILD
+    # TODO: this is more often just a comment in the APKBUILD
     'maintainer': m_maintainer_handler,
 
     # For example: A:x86_64
@@ -1190,10 +1299,13 @@ package_handlers_by_field_name = {
     # - 'F': this is a folder path from the root and until there is a new F value
     #    all files defined with an R are under that folder
     'F': F_directory_handler,
+
     # - 'Z' is a file checksum (for files and links)
     'Z': Z_checksum_handler,
+
     # - 'R': this is a file name that is under the current F Folder
     'R': R_filename_handler,
+
     # - 'M' is a set of permissions for a folder as user:group:mode e.g. M:0:0:1777
     # - 'a' is a set of permissions for a file as user:group:mode e.g. a:0:0:755
     ############################################################################
@@ -1258,8 +1370,10 @@ def normalize_and_cleanup_declared_license(declared):
     The expression should be valida SPDX but are far from this in practice.
 
     Several fixes are applied:
+
     - plain text replacemnet aka. syntax fixes are plain text replacements
       to make the expression parsable
+
     - common fixes includes also nadling space-separated and comma-separated
       lists of licenses
     """
@@ -1548,6 +1662,7 @@ def apkbuild_options_handler(value, **kwargs):
 
 
 #################################################
+# test code to test parse whole APKINDEX
 if __name__ == '__main__':
     import sys
 

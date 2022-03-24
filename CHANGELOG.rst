@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+The package repository_homepage_url, repository_download_url, api_data_url are
+now plain field and not always computed fields.
+
 31.0.0 (next, roadmap)
 -----------------------
 

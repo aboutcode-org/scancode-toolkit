@@ -436,7 +436,7 @@ def package_summarizer(resource, children, keep_details=False):
 
     if TRACE_LIGHT and current_packages:
         from packagedcode.models import Package
-        packs = [Package.create(**p) for p in current_packages]
+        packs = [Package.from_dict(**p) for p in current_packages]
         logger_debug('package_summarizer: for:', resource,
                      'current_packages are:', packs)
 
@@ -446,7 +446,7 @@ def package_summarizer(resource, children, keep_details=False):
     if TRACE_LIGHT and packages:
         logger_debug()
         from packagedcode.models import Package  # NOQA
-        packs = [Package.create(**p) for p in packages]
+        packs = [Package.from_dict(**p) for p in packages]
         logger_debug('package_summarizer: for:', resource,
                      'packages are:', packs)
 

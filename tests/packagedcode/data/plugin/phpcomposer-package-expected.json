@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/php",
+      "dependency_uid": "pkg:composer/php",
       "for_package": "pkg:composer/jandreasn/a-timer",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/phpunit/phpunit",
@@ -40,9 +40,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/phpunit/phpunit",
+      "dependency_uid": "pkg:composer/phpunit/phpunit",
       "for_package": "pkg:composer/jandreasn/a-timer",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     },
     {
       "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -52,9 +52,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:composer/squizlabs/php_codesniffer",
+      "dependency_uid": "pkg:composer/squizlabs/php_codesniffer",
       "for_package": "pkg:composer/jandreasn/a-timer",
-      "lockfile": "composer.json"
+      "datafile_path": "composer.json"
     }
   ],
   "packages": [
@@ -99,10 +99,9 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:composer/jandreasn/a-timer",
+      "package_uid": "pkg:composer/jandreasn/a-timer",
       "package_data_files": [
         "composer.json"
       ],
@@ -161,7 +160,6 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

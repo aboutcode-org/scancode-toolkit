@@ -59,10 +59,9 @@
         "License": null
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:winexe/Windows%20SDK@10.0.10011.16384",
+      "package_uid": "pkg:winexe/Windows%20SDK@10.0.10011.16384",
       "package_data_files": [
         "Windows.AI.winmd"
       ],
@@ -118,7 +117,6 @@
             "License": null
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],

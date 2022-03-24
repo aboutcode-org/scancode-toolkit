@@ -19,26 +19,26 @@ class TestChef(PackageTester):
 
     def test_chef_metadata_json_is_package_data_file(self):
         test_file = self.get_test_loc('chef/basic/metadata.json')
-        assert chef.MetadataJson.is_package_data_file(test_file)
+        assert chef.MetadataJson.is_datafile(test_file)
 
     def test_chef_metadata_rb_from_json(self):
         test_file = self.get_test_loc('chef/basic/metadata.json')
         expected_file = self.get_test_loc('chef/basic/metadata.json.expected')
-        self.check_packages(chef.MetadataJson.recognize(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
+        self.check_packages(chef.MetadataJson.parse(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_chef_metadata_rb_is_package_data_file(self):
         test_file = self.get_test_loc('chef/basic/metadata.rb')
-        assert chef.Metadatarb.is_package_data_file(test_file)
+        assert chef.Metadatarb.is_datafile(test_file)
 
     def test_parse_from_rb(self):
         test_file = self.get_test_loc('chef/basic/metadata.rb')
         expected_file = self.get_test_loc('chef/basic/metadata.rb.expected')
-        self.check_packages(chef.Metadatarb.recognize(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
+        self.check_packages(chef.Metadatarb.parse(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_from_rb_dependency_requirement(self):
         test_file = self.get_test_loc('chef/dependencies/metadata.rb')
         expected_file = self.get_test_loc('chef/dependencies/metadata.rb.expected')
-        self.check_packages(chef.Metadatarb.recognize(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
+        self.check_packages(chef.Metadatarb.parse(test_file), expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_build_package(self):
         package_data = dict(

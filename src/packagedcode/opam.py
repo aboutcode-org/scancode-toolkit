@@ -7,72 +7,31 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-import logging
 import re
 
-import attr
 from packageurl import PackageURL
 
-from commoncode import filetype
 from packagedcode import models
 
-
 """
-Handle opam package.
+Handle OCaml opam package.
 """
 
-TRACE = False
 
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-
-@attr.s()
-class OpamPackageData(models.PackageData):
-
-    default_type = 'opam'
-    default_primary_language = 'Ocaml'
-    default_web_baseurl = 'https://opam.ocaml.org/packages'
-    default_download_baseurl = None
-    default_api_baseurl = 'https://github.com/ocaml/opam-repository/blob/master/packages'
+class OpamFileHandler(models.DatafileHandler):
+    datasource_id = 'opam_file'
+    path_patterns = ('*opam',)
+    default_package_type = 'opam'
+    default_primary_language = 'OCaml'
+    description = 'Ocaml Opam file'
+    documentation_url = 'https://opam.ocaml.org/doc/Manual.html#Common-file-format'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.name:
-            return '{}/{}'.format(baseurl, self.name)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        if self.name and self.version:
-            return '{}/{}/{}.{}/opam'.format(baseurl, self.name, self.name, self.version)
-
-
-@attr.s()
-class OpamFile(OpamPackageData, models.PackageDataFile):
-
-    file_patterns = ('*opam',)
-    extensions = ('.opam',)
+    def get_package_root(cls, resource, codebase):
+        return resource.parent(codebase)
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('opam')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         opams = parse_opam(location)
 
         package_dependencies = []
@@ -80,7 +39,7 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
         for dep in deps:
             package_dependencies.append(
                 models.DependentPackage(
-                    purl=dep.purl,
+                    purl=dep.to_string(),
                     extracted_requirement=dep.version,
                     scope='dependency',
                     is_runtime=True,
@@ -91,6 +50,7 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
 
         name = opams.get('name')
         version = opams.get('version')
+
         homepage_url = opams.get('homepage')
         download_url = opams.get('src')
         vcs_url = opams.get('dev-repo')
@@ -100,6 +60,8 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
         md5 = opams.get('md5')
         sha256 = opams.get('sha256')
         sha512 = opams.get('sha512')
+        repository_homepage_url = get_repository_homepage_url(name)
+        api_data_url = get_api_data_url(name, version)
 
         short_desc = opams.get('synopsis') or ''
         long_desc = opams.get('description') or ''
@@ -128,7 +90,7 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
                 )
             )
 
-        package = cls(
+        yield models.PackageData(
             name=name,
             version=version,
             vcs_url=vcs_url,
@@ -142,86 +104,23 @@ class OpamFile(OpamPackageData, models.PackageDataFile):
             declared_license=declared_license,
             description=description,
             parties=parties,
-            dependencies=package_dependencies
+            dependencies=package_dependencies,
+            api_data_url=api_data_url,
+            repository_homepage_url=repository_homepage_url
         )
 
-        yield package
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return super().assign_package_to_parent_tree(package, resource, codebase)
 
 
-@attr.s()
-class OpamPackage(OpamPackageData, models.Package):
-    """
-    A Opam Package that is created out of one/multiple opam package
-    manifests and package-like data, with it's files.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            OpamFile
-        ]
+def get_repository_homepage_url(name):
+    return name and '{https://opam.ocaml.org/packages}/{name}'
 
 
-"""
-Example:- 
-
-Sample opam file(sample3.opam):
-opam-version: "2.0"
-version: "4.11.0+trunk"
-synopsis: "OCaml development version"
-depends: [
-  "ocaml" {= "4.11.0" & post}
-  "base-unix" {post}
-]
-conflict-class: "ocaml-core-compiler"
-flags: compiler
-setenv: CAML_LD_LIBRARY_PATH = "%{lib}%/stublibs"
-build: [
-  ["./configure" "--prefix=%{prefix}%"]
-  [make "-j%{jobs}%"]
-]
-install: [make "install"]
-maintainer: "caml-list@inria.fr"
-homepage: "https://github.com/ocaml/ocaml/"
-bug-reports: "https://github.com/ocaml/ocaml/issues"
-authors: [
-  "Xavier Leroy"
-  "Damien Doligez"
-  "Alain Frisch"
-  "Jacques Garrigue"
-] 
-
->>> p = parse_opam('sample3.opam')
->>> for k, v in p.items():
->>>     print(k, v)
-
-Output:
-opam-version 2.0
-version 4.11.0+trunk
-synopsis OCaml development version
-depends [Opam(name='ocaml', version='= 4.11.0 & post'), Opam(name='base-unix', version='post')]
-conflict-class ocaml-core-compiler
-flags compiler
-setenv CAML_LD_LIBRARY_PATH = %{lib}%/stublibs
-build 
-install make install
-maintainer ['caml-list@inria.fr']
-homepage https://github.com/ocaml/ocaml/
-bug-reports https://github.com/ocaml/ocaml/issues
-authors ['Xavier Leroy', 'Damien Doligez', 'Alain Frisch', 'Jacques Garrigue']
-"""
-
-@attr.s()
-class Opam(object):
-    name = attr.ib(default=None)
-    version = attr.ib(default=None)
-
-    @property
-    def purl(self):
-        return PackageURL(
-                    type='opam',
-                    name=self.name
-                ).to_string()
+def get_api_data_url(name, version):
+    if name and version:
+        return f'https://github.com/ocaml/opam-repository/blob/master/packages/{name}/{name}.{version}/opam'
 
 
 # Regex expressions to parse file lines
@@ -259,78 +158,134 @@ Example:
 >>> assert p.group('version') == ('{= "1.0.0"}')
 """
 
+
 def parse_opam(location):
     """
-    Return a mapping of package data collected from the opam OCaml package manifest file at `location`.
+    Return a mapping of package data collected from the opam OCaml package
+    manifest file at ``location``.
     """
-    with io.open(location, encoding='utf-8') as data:
-        lines = data.readlines()
+    with open(location) as od:
+        text = od.read()
+    return parse_opam_from_text(text)
+
+
+def parse_opam_from_text(text):
+    """
+    Return a mapping of package data collected from the opam OCaml package
+    manifest ``text``.
+
+    Example:
+
+    >>> opam_text = '''
+    ... opam-version: "2.0"
+    ... version: "4.11.0+trunk"
+    ... synopsis: "OCaml development version"
+    ... depends: [
+    ...   "ocaml" {= "4.11.0" & post}
+    ...   "base-unix" {post}
+    ... ]
+    ... conflict-class: "ocaml-core-compiler"
+    ... flags: compiler
+    ... setenv: CAML_LD_LIBRARY_PATH = "%{lib}%/stublibs"
+    ... build: [
+    ...   ["./configure" "--prefix=%{prefix}%"]
+    ...   [make "-j%{jobs}%"]
+    ... ]
+    ... install: [make "install"]
+    ... maintainer: "caml-list@inria.fr"
+    ... homepage: "https://github.com/ocaml/ocaml/"
+    ... bug-reports: "https://github.com/ocaml/ocaml/issues"
+    ... authors: [
+    ...   "Xavier Leroy"
+    ...   "Damien Doligez"
+    ...   "Alain Frisch"
+    ...   "Jacques Garrigue"
+    ... ]'''
+
+    >>> p = parse_opam_from_text(opam_text)
+    >>> for k, v in p.items():
+    >>>     print(k, v)
+    opam-version 2.0
+    version 4.11.0+trunk
+    synopsis OCaml development version
+    depends [Opam(name='ocaml', version='= 4.11.0 & post'), Opam(name='base-unix', version='post')]
+    conflict-class ocaml-core-compiler
+    flags compiler
+    setenv CAML_LD_LIBRARY_PATH = %{lib}%/stublibs
+    build
+    install make install
+    maintainer ['caml-list@inria.fr']
+    homepage https://github.com/ocaml/ocaml/
+    bug-reports https://github.com/ocaml/ocaml/issues
+    authors ['Xavier Leroy', 'Damien Doligez', 'Alain Frisch', 'Jacques Garrigue']
+    """
 
     opam_data = {}
 
+    lines = text.splitlines()
     for i, line in enumerate(lines):
         parsed_line = parse_file_line(line)
-        if parsed_line:
-            key = parsed_line.group('key').strip()
-            value = parsed_line.group('value').strip()
-            if key == 'description': # Get multiline description
-                value = ''
-                for cont in lines[i+1:]:
-                    value += ' ' + cont.strip()
-                    if '"""' in cont:
-                        break
+        if not parsed_line:
+            continue
+        key = parsed_line.group('key').strip()
+        value = parsed_line.group('value').strip()
+        if key == 'description':  # Get multiline description
+            value = ''
+            for cont in lines[i + 1:]:
+                value += ' ' + cont.strip()
+                if '"""' in cont:
+                    break
 
+        opam_data[key] = clean_data(value)
+
+        if key == 'maintainer':
+            stripped_val = value.strip('["] ')
+            stripped_val = stripped_val.split('" "')
+            opam_data[key] = stripped_val
+        elif key == 'authors':
+            if '[' in line:  # If authors are present in multiple lines
+                for authors in lines[i + 1:]:
+                    value += ' ' + authors.strip()
+                    if ']' in authors:
+                        break
+                value = value.strip('["] ')
+            else:
+                value = clean_data(value)
+            value = value.split('" "')
+            opam_data[key] = value
+        elif key == 'depends':  # Get multiline dependencies
+            value = []
+            for dep in lines[i + 1:]:
+                if ']' in dep:
+                    break
+                parsed_dep = parse_dep(dep)
+                if parsed_dep:
+                    version = parsed_dep.group('version').strip('{ } ').replace('"', '')
+                    name = parsed_dep.group('name').strip()
+                    value.append(PackageURL(type='opam', name=name, version=version))
+            opam_data[key] = value
+
+        elif key == 'src':  # Get multiline src
+            if not value:
+                value = lines[i + 1].strip()
             opam_data[key] = clean_data(value)
-
-            if key == 'maintainer':
-                stripped_val = value.strip('["] ')
-                stripped_val = stripped_val.split('" "')
-                opam_data[key] = stripped_val
-            elif key == 'authors':
-                if '[' in line: # If authors are present in multiple lines
-                    for authors in lines[i+1:]:
-                        value += ' ' + authors.strip()
-                        if ']' in authors:
-                            break
-                    value = value.strip('["] ')
-                else:
-                    value = clean_data(value)   
-                value = value.split('" "')
-                opam_data[key] = value
-            elif key == 'depends': # Get multiline dependencies
-                value = []
-                for dep in lines[i+1:]:
-                    if ']' in dep:
+        elif key == 'checksum':  # Get checksums
+            if '[' in line:
+                for checksum in lines[i + 1:]:
+                    checksum = checksum.strip('" ')
+                    if ']' in checksum:
                         break
-                    parsed_dep = parse_dep(dep)
-                    if parsed_dep:
-                        value.append(Opam(
-                                name=parsed_dep.group('name').strip(),
-                                version=parsed_dep.group('version').strip('{ } ').replace('"', '')
-                            )
-                        )
-                opam_data[key] = value
-            elif key == 'src': # Get multiline src
-                if not value:
-                    value = lines[i+1].strip()
-                opam_data[key] = clean_data(value)
-            elif key == 'checksum': # Get checksums
-                if '[' in line:
-                    for checksum in lines[i+1:]:
-                        checksum = checksum.strip('" ')
-                        if ']' in checksum:
-                            break
-                        parsed_checksum = parse_checksum(checksum)
-                        key = clean_data(parsed_checksum.group('key').strip())
-                        value = clean_data(parsed_checksum.group('value').strip())
-                        opam_data[key] = value
-                else:
-                    value = value.strip('" ')
-                    parsed_checksum = parse_checksum(value)
-                    if parsed_checksum:
-                        key = clean_data(parsed_checksum.group('key').strip())
-                        value = clean_data(parsed_checksum.group('value').strip())
-                        opam_data[key] = value
+                    parsed_checksum = parse_checksum(checksum)
+                    key = clean_data(parsed_checksum.group('key').strip())
+                    value = clean_data(parsed_checksum.group('value').strip())
+                    opam_data[key] = value
+            else:
+                value = value.strip('" ')
+                parsed_checksum = parse_checksum(value)
+                if parsed_checksum:
+                    key = clean_data(parsed_checksum.group('key').strip())
+                    value = clean_data(parsed_checksum.group('value').strip())
+                    opam_data[key] = value
 
     return opam_data
 

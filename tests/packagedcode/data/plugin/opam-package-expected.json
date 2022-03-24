@@ -28,9 +28,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/ocaml",
+      "dependency_uid": "pkg:opam/ocaml",
       "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "datafile_path": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-unix",
@@ -40,9 +40,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-unix",
+      "dependency_uid": "pkg:opam/base-unix",
       "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "datafile_path": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-bigarray",
@@ -52,9 +52,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-bigarray",
+      "dependency_uid": "pkg:opam/base-bigarray",
       "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "datafile_path": "ocaml-variants.opam"
     },
     {
       "purl": "pkg:opam/base-threads",
@@ -64,9 +64,9 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-threads",
+      "dependency_uid": "pkg:opam/base-threads",
       "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "datafile_path": "ocaml-variants.opam"
     }
   ],
   "packages": [],
@@ -151,7 +151,6 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

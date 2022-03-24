@@ -9,17 +9,15 @@
 
 from contextlib import closing
 
-import attr
-from ftfy import fix_text
 import pefile
+from ftfy import fix_text
 
-from commoncode import filetype
 from commoncode import text
-from typecode import contenttype
 
 from packagedcode import models
 from packagedcode.models import Party
 from packagedcode.models import party_org
+from typecode import contenttype
 
 TRACE = False
 
@@ -221,19 +219,6 @@ def pe_info(location):
     return result
 
 
-@attr.s()
-class WindowsExecutableData(models.PackageData):
-    
-    filetypes = ('pe32', 'for ms windows',)
-    mimetypes = ('application/x-dosexec',)
-
-    default_type = 'winexe'
-
-    default_web_baseurl = None
-    default_download_baseurl = None
-    default_api_baseurl = None
-
-
 def get_first(mapping, *keys):
     """
     Return the first value of the `keys` that is found in the `mapping`.
@@ -257,41 +242,34 @@ def concat(mapping, *keys):
     return '\n'.join(values)
 
 
-@attr.s()
-class WindowsExecutable(WindowsExecutableData, models.PackageDataFile):
-    extensions = (
-        '.exe',
-        '.dll',
-        '.mui',
-        '.mun',
-        '.com',
-        '.winmd',
-        '.sys',
-        '.tlb',
-        '.exe_*',
-        '.dll_*',
-        '.mui_*',
-        '.mun_*',
-        '.com_*',
-        '.winmd_*',
-        '.sys_*',
-        '.tlb_*',
+class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'windows_executable'
+    default_package_type = 'winexe'
+    filetypes = ('pe32', 'for ms windows',)
+    path_patterns = (
+        '*.exe',
+        '*.dll',
+        '*.mui',
+        '*.mun',
+        '*.com',
+        '*.winmd',
+        '*.sys',
+        '*.tlb',
+        '*.exe_*',
+        '*.dll_*',
+        '*.mui_*',
+        '*.mun_*',
+        '*.com_*',
+        '*.winmd_*',
+        '*.sys_*',
+        '*.tlb_*',
+        '*.ocx',
     )
+    description = 'Windows Portable Executable metadata'
+    documentation_url = 'https://en.wikipedia.org/wiki/Portable_Executable'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        T = contenttype.get_type(location)
-        return filetype.is_file(location) and T.is_winexe
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         infos = pe_info(location)
 
         version = get_first(
@@ -343,7 +321,9 @@ class WindowsExecutable(WindowsExecutableData, models.PackageDataFile):
             parties = [Party(type=party_org, role='author', name=cname)]
         homepage_url = get_first(infos, 'URL', 'WWW')
 
-        yield cls(
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             version=version,
             release_date=release_date,
@@ -353,18 +333,3 @@ class WindowsExecutable(WindowsExecutableData, models.PackageDataFile):
             parties=parties,
             homepage_url=homepage_url,
         )
-
-
-@attr.s()
-class WindowsPackage(WindowsExecutableData, models.Package):
-    """
-    A Windows Package that is created out of one/multiple windows package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            WindowsExecutable
-        ]
-

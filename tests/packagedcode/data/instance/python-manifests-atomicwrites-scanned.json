@@ -25,7 +25,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": "atomicwrites/Pipfile.lock",
     "dependencies": [
       {
         "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -164,7 +163,6 @@
         "is_resolved": true
       }
     ],
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": null,
@@ -219,9 +217,7 @@
       ]
     },
     "notice_text": null,
-    "root_path": "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
     "dependencies": [],
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": "pkg:pypi/atomicwrites@1.2.1",

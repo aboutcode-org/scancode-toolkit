@@ -20,16 +20,16 @@ class TestAbout(PackageTester):
 
     def test_can_detect_aboutfile(self):
         test_file = self.get_test_loc('about/aboutfiles/apipkg.ABOUT')
-        assert about.Aboutfile.is_package_data_file(test_file)
+        assert about.AboutFileHandler.is_datafile(test_file)
 
     def test_parse_about_file_home_url(self):
         test_file = self.get_test_loc('about/aboutfiles/apipkg.ABOUT')
-        package = about.Aboutfile.recognize(test_file)
+        package = about.AboutFileHandler.parse(test_file)
         expected_loc = self.get_test_loc('about/apipkg.ABOUT-expected')
         self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_about_file_homepage_url(self):
         test_file = self.get_test_loc('about/aboutfiles/appdirs.ABOUT')
-        package = about.Aboutfile.recognize(test_file)
+        package = about.AboutFileHandler.parse(test_file)
         expected_loc = self.get_test_loc('about/appdirs.ABOUT-expected')
         self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)

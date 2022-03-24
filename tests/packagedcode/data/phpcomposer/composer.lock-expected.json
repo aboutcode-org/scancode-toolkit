@@ -25,7 +25,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -376,7 +375,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -474,7 +472,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -563,7 +560,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -661,7 +657,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -768,7 +763,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -846,7 +840,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1016,7 +1009,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1101,7 +1093,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1177,7 +1168,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1257,7 +1247,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1365,7 +1354,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1468,7 +1456,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1546,7 +1533,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1887,7 +1873,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -1981,7 +1966,6 @@
       "BSD-3-Clause"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2054,7 +2038,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2152,7 +2135,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2214,7 +2196,6 @@
       "BSD-3-Clause"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2319,7 +2300,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2523,7 +2503,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2619,7 +2598,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2760,7 +2738,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2838,7 +2815,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2907,7 +2883,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -2976,7 +2951,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -3054,7 +3028,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -3132,7 +3105,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -3210,7 +3182,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -3279,7 +3250,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [
@@ -3348,7 +3318,6 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "dependencies": [

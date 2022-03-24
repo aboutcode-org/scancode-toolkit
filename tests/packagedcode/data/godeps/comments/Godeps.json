@@ -1,0 +1,25 @@
+{
+	"ImportPath": "bitbucket.org/ehazlett/dialogue/cli",
+	"GoVersion": "go1.2.1",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/go.crypto/ssh/terminal",
+			"Comment": "null-205",
+			"Rev": "fe6c00a82e550c3be0c18b3ed05211c9c2ec8106"
+		},
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.1.1-5-g5568a01",
+			"Rev": "5568a01db73b24230945a9ccd6813fac482e226f"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.0.0-65-g820deef",
+			"Rev": "820deefc9031d101f085ef773425fc6ca7a5363e"
+		},
+		{
+			"ImportPath": "github.com/howeyc/gopass",
+			"Rev": "e8c0d21f59eb7f01086a39e47e05568acc9bb736"
+		}
+	]
+}

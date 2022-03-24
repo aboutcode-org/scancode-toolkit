@@ -9,65 +9,41 @@
 
 import io
 import json
-import logging
 
-import attr
 from packageurl import PackageURL
 
-from commoncode import filetype
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
 
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-
-@attr.s()
-class BowerPackageData(models.PackageData):
-    
-    default_type = 'bower'
+class BowerJsonHandler(models.DatafileHandler):
+    datasource_id = 'bower_json'
+    path_patterns = ('*/bower.json', '*/.bower.json',)
+    default_package_type = 'bower'
+    default_primary_language = 'JavaScript'
+    description = 'Bower package'
+    documentation_url = 'https://bower.io'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
+    def compute_normalized_license(cls, package):
+        return compute_bower_normalized_license(package.declared_license)
 
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
-
-
-@attr.s()
-class BowerJson(BowerPackageData, models.PackageDataFile):
-
-    file_patterns = ('bower.json', '.bower.json')
-    extensions = ('.json',)
+    # TODO: handle complex cases of npms and bower combined
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        cls.assign_package_to_parent_tree(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+        )
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.lower().endswith(('bower.json', '.bower.json'))
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
+        # note: having no name is not a problem for private packages. See #1514
         name = package_data.get('name')
-        # FIXME: having no name may not be a problem See #1514
-        if not name:
-            return
 
         description = package_data.get('description')
         version = package_data.get('version')
@@ -105,7 +81,7 @@ class BowerJson(BowerPackageData, models.PackageDataFile):
 
         vcs_url = None
         if repo_type and repo_url:
-            vcs_url = '{}+{}'.format(repo_type, repo_url)
+            vcs_url = f'{repo_type}+{repo_url}'
 
         deps = package_data.get('dependencies') or {}
         dependencies = []
@@ -145,21 +121,7 @@ class BowerJson(BowerPackageData, models.PackageDataFile):
         )
 
 
-@attr.s()
-class BowerPackage(BowerPackageData, models.Package):
-    """
-    A Bower Package that is created out of one/multiple bower package
-    manifests and package-like data, with it's files.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            BowerJson
-        ]
-
-
-def compute_normalized_license(declared_license):
+def compute_bower_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of
     declared license strings.

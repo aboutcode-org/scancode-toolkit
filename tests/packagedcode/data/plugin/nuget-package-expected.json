@@ -62,10 +62,9 @@
       "license_expression": "apache-2.0",
       "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:nuget/Castle.Core@4.2.1",
+      "package_uid": "pkg:nuget/Castle.Core@4.2.1",
       "package_data_files": [
         "Castle.Core.nuspec"
       ],
@@ -124,7 +123,6 @@
           "license_expression": "apache-2.0",
           "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [],

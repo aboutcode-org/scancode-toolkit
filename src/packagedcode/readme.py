@@ -7,119 +7,93 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
-
-import attr
-from commoncode import filetype
 from commoncode import fileutils
 
 from packagedcode import models
 
 """
-Handle README.* package metadata
+Handle README.*-style semi-structured package metadata.
+These are seen in Android, Chromium and a few more places.
 """
 
-TRACE = False
+# Common README field name mapped to known PackageData field name
+PACKAGE_FIELD_BY_README_FIELD = {
+    'name': 'name',
+    'project': 'name',
+    'version': 'version',
 
-logger = logging.getLogger(__name__)
+    'copyright': 'copyright',
 
-if TRACE:
-    import sys
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    'download link': 'download_url',
+    'downloaded from': 'download_url',
 
+    'homepage': 'homepage_url',
+    'website': 'homepage_url',
+    'repo': 'homepage_url',
+    'source': 'homepage_url',
+    'upstream': 'homepage_url',
+    'url': 'homepage_url',
+    'project url': 'homepage_url',
 
-README_MAPPING = {
-    'name': ['name', 'project'],
-    'version': ['version'],
-    'homepage_url': ['project url', 'repo', 'source', 'upstream', 'url', 'website'],
-    'download_url': ['download link', 'downloaded from'],
-    'declared_license': ['license'],
+    'licence': 'declared_license',
+    'license': 'declared_license',
 }
 
 
-@attr.s()
-class ReadmePackageData(models.PackageData):
-    default_type = 'readme'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
-@attr.s()
-class ReadmeManifest(ReadmePackageData, models.PackageDataFile):
-
-    file_patterns = (
-        'README.android',
-        'README.chromium',
-        'README.facebook',
-        'README.google',
-        'README.thirdparty',
+class ReadmeHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'readme'
+    default_package_type = 'readme'
+    path_patterns = (
+        '*/README.android',
+        '*/README.chromium',
+        '*/README.facebook',
+        '*/README.google',
+        '*/README.thirdparty',
     )
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() in [
-                'readme.android',
-                'readme.chromium',
-                'readme.facebook',
-                'readme.google',
-                'readme.thirdparty'
-            ]
-        )
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location, encoding='utf-8') as loc:
             readme_manifest = loc.read()
 
-        package = build_package(cls, readme_manifest)
+        package_data = build_package(cls, readme_manifest)
 
-        if not package.name:
-            # If no name was detected for the Package, then we use the basename of
-            # the parent directory as the Package name
+        if not package_data.name:
+            # If no name was detected for the Package, then we use the basename
+            # of the parent directory as the Package name
             parent_dir = fileutils.parent_directory(location)
             parent_dir_basename = fileutils.file_base_name(parent_dir)
-            package.name = parent_dir_basename
+            package_data.name = parent_dir_basename
 
-        yield package
+        yield package_data
 
 
-def build_package(cls, readme_manifest):
+def build_package(readme_manifest):
     """
     Return a Package object from a readme_manifest mapping (from a
     README.chromium file or similar) or None.
     """
-    package = cls()
+    package = models.PackageData(
+        datasource_id=ReadmeHandler.datasource_id,
+        default_package_type=ReadmeHandler.default_package_type,
+    )
 
     for line in readme_manifest.splitlines():
-        key, sep, value = line.partition(':')
+        line = line.strip()
+
+        if ':' in line:
+            key, _sep, value = line.partition(':')
+        elif '=' in line:
+            key, _sep, value = line.partition('=')
+
+        key = key.lower().strip()
+        value = value.strip()
 
         if not key or not value:
             continue
-
-        # Map the key, value pairs to the Package
-        key, value = key.lower(), value.strip()
-        if key in README_MAPPING['name']:
-            package.name = value
-        if key in README_MAPPING['version']:
-            package.version = value
-        if key in README_MAPPING['homepage_url']:
-            package.homepage_url = value
-        if key in README_MAPPING['download_url']:
-            package.download_url = value
-        if key in README_MAPPING['declared_license']:
-            package.declared_license = value
+        package_key = PACKAGE_FIELD_BY_README_FIELD.get(key)
+        if not package_key:
+            continue
+        setattr(package, package_key, value)
 
     return package

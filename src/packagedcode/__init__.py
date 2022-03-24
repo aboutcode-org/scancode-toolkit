@@ -10,16 +10,20 @@
 import attr
 
 from packagedcode import about
+from packagedcode import alpine
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import build_gradle
 from packagedcode import cargo
 from packagedcode import chef
 from packagedcode import debian
+from packagedcode import debian_copyright
+from packagedcode import distro
 from packagedcode import conda
 from packagedcode import cocoapods
 from packagedcode import cran
 from packagedcode import freebsd
+from packagedcode import godeps
 from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import jar_manifest
@@ -38,250 +42,195 @@ from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
 from packagedcode import windows
+from packagedcode import win_reg
 
+# Note: the order matters: from the most to the least specific parser.
+# a handler classes MUST be added to this list to be active
+PACKAGE_DATAFILE_HANDLERS = [
+    about.AboutFileHandler,
 
-# Note: the order matters: from the most to the least specific
-# Package classes MUST be added to this list to be active
-PACKAGE_DATA_CLASSES = [
-    rpm.RpmManifest,
-    debian.DebianPackage,
+    alpine.AlpineApkArchiveHandler,
+    alpine.AlpineApkArchiveHandler,
+    alpine.AlpineInstalledDatabaseHandler,
 
-    misc.JavaJar,
-    jar_manifest.JavaManifest,
-    misc.JavaEar,
-    misc.JavaWar,
-    maven.PomXml,
-    jar_manifest.IvyJar,
-    misc.JBossSar,
-    misc.Axis2Mar,
+    bower.BowerJsonHandler,
 
-    about.Aboutfile,
-    npm.PackageJson,
-    npm.PackageLockJson,
-    npm.YarnLockJson,
-    phpcomposer.ComposerJson,
-    phpcomposer.ComposerLock,
-    haxe.HaxelibJson,
-    cargo.CargoToml,
-    cargo.CargoLock,
-    cocoapods.Podspec,
-    cocoapods.PodfileLock,
-    cocoapods.PodspecJson,
-    opam.OpamFile,
-    misc.MeteorPackage,
-    bower.BowerJson,
-    freebsd.CompactManifest,
-    misc.CpanModule,
-    rubygems.GemArchive,
-    rubygems.GemArchiveExtracted,
-    rubygems.GemSpec,
-    rubygems.GemfileLock,
-    misc.AndroidApp,
-    misc.AndroidLibrary,
-    misc.MozillaExtension,
-    misc.ChromeExtension,
-    misc.IOSApp,
-    pypi.MetadataFile,
-    pypi.BinaryDistArchive,
-    pypi.SourceDistArchive,
-    pypi.SetupPy,
-    pypi.DependencyFile,
-    pypi.PipfileLock,
-    pypi.RequirementsFile,
-    golang.GoMod,
-    golang.GoSum,
-    misc.CabPackage,
-    misc.InstallShieldPackage,
-    misc.NSISInstallerPackage,
-    nuget.Nuspec,
-    misc.SharPackage,
-    misc.AppleDmgPackage,
-    misc.IsoImagePackage,
-    misc.SquashfsPackage,
-    chef.MetadataJson,
-    chef.Metadatarb,
-    build.BazelPackage,
-    build.BuckPackage,
-    build.AutotoolsPackage,
-    conda.Condayml,
-    win_pe.WindowsExecutable,
-    readme.ReadmeManifest,
-    build.MetadataBzl,
-    msi.MsiInstallerPackage,
-    windows.MicrosoftUpdateManifest,
-    pubspec.PubspecYaml,
-    pubspec.PubspecLock,
-    cran.DescriptionFile,
-    build_gradle.BuildGradle
+    build_gradle.BuildGradleHandler,
+
+    build.AutotoolsConfigureHandler,
+    build.BazelBuildHandler,
+    build.BuckMetadataBzlHandler,
+    build.BuckPackageHandler,
+
+    cargo.CargoLockHandler,
+    cargo.CargoTomlHandler,
+
+    chef.ChefMetadataJsonHandler,
+    chef.ChefMetadataRbHandler,
+
+    cocoapods.PodspecHandler,
+    cocoapods.PodspecJsonHandler,
+    cocoapods.PodfileLockHandler,
+    cocoapods.PodfileHandler,
+
+    conda.CondaYamlHandler,
+    conda.CondaMetaYamlHandler,
+
+    cran.CranDescriptionFileHandler,
+
+    debian_copyright.DebianCopyrightFileInPackageHandler,
+    debian_copyright.DebianCopyrightFileInSourceHandler,
+    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
+
+    debian.DebianDscFileHandler,
+    debian.DebianDistrolessInstalledDatabaseHandler,
+    debian.DebianInstalledFilelistHandler,
+    debian.DebianInstalledMd5sumFilelistHandler,
+    debian.DebianInstalledStatusDatabaseHandler,
+
+    debian.DebianControlFileInExtractedDebHandler,
+    debian.DebianControlFileInSourceHandler,
+
+    debian.DebianDebPackageHandler,
+    debian.DebianMd5sumFilelistInPackageHandler,
+
+    debian.DebianSourcePackageMetadataTarballHandler,
+    debian.DebianSourcePackageTarballHandler,
+
+    distro.EtcOsReleaseHandler,
+
+    freebsd.CompactManifestHandler,
+
+    godeps.GodepsHandler,
+    golang.GoModHandler,
+    golang.GoSumHandler,
+
+    haxe.HaxelibJsonHandler,
+
+    jar_manifest.JavaJarManifestHandler,
+
+    maven.MavenPomXmlHandler,
+    maven.MavenPomPropertiesHandler,
+
+    misc.AndroidAppArchiveHandler,
+    misc.AndroidLibraryHandler,
+    misc.AppleDmgHandler,
+    misc.Axis2MarArchiveHandler ,
+    misc.Axis2MarModuleXmlHandler ,
+    misc.CabArchiveHandler,
+    misc.ChromeExtensionHandler,
+    misc.CpanDistIniHandler ,
+    misc.CpanMakefilePlHandler,
+    misc.CpanManifestHandler,
+    misc.CpanMetaJsonHandler,
+    misc.CpanMetaYmlHandler,
+    misc.InstallShieldPackageHandler,
+    misc.IosAppIpaHandler,
+    misc.IsoImageHandler,
+    misc.IvyXmlHandler,
+
+    misc.JavaEarAppXmlHandler ,
+    misc.JavaEarHandler ,
+
+    # is this redundant with Jar manifest?
+    misc.JavaJarHandler,
+
+    misc.JavaWarHandler,
+    misc.JavaWarWebXmlHandler,
+
+    misc.JBossSarHandler ,
+    misc.JBossServiceXmlHandler ,
+
+    misc.MeteorPackageHandler,
+    misc.MozillaExtensionHandler,
+    misc.NsisInstallerHandler,
+    misc.SharArchiveHandler,
+    misc.SquashfsImageHandler,
+
+    msi.MsiInstallerHandler,
+
+    npm.NpmPackageJsonHandler,
+    npm.NpmPackageLockJsonHandler,
+    npm.NpmShrinkwrapJsonHandler,
+    npm.YarnLockV1Handler,
+    npm.YarnLockV2Handler,
+
+    nuget.NugetNupkgHandler,
+    nuget.NugetNuspecHandler,
+
+    opam.OpamFileHandler,
+
+    phpcomposer.PhpComposerJsonHandler,
+    phpcomposer.PhpComposerLockHandler,
+
+    pubspec.DartPubspecYamlHandler,
+    pubspec.PubspecLockHandler,
+
+    pypi.PipfileHandler,
+    pypi.PipfileLockHandler,
+    pypi.PipRequirementsFileHandler,
+    pypi.PypiEggHandler,
+    pypi.PypiSdistArchiveHandler,
+    pypi.PypiWheelHandler,
+    pypi.PyprojectTomlHandler,
+    pypi.PythonEditableInstallationPkgInfoFile,
+    pypi.PythonEggPkgInfoFile,
+    pypi.PythonInstalledWheelMetadataFile,
+    pypi.PythonSdistPkgInfoFile,
+    pypi.PythonSetupPyHandler,
+    pypi.SetupCfgHandler,
+    pypi.ToxIniHandler,
+
+    readme.ReadmeHandler,
+
+    rpm.RpmArchiveHandler,
+    rpm.RpmInstalledBdbDatabaseHandler,
+    rpm.RpmInstalledSqliteDatabaseHandler,
+    rpm.RpmInstalledNdbDatabaseHandler,
+    rpm.RpmSpecfileHandler,
+
+    rubygems.GemArchiveExtractedHandler,
+    rubygems.GemArchiveHandler,
+
+    # the order of these handlers matter
+    rubygems.GemfileInExtractedGemHandler,
+    rubygems.GemfileHandler,
+
+    # the order of these handlers matter
+    rubygems.GemfileLockInExtractedGemHandler,
+    rubygems.GemfileLockHandler,
+
+    # the order of these handlers matter
+    rubygems.GemspecInInstalledVendorBundleSpecificationsHandler,
+    rubygems.GemspecInExtractedGemHandler,
+    rubygems.GemspecHandler,
+
+    windows.MicrosoftUpdateManifestHandler,
+
+    win_pe.WindowsExecutableHandler,
+
+    win_reg.InstalledProgramFromDockerSoftwareDeltaHandler,
+    win_reg.InstalledProgramFromDockerFilesSoftwareHandler,
+    win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
 ]
 
-
-PACKAGE_INSTANCE_CLASSES = [
-    rpm.RpmPackage,
-    maven.MavenPackage,
-    npm.NpmPackage,
-    phpcomposer.PhpPackage,
-    haxe.HaxePackage,
-    cargo.RustPackage,
-    cocoapods.CocoapodsPackage,
-    opam.OpamPackage,
-    bower.BowerPackage,
-    freebsd.FreebsdPackage,
-    rubygems.RubyPackage,
-    pypi.PythonPackage,
-    golang.GoPackage,
-    nuget.NugetPackage,
-    chef.ChefPackage,
-    win_pe.WindowsPackage,
-    pubspec.PubspecPackage,
-    cran.CranPackage
-]
-
-
-PACKAGE_DATA_BY_TYPE = {
-    cls.default_type: cls
-    for cls in PACKAGE_DATA_CLASSES
+HANDLER_BY_DATASOURCE_ID = {
+    handler.datasource_id: handler for handler in PACKAGE_DATAFILE_HANDLERS
 }
 
 
-PACKAGE_INSTANCES_BY_TYPE = {
-    cls.default_type: cls
-    for cls in PACKAGE_INSTANCE_CLASSES
-}
+class UnknownPackageDatasource(Exception):
+    pass
 
 
-def get_package_class(scan_data, default=models.Package):
+def get_package_handler(package_data):
     """
-    Return the Package subclass that corresponds to the package type in a
-    mapping of package `scan_data`.
-
-    For example:
-    >>> data = {'type': 'cpan'}
-    >>> assert models.CpanModule == get_package_class(data)
-    >>> data = {'type': 'some stuff'}
-    >>> assert models.Package == get_package_class(data)
-    >>> data = {'type': None}
-    >>> assert models.Package == get_package_class(data)
-    >>> data = {}
-    >>> assert models.Package == get_package_class(data)
-    >>> data = []
-    >>> assert models.Package == get_package_class(data)
-    >>> data = None
-    >>> assert models.Package == get_package_class(data)
+    Return the DatafileHandler class that corresponds to a ``package_data``
+    PackageData object. Raise a UnknownPackageDatasource error if the
+    DatafileHandler is not found.
     """
-    ptype = scan_data and scan_data.get('type') or None
-    if not ptype:
-        # basic type for default package types
-        return default
-    ptype_class = PACKAGE_DATA_BY_TYPE.get(ptype)
-    return ptype_class or default
-
-
-def get_package_instance(scan_data):
-    """
-    Return a Package instance re-built from a mapping of ``scan_data`` native
-    Python data that has the structure of a scan. Known attributes that store a
-    list of objects are also "rehydrated" (such as models.Party).
-
-    The Package instance will use the Package subclass that supports the
-    provided package "type" when possible or the base Package class otherwise.
-
-    Unknown attributes provided in ``scan_data`` that do not exist as fields in
-    the Package class are kept as items in the Package.extra_data mapping.
-    An Exception is raised if an "unknown attribute" name already exists as
-    a Package.extra_data key.
-    """
-    # TODO: consider using a proper library for this such as cattrs,
-    # marshmallow, etc. or use the field type that we declare.
-
-    # Each of these are lists of class instances tracked here, which are stored
-    # as a list of mappings in scanc_data
-    list_field_types_by_name = {
-        'parties': models.Party,
-        'dependencies': models.DependentPackage,
-        'installed_files': models.PackageFile,
-    }
-
-    # these are computed attributes serialized on a package
-    # that should not be recreated when serializing
-    computed_attributes = set([
-        'purl',
-        'repository_homepage_url',
-        'repository_download_url',
-        'api_data_url'
-    ])
-
-    # re-hydrate lists of typed objects
-    klas = get_package_class(scan_data)
-    existing_fields = attr.fields_dict(klas)
-
-    extra_data = scan_data.get('extra_data', {}) or {}
-    package_data = {}
-
-    for key, value in scan_data.items():
-        if not value or key in computed_attributes:
-            continue
-
-        field = existing_fields.get(key)
-
-        if not field:
-            if key not in extra_data:
-                # keep unknown field as extra data
-                extra_data[key] = value
-                continue
-            else:
-                raise Exception(
-                    f'Invalid scan_data with duplicated key: {key}={value!r} '
-                    f'present both as attribute AND as extra_data: '
-                    f'{key}={extra_data[key]!r}'
-                )
-
-        list_field_type = list_field_types_by_name.get(key)
-        if not list_field_type:
-            # this is a plain known field
-            package_data[key] = value
-            continue
-
-        # Since we have a list_field_type, value must be a list of mappings:
-        # we transform it in a list of objects.
-
-        if not isinstance(value, list):
-            raise Exception(
-                f'Invalid scan_data with unknown data structure. '
-                f'Expected the value to be a list of dicts and not a '
-                f'{type(value)!r} for {key}={value!r}'
-            )
-
-        objects = list(_build_objects_list(values=value, klass=list_field_type))
-        package_data[key] = objects
-
-    return klas(**package_data)
-
-
-def _build_objects_list(values, klass):
-    """
-    Yield ``klass`` objects built from a ``values`` list of mappings.
-    """
-    # Since we have a list_field_type, value must be a list of mappings:
-    # we transform it in a list of objects.
-
-    if not isinstance(values, list):
-        raise Exception(
-            f'Invalid scan_data with unknown data structure. '
-            f'Expected the value to be a list of dicts and not a '
-            f'{type(values)!r} for {values!r}'
-        )
-
-    for val in values:
-        if not val:
-            continue
-
-        if not isinstance(val, dict):
-            raise Exception(
-                f'Invalid scan_data with unknown data structure. '
-                f'Expected the value to be a mapping for and not a '
-                f'{type(val)!r} for {values!r}'
-            )
-
-        yield klass.create(**val)
+    ppc = HANDLER_BY_DATASOURCE_ID.get(package_data.datasource_id)
+    if not ppc:
+        raise UnknownPackageDatasource(package_data)
+    return ppc
 

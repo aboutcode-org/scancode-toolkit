@@ -221,7 +221,7 @@ def check_json_scan(
 def remove_uuid_from_scan(results):
     """
     In `results` data mapping remove `uuid` qualifiers from all the
-    `package_uuid fields` in `packages` and `dependency_uuid` fields in `dependencies`.
+    `package_uid fields` in `packages` and `dependency_uid` fields in `dependencies`.
 
     UUID fields are generated uniquely and would cause test failures
     when comparing results and expected.
@@ -230,12 +230,12 @@ def remove_uuid_from_scan(results):
 
     remove_uuid_from_instances(
         instances=modified_results["dependencies"],
-        uuid_string_fields=["dependency_uuid", "for_package"],
+        uuid_string_fields=["dependency_uid", "for_package"],
     )
 
     remove_uuid_from_instances(
         instances=modified_results["packages"],
-        uuid_string_fields=["package_uuid"],
+        uuid_string_fields=["package_uid"],
     )
 
     remove_uuid_from_instances(

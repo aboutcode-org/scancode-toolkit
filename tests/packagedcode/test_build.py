@@ -14,6 +14,7 @@ from commoncode.resource import Codebase
 from packagedcode import build
 from packagedcode import models
 from packages_test_utils import PackageTester
+from packages_test_utils import compare_package_results
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -49,18 +50,18 @@ class TestBuild(PackageTester):
         results = [r.path for r in build.BaseBuildManifestPackageData.get_package_resources(root, codebase)]
         assert results == expected
 
-    def test_BazelPackage_recognize(self):
+    def test_BazelPackage_parse(self):
         test_file = self.get_test_loc('bazel/parse/BUILD')
-        result_packages = build.BazelPackage.recognize(test_file)
+        result_packages = build.BazelPackage.parse(test_file)
         expected_packages = [
             build.BazelPackage(name='hello-greet'),
             build.BazelPackage(name='hello-world'),
         ]
         compare_package_results(expected_packages, result_packages)
 
-    def test_BuckPackage_recognize(self):
+    def test_BuckPackage_parse(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
-        result_packages = build.BuckPackage.recognize(test_file)
+        result_packages = build.BuckPackage.parse(test_file)
         expected_packages = [
             build.BuckPackage(name='app'),
             build.BuckPackage(name='app2'),
@@ -69,7 +70,7 @@ class TestBuild(PackageTester):
 
     def test_BuckPackage_recognize_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result_packages = build.BuckPackage.recognize(test_file)
+        result_packages = build.BuckPackage.parse(test_file)
         expected_packages = [
             build.BuckPackage(
                 name='app',
@@ -79,9 +80,9 @@ class TestBuild(PackageTester):
         ]
         compare_package_results(expected_packages, result_packages)
 
-    def test_MetadataBzl_recognize(self):
+    def test_MetadataBzl_parse(self):
         test_file = self.get_test_loc('metadatabzl/METADATA.bzl')
-        result_packages = build.MetadataBzl.recognize(test_file)
+        result_packages = build.MetadataBzl.parse(test_file)
         expected_packages = [
             build.MetadataBzl(
                 type='github',
@@ -100,16 +101,3 @@ class TestBuild(PackageTester):
         ]
         compare_package_results(expected_packages, result_packages)
 
-
-def compare_package_results(expected, result):
-    # We don't want to compare `root_path`, since the result will always
-    # have a different `root_path` than the expected result
-    result_packages = []
-    for result_package in result:
-        r = result_package.to_dict()
-        result_packages.append(r)
-    expected_packages = []
-    for expected_package in expected:
-        e = expected_package.to_dict()
-        expected_packages.append(e)
-    assert result_packages == expected_packages

@@ -25,9 +25,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
-    "installed_files": [],
+    "file_references": [],
     "extra_data": {
       "install_location": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\"
     },

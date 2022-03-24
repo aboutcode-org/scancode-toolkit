@@ -39,7 +39,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate@3.2.1.ga?classifier=sources"
   ],

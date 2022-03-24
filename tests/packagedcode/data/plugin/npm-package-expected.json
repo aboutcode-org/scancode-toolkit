@@ -28,9 +28,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/mocha",
+      "dependency_uid": "pkg:npm/mocha",
       "for_package": "pkg:npm/cookie-signature@1.0.3",
-      "lockfile": "package.json"
+      "datafile_path": "package.json"
     },
     {
       "purl": "pkg:npm/should",
@@ -40,9 +40,9 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/should",
+      "dependency_uid": "pkg:npm/should",
       "for_package": "pkg:npm/cookie-signature@1.0.3",
-      "lockfile": "package.json"
+      "datafile_path": "package.json"
     }
   ],
   "packages": [
@@ -84,10 +84,9 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/cookie-signature@1.0.3",
+      "package_uid": "pkg:npm/cookie-signature@1.0.3",
       "package_data_files": [
         "package.json"
       ],
@@ -143,7 +142,6 @@
           "license_expression": null,
           "declared_license": [],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},
           "dependencies": [

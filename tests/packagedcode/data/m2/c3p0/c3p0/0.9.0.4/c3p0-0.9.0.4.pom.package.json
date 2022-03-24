@@ -31,7 +31,6 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/c3p0/c3p0@0.9.0.4?classifier=sources"
   ],

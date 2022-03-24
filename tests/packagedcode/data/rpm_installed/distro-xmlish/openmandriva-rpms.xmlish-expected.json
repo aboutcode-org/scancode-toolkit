@@ -27,14 +27,13 @@
     "license_expression": "gpl-1.0-plus",
     "declared_license": "GPL",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": "pkg:rpm/chkconfig@1.11?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "/etc/alternatives",
         "size": 0,
@@ -833,14 +832,13 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
     "purl": "pkg:rpm/lib64ncursesw6@6.2?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "installed_files": [
+    "file_references": [
       {
         "path": "/lib64/libncursesw.so.6",
         "size": 0,
