@@ -45,10 +45,6 @@ Create summarized scan data.
 """
 
 
-class SummaryPluginDeprecationWarning(DeprecationWarning):
-    pass
-
-
 @post_scan_impl
 class ScanSummary(PostScanPlugin):
     """
@@ -62,6 +58,36 @@ class ScanSummary(PostScanPlugin):
         PluggableCommandLineOption(('--summary',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans at the codebase level.',
+            help_group=POST_SCAN_GROUP,
+            required_options=['classify', 'license_clarity_score']
+        )
+    ]
+
+    def is_enabled(self, summary, **kwargs):
+        return summary
+
+    def process_codebase(self, codebase, summary, **kwargs):
+        if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
+        summarize_codebase(codebase, keep_details=False, **kwargs)
+
+
+class SummaryLegacyPluginDeprecationWarning(DeprecationWarning):
+    pass
+
+
+@post_scan_impl
+class ScanSummaryLegacy(PostScanPlugin):
+    """
+    Summarize a scan at the codebase level.
+    """
+    sort_order = 10
+
+    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
+
+    options = [
+        PluggableCommandLineOption(('--summary-legacy',),
+            is_flag=True, default=False,
+            help='Summarize license, copyright and other scans at the codebase level.',
             help_group=POST_SCAN_GROUP)
     ]
 
@@ -69,17 +95,17 @@ class ScanSummary(PostScanPlugin):
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
-        deprecation_message = "The --summary option will be deprecated in a future version of scancode-toolkit."
-        warnings.simplefilter('always', SummaryPluginDeprecationWarning)
+        deprecation_message = "The --summary-legacy option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', SummaryLegacyPluginDeprecationWarning)
         warnings.warn(
             deprecation_message,
-            SummaryPluginDeprecationWarning,
+            SummaryLegacyPluginDeprecationWarning,
             stacklevel=2,
         )
         codebase_header = codebase.get_or_create_current_header()
         codebase_header.warnings.append(deprecation_message)
-        if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
-        summarize_codebase(codebase, keep_details=False, **kwargs)
+        if TRACE_LIGHT: logger_debug('ScanSummaryLegacy:process_codebase')
+        summarize_codebase(codebase, keep_details=False, legacy=True, **kwargs)
 
 
 class SummaryWithDetailsDeprecationWarning(DeprecationWarning):
@@ -119,28 +145,37 @@ class ScanSummaryWithDetails(PostScanPlugin):
         )
         codebase_header = codebase.get_or_create_current_header()
         codebase_header.warnings.append(deprecation_message)
-        summarize_codebase(codebase, keep_details=True, **kwargs)
+        summarize_codebase(codebase, keep_details=True, legacy=True, **kwargs)
 
 
-def summarize_codebase(codebase, keep_details, **kwargs):
+def summarize_codebase(codebase, keep_details, legacy=False, **kwargs):
     """
     Summarize a scan at the codebase level for available scans.
 
     If `keep_details` is True, also keep file and directory details in the
     `summary` file attribute for every file and directory.
+
+    If `legacy` is True, summarize copyrights, authors, programming languages,
+    and packages.
     """
-    from summarycode.copyright_summary import author_summarizer
-    from summarycode.copyright_summary import copyright_summarizer
     from summarycode.copyright_summary import holder_summarizer
 
     attrib_summarizers = [
         ('license_expressions', license_summarizer),
-        ('copyrights', copyright_summarizer),
         ('holders', holder_summarizer),
-        ('authors', author_summarizer),
-        ('programming_language', language_summarizer),
-        ('packages', package_summarizer),
     ]
+
+    if legacy:
+        from summarycode.copyright_summary import author_summarizer
+        from summarycode.copyright_summary import copyright_summarizer
+
+        attrib_summarizers.extend([
+            ('copyrights', copyright_summarizer),
+            ('authors', author_summarizer),
+            ('programming_language', language_summarizer),
+            ('packages', package_summarizer),
+        ])
+
 
     # find which attributes are available for summarization by checking the root
     # resource
