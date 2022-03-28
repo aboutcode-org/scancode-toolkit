@@ -66,16 +66,18 @@ class ScanSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary, **kwargs):
-        warnings.simplefilter('always', SummaryPluginDeprecationWarning)
-        warnings.warn(
-            "\nThe --summary option will be deprecated "
-            "in a future version of scancode-toolkit.\n",
-            SummaryPluginDeprecationWarning,
-            stacklevel=2,
-        )
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
+        deprecation_message = "The --summary option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', SummaryPluginDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            SummaryPluginDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
         summarize_codebase(codebase, keep_details=False, **kwargs)
 
@@ -105,16 +107,18 @@ class ScanSummaryWithDetails(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_with_details, **kwargs):
-        warnings.simplefilter('always', SummaryWithDetailsDeprecationWarning)
-        warnings.warn(
-            "\nThe --summary-with-details option will be deprecated "
-            "in a future version of scancode-toolkit.\n",
-            SummaryWithDetailsDeprecationWarning,
-            stacklevel=2,
-        )
         return summary_with_details
 
     def process_codebase(self, codebase, summary_with_details, **kwargs):
+        deprecation_message = "The --summary-with-details option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', SummaryWithDetailsDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            SummaryWithDetailsDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
         summarize_codebase(codebase, keep_details=True, **kwargs)
 
 
@@ -307,16 +311,18 @@ class ScanKeyFilesSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_key_files, **kwargs):
-        warnings.simplefilter('always', SummaryKeyFilesDeprecationWarning)
-        warnings.warn(
-            "\nThe --summary-key-files option will be deprecated "
-            "in a future version of scancode-toolkit.\n",
-            SummaryKeyFilesDeprecationWarning,
-            stacklevel=2,
-        )
         return summary_key_files
 
     def process_codebase(self, codebase, summary_key_files, **kwargs):
+        deprecation_message = "The --summary-key-files option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', SummaryKeyFilesDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            SummaryKeyFilesDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
         summarize_codebase_key_files(codebase, **kwargs)
 
 
@@ -387,16 +393,18 @@ class ScanByFacetSummary(PostScanPlugin):
     ]
 
     def is_enabled(self, summary_by_facet, **kwargs):
-        warnings.simplefilter('always', SummaryByFacetPluginDeprecationWarning)
-        warnings.warn(
-            "\nThe --summary-by-facet option will be deprecated "
-            "in a future version of scancode-toolkit.\n",
-            SummaryByFacetPluginDeprecationWarning,
-            stacklevel=2,
-        )
         return summary_by_facet
 
     def process_codebase(self, codebase, summary_by_facet, **kwargs):
+        deprecation_message = "The --summary-by-facet option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', SummaryByFacetPluginDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            SummaryByFacetPluginDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
         if TRACE_LIGHT: logger_debug('ScanByFacetSummary:process_codebase')
         summarize_codebase_by_facet(codebase, **kwargs)
 

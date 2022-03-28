@@ -154,16 +154,19 @@ class Consolidator(PostScanPlugin):
     ]
 
     def is_enabled(self, consolidate, **kwargs):
-        warnings.simplefilter('always', ConsolidatorPluginDeprecationWarning)
-        warnings.warn(
-            "\nThe --consolidate option will be deprecated "
-            "in a future version of scancode-toolkit.\n",
-            ConsolidatorPluginDeprecationWarning,
-            stacklevel=2,
-        )
         return consolidate
 
     def process_codebase(self, codebase, **kwargs):
+        deprecation_message = "The --consolidate option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', ConsolidatorPluginDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            ConsolidatorPluginDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
+
         # Collect ConsolidatedPackages and ConsolidatedComponents
         # TODO: Have a "catch-all" Component for the things that we haven't grouped
         consolidations = []
