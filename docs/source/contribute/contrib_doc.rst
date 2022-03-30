@@ -18,23 +18,23 @@ That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::
 
     cd scancode-toolkit
-    ./configure --dev
-    source venv/bin/activate
+    ./configure --docs
 
-Now, the following prerequisites should be installed
+.. note::
+
+    In case of windows, run ``configure --docs`` instead of this.
+
+Now, this will install the following prerequisites:
 
 - Sphinx
 - sphinx_rtd_theme (the format theme used by ReadTheDocs)
 - docs8 (style linter)
 
-::
-
-    pip install -e .[docs]
-
-These requirements are already present in setup.cfg and this installs them.
+These requirements are already present in setup.cfg and `./configure --docs` installs them.
 
 Now you can build the HTML documents locally::
 
+    source venv/bin/activate
     cd docs
     make html
 
@@ -116,9 +116,10 @@ Style Checks Using ``Doc8``
 How To Run Style Tests
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In the project root, run the following command::
+In the project root, run the following commands::
 
-    $ doc8 --max-line-length 100 docs/source/ --ignore D000
+    $ cd docs
+    $ ./scripts/doc8_style_check.sh
 
 A sample output is::
 
