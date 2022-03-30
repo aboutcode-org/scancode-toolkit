@@ -73,11 +73,13 @@ To generate requirements.txt:
 
     python etc/scripts/gen_requirements.py -s venv/lib/python<version>/site-packages/
 
-Replace \<version\> with the version number of the Python being used, for example: ``venv/lib/python3.6/site-packages/``
+Replace \<version\> with the version number of the Python being used, for example:
+``venv/lib/python3.6/site-packages/``
 
 To generate requirements-dev.txt after requirements.txt has been generated:
 
 .. code-block:: bash
+
     ./configure --dev
     python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/
 
