@@ -5,7 +5,8 @@ Welcome to nexb-skeleton's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   skeleton/index
+   skeleton-usage
+   contribute/contrib_doc
 
 Indices and tables
 ==================
