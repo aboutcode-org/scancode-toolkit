@@ -43,6 +43,7 @@ Options:
     --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
     --json-lines FILE       Write scan output as JSON Lines to FILE.
     --yaml FILE             Write scan output as YAML to FILE.
+    --xml FILE              Write scan output as XML to FILE.
     --csv FILE              Write scan output as CSV to FILE.
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
