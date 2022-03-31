@@ -225,6 +225,7 @@ Other contributors, listed alphabetically, are:
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Brian Tiffin -- OpenCOBOL lexer
 * Bob Tolbert -- Hy lexer
+* Doug Torrance -- Macaulay2 lexer
 * Matthias Trute -- Forth lexer
 * Tuoa Spi T4 -- Bdd lexer
 * Erick Tryzelaar -- Felix lexer
