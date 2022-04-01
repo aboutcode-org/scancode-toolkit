@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import Counter
+from collections import Counter, defaultdict
 import warnings
 
 import attr
@@ -16,6 +16,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
+from summarycode.score import get_field_values_from_codebase_resources
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
@@ -68,7 +69,11 @@ class ScanSummary(PostScanPlugin):
 
     def process_codebase(self, codebase, summary, **kwargs):
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
-        summarize_codebase(codebase, keep_details=False, **kwargs)
+        summary = summarize_codebase(codebase, keep_details=False, **kwargs)
+        declared_holders = get_declared_holders(codebase, summary)
+        codebase.attributes.summary['declared_holders'] = declared_holders
+        codebase.attributes.summary['primary_language'] = get_primary_language(summary)
+        codebase.attributes.summary.update(summary)
 
 
 class SummaryLegacyPluginDeprecationWarning(DeprecationWarning):
@@ -91,10 +96,10 @@ class ScanSummaryLegacy(PostScanPlugin):
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, summary, **kwargs):
-        return summary
+    def is_enabled(self, summary_legacy, **kwargs):
+        return summary_legacy
 
-    def process_codebase(self, codebase, summary, **kwargs):
+    def process_codebase(self, codebase, summary_legacy, **kwargs):
         deprecation_message = "The --summary-legacy option will be deprecated in a future version of scancode-toolkit."
         warnings.simplefilter('always', SummaryLegacyPluginDeprecationWarning)
         warnings.warn(
@@ -105,7 +110,7 @@ class ScanSummaryLegacy(PostScanPlugin):
         codebase_header = codebase.get_or_create_current_header()
         codebase_header.warnings.append(deprecation_message)
         if TRACE_LIGHT: logger_debug('ScanSummaryLegacy:process_codebase')
-        summarize_codebase(codebase, keep_details=False, legacy=True, **kwargs)
+        summarize_codebase_legacy(codebase, keep_details=False, **kwargs)
 
 
 class SummaryWithDetailsDeprecationWarning(DeprecationWarning):
@@ -145,7 +150,7 @@ class ScanSummaryWithDetails(PostScanPlugin):
         )
         codebase_header = codebase.get_or_create_current_header()
         codebase_header.warnings.append(deprecation_message)
-        summarize_codebase(codebase, keep_details=True, legacy=True, **kwargs)
+        summarize_codebase_legacy(codebase, keep_details=True, **kwargs)
 
 
 def summarize_codebase(codebase, keep_details, legacy=False, **kwargs):
@@ -163,6 +168,7 @@ def summarize_codebase(codebase, keep_details, legacy=False, **kwargs):
     attrib_summarizers = [
         ('license_expressions', license_summarizer),
         ('holders', holder_summarizer),
+        ('programming_language', language_summarizer),
     ]
 
     if legacy:
@@ -176,6 +182,56 @@ def summarize_codebase(codebase, keep_details, legacy=False, **kwargs):
             ('packages', package_summarizer),
         ])
 
+
+    # find which attributes are available for summarization by checking the root
+    # resource
+    root = codebase.root
+    summarizers = [s for a, s in attrib_summarizers if hasattr(root, a)]
+    if TRACE: logger_debug('summarize_codebase with summarizers:', summarizers)
+
+    # collect and set resource-level summaries
+    for resource in codebase.walk(topdown=False):
+        children = resource.children(codebase)
+
+        for summarizer in summarizers:
+            _summary_data = summarizer(resource, children, keep_details=keep_details)
+            if TRACE: logger_debug('summary for:', resource.path, 'after summarizer:', summarizer, 'is:', _summary_data)
+
+        codebase.save_resource(resource)
+
+    # set the summary from the root resource at the codebase level
+    if keep_details:
+        summary = root.summary
+    else:
+        summary = root.extra_data.get('summary', {})
+
+    if TRACE: logger_debug('codebase summary:', summary)
+
+    return summary
+
+
+def summarize_codebase_legacy(codebase, keep_details, legacy=False, **kwargs):
+    """
+    Summarize a scan at the codebase level for available scans.
+
+    If `keep_details` is True, also keep file and directory details in the
+    `summary` file attribute for every file and directory.
+
+    If `legacy` is True, summarize copyrights, authors, programming languages,
+    and packages.
+    """
+    from summarycode.copyright_summary import author_summarizer
+    from summarycode.copyright_summary import copyright_summarizer
+    from summarycode.copyright_summary import holder_summarizer
+
+    attrib_summarizers = [
+        ('license_expressions', license_summarizer),
+        ('copyrights', copyright_summarizer),
+        ('holders', holder_summarizer),
+        ('authors', author_summarizer),
+        ('programming_language', language_summarizer),
+        ('packages', package_summarizer),
+    ]
 
     # find which attributes are available for summarization by checking the root
     # resource
@@ -546,3 +602,34 @@ def package_summarizer(resource, children, keep_details=False):
     # summarize proper
     set_resource_summary(resource, key='packages', value=packages, as_attribute=False)
     return packages
+
+
+def get_declared_holders(codebase, summary):
+    holders_summary = summary.get('holders', [])
+    counts_by_holders = {entry.get('value'): entry.get('count') for entry in holders_summary}
+    holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
+    holders = list(set(entry.get('holder') for entry in holders))
+
+    holders_by_counts = defaultdict(list)
+    for holder in holders:
+        count = counts_by_holders.get(holder)
+        if count:
+            holders_by_counts[count].append(holder)
+
+    declared_holders = []
+    if holders_by_counts:
+        highest_count = max(holders_by_counts)
+        declared_holders = sorted(holders_by_counts[highest_count])
+    return declared_holders
+
+
+def get_primary_language(summary):
+    programming_language_summary = summary.get('programming_language')
+
+    programming_language_by_count = {entry.get('count'): entry.get('value') for entry in programming_language_summary}
+    primary_language = ''
+    if programming_language_by_count:
+        highest_count = max(programming_language_by_count)
+        primary_language = programming_language_by_count[highest_count]
+
+    return primary_language

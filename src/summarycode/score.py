@@ -9,7 +9,7 @@
 
 import attr
 
-from commoncode.datautils import Mapping
+from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
@@ -153,18 +153,18 @@ def compute_license_score(codebase):
         ):
             scoring_elements.score -= 20
 
-    primary_license = get_primary_license(declared_license_expressions)
-    if (
-        not primary_license
-        and scoring_elements.score > 0
-    ):
+    declared_license_expression = get_primary_license(unique_declared_license_expressions)
+    if not declared_license_expression:
+        # If we cannot get a single primary license, then we combine and simplify the license expressions from key files
+        combined_declared_license_expression = combine_expressions(unique_declared_license_expressions)
+        if combined_declared_license_expression:
+            declared_license_expression = str(Licensing().parse(combined_declared_license_expression).simplify())
         scoring_elements.ambigous_compound_licensing = True
-        scoring_elements.score -= 10
+        if scoring_elements.score > 0:
+            scoring_elements.score -= 10
 
-    codebase.attributes.summary['primary_license_expression'] = primary_license
-    codebase.attributes.summary['declared_license_expressions'] = unique_declared_license_expressions
+    codebase.attributes.summary['declared_license_expression'] = declared_license_expression or ''
     codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
-
 
 
 def unique(objects):
@@ -458,3 +458,9 @@ def get_primary_license(declared_license_expressions):
         return next(iter(single_expressions_by_joined_expressions))
     else:
         return ''
+
+
+def get_primary_holders(declared_holders):
+    # Get a list of unique holders
+    holders = list(set(h.get('holder') for h in declared_holders))
+
