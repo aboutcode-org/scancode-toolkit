@@ -6,9 +6,10 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import json 
 
 from json2xml import json2xml
-from json2xml.utils import readfromjson
+from json2xml.utils import readfromstring
 from formattedcode import FileOptionType
 from formattedcode import output_json
 from commoncode.cliutils import PluggableCommandLineOption
@@ -38,14 +39,14 @@ class XmlOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_xml, **kwargs):
         results = output_json.get_results(codebase, as_list=True, **kwargs)
-        write_xml(results, output_file=output_xml, pretty=False)
+        results = json.dumps(results)
+        write_xml(results, output_file=output_xml, pretty=True)
 
 def write_xml(results, output_file, **kwargs):
     """
     Write `results` to the `output_file` opened file-like object.
     """
-    data = readfromjson(results)
-   # print(json2xml.Json2xml(data).to_xml())
+    data = readfromstring(results)
     output_file.write(json2xml.Json2xml(data).to_xml())
     output_file.write('\n')
 

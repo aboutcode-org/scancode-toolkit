@@ -1,0 +1,386 @@
+<?xml version="1.0" ?>
+<all>
+        <headers type="list">
+                <item type="dict">
+                        <tool_name type="str">scancode-toolkit</tool_name>
+                        <tool_version type="str">31.0.0b1</tool_version>
+                        <options type="dict">
+                                <input type="str">&lt;path&gt;</input>
+                                <key name="--copyright" type="bool">True</key>
+                                <key name="--info" type="bool">True</key>
+                                <key name="--license" type="bool">True</key>
+                                <key name="--package" type="bool">True</key>
+                                <key name="--strip-root" type="bool">True</key>
+                                <key name="--xml" type="str">&lt;file&gt;</key>
+                        </options>
+                        <notice type="str">Generated with ScanCode and provided on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, either express or implied. No content created from
+ScanCode should be considered or used as legal advice. Consult an Attorney
+for any legal advice.
+ScanCode is a free software code scanning tool from nexB Inc. and others.
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.</notice>
+                        <start_timestamp type="str">2022-04-01T104718.217774</start_timestamp>
+                        <end_timestamp type="str">2022-04-01T104718.601146</end_timestamp>
+                        <output_format_version type="str">2.0.0</output_format_version>
+                        <duration type="float">0.3833925724029541</duration>
+                        <message type="null"/>
+                        <errors type="list"/>
+                        <extra_data type="dict">
+                                <spdx_license_list_version type="str">3.16</spdx_license_list_version>
+                                <files_count type="int">7</files_count>
+                        </extra_data>
+                </item>
+        </headers>
+        <dependencies type="list"/>
+        <packages type="list"/>
+        <files type="list">
+                <item type="dict">
+                        <path type="str">copy1.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy1.c</name>
+                        <base_name type="str">copy1</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">91</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">3922760d8492eb8f853c10a627f5a73f9eaec6ff</sha1>
+                        <md5 type="str">fc7f53659b7a9db8b6dff0638641778e</md5>
+                        <sha256 type="str">23fe3ce8ad18772ea688a435bb624d65e08fdee1d31b9f620a1ba62619c0f201</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">copy2.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy2.c</name>
+                        <base_name type="str">copy2</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">91</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">3922760d8492eb8f853c10a627f5a73f9eaec6ff</sha1>
+                        <md5 type="str">fc7f53659b7a9db8b6dff0638641778e</md5>
+                        <sha256 type="str">23fe3ce8ad18772ea688a435bb624d65e08fdee1d31b9f620a1ba62619c0f201</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">copy3.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy3.c</name>
+                        <base_name type="str">copy3</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">91</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">c91811eb5fdc7ab440355f9f8d1580e1518b0c2f</sha1>
+                        <md5 type="str">e999e21c9d7de4d0f943aefbb6f21b99</md5>
+                        <sha256 type="str">abd984f8715001bb54d5a2ef293b2c559861756b17c4461cde3ac08e9b61ec78</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">subdir</path>
+                        <type type="str">directory</type>
+                        <name type="str">subdir</name>
+                        <base_name type="str">subdir</base_name>
+                        <extension type="str"/>
+                        <size type="int">0</size>
+                        <date type="null"/>
+                        <sha1 type="null"/>
+                        <md5 type="null"/>
+                        <sha256 type="null"/>
+                        <mime_type type="null"/>
+                        <file_type type="null"/>
+                        <programming_language type="null"/>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">False</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">False</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list"/>
+                        <holders type="list"/>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">4</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">361</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">subdir/copy1.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy1.c</name>
+                        <base_name type="str">copy1</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">91</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">3922760d8492eb8f853c10a627f5a73f9eaec6ff</sha1>
+                        <md5 type="str">fc7f53659b7a9db8b6dff0638641778e</md5>
+                        <sha256 type="str">23fe3ce8ad18772ea688a435bb624d65e08fdee1d31b9f620a1ba62619c0f201</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">subdir/copy2.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy2.c</name>
+                        <base_name type="str">copy2</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">91</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">3922760d8492eb8f853c10a627f5a73f9eaec6ff</sha1>
+                        <md5 type="str">fc7f53659b7a9db8b6dff0638641778e</md5>
+                        <sha256 type="str">23fe3ce8ad18772ea688a435bb624d65e08fdee1d31b9f620a1ba62619c0f201</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">subdir/copy3.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy3.c</name>
+                        <base_name type="str">copy3</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">84</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">389af7e629a9853056e42b262d5e30bf4579a74f</sha1>
+                        <md5 type="str">290627a1387288ef77ae7e07946f3ecf</md5>
+                        <sha256 type="str">271a9f4402a59c923ee04fd9bd3f2aa188d2b9e4741cef1b756ec7116f9d83ef</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+                <item type="dict">
+                        <path type="str">subdir/copy4.c</path>
+                        <type type="str">file</type>
+                        <name type="str">copy4.c</name>
+                        <base_name type="str">copy4</base_name>
+                        <extension type="str">.c</extension>
+                        <size type="int">95</size>
+                        <date type="str">2022-03-31</date>
+                        <sha1 type="str">58748872d25374160692f1ed7075d0fe80a544b1</sha1>
+                        <md5 type="str">88e46475db9b1a68f415f6a3544eeb16</md5>
+                        <sha256 type="str">f6810dc076ffe08dad2812318e414ac4123de9a612faabc35121206a4fa48ce4</sha256>
+                        <mime_type type="str">text/plain</mime_type>
+                        <file_type type="str">UTF-8 Unicode text</file_type>
+                        <programming_language type="str">C</programming_language>
+                        <is_binary type="bool">False</is_binary>
+                        <is_text type="bool">True</is_text>
+                        <is_archive type="bool">False</is_archive>
+                        <is_media type="bool">False</is_media>
+                        <is_source type="bool">True</is_source>
+                        <is_script type="bool">False</is_script>
+                        <licenses type="list"/>
+                        <license_expressions type="list"/>
+                        <percentage_of_license_text type="int">0</percentage_of_license_text>
+                        <copyrights type="list">
+                                <item type="dict">
+                                        <copyright type="str">Copyright (c) 2000 ACME, Inc.</copyright>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </copyrights>
+                        <holders type="list">
+                                <item type="dict">
+                                        <holder type="str">ACME, Inc.</holder>
+                                        <start_line type="int">1</start_line>
+                                        <end_line type="int">1</end_line>
+                                </item>
+                        </holders>
+                        <authors type="list"/>
+                        <package_data type="list"/>
+                        <for_packages type="list"/>
+                        <files_count type="int">0</files_count>
+                        <dirs_count type="int">0</dirs_count>
+                        <size_count type="int">0</size_count>
+                        <scan_errors type="list"/>
+                </item>
+        </files>
+</all>
