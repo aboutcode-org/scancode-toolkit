@@ -17,6 +17,7 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode.score import get_field_values_from_codebase_resources
+from summarycode.score import unique
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
@@ -72,8 +73,8 @@ class ScanSummary(PostScanPlugin):
         summary = summarize_codebase(codebase, keep_details=False, **kwargs)
         declared_holders = get_declared_holders(codebase, summary)
         codebase.attributes.summary['declared_holders'] = declared_holders
-        codebase.attributes.summary['primary_language'] = get_primary_language(summary)
-        codebase.attributes.summary.update(summary)
+        codebase.attributes.summary['primary_programming_language'] = get_primary_language(summary)
+        remove_declared_from_fields(codebase, summary)
 
 
 class SummaryLegacyPluginDeprecationWarning(DeprecationWarning):
@@ -606,30 +607,64 @@ def package_summarizer(resource, children, keep_details=False):
 
 def get_declared_holders(codebase, summary):
     holders_summary = summary.get('holders', [])
-    counts_by_holders = {entry.get('value'): entry.get('count') for entry in holders_summary}
-    holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
-    holders = list(set(entry.get('holder') for entry in holders))
+    entry_by_holders = {entry.get('value'): entry for entry in holders_summary}
+    key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
+    key_file_holders = [entry.get('holder') for entry in key_file_holders]
+    unique_key_file_holders = unique(key_file_holders)
 
-    holders_by_counts = defaultdict(list)
-    for holder in holders:
-        count = counts_by_holders.get(holder)
+    holder_entry_by_counts = defaultdict(list)
+    for holder in unique_key_file_holders:
+        entry = entry_by_holders.get(holder)
+        count = entry.get('count')
         if count:
-            holders_by_counts[count].append(holder)
+            holder_entry_by_counts[count].append(entry)
 
     declared_holders = []
-    if holders_by_counts:
-        highest_count = max(holders_by_counts)
-        declared_holders = sorted(holders_by_counts[highest_count])
+    if holder_entry_by_counts:
+        highest_count = max(holder_entry_by_counts)
+        declared_holders = holder_entry_by_counts[highest_count]
     return declared_holders
 
 
 def get_primary_language(summary):
     programming_language_summary = summary.get('programming_language')
 
-    programming_language_by_count = {entry.get('count'): entry.get('value') for entry in programming_language_summary}
-    primary_language = ''
-    if programming_language_by_count:
-        highest_count = max(programming_language_by_count)
-        primary_language = programming_language_by_count[highest_count]
+    programming_language_entry_by_count = {entry.get('count'): entry for entry in programming_language_summary}
+    primary_language = {}
+    if programming_language_entry_by_count:
+        highest_count = max(programming_language_entry_by_count)
+        primary_language = programming_language_entry_by_count[highest_count]
 
     return primary_language
+
+
+def remove_declared_from_fields(codebase, summary):
+    license_expressions = summary.get('license_expressions', [])
+    holders = summary.get('holders', [])
+    programming_languages = summary.get('programming_language', [])
+
+    declared_license_expression = codebase.attributes.summary.get('declared_license_expression', '')
+    declared_holders = codebase.attributes.summary.get('declared_holders', [])
+    primary_programming_language = codebase.attributes.summary.get('primary_programming_language', {})
+
+    other_license_expressions = [
+        entry
+        for entry in license_expressions
+        if entry.get('value') != declared_license_expression
+    ]
+
+    other_holders = [
+        entry
+        for entry in holders
+        if entry not in declared_holders
+    ]
+
+    other_programming_languages = [
+        entry
+        for entry in programming_languages
+        if entry != primary_programming_language
+    ]
+
+    codebase.attributes.summary['other_license_expressions'] = other_license_expressions
+    codebase.attributes.summary['other_holders'] = other_holders
+    codebase.attributes.summary['other_programming_languages'] = other_programming_languages
