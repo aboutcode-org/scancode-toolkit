@@ -8,12 +8,35 @@
 #
 
 import io
+import os
+from pathlib import Path
 
 import saneyaml
 
 from packagedcode import models
+from packageurl import PackageURL
 
 # TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 
 class AboutFileHandler(models.DatafileHandler):
@@ -32,24 +55,46 @@ class AboutFileHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             package_data = saneyaml.load(loc.read())
 
-        # FIXME: About files can contain any purl and also have a namespace
-        package_type = cls.default_package_type
+        # About files can contain any purl and also have a namespace
+        about_type = package_data.get('type')
+        about_ns = package_data.get('namespace')
+        purl_type = None
+        purl_ns = None
+        purl = package_data.get('purl')
+        if purl:
+            purl = PackageURL.from_string(purl)
+            if purl:
+                purl_type = purl.type
+
+        package_type = about_type or purl_type or cls.default_package_type
+        package_ns = about_ns or purl_ns
+
         name = package_data.get('name')
         version = package_data.get('version')
 
         homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
         download_url = package_data.get('download_url')
-        declared_license = license_expression = package_data.get('license_expression')
         copyright_statement = package_data.get('copyright')
+
+        license_expression = package_data.get('license_expression')
+        declared_license = license_expression
 
         owner = package_data.get('owner')
         if not isinstance(owner, str):
             owner = repr(owner)
         parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 
+        # FIXME: also include notice_file and license_file(s) as file_references
+        file_references = []
+        about_resource = package_data.get('about_resource')
+        if about_resource:
+            file_references.append(models.FileReference(path=about_resource))
+
+        # FIXME: we should put the unprocessed attributes in extra data
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=package_type,
+            namespace=package_ns,
             name=name,
             version=version,
             declared_license=declared_license,
@@ -58,8 +103,7 @@ class AboutFileHandler(models.DatafileHandler):
             parties=parties,
             homepage_url=homepage_url,
             download_url=download_url,
-            # FIXME: we should put the unprocessed attributes in extra data
-            extra_data=dict(about_resource=package_data.get('about_resource'))
+            file_references=file_references,
         )
 
     @classmethod
@@ -81,19 +125,43 @@ class AboutFileHandler(models.DatafileHandler):
             resource.for_packages.append(package_uid)
             resource.save(codebase)
 
-            package.license_expression = cls.compute_normalized_license(package)
+            if not package.license_expression:
+                package.license_expression = cls.compute_normalized_license(package)
 
             yield package
 
-            # FIXME: also include notice_file and license_file(s)
-            about_resource = package_data.extra_data.get('about_resource')
-            if about_resource:
-                parent = resource.parent(codebase)
-                # FIXME: we should be able to get the path relatively to the ABOUT file resource
-                for child in parent.children(codebase):
-                    if child.name == about_resource:
-                        child.for_packages.append(package_uid)
-                        child.save()
+            if resource.pid is not None and package_data.file_references:
+                parent_resource = resource.parent(codebase)
+                if parent_resource and package_data.file_references:
+                    root_path = Path(parent_resource.path)
+
+                    # FIXME: we should be able to get the path relatively to the
+                    # ABOUT file resource a file ref extends from the root of
+                    # the filesystem
+                    file_references_by_path = {
+                        str(root_path / ref.path): ref
+                        for ref in package.file_references
+                    }
+
+                    for res in parent_resource.walk(codebase):
+                        ref = file_references_by_path.get(res.path)
+                        if not ref:
+                            continue
+
+                        # path is found and processed: remove it, so we can
+                        # check if we found all of them
+                        del file_references_by_path[res.path]
+                        res.for_packages.append(package_uid)
+                        res.save(codebase)
+
+                        yield res
+
+                # if we have left over file references, add these to extra data
+                if file_references_by_path:
+                    missing = sorted(file_references_by_path.values(), key=lambda r: r.path)
+                    package.extra_data['missing_file_references'] = missing
+            else:
+                package.extra_data['missing_file_references'] = package_data.file_references[:]
 
         # we yield this as we do not want this further processed
         yield resource

@@ -46,7 +46,7 @@ class TestScanSummary(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('summary2/full/scan.expected.json')
         run_scan_click(['-clip', '--summary2', '--classify', '--license-clarity-score', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_full_summary_json_lines(self):
         test_dir = self.get_test_loc('summary2/full/scan')
@@ -68,7 +68,7 @@ class TestScanSummary(FileDrivenTesting):
             '--license-clarity-score',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_with_packages_reports_packages_with_files(self):
         test_dir = self.get_test_loc('summary2/packages/scan')
@@ -81,4 +81,4 @@ class TestScanSummary(FileDrivenTesting):
             '--license-clarity-score',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

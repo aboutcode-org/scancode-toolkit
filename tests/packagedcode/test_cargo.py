@@ -13,7 +13,8 @@ import pytest
 from packagedcode import cargo
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
-
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import check_json_scan
 
 
 class TestCargo(PackageTester):
@@ -21,71 +22,80 @@ class TestCargo(PackageTester):
 
     def test_is_manifest_cargo_toml(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
-        assert cargo.CargoToml.is_datafile(test_file)
+        assert cargo.CargoTomlHandler.is_datafile(test_file)
 
     def test_parse_cargo_toml_clap(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml.expected')
-        package = cargo.CargoToml.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_clippy(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clippy/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/clippy/Cargo.toml.expected')
-        package = cargo.CargoToml.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_mdbook(self):
         test_file = self.get_test_loc('cargo/cargo_toml/mdbook/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/mdbook/Cargo.toml.expected')
-        package = cargo.CargoToml.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_rustfmt(self):
         test_file = self.get_test_loc('cargo/cargo_toml/rustfmt/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/rustfmt/Cargo.toml.expected')
-        package = cargo.CargoToml.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_toml_rustup(self):
         test_file = self.get_test_loc('cargo/cargo_toml/rustup/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/rustup/Cargo.toml.expected')
-        package = cargo.CargoToml.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-    
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_manifest_cargo_lock(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
-        assert cargo.CargoLock.is_datafile(test_file)
+        assert cargo.CargoLockHandler.is_datafile(test_file)
 
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
-        package = cargo.CargoLock.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoLockHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample2(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample2/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample2/output.expected.json')
-        package = cargo.CargoLock.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoLockHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample3(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample3/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample3/output.expected.json')
-        package = cargo.CargoLock.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoLockHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample4(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample4/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample4/output.expected.json')
-        package = cargo.CargoLock.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoLockHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_cargo_lock_sample5(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample5/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample5/output.expected.json')
-        package = cargo.CargoLock.parse(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages_data = cargo.CargoLockHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_scan_cli_works(self):
+        test_file = self.get_test_loc('cargo/scan')
+        expected_file = self.get_test_loc('cargo/scan.expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
 
 
 PERSON_PARSER_TEST_TABLE = [
@@ -100,7 +110,9 @@ PERSON_NO_NAME_PARSER_TEST_TABLE = [
     ('<anotherguy@email.com>', (None, '<anotherguy@email.com>')),
 ]
 
+
 class TestRegex(object):
+
     @pytest.mark.parametrize('person, expected_person', PERSON_PARSER_TEST_TABLE)
     def test_person_parser(self, person, expected_person):
         parsed_person = cargo.person_parser(person)

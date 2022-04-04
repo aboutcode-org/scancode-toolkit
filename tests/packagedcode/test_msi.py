@@ -13,9 +13,9 @@ import pytest
 
 from commoncode.system import on_linux
 
+from packagedcode import models
 from packagedcode.models import Party
 from packagedcode.msi import create_package_data_from_msiinfo_results
-from packagedcode.msi import MsiInstallerPackage
 from packagedcode.msi import parse_msiinfo_suminfo_output
 
 from packages_test_utils import PackageTester
@@ -51,7 +51,7 @@ class TestMsi(PackageTester):
 
     def test_msi_create_package_data_from_msiinfo_results(self):
         result = create_package_data_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
-        expected = MsiInstallerPackage(
+        expected = models.PackageData(
             name='Python 3.9.5 Add to Path (64-bit)',
             version='v 3.9.5',
             description='This installer database contains the logic and data required to install Python 3.9.5 Add to Path (64-bit).',

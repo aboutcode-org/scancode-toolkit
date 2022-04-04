@@ -79,7 +79,7 @@ def assemble_extracted_gem(cls, package_data, resource, codebase):
     )
 
 
-class GemArchiveExtractedHandler(BaseGemHandler):
+class GemMetadataArchiveExtractedHandler(BaseGemHandler):
     datasource_id = 'gem_archive_extracted'
     path_patterns = ('*/metadata.gz-extract',)
     default_package_type = 'gem'

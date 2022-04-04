@@ -36,9 +36,12 @@
   "declared_license": "apache-2.0",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {},
-  "purl": "pkg:rpm/Sample",
+  "dependencies": [],
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "rpm_archive",
+  "purl": "pkg:rpm/Sample"
 }

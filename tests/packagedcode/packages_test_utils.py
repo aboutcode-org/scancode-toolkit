@@ -18,7 +18,6 @@ from commoncode import text
 from scancode_config import REGEN_TEST_FIXTURES
 
 
-
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -37,14 +36,14 @@ class PackageTester(testcase.FileBasedTesting):
         package = package_function(manifest_loc)
         if not package:
             raise Exception(f'Failed to parse package: {manifest_loc}')
-        return self.check_package(package, expected_loc, regen)
+        return self.check_package_data(package, expected_loc, regen)
 
-    def check_package(self, package, expected_loc, regen=REGEN_TEST_FIXTURES):
+    def check_package_data(self, package_data, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
         Helper to test a package object against an expected JSON file.
         """
-        package.license_expression = get_detected_license_expression(package_data=package)
-        results = package.to_dict()
+        compute_and_set_license_expression(package_data)
+        results = package_data.to_dict()
 
         expected_loc = self.get_test_loc(expected_loc, must_exist=False)
         check_result_equals_expected_json(
@@ -53,16 +52,16 @@ class PackageTester(testcase.FileBasedTesting):
             regen=regen,
         )
 
-    def check_packages(self, packages, expected_loc, regen=REGEN_TEST_FIXTURES):
+    def check_packages_data(self, packages_data, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
-        Helper to test a list of package objects against an expected JSON file.
+        Helper to test a list of package_data objects against an expected JSON file.
         """
         expected_loc = self.get_test_loc(expected_loc)
 
         results = []
-        for package in packages:
-            package.license_expression = get_detected_license_expression(package_data=package)
-            results.append(package.to_dict())
+        for package_data in packages_data:
+            compute_and_set_license_expression(package_data)
+            results.append(package_data.to_dict())
 
         check_result_equals_expected_json(
             result=results,
@@ -70,10 +69,15 @@ class PackageTester(testcase.FileBasedTesting):
             regen=regen,
         )
 
-def get_detected_license_expression(package_data):
-    from packagedcode import HANDLER_BY_DATASOURCE_ID
-    handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
-    return handler.compute_normalized_license(package_data)
+
+def compute_and_set_license_expression(package_data):
+    if package_data.declared_license and not package_data.license_expression:
+        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
+        computed = handler.compute_normalized_license(package_data)
+        if computed:
+            package_data.license_expression = computed
+    return package_data
 
 
 def check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES):

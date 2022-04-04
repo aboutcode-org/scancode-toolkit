@@ -50,7 +50,7 @@ PACKAGE_DATAFILE_HANDLERS = [
     about.AboutFileHandler,
 
     alpine.AlpineApkArchiveHandler,
-    alpine.AlpineApkArchiveHandler,
+    alpine.AlpineApkbuildHandler,
     alpine.AlpineInstalledDatabaseHandler,
 
     bower.BowerJsonHandler,
@@ -189,7 +189,7 @@ PACKAGE_DATAFILE_HANDLERS = [
     rpm.RpmInstalledNdbDatabaseHandler,
     rpm.RpmSpecfileHandler,
 
-    rubygems.GemArchiveExtractedHandler,
+    rubygems.GemMetadataArchiveExtractedHandler,
     rubygems.GemArchiveHandler,
 
     # the order of these handlers matter

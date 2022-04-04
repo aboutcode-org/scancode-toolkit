@@ -26,14 +26,14 @@ class TestBuildGradle(PackageTester):
         expected_file = self.get_test_loc('end2end-expected.json')
         result_file = self.get_temp_file()
         run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_build_gradle_parse(self):
         test_file = self.get_test_loc('build.gradle')
-        result_packages = build_gradle.BuildGradle.parse(test_file)
+        result_packages = build_gradle.BuildGradleHandler.parse(test_file)
 
         expected_packages = [
-            build_gradle.BuildGradle(
+            build_gradle.BuildGradleHandler(
                 type='build.gradle',
                 dependencies = [
                     models.DependentPackage(

@@ -11,7 +11,6 @@ import io
 import json
 import os
 
-from packagedcode.pypi import PythonPackage
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
@@ -26,24 +25,24 @@ class TestPackageAndDependency(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('instance/python-package-instance-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_instance_uuid=True)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
 
     # Note that this will fail even at regen True.
     # Will pass on the next regen False run.
-    # ToDo: Use moking instead
+    # ToDo: Use mocking instead
     def test_package_instance_scan_python_with_uuid(self):
         test_dir = self.get_test_loc('instance/pypi')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('instance/python-package-instance-expected-with-uuid.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, ignore_instance_uuid=True)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
 
     def test_package_instance_scan_python_with_test_manifests(self):
         test_dir = self.get_test_loc('instance/pypi-with-test-manifests')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_instance_uuid=True)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
 
     def test_package_data_merge_generic(self, regen=REGEN_TEST_FIXTURES):
         input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')
@@ -56,7 +55,7 @@ class TestPackageAndDependency(PackageTester):
         for manifest in manifests:
             pk_instance.update(manifest)
 
-        self.check_package(pk_instance, expected_file, regen)
+        self.check_package_data(pk_instance, expected_file, regen)
 
     def test_package_data_merge_with_dependencies(self, regen=REGEN_TEST_FIXTURES):
         input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
@@ -69,4 +68,4 @@ class TestPackageAndDependency(PackageTester):
         for manifest in manifests:
             pk_instance.update(manifest)
 
-        self.check_package(pk_instance, expected_file, regen)
+        self.check_package_data(pk_instance, expected_file, regen)

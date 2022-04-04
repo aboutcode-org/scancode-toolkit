@@ -14,7 +14,6 @@ from packages_test_utils  import build_tests
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -23,29 +22,29 @@ class TestPubspecDatadriven(PackageTester):
 
     def test_pubspec_lock_is_package_data_file(self):
         test_file = self.get_test_loc('pubspec/locks/dart-pubspec.lock')
-        assert pubspec.PubspecLock.is_datafile(test_file)
+        assert pubspec.PubspecLockHandler.is_datafile(test_file)
 
     def test_pubspec_yaml_is_package_data_file(self):
         test_file = self.get_test_loc('pubspec/specs/authors-pubspec.yaml')
-        assert pubspec.PubspecYaml.is_datafile(test_file)
+        assert pubspec.DartPubspecYamlHandler.is_datafile(test_file)
 
     def test_parse_lock(self):
         test_loc = self.get_test_loc('pubspec/mini-pubspec.lock')
         expected_loc = self.get_test_loc('pubspec/mini-pubspec.lock-expected.json', must_exist=False)
-        package_data = pubspec.PubspecLock.parse(test_loc)
-        self.check_packages(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+        package_data = pubspec.PubspecLockHandler.parse(test_loc)
+        self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 def pub_tester(location,):
     manifests = []
-    for package_data in pubspec.PubspecYaml.parse(location):
+    for package_data in pubspec.DartPubspecYamlHandler.parse(location):
         manifests.append(package_data.to_dict())
     return manifests
 
 
 def lock_tester(location,):
     manifests = []
-    for package_data in pubspec.PubspecLock.parse(location):
+    for package_data in pubspec.PubspecLockHandler.parse(location):
         manifests.append(package_data.to_dict())
     return manifests
 

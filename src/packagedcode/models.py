@@ -376,18 +376,17 @@ class DependentPackage(ModelMixin):
          )
 
 
+
 @attr.attributes(slots=True)
 class Dependency(DependentPackage):
     """
     Top-level dependency instance from parsed package data collected from data
     files such as a package manifest or lockfile.
-
-    Subclasses can extend for each package type.
     """
-    uuid = String(
-        default=attr.Factory(uuid.uuid4),
-        label='Dependency UUID',
+    dependency_uid = String(
+        label='Dependency unique id',
         help='A unique identifier for this dependency instance.'
+             'Consists of the dependency purl with a UUID qualifier.'
     )
 
     # TODO: should we also repeat the purl here: this may be redundant but this
@@ -408,6 +407,10 @@ class Dependency(DependentPackage):
         label='datasource id',
         help='Datasource identifier for the source of these package data.'
     )
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        if not self.dependency_uid:
+            self.dependency_uid = build_package_uid(self.purl)
 
     @classmethod
     def from_dependent_package(
@@ -469,12 +472,6 @@ class FileReference(ModelMixin):
         repr=True,
     )
 
-    is_file = Boolean(
-        label='file or directory',
-        help='True if this is a file, false if thif is a directory',
-        repr=False,
-    )
-
     size = Integer(
         label='file size',
         help='size of the file in bytes',
@@ -509,12 +506,6 @@ class FileReference(ModelMixin):
         label='extra data',
         help='A mapping of arbitrary extra file reference data.',
     )
-
-    def to_dict(self, with_details=True, **kwargs):
-        mapping = super().to_dict(**kwargs)
-        if not with_details:
-            mapping.pop('is_file', None)
-        return mapping
 
     def update(self, other):
         """
@@ -841,7 +832,7 @@ class DatafileHandler:
     documentation_url = None
 
     @classmethod
-    def is_datafile(cls, location):
+    def is_datafile(cls, location, filetypes=tuple()):
         """
         Return True if the file at ``location`` is likely a package data file
         that this parser can handle. This implementation is based on:
@@ -858,10 +849,11 @@ class DatafileHandler:
         if filetype.is_file(location):
             loc = as_posixpath(location)
             if any(fnmatch(loc, pat) for pat in cls.path_patterns):
-                if cls.filetypes:
+                filetypes = filetypes or cls.filetypes
+                if filetypes:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
-                    return any(ft in actual_type for ft in cls.filetypes)
+                    return any(ft in actual_type for ft in filetypes)
                 return True
 
     @classmethod
@@ -912,11 +904,12 @@ class DatafileHandler:
             )
             package_uid = package.package_uid
 
-            package.license_expression = cls.compute_normalized_license(
-                package=package,
-                resource=resource,
-                codebase=codebase,
-            )
+            if not package.license_expression:
+                package.license_expression = cls.compute_normalized_license(
+                    package=package,
+                    resource=resource,
+                    codebase=codebase,
+                )
 
             cls.assign_package_to_resources(
                 package_uid=package_uid,
@@ -1004,7 +997,7 @@ class DatafileHandler:
     def assemble_from_many(cls, pkgdata_resources, codebase,):
         """
         Yield Package, Resources or Dependency given a ``pkgdata_resources``
-        list of tuple (package_data, resource) in ``codebase``.
+        list of tuple (PackageData, Resource) in ``codebase``.
 
         Create a Package from the first package_data item. Update this package
         with other items. Assign to this Package the file tree from the parent
@@ -1029,16 +1022,13 @@ class DatafileHandler:
 
             if not package:
                 # create package from the first item first package_data
-                for pkgdt in package_data:
-                    package = Package.from_package_data(
-                        package_data=pkgdt,
-                        datafile_path=resource.path,
-                    )
-                    break
-
-            for pkgdt in package_data:
+                package = Package.from_package_data(
+                    package_data=package_data,
+                    datafile_path=resource.path,
+                )
+            else:
                 package.update(
-                    package_data=pkgdt,
+                    package_data=package_data,
                     datafile_path=resource.path,
                 )
 
@@ -1065,7 +1055,7 @@ class DatafileHandler:
         # the whole parent subtree of the base_resource is for this package
         for res in base_resource.walk(codebase):
             res.for_packages.append(package_uid)
-            res.save()
+            res.save(codebase)
 
     @classmethod
     def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
@@ -1091,7 +1081,7 @@ class DatafileHandler:
             child.name: child
             for child in directory.children(codebase)
             if any(
-                fnmatchcase(name=child.name, path=dfnp)
+                fnmatchcase(name=child.name, pat=dfnp)
                 for dfnp in datafile_name_patterns
             )
         }
@@ -1103,11 +1093,24 @@ class DatafileHandler:
             resource = siblings.get(datafile_name)
             if resource:
                 for package_data in resource.package_data:
-                    pkgdata_resources.append(package_data, resource)
+                    package_data = PackageData.from_dict(package_data)
+                    pkgdata_resources.append((package_data, resource,))
 
         yield from cls.assemble_from_many(
             pkgdata_resources=pkgdata_resources,
             codebase=codebase,
+        )
+
+    @classmethod
+    def create_default_package_data(cls, **kwargs):
+        """
+        Return an empty PackageData using default values and the provided kwargs.
+        """
+        return PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            **kwargs,
         )
 
 
@@ -1127,7 +1130,7 @@ def build_package_uid(purl):
     Return a purl string with a UUID qualifier given a ``purl`` string .
     """
     purl = PackageURL.from_string(purl)
-    purl.qualifiers["uuid"] = str(uuid.uuid4())
+    purl.qualifiers['uuid'] = str(uuid.uuid4())
     return str(purl)
 
 
@@ -1171,16 +1174,20 @@ class Package(PackageData):
         """
         if isinstance(package_data, PackageData):
             package_data_mapping = package_data.to_dict()
-        else:
+            dsid = package_data.datasource_id
+        elif isinstance(package_data, dict):
             # make a copy
-            package_data_mapping = dict(package_data)
+            package_data_mapping = dict(package_data.items())
+            dsid = package_data['datasource_id']
+        elif package_data:
+            raise Exception(f'Invalid type: {package_data!r}', package_data)
 
         package_data_mapping['datafile_paths'] = [datafile_path]
-        package_data_mapping['datasource_ids'] = [package_data.datasource_id]
+        package_data_mapping['datasource_ids'] = [dsid]
 
         return cls.from_dict(package_data_mapping)
 
-    def is_compatible(self, package_data,):
+    def is_compatible(self, package_data, include_qualifiers=True):
         """
         Return True if the ``package_data`` PackageData is compatible with
         this Package, e.g. it is about the same package.
@@ -1190,7 +1197,7 @@ class Package(PackageData):
             and self.namespace == package_data.namespace
             and self.name == package_data.name
             and self.version == package_data.version
-            and self.qualifier == package_data.qualifier
+            and (include_qualifiers and self.qualifier == package_data.qualifier)
             and self.subpath == package_data.subpath
             and self.primary_language == package_data.primary_language
         )

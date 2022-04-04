@@ -7,10 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
 import re
 
-import attr
 import saneyaml
 import toml
 from packageurl import PackageURL
@@ -21,17 +19,6 @@ from packagedcode import models
 Handle Rust cargo crates
 """
 
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-# TODO:  add dependencies
-
 
 class CargoTomlHandler(models.DatafileHandler):
     datasource_id = 'cargo_toml'
@@ -39,6 +26,7 @@ class CargoTomlHandler(models.DatafileHandler):
     default_package_type = 'cargo'
     default_primary_language = 'Rust'
     description = 'Rust Cargo.toml package manifest'
+    documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
 
     @classmethod
     def parse(cls, location):
@@ -55,9 +43,9 @@ class CargoTomlHandler(models.DatafileHandler):
         parties = list(party_mapper(authors, party_role='author'))
 
         declared_license = core_package_data.get('license')
-        license_expression = cls.compute_normalized_license(declared_license)
         # TODO: load as a notice_text
         license_file = core_package_data.get('license-file')
+
         keywords = core_package_data.get('keywords') or []
         categories = core_package_data.get('categories') or []
         keywords.extend(categories)
@@ -68,7 +56,18 @@ class CargoTomlHandler(models.DatafileHandler):
             if key.endswith('dependencies'):
                 dependencies.extend(dependency_mapper(dependencies=value, scope=key))
 
-        package = models.PackageData(
+        # TODO: add file refs:
+        # - readme, include and exclude
+        # TODO: other URLs
+        # - documentation
+
+        vcs_url = core_package_data.get('repository')
+        homepage_url = core_package_data.get('homepage')
+        repository_homepage_url = name and f'https://crates.io/crates/{name}'
+        repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
+        api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
+
+        yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -77,14 +76,13 @@ class CargoTomlHandler(models.DatafileHandler):
             description=description,
             parties=parties,
             declared_license=declared_license,
-            license_expression=license_expression,
-            repository_homepage_url=name and f'https://crates.io/crates/{name}',
-            repository_download_url=name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download',
-            api_data_url=name and  f'https://crates.io/api/v1/crates/{name}',
+            vcs_url=vcs_url,
+            homepage_url=homepage_url,
+            repository_homepage_url=repository_homepage_url,
+            repository_download_url=repository_download_url,
+            api_data_url=api_data_url,
             dependencies=dependencies,
         )
-
-        yield package
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
@@ -97,14 +95,18 @@ class CargoTomlHandler(models.DatafileHandler):
             codebase=codebase,
         )
 
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return super().compute_normalized_license(package)
 
-@attr.s()
+
 class CargoLockHandler(models.DatafileHandler):
     datasource_id = 'cargo_lock'
     path_patterns = ('*/Cargo.lock',)
     default_package_type = 'cargo'
     default_primary_language = 'Rust'
     description = 'Rust Cargo.lock dependencies lockfile'
+    documentation_url = 'https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html'
 
     # TODO: also add extra package data found such as version control and commits
     # [[package]]
@@ -122,6 +124,7 @@ class CargoLockHandler(models.DatafileHandler):
         dependencies = []
         package = cargo_lock.get('package', [])
         for dep in package:
+            # TODO: add missing "source" vs. "dependencies" and checksum
             dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -134,7 +137,6 @@ class CargoLockHandler(models.DatafileHandler):
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=True,
-
                 )
             )
 

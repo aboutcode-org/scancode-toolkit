@@ -74,8 +74,8 @@ def _parse(location):
         except NotImplementedError:
             # build a plain package if parse is not yet implemented
             pkg = models.PackageData(
-                type=handler.default_package_type,
                 datasource_id=handler.datasource_id,
+                type=handler.default_package_type,
                 primary_language=handler.default_primary_language,
             )
             if TRACE:

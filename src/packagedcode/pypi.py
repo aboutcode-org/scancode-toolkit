@@ -363,7 +363,6 @@ def get_file_references(dist):
         ref = models.FileReference(
             path=as_posixpath(str(filepath)),
             size=filepath.size,
-            is_file=True,
         )
 
         filehash = filepath.hash
@@ -439,8 +438,8 @@ class PypiSdistArchiveHandler(BasePypiHandler):
     documentation_url = 'https://peps.python.org/pep-0643/'
 
     @classmethod
-    def is_datafile(cls, location):
-        if super().is_datafile(location):
+    def is_datafile(cls, location, filetypes=tuple()):
+        if super().is_datafile(location, filetypes=filetypes):
             # TODO: there is a structure to an sdists name: aboutcode-toolkit-7.0.0.tar.gz
             # TODO: there is more to it than this... based on actual listing of files inside
             return True
@@ -534,7 +533,6 @@ class BaseDependencyFileHandler(BasePypiHandler):
         )
 
 
-
 class SetupCfgHandler(BaseExtractedPythonLayout):
     datasource_id = 'pypi_setup_cfg'
     path_patterns = ('*setup.cfg',)
@@ -567,7 +565,7 @@ class PipfileHandler(BaseDependencyFileHandler):
 
 
 class PipfileLockHandler(BaseDependencyFileHandler):
-    datasource_id = 'pipfile'
+    datasource_id = 'pipfile_lock'
     path_patterns = ('*Pipfile.lock',)
     default_package_type = 'pypi'
     default_primary_language = 'Python'

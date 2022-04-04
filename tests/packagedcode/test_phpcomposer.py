@@ -39,50 +39,50 @@ class TestPHPcomposer(PackageTester):
 
     def test_is_manifest_php_composer_json(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
-        assert phpcomposer.ComposerJson.is_datafile(test_file)
+        assert phpcomposer.PhpComposerJsonHandler.is_datafile(test_file)
 
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/a-timer/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_framework(self):
         test_file = self.get_test_loc('phpcomposer/framework/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/framework/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_slim(self):
         test_file = self.get_test_loc('phpcomposer/slim/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/slim/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_modern(self):
         test_file = self.get_test_loc('phpcomposer/modern/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/modern/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_fake_license1(self):
         test_file = self.get_test_loc('phpcomposer/fake/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/fake/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_fake_license2(self):
         test_file = self.get_test_loc('phpcomposer/fake2/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/fake2/composer.json.expected')
-        packages = phpcomposer.ComposerJson.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_is_manifest_php_composer_lock(self):
         test_file = self.get_test_loc('phpcomposer/composer.lock')
-        assert phpcomposer.ComposerLock.is_datafile(test_file)
+        assert phpcomposer.PhpComposerLockHandler.is_datafile(test_file)
 
     def test_parse_composer_lock(self):
         test_file = self.get_test_loc('phpcomposer/composer.lock')
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
-        packages = phpcomposer.ComposerLock.parse(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)

@@ -22,7 +22,7 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
-        for package_data in rpm.RpmManifestRecognizer.parse(test_file):
+        for package_data in rpm.RpmArchiveHandler.parse(test_file):
             break
 
         expected = [
@@ -60,7 +60,6 @@ class TestRpmBasics(FileBasedTesting):
             ('license_expression', None),
             ('declared_license', 'LGPLv2+'),
             ('notice_text', None),
-            ('contains_source_code', None),
             ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
             ('extra_data', {}),
             ('dependencies', []),
@@ -130,11 +129,11 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_rpm_is_manifest_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert not rpm.RpmManifestRecognizer.is_datafile(test_file)
+        assert not rpm.RpmArchiveHandler.is_datafile(test_file)
 
     def test_rpm_is_manifest_rpm_file(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
-        assert rpm.RpmManifestRecognizer.is_datafile(test_file)
+        assert rpm.RpmArchiveHandler.is_datafile(test_file)
 
 
 def check_json(result, expected_file, regen=REGEN_TEST_FIXTURES):

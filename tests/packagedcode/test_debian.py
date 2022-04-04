@@ -64,13 +64,13 @@ class TestDebian(PackageTester):
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_status_file_perl_error(self):
         test_file = self.get_test_loc('debian/mini-status/status')
         expected_loc = self.get_test_loc('debian/mini-status/status.expected')
         packages = list(debian.parse_status_file(test_file, distro='debian'))
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_parse_end_to_end(self):

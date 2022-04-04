@@ -30,6 +30,7 @@ from packagedcode import pypi
 from packagedcode import golang
 from packagedcode import models
 
+# TODO: this needs to be updated to use either a full scan of to use parse and assemble
 
 class TestRecognize(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

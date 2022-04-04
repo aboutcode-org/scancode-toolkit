@@ -299,7 +299,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             # path is found and processed: remove it, so we can check if we found all of them
             del file_references_by_path[res.path]
             res.for_packages.append(package_uid)
-            res.save()
+            res.save(codebase)
 
             yield res
 

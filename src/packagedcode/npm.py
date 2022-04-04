@@ -357,8 +357,8 @@ class YarnLockV2Handler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
     @classmethod
-    def is_datafile(cls, location):
-        return super().is_datafile(location) and is_yarn_v2(location)
+    def is_datafile(cls, location, filetypes=tuple()):
+        return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
 
     @classmethod
     def parse(cls, location):
@@ -378,8 +378,8 @@ class YarnLockV1Handler(BaseNpmHandler):
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
     @classmethod
-    def is_datafile(cls, location):
-        return super().is_datafile(location) and not is_yarn_v2(location)
+    def is_datafile(cls, location, filetypes=tuple()):
+        return super().is_datafile(location, filetypes=filetypes) and not is_yarn_v2(location)
 
     @classmethod
     def parse(cls, location):

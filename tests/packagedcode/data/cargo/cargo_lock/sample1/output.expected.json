@@ -26,39 +26,41 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:crates/autocfg@1.0.0",
+        "purl": "pkg:cargo/autocfg@1.0.0",
         "extracted_requirement": "1.0.0",
-        "scope": "dependency",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
         "resolved_package": {}
       },
       {
-        "purl": "pkg:crates/cargo-lock@4.0.1",
+        "purl": "pkg:cargo/cargo-lock@4.0.1",
         "extracted_requirement": "4.0.1",
-        "scope": "dependency",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
         "resolved_package": {}
       },
       {
-        "purl": "pkg:crates/gumdrop@0.7.0",
+        "purl": "pkg:cargo/gumdrop@0.7.0",
         "extracted_requirement": "0.7.0",
-        "scope": "dependency",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "cargo_lock",
+    "purl": null
   }
 ]

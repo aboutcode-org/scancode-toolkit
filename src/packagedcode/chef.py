@@ -33,17 +33,6 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-# TODO: implemnet me: extract and parse and register
-class ChefCookbookHandler(models.PackageData):
-    datasource_id = 'chef_cookbook_tarball'
-    path_patterns = ('*.tgz',)
-    default_package_type = 'chef'
-    default_primary_language = 'Ruby'
-
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
-
 def chef_download_url(name, version):
     """
     Return an Chef cookbook download url given a name, version, and base registry URL.
@@ -55,7 +44,7 @@ def chef_download_url(name, version):
     return name and version and f'https://supermarket.chef.io/cookbooks/{name}/versions/{version}/download'
 
 
-def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
+def chef_api_url(name, version):
     """
     Return a package API data URL given a name, version and a base registry URL.
 
@@ -64,6 +53,20 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     >>> assert c == u'https://supermarket.chef.io/api/v1/cookbooks/seven_zip/versions/1.0.4'
     """
     return name and version and f'https://supermarket.chef.io/api/v1/cookbooks/{name}/versions/{version}'
+
+
+def get_urls(name, version):
+    """
+    Return a mapping of URLs given a name and version.
+    """
+    dnl = chef_download_url(name, version)
+    rhu = name and version and f'https://supermarket.chef.io/cookbooks/{name}/versions/{version}/'
+    return dict(
+        download_url=dnl,
+        repository_download_url=dnl,
+        repository_homepage_url=rhu,
+        api_data_url=chef_api_url(name, version),
+    )
 
 
 class ChefMetadataFormatter(Formatter):
@@ -150,22 +153,31 @@ class BaseChefMetadataHandler(models.DatafileHandler):
         )
 
 
+# TODO: implemet me: extract and parse and register
+class ChefCookbookHandler(BaseChefMetadataHandler):
+    datasource_id = 'chef_cookbook_tarball'
+    path_patterns = ('*.tgz',)
+    default_package_type = 'chef'
+    default_primary_language = 'Ruby'
+    description = 'Chef cookbook tarball'
+
+
 class ChefMetadataJsonHandler(BaseChefMetadataHandler):
     datasource_id = 'chef_cookbook_metadata_json'
     path_patterns = ('*/metadata.json',)
     default_package_type = 'chef'
     default_primary_language = 'Ruby'
     description = 'Chef cookbook metadata.json'
-    documentation_ulr = 'https://docs.chef.io/config_rb_metadata/'
+    documentation_url = 'https://docs.chef.io/config_rb_metadata/'
 
     @classmethod
-    def is_datafile(cls, location):
+    def is_datafile(cls, location, filetypes=tuple()):
         """
         Return True if `location` path is for a Chef metadata.json file. The
         metadata.json is/was also used in Python legacy wheels in a 'dist-info'
         directory.
         """
-        if super().is_datafile(location):
+        if super().is_datafile(location, filetypes=filetypes):
             parent = fileutils.file_name(fileutils.parent_directory(location))
             return not parent.endswith('dist-info')
 
@@ -186,7 +198,7 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
     default_package_type = 'chef'
     default_primary_language = 'Ruby'
     description = 'Chef cookbook metadata.rb'
-    documentation_ulr = 'https://docs.chef.io/config_rb_metadata/'
+    documentation_url = 'https://docs.chef.io/config_rb_metadata/'
 
     @classmethod
     def parse(cls, location):
@@ -210,10 +222,6 @@ def build_package(package_data, datasource_id):
     """
     name = package_data.get('name')
     version = package_data.get('version')
-    if not name or not version:
-        # a metadata.json without name and version is not a usable chef package
-        # FIXME: raise error?
-        return
 
     maintainer_name = package_data.get('maintainer', '')
     maintainer_email = package_data.get('maintainer_email', '')
@@ -233,10 +241,12 @@ def build_package(package_data, datasource_id):
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    dependencies = package_data.get('dependencies', {}) or package_data.get('depends', {})
-    package_dependencies = []
-    for dependency_name, requirement in dependencies.items():
-        package_dependencies.append(
+    deps = dict(package_data.get('dependencies', {}) or {})
+    deps.update(package_data.get('depends', {}) or {})
+
+    dependencies = []
+    for dependency_name, requirement in deps.items():
+        dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(type='chef', name=dependency_name).to_string(),
                 scope='dependencies',
@@ -256,7 +266,7 @@ def build_package(package_data, datasource_id):
         declared_license=lic.strip() or None,
         code_view_url=code_view_url.strip() or None,
         bug_tracking_url=bug_tracking_url.strip() or None,
-        download_url=chef_download_url(name, version).strip(),
-        dependencies=package_dependencies,
+        dependencies=dependencies,
         primary_language='Ruby',
+        **get_urls(name, version),
     )

@@ -339,8 +339,8 @@ def get_package_data(location, **kwargs):
     if TRACE:
         print('kwargs', kwargs)
 
-    package_data = _get_package_data(location, **kwargs) or []
-    return dict([pd.to_dict() for pd in package_data])
+    package_datas = _get_package_data(location, **kwargs) or []
+    return dict(package_data=[pd.to_dict() for pd in package_datas])
 
 
 def get_file_info(location, **kwargs):

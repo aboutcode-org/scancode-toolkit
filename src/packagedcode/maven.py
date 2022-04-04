@@ -67,11 +67,11 @@ class MavenPomXmlHandler(models.DatafileHandler):
     # TODO: implment more sophistcaed assembly with META-INF/MANIFEST.MF and META-INF/LICENSE
 
     @classmethod
-    def is_datafile(cls, location):
+    def is_datafile(cls, location, filetypes=tuple()):
         """
         Return True if the file at location is highly likely to be a POM.
         """
-        if not super().is_datafile(location):
+        if super().is_datafile(location, filetypes=filetypes):
             return
 
         T = contenttype.get_type(location)

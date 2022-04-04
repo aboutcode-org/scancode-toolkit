@@ -36,13 +36,13 @@ class TestConda(PackageTester):
 
     def test_condayml_is_package_data_file(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        assert conda.Condayml.is_datafile(test_file)
+        assert conda.CondaMetaYamlHandler.is_datafile(test_file)
 
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        package = conda.Condayml.parse(test_file)
+        package = conda.CondaMetaYamlHandler.parse(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_root_dir(self):
         test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')

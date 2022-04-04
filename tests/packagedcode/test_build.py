@@ -52,27 +52,27 @@ class TestBuild(PackageTester):
 
     def test_BazelPackage_parse(self):
         test_file = self.get_test_loc('bazel/parse/BUILD')
-        result_packages = build.BazelPackage.parse(test_file)
+        result_packages = build.BazelBuildHandler.parse(test_file)
         expected_packages = [
-            build.BazelPackage(name='hello-greet'),
-            build.BazelPackage(name='hello-world'),
+            models.PackageData(name='hello-greet'),
+            models.PackageData(name='hello-world'),
         ]
         compare_package_results(expected_packages, result_packages)
 
     def test_BuckPackage_parse(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
-        result_packages = build.BuckPackage.parse(test_file)
+        result_packages = build.BuckPackageHandler.parse(test_file)
         expected_packages = [
-            build.BuckPackage(name='app'),
-            build.BuckPackage(name='app2'),
+            models.PackageData(name='app'),
+            models.PackageData(name='app2'),
         ]
         compare_package_results(expected_packages, result_packages)
 
     def test_BuckPackage_recognize_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result_packages = build.BuckPackage.parse(test_file)
+        result_packages = build.BuckPackageHandler.parse(test_file)
         expected_packages = [
-            build.BuckPackage(
+            models.PackageData(
                 name='app',
                 declared_license=['LICENSE'],
                 license_expression= 'apache-2.0',
@@ -82,9 +82,9 @@ class TestBuild(PackageTester):
 
     def test_MetadataBzl_parse(self):
         test_file = self.get_test_loc('metadatabzl/METADATA.bzl')
-        result_packages = build.MetadataBzl.parse(test_file)
+        result_packages = build.BuckMetadataBzlHandler.parse(test_file)
         expected_packages = [
-            build.MetadataBzl(
+            models.PackageData(
                 type='github',
                 name='example',
                 version='0.0.1',

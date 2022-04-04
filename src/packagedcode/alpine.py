@@ -99,7 +99,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             # found all of them
             del file_references_by_path[res.path]
             res.for_packages.append(package_uid)
-            res.save()
+            res.save(codebase)
 
             yield res
 

@@ -54,7 +54,6 @@ See https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
-MATCHER_UNKNOWN = '5-unknown'
 
 
 def logger_debug(*args):
@@ -72,15 +71,16 @@ if TRACE:
             ' '.join(isinstance(a, str) and a or repr(a) for a in args)
         )
 
+MATCHER_UNKNOWN = '5-unknown'
 
 class BaseDebianCopyrightFileHandler(models.DatafileHandler):
     default_package_type = 'deb'
     documentation_url = 'https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/'
 
     @classmethod
-    def is_datafile(cls, location, filetypes=None, strict=False):
+    def is_datafile(cls, location, filetypes=tuple(), strict=False):
         isdc = (
-            super().is_datafile(location, filetypes)
+            super().is_datafile(location, filetypes=filetypes)
             # we want the filename to be lowercase
             and location.endswith('copyright')
         )

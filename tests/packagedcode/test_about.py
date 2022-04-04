@@ -12,7 +12,8 @@ import os.path
 from packagedcode import about
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
-
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import check_json_scan
 
 
 class TestAbout(PackageTester):
@@ -26,10 +27,19 @@ class TestAbout(PackageTester):
         test_file = self.get_test_loc('about/aboutfiles/apipkg.ABOUT')
         package = about.AboutFileHandler.parse(test_file)
         expected_loc = self.get_test_loc('about/apipkg.ABOUT-expected')
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_about_file_homepage_url(self):
         test_file = self.get_test_loc('about/aboutfiles/appdirs.ABOUT')
         package = about.AboutFileHandler.parse(test_file)
         expected_loc = self.get_test_loc('about/appdirs.ABOUT-expected')
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_scan_cli_works(self):
+        test_file = self.get_test_loc('about/aboutfiles')
+        expected_file = self.get_test_loc('about/aboutfiles.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )

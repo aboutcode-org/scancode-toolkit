@@ -55,17 +55,16 @@ def print_packages(ctx, param, value):
 
     from packagedcode import PACKAGE_DATAFILE_HANDLERS
 
-#     for cls in sorted(
-#         PACKAGE_DATAFILE_HANDLERS,
-#         key=lambda pc: (pc.default_package_type, pc.datasource_id)
-#     ):
-    for cls in PACKAGE_DATAFILE_HANDLERS:
+    for cls in sorted(
+        PACKAGE_DATAFILE_HANDLERS,
+        key=lambda pc: (pc.default_package_type or '', pc.datasource_id)
+    ):
         pp = ', '.join(repr(p) for p in cls.path_patterns)
         click.echo('--------------------------------------------')
-        click.echo(f'Package datasource:  {cls.default_package_type!r}')    
+        click.echo(f'Package type:  {cls.default_package_type}')
         if cls.datasource_id is None:
             raise Exception(cls)
-        click.echo(f'  datasource_id:     {cls.datasource_id!r}')
+        click.echo(f'  datasource_id:     {cls.datasource_id}')
         click.echo(f'  documentation URL: {cls.documentation_url}')
         click.echo(f'  primary language:  {cls.default_primary_language}')
         click.echo(f'  description:       {cls.description}')
@@ -182,6 +181,6 @@ def create_package_and_deps(codebase, **kwargs):
                     raise Exception('Unknown package assembly item type: {item!r}')
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
-    codebase.attributes.dependencies.extend(dep.to_dict() for dep in packages_top_level)
+    codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)
 
     return packages_top_level, packages_top_level

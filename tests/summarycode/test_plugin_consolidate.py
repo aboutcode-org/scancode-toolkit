@@ -30,7 +30,7 @@ class TestConsolidate(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/package-fileset-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_package_files_should_not_be_considered_in_license_holder_consolidated_component(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package-files-not-counted-in-license-holders')
@@ -40,7 +40,7 @@ class TestConsolidate(FileDrivenTesting):
         # expression and holder
         expected_file = self.get_test_loc('plugin_consolidate/package-files-not-counted-in-license-holders-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_component_package_from_json_can_run_twice(self):
         scan_file = self.get_scan('plugin_consolidate/component-package', cli_options='-clip')
@@ -48,26 +48,26 @@ class TestConsolidate(FileDrivenTesting):
 
         result_file = self.get_temp_file('json')
         run_scan_click(['--from-json', scan_file, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
         # rerun with result_file from last run
         result_file2 = self.get_temp_file('json')
         run_scan_click(['--from-json', result_file, '--consolidate', '--json', result_file2])
-        check_json_scan(expected_file, result_file2, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file2, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_component_package_from_live_scan(self):
         scan_loc = self.get_test_loc('plugin_consolidate/component-package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/component-package-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_package_always_include_own_manifest_file(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package-manifest')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/package-manifest-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_get_package_resources_on_nested_packages_should_include_manifest(self):
         from packagedcode import get_package_instance
@@ -110,14 +110,14 @@ class TestConsolidate(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/component-package-build-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_report_minority_origin_directory(self):
         scan_loc = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_zlib(self):
         scan_loc = self.get_test_loc('plugin_consolidate/zlib.json')

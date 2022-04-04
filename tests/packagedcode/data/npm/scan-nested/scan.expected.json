@@ -1,0 +1,1343 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 5
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/lodash._baseclone",
+      "extracted_requirement": "~4.5.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/lodash._baseclone?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/bluebird",
+      "extracted_requirement": "^3.3.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/depd",
+      "extracted_requirement": "^1.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/depd?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/dottie",
+      "extracted_requirement": "^1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/dottie?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/generic-pool",
+      "extracted_requirement": "2.4.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/generic-pool?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/inflection",
+      "extracted_requirement": "^1.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/inflection?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/lodash",
+      "extracted_requirement": "4.12.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/moment",
+      "extracted_requirement": "^2.13.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/moment-timezone",
+      "extracted_requirement": "^0.5.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/moment-timezone?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/retry-as-promised",
+      "extracted_requirement": "^2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/retry-as-promised?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/semver",
+      "extracted_requirement": "^5.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/semver?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/shimmer",
+      "extracted_requirement": "1.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/shimmer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/terraformer-wkt-parser",
+      "extracted_requirement": "^1.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/terraformer-wkt-parser?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/toposort-class",
+      "extracted_requirement": "^1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/toposort-class?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/uuid",
+      "extracted_requirement": "^3.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/uuid?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/validator",
+      "extracted_requirement": "^5.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/validator?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/wkx",
+      "extracted_requirement": "0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/wkx?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai",
+      "extracted_requirement": "^3.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai-as-promised",
+      "extracted_requirement": "^5.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai-as-promised?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai-datetime",
+      "extracted_requirement": "^1.4.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai-datetime?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai-spies",
+      "extracted_requirement": "^0.7.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai-spies?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/commander",
+      "extracted_requirement": "^2.6.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/commander?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/continuation-local-storage",
+      "extracted_requirement": "^3.1.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/continuation-local-storage?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/cross-env",
+      "extracted_requirement": "^2.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/cross-env?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/dox",
+      "extracted_requirement": "~0.8.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/dox?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/git",
+      "extracted_requirement": "^0.1.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/git?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/hints",
+      "extracted_requirement": "^0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/hints?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/istanbul",
+      "extracted_requirement": "^0.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/istanbul?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/jshint",
+      "extracted_requirement": "^2.9.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/jshint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/lcov-result-merger",
+      "extracted_requirement": "^1.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/lcov-result-merger?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/mocha",
+      "extracted_requirement": "^2.4.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/mysql",
+      "extracted_requirement": "~2.10.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/mysql?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/pg",
+      "extracted_requirement": "^4.4.6",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/pg?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/pg-hstore",
+      "extracted_requirement": "^2.3.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/pg-hstore?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/pg-native",
+      "extracted_requirement": "^1.8.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/pg-native?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/pg-types",
+      "extracted_requirement": "^1.11.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/pg-types?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/rimraf",
+      "extracted_requirement": "^2.5.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/rimraf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/sinon",
+      "extracted_requirement": "^1.17.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/sinon?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/sinon-chai",
+      "extracted_requirement": "^2.8.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/sinon-chai?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/sqlite3",
+      "extracted_requirement": "^3.1.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/sqlite3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/tedious",
+      "extracted_requirement": "^1.13.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/tedious?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/uuid-validate",
+      "extracted_requirement": "^0.0.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/uuid-validate?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/watchr",
+      "extracted_requirement": "~2.4.11",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/watchr?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "lodash.clonedeep",
+      "version": "4.3.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "The lodash method `_.cloneDeep` exported as a module.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "keywords": [
+        "lodash-modularized",
+        "clonedeep"
+      ],
+      "homepage_url": "https://lodash.com/",
+      "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/lodash/lodash",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": [
+        "MIT"
+      ],
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
+      "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+      "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
+      "package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/lodash.clonedeep@4.3.2"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "sequelize",
+      "version": "3.30.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Multi dialect ORM for Node.JS/io.js",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Jan Aagaard Meier",
+          "email": "janzeh@gmail.com\njmei@itu.dk",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Daniel Durante",
+          "email": "me@danieldurante.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mick Hansen",
+          "email": "mick.kasper.hansen@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "mysql",
+        "sqlite",
+        "postgresql",
+        "postgres",
+        "mssql",
+        "orm",
+        "nodejs",
+        "object relational mapper"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/sequelize/sequelize/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/sequelize/sequelize.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": [
+        "MIT"
+      ],
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
+      "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+      "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
+      "package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/node_modules/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/sequelize@3.30.2"
+    }
+  ],
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/node_modules",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/node_modules/package-lock.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/node_modules/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "sequelize",
+          "version": "3.30.2",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Multi dialect ORM for Node.JS/io.js",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Sascha Depold",
+              "email": "sascha@depold.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Sascha Depold",
+              "email": "sascha@depold.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Jan Aagaard Meier",
+              "email": "janzeh@gmail.com\njmei@itu.dk",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Daniel Durante",
+              "email": "me@danieldurante.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Mick Hansen",
+              "email": "mick.kasper.hansen@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "mysql",
+            "sqlite",
+            "postgresql",
+            "postgres",
+            "mssql",
+            "orm",
+            "nodejs",
+            "object relational mapper"
+          ],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/sequelize/sequelize/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/sequelize/sequelize.git",
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": [
+            "MIT"
+          ],
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/bluebird",
+              "extracted_requirement": "^3.3.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/depd",
+              "extracted_requirement": "^1.1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/dottie",
+              "extracted_requirement": "^1.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/generic-pool",
+              "extracted_requirement": "2.4.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/inflection",
+              "extracted_requirement": "^1.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/lodash",
+              "extracted_requirement": "4.12.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/moment",
+              "extracted_requirement": "^2.13.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/moment-timezone",
+              "extracted_requirement": "^0.5.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/retry-as-promised",
+              "extracted_requirement": "^2.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/semver",
+              "extracted_requirement": "^5.0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/shimmer",
+              "extracted_requirement": "1.1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/terraformer-wkt-parser",
+              "extracted_requirement": "^1.1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/toposort-class",
+              "extracted_requirement": "^1.0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/uuid",
+              "extracted_requirement": "^3.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/validator",
+              "extracted_requirement": "^5.2.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/wkx",
+              "extracted_requirement": "0.2.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/chai",
+              "extracted_requirement": "^3.5.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/chai-as-promised",
+              "extracted_requirement": "^5.1.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/chai-datetime",
+              "extracted_requirement": "^1.4.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/chai-spies",
+              "extracted_requirement": "^0.7.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/commander",
+              "extracted_requirement": "^2.6.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/continuation-local-storage",
+              "extracted_requirement": "^3.1.4",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/cross-env",
+              "extracted_requirement": "^2.0.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/dox",
+              "extracted_requirement": "~0.8.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/git",
+              "extracted_requirement": "^0.1.5",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/hints",
+              "extracted_requirement": "^0.2.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/istanbul",
+              "extracted_requirement": "^0.4.3",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/jshint",
+              "extracted_requirement": "^2.9.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/lcov-result-merger",
+              "extracted_requirement": "^1.2.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/mocha",
+              "extracted_requirement": "^2.4.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/mysql",
+              "extracted_requirement": "~2.10.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/pg",
+              "extracted_requirement": "^4.4.6",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/pg-hstore",
+              "extracted_requirement": "^2.3.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/pg-native",
+              "extracted_requirement": "^1.8.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/pg-types",
+              "extracted_requirement": "^1.11.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/rimraf",
+              "extracted_requirement": "^2.5.4",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/sinon",
+              "extracted_requirement": "^1.17.4",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/sinon-chai",
+              "extracted_requirement": "^2.8.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/sqlite3",
+              "extracted_requirement": "^3.1.4",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/tedious",
+              "extracted_requirement": "^1.13.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/uuid-validate",
+              "extracted_requirement": "^0.0.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/watchr",
+              "extracted_requirement": "~2.4.11",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
+          "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+          "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/sequelize@3.30.2"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/node_modules/yarn.lock",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/package-lock.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "lodash.clonedeep",
+          "version": "4.3.2",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "The lodash method `_.cloneDeep` exported as a module.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "John-David Dalton",
+              "email": "john.david.dalton@gmail.com",
+              "url": "http://allyoucanleet.com/"
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "John-David Dalton",
+              "email": "john.david.dalton@gmail.com",
+              "url": "http://allyoucanleet.com/"
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Blaine Bublitz",
+              "email": "blaine.bublitz@gmail.com",
+              "url": "https://github.com/phated"
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Mathias Bynens",
+              "email": "mathias@qiwi.be",
+              "url": "https://mathiasbynens.be/"
+            }
+          ],
+          "keywords": [
+            "lodash-modularized",
+            "clonedeep"
+          ],
+          "homepage_url": "https://lodash.com/",
+          "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/lodash/lodash",
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": [
+            "MIT"
+          ],
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/lodash._baseclone",
+              "extracted_requirement": "~4.5.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
+          "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+          "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/lodash.clonedeep@4.3.2"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
