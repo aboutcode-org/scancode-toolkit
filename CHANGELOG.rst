@@ -1,6 +1,15 @@
 Release notes
 =============
 
+Version 30.1.0 (2022-04-05)
+------------------------------
+
+- Add ``warning`` field to ``commoncode.Codebase`` headers.
+- Add new functions ``get_jar_nv()`` and ``get_nupkg_nv()`` that accepts
+  a filename of a JAR or nupkg and return a name/version tuple extracted
+  using multiple heuristics.
+
+
 Version 30.0.0 (2021-09-24)
 ------------------------------
 
