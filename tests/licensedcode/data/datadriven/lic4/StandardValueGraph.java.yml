@@ -1,4 +1,3 @@
 license_expressions:
-    - apache-2.0
+  - apache-2.0
 notes: there was some false positive detected before this
-

@@ -4,8 +4,6 @@ license_expressions:
   - lgpl-2.1-plus
   - cc-by-sa-4.0
   - bsd-new
-
 notes: this is based on the HTML page of https://github.com/ClusterLabs/pacemaker/blob/main/COPYING
- and is by design somtheing atypical
- It should return gpl-2.0-plus AND lgpl-2.1-plus AND cc-by-sa-4.0 AND bsd-new
-
+  and is by design somtheing atypical It should return gpl-2.0-plus AND lgpl-2.1-plus AND cc-by-sa-4.0
+  AND bsd-new
