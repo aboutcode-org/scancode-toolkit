@@ -261,6 +261,12 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageLockJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_lock_v2_2(self):
+        test_file = self.get_test_loc('npm/package-lock-v2-2/package-lock.json')
+        expected_loc = self.get_test_loc(
+            'npm/package-lock-v2-2/package-lock.json-expected')
+        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_is_datafile_npm_shrinkwrap_json(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
