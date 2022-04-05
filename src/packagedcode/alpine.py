@@ -770,7 +770,7 @@ def parse_pkginfo(location):
         depend = imagemagick
 
     """
-    raise NotImplementedError('TODO: implement me')
+    raise NotImplementedError
 
 
 def build_package_data(package_fields, datasource_id, package_type):

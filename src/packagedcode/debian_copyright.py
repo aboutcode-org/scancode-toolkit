@@ -261,28 +261,28 @@ class DebianDetector:
         """
         Return a DebianDetector object with License and Copyright detections.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_copyright(self, *args, **kwargs):
         """
         Return a copyright string (found in Copyright: structured fields or in
         plain text).
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_license_expression(self, *args, **kwargs):
         """
         Return a license expression string suitable to use as a
         PackageData.license_expression.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_declared_license(self, *args, **kwargs):
         """
         Return a list of declared license string suitable to use as a
         PackageData.declared_license.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
 
 @attr.s
