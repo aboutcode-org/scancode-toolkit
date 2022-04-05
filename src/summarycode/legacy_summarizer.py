@@ -47,36 +47,6 @@ Create summarized scan data.
 """
 
 
-@post_scan_impl
-class ScanSummary(PostScanPlugin):
-    """
-    Summarize a scan at the codebase level.
-    """
-    sort_order = 10
-
-    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
-
-    options = [
-        PluggableCommandLineOption(('--summary',),
-            is_flag=True, default=False,
-            help='Summarize license, copyright and other scans at the codebase level.',
-            help_group=POST_SCAN_GROUP,
-            required_options=['classify', 'license_clarity_score']
-        )
-    ]
-
-    def is_enabled(self, summary, **kwargs):
-        return summary
-
-    def process_codebase(self, codebase, summary, **kwargs):
-        if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
-        summary = summarize_codebase(codebase, keep_details=False, **kwargs)
-        declared_holders = get_declared_holders(codebase, summary)
-        codebase.attributes.summary['declared_holders'] = declared_holders
-        codebase.attributes.summary['primary_programming_language'] = get_primary_language(summary)
-        remove_declared_from_fields(codebase, summary)
-
-
 class SummaryLegacyPluginDeprecationWarning(DeprecationWarning):
     pass
 

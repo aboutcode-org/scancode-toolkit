@@ -71,16 +71,19 @@ class ScanSummary(PostScanPlugin):
 
     def process_codebase(self, codebase, summary, **kwargs):
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
-        summary = summarize_codebase(codebase, keep_details=False, **kwargs)
-        license_expressions_summary = summary.get('license_expressions', [])
-        programming_language_summary = summary.get('programming_language', [])
-        holders_summary = summary.get('holders', [])
-        scoring_elements, declared_license_expression = compute_license_score(codebase)
-        declared_holders = get_declared_holders(codebase, holders_summary)
-        primary_language = get_primary_language(programming_language_summary)
 
+        summary = summarize_codebase(codebase, keep_details=False, **kwargs)
+
+        license_expressions_summary = summary.get('license_expressions', [])
+        scoring_elements, declared_license_expression = compute_license_score(codebase)
         other_license_expressions = remove_from_summary(declared_license_expression, license_expressions_summary)
+
+        holders_summary = summary.get('holders', [])
+        declared_holders = get_declared_holders(codebase, holders_summary)
         other_holders = remove_from_summary(declared_holders, holders_summary)
+
+        programming_language_summary = summary.get('programming_language', [])
+        primary_language = get_primary_language(programming_language_summary)
         other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
 
         # Save summary info to codebase
