@@ -70,7 +70,10 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        compute_license_score(codebase)
+        scoring_elements, declared_license_expression = compute_license_score(codebase)
+        codebase.attributes.summary['declared_license_expression'] = declared_license_expression
+        codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
+
 
 
 def compute_license_score(codebase):
@@ -163,8 +166,7 @@ def compute_license_score(codebase):
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
 
-    codebase.attributes.summary['declared_license_expression'] = declared_license_expression or ''
-    codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
+    return scoring_elements, declared_license_expression or ''
 
 
 def unique(objects):
