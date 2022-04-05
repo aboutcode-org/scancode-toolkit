@@ -158,6 +158,7 @@ class Header(object):
     duration = String(help='Scan duration in seconds.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
+    warnings = List(help='List of warning messages.')
     extra_data = Mapping(help='Mapping of extra key/values for this tool.')
 
     def to_dict(self):
@@ -180,6 +181,7 @@ class Header(object):
             'duration',
             'message',
             'errors',
+            'warnings',
             'extra_data',
         ])
 
@@ -1602,12 +1604,12 @@ class VirtualCodebase(Codebase):
             raise Exception('Input has no file-level scan results.')
 
         # We iterate through all the Resource(s) so that we can build attributes each resource contains
-        
+
         sample_resource_data = dict()
-        
+
         for resource in resources_data:
             sample_resource_data.update(resource)
-        
+
         # Collect the existing attributes of the standard Resource class
         standard_res_attributes = set(f.name for f in attr.fields(Resource))
         # add these properties since they are fields but are serialized
