@@ -26,6 +26,7 @@
     "declared_license": [],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -56,9 +57,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/pahub@0.4.0",
     "repository_homepage_url": "https://www.npmjs.com/package/pahub",
     "repository_download_url": "https://registry.npmjs.org/pahub/-/pahub-0.4.0.tgz",
-    "api_data_url": "https://registry.npmjs.org/pahub/0.4.0"
+    "api_data_url": "https://registry.npmjs.org/pahub/0.4.0",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/pahub@0.4.0"
   }
 ]

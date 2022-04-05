@@ -42,6 +42,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -135,9 +136,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/grunt-esvm@3.2.8",
     "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
     "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
-    "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8"
+    "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/grunt-esvm@3.2.8"
   }
 ]

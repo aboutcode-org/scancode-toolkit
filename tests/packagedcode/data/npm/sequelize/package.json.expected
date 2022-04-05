@@ -73,6 +73,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -454,9 +455,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/sequelize@3.30.2",
     "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
     "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
-    "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2"
+    "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/sequelize@3.30.2"
   }
 ]

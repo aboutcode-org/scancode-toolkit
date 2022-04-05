@@ -36,6 +36,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -588,9 +589,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
     "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
     "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-    "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts"
+    "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
   }
 ]

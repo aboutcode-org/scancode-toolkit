@@ -49,6 +49,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -61,9 +62,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/mime@1.3.4",
     "repository_homepage_url": "https://www.npmjs.com/package/mime",
     "repository_download_url": "https://registry.npmjs.org/mime/-/mime-1.3.4.tgz",
-    "api_data_url": "https://registry.npmjs.org/mime/1.3.4"
+    "api_data_url": "https://registry.npmjs.org/mime/1.3.4",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/mime@1.3.4"
   }
 ]

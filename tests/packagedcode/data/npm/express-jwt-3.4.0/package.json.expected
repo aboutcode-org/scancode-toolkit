@@ -50,6 +50,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -98,9 +99,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/express-jwt@3.4.0",
     "repository_homepage_url": "https://www.npmjs.com/package/express-jwt",
     "repository_download_url": "https://registry.npmjs.org/express-jwt/-/express-jwt-3.4.0.tgz",
-    "api_data_url": "https://registry.npmjs.org/express-jwt/3.4.0"
+    "api_data_url": "https://registry.npmjs.org/express-jwt/3.4.0",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/express-jwt@3.4.0"
   }
 ]

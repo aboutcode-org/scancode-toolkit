@@ -54,6 +54,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -111,9 +112,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/npm-research@0.0.1",
     "repository_homepage_url": "https://www.npmjs.com/package/npm-research",
     "repository_download_url": "https://registry.npmjs.org/npm-research/-/npm-research-0.0.1.tgz",
-    "api_data_url": "https://registry.npmjs.org/npm-research/0.0.1"
+    "api_data_url": "https://registry.npmjs.org/npm-research/0.0.1",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/npm-research@0.0.1"
   }
 ]

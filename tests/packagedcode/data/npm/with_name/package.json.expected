@@ -31,11 +31,13 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:npm/bson",
     "repository_homepage_url": "https://www.npmjs.com/package/bson",
     "repository_download_url": "https://registry.npmjs.org/bson/-/bson-None.tgz",
-    "api_data_url": "https://registry.npmjs.org/bson"
+    "api_data_url": "https://registry.npmjs.org/bson",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/bson"
   }
 ]

@@ -60,6 +60,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -72,9 +73,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/lodash.clonedeep@4.3.2",
     "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
     "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
-    "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2"
+    "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/lodash.clonedeep@4.3.2"
   }
 ]

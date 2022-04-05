@@ -59,7 +59,7 @@ class TestNpm(PackageTester):
                 'url': 'http://example.com'}
         assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com')
 
-    def test_is_manifest_package_json(self):
+    def test_is_datafile_package_json(self):
         test_file = self.get_test_loc('npm/dist/package.json')
         assert npm.NpmPackageJsonHandler.is_datafile(test_file)
 
@@ -239,26 +239,38 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_is_manifest_package_lock_json(self):
-        test_file = self.get_test_loc('npm/package-lock/package-lock.json')
+    def test_is_datafile_package_lock_json_v1(self):
+        test_file = self.get_test_loc('npm/package-lock-v1/package-lock.json')
         assert npm.NpmPackageLockJsonHandler.is_datafile(test_file)
 
-    def test_parse_package_lock(self):
-        test_file = self.get_test_loc('npm/package-lock/package-lock.json')
+    def test_parse_package_lock_v1(self):
+        test_file = self.get_test_loc('npm/package-lock-v1/package-lock.json')
         expected_loc = self.get_test_loc(
-            'npm/package-lock/package-lock.json-expected')
+            'npm/package-lock-v1/package-lock.json-expected')
         packages = npm.NpmPackageLockJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_is_manifest_npm_shrinkwrap_json(self):
-        test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
+    def test_is_datafile_package_lock_json_v2(self):
+        test_file = self.get_test_loc('npm/package-lock-v2/package-lock.json')
         assert npm.NpmPackageLockJsonHandler.is_datafile(test_file)
+
+    def test_parse_package_lock_v2(self):
+        test_file = self.get_test_loc('npm/package-lock-v2/package-lock.json')
+        expected_loc = self.get_test_loc(
+            'npm/package-lock-v2/package-lock.json-expected')
+        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+    def test_is_datafile_npm_shrinkwrap_json(self):
+        test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
+        assert npm.NpmShrinkwrapJsonHandler.is_datafile(test_file)
 
     def test_parse_npm_shrinkwrap(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
         expected_loc = self.get_test_loc(
             'npm/npm-shrinkwrap/npm-shrinkwrap.json-expected')
-        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
+        packages = npm.NpmShrinkwrapJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_with_name(self):
@@ -274,15 +286,35 @@ class TestNpm(PackageTester):
         except AttributeError as e:
             assert "'NoneType' object has no attribute 'to_dict'" in str(e)
 
-    def test_is_manifest_yarn_lock_v1(self):
+    def test_is_datafile_yarn_lock_v1(self):
         test_file = self.get_test_loc('npm/yarn-lock/v1/yarn.lock')
         assert npm.YarnLockV1Handler.is_datafile(test_file)
+        assert not npm.YarnLockV2Handler.is_datafile(test_file)
 
     def test_parse_yarn_lock_v1(self):
         test_file = self.get_test_loc('npm/yarn-lock/v1/yarn.lock')
         expected_loc = self.get_test_loc(
-            'npm/yarn-lock/yarn.lock-expected')
+            'npm/yarn-lock/v1/yarn.lock-expected')
         packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yarn_lock_v1_complex(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-complex/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-complex/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_datafile_yarn_lock_v2(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v2/yarn.lock')
+        assert npm.YarnLockV2Handler.is_datafile(test_file)
+        assert not npm.YarnLockV1Handler.is_datafile(test_file)
+
+    def test_parse_yarn_lock_v2(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v2/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v2/yarn.lock-expected')
+        packages = npm.YarnLockV2Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_vcs_repository_mapper(self):
