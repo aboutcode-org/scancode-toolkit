@@ -368,7 +368,7 @@ class ScanKeyFilesSummary(PostScanPlugin):
                  '--classify option "is_legal", "is_readme", "is_manifest" '
                  'and "is_top_level" flags.',
             help_group=POST_SCAN_GROUP,
-            required_options=['classify', 'summary']
+            required_options=['classify', 'summary_legacy']
         )
     ]
 
@@ -450,7 +450,7 @@ class ScanByFacetSummary(PostScanPlugin):
             help='Summarize license, copyright and other scans and group the '
                  'results by facet.',
             help_group=POST_SCAN_GROUP,
-            required_options=['facet', 'summary']
+            required_options=['facet', 'summary_legacy']
         )
     ]
 

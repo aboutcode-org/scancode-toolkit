@@ -10,13 +10,13 @@
           "--info": true,
           "--json-lines": "<file>",
           "--license": true,
-          "--license-clarity-score": true,
-          "--summary2": true
+          "--summary": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
         "output_format_version": "2.0.0",
         "message": null,
         "errors": [],
+        "warnings": [],
         "extra_data": {
           "spdx_license_list_version": "3.16",
           "files_count": 26
@@ -26,11 +26,7 @@
   },
   {
     "summary": {
-      "primary_license_expression": "",
-      "declared_license_expressions": [
-        "cc0-1.0",
-        "artistic-2.0"
-      ],
+      "declared_license_expression": "artistic-2.0 AND cc0-1.0",
       "license_clarity_score": {
         "score": 60,
         "declared_license": true,
@@ -40,7 +36,9 @@
         "conflicting_license_categories": true,
         "ambigous_compound_licensing": true
       },
-      "license_expressions": [
+      "declared_holders": [],
+      "primary_programming_language": "C",
+      "other_license_expressions": [
         {
           "value": "zlib",
           "count": 12
@@ -74,7 +72,7 @@
           "count": 1
         }
       ],
-      "holders": [
+      "other_holders": [
         {
           "value": null,
           "count": 6
@@ -121,6 +119,20 @@
         },
         {
           "value": "Red Hat, Inc. and individual contributors",
+          "count": 1
+        }
+      ],
+      "other_programming_languages": [
+        {
+          "value": "Java",
+          "count": 7
+        },
+        {
+          "value": "C#",
+          "count": 2
+        },
+        {
+          "value": "GAS",
           "count": 1
         }
       ]

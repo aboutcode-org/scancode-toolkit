@@ -9,25 +9,24 @@
         "--info": true,
         "--json-pp": "<file>",
         "--license": true,
-        "--license-clarity-score": true,
         "--package": true,
-        "--summary2": true
+        "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 4
       }
     }
   ],
+  "dependencies": [],
+  "packages": [],
   "summary": {
-    "primary_license_expression": "gpl-3.0-plus",
-    "declared_license_expressions": [
-      "gpl-3.0-plus"
-    ],
+    "declared_license_expression": "gpl-3.0-plus",
     "license_clarity_score": {
       "score": 90,
       "declared_license": true,
@@ -37,17 +36,15 @@
       "conflicting_license_categories": false,
       "ambigous_compound_licensing": false
     },
-    "license_expressions": [
+    "declared_holders": [],
+    "primary_programming_language": "C",
+    "other_license_expressions": [
       {
         "value": "gpl-2.0-plus",
         "count": 1
-      },
-      {
-        "value": "gpl-3.0-plus",
-        "count": 1
       }
     ],
-    "holders": [
+    "other_holders": [
       {
         "value": null,
         "count": 2
@@ -56,10 +53,9 @@
         "value": "Members of the Gmerlin project",
         "count": 2
       }
-    ]
+    ],
+    "other_programming_languages": []
   },
-  "dependencies": [],
-  "packages": [],
   "files": [
     {
       "path": "bug-1141.tar.gz",

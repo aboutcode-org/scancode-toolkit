@@ -9,120 +9,20 @@
         "--info": true,
         "--json-pp": "<file>",
         "--license": true,
-        "--license-clarity-score": true,
         "--package": true,
-        "--summary2": true
+        "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 26
       }
     }
   ],
-  "summary": {
-    "primary_license_expression": "",
-    "declared_license_expressions": [
-      "cc0-1.0",
-      "artistic-2.0"
-    ],
-    "license_clarity_score": {
-      "score": 60,
-      "declared_license": true,
-      "precise_license_detection": true,
-      "has_license_text": true,
-      "declared_copyrights": false,
-      "conflicting_license_categories": true,
-      "ambigous_compound_licensing": true
-    },
-    "license_expressions": [
-      {
-        "value": "zlib",
-        "count": 12
-      },
-      {
-        "value": "lgpl-2.1-plus",
-        "count": 3
-      },
-      {
-        "value": "artistic-2.0",
-        "count": 1
-      },
-      {
-        "value": "boost-1.0",
-        "count": 1
-      },
-      {
-        "value": "cc-by-2.5",
-        "count": 1
-      },
-      {
-        "value": "cc0-1.0",
-        "count": 1
-      },
-      {
-        "value": "gpl-2.0-plus WITH ada-linking-exception",
-        "count": 1
-      },
-      {
-        "value": "mit-old-style",
-        "count": 1
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 6
-      },
-      {
-        "value": "Jean-loup Gailly",
-        "count": 4
-      },
-      {
-        "value": "Mark Adler",
-        "count": 4
-      },
-      {
-        "value": "Jean-loup Gailly and Mark Adler",
-        "count": 3
-      },
-      {
-        "value": "Henrik Ravn",
-        "count": 2
-      },
-      {
-        "value": "Brian Goetz and Tim Peierls",
-        "count": 1
-      },
-      {
-        "value": "Christian Michelsen Research AS Advanced Computing",
-        "count": 1
-      },
-      {
-        "value": "Dmitriy Anisimkov",
-        "count": 1
-      },
-      {
-        "value": "JBoss Inc., and individual contributors",
-        "count": 1
-      },
-      {
-        "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
-        "count": 1
-      },
-      {
-        "value": "Red Hat Middleware LLC, and individual contributors",
-        "count": 1
-      },
-      {
-        "value": "Red Hat, Inc. and individual contributors",
-        "count": 1
-      }
-    ]
-  },
   "dependencies": [
     {
       "purl": "pkg:npm/abbrev",
@@ -3302,6 +3202,118 @@
       "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
     }
   ],
+  "summary": {
+    "declared_license_expression": "artistic-2.0 AND cc0-1.0",
+    "license_clarity_score": {
+      "score": 60,
+      "declared_license": true,
+      "precise_license_detection": true,
+      "has_license_text": true,
+      "declared_copyrights": false,
+      "conflicting_license_categories": true,
+      "ambigous_compound_licensing": true
+    },
+    "declared_holders": [],
+    "primary_programming_language": "C",
+    "other_license_expressions": [
+      {
+        "value": "zlib",
+        "count": 12
+      },
+      {
+        "value": "lgpl-2.1-plus",
+        "count": 3
+      },
+      {
+        "value": "artistic-2.0",
+        "count": 1
+      },
+      {
+        "value": "boost-1.0",
+        "count": 1
+      },
+      {
+        "value": "cc-by-2.5",
+        "count": 1
+      },
+      {
+        "value": "cc0-1.0",
+        "count": 1
+      },
+      {
+        "value": "gpl-2.0-plus WITH ada-linking-exception",
+        "count": 1
+      },
+      {
+        "value": "mit-old-style",
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 6
+      },
+      {
+        "value": "Jean-loup Gailly",
+        "count": 4
+      },
+      {
+        "value": "Mark Adler",
+        "count": 4
+      },
+      {
+        "value": "Jean-loup Gailly and Mark Adler",
+        "count": 3
+      },
+      {
+        "value": "Henrik Ravn",
+        "count": 2
+      },
+      {
+        "value": "Brian Goetz and Tim Peierls",
+        "count": 1
+      },
+      {
+        "value": "Christian Michelsen Research AS Advanced Computing",
+        "count": 1
+      },
+      {
+        "value": "Dmitriy Anisimkov",
+        "count": 1
+      },
+      {
+        "value": "JBoss Inc., and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+        "count": 1
+      },
+      {
+        "value": "Red Hat Middleware LLC, and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Red Hat, Inc. and individual contributors",
+        "count": 1
+      }
+    ],
+    "other_programming_languages": [
+      {
+        "value": "Java",
+        "count": 7
+      },
+      {
+        "value": "C#",
+        "count": 2
+      },
+      {
+        "value": "GAS",
+        "count": 1
+      }
+    ]
+  },
   "files": [
     {
       "path": "scan",

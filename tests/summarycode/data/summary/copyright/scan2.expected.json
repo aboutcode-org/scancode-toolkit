@@ -8,13 +8,13 @@
         "--copyright": true,
         "--json-pp": "<file>",
         "--license": true,
-        "--license-clarity-score": true,
-        "--summary2": true
+        "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 1
@@ -22,10 +22,7 @@
     }
   ],
   "summary": {
-    "primary_license_expression": "jetty",
-    "declared_license_expressions": [
-      "jetty"
-    ],
+    "declared_license_expression": "jetty",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -35,13 +32,7 @@
       "conflicting_license_categories": false,
       "ambigous_compound_licensing": false
     },
-    "license_expressions": [
-      {
-        "value": "jetty",
-        "count": 1
-      }
-    ],
-    "holders": [
+    "declared_holders": [
       {
         "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
         "count": 1
@@ -50,7 +41,11 @@
         "value": "Sun Microsystems, Inc.",
         "count": 1
       }
-    ]
+    ],
+    "primary_programming_language": "",
+    "other_license_expressions": [],
+    "other_holders": [],
+    "other_programming_languages": []
   },
   "files": [
     {

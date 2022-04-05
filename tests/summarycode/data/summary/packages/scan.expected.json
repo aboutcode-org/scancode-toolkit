@@ -6,33 +6,20 @@
         "input": "<path>",
         "--classify": true,
         "--json-pp": "<file>",
-        "--license-clarity-score": true,
         "--package": true,
-        "--summary2": true
+        "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 3
       }
     }
   ],
-  "summary": {
-    "primary_license_expression": "",
-    "declared_license_expressions": [],
-    "license_clarity_score": {
-      "score": 0,
-      "declared_license": false,
-      "precise_license_detection": false,
-      "has_license_text": false,
-      "declared_copyrights": false,
-      "conflicting_license_categories": false,
-      "ambigous_compound_licensing": false
-    }
-  },
   "dependencies": [
     {
       "purl": "pkg:npm/%40angular-devkit/build-optimizer",
@@ -929,6 +916,23 @@
       "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts"
     }
   ],
+  "summary": {
+    "declared_license_expression": "",
+    "license_clarity_score": {
+      "score": 0,
+      "declared_license": false,
+      "precise_license_detection": false,
+      "has_license_text": false,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambigous_compound_licensing": true
+    },
+    "declared_holders": [],
+    "primary_programming_language": "",
+    "other_license_expressions": [],
+    "other_holders": [],
+    "other_programming_languages": []
+  },
   "files": [
     {
       "path": "scan",

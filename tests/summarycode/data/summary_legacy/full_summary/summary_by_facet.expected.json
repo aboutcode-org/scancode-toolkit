@@ -18,14 +18,18 @@
         "--json-pp": "<file>",
         "--license": true,
         "--package": true,
-        "--summary": true,
         "--summary-by-facet": true,
+        "--summary-legacy": true,
         "--url": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [
+        "The --summary-legacy option will be deprecated in a future version of scancode-toolkit.",
+        "The --summary-by-facet option will be deprecated in a future version of scancode-toolkit."
+      ],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 26

@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 import warnings
 
 import attr
+import fingerprints
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -74,15 +75,15 @@ class ScanSummary(PostScanPlugin):
 
         summary = summarize_codebase(codebase, keep_details=False, **kwargs)
 
-        license_expressions_summary = summary.get('license_expressions', [])
+        license_expressions_summary = summary.get('license_expressions') or []
         scoring_elements, declared_license_expression = compute_license_score(codebase)
         other_license_expressions = remove_from_summary(declared_license_expression, license_expressions_summary)
 
-        holders_summary = summary.get('holders', [])
+        holders_summary = summary.get('holders') or []
         declared_holders = get_declared_holders(codebase, holders_summary)
         other_holders = remove_from_summary(declared_holders, holders_summary)
 
-        programming_language_summary = summary.get('programming_language', [])
+        programming_language_summary = summary.get('programming_language') or []
         primary_language = get_primary_language(programming_language_summary)
         other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
 
@@ -306,8 +307,14 @@ def package_summarizer(resource, children, keep_details=False):
 
 def get_declared_holders(codebase, holders_summary):
     key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
-    entry_by_holders = {entry.get('value'): entry for entry in holders_summary}
-    key_file_holders = [entry.get('holder') for entry in key_file_holders]
+    entry_by_holders = {
+        fingerprints.generate(entry.get('value')): entry
+        for entry in holders_summary
+    }
+    key_file_holders = [
+        fingerprints.generate(entry.get('holder'))
+        for entry in key_file_holders
+    ]
     unique_key_file_holders = unique(key_file_holders)
 
     holder_entry_by_counts = defaultdict(list)
@@ -326,8 +333,8 @@ def get_declared_holders(codebase, holders_summary):
 
 def get_primary_language(programming_language_summary):
     programming_language_entry_by_count = {entry.get('count'): entry for entry in programming_language_summary}
-    primary_language = {}
+    primary_language = ''
     if programming_language_entry_by_count:
         highest_count = max(programming_language_entry_by_count)
-        primary_language = programming_language_entry_by_count[highest_count]
+        primary_language = programming_language_entry_by_count[highest_count].get('value') or ''
     return primary_language
