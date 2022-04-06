@@ -79,7 +79,7 @@ class DartPubspecYamlHandler(BaseDartPubspecHandler):
             yield package_data
 
 
-def compute_normalized_license(declared_license, location=None):
+def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of
     declared license items.

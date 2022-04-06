@@ -52,9 +52,12 @@ class TestPackageAndDependency(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        package = models.Package()
-        for manifest in manifests:
-            package.update(manifest, datafile_path='foor/bar')
+        package = None
+        for pkg_data in manifests:
+            if not package:
+                package = models.Package.from_package_data(pkg_data, datafile_path='main')
+            else:
+                package.update(pkg_data, datafile_path='foo/bar')
 
         self.check_package_data(package, expected_file, regen)
 
@@ -65,8 +68,11 @@ class TestPackageAndDependency(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        package = models.Package()
+        package = None
         for pkg_data in manifests:
-            package.update(pkg_data, datafile_path='foo/bar')
+            if not package:
+                package = models.Package.from_package_data(pkg_data, datafile_path='main')
+            else:
+                package.update(pkg_data, datafile_path='foo/bar')
 
         self.check_package_data(package, expected_file, regen)

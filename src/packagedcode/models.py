@@ -908,12 +908,10 @@ class DatafileHandler:
             if not package.license_expression:
                 package.license_expression = cls.compute_normalized_license(
                     package=package,
-                    resource=resource,
-                    codebase=codebase,
                 )
 
             cls.assign_package_to_resources(
-                package_uid=package_uid,
+                package=package,
                 resource=resource,
                 codebase=codebase,
             )
@@ -1122,7 +1120,7 @@ class NonAssemblableDatafileHandler(DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
-        pass
+        return []
 
 
 def build_package_uid(purl):

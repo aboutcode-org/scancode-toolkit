@@ -405,7 +405,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase):
         # this is assembled only from a database entry
-        pass
+       return
 
 
 class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
@@ -431,7 +431,7 @@ class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase):
         # this is assembled only from a database entry
-        pass
+        return []
 
 
 class DebianMd5sumFilelistInPackageHandler(models.DatafileHandler):

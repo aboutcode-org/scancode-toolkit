@@ -93,7 +93,7 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        pass
+        return
 
     @classmethod
     def parse(cls, location):
@@ -152,7 +152,7 @@ class DebianCopyrightFileInPackageHandler(BaseDebianCopyrightFileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase):
         # DO NOTHING: let other handler reuse this
-        pass
+        return []
 
 
 class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):

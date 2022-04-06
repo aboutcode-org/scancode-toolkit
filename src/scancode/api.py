@@ -337,7 +337,7 @@ def get_package_data(location, **kwargs):
     Return a mapping of package manifest information detected in the file at `location`.
     """
     if TRACE:
-        print('kwargs', kwargs)
+        print('  scancode.api.get_package_data: kwargs', kwargs)
 
     package_datas = _get_package_data(location, **kwargs) or []
     return dict(package_data=[pd.to_dict() for pd in package_datas])

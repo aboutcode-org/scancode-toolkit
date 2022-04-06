@@ -70,9 +70,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
-        package.license_expression = cls.compute_normalized_license(
-            package=package, resource=resource, codebase=codebase,
-        )
+        package.license_expression = cls.compute_normalized_license(package=package)
 
         dependent_packages = package_data.dependencies
         if dependent_packages:

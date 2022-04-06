@@ -143,7 +143,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
+        return compute_normalized_license(declared_license=package.declared_license)
 
 # TODO: assemble with its pom!!
 class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):

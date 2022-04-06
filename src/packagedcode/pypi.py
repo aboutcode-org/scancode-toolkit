@@ -281,7 +281,7 @@ def get_resource_for_path(path, root, codebase):
     return root
 
 
-# FIXME: Implemnet me
+# FIXME: Implement me
 class PyprojectTomlHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'pypi_pyproject_toml'
     path_patterns = ('*pyproject.toml',)

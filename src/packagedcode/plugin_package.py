@@ -42,8 +42,7 @@ if TRACE:
         printer = logger.debug
 
     def logger_debug(*args):
-        return printer(' '.join(isinstance(a, str) and a or repr(a)
-                                     for a in args))
+        return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def print_packages(ctx, param, value):
@@ -163,12 +162,16 @@ def create_package_and_deps(codebase, **kwargs):
             # packages and deps
 
             handler = get_package_handler(package_data)
+            if TRACE:
+                logger_debug('  create_package_and_deps: handler:', handler)
+            click.echo(f'  create_package_and_deps: handler: {handler}')
             items = handler.assemble(
                 package_data=package_data,
                 resource=resource,
                 codebase=codebase,
             )
 
+            
             for item in items:
                 if TRACE:
                     logger_debug('    create_package_and_deps: item:', item,)

@@ -170,7 +170,7 @@ def walk_build(resource, codebase, skip_name):
                 yield subchild
 
 
-def compute_normalized_license(self, package, resource, codebase):
+def compute_normalized_license(self, package):
     """
     Return a normalized license expression string detected from a list of
     declared license items.
