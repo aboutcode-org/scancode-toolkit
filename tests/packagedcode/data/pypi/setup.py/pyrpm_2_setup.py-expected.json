@@ -51,11 +51,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/pyrpm-02strich@0.5.3",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/pyrpm-02strich",
     "repository_download_url": "https://pypi.org/packages/source/p/pyrpm-02strich/pyrpm-02strich-0.5.3.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/pyrpm-02strich/0.5.3/json"
+    "api_data_url": "https://pypi.org/pypi/pyrpm-02strich/0.5.3/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pyrpm-02strich@0.5.3"
   }
 ]

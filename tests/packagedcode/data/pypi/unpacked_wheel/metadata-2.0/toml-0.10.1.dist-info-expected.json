@@ -56,11 +56,194 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [
+      {
+        "path": "toml-0.10.1.dist-info/DESCRIPTION.rst",
+        "size": 5262,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0db5e52d356a193ece83171966aa6de2f7380708e42fdc8c6cdd5705b5dc9dd4",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/INSTALLER",
+        "size": 4,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/LICENSE.txt",
+        "size": 1252,
+        "sha1": null,
+        "md5": null,
+        "sha256": "2d9294823df6c89357c8be4927fce79361d6561e5ee7532d5926e63939aaa536",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/METADATA",
+        "size": 6371,
+        "sha1": null,
+        "md5": null,
+        "sha256": "f45cdd6f8f921bca704cf6c1453d6404140154b8cb09b10a94116386546b45fe",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/WHEEL",
+        "size": 110,
+        "sha1": null,
+        "md5": null,
+        "sha256": "02f47459e4e90dac53eb8e5b979150c542ba34fb1396cdadb69706260de3d578",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/metadata.json",
+        "size": 1185,
+        "sha1": null,
+        "md5": null,
+        "sha256": "5c8bc81c9d06c64ee50f031a8e43917158d51127ee2805e13e1315ac91d1a9bc",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml-0.10.1.dist-info/top_level.txt",
+        "size": 5,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d813bc651367bc95a05f2890bfae8b05bfeff3ba81cdca14b4405e7c0ef93ae9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__init__.py",
+        "size": 723,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0adb86e5a40d93a9ba326c68b6bb7a179db1f5d45de77a324e23188a2f7b867d",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/__init__.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/common.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/decoder.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/encoder.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/ordered.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/__pycache__/tz.cpython-38.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/common.py",
+        "size": 242,
+        "sha1": null,
+        "md5": null,
+        "sha256": "56205c70076e3fa79934901bd4f3a14618ce022e7a4c3b0d8162754e381702e8",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/decoder.py",
+        "size": 38684,
+        "sha1": null,
+        "md5": null,
+        "sha256": "811827350ef7237670f18b3402b0646de73d877d7bcde163991bb84cca17ba6c",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/encoder.py",
+        "size": 9931,
+        "sha1": null,
+        "md5": null,
+        "sha256": "f47a5e90fb5790075f84fa59a9f1d4c717d6f367ccc49f5ac9b88b53371b477d",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/ordered.py",
+        "size": 354,
+        "sha1": null,
+        "md5": null,
+        "sha256": "9b3d37959995d1b99cf65b1844850eba3ec3b2ee4fb70abe52d195ab915d559e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "toml/tz.py",
+        "size": 618,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0eb020237c19c5988670bb95fe5f2e780fe73eb628c50de1640f6d2528d646c4",
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/toml@0.10.1",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/toml",
     "repository_download_url": "https://pypi.org/packages/source/t/toml/toml-0.10.1.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/toml/0.10.1/json"
+    "api_data_url": "https://pypi.org/pypi/toml/0.10.1/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/toml@0.10.1"
   }
 ]

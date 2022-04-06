@@ -56,6 +56,575 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [
+      {
+        "path": "Jinja2-2.10.dist-info/DESCRIPTION.rst",
+        "size": 978,
+        "sha1": null,
+        "md5": null,
+        "sha256": "6f9724143a0ceef56dcff980b090f838fb5e14a0aa13b6debb7e7783808ea182",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/INSTALLER",
+        "size": 4,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/LICENSE.txt",
+        "size": 1554,
+        "sha1": null,
+        "md5": null,
+        "sha256": "26fcd436fdc8a39d44896ac03e6f1dfd25e38499c48f20d8bc1dd3bf0aaa8a5b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/METADATA",
+        "size": 2258,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d7c12053ccd1ebe6affb4fb9cbf81779bccae069c107fefa9402d4b25fba4073",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/WHEEL",
+        "size": 110,
+        "sha1": null,
+        "md5": null,
+        "sha256": "91db0dfb93890192221cdfa23b846197cd8ac92d1b0d67f8b81c0c6e435a7ebf",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/entry_points.txt",
+        "size": 72,
+        "sha1": null,
+        "md5": null,
+        "sha256": "35dcd570eaeac8dc8a0f10f4f5a1118ffff76c5c76a5a6618b3143b0a9958620",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/metadata.json",
+        "size": 1473,
+        "sha1": null,
+        "md5": null,
+        "sha256": "34f509f53301c55400bff913273bd4f07c263fee1766f6caf66cfaff8614565e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "Jinja2-2.10.dist-info/top_level.txt",
+        "size": 7,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3e47955ad2dbdfe0aa8d68b57cedbd3826e3e791215ff72184aac276b55eff3b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__init__.py",
+        "size": 2614,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c491e368ca32e75fca5e7d707f4732b07ead51489f531642c1239f709184619c",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/_compat.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/_identifier.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/asyncfilters.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/asyncsupport.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/bccache.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/compiler.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/constants.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/debug.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/defaults.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/environment.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/exceptions.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/ext.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/filters.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/idtracking.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/lexer.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/loaders.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/meta.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/nativetypes.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/nodes.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/optimizer.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/parser.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/runtime.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/sandbox.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/tests.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/utils.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/__pycache__/visitor.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/_compat.py",
+        "size": 2596,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c4feb4084e50afc15361c0c4d5fe78b5b64b286bccc189a5e3ef13ed0e0a1bd9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/_identifier.py",
+        "size": 1726,
+        "sha1": null,
+        "md5": null,
+        "sha256": "5b5401498fa226ccadea847f9ca4ae34d0b357de6f2c839881434f508d5de605",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/asyncfilters.py",
+        "size": 4144,
+        "sha1": null,
+        "md5": null,
+        "sha256": "7130cfbeb4bc1e9fc8930b19d66f5a7ff96be671f2b30eee4dae605743666551",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/asyncsupport.py",
+        "size": 7878,
+        "sha1": null,
+        "md5": null,
+        "sha256": "504ad0dd89532da4a315bf783f83159f4f3e6950fd8c9c6dcb62557cc45bfb53",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/bccache.py",
+        "size": 12794,
+        "sha1": null,
+        "md5": null,
+        "sha256": "9d095dc7465160034cc9fbce8a146860529295475de6f2644bb063c4dc253993",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/compiler.py",
+        "size": 65386,
+        "sha1": null,
+        "md5": null,
+        "sha256": "06a0b953a27139b49185b9724ff6ba4e9e46b44539cf7512d5ae232d06b1c60a",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/constants.py",
+        "size": 1626,
+        "sha1": null,
+        "md5": null,
+        "sha256": "bb0c15f195211e169c02ecf93d3c1c91fb1ba816aa33b68a7f224bee4197e584",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/debug.py",
+        "size": 12045,
+        "sha1": null,
+        "md5": null,
+        "sha256": "59355e5051946b8bfa45e0ac62ffa254f6b7a64341ef93a29c9b773dfc4d757b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/defaults.py",
+        "size": 1400,
+        "sha1": null,
+        "md5": null,
+        "sha256": "126fbde619ac27121e9c3099141d584af7fd08d85ef6b066cad377c94ac17160",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/environment.py",
+        "size": 50849,
+        "sha1": null,
+        "md5": null,
+        "sha256": "56790092ac3c25b8d972de2d0321e5a41ae46b6bea07e679f1100ffb7d8fd596",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/exceptions.py",
+        "size": 4428,
+        "sha1": null,
+        "md5": null,
+        "sha256": "fd18fe3558bdf10e808848d840eb0ff1d10876ee40966447cdc48d38f7568b1e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/ext.py",
+        "size": 24500,
+        "sha1": null,
+        "md5": null,
+        "sha256": "6ad310c9d102f3ab4dd7352c750887c392f9705eb69c36ea1ae7b6e588aedcde",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/filters.py",
+        "size": 36528,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c8e00993432c1fefe0102d22d14e8dc1e55085bb58682fae13cc6cc0714b178c",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/idtracking.py",
+        "size": 9197,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d866c34b322f180ac40462e4a2f2e4a847e6631996b047fc737419c0ce2e36cc",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/lexer.py",
+        "size": 28559,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c9210fa1777583bc118ecbb0db7ba2992ea79063796aaad8c1c38ac426953014",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/loaders.py",
+        "size": 17382,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c624ee51128010e6f2ca6d2753c3c2217bbf429f1f9f4009e682000d4526fb94",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/meta.py",
+        "size": 4340,
+        "sha1": null,
+        "md5": null,
+        "sha256": "7e6287c649996003a6f50c965b2f0431de9e79f008876df8ae404c5b65f8651f",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/nativetypes.py",
+        "size": 7308,
+        "sha1": null,
+        "md5": null,
+        "sha256": "fec2614bc7fef10d103080b4766d5811d2f2c44ca83be91c87ca8e2f9c540df1",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/nodes.py",
+        "size": 30853,
+        "sha1": null,
+        "md5": null,
+        "sha256": "2f5d0bfe74037ee6cb84edd78e917dab3e3a1528767252feddee3da205653260",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/optimizer.py",
+        "size": 1722,
+        "sha1": null,
+        "md5": null,
+        "sha256": "32c765140089d0545d3ed8e608076dec943d486ad715a0cd51ab25b1641a1b73",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/parser.py",
+        "size": 35875,
+        "sha1": null,
+        "md5": null,
+        "sha256": "94fcd311b7294d104bc3c8a2e8e6321311de0216992cc034e47a6fe2597750b9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/runtime.py",
+        "size": 27755,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0c7743dfc3eaf208fbb96402e6eb09c961683562f7d7b03d02f5ce5bf08b077e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/sandbox.py",
+        "size": 16708,
+        "sha1": null,
+        "md5": null,
+        "sha256": "4d5c991e536aa93cecbfd7efd8dbc936649d5911d382e8723077718d69acdf65",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/tests.py",
+        "size": 4237,
+        "sha1": null,
+        "md5": null,
+        "sha256": "88940bc1b6a966bf842aab931bf7d53957701d450a7f7497f5e3648d00c5f285",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/utils.py",
+        "size": 20629,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ab6e15ba9199a2d43eb8ecab27109a5ed0d68590b5460b101bb91c7668dc9364",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "jinja2/visitor.py",
+        "size": 3316,
+        "sha1": null,
+        "md5": null,
+        "sha256": "243d47d5c00d036f49727b457cde5f3f2a90c41e1b238c02d3407365af971e4b",
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
     "extra_data": {},
     "dependencies": [
       {
@@ -77,9 +646,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/jinja2@2.10",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/Jinja2",
     "repository_download_url": "https://pypi.org/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/Jinja2/2.10/json"
+    "api_data_url": "https://pypi.org/pypi/Jinja2/2.10/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/jinja2@2.10"
   }
 ]

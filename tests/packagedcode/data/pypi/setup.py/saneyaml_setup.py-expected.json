@@ -54,6 +54,7 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -66,9 +67,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/saneyaml@0.2dev",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/saneyaml",
     "repository_download_url": "https://pypi.org/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json"
+    "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/saneyaml@0.2dev"
   }
 ]

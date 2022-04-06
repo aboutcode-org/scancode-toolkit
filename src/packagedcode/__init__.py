@@ -179,7 +179,6 @@ PACKAGE_DATAFILE_HANDLERS = [
     pypi.PythonSdistPkgInfoFile,
     pypi.PythonSetupPyHandler,
     pypi.SetupCfgHandler,
-    pypi.ToxIniHandler,
 
     readme.ReadmeHandler,
 

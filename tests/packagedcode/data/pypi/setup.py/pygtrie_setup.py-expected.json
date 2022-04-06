@@ -26,11 +26,13 @@
     "declared_license": {},
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "pypi_setup_py",
+    "purl": null
   }
 ]

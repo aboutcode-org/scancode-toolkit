@@ -48,7 +48,191 @@
     },
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
+    "file_references": [
+      {
+        "path": "haruka_bot/__init__.py",
+        "size": 279,
+        "sha1": null,
+        "md5": null,
+        "sha256": "b2d34c924e6ca5b8f9ccdc5e2561771bebe6566cbb7b025858a32ad3957c19db",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/auto_agree.py",
+        "size": 779,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d786b16660c3fcd81dd4acdab92c034f078f6be2420e686eb54551da319db53a",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/bilireq.py",
+        "size": 5325,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ff8610f8a837c01dc28762686f4911d9cbc15c978fb52207de84a921e59b9469",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/cli/__init__.py",
+        "size": 200,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0201fe02a5296daf72d8fc1e36c6b5c8de8d8765fae3745335ef4e4632745775",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/cli/__main__.py",
+        "size": 20,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3e414d4bfedc775e837d65de4f9a44320664daa3e498b7efa0bca4f35b23e096",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/cli/bot.py",
+        "size": 895,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c1be148725e6dc894a661965b3008f3feff8847ab65222057c0f413956e5930a",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/cli/utils.py",
+        "size": 952,
+        "sha1": null,
+        "md5": null,
+        "sha256": "7075d894a7433f5fafa98ca30338950a74862a0a82887e63c52c7c314b9384f5",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/config.py",
+        "size": 10492,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d1d32a3f4d7711e37fe19e385f442ae7f18296c0048c6d5eb9c7f9acc9f2bb26",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/config_manager.py",
+        "size": 7859,
+        "sha1": null,
+        "md5": null,
+        "sha256": "f57764bf0b46e68bed90cdb93a5b93f4cc65b194f68e11fdc7b62d6fea978b54",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/dynamic.py",
+        "size": 3072,
+        "sha1": null,
+        "md5": null,
+        "sha256": "38ea7be42cc3046ec356ceb3f88caf1d6a94de8125b63a3c80c309842ae5c862",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/dynamic_pusher.py",
+        "size": 1721,
+        "sha1": null,
+        "md5": null,
+        "sha256": "908ec9efab70de086bac8a2816187a5b577cdd33fe4544a8516bbdf59af55a3e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/live_pusher.py",
+        "size": 1707,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3735b49dbd0c7daf70cefef515ce9c47b63ba8c72aca59ed214a5468e68e7e1d",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/login.py",
+        "size": 3065,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ec6940e6fa5c31f1b0b66ccf329718eaeaaa087caf8058d0713487985239abfd",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/utils.py",
+        "size": 2968,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3f8455b67b4aaf043339e0d861229bc9b02ebe9fabc83acbe11ae07c0cc418e2",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot/version.py",
+        "size": 322,
+        "sha1": null,
+        "md5": null,
+        "sha256": "1a46684dd91e8643d7fc9fc12e10b00aba15e09bdd8302727a73dd7cf290667a",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot-1.2.3.dist-info/entry_points.txt",
+        "size": 51,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0638bf22f40625e7b54b5a52bb798235fb680ecfa9fa5cc72645672d95cf9b40",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot-1.2.3.dist-info/LICENSE",
+        "size": 35182,
+        "sha1": null,
+        "md5": null,
+        "sha256": "13fb48a6c31a72e0e2b69650b1cebe8954f7b73449848492dcfd22b25bd91afa",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot-1.2.3.dist-info/WHEEL",
+        "size": 83,
+        "sha1": null,
+        "md5": null,
+        "sha256": "54dd9e120e0f1db4ce9e25dbf9c09840f73acd44d2e1d01c0138e5814deaf8ba",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot-1.2.3.dist-info/METADATA",
+        "size": 4560,
+        "sha1": null,
+        "md5": null,
+        "sha256": "8392719243ddc15284a49fbfc7f9ba13881e00966b44f9cffc9b9d4aa6ca5fc0",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "haruka_bot-1.2.3.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
+    "extra_data": {
+      "Documentation": "Documentation, https://github.com/SK-415/HarukaBot#readme"
+    },
     "dependencies": [
       {
         "purl": "pkg:pypi/click",
@@ -159,9 +343,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/haruka-bot@1.2.3",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/haruka-bot",
     "repository_download_url": "https://pypi.org/packages/source/h/haruka-bot/haruka-bot-1.2.3.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/haruka-bot/1.2.3/json"
+    "api_data_url": "https://pypi.org/pypi/haruka-bot/1.2.3/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/haruka-bot@1.2.3"
   }
 ]

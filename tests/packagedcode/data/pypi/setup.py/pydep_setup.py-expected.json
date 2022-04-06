@@ -34,6 +34,7 @@
     "declared_license": {},
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -46,9 +47,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/pydep@0.0",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/pydep",
     "repository_download_url": "https://pypi.org/packages/source/p/pydep/pydep-0.0.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/pydep/0.0/json"
+    "api_data_url": "https://pypi.org/pypi/pydep/0.0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pydep@0.0"
   }
 ]

@@ -11,6 +11,7 @@ import io
 import json
 import os
 
+from packagedcode import models
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
@@ -51,11 +52,11 @@ class TestPackageAndDependency(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        pk_instance = PythonPackage()
+        package = models.Package()
         for manifest in manifests:
-            pk_instance.update(manifest)
+            package.update(manifest, datafile_path='foor/bar')
 
-        self.check_package_data(pk_instance, expected_file, regen)
+        self.check_package_data(package, expected_file, regen)
 
     def test_package_data_merge_with_dependencies(self, regen=REGEN_TEST_FIXTURES):
         input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
@@ -64,8 +65,8 @@ class TestPackageAndDependency(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
 
-        pk_instance = PythonPackage()
-        for manifest in manifests:
-            pk_instance.update(manifest)
+        package = models.Package()
+        for pkg_data in manifests:
+            package.update(pkg_data, datafile_path='foo/bar')
 
-        self.check_package_data(pk_instance, expected_file, regen)
+        self.check_package_data(package, expected_file, regen)

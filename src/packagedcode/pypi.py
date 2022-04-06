@@ -135,9 +135,10 @@ class BaseExtractedPythonLayout(BasePypiHandler):
             'Pipfile',
         ) + PipRequirementsFileHandler.path_patterns
 
+        parent = resource.parent(codebase)
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
-            directory=resource.parent(codebase),
+            directory=parent,
             codebase=codebase,
         )
 
@@ -357,7 +358,7 @@ def get_file_references(dist):
     if not dist:
         return
 
-    for filepath in dist.files():
+    for filepath in dist.files or []:
         # FIXME: the path is relative to the "site-packages" directory or the
         # root of a wheel but this should be a scan path
         ref = models.FileReference(
@@ -542,19 +543,6 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
     documentation_url = 'https://peps.python.org/pep-0390/'
 
 
-class ToxIniHandler(BaseDependencyFileHandler):
-    datasource_id = 'pypi_tox_ini'
-    path_patterns = ('*tox.ini',)
-    default_package_type = 'pypi'
-    default_primary_language = 'Python'
-    description = 'Tox tox.ini'
-    documentation_url = 'https://tox.wiki'
-
-    @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        pass
-
-
 class PipfileHandler(BaseDependencyFileHandler):
     datasource_id = 'pipfile'
     path_patterns = ('*Pipfile',)
@@ -635,7 +623,7 @@ class PipRequirementsFileHandler(BaseDependencyFileHandler):
         '*requirements/*.txt',
         '*requirements/*.pip',
         '*requirements/*.in',
-        '*reqs.txt'
+        '*reqs.txt',
     )
 
     default_package_type = 'pypi'
@@ -1047,7 +1035,6 @@ def get_dparse2_supported_file_name(file_name):
         'Pipfile',
         'conda.yml',
         'setup.cfg',
-        'tox.ini',
     )
 
     for dfile_name in dfile_names:

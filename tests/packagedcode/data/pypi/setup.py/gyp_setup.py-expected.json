@@ -34,11 +34,13 @@
     "declared_license": {},
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/gyp@0.1",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/gyp",
     "repository_download_url": "https://pypi.org/packages/source/g/gyp/gyp-0.1.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/gyp/0.1/json"
+    "api_data_url": "https://pypi.org/pypi/gyp/0.1/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/gyp@0.1"
   }
 ]

@@ -376,7 +376,6 @@ class DependentPackage(ModelMixin):
          )
 
 
-
 @attr.attributes(slots=True)
 class Dependency(DependentPackage):
     """
@@ -664,7 +663,8 @@ class PackageData(IdentifiablePackageData):
 
     datasource_id = String(
         label='datasource id',
-        help='Datasource identifier for the source of these package data.'
+        help='Datasource identifier for the source of these package data.',
+        repr=True,
     )
 
     def to_dict(self, with_details=True, **kwargs):
@@ -850,11 +850,12 @@ class DatafileHandler:
             loc = as_posixpath(location)
             if any(fnmatch(loc, pat) for pat in cls.path_patterns):
                 filetypes = filetypes or cls.filetypes
-                if filetypes:
+                if not filetypes:
+                    return True
+                else:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
-                return True
 
     @classmethod
     def parse(cls, location):
@@ -1033,11 +1034,8 @@ class DatafileHandler:
                 )
 
             package_uid = package.package_uid
-
             resource.for_packages.append(package_uid)
             resource.save(codebase)
-
-            yield package
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1056,6 +1054,8 @@ class DatafileHandler:
         for res in base_resource.walk(codebase):
             res.for_packages.append(package_uid)
             res.save(codebase)
+
+        yield package
 
     @classmethod
     def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):

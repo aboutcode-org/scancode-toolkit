@@ -57,7 +57,785 @@
     },
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
+    "file_references": [
+      {
+        "path": "urllib3-1.26.4.dist-info/DESCRIPTION.rst",
+        "size": 41482,
+        "sha1": null,
+        "md5": null,
+        "sha256": "4c66f27c72fca218f59fa8dfb423e4030c0eaa11a1551abda8fc2e039635bfce",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/INSTALLER",
+        "size": 4,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/LICENSE.txt",
+        "size": 1115,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c37bf186e27cf9dbe9619e55edfe3cea7b30091ceb3da63c7dacbe0e6d77907b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/METADATA",
+        "size": 43414,
+        "sha1": null,
+        "md5": null,
+        "sha256": "4f5d9bf5ecae7806dfaeb1a77ab3c78d87da784dcbda65538cd8b486fe74bfed",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/WHEEL",
+        "size": 110,
+        "sha1": null,
+        "md5": null,
+        "sha256": "02f47459e4e90dac53eb8e5b979150c542ba34fb1396cdadb69706260de3d578",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/metadata.json",
+        "size": 1857,
+        "sha1": null,
+        "md5": null,
+        "sha256": "1d8941772636a8b01b6c4d3b06e197eeae07088b6b5e3ff100ada690011528d4",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3-1.26.4.dist-info/top_level.txt",
+        "size": 8,
+        "sha1": null,
+        "md5": null,
+        "sha256": "10c8972f6b0aad3726accc481d3a9d737113e78a50236634ef62dec4511e9afa",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__init__.py",
+        "size": 2763,
+        "sha1": null,
+        "md5": null,
+        "sha256": "8f7cb31c86e65bb092f8829027df8f3d07ff60a3bc10e01ecbfacc5b4511eeeb",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/_collections.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/_version.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/connection.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/connectionpool.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/exceptions.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/fields.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/filepost.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/poolmanager.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/request.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/__pycache__/response.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/_collections.py",
+        "size": 10811,
+        "sha1": null,
+        "md5": null,
+        "sha256": "469d6657206073f52501ca7a3376add6c909057479278dcd6b0453bd6da0fd76",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/_version.py",
+        "size": 63,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d818e4fdc078f7ddb53d3bdeade5a9f194773612cda02300c874863fe39eb0b9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/connection.py",
+        "size": 18748,
+        "sha1": null,
+        "md5": null,
+        "sha256": "abebdffd333733245b65c167dfe5422990527f4a048468efec115e666ffb930e",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/connectionpool.py",
+        "size": 37133,
+        "sha1": null,
+        "md5": null,
+        "sha256": "20aa1eb89658f580189b418ae2af8c5c08725d6d0cfc59ef69b61a36c0c847e1",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__init__.py",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/_appengine_environ.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/appengine.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/ntlmpool.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/pyopenssl.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/securetransport.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/__pycache__/socks.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_appengine_environ.py",
+        "size": 957,
+        "sha1": null,
+        "md5": null,
+        "sha256": "6c36f2384856d8228b25c42a00a032ac41cdf9a925b321c52aaeaf17c645b269",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/__init__.py",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/__pycache__/bindings.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/__pycache__/low_level.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/bindings.py",
+        "size": 17637,
+        "sha1": null,
+        "md5": null,
+        "sha256": "135ffb49cb2039c85fc677a8cdb02e78aef3882c05df97e76b80ee0c2609f7fa",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/_securetransport/low_level.py",
+        "size": 13908,
+        "sha1": null,
+        "md5": null,
+        "sha256": "96021db12c9ca9f0745e6e41889cd719e20a4fbc9b0903053c902091cc0f6b5b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/appengine.py",
+        "size": 11010,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ecfc5bd2d29f0c1fcb4c63c4462b301f4aa89a10e85143a8e64c326c028b4321",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/ntlmpool.py",
+        "size": 4160,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e88f79875ffbd5fcf19a831236d634801f259f20a856d3ff0e9a851a3d787dd5",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/pyopenssl.py",
+        "size": 16778,
+        "sha1": null,
+        "md5": null,
+        "sha256": "be087a8f9db0f71830abedd1da47c1e4cd896e54004c97ca00ade52007359128",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/securetransport.py",
+        "size": 34286,
+        "sha1": null,
+        "md5": null,
+        "sha256": "2b118f664f1de187a95a6ed173e481b755ebcc87e72ca73c26451557be57ce01",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/contrib/socks.py",
+        "size": 7097,
+        "sha1": null,
+        "md5": null,
+        "sha256": "0dc463336974ad0308ca162b37aafeb6756463a6530f11c994cf3fbac0241820",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/exceptions.py",
+        "size": 8217,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d0c9e7a372874cd7d745f63beb7f0db9f38f9146fa9973a6f8baa3fb8c76c3c0",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/fields.py",
+        "size": 8579,
+        "sha1": null,
+        "md5": null,
+        "sha256": "92f2c30a0fc9987d652e3514118fc52d2f14858ee106f0cfb951136d8f2676b3",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/filepost.py",
+        "size": 2440,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e5bfeaaa04475652fbb8bb5d018073061f861e653901f255b7fd8dd174b73de6",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/__init__.py",
+        "size": 108,
+        "sha1": null,
+        "md5": null,
+        "sha256": "87804b843e2d2da071d5a75a0ed2977eea6c82a634c162d76ff7f5ff256557a0",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/__pycache__/six.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/backports/__init__.py",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/backports/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/backports/__pycache__/makefile.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/backports/makefile.py",
+        "size": 1417,
+        "sha1": null,
+        "md5": null,
+        "sha256": "9dbcedde2d1a80f54fd3b8eaaa08e16988cc9ae022fd6e44d04cb0662bd53bc1",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/six.py",
+        "size": 32536,
+        "sha1": null,
+        "md5": null,
+        "sha256": "69dc78cfe78cfc3d15beed0822a573140090feec7d97ae32ec391211f6f1083b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/ssl_match_hostname/__init__.py",
+        "size": 757,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ce9a5ecdd1107691ac61eac8ea657a31f518cb8f79255e2670e582fc681b9635",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/ssl_match_hostname/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/ssl_match_hostname/__pycache__/_implementation.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/packages/ssl_match_hostname/_implementation.py",
+        "size": 5679,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e9d67eab4ef883b5e1b09dbb3050a091cb7c895359077b0c66f2a17fe294572d",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/poolmanager.py",
+        "size": 19763,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c21ce55fa51312038330e0b2d190cc50e351042cf9c3220cf19f68a57018f8b9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/request.py",
+        "size": 5985,
+        "sha1": null,
+        "md5": null,
+        "sha256": "645488a97d02e968b38b179c0a1677fe8932bbb044bf4959bb5553d2cea1e123",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/response.py",
+        "size": 28203,
+        "sha1": null,
+        "md5": null,
+        "sha256": "846846061ed3904921fc8420e42d56ff1b8f36b8082afe415173f213eab42ee1",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__init__.py",
+        "size": 1155,
+        "sha1": null,
+        "md5": null,
+        "sha256": "2449929a6aaa2f26b0f0fe75814226661f06c20f62d7349ef83a2a022b67da77",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/connection.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/proxy.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/queue.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/request.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/response.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/retry.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/ssl_.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/ssltransport.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/timeout.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/url.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/__pycache__/wait.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/connection.py",
+        "size": 4910,
+        "sha1": null,
+        "md5": null,
+        "sha256": "db507e2d7d1cf1f9313c3b2cc8709a2b4a429e6aca9a196d839128a2e1e200f5",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/proxy.py",
+        "size": 1604,
+        "sha1": null,
+        "md5": null,
+        "sha256": "1468a90049ef66d7b295d5cd8dc7b80c407b633c14f9ae657a9f32e52d2a1d08",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/queue.py",
+        "size": 498,
+        "sha1": null,
+        "md5": null,
+        "sha256": "9d1817f3f797fbf564bf1a17d3de905a8cfc3ecd101d4004c482c263fecf9dc3",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/request.py",
+        "size": 4123,
+        "sha1": null,
+        "md5": null,
+        "sha256": "367cda10a4353dabb0e4c14c57a1e68043072137f402e6bd7d0bb38b6b99cc67",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/response.py",
+        "size": 3510,
+        "sha1": null,
+        "md5": null,
+        "sha256": "189a60dc4822f6a6895d1c01879c2ff8c36e4566a7e4122ee34a117a8c563f6f",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/retry.py",
+        "size": 21396,
+        "sha1": null,
+        "md5": null,
+        "sha256": "b3764d2973bafeddb7650320f3396edb43cc4aaada4f8f79f92fe6118ff5f5a9",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/ssl_.py",
+        "size": 16269,
+        "sha1": null,
+        "md5": null,
+        "sha256": "7d1ab3466a0b7e20efe7fb45ce016d1b394ebae1e82d7d2eb3b5947fbb580c0a",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/ssltransport.py",
+        "size": 6908,
+        "sha1": null,
+        "md5": null,
+        "sha256": "22f190becf585a47f88f37ea5634eefd45a3c005203e7e4072d6a35bc54bcfa0",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/timeout.py",
+        "size": 10003,
+        "sha1": null,
+        "md5": null,
+        "sha256": "4126c150d381f7287a0270e7eb54ab2d0d21839a33d08f7eb97106f75009b888",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/url.py",
+        "size": 13964,
+        "sha1": null,
+        "md5": null,
+        "sha256": "2d67cb4a523897616650c29f0a412509a5b5d3ed0dfac2434fd6f1683649923b",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "urllib3/util/wait.py",
+        "size": 5404,
+        "sha1": null,
+        "md5": null,
+        "sha256": "dcc50a452014243076b60728eea454b245b4cd7180598bd1444e10d7feb194bb",
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
+    "extra_data": {
+      "Documentation": "Documentation, https://urllib3.readthedocs.io/"
+    },
     "dependencies": [
       {
         "purl": "pkg:pypi/pyopenssl",
@@ -123,9 +901,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/urllib3@1.26.4",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/urllib3",
     "repository_download_url": "https://pypi.org/packages/source/u/urllib3/urllib3-1.26.4.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/urllib3/1.26.4/json"
+    "api_data_url": "https://pypi.org/pypi/urllib3/1.26.4/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/urllib3@1.26.4"
   }
 ]

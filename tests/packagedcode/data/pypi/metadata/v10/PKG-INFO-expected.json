@@ -36,11 +36,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/prompt-toolkit@0.53.1",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/prompt-toolkit",
     "repository_download_url": "https://pypi.org/packages/source/p/prompt-toolkit/prompt-toolkit-0.53.1.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/prompt-toolkit/0.53.1/json"
+    "api_data_url": "https://pypi.org/pypi/prompt-toolkit/0.53.1/json",
+    "datasource_id": "pypi_sdist_pkginfo",
+    "purl": "pkg:pypi/prompt-toolkit@0.53.1"
   }
 ]

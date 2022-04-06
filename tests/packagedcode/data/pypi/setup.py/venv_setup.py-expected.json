@@ -57,11 +57,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/virtualenv",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/virtualenv",
     "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/virtualenv/json"
+    "api_data_url": "https://pypi.org/pypi/virtualenv/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/virtualenv"
   }
 ]

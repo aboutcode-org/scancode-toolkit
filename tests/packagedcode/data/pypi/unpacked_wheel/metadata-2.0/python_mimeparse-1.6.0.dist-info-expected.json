@@ -47,11 +47,77 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [
+      {
+        "path": "mimeparse.py",
+        "size": 6246,
+        "sha1": null,
+        "md5": null,
+        "sha256": "bd5bb1ec21fdb003f31b5f5502eb4961db0c5ef236f830cfc21296ae76536179",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/DESCRIPTION.rst",
+        "size": 1654,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3b7ce99a4cd5559151b41e92e6b8fbec4821716e94e860879d4b42b089a49989",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/METADATA",
+        "size": 2468,
+        "sha1": null,
+        "md5": null,
+        "sha256": "74f097a62186c97d5ae6751d597c4669b676c790e02c117dc75e16fbfc3ff177",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/metadata.json",
+        "size": 935,
+        "sha1": null,
+        "md5": null,
+        "sha256": "4e1edf7804619f1b3dca66cffb6ef6370977d7afc0f9378a80d39b933f67be89",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/top_level.txt",
+        "size": 10,
+        "sha1": null,
+        "md5": null,
+        "sha256": "e9892849c0da62bd49fd528a0582af51a4d9032d4d046efbd209c5b0b1aecf18",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "python_mimeparse-1.6.0.dist-info/WHEEL",
+        "size": 110,
+        "sha1": null,
+        "md5": null,
+        "sha256": "02f47459e4e90dac53eb8e5b979150c542ba34fb1396cdadb69706260de3d578",
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/python-mimeparse@1.6.0",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/python-mimeparse",
     "repository_download_url": "https://pypi.org/packages/source/p/python-mimeparse/python-mimeparse-1.6.0.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/python-mimeparse/1.6.0/json"
+    "api_data_url": "https://pypi.org/pypi/python-mimeparse/1.6.0/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/python-mimeparse@1.6.0"
   }
 ]

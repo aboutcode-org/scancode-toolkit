@@ -44,11 +44,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/publicsuffix@1.1.1",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/publicsuffix",
     "repository_download_url": "https://pypi.org/packages/source/p/publicsuffix/publicsuffix-1.1.1.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/publicsuffix/1.1.1/json"
+    "api_data_url": "https://pypi.org/pypi/publicsuffix/1.1.1/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/publicsuffix@1.1.1"
   }
 ]

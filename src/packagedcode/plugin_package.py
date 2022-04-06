@@ -156,17 +156,22 @@ def create_package_and_deps(codebase, **kwargs):
         for package_data in resource.package_data:
             package_data = PackageData.from_dict(package_data)
 
+            if TRACE:
+                logger_debug('  create_package_and_deps: package_data:', package_data)
+
             # Find a handler for this package datasource to assemble collect
             # packages and deps
 
             handler = get_package_handler(package_data)
-            for item in handler.assemble(
+            items = handler.assemble(
                 package_data=package_data,
                 resource=resource,
-                codebase=codebase
-            ):
+                codebase=codebase,
+            )
+
+            for item in items:
                 if TRACE:
-                    logger_debug('create_package_and_deps: item:', item,)
+                    logger_debug('    create_package_and_deps: item:', item,)
 
                 if isinstance(item, Package):
                     packages_top_level.append(item)

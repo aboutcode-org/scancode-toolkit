@@ -47,11 +47,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/ntfsutils",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/ntfsutils",
     "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/ntfsutils/json"
+    "api_data_url": "https://pypi.org/pypi/ntfsutils/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/ntfsutils"
   }
 ]
