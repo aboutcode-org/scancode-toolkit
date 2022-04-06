@@ -33,11 +33,12 @@ class TestBuildGradle(PackageTester):
         result_packages = build_gradle.BuildGradleHandler.parse(test_file)
 
         expected_packages = [
-            build_gradle.BuildGradleHandler(
-                type='build.gradle',
+            models.PackageData(
+                datasource_id='build_gradle',
+                type='maven',
                 dependencies = [
                     models.DependentPackage(
-                        purl='pkg:build.gradle/com.google/guava@1.0',
+                        purl='pkg:maven/com.google/guava@1.0',
                         extracted_requirement='1.0',
                         scope='api',
                         is_runtime=True,
@@ -45,7 +46,7 @@ class TestBuildGradle(PackageTester):
                         is_resolved=False
                     ),
                     models.DependentPackage(
-                        purl='pkg:build.gradle/org.apache/commons@1.0',
+                        purl='pkg:maven/org.apache/commons@1.0',
                         extracted_requirement='1.0',
                         scope='usageDependencies',
                         is_runtime=True,
@@ -53,7 +54,7 @@ class TestBuildGradle(PackageTester):
                         is_resolved=False
                     ),
                     models.DependentPackage(
-                        purl='pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128',
+                        purl='pkg:maven/org.jacoco.ant@0.7.4.201502262128',
                         extracted_requirement='0.7.4.201502262128',
                         scope='',
                         is_runtime=True,
@@ -61,7 +62,7 @@ class TestBuildGradle(PackageTester):
                         is_resolved=False
                     ),
                     models.DependentPackage(
-                        purl='pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128',
+                        purl='pkg:maven/org.jacoco.agent@0.7.4.201502262128',
                         extracted_requirement='0.7.4.201502262128',
                         scope='',
                         is_runtime=True,

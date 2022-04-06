@@ -25,6 +25,7 @@
   "declared_license": "LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -40,8 +41,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/plasma-systemmonitor@5.22.0-r0",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/plasma-systemmonitor@5.22.0-r0"
 }

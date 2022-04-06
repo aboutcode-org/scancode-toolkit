@@ -1,6 +1,6 @@
 [
   {
-    "type": "pubspec",
+    "type": "dart",
     "namespace": null,
     "name": "foobar",
     "version": "1.0.0+1",
@@ -26,6 +26,7 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -74,9 +75,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pubspec/foobar@1.0.0%2B1",
     "repository_homepage_url": "https://pub.dev/packages/foobar/versions/1.0.0+1",
     "repository_download_url": "https://pub.dartlang.org/packages/foobar/versions/1.0.0+1.tar.gz",
-    "api_data_url": "https://pub.dev/api/packages/foobar/versions/1.0.0+1"
+    "api_data_url": "https://pub.dev/api/packages/foobar/versions/1.0.0+1",
+    "datasource_id": "pubspec_yaml",
+    "purl": "pkg:dart/foobar@1.0.0%2B1"
   }
 ]

@@ -187,7 +187,7 @@ class PodfileLockHandler(BasePodHandler):
             if isinstance(pod, dict):
                 for main_pod, _dep_pods in pod.items():
 
-                    purl, xreq = parse_dep_requirements(main_pod).to_string()
+                    purl, xreq = parse_dep_requirements(main_pod)
 
                     dependencies.append(
                         models.DependentPackage(
@@ -203,7 +203,7 @@ class PodfileLockHandler(BasePodHandler):
 
             elif isinstance(pod, str):
 
-                purl, xreq = parse_dep_requirements(pod).to_string()
+                purl, xreq = parse_dep_requirements(pod)
 
                 dependencies.append(
                     models.DependentPackage(
@@ -218,7 +218,7 @@ class PodfileLockHandler(BasePodHandler):
                 )
 
         yield models.PackageData(
-            datasouource_id=cls.datasource_id,
+            datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,

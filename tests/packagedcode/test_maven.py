@@ -69,7 +69,7 @@ def compare_results(results, test_pom_loc, expected_json_loc, regen=REGEN_TEST_F
     results_dump = json.dumps(results, indent=2)
     expected_dump = json.dumps(expected, indent=2)
     try:
-        assert results_dump == expected_dump
+        assert results == expected
     except AssertionError:
         test_pom_loc = 'file://' + test_pom_loc
         expected_json_loc = 'file://' + expected_json_loc
@@ -111,8 +111,8 @@ class BaseMavenCase(testcase.FileBasedTesting):
             package_data = packages_data.pop()
             # We need to call maven.PomXmlHandler.assemble AND we need a codebase????!!!!
             
-            package.license_expression = package.compute_normalized_license()
-            results = package.to_dict()
+            package_data.license_expression = package_data.compute_normalized_license()
+            results = package_data.to_dict()
         compare_results(results, test_pom_loc, expected_json_loc, regen)
 
 

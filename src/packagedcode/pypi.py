@@ -355,7 +355,7 @@ def get_file_references(dist):
     """
     Yield FileReference found in a ``dist`` importlib_metadata.Distribution.
     """
-    if not dist:
+    if not dist.files:
         return
 
     for filepath in dist.files or []:

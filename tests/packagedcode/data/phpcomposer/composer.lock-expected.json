@@ -26,6 +26,7 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -299,10 +300,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "php_composer_lock",
+    "purl": null
   },
   {
     "type": "composer",
@@ -376,6 +378,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -424,10 +427,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/doctrine/cache@v1.6.2",
     "repository_homepage_url": "https://packagist.org/packages/doctrine/cache",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/doctrine/cache.json"
+    "api_data_url": "https://packagist.org/p/packages/doctrine/cache.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/doctrine/cache@v1.6.2"
   },
   {
     "type": "composer",
@@ -473,6 +477,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -512,10 +517,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/guzzlehttp/cache-subscriber@0.2.0",
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/cache-subscriber",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/cache-subscriber.json"
+    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/cache-subscriber.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/guzzlehttp/cache-subscriber@0.2.0"
   },
   {
     "type": "composer",
@@ -561,6 +567,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -609,10 +616,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/guzzlehttp/guzzle@5.3.3",
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/guzzle",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/guzzle.json"
+    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/guzzle.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/guzzlehttp/guzzle@5.3.3"
   },
   {
     "type": "composer",
@@ -658,6 +666,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -715,10 +724,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/guzzlehttp/ringphp@1.1.1",
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/ringphp",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/ringphp.json"
+    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/ringphp.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/guzzlehttp/ringphp@1.1.1"
   },
   {
     "type": "composer",
@@ -764,6 +774,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -785,10 +796,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/guzzlehttp/streams@3.0.0",
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/streams",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/streams.json"
+    "api_data_url": "https://packagist.org/p/packages/guzzlehttp/streams.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/guzzlehttp/streams@3.0.0"
   },
   {
     "type": "composer",
@@ -841,6 +853,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -961,10 +974,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/prestashop/circuit-breaker@v3.0.0",
     "repository_homepage_url": "https://packagist.org/packages/prestashop/circuit-breaker",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/prestashop/circuit-breaker.json"
+    "api_data_url": "https://packagist.org/p/packages/prestashop/circuit-breaker.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/prestashop/circuit-breaker@v3.0.0"
   },
   {
     "type": "composer",
@@ -1010,6 +1024,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1031,10 +1046,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/react/promise@v2.7.1",
     "repository_homepage_url": "https://packagist.org/packages/react/promise",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/react/promise.json"
+    "api_data_url": "https://packagist.org/p/packages/react/promise.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/react/promise@v2.7.1"
   },
   {
     "type": "composer",
@@ -1094,6 +1110,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1106,10 +1123,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/css-selector@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/css-selector",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/css-selector.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/css-selector.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/css-selector@v3.4.31"
   },
   {
     "type": "composer",
@@ -1169,6 +1187,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1199,10 +1218,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/composer/semver@1.5.0",
     "repository_homepage_url": "https://packagist.org/packages/composer/semver",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/composer/semver.json"
+    "api_data_url": "https://packagist.org/p/packages/composer/semver.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/composer/semver@1.5.0"
   },
   {
     "type": "composer",
@@ -1248,6 +1268,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1278,10 +1299,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/composer/xdebug-handler@1.3.3",
     "repository_homepage_url": "https://packagist.org/packages/composer/xdebug-handler",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/composer/xdebug-handler.json"
+    "api_data_url": "https://packagist.org/p/packages/composer/xdebug-handler.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/composer/xdebug-handler@1.3.3"
   },
   {
     "type": "composer",
@@ -1355,6 +1377,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1394,10 +1417,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/doctrine/annotations@v1.4.0",
     "repository_homepage_url": "https://packagist.org/packages/doctrine/annotations",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/doctrine/annotations.json"
+    "api_data_url": "https://packagist.org/p/packages/doctrine/annotations.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/doctrine/annotations@v1.4.0"
   },
   {
     "type": "composer",
@@ -1457,6 +1481,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1478,10 +1503,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/doctrine/lexer@1.0.2",
     "repository_homepage_url": "https://packagist.org/packages/doctrine/lexer",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/doctrine/lexer.json"
+    "api_data_url": "https://packagist.org/p/packages/doctrine/lexer.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/doctrine/lexer@1.0.2"
   },
   {
     "type": "composer",
@@ -1534,6 +1560,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1825,10 +1852,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/friendsofphp/php-cs-fixer@v2.15.3",
     "repository_homepage_url": "https://packagist.org/packages/friendsofphp/php-cs-fixer",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/friendsofphp/php-cs-fixer.json"
+    "api_data_url": "https://packagist.org/p/packages/friendsofphp/php-cs-fixer.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/friendsofphp/php-cs-fixer@v2.15.3"
   },
   {
     "type": "composer",
@@ -1874,6 +1902,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1904,10 +1933,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/paragonie/random_compat@v2.0.18",
     "repository_homepage_url": "https://packagist.org/packages/paragonie/random_compat",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/paragonie/random_compat.json"
+    "api_data_url": "https://packagist.org/p/packages/paragonie/random_compat.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/paragonie/random_compat@v2.0.18"
   },
   {
     "type": "composer",
@@ -1967,6 +1997,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1997,10 +2028,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/php-cs-fixer/diff@v1.3.0",
     "repository_homepage_url": "https://packagist.org/packages/php-cs-fixer/diff",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/php-cs-fixer/diff.json"
+    "api_data_url": "https://packagist.org/p/packages/php-cs-fixer/diff.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/php-cs-fixer/diff@v1.3.0"
   },
   {
     "type": "composer",
@@ -2039,6 +2071,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2087,10 +2120,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/prestashop/php-coding-standards@dev-master",
     "repository_homepage_url": "https://packagist.org/packages/prestashop/php-coding-standards",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/prestashop/php-coding-standards.json"
+    "api_data_url": "https://packagist.org/p/packages/prestashop/php-coding-standards.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/prestashop/php-coding-standards@dev-master"
   },
   {
     "type": "composer",
@@ -2136,6 +2170,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2148,10 +2183,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/psr/log@1.1.0",
     "repository_homepage_url": "https://packagist.org/packages/psr/log",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/psr/log.json"
+    "api_data_url": "https://packagist.org/p/packages/psr/log.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/psr/log@1.1.0"
   },
   {
     "type": "composer",
@@ -2197,6 +2233,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2245,10 +2282,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/squizlabs/php_codesniffer@3.4.2",
     "repository_homepage_url": "https://packagist.org/packages/squizlabs/php_codesniffer",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/squizlabs/php_codesniffer.json"
+    "api_data_url": "https://packagist.org/p/packages/squizlabs/php_codesniffer.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/squizlabs/php_codesniffer@3.4.2"
   },
   {
     "type": "composer",
@@ -2301,6 +2339,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2448,10 +2487,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/console@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/console",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/console.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/console.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/console@v3.4.31"
   },
   {
     "type": "composer",
@@ -2504,6 +2544,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2543,10 +2584,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/debug@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/debug",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/debug.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/debug.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/debug@v3.4.31"
   },
   {
     "type": "composer",
@@ -2599,6 +2641,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2683,10 +2726,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/event-dispatcher@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/event-dispatcher",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/event-dispatcher.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/event-dispatcher.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/event-dispatcher@v3.4.31"
   },
   {
     "type": "composer",
@@ -2739,6 +2783,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2760,10 +2805,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/filesystem@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/filesystem",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/filesystem.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/filesystem.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/filesystem@v3.4.31"
   },
   {
     "type": "composer",
@@ -2816,6 +2862,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2828,10 +2875,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/finder@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/finder",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/finder.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/finder.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/finder@v3.4.31"
   },
   {
     "type": "composer",
@@ -2884,6 +2932,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2896,10 +2945,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/options-resolver@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/options-resolver",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/options-resolver.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/options-resolver.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/options-resolver@v3.4.31"
   },
   {
     "type": "composer",
@@ -2952,6 +3002,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2973,10 +3024,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/polyfill-ctype@v1.12.0",
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-ctype",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-ctype.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-ctype.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/polyfill-ctype@v1.12.0"
   },
   {
     "type": "composer",
@@ -3029,6 +3081,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3050,10 +3103,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/polyfill-mbstring@v1.12.0",
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-mbstring",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-mbstring.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-mbstring.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/polyfill-mbstring@v1.12.0"
   },
   {
     "type": "composer",
@@ -3106,6 +3160,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3127,10 +3182,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/polyfill-php70@v1.12.0",
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-php70",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-php70.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-php70.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/polyfill-php70@v1.12.0"
   },
   {
     "type": "composer",
@@ -3183,6 +3239,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3195,10 +3252,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/polyfill-php72@v1.12.0",
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-php72",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-php72.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/polyfill-php72.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/polyfill-php72@v1.12.0"
   },
   {
     "type": "composer",
@@ -3251,6 +3309,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3263,10 +3322,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/process@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/process",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/process.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/process.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/process@v3.4.31"
   },
   {
     "type": "composer",
@@ -3319,6 +3379,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3331,9 +3392,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/symfony/stopwatch@v3.4.31",
     "repository_homepage_url": "https://packagist.org/packages/symfony/stopwatch",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/symfony/stopwatch.json"
+    "api_data_url": "https://packagist.org/p/packages/symfony/stopwatch.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/symfony/stopwatch@v3.4.31"
   }
 ]

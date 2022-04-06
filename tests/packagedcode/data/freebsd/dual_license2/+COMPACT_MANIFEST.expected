@@ -47,11 +47,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:freebsd/rubygem-ttfunk@1.5.1?arch=freebsd:10:%2A&origin=print/rubygem-ttfunk",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "freebsd_compact_manifest",
+    "purl": "pkg:freebsd/rubygem-ttfunk@1.5.1?arch=freebsd:10:%2A&origin=print/rubygem-ttfunk"
   }
 ]

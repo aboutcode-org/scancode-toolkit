@@ -46,11 +46,3 @@ class TestHaxe(PackageTester):
         expected_loc = self.get_test_loc('haxe/tags/haxelib.json.expected')
         package = haxe.HaxelibJsonHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_root_dir(self):
-        test_file = self.get_test_loc('haxe/tags/haxelib.json')
-        test_dir = self.get_test_loc('haxe/tags')
-        codebase = Codebase(test_dir)
-        resource = codebase.get_resource_from_path(test_file, absolute=True)
-        proot = haxe.HaxePackage.get_package_root(resource, codebase)
-        assert proot.location == test_dir

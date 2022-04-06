@@ -29,7 +29,6 @@ from packagedcode import haxe
 from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import misc
-from packagedcode import models
 from packagedcode import msi
 from packagedcode import npm
 from packagedcode import nuget

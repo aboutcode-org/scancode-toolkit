@@ -22,7 +22,7 @@ class OpamFileHandler(models.DatafileHandler):
     datasource_id = 'opam_file'
     path_patterns = ('*opam',)
     default_package_type = 'opam'
-    default_primary_language = 'OCaml'
+    default_primary_language = 'Ocaml'
     description = 'Ocaml Opam file'
     documentation_url = 'https://opam.ocaml.org/doc/Manual.html#Common-file-format'
 
@@ -39,8 +39,8 @@ class OpamFileHandler(models.DatafileHandler):
         for dep in deps:
             package_dependencies.append(
                 models.DependentPackage(
-                    purl=dep.to_string(),
-                    extracted_requirement=dep.version,
+                    purl=dep["purl"],
+                    extracted_requirement=dep["version"],
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
@@ -91,6 +91,8 @@ class OpamFileHandler(models.DatafileHandler):
             )
 
         yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             version=version,
             vcs_url=vcs_url,
@@ -106,7 +108,8 @@ class OpamFileHandler(models.DatafileHandler):
             parties=parties,
             dependencies=package_dependencies,
             api_data_url=api_data_url,
-            repository_homepage_url=repository_homepage_url
+            repository_homepage_url=repository_homepage_url,
+            primary_language=cls.default_primary_language
         )
 
     @classmethod
@@ -262,7 +265,10 @@ def parse_opam_from_text(text):
                 if parsed_dep:
                     version = parsed_dep.group('version').strip('{ } ').replace('"', '')
                     name = parsed_dep.group('name').strip()
-                    value.append(PackageURL(type='opam', name=name, version=version))
+                    value.append(dict(
+                        purl=PackageURL(type='opam', name=name).to_string(),
+                        version=version,
+                    ))
             opam_data[key] = value
 
         elif key == 'src':  # Get multiline src

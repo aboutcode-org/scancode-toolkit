@@ -906,11 +906,7 @@ class DatafileHandler:
             package_uid = package.package_uid
 
             if not package.license_expression:
-                package.license_expression = cls.compute_normalized_license(
-                    package=package,
-                    resource=resource,
-                    codebase=codebase,
-                )
+                package.license_expression = cls.compute_normalized_license(package)
 
             cls.assign_package_to_resources(
                 package_uid=package_uid,

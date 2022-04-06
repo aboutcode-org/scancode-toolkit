@@ -1033,7 +1033,7 @@ def get_parties(pom):
     return parties
 
 
-def get_urls(cls, namespace, name, version, qualifiers, base_url='http://repo1.maven.org/maven2'):
+def get_urls(namespace, name, version, qualifiers, base_url='http://repo1.maven.org/maven2'):
     """
     Return a mapping of URLs.
     """
@@ -1153,7 +1153,8 @@ def parse(
 
     scm = pom.scm or {}
     urls = build_vcs_and_code_view_urls(scm)
-    urls .update(get_urls(
+    print(urls)
+    urls.update(get_urls(
         namespace=group_id,
         name=artifact_id, version=version,
         qualifiers=qualifiers,
@@ -1212,7 +1213,7 @@ def build_vcs_and_code_view_urls(scm):
     # TODO: handle tag
     # vcs_tag = scm.get('tag')
 
-    return dict(vcs_url=vcs_url, code_view_url=code_view_url)
+    return dict(vcs_url=vcs_url, code_view_url=code_view_url,)
 
 
 def parse_scm_connection(scm_connection):

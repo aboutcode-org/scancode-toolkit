@@ -56,7 +56,7 @@ class ReadmeHandler(models.NonAssemblableDatafileHandler):
         with open(location, encoding='utf-8') as loc:
             readme_manifest = loc.read()
 
-        package_data = build_package(cls, readme_manifest)
+        package_data = build_package(readme_manifest)
 
         if not package_data.name:
             # If no name was detected for the Package, then we use the basename
@@ -75,7 +75,7 @@ def build_package(readme_manifest):
     """
     package = models.PackageData(
         datasource_id=ReadmeHandler.datasource_id,
-        default_package_type=ReadmeHandler.default_package_type,
+        type=ReadmeHandler.default_package_type,
     )
 
     for line in readme_manifest.splitlines():
@@ -85,9 +85,14 @@ def build_package(readme_manifest):
             key, _sep, value = line.partition(':')
         elif '=' in line:
             key, _sep, value = line.partition('=')
+        else:
+            key = None
+            value = None
 
-        key = key.lower().strip()
-        value = value.strip()
+        if key:
+            key = key.lower().strip()
+        if value:
+            value = value.strip()
 
         if not key or not value:
             continue

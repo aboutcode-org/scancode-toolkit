@@ -44,6 +44,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -74,9 +75,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/fake/fake",
     "repository_homepage_url": "https://packagist.org/packages/fake/fake",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/fake/fake.json"
+    "api_data_url": "https://packagist.org/p/packages/fake/fake.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/fake/fake"
   }
 ]

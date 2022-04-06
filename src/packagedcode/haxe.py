@@ -63,31 +63,32 @@ class HaxelibJsonHandler(models.DatafileHandler):
         }
         """
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
+            json_data = json.load(loc)
 
-        name = package_data.get('name')
-        version = package_data.get('version')
+        name = json_data.get('name')
+        version = json_data.get('version')
 
         package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
             version=version,
-            homepage_url=package_data.get('url'),
-            declared_license=package_data.get('license'),
-            keywords=package_data.get('tags'),
-            description=package_data.get('description'),
+            homepage_url=json_data.get('url'),
+            declared_license=json_data.get('license'),
+            keywords=json_data.get('tags'),
+            description=json_data.get('description'),
+            primary_language=cls.default_primary_language,
         )
 
         if name and version:
-            download_url = f'https://lib.haxe.org/p//{name}/{version}/download/'
+            download_url = f'https://lib.haxe.org/p/{name}/{version}/download/'
             package_data.repository_download_url = download_url
             package_data.download_url = download_url
 
         if name:
             package_data.repository_homepage_url = f'https://lib.haxe.org/p/{name}'
 
-        for contrib in package_data.get('contributors', []):
+        for contrib in json_data.get('contributors', []):
             party = models.Party(
                 type=models.party_person,
                 name=contrib,
@@ -95,7 +96,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
                 url='https://lib.haxe.org/u/{}'.format(contrib))
             package_data.parties.append(party)
 
-        for dep_name, dep_version in package_data.get('dependencies', {}).items():
+        for dep_name, dep_version in json_data.get('dependencies', {}).items():
             dep_version = dep_version and dep_version.strip()
             is_resolved = bool(dep_version)
             dep_purl = PackageURL(

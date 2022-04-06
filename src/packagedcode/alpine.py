@@ -149,9 +149,9 @@ def parse_alpine_installed_db(location, datasource_id, package_type):
     """
     for package_fields in get_alpine_installed_db_fields(location):
         yield build_package_data(
+            package_fields=package_fields,
             datasource_id=datasource_id,
             package_type=package_type,
-            fields=package_fields,
         )
 
 

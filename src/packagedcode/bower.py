@@ -108,7 +108,9 @@ class BowerJsonHandler(models.DatafileHandler):
                 )
             )
 
-        yield cls(
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             description=description,
             version=version,

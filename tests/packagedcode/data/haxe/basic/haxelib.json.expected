@@ -72,11 +72,13 @@
     "declared_license": "GPL",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:haxe/haxelib@3.4.0",
     "repository_homepage_url": "https://lib.haxe.org/p/haxelib",
     "repository_download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "haxelib_json",
+    "purl": "pkg:haxe/haxelib@3.4.0"
   }
 ]

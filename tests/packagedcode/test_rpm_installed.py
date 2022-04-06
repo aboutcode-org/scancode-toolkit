@@ -66,7 +66,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_detect_license(self):
         test_installed = self.get_test_loc('rpm_installed/xmlish/centos-5-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/xmlish/centos-5-rpms.xmlish-with-license-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
@@ -74,7 +74,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_parse_centos8(self):
         test_installed = self.get_test_loc('rpm_installed/distro-xmlish/centos-8-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/distro-xmlish/centos-8-rpms.xmlish-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
@@ -82,7 +82,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_parse_fc33(self):
         test_installed = self.get_test_loc('rpm_installed/distro-xmlish/fc33-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/distro-xmlish/fc33-rpms.xmlish-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
@@ -90,7 +90,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_parse_openmandriva(self):
         test_installed = self.get_test_loc('rpm_installed/distro-xmlish/openmandriva-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/distro-xmlish/openmandriva-rpms.xmlish-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
@@ -98,7 +98,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_parse_opensuse(self):
         test_installed = self.get_test_loc('rpm_installed/distro-xmlish/opensuse-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/distro-xmlish/opensuse-rpms.xmlish-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
@@ -106,7 +106,7 @@ class TestRpmInstalled(PackageTester):
     def test_parse_rpm_xmlish_can_parse_rhel(self):
         test_installed = self.get_test_loc('rpm_installed/distro-xmlish/rhel-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/distro-xmlish/rhel-rpms.xmlish-expected.json')
-        packages = rpm_installed.parse_rpm_xmlish(test_installed, detect_licenses=True)
+        packages = rpm_installed.parse_rpm_xmlish(test_installed)
         result = [package.to_dict(_detailed=True) for package in packages]
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
