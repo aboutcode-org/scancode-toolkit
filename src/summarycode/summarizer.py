@@ -8,7 +8,6 @@
 #
 
 from collections import Counter, defaultdict
-import warnings
 
 import attr
 import fingerprints
@@ -84,7 +83,7 @@ class ScanSummary(PostScanPlugin):
         other_holders = remove_from_summary(declared_holders, holders_summary)
 
         programming_language_summary = summary.get('programming_language') or []
-        primary_language = get_primary_language(programming_language_summary)
+        primary_language = get_primary_language(codebase, programming_language_summary)
         other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
 
         # Save summary info to codebase
@@ -306,35 +305,57 @@ def package_summarizer(resource, children, keep_details=False):
 
 
 def get_declared_holders(codebase, holders_summary):
-    key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
     entry_by_holders = {
         fingerprints.generate(entry.get('value')): entry
         for entry in holders_summary
     }
+    key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
     key_file_holders = [
         fingerprints.generate(entry.get('holder'))
         for entry in key_file_holders
     ]
     unique_key_file_holders = unique(key_file_holders)
 
-    holder_entry_by_counts = defaultdict(list)
+    holder_by_counts = defaultdict(list)
     for holder in unique_key_file_holders:
         entry = entry_by_holders.get(holder)
         count = entry.get('count')
         if count:
-            holder_entry_by_counts[count].append(entry)
+            holder = entry.get('value')
+            holder_by_counts[count].append(holder)
 
     declared_holders = []
-    if holder_entry_by_counts:
-        highest_count = max(holder_entry_by_counts)
-        declared_holders = holder_entry_by_counts[highest_count]
+    if holder_by_counts:
+        highest_count = max(holder_by_counts)
+        declared_holders = holder_by_counts[highest_count]
     return declared_holders
 
 
-def get_primary_language(programming_language_summary):
-    programming_language_entry_by_count = {entry.get('count'): entry for entry in programming_language_summary}
+def get_primary_language(codebase, programming_language_summary):
+    # get primary language from package type
+    key_file_packages = get_field_values_from_codebase_resources(codebase, 'packages', key_files_only=True)
+    package_primary_language = [p.get('primary_language') for p in key_file_packages]
+    package_primary_language = unique(package_primary_language)
+
     primary_language = ''
-    if programming_language_entry_by_count:
-        highest_count = max(programming_language_entry_by_count)
-        primary_language = programming_language_entry_by_count[highest_count].get('value') or ''
+    if package_primary_language:
+        counts_by_programming_language = {entry.get('value'): entry.get('count') for entry in programming_language_summary}
+        programming_language_by_counts = defaultdict(list)
+        for language in package_primary_language:
+            count = counts_by_programming_language.get(language)
+            if count:
+                programming_language_by_counts[count].append(language)
+
+        if programming_language_entry_by_count:
+            highest_count = max(programming_language_by_counts)
+            primary_language = programming_language_entry_by_count.get(highest_count, '')
+
+    if not primary_language:
+        # If we did not get a primary language from detected Package info, then
+        # we return the most common programming language as the primary language
+        programming_language_entry_by_count = {entry.get('count'): entry for entry in programming_language_summary}
+        if programming_language_entry_by_count:
+            highest_count = max(programming_language_entry_by_count)
+            primary_language = programming_language_entry_by_count[highest_count].get('value') or ''
+
     return primary_language

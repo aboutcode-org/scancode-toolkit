@@ -30,7 +30,7 @@ Important API changes:
   return "package_data" package information at the manifest file-level
   rather than "packages". This has all the data attributes of a "package_data"
   field plus others: "package_uuid", "package_data_files" and "files".
-  
+
 - There is a a new top-level "packages" attribute that contains package
   instances that can be aggregating data from multiple manifests.
 
@@ -142,7 +142,7 @@ Package detection:
     as these are really package data that are being detected, and can be manifests,
     lockfiles or other package data. This has all the data attributes of a `package_data`
     field plus others: `package_uuid`, `package_data_files` and `files`.
-  
+
 
   - A new top-level attribute `packages` has been added which contains package
     instances created from `package_data` detected in the codebase.
@@ -156,7 +156,7 @@ Package detection:
 
   - There is a new resource-level attribute `for_packages` which refers to packages
     through package_uuids (pURL + uuid string).
-  
+
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` having a package data mapping.
     Also the `requirement` attribute here is renamed to `extracted_requirement`.
@@ -287,6 +287,9 @@ Outputs:
 
  - Add new outputs for the CycloneDx format.
    The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+
+ - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+   that contains any warning messages that occur during a scan.
 
 
 Output version
