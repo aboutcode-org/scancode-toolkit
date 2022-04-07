@@ -359,45 +359,15 @@ def get_declared_holder(codebase, holders_summary):
     return declared_holder
 
 
-def get_primary_language(key_files_package_data, programming_language_summary):
+def get_primary_language(programming_language_summary):
     """
-    Determine the primary language from package data detected from key files.
-
-    If no package data is present, then return the most common detected
-    programming language as the primary language.
+    Return the most common detected programming language as the primary language.
     """
-    # Get a list of unique languages from the detected Package data
-    package_languages = [p.get('primary_language') for p in key_files_package_data]
-    package_languages = unique(package_languages)
-
+    programming_languages_by_count = {entry['count']: entry['value'] for entry in programming_language_summary}
     primary_language = ''
-    if package_languages:
-        if len(package_languages) > 1:
-            # If we have multiple languages from packages in
-            # `key_files_package_data`, then we see how many time those languages
-            # occur in the codebase and return the language that occurs the most
-            # often.
-            counts_by_programming_language = {entry['value']: entry['count'] for entry in programming_language_summary}
-            programming_language_by_counts = defaultdict(list)
-            for language in package_languages:
-                count = counts_by_programming_language.get(language)
-                if count:
-                    programming_language_by_counts[count].append(language)
-
-            if programming_language_by_counts:
-                highest_count = max(programming_language_by_counts)
-                primary_language = programming_language_by_counts.get(highest_count, '')
-        else:
-            primary_language = package_languages[0]
-
-    if not primary_language:
-        # If we did not get a primary language from detected Package info, then
-        # we return the most common programming language as the primary language
-        programming_languages_by_count = {entry['count']: entry['value'] for entry in programming_language_summary}
-        if programming_languages_by_count:
-            highest_count = max(programming_languages_by_count)
-            primary_language = programming_languages_by_count[highest_count] or ''
-
+    if programming_languages_by_count:
+        highest_count = max(programming_languages_by_count)
+        primary_language = programming_languages_by_count[highest_count] or ''
     return primary_language
 
 
