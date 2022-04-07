@@ -26,11 +26,13 @@
     "declared_license": "Apache 2.0",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:readme/mbed%20TLS@2.16.4",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "readme",
+    "purl": "pkg:readme/mbed%20TLS@2.16.4"
   }
 ]

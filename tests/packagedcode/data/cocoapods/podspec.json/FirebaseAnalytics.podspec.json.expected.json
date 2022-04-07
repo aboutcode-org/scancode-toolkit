@@ -36,11 +36,13 @@
     "declared_license": "Copyright 2021 Google Copyright",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pods/FirebaseAnalytics@8.1.1",
     "repository_homepage_url": "https://cocoapods.org/pods/FirebaseAnalytics",
     "repository_download_url": "https://firebase.google.com/features/analytics//archive/8.1.1.zip",
-    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/e/2/1/FirebaseAnalytics/8.1.1/FirebaseAnalytics.podspec.json"
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/e/2/1/FirebaseAnalytics/8.1.1/FirebaseAnalytics.podspec.json",
+    "datasource_id": "cocoapods_podspec_json",
+    "purl": "pkg:pods/FirebaseAnalytics@8.1.1"
   }
 ]

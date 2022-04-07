@@ -47,6 +47,7 @@
     "declared_license": "BSD",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -68,9 +69,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:haxe/selecthxml@0.5.1",
     "repository_homepage_url": "https://lib.haxe.org/p/selecthxml",
     "repository_download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "haxelib_json",
+    "purl": "pkg:haxe/selecthxml@0.5.1"
   }
 ]

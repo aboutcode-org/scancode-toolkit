@@ -52,27 +52,27 @@ class TestPackageAndDependency(PackageTester):
         with io.open(input_file, encoding='utf-8') as res:
             packages_data = json.load(res)
 
-        package = None
+        pk_instance = None
         for package_data in packages_data:
-            if not package:
-                package = models.Package.from_package_data(package_data, datafile_path='main')
+            if not pk_instance:
+                pk_instance=models.Package.from_package_data(package_data, datafile_path='click')
             else:
-                package.update(package_data, datafile_path='click')
+                pk_instance.update(package_data, datafile_path='click')
 
-        self.check_package_data(package.to_dict(), expected_file, regen)
+        self.check_package_data(pk_instance.to_dict(), expected_file, regen)
 
     def test_package_data_merge_with_dependencies(self, regen=REGEN_TEST_FIXTURES):
         input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
         expected_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned-result.json')
 
         with io.open(input_file, encoding='utf-8') as res:
-            packages_data = json.load(res)
+                packages_data = json.load(res)
 
-        package = None
+        pk_instance = None
         for package_data in packages_data:
-            if not package:
-                package = models.Package.from_package_data(package_data, datafile_path='main')
+            if not pk_instance:
+                pk_instance=models.Package.from_package_data(package_data, datafile_path='atomicwrites')
             else:
-                package.update(package_data, datafile_path='atomicwrites')
+                pk_instance.update(package_data, datafile_path='atomicwrites')
 
-        self.check_package_data(package.to_dict(), expected_file, regen)
+        self.check_package_data(pk_instance.to_dict(), expected_file, regen)

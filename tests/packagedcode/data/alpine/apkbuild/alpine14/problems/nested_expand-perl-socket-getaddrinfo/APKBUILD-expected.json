@@ -25,6 +25,7 @@
   "declared_license": "GPL-1.0-or-later OR Artistic-1.0-Perl",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -40,8 +41,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/perl-socket-getaddrinfo@0.22-r3",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/perl-socket-getaddrinfo@0.22-r3"
 }

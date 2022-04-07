@@ -1153,7 +1153,8 @@ def parse(
 
     scm = pom.scm or {}
     urls = build_vcs_and_code_view_urls(scm)
-    urls .update(get_urls(
+    print(urls)
+    urls.update(get_urls(
         namespace=group_id,
         name=artifact_id, version=version,
         qualifiers=qualifiers,

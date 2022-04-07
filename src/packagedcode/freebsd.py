@@ -51,6 +51,8 @@ class CompactManifestHandler(models.DatafileHandler):
             freebsd_manifest = saneyaml.load(loc)
 
         package_data = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             qualifiers=dict(
                 arch=freebsd_manifest.get('arch'),
                 origin=freebsd_manifest.get('origin'),

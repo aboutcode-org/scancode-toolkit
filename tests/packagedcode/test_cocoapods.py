@@ -76,7 +76,7 @@ class TestCocoaPodfileLock(PackageTester):
         assert PodfileLockHandler.is_datafile(test_file)
 
     def test_cocoapods_can_parse_braintree_ios(self):
-        test_file = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock')
-        expected_loc = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock.expected.json')
+        test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
+        expected_loc = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock.expected.json')
         packages = PodfileLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)

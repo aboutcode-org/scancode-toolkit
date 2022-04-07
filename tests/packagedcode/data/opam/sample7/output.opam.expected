@@ -48,6 +48,7 @@
     "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -87,9 +88,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "opam_file",
+    "purl": null
   }
 ]

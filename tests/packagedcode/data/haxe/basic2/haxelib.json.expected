@@ -39,11 +39,13 @@
     "declared_license": "MIT",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:haxe/hxsocketio@0.1.0",
     "repository_homepage_url": "https://lib.haxe.org/p/hxsocketio",
     "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "haxelib_json",
+    "purl": "pkg:haxe/hxsocketio@0.1.0"
   }
 ]

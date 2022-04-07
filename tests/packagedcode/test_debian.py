@@ -48,13 +48,13 @@ class TestDebian(PackageTester):
 
     def test_parse_status_file_not_a_status_file(self):
         test_file = self.get_test_loc('debian/not-a-status-file')
-        test_packages = list(debian.parse_status_file(test_file))
+        test_packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         assert test_packages == []
 
     def test_parse_status_file_non_existing_file(self):
         test_file = os.path.join(self.get_test_loc('debian'), 'foobarbaz')
         try:
-            list(debian.parse_status_file(test_file))
+            list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
             self.fail('FileNotFoundError not raised')
         except FileNotFoundError:
             pass
@@ -63,13 +63,13 @@ class TestDebian(PackageTester):
         test_file = self.get_test_loc('debian/basic/status')
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
-        packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
+        packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_status_file_perl_error(self):
         test_file = self.get_test_loc('debian/mini-status/status')
         expected_loc = self.get_test_loc('debian/mini-status/status.expected')
-        packages = list(debian.parse_status_file(test_file, distro='debian'))
+        packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
@@ -78,7 +78,7 @@ class TestDebian(PackageTester):
         test_info_dir = os.path.join(test_dir, 'end-to-end')
         test_file = os.path.join(test_info_dir, 'status')
 
-        packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
+        packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         assert len(packages) == 1
 
         test_package = packages[0]

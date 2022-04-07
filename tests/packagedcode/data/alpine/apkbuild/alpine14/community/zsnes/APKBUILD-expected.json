@@ -25,6 +25,7 @@
   "declared_license": "GPL-2.0",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -96,8 +97,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/zsnes@1.51-r11",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/zsnes@1.51-r11"
 }

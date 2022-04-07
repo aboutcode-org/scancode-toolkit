@@ -61,12 +61,14 @@ class TestRpmBasics(FileBasedTesting):
             ('declared_license', 'LGPLv2+'),
             ('notice_text', None),
             ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
+            ('file_references', []),
             ('extra_data', {}),
             ('dependencies', []),
-            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),
             ('api_data_url', None),
+            ('datasource_id', 'rpm_archive'),
+            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
         ]
         assert list(package_data.to_dict().items()) == expected
 
@@ -78,6 +80,7 @@ class TestRpmBasics(FileBasedTesting):
         expected = {
             'arch': 'noarch',
             'epoch': None,
+            'files_digest_algo': None,
             'description': 'These bindings permit access to QuesoGLC, an '
                            'open source\nimplementation of TrueType font '
                            'rendering for OpenGL.',

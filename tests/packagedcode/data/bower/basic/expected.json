@@ -40,6 +40,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -70,9 +71,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:bower/blue-leaf",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "bower_json",
+    "purl": "pkg:bower/blue-leaf"
   }
 ]

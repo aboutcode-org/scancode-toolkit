@@ -46,11 +46,13 @@
     },
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:freebsd/py27-idna@2.6?arch=freebsd:10:%2A&origin=dns/py-idna",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "freebsd_compact_manifest",
+    "purl": "pkg:freebsd/py27-idna@2.6?arch=freebsd:10:%2A&origin=dns/py-idna"
   }
 ]

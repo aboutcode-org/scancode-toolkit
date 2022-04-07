@@ -25,6 +25,7 @@
   "declared_license": "GPL MIT LGPL",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -64,8 +65,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/haxe@3.4.7-r1",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/haxe@3.4.7-r1"
 }

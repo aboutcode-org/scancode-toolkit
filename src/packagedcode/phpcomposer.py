@@ -70,7 +70,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
         with io.open(location, encoding='utf-8') as loc:
             package_json = json.load(loc)
 
-        yield build_package_data(cls, package_json)
+        yield build_package_data(package_json)
 
 
 def get_repository_homepage_url(namespace, name):
@@ -174,11 +174,11 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
             package_data = json.load(loc)
 
         packages = [
-            build_package_data(cls, p)
+            build_package_data(p)
             for p in package_data.get('packages', [])
         ]
         packages_dev = [
-            build_package_data(cls, p)
+            build_package_data(p)
             for p in package_data.get('packages-dev', [])
         ]
 

@@ -73,7 +73,8 @@
         "purl": "pkg:pypi/click@8.0.1",
         "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
         "repository_download_url": "https://pypi.org/packages/source/c/click/click-8.0.1.tar.gz",
-        "api_data_url": "https://pypi.org/pypi/click/8.0.1/json"
+        "api_data_url": "https://pypi.org/pypi/click/8.0.1/json",
+        "datasource_id": null
     },
     {
         "type": "pypi",
@@ -107,7 +108,8 @@
         "purl": null,
         "repository_homepage_url": null,
         "repository_download_url": null,
-        "api_data_url": null
+        "api_data_url": null,
+        "datasource_id": null
     },
     {
         "type": "pypi",
@@ -158,7 +160,8 @@
         "purl": "pkg:pypi/click",
         "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
         "repository_download_url": null,
-        "api_data_url": "https://pypi.org/pypi/click/json"
+        "api_data_url": "https://pypi.org/pypi/click/json",
+        "datasource_id": null
     },
     {
         "type": "pypi",
@@ -201,6 +204,7 @@
         "purl": null,
         "repository_homepage_url": null,
         "repository_download_url": null,
-        "api_data_url": null
+        "api_data_url": null,
+        "datasource_id": null
     }
 ]

@@ -25,6 +25,7 @@
   "declared_license": "Ruby AND BSD-2-Clause AND MIT",
   "notice_text": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -72,8 +73,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/ruby@2.7.3-r1",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/ruby@2.7.3-r1"
 }

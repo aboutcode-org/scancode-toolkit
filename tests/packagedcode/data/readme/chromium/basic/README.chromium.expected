@@ -26,11 +26,13 @@
     "declared_license": "Apache",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:readme/tsproxy@a2f578febcd79b751d948f615bbde8f6189fbeed%20%28commit%20hash%29",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "readme",
+    "purl": "pkg:readme/tsproxy@a2f578febcd79b751d948f615bbde8f6189fbeed%20%28commit%20hash%29"
   }
 ]
