@@ -72,11 +72,19 @@ class ScanSummary(PostScanPlugin):
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
 
         summary = summarize_codebase(codebase, keep_details=False, **kwargs)
+        license_expressions_summary = summary.get('license_expressions') or []
+        holders_summary = summary.get('holders') or []
+        programming_language_summary = summary.get('programming_language') or []
 
         key_files_package_data = get_field_values_from_codebase_resources(codebase, 'package_data', key_files_only=True)
         # Remove any package that has no name
-        key_file_package_data = [package_data for package_data in key_files_package_data if package_data.get('name')]
-        declared_license_expression, declared_holder = get_license_and_holder_from_package_info(key_file_package_data)
+        key_file_package_data = [
+            package_data
+            for package_data in key_files_package_data
+            if package_data.get('name')
+        ]
+
+        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data)
 
         if declared_license_expression:
             scoring_elements, _ = compute_license_score(codebase)
@@ -84,17 +92,14 @@ class ScanSummary(PostScanPlugin):
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
             scoring_elements, declared_license_expression = compute_license_score(codebase)
-
-        license_expressions_summary = summary.get('license_expressions') or []
         other_license_expressions = remove_from_summary(declared_license_expression, license_expressions_summary)
 
-        holders_summary = summary.get('holders') or []
         if not declared_holder:
             declared_holder = get_declared_holder(codebase, holders_summary)
         other_holders = remove_from_summary(declared_holder, holders_summary)
 
-        programming_language_summary = summary.get('programming_language') or []
-        primary_language = get_primary_language(key_files_package_data, programming_language_summary)
+        if not primary_language:
+            primary_language = get_primary_language(key_files_package_data, programming_language_summary)
         other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
 
         # Save summary info to codebase
@@ -316,6 +321,13 @@ def package_summarizer(resource, children, keep_details=False):
 
 
 def get_declared_holder(codebase, holders_summary):
+    """
+    Determine the declared holders of a codebase from the holders detetected
+    from key files.
+
+    A declared holder is a copyright holder present in the key files who has the
+    highest amount of refrences throughout the codebase.
+    """
     entry_by_holders = {
         fingerprints.generate(entry['value']): entry
         for entry in holders_summary if entry['value']
@@ -354,54 +366,59 @@ def get_primary_language(key_files_package_data, programming_language_summary):
     If no package data is present, then return the most common detected
     programming language as the primary language.
     """
-    # Get a list of unique languages
+    # Get a list of unique languages from the detected Package data
     package_languages = [p.get('primary_language') for p in key_files_package_data]
     package_languages = unique(package_languages)
 
     primary_language = ''
-    if len(package_languages) > 1:
-        # If we have multiple languages from packages in
-        # `key_files_package_data`, then we see how many time those languages
-        # occur in the codebase and return the language that occurs the most
-        # often.
-        counts_by_programming_language = {entry.get('value'): entry.get('count') for entry in programming_language_summary}
-        programming_language_by_counts = defaultdict(list)
-        for language in package_languages:
-            count = counts_by_programming_language.get(language)
-            if count:
-                programming_language_by_counts[count].append(language)
+    if package_languages:
+        if len(package_languages) > 1:
+            # If we have multiple languages from packages in
+            # `key_files_package_data`, then we see how many time those languages
+            # occur in the codebase and return the language that occurs the most
+            # often.
+            counts_by_programming_language = {entry['value']: entry['count'] for entry in programming_language_summary}
+            programming_language_by_counts = defaultdict(list)
+            for language in package_languages:
+                count = counts_by_programming_language.get(language)
+                if count:
+                    programming_language_by_counts[count].append(language)
 
-        if programming_language_by_counts:
-            highest_count = max(programming_language_by_counts)
-            primary_language = programming_language_by_counts.get(highest_count, '')
-    else:
-        primary_language = package_languages[0]
+            if programming_language_by_counts:
+                highest_count = max(programming_language_by_counts)
+                primary_language = programming_language_by_counts.get(highest_count, '')
+        else:
+            primary_language = package_languages[0]
 
     if not primary_language:
         # If we did not get a primary language from detected Package info, then
         # we return the most common programming language as the primary language
-        programming_language_entry_by_count = {entry.get('count'): entry for entry in programming_language_summary}
-        if programming_language_entry_by_count:
-            highest_count = max(programming_language_entry_by_count)
-            primary_language = programming_language_entry_by_count[highest_count].get('value') or ''
+        programming_languages_by_count = {entry['count']: entry['value'] for entry in programming_language_summary}
+        if programming_languages_by_count:
+            highest_count = max(programming_languages_by_count)
+            primary_language = programming_languages_by_count[highest_count] or ''
 
     return primary_language
 
 
-def get_license_and_holder_from_package_info(key_file_package_data):
+def get_origin_info_from_package_data(key_file_package_data):
     """
-    Return the declared license expression and copyright holder from a list of
-    detected package data.
+    Return a 3-tuple containing the strings of declared license expression,
+    copyright holder, and primary programming language from a list of detected
+    package data.
 
     Currently, we are assuming that we are only getting a single package
     detected among key files from a top-level directory
     """
 
     if len(key_file_package_data) != 1:
-        return '', ''
+        return '', '', ''
     else:
         package = key_file_package_data[0]
-        declared_license_expression = package.get('license_expression', '')
+        declared_license_expression = package.get('license_expression') or ''
+        package_primary_language = package.get('primary_language') or ''
+
+        # Determine declared holder from Package copyright statement
         package_copyright = package.get('copyright', '')
         package_holders = []
         if package_copyright:
@@ -428,4 +445,4 @@ def get_license_and_holder_from_package_info(key_file_package_data):
                 party_members.append(party['name'])
             declared_holder = ', '.join(party_members)
 
-        return declared_license_expression, declared_holder
+        return declared_license_expression, declared_holder, package_primary_language

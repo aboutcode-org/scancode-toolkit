@@ -67,14 +67,26 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_with_packages_reports_packages_with_files(self):
-        test_dir = self.get_test_loc('summary/packages/scan')
+    def test_simple_summary_with_package_info(self):
+        test_dir = self.get_test_loc('summary/simple/xml2data-0.1.0')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/packages/scan.expected.json')
+        expected_file = self.get_test_loc('summary/simple/xml2data-0.1.0-clip.expected.json')
         run_scan_click([
-            '--package',
+            '-clip',
             '--summary',
             '--classify',
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_simple_summary_without_package_info(self):
+        test_dir = self.get_test_loc('summary/simple/xml2data-0.1.0')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/simple/xml2data-0.1.0-cli.expected.json')
+        run_scan_click([
+            '-cli',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

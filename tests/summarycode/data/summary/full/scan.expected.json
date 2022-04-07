@@ -3203,7 +3203,7 @@
     }
   ],
   "summary": {
-    "declared_license_expression": "artistic-2.0 AND cc0-1.0",
+    "declared_license_expression": "artistic-2.0",
     "license_clarity_score": {
       "score": 60,
       "declared_license": true,
@@ -3213,8 +3213,8 @@
       "conflicting_license_categories": true,
       "ambigous_compound_licensing": true
     },
-    "declared_holders": [],
-    "primary_programming_language": "C",
+    "declared_holder": "Isaac Z. Schlueter, Isaac Z. Schlueter, Steve Steiner, Mikeal Rogers, Aaron Blohowiak, Martyn Smith, Charlie Robbins, Francisco Treacy, Cliffano Subagio, Christian Eager, Dav Glass, Alex K. Wolfe, James Sanders, Reid Burke, Arlo Breault, Timo Derstappen, Bart Teeuwisse, Ben Noordhuis, Tor Valamo, Whyme.Lyu, Olivier Melcher, Toma\u017e Muraus, Evan Meagher, Orlando Vazquez, Kai Chen, George Miroshnykov, Geoff Flarity, Max Goodman, Pete Kruckenberg, Laurie Harper, Chris Wong, Scott Bronson, Federico Romero, Visnu Pitiyanuvath, Irakli Gozalishvili, Mark Cahill, Tony, Iain Sproat, Trent Mick, Felix Geisendo\u0308rfer, Jameson Little, Conny Brunnkvist, Will Elwood, Dean Landolt, Oleg Efimov, Martin Cooper, Jann Horn, Andrew Bradley, Maciej Ma\u0142ecki, Stephen Sugden, Michael Budde, Jason Smith, Gautham Pai, David Trejo, Paul Vorbach, George Ornbo, Tim Oxley, Tyler Green, Dave Pacheco, Danila Gerasimov, Rod Vagg, Christian Howe, Andrew Lunny, Henrik Hodne, Adam Blackburn, Kris Windham, Jens Grunert, Joost-Wim Boekesteijn, Dalmais Maxence, Marcus Ekwall, Aaron Stacy, Phillip Howell, Domenic Denicola, James Halliday, Jeremy Cantrell, Ribettes, Don Park, Einar Otto Stangvik, Kei Son, Nicolas Morel, Mark Dube, Nathan Rajlich, Maxim Bogushevich, Meaglin, Ben Evans, Nathan Zadoks, Brian White, Jed Schmidt, Ian Livingstone, Patrick Pfeiffer, Paul Miller, Ryan Emery, Carl Lange, Jan Lehnardt, Stuart P. Bentley, Johan Sk\u00f6ld, Stuart Knightley, Niggler, Paolo Fragomeni, Jaakko Manninen, Luke Arduini, Larz Conwell, Marcel Klehr, Robert Kowalski, Forbes Lindesay, Vaz Allen, Jake Verbaten, Schabse Laks, Florian Margaine, Johan Nordberg, Ian Babrou, Di Wu, Mathias Bynens, Matt McClure, Matt Lunn, Alexey Kreschuk, elisee, Robert Gieseke, Franc\u0327ois Frisch, Trevor Burnham, Alan Shaw, TJ Holowaychuk, Nicholas Kinsey, Paulo Cesar, Elan Shanker, Jon Spencer, Jason Diamond, Maximilian Antoni, Thom Blake, Jess Martin, Spain Train, Alex Rodionov, Matt Colyer, Evan You, bitspill, Gabriel Falkenberg, Alexej Yaroshevich, Quim Calpe, Steve Mason, Wil Moore III, Sergey Belov, Tom Huang, CamilleM, S\u00e9bastien Santoro, Evan Lucas, Quinn Slack, Alex Kocharin, Daniel Santiago, Denis Gladkikh, Andrew Horton, Zeke Sikelianos, Dylan Greene, Franck Cuny, Yeonghoon Park, Rafael de Oleza, Mikola Lysenko, Yazhong Liu, Neil Gentleman, Kris Kowal, Alex Gorbatchev, Shawn Wildermuth, Wesley de Souza, yoyoyogi, J. Tangelder, Jean Lauliac, Andrey Kislyuk, Thorsten Lorenz, Julian Gruber, Benjamin Coe, Alex Ford, Matt Hickford, Sean McGivern, C J Silverio, Robin Tweedie, Miroslav Bajto\u0161, David Glasser, Gianluca Casati, Forrest L Norvell, Karsten Tinnefeld, Bryan Burgers, David Beitey, Evan You, Zach Pomerantz, Chris Williams, sudodoki, Mick Thompson, Felix Rabe, Michael Hayes, Chris Dickinson, Bradley Meck, GeJ, Andrew Terris, Michael Nisi, fengmk2, Adam Meadows, Chulki Lee, \u4e0d\u56db, dead_horse, Kenan Yildirim, Laurie Voss, Rebecca Turner, Hunter Loftis, Peter Richardson, Jussi Kalliokoski, Filip Weiss, Timo Wei\u00df, Christopher Hiller, J\u00e9r\u00e9my Lal, Anders Janmyr, Chris Meyers, Ludwig Magnusson, Wout Mertens, Nick Santos, Terin Stock, Faiq Raza, Thomas Torp, Sam Mikes, Mat Tyndall, Tauren Mills, Ron Martinez, Kazuhito Hokamura, Tristan Davies, David Volm, Lin Clark, Ben Page, Jeff Jo, martinvd, Mark J. Titorenko, Oddur Sigurdsson, Eric Mill, Gabriel Barros, KevinSheedy, Aleksey Smolenchuk, Ed Morley, Blaine Bublitz, Andrey Fedorov, Daijiro Wachi, Luc Thevenard, Aria Stewart, Charlie Rudolph, Vladimir Rutsky, Isaac Murchie, Marcin Wosinek, David Marr, Bryan English, Anthony Zotti, Karl Horky, Jordan Harband, Gu\u00f0laugur Stef\u00e1n Egilsson, Helge Skogly Holm, Peter A. Shevtsov, Alain Kalker, Bryant Williams, Jonas Weber, Tim Whidden, Andreas, Karolis Narkevicius, Adrian Lynch, Richard Littauer, Oli Evans, Matt Brennan, Jeff Barczewski, Danny Fritz, Takaya Kobayashi, Ra'Shaun Stovall, Julien Meddah, Michiel Sikma, Jakob Krigovsky, Charmander, Erik Wienhold, James Butler, Kevin Kragenbrink, Arnaud Rinquin, Mike MacCana, Antti Mattila, laiso, Matt Zorn, Kyle Mitchell, Jeremiah Senkpiel, Michael Klein, Simen Bekkhus, Victor, thefourtheye, Clay Carpenter, bangbang93, Nick Malaguti, Cedric Nelson, Kat March\u00e1n, Andrew, Eduardo Pinho, Rachel Hutchison, Ryan Temple, Eugene Sharygin, Nick Heiner, James Talmage, jane arc, Joseph Dykstra, Joshua Egan, Thomas Cort, Thaddee Tyl, Steve Klabnik, Andrew Murray, Stephan B\u00f6nnemann, Kyle M. Tarplee, Derek Peterson, Greg Whiteley, murgatroid99, isaacs, othiym23, iarna, zkat",
+    "primary_programming_language": "JavaScript",
     "other_license_expressions": [
       {
         "value": "zlib",
@@ -3223,10 +3223,6 @@
       {
         "value": "lgpl-2.1-plus",
         "count": 3
-      },
-      {
-        "value": "artistic-2.0",
-        "count": 1
       },
       {
         "value": "boost-1.0",
@@ -3300,6 +3296,10 @@
       }
     ],
     "other_programming_languages": [
+      {
+        "value": "C",
+        "count": 12
+      },
       {
         "value": "Java",
         "count": 7

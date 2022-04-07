@@ -36,7 +36,7 @@
         "conflicting_license_categories": true,
         "ambigous_compound_licensing": true
       },
-      "declared_holders": [],
+      "declared_holder": "",
       "primary_programming_language": "C",
       "other_license_expressions": [
         {
