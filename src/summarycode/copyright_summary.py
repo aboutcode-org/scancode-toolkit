@@ -544,8 +544,10 @@ COMMON_NAMES = {
 
     'borland': 'Borland Corp.',
 
-    'microsoft': 'Microsoft Corp.',
-    'microsoftcorp': 'Microsoft Corp.',
+    'microsoft': 'Microsoft',
+    'microsoftcorp': 'Microsoft',
+    'microsoftinc': 'Microsoft',
+    'microsoftcorporation': 'Microsoft',
 
     'google': 'Google Inc.',
     'googlellc': 'Google Inc.',
