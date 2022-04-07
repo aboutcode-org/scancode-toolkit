@@ -616,6 +616,7 @@
   "source_packages": [
     "pkg:maven/commons-lang/commons-lang@2.4?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -628,8 +629,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/commons-lang/commons-lang@2.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-lang/commons-lang/2.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/commons-lang/commons-lang@2.4"
 }

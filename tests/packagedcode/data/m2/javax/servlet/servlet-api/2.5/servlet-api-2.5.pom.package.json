@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/javax.servlet/servlet-api@2.5?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/javax.servlet/servlet-api@2.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/javax.servlet/servlet-api@2.5"
 }

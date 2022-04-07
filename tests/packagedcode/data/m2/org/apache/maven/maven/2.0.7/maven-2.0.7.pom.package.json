@@ -27,6 +27,7 @@
   "source_packages": [
     "pkg:maven/org.apache.maven/maven@2.0.7?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -255,8 +256,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.apache.maven/maven@2.0.7",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.7/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.apache.maven/maven@2.0.7"
 }

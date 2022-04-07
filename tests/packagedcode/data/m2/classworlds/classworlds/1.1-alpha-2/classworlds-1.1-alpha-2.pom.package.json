@@ -56,10 +56,12 @@
   "source_packages": [
     "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/",
   "repository_download_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2"
 }

@@ -69,12 +69,12 @@ def get_source(line):
 
 # mapping of parser callable by its field name
 PARSER_BY_NAME = {
-    'name': partial(get_value, name='name', match=parse_name),
-    'version': partial(get_value, name='version', match=parse_version),
-    'license': partial(get_value, name='license', match=parse_license),
-    'summary': partial(get_value, name='summary', match=parse_summary),
-    'description': partial(get_value, name='description', match=parse_description),
-    'homepage': partial(get_value, name='homepage', match=parse_homepage),
+    'name': partial(get_value, name='name', matcher=parse_name),
+    'version': partial(get_value, name='version', matcher=parse_version),
+    'license': partial(get_value, name='license', matcher=parse_license),
+    'summary': partial(get_value, name='summary', matcher=parse_summary),
+    'description': partial(get_value, name='description', matcher=parse_description),
+    'homepage': partial(get_value, name='homepage', matcher=parse_homepage),
     'source': get_source,
 }
 
@@ -92,11 +92,11 @@ def parse_spec(location, package_type):
             line = pre_process(line)
 
             for attribute_name, parser in PARSER_BY_NAME.items():
-                parsed = parser(line)
+                parsed = parser(line=line)
                 if parsed:
                     spec_data[attribute_name] = parsed
 
-            match = parse_description(line)
+            match = parse_description.match(line)
             if match:
                 if location.endswith('.gemspec'):
                     # FIXME: description can be in single or multi-lines
@@ -146,14 +146,15 @@ def get_dependent_packages(location, package_type):
         }
 
     dependencies = GemfileParser(location).parse()
-    for deps in dependencies.values():
-        for dep in deps:
-            scope = dep['scope']
-            flags = flags_by_scope.get(scope, 'runtime')
+
+    for key in dependencies:
+        depends = dependencies.get(key, []) or []
+        for dep in depends:
+            flags = flags_by_scope.get(key, 'runtime')
             yield models.DependentPackage(
-                purl=PackageURL(type=package_type, name=dep['name']),
-                extracted_requirement=', '.join(dep['requirement']),
-                scope=scope,
+                purl=PackageURL(type=package_type, name=dep.name).to_string(),
+                extracted_requirement=', '.join(dep.requirement),
+                scope=key,
                 is_resolved=False,
                 **flags,
             )

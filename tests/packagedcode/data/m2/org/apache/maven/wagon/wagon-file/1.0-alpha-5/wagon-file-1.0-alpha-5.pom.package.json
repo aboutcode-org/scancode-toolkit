@@ -63,6 +63,7 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -120,8 +121,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/wagon-file-1.0-alpha-5.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/wagon-file-1.0-alpha-5.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/wagon-file-1.0-alpha-5.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5"
 }

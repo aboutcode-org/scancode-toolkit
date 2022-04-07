@@ -27,6 +27,7 @@
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/project@6.1-SNAPSHOT?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -102,8 +103,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.mortbay.jetty/project@6.1-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/project-6.1-SNAPSHOT.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/project-6.1-SNAPSHOT.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/project-6.1-SNAPSHOT.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.mortbay.jetty/project@6.1-SNAPSHOT"
 }

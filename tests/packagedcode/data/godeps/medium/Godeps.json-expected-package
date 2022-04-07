@@ -1,27 +1,48 @@
-{
-  "import_path": "bitbucket.org/ehazlett/dialogue/cli",
-  "go_version": "go1.2.1",
-  "packages": [],
-  "dependencies": [
-    {
-      "import_path": "code.google.com/p/go.crypto/ssh/terminal",
-      "revision": "fe6c00a82e550c3be0c18b3ed05211c9c2ec8106",
-      "comment": "null-205"
-    },
-    {
-      "import_path": "github.com/Sirupsen/logrus",
-      "revision": "5568a01db73b24230945a9ccd6813fac482e226f",
-      "comment": "v0.1.1-5-g5568a01"
-    },
-    {
-      "import_path": "github.com/codegangsta/cli",
-      "revision": "820deefc9031d101f085ef773425fc6ca7a5363e",
-      "comment": "1.0.0-65-g820deef"
-    },
-    {
-      "import_path": "github.com/howeyc/gopass",
-      "revision": "e8c0d21f59eb7f01086a39e47e05568acc9bb736",
-      "comment": null
-    }
-  ]
-}
+[
+  {
+    "type": "golang",
+    "namespace": "github.com/goincremental",
+    "name": "dal",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/labix.org/v2/mgo",
+        "extracted_requirement": "gustavo@niemeyer.net-20140501184651-975yyw9ipld92pji",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/github.com/goincremental/dal"
+  }
+]

@@ -111,7 +111,7 @@ class PodspecHandler(BasePodHandler):
 
         name = podspec.get('name')
         version = podspec.get('version')
-        homepage_url = podspec.get('homepage_url')
+        homepage_url = podspec.get('homepage')
         declared_license = podspec.get('license')
         description = utils.build_description(
             summary=podspec.get('summary'),
@@ -380,7 +380,7 @@ def party_mapper(author, email):
 
 person_parser = re.compile(
     r'^(?P<name>[\w\s(),-_.,]+)'
-    r'=>'
+    r'[\s]=[>\s]?'
     r'(?P<email>[\S+]+$)'
 ).match
 

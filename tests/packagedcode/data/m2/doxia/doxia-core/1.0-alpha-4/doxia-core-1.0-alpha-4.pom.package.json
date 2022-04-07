@@ -42,6 +42,7 @@
   "source_packages": [
     "pkg:maven/doxia/doxia-core@1.0-alpha-4?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -81,8 +82,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/doxia/doxia-core@1.0-alpha-4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/doxia/doxia-core/1.0-alpha-4/",
   "repository_download_url": "https://repo1.maven.org/maven2/doxia/doxia-core/1.0-alpha-4/doxia-core-1.0-alpha-4.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/doxia/doxia-core/1.0-alpha-4/doxia-core-1.0-alpha-4.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/doxia/doxia-core/1.0-alpha-4/doxia-core-1.0-alpha-4.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/doxia/doxia-core@1.0-alpha-4"
 }

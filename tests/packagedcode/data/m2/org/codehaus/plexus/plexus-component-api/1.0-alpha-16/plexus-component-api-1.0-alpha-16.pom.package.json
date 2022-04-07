@@ -27,6 +27,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-16?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -39,8 +40,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-16",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-16"
 }

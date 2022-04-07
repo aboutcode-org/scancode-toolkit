@@ -28,11 +28,13 @@ class TestGodeps(FileBasedTesting):
         "Deps": [
                 {
                     "ImportPath": "code.google.com/p/go-netrc/netrc",
-                    "Rev": "28676070ab99"
+                    "Rev": "28676070ab99",
+                    "Comment": null
                 },
                 {
                     "ImportPath": "github.com/kr/binarydist",
-                    "Rev": "3380ade90f8b0dfa3e363fd7d7e941fa857d0d13"
+                    "Rev": "3380ade90f8b0dfa3e363fd7d7e941fa857d0d13",
+                    "Comment": null
                 }
             ]
         }'''
@@ -79,13 +81,15 @@ class TestGodeps(FileBasedTesting):
         expected_package_file = f'{test_file}-expected-package'
         expected_loc = self.get_test_loc(expected_package_file)
         results = list(godeps.GodepsHandler.parse(location=test_loc))
+        results_mapping = [r.to_dict() for r in results]
 
         if regen:
             with open(expected_loc, 'w') as ex:
-                json.dump(results, ex, indent=2)
+                json.dump(results_mapping, ex, indent=2)
         with io.open(expected_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
-        assert sorted(results.items()) == sorted(expected.items())
+
+        assert results_mapping == expected
 
     def test_godeps_godeps_godeps_json_comments(self):
         self.check_parse('godeps/comments/Godeps.json')
@@ -112,7 +116,7 @@ class TestGodeps(FileBasedTesting):
         self.check_parse('godeps/package2/Godeps.json')
 
     def test_godeps_godeps_godeps_json_package3(self):
-        self.check_parse('godeps/-package3/Godeps.json')
+        self.check_parse('godeps/package3/Godeps.json')
 
     def test_godeps_godeps_godeps_json_simple(self):
         self.check_parse('godeps/simple/Godeps.json')

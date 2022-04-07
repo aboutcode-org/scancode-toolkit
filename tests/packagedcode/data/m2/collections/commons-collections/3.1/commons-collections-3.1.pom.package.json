@@ -469,6 +469,7 @@
   "source_packages": [
     "pkg:maven/commons-collections/commons-collections@3.1?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -481,8 +482,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/commons-collections/commons-collections@3.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/commons-collections/commons-collections@3.1"
 }

@@ -68,7 +68,7 @@ def get_installed_dotnet_versions_from_hive(
     The logic to retrieve installed .NET version has been outlined here:
     https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
     """
-    registry_tree = get_registry_tree(location, registry_path)
+    registry_tree = get_registry_tree(registry_location=location, registry_path=registry_path)
     yield from get_installed_dotnet_versions_from_regtree(
         registry_tree=registry_tree,
         datasource_id=datasource_id,
@@ -129,7 +129,7 @@ def get_installed_windows_programs_from_hive(
     If ``registry_path`` is provided, then we will load Registry entries
     starting from ``registry_path``
     """
-    registry_tree = get_registry_tree(location=location, registry_path=registry_path)
+    registry_tree = get_registry_tree(registry_location=location, registry_path=registry_path)
     yield from get_installed_windows_programs_from_regtree(
         registry_tree=registry_tree,
         datasource_id=datasource_id,

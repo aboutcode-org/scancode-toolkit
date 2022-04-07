@@ -236,7 +236,7 @@ def parse_gosum(location):
     gosums = []
 
     for line in lines:
-        line = line.replace('*/go.mod', '')
+        line = line.replace('/go.mod', '')
         parsed_dep = get_dependency(line)
 
         ns_name = parsed_dep.group('ns_name')

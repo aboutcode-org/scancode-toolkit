@@ -35,7 +35,7 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def parse_rpm_xmlish(location):
+def parse_rpm_xmlish(location, datasource_id, package_type):
     """
     Yield RpmPackage(s) from a RPM XML'ish file at `location`. This is a file
     created with the rpm CLI with the xml query option.
@@ -53,7 +53,7 @@ def parse_rpm_xmlish(location):
 
     for rpm_raw_tags in collect_rpms(rpms):
         tags = collect_tags(rpm_raw_tags)
-        yield build_package(tags)
+        yield build_package(tags, datasource_id, package_type)
 
 
 def collect_rpms(text):
@@ -128,14 +128,19 @@ def collect_tags(raw_tags):
         yield name, value_type, value
 
 
-def build_package(rpm_tags, datasource_id, package_type, package_namespace):
+def build_package(rpm_tags, datasource_id, package_type, package_namespace=None):
     """
     Return a PackageData object from an ``rpm_tags`` iterable of (name,
     value_type, value) tuples.
     """
 
     # mapping of real Package field name -> value converted to expected format
-    converted = {}
+    converted = {
+        'datasource_id': datasource_id,
+        'type': package_type,
+        'namespace': package_namespace
+    }
+
     for name, value_type, value in rpm_tags:
         handler = RPM_TAG_HANDLER_BY_NAME.get(name)
         # FIXME: we need to handle EVRA correctly

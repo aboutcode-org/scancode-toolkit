@@ -140,6 +140,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus@1.0.9?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -152,8 +153,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.9",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.9"
 }

@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/asm/asm@3.0?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/asm/asm@3.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm/3.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/asm/asm/3.0/asm-3.0.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/asm/asm/3.0/asm-3.0.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/asm/asm/3.0/asm-3.0.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/asm/asm@3.0"
 }

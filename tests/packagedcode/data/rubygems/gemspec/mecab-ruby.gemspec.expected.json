@@ -7,7 +7,7 @@
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
-    "description": "Ruby bindings for MeCab, a morphological analyzer.",
+    "description": "Ruby bindings for MeCab.\nRuby bindings for MeCab, a morphological analyzer.",
     "release_date": null,
     "parties": [
       {
@@ -19,7 +19,7 @@
       },
       {
         "type": "person",
-        "role": "email",
+        "role": "author",
         "name": null,
         "email": "taku@chasen.org",
         "url": null
@@ -27,7 +27,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://mecab.sourceforge.net/",
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/mecab-ruby-0.99.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -41,11 +41,13 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/mecab-ruby@0.99",
     "repository_homepage_url": "https://rubygems.org/gems/mecab-ruby/versions/0.99",
     "repository_download_url": "https://rubygems.org/downloads/mecab-ruby-0.99.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mecab-ruby/versions/0.99.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mecab-ruby/versions/0.99.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/mecab-ruby@0.99"
   }
 ]

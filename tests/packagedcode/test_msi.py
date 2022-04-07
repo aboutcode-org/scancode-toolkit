@@ -43,11 +43,11 @@ class TestMsi(PackageTester):
 
     def test_msi_parse_msiinfo_suminfo_output(self):
         test_file = self.get_test_loc('msi/python-add-to-path-msiinfo-results.txt')
-        expected_loc = self.get_test_loc('msi/python-add-to-path-msiinfo-results.expected')
         with open(test_file) as f:
             msiinfo_results = f.read()
         result = parse_msiinfo_suminfo_output(msiinfo_results)
-        self.assertEqual(result, self.python_3_9_5_add_to_path_results)
+        print(result)
+        assert result == self.python_3_9_5_add_to_path_results
 
     def test_msi_create_package_data_from_msiinfo_results(self):
         result = create_package_data_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
@@ -65,4 +65,4 @@ class TestMsi(PackageTester):
             keywords='Installer',
             extra_data=self.python_3_9_5_add_to_path_results
         )
-        self.assertEqual(result, expected)
+        self.assertEqual(result.to_dict(), expected.to_dict())

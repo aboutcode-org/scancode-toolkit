@@ -112,6 +112,7 @@
   "source_packages": [
     "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -160,8 +161,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/commons-logging/commons-logging@1.1.1"
 }

@@ -36,6 +36,7 @@
     ],
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -138,9 +139,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/dependabot-omnibus@0.87.15",
     "repository_homepage_url": "https://rubygems.org/gems/dependabot-omnibus/versions/0.87.15",
     "repository_download_url": "https://rubygems.org/downloads/dependabot-omnibus-0.87.15.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/dependabot-omnibus/versions/0.87.15.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/dependabot-omnibus/versions/0.87.15.json",
+    "datasource_id": "gem_archive",
+    "purl": "pkg:gem/dependabot-omnibus@0.87.15"
   }
 ]

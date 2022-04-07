@@ -1,27 +1,75 @@
-{
-  "import_path": "bitbucket.org/ehazlett/dialogue/cli",
-  "go_version": "go1.2.1",
-  "packages": [],
-  "dependencies": [
-    {
-      "import_path": "code.google.com/p/go.crypto/ssh/terminal",
-      "revision": "fe6c00a82e550c3be0c18b3ed05211c9c2ec8106",
-      "comment": "null-205"
-    },
-    {
-      "import_path": "github.com/Sirupsen/logrus",
-      "revision": "5568a01db73b24230945a9ccd6813fac482e226f",
-      "comment": "v0.1.1-5-g5568a01"
-    },
-    {
-      "import_path": "github.com/codegangsta/cli",
-      "revision": "820deefc9031d101f085ef773425fc6ca7a5363e",
-      "comment": "1.0.0-65-g820deef"
-    },
-    {
-      "import_path": "github.com/howeyc/gopass",
-      "revision": "e8c0d21f59eb7f01086a39e47e05568acc9bb736",
-      "comment": null
-    }
-  ]
-}
+[
+  {
+    "type": "golang",
+    "namespace": "bitbucket.org/ehazlett/dialogue",
+    "name": "cli",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/code.google.com/p/go.crypto/ssh/terminal",
+        "extracted_requirement": "fe6c00a82e550c3be0c18b3ed05211c9c2ec8106",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/Sirupsen/logrus",
+        "extracted_requirement": "5568a01db73b24230945a9ccd6813fac482e226f",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/codegangsta/cli",
+        "extracted_requirement": "820deefc9031d101f085ef773425fc6ca7a5363e",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/howeyc/gopass",
+        "extracted_requirement": "e8c0d21f59eb7f01086a39e47e05568acc9bb736",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/bitbucket.org/ehazlett/dialogue/cli"
+  }
+]

@@ -116,7 +116,7 @@ def create_test_function(test_loc, test_name, regen=REGEN_TEST_FIXTURES):
         expected_json_loc = loc + '.json'
         packages = list(rubygems.GemArchiveHandler.parse(location=loc))
         package = packages[0]
-        package.license_expression = package.compute_normalized_license()
+        package.license_expression = rubygems.GemArchiveHandler.compute_normalized_license(package)
         package = [package.to_dict()]
         if regen:
             with io.open(expected_json_loc, 'w') as ex:

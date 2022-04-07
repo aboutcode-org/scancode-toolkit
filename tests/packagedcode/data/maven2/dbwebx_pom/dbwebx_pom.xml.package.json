@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT"
 }

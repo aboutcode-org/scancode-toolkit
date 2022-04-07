@@ -47,8 +47,8 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": null,
-    "code_view_url": null,
+    "bug_tracking_url": "https://github.com/daltoniam/Starscream/issues/",
+    "code_view_url": "https://github.com/daltoniam/Starscream/tree/4.0.3",
     "vcs_url": "https://github.com/daltoniam/Starscream.git",
     "copyright": null,
     "license_expression": "apache-2.0",
@@ -57,11 +57,13 @@
     "source_packages": [
       "https://github.com/daltoniam/Starscream.git"
     ],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pods/Starscream@4.0.3",
     "repository_homepage_url": "https://cocoapods.org/pods/Starscream",
-    "repository_download_url": "https://github.com/daltoniam/Starscream/archive/4.0.3.zip",
-    "api_data_url": null
+    "repository_download_url": "https://github.com/daltoniam/Starscream/archive/refs/tags/4.0.3.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/2/f/Starscream/4.0.3/Starscream.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/Starscream@4.0.3"
   }
 ]

@@ -77,6 +77,7 @@
   "source_packages": [
     "pkg:maven/commons-el/commons-el@1.0?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -107,8 +108,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/commons-el/commons-el@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-el/commons-el/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/commons-el/commons-el@1.0"
 }

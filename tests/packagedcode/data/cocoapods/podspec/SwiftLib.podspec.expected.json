@@ -7,7 +7,7 @@
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Objective-C",
-    "description": "A CocoaPods library written in Swift\n This CocoaPods library helps you perform calculation.",
+    "description": "A CocoaPods library written in Swift\nThis CocoaPods library helps you perform calculation.",
     "release_date": null,
     "parties": [
       {
@@ -33,21 +33,23 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": null,
-    "code_view_url": null,
+    "bug_tracking_url": "https://github.com/alizainprasla/swiftlib/issues/",
+    "code_view_url": "https://github.com/alizainprasla/swiftlib/tree/0.0.1",
     "vcs_url": "https://github.com/alizainprasla/swiftlib.git",
     "copyright": null,
     "license_expression": "mit AND unknown",
-    "declared_license": ":type => MIT, :file => LICENSE",
+    "declared_license": ":type = MIT, :file = LICENSE",
     "notice_text": null,
     "source_packages": [
       "https://github.com/alizainprasla/swiftlib.git"
     ],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pods/SwiftLib@0.0.1",
     "repository_homepage_url": "https://cocoapods.org/pods/SwiftLib",
-    "repository_download_url": "https://github.com/alizainprasla/swiftlib/archive/0.0.1.zip",
-    "api_data_url": null
+    "repository_download_url": "https://github.com/alizainprasla/swiftlib/archive/refs/tags/0.0.1.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/9/1/SwiftLib/0.0.1/SwiftLib.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/SwiftLib@0.0.1"
   }
 ]

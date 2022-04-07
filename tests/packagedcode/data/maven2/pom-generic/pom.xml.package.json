@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT"
 }

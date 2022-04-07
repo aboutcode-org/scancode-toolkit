@@ -25,7 +25,6 @@ same format. Godeps (and glide, etc.) is mostly legacy today and replaced by Go
 modules.
 """
 # FIXME: update to use the latest vendor conventions.
-# TODO: Use attrs
 # consider other legacy format?
 # https://github.com/golang/dep/blob/master/Gopkg.lock
 # https://github.com/golang/dep/blob/master/Gopkg.toml
@@ -81,7 +80,7 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
 
 
 @attr.s
-class Dep(namedtuple('Dep', 'import_path revision comment')):
+class Dep:
     import_path = datautils.String()
     revision = datautils.String()
     comment = datautils.String()

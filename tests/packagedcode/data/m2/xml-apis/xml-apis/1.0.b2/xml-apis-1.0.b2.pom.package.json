@@ -42,10 +42,12 @@
   "source_packages": [
     "pkg:maven/xml-apis/xml-apis@1.0.b2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/",
   "repository_download_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2"
 }

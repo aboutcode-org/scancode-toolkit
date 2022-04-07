@@ -40,28 +40,28 @@
       },
       {
         "type": "person",
-        "role": "email",
+        "role": "author",
         "name": null,
         "email": "aaron@tenderlovemaking.com",
         "url": null
       },
       {
         "type": "person",
-        "role": "email",
+        "role": "author",
         "name": null,
         "email": " bryan@brynary.com",
         "url": null
       },
       {
         "type": "person",
-        "role": "email",
+        "role": "author",
         "name": null,
         "email": " miloops@gmail.com",
         "url": null
       },
       {
         "type": "person",
-        "role": "email",
+        "role": "author",
         "name": null,
         "email": " nick@example.org",
         "url": null
@@ -69,7 +69,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://github.com/rails/arel",
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/arel-2.0.7.beta.20110429111451.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -83,12 +83,31 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:gem/minitest",
         "extracted_requirement": ">= 2.0.2",
-        "scope": "dependencies",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/hoe",
+        "extracted_requirement": ">= 2.9.1",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/minitest",
+        "extracted_requirement": ">= 2.0.2",
+        "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
@@ -97,16 +116,35 @@
       {
         "purl": "pkg:gem/hoe",
         "extracted_requirement": ">= 2.9.1",
-        "scope": "dependencies",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/minitest",
+        "extracted_requirement": ">= 2.0.2",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:gem/hoe",
+        "extracted_requirement": ">= 2.9.1",
+        "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/arel@2.0.7.beta.20110429111451",
     "repository_homepage_url": "https://rubygems.org/gems/arel/versions/2.0.7.beta.20110429111451",
     "repository_download_url": "https://rubygems.org/downloads/arel-2.0.7.beta.20110429111451.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/2.0.7.beta.20110429111451.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/2.0.7.beta.20110429111451.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/arel@2.0.7.beta.20110429111451"
   }
 ]

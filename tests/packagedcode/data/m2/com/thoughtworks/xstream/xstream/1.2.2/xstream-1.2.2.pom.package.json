@@ -27,6 +27,7 @@
   "source_packages": [
     "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -165,8 +166,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/xstream-1.2.2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/xstream-1.2.2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/xstream-1.2.2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2"
 }

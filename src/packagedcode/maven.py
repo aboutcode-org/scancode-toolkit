@@ -72,7 +72,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
         Return True if the file at location is highly likely to be a POM.
         """
         if super().is_datafile(location, filetypes=filetypes):
-            return
+            return True
 
         T = contenttype.get_type(location)
         if not T.is_text:
@@ -95,7 +95,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
                     return True
 
     @classmethod
-    def parse(cls, location, base_url='http://repo1.maven.org/maven2'):
+    def parse(cls, location, base_url='https://repo1.maven.org/maven2'):
         return parse(
             location=location,
             datasource_id=cls.datasource_id,
@@ -242,7 +242,7 @@ def build_url(
     artifact_id,
     version,
     filename=None,
-    base_url='http://repo1.maven.org/maven2',
+    base_url='https://repo1.maven.org/maven2',
 ):
     """
     Return a download URL for a Maven artifact built from its POM "coordinates".
@@ -302,11 +302,11 @@ class ParentPom(artifact.Artifact):
         Return a mapping representing this POM
         """
         return {
-            'group_id', self.group_id,
-            'artifact_id', self.artifact_id,
-            'version', str(self.version) if self.version else None,
-            'classifier', self.classifier,
-            'type', self.type,
+            'group_id': self.group_id,
+            'artifact_id': self.artifact_id,
+            'version': str(self.version) if self.version else None,
+            'classifier': self.classifier,
+            'type': self.type,
         }
 
 
@@ -908,7 +908,7 @@ def get_maven_pom(location=None):
     if not hbpa:
         if TRACE:
             logger.debug(f'get_maven_pom: has_basic_pom_attributes: {hbpa}')
-        return {}
+        return
     return pom
 
 
@@ -1033,7 +1033,7 @@ def get_parties(pom):
     return parties
 
 
-def get_urls(namespace, name, version, qualifiers, base_url='http://repo1.maven.org/maven2'):
+def get_urls(namespace, name, version, qualifiers, base_url='https://repo1.maven.org/maven2'):
     """
     Return a mapping of URLs.
     """
@@ -1089,7 +1089,7 @@ def parse(
     datasource_id,
     package_type,
     primary_language,
-    base_url='http://repo1.maven.org/maven2',
+    base_url='https://repo1.maven.org/maven2',
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
@@ -1153,7 +1153,6 @@ def parse(
 
     scm = pom.scm or {}
     urls = build_vcs_and_code_view_urls(scm)
-    print(urls)
     urls.update(get_urls(
         namespace=group_id,
         name=artifact_id, version=version,
@@ -1206,7 +1205,7 @@ def build_vcs_and_code_view_urls(scm):
         if code_view_url:
             # we can craft a vcs_url in some cases
             vcs_url = code_view_url
-        return vcs_url, code_view_url
+        return dict(vcs_url=vcs_url, code_view_url=code_view_url,)
 
     vcs_url = parse_scm_connection(vcs_url)
 

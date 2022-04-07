@@ -42,10 +42,12 @@
   "source_packages": [
     "pkg:maven/jtidy/jtidy@4aug2000r7-dev?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev",
   "repository_homepage_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/",
   "repository_download_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev"
 }

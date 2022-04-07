@@ -34,6 +34,7 @@
   "source_packages": [
     "pkg:maven/httpunit/httpunit@1.6.2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -109,8 +110,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/httpunit/httpunit@1.6.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/httpunit-1.6.2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/httpunit-1.6.2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/httpunit-1.6.2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/httpunit/httpunit@1.6.2"
 }

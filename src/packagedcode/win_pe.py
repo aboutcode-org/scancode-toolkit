@@ -147,11 +147,6 @@ def pe_info(location):
     if not location:
         return {}
 
-    T = contenttype.get_type(location)
-
-    if not T.is_winexe:
-        return {}
-
     result = dict([(k, None,) for k in PE_INFO_KEYS])
     extra_data = result['extra_data'] = {}
 
@@ -267,6 +262,18 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
     )
     description = 'Windows Portable Executable metadata'
     documentation_url = 'https://en.wikipedia.org/wiki/Portable_Executable'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        """
+        Return True if the file at location is highly likely to be a POM.
+        """
+        if super().is_datafile(location, filetypes=filetypes):
+            return True
+
+        T = contenttype.get_type(location)
+        if T.is_winexe:
+            return True
 
     @classmethod
     def parse(cls, location):

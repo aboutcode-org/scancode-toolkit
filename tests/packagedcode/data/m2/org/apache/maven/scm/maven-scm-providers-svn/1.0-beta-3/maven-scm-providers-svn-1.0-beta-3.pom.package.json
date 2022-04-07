@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.scm/maven-scm-providers-svn@1.0-beta-3?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/org.apache.maven.scm/maven-scm-providers-svn@1.0-beta-3",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/maven-scm-providers-svn-1.0-beta-3.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/maven-scm-providers-svn-1.0-beta-3.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/maven-scm-providers-svn-1.0-beta-3.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.apache.maven.scm/maven-scm-providers-svn@1.0-beta-3"
 }

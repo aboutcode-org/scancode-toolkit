@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.2"
 }

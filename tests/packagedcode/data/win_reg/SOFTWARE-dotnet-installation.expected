@@ -2,7 +2,7 @@
   {
     "type": "windows-program",
     "namespace": null,
-    "name": "Microsoft .NET Framework",
+    "name": "microsoft-dot-net-framework",
     "version": "4.8.04084",
     "qualifiers": {},
     "subpath": null,
@@ -26,14 +26,23 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
-    "file_references": [],
-    "extra_data": {
-      "install_location": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\"
-    },
+    "file_references": [
+      {
+        "path": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
+    "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:windows-program/Microsoft%20.NET%20Framework@4.8.04084",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "purl": "pkg:windows-program/microsoft-dot-net-framework@4.8.04084"
   }
 ]

@@ -126,9 +126,11 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
     def parse(cls, location):
         # dump and parse the rpmdb to XMLish
         xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rpmdb_loc(location)
-        package_data = rpm_installed.parse_rpm_xmlish(xmlish_loc)
-        package_data.datasource_id = cls.datasource_id
-        package_data.type = cls.default_package_type
+        package_data = rpm_installed.parse_rpm_xmlish(
+            location=xmlish_loc,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
         # TODO: package_data.namespace = cls.default_package_namespace
         return package_data
 

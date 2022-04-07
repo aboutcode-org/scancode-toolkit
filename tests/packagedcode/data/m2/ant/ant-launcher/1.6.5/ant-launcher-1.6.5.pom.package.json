@@ -27,10 +27,12 @@
   "source_packages": [
     "pkg:maven/ant/ant-launcher@1.6.5?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/ant/ant-launcher@1.6.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/ant/ant-launcher/1.6.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/ant/ant-launcher/1.6.5/ant-launcher-1.6.5.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/ant/ant-launcher/1.6.5/ant-launcher-1.6.5.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/ant/ant-launcher/1.6.5/ant-launcher-1.6.5.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/ant/ant-launcher@1.6.5"
 }

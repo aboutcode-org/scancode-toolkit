@@ -315,10 +315,12 @@
   "source_packages": [
     "pkg:maven/org.apache.shale/shale-master@2?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/org.apache.shale/shale-master@2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/shale/shale-master/2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/shale/shale-master/2/shale-master-2.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/shale/shale-master/2/shale-master-2.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/shale/shale-master/2/shale-master-2.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.apache.shale/shale-master@2"
 }

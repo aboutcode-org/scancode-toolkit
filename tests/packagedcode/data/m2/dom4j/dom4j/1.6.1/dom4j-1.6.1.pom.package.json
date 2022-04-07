@@ -140,6 +140,7 @@
   "source_packages": [
     "pkg:maven/dom4j/dom4j@1.6.1?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -251,8 +252,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/dom4j/dom4j@1.6.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/dom4j/dom4j@1.6.1"
 }

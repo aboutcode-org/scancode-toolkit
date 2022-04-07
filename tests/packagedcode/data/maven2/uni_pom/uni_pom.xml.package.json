@@ -27,6 +27,7 @@
   "source_packages": [
     "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -75,8 +76,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT"
 }

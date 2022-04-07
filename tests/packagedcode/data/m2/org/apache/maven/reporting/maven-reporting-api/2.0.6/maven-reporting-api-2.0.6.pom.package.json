@@ -35,6 +35,7 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.6?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -47,8 +48,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.6",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.6"
 }

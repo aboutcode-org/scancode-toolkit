@@ -34,10 +34,12 @@
   "source_packages": [
     "pkg:maven/mysql/mysql-connector-java@5.0.4?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/mysql/mysql-connector-java@5.0.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/mysql-connector-java-5.0.4.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/mysql-connector-java-5.0.4.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/mysql-connector-java-5.0.4.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/mysql/mysql-connector-java@5.0.4"
 }

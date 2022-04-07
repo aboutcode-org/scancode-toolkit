@@ -899,7 +899,7 @@ def m_maintainer_handler(value, **kwargs):
             name=name,
             email=email,
         )
-        parties.append(maintainer)
+        parties.append(maintainer.to_dict())
     return {'parties': parties}
 
 
@@ -995,7 +995,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
             is_resolved=is_resolved,
         )
         if dependency not in dependencies:
-            dependencies.append(dependency)
+            dependencies.append(dependency.to_dict())
 
     return {'dependencies': dependencies}
 
@@ -1047,7 +1047,7 @@ def R_filename_handler(value, current_dir, file_references=None, **kwargs):
     file_references = file_references[:] if file_references else []
 
     current_file = models.FileReference(path=posixpath.join(current_dir, value))
-    file_references.append(current_file)
+    file_references.append(current_file.to_dict())
     return {'current_file': current_file, 'file_references': file_references}
 
 

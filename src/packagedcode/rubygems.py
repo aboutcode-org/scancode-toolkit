@@ -143,7 +143,8 @@ class GemspecHandler(BaseGemHandler):
 
         name = gemspec.get('name')
         version = gemspec.get('version')
-        homepage_url = gemspec.get('homepage_url')
+        homepage_url = gemspec.get('homepage')
+
         description = build_description(
             summary=gemspec.get('summary'),
             description=gemspec.get('description'),
@@ -158,6 +159,8 @@ class GemspecHandler(BaseGemHandler):
         parties = get_parties(gemspec)
         dependencies = gemspec.get('dependencies') or []
 
+        urls = get_urls(name=name, version=version)
+
         package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -168,7 +171,8 @@ class GemspecHandler(BaseGemHandler):
             description=description,
             declared_license=declared_license,
             primary_language=cls.default_primary_language,
-            dependencies=dependencies
+            dependencies=dependencies,
+            **urls
         )
 
         yield package_data
@@ -285,6 +289,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                         is_resolved=True,
                     )
                 )
+            urls = get_urls(gem.name, gem.version)
 
             yield models.PackageData(
                 datasource_id=cls.datasource_id,
@@ -292,7 +297,8 @@ class GemfileLockHandler(BaseGemProjectHandler):
                 type=cls.default_package_type,
                 name=gem.name,
                 version=gem.version,
-                dependencies=deps
+                dependencies=deps,
+                **urls
             )
 
 
@@ -487,7 +493,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
     package_data = models.PackageData(
         datasource_id=datasource_id,
         type=GemArchiveHandler.default_package_type,
-        primary_languages=GemArchiveHandler.default_primary_language,
+        primary_language=GemArchiveHandler.default_primary_language,
         name=name,
         version=version,
         qualifiers=qualifiers,
@@ -529,7 +535,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
     #   "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
 
     if not package_data.homepage_url:
-        package_data.homepage_url = package_data.repository_homepage_url()
+        package_data.homepage_url = rubygems_homepage_url(name, version)
 
     return package_data
 
@@ -709,14 +715,20 @@ LICENSES_MAPPING = {
 }
 
 
-def party_mapper(names, role):
+def party_mapper(role, names=[], emails=[]):
     """
     Yields Party with ``role`` objects from a ``names`` list of string.
     """
-    return (
-        models.Party(type=models.party_person, name=name, role=role)
-        for name in names
-    )
+    if names:
+        return (
+            models.Party(type=models.party_person, name=name, role=role)
+            for name in names
+        )
+    elif emails:
+        return (
+            models.Party(type=models.party_person, email=email, role=role)
+            for email in emails
+        )
 
 
 def get_parties(gem_data):
@@ -725,10 +737,10 @@ def get_parties(gem_data):
     """
     parties = []
     authors = gem_data.get('author') or []
-    parties.extend(party_mapper(authors, role='author'))
+    parties.extend(party_mapper(names=authors, role='author'))
     # FIXME: emails is NOT a party
     emails = gem_data.get('email') or []
-    parties.extend(party_mapper(emails, role='email'))
+    parties.extend(party_mapper(emails=emails, role='author'))
     return parties
 
 

@@ -26,6 +26,7 @@
     "declared_license": null,
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -38,9 +39,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:golang/github.com/ua-parser/uap-go",
     "repository_homepage_url": "https://pkg.go.dev/github.com/ua-parser/uap-go",
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "go_mod",
+    "purl": "pkg:golang/github.com/ua-parser/uap-go"
   }
 ]
