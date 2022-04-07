@@ -50,29 +50,29 @@ class TestPackageAndDependency(PackageTester):
         expected_file = self.get_test_loc('instance/python-manifests-click-scanned-result.json')
 
         with io.open(input_file, encoding='utf-8') as res:
-            manifests = json.load(res)
+            packages_data = json.load(res)
 
         package = None
-        for pkg_data in manifests:
+        for package_data in packages_data:
             if not package:
-                package = models.Package.from_package_data(pkg_data, datafile_path='main')
+                package = models.Package.from_package_data(package_data, datafile_path='main')
             else:
-                package.update(pkg_data, datafile_path='foo/bar')
+                package.update(package_data, datafile_path='click')
 
-        self.check_package_data(package, expected_file, regen)
+        self.check_package_data(package.to_dict(), expected_file, regen)
 
     def test_package_data_merge_with_dependencies(self, regen=REGEN_TEST_FIXTURES):
         input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
         expected_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned-result.json')
 
         with io.open(input_file, encoding='utf-8') as res:
-            manifests = json.load(res)
+            packages_data = json.load(res)
 
         package = None
-        for pkg_data in manifests:
+        for package_data in packages_data:
             if not package:
-                package = models.Package.from_package_data(pkg_data, datafile_path='main')
+                package = models.Package.from_package_data(package_data, datafile_path='main')
             else:
-                package.update(pkg_data, datafile_path='foo/bar')
+                package.update(package_data, datafile_path='atomicwrites')
 
-        self.check_package_data(package, expected_file, regen)
+        self.check_package_data(package.to_dict(), expected_file, regen)
