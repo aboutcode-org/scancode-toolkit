@@ -91,7 +91,7 @@ class ScanSummary(PostScanPlugin):
         ]
 
         # Determine declared license expression, declared holder, and primary language from Package data
-        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data)
+        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data, programming_language_summary)
 
         if declared_license_expression:
             scoring_elements, _ = compute_license_score(codebase)
@@ -381,48 +381,61 @@ def get_primary_language(programming_language_summary):
     return primary_language
 
 
-def get_origin_info_from_package_data(key_file_package_data):
+def get_origin_info_from_package_data(key_file_package_data, programming_language_summary):
     """
     Return a 3-tuple containing the strings of declared license expression,
     copyright holder, and primary programming language from a list of detected
     package data.
-
-    Currently, we are assuming that we are only getting a single package
-    detected among key files from a top-level directory
     """
+    counts_by_programming_languages = {
+        entry.get('value'): entry.get('count')
+        for entry in programming_language_summary
+    }
+    packages_by_primary_languages = {
+        package.get('primary_language'): package
+        for package in key_file_package_data
+    }
 
-    if len(key_file_package_data) != 1:
-        return '', '', ''
+    # We pick the package data to report as the origin information based on the
+    # primary language of the packages
+    # We will use the package whose primary language occurs most often in our codebase
+    highest_count = 0
+    top_package = None
+    for package_primary_language, package in packages_by_primary_languages.items():
+        count = counts_by_programming_languages.get(package_primary_language) or 0
+        if count > highest_count:
+            highest_count = count
+            top_package = package
+
+    package = top_package
+    declared_license_expression = package.get('license_expression') or ''
+    package_primary_language = package.get('primary_language') or ''
+
+    # Determine declared holder from Package copyright statement
+    package_copyright = package.get('copyright', '')
+    package_holders = []
+    if package_copyright:
+        numbered_lines = [(0, package_copyright)]
+
+        holder_detections = CopyrightDetector().detect(
+            numbered_lines,
+            include_copyrights=False,
+            include_holders=True,
+            include_authors=False,
+        )
+
+        for holder_detection in holder_detections:
+            package_holders.append(holder_detection.holder)
+
+    declared_holder = ''
+    if package_holders:
+        declared_holder = ', '.join(package_holders)
     else:
-        package = key_file_package_data[0]
-        declared_license_expression = package.get('license_expression') or ''
-        package_primary_language = package.get('primary_language') or ''
+        # If there is no copyright statement on the package, collect the
+        # detected party members and return them as a holder
+        party_members = []
+        for party in package.get('parties', []):
+            party_members.append(party['name'])
+        declared_holder = ', '.join(party_members)
 
-        # Determine declared holder from Package copyright statement
-        package_copyright = package.get('copyright', '')
-        package_holders = []
-        if package_copyright:
-            numbered_lines = [(0, package_copyright)]
-
-            holder_detections = CopyrightDetector().detect(
-                numbered_lines,
-                include_copyrights=False,
-                include_holders=True,
-                include_authors=False,
-            )
-
-            for holder_detection in holder_detections:
-                package_holders.append(holder_detection.holder)
-
-        declared_holder = ''
-        if package_holders:
-            declared_holder = ', '.join(package_holders)
-        else:
-            # If there is no copyright statement on the package, collect the
-            # detected party members and return them as a holder
-            party_members = []
-            for party in package.get('parties', []):
-                party_members.append(party['name'])
-            declared_holder = ', '.join(party_members)
-
-        return declared_license_expression, declared_holder, package_primary_language
+    return declared_license_expression, declared_holder, package_primary_language
