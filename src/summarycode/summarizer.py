@@ -71,12 +71,18 @@ class ScanSummary(PostScanPlugin):
     def process_codebase(self, codebase, summary, **kwargs):
         if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
 
+        # Get summary data
         summary = summarize_codebase(codebase, keep_details=False, **kwargs)
         license_expressions_summary = summary.get('license_expressions') or []
         holders_summary = summary.get('holders') or []
         programming_language_summary = summary.get('programming_language') or []
 
-        key_files_package_data = get_field_values_from_codebase_resources(codebase, 'package_data', key_files_only=True)
+        # Get Package data from key files
+        key_files_package_data = get_field_values_from_codebase_resources(
+            codebase,
+            'package_data',
+            key_files_only=True
+        )
         # Remove any package that has no name
         key_file_package_data = [
             package_data
@@ -84,6 +90,7 @@ class ScanSummary(PostScanPlugin):
             if package_data.get('name')
         ]
 
+        # Determine declared license expression, declared holder, and primary language from Package data
         declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data)
 
         if declared_license_expression:
@@ -99,7 +106,7 @@ class ScanSummary(PostScanPlugin):
         other_holders = remove_from_summary(declared_holder, holders_summary)
 
         if not primary_language:
-            primary_language = get_primary_language(key_files_package_data, programming_language_summary)
+            primary_language = get_primary_language(programming_language_summary)
         other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
 
         # Save summary info to codebase
@@ -322,8 +329,8 @@ def package_summarizer(resource, children, keep_details=False):
 
 def get_declared_holder(codebase, holders_summary):
     """
-    Determine the declared holders of a codebase from the holders detetected
-    from key files.
+    Determine the declared holders of a codebase from the holders detected from
+    key files.
 
     A declared holder is a copyright holder present in the key files who has the
     highest amount of refrences throughout the codebase.
@@ -363,7 +370,10 @@ def get_primary_language(programming_language_summary):
     """
     Return the most common detected programming language as the primary language.
     """
-    programming_languages_by_count = {entry['count']: entry['value'] for entry in programming_language_summary}
+    programming_languages_by_count = {
+        entry['count']: entry['value']
+        for entry in programming_language_summary
+    }
     primary_language = ''
     if programming_languages_by_count:
         highest_count = max(programming_languages_by_count)

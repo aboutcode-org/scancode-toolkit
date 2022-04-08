@@ -181,6 +181,7 @@ def unique(objects):
             seen.add(obj)
     return uniques
 
+
 @attr.s()
 class ScoringElements:
     score = attr.ib(default=0)
@@ -460,9 +461,3 @@ def get_primary_license(declared_license_expressions):
         return next(iter(single_expressions_by_joined_expressions))
     else:
         return ''
-
-
-def get_primary_holders(declared_holders):
-    # Get a list of unique holders
-    holders = list(set(h.get('holder') for h in declared_holders))
-
