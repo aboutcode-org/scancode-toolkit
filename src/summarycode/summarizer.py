@@ -388,12 +388,12 @@ def get_origin_info_from_package_data(key_file_package_data, programming_languag
     package data.
     """
     counts_by_programming_languages = {
-        entry.get('value'): entry.get('count')
+        entry['value']: entry['count']
         for entry in programming_language_summary
     }
     packages_by_primary_languages = {
-        package.get('primary_language'): package
-        for package in key_file_package_data
+        package['primary_language']: package
+        for package in key_file_package_data if package['primary_language']
     }
 
     # We pick the package data to report as the origin information based on the
@@ -406,6 +406,9 @@ def get_origin_info_from_package_data(key_file_package_data, programming_languag
         if count > highest_count:
             highest_count = count
             top_package = package
+
+    if not top_package:
+        return '', '', ''
 
     package = top_package
     declared_license_expression = package.get('license_expression') or ''
