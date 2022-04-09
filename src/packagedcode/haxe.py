@@ -108,11 +108,3 @@ class HaxelibJsonHandler(models.DatafileHandler):
             package_data.dependencies.append(dep)
 
         yield package_data
-
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
-            package=package,
-            resource=resource,
-            codebase=codebase,
-        )

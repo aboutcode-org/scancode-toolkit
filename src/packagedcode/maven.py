@@ -120,7 +120,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
         # the root is either the parent or further up for poms stored under
         # a META-INF dir
 
-        assert resource.name.endswith('pom.xml')
+        # assert resource.name.endswith('pom.xml')
 
         root = None
         if resource.path.endswith(f'META-INF/maven/{package.namespace}/{package.name}/pom.xml'):

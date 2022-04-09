@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:npm/mocha",
-      "for_package": "pkg:npm/cookie-signature@1.0.3",
-      "datafile_path": "package.json"
+      "dependency_uid": "pkg:npm/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/should",
@@ -40,9 +41,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:npm/should",
-      "for_package": "pkg:npm/cookie-signature@1.0.3",
-      "datafile_path": "package.json"
+      "dependency_uid": "pkg:npm/should?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
     }
   ],
   "packages": [
@@ -86,17 +88,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:npm/cookie-signature@1.0.3",
-      "package_data_files": [
-        "package.json"
-      ],
-      "files": [
-        "package.json"
-      ],
-      "purl": "pkg:npm/cookie-signature@1.0.3",
       "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
       "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
-      "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3"
+      "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3",
+      "package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/cookie-signature@1.0.3"
     }
   ],
   "files": [
@@ -143,6 +145,7 @@
           "declared_license": [],
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -164,14 +167,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:npm/cookie-signature@1.0.3",
           "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
           "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
-          "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3"
+          "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/cookie-signature@1.0.3"
         }
       ],
       "for_packages": [
-        "pkg:npm/cookie-signature@1.0.3"
+        "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

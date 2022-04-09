@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:cran/R",
-      "for_package": "pkg:cran/codetools@0.2-16",
-      "datafile_path": "DESCRIPTION"
+      "dependency_uid": "pkg:cran/R?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "DESCRIPTION",
+      "datasource_id": "cran_description"
     }
   ],
   "packages": [
@@ -77,17 +78,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:cran/codetools@0.2-16",
-      "package_data_files": [
-        "DESCRIPTION"
-      ],
-      "files": [
-        "DESCRIPTION"
-      ],
-      "purl": "pkg:cran/codetools@0.2-16",
       "repository_homepage_url": "https://cran.r-project.org/package=codetools",
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "DESCRIPTION"
+      ],
+      "datasource_ids": [
+        "cran_description"
+      ],
+      "purl": "pkg:cran/codetools@0.2-16"
     }
   ],
   "files": [
@@ -133,10 +134,11 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "gpl-1.0-plus",
+          "license_expression": null,
           "declared_license": "GPL",
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -149,14 +151,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:cran/codetools@0.2-16",
           "repository_homepage_url": "https://cran.r-project.org/package=codetools",
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "cran_description",
+          "purl": "pkg:cran/codetools@0.2-16"
         }
       ],
       "for_packages": [
-        "pkg:cran/codetools@0.2-16"
+        "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

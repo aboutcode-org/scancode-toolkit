@@ -57,25 +57,24 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/npm/npm.git",
       "copyright": null,
-      "license_expression": "artistic-2.0 OR mit",
+      "license_expression": null,
       "declared_license": [
         "Artistic-2.0 OR MIT"
       ],
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:npm/npm@2.13.5",
-      "package_data_files": [
-        "scan/package.json"
-      ],
-      "files": [
-        "scan/copyr.java",
-        "scan/package.json"
-      ],
-      "purl": "pkg:npm/npm@2.13.5",
       "repository_homepage_url": "https://www.npmjs.com/package/npm",
       "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
-      "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
+      "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
+      "package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/npm@2.13.5"
     }
   ],
   "licenses_reference": [
@@ -315,9 +314,7 @@
       ],
       "percentage_of_license_text": 100.0,
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/npm@2.13.5"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -404,22 +401,24 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/npm/npm.git",
           "copyright": null,
-          "license_expression": "artistic-2.0 OR mit",
+          "license_expression": null,
           "declared_license": [
             "Artistic-2.0 OR MIT"
           ],
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:npm/npm@2.13.5",
           "repository_homepage_url": "https://www.npmjs.com/package/npm",
           "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
-          "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
+          "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/npm@2.13.5"
         }
       ],
       "for_packages": [
-        "pkg:npm/npm@2.13.5"
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

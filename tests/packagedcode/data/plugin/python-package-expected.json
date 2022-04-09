@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/atomicwrites@1.1.5",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/atomicwrites@1.1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/attrs@18.1.0",
@@ -40,9 +41,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/attrs@18.1.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/attrs@18.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/contextlib2@0.5.5",
@@ -52,9 +54,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/contextlib2@0.5.5",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/contextlib2@0.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/coverage@4.5.1",
@@ -64,9 +67,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/coverage@4.5.1",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/coverage@4.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/funcsigs@1.0.2",
@@ -76,9 +80,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/funcsigs@1.0.2",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/funcsigs@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/mock@2.0.0",
@@ -88,9 +93,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/mock@2.0.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/mock@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/more-itertools@4.2.0",
@@ -100,9 +106,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/more-itertools@4.2.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/more-itertools@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pbr@4.2.0",
@@ -112,9 +119,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pbr@4.2.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pbr@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pluggy@0.6.0",
@@ -124,9 +132,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pluggy@0.6.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pluggy@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/py@1.5.4",
@@ -136,9 +145,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/py@1.5.4",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/py@1.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pytest@3.6.3",
@@ -148,9 +158,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pytest@3.6.3",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pytest@3.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pytest-cov@2.5.1",
@@ -160,9 +171,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pytest-cov@2.5.1",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pytest-cov@2.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pytest-vcr@0.3.0",
@@ -172,9 +184,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pytest-vcr@0.3.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pytest-vcr@0.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/pyyaml@3.13",
@@ -184,9 +197,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/pyyaml@3.13",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/pyyaml@3.13?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/six@1.11.0",
@@ -196,9 +210,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/six@1.11.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/six@1.11.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/vcrpy@1.13.0",
@@ -208,9 +223,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/vcrpy@1.13.0",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/vcrpy@1.13.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/wrapt@1.10.11",
@@ -220,9 +236,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/wrapt@1.10.11",
-      "for_package": "pkg:pypi/atomicwrites@1.2.1",
-      "datafile_path": "atomicwrites/Pipfile.lock"
+      "dependency_uid": "pkg:pypi/wrapt@1.10.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "atomicwrites/Pipfile.lock",
+      "datasource_id": "pipfile_lock"
     },
     {
       "purl": "pkg:pypi/setuptools",
@@ -232,9 +249,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/setuptools",
-      "for_package": null,
-      "datafile_path": "requirements/requirements.txt"
+      "dependency_uid": "pkg:pypi/setuptools?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "requirements/requirements.txt",
+      "datasource_id": "pip_requirements"
     },
     {
       "purl": "pkg:pypi/nose",
@@ -244,9 +262,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/nose",
-      "for_package": null,
-      "datafile_path": "requirements/requirements.txt"
+      "dependency_uid": "pkg:pypi/nose?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "requirements/requirements.txt",
+      "datasource_id": "pip_requirements"
     },
     {
       "purl": "pkg:pypi/chardet",
@@ -256,9 +275,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:pypi/chardet",
-      "for_package": null,
-      "datafile_path": "requirements/requirements.txt"
+      "dependency_uid": "pkg:pypi/chardet?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "requirements/requirements.txt",
+      "datasource_id": "pip_requirements"
     }
   ],
   "packages": [
@@ -293,24 +313,24 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "bsd-simplified",
+      "license_expression": null,
       "declared_license": {
         "license": "Simplified BSD"
       },
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:pypi/arpy@0.1.1",
-      "package_data_files": [
-        "arpy/setup.py"
-      ],
-      "files": [
-        "arpy/setup.py"
-      ],
-      "purl": "pkg:pypi/arpy@0.1.1",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/arpy",
       "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
+      "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
+      "package_uid": "pkg:pypi/arpy@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "arpy/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/arpy@0.1.1"
     },
     {
       "type": "pypi",
@@ -345,7 +365,7 @@
       "size": null,
       "sha1": null,
       "md5": null,
-      "sha256": "6e45251662433bf51f96fb3d2204b65416fece329d60e6235c0f0edc416cfe24",
+      "sha256": null,
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
@@ -361,19 +381,57 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:pypi/atomicwrites@1.2.1",
-      "package_data_files": [
-        "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-        "atomicwrites/Pipfile.lock"
-      ],
-      "files": [
-        "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-        "atomicwrites/Pipfile.lock"
-      ],
-      "purl": "pkg:pypi/atomicwrites@1.2.1",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/atomicwrites",
       "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
+      "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json",
+      "package_uid": "pkg:pypi/atomicwrites@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl"
+      ],
+      "datasource_ids": [
+        "pypi_wheel"
+      ],
+      "purl": "pkg:pypi/atomicwrites@1.2.1"
+    },
+    {
+      "type": "chef",
+      "namespace": null,
+      "name": "six",
+      "version": "1.10.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/",
+      "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0",
+      "package_uid": "pkg:chef/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Six/metadata.json"
+      ],
+      "datasource_ids": [
+        "chef_cookbook_metadata_json"
+      ],
+      "purl": "pkg:chef/six@1.10.0"
     },
     {
       "type": "pypi",
@@ -422,61 +480,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:pypi/six@1.10.0",
-      "package_data_files": [
-        "Six/METADATA"
-      ],
-      "files": [
-        "Six/DESCRIPTION.rst",
-        "Six/METADATA",
-        "Six/metadata.json"
-      ],
-      "purl": "pkg:pypi/six@1.10.0",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/six",
       "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
-    },
-    {
-      "type": "chef",
-      "namespace": null,
-      "name": "six",
-      "version": "1.10.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Ruby",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "mit",
-      "declared_license": "MIT",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "package_uid": "pkg:chef/six@1.10.0",
-      "package_data_files": [
-        "Six/metadata.json"
+      "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
+      "package_uid": "pkg:pypi/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Six/Six.dist-info/METADATA"
       ],
-      "files": [
-        "Six/DESCRIPTION.rst",
-        "Six/METADATA",
-        "Six/metadata.json"
+      "datasource_ids": [
+        "pypi_wheel_metadata"
       ],
-      "purl": "pkg:chef/six@1.10.0",
-      "repository_homepage_url": null,
-      "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
+      "purl": "pkg:pypi/six@1.10.0"
     },
     {
       "type": "pypi",
@@ -509,24 +523,24 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "unknown",
+      "license_expression": null,
       "declared_license": {
         "license": "BSD"
       },
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:pypi/ticketimport@0.7a",
-      "package_data_files": [
-        "TicketImport/PKG-INFO"
-      ],
-      "files": [
-        "TicketImport/PKG-INFO"
-      ],
-      "purl": "pkg:pypi/ticketimport@0.7a",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/TicketImport",
       "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json"
+      "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json",
+      "package_uid": "pkg:pypi/ticketimport@0.7a?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "TicketImport/PKG-INFO"
+      ],
+      "datasource_ids": [
+        "pypi_sdist_pkginfo"
+      ],
+      "purl": "pkg:pypi/ticketimport@0.7a"
     }
   ],
   "files": [
@@ -541,14 +555,18 @@
       "path": "Six/DESCRIPTION.rst",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/six@1.10.0",
-        "pkg:chef/six@1.10.0"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
-      "path": "Six/METADATA",
+      "path": "Six/Six.dist-info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "Six/Six.dist-info/METADATA",
       "type": "file",
       "package_data": [
         {
@@ -588,7 +606,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": {
             "license": "MIT",
             "classifiers": [
@@ -597,17 +615,18 @@
           },
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/six@1.10.0",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/six",
           "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
+          "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
+          "datasource_id": "pypi_wheel_metadata",
+          "purl": "pkg:pypi/six@1.10.0"
         }
       ],
       "for_packages": [
-        "pkg:pypi/six@1.10.0",
-        "pkg:chef/six@1.10.0"
+        "pkg:pypi/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -638,21 +657,22 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": "MIT",
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:chef/six@1.10.0",
-          "repository_homepage_url": null,
+          "repository_homepage_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/",
           "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0",
+          "datasource_id": "chef_cookbook_metadata_json",
+          "purl": "pkg:chef/six@1.10.0"
         }
       ],
       "for_packages": [
-        "pkg:pypi/six@1.10.0",
-        "pkg:chef/six@1.10.0"
+        "pkg:chef/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -698,22 +718,24 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": {
             "license": "BSD"
           },
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/ticketimport@0.7a",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/TicketImport",
           "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json"
+          "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json",
+          "datasource_id": "pypi_sdist_pkginfo",
+          "purl": "pkg:pypi/ticketimport@0.7a"
         }
       ],
       "for_packages": [
-        "pkg:pypi/ticketimport@0.7a"
+        "pkg:pypi/ticketimport@0.7a?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -759,22 +781,24 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "bsd-simplified",
+          "license_expression": null,
           "declared_license": {
             "license": "Simplified BSD"
           },
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/arpy@0.1.1",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/arpy",
           "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
+          "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/arpy@0.1.1"
         }
       ],
       "for_packages": [
-        "pkg:pypi/arpy@0.1.1"
+        "pkg:pypi/arpy@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -816,6 +840,7 @@
           "declared_license": null,
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -972,15 +997,14 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "pipfile_lock",
+          "purl": null
         }
       ],
-      "for_packages": [
-        "pkg:pypi/atomicwrites@1.2.1"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -1026,7 +1050,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": {
             "license": "MIT",
             "classifiers": [
@@ -1035,16 +1059,64 @@
           },
           "notice_text": null,
           "source_packages": [],
+          "file_references": [
+            {
+              "path": "atomicwrites/__init__.py",
+              "size": 6428,
+              "sha1": null,
+              "md5": null,
+              "sha256": "e99fd5a033165d8a870e730383a30199798cc5fd31194cec120b616d8f59c71c",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "atomicwrites-1.2.1.dist-info/METADATA",
+              "size": 5535,
+              "sha1": null,
+              "md5": null,
+              "sha256": "0289c810b3daea2a81801eac17154b464b8eb7b34c5ae2c8de6706d18205a358",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "atomicwrites-1.2.1.dist-info/RECORD",
+              "size": null,
+              "sha1": null,
+              "md5": null,
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "atomicwrites-1.2.1.dist-info/WHEEL",
+              "size": 110,
+              "sha1": null,
+              "md5": null,
+              "sha256": "81dbae3f206f149412434cddcb117b934cf29c35db21bbe0e59047a17ba6e6e9",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "atomicwrites-1.2.1.dist-info/top_level.txt",
+              "size": 13,
+              "sha1": null,
+              "md5": null,
+              "sha256": "92ceb8cca55492b97666bacfd38e82b32b5795219ff202c6f887285e93727a87",
+              "sha512": null,
+              "extra_data": {}
+            }
+          ],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/atomicwrites@1.2.1",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/atomicwrites",
           "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
+          "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json",
+          "datasource_id": "pypi_wheel",
+          "purl": "pkg:pypi/atomicwrites@1.2.1"
         }
       ],
       "for_packages": [
-        "pkg:pypi/atomicwrites@1.2.1"
+        "pkg:pypi/atomicwrites@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1086,6 +1158,7 @@
           "declared_license": null,
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -1116,10 +1189,11 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "pip_requirements",
+          "purl": null
         }
       ],
       "for_packages": [],

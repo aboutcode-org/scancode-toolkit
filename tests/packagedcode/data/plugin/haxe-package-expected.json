@@ -62,17 +62,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:haxe/hxsocketio@0.1.0",
-      "package_data_files": [
-        "haxelib.json"
-      ],
-      "files": [
-        "haxelib.json"
-      ],
-      "purl": "pkg:haxe/hxsocketio@0.1.0",
       "repository_homepage_url": "https://lib.haxe.org/p/hxsocketio",
       "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:haxe/hxsocketio@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "haxelib.json"
+      ],
+      "datasource_ids": [
+        "haxelib_json"
+      ],
+      "purl": "pkg:haxe/hxsocketio@0.1.0"
     }
   ],
   "files": [
@@ -116,20 +116,22 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": "MIT",
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:haxe/hxsocketio@0.1.0",
           "repository_homepage_url": "https://lib.haxe.org/p/hxsocketio",
           "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "haxelib_json",
+          "purl": "pkg:haxe/hxsocketio@0.1.0"
         }
       ],
       "for_packages": [
-        "pkg:haxe/hxsocketio@0.1.0"
+        "pkg:haxe/hxsocketio@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

@@ -140,10 +140,10 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 type=cls.default_package_type,
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package)
+    # FIXME: This uses codebase and resources to compute normalized license
+    #@classmethod
+    #def compute_normalized_license(cls, package):
+    #    return compute_normalized_license(package)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name=None):
@@ -170,7 +170,7 @@ def walk_build(resource, codebase, skip_name):
                 yield subchild
 
 
-def compute_normalized_license(self, package):
+def compute_normalized_license(package):
     """
     Return a normalized license expression string detected from a list of
     declared license items.

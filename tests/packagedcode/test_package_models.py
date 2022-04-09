@@ -127,16 +127,28 @@ class TestModels(PackageTester):
         expected_loc = 'models/full-expected.json'
         self.check_package_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-def test_package_data_datasource_id_are_unique():
-    """
-    Check that we do not have two DataFileHandlers with the same
-    datasource_id and that all have one.
-    """
-    seen = {}
-    for pdh in PACKAGE_DATAFILE_HANDLERS:
-        pdhid = pdh.datasource_id
-        assert pdhid
-        assert (
-            pdh.datasource_id not in seen
-        ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
-        seen[pdh.datasource_id] = pdh
+    def test_package_data_datasource_id_are_unique(self):
+        """
+        Check that we do not have two DataFileHandlers with the same
+        datasource_id and that all have one.
+        """
+        seen = {}
+        for pdh in PACKAGE_DATAFILE_HANDLERS:
+            pdhid = pdh.datasource_id
+            assert pdhid
+            assert (
+                pdh.datasource_id not in seen
+            ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
+            seen[pdh.datasource_id] = pdh
+    
+    def test_package_data_file_patterns_are_tuples(self):
+        """
+        Check that all file patterns are tuples, as if they are
+        strings the matching will happen per character and will be
+        True for most of the cases.
+        """
+        for pdh in PACKAGE_DATAFILE_HANDLERS:
+            if pdh.path_patterns:
+                assert type(pdh.path_patterns) == tuple, pdh
+            if pdh.filetypes:
+                assert type(pdh.filetypes) == tuple, pdh

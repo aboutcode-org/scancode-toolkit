@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:bower/get-size",
-      "for_package": "pkg:bower/blue-leaf",
-      "datafile_path": "bower.json"
+      "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     },
     {
       "purl": "pkg:bower/eventEmitter",
@@ -40,9 +41,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:bower/eventEmitter",
-      "for_package": "pkg:bower/blue-leaf",
-      "datafile_path": "bower.json"
+      "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     },
     {
       "purl": "pkg:bower/qunit",
@@ -52,9 +54,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:bower/qunit",
-      "for_package": "pkg:bower/blue-leaf",
-      "datafile_path": "bower.json"
+      "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     }
   ],
   "packages": [
@@ -100,17 +103,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:bower/blue-leaf",
-      "package_data_files": [
-        "bower.json"
-      ],
-      "files": [
-        "bower.json"
-      ],
-      "purl": "pkg:bower/blue-leaf",
       "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "bower.json"
+      ],
+      "datasource_ids": [
+        "bower_json"
+      ],
+      "purl": "pkg:bower/blue-leaf"
     }
   ],
   "files": [
@@ -153,12 +156,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": [
             "MIT"
           ],
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -189,14 +193,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:bower/blue-leaf",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "bower_json",
+          "purl": "pkg:bower/blue-leaf"
         }
       ],
       "for_packages": [
-        "pkg:bower/blue-leaf"
+        "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

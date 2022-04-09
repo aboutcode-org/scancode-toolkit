@@ -129,10 +129,6 @@ class CompactManifestHandler(models.DatafileHandler):
         if detected_licenses:
             return combine_expressions(expressions=detected_licenses, relation=relation)
 
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        super().assign_package_to_parent_tree(package, resource, codebase)
-
 
 def license_mapper(freebsd_manifest, package):
     """

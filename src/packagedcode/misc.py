@@ -63,7 +63,7 @@ class JavaEarHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'java_ear_archive'
     default_package_type = 'ear'
     default_primary_language = 'Java'
-    path_patterns = ('*.ear')
+    path_patterns = ('*.ear',)
     filetypes = ('zip archive',)
     description = 'Java EAR Enterprise application archive'
     documentation_url = 'https://en.wikipedia.org/wiki/EAR_(file_format)'

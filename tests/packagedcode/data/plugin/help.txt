@@ -312,7 +312,7 @@ Package type:  ear
   documentation URL: https://en.wikipedia.org/wiki/EAR_(file_format)
   primary language:  Java
   description:       Java EAR Enterprise application archive
-  path_patterns:    '*', '.', 'e', 'a', 'r'
+  path_patterns:    '*.ear'
 --------------------------------------------
 Package type:  freebsd
   datasource_id:     freebsd_compact_manifest
@@ -698,13 +698,6 @@ Package type:  pypi
   primary language:  Python
   description:       Python setup.py
   path_patterns:    '*setup.py'
---------------------------------------------
-Package type:  pypi
-  datasource_id:     pypi_tox_ini
-  documentation URL: https://tox.wiki
-  primary language:  Python
-  description:       Tox tox.ini
-  path_patterns:    '*tox.ini'
 --------------------------------------------
 Package type:  pypi
   datasource_id:     pypi_wheel

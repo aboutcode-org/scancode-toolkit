@@ -41,20 +41,21 @@ class BaseDartPubspecHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
-        datafile_names = (
+        datafile_name_patterns = (
             'pubspec.yaml',
             'pubspec.lock',
         )
 
+        if resource.has_parent():
+            dir_resource=resource.parent(codebase)
+        else:
+            dir_resource=resource
+
         yield from cls.assemble_from_many_datafiles(
-            datafile_names=datafile_names,
-            directory=resource.parent(codebase),
+            datafile_name_patterns=datafile_name_patterns,
+            directory=dir_resource,
             codebase=codebase,
         )
-
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_parent_tree(package, resource, codebase)
 
     @classmethod
     def compute_normalized_license(cls, package):

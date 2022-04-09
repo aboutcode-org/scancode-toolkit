@@ -93,54 +93,6 @@
         "chef_cookbook_metadata_rb"
       ],
       "purl": "pkg:chef/301@0.1.0"
-    },
-    {
-      "type": "chef",
-      "namespace": null,
-      "name": "301",
-      "version": "0.1.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Ruby",
-      "description": "Installs/Configures 301",
-      "release_date": null,
-      "parties": [
-        {
-          "type": null,
-          "role": "maintainer",
-          "name": "Mark Wilkerson",
-          "email": "mark@segfawlt.net",
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": "MIT",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
-      "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
-      "package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "package/metadata.rb"
-      ],
-      "datasource_ids": [
-        "chef_cookbook_metadata_rb"
-      ],
-      "purl": "pkg:chef/301@0.1.0"
     }
   ],
   "files": [

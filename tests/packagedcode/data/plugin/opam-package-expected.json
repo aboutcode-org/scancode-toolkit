@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:opam/ocaml",
-      "for_package": null,
-      "datafile_path": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/ocaml?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-unix",
@@ -40,9 +41,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:opam/base-unix",
-      "for_package": null,
-      "datafile_path": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-unix?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-bigarray",
@@ -52,9 +54,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:opam/base-bigarray",
-      "for_package": null,
-      "datafile_path": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-bigarray?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-threads",
@@ -64,9 +67,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:opam/base-threads",
-      "for_package": null,
-      "datafile_path": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-threads?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     }
   ],
   "packages": [],
@@ -152,6 +156,7 @@
           "declared_license": null,
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -191,10 +196,11 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "opam_file",
+          "purl": null
         }
       ],
       "for_packages": [],

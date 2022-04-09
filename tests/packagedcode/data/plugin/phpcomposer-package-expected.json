@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:composer/php",
-      "for_package": "pkg:composer/jandreasn/a-timer",
-      "datafile_path": "composer.json"
+      "dependency_uid": "pkg:composer/php?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "composer.json",
+      "datasource_id": "php_composer_json"
     },
     {
       "purl": "pkg:composer/phpunit/phpunit",
@@ -40,9 +41,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:composer/phpunit/phpunit",
-      "for_package": "pkg:composer/jandreasn/a-timer",
-      "datafile_path": "composer.json"
+      "dependency_uid": "pkg:composer/phpunit/phpunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "composer.json",
+      "datasource_id": "php_composer_json"
     },
     {
       "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -52,9 +54,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:composer/squizlabs/php_codesniffer",
-      "for_package": "pkg:composer/jandreasn/a-timer",
-      "datafile_path": "composer.json"
+      "dependency_uid": "pkg:composer/squizlabs/php_codesniffer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "composer.json",
+      "datasource_id": "php_composer_json"
     }
   ],
   "packages": [
@@ -96,22 +99,22 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit",
+      "license_expression": null,
       "declared_license": "MIT",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:composer/jandreasn/a-timer",
-      "package_data_files": [
-        "composer.json"
-      ],
-      "files": [
-        "composer.json"
-      ],
-      "purl": "pkg:composer/jandreasn/a-timer",
       "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
       "repository_download_url": null,
-      "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
+      "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
+      "package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "composer.json"
+      ],
+      "datasource_ids": [
+        "php_composer_json"
+      ],
+      "purl": "pkg:composer/jandreasn/a-timer"
     }
   ],
   "files": [
@@ -157,10 +160,11 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": "MIT",
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -191,14 +195,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:composer/jandreasn/a-timer",
           "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
           "repository_download_url": null,
-          "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
+          "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
+          "datasource_id": "php_composer_json",
+          "purl": "pkg:composer/jandreasn/a-timer"
         }
       ],
       "for_packages": [
-        "pkg:composer/jandreasn/a-timer"
+        "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

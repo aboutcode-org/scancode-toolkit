@@ -982,13 +982,17 @@ class DatafileHandler:
         """
         Set the "for_packages" attributes to ``package``  for the whole
         resource tree of the parent of a ``resource`` object in the
-        ``codebase``.
+        ``codebase``. If codebase doesn't have a parent, just set the
+        attribute for that resource only.
 
         This is a convenience method that subclasses can reuse when overriding
         `assign_package_to_resources()`
         """
-        parent = resource.parent(codebase)
-        cls.assign_package_to_resources(package, parent, codebase)
+        if resource.has_parent():
+            parent = resource.parent(codebase)
+            cls.assign_package_to_resources(package, parent, codebase)
+        else:
+            cls.assign_package_to_resources(package, resource, codebase)
 
     @classmethod
     def assemble_from_many(cls, pkgdata_resources, codebase,):
@@ -1073,14 +1077,17 @@ class DatafileHandler:
         multiple PackageData for unrelated Packages
         """
 
-        siblings = {
-            child.name: child
-            for child in directory.children(codebase)
-            if any(
-                fnmatchcase(name=child.name, pat=dfnp)
-                for dfnp in datafile_name_patterns
-            )
-        }
+        if not codebase.has_single_resource:
+            siblings = {
+                child.name: child
+                for child in directory.children(codebase)
+                if any(
+                    fnmatchcase(name=child.name, pat=dfnp)
+                    for dfnp in datafile_name_patterns
+                )
+            }
+        else:
+            siblings = {directory.name: directory}
 
         pkgdata_resources = []
 
@@ -1091,6 +1098,9 @@ class DatafileHandler:
                 for package_data in resource.package_data:
                     package_data = PackageData.from_dict(package_data)
                     pkgdata_resources.append((package_data, resource,))
+
+        if not pkgdata_resources:
+            return
 
         yield from cls.assemble_from_many(
             pkgdata_resources=pkgdata_resources,

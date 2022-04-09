@@ -104,10 +104,6 @@ class CranDescriptionFileHandler(models.DatafileHandler):
             repository_homepage_url=f'https://cran.r-project.org/package={name}',
         )
 
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_parent_tree(package, resource, codebase)
-
 # FIXME: THIS IS NOT YAML but RFC 822
 
 

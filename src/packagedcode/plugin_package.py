@@ -135,7 +135,6 @@ def create_package_and_deps(codebase, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
-    Return a two-tuple of (list of Packages, list of Dependencies).
     """
     # track resource ids that have been already processed
     seen_resource_ids = set()
@@ -160,7 +159,6 @@ def create_package_and_deps(codebase, **kwargs):
 
             # Find a handler for this package datasource to assemble collect
             # packages and deps
-
             handler = get_package_handler(package_data)
             if TRACE:
                 logger_debug('  create_package_and_deps: handler:', handler)
@@ -170,7 +168,6 @@ def create_package_and_deps(codebase, **kwargs):
                 resource=resource,
                 codebase=codebase,
             )
-
             
             for item in items:
                 if TRACE:
@@ -190,5 +187,3 @@ def create_package_and_deps(codebase, **kwargs):
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)
-
-    return packages_top_level, packages_top_level

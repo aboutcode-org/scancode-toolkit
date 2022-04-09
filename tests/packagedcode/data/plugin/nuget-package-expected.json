@@ -64,17 +64,17 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uid": "pkg:nuget/Castle.Core@4.2.1",
-      "package_data_files": [
-        "Castle.Core.nuspec"
-      ],
-      "files": [
-        "Castle.Core.nuspec"
-      ],
-      "purl": "pkg:nuget/Castle.Core@4.2.1",
       "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
       "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
-      "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
+      "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json",
+      "package_uid": "pkg:nuget/Castle.Core@4.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Castle.Core.nuspec"
+      ],
+      "datasource_ids": [
+        "nuget_nupsec"
+      ],
+      "purl": "pkg:nuget/Castle.Core@4.2.1"
     }
   ],
   "files": [
@@ -120,20 +120,22 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/castleproject/Core",
           "copyright": "Copyright (c) 2004-2017 Castle Project - http://www.castleproject.org/",
-          "license_expression": "apache-2.0",
+          "license_expression": null,
           "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:nuget/Castle.Core@4.2.1",
           "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
           "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
-          "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
+          "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json",
+          "datasource_id": "nuget_nupsec",
+          "purl": "pkg:nuget/Castle.Core@4.2.1"
         }
       ],
       "for_packages": [
-        "pkg:nuget/Castle.Core@4.2.1"
+        "pkg:nuget/Castle.Core@4.2.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

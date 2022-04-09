@@ -107,7 +107,3 @@ class NugetNuspecHandler(models.DatafileHandler):
             vcs_url=vcs_url,
             **urls,
         )
-
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_parent_tree(package, resource, codebase)

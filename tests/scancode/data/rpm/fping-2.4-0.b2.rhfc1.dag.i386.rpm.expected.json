@@ -57,17 +57,17 @@
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
       ],
       "extra_data": {},
-      "package_uid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
-      "package_data_files": [
-        "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
-      ],
-      "files": [
-        "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
-      ],
-      "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
       "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
+      ],
+      "datasource_ids": [
+        "rpm_archive"
+      ],
+      "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
     }
   ],
   "files": [
@@ -106,22 +106,24 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": "distributable",
           "notice_text": null,
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
           ],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "rpm_archive",
+          "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
         }
       ],
       "for_packages": [
-        "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
+        "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

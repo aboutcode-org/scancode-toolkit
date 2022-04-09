@@ -16,6 +16,7 @@ from packagedcode import models
 from packagedcode.utils import combine_expressions
 
 
+# TODO: handle complex cases of npms and bower combined
 class BowerJsonHandler(models.DatafileHandler):
     datasource_id = 'bower_json'
     path_patterns = ('*/bower.json', '*/.bower.json',)
@@ -27,15 +28,6 @@ class BowerJsonHandler(models.DatafileHandler):
     @classmethod
     def compute_normalized_license(cls, package):
         return compute_bower_normalized_license(package.declared_license)
-
-    # TODO: handle complex cases of npms and bower combined
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
-            package=package,
-            resource=resource,
-            codebase=codebase,
-        )
 
     @classmethod
     def parse(cls, location):
