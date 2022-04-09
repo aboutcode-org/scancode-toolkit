@@ -157,6 +157,7 @@ def compute_license_score(codebase):
             scoring_elements.score -= 20
 
     declared_license_expression = get_primary_license(unique_declared_license_expressions)
+
     if not declared_license_expression:
         # If we cannot get a single primary license, then we combine and simplify the license expressions from key files
         combined_declared_license_expression = combine_expressions(unique_declared_license_expressions)
@@ -395,17 +396,20 @@ def group_license_expressions(unique_license_expressions):
     unique_joined_expressions = []
     seen_joined_expression = []
     len_joined_expressions = len(joined_expressions)
-    for i, j in enumerate(joined_expressions, start=1):
-        if i > len_joined_expressions:
-            break
-        for j1 in joined_expressions[i:]:
-            if licensing.is_equivalent(j, j1):
-                if (
-                    j not in unique_joined_expressions
-                    and j not in seen_joined_expression
-                ):
-                    unique_joined_expressions.append(j)
-                    seen_joined_expression.append(j1)
+    if len_joined_expressions > 1:
+        for i, j in enumerate(joined_expressions, start=1):
+            if i > len_joined_expressions:
+                break
+            for j1 in joined_expressions[i:]:
+                if licensing.is_equivalent(j, j1):
+                    if (
+                        j not in unique_joined_expressions
+                        and j not in seen_joined_expression
+                    ):
+                        unique_joined_expressions.append(j)
+                        seen_joined_expression.append(j1)
+    else:
+        unique_joined_expressions = joined_expressions
 
     return unique_joined_expressions, single_expressions
 
