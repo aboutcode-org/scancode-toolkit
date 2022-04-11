@@ -39,30 +39,6 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_with_package_info(self):
-        test_dir = self.get_test_loc('summary/package/xml2data-0.1.0')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/package/xml2data-0.1.0-clip.expected.json')
-        run_scan_click([
-            '-clip',
-            '--summary',
-            '--classify',
-            '--json-pp', result_file, test_dir
-        ])
-        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
-
-    def test_summary_without_package_info(self):
-        test_dir = self.get_test_loc('summary/package/xml2data-0.1.0')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/package/xml2data-0.1.0-cli.expected.json')
-        run_scan_click([
-            '-cli',
-            '--summary',
-            '--classify',
-            '--json-pp', result_file, test_dir
-        ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
-
     def test_summary_license_ambiguity_unambiguous(self):
         test_dir = self.get_test_loc('summary/license_ambiguity/unambiguous')
         result_file = self.get_temp_file('json')
@@ -103,6 +79,30 @@ class TestScanSummary(FileDrivenTesting):
         test_dir = self.get_test_loc('summary/conflicting_license_categories/codebase')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('summary/conflicting_license_categories/conflicting_license_categories.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_summary_simple_with_package_data(self):
+        test_dir = self.get_test_loc('summary/simple/with_package_data')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/simple/with_package_data.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_summary_simple_without_package_data(self):
+        test_dir = self.get_test_loc('summary/simple/without_package_data')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/simple/without_package_data.expected.json')
         run_scan_click([
             '-clip',
             '--summary',
