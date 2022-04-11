@@ -64,7 +64,7 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/codebase?uuid=163eb5f5-6cc4-41f6-869c-5f971e64ffd4",
+      "package_uuid": "pkg:pypi/codebase?uuid=e63a53da-a213-4430-95a2-9b6412cacbc6",
       "package_data_files": [
         "with_package_data/setup.py"
       ],
@@ -92,7 +92,7 @@
       "ambigous_compound_licensing": false
     },
     "declared_holder": "Example Corp.",
-    "primary_programming_language": "Python",
+    "primary_language": "Python",
     "other_license_expressions": [
       {
         "value": "apache-2.0 OR mit",
@@ -109,7 +109,7 @@
         "count": 3
       }
     ],
-    "other_programming_languages": []
+    "other_languages": []
   },
   "files": [
     {
@@ -308,7 +308,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/codebase?uuid=163eb5f5-6cc4-41f6-869c-5f971e64ffd4"
+        "pkg:pypi/codebase?uuid=e63a53da-a213-4430-95a2-9b6412cacbc6"
       ],
       "is_legal": false,
       "is_manifest": false,
@@ -388,7 +388,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/codebase?uuid=163eb5f5-6cc4-41f6-869c-5f971e64ffd4"
+        "pkg:pypi/codebase?uuid=e63a53da-a213-4430-95a2-9b6412cacbc6"
       ],
       "is_legal": true,
       "is_manifest": false,
@@ -468,7 +468,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/codebase?uuid=163eb5f5-6cc4-41f6-869c-5f971e64ffd4"
+        "pkg:pypi/codebase?uuid=e63a53da-a213-4430-95a2-9b6412cacbc6"
       ],
       "is_legal": true,
       "is_manifest": false,
@@ -594,7 +594,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/codebase?uuid=163eb5f5-6cc4-41f6-869c-5f971e64ffd4"
+        "pkg:pypi/codebase?uuid=e63a53da-a213-4430-95a2-9b6412cacbc6"
       ],
       "is_legal": false,
       "is_manifest": true,

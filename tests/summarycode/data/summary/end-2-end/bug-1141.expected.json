@@ -37,7 +37,7 @@
       "ambigous_compound_licensing": false
     },
     "declared_holder": "",
-    "primary_programming_language": "C",
+    "primary_language": "C",
     "other_license_expressions": [
       {
         "value": "gpl-2.0-plus",
@@ -54,7 +54,7 @@
         "count": 2
       }
     ],
-    "other_programming_languages": []
+    "other_languages": []
   },
   "files": [
     {

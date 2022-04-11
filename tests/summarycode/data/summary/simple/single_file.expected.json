@@ -37,7 +37,7 @@
       "ambigous_compound_licensing": false
     },
     "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems, Inc.",
-    "primary_programming_language": "",
+    "primary_language": "",
     "other_license_expressions": [],
     "other_holders": [
       {
@@ -49,7 +49,7 @@
         "count": 1
       }
     ],
-    "other_programming_languages": []
+    "other_languages": []
   },
   "files": [
     {

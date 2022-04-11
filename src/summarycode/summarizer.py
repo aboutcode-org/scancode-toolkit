@@ -107,16 +107,16 @@ class ScanSummary(PostScanPlugin):
 
         if not primary_language:
             primary_language = get_primary_language(programming_language_summary)
-        other_programming_languages = remove_from_summary(primary_language, programming_language_summary)
+        other_languages = remove_from_summary(primary_language, programming_language_summary)
 
         # Save summary info to codebase
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
         codebase.attributes.summary['declared_holder'] = declared_holder
-        codebase.attributes.summary['primary_programming_language'] = primary_language
+        codebase.attributes.summary['primary_language'] = primary_language
         codebase.attributes.summary['other_license_expressions'] = other_license_expressions
         codebase.attributes.summary['other_holders'] = other_holders
-        codebase.attributes.summary['other_programming_languages'] = other_programming_languages
+        codebase.attributes.summary['other_languages'] = other_languages
 
 
 def remove_from_summary(entry, summary_data):

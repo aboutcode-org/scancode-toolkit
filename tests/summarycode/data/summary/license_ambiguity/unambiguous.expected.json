@@ -37,7 +37,7 @@
       "ambigous_compound_licensing": false
     },
     "declared_holder": "Example Corp.",
-    "primary_programming_language": "Python",
+    "primary_language": "Python",
     "other_license_expressions": [
       {
         "value": "apache-2.0",
@@ -58,7 +58,7 @@
         "count": 1
       }
     ],
-    "other_programming_languages": []
+    "other_languages": []
   },
   "files": [
     {
