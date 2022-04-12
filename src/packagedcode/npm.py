@@ -48,9 +48,14 @@ class BaseNpmHandler(models.DatafileHandler):
             'yarn.lock',
         )
 
+        if resource.has_parent():
+            dir_resource=resource.parent(codebase)
+        else:
+            dir_resource=resource
+
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
-            directory=resource.parent(codebase),
+            directory=dir_resource,
             codebase=codebase,
         )
 
@@ -170,6 +175,9 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         lic = package_data.get('license')
         lics = package_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
+
+        if not package.license_expression and package.declared_license:
+            package.license_expression = compute_normalized_license(package.declared_license)
 
         yield package
 

@@ -769,6 +769,9 @@ def compute_normalized_license(declared_license, expression_symbols=None):
     Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
     if provided. Otherwise use the standard SPDX license symbols.
     """
+    # If declared license is dict/list convert to string
+    if not type(declared_license) == str:
+        declared_license = repr(declared_license)
 
     if not declared_license:
         return

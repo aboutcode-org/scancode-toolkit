@@ -232,11 +232,15 @@ def remove_uuid_from_scan(results):
         if for_package_uid:
             dependency['for_package_uid'] = purl_with_fake_uuid(for_package_uid)
 
-    for file in (results.get('files') or []):
+    for resource in (results.get('files') or []):
         for_packages = []
-        for fpkg in (file.get('for_packages') or []):
+        has_packages = False
+        for fpkg in (resource.get('for_packages') or []):
+            has_packages = True
             for_packages.append(purl_with_fake_uuid(fpkg))
-        file['for_packages'] = for_packages
+
+        if has_packages:
+            resource['for_packages'] = for_packages
 
     return results
 
