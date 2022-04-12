@@ -49,7 +49,7 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_license_ambiguity_ambiguous(self):
         test_dir = self.get_test_loc('summary/license_ambiguity/ambiguous')
@@ -61,7 +61,7 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_simple_single_file_with_origin_info(self):
         test_dir = self.get_test_loc('summary/simple/single_file')
@@ -73,7 +73,7 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_conflicting_license_categories(self):
         test_dir = self.get_test_loc('summary/conflicting_license_categories/codebase')
@@ -85,7 +85,7 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_simple_with_package_data(self):
         test_dir = self.get_test_loc('summary/simple/with_package_data')
@@ -97,7 +97,7 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_summary_simple_without_package_data(self):
         test_dir = self.get_test_loc('summary/simple/without_package_data')
@@ -109,4 +109,4 @@ class TestScanSummary(FileDrivenTesting):
             '--classify',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
