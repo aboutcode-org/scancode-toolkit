@@ -1,0 +1,966 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--json": "<file>",
+        "--tallies-with-details": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 24
+      }
+    }
+  ],
+  "tallies": {
+    "copyrights": [
+      {
+        "value": null,
+        "count": 4
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 4
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 19
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 4
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 4
+          }
+        ],
+        "authors": [
+          {
+            "value": null,
+            "count": 19
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ],
+        "authors": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ],
+        "authors": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/FixedMembershipToken.java",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "JBoss Inc., and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/GuardedBy.java",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Brian Goetz and Tim Peierls",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/ImmutableReference.java",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Red Hat, Inc. and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/RATE_LIMITER.java",
+      "type": "file",
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/RouterStub.java",
+      "type": "file",
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/RouterStubManager.java",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Red Hat Middleware LLC, and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/JGroups/src/S3_PING.java",
+      "type": "file",
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/README",
+      "type": "file",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/arch",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 3
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/arch/adler32.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2011 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/arch/zlib.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/arch/zutil.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 12
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/ada",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/ada/zlib.ads",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Dmitriy Anisimkov",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/adler32.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2011 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/deflate.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/deflate.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/dotzlib",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 2
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/dotzlib/AssemblyInfo.cs",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2004 by Henrik Ravn",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Henrik Ravn",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/dotzlib/ChecksumImpl.cs",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright Henrik Ravn 2004",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Henrik Ravn",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/gcc_gvmat64",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/gcc_gvmat64/gvmat64.S",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "authors": [
+        {
+          "author": "Gilles Vollant",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/infback9",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 2
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/infback9/infback9.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2008 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/infback9/infback9.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2003 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/iostream2",
+      "type": "directory",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/iostream2/zstream.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+          "start_line": 3,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Christian Michelsen Research AS Advanced Computing",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/zlib.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/zutil.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan/zlib/zutil.h",
+      "type": "file",
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "tallies": {
+        "copyrights": [],
+        "holders": [],
+        "authors": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ]
+      },
+      "scan_errors": []
+    }
+  ]
+}
