@@ -17,7 +17,7 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-TRACE = True
+TRACE = False
 
 logger = logging.getLogger(__name__)
 
