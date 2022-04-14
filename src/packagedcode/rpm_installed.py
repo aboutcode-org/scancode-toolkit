@@ -179,8 +179,9 @@ def size_handler(value, **kwargs):
 
 def arch_handler(value, **kwargs):
     """
-    Return a Package URL qualifier for the arch.
+    Return a Package URL qualifiers for the arch.
     """
+    # TODO: should arch={value} be rather a mapping of {arch: value} ?
     return {'qualifiers': f'arch={value}'}
 
 

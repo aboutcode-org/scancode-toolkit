@@ -1018,8 +1018,9 @@ def c_git_commit_handler(value, **kwargs):
 
 def A_arch_handler(value, **kwargs):
     """
-    Return a Package URL qualifier for the arch.
+    Return a Package URL qualifiers for the arch.
     """
+    # TODO: should arch={value} be rather a mapping of {arch: value} ?
     return {'qualifiers': f'arch={value}'}
 
 # Note that we use a little trick for handling package file references. Each
