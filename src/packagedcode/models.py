@@ -667,15 +667,14 @@ class PackageData(IdentifiablePackageData):
     @classmethod
     def from_dict(cls, mapping):
         """
-        Return an instance of PackageData instance re-built from a mapping of
-        ``scan_data`` native Python data. Known attributes that store a list of
-        objects are also "rehydrated" (such as models.Party).
+        Return an instance of PackageData built from a ``mapping`` native Python
+        data. Known attributes that store a list of objects are also
+        "rehydrated" (such as models.Party).
 
-        Unknown attributes provided in ``scan_data`` that do not exist as fields in
-        the class are kept as items in the extra_data mapping. An Exception is
-        raised if an "unknown attribute" name already exists as a extra_data name.
-
-        ``list_item_types_by_name`` is a mapping of extra list items.
+        Unknown attributes provided in ``mapping`` that do not exist as fields
+        in the class are kept as items in the extra_data mapping. An Exception
+        is raised if an "unknown attribute" name already exists as an extra_data
+        name.
         """
         # TODO: consider using a proper library for this such as cattrs,
         # marshmallow, etc. or use the field type that we declare.
@@ -1054,9 +1053,9 @@ class DatafileHandler:
     @classmethod
     def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
         """
-        Assemble Package from package data of the datafiles found in multiple
-        ``datafile_name_patterns`` name patterns (case-sensitive) found in the
-        ``directory`` Resource.
+        Assemble Package and Dependency from package data of the datafiles found
+        in multiple ``datafile_name_patterns`` name patterns (case- sensitive)
+        found in the ``directory`` Resource.
 
         Create a Package from the first package data item. Update this package
         with other items. Assign to this Package the file tree from the parent
@@ -1127,6 +1126,30 @@ def build_package_uid(purl):
     return str(purl)
 
 
+def build_purl(mapping):
+    """
+    Return a PackageURL from a ``mapping`` or None if essential type and name
+    fields are missing.
+    """
+    ptype = mapping.get('type')
+    name = mapping.get('name')
+    if not ptype or not name:
+        return
+
+    namespace = mapping.get('namespace')
+    version = mapping.get('version')
+    qualifiers = mapping.get('qualifiers') or {}
+    subpath = mapping.get('subpath')
+    return PackageURL(
+        type=ptype,
+        name=name,
+        namespace=namespace,
+        version=version,
+        qualifiers=qualifiers,
+        subpath=subpath,
+    )
+
+
 @attr.attributes(slots=True)
 class Package(PackageData):
     """
@@ -1163,7 +1186,7 @@ class Package(PackageData):
     def from_package_data(cls, package_data, datafile_path):
         """
         Return a Package from a ``package_data`` PackageData object
-        or mapping.
+        or mapping. Or None.
         """
         if isinstance(package_data, PackageData):
             package_data_mapping = package_data.to_dict()
@@ -1180,6 +1203,18 @@ class Package(PackageData):
 
         return cls.from_dict(package_data_mapping)
 
+    @classmethod
+    def from_dict(cls, mapping):
+        """
+        Return an instance of Package built from a ``mapping`` of native Python
+        data, typically a PackageData-like ``mapping``. Return None if there are
+        not enough data to form a PackageURL from this data.
+
+        See PackageData.from_dict() for other details.
+        """
+        if build_purl(mapping):
+            return super().from_dict(mapping)
+
     def is_compatible(self, package_data, include_qualifiers=True):
         """
         Return True if the ``package_data`` PackageData is compatible with
@@ -1190,7 +1225,7 @@ class Package(PackageData):
             and self.namespace == package_data.namespace
             and self.name == package_data.name
             and self.version == package_data.version
-            and (include_qualifiers and self.qualifier == package_data.qualifier)
+            and (include_qualifiers and self.qualifiers == package_data.qualifiers)
             and self.subpath == package_data.subpath
             and self.primary_language == package_data.primary_language
         )
