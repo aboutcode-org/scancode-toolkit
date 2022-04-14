@@ -13,8 +13,9 @@ import attr
 import fingerprints
 from commoncode.cliutils import POST_SCAN_GROUP, PluggableCommandLineOption
 from plugincode.post_scan import PostScanPlugin, post_scan_impl
-
+from license_expression import Licensing
 from cluecode.copyrights import CopyrightDetector
+from packagedcode.utils import combine_expressions
 from summarycode.copyright_summary import canonical_holder
 from summarycode.score import (compute_license_score,
                                get_field_values_from_codebase_resources,
@@ -91,7 +92,7 @@ class ScanSummary(PostScanPlugin):
         ]
 
         # Determine declared license expression, declared holder, and primary language from Package data
-        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data, programming_language_summary)
+        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data)
 
         if declared_license_expression:
             scoring_elements, _ = compute_license_score(codebase)
@@ -340,18 +341,18 @@ def get_declared_holder(codebase, holders_summary):
         for entry in holders_summary if entry['value']
     }
     key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
-    key_file_holders = [
-        fingerprints.generate(entry['holder'])
-        for entry in key_file_holders
-    ]
-    unique_key_file_holders = unique(key_file_holders)
+    entry_by_key_file_holders = {
+        fingerprints.generate(entry['holder']): entry
+        for entry in key_file_holders if entry['holder']
+    }
+    unique_key_file_holders = unique(entry_by_key_file_holders.keys())
+    unique_key_file_holders_entries = [entry_by_holders[holder] for holder in unique_key_file_holders]
 
     holder_by_counts = defaultdict(list)
-    for holder in unique_key_file_holders:
-        entry = entry_by_holders.get(holder) or {}
-        count = entry.get('count')
+    for holder_entry in unique_key_file_holders_entries:
+        count = holder_entry.get('count')
         if count:
-            holder = entry.get('value')
+            holder = holder_entry.get('value')
             holder_by_counts[count].append(holder)
 
     declared_holder = ''
@@ -381,36 +382,55 @@ def get_primary_language(programming_language_summary):
     return primary_language
 
 
-def get_origin_info_from_package_data(key_file_package_data, programming_language_summary):
+def get_origin_info_from_package_data(key_file_package_data):
     """
     Return a 3-tuple containing the strings of declared license expression,
     copyright holder, and primary programming language from a list of detected
     package data.
     """
-    counts_by_programming_languages = {
-        entry['value']: entry['count']
-        for entry in programming_language_summary
-    }
-    packages_by_primary_languages = {
-        package['primary_language']: package
-        for package in key_file_package_data if package['primary_language']
-    }
-
-    # We pick the package data to report as the origin information based on the
-    # primary language of the packages
-    # We will use the package whose primary language occurs most often in our codebase
-    highest_count = 0
-    top_package = None
-    for package_primary_language, package in packages_by_primary_languages.items():
-        count = counts_by_programming_languages.get(package_primary_language) or 0
-        if count > highest_count:
-            highest_count = count
-            top_package = package
-
-    if not top_package:
+    if not key_file_package_data:
         return '', '', ''
 
-    package = top_package
+    if len(key_file_package_data) > 1:
+        license_expressions = []
+        programming_languages = []
+        copyrights = []
+        parties = []
+        for package_data in key_file_package_data:
+            license_expression = package_data.get('license_expression') or ''
+            programming_language = package_data.get('primary_language') or ''
+            copyright_statement = package_data.get('copyright') or ''
+            package_parties = package_data.get('parties', [])
+            license_expressions.append(license_expression)
+            programming_languages.append(programming_language)
+            copyrights.append(copyright_statement)
+            parties.extend(package_parties)
+
+        # Combine license expressions
+        unique_license_expressions = unique(license_expressions)
+        combined_declared_license_expression = combine_expressions(unique_license_expressions)
+        declared_license_expression = ''
+        if combined_declared_license_expression:
+            declared_license_expression = str(Licensing().parse(combined_declared_license_expression).simplify())
+
+        # Combine holders
+        holders = list(get_holders_from_copyright(copyrights))
+        declared_holder = ''
+        if holders:
+            declared_holder = ', '.join(holders)
+        elif parties:
+            party_members = [party['name'] for party in parties]
+            declared_holder = ', '.join(party_members)
+
+        # Programming language
+        unique_programming_languages = unique(programming_languages)
+        primary_language = ''
+        if len(unique_programming_languages) == 1:
+            primary_language = unique_programming_languages[0]
+
+        return declared_license_expression, declared_holder, primary_language
+
+    package = key_file_package_data[0]
     declared_license_expression = package.get('license_expression') or ''
     package_primary_language = package.get('primary_language') or ''
 
@@ -418,19 +438,8 @@ def get_origin_info_from_package_data(key_file_package_data, programming_languag
     package_copyright = package.get('copyright', '')
     package_holders = []
     if package_copyright:
-        numbered_lines = [(0, package_copyright)]
+        package_holders = list(get_holders_from_copyright(package_copyright))
 
-        holder_detections = CopyrightDetector().detect(
-            numbered_lines,
-            include_copyrights=False,
-            include_holders=True,
-            include_authors=False,
-        )
-
-        for holder_detection in holder_detections:
-            package_holders.append(holder_detection.holder)
-
-    declared_holder = ''
     if package_holders:
         declared_holder = ', '.join(package_holders)
     else:
@@ -442,3 +451,29 @@ def get_origin_info_from_package_data(key_file_package_data, programming_languag
         declared_holder = ', '.join(party_members)
 
     return declared_license_expression, declared_holder, package_primary_language
+
+
+def get_holders_from_copyright(copyright):
+    """
+    Yield holders detected from a `copyright` string or list.
+    """
+    numbered_lines = []
+    if isinstance(copyright, list):
+        for i, c in enumerate(copyright):
+            numbered_lines.append(
+                (i, c)
+            )
+    else:
+        numbered_lines.append(
+            (0, copyright)
+        )
+
+    holder_detections = CopyrightDetector().detect(
+        numbered_lines,
+        include_copyrights=False,
+        include_holders=True,
+        include_authors=False,
+    )
+
+    for holder_detection in holder_detections:
+        yield holder_detection.holder

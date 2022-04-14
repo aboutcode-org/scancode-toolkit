@@ -19,12 +19,65 @@
       "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "files_count": 4
+        "files_count": 5
       }
     }
   ],
   "dependencies": [],
   "packages": [
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "codebase",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Demo Corporation",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": "MIT",
+      "notice_text": null,
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:cargo/codebase",
+      "package_data_files": [
+        "multiple_package_data/cargo.toml"
+      ],
+      "files": [
+        "multiple_package_data/apache-2.0.LICENSE",
+        "multiple_package_data/cargo.toml",
+        "multiple_package_data/mit.LICENSE",
+        "multiple_package_data/README.txt",
+        "multiple_package_data/setup.py"
+      ],
+      "purl": "pkg:cargo/codebase",
+      "repository_homepage_url": "https://crates.io/crates/codebase",
+      "repository_download_url": null,
+      "api_data_url": "https://crates.io/api/v1/crates/codebase"
+    },
     {
       "type": "pypi",
       "namespace": null,
@@ -66,13 +119,14 @@
       "extra_data": {},
       "package_uuid": "pkg:pypi/codebase",
       "package_data_files": [
-        "with_package_data/setup.py"
+        "multiple_package_data/setup.py"
       ],
       "files": [
-        "with_package_data/apache-2.0.LICENSE",
-        "with_package_data/mit.LICENSE",
-        "with_package_data/README.txt",
-        "with_package_data/setup.py"
+        "multiple_package_data/apache-2.0.LICENSE",
+        "multiple_package_data/cargo.toml",
+        "multiple_package_data/mit.LICENSE",
+        "multiple_package_data/README.txt",
+        "multiple_package_data/setup.py"
       ],
       "purl": "pkg:pypi/codebase",
       "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
@@ -81,7 +135,7 @@
     }
   ],
   "summary": {
-    "declared_license_expression": "apache-2.0",
+    "declared_license_expression": "apache-2.0 AND mit",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -91,32 +145,40 @@
       "conflicting_license_categories": false,
       "ambigous_compound_licensing": false
     },
-    "declared_holder": "Example Corp.",
+    "declared_holder": "Demo Corporation, Example Corp.",
     "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": "apache-2.0 OR mit",
-        "count": 1
+        "value": "apache-2.0",
+        "count": 3
       },
       {
         "value": "mit",
+        "count": 2
+      },
+      {
+        "value": "apache-2.0 OR mit",
         "count": 1
       }
     ],
     "other_holders": [
       {
         "value": null,
-        "count": 3
+        "count": 4
+      },
+      {
+        "value": "Example Corp.",
+        "count": 1
       }
     ],
     "other_languages": []
   },
   "files": [
     {
-      "path": "with_package_data",
+      "path": "multiple_package_data",
       "type": "directory",
-      "name": "with_package_data",
-      "base_name": "with_package_data",
+      "name": "multiple_package_data",
+      "base_name": "multiple_package_data",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -144,13 +206,13 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
-      "files_count": 4,
+      "files_count": 5,
       "dirs_count": 0,
-      "size_count": 11357,
+      "size_count": 11432,
       "scan_errors": []
     },
     {
-      "path": "with_package_data/README.txt",
+      "path": "multiple_package_data/README.txt",
       "type": "file",
       "name": "README.txt",
       "base_name": "README",
@@ -308,6 +370,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
+        "pkg:cargo/codebase",
         "pkg:pypi/codebase"
       ],
       "is_legal": false,
@@ -321,7 +384,7 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/apache-2.0.LICENSE",
+      "path": "multiple_package_data/apache-2.0.LICENSE",
       "type": "file",
       "name": "apache-2.0.LICENSE",
       "base_name": "apache-2.0",
@@ -388,6 +451,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
+        "pkg:cargo/codebase",
         "pkg:pypi/codebase"
       ],
       "is_legal": true,
@@ -401,7 +465,138 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/mit.LICENSE",
+      "path": "multiple_package_data/cargo.toml",
+      "type": "file",
+      "name": "cargo.toml",
+      "base_name": "cargo",
+      "extension": ".toml",
+      "size": 75,
+      "sha1": "97d0edda5c68c41ccb29397461b12af7ea216314",
+      "md5": "5f0e096c1e8b60e7d47d2386a77c55ba",
+      "sha256": "fa9742ed8f0a094978bbf7fc86e0d3c188f6a4544696c78cdce9b916fb465680",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "mit_30.RULE",
+            "license_expression": "mit",
+            "licenses": [
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "mit"
+      ],
+      "percentage_of_license_text": 25.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Demo Corporation",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "codebase",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Demo Corporation",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "mit",
+          "declared_license": "MIT",
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [],
+          "purl": "pkg:cargo/codebase",
+          "repository_homepage_url": "https://crates.io/crates/codebase",
+          "repository_download_url": null,
+          "api_data_url": "https://crates.io/api/v1/crates/codebase"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/codebase",
+        "pkg:pypi/codebase"
+      ],
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "multiple_package_data/mit.LICENSE",
       "type": "file",
       "name": "mit.LICENSE",
       "base_name": "mit",
@@ -468,6 +663,7 @@
       "authors": [],
       "package_data": [],
       "for_packages": [
+        "pkg:cargo/codebase",
         "pkg:pypi/codebase"
       ],
       "is_legal": true,
@@ -481,7 +677,7 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/setup.py",
+      "path": "multiple_package_data/setup.py",
       "type": "file",
       "name": "setup.py",
       "base_name": "setup",
@@ -594,6 +790,7 @@
         }
       ],
       "for_packages": [
+        "pkg:cargo/codebase",
         "pkg:pypi/codebase"
       ],
       "is_legal": false,
