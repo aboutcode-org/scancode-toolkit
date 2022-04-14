@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/dart",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/dart?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
@@ -40,9 +41,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/_fe_analyzer_shared@22.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/analyzer@1.7.1",
@@ -52,9 +54,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/analyzer@1.7.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/analyzer@1.7.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/args@2.1.1",
@@ -64,9 +67,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/args@2.1.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/args@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/async@2.7.0",
@@ -76,9 +80,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/async@2.7.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/async@2.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/boolean_selector@2.1.0",
@@ -88,9 +93,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/boolean_selector@2.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/boolean_selector@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/charcode@1.3.1",
@@ -100,9 +106,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/charcode@1.3.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/charcode@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/cli_util@0.3.2",
@@ -112,9 +119,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/cli_util@0.3.2",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/cli_util@0.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/collection@1.15.0",
@@ -124,9 +132,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/collection@1.15.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/collection@1.15.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/convert@3.0.1",
@@ -136,9 +145,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/convert@3.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/convert@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/coverage@1.0.3",
@@ -148,9 +158,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/coverage@1.0.3",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/coverage@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/crypto@3.0.1",
@@ -160,9 +171,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/crypto@3.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/crypto@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/csslib@0.17.0",
@@ -172,9 +184,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/csslib@0.17.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/csslib@0.17.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/dartdoc@1.0.0",
@@ -184,9 +197,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/dartdoc@1.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/dartdoc@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/file@6.1.2",
@@ -196,9 +210,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/file@6.1.2",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/file@6.1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/frontend_server_client@2.1.0",
@@ -208,9 +223,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/frontend_server_client@2.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/frontend_server_client@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/glob@2.0.1",
@@ -220,9 +236,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/glob@2.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/glob@2.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/html@0.15.0",
@@ -232,9 +249,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/html@0.15.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/html@0.15.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/http@0.13.3",
@@ -244,9 +262,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/http@0.13.3",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/http@0.13.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/http_multi_server@3.0.1",
@@ -256,9 +275,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/http_multi_server@3.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/http_multi_server@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/http_parser@4.0.0",
@@ -268,9 +288,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/http_parser@4.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/http_parser@4.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/io@1.0.2",
@@ -280,9 +301,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/io@1.0.2",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/io@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/js@0.6.3",
@@ -292,9 +314,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/js@0.6.3",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/js@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/json_annotation@4.0.1",
@@ -304,9 +327,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/json_annotation@4.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/json_annotation@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/logging@1.0.1",
@@ -316,9 +340,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/logging@1.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/logging@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/markdown@4.0.0",
@@ -328,9 +353,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/markdown@4.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/markdown@4.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/matcher@0.12.10",
@@ -340,9 +366,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/matcher@0.12.10",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/matcher@0.12.10?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/meta@1.3.0",
@@ -352,9 +379,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/meta@1.3.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/meta@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/mime@1.0.0",
@@ -364,9 +392,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/mime@1.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/mime@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/node_preamble@2.0.1",
@@ -376,9 +405,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/node_preamble@2.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/node_preamble@2.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/package_config@2.0.0",
@@ -388,9 +418,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/package_config@2.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/package_config@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/path@1.8.0",
@@ -400,9 +431,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/path@1.8.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/path@1.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/pedantic@1.11.1",
@@ -412,9 +444,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/pedantic@1.11.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/pedantic@1.11.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/pool@1.5.0",
@@ -424,9 +457,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/pool@1.5.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/pool@1.5.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/pub_dartdoc_data@0.0.0",
@@ -436,9 +470,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/pub_dartdoc_data@0.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/pub_dartdoc_data@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/pub_semver@2.0.0",
@@ -448,9 +483,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/pub_semver@2.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/pub_semver@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/shelf@1.1.4",
@@ -460,9 +496,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/shelf@1.1.4",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/shelf@1.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/shelf_packages_handler@3.0.0",
@@ -472,9 +509,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/shelf_packages_handler@3.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/shelf_packages_handler@3.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/shelf_static@1.0.0",
@@ -484,9 +522,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/shelf_static@1.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/shelf_static@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/shelf_web_socket@1.0.1",
@@ -496,9 +535,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/shelf_web_socket@1.0.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/shelf_web_socket@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/source_map_stack_trace@2.1.0",
@@ -508,9 +548,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/source_map_stack_trace@2.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/source_map_stack_trace@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/source_maps@0.10.10",
@@ -520,9 +561,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/source_maps@0.10.10",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/source_maps@0.10.10?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/source_span@1.8.1",
@@ -532,9 +574,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/source_span@1.8.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/source_span@1.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/stack_trace@1.10.0",
@@ -544,9 +587,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/stack_trace@1.10.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/stack_trace@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/stream_channel@2.1.0",
@@ -556,9 +600,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/stream_channel@2.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/stream_channel@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/string_scanner@1.1.0",
@@ -568,9 +613,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/string_scanner@1.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/string_scanner@1.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/tar@0.4.0",
@@ -580,9 +626,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/tar@0.4.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/tar@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/term_glyph@1.2.0",
@@ -592,9 +639,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/term_glyph@1.2.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/term_glyph@1.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/test@1.17.9",
@@ -604,9 +652,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/test@1.17.9",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/test@1.17.9?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/test_api@0.4.1",
@@ -616,9 +665,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/test_api@0.4.1",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/test_api@0.4.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/test_core@0.3.29",
@@ -628,9 +678,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/test_core@0.3.29",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/test_core@0.3.29?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/typed_data@1.3.0",
@@ -640,9 +691,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/typed_data@1.3.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/typed_data@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/vm_service@7.1.0",
@@ -652,9 +704,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/vm_service@7.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/vm_service@7.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/watcher@1.0.0",
@@ -664,9 +717,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/watcher@1.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/watcher@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/web_socket_channel@2.1.0",
@@ -676,9 +730,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/web_socket_channel@2.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/web_socket_channel@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/webkit_inspection_protocol@1.0.0",
@@ -688,9 +743,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/webkit_inspection_protocol@1.0.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/webkit_inspection_protocol@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     },
     {
       "purl": "pkg:pubspec/yaml@3.1.0",
@@ -700,9 +756,10 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uid": "pkg:pubspec/yaml@3.1.0",
-      "for_package": null,
-      "datafile_path": "dart-pubspec.lock"
+      "dependency_uid": "pkg:pubspec/yaml@3.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "dart-pubspec.lock",
+      "datasource_id": "pubspec_lock"
     }
   ],
   "packages": [],
@@ -738,6 +795,7 @@
           "declared_license": null,
           "notice_text": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -1254,10 +1312,11 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "pubspec_lock",
+          "purl": null
         }
       ],
       "for_packages": [],

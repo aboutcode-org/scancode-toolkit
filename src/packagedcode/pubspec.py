@@ -41,10 +41,8 @@ class BaseDartPubspecHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
-        datafile_name_patterns = (
-            'pubspec.yaml',
-            'pubspec.lock',
-        )
+        datafile_name_patterns = \
+            DartPubspecYamlHandler.path_patterns + DartPubspecLockHandler.path_patterns
 
         if resource.has_parent():
             dir_resource=resource.parent(codebase)
@@ -103,7 +101,7 @@ def compute_normalized_license(declared_license):
         return combine_expressions(detected_licenses)
 
 
-class PubspecLockHandler(BaseDartPubspecHandler):
+class DartPubspecLockHandler(BaseDartPubspecHandler):
     datasource_id = 'pubspec_lock'
     path_patterns = ('*pubspec.lock',)
     default_package_type = 'pubspec'

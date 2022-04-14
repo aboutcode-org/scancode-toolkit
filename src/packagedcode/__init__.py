@@ -163,7 +163,7 @@ PACKAGE_DATAFILE_HANDLERS = [
     phpcomposer.PhpComposerLockHandler,
 
     pubspec.DartPubspecYamlHandler,
-    pubspec.PubspecLockHandler,
+    pubspec.DartPubspecLockHandler,
 
     pypi.PipfileHandler,
     pypi.PipfileLockHandler,

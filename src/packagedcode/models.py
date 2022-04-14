@@ -1013,6 +1013,7 @@ class DatafileHandler:
         multiple PackageData for unrelated Packages
         """
         package = None
+        package_uid = None
         base_resource = None
 
         # process each package in sequence. The first item creates a package and
@@ -1023,19 +1024,21 @@ class DatafileHandler:
 
             if not package:
                 # create package from the first item first package_data
-                package = Package.from_package_data(
-                    package_data=package_data,
-                    datafile_path=resource.path,
-                )
+                if package_data.purl:
+                    package = Package.from_package_data(
+                        package_data=package_data,
+                        datafile_path=resource.path,
+                    )
+                    package_uid = package.package_uid
+                    resource.for_packages.append(package_uid)
+                    resource.save(codebase)
             else:
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,
                 )
-
-            package_uid = package.package_uid
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+                resource.for_packages.append(package_uid)
+                resource.save(codebase)
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1055,7 +1058,8 @@ class DatafileHandler:
             res.for_packages.append(package_uid)
             res.save(codebase)
 
-        yield package
+        if package:
+            yield package
 
     @classmethod
     def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
@@ -1074,7 +1078,7 @@ class DatafileHandler:
         `assemble()`
 
         NOTE: ATTENTION!: this will not work well for datafile that yields
-        multiple PackageData for unrelated Packages
+        multiple PackageData for unrelated Packages.
         """
         if TRACE:
             logger_debug(f'assemble_from_many_datafiles: datafile_name_patterns: {datafile_name_patterns!r}')
@@ -1084,27 +1088,21 @@ class DatafileHandler:
         else:
             siblings = [directory]
 
-        matching_siblings = []
-        for sibling in siblings:
-            name = sibling.name
-            # we iterate on datafile_name_patterns because their order matters
-            for dfnp in datafile_name_patterns:
-                if fnmatchcase(name=name, pat=dfnp):
-                    matching_siblings.append(sibling)
-
         pkgdata_resources = []
-        for resource in matching_siblings:
-            for package_data in resource.package_data:
-                package_data = PackageData.from_dict(package_data)
-                pkgdata_resources.append((package_data, resource,))
 
-        if not pkgdata_resources:
-            return
+        # we iterate on datafile_name_patterns because their order matters
+        for datafile_name_pattern in datafile_name_patterns:
+            for sibling in siblings:
+                if fnmatch(sibling.name, datafile_name_pattern):
+                    for package_data in sibling.package_data:
+                        package_data = PackageData.from_dict(package_data)
+                        pkgdata_resources.append((package_data, sibling,))
 
-        yield from cls.assemble_from_many(
-            pkgdata_resources=pkgdata_resources,
-            codebase=codebase,
-        )
+        if pkgdata_resources:
+            yield from cls.assemble_from_many(
+                pkgdata_resources=pkgdata_resources,
+                codebase=codebase,
+            )
 
     @classmethod
     def create_default_package_data(cls, **kwargs):

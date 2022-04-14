@@ -38,24 +38,20 @@ class TestBuild(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_build_get_package_resources(self):
-        test_loc = self.get_test_loc('get_package_resources')
-        codebase = Codebase(test_loc)
-        root = codebase.root
-        expected = [
-            'get_package_resources',
-            'get_package_resources/BUCK',
-            'get_package_resources/file1',
-        ]
-        results = [r.path for r in build.BaseBuildManifestPackageData.get_package_resources(root, codebase)]
-        assert results == expected
-
     def test_BazelPackage_parse(self):
         test_file = self.get_test_loc('bazel/parse/BUILD')
         result_packages = build.BazelBuildHandler.parse(test_file)
         expected_packages = [
-            models.PackageData(name='hello-greet'),
-            models.PackageData(name='hello-world'),
+            models.PackageData(
+                name='hello-greet',
+                type=build.BazelBuildHandler.default_package_type,
+                datasource_id=build.BazelBuildHandler.datasource_id,
+            ),
+            models.PackageData(
+                name='hello-world',
+                type=build.BazelBuildHandler.default_package_type,
+                datasource_id=build.BazelBuildHandler.datasource_id,
+            )
         ]
         compare_package_results(expected_packages, result_packages)
 
@@ -63,28 +59,34 @@ class TestBuild(PackageTester):
         test_file = self.get_test_loc('buck/parse/BUCK')
         result_packages = build.BuckPackageHandler.parse(test_file)
         expected_packages = [
-            models.PackageData(name='app'),
-            models.PackageData(name='app2'),
+            models.PackageData(
+                name='app',
+                type=build.BuckPackageHandler.default_package_type,
+                datasource_id=build.BuckPackageHandler.datasource_id,
+            ),
+            models.PackageData(
+                name='app2',
+                type=build.BuckPackageHandler.default_package_type,
+                datasource_id=build.BuckPackageHandler.datasource_id,
+            ),
         ]
         compare_package_results(expected_packages, result_packages)
 
     def test_BuckPackage_recognize_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result_packages = build.BuckPackageHandler.parse(test_file)
-        expected_packages = [
-            models.PackageData(
-                name='app',
-                declared_license=['LICENSE'],
-                license_expression= 'apache-2.0',
-            )
-        ]
-        compare_package_results(expected_packages, result_packages)
+        test_loc = self.get_test_loc('buck/parse/license/')
+        result_package = list(build.BuckPackageHandler.parse(test_file))[0]
+        codebase = Codebase(test_loc)
+        resource = codebase.get_resource_from_path(test_file, absolute=True)
+        license_expression = build.compute_normalized_license(result_package, resource, codebase)
+        assert license_expression == 'apache-2.0'
 
     def test_MetadataBzl_parse(self):
         test_file = self.get_test_loc('metadatabzl/METADATA.bzl')
         result_packages = build.BuckMetadataBzlHandler.parse(test_file)
         expected_packages = [
             models.PackageData(
+                datasource_id=build.BuckMetadataBzlHandler.datasource_id,
                 type='github',
                 name='example',
                 version='0.0.1',

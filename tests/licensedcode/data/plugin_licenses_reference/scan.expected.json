@@ -57,7 +57,7 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/npm/npm.git",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "artistic-2.0 OR mit",
       "declared_license": [
         "Artistic-2.0 OR MIT"
       ],
@@ -401,7 +401,7 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/npm/npm.git",
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "artistic-2.0 OR mit",
           "declared_license": [
             "Artistic-2.0 OR MIT"
           ],
