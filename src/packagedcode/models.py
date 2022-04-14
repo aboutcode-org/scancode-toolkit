@@ -9,7 +9,6 @@
 
 import os
 import uuid
-from fnmatch import fnmatch
 from fnmatch import fnmatchcase
 
 import attr
@@ -837,7 +836,7 @@ class DatafileHandler:
         """
         if filetype.is_file(location):
             loc = as_posixpath(location)
-            if any(fnmatch(loc, pat) for pat in cls.path_patterns):
+            if any(fnmatchcase(loc, pat) for pat in cls.path_patterns):
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
@@ -1085,7 +1084,7 @@ class DatafileHandler:
         # we iterate on datafile_name_patterns because their order matters
         for datafile_name_pattern in datafile_name_patterns:
             for sibling in siblings:
-                if fnmatch(sibling.name, datafile_name_pattern):
+                if fnmatchcase(sibling.name, datafile_name_pattern):
                     for package_data in sibling.package_data:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, sibling,))
