@@ -7,9 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
 import os
-import sys
 import uuid
 from fnmatch import fnmatch
 from fnmatch import fnmatchcase
@@ -107,25 +105,24 @@ Beyond these we have a few secondary models:
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
-TRACE = False or SCANCODE_DEBUG_PACKAGE_API
-TRACE_UPDATE = False or SCANCODE_DEBUG_PACKAGE_API
-
-
-def logger_debug(*args):
-    pass
-
-
-logger = logging.getLogger(__name__)
+TRACE = SCANCODE_DEBUG_PACKAGE_API
+TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_API
 
 if TRACE or TRACE_UPDATE:
-
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    use_print = True
+    if use_print:
+        prn = print
+    else:
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        prn = logger.debug
 
     def logger_debug(*args):
-        return logger_debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-    logger_debug = print
+        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class ModelMixin:
@@ -769,8 +766,8 @@ def compute_normalized_license(declared_license, expression_symbols=None):
     Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
     if provided. Otherwise use the standard SPDX license symbols.
     """
-    # If declared license is dict/list convert to string
-    if not type(declared_license) == str:
+    # Ensure declared license is always a string
+    if not isinstance(declared_license, str):
         declared_license = repr(declared_license)
 
     if not declared_license:
@@ -1079,28 +1076,27 @@ class DatafileHandler:
         NOTE: ATTENTION!: this will not work well for datafile that yields
         multiple PackageData for unrelated Packages
         """
+        if TRACE:
+            logger_debug(f'assemble_from_many_datafiles: datafile_name_patterns: {datafile_name_patterns!r}')
 
         if not codebase.has_single_resource:
-            siblings = {
-                child.name: child
-                for child in directory.children(codebase)
-                if any(
-                    fnmatchcase(name=child.name, pat=dfnp)
-                    for dfnp in datafile_name_patterns
-                )
-            }
+            siblings = list(directory.children(codebase))
         else:
-            siblings = {directory.name: directory}
+            siblings = [directory]
+
+        matching_siblings = []
+        for sibling in siblings:
+            name = sibling.name
+            # we iterate on datafile_name_patterns because their order matters
+            for dfnp in datafile_name_patterns:
+                if fnmatchcase(name=name, pat=dfnp):
+                    matching_siblings.append(sibling)
 
         pkgdata_resources = []
-
-        # we iterate on datafile_name_patterns because their order matters
-        for datafile_name in datafile_name_patterns:
-            resource = siblings.get(datafile_name)
-            if resource:
-                for package_data in resource.package_data:
-                    package_data = PackageData.from_dict(package_data)
-                    pkgdata_resources.append((package_data, resource,))
+        for resource in matching_siblings:
+            for package_data in resource.package_data:
+                package_data = PackageData.from_dict(package_data)
+                pkgdata_resources.append((package_data, resource,))
 
         if not pkgdata_resources:
             return
