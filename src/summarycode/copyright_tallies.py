@@ -227,7 +227,7 @@ def tally_persons(texts):
     Return a list of mapping of {value:string, count:int} given a
     list of holders strings or Text() objects.
     """
-    texts = []
+    texts_to_tally = []
     no_detection_counter = 0
     for text in texts:
         if not text:
@@ -235,12 +235,12 @@ def tally_persons(texts):
             continue
         # Keep Text objects as-is
         if isinstance(text, Text):
-            texts.append(text)
+            texts_to_tally.append(text)
         else:
             cano = canonical_holder(text)
-            texts.append(Text(cano, cano))
+            texts_to_tally.append(Text(cano, cano))
 
-    counter = tally(texts)
+    counter = tally(texts_to_tally)
 
     if no_detection_counter:
         counter[None] = no_detection_counter

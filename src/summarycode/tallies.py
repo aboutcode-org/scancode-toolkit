@@ -7,20 +7,16 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import Counter, defaultdict
-import warnings
-
 import attr
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
-from summarycode.score import get_field_values_from_codebase_resources
-from summarycode.score import unique
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_tallies
 from summarycode.utils import set_resource_tallies
+
 
 # Tracing flags
 TRACE = False
@@ -69,7 +65,8 @@ class Tallies(PostScanPlugin):
 
     def process_codebase(self, codebase, tallies, **kwargs):
         if TRACE_LIGHT: logger_debug('Tallies:process_codebase')
-        compute_codebase_tallies(codebase, keep_details=False, **kwargs)
+        tallies = compute_codebase_tallies(codebase, keep_details=False, **kwargs)
+        codebase.attributes.tallies.update(tallies)
 
 
 @post_scan_impl
@@ -86,9 +83,9 @@ class TalliesWithDetails(PostScanPlugin):
     - programming_language
     - packages
     """
-    # mapping of summary data at the codebase level for the whole codebase
+    # mapping of tally data at the codebase level for the whole codebase
     codebase_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
-    # store summaries at the file and directory level in this attribute when
+    # store tallies at the file and directory level in this attribute when
     # keep details is True
     resource_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
     sort_order = 100
@@ -105,7 +102,8 @@ class TalliesWithDetails(PostScanPlugin):
         return tallies_with_details
 
     def process_codebase(self, codebase, tallies_with_details, **kwargs):
-        compute_codebase_tallies(codebase, keep_details=True, **kwargs)
+        tallies = compute_codebase_tallies(codebase, keep_details=True, **kwargs)
+        codebase.attributes.tallies.update(tallies)
 
 
 def compute_codebase_tallies(codebase, keep_details, **kwargs):
@@ -113,19 +111,19 @@ def compute_codebase_tallies(codebase, keep_details, **kwargs):
     Compute tallies of a scan at the codebase level for available scans.
 
     If `keep_details` is True, also keep file and directory details in the
-    `summary` file attribute for every file and directory.
+    `tallies` file attribute for every file and directory.
     """
     from summarycode.copyright_tallies import author_tallies
     from summarycode.copyright_tallies import copyright_tallies
     from summarycode.copyright_tallies import holder_tallies
 
     attrib_summarizers = [
-        ('license_expressions', license_summarizer),
+        ('license_expressions', license_tallies),
         ('copyrights', copyright_tallies),
         ('holders', holder_tallies),
         ('authors', author_tallies),
-        ('programming_language', language_summarizer),
-        ('packages', package_summarizer),
+        ('programming_language', language_tallies),
+        ('packages', package_tallies),
     ]
 
     # find which attributes are available for summarization by checking the root
@@ -144,17 +142,17 @@ def compute_codebase_tallies(codebase, keep_details, **kwargs):
 
         codebase.save_resource(resource)
 
-    # set the summary from the root resource at the codebase level
+    # set the tallies from the root resource at the codebase level
     if keep_details:
-        summary = root.tallies
+        tallies = root.tallies
     else:
-        summary = root.extra_data.get('tallies', {})
-    codebase.attributes.tallies.update(summary)
+        tallies = root.extra_data.get('tallies', {})
 
-    if TRACE: logger_debug('codebase tallies:', summary)
+    if TRACE: logger_debug('codebase tallies:', tallies)
+    return tallies
 
 
-def license_summarizer(resource, children, keep_details=False):
+def license_tallies(resource, children, keep_details=False):
     """
     Populate a license_expressions list of mappings such as
         {value: "expression", count: "count of occurences"}
@@ -171,24 +169,24 @@ def license_summarizer(resource, children, keep_details=False):
     else:
         license_expressions.extend(lic_expressions)
 
-    # Collect direct children expression summary
+    # Collect direct children expression tallies
     for child in children:
-        child_summaries = get_resource_tallies(child, key=LIC_EXP, as_attribute=keep_details) or []
-        for child_summary in child_summaries:
+        child_tallies = get_resource_tallies(child, key=LIC_EXP, as_attribute=keep_details) or []
+        for child_tally in child_tallies:
             # TODO: review this: this feels rather weird
-            child_sum_val = child_summary.get('value')
+            child_sum_val = child_tally.get('value')
             if child_sum_val:
-                values = [child_sum_val] * child_summary['count']
+                values = [child_sum_val] * child_tally['count']
                 license_expressions.extend(values)
 
     # summarize proper
-    licenses_counter = summarize_licenses(license_expressions)
-    summarized = sorted_counter(licenses_counter)
-    set_resource_tallies(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
-    return summarized
+    licenses_counter = tally_licenses(license_expressions)
+    tallied = sorted_counter(licenses_counter)
+    set_resource_tallies(resource, key=LIC_EXP, value=tallied, as_attribute=keep_details)
+    return tallied
 
 
-def summarize_licenses(license_expressions):
+def tally_licenses(license_expressions):
     """
     Given a list of license expressions, return a mapping of {expression: count
     of occurences}
@@ -198,9 +196,9 @@ def summarize_licenses(license_expressions):
     return Counter(license_expressions)
 
 
-def language_summarizer(resource, children, keep_details=False):
+def language_tallies(resource, children, keep_details=False):
     """
-    Populate a programming_language summary list of mappings such as
+    Populate a programming_language tallies list of mappings such as
         {value: "programming_language", count: "count of occurences"}
     sorted by decreasing count.
     """
@@ -216,21 +214,21 @@ def language_summarizer(resource, children, keep_details=False):
 
     # Collect direct children expression summaries
     for child in children:
-        child_summaries = get_resource_tallies(child, key=PROG_LANG, as_attribute=keep_details) or []
-        for child_summary in child_summaries:
-            child_sum_val = child_summary.get('value')
+        child_tallies = get_resource_tallies(child, key=PROG_LANG, as_attribute=keep_details) or []
+        for child_tally in child_tallies:
+            child_sum_val = child_tally.get('value')
             if child_sum_val:
-                values = [child_sum_val] * child_summary['count']
+                values = [child_sum_val] * child_tally['count']
                 languages.extend(values)
 
     # summarize proper
-    languages_counter = summarize_languages(languages)
-    summarized = sorted_counter(languages_counter)
-    set_resource_tallies(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
-    return summarized
+    languages_counter = tally_languages(languages)
+    tallied = sorted_counter(languages_counter)
+    set_resource_tallies(resource, key=PROG_LANG, value=tallied, as_attribute=keep_details)
+    return tallied
 
 
-def summarize_languages(languages):
+def tally_languages(languages):
     """
     Given a list of languages, return a mapping of {language: count
     of occurences}
@@ -239,7 +237,7 @@ def summarize_languages(languages):
     return Counter(languages)
 
 
-SUMMARIZABLE_ATTRS = set([
+TALLYABLE_ATTRS = set([
     'license_expressions',
     'copyrights',
     'holders',
@@ -249,24 +247,24 @@ SUMMARIZABLE_ATTRS = set([
 ])
 
 
-def summarize_values(values, attribute):
+def tally_values(values, attribute):
     """
     Given a list of `values` for a given `attribute`, return a mapping of
-    {value: count of occurences} using a summarization specific to the attribute.
+    {value: count of occurences} using a tallier specific to the attribute.
     """
-    if attribute not in SUMMARIZABLE_ATTRS:
+    if attribute not in TALLYABLE_ATTRS:
         return {}
-    from summarycode.copyright_summary import summarize_persons
-    from summarycode.copyright_summary import summarize_copyrights
+    from summarycode.copyright_tallies import tally_copyrights
+    from summarycode.copyright_tallies import tally_persons
 
-    value_summarizers_by_attr = dict(
-        license_expressions=summarize_licenses,
-        copyrights=summarize_copyrights,
-        holders=summarize_persons,
-        authors=summarize_persons,
-        programming_language=summarize_languages,
+    value_talliers_by_attr = dict(
+        license_expressions=tally_licenses,
+        copyrights=tally_copyrights,
+        holders=tally_persons,
+        authors=tally_persons,
+        programming_language=tally_languages,
     )
-    return value_summarizers_by_attr[attribute](values)
+    return value_talliers_by_attr[attribute](values)
 
 
 @post_scan_impl
@@ -276,7 +274,7 @@ class KeyFilesTallies(PostScanPlugin):
     """
     sort_order = 150
 
-    # mapping of summary data at the codebase level for key files
+    # mapping of tally data at the codebase level for key files
     codebase_attributes = dict(tallies_of_key_files=attr.ib(default=attr.Factory(dict)))
 
     options = [
@@ -296,21 +294,21 @@ class KeyFilesTallies(PostScanPlugin):
         return tallies_key_files
 
     def process_codebase(self, codebase, tallies_key_files, **kwargs):
-        summarize_codebase_key_files(codebase, **kwargs)
+        tally_codebase_key_files(codebase, **kwargs)
 
 
-def summarize_codebase_key_files(codebase, **kwargs):
+def tally_codebase_key_files(codebase, field='tallies', **kwargs):
     """
     Summarize codebase key files.
     """
-    summarizables = codebase.attributes.tallies.keys()
-    if TRACE: logger_debug('summarizables:', summarizables)
+    talliables = codebase.attributes.tallies.keys()
+    if TRACE: logger_debug('tallieables:', talliables)
 
     # TODO: we cannot summarize packages with "key files" for now
-    summarizables = [k for k in summarizables if k in SUMMARIZABLE_ATTRS]
+    talliables = [k for k in talliables if k in TALLYABLE_ATTRS]
 
     # create one counter for each summarized attribute
-    summarizable_values_by_key = dict([(key, []) for key in summarizables])
+    talliable_values_by_key = dict([(key, []) for key in talliables])
 
     # filter to get only key files
     key_files = (res for res in codebase.walk(topdown=True)
@@ -318,29 +316,29 @@ def summarize_codebase_key_files(codebase, **kwargs):
                      and (res.is_readme or res.is_legal or res.is_manifest)))
 
     for resource in key_files:
-        for key, values in summarizable_values_by_key.items():
+        for key, values in talliable_values_by_key.items():
             # note we assume things are stored as extra-data, not as direct
             # Resource attributes
-            res_summaries = get_resource_tallies(resource, key=key, as_attribute=False) or []
-            for summary in res_summaries:
-                # each summary is a mapping with value/count: we transform back to values
-                sum_value = summary.get('value')
-                if sum_value:
-                    values.extend([sum_value] * summary['count'])
+            res_tallies = get_resource_tallies(resource, key=key, as_attribute=False) or []
+            for tally in res_tallies:
+                # each tally is a mapping with value/count: we transform back to values
+                tally_value = tally.get('value')
+                if tally_value:
+                    values.extend([tally_value] * tally['count'])
 
-    summary_counters = []
-    for key, values in summarizable_values_by_key.items():
-        if key not in SUMMARIZABLE_ATTRS:
+    tally_counters = []
+    for key, values in talliable_values_by_key.items():
+        if key not in TALLYABLE_ATTRS:
             continue
-        summarized = summarize_values(values, key)
-        summary_counters.append((key, summarized))
+        tallied = tally_values(values, key)
+        tally_counters.append((key, tallied))
 
-    sorted_summaries = dict(
-        [(key, sorted_counter(counter)) for key, counter in summary_counters])
+    sorted_tallies = dict(
+        [(key, sorted_counter(counter)) for key, counter in tally_counters])
 
-    codebase.attributes.tallies_of_key_files = sorted_summaries
+    codebase.attributes.tallies_of_key_files = sorted_tallies
 
-    if TRACE: logger_debug('codebase summary_of_key_files:', sorted_summaries)
+    if TRACE: logger_debug('codebase tallies_of_key_files:', sorted_tallies)
 
 
 @post_scan_impl
@@ -366,22 +364,22 @@ class FacetTallies(PostScanPlugin):
 
     def process_codebase(self, codebase, tallies_by_facet, **kwargs):
         if TRACE_LIGHT: logger_debug('FacetTallies:process_codebase')
-        summarize_codebase_by_facet(codebase, **kwargs)
+        tally_codebase_by_facet(codebase, **kwargs)
 
 
-def summarize_codebase_by_facet(codebase, **kwargs):
+def tally_codebase_by_facet(codebase, **kwargs):
     """
     Summarize codebase by facte.
     """
     from summarycode import facet as facet_module
 
-    summarizable = codebase.attributes.tallies.keys()
+    talliable = codebase.attributes.tallies.keys()
     if TRACE:
-        logger_debug('summarize_codebase_by_facet for attributes:', summarizable)
+        logger_debug('tally_codebase_by_facet for attributes:', talliable)
 
     # create one group of by-facet values lists for each summarized attribute
-    summarizable_values_by_key_by_facet = dict([
-        (facet, dict([(key, []) for key in summarizable]))
+    talliable_values_by_key_by_facet = dict([
+        (facet, dict([(key, []) for key in talliable]))
         for facet in facet_module.FACETS
     ])
 
@@ -391,34 +389,34 @@ def summarize_codebase_by_facet(codebase, **kwargs):
 
         for facet in resource.facets:
             # note: this will fail loudly if the facet is not a known one
-            values_by_attribute = summarizable_values_by_key_by_facet[facet]
+            values_by_attribute = talliable_values_by_key_by_facet[facet]
             for key, values in values_by_attribute.items():
                 # note we assume things are stored as extra-data, not as direct
                 # Resource attributes
-                res_summaries = get_resource_tallies(resource, key=key, as_attribute=False) or []
-                for summary in res_summaries:
-                    # each summary is a mapping with value/count: we transform back to discrete values
-                    sum_value = summary.get('value')
-                    if sum_value:
-                        values.extend([sum_value] * summary['count'])
+                res_tallies = get_resource_tallies(resource, key=key, as_attribute=False) or []
+                for tally in res_tallies:
+                    # each tally is a mapping with value/count: we transform back to discrete values
+                    tally_value = tally.get('value')
+                    if tally_value:
+                        values.extend([tally_value] * tally['count'])
 
-    final_summaries = []
-    for facet, summarizable_values_by_key in summarizable_values_by_key_by_facet.items():
-        summary_counters = (
-            (key, summarize_values(values, key))
-            for key, values in summarizable_values_by_key.items()
+    final_tallies = []
+    for facet, talliable_values_by_key in talliable_values_by_key_by_facet.items():
+        tally_counters = (
+            (key, tally_values(values, key))
+            for key, values in talliable_values_by_key.items()
         )
 
-        sorted_summaries = dict(
-            [(key, sorted_counter(counter)) for key, counter in summary_counters])
+        sorted_tallies = dict(
+            [(key, sorted_counter(counter)) for key, counter in tally_counters])
 
-        facet_summary = dict(facet=facet)
-        facet_summary['summary'] = sorted_summaries
-        final_summaries.append(facet_summary)
+        facet_tally = dict(facet=facet)
+        facet_tally['tallies'] = sorted_tallies
+        final_tallies.append(facet_tally)
 
-    codebase.attributes.tallies_by_facet.extend(final_summaries)
+    codebase.attributes.tallies_by_facet.extend(final_tallies)
 
-    if TRACE: logger_debug('codebase summary_by_facet:', final_summaries)
+    if TRACE: logger_debug('codebase tallies_by_facet:', final_tallies)
 
 
 def add_files(packages, resource):
@@ -435,9 +433,9 @@ def add_files(packages, resource):
         yield package
 
 
-def package_summarizer(resource, children, keep_details=False):
+def package_tallies(resource, children, keep_details=False):
     """
-    Populate a packages summary list of packages mappings.
+    Populate a packages tally list of packages mappings.
 
     Note: `keep_details` is never used, as we are not keeping details of
     packages as this has no value.
@@ -450,7 +448,7 @@ def package_summarizer(resource, children, keep_details=False):
     if TRACE_LIGHT and current_packages:
         from packagedcode.models import Package
         packs = [Package.create(**p) for p in current_packages]
-        logger_debug('package_summarizer: for:', resource,
+        logger_debug('package_tallier: for:', resource,
                      'current_packages are:', packs)
 
     current_packages = add_files(current_packages, resource)
@@ -460,13 +458,13 @@ def package_summarizer(resource, children, keep_details=False):
         logger_debug()
         from packagedcode.models import Package  # NOQA
         packs = [Package.create(**p) for p in packages]
-        logger_debug('package_summarizer: for:', resource,
+        logger_debug('package_tallier: for:', resource,
                      'packages are:', packs)
 
-    # Collect direct children packages summary
+    # Collect direct children packages tallies
     for child in children:
-        child_summaries = get_resource_tallies(child, key='packages', as_attribute=False) or []
-        packages.extend(child_summaries)
+        child_tallies = get_resource_tallies(child, key='packages', as_attribute=False) or []
+        packages.extend(child_tallies)
 
     # summarize proper
     set_resource_tallies(resource, key='packages', value=packages, as_attribute=False)

@@ -21,7 +21,16 @@
   ],
   "tallies": {
     "copyrights": [],
-    "holders": [],
+    "holders": [
+      {
+        "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
+        "count": 1
+      },
+      {
+        "value": "Sun Microsystems, Inc.",
+        "count": 1
+      }
+    ],
     "authors": [
       {
         "value": null,
