@@ -1,7 +1,7 @@
 """
 Minimal lexer for POSIX and Bash shells.
 Derived from pygments.lexers.shell and significantly modified
-copyright: Copyright 2006-2021 by the Pygments team, see bashlex.py.AUTHORS.
+copyright: Copyright 2006-2021 by the Pygments team, see pygments.AUTHORS.
 SPDX-License-Identifier: BSD-2-Clause
 """
 
