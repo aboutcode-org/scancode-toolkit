@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
 import re
 
 from gemfileparser import GemfileParser
@@ -22,14 +21,41 @@ Handle Cocoapods (.podspec/Pofile) and Ruby(.gemspec/Gemfile) files.
 
 # FIXME: code needs cleanup
 
-parse_name = re.compile(r'.*\.name(\s*)=(?P<name>.*)')
-parse_version = re.compile(r'.*\.version(\s*)=(?P<version>.*)')
-parse_summary = re.compile(r'.*\.summary(\s*)=(?P<summary>.*)')
-parse_description = re.compile(r'.*\.description(\s*)=(?P<description>.*)')
-parse_homepage = re.compile(r'.*\.homepage(\s*)=(?P<homepage>.*)')
+parse_name = re.compile(
+    r'.*\.name\s*=\s*'
+    r'(?P<name>.*)'
+)
 
-parse_license = re.compile(r'.*\.license(\s*)=(?P<license>.*)')
-parse_source = re.compile(r'.*\.source(\s*)=(?P<source>.*)')
+parse_version = re.compile(
+    r'.*\.version\s*=\s*'
+    f'(?P<version>.*)'
+)
+
+parse_summary = re.compile(
+    r'.*\.summary\s*=\s*'
+    r'(?P<summary>.*)',
+)
+
+# simple single line quoted description
+parse_description = re.compile(
+    r'.*\.description\s*=\s*'
+    r'(?P<description>.*)',
+)
+
+parse_homepage = re.compile(
+    r'.*\.homepage\s*=\s*'
+    r'(?P<homepage>.*)'
+)
+
+parse_license = re.compile(
+    r'.*\.license\s*=\s*'
+    r'(?P<license>.*)'
+)
+
+parse_podspec_source = re.compile(
+    r'.*\.source\s*=\s*'
+    r'(?P<source>.*)'
+)
 
 # See in gemspec
 # for file refs:
@@ -38,7 +64,7 @@ parse_source = re.compile(r'.*\.source(\s*)=(?P<source>.*)')
 #  extensions
 #  executables
 #  extra_rdoc_files
-# date = "2017-11-07" 
+# date = "2017-11-07"
 # metadata
 # rubygems_version
 # licenses = ['MIT']
@@ -46,25 +72,51 @@ parse_source = re.compile(r'.*\.source(\s*)=(?P<source>.*)')
 # email = ["javan@javan.us".freeze, "sstephenson@gmail.com".freeze, "david@loudthinking.com".freeze]
 # email = 'rubocop@googlegroups.com'
 
-def get_value(name, matcher, line):
+
+def get_value(name, matcher, line, clean=True):
     """
     Return the value for the ``name`` attribute collected using the ``matcher``
     regex in the ``line`` text.
     """
     match = matcher.match(line)
     if match:
-        name = match.group(name)
-        return get_cleaned_string(name)
+        value = match.group(name)
+        return get_cleaned_string(value) if clean else value
 
 
 # FIXME: this does not smell right as we ignore the matched value
-def get_source(line):
+def get_podspec_source(line):
     if '.source' in line:
-        match = get_value(name='source', matcher=parse_source, line=line)
+        match = get_value(name='source', matcher=parse_podspec_source, line=line)
         if match:
             source = re.sub(r'/*.*source.*?>', '', line)
             stripped_source = re.sub(r',.*', '', source)
             return get_cleaned_string(stripped_source)
+
+
+def get_emails(line):
+    """
+    Return a list of emails extracted from a text ``line``, or None
+    """
+    if '.email' in line:
+        _key, _sep, value = line.rpartition('=')
+        stripped_emails = get_cleaned_string(value)
+        stripped_emails = stripped_emails.strip()
+        stripped_emails = stripped_emails.split(',')
+        return stripped_emails
+
+
+def get_authors(line):
+    """
+    Return a list of authors extracted from a text ``line``, or None
+    """
+    if '.author' in line:
+        authors = re.sub(r'/*.*author.*?=', '', line)
+        stripped_authors = get_cleaned_string(authors)
+        stripped_authors = re.sub(r'(\s*=>\s*)', '=>', stripped_authors)
+        stripped_authors = stripped_authors.strip()
+        stripped_authors = stripped_authors.split(',')
+        return stripped_authors
 
 
 # mapping of parser callable by its field name
@@ -73,9 +125,11 @@ PARSER_BY_NAME = {
     'version': partial(get_value, name='version', matcher=parse_version),
     'license': partial(get_value, name='license', matcher=parse_license),
     'summary': partial(get_value, name='summary', matcher=parse_summary),
-    'description': partial(get_value, name='description', matcher=parse_description),
+    'description': partial(get_value, name='description', matcher=parse_description, clean=False),
     'homepage': partial(get_value, name='homepage', matcher=parse_homepage),
-    'source': get_source,
+    'source': get_podspec_source,
+    'email': get_emails,
+    'author': get_authors,
 }
 
 
@@ -86,43 +140,37 @@ def parse_spec(location, package_type):
     dependencies is a list of DependentPackage.
     """
     spec_data = {}
-    with open(location) as lines:
+    with open(location) as spec:
+        content = spec.read()
 
-        for line in lines:
-            line = pre_process(line)
+    lines = content.splitlines()
+    for line in lines:
+        line = pre_process(line)
 
-            for attribute_name, parser in PARSER_BY_NAME.items():
-                parsed = parser(line=line)
-                if parsed:
-                    spec_data[attribute_name] = parsed
+        for attribute_name, parser in PARSER_BY_NAME.items():
+            parsed = parser(line=line)
+            if parsed:
+                spec_data[attribute_name] = parsed
 
-            match = parse_description.match(line)
-            if match:
-                if location.endswith('.gemspec'):
-                    # FIXME: description can be in single or multi-lines
-                    # There are many different ways to write description.
-                    description = match.group('description')
-                    spec_data['description'] = get_cleaned_string(description)
-                else:
-                    spec_data['description'] = get_description(location)
+    # description can be in single or multi-lines
+    # There are many different ways to write description.
+    # we reparse for multline
+    description = spec_data.get("description")
+    if description:
+        if '<<-' in description:
+            # a Ruby multiline text
+            spec_data['description'] = get_multiline_description(
+                description_start=description,
+                lines=lines,
+            )
+        else:
+            # a single quoted description
+            spec_data['description'] = get_cleaned_string(description)
 
-            if '.email' in line:
-                _key, _sep, value = line.rpartition('=')
-                stripped_emails = get_cleaned_string(value)
-                stripped_emails = stripped_emails.strip()
-                stripped_emails = stripped_emails.split(',')
-                spec_data['email'] = stripped_emails
-
-            elif '.author' in line:
-                authors = re.sub(r'/*.*author.*?=', '', line)
-                stripped_authors = get_cleaned_string(authors)
-                stripped_authors = re.sub(r'(\s*=>\s*)', '=>', stripped_authors)
-                stripped_authors = stripped_authors.strip()
-                stripped_authors = stripped_authors.split(',')
-                spec_data['author'] = stripped_authors
-
-    # FIXME: why are we parsing twice?: merge all in gemfileparser
+    # We avoid reloading twice the file but we are still parsing twice: need to
+    # merge all in gemfileparser or write a better parser.
     spec_data['dependencies'] = list(get_dependent_packages(
+        lines=lines,
         location=location,
         package_type=package_type,
     ))
@@ -130,7 +178,7 @@ def parse_spec(location, package_type):
     return spec_data
 
 
-def get_dependent_packages(location, package_type):
+def get_dependent_packages(lines, location, package_type):
     """
     Yield DependentPackage from the file at ``location`` for the given
     ``package_type``.
@@ -145,12 +193,13 @@ def get_dependent_packages(location, package_type):
         'metrics': dict(is_runtime=False, is_optional=True),
         }
 
-    dependencies = GemfileParser(location).parse()
+    dependencies = LinesBasedGemfileParser(lines=lines, filepath=location).parse()
 
     for key in dependencies:
         depends = dependencies.get(key, []) or []
         for dep in depends:
             flags = flags_by_scope.get(key, 'runtime')
+
             yield models.DependentPackage(
                 purl=PackageURL(type=package_type, name=dep.name).to_string(),
                 extracted_requirement=', '.join(dep.requirement),
@@ -158,6 +207,31 @@ def get_dependent_packages(location, package_type):
                 is_resolved=False,
                 **flags,
             )
+
+
+class LinesBasedGemfileParser(GemfileParser):
+    """
+    A GemfileParser that works from a text lines rather than re-reading a file.
+    Done to avoid reading a file twice.
+    """
+
+    def __init__(self, lines, filepath, appname=''):
+        self.filepath = filepath
+
+        self.current_group = 'runtime'
+
+        self.appname = appname
+        self.dependencies = {
+            'development': [],
+            'runtime': [],
+            'dependency': [],
+            'test': [],
+            'production': [],
+            'metrics': [],
+        }
+        self.contents = lines
+
+        self.gemspec = filepath.endswith(('.gemspec', '.podspec'))
 
 
 def pre_process(line):
@@ -174,14 +248,15 @@ def get_cleaned_string(string):
     Return ``string`` removing unnecessary special character
     """
     if string:
-        for replaceable in ("'", '"', '{', '}', '[', ']', '%q','<', '>', '.freeze'):
+        for replaceable in ("'", '"', '{', '}', '[', ']', '%q', '<', '>', '.freeze'):
             string = string.replace(replaceable, '')
         return string.strip()
 
 
-def get_description(location):
+def get_multiline_description(description_start, lines):
     """
-    Return description from podspec.
+    Return a multiline description given the ``description_start`` start of the
+    decsription and a ``lines`` list. These are common in .podspec.
 
     https://guides.cocoapods.org/syntax/podspec.html#description
     description is in the form:
@@ -193,15 +268,19 @@ def get_description(location):
          42. Likes candies.
         DESC
     """
-    with io.open(location, encoding='utf-8', closefd=True) as data:
-        lines = data.readlines()
-    description = ''
-    for i, content in enumerate(lines):
-        if '.description' in content:
-            for cont in lines[i + 1:]:
-                if 'DESC' in cont:
-                    break
-                description += ' '.join([description, cont.strip()])
-            break
-    description.strip()
-    return description
+    # from "<<-DESC" to "DESC"
+    description_end = description_start.strip('<-')
+    description_lines = []
+    started = False
+    for line  in lines:
+        if started:
+            ended = line.strip().startswith(description_end)
+            if not ended:
+                description_lines.append(line)
+            else:
+                break
+
+        elif '.description' in line and description_start in line:
+            started = True
+
+    return '\n'.join(description_lines)
