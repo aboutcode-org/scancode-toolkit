@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import Counter, defaultdict
+from collections import defaultdict
 
 import attr
 import fingerprints
@@ -253,9 +253,7 @@ def get_origin_info_from_package_data(key_file_package_data):
     else:
         # If there is no copyright statement on the package, collect the
         # detected party members and return them as a holder
-        party_members = []
-        for party in package.get('parties', []):
-            party_members.append(party['name'])
+        party_members = [party['name'] for party in package.get('parties', [])]
         declared_holder = ', '.join(party_members)
 
     return declared_license_expression, declared_holder, package_primary_language

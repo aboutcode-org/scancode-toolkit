@@ -7,16 +7,14 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from collections import Counter
+
 import attr
+from commoncode.cliutils import POST_SCAN_GROUP, PluggableCommandLineOption
+from plugincode.post_scan import PostScanPlugin, post_scan_impl
 
-from plugincode.post_scan import PostScanPlugin
-from plugincode.post_scan import post_scan_impl
-from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import POST_SCAN_GROUP
-from summarycode.utils import sorted_counter
-from summarycode.utils import get_resource_tallies
-from summarycode.utils import set_resource_tallies
-
+from summarycode.utils import (get_resource_tallies, set_resource_tallies,
+                               sorted_counter)
 
 # Tracing flags
 TRACE = False
@@ -113,9 +111,9 @@ def compute_codebase_tallies(codebase, keep_details, **kwargs):
     If `keep_details` is True, also keep file and directory details in the
     `tallies` file attribute for every file and directory.
     """
-    from summarycode.copyright_tallies import author_tallies
-    from summarycode.copyright_tallies import copyright_tallies
-    from summarycode.copyright_tallies import holder_tallies
+    from summarycode.copyright_tallies import (author_tallies,
+                                               copyright_tallies,
+                                               holder_tallies)
 
     attrib_summarizers = [
         ('license_expressions', license_tallies),
@@ -254,8 +252,7 @@ def tally_values(values, attribute):
     """
     if attribute not in TALLYABLE_ATTRS:
         return {}
-    from summarycode.copyright_tallies import tally_copyrights
-    from summarycode.copyright_tallies import tally_persons
+    from summarycode.copyright_tallies import tally_copyrights, tally_persons
 
     value_talliers_by_attr = dict(
         license_expressions=tally_licenses,
