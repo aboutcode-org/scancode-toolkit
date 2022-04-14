@@ -1,11 +1,8 @@
 """
-    pygments.lexers.ruby
-    ~~~~~~~~~~~~~~~~~~~~
-
-    Lexers for Ruby and related languages.
-
-    :copyright: Copyright 2006-2022 by the Pygments team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
+Minimal lexer for Ruby.
+Derived from pygments.lexers.ruby and significantly modified
+copyright: Copyright 2006-2022 by the Pygments team, see pygments.AUTHORS.
+SPDX-License-Identifier: BSD-2-Clause
 """
 
 import re
