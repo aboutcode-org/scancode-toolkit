@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2008 Adam Nielsen <a.nielsen@shikadi.net>
 holders:
   - Adam Nielsen
-holders_summary:
+holders_tallies:
   - value: Adam Nielsen
     count: 1

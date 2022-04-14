@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - John Doe
-authors_summary:
+authors_tallies:
   - value: John Doe
     count: 1

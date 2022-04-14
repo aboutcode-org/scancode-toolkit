@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2011 Lohit Fonts Project contributors <http://fedorahosted.org/lohit>
 holders:
   - Lohit Fonts Project contributors
-holders_summary:
+holders_tallies:
   - value: Lohit Fonts Project contributors
     count: 1

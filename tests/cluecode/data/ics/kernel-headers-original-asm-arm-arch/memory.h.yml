@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 RidgeRun, Inc.
   - Copyright (c) 1999 ARM Limited
 holders:
   - RidgeRun, Inc.
   - ARM Limited
-holders_summary:
+holders_tallies:
   - value: ARM Limited
     count: 1
   - value: RidgeRun, Inc.

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright (c) 1996-2010 Julian R Seward
 holders:
   - Julian R Seward
-holders_summary:
+holders_tallies:
   - value: Julian R Seward
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997 The Regents of
     the University of California
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - The Regents of the University of California
   - The tcpdump.org project
-holders_summary:
+holders_tallies:
   - value: The Regents of the University of California
     count: 1
   - value: The tcpdump.org project

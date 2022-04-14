@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2005-2009, Paul Marquess <pmqs@cpan.org>
   - Copyright 1995-2005, Jean-loup Gailly <jloup@gzip.org>
@@ -14,7 +14,7 @@ holders:
   - Mark Adler
   - Marcus Holland-Moritz Paul Marquess
   - Krzysztof Krzyzaniak
-holders_summary:
+holders_tallies:
   - value: Jean-loup Gailly
     count: 1
   - value: Krzysztof Krzyzaniak

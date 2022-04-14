@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright (c) 1991,92,94,95,96,97,98,99,2000,01,02 Free Software Foundation, Inc.
 holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Free Software Foundation, Inc.
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

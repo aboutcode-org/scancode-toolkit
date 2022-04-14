@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: The Regents of the University of California
     count: 1

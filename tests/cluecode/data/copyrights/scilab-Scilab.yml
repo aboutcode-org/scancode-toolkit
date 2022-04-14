@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Scilab (c) INRIA-ENPC.
   - Scilab (c) INRIA-ENPC.
@@ -18,7 +18,7 @@ holders:
   - Scilab inside INRIA-ENPC
   - Scilab INRIA-ENPC
   - Scilab INRIA-ENPC
-holders_summary:
+holders_tallies:
   - value: Scilab INRIA-ENPC.
     count: 6
   - value: Scilab inside INRIA-ENPC

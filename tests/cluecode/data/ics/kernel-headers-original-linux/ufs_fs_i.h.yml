@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996 Adrian Rodriguez (adrian@franklins-tower.rutgers.edu) Laboratory for
     Computer Science Research Computing Facility
 holders:
   - Adrian Rodriguez Laboratory for Computer Science Research Computing Facility
-holders_summary:
+holders_tallies:
   - value: Adrian Rodriguez Laboratory for Computer Science Research Computing Facility
     count: 1

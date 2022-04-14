@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2002 Read the
   - Copyright IBM Corporation 2007
 holders:
   - Read the
   - IBM Corporation
-holders_summary:
+holders_tallies:
   - value: IBM Corporation
     count: 1
   - value: Read the

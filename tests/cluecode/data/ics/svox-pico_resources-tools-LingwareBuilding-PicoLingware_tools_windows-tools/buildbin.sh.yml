@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 SVOX AG.
 holders:
   - SVOX AG.
-holders_summary:
+holders_tallies:
   - value: SVOX AG.
     count: 1

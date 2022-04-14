@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 Mozilla Foundation
 holders:
   - Mozilla Foundation
-holders_summary:
+holders_tallies:
   - value: Mozilla Foundation
     count: 1

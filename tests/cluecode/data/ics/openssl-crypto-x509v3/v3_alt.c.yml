@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2003 The OpenSSL Project
 holders:
   - The OpenSSL Project
-holders_summary:
+holders_tallies:
   - value: The OpenSSL Project
     count: 1

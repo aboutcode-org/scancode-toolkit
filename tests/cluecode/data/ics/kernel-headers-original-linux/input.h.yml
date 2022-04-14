@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2002 Vojtech Pavlik
 holders:
   - Vojtech Pavlik
-holders_summary:
+holders_tallies:
   - value: Vojtech Pavlik
     count: 1

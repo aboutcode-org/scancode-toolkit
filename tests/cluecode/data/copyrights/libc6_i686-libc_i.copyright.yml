@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1991,92,93,94,95,96,97,98,99,2000,2001,2002,2003,2004,2005, 2006,2007,2008
     Free Software Foundation, Inc.
@@ -22,7 +22,7 @@ holders:
   - Carnegie Mellon University
   - Intel Corporation
   - Craig Metz
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 2
   - value: Carnegie Mellon University

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-2002 Metrowerks Corporation
 holders:
   - Metrowerks Corporation
-holders_summary:
+holders_tallies:
   - value: Metrowerks Corporation
     count: 1

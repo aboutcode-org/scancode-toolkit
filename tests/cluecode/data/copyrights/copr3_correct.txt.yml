@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copr. SSD Research Team 2011
 holders:
   - SSD Research Team
-holders_summary:
+holders_tallies:
   - value: SSD Research Team
     count: 1

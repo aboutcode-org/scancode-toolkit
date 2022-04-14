@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
   - Copyright (c) 1995, 1996 The President and Fellows of Harvard University
 holders:
   - The Regents of the University of California
   - The President and Fellows of Harvard University
-holders_summary:
+holders_tallies:
   - value: The President and Fellows of Harvard University
     count: 1
   - value: The Regents of the University of California

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Stefan Westerfeld
   - Copyright (c) 2007 Tim Janik
 holders:
   - Stefan Westerfeld
   - Tim Janik
-holders_summary:
+holders_tallies:
   - value: Stefan Westerfeld
     count: 1
   - value: Tim Janik

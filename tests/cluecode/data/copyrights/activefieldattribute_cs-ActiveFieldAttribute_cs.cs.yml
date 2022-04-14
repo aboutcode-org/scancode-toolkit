@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009 - Thomas Hansen thomas@ra-ajax.org
 holders:
   - Thomas Hansen
-holders_summary:
+holders_tallies:
   - value: Thomas Hansen
     count: 1
 notes: this is not correct and Web Applications should not be returned at all

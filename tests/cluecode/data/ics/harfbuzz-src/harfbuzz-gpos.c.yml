@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2004 David Turner and Werner Lemberg
   - Copyright (c) 2006 Behdad Esfahbod
@@ -10,7 +10,7 @@ holders:
   - David Turner and Werner Lemberg
   - Behdad Esfahbod
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Behdad Esfahbod
     count: 1
   - value: David Turner and Werner Lemberg

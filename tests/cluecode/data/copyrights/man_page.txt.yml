@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2001-2017 Free Software Foundation, Inc., and others
 holders:
   - Free Software Foundation, Inc., and others
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc., and others
     count: 1

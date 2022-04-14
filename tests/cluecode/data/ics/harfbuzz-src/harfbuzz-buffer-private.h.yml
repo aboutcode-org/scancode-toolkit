@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2004 David Turner and Werner Lemberg
   - Copyright (c) 2004,2007 Red Hat, Inc.
 holders:
   - David Turner and Werner Lemberg
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: David Turner and Werner Lemberg
     count: 1
   - value: Red Hat, Inc.

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 - Michael Richardson <mcr@xelerance.com>
 holders:
   - Michael Richardson
-holders_summary:
+holders_tallies:
   - value: Michael Richardson
     count: 1

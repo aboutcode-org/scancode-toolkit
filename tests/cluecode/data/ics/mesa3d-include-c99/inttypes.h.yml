@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Alexander Chemeris
 holders:
   - Alexander Chemeris
-holders_summary:
+holders_tallies:
   - value: Alexander Chemeris
     count: 1

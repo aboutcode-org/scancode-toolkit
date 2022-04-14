@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2008 Netallied Systems GmbH.
 holders:
   - Netallied Systems GmbH.
-holders_summary:
+holders_tallies:
   - value: Netallied Systems GmbH.
     count: 1

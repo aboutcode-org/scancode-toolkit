@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2007, 2008 The Python Markdown Project
   - Copyright 2004, 2005, 2006 Yuri Takhteyev
@@ -10,7 +10,7 @@ holders:
   - The Python Markdown Project
   - Yuri Takhteyev
   - Manfred Stienstra
-holders_summary:
+holders_tallies:
   - value: Manfred Stienstra
     count: 1
   - value: The Python Markdown Project

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007 Jiri Kosina
 holders:
   - Jiri Kosina
-holders_summary:
+holders_tallies:
   - value: Jiri Kosina
     count: 1

@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1993 Hewlett-Packard Company
   - copyrighted works of Hewlett-Packard Co.
 holders:
   - Hewlett-Packard Company
   - Hewlett-Packard Co.
-holders_summary:
+holders_tallies:
   - value: Hewlett-Packard, Inc.
     count: 2

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 1999 Paul Rusty Russell
 holders:
   - Paul Rusty Russell
-holders_summary:
+holders_tallies:
   - value: Paul Rusty Russell
     count: 1

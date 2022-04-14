@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2009 Red Hat, Inc.
   - Copyright (c) 1999-2007 Novell, Inc.
@@ -28,7 +28,7 @@ holders:
   - Tom Tromey
   - Free Software Foundation, Inc.
   - Sun Microsystems, Inc.
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: George Lebl

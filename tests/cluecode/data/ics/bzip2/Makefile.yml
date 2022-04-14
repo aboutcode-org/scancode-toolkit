@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996-2010 Julian Seward <jseward@bzip.org>
 holders:
   - Julian Seward
-holders_summary:
+holders_tallies:
   - value: Julian Seward
     count: 1

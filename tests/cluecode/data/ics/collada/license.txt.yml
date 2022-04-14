@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2006 Sony Computer Entertainment Inc.
 holders:
   - Sony Computer Entertainment Inc.
-holders_summary:
+holders_tallies:
   - value: Sony Computer Entertainment Inc.
     count: 1

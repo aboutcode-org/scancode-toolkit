@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1989-2001, Larry Wall
   - Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler
@@ -22,7 +22,7 @@ holders:
   - The Regents of the University of California
   - The Regents of the University of California
   - Julian R Seward
-holders_summary:
+holders_tallies:
   - value: the Regents of the University of California
     count: 3
   - value: Unicode, Inc.

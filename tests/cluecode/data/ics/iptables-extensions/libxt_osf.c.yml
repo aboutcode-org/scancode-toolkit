@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003+ Evgeniy Polyakov <zbr@ioremap.net>
 holders:
   - Evgeniy Polyakov
-holders_summary:
+holders_tallies:
   - value: Evgeniy Polyakov
     count: 1

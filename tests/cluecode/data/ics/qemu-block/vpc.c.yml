@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Alex Beregszaszi
   - Copyright (c) 2009 Kevin Wolf <kwolf@suse.de>
 holders:
   - Alex Beregszaszi
   - Kevin Wolf
-holders_summary:
+holders_tallies:
   - value: Alex Beregszaszi
     count: 1
   - value: Kevin Wolf

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-2015 Oracle and/or its affiliates
 holders:
   - Oracle and/or its affiliates
-holders_summary:
+holders_tallies:
   - value: Oracle and/or its affiliates
     count: 1

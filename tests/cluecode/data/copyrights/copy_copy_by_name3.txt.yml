@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>
 holders:
   - Joachim Foerster
-holders_summary:
+holders_tallies:
   - value: Joachim Foerster
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002 Guy Harris
 holders:
   - Guy Harris
-holders_summary:
+holders_tallies:
   - value: Guy Harris
     count: 1

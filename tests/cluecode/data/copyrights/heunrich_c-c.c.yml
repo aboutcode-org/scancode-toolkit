@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 HEUNRICH HERTZ INSTITUTE
 holders:
   - HEUNRICH HERTZ INSTITUTE
-holders_summary:
+holders_tallies:
   - value: HEUNRICH HERTZ INSTITUTE
     count: 1

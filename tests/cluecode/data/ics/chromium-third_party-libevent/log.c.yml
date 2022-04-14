@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Nick Mathewson <nickm@freehaven.net>
   - Copyright (c) 2000 Dug Song <dugsong@monkey.org>
@@ -10,7 +10,7 @@ holders:
   - Nick Mathewson
   - Dug Song
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: Dug Song
     count: 1
   - value: Nick Mathewson

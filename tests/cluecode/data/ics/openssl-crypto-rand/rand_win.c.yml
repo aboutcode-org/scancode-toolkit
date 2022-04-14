@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
   - holder is Tim Hudson (tjh@cryptsoft.com)
@@ -12,10 +12,10 @@ holders:
   - Tim Hudson
   - The OpenSSL Project
   - Microsoft Corp.
-holders_summary:
+holders_tallies:
   - value: Eric Young
     count: 1
-  - value: Microsoft Corp.
+  - value: Microsoft
     count: 1
   - value: The OpenSSL Project
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002,2003,2004,2005,2006,2007 Josh Coalson
 holders:
   - Josh Coalson
-holders_summary:
+holders_tallies:
   - value: Josh Coalson
     count: 1

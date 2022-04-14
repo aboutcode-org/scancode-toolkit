@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 Keith Mok <ek9852@gmail.com>
   - Copyright (c) 2008-2010 Nokia Corporation
@@ -14,7 +14,7 @@ holders:
   - Marcel Holtmann
   - Henryk Ploetz
   - Brad Midgley
-holders_summary:
+holders_tallies:
   - value: Brad Midgley
     count: 1
   - value: Henryk Ploetz

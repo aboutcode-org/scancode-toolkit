@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 David S. Miller (davem@redhat.com)
   - Copyright 2001 Jeff Garzik <jgarzik@pobox.com>
@@ -12,7 +12,7 @@ holders:
   - Jeff Garzik
   - Sun Microsystems
   - Intel
-holders_summary:
+holders_tallies:
   - value: David S. Miller
     count: 1
   - value: Intel Corporation

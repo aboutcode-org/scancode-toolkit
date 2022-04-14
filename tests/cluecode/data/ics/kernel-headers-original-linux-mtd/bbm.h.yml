@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Samsung Electronics Kyungmin Park <kyungmin.park@samsung.com>
   - Copyright (c) 2000-2005 Thomas Gleixner <tglx@linuxtronix.de>
 holders:
   - Samsung Electronics Kyungmin Park
   - Thomas Gleixner
-holders_summary:
+holders_tallies:
   - value: Samsung Electronics Kyungmin Park
     count: 1
   - value: Thomas Gleixner

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright Sonic Network Inc. 2006
 holders:
   - Sonic Network Inc.
-holders_summary:
+holders_tallies:
   - value: Sonic Network Inc.
     count: 1

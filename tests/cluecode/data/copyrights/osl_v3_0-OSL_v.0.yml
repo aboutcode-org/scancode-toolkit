@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Lawrence Rosen
 holders:
   - Lawrence Rosen
-holders_summary:
+holders_tallies:
   - value: Lawrence Rosen
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 HTC Corporation
 holders:
   - HTC Corporation
-holders_summary:
+holders_tallies:
   - value: HTC Corporation
     count: 1

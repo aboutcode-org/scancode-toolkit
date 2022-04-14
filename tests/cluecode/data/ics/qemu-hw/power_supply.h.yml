@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007 Anton Vorontsov <cbou@mail.ru>
   - Copyright (c) 2004 Szabolcs Gyurko
@@ -10,7 +10,7 @@ holders:
   - Anton Vorontsov
   - Szabolcs Gyurko
   - Ian Molton
-holders_summary:
+holders_tallies:
   - value: Anton Vorontsov
     count: 1
   - value: Ian Molton

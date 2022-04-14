@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, 2000 Tom Tromey
   - Copyright 2000, 2005 Red Hat, Inc.
 holders:
   - Tom Tromey
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Red Hat, Inc.
     count: 1
   - value: Tom Tromey

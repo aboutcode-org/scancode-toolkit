@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2008 The Dasher Project
 holders:
   - The Dasher Project
-holders_summary:
+holders_tallies:
   - value: The Dasher Project
     count: 1

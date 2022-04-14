@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
   - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
@@ -48,7 +48,7 @@ holders:
   - Sleepycat Software
   - Keith Bostic
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: Andrea Campi
     count: 3
   - value: Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - COPYRIGHT (c) 2005 MOTOROLA, BROADBAND COMMUNICATIONS SECTOR
 holders:
   - MOTOROLA, BROADBAND COMMUNICATIONS SECTOR
-holders_summary:
+holders_tallies:
   - value: MOTOROLA, BROADBAND COMMUNICATIONS SECTOR
     count: 1

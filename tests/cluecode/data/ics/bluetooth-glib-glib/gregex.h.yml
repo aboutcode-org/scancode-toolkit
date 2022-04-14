@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, 2000 Scott Wimer
   - Copyright (c) 2004, Matthias Clasen <mclasen@redhat.com>
@@ -10,7 +10,7 @@ holders:
   - Scott Wimer
   - Matthias Clasen
   - Marco Barisione
-holders_summary:
+holders_tallies:
   - value: Marco Barisione
     count: 1
   - value: Matthias Clasen

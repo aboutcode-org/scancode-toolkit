@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, 2000 Red Hat Inc.
   - Copyright (c) 2001 Sid Vicious
@@ -14,7 +14,7 @@ holders:
   - Free Software Foundation
   - Sun Microsystems, Inc.
   - Kristian Rietveld
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Kristian Rietveld

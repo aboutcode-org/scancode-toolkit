@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 Source Auditor Inc.
 holders:
   - Source Auditor Inc.
-holders_summary:
+holders_tallies:
   - value: Source Auditor Inc.
     count: 1

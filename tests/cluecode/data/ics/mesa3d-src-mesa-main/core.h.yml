@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 LunarG Inc.
 holders:
   - LunarG Inc.
-holders_summary:
+holders_tallies:
   - value: LunarG Inc.
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright IBM and others (c) 2008
   - Copyright Eclipse, IBM and others
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - IBM and others
   - Eclipse, IBM and others
-holders_summary:
+holders_tallies:
   - value: Eclipse, IBM and others
     count: 1
   - value: IBM and others

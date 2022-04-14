@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright abc 2001
 holders:
   - abc
-holders_summary:
+holders_tallies:
   - value: abc
     count: 1

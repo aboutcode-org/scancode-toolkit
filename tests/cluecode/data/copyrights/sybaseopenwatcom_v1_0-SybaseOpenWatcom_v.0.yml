@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Portions Copyright (c) 1983-2002 Sybase, Inc.
 holders:
   - Sybase, Inc.
-holders_summary:
+holders_tallies:
   - value: Sybase, Inc.
     count: 1

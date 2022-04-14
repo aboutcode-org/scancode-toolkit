@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Red Hat, Inc., James Morris <jmorris@redhat.com>
 holders:
   - Red Hat, Inc., James Morris
-holders_summary:
+holders_tallies:
   - value: Red Hat, Inc., James Morris
     count: 1

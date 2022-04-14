@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Andrew Henroid
 holders:
   - Andrew Henroid
-holders_summary:
+holders_tallies:
   - value: Andrew Henroid
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright lowRISC contributors
 holders:
   - lowRISC contributors
-holders_summary:
+holders_tallies:
   - value: lowRISC contributors
     count: 1

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2005 Michel Fortin <http://www.michelf.com/>
   - Copyright (c) 2003-2005 John Gruber <http://daringfireball.net/>
 holders:
   - Michel Fortin
   - John Gruber
-holders_summary:
+holders_tallies:
   - value: John Gruber
     count: 1
   - value: Michel Fortin

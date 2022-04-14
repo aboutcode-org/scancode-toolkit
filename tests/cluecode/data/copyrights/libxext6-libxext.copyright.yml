@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1986, 1987, 1988, 1989, 1994, 1998 The Open Group
   - Copyright (c) 1996 Digital Equipment Corporation, Maynard, Massachusetts
@@ -24,7 +24,7 @@ holders:
   - Hewlett-Packard Company
   - Digital Equipment Corporation
   - Sun Microsystems, Inc.
-holders_summary:
+holders_tallies:
   - value: Digital Equipment Corporation
     count: 1
   - value: Digital Equipment Corporation, Maynard, Massachusetts

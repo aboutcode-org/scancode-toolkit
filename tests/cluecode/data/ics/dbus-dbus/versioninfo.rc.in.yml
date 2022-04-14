@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 g10 Code GmbH
   - Copyright (c) 2009 FreeDesktop.org
 holders:
   - g10 Code GmbH
   - FreeDesktop.org
-holders_summary:
+holders_tallies:
   - value: FreeDesktop.org
     count: 1
   - value: g10 Code GmbH

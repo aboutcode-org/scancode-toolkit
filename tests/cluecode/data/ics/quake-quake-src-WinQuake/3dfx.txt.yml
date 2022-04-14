@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright ( 1997 3Dfx Interactive, Inc. )
 holders:
   - 3Dfx Interactive, Inc.
-holders_summary:
+holders_tallies:
   - value: 3Dfx Interactive, Inc.
     count: 1

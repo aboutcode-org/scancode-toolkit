@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2006 by Princeton University
 holders:
   - Princeton University
-holders_summary:
+holders_tallies:
   - value: Princeton University
     count: 1

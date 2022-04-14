@@ -2,11 +2,11 @@ what:
   - authors
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009 J-Doe
 holders:
   - J-Doe
-holders_summary:
+holders_tallies:
   - value: J-Doe
     count: 1

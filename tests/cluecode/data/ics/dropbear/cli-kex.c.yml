@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002-2004 Matt Johnston
   - Copyright (c) 2004 by Mihnea Stoenescu
 holders:
   - Matt Johnston
   - Mihnea Stoenescu
-holders_summary:
+holders_tallies:
   - value: Matt Johnston
     count: 1
   - value: Mihnea Stoenescu

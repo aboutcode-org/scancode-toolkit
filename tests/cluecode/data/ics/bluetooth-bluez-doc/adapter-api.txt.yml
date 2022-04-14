@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2005-2006 Johan Hedberg <johan.hedberg@nokia.com>
@@ -12,7 +12,7 @@ holders:
   - Johan Hedberg
   - Claudio Takahasi
   - Luiz von Dentz
-holders_summary:
+holders_tallies:
   - value: Claudio Takahasi
     count: 1
   - value: Johan Hedberg

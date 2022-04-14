@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Academy of Motion Picture Arts and Sciences
 holders:
   - Academy of Motion Picture Arts and Sciences
-holders_summary:
+holders_tallies:
   - value: Academy of Motion Picture Arts and Sciences
     count: 1

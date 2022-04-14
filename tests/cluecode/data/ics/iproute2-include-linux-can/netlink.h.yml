@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 Wolfgang Grandegger <wg@grandegger.com>
 holders:
   - Wolfgang Grandegger
-holders_summary:
+holders_tallies:
   - value: Wolfgang Grandegger
     count: 1

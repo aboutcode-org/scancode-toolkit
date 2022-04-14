@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003 CodeFactory AB
   - Copyright (c) 2003 Red Hat, Inc.
@@ -10,7 +10,7 @@ holders:
   - CodeFactory AB
   - Red Hat, Inc.
   - Imendio HB
-holders_summary:
+holders_tallies:
   - value: CodeFactory AB
     count: 1
   - value: Imendio HB

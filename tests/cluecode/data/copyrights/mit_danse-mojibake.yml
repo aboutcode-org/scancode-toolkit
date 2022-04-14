@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 California Institute of Technology
 holders:
   - California Institute of Technology
-holders_summary:
+holders_tallies:
   - value: California Institute of Technology
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Michael Vogt <mvo@debian.org>
 holders:
   - Michael Vogt
-holders_summary:
+holders_tallies:
   - value: Michael Vogt
     count: 1

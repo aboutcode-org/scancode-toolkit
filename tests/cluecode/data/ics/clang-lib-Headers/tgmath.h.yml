@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 Howard Hinnant
 holders:
   - Howard Hinnant
-holders_summary:
+holders_tallies:
   - value: Howard Hinnant
     count: 1

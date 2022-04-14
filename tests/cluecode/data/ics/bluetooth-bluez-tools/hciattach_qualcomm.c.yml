@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005-2010 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2010, Code Aurora Forum
 holders:
   - Marcel Holtmann
   - Code Aurora Forum
-holders_summary:
+holders_tallies:
   - value: Code Aurora Forum
     count: 1
   - value: Marcel Holtmann

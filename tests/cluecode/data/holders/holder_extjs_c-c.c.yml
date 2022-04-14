@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2007, Ext JS, LLC.
 holders:
   - Ext JS, LLC.
-holders_summary:
+holders_tallies:
   - value: Ext JS, LLC.
     count: 1

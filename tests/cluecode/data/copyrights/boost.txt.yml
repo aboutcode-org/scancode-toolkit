@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2012 LearnBoost <tj@learnboost.com>
 holders:
   - LearnBoost
-holders_summary:
+holders_tallies:
   - value: LearnBoost
     count: 1

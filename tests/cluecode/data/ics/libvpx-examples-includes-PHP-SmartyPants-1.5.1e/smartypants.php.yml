@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003-2004 John Gruber
   - Copyright (c) 2004-2005 Michel Fortin
@@ -12,11 +12,10 @@ holders:
   - Michel Fortin
   - John Gruber
   - Michel Fortin
-holders_summary:
+holders_tallies:
   - value: John Gruber
     count: 2
   - value: Michel Fortin
     count: 2
 expected_failures:
   - copyrights
-    

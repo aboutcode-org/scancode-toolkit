@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Red Hat, Inc.
   - Copyright (c) 1995-2005 Red Hat, Inc. and others
@@ -10,7 +10,7 @@ holders:
   - Red Hat, Inc.
   - Red Hat, Inc. and others
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Red Hat, Inc.
     count: 2
   - value: Red Hat, Inc. and others

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 United States Government as represented by the Secretary of the Navy
 holders:
   - United States Government as represented by the Secretary of the Navy
-holders_summary:
+holders_tallies:
   - value: United States Government as represented by the Secretary of the Navy
     count: 1

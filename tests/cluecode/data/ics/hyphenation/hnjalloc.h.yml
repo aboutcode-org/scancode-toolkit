@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 Raph Levien
 holders:
   - Raph Levien
-holders_summary:
+holders_tallies:
   - value: Raph Levien
     count: 1

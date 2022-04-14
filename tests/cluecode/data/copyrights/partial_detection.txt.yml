@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1991 by the Massachusetts Institute of Technology
   - Copyright (c) 2001 AT&T
@@ -35,7 +35,7 @@ holders:
   - EU DataGrid
   - OCLC Research
   - Trolltech AS, Norway
-holders_summary:
+holders_tallies:
   - value: AT&T
     count: 1
   - value: Academy of Motion Picture Arts and Sciences

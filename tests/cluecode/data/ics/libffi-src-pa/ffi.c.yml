@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2003-2004 Randolph Chung <tausq@debian.org>
   - (c) 2008 Red Hat, Inc.
@@ -10,7 +10,7 @@ holders:
   - Randolph Chung
   - Red Hat, Inc.
   - Free Software Foundation, Inc.
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Randolph Chung

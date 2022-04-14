@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2001-2009 OFFIS, Tammo Freese
 holders:
   - OFFIS, Tammo Freese
-holders_summary:
+holders_tallies:
   - value: OFFIS, Tammo Freese
     count: 1

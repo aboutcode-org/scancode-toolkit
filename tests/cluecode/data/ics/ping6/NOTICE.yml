@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project
   - Copyright (c) 1989, 1993 The Regents of the University of California
 holders:
   - WIDE Project
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: The Regents of the University of California
     count: 1
   - value: WIDE Project

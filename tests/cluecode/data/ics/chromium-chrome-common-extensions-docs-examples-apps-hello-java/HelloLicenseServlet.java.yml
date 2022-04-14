@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2010 the Chromium Authors
 holders:
   - the Chromium Authors
-holders_summary:
+holders_tallies:
   - value: the Chromium Authors
     count: 1

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman
   - Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr>
 holders:
   - Ingo Molnar, Gadi Oxman
   - Marc ZYNGIER
-holders_summary:
+holders_tallies:
   - value: Ingo Molnar, Gadi Oxman
     count: 1
   - value: Marc ZYNGIER

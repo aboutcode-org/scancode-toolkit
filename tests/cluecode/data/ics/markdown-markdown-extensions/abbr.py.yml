@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2007-2008 Waylan Limberg (http://achinghead.com/) Seemant Kulleen (http://www.kulleen.org/)
 holders:
   - Waylan Limberg Seemant Kulleen
-holders_summary:
+holders_tallies:
   - value: Waylan Limberg Seemant Kulleen
     count: 1

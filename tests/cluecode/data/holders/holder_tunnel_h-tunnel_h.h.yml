@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Frank Strauss
-holders_summary:
+holders_tallies:
   - value: Frank Strauss
     count: 1

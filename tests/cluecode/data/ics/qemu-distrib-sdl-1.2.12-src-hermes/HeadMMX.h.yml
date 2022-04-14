@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 holders:
   - Christian Nentwich
-holders_summary:
+holders_tallies:
   - value: Christian Nentwich
     count: 1

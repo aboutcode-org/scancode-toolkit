@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2010 Shigeru Chiba
 holders:
   - Shigeru Chiba
-holders_summary:
+holders_tallies:
   - value: Shigeru Chiba
     count: 1

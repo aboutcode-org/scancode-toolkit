@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - bj@open-rnd.pl
-authors_summary:
+authors_tallies:
   - value: bj@open-rnd.pl
     count: 1

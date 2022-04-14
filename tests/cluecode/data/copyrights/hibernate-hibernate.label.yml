@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2006 Bernard Blackham <bernard@blackham.com.au>
   - copyright (c) 2004-2006 Cameron Patrick <cameron@patrick.wattle.id.au>
@@ -10,7 +10,7 @@ holders:
   - Bernard Blackham
   - Cameron Patrick
   - Martin F. Krafft
-holders_summary:
+holders_tallies:
   - value: Bernard Blackham
     count: 1
   - value: Cameron Patrick

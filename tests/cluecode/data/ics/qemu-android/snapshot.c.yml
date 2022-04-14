@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 The Android Open Source Project
   - copyright (c) 2003 Fabrice Bellard
 holders:
   - The Android Open Source Project
   - Fabrice Bellard
-holders_summary:
+holders_tallies:
   - value: Fabrice Bellard
     count: 1
   - value: The Android Open Source Project, Inc.

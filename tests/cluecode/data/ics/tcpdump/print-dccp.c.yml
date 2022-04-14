@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) Arnaldo Carvalho de Melo 2004
   - Copyright (c) Ian McDonald 2005
@@ -10,7 +10,7 @@ holders:
   - Arnaldo Carvalho de Melo
   - Ian McDonald
   - Yoshifumi Nishida
-holders_summary:
+holders_tallies:
   - value: Arnaldo Carvalho de Melo
     count: 1
   - value: Ian McDonald

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1993-2014 University Corporation for Atmospheric Research/Unidata
   - copyright 1991-1998 by LCS/Telegraphics
 holders:
   - University Corporation for Atmospheric Research/Unidata
   - LCS/Telegraphics
-holders_summary:
+holders_tallies:
   - value: LCS/Telegraphics
     count: 1
   - value: University Corporation for Atmospheric Research/Unidata

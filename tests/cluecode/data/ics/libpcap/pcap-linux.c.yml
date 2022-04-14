@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Torsten Landschoff <torsten@debian.org> Sebastian Krahmer <krahmer@cs.uni-potsdam.de>
 holders:
   - Torsten Landschoff Sebastian Krahmer
-holders_summary:
+holders_tallies:
   - value: Torsten Landschoff Sebastian Krahmer
     count: 1

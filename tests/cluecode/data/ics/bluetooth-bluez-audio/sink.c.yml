@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2007 Nokia Corporation
   - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
@@ -10,7 +10,7 @@ holders:
   - Nokia Corporation
   - Marcel Holtmann
   - Motorola Inc.
-holders_summary:
+holders_tallies:
   - value: Marcel Holtmann
     count: 1
   - value: Motorola Inc.

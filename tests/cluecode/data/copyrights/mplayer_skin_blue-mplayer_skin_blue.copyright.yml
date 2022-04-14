@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005-06 Franciszek Wilamowski, xenomorph@irc.pl
 holders:
   - Franciszek Wilamowski
-holders_summary:
+holders_tallies:
   - value: Franciszek Wilamowski
     count: 1

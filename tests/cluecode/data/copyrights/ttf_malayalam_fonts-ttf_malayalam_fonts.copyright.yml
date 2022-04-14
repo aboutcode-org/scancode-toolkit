@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com> , Hiran
     Venugopalan <hiran.v@gmail.com>
@@ -27,7 +27,7 @@ holders:
   - Modular Infotech, Pune, INDIA
   - Modular Infotech Pvt Ltd.
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: CDAC, Mumbai Font Design
     count: 1
   - value: Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing

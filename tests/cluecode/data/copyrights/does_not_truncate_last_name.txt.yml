@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2014, Kenneth MacKay
 holders:
   - Kenneth MacKay
-holders_summary:
+holders_tallies:
   - value: Kenneth MacKay
     count: 1

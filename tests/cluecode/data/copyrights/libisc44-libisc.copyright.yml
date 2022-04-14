@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996-2001 Internet Software Consortium
 holders:
   - Internet Software Consortium
-holders_summary:
+holders_tallies:
   - value: Internet Software Consortium
     count: 1

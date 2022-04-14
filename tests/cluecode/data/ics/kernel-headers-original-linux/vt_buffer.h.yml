@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 1998 Martin Mares <mj@ucw.cz>
 holders:
   - Martin Mares
-holders_summary:
+holders_tallies:
   - value: Martin Mares
     count: 1

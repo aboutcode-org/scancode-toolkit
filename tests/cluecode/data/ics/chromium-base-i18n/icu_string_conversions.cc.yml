@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 The Chromium Authors
   - Copyright (c) 1995-2006 International Business Machines Corporation and others
 holders:
   - The Chromium Authors
   - International Business Machines Corporation and others
-holders_summary:
+holders_tallies:
   - value: International Business Machines Corporation and others
     count: 1
   - value: The Chromium Authors

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 Wichert Akkerman <wichert@cistron.nl>
 holders:
   - Wichert Akkerman
-holders_summary:
+holders_tallies:
   - value: Wichert Akkerman
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html
 holders:
   - Gilles Vollant
-holders_summary:
+holders_tallies:
   - value: Gilles Vollant
     count: 1

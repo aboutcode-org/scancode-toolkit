@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996-1998 Silicon Graphics Computer Systems, Inc.
   - Copyright (c) 1994 Hewlett-Packard Company
 holders:
   - Silicon Graphics Computer Systems, Inc.
   - Hewlett-Packard Company
-holders_summary:
+holders_tallies:
   - value: Hewlett-Packard, Inc.
     count: 1
   - value: Silicon Graphics Computer Systems, Inc.

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2002 Nokia Corporation
   - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
@@ -14,7 +14,7 @@ holders:
   - Marcel Holtmann
   - Stephen Crane
   - Jean Tourrilhes
-holders_summary:
+holders_tallies:
   - value: Jean Tourrilhes
     count: 1
   - value: Marcel Holtmann

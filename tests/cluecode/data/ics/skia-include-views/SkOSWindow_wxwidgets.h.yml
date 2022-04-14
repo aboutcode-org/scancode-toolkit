@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 The Android Open Source Project
   - Copyright 2005 MyCompanyName
 holders:
   - The Android Open Source Project
   - MyCompanyName
-holders_summary:
+holders_tallies:
   - value: MyCompanyName
     count: 1
   - value: The Android Open Source Project, Inc.

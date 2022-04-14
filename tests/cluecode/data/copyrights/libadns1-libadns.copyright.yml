@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1997-2000 Ian Jackson
   - Copyright 1999 Tony Finch
@@ -10,7 +10,7 @@ holders:
   - Ian Jackson
   - Tony Finch
   - Massachusetts Institute of Technology
-holders_summary:
+holders_tallies:
   - value: Ian Jackson
     count: 1
   - value: Massachusetts Institute of Technology

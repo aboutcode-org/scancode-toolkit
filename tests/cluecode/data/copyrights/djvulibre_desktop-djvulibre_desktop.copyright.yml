@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002 Leon Bottou and Yann Le Cun
   - Copyright (c) 2001 AT&T
@@ -10,7 +10,7 @@ holders:
   - Leon Bottou and Yann Le Cun
   - AT&T
   - LizardTech, Inc.
-holders_summary:
+holders_tallies:
   - value: AT&T
     count: 1
   - value: Leon Bottou and Yann Le Cun

@@ -1,11 +1,11 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de)
   - Jennifer Bray of Origin (jbray@origin-at.co.uk)
   - Simon Leinen (simon@switch.ch)
-authors_summary:
+authors_tallies:
   - value: Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de)
     count: 1
   - value: Jennifer Bray of Origin (jbray@origin-at.co.uk)

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1990-1996 Sam Leffler
   - Copyright (c) 1991-1996 Silicon Graphics, Inc.
 holders:
   - Sam Leffler
   - Silicon Graphics, Inc.
-holders_summary:
+holders_tallies:
   - value: Sam Leffler
     count: 1
   - value: Silicon Graphics, Inc.

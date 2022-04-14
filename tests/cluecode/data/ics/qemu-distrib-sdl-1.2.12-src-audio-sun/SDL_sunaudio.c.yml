@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-2006 Sam Lantinga
   - Copyright 1989 by Rich Gopstein and Harris Corporation
 holders:
   - Sam Lantinga
   - Rich Gopstein and Harris Corporation
-holders_summary:
+holders_tallies:
   - value: Rich Gopstein and Harris Corporation
     count: 1
   - value: Sam Lantinga

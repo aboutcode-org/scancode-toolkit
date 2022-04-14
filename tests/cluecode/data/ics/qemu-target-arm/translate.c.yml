@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003 Fabrice Bellard
   - Copyright (c) 2005-2007 CodeSourcery
@@ -10,7 +10,7 @@ holders:
   - Fabrice Bellard
   - CodeSourcery
   - OpenedHand, Ltd.
-holders_summary:
+holders_tallies:
   - value: CodeSourcery
     count: 1
   - value: Fabrice Bellard

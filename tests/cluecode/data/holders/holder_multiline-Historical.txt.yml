@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.
-holders_summary:
+holders_tallies:
   - value: GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann (http://qbnz.com/highlighter/ and
     http://geshi.org/)
@@ -23,7 +23,7 @@ holders:
   - Nigel McNie, - Benny Baumann
   - Nigel McNie
   - name  website URL
-holders_summary:
+holders_tallies:
   - value: Nigel McNie, - Benny Baumann
     count: 5
   - value: Nigel McNie

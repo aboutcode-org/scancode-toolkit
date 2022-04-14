@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 Cygnus Solutions
   - Copyright (c) 2004 Simon Posnjak
@@ -12,7 +12,7 @@ holders:
   - Simon Posnjak
   - Axis Communications AB
   - Free Software Foundation, Inc.
-holders_summary:
+holders_tallies:
   - value: Axis Communications AB
     count: 1
   - value: Cygnus Solutions

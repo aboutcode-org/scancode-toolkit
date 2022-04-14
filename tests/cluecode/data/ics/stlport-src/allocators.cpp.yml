@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996,1997 Silicon Graphics Computer Systems, Inc.
   - Copyright (c) 1997 Moscow Center for SPARC Technology
@@ -10,7 +10,7 @@ holders:
   - Silicon Graphics Computer Systems, Inc.
   - Moscow Center for SPARC Technology
   - Boris Fomitchev
-holders_summary:
+holders_tallies:
   - value: Boris Fomitchev
     count: 1
   - value: Moscow Center for SPARC Technology

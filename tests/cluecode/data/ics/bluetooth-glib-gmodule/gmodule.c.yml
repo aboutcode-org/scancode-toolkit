@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 Tim Janik
 holders:
   - Tim Janik
-holders_summary:
+holders_tallies:
   - value: Tim Janik
     count: 1

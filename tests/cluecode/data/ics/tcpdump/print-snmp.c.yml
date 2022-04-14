@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert LoVerso
   - J. Schoenwaelder, Copyright (c) 1999
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - John Robert LoVerso
   - J. Schoenwaelder
-holders_summary:
+holders_tallies:
   - value: J. Schoenwaelder
     count: 1
   - value: John Robert LoVerso

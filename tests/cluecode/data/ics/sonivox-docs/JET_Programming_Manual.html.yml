@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 The Android Open Source Project
   - Copyright 2009 Sonic Network, Inc.
 holders:
   - The Android Open Source Project
   - Sonic Network, Inc.
-holders_summary:
+holders_tallies:
   - value: Sonic Network, Inc.
     count: 1
   - value: The Android Open Source Project, Inc.

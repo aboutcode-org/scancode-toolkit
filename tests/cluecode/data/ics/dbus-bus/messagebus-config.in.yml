@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009 Yaakov Selkowitz
 holders:
   - Yaakov Selkowitz
-holders_summary:
+holders_tallies:
   - value: Yaakov Selkowitz
     count: 1

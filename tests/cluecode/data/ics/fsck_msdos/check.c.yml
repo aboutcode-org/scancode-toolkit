@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995, 1996, 1997 Wolfgang Solfrank
   - Copyright (c) 1995 Martin Husemann
 holders:
   - Wolfgang Solfrank
   - Martin Husemann
-holders_summary:
+holders_tallies:
   - value: Martin Husemann
     count: 1
   - value: Wolfgang Solfrank

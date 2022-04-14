@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Vladimir Oleynik <dzo@simtreas.ru> (c) 2003
 holders:
   - Vladimir Oleynik
-holders_summary:
+holders_tallies:
   - value: Vladimir Oleynik
     count: 1

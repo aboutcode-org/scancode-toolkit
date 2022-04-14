@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1994-2001 Stephen Rothwell (sfr@canb.auug.org.au)
 holders:
   - Stephen Rothwell
-holders_summary:
+holders_tallies:
   - value: Stephen Rothwell
     count: 1

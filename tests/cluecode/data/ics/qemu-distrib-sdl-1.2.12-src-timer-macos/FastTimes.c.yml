@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) Matt Slot, 1999-2000
 holders:
   - Matt Slot
-holders_summary:
+holders_tallies:
   - value: Matt Slot
     count: 1

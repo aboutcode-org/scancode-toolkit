@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
 holders:
   - Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
-holders_summary:
+holders_tallies:
   - value: Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
     count: 1

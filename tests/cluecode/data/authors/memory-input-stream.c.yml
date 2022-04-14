@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Tim Janik
-authors_summary:
+authors_tallies:
   - value: Tim Janik
     count: 1

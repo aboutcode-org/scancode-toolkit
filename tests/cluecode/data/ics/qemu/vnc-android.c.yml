@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Anthony Liguori <anthony@codemonkey.ws>
   - Copyright (c) 2006 Fabrice Bellard
@@ -10,7 +10,7 @@ holders:
   - Anthony Liguori
   - Fabrice Bellard
   - Red Hat, Inc
-holders_summary:
+holders_tallies:
   - value: Anthony Liguori
     count: 1
   - value: Fabrice Bellard

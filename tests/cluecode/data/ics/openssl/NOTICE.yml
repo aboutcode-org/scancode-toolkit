@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2011 The OpenSSL Project
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
@@ -10,7 +10,7 @@ holders:
   - The OpenSSL Project
   - Eric Young
   - Tim Hudson
-holders_summary:
+holders_tallies:
   - value: Eric Young
     count: 1
   - value: The OpenSSL Project

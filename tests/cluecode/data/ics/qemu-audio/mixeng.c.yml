@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2005 Vassili Karpov
   - Copyright (c) 1998 Fabrice Bellard
@@ -10,7 +10,7 @@ holders:
   - Vassili Karpov
   - Fabrice Bellard
   - Fabrice Bellard
-holders_summary:
+holders_tallies:
   - value: Fabrice Bellard
     count: 2
   - value: Vassili Karpov

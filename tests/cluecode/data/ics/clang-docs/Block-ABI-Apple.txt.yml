@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2008-2010 Apple, Inc.
 holders:
   - Apple, Inc.
-holders_summary:
+holders_tallies:
   - value: Apple, Inc.
     count: 1

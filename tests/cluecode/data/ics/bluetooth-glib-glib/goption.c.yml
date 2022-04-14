@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, 2003 Red Hat Software
   - Copyright (c) 2004 Anders Carlsson <andersca@gnome.org>
 holders:
   - Red Hat Software
   - Anders Carlsson
-holders_summary:
+holders_tallies:
   - value: Anders Carlsson
     count: 1
   - value: Red Hat Software

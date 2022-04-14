@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998, 1999 Thai Open Source Software Center Ltd
 holders:
   - Thai Open Source Software Center Ltd
-holders_summary:
+holders_tallies:
   - value: Thai Open Source Software Center Ltd
     count: 1

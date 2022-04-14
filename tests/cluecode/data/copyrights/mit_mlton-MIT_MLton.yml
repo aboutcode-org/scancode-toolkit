@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2006 Henry Cejtin, Matthew Fluet, Suresh Jagannathan, and Stephen Weeks
   - Copyright (c) 1997-2000 by the NEC Research Institute
 holders:
   - Henry Cejtin, Matthew Fluet, Suresh Jagannathan, and Stephen Weeks
   - the NEC Research Institute
-holders_summary:
+holders_tallies:
   - value: Henry Cejtin, Matthew Fluet, Suresh Jagannathan, and Stephen Weeks
     count: 1
   - value: the NEC Research Institute

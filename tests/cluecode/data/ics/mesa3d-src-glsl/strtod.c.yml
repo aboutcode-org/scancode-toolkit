@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2010 VMware, Inc.
 holders:
   - VMware, Inc.
-holders_summary:
+holders_tallies:
   - value: VMware, Inc.
     count: 1

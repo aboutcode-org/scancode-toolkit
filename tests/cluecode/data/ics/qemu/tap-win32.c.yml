@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) Damion K. Wilson, 2003
   - Copyright (c) James Yonan, 2003-2004
 holders:
   - Damion K. Wilson
   - James Yonan
-holders_summary:
+holders_tallies:
   - value: Damion K. Wilson
     count: 1
   - value: James Yonan

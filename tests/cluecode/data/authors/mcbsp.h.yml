@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Steve Johnson
-authors_summary:
+authors_tallies:
   - value: Steve Johnson
     count: 1

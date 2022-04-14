@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, Bob Withers
 holders:
   - Bob Withers
-holders_summary:
+holders_tallies:
   - value: Bob Withers
     count: 1

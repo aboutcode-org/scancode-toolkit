@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2009 Google - http://www.google.com/privacy.html
 holders:
   - Google
-holders_summary:
+holders_tallies:
   - value: Google Inc.
     count: 1

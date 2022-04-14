@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Hans-Jurgen Koch
-holders_summary:
+holders_tallies:
   - value: Hans-Jurgen Koch
     count: 1

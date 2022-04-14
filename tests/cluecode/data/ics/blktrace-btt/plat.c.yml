@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 2008 Hewlett-Packard Development Company, L.P. Alan D. Brunelle <alan.brunelle@hp.com>
 holders:
   - Hewlett-Packard Development Company, L.P. Alan D. Brunelle
-holders_summary:
+holders_tallies:
   - value: Hewlett-Packard Development Company, L.P. Alan D. Brunelle
     count: 1

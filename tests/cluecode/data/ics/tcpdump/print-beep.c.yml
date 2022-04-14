@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000, Richard Sharpe
 holders:
   - Richard Sharpe
-holders_summary:
+holders_tallies:
   - value: Richard Sharpe
     count: 1

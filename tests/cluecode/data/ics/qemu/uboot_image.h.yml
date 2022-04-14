@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 2000-2005 Wolfgang Denk, DENX Software Engineering, wd@denx.de
 holders:
   - Wolfgang Denk, DENX Software Engineering
-holders_summary:
+holders_tallies:
   - value: Wolfgang Denk, DENX Software Engineering
     count: 1

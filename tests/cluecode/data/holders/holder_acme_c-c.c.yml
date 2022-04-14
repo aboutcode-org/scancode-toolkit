@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - ACME, Inc.
-holders_summary:
+holders_tallies:
   - value: ACME, Inc.
     count: 1

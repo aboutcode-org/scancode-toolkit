@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Scott Violet
-authors_summary:
+authors_tallies:
   - value: Scott Violet
     count: 1

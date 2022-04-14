@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1996 Jean-loup Gailly and Gilles Vollant
 holders:
   - Jean-loup Gailly and Gilles Vollant
-holders_summary:
+holders_tallies:
   - value: Jean-loup Gailly and Gilles Vollant
     count: 1

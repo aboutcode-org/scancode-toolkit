@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-1999 Russell King
   - Copyright (c) 2000-2002 Deep Blue Solutions Ltd.
 holders:
   - Russell King
   - Deep Blue Solutions Ltd.
-holders_summary:
+holders_tallies:
   - value: Deep Blue Solutions Ltd.
     count: 1
   - value: Russell King

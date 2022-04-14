@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2007 Technical Pursuit Inc.
 holders:
   - Technical Pursuit Inc.
-holders_summary:
+holders_tallies:
   - value: Technical Pursuit Inc.
     count: 1

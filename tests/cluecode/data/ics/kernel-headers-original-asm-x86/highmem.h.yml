@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999 Gerhard Wichert, Siemens AG Gerhard.Wichert@pdb.siemens.de
   - Copyright (c) 1999 Ingo Molnar <mingo@redhat.com>
 holders:
   - Gerhard Wichert, Siemens AG
   - Ingo Molnar
-holders_summary:
+holders_tallies:
   - value: Gerhard Wichert, Siemens AG
     count: 1
   - value: Ingo Molnar

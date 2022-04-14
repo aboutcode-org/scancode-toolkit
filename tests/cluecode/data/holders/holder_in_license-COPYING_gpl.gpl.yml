@@ -1,9 +1,9 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 2

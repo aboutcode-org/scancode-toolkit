@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Deep Blue Solutions Ltd.
 holders:
   - Deep Blue Solutions Ltd.
-holders_summary:
+holders_tallies:
   - value: Deep Blue Solutions Ltd.
     count: 1

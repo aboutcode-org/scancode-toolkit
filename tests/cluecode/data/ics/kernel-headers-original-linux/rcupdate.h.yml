@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) IBM Corporation, 2001
 holders:
   - IBM Corporation
-holders_summary:
+holders_tallies:
   - value: IBM Corporation
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 Matthias Clasen <matthiasc@poet.de>
 holders:
   - Matthias Clasen
-holders_summary:
+holders_tallies:
   - value: Matthias Clasen
     count: 1

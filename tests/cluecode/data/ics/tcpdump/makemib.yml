@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1990, 1996 John Robert LoVerso
   - copyright (c) 1999 William C. Fenner
 holders:
   - John Robert LoVerso
   - William C. Fenner
-holders_summary:
+holders_tallies:
   - value: John Robert LoVerso
     count: 1
   - value: William C. Fenner

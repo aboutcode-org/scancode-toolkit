@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2007 by Fredrik Lundh
   - Copyright (c) 1999-2007 by Fredrik Lundh
 holders:
   - Fredrik Lundh
   - Fredrik Lundh
-holders_summary:
+holders_tallies:
   - value: Fredrik Lundh
     count: 2

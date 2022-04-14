@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2000 Wasabi Systems, Inc.
 holders:
   - Wasabi Systems, Inc.
-holders_summary:
+holders_tallies:
   - value: Wasabi Systems, Inc.
     count: 1

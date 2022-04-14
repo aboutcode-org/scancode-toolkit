@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright 1998 Sebastian Wilhelmi University of Karlsruhe Owen Taylor
 holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Sebastian Wilhelmi University of Karlsruhe Owen Taylor
-holders_summary:
+holders_tallies:
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald
     count: 1
   - value: Sebastian Wilhelmi University of Karlsruhe Owen Taylor

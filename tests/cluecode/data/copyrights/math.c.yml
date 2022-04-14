@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1989, 1991, 1993, 1994 The Regents of the University of California
   - Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au>
@@ -14,7 +14,7 @@ holders:
   - Aaron Lehmann
   - Paul Mundt
   - Vladimir Oleynik
-holders_summary:
+holders_tallies:
   - value: Aaron Lehmann
     count: 1
   - value: Herbert Xu

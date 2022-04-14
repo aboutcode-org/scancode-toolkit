@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002 Trond Myklebust <trond.myklebust@fys.uio.no>
 holders:
   - Trond Myklebust
-holders_summary:
+holders_tallies:
   - value: Trond Myklebust
     count: 1

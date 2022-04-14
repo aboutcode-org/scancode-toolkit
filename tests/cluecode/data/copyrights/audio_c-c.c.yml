@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke
 holders:
   - AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke
-holders_summary:
+holders_tallies:
   - value: AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke
     count: 1

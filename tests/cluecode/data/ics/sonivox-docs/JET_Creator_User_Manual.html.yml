@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009 Confidential
   - Copyright (c) 2009 The Android Open Source Project
@@ -10,7 +10,7 @@ holders:
   - Confidential
   - The Android Open Source Project
   - Sonic Network, Inc.
-holders_summary:
+holders_tallies:
   - value: Confidential
     count: 1
   - value: Sonic Network, Inc.

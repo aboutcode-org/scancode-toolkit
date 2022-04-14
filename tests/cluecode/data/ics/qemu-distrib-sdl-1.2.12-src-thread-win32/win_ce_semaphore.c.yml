@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998, Johnson M. Hart
 holders:
   - Johnson M. Hart
-holders_summary:
+holders_tallies:
   - value: Johnson M. Hart
     count: 1

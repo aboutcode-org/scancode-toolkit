@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001,2002 Patrick Mochel
   - Copyright (c) 2004 Silicon Graphics, Inc.
 holders:
   - Patrick Mochel
   - Silicon Graphics, Inc.
-holders_summary:
+holders_tallies:
   - value: Patrick Mochel
     count: 1
   - value: Silicon Graphics, Inc.

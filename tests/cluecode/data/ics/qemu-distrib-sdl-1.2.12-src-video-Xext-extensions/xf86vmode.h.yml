@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1995 Kaleb S. KEITHLEY
 holders:
   - Kaleb S. KEITHLEY
-holders_summary:
+holders_tallies:
   - value: Kaleb S. KEITHLEY
     count: 1

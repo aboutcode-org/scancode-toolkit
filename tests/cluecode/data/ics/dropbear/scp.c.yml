@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999 Theo de Raadt
   - Copyright (c) 1999 Aaron Campbell
@@ -10,7 +10,7 @@ holders:
   - Theo de Raadt
   - Aaron Campbell
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: Aaron Campbell
     count: 1
   - value: The Regents of the University of California

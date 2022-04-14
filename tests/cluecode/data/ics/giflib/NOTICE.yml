@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997 Eric S. Raymond
 holders:
   - Eric S. Raymond
-holders_summary:
+holders_tallies:
   - value: Eric S. Raymond
     count: 1

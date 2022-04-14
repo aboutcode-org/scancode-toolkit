@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
 holders:
   - Marcel Holtmann
-holders_summary:
+holders_tallies:
   - value: Marcel Holtmann
     count: 1

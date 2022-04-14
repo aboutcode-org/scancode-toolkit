@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copr. 1986-92 Numerical Recipes Software
 holders:
   - Numerical Recipes Software
-holders_summary:
+holders_tallies:
   - value: Numerical Recipes Software
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1999 Radical Eye Software
 holders:
   - Radical Eye Software
-holders_summary:
+holders_tallies:
   - value: Radical Eye Software
     count: 1

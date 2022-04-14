@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2009 by Pablo Neira Ayuso <pablo@netfilter.org>
 holders:
   - Pablo Neira Ayuso
-holders_summary:
+holders_tallies:
   - value: Pablo Neira Ayuso
     count: 1

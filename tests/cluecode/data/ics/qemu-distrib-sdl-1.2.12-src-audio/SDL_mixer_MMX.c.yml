@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-2006 Sam Lantinga
   - Copyright 2002 Stephane Marchesin (stephane.marchesin@wanadoo.fr)
 holders:
   - Sam Lantinga
   - Stephane Marchesin
-holders_summary:
+holders_tallies:
   - value: Sam Lantinga
     count: 1
   - value: Stephane Marchesin

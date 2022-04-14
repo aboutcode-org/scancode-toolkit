@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009 Confidential
 holders:
   - Confidential
-holders_summary:
+holders_tallies:
   - value: Confidential
     count: 1

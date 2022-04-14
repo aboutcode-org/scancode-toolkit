@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002-2004 Dmitriy Anisimkov
 holders:
   - Dmitriy Anisimkov
-holders_summary:
+holders_tallies:
   - value: Dmitriy Anisimkov
     count: 1

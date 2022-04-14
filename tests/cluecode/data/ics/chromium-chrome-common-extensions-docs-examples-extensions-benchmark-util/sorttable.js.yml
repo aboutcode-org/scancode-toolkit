@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2006, Dean Edwards
 holders:
   - Dean Edwards
-holders_summary:
+holders_tallies:
   - value: Dean Edwards
     count: 1

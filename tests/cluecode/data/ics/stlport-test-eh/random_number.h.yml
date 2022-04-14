@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-1998 Mark of the Unicorn, Inc.
 holders:
   - Mark of the Unicorn, Inc.
-holders_summary:
+holders_tallies:
   - value: Mark of the Unicorn, Inc.
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003-2004, Mark Borgerding
 holders:
   - Mark Borgerding
-holders_summary:
+holders_tallies:
   - value: Mark Borgerding
     count: 1

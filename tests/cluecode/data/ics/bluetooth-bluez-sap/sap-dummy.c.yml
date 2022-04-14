@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 ST-Ericsson SA
   - Copyright (c) 2011 Tieto Poland
 holders:
   - ST-Ericsson SA
   - Tieto Poland
-holders_summary:
+holders_tallies:
   - value: ST-Ericsson SA
     count: 1
   - value: Tieto Poland

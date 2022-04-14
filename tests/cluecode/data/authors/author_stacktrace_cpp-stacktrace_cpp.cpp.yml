@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - faith@dict.org
-authors_summary:
+authors_tallies:
   - value: faith@dict.org
     count: 1

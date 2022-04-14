@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2011 Skia
 holders:
   - Skia
-holders_summary:
+holders_tallies:
   - value: Skia
     count: 1

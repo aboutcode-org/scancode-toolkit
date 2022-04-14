@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003 - 2005 Nokia Corporation
   - Copyright (c) 2004 Texas Instruments
@@ -10,7 +10,7 @@ holders:
   - Nokia Corporation
   - Texas Instruments
   - Texas Instruments
-holders_summary:
+holders_tallies:
   - value: Texas Instruments
     count: 2
   - value: Nokia Corporation

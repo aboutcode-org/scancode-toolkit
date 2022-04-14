@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997 Yen Yen Lim and North Dakota State University
 holders:
   - Yen Yen Lim and North Dakota State University
-holders_summary:
+holders_tallies:
   - value: Yen Yen Lim and North Dakota State University
     count: 1

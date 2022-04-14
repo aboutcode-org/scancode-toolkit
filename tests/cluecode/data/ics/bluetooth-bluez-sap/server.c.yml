@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 Instituto Nokia de Tecnologia - INdT
   - Copyright (c) 2010 ST-Ericsson SA
@@ -10,7 +10,7 @@ holders:
   - Instituto Nokia de Tecnologia - INdT
   - ST-Ericsson SA
   - Tieto Poland
-holders_summary:
+holders_tallies:
   - value: Instituto Nokia de Tecnologia - INdT
     count: 1
   - value: ST-Ericsson SA

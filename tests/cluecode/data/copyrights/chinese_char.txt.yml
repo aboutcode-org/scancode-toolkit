@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2016Nian Allen
 holders:
   - Allen
-holders_summary:
+holders_tallies:
   - value: Allen
     count: 1

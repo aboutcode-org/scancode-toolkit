@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Anthony Green
   - Copyright (c) 2007 Free Software Foundation, Inc.
@@ -10,7 +10,7 @@ holders:
   - Anthony Green
   - Free Software Foundation, Inc.
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Anthony Green
     count: 1
   - value: Free Software Foundation, Inc.

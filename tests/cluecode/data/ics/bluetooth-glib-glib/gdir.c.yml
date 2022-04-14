@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright 2001 Hans Breuer
@@ -10,7 +10,7 @@ holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Hans Breuer
   - Tor Lillqvist
-holders_summary:
+holders_tallies:
   - value: Hans Breuer
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

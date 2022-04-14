@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2001 Red Hat, Inc.
   - Copyright Linus Torvalds and others
 holders:
   - Red Hat, Inc.
   - Linus Torvalds and others
-holders_summary:
+holders_tallies:
   - value: Linus Torvalds and others
     count: 1
   - value: Red Hat, Inc.

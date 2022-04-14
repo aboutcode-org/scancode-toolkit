@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright Marco d'Itri <md@Linux.IT>
   - Copyright Marco d'Itri
 holders:
   - Marco d'Itri
   - Marco d'Itri
-holders_summary:
+holders_tallies:
   - value: Marco d'Itri
     count: 2

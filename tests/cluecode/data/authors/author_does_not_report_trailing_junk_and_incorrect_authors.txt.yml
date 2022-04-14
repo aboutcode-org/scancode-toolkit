@@ -1,10 +1,10 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Mohit Agarwal
   - Mitsubishi and NTT.
-authors_summary:
+authors_tallies:
   - value: Mitsubishi and NTT.
     count: 1
   - value: Mohit Agarwal

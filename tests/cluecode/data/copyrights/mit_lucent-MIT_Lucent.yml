@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1989-1998 by Lucent Technologies
 holders:
   - Lucent Technologies
-holders_summary:
+holders_tallies:
   - value: Lucent Technologies
     count: 1

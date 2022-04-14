@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Brian Goetz
 holders:
   - Brian Goetz
-holders_summary:
+holders_tallies:
   - value: Brian Goetz
     count: 1

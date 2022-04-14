@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright . 2008 Foo Name, Inc.
 holders:
   - Foo Name, Inc.
-holders_summary:
+holders_tallies:
   - value: Foo Name, Inc.
     count: 1

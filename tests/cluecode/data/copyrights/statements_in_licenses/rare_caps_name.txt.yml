@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 O Young Jong
 holders:
   - O Young Jong
-holders_summary:
+holders_tallies:
   - value: O Young Jong
     count: 1

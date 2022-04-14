@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 John McCutchan <john@johnmccutchan.com>
 holders:
   - John McCutchan
-holders_summary:
+holders_tallies:
   - value: John McCutchan
     count: 1

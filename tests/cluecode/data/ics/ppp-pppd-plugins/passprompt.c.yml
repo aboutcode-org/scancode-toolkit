@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1999 Paul Mackerras, Alan Curry
 holders:
   - Paul Mackerras, Alan Curry
-holders_summary:
+holders_tallies:
   - value: Paul Mackerras, Alan Curry
     count: 1

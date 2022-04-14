@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2002 Henrik Theiling
 holders:
   - Henrik Theiling
-holders_summary:
+holders_tallies:
   - value: Henrik Theiling
     count: 1

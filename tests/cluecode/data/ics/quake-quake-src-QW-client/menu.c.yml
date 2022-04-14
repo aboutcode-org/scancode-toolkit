@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996-1997 Id Software, Inc.
   - (c) 1996 Id Software,', 0Inc.
 holders:
   - Id Software, Inc.
   - Id Software,', 0Inc.
-holders_summary:
+holders_tallies:
   - value: Id Software, Inc.
     count: 1
   - value: Id Software,', 0Inc.

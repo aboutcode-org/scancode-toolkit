@@ -60,9 +60,9 @@ class CopyrightTest(object):
     holders = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
 
-    holders_summary = attr.ib(default=attr.Factory(list))
-    copyrights_summary = attr.ib(default=attr.Factory(list))
-    authors_summary = attr.ib(default=attr.Factory(list))
+    holders_tallies = attr.ib(default=attr.Factory(list))
+    copyrights_tallies = attr.ib(default=attr.Factory(list))
+    authors_tallies = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
@@ -83,14 +83,14 @@ class CopyrightTest(object):
                 raise Exception(msg)
 
         # fix counts to be ints: saneyaml loads everything as string
-        for holders_sum in self.holders_summary:
-            holders_sum['count'] = int(holders_sum['count'])
+        for holders_tally in self.holders_tallies:
+            holders_tally['count'] = int(holders_tally['count'])
 
-        for copyrs_sum in self.copyrights_summary:
-            copyrs_sum['count'] = int(copyrs_sum['count'])
+        for copyrs_tally in self.copyrights_tallies:
+            copyrs_tally['count'] = int(copyrs_tally['count'])
 
-        for auths_sum in self.authors_summary:
-            auths_sum['count'] = int(auths_sum['count'])
+        for auths_tally in self.authors_tallies:
+            auths_tally['count'] = int(auths_tally['count'])
 
     def to_dict(self):
         """
@@ -175,32 +175,32 @@ def make_copyright_test_functions(
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from summarycode.copyright_summary import summarize_copyrights
-    from summarycode.copyright_summary import summarize_persons
+    from summarycode.copyright_tallies import tally_copyrights
+    from summarycode.copyright_tallies import tally_persons
 
     def closure_test_function(*args, **kwargs):
         detections = detect_copyrights(test_file)
         copyrights, holders, authors = Detection.split_values(detections)
 
-        holders_summary = []
-        if 'holders_summary' in test.what:
-            holders_summary = as_sorted_mapping(summarize_persons(holders))
+        holders_tallies = []
+        if 'holders_tallies' in test.what:
+            holders_tallies = as_sorted_mapping(tally_persons(holders))
 
-        copyrights_summary = []
-        if 'copyrights_summary' in test.what:
-            copyrights_summary = as_sorted_mapping(summarize_copyrights(copyrights))
+        copyrights_tallies = []
+        if 'copyrights_tallies' in test.what:
+            copyrights_tallies = as_sorted_mapping(tally_copyrights(copyrights))
 
-        authors_summary = []
-        if 'authors_summary' in test.what:
-            authors_summary = as_sorted_mapping(summarize_persons(authors))
+        authors_tallies = []
+        if 'authors_tallies' in test.what:
+            authors_tallies = as_sorted_mapping(tally_persons(authors))
 
         results = dict(
             copyrights=copyrights,
             authors=authors,
             holders=holders,
-            holders_summary=holders_summary,
-            copyrights_summary=copyrights_summary,
-            authors_summary=authors_summary,
+            holders_tallies=holders_tallies,
+            copyrights_tallies=copyrights_tallies,
+            authors_tallies=authors_tallies,
         )
 
         expected_yaml = test.dumps()

@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Finn Thain 2006
 holders:
   - Finn Thain
-holders_summary:
+holders_tallies:
   - value: Finn Thain
     count: 1
 notes: spurrious trailing Copying

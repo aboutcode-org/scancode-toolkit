@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic
   - Copyright 2003-2017, BugSplat
@@ -46,7 +46,7 @@ holders:
   - Facebook, Inc.
   - William Pitcock
   - Facebook Technologies, LLC and its affiliates
-holders_summary:
+holders_tallies:
   - value: Facebook, Inc.
     count: 2
   - value: Intel Corporation

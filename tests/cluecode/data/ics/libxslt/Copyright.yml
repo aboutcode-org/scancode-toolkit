@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2002 Daniel Veillard
   - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
 holders:
   - Daniel Veillard
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
-holders_summary:
+holders_tallies:
   - value: Daniel Veillard
     count: 1
   - value: Thomas Broyer, Charlie Bozeman and Daniel Veillard

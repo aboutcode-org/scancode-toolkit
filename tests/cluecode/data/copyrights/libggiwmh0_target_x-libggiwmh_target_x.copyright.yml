@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 Eric Faurot eric.faurot@gmail.com
   - Copyright (c) 2004 Peter Ekberg peda@lysator.liu.se
@@ -16,7 +16,7 @@ holders:
   - Marcus Sundberg
   - Andreas Beck
   - Bradley Smith
-holders_summary:
+holders_tallies:
   - value: Andreas Beck
     count: 1
   - value: Bradley Smith

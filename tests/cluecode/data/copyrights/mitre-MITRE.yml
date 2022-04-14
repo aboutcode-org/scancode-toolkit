@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1994-1999. The MITRE Corporation (http://www.mitre.org/)
 holders:
   - The MITRE Corporation
-holders_summary:
+holders_tallies:
   - value: The MITRE Corporation
     count: 1

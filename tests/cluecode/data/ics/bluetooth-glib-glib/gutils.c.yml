@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1998 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright (c) 2007 Red Hat Inc.
@@ -10,7 +10,7 @@ holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Red Hat Inc.
   - Free Software Foundation, Inc.
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003-2009 Thomas Graf <tgraf@suug.ch>
 holders:
   - Thomas Graf
-holders_summary:
+holders_tallies:
   - value: Thomas Graf
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2003-2009 OFFIS, Henri Tremblay
 holders:
   - OFFIS, Henri Tremblay
-holders_summary:
+holders_tallies:
   - value: OFFIS, Henri Tremblay
     count: 1

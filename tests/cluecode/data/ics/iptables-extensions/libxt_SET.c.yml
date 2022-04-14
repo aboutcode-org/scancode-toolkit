@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2002 Joakim Axelsson <gozem@linux.nu> Patrick Schaaf <bof@bof.de> Martin
     Josefsson <gandalf@wlug.westbo.se>
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - Joakim Axelsson Patrick Schaaf Martin Josefsson
   - Jozsef Kadlecsik
-holders_summary:
+holders_tallies:
   - value: Joakim Axelsson Patrick Schaaf Martin Josefsson
     count: 1
   - value: Jozsef Kadlecsik

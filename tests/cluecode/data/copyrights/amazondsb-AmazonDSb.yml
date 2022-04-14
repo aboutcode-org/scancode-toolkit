@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2006 Amazon Digital Services, Inc.
 holders:
   - Amazon Digital Services, Inc.
-holders_summary:
+holders_tallies:
   - value: Amazon Digital Services, Inc.
     count: 1

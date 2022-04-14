@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright disclaimed 2003 by Andrew Clarke
 holders:
   - disclaimed by Andrew Clarke
-holders_summary:
+holders_tallies:
   - value: disclaimed by Andrew Clarke
     count: 1

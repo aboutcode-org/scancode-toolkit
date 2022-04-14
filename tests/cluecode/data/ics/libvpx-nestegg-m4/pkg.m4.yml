@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Scott James Remnant <scott@netsplit.com>
 holders:
   - Scott James Remnant
-holders_summary:
+holders_tallies:
   - value: Scott James Remnant
     count: 1

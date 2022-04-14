@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2005, ATMEL Corporation
   - Copyright (c) 2004-2007, Jouni Malinen <j@w1.fi>
@@ -10,7 +10,7 @@ holders:
   - ATMEL Corporation
   - Jouni Malinen
   - ATMEL Corporation
-holders_summary:
+holders_tallies:
   - value: ATMEL Corporation
     count: 2
   - value: Jouni Malinen

@@ -1,10 +1,10 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Jouni Malinen
   - Jouni Malinen and contributors
-holders_summary:
+holders_tallies:
   - value: Jouni Malinen
     count: 1
   - value: Jouni Malinen and contributors

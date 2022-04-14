@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) UCB 1986-1988
 holders:
   - UCB
-holders_summary:
+holders_tallies:
   - value: UCB
     count: 1

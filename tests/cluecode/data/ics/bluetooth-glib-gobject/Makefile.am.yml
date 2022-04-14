@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997,98,99,2000 Tim Janik and Red Hat, Inc.
 holders:
   - Tim Janik and Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Tim Janik and Red Hat, Inc.
     count: 1

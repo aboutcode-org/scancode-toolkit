@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2008 Clemens N. Buss <cebuzz@gmail.com>
 holders:
   - Clemens N. Buss
-holders_summary:
+holders_tallies:
   - value: Clemens N. Buss
     count: 1

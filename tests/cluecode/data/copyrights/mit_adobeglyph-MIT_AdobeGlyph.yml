@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997,1998,2002,2007 Adobe Systems Incorporated
 holders:
   - Adobe Systems Incorporated
-holders_summary:
+holders_tallies:
   - value: Adobe Systems Incorporated
     count: 1

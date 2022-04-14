@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002-2008 Blender Foundation
   - Copyright (c) 2004-2005 Masayuki Hatta <mhatta@debian.org>
@@ -12,7 +12,7 @@ holders:
   - Masayuki Hatta
   - Florian Ernst
   - Cyril Brulebois
-holders_summary:
+holders_tallies:
   - value: Blender Foundation
     count: 1
   - value: Cyril Brulebois

@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - not attributable
-authors_summary:
+authors_tallies:
   - value: not attributable
     count: 1

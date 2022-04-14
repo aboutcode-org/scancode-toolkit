@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos
   - Copyright (c) 2010 Signove
 holders:
   - GSyC/LibreSoft, Universidad Rey Juan Carlos
   - Signove
-holders_summary:
+holders_tallies:
   - value: GSyC/LibreSoft, Universidad Rey Juan Carlos
     count: 1
   - value: Signove

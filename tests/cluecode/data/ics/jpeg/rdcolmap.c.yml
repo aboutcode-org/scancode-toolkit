@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1994-1996, Thomas G. Lane
   - Copyright (c) 1988 by Jef Poskanzer
 holders:
   - Thomas G. Lane
   - Jef Poskanzer
-holders_summary:
+holders_tallies:
   - value: Jef Poskanzer
     count: 1
   - value: Thomas G. Lane

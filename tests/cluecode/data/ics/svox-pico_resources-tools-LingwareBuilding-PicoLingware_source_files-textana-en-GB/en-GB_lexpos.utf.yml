@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2008-2009 SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland
 holders:
   - SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland
-holders_summary:
+holders_tallies:
   - value: SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland
     count: 1

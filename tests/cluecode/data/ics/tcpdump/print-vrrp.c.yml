@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 William C. Fenner
 holders:
   - William C. Fenner
-holders_summary:
+holders_tallies:
   - value: William C. Fenner
     count: 1

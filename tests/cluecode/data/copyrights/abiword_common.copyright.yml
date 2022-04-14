@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998- AbiSource, Inc. & Co.
   - Copyright (c) 2009 Masayuki Hatta
@@ -10,7 +10,7 @@ holders:
   - AbiSource, Inc. & Co.
   - Masayuki Hatta
   - Patrik Fimml
-holders_summary:
+holders_tallies:
   - value: AbiSource, Inc. & Co.
     count: 1
   - value: Masayuki Hatta

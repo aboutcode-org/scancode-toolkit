@@ -1,6 +1,6 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 notes: |
   name +email is not enough to create an author
   hence this is not detected correctly

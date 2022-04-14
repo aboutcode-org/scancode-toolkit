@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2003 Andi Kleen, SuSE Labs
 holders:
   - Andi Kleen, SuSE Labs
-holders_summary:
+holders_tallies:
   - value: Andi Kleen, SuSE Labs
     count: 1

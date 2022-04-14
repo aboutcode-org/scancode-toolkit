@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1989, 1998 The Open Group
 holders:
   - The Open Group
-holders_summary:
+holders_tallies:
   - value: The Open Group
     count: 1

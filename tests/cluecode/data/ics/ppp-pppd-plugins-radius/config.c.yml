@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995,1996,1997 Lars Fenneberg
   - Copyright 1992 Livingston Enterprises, Inc.
@@ -11,7 +11,7 @@ holders:
   - Lars Fenneberg
   - Livingston Enterprises, Inc.
   - The Regents of the University of Michigan and Merit Network, Inc.
-holders_summary:
+holders_tallies:
   - value: Lars Fenneberg
     count: 1
   - value: Livingston Enterprises, Inc.

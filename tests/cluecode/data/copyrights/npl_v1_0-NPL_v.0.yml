@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998 Netscape Communications Corporation
 holders:
   - Netscape Communications Corporation
-holders_summary:
+holders_tallies:
   - value: Netscape Communications Corporation
     count: 1

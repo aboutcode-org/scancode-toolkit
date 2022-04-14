@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 Apple Computer, Inc.
 holders:
   - Apple Computer, Inc.
-holders_summary:
+holders_tallies:
   - value: Apple Computer, Inc.
     count: 1

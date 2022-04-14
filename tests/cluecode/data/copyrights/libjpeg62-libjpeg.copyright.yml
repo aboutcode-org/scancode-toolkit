@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright (c) 1991-1998, Thomas G. Lane
   - copyright holder, Aladdin Enterprises of Menlo Park
@@ -14,7 +14,7 @@ holders:
   - the Free Software Foundation
   - M.I.T.
   - CompuServe Incorporated
-holders_summary:
+holders_tallies:
   - value: Aladdin Enterprises of Menlo Park
     count: 1
   - value: CompuServe Incorporated

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997, Eric Young
 holders:
   - Eric Young
-holders_summary:
+holders_tallies:
   - value: Eric Young
     count: 1

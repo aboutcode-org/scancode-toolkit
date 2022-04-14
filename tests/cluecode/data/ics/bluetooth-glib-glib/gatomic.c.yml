@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright (c) 2003 Sebastian Wilhelmi
@@ -10,7 +10,7 @@ holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Sebastian Wilhelmi
   - Nokia Corporation
-holders_summary:
+holders_tallies:
   - value: Nokia Corporation
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

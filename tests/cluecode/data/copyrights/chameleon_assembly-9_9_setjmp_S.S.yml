@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright Chameleon Systems, 1999
 holders:
   - Chameleon Systems
-holders_summary:
+holders_tallies:
   - value: Chameleon Systems
     count: 1

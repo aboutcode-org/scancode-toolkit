@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2001 Brian Paul
 holders:
   - Brian Paul
-holders_summary:
+holders_tallies:
   - value: Brian Paul
     count: 1

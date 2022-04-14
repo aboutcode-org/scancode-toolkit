@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 2003-2007 Nuance
 holders:
   - Nuance
-holders_summary:
+holders_tallies:
   - value: Nuance
     count: 1

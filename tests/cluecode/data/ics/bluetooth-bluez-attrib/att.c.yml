@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 Nokia Corporation
   - Copyright (c) 2010 Marcel Holtmann <marcel@holtmann.org>
 holders:
   - Nokia Corporation
   - Marcel Holtmann
-holders_summary:
+holders_tallies:
   - value: Marcel Holtmann
     count: 1
   - value: Nokia Corporation

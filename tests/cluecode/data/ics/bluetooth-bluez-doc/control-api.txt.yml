@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2007-2008 David Stockwell <dstockwell@frequency-one.com>
 holders:
   - Marcel Holtmann
   - David Stockwell
-holders_summary:
+holders_tallies:
   - value: David Stockwell
     count: 1
   - value: Marcel Holtmann

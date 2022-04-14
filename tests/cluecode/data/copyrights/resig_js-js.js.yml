@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009 John Resig
 holders:
   - John Resig
-holders_summary:
+holders_tallies:
   - value: John Resig
     count: 1

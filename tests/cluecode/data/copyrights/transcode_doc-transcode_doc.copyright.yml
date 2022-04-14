@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 Thomas Ostreich
 holders:
   - Thomas Ostreich
-holders_summary:
+holders_tallies:
   - value: Thomas Ostreich
     count: 1

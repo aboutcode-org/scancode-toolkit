@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2005-02-02 David A. Wheeler
 holders:
   - David A. Wheeler
-holders_summary:
+holders_tallies:
   - value: David A. Wheeler
     count: 1

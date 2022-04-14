@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Gordon Matzigkeit <gord@gnu.ai.mit.edu>
-authors_summary:
+authors_tallies:
   - value: Gordon Matzigkeit <gord@gnu.ai.mit.edu>
     count: 1

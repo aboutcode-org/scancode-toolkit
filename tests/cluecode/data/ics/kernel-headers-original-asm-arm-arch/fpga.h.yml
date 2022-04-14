@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 RidgeRun, Inc.
   - Copyright (c) 2002 MontaVista Software, Inc.
@@ -10,7 +10,7 @@ holders:
   - RidgeRun, Inc.
   - MontaVista Software, Inc.
   - Nokia Corporation
-holders_summary:
+holders_tallies:
   - value: MontaVista Software, Inc.
     count: 1
   - value: Nokia Corporation

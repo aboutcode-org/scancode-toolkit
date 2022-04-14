@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003 Epic Games
 holders:
   - Epic Games
-holders_summary:
+holders_tallies:
   - value: Epic Games
     count: 1

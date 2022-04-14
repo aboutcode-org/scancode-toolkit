@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2001 Qualcomm Incorporated
   - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
@@ -14,7 +14,7 @@ holders:
   - Marcel Holtmann
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 2
   - value: Marcel Holtmann

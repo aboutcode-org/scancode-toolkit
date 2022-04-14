@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 - 2006 Intel Corporation
 holders:
   - Intel Corporation
-holders_summary:
+holders_tallies:
   - value: Intel Corporation
     count: 1

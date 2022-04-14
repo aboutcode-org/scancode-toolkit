@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 2003 Speechworks International
 holders:
   - Speechworks International
-holders_summary:
+holders_tallies:
   - value: Speechworks International
     count: 1

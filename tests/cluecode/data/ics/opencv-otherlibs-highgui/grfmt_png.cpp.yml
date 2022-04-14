@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000, Intel Corporation
   - (Copyright (c) 1999-2001 MIYASAKA Masaru)
 holders:
   - Intel Corporation
   - MIYASAKA Masaru
-holders_summary:
+holders_tallies:
   - value: Intel Corporation
     count: 1
   - value: MIYASAKA Masaru

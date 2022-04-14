@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2007, Sample ABC Inc.
 holders:
   - Sample ABC Inc.
-holders_summary:
+holders_tallies:
   - value: Sample ABC Inc.
     count: 1

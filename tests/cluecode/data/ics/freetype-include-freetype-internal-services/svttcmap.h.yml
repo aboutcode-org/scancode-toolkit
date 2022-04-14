@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2003 by Masatake YAMATO, Redhat K.K.
   - Copyright 2003, 2008 by David Turner, Robert Wilhelm, and Werner Lemberg
 holders:
   - Masatake YAMATO, Redhat K.K.
   - David Turner, Robert Wilhelm, and Werner Lemberg
-holders_summary:
+holders_tallies:
   - value: David Turner, Robert Wilhelm, and Werner Lemberg
     count: 1
   - value: Masatake YAMATO, Redhat K.K.

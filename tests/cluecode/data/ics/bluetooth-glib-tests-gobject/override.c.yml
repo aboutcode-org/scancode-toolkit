@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001, James Henstridge
   - Copyright (c) 2003, Red Hat, Inc.
 holders:
   - James Henstridge
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: James Henstridge
     count: 1
   - value: Red Hat, Inc.

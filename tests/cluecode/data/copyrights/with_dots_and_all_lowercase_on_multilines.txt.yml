@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright . 2008 company name, inc.
 holders:
   - company name, inc.
-holders_summary:
+holders_tallies:
   - value: company name, inc.
     count: 1

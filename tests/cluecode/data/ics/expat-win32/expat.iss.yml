@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat maintainers
 holders:
   - Thai Open Source Software Center, Clark Cooper, and the Expat maintainers
-holders_summary:
+holders_tallies:
   - value: Thai Open Source Software Center, Clark Cooper, and the Expat maintainers
     count: 1

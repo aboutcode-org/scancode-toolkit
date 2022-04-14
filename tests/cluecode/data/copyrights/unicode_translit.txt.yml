@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2011-2016 Wojciech Mula
 holders:
   - Wojciech Mula
-holders_summary:
+holders_tallies:
   - value: Wojciech Mula
     count: 1

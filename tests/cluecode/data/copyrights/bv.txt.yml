@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2016 HERE Europe B.V.
   - (c) HERE 2016
 holders:
   - HERE Europe B.V.
   - HERE
-holders_summary:
+holders_tallies:
   - value: HERE
     count: 1
   - value: HERE Europe B.V.

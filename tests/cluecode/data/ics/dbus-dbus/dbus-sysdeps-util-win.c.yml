@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002, 2003, 2004, 2005 Red Hat, Inc.
   - Copyright (c) 2003 CodeFactory AB
@@ -10,7 +10,7 @@ holders:
   - Red Hat, Inc.
   - CodeFactory AB
   - Werner Almesberger
-holders_summary:
+holders_tallies:
   - value: CodeFactory AB
     count: 1
   - value: Red Hat, Inc.

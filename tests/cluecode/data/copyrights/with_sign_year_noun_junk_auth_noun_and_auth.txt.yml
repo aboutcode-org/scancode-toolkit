@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007-2010 the original author or authors
 holders:
   - the original author or authors
-holders_summary:
+holders_tallies:
   - value: the original author or authors
     count: 1

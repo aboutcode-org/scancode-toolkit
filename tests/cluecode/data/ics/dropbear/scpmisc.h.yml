@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
 holders:
   - Tatu Ylonen , Espoo, Finland
-holders_summary:
+holders_tallies:
   - value: Tatu Ylonen , Espoo, Finland
     count: 1

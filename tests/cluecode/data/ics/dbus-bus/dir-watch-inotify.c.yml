@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003 Red Hat, Inc.
   - (c) 2006 Mandriva
 holders:
   - Red Hat, Inc.
   - Mandriva
-holders_summary:
+holders_tallies:
   - value: Mandriva
     count: 1
   - value: Red Hat, Inc.

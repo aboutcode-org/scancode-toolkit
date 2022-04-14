@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2003 David Woodhouse <dwmw2@infradead.org>
 holders:
   - David Woodhouse
-holders_summary:
+holders_tallies:
   - value: David Woodhouse
     count: 1

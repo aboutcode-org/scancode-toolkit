@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 1999 by Paul Rusty Russell <rusty@rustcorp.com.au>
   - (c) 2000-2002 by Harald Welte <laforge@gnumonks.org>
 holders:
   - Paul Rusty Russell
   - Harald Welte
-holders_summary:
+holders_tallies:
   - value: Harald Welte
     count: 1
   - value: Paul Rusty Russell

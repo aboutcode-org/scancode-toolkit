@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
   - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
 holders:
   - Robert A. van Engelen, Genivia inc.
   - Robert A. van Engelen, Genivia inc.
-holders_summary:
+holders_tallies:
   - value: Robert A. van Engelen, Genivia inc.
     count: 2

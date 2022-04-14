@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007-2008 Geoff Stearns, Michael Williams, and Bobby van der Sluis
 holders:
   - Geoff Stearns, Michael Williams, and Bobby van der Sluis
-holders_summary:
+holders_tallies:
   - value: Geoff Stearns, Michael Williams, and Bobby van der Sluis
     count: 1

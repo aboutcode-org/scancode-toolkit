@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Anthony Liguori <aliguori@us.ibm.com>
-authors_summary:
+authors_tallies:
   - value: Anthony Liguori <aliguori@us.ibm.com>
     count: 1

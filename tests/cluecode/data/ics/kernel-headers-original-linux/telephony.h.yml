@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 1999-2001 Quicknet Technologies, Inc.
 holders:
   - Quicknet Technologies, Inc.
-holders_summary:
+holders_tallies:
   - value: Quicknet Technologies, Inc.
     count: 1

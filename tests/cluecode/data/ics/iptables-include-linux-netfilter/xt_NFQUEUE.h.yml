@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2005 Harald Welte <laforge@netfilter.org>
 holders:
   - Harald Welte
-holders_summary:
+holders_tallies:
   - value: Harald Welte
     count: 1

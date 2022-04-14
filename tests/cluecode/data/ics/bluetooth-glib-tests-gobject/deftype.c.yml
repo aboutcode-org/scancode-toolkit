@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Behdad Esfahbod
 holders:
   - Behdad Esfahbod
-holders_summary:
+holders_tallies:
   - value: Behdad Esfahbod
     count: 1

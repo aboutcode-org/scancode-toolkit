@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2000 University College London
 holders:
   - University College London
-holders_summary:
+holders_tallies:
   - value: University College London
     count: 1

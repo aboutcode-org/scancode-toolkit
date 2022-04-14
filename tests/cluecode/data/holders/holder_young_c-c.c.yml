@@ -1,10 +1,10 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Eric Young
   - Tim Hudson
-holders_summary:
+holders_tallies:
   - value: Eric Young
     count: 1
   - value: Tim Hudson

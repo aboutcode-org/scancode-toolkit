@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
 holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
-holders_summary:
+holders_tallies:
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald
     count: 1

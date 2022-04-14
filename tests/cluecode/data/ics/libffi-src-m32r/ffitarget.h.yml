@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Renesas Technology
 holders:
   - Renesas Technology
-holders_summary:
+holders_tallies:
   - value: Renesas Technology
     count: 1

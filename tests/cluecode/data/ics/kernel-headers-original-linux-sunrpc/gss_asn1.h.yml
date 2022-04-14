@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 The Regents of the University of Michigan
   - Copyright 1995 by the Massachusetts Institute of Technology
 holders:
   - The Regents of the University of Michigan
   - the Massachusetts Institute of Technology
-holders_summary:
+holders_tallies:
   - value: The Regents of the University of Michigan
     count: 1
   - value: the Massachusetts Institute of Technology

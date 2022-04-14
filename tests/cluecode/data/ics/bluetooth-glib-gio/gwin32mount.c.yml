@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2007 Red Hat, Inc.
   - Copyright (c) 2008 Hans Breuer
 holders:
   - Red Hat, Inc.
   - Hans Breuer
-holders_summary:
+holders_tallies:
   - value: Hans Breuer
     count: 1
   - value: Red Hat, Inc.

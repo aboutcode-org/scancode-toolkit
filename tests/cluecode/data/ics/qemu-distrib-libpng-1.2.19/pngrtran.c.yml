@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2007 Glenn Randers-Pehrson
   - Copyright (c) 1996, 1997 Andreas Dilger
@@ -12,7 +12,7 @@ holders:
   - Andreas Dilger
   - Guy Eric Schalnat, Group 42, Inc.
   - Charles Poynton poynton at inforamp.net
-holders_summary:
+holders_tallies:
   - value: Andreas Dilger
     count: 1
   - value: Charles Poynton poynton at inforamp.net

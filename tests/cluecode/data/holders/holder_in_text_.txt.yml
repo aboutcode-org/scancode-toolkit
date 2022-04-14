@@ -1,6 +1,6 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Markus Franz Xaver Johannes Oberhumer
   - Markus Franz Xaver Johannes Oberhumer
@@ -12,6 +12,6 @@ holders:
   - Markus Franz Xaver Johannes Oberhumer
   - Markus Franz Xaver Johannes Oberhumer
   - Markus Franz Xaver Johannes Oberhumer
-holders_summary:
+holders_tallies:
   - value: Markus Franz Xaver Johannes Oberhumer
     count: 10

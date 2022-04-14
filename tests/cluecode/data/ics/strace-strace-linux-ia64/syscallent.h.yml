@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999, 2001 Hewlett-Packard Co David Mosberger-Tang <davidm@hpl.hp.com>
 holders:
   - Hewlett-Packard Co David Mosberger-Tang
-holders_summary:
+holders_tallies:
   - value: Hewlett-Packard Co David Mosberger-Tang
     count: 1

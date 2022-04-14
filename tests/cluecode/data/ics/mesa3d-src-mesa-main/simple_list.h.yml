@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 1997, Keith Whitwell
   - Copyright (c) 1999-2001 Brian Paul
 holders:
   - Keith Whitwell
   - Brian Paul
-holders_summary:
+holders_tallies:
   - value: Brian Paul
     count: 1
   - value: Keith Whitwell

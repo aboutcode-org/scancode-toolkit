@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006, Dan Williams <dcbw@redhat.com> and Red Hat, Inc.
 holders:
   - Dan Williams and Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Dan Williams and Red Hat, Inc.
     count: 1

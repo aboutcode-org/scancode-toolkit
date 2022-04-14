@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2000 Aaron D. Gifford
 holders:
   - Aaron D. Gifford
-holders_summary:
+holders_tallies:
   - value: Aaron D. Gifford
     count: 1

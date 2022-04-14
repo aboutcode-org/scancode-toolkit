@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Business Management Systems, Inc.
 holders:
   - Business Management Systems, Inc.
-holders_summary:
+holders_tallies:
   - value: Business Management Systems, Inc.
     count: 1

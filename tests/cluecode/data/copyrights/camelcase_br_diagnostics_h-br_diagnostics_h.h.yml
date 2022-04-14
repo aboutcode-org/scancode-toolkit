@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2011 by BitRouter <www.BitRouter.com>
 holders:
   - BitRouter
-holders_summary:
+holders_tallies:
   - value: BitRouter
     count: 1

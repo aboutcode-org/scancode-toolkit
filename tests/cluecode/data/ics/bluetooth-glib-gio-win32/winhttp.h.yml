@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007 Francois Gouget
 holders:
   - Francois Gouget
-holders_summary:
+holders_tallies:
   - value: Francois Gouget
     count: 1

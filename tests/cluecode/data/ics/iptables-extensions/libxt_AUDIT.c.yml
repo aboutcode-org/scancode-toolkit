@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2010-2011, Thomas Graf <tgraf@redhat.com>
   - (c) 2010-2011, Red Hat, Inc.
 holders:
   - Thomas Graf
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Red Hat, Inc.
     count: 1
   - value: Thomas Graf

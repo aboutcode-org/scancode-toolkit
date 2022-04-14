@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - COPYRIGHT (c) 2006 - 2009 DIONYSOS
   - COPYRIGHT (c) ADIONYSOS 2006 - 2009
@@ -28,7 +28,7 @@ holders:
   - MyCompany
   - MyCompany2
   - DIONYSOS2
-holders_summary:
+holders_tallies:
   - value: ADIONYSOS
     count: 2
   - value: ADIONYSOS2

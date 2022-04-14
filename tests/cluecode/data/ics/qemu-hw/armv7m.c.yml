@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2007 CodeSourcery
 holders:
   - CodeSourcery
-holders_summary:
+holders_tallies:
   - value: CodeSourcery
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 C-Cube Microsystems
 holders:
   - C-Cube Microsystems
-holders_summary:
+holders_tallies:
   - value: C-Cube Microsystems
     count: 1

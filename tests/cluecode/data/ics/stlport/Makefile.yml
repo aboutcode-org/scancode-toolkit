@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2008 Petr Ovtchenkov
 holders:
   - Petr Ovtchenkov
-holders_summary:
+holders_tallies:
   - value: Petr Ovtchenkov
     count: 1

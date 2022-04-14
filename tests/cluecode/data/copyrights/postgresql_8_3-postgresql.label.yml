@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Portions Copyright (c) 1996-2003, The PostgreSQL Global Development Group
   - Portions Copyright (c) 1994, The Regents of the University of California
@@ -14,7 +14,7 @@ holders:
   - Henry Spencer
   - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
     ActiveState Corporation
-holders_summary:
+holders_tallies:
   - value: Henry Spencer
     count: 1
   - value: The PostgreSQL Global Development Group

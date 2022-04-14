@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2002-2007 Xiph.org Foundation
   - Copyright 2002-2007 Jean-Marc Valin
@@ -18,7 +18,7 @@ holders:
   - David Rowe
   - EpicGames
   - Jutta Degener , Carsten Bormann
-holders_summary:
+holders_tallies:
   - value: Analog Devices Inc.
     count: 1
   - value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)

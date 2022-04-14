@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2006 Ufo Mechanic <azez@ufomechanic.net>
   - (c) 2000-2002 by Harald Welte <laforge@gnumonks.org>
 holders:
   - Ufo Mechanic
   - Harald Welte
-holders_summary:
+holders_tallies:
   - value: Harald Welte
     count: 1
   - value: Ufo Mechanic

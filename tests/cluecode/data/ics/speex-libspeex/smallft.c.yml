@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) COPYRIGHT 1994-2001 by the XIPHOPHORUS Company http://www.xiph.org
 holders:
   - the XIPHOPHORUS Company
-holders_summary:
+holders_tallies:
   - value: the XIPHOPHORUS Company
     count: 1

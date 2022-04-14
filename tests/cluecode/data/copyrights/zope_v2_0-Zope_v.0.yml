@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) Zope Corporation (tm) and Contributors
 holders:
   - Zope Corporation (tm) and Contributors
-holders_summary:
+holders_tallies:
   - value: Zope Corporation (tm) and Contributors
     count: 1

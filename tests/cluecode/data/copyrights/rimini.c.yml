@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Copyright 2000 Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY), arsenio@tin.it
 holders:
   - Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY)
-holders_summary:
+holders_tallies:
   - value: Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY)
     count: 1

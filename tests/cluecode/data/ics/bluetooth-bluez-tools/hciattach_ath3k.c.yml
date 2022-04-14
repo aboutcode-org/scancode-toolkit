@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009-2010 Atheros Communications Inc.
 holders:
   - Atheros Communications Inc.
-holders_summary:
+holders_tallies:
   - value: Atheros Communications Inc.
     count: 1

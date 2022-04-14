@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2010 Nokia Corporation
   - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
@@ -10,7 +10,7 @@ holders:
   - Nokia Corporation
   - Marcel Holtmann
   - Johan Hedberg
-holders_summary:
+holders_tallies:
   - value: Johan Hedberg
     count: 1
   - value: Marcel Holtmann

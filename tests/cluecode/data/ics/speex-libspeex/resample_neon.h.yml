@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007-2008 Jean-Marc Valin
   - Copyright (c) 2008 Thorvald Natvig
@@ -10,7 +10,7 @@ holders:
   - Jean-Marc Valin
   - Thorvald Natvig
   - Jyri Sarha, Texas Instruments
-holders_summary:
+holders_tallies:
   - value: Jean-Marc Valin
     count: 1
   - value: Jyri Sarha, Texas Instruments

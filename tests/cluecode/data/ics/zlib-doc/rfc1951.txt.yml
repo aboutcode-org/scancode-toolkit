@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1996 L. Peter Deutsch
 holders:
   - L. Peter Deutsch
-holders_summary:
+holders_tallies:
   - value: L. Peter Deutsch
     count: 1

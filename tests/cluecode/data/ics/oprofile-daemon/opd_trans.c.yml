@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2002 OProfile
   - Copyright (c) 2005 Hewlett-Packard Co.
@@ -10,7 +10,7 @@ holders:
   - OProfile
   - Hewlett-Packard Co.
   - IBM Corporation
-holders_summary:
+holders_tallies:
   - value: Hewlett-Packard, Inc.
     count: 1
   - value: IBM Corporation

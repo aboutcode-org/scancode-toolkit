@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Emmanuel Dreyfus
   - Copyright (c) 2008 Timo Teras
 holders:
   - Emmanuel Dreyfus
   - Timo Teras
-holders_summary:
+holders_tallies:
   - value: Emmanuel Dreyfus
     count: 1
   - value: Timo Teras

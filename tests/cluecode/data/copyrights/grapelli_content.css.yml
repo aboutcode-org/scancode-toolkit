@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2009, vonautomatisch werkstaetten
 holders:
   - vonautomatisch werkstaetten
-holders_summary:
+holders_tallies:
   - value: vonautomatisch werkstaetten
     count: 1

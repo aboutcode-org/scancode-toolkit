@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004, Richard Levitte <richard@levitte.org>
 holders:
   - Richard Levitte
-holders_summary:
+holders_tallies:
   - value: Richard Levitte
     count: 1

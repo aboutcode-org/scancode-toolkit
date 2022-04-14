@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA.
 holders:
   - The OpenLDAP Foundation, Redwood City, California, USA.
-holders_summary:
+holders_tallies:
   - value: The OpenLDAP Foundation, Redwood City, California, USA.
     count: 1

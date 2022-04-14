@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2003-2010 The Knopflerfish Project http://www.knopflerfish.org
   - Copyright (c) OSGi Alliance (2000, 2009)
@@ -26,7 +26,7 @@ holders:
   - Richard S. Hall
   - http://xml.apache.org/xalan-j
   - http://xerces.apache.org
-holders_summary:
+holders_tallies:
   - value: Didier Donsez
     count: 1
   - value: INRIA, France Telecom

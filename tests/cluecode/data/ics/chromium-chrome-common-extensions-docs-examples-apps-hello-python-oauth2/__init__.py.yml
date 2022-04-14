@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007-2010 Leah Culver, Joe Stump, Mark Paschal, Vic Fryzel
 holders:
   - Leah Culver, Joe Stump, Mark Paschal, Vic Fryzel
-holders_summary:
+holders_tallies:
   - value: Leah Culver, Joe Stump, Mark Paschal, Vic Fryzel
     count: 1

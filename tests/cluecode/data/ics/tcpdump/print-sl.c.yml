@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1989, 1990, 1991, 1993, 1994, 1995, 1996, 1997 The Regents of the University
     of California
 holders:
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: The Regents of the University of California
     count: 1

@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Jerone Young <jyoung5@us.ibm.com> Hollis Blanchard <hollisb@us.ibm.com>
-authors_summary:
+authors_tallies:
   - value: Jerone Young <jyoung5@us.ibm.com> Hollis Blanchard <hollisb@us.ibm.com>
     count: 1

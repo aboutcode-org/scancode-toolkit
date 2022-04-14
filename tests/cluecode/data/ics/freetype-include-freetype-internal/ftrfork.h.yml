@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2004, 2006, 2007 by Masatake YAMATO and Redhat K.K.
 holders:
   - Masatake YAMATO and Redhat K.K.
-holders_summary:
+holders_tallies:
   - value: Masatake YAMATO and Redhat K.K.
     count: 1

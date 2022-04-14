@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
 holders:
   - Rick Sladkey
-holders_summary:
+holders_tallies:
   - value: Rick Sladkey
     count: 1

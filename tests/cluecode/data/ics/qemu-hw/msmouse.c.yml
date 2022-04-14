@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2008 Lubomir Rintel
 holders:
   - Lubomir Rintel
-holders_summary:
+holders_tallies:
   - value: Lubomir Rintel
     count: 1

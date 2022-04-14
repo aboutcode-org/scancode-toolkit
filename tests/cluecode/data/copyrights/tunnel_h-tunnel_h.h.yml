@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Frank Strauss <strauss@ibr.cs.tu-bs.de>
 holders:
   - Frank Strauss
-holders_summary:
+holders_tallies:
   - value: Frank Strauss
     count: 1

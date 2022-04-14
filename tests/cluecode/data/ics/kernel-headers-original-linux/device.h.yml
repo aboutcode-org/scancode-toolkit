@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2003 Patrick Mochel <mochel@osdl.org>
 holders:
   - Patrick Mochel
-holders_summary:
+holders_tallies:
   - value: Patrick Mochel
     count: 1

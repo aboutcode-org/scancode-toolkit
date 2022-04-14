@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Simon Kelley
 holders:
   - Simon Kelley
-holders_summary:
+holders_tallies:
   - value: Simon Kelley
     count: 1

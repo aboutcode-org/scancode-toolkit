@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2007 Stefan Walter
   - Copyright (c) 2004-2006 Adam Schreiber
@@ -88,7 +88,7 @@ holders:
   - Red Hat, Inc.
   - Scott James Remnant
   - Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette
-holders_summary:
+holders_tallies:
   - value: Adam Schreiber
     count: 1
   - value: Adam Weinberger and the GNOME Foundation

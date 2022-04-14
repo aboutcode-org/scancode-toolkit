@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002 Roaring Penguin Software Inc.
   - Copyright (c) 1995,1996,1997,1998 Lars Fenneberg <lf@elemental.net>
@@ -12,7 +12,7 @@ holders:
   - Lars Fenneberg
   - Livingston Enterprises, Inc. Livingston Enterprises, Inc.
   - RSA Data Security, Inc.
-holders_summary:
+holders_tallies:
   - value: Lars Fenneberg
     count: 1
   - value: Livingston Enterprises, Inc. Livingston Enterprises, Inc.

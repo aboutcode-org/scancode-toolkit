@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2004-2007 Canonical Ltd. 2004-2005 Michiel Sikkes 2006 FSF Europe
 holders:
   - Canonical Ltd. Michiel Sikkes FSF Europe
-holders_summary:
+holders_tallies:
   - value: Canonical Ltd. Michiel Sikkes FSF Europe
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copr. 2006 INRIA - CIRAD - INRA
 holders:
   - INRIA - CIRAD - INRA
-holders_summary:
+holders_tallies:
   - value: INRIA - CIRAD - INRA
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
 holders:
   - SIProp Project
-holders_summary:
+holders_tallies:
   - value: SIProp Project
     count: 1

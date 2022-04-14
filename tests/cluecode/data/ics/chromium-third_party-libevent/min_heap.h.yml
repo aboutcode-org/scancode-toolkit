@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Maxim Yegorushkin <maxim.yegorushkin@gmail.com>
 holders:
   - Maxim Yegorushkin
-holders_summary:
+holders_tallies:
   - value: Maxim Yegorushkin
     count: 1

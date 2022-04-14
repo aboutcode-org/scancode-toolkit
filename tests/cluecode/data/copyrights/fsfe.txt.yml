@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2017 Free Software Foundation Europe e.V.
 holders:
   - Free Software Foundation Europe e.V.
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation Europe e.V.
     count: 1

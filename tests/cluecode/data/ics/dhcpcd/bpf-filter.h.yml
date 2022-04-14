@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2008 Roy Marples <roy@marples.name>
   - Copyright (c) 2004,2007 by Internet Systems Consortium, Inc.
@@ -10,7 +10,7 @@ holders:
   - Roy Marples
   - Internet Systems Consortium, Inc.
   - Internet Software Consortium
-holders_summary:
+holders_tallies:
   - value: Internet Software Consortium
     count: 1
   - value: Internet Systems Consortium, Inc.

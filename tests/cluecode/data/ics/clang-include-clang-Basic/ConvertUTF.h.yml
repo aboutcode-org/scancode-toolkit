@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2001-2004 Unicode, Inc.
 holders:
   - Unicode, Inc.
-holders_summary:
+holders_tallies:
   - value: Unicode, Inc.
     count: 1

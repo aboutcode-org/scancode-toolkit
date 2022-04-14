@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Ext JS, LLC
-holders_summary:
+holders_tallies:
   - value: Ext JS, LLC
     count: 1

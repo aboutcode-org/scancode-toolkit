@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)
 holders:
   - Nokia Corporation and/or its subsidiary(-ies)
-holders_summary:
+holders_tallies:
   - value: Nokia Corporation and/or its subsidiary(-ies)
     count: 1

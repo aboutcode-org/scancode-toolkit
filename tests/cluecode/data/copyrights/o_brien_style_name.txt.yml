@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001-2003, Patrick K. O'Brien and Contributors
 holders:
   - Patrick K. O'Brien and Contributors
-holders_summary:
+holders_tallies:
   - value: Patrick K. O'Brien and Contributors
     count: 1

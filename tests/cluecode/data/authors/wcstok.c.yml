@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Wes Peters <wes@softweyr.com>
-authors_summary:
+authors_tallies:
   - value: Wes Peters <wes@softweyr.com>
     count: 1

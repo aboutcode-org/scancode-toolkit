@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 1991-1992, Thomas G. Lane, Part of the Independent JPEG Group's
 holders:
   - Thomas G. Lane, Part of the Independent JPEG Group's
-holders_summary:
+holders_tallies:
   - value: Thomas G. Lane, Part of the Independent JPEG Group's
     count: 1

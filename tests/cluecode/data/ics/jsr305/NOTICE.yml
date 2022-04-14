@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007-2009, JSR305 expert group
 holders:
   - JSR305 expert group
-holders_summary:
+holders_tallies:
   - value: JSR305 expert group
     count: 1

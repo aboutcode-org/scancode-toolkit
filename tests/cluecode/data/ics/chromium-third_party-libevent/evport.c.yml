@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2007 Sun Microsystems
 holders:
   - Sun Microsystems
-holders_summary:
+holders_tallies:
   - value: Sun Microsystems, Inc.
     count: 1

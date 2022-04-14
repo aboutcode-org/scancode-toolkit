@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - at iClick, Inc., software copyright (c) 1999
 holders:
   - iClick, Inc., software
-holders_summary:
+holders_tallies:
   - value: iClick, Inc., software
     count: 1

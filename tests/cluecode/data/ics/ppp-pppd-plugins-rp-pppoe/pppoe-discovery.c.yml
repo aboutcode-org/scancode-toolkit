@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2001 by Roaring Penguin Software Inc.
   - Copyright (c) 2004 Marco d'Itri <md@linux.it>
 holders:
   - Roaring Penguin Software Inc.
   - Marco d'Itri
-holders_summary:
+holders_tallies:
   - value: Marco d'Itri
     count: 1
   - value: Roaring Penguin Software Inc.

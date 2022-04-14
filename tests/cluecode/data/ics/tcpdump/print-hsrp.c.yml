@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001 Julian Cowley
 holders:
   - Julian Cowley
-holders_summary:
+holders_tallies:
   - value: Julian Cowley
     count: 1

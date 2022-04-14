@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright Takuya OOURA, 1996-2001
 holders:
   - Takuya OOURA
-holders_summary:
+holders_tallies:
   - value: Takuya OOURA
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Foobar Company, (c) 2005
   - Copyright Foobar Company (PC) Property of Foobar Company
@@ -10,7 +10,7 @@ holders:
   - Foobar Company
   - Foobar Company (PC) Property of Foobar Company
   - Foobar Company
-holders_summary:
+holders_tallies:
   - value: Foobar Company
     count: 2
   - value: Foobar Company (PC) Property of Foobar Company

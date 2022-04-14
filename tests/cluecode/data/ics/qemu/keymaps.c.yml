@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Johannes Schindelin
 holders:
   - Johannes Schindelin
-holders_summary:
+holders_tallies:
   - value: Johannes Schindelin
     count: 1

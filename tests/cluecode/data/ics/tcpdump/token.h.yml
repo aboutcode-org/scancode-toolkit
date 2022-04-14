@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998, Larry Lile
 holders:
   - Larry Lile
-holders_summary:
+holders_tallies:
   - value: Larry Lile
     count: 1

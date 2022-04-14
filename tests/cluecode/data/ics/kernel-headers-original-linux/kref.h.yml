@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004 Greg Kroah-Hartman <greg@kroah.com>
   - Copyright (c) 2004 IBM Corp.
@@ -12,7 +12,7 @@ holders:
   - IBM Corp.
   - Patrick Mochel
   - Open Source Development Labs
-holders_summary:
+holders_tallies:
   - value: Greg Kroah-Hartman
     count: 1
   - value: IBM Corp.

@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Gary O'Neall
-authors_summary:
+authors_tallies:
   - value: Gary O'Neall
     count: 1

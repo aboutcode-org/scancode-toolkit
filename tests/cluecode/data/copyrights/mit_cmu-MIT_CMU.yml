@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1989, 1991, 1992 by Carnegie Mellon University
   - Copyright 1996, 1998-2000 The Regents of the University of California
 holders:
   - Carnegie Mellon University
   - The Regents of the University of California
-holders_summary:
+holders_tallies:
   - value: Carnegie Mellon University
     count: 1
   - value: The Regents of the University of California

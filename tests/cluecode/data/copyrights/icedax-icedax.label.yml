@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1998-2003 Heiko Eissfeldt
   - parts (c) Peter Widow
@@ -30,7 +30,7 @@ holders:
   - J. Schilling
   - J. Schilling
   - H. Peter Anvin
-holders_summary:
+holders_tallies:
   - value: J. Schilling
     count: 3
   - value: Heiko Eissfeldt

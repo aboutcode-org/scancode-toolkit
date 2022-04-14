@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006 Fabrice Bellard
   - (c) Copyright 2008 Semihalf
@@ -10,7 +10,7 @@ holders:
   - Fabrice Bellard
   - Semihalf
   - Wolfgang Denk, DENX Software Engineering
-holders_summary:
+holders_tallies:
   - value: Fabrice Bellard
     count: 1
   - value: Semihalf

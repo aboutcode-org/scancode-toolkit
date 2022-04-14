@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright (c) 1998 Tim Janik
 holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Tim Janik
-holders_summary:
+holders_tallies:
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald
     count: 1
   - value: Tim Janik

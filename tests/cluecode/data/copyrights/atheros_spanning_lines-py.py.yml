@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Atheros Communications, Inc.
   - Copyright (c) 2001 Atheros Communications, Inc.
@@ -10,7 +10,7 @@ holders:
   - Atheros Communications, Inc.
   - Atheros Communications, Inc.
   - Intel Corporation
-holders_summary:
+holders_tallies:
   - value: Atheros Communications, Inc.
     count: 2
   - value: Intel Corporation

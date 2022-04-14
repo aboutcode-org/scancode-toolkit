@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1994 Hewlett-Packard Company
   - Copyright (c) 1996-1998 Silicon Graphics Computer Systems, Inc.
@@ -16,7 +16,7 @@ holders:
   - Boris Fomitchev
   - Pavel Kuznetsov
   - Meridian'93
-holders_summary:
+holders_tallies:
   - value: Boris Fomitchev
     count: 1
   - value: Hewlett-Packard, Inc.

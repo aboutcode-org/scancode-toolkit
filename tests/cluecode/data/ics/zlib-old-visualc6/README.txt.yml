@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2004 Simon-Pierre Cadieux
   - Copyright (c) 2004 Cosmin Truta
 holders:
   - Simon-Pierre Cadieux
   - Cosmin Truta
-holders_summary:
+holders_tallies:
   - value: Cosmin Truta
     count: 1
   - value: Simon-Pierre Cadieux

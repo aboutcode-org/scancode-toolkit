@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2006, Giridhar Pemmasani <giri@lmc.cs.sunysb.edu>
   - Copyright (c) 2004-2006, Jouni Malinen <j@w1.fi>
 holders:
   - Giridhar Pemmasani
   - Jouni Malinen
-holders_summary:
+holders_tallies:
   - value: Giridhar Pemmasani
     count: 1
   - value: Jouni Malinen

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright (c) 2004 Canonical Software
   - Copyright (c) 2002 Terra Soft Solutions, Inc.
@@ -16,7 +16,7 @@ holders:
   - SciTech Software, Inc.
   - David Mosberger-Tang
   - Egbert Eich
-holders_summary:
+holders_tallies:
   - value: Canonical Software
     count: 1
   - value: David Mosberger-Tang

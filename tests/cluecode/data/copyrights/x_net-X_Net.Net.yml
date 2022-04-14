@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2001 X.Net, Inc. Lafayette, California, USA
 holders:
   - X.Net, Inc. Lafayette, California, USA
-holders_summary:
+holders_tallies:
   - value: X.Net, Inc. Lafayette, California, USA
     count: 1

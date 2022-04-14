@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) 2000-2002 by the netfilter coreteam <coreteam@netfilter.org> Paul Rusty Russell <rusty@rustcorp.com.au>
     Marc Boucher <marc+nf@mbsi.ca>
 holders:
   - the netfilter coreteam Paul Rusty Russell Marc Boucher
-holders_summary:
+holders_tallies:
   - value: the netfilter coreteam Paul Rusty Russell Marc Boucher
     count: 1

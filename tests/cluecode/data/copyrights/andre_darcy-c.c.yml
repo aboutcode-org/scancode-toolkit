@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)
   - copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)
 holders:
   - Pascal Andre
   - D'Arcy J.M. Cain
-holders_summary:
+holders_tallies:
   - value: D'Arcy J.M. Cain
     count: 1
   - value: Pascal Andre

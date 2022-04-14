@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000 Free Software Foundation
 holders:
   - Free Software Foundation
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 1

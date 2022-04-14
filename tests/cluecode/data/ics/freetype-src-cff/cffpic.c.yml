@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2009, 2010 by Oran Agra and Mickey Gabel
 holders:
   - Oran Agra and Mickey Gabel
-holders_summary:
+holders_tallies:
   - value: Oran Agra and Mickey Gabel
     count: 1

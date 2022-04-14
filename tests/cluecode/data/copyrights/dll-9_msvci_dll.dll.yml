@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright Myself and Me, Inc
 holders:
   - Myself and Me, Inc
-holders_summary:
+holders_tallies:
   - value: Myself and Me, Inc
     count: 1

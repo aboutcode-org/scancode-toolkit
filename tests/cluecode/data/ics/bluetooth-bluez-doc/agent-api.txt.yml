@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2005-2006 Johan Hedberg <johan.hedberg@nokia.com>
 holders:
   - Marcel Holtmann
   - Johan Hedberg
-holders_summary:
+holders_tallies:
   - value: Johan Hedberg
     count: 1
   - value: Marcel Holtmann

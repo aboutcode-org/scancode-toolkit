@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - (c) Adobe AIR
 holders:
   - Adobe AIR
-holders_summary:
+holders_tallies:
   - value: Adobe AIR
     count: 1

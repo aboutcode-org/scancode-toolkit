@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997, 2002, 2005 Free Software Foundation, Inc.
   - Copyright (c) 2005 Jens Axboe <axboe@suse.de>
@@ -26,7 +26,7 @@ holders:
   - Silicon Graphics, Inc.
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_summary:
+holders_tallies:
   - value: Free Software Foundation, Inc.
     count: 3
   - value: Jens Axboe

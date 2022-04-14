@@ -1,11 +1,11 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - the University of California, Berkeley and its contributors
   - UC Berkeley and its contributors
   - the University of California, Berkeley and its contributors
-authors_summary:
+authors_tallies:
   - value: the University of California, Berkeley and its contributors
     count: 2
   - value: UC Berkeley and its contributors

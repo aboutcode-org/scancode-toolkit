@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2006-2010 Roy Marples <roy@marples.name>
   - Copyright (c) 2006-2010 Roy Marples
 holders:
   - Roy Marples
   - Roy Marples
-holders_summary:
+holders_tallies:
   - value: Roy Marples
     count: 2

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1993-1996 Bas Laarhoven
   - (c) 1997 Claus-Justus Heine
 holders:
   - Bas Laarhoven
   - Claus-Justus Heine
-holders_summary:
+holders_tallies:
   - value: Bas Laarhoven
     count: 1
   - value: Claus-Justus Heine

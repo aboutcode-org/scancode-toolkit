@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2010, Google Inc. Eric Shienbrood <ers@google.com>
   - Copyright 1998 Gerald Combs
 holders:
   - Google Inc. Eric Shienbrood
   - Gerald Combs
-holders_summary:
+holders_tallies:
   - value: Gerald Combs
     count: 1
   - value: Google Inc. Eric Shienbrood

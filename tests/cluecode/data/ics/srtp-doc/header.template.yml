@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright 2001-2005 by David A. McGrew, Cisco Systems, Inc.
 holders:
   - David A. McGrew, Cisco Systems, Inc.
-holders_summary:
+holders_tallies:
   - value: David A. McGrew, Cisco Systems, Inc.
     count: 1

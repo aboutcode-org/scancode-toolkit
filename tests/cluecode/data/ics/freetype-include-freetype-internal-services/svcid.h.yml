@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 2007, 2009 by Derek Clegg, Michael Toftdal
 holders:
   - Derek Clegg, Michael Toftdal
-holders_summary:
+holders_tallies:
   - value: Derek Clegg, Michael Toftdal
     count: 1

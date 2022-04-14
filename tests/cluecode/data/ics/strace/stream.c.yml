@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
   - Copyright (c) 1996-1999 Wichert Akkerman <wichert@cistron.nl>
 holders:
   - Rick Sladkey
   - Wichert Akkerman
-holders_summary:
+holders_tallies:
   - value: Rick Sladkey
     count: 1
   - value: Wichert Akkerman

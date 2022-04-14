@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyrighted by Mark Kilgard
   - copyrighted by SGI
@@ -10,7 +10,7 @@ holders:
   - Mark Kilgard
   - SGI
   - Brian Paul
-holders_summary:
+holders_tallies:
   - value: Brian Paul
     count: 1
   - value: Mark Kilgard

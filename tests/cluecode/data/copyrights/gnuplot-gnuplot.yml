@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1986 - 1993, 1998, 2004 Thomas Williams, Colin Kelley
 holders:
   - Thomas Williams, Colin Kelley
-holders_summary:
+holders_tallies:
   - value: Thomas Williams, Colin Kelley
     count: 1

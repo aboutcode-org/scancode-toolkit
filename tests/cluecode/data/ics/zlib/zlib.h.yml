@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler
 holders:
   - Jean-loup Gailly and Mark Adler
-holders_summary:
+holders_tallies:
   - value: Jean-loup Gailly and Mark Adler
     count: 1

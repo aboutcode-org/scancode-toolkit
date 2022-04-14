@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2002 Red Hat, Inc.
   - Copyright (c) 1991-1993 The Regents of the University of California
@@ -17,7 +17,7 @@ holders:
   - The Regents of the University of California
   - Sun Microsystems, Inc.
   - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
-holders_summary:
+holders_tallies:
   - value: Sun Microsystems, Inc.
     count: 2
   - value: The Regents of the University of California

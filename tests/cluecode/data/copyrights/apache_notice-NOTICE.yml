@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright 1999-2006 The Apache Software Foundation
   - Copyright 1999-2006 The Apache Software Foundation
@@ -12,7 +12,7 @@ holders:
   - The Apache Software Foundation
   - The Apache Software Foundation
   - World Wide Web Consortium
-holders_summary:
+holders_tallies:
   - value: The Apache Software Foundation
     count: 3
   - value: World Wide Web Consortium

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - copyright 2005-2006 Cedrik LIME
 holders:
   - Cedrik LIME
-holders_summary:
+holders_tallies:
   - value: Cedrik LIME
     count: 1

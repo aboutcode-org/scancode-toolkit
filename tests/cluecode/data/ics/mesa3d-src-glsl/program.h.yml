@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1999-2008 Brian Paul
   - Copyright (c) 2009 VMware, Inc.
@@ -10,7 +10,7 @@ holders:
   - Brian Paul
   - VMware, Inc.
   - Intel Corporation
-holders_summary:
+holders_tallies:
   - value: Brian Paul
     count: 1
   - value: Intel Corporation

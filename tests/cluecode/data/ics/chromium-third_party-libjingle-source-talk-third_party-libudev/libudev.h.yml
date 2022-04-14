@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2008-2010 Kay Sievers <kay.sievers@vrfy.org>
 holders:
   - Kay Sievers
-holders_summary:
+holders_tallies:
   - value: Kay Sievers
     count: 1

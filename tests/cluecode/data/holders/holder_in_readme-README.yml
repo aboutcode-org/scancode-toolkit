@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_summary
+  - holders_tallies
 holders:
   - Jouni Malinen and contributors
-holders_summary:
+holders_tallies:
   - value: Jouni Malinen and contributors
     count: 1

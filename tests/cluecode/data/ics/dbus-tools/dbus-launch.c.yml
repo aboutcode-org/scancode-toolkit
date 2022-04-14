@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2003, 2006 Red Hat, Inc.
   - Copyright (c) 2006 Thiago Macieira <thiago@kde.org>
@@ -10,7 +10,7 @@ holders:
   - Red Hat, Inc.
   - Thiago Macieira
   - Red Hat, Inc.
-holders_summary:
+holders_tallies:
   - value: Red Hat, Inc.
     count: 2
   - value: Thiago Macieira

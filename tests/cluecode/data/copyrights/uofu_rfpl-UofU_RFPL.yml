@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2001, 1998 University of Utah
 holders:
   - University of Utah
-holders_summary:
+holders_tallies:
   - value: University of Utah
     count: 1

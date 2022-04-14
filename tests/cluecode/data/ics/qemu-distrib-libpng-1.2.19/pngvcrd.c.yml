@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1998-2007 Glenn Randers-Pehrson
   - Copyright (c) 1998, Intel Corporation
 holders:
   - Glenn Randers-Pehrson
   - Intel Corporation
-holders_summary:
+holders_tallies:
   - value: Glenn Randers-Pehrson
     count: 1
   - value: Intel Corporation

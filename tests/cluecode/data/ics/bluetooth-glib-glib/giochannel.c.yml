@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright 1998 Owen Taylor
 holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Owen Taylor
-holders_summary:
+holders_tallies:
   - value: Owen Taylor
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

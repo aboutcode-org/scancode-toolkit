@@ -59,8 +59,11 @@ class ScanSummary(PostScanPlugin):
 
     options = [
         PluggableCommandLineOption(('--summary',),
-            is_flag=True, default=False,
-            help='Summarize license, copyright and other scans at the codebase level.',
+            is_flag=True,
+            default=False,
+            help='Summarize scans by providing declared origin '
+                 'information and other detected origin info at the '
+                 'codebase attribute level.',
             help_group=POST_SCAN_GROUP,
             required_options=['classify']
         )

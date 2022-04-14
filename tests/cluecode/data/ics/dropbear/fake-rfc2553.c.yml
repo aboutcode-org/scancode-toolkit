@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2003 Damien Miller
   - Copyright (c) 1999 WIDE Project
 holders:
   - Damien Miller
   - WIDE Project
-holders_summary:
+holders_tallies:
   - value: Damien Miller
     count: 1
   - value: WIDE Project

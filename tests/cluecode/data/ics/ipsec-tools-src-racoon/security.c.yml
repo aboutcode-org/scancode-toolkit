@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 International Business Machines Corporation
   - Copyright (c) 2005 by Trusted Computer Solutions, Inc.
 holders:
   - International Business Machines Corporation
   - Trusted Computer Solutions, Inc.
-holders_summary:
+holders_tallies:
   - value: International Business Machines Corporation
     count: 1
   - value: Trusted Computer Solutions, Inc.

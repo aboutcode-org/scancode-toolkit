@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1995-2000 Simon G. Vogl
 holders:
   - Simon G. Vogl
-holders_summary:
+holders_tallies:
   - value: Simon G. Vogl
     count: 1

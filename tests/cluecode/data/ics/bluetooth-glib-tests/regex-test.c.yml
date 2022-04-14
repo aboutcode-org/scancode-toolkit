@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2005 - 2006, Marco Barisione <marco@barisione.org>
 holders:
   - Marco Barisione
-holders_summary:
+holders_tallies:
   - value: Marco Barisione
     count: 1

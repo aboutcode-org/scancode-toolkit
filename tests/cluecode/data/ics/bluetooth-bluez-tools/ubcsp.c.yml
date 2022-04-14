@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 2000-2005 CSR Ltd.
 holders:
   - CSR Ltd.
-holders_summary:
+holders_tallies:
   - value: CSR Ltd.
     count: 1

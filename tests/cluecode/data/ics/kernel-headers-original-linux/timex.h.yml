@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) David L. Mills 1993
 holders:
   - David L. Mills
-holders_summary:
+holders_tallies:
   - value: David L. Mills
     count: 1

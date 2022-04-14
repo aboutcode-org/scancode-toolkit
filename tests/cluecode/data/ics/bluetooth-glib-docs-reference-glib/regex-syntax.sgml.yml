@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+  - holders_tallies
 copyrights:
   - Copyright (c) 1997-2006 University of Cambridge
 holders:
   - University of Cambridge
-holders_summary:
+holders_tallies:
   - value: University of Cambridge
     count: 1

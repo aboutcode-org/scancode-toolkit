@@ -1,9 +1,9 @@
 what:
   - authors
-  - authors_summary
+  - authors_tallies
 authors:
   - Avinash Kak (kak@purdue.edu)
   - Avinash Kak (kak@purdue.edu)
-authors_summary:
+authors_tallies:
   - value: Avinash Kak (kak@purdue.edu)
     count: 2
