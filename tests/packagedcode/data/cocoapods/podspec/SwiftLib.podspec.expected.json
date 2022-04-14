@@ -13,14 +13,7 @@
       {
         "type": "person",
         "role": "author",
-        "name": "alizainprasla",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "alizainprasla ",
         "email": "alizainprasla@gmail.com",
         "url": null
       }
@@ -40,9 +33,7 @@
     "license_expression": "mit AND unknown",
     "declared_license": ":type = MIT, :file = LICENSE",
     "notice_text": null,
-    "source_packages": [
-      "https://github.com/alizainprasla/swiftlib.git"
-    ],
+    "source_packages": [],
     "file_references": [],
     "extra_data": {},
     "dependencies": [],

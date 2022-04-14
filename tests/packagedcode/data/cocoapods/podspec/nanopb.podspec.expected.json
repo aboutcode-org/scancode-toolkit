@@ -7,20 +7,13 @@
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Objective-C",
-    "description": "Protocol buffers with small code size.\nNanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in Nanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in microcontrollers, but fits any memory restricted system.",
+    "description": "Protocol buffers with small code size.\nNanopb is a small code-size Protocol Buffers implementation\n                    in ansi C. It is especially suitable for use in\n                    microcontrollers, but fits any memory restricted system.",
     "release_date": null,
     "parties": [
       {
         "type": "person",
         "role": "author",
-        "name": "Petteri Aimonen",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "Petteri Aimonen ",
         "email": "jpa@nanopb.mail.kapsi.fi",
         "url": null
       }
@@ -40,9 +33,7 @@
     "license_expression": "unknown",
     "declared_license": ":type = zlib, :file = LICENSE.txt",
     "notice_text": null,
-    "source_packages": [
-      "https://github.com/nanopb/nanopb.git"
-    ],
+    "source_packages": [],
     "file_references": [],
     "extra_data": {},
     "dependencies": [],

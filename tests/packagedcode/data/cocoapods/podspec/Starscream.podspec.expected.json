@@ -13,28 +13,14 @@
       {
         "type": "person",
         "role": "author",
-        "name": "Dalton Cherry",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "author",
-        "name": "Austin Cherry",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "Dalton Cherry ",
         "email": "http://daltoniam.com",
         "url": null
       },
       {
         "type": "person",
-        "role": "email",
-        "name": null,
+        "role": "author",
+        "name": " Austin Cherry ",
         "email": "http://austincherry.me",
         "url": null
       }
@@ -54,9 +40,7 @@
     "license_expression": "apache-2.0",
     "declared_license": "Apache License, Version 2.0",
     "notice_text": null,
-    "source_packages": [
-      "https://github.com/daltoniam/Starscream.git"
-    ],
+    "source_packages": [],
     "file_references": [],
     "extra_data": {},
     "dependencies": [],

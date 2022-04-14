@@ -32,10 +32,29 @@ See https://cocoapods.org
 # TODO: override the license detection to detect declared_license correctly.
 
 
-def get_reponame(vcs_url):
-    if isinstance(vcs_url, str):
-        if vcs_url[-4:] == '.git':
-            return vcs_url[:-4]
+def get_repo_base_url(vcs_url):
+    """
+    Return the repository base_url given a ``vcs_url`` version control URL or
+    None.
+
+    For example::
+    >>> assert get_repo_base_url('https://github.com/jogendra/BadgeHub.git') == 'https://github.com/jogendra/BadgeHub'
+    >>> assert get_repo_base_url('https://github.com/jogendra/BadgeHub') == 'https://github.com/jogendra/BadgeHub'
+    >>> assert get_repo_base_url(None) == None
+    """
+    if not vcs_url:
+        return
+
+    if not vcs_url.startswith('https://github.com/'):
+        # TODO: we may not know what to do if this is not a GH repo?
+        pass
+
+    if vcs_url.endswith('.git'):
+        reponame, _, _ = vcs_url.partition('.git')
+    else:
+        reponame = vcs_url
+
+    return reponame
 
 
 def get_podname_proper(podname):
@@ -77,17 +96,49 @@ class BasePodHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
-        datafile_name_patterns = (
-            '*.podspec',
-            'Podfile.lock',
-            'Podfile',
-        )
+        """
+        Assemble pod packages and dependencies and handle the specifc cases where
+        there are more than one podspec in the same directory.
+        """
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+        else:
+            parent = resource.parent(codebase)
+            sibling_podspecs = [
+                r for r in parent.children(codebase)
+                if r.name.endswith('.podspec')
+            ]
 
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=resource.parent(codebase),
-            codebase=codebase,
-        )
+            has_single_podspec = len(sibling_podspecs) == 1
+
+            if has_single_podspec:
+                # we can treat all podfile/spec as being for one package
+                datafile_name_patterns = (
+                    sibling_podspecs[0].name,
+                    'Podfile.lock',
+                    'Podfile',
+                )
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
+            else:
+                # treat each of podspec and podfile alone without meraging
+                # as we cannot determine easily which podfile is for which
+                # podspec
+                for resource in sibling_podspecs:
+                    yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+
+                datafile_name_patterns = (
+                    'Podfile.lock',
+                    'Podfile',
+                )
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
 
 
 class PodspecHandler(BasePodHandler):
@@ -105,7 +156,7 @@ class PodspecHandler(BasePodHandler):
         pointing to a package archive, manifest or similar.
         """
         podspec = spec.parse_spec(
-            location=location, 
+            location=location,
             package_type=cls.default_package_type,
         )
 
@@ -113,24 +164,27 @@ class PodspecHandler(BasePodHandler):
         version = podspec.get('version')
         homepage_url = podspec.get('homepage')
         declared_license = podspec.get('license')
+        summary = podspec.get('summary')
+        description = podspec.get('description')
         description = utils.build_description(
-            summary=podspec.get('summary'),
-            description=podspec.get('description'),
+            summary=summary,
+            description=description,
         )
-        vcs_url = podspec.get('source')
+        vcs_url = podspec.get('source') or ''
         authors = podspec.get('author') or []
 
-
-        author_names = []
-        author_email = []
+        # FIXME: we are doing nothing with the email list
+        parties = []
         if authors:
-            for split_author in authors:
-                split_author = split_author.strip()
-                author, email = parse_person(split_author)
-                author_names.append(author)
-                author_email.append(email)
-
-        parties = list(party_mapper(author_names, author_email))
+            for author in authors:
+                auth, email = parse_person(author)
+                party = models.Party(
+                    type=models.party_person,
+                    name=auth,
+                    email=email,
+                    role='author',
+                )
+                parties.append(party)
 
         urls = get_urls(
             name=name,
@@ -141,12 +195,13 @@ class PodspecHandler(BasePodHandler):
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             name=name,
             version=version,
+
+            primary_language=cls.default_primary_language,
             vcs_url=vcs_url,
             # FIXME: a source should be a PURL, not a list of URLs
-            source_packages=vcs_url.split('\n'),
+            # source_packages=vcs_url.split('\n'),
             description=description,
             declared_license=declared_license,
             homepage_url=homepage_url,
@@ -261,9 +316,9 @@ class PodspecJsonHandler(models.DatafileHandler):
                 vcs_url = git_url
             elif http_url:
                 download_url = http_url
-
-        if not vcs_url:
-            vcs_url = source
+        elif isinstance(source, str):
+            if not vcs_url:
+                vcs_url = source
 
         authors = data.get('authors') or {}
 
@@ -330,7 +385,7 @@ def get_urls(name=None, version=None, homepage_url=None, vcs_url=None):
     """
     Return a mapping of podspec URLS.
     """
-    reponame = get_reponame(vcs_url)
+    reponame = get_repo_base_url(vcs_url) or ''
 
     repository_download_url = None
     if version:
@@ -351,11 +406,11 @@ def get_urls(name=None, version=None, homepage_url=None, vcs_url=None):
     )
 
     return dict(
-        repository_download_url=repository_download_url,
-        repository_homepage_url=name and f'https://cocoapods.org/pods/{name}',
-        code_view_url=reponame and version and f'{reponame}/tree/{version}',
-        bug_tracking_url=reponame and f'{reponame}/issues/',
-        api_data_url=api_data_url,
+        repository_download_url=repository_download_url or None,
+        repository_homepage_url=name and f'https://cocoapods.org/pods/{name}' or None,
+        code_view_url=reponame and version and f'{reponame}/tree/{version}' or None,
+        bug_tracking_url=reponame and f'{reponame}/issues/' or None,
+        api_data_url=api_data_url or None,
     )
 
 
@@ -378,17 +433,6 @@ def party_mapper(author, email):
         )
 
 
-person_parser = re.compile(
-    r'^(?P<name>[\w\s(),-_.,]+)'
-    r'[\s]=[>\s]?'
-    r'(?P<email>[\S+]+$)'
-).match
-
-person_parser_only_name = re.compile(
-    r'^(?P<name>[\w\s(),-_.,]+)'
-).match
-
-
 def parse_person(person):
     """
     Return name and email from person string.
@@ -398,46 +442,50 @@ def parse_person(person):
         s.author = 'Rohit Potter'
         or
         s.author = 'Rohit Potter=>rohit@gmail.com'
-    Author check:
+
     >>> p = parse_person('Rohit Potter=>rohit@gmail.com')
-    >>> assert p == ('Rohit Potter', 'rohit@gmail.com')
+    >>> assert p == ('Rohit Potter', 'rohit@gmail.com'), p
     >>> p = parse_person('Rohit Potter')
-    >>> assert p == ('Rohit Potter', None)
+    >>> assert p == ('Rohit Potter', None), p
     """
-    parsed = person_parser(person)
-    if not parsed:
-        parsed = person_parser_only_name(person)
-        name = parsed.group('name')
-        email = None
+    if '=>' in person:
+        name, _, email = person.partition('=>')
+        email = email.strip('\'" =')
+    elif '=' in person:
+        name, _, email = person.partition('=')
+        email = email.strip('\'" ')
     else:
-        name = parsed.group('name')
-        email = parsed.group('email')
+        name = person
+        email = None
+
+    name = name.strip('\'"')
 
     return name, email
 
 
 def parse_dep_requirements(dep):
     """
-    Return a tuple of (pods Package URL, and a version requirement) given a
-    ``dep`` extracted pod requirements string.
+    Return a tuple of (Package URL, version constraint) given a ``dep``
+    dependency requirement string extracted from a podspec.
 
     For example:
 
     >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs@9.0.0'), '9.0.0'
-    >>> assert get_purl_from_dep('OHHTTPStubs (9.0.0)') == expected
+    >>> assert parse_dep_requirements('OHHTTPStubs (9.0.0)') == expected
 
     >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs/NSURLSession'), None
-    >>> assert get_purl_from_dep('OHHTTPStubs/NSURLSession') == expected
+    >>> result = parse_dep_requirements('OHHTTPStubs/NSURLSession')
+    >>> assert result == expected, result
 
     >>> expected = PackageURL.from_string('pkg:pods/AFNetworking/Serialization@3.0.4'), '= 3.0.4'
-    >>> assert get_purl_from_dep(' AFNetworking/Serialization (= 3.0.4) ') == expected
+    >>> result = parse_dep_requirements(' AFNetworking/Serialization (= 3.0.4) ')
+    >>> assert result == expected, result
     """
     if '(' in dep:
         name, _, version = dep.partition('(')
-        version = version.strip(')')
+        version = version.strip(')( ')
         requirement = version
-        if '=' in version:
-            version = version.strip('=')
+        version = requirement.strip('= ')
 
     else:
         version = None

@@ -1,0 +1,46 @@
+[
+  {
+    "type": "pods",
+    "namespace": null,
+    "name": "PayTabsSDK",
+    "version": "6.1.18",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Objective-C",
+    "description": "PayTabs is an online payment gateway.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "PayTabs ",
+        "email": "m.adly@paytabs.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/paytabscom/paytabs-ios-library-sample/tree/master",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/paytabscom/paytabs-ios-library-sample/issues/",
+    "code_view_url": "https://github.com/paytabscom/paytabs-ios-library-sample/tree/6.1.18",
+    "vcs_url": "https://github.com/paytabscom/paytabs-ios-library-sample.git",
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://cocoapods.org/pods/PayTabsSDK",
+    "repository_download_url": "https://github.com/paytabscom/paytabs-ios-library-sample/archive/refs/tags/6.1.18.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/5/f/PayTabsSDK/6.1.18/PayTabsSDK.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/PayTabsSDK@6.1.18"
+  }
+]

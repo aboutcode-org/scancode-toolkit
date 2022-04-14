@@ -13,14 +13,7 @@
       {
         "type": "person",
         "role": "author",
-        "name": "jogendra",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "jogendra ",
         "email": "jogendrafx@gmail.com",
         "url": null
       }
@@ -40,9 +33,7 @@
     "license_expression": "mit AND unknown",
     "declared_license": ":type = MIT, :file = LICENSE",
     "notice_text": null,
-    "source_packages": [
-      "https://github.com/jogendra/LoadingShimmer.git"
-    ],
+    "source_packages": [],
     "file_references": [],
     "extra_data": {},
     "dependencies": [],
