@@ -1022,6 +1022,9 @@ class DatafileHandler:
                     resource.for_packages.append(package_uid)
                     resource.save(codebase)
             else:
+                # FIXME: What is the package_data is NOT for the same package as package?
+                # FIXME: What if the update did not do anything? (it does return True or False)
+                # FIXME: There we would be missing out packges AND/OR errors
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,
