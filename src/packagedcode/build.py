@@ -75,6 +75,39 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
     """
 
     @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        """
+        Given a ``package_data`` PackageData found in the ``resource`` datafile
+        of the ``codebase``, assemble package their files and dependencies
+        from one or more datafiles.
+        """
+        datafile_path = resource.path
+        # do we have enough to create a package?
+        if package_data.purl:
+            package = models.Package.from_package_data(
+                package_data=package_data,
+                datafile_path=datafile_path,
+            )
+
+            if not package.license_expression:
+                package.license_expression = compute_normalized_license(
+                    package=package,
+                    resource=resource,
+                    codebase=codebase,
+                )
+
+            cls.assign_package_to_resources(
+                package=package,
+                resource=resource,
+                codebase=codebase,
+            )
+
+            yield package
+
+        # we yield this as we do not want this further processed
+        yield resource
+
+    @classmethod
     def parse(cls, location):
 
         # Thanks to Starlark being a Python dialect, we can use `ast` to parse it
@@ -140,10 +173,6 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 type=cls.default_package_type,
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
-    # FIXME: This uses codebase and resources to compute normalized license
-    #@classmethod
-    #def compute_normalized_license(cls, package):
-    #    return compute_normalized_license(package)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name=None):
@@ -170,7 +199,7 @@ def walk_build(resource, codebase, skip_name):
                 yield subchild
 
 
-def compute_normalized_license(package):
+def compute_normalized_license(package, resource, codebase):
     """
     Return a normalized license expression string detected from a list of
     declared license items.
