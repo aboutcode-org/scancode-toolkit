@@ -231,12 +231,6 @@ class IdentifiablePackageData(ModelMixin):
     This base class is used for all package-like objects be they a manifest
     or an actual package instance.
     """
-    # Optional. Public default type for a package class.
-    default_package_type = None
-
-    # TODO: add description of the Package type for info
-    # type_description = None
-
     type = String(
         repr=True,
         label='package type',
@@ -271,10 +265,6 @@ class IdentifiablePackageData(ModelMixin):
         label='extra package subpath',
         help='Subpath inside a package and relative to the root '
              'of this package')
-
-    def __attrs_post_init__(self, *args, **kwargs):
-        if not self.type and hasattr(self, 'default_package_type'):
-            self.type = self.default_package_type
 
     @property
     def purl(self):
