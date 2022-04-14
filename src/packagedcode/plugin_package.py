@@ -183,7 +183,7 @@ def create_package_and_deps(codebase, **kwargs):
                     seen_resource_ids.add(item.rid)
 
                 else:
-                    raise Exception('Unknown package assembly item type: {item!r}')
+                    raise Exception(f'Unknown package assembly item type: {item!r}')
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)
