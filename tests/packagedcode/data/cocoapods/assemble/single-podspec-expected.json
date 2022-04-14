@@ -27,7 +27,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "single-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -40,7 +40,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "single-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -53,7 +53,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "single-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     }
@@ -157,7 +157,9 @@
           "purl": null
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -229,7 +231,9 @@
           "purl": null
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {

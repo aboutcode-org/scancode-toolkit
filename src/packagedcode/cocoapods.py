@@ -9,7 +9,6 @@
 
 import hashlib
 import json
-import re
 
 import saneyaml
 from packageurl import PackageURL
@@ -99,17 +98,21 @@ class BasePodHandler(models.DatafileHandler):
         """
         Assemble pod packages and dependencies and handle the specifc cases where
         there are more than one podspec in the same directory.
+        This is designed to process .podspec, Podfile and Podfile.lock
         """
         if codebase.has_single_resource:
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
         else:
+            # do we have more than one podspec?
             parent = resource.parent(codebase)
             sibling_podspecs = [
                 r for r in parent.children(codebase)
                 if r.name.endswith('.podspec')
             ]
 
-            has_single_podspec = len(sibling_podspecs) == 1
+            siblings_counts = len(sibling_podspecs)
+            has_single_podspec = siblings_counts == 1
+            has_multiple_podspec = siblings_counts > 1
 
             if has_single_podspec:
                 # we can treat all podfile/spec as being for one package
@@ -123,13 +126,25 @@ class BasePodHandler(models.DatafileHandler):
                     directory=parent,
                     codebase=codebase,
                 )
-            else:
+
+            elif has_multiple_podspec:
                 # treat each of podspec and podfile alone without meraging
                 # as we cannot determine easily which podfile is for which
                 # podspec
-                for resource in sibling_podspecs:
-                    yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+                yield from models.DatafileHandler.assemble(package_data, resource, codebase)
 
+                datafile_name_patterns = (
+                    'Podfile.lock',
+                    'Podfile',
+                )
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
+
+            else:
+                # has_no_podspec:
                 datafile_name_patterns = (
                     'Podfile.lock',
                     'Podfile',
