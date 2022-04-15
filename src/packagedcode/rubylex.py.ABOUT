@@ -1,0 +1,13 @@
+about_resource: rubylex.py
+attribute: yes
+copyright: Copyright (c) the Pygments team
+description: This is an enhanced Ruby lexer derived from Pygments lexers
+download_url: https://files.pythonhosted.org/packages/94/9c/cb656d06950268155f46d4f6ce25d7ffc51a0da47eadf1b164bbf23b718b/Pygments-2.11.2.tar.gz
+homepage_url: http://pygments.org/
+license_expression: bsd-simplified
+name: bashlex.py
+notice_file: pygments.NOTICE
+package_url: pkg:generic/rubylex.py
+primary_language: Python
+notes: this is a derived and heavily modified Pygments Ruby lexer
+ See pygments.AUTHORS
