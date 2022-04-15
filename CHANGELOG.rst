@@ -222,6 +222,22 @@ License Clarity Scoring Update
      - Scoring Weight = -20
 
 
+Summary Plugin Update
+~~~~~~~~~~~~~~~~~~~~~
+The summary plugin's behavior has been changed. Previously, it provided a count
+of the detected license expressions, copyrights, holders, authors, and
+programming languages from a scan. We have preserved this functionality by
+creating a new plugin called ``tallies``. All functionality of the previous
+summary plugin have been preserved in the tallies plugin.
+
+The plugin now attempts to determine a declared license expression, holder, and
+primary programming language from a scan. The license clarity score is provided
+context on what origin information is provided from key files. It also returns
+lists of tallies of the other detected license expressions, holders, and
+programming languages. All information is provided in the codebase level
+attribute named ``summary``.
+
+
 Outputs:
 ~~~~~~~~
 
