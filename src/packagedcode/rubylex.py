@@ -7,13 +7,11 @@ SPDX-License-Identifier: BSD-2-Clause
 
 import re
 
-from pygments.lexer import Lexer, RegexLexer, ExtendedRegexLexer, include, \
-    bygroups, default, LexerContext, do_insertions, words
+from pygments.lexer import ExtendedRegexLexer, include, \
+    bygroups, default, LexerContext, words
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
-    Number, Punctuation, Error, Generic
-from pygments.util import shebang_matches
+    Number, Punctuation, Error
 
-__all__ = ['RubyLexer', 'RubyConsoleLexer', 'FancyLexer']
 
 line_re = re.compile('.*?\n')
 
@@ -387,136 +385,3 @@ class RubyLexer(ExtendedRegexLexer):
     }
     tokens.update(gen_rubystrings_rules())
 
-    def analyse_text(text):
-        return shebang_matches(text, r'ruby(1\.\d)?')
-
-
-class RubyConsoleLexer(Lexer):
-    """
-    For Ruby interactive console (**irb**) output like:
-
-    .. sourcecode:: rbcon
-
-        irb(main):001:0> a = 1
-        => 1
-        irb(main):002:0> puts a
-        1
-        => nil
-    """
-    name = 'Ruby irb session'
-    aliases = ['rbcon', 'irb']
-    mimetypes = ['text/x-ruby-shellsession']
-
-    _prompt_re = re.compile(r'irb\([a-zA-Z_]\w*\):\d{3}:\d+[>*"\'] '
-                            r'|>> |\?> ')
-
-    def get_tokens_unprocessed(self, text):
-        rblexer = RubyLexer(**self.options)
-
-        curcode = ''
-        insertions = []
-        for match in line_re.finditer(text):
-            line = match.group()
-            m = self._prompt_re.match(line)
-            if m is not None:
-                end = m.end()
-                insertions.append((len(curcode),
-                                   [(0, Generic.Prompt, line[:end])]))
-                curcode += line[end:]
-            else:
-                if curcode:
-                    yield from do_insertions(
-                        insertions, rblexer.get_tokens_unprocessed(curcode))
-                    curcode = ''
-                    insertions = []
-                yield match.start(), Generic.Output, line
-        if curcode:
-            yield from do_insertions(
-                insertions, rblexer.get_tokens_unprocessed(curcode))
-
-
-class FancyLexer(RegexLexer):
-    """
-    Pygments Lexer For Fancy.
-
-    Fancy is a self-hosted, pure object-oriented, dynamic,
-    class-based, concurrent general-purpose programming language
-    running on Rubinius, the Ruby VM.
-
-    .. versionadded:: 1.5
-    """
-    name = 'Fancy'
-    url = 'https://github.com/bakkdoor/fancy'
-    filenames = ['*.fy', '*.fancypack']
-    aliases = ['fancy', 'fy']
-    mimetypes = ['text/x-fancysrc']
-
-    tokens = {
-        # copied from PerlLexer:
-        'balanced-regex': [
-            (r'/(\\\\|\\[^\\]|[^/\\])*/[egimosx]*', String.Regex, '#pop'),
-            (r'!(\\\\|\\[^\\]|[^!\\])*![egimosx]*', String.Regex, '#pop'),
-            (r'\\(\\\\|[^\\])*\\[egimosx]*', String.Regex, '#pop'),
-            (r'\{(\\\\|\\[^\\]|[^}\\])*\}[egimosx]*', String.Regex, '#pop'),
-            (r'<(\\\\|\\[^\\]|[^>\\])*>[egimosx]*', String.Regex, '#pop'),
-            (r'\[(\\\\|\\[^\\]|[^\]\\])*\][egimosx]*', String.Regex, '#pop'),
-            (r'\((\\\\|\\[^\\]|[^)\\])*\)[egimosx]*', String.Regex, '#pop'),
-            (r'@(\\\\|\\[^\\]|[^@\\])*@[egimosx]*', String.Regex, '#pop'),
-            (r'%(\\\\|\\[^\\]|[^%\\])*%[egimosx]*', String.Regex, '#pop'),
-            (r'\$(\\\\|\\[^\\]|[^$\\])*\$[egimosx]*', String.Regex, '#pop'),
-        ],
-        'root': [
-            (r'\s+', Text),
-
-            # balanced delimiters (copied from PerlLexer):
-            (r's\{(\\\\|\\[^\\]|[^}\\])*\}\s*', String.Regex, 'balanced-regex'),
-            (r's<(\\\\|\\[^\\]|[^>\\])*>\s*', String.Regex, 'balanced-regex'),
-            (r's\[(\\\\|\\[^\\]|[^\]\\])*\]\s*', String.Regex, 'balanced-regex'),
-            (r's\((\\\\|\\[^\\]|[^)\\])*\)\s*', String.Regex, 'balanced-regex'),
-            (r'm?/(\\\\|\\[^\\]|[^///\n])*/[gcimosx]*', String.Regex),
-            (r'm(?=[/!\\{<\[(@%$])', String.Regex, 'balanced-regex'),
-
-            # Comments
-            (r'#(.*?)\n', Comment.Single),
-            # Symbols
-            (r'\'([^\'\s\[\](){}]+|\[\])', String.Symbol),
-            # Multi-line DoubleQuotedString
-            (r'"""(\\\\|\\[^\\]|[^\\])*?"""', String),
-            # DoubleQuotedString
-            (r'"(\\\\|\\[^\\]|[^"\\])*"', String),
-            # keywords
-            (r'(def|class|try|catch|finally|retry|return|return_local|match|'
-             r'case|->|=>)\b', Keyword),
-            # constants
-            (r'(self|super|nil|false|true)\b', Name.Constant),
-            (r'[(){};,/?|:\\]', Punctuation),
-            # names
-            (words((
-                'Object', 'Array', 'Hash', 'Directory', 'File', 'Class', 'String',
-                'Number', 'Enumerable', 'FancyEnumerable', 'Block', 'TrueClass',
-                'NilClass', 'FalseClass', 'Tuple', 'Symbol', 'Stack', 'Set',
-                'FancySpec', 'Method', 'Package', 'Range'), suffix=r'\b'),
-             Name.Builtin),
-            # functions
-            (r'[a-zA-Z](\w|[-+?!=*/^><%])*:', Name.Function),
-            # operators, must be below functions
-            (r'[-+*/~,<>=&!?%^\[\].$]+', Operator),
-            (r'[A-Z]\w*', Name.Constant),
-            (r'@[a-zA-Z_]\w*', Name.Variable.Instance),
-            (r'@@[a-zA-Z_]\w*', Name.Variable.Class),
-            ('@@?', Operator),
-            (r'[a-zA-Z_]\w*', Name),
-            # numbers - / checks are necessary to avoid mismarking regexes,
-            # see comment in RubyLexer
-            (r'(0[oO]?[0-7]+(?:_[0-7]+)*)(\s*)([/?])?',
-             bygroups(Number.Oct, Text, Operator)),
-            (r'(0[xX][0-9A-Fa-f]+(?:_[0-9A-Fa-f]+)*)(\s*)([/?])?',
-             bygroups(Number.Hex, Text, Operator)),
-            (r'(0[bB][01]+(?:_[01]+)*)(\s*)([/?])?',
-             bygroups(Number.Bin, Text, Operator)),
-            (r'([\d]+(?:_\d+)*)(\s*)([/?])?',
-             bygroups(Number.Integer, Text, Operator)),
-            (r'\d+([eE][+-]?[0-9]+)|\d+\.\d+([eE][+-]?[0-9]+)?', Number.Float),
-            (r'\d+', Number.Integer)
-        ]
-    }
