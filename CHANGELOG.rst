@@ -47,6 +47,14 @@ Important API changes:
 - The data structure for CSV output has been changed to rename the Resource
   column to "path". The "copyright_holder" has been ranmed to "holder"
 
+- The license clarity scoring plugin has been overhauled to show new license
+  clarity criteria. More details of the new criteria are provided below.
+
+- The functionality of the summary plugin has been changed to provide declared
+  origin information for the codebase being scanned. The previous summary plugin
+  functionality has been preserved in the new ``tallies`` plugin. More details
+  are provided below.
+
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
