@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
+from copy import copy
 from os import path
 
 import pytest
@@ -15,9 +15,11 @@ import pytest
 from commoncode.testcase import FileDrivenTesting
 
 from scancode.cli_test_utils import check_json_scan
-from scancode.cli_test_utils import check_jsonlines_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+from summarycode.summarizer import remove_from_tallies
+from summarycode.summarizer import get_primary_language
+from summarycode.summarizer import get_holders_from_copyright
 
 
 pytestmark = pytest.mark.scanslow
@@ -122,3 +124,103 @@ class TestScanSummary(FileDrivenTesting):
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_remove_from_tallies(self):
+        tallies = [
+            {
+                'value': 'apache-2.0',
+                'count': 5,
+            },
+            {
+                'value': 'mit',
+                'count': 2,
+            },
+            {
+                'value': 'gpl-3.0',
+                'count': 1,
+            }
+        ]
+
+        test_entry_1 = {
+            'value': 'apache-2.0',
+            'count': 5,
+        }
+        expected_1 = [
+            {
+                'value': 'mit',
+                'count': 2,
+            },
+            {
+                'value': 'gpl-3.0',
+                'count': 1,
+            }
+        ]
+        result_1 = remove_from_tallies(test_entry_1, copy(tallies))
+        assert(result_1, expected_1)
+
+        test_entry_2 = [
+            {
+                'value': 'mit',
+                'count': 2,
+            },
+            {
+                'value': 'gpl-3.0',
+                'count': 1,
+            }
+        ]
+        expected_2 = [
+            {
+                'value': 'apache-2.0',
+                'count': 5,
+            },
+        ]
+        result_2 = remove_from_tallies(test_entry_2, copy(tallies))
+        assert(result_2, expected_2)
+
+        test_entry_3 = 'apache-2.0'
+        expected_3 = [
+            {
+                'value': 'mit',
+                'count': 2,
+            },
+            {
+                'value': 'gpl-3.0',
+                'count': 1,
+            }
+        ]
+        result_3 = remove_from_tallies(test_entry_3, copy(tallies))
+        assert(result_3, expected_3)
+
+    def test_get_primary_language(self):
+        language_tallies = [
+            {
+                'value': 'Python',
+                'count': 5,
+            },
+            {
+                'value': 'Java',
+                'count': 2,
+            },
+            {
+                'value': 'C++',
+                'count': 1,
+            }
+        ]
+        expected_1 = 'Python'
+        result_1 = get_primary_language(language_tallies)
+        assert(result_1, expected_1)
+
+    def test_get_holders_from_copyright(self):
+        test_copyright = 'Copyright (c) 2017, The University of Chicago. All rights reserved.'
+        expected_1 = ['The University of Chicago']
+        result_1 = get_holders_from_copyright(test_copyright)
+        assert(result_1, expected_1)
+
+        test_copyrights = [
+            'Copyright (c) 2017, The University of Chicago. All rights reserved.',
+            'Copyright (c) MIT',
+            'Copyright (c) Apache Software Foundation',
+        ]
+        expected_2 = ['The University of Chicago', 'MIT', 'Apache Software Foundation']
+        result_2 = get_holders_from_copyright(test_copyrights)
+        assert(result_2, expected_2)
