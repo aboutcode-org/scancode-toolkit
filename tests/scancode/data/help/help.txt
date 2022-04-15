@@ -112,20 +112,22 @@ Options:
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
                              directory as a new source_file_counts attribute
-    --summary                Summarize license, copyright and other scans at the
-                             codebase level.
-    --summary-by-facet       Summarize license, copyright and other scans and
-                             group the results by facet.
-    --summary-key-files      Summarize license, copyright and other scans for key,
-                             top-level files. Key files are top-level codebase
-                             files such as COPYING, README and package manifests
-                             as reported by the --classify option "is_legal",
-                             "is_readme", "is_manifest" and "is_top_level" flags.
-    --summary-legacy         Summarize license, copyright and other scans at the
-                             codebase level.
-    --summary-with-details   Summarize license, copyright and other scans at the
-                             codebase level, keeping intermediate details at the
-                             file and directory level.
+    --summary                Summarize scans by providing declared origin
+                             information and other detected origin info at the
+                             codebase attribute level.
+    --tallies                Compute tallies for license, copyright and other
+                             scans at the codebase level.
+    --tallies-by-facet       Compute tallies for license, copyright and other
+                             scans and group the results by facet.
+    --tallies-key-files      Compute tallies for license, copyright and other
+                             scans for key, top-level files. Key files are top-
+                             level codebase files such as COPYING, README and
+                             package manifests as reported by the --classify
+                             option "is_legal", "is_readme", "is_manifest" and
+                             "is_top_level" flags.
+    --tallies-with-details   Compute tallies of license, copyright and other scans
+                             at the codebase level, keeping intermediate details
+                             at the file and directory level.
 
   core:
     --timeout <secs>         Stop an unfinished file scan after a timeout in
