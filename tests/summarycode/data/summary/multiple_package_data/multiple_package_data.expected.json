@@ -64,14 +64,14 @@
       "extra_data": {},
       "package_uuid": "pkg:cargo/codebase",
       "package_data_files": [
-        "multiple_package_data/cargo.toml"
+        "codebase/cargo.toml"
       ],
       "files": [
-        "multiple_package_data/apache-2.0.LICENSE",
-        "multiple_package_data/cargo.toml",
-        "multiple_package_data/mit.LICENSE",
-        "multiple_package_data/README.txt",
-        "multiple_package_data/setup.py"
+        "codebase/apache-2.0.LICENSE",
+        "codebase/cargo.toml",
+        "codebase/mit.LICENSE",
+        "codebase/README.txt",
+        "codebase/setup.py"
       ],
       "purl": "pkg:cargo/codebase",
       "repository_homepage_url": "https://crates.io/crates/codebase",
@@ -119,14 +119,14 @@
       "extra_data": {},
       "package_uuid": "pkg:pypi/codebase",
       "package_data_files": [
-        "multiple_package_data/setup.py"
+        "codebase/setup.py"
       ],
       "files": [
-        "multiple_package_data/apache-2.0.LICENSE",
-        "multiple_package_data/cargo.toml",
-        "multiple_package_data/mit.LICENSE",
-        "multiple_package_data/README.txt",
-        "multiple_package_data/setup.py"
+        "codebase/apache-2.0.LICENSE",
+        "codebase/cargo.toml",
+        "codebase/mit.LICENSE",
+        "codebase/README.txt",
+        "codebase/setup.py"
       ],
       "purl": "pkg:pypi/codebase",
       "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
@@ -165,20 +165,16 @@
       {
         "value": null,
         "count": 4
-      },
-      {
-        "value": "Example Corp.",
-        "count": 1
       }
     ],
     "other_languages": []
   },
   "files": [
     {
-      "path": "multiple_package_data",
+      "path": "codebase",
       "type": "directory",
-      "name": "multiple_package_data",
-      "base_name": "multiple_package_data",
+      "name": "codebase",
+      "base_name": "codebase",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -212,7 +208,7 @@
       "scan_errors": []
     },
     {
-      "path": "multiple_package_data/README.txt",
+      "path": "codebase/README.txt",
       "type": "file",
       "name": "README.txt",
       "base_name": "README",
@@ -384,7 +380,7 @@
       "scan_errors": []
     },
     {
-      "path": "multiple_package_data/apache-2.0.LICENSE",
+      "path": "codebase/apache-2.0.LICENSE",
       "type": "file",
       "name": "apache-2.0.LICENSE",
       "base_name": "apache-2.0",
@@ -465,7 +461,7 @@
       "scan_errors": []
     },
     {
-      "path": "multiple_package_data/cargo.toml",
+      "path": "codebase/cargo.toml",
       "type": "file",
       "name": "cargo.toml",
       "base_name": "cargo",
@@ -596,7 +592,7 @@
       "scan_errors": []
     },
     {
-      "path": "multiple_package_data/mit.LICENSE",
+      "path": "codebase/mit.LICENSE",
       "type": "file",
       "name": "mit.LICENSE",
       "base_name": "mit",
@@ -677,7 +673,7 @@
       "scan_errors": []
     },
     {
-      "path": "multiple_package_data/setup.py",
+      "path": "codebase/setup.py",
       "type": "file",
       "name": "setup.py",
       "base_name": "setup",

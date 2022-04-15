@@ -58,10 +58,10 @@
   },
   "files": [
     {
-      "path": "unambiguous",
+      "path": "codebase",
       "type": "directory",
-      "name": "unambiguous",
-      "base_name": "unambiguous",
+      "name": "codebase",
+      "base_name": "codebase",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -95,7 +95,7 @@
       "scan_errors": []
     },
     {
-      "path": "unambiguous/README.txt",
+      "path": "codebase/README.txt",
       "type": "file",
       "name": "README.txt",
       "base_name": "README",
@@ -264,7 +264,7 @@
       "scan_errors": []
     },
     {
-      "path": "unambiguous/apache-2.0.LICENSE",
+      "path": "codebase/apache-2.0.LICENSE",
       "type": "file",
       "name": "apache-2.0.LICENSE",
       "base_name": "apache-2.0",
@@ -342,7 +342,7 @@
       "scan_errors": []
     },
     {
-      "path": "unambiguous/mit.LICENSE",
+      "path": "codebase/mit.LICENSE",
       "type": "file",
       "name": "mit.LICENSE",
       "base_name": "mit",

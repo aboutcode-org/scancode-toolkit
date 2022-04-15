@@ -65,10 +65,10 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_simple_single_file_with_origin_info(self):
-        test_dir = self.get_test_loc('summary/simple/single_file')
+    def test_summary_single_file_with_origin_info(self):
+        test_dir = self.get_test_loc('summary/single_file/codebase')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/simple/single_file.expected.json')
+        expected_file = self.get_test_loc('summary/single_file/single_file.expected.json')
         run_scan_click([
             '-clip',
             '--summary',
@@ -89,10 +89,10 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_simple_with_package_data(self):
-        test_dir = self.get_test_loc('summary/simple/with_package_data')
+    def test_summary_with_package_data(self):
+        test_dir = self.get_test_loc('summary/with_package_data/codebase')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/simple/with_package_data.expected.json')
+        expected_file = self.get_test_loc('summary/with_package_data/with_package_data.expected.json')
         run_scan_click([
             '-clip',
             '--summary',
@@ -101,10 +101,10 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_simple_without_package_data(self):
-        test_dir = self.get_test_loc('summary/simple/without_package_data')
+    def test_summary_without_package_data(self):
+        test_dir = self.get_test_loc('summary/without_package_data/codebase')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/simple/without_package_data.expected.json')
+        expected_file = self.get_test_loc('summary/without_package_data/without_package_data.expected.json')
         run_scan_click([
             '-clip',
             '--summary',
@@ -113,10 +113,34 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_summary_simple_multiple_package_data(self):
-        test_dir = self.get_test_loc('summary/simple/multiple_package_data')
+    def test_summary_multiple_package_data(self):
+        test_dir = self.get_test_loc('summary/multiple_package_data/codebase')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('summary/simple/multiple_package_data.expected.json')
+        expected_file = self.get_test_loc('summary/multiple_package_data/multiple_package_data.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_summary_clear_holder(self):
+        test_dir = self.get_test_loc('summary/holders/clear_holder')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/holders/clear_holder.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_instance_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_summary_combined_holders(self):
+        test_dir = self.get_test_loc('summary/holders/combined_holders')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/holders/combined_holders.expected.json')
         run_scan_click([
             '-clip',
             '--summary',

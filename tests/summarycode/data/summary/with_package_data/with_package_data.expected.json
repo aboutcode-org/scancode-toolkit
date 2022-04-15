@@ -19,14 +19,69 @@
       "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "files_count": 3
+        "files_count": 4
       }
     }
   ],
   "dependencies": [],
-  "packages": [],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "codebase",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Example Corp.",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "apache-2.0",
+      "declared_license": {
+        "license": "apache-2.0"
+      },
+      "notice_text": null,
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:pypi/codebase",
+      "package_data_files": [
+        "codebase/setup.py"
+      ],
+      "files": [
+        "codebase/apache-2.0.LICENSE",
+        "codebase/mit.LICENSE",
+        "codebase/README.txt",
+        "codebase/setup.py"
+      ],
+      "purl": "pkg:pypi/codebase",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": null,
+      "api_data_url": "https://pypi.org/pypi/codebase/json"
+    }
+  ],
   "summary": {
-    "declared_license_expression": "apache-2.0 OR mit",
+    "declared_license_expression": "apache-2.0",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -37,11 +92,11 @@
       "ambigous_compound_licensing": false
     },
     "declared_holder": "Example Corp.",
-    "primary_language": "",
+    "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": "apache-2.0",
-        "count": 2
+        "value": "apache-2.0 OR mit",
+        "count": 1
       },
       {
         "value": "mit",
@@ -51,17 +106,17 @@
     "other_holders": [
       {
         "value": null,
-        "count": 2
+        "count": 3
       }
     ],
     "other_languages": []
   },
   "files": [
     {
-      "path": "without_package_data",
+      "path": "codebase",
       "type": "directory",
-      "name": "without_package_data",
-      "base_name": "without_package_data",
+      "name": "codebase",
+      "base_name": "codebase",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -89,13 +144,13 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
-      "files_count": 3,
+      "files_count": 4,
       "dirs_count": 0,
-      "size_count": 11273,
+      "size_count": 11357,
       "scan_errors": []
     },
     {
-      "path": "without_package_data/README.txt",
+      "path": "codebase/README.txt",
       "type": "file",
       "name": "README.txt",
       "base_name": "README",
@@ -252,7 +307,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase"
+      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -264,7 +321,7 @@
       "scan_errors": []
     },
     {
-      "path": "without_package_data/apache-2.0.LICENSE",
+      "path": "codebase/apache-2.0.LICENSE",
       "type": "file",
       "name": "apache-2.0.LICENSE",
       "base_name": "apache-2.0",
@@ -330,7 +387,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase"
+      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -342,7 +401,7 @@
       "scan_errors": []
     },
     {
-      "path": "without_package_data/mit.LICENSE",
+      "path": "codebase/mit.LICENSE",
       "type": "file",
       "name": "mit.LICENSE",
       "base_name": "mit",
@@ -408,9 +467,137 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase"
+      ],
       "is_legal": true,
       "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/setup.py",
+      "type": "file",
+      "name": "setup.py",
+      "base_name": "setup",
+      "extension": ".py",
+      "size": 84,
+      "sha1": "10c7f4a6c2f60591dd08c9afeaeb7a05c76388a9",
+      "md5": "425b1701628572de3fd81f9de0be2d64",
+      "sha256": "e0e775cf6127edc482607cabcd652f3b10e6c69e03dc2e92c4b2174103831b3c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 100.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "apache-2.0_65.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "percentage_of_license_text": 40.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "codebase",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Example Corp.",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": {
+            "license": "apache-2.0"
+          },
+          "notice_text": null,
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "dependencies": [],
+          "purl": "pkg:pypi/codebase",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": null,
+          "api_data_url": "https://pypi.org/pypi/codebase/json"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/codebase"
+      ],
+      "is_legal": false,
+      "is_manifest": true,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,

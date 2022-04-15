@@ -19,69 +19,14 @@
       "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "files_count": 4
+        "files_count": 5
       }
     }
   ],
   "dependencies": [],
-  "packages": [
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "codebase",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Example Corp.",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": {
-        "license": "apache-2.0"
-      },
-      "notice_text": null,
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "package_uuid": "pkg:pypi/codebase",
-      "package_data_files": [
-        "with_package_data/setup.py"
-      ],
-      "files": [
-        "with_package_data/apache-2.0.LICENSE",
-        "with_package_data/mit.LICENSE",
-        "with_package_data/README.txt",
-        "with_package_data/setup.py"
-      ],
-      "purl": "pkg:pypi/codebase",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-      "repository_download_url": null,
-      "api_data_url": "https://pypi.org/pypi/codebase/json"
-    }
-  ],
+  "packages": [],
   "summary": {
-    "declared_license_expression": "apache-2.0",
+    "declared_license_expression": "apache-2.0 OR mit",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -91,12 +36,12 @@
       "conflicting_license_categories": false,
       "ambigous_compound_licensing": false
     },
-    "declared_holder": "Example Corp.",
+    "declared_holder": "Example Corp., Demo Corp.",
     "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": "apache-2.0 OR mit",
-        "count": 1
+        "value": "apache-2.0",
+        "count": 4
       },
       {
         "value": "mit",
@@ -106,17 +51,17 @@
     "other_holders": [
       {
         "value": null,
-        "count": 3
+        "count": 4
       }
     ],
     "other_languages": []
   },
   "files": [
     {
-      "path": "with_package_data",
+      "path": "combined_holders",
       "type": "directory",
-      "name": "with_package_data",
-      "base_name": "with_package_data",
+      "name": "combined_holders",
+      "base_name": "combined_holders",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -144,21 +89,21 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
-      "files_count": 4,
-      "dirs_count": 0,
-      "size_count": 11357,
+      "files_count": 5,
+      "dirs_count": 2,
+      "size_count": 11406,
       "scan_errors": []
     },
     {
-      "path": "with_package_data/README.txt",
+      "path": "combined_holders/README.txt",
       "type": "file",
       "name": "README.txt",
       "base_name": "README",
       "extension": ".txt",
-      "size": 78,
-      "sha1": "1df6d834f14cf559f8294602edc62cd1fd3a801a",
-      "md5": "4d6efca9ce0e3674ff53d5769e8e6d3b",
-      "sha256": "558bb811471ccfa7e3a17920decbea52596cdb3cbb40bcd3b55dba2a62814650",
+      "size": 99,
+      "sha1": "d282def871ec7311944a84a8889e26730f0c400d",
+      "md5": "9644fbe6f26482b66036b19d871de381",
+      "sha256": "be675303033bbc1e103bafa3a11e90057048472a46094092941917fb1560d072",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -290,12 +235,17 @@
         "apache-2.0",
         "apache-2.0 OR mit"
       ],
-      "percentage_of_license_text": 57.14,
+      "percentage_of_license_text": 47.06,
       "copyrights": [
         {
           "copyright": "Copyright Example Corp.",
           "start_line": 5,
           "end_line": 5
+        },
+        {
+          "copyright": "Copyright Demo Corp.",
+          "start_line": 6,
+          "end_line": 6
         }
       ],
       "holders": [
@@ -303,13 +253,16 @@
           "holder": "Example Corp.",
           "start_line": 5,
           "end_line": 5
+        },
+        {
+          "holder": "Demo Corp.",
+          "start_line": 6,
+          "end_line": 6
         }
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -321,7 +274,7 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/apache-2.0.LICENSE",
+      "path": "combined_holders/apache-2.0.LICENSE",
       "type": "file",
       "name": "apache-2.0.LICENSE",
       "base_name": "apache-2.0",
@@ -387,9 +340,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -401,7 +352,7 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/mit.LICENSE",
+      "path": "combined_holders/mit.LICENSE",
       "type": "file",
       "name": "mit.LICENSE",
       "base_name": "mit",
@@ -467,9 +418,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -481,25 +430,100 @@
       "scan_errors": []
     },
     {
-      "path": "with_package_data/setup.py",
+      "path": "combined_holders/src",
+      "type": "directory",
+      "name": "src",
+      "base_name": "src",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 70,
+      "scan_errors": []
+    },
+    {
+      "path": "combined_holders/src/a.py",
       "type": "file",
-      "name": "setup.py",
-      "base_name": "setup",
+      "name": "a.py",
+      "base_name": "a",
       "extension": ".py",
-      "size": 84,
-      "sha1": "10c7f4a6c2f60591dd08c9afeaeb7a05c76388a9",
-      "md5": "425b1701628572de3fd81f9de0be2d64",
-      "sha256": "e0e775cf6127edc482607cabcd652f3b10e6c69e03dc2e92c4b2174103831b3c",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
+      "size": 70,
+      "sha1": "e2ea6df347f3ebe5c1d3a2dc02d62c21d605d0af",
+      "md5": "a16a5f703a6d86542bc7af743c69d521",
+      "sha256": "b20f754ecb025b1026e5a35b36ed48775544b177a4f7090ea1d0c93d6cb45446",
+      "mime_type": "text/x-script.python",
+      "file_type": "Python script, ASCII text executable",
       "programming_language": "Python",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
-      "is_script": false,
+      "is_script": true,
       "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 80.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "apache-2.0_73.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 80
+          }
+        },
         {
           "key": "apache-2.0",
           "score": 100.0,
@@ -516,10 +540,166 @@
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 3,
-          "end_line": 3,
+          "start_line": 1,
+          "end_line": 1,
           "matched_rule": {
-            "identifier": "apache-2.0_65.RULE",
+            "identifier": "apache-2.0_or_mit_36.RULE",
+            "license_expression": "apache-2.0 OR mit",
+            "licenses": [
+              "apache-2.0",
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        },
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "apache-2.0_or_mit_36.RULE",
+            "license_expression": "apache-2.0 OR mit",
+            "licenses": [
+              "apache-2.0",
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0",
+        "apache-2.0 OR mit"
+      ],
+      "percentage_of_license_text": 66.67,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "combined_holders/tests",
+      "type": "directory",
+      "name": "tests",
+      "base_name": "tests",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 42,
+      "scan_errors": []
+    },
+    {
+      "path": "combined_holders/tests/test_a.py",
+      "type": "file",
+      "name": "test_a.py",
+      "base_name": "test_a",
+      "extension": ".py",
+      "size": 42,
+      "sha1": "1a16761e68a0d2e3e6a38b697bc72198f6714798",
+      "md5": "5cd684d4fdd223c82a251c4923d5924f",
+      "sha256": "c94f7fd0378644b76b9fbff868b9445197c3fee864f351431202146e15ec6c9c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with no line terminators",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 80.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "apache-2.0_73.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
@@ -527,80 +707,111 @@
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "is_license_intro": false,
             "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
             "match_coverage": 100.0,
+            "rule_relevance": 80
+          }
+        },
+        {
+          "key": "apache-2.0",
+          "score": 100.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "apache-2.0_or_mit_36.RULE",
+            "license_expression": "apache-2.0 OR mit",
+            "licenses": [
+              "apache-2.0",
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        },
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "apache-2.0_or_mit_36.RULE",
+            "license_expression": "apache-2.0 OR mit",
+            "licenses": [
+              "apache-2.0",
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
             "rule_relevance": 100
           }
         }
       ],
       "license_expressions": [
-        "apache-2.0"
+        "apache-2.0",
+        "apache-2.0 OR mit"
       ],
-      "percentage_of_license_text": 40.0,
+      "percentage_of_license_text": 88.89,
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": "codebase",
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": "",
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Example Corp.",
-              "email": null,
-              "url": null
-            }
-          ],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": {
-            "license": "apache-2.0"
-          },
-          "notice_text": null,
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "dependencies": [],
-          "purl": "pkg:pypi/codebase",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-          "repository_download_url": null,
-          "api_data_url": "https://pypi.org/pypi/codebase/json"
-        }
-      ],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "package_data": [],
+      "for_packages": [],
       "is_legal": false,
-      "is_manifest": true,
+      "is_manifest": false,
       "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
+      "is_top_level": false,
+      "is_key_file": false,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

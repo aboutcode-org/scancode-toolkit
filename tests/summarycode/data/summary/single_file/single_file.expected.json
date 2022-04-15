@@ -39,24 +39,15 @@
     "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems, Inc.",
     "primary_language": "",
     "other_license_expressions": [],
-    "other_holders": [
-      {
-        "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
-        "count": 1
-      },
-      {
-        "value": "Sun Microsystems, Inc.",
-        "count": 1
-      }
-    ],
+    "other_holders": [],
     "other_languages": []
   },
   "files": [
     {
-      "path": "single_file",
+      "path": "codebase",
       "type": "directory",
-      "name": "single_file",
-      "base_name": "single_file",
+      "name": "codebase",
+      "base_name": "codebase",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -90,7 +81,7 @@
       "scan_errors": []
     },
     {
-      "path": "single_file/jetty.LICENSE",
+      "path": "codebase/jetty.LICENSE",
       "type": "file",
       "name": "jetty.LICENSE",
       "base_name": "jetty",

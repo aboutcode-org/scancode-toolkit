@@ -95,7 +95,7 @@ class ScanSummary(PostScanPlugin):
         ]
 
         # Determine declared license expression, declared holder, and primary language from Package data
-        declared_license_expression, declared_holder, primary_language = get_origin_info_from_package_data(key_file_package_data)
+        declared_license_expression, declared_holders, primary_language = get_origin_info_from_package_data(key_file_package_data)
 
         if declared_license_expression:
             scoring_elements, _ = compute_license_score(codebase)
@@ -105,9 +105,10 @@ class ScanSummary(PostScanPlugin):
             scoring_elements, declared_license_expression = compute_license_score(codebase)
         other_license_expressions = remove_from_tallies(declared_license_expression, license_expressions_tallies)
 
-        if not declared_holder:
-            declared_holder = get_declared_holder(codebase, holders_tallies)
-        other_holders = remove_from_tallies(declared_holder, holders_tallies)
+        if not declared_holders:
+            declared_holders = get_declared_holders(codebase, holders_tallies)
+        other_holders = remove_from_tallies(declared_holders, holders_tallies)
+        declared_holder = ', '.join(declared_holders)
 
         if not primary_language:
             primary_language = get_primary_language(programming_language_tallies)
@@ -132,6 +133,7 @@ def remove_from_tallies(entry, tallies):
         if (
             isinstance(entry, dict) and t == entry
             or isinstance(entry, (list, tuple)) and t in entry
+            or isinstance(entry, (list, tuple)) and t.get('value') in entry
             or t.get('value') == entry
         ):
             continue
@@ -139,10 +141,10 @@ def remove_from_tallies(entry, tallies):
     return pruned_tallies
 
 
-def get_declared_holder(codebase, holders_tallies):
+def get_declared_holders(codebase, holders_tallies):
     """
-    Determine the declared holders of a codebase from the holders detected from
-    key files.
+    Return a list of declared holders from a codebase using the holders
+    detected from key files.
 
     A declared holder is a copyright holder present in the key files who has the
     highest amount of refrences throughout the codebase.
@@ -166,16 +168,17 @@ def get_declared_holder(codebase, holders_tallies):
             holder = holder_entry.get('value')
             holder_by_counts[count].append(holder)
 
-    declared_holder = ''
+    declared_holders = []
     if holder_by_counts:
         highest_count = max(holder_by_counts)
-        declared_holder = ', '.join(holder_by_counts[highest_count])
+        declared_holders = holder_by_counts[highest_count]
 
-    # If we could not determine a holder, then we report all detected holders from key files
-    if not declared_holder:
-        declared_holder = ', '.join(unique_key_file_holders) or ''
+    # If we could not determine a holder, then we return a list of all the
+    # unique key file holders
+    if not declared_holders:
+        declared_holders = [entry['value'] for entry in unique_key_file_holders_entries]
 
-    return declared_holder
+    return declared_holders
 
 
 def get_primary_language(programming_language_tallies):
@@ -224,14 +227,13 @@ def get_origin_info_from_package_data(key_file_package_data):
         if combined_declared_license_expression:
             declared_license_expression = str(Licensing().parse(combined_declared_license_expression).simplify())
 
-        # Combine holders
+        # Get holders
         holders = list(get_holders_from_copyright(copyrights))
-        declared_holder = ''
+        declared_holders = []
         if holders:
-            declared_holder = ', '.join(holders)
+            declared_holders = holders
         elif parties:
-            party_members = [party['name'] for party in parties]
-            declared_holder = ', '.join(party_members)
+            declared_holders = [party['name'] for party in parties]
 
         # Programming language
         unique_programming_languages = unique(programming_languages)
@@ -239,25 +241,24 @@ def get_origin_info_from_package_data(key_file_package_data):
         if len(unique_programming_languages) == 1:
             primary_language = unique_programming_languages[0]
 
-        return declared_license_expression, declared_holder, primary_language
+        return declared_license_expression, declared_holders, primary_language
 
     package = key_file_package_data[0]
     declared_license_expression = package.get('license_expression') or ''
     package_primary_language = package.get('primary_language') or ''
 
-    # Determine declared holder from Package copyright statement
+    # Determine holders from Package copyright statement
     package_copyright = package.get('copyright', '')
     package_holders = []
     if package_copyright:
         package_holders = list(get_holders_from_copyright(package_copyright))
 
     if package_holders:
-        declared_holder = ', '.join(package_holders)
+        declared_holder = package_holders
     else:
         # If there is no copyright statement on the package, collect the
         # detected party members and return them as a holder
-        party_members = [party['name'] for party in package.get('parties', [])]
-        declared_holder = ', '.join(party_members)
+        declared_holder = [party['name'] for party in package.get('parties', [])]
 
     return declared_license_expression, declared_holder, package_primary_language
 
