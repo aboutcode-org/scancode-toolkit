@@ -27,7 +27,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -40,7 +40,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -53,7 +53,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -66,7 +66,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -79,7 +79,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -92,7 +92,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -105,7 +105,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -118,7 +118,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -131,7 +131,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -144,7 +144,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -157,7 +157,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -170,7 +170,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -183,7 +183,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -196,7 +196,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -209,7 +209,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -222,7 +222,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -235,7 +235,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -248,7 +248,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -261,7 +261,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -274,7 +274,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -287,7 +287,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -300,7 +300,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -313,7 +313,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -326,7 +326,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -339,7 +339,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -352,7 +352,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -365,7 +365,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -378,7 +378,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -391,7 +391,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -404,7 +404,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -417,7 +417,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -430,7 +430,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -443,7 +443,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -456,7 +456,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -469,7 +469,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -482,7 +482,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -495,7 +495,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -508,7 +508,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -521,7 +521,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
@@ -534,116 +534,60 @@
       "is_resolved": true,
       "resolved_package": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/AWSCore@2.27.0",
-      "extracted_requirement": "2.27.0",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/CwlCatchException@2.1.1",
-      "extracted_requirement": "2.1.1",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/CwlCatchExceptionSupport@2.1.1",
-      "extracted_requirement": "2.1.1",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/CwlMachBadInstructionHandler@2.1.0",
-      "extracted_requirement": "2.1.0",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/CwlPosixPreconditionTesting@2.1.0",
-      "extracted_requirement": "2.1.0",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/CwlPreconditionTesting@2.1.0",
-      "extracted_requirement": "2.1.0",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/SwiftFormat/CLI@0.44.17",
-      "extracted_requirement": "0.44.17",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "many-podspecs/Podfile.lock",
-      "datasource_id": "cocoapods_podfile_lock"
-    },
-    {
-      "purl": "pkg:pods/SwiftLint@0.46.2",
-      "extracted_requirement": "0.46.2",
-      "scope": "requires",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {},
-      "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
+      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
   "packages": [
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "CoreMLPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/CoreMLPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
     {
       "type": "pods",
       "namespace": null,
@@ -675,7 +619,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -723,7 +667,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -771,7 +715,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -819,7 +763,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -867,7 +811,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -915,7 +859,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
+      "license_expression": null,
       "declared_license": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -931,6 +875,1110 @@
         "cocoapods_podspec"
       ],
       "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "Amplify",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+      "package_uid": "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/Amplify.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyPlugins",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+      "package_uid": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyPlugins.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyTestCommon",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+      "package_uid": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyTestCommon.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPluginsCore",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+      "package_uid": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPluginsCore.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "CoreMLPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/CoreMLPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "Amplify",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+      "package_uid": "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/Amplify.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyPlugins",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+      "package_uid": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyPlugins.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyTestCommon",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+      "package_uid": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyTestCommon.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPluginsCore",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+      "package_uid": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPluginsCore.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "CoreMLPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/CoreMLPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "Amplify",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+      "package_uid": "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/Amplify.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyPlugins",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+      "package_uid": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyPlugins.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyTestCommon",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+      "package_uid": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyTestCommon.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPluginsCore",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+      "package_uid": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPluginsCore.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "CoreMLPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/CoreMLPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "Amplify",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+      "package_uid": "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/Amplify.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyPlugins",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+      "package_uid": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyPlugins.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AmplifyTestCommon",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+      "package_uid": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyTestCommon.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPluginsCore",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+      "package_uid": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPluginsCore.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "AWSPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
     }
   ],
   "files": [
@@ -991,6 +2039,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1045,6 +2097,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1099,6 +2155,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1153,6 +2213,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1207,6 +2271,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1261,6 +2329,10 @@
         }
       ],
       "for_packages": [
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -1306,7 +2378,13 @@
           "purl": null
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -1423,7 +2501,13 @@
           "purl": null
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
