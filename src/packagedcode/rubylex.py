@@ -102,6 +102,68 @@ class RubyLexer(ExtendedRegexLexer):
 
         states = {}
         states['strings'] = [
+            # Gemfile
+            # groups/scopes
+            (r'\:development', String.Symbol.Development),
+            (r'\:debug', String.Symbol.Debug),
+            (r'\:test', String.Symbol.Test),
+            (r'\:default', String.Symbol.Default),
+
+            (r'\:source', String.Symbol.Source),
+            (r'\:platform', String.Symbol.Platform),
+            (r'\:platforms', String.Symbol.Platforms),
+
+            (r'\:require', String.Symbol.Require),
+            (r'\:group', String.Symbol.Group),
+            (r'\:groups', String.Symbol.Groups),
+            (r'\:name', String.Symbol.Name),
+
+            (r'\:engine', String.Symbol.Engine),
+            (r'\:engine_version', String.Symbol.Engine_version),
+            (r'\:patchlevel', String.Symbol.Patchlevel),
+
+            (r'\:git', String.Symbol.Git),
+            
+            (r'\:tag', String.Symbol.Tag),
+            (r'\:branch', String.Symbol.Branch),
+            (r'\:ref', String.Symbol.Ref),
+
+            (r'\:git_source', String.Symbol.Git_source),
+            (r'\:github', String.Symbol.GitHub),
+            (r'\:gist', String.Symbol.Gist),
+            (r'\:bitbucket', String.Symbol.Bitbucket),
+
+            (r'\:path', String.Symbol.Path),
+            
+
+            # Podspec
+            (r'\:type', String.Symbol.Type),
+
+            (r'\:file', String.Symbol.File),
+            (r'\:text', String.Symbol.Text),
+            
+            (r'\:commit', String.Symbol.Commit),
+            (r'\:submodules', String.Symbol.Submodules),
+
+            (r'\:hg', String.Symbol.Hg),
+            (r'\:revision', String.Symbol.Revision),
+            
+            (r'\:svn', String.Symbol.Svn),
+            (r'\:folder', String.Symbol.Folder),
+
+            (r'\:http', String.Symbol.Http),
+            (r'\:headers', String.Symbol.Headers),
+            (r'\:flatten', String.Symbol.Flatten),
+            (r'\:sha1', String.Symbol.Sha1),
+            (r'\:sha256', String.Symbol.Sha256),
+
+            (r'\:osx', String.Symbol.Osx),
+            (r'\:ios', String.Symbol.Ios),
+            (r'\:watchos', String.Symbol.Watchos),
+            (r'\:tvos', String.Symbol.Tvos),
+            (r'\:configurations', String.Symbol.Configurations),
+            (r'\:sha256', String.Symbol.Sha256),
+
             # easy ones
             (r'\:@{0,2}[a-zA-Z_]\w*[!?]?', String.Symbol),
             (words(RUBY_OPERATORS, prefix=r'\:@{0,2}'), String.Symbol),
@@ -109,16 +171,16 @@ class RubyLexer(ExtendedRegexLexer):
             (r':"', String.Symbol, 'simple-sym'),
             (r'([a-zA-Z_]\w*)(:)(?!:)',
              bygroups(String.Symbol, Punctuation)),  # Since Ruby 1.9
-            (r'"', String.Double, 'simple-string-double'),
-            (r"'", String.Single, 'simple-string-single'),
-            (r'(?<!\.)`', String.Backtick, 'simple-backtick'),
+            (r'"', String.Double.Quote, 'simple-string-double'),
+            (r"'", String.Single.Quote, 'simple-string-single'),
+            (r'(?<!\.)`', String.Backtick.Quote, 'simple-backtick'),
         ]
 
         # quoted string and symbol
-        for name, ttype, end in ('string-double', String.Double, '"'), \
-                                ('string-single', String.Single, "'"),\
+        for name, ttype, end in ('string-double', String.Double.Value, '"'), \
+                                ('string-single', String.Single.Value, "'"),\
                                 ('sym', String.Symbol, '"'), \
-                                ('backtick', String.Backtick, '`'):
+                                ('backtick', String.Backtick.Value, '`'):
             states['simple-'+name] = [
                 include('string-intp-escaped'),
                 (r'[^\\%s#]+' % end, ttype),
@@ -191,6 +253,30 @@ class RubyLexer(ExtendedRegexLexer):
             (r'\A#!.+?$', Comment.Hashbang),
             (r'#.*?$', Comment.Single),
             (r'=begin\s.*?\n=end.*?$', Comment.Multiline),
+
+            # keywords
+            
+            # gem
+            (words(('BEGIN', 'begin',), suffix=r'\b'), Keyword.Begin),
+            (words(('END', 'end',), suffix=r'\b'), Keyword.End),
+            (words(('do',), suffix=r'\b'), Keyword.Do),
+
+            (words(('ruby',), suffix=r'\b'), Keyword.Ruby),
+            (words(('gem',), suffix=r'\b'), Keyword.Gem),
+            (words(('gemspec',), suffix=r'\b'), Keyword.Gemspec),
+
+            (words(('require',), suffix=r'\b'), Keyword.Require),
+            (words(('versions',), suffix=r'\b'), Keyword.Versions),
+            (words(('source',), suffix=r'\b'), Keyword.Source),
+            (words(('git',), suffix=r'\b'), Keyword.Git),
+            (words(('group',), suffix=r'\b'), Keyword.Group),
+            (words(('platforms',), suffix=r'\b'), Keyword.Platforms),
+            (words(('path',), suffix=r'\b'), Keyword.Pth),
+
+            # pods
+            (words(('pod',), suffix=r'\b'), Keyword.Pod),
+            (words(('subspec',), suffix=r'\b'), Keyword.Subspec),
+            
             # keywords
             (words((
                 'BEGIN', 'END', 'alias', 'begin', 'break', 'case', 'defined?',
@@ -212,7 +298,7 @@ class RubyLexer(ExtendedRegexLexer):
                 'module_function', 'public', 'protected', 'true', 'false', 'nil'),
                 suffix=r'\b'),
              Keyword.Pseudo),
-            (r'(not|and|or)\b', Operator.Word),
+            (r'(not|and|or)\b', Operator.Word.AndOrNot),
             (words((
                 'autoload', 'block_given', 'const_defined', 'eql', 'equal', 'frozen', 'include',
                 'instance_of', 'is_a', 'iterator', 'kind_of', 'method_defined', 'nil',
@@ -302,7 +388,7 @@ class RubyLexer(ExtendedRegexLexer):
             (r'\$\w+', Name.Variable.Global),
             (r'\$[!@&`\'+~=/\\,;.<>_*$?:"^-]', Name.Variable.Global),
             (r'\$-[0adFiIlpvw]', Name.Variable.Global),
-            (r'::', Operator),
+            (r'::', Operator.Double_Colon),
             include('strings'),
             # chars
             (r'\?(\\[MC]-)*'  # modifiers
@@ -312,16 +398,114 @@ class RubyLexer(ExtendedRegexLexer):
             (r'[A-Z]\w+', Name.Constant),
             # this is needed because ruby attributes can look
             # like keywords (class) or like this: ` ?!?
-            (words(RUBY_OPERATORS, prefix=r'(\.|::)'),
-             bygroups(Operator, Name.Operator)),
-            (r'(\.|::)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
-             bygroups(Operator, Name)),
+            (words(RUBY_OPERATORS, prefix=r'(::)'),
+             bygroups(Operator, Name.Operator.Double_Colon)),
+            (words(RUBY_OPERATORS, prefix=r'(\.)'),
+             bygroups(Operator, Name.Operator.Dot)),
+            (r'(::)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
+             bygroups(Operator.Double_Colon, Name)),
+            (r'(\.)(new)', bygroups(Operator.Dot, Name.New)),
+
+            # required in gemspec
+            (r'(\.)(name)', bygroups(Operator.Dot, Name.Name)),
+            (r'(\.)(version)', bygroups(Operator.Dot, Name.Version)),
+            (r'(\.)(summary)', bygroups(Operator.Dot, Name.Summary)),
+            (r'(\.)(files)', bygroups(Operator.Dot, Name.Files)),
+
+            (r'(\.)(authors)', bygroups(Operator.Dot, Name.Authors)),
+            # optional form for single author
+            (r'(\.)(author)', bygroups(Operator.Dot, Name.Author)),
+
+            # recommended in gemspec
+            (r'(\.)(description)', bygroups(Operator.Dot, Name.Description)),
+            (r'(\.)(homepage)', bygroups(Operator.Dot, Name.Homepage)),
+            (r'(\.)(email)', bygroups(Operator.Dot, Name.Email)),
+            (r'(\.)(license)', bygroups(Operator.Dot, Name.License)),
+            (r'(\.)(licenses)', bygroups(Operator.Dot, Name.Licenses)),
+            (r'(\.)(metadata)', bygroups(Operator.Dot, Name.Metadata)),
+            (r'(\.)(required_ruby_version)', bygroups(Operator.Dot, Name.Required_Ruby_Version)),
+
+            (r'(\.)(date)', bygroups(Operator.Dot, Name.Date)),
+            (r'(\.)(platform)', bygroups(Operator.Dot, Name.Platform)),
+
+            (r'(\.)(required_rubygems_version)', bygroups(Operator.Dot, Name.Required_RubyGems_Version)),
+            (r'(\.)(rubyforge_project)', bygroups(Operator.Dot, Name.Rubyforge_Project)),
+
+            (r'(\.)(add_runtime_dependency)', bygroups(Operator.Dot, Name.Add_Runtime_Dependency)),
+            (r'(\.)(add_development_dependency)', bygroups(Operator.Dot, Name.Add_Development_Dependency)),
+            (r'(\.)(add_dependency)', bygroups(Operator.Dot, Name.Add_Dependency)),
+            
+            (r'(\.)(requirements)', bygroups(Operator.Dot, Name.Requirements)),
+
+            (r'(\.)(extensions)', bygroups(Operator.Dot, Name.Extensions)),
+            (r'(\.)(test_files)', bygroups(Operator.Dot, Name.Test_Files)),
+            (r'(\.)(executables)', bygroups(Operator.Dot, Name.Executables)),
+            (r'(\.)(extra_rdoc_files)', bygroups(Operator.Dot, Name.Extra_Rdoc_Files)),
+            (r'(\.)(require_paths)', bygroups(Operator.Dot, Name.Require_Paths)),
+            (r'(\.)(bindir)', bygroups(Operator.Dot, Name.Bindir)),
+            
+            # in podspec
+            (r'(\.)(source)', bygroups(Operator.Dot, Name.Source)),
+            (r'(\.)(source_files)', bygroups(Operator.Dot, Name.Source_files)),
+            (r'(\.)(public_header_files)', bygroups(Operator.Dot, Name.Public_header_files)),
+
+            (r'(\.)(framework)', bygroups(Operator.Dot, Name.Framework)),
+            (r'(\.)(frameworks)', bygroups(Operator.Dot, Name.Frameworks)),
+            
+            (r'(\.)(weak_framework)', bygroups(Operator.Dot, Name.Weak_framework)),
+            (r'(\.)(weak_frameworks)', bygroups(Operator.Dot, Name.Weak_frameworks)),
+            
+            (r'(\.)(vendored_framework)', bygroups(Operator.Dot, Name.Vendored_framework)),
+            (r'(\.)(vendored_frameworks)', bygroups(Operator.Dot, Name.Vendored_frameworks)),
+            
+            (r'(\.)(vendored_library)', bygroups(Operator.Dot, Name.Vendored_library)),
+            (r'(\.)(vendored_libraries)', bygroups(Operator.Dot, Name.Vendored_libraries)),
+
+            (r'(\.)(library)', bygroups(Operator.Dot, Name.Library)),
+            (r'(\.)(libraries)', bygroups(Operator.Dot, Name.Libraries)),
+
+            (r'(\.)(module_name)', bygroups(Operator.Dot, Name.Module_Name)),
+            (r'(\.)(dependency)', bygroups(Operator.Dot, Name.Dependency)),
+            
+            (r'(\.)(swift_version)', bygroups(Operator.Dot, Name.Swift_Version)),
+            (r'(\.)(swift_versions)', bygroups(Operator.Dot, Name.Swift_Versions)),
+            
+            (r'(\.)(cocoapods_version)', bygroups(Operator.Dot, Name.Cocoapods_Version)),
+            (r'(\.)(social_media_url)', bygroups(Operator.Dot, Name.Social_media_url)),
+            
+            (r'(\.)(readme)', bygroups(Operator.Dot, Name.Readme)),
+            (r'(\.)(changelog)', bygroups(Operator.Dot, Name.Changelog)),
+
+            (r'(\.)(resource)', bygroups(Operator.Dot, Name.Resource)),
+            (r'(\.)(resources)', bygroups(Operator.Dot, Name.Resources)),
+
+            (r'(\.)(screenshot)', bygroups(Operator.Dot, Name.Screenshot)),
+            (r'(\.)(screenshots)', bygroups(Operator.Dot, Name.Screenshots)),
+            
+            (r'(\.)(documentation_url)', bygroups(Operator.Dot, Name.Documentation_url)),
+            (r'(\.)(static_framework)', bygroups(Operator.Dot, Name.Static_framework)),
+            (r'(\.)(deprecated)', bygroups(Operator.Dot, Name.Deprecated)),
+            (r'(\.)(deprecated_in_favor_of)', bygroups(Operator.Dot, Name.Deprecated_in_favor_of)),
+            
+            # spec.ios.deployment_target = '6.0'
+            (r'(\.)(deployment_target)', bygroups(Operator.Dot, Name.Deployment_target)),
+            (r'(\.)(info_plist)', bygroups(Operator.Dot, Name.Info_plist)),
+
+            (r'(\.)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
+             bygroups(Operator.Dot, Name)),
             (r'[a-zA-Z_]\w*[!?]?', Name),
+            (r'(\[)', Operator.Open_Square_Bracket),
+            (r'(\])', Operator.Close_Square_Bracket),
+            (r'(\{)', Operator.Open_Curly_Brace),
+            (r'(\})', Operator.Close_Curly_Brace),
             (r'(\[|\]|\*\*|<<?|>>?|>=|<=|<=>|=~|={3}|'
              r'!~|&&?|\|\||\.{1,3})', Operator),
-            (r'[-+/*%=<>&!^|~]=?', Operator),
+            (r'[-+/*%<>&!^|~]=?', Operator),
+            (r'[=]=?', Operator.Equal),
+            (r',', Punctuation.Comma),
             (r'[(){};,/?:\\]', Punctuation),
-            (r'\s+', Text)
+            (r'\n+', Text.Whitespace.Newline),
+            (r'\s+', Text.Whitespace),
         ],
         'funcname': [
             (r'\(', Punctuation, 'defexpr'),
