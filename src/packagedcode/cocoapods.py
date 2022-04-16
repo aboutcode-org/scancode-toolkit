@@ -9,6 +9,9 @@
 
 import hashlib
 import json
+import os
+import logging
+from struct import pack
 
 import saneyaml
 from packageurl import PackageURL
@@ -25,6 +28,24 @@ and from Xcode projects, including .podspec, Podfile and Podfile.lock files,
 and .podspec.json files from https://github.com/CocoaPods/Specs.
 See https://cocoapods.org
 """
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 # TODO: consider merging Gemfile.lock and Podfile.lock in one module: this is the same format
 
@@ -96,7 +117,7 @@ class BasePodHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase):
         """
-        Assemble pod packages and dependencies and handle the specifc cases where
+        Assemble pod packages and dependencies and handle the specific cases where
         there are more than one podspec in the same directory.
         This is designed to process .podspec, Podfile and Podfile.lock
         """
@@ -114,13 +135,15 @@ class BasePodHandler(models.DatafileHandler):
             has_single_podspec = siblings_counts == 1
             has_multiple_podspec = siblings_counts > 1
 
+            datafile_name_patterns = (
+                'Podfile.lock',
+                'Podfile',
+            )
+
             if has_single_podspec:
                 # we can treat all podfile/spec as being for one package
-                datafile_name_patterns = (
-                    sibling_podspecs[0].name,
-                    'Podfile.lock',
-                    'Podfile',
-                )
+                datafile_name_patterns = (sibling_podspecs[0].name,) + datafile_name_patterns
+
                 yield from models.DatafileHandler.assemble_from_many_datafiles(
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,
@@ -131,24 +154,28 @@ class BasePodHandler(models.DatafileHandler):
                 # treat each of podspec and podfile alone without meraging
                 # as we cannot determine easily which podfile is for which
                 # podspec
-                yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+                podspec = sibling_podspecs.pop()
+                datafile_name_patterns = (podspec.name,) + datafile_name_patterns
 
-                datafile_name_patterns = (
-                    'Podfile.lock',
-                    'Podfile',
-                )
                 yield from models.DatafileHandler.assemble_from_many_datafiles(
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,
                     codebase=codebase,
                 )
 
+                for resource in sibling_podspecs:
+                    datafile_path = resource.path
+                    for package_data in resource.package_data:
+                        package_data = models.PackageData.from_dict(package_data)
+                        package = models.Package.from_package_data(
+                            package_data=package_data,
+                            datafile_path=datafile_path,
+                        )
+                        cls.assign_package_to_resources(package, resource, codebase)
+                        yield package
+
             else:
                 # has_no_podspec:
-                datafile_name_patterns = (
-                    'Podfile.lock',
-                    'Podfile',
-                )
                 yield from models.DatafileHandler.assemble_from_many_datafiles(
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,

@@ -10,6 +10,7 @@
 import os
 import uuid
 from fnmatch import fnmatchcase
+import logging
 
 import attr
 from packageurl import normalize_qualifiers
@@ -107,21 +108,20 @@ SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE = SCANCODE_DEBUG_PACKAGE_API
 TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_API
 
+def logger_debug(*args):
+    pass
+
+logger = logging.getLogger(__name__)
+
 if TRACE or TRACE_UPDATE:
-    use_print = True
-    if use_print:
-        prn = print
-    else:
-        import logging
-        import sys
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        prn = logger.debug
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 
 class ModelMixin:
@@ -1090,6 +1090,9 @@ class DatafileHandler:
                         pkgdata_resources.append((package_data, sibling,))
 
         if pkgdata_resources:
+            if TRACE:
+                logger_debug(f' assemble_from_many_datafiles: pkgdata_resources: {pkgdata_resources!r}')
+
             yield from cls.assemble_from_many(
                 pkgdata_resources=pkgdata_resources,
                 codebase=codebase,

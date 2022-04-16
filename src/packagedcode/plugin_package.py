@@ -10,6 +10,7 @@
 import attr
 import click
 import os
+import logging
 import sys
 
 from commoncode.cliutils import PluggableCommandLineOption
@@ -24,25 +25,25 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 
+
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
 if TRACE:
-
-    use_print = True
-
-    if use_print:
-        printer = print
-    else:
-        import logging
-
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        printer = logger.debug
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 
 def print_packages(ctx, param, value):
@@ -171,7 +172,7 @@ def create_package_and_deps(codebase, **kwargs):
             
             for item in items:
                 if TRACE:
-                    logger_debug('    create_package_and_deps: item:', item,)
+                    logger_debug('    create_package_and_deps: item:', item)
 
                 if isinstance(item, Package):
                     packages_top_level.append(item)
@@ -181,6 +182,8 @@ def create_package_and_deps(codebase, **kwargs):
 
                 elif isinstance(item, Resource):
                     seen_resource_ids.add(item.rid)
+                    if TRACE:
+                        logger_debug('    create_package_and_deps: seen_resource_ids:', seen_resource_ids,)
 
                 else:
                     raise Exception(f'Unknown package assembly item type: {item!r}')
