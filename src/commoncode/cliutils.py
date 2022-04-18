@@ -6,6 +6,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import shutil
 import sys
 
 import click
@@ -353,7 +354,7 @@ def file_name_max_len(used_width=BAR_WIDTH + 1 + 7 + 1 + 8 + 1):
     The space usage is therefore:
         BAR_WIDTH + 1 + 7 + 1 + 8 + 1 + the file name length
     """
-    term_width, _height = click.get_terminal_size()
+    term_width, _height = shutil.get_terminal_size()
     max_filename_length = term_width - used_width
     return max_filename_length
 
