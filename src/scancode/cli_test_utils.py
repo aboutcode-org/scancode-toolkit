@@ -94,6 +94,7 @@ def run_scan_click(
     If retry is True, wait 10 seconds after a failure and retry once
     """
     import click
+    import shutil
     from click.testing import CliRunner
     from scancode import cli
 
@@ -104,7 +105,7 @@ def run_scan_click(
 
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-        monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+        monkeypatch.setattr(shutil , 'get_terminal_size', lambda : (80, 43,))
 
     if not env:
         env = dict(os.environ)
