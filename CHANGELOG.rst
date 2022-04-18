@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 30.1.1 (2022-04-18)
+------------------------------
+
+- Remove usage of deprecated ``click.get_terminal_size()``.
+
+
 Version 30.1.0 (2022-04-05)
 ------------------------------
 
