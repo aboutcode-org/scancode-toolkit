@@ -30,6 +30,7 @@ CLI_ARGS=$1
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
 DEV_REQUIREMENTS="--editable .[testing,packages] --constraint requirements.txt --constraint requirements-dev.txt"
+DOCS_REQUIREMENTS="--editable .[docs] --constraint requirements.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -178,6 +179,7 @@ while getopts :-: optchar; do
                 help  ) cli_help;;
                 clean ) find_python && clean;;
                 dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
+                docs   ) CFG_REQUIREMENTS="$DOCS_REQUIREMENTS";;
             esac;;
     esac
 done
