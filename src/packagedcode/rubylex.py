@@ -9,12 +9,20 @@ import re
 
 from pygments.lexer import ExtendedRegexLexer, include, \
     bygroups, default, LexerContext, words
-from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
-    Number, Punctuation, Error
 
+from pygments import token
+
+Keyword = token.Keyword
+Name = token.Name
+String = token.String
+Text = token.Text
+Comment = token.Comment
+Operator = token.Operator
+Number = token.Number
+Punctuation = token.Punctuation
+Error = token.Error
 
 line_re = re.compile('.*?\n')
-
 
 RUBY_OPERATORS = (
     '*', '**', '-', '+', '-@', '+@', '/', '%', '&', '|', '^', '`', '~',
@@ -41,10 +49,10 @@ class RubyLexer(ExtendedRegexLexer):
         # match: 1 = <<[-~]?, 2 = quote? 3 = name 4 = quote? 5 = rest of line
 
         start = match.start(1)
-        yield start, Operator, match.group(1)        # <<[-~]?
-        yield match.start(2), String.Heredoc, match.group(2)   # quote ", ', `
-        yield match.start(3), String.Delimiter, match.group(3) # heredoc name
-        yield match.start(4), String.Heredoc, match.group(4)   # quote again
+        yield start, Operator.Heredoc, match.group(1)  # <<[-~]?
+        yield match.start(2), String.Heredoc, match.group(2)  # quote ", ', `
+        yield match.start(3), String.HeredocDelimiter, match.group(3)  # heredoc name
+        yield match.start(4), String.Heredoc, match.group(4)  # quote again
 
         heredocstack = ctx.__dict__.setdefault('heredocstack', [])
         outermost = not bool(heredocstack)
@@ -71,7 +79,7 @@ class RubyLexer(ExtendedRegexLexer):
                     if check == hdname:
                         for amatch in lines:
                             yield amatch.start(), String.Heredoc, amatch.group()
-                        yield match.start(), String.Delimiter, match.group()
+                        yield match.start(), String.HeredocDelimiter, match.group()
                         ctx.pos = match.end()
                         break
                     else:
@@ -83,12 +91,13 @@ class RubyLexer(ExtendedRegexLexer):
             ctx.end = len(ctx.text)
             del heredocstack[:]
 
-    def gen_rubystrings_rules():
+    def gen_rubystrings_rules():  # NOQA
+
         def intp_regex_callback(self, match, ctx):
             yield match.start(1), String.Regex, match.group(1)  # begin
             nctx = LexerContext(match.group(3), 0, ['interpolated-regex'])
             for i, t, v in self.get_tokens_unprocessed(context=nctx):
-                yield match.start(3)+i, t, v
+                yield match.start(3) + i, t, v
             yield match.start(4), String.Regex, match.group(4)  # end[mixounse]*
             ctx.pos = match.end()
 
@@ -96,73 +105,26 @@ class RubyLexer(ExtendedRegexLexer):
             yield match.start(1), String.Other, match.group(1)
             nctx = LexerContext(match.group(3), 0, ['interpolated-string'])
             for i, t, v in self.get_tokens_unprocessed(context=nctx):
-                yield match.start(3)+i, t, v
+                yield match.start(3) + i, t, v
             yield match.start(4), String.Other, match.group(4)  # end
             ctx.pos = match.end()
 
         states = {}
         states['strings'] = [
-            # Gemfile
+            # Gem/Pod bare :colo strings used as hash keys
             # groups/scopes
-            (r'\:development', String.Symbol.Development),
-            (r'\:debug', String.Symbol.Debug),
-            (r'\:test', String.Symbol.Test),
-            (r'\:default', String.Symbol.Default),
-
-            (r'\:source', String.Symbol.Source),
-            (r'\:platform', String.Symbol.Platform),
-            (r'\:platforms', String.Symbol.Platforms),
-
-            (r'\:require', String.Symbol.Require),
-            (r'\:group', String.Symbol.Group),
-            (r'\:groups', String.Symbol.Groups),
-            (r'\:name', String.Symbol.Name),
-
-            (r'\:engine', String.Symbol.Engine),
-            (r'\:engine_version', String.Symbol.Engine_version),
-            (r'\:patchlevel', String.Symbol.Patchlevel),
-
-            (r'\:git', String.Symbol.Git),
-            
-            (r'\:tag', String.Symbol.Tag),
-            (r'\:branch', String.Symbol.Branch),
-            (r'\:ref', String.Symbol.Ref),
-
-            (r'\:git_source', String.Symbol.Git_source),
-            (r'\:github', String.Symbol.GitHub),
-            (r'\:gist', String.Symbol.Gist),
-            (r'\:bitbucket', String.Symbol.Bitbucket),
-
-            (r'\:path', String.Symbol.Path),
-            
+            (
+                r'\:(development|debug|test|default|source|platforms?|require|groups?|name'
+                r'|engine|engine_version|patchlevel|git|tag|branch|ref|git_source|github|gist|bitbucket|path)',
+                String.ColonSymbol,
+             ),
 
             # Podspec
-            (r'\:type', String.Symbol.Type),
-
-            (r'\:file', String.Symbol.File),
-            (r'\:text', String.Symbol.Text),
-            
-            (r'\:commit', String.Symbol.Commit),
-            (r'\:submodules', String.Symbol.Submodules),
-
-            (r'\:hg', String.Symbol.Hg),
-            (r'\:revision', String.Symbol.Revision),
-            
-            (r'\:svn', String.Symbol.Svn),
-            (r'\:folder', String.Symbol.Folder),
-
-            (r'\:http', String.Symbol.Http),
-            (r'\:headers', String.Symbol.Headers),
-            (r'\:flatten', String.Symbol.Flatten),
-            (r'\:sha1', String.Symbol.Sha1),
-            (r'\:sha256', String.Symbol.Sha256),
-
-            (r'\:osx', String.Symbol.Osx),
-            (r'\:ios', String.Symbol.Ios),
-            (r'\:watchos', String.Symbol.Watchos),
-            (r'\:tvos', String.Symbol.Tvos),
-            (r'\:configurations', String.Symbol.Configurations),
-            (r'\:sha256', String.Symbol.Sha256),
+            (
+                r'\:(type|file|text|commit|submodules|hg|revision|svn|folder|http|headers|flatten'
+                r'|sha1|sha256|osx|ios|watchos|tvos|configurations|sha256)',
+                String.ColonSymbol,
+            ),
 
             # easy ones
             (r'\:@{0,2}[a-zA-Z_]\w*[!?]?', String.Symbol),
@@ -177,15 +139,17 @@ class RubyLexer(ExtendedRegexLexer):
         ]
 
         # quoted string and symbol
-        for name, ttype, end in ('string-double', String.Double.Value, '"'), \
-                                ('string-single', String.Single.Value, "'"),\
-                                ('sym', String.Symbol, '"'), \
-                                ('backtick', String.Backtick.Value, '`'):
-            states['simple-'+name] = [
+        for name, ttype, end, endttype in (
+            ('string-double', String.Value, '"', String.Double.Quote),
+            ('string-single', String.Value, "'", String.Single.Quote),
+            ('sym', String.Symbol, '"', String.Double.Quote),
+            ('backtick', String.Value, '`', String.Backtick.Quote),
+        ):
+            states['simple-' + name] = [
                 include('string-intp-escaped'),
                 (r'[^\\%s#]+' % end, ttype),
                 (r'[\\#]', ttype),
-                (end, ttype, '#pop'),
+                (end, endttype, '#pop'),
             ]
 
         # braced quoted strings
@@ -194,26 +158,26 @@ class RubyLexer(ExtendedRegexLexer):
                 ('\\[', '\\]', '\\[\\]', 'sb'), \
                 ('\\(', '\\)', '()', 'pa'), \
                 ('<', '>', '<>', 'ab'):
-            states[name+'-intp-string'] = [
-                (r'\\[\\' + bracecc + ']', String.Other),
-                (lbrace, String.Other, '#push'),
-                (rbrace, String.Other, '#pop'),
+            states[name + '-intp-string'] = [
+                (r'\\[\\' + bracecc + ']', String.Value),
+                (lbrace, String.Other.Lbrace, '#push'),
+                (rbrace, String.Other.Rbrace, '#pop'),
                 include('string-intp-escaped'),
-                (r'[\\#' + bracecc + ']', String.Other),
-                (r'[^\\#' + bracecc + ']+', String.Other),
+                (r'[\\#' + bracecc + ']', String.Value),
+                (r'[^\\#' + bracecc + ']+', String.Value),
             ]
-            states['strings'].append((r'%[QWx]?' + lbrace, String.Other,
-                                      name+'-intp-string'))
-            states[name+'-string'] = [
+            states['strings'].append((r'%[QWx]?' + lbrace, String.Other.Lbrace,
+                                      name + '-intp-string'))
+            states[name + '-string'] = [
                 (r'\\[\\' + bracecc + ']', String.Other),
-                (lbrace, String.Other, '#push'),
-                (rbrace, String.Other, '#pop'),
-                (r'[\\#' + bracecc + ']', String.Other),
-                (r'[^\\#' + bracecc + ']+', String.Other),
+                (lbrace, String.Other.Lbrace, '#push'),
+                (rbrace, String.Other.Rbrace, '#pop'),
+                (r'[\\#' + bracecc + ']', String.Value),
+                (r'[^\\#' + bracecc + ']+', String.Value),
             ]
-            states['strings'].append((r'%[qsw]' + lbrace, String.Other,
-                                      name+'-string'))
-            states[name+'-regex'] = [
+            states['strings'].append((r'%[qsw]' + lbrace, String.Other.Lbrace,
+                                      name + '-string'))
+            states[name + '-regex'] = [
                 (r'\\[\\' + bracecc + ']', String.Regex),
                 (lbrace, String.Regex, '#push'),
                 (rbrace + '[mixounse]*', String.Regex, '#pop'),
@@ -222,7 +186,7 @@ class RubyLexer(ExtendedRegexLexer):
                 (r'[^\\#' + bracecc + ']+', String.Regex),
             ]
             states['strings'].append((r'%r' + lbrace, String.Regex,
-                                      name+'-regex'))
+                                      name + '-regex'))
 
         # these must come after %<brace>!
         states['strings'] += [
@@ -255,32 +219,93 @@ class RubyLexer(ExtendedRegexLexer):
             (r'=begin\s.*?\n=end.*?$', Comment.Multiline),
 
             # keywords
-            
-            # gem
+
+            # in any ruby code
             (words(('BEGIN', 'begin',), suffix=r'\b'), Keyword.Begin),
             (words(('END', 'end',), suffix=r'\b'), Keyword.End),
             (words(('do',), suffix=r'\b'), Keyword.Do),
 
-            (words(('ruby',), suffix=r'\b'), Keyword.Ruby),
+            # in Gemfile: source "https://rubygems.org"
+            (words(('source',), suffix=r'\b'), Keyword.Attribute.Source),
+
+            # in Gemfile, a single URL as in: source "https://rubygems.org". has extra arguments
+            # ruby "2.0.0", :patchlevel => "247"
+            (words(('ruby',), suffix=r'\b'), Keyword.Attribute.Ruby),
+
+            # in Gemfile
+            # gem "RedCloth", ">= 4.1.0", "< 4.2.0"
+            # gem "nokogiri", :require => "nokogiri"
+            # gem "nokogiri", :require => true
+            # gem "redis", :require => ["redis/connection/hiredis", "redis"]
+            # gem "rspec", :group => :test
+            # gem "wirble", :groups => [:development, :test]
+            # gem "ruby-debug", :platforms => :mri_18
+            # gem "nokogiri",   :platforms => [:mri_18, :jruby]
+            # gem "some_internal_gem", :source => "https://gems.example.com"
+            # gem "rack", :git => "git://github.com/rack/rack.git"
+            # gem "rails", :git => "https://github.com/rails/rails.git", :branch => "5-0-stable"
+            # gem "rails", :git => "https://github.com/rails/rails.git", :tag => "v5.0.0"
+            # gem "rails", :git => "https://github.com/rails/rails.git", :ref => "4aded"
+            # gem "rack", :git => "git://github.com/rack/rack.git" :submodules => true
+            # git_source(:stash){ |repo_name| "https://stash.corp.acme.pl/#{repo_name}.git" }
+            # gem 'rails', :stash => 'forks/rails'
+            # gem "rails", :github => "rails/rails"
+            # gem "rails", :github => "https://github.com/rails/rails/pull/43753"
+            # gem "the_hatch", :gist => "4815162342"
+            # gem "the_hatch", :git => "https://gist.github.com/4815162342.git"
+            # gem "rails", :bitbucket => "rails/rails"
+            # gem "rails", :path => "vendor/rails"
+            # path 'components' do
+            #   gem 'admin_ui'
+            #   gem 'public_ui'
+            # end
+            # git "https://github.com/rails/rails.git" do
+            #   gem "activesupport"
+            #   gem "actionpack"
+            # end
+            # group :development, :optional => true do
+            #   gem "wirble"
+            #   gem "faker"
+            # end
+            # source "https://gems.example.com" do
+            #   gem "some_internal_gem"
+            #   gem "another_internal_gem"
+            # end
             (words(('gem',), suffix=r'\b'), Keyword.Gem),
+
+            # includes a gemspec in the Gemfile
             (words(('gemspec',), suffix=r'\b'), Keyword.Gemspec),
 
-            (words(('require',), suffix=r'\b'), Keyword.Require),
-            (words(('versions',), suffix=r'\b'), Keyword.Versions),
-            (words(('source',), suffix=r'\b'), Keyword.Source),
-            (words(('git',), suffix=r'\b'), Keyword.Git),
-            (words(('group',), suffix=r'\b'), Keyword.Group),
-            (words(('platforms',), suffix=r'\b'), Keyword.Platforms),
-            (words(('path',), suffix=r'\b'), Keyword.Pth),
+            (words(('require',), suffix=r'\b'), Keyword.Attribute.Require),
+            (words(('versions',), suffix=r'\b'), Keyword.Attribute.Versions),
+
+            (words(('git',), suffix=r'\b'), Keyword.Attribute.Git),
+            (words(('group',), suffix=r'\b'), Keyword.Attribute.Group),
+            (words(('platforms',), suffix=r'\b'), Keyword.Attribute.Platforms),
+            (words(('path',), suffix=r'\b'), Keyword.Attribute.Path),
 
             # pods
+            # this is a function as in:
+            # pod 'ShareKit/Twitter',  '2.0'
             (words(('pod',), suffix=r'\b'), Keyword.Pod),
-            (words(('subspec',), suffix=r'\b'), Keyword.Subspec),
-            
+
+            # in podspec
+            # TODO: this is typically nested with spect.func
+            # this is a function as in:
+            #     s.subspec 'Core' do |cs|
+            #       cs.dependency 'RestKit/ObjectMapping'
+            #       cs.dependency 'RestKit/Network'
+            #       cs.dependency 'RestKit/CoreData'
+            #     end
+            (words(('subspec',), suffix=r'\b'), Keyword.Attribute.Subspec),
+            (words(('test_spec',), suffix=r'\b'), Keyword.Attribute.Subspec),
+            (words(('app_spec',), suffix=r'\b'), Keyword.Attribute.Subspec),
+            (words(('app_spec',), suffix=r'\b'), Keyword.Attribute.Subspec),
+
             # keywords
             (words((
-                'BEGIN', 'END', 'alias', 'begin', 'break', 'case', 'defined?',
-                'do', 'else', 'elsif', 'end', 'ensure', 'for', 'if', 'in', 'next', 'redo',
+                'alias', 'begin', 'break', 'case', 'defined?',
+                'else', 'elsif', 'end', 'ensure', 'for', 'if', 'in', 'next', 'redo',
                 'rescue', 'raise', 'retry', 'return', 'super', 'then', 'undef',
                 'unless', 'until', 'when', 'while', 'yield'), suffix=r'\b'),
              Keyword),
@@ -395,115 +420,221 @@ class RubyLexer(ExtendedRegexLexer):
              r'(\\([\\abefnrstv#"\']|x[a-fA-F0-9]{1,2}|[0-7]{1,3})|\S)'
              r'(?!\w)',
              String.Char),
+
+            # important declarations
+            (r'Gem::Specification', Name.Spec.Gem),
+            (r'Pod::Spec', Name.Spec.Pod),
+
+            # other constants
             (r'[A-Z]\w+', Name.Constant),
             # this is needed because ruby attributes can look
             # like keywords (class) or like this: ` ?!?
             (words(RUBY_OPERATORS, prefix=r'(::)'),
              bygroups(Operator, Name.Operator.Double_Colon)),
+
             (words(RUBY_OPERATORS, prefix=r'(\.)'),
              bygroups(Operator, Name.Operator.Dot)),
+
             (r'(::)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
              bygroups(Operator.Double_Colon, Name)),
+            
             (r'(\.)(new)', bygroups(Operator.Dot, Name.New)),
 
-            # required in gemspec
-            (r'(\.)(name)', bygroups(Operator.Dot, Name.Name)),
-            (r'(\.)(version)', bygroups(Operator.Dot, Name.Version)),
-            (r'(\.)(summary)', bygroups(Operator.Dot, Name.Summary)),
-            (r'(\.)(files)', bygroups(Operator.Dot, Name.Files)),
+            # see https://github.com/CocoaPods/Core/blob/master/lib/cocoapods-core/specification/dsl.rb
 
-            (r'(\.)(authors)', bygroups(Operator.Dot, Name.Authors)),
-            # optional form for single author
-            (r'(\.)(author)', bygroups(Operator.Dot, Name.Author)),
+            # in gemspec and in podspec
+            (
+                r'(\.)('
+                r'name'
+                r'|version'
+                r'|summary'
+                r'|description'
 
-            # recommended in gemspec
-            (r'(\.)(description)', bygroups(Operator.Dot, Name.Description)),
-            (r'(\.)(homepage)', bygroups(Operator.Dot, Name.Homepage)),
-            (r'(\.)(email)', bygroups(Operator.Dot, Name.Email)),
-            (r'(\.)(license)', bygroups(Operator.Dot, Name.License)),
-            (r'(\.)(licenses)', bygroups(Operator.Dot, Name.Licenses)),
-            (r'(\.)(metadata)', bygroups(Operator.Dot, Name.Metadata)),
-            (r'(\.)(required_ruby_version)', bygroups(Operator.Dot, Name.Required_Ruby_Version)),
+                # gemspec has author:string or authors:list.
+                # podspec has author:string authors:list of names and authors:mapping {name: email}
+                r'|authors?'
 
-            (r'(\.)(date)', bygroups(Operator.Dot, Name.Date)),
-            (r'(\.)(platform)', bygroups(Operator.Dot, Name.Platform)),
+                # URL to home
+                r'|homepage'
 
-            (r'(\.)(required_rubygems_version)', bygroups(Operator.Dot, Name.Required_RubyGems_Version)),
-            (r'(\.)(rubyforge_project)', bygroups(Operator.Dot, Name.Rubyforge_Project)),
+                # gemspec has license:string or license:list
+                # podspec has license:string or license:mapping with type/file/text keys
+                r'|licenses?'
 
-            (r'(\.)(add_runtime_dependency)', bygroups(Operator.Dot, Name.Add_Runtime_Dependency)),
-            (r'(\.)(add_development_dependency)', bygroups(Operator.Dot, Name.Add_Development_Dependency)),
-            (r'(\.)(add_dependency)', bygroups(Operator.Dot, Name.Add_Dependency)),
-            
-            (r'(\.)(requirements)', bygroups(Operator.Dot, Name.Requirements)),
+                ')',
+                bygroups(Operator.Dot, Name.Attribute.Spec),
+             ),
 
-            (r'(\.)(extensions)', bygroups(Operator.Dot, Name.Extensions)),
-            (r'(\.)(test_files)', bygroups(Operator.Dot, Name.Test_Files)),
-            (r'(\.)(executables)', bygroups(Operator.Dot, Name.Executables)),
-            (r'(\.)(extra_rdoc_files)', bygroups(Operator.Dot, Name.Extra_Rdoc_Files)),
-            (r'(\.)(require_paths)', bygroups(Operator.Dot, Name.Require_Paths)),
-            (r'(\.)(bindir)', bygroups(Operator.Dot, Name.Bindir)),
-            
+            (
+                r'(\.)('
+                # in podspec:
+                # a mapping point to the source VCS or a plain download
+                # type keys are: git/svn/hg/http and point to a URL
+                # and then each type has different attributes name/values
+                # :git  => [:tag, :branch, :commit, :submodules]
+                # :svn  => [:folder, :tag, :revision]
+                # :hg   => [:revision]
+                # :http => [:flatten, :type, :sha256, :sha1, :headers]
+                r'source'
+
+                ')',
+                bygroups(Operator.Dot, Name.Attribute.Spec),
+             ),
+
+            # in gemspec only
+            (
+                r'(\.)('
+                # gemspec only  email:string or email:list
+                r'email'
+
+                # spec.required_ruby_version = '>= 2.7.0'
+                r'|required_ruby_version'
+                r'|required_rubygems_version'
+                r'|date'
+                r'|platform'
+                # legacy as rubyforge is dead
+                r'|rubyforge_project'
+
+                # listrs to append to. spec.requirements << 'libmagick, v6.0'
+                r'|requirements'
+
+                # a list of strings
+                r'|require_paths'
+
+                r'|files'
+                # gemspec attributes related to "files"
+                r'|test_files'
+                # a single path
+                r'|bindir'
+
+                # spec.extra_rdoc_files = ['README', 'doc/user-guide.txt']
+                r'|extra_rdoc_files'
+
+                # lists wher you append
+                # spec.executables << 'rake'
+                r'|executables'
+                # spec.extensions << 'ext/rmagic/extconf.rb'
+                r'|extensions'
+
+                ')',
+                bygroups(Operator.Dot, Name.Attribute.Spec),
+             ),
+
+            # gempsec only
+            # spec.add_development_dependency 'example', '~> 1.1', '>= 1.1.4'
+            # spec.add_runtime_dependency 'example', '~> 1.1', '>= 1.1.4'
+            (
+                r'(\.)(add_runtime_dependency|add_dependency)',
+                bygroups(Operator.Dot, Name.AddGemDependency.Runtime),
+             ),
+            (
+                r'(\.)(add_development_dependency)',
+                bygroups(Operator.Dot, Name.AddGemDependency.Dev),
+             ),
+
+            # gemspec  has a mmaping and doc suggest using theses:
+            #     "bug_tracker_uri"   => "https://example.com/user/bestgemever/issues",
+            #     "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
+            #     "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
+            #     "homepage_uri"      => "https://bestgemever.example.io",
+            #     "mailing_list_uri"  => "https://groups.example.com/bestgemever",
+            #     "source_code_uri"   => "https://example.com/user/bestgemever",
+            #     "wiki_uri"          => "https://example.com/user/bestgemever/wiki"
+            #     "funding_uri"       => "https://example.com/donate"
+            (
+                r'(\.)(metadata)',
+                bygroups(Operator.Dot, Name.Attribute.GemMetadata),
+             ),
+
+            # in podspec only
+            (
+                r'(\.)('
+                # lists of glob-style patterns as 'Classes/**/*.{h,m}'
+                r'source_files'
+                r'|public_header_files'
+                r'|project_header_files'
+                r'|private_header_files'
+                r'|project_header_files'
+                r'|vendored_frameworks'
+                r'|vendored_library|vendored_libraries'
+                # a string, list or mapping of glob-style patterns
+                r'|on_demand_resources?'
+                # a mapping to string or list of glob-style patterns for each res bundle
+                r'|resource_bundles?'
+                # a string, list of glob-style patterns
+                r'|resources?'
+                # a list of glob-style patterns
+                r'|exclude_files'
+                # a list of glob-style patterns
+                r'|preserve_paths?'
+
+                # a mapping of platform-name:version : osx, macos, ios, tvos, ...
+                r'|platforms'
+
+                # string or list as in spec.frameworks = 'QuartzCore', 'CoreData'
+                r'|frameworks?'
+                r'|weak_frameworks?'
+                r'|library|libraries'
+
+                r'|module_name'
+
+                # a string or list of versions
+                r'|swift_versions?'
+                # a version constraint
+                r'|cocoapods_version'
+
+                # single URLs to markdown file
+                r'|social_media_url'
+                r'|readme'
+                r'|changelog'
+                r'|documentation_url'
+
+                # podspec only: single URL or list of URLs
+                r'|screenshots?'
+
+                # boolean
+                r'|static_framework'
+
+                # boolean, string
+                r'|deprecated|deprecated_in_favor_of'
+
+                r'|deployment_target'
+
+                # mapping of name/values added to plist
+                r'|info_plist'
+                r')',
+                bygroups(Operator.Dot, Name.Attribute.PodSpec),
+            ),
+
             # in podspec
-            (r'(\.)(source)', bygroups(Operator.Dot, Name.Source)),
-            (r'(\.)(source_files)', bygroups(Operator.Dot, Name.Source_files)),
-            (r'(\.)(public_header_files)', bygroups(Operator.Dot, Name.Public_header_files)),
+            # as spec.dependency 'AFNetworking', '~> 1.0'
+            # or with an optional extra named arg: configurations as in
+            # spec.dependency 'RestKit/CoreData', '~> 0.20.0', :configurations => :debug
+            # or as spec.ios.dependency 'MBProgressHUD', '~> 0.5'
+            (
+                r'(\.)('
+                r'dependency'
+                r')',
+                bygroups(Operator.Dot, Name.PodDependency),
+             ),
 
-            (r'(\.)(framework)', bygroups(Operator.Dot, Name.Framework)),
-            (r'(\.)(frameworks)', bygroups(Operator.Dot, Name.Frameworks)),
-            
-            (r'(\.)(weak_framework)', bygroups(Operator.Dot, Name.Weak_framework)),
-            (r'(\.)(weak_frameworks)', bygroups(Operator.Dot, Name.Weak_frameworks)),
-            
-            (r'(\.)(vendored_framework)', bygroups(Operator.Dot, Name.Vendored_framework)),
-            (r'(\.)(vendored_frameworks)', bygroups(Operator.Dot, Name.Vendored_frameworks)),
-            
-            (r'(\.)(vendored_library)', bygroups(Operator.Dot, Name.Vendored_library)),
-            (r'(\.)(vendored_libraries)', bygroups(Operator.Dot, Name.Vendored_libraries)),
-
-            (r'(\.)(library)', bygroups(Operator.Dot, Name.Library)),
-            (r'(\.)(libraries)', bygroups(Operator.Dot, Name.Libraries)),
-
-            (r'(\.)(module_name)', bygroups(Operator.Dot, Name.Module_Name)),
-            (r'(\.)(dependency)', bygroups(Operator.Dot, Name.Dependency)),
-            
-            (r'(\.)(swift_version)', bygroups(Operator.Dot, Name.Swift_Version)),
-            (r'(\.)(swift_versions)', bygroups(Operator.Dot, Name.Swift_Versions)),
-            
-            (r'(\.)(cocoapods_version)', bygroups(Operator.Dot, Name.Cocoapods_Version)),
-            (r'(\.)(social_media_url)', bygroups(Operator.Dot, Name.Social_media_url)),
-            
-            (r'(\.)(readme)', bygroups(Operator.Dot, Name.Readme)),
-            (r'(\.)(changelog)', bygroups(Operator.Dot, Name.Changelog)),
-
-            (r'(\.)(resource)', bygroups(Operator.Dot, Name.Resource)),
-            (r'(\.)(resources)', bygroups(Operator.Dot, Name.Resources)),
-
-            (r'(\.)(screenshot)', bygroups(Operator.Dot, Name.Screenshot)),
-            (r'(\.)(screenshots)', bygroups(Operator.Dot, Name.Screenshots)),
-            
-            (r'(\.)(documentation_url)', bygroups(Operator.Dot, Name.Documentation_url)),
-            (r'(\.)(static_framework)', bygroups(Operator.Dot, Name.Static_framework)),
-            (r'(\.)(deprecated)', bygroups(Operator.Dot, Name.Deprecated)),
-            (r'(\.)(deprecated_in_favor_of)', bygroups(Operator.Dot, Name.Deprecated_in_favor_of)),
-            
-            # spec.ios.deployment_target = '6.0'
-            (r'(\.)(deployment_target)', bygroups(Operator.Dot, Name.Deployment_target)),
-            (r'(\.)(info_plist)', bygroups(Operator.Dot, Name.Info_plist)),
-
+            # catchall for dot.name
             (r'(\.)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
              bygroups(Operator.Dot, Name)),
+
             (r'[a-zA-Z_]\w*[!?]?', Name),
             (r'(\[)', Operator.Open_Square_Bracket),
             (r'(\])', Operator.Close_Square_Bracket),
             (r'(\{)', Operator.Open_Curly_Brace),
             (r'(\})', Operator.Close_Curly_Brace),
+            (r'=>', Operator.Rocket),
             (r'(\[|\]|\*\*|<<?|>>?|>=|<=|<=>|=~|={3}|'
              r'!~|&&?|\|\||\.{1,3})', Operator),
             (r'[-+/*%<>&!^|~]=?', Operator),
             (r'[=]=?', Operator.Equal),
             (r',', Punctuation.Comma),
-            (r'[(){};,/?:\\]', Punctuation),
+            (r'[(){};,/?\\]', Punctuation),
+            (r':', Punctuation.Colon),
             (r'\n+', Text.Whitespace.Newline),
             (r'\s+', Text.Whitespace),
         ],
@@ -568,4 +699,3 @@ class RubyLexer(ExtendedRegexLexer):
         ]
     }
     tokens.update(gen_rubystrings_rules())
-
