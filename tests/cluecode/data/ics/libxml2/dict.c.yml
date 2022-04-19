@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Daniel Veillard
 holders:
   - Daniel Veillard
-holders_tallies:
+holders_summary:
   - value: Daniel Veillard
     count: 1

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007,2008 redpig@dataspill.org
   - portions copyright The Android Open Source Project
 holders:
   - redpig@dataspill.org
   - The Android Open Source Project
-holders_tallies:
+holders_summary:
   - value: The Android Open Source Project, Inc.
     count: 1
   - value: redpig@dataspill.org

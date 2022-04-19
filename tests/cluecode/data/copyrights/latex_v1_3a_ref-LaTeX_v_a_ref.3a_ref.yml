@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2003 Name
 holders:
   - Name
-holders_tallies:
+holders_summary:
   - value: Name
     count: 1

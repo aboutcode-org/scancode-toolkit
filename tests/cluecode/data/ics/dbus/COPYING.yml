@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2004 Lawrence E. Rosen
   - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
@@ -10,7 +10,7 @@ holders:
   - Lawrence E. Rosen
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 2
   - value: Lawrence E. Rosen

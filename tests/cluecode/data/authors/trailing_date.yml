@@ -1,10 +1,10 @@
 what:
   - authors
-  - authors_tallies
+  - authors_summary
 authors:
   - Nikos Mavrogiannopoulos <nmav@redhat.com>
   - Alexander Kanavin <alex.kanavin@gmail.com>
-authors_tallies:
+authors_summary:
   - value: Alexander Kanavin <alex.kanavin@gmail.com>
     count: 1
   - value: Nikos Mavrogiannopoulos <nmav@redhat.com>

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004-2005 Jocelyn Mayer <l_indien@magic.fr>
   - Copyright (c) 2004-2005 Fabrice Bellard
 holders:
   - Jocelyn Mayer
   - Fabrice Bellard
-holders_tallies:
+holders_summary:
   - value: Fabrice Bellard
     count: 1
   - value: Jocelyn Mayer

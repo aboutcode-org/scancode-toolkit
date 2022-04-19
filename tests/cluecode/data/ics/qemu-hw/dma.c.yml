@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2004 Vassili Karpov
 holders:
   - Vassili Karpov
-holders_tallies:
+holders_summary:
   - value: Vassili Karpov
     count: 1

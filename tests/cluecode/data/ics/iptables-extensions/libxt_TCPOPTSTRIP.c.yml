@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 Sven Schnelle <svens@bitebene.org>
   - Copyright (c) CC Computer Consultants GmbH, 2007 Jan Engelhardt <jengelh@computergmbh.de>
 holders:
   - Sven Schnelle
   - CC Computer Consultants GmbH, Jan Engelhardt
-holders_tallies:
+holders_summary:
   - value: CC Computer Consultants GmbH, Jan Engelhardt
     count: 1
   - value: Sven Schnelle

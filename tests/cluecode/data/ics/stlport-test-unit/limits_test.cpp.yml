@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Jens Maurer 2000
 holders:
   - Jens Maurer
-holders_tallies:
+holders_summary:
   - value: Jens Maurer
     count: 1

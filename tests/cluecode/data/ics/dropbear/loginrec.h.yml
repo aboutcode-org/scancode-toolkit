@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Andre Lucas
 holders:
   - Andre Lucas
-holders_tallies:
+holders_summary:
   - value: Andre Lucas
     count: 1

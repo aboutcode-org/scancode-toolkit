@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2005, Jouni Malinen <j@w1.fi>
   - Copyright (c) 2004, Luis R. Rodriguez <mcgrof@ruslug.rutgers.edu>
 holders:
   - Jouni Malinen
   - Luis R. Rodriguez
-holders_tallies:
+holders_summary:
   - value: Jouni Malinen
     count: 1
   - value: Luis R. Rodriguez

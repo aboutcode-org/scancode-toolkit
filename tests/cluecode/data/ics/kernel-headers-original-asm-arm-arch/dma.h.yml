@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Nokia Corporation
 holders:
   - Nokia Corporation
-holders_tallies:
+holders_summary:
   - value: Nokia Corporation
     count: 1

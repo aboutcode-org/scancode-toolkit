@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - X Consortium
-holders_tallies:
+holders_summary:
   - value: X Consortium
     count: 1

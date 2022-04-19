@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004-2008 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
@@ -46,7 +46,7 @@ holders:
   - the Free Software Foundation
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 4
   - value: Marcel Holtmann

@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright nexB and others
   - (c) 2012
 holders:
   - nexB and others
-holders_tallies:
+holders_summary:
   - value: nexB and others
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1993 Martin Birgmeier
 holders:
   - Martin Birgmeier
-holders_tallies:
+holders_summary:
   - value: Martin Birgmeier
     count: 1

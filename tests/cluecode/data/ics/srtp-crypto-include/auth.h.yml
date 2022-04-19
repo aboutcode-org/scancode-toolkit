@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001-2006, Cisco Systems, Inc.
 holders:
   - Cisco Systems, Inc.
-holders_tallies:
+holders_summary:
   - value: Cisco Systems, Inc.
     count: 1

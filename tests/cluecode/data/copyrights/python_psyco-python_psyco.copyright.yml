@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001-2003 Armin Rigo
 holders:
   - Armin Rigo
-holders_tallies:
+holders_summary:
   - value: Armin Rigo
     count: 1

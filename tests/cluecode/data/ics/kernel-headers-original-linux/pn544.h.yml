@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 Trusted Logic S.A.
 holders:
   - Trusted Logic S.A.
-holders_tallies:
+holders_summary:
   - value: Trusted Logic S.A.
     count: 1

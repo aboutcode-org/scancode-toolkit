@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005 Analog Devices
 holders:
   - Analog Devices
-holders_tallies:
+holders_summary:
   - value: Analog Devices
     count: 1

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006-2007 Red Hat, Inc.
   - Copyright (c) 2007 Jurg Billeter
 holders:
   - Red Hat, Inc.
   - Jurg Billeter
-holders_tallies:
+holders_summary:
   - value: Jurg Billeter
     count: 1
   - value: Red Hat, Inc.

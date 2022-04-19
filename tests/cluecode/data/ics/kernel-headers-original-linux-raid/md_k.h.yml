@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman
 holders:
   - Ingo Molnar, Gadi Oxman
-holders_tallies:
+holders_summary:
   - value: Ingo Molnar, Gadi Oxman
     count: 1

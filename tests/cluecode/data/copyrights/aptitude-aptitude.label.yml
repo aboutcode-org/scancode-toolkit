@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1999-2005 Daniel Burrows <dburrows@debian.org>
 holders:
   - Daniel Burrows
-holders_tallies:
+holders_summary:
   - value: Daniel Burrows
     count: 1

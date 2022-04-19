@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-2003 Glyph & Cog, LLC
 holders:
   - Glyph & Cog, LLC
-holders_tallies:
+holders_summary:
   - value: Glyph & Cog, LLC
     count: 1

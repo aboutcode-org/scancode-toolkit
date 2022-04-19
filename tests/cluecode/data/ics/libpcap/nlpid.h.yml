@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996 Juniper Networks, Inc.
 holders:
   - Juniper Networks, Inc.
-holders_tallies:
+holders_summary:
   - value: Juniper Networks, Inc.
     count: 1

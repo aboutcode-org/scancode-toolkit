@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2003 Mark Adler
   - Copyright (c) 2003 Chris Anderson <christop@charm.net>
 holders:
   - Mark Adler
   - Chris Anderson
-holders_tallies:
+holders_summary:
   - value: Chris Anderson
     count: 1
   - value: Mark Adler

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Bob Beck <beck@openbsd.org>
   - Copyright (c) 2002 Theo de Raadt
@@ -10,7 +10,7 @@ holders:
   - Bob Beck
   - Theo de Raadt
   - Markus Friedl
-holders_tallies:
+holders_summary:
   - value: Bob Beck
     count: 1
   - value: Markus Friedl

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright notice (3dfx Interactive, Inc. 1999)
   - COPYRIGHT 3DFX INTERACTIVE, INC. 1999
@@ -10,6 +10,6 @@ holders:
   - 3dfx Interactive, Inc.
   - 3DFX INTERACTIVE, INC.
   - 3DFX INTERACTIVE, INC.
-holders_tallies:
+holders_summary:
   - value: 3dfx Interactive, Inc.
     count: 3

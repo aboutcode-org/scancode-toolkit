@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2012-2016, Project contributors
 holders:
   - Project contributors
-holders_tallies:
+holders_summary:
   - value: Project contributors
     count: 1

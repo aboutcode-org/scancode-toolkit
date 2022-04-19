@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004, Nikki Chumkov <nikki@gattaca.ru>
   - Copyright (c) 2004, Jouni Malinen <j@w1.fi>
 holders:
   - Nikki Chumkov
   - Jouni Malinen
-holders_tallies:
+holders_summary:
   - value: Jouni Malinen
     count: 1
   - value: Nikki Chumkov

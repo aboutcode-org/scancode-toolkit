@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2007 uim Project http://uim.freedesktop.org
   - COPYRIGHT (c) 1988-1994 BY PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
@@ -24,7 +24,7 @@ holders:
   - YAMAMOTO Kengo
   - Jae-hyeon Park
   - Etsushi Kato
-holders_tallies:
+holders_summary:
   - value: Etsushi Kato
     count: 1
   - value: FUJITA Yuji

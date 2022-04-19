@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 2007 Hewlett-Packard Co.
 holders:
   - Hewlett-Packard Co.
-holders_tallies:
+holders_summary:
   - value: Hewlett-Packard, Inc.
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1999-2006 The Apache Software Foundation
   - Copyright 1999-2006 The Apache Software Foundation
@@ -30,7 +30,7 @@ holders:
   - IBM Corporation
   - Sun Microsystems
   - World Wide Web Consortium
-holders_tallies:
+holders_summary:
   - value: The Apache Software Foundation
     count: 4
   - value: IBM Corporation

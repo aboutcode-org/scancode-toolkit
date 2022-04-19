@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1988, 1989 by Carnegie Mellon University
   - Copyright 1989 TGV, Incorporated
 holders:
   - Carnegie Mellon University
   - TGV, Incorporated
-holders_tallies:
+holders_summary:
   - value: Carnegie Mellon University
     count: 1
   - value: TGV, Incorporated

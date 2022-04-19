@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 The Chromium Authors
   - Copyright (c) 2003 IBM Corporation
 holders:
   - The Chromium Authors
   - IBM Corporation
-holders_tallies:
+holders_summary:
   - value: IBM Corporation
     count: 1
   - value: The Chromium Authors

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000, Intel Corporation
   - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin
 holders:
   - Intel Corporation
   - Chih-Chung Chang and Chih-Jen Lin
-holders_tallies:
+holders_summary:
   - value: Chih-Chung Chang and Chih-Jen Lin
     count: 1
   - value: Intel Corporation

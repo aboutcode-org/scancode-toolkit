@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001-2007 Expat maintainers
 holders:
   - Expat maintainers
-holders_tallies:
+holders_summary:
   - value: Expat maintainers
     count: 1

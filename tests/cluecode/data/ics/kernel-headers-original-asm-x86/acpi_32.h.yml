@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Paul Diefenbaugh <paul.s.diefenbaugh@intel.com>
   - Copyright (c) 2001 Patrick Mochel <mochel@osdl.org>
 holders:
   - Paul Diefenbaugh
   - Patrick Mochel
-holders_tallies:
+holders_summary:
   - value: Patrick Mochel
     count: 1
   - value: Paul Diefenbaugh

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Andreas Gal
   - Copyright (c) 2000-2001 Vojtech Pavlik
@@ -10,7 +10,7 @@ holders:
   - Andreas Gal
   - Vojtech Pavlik
   - Jiri Kosina
-holders_tallies:
+holders_summary:
   - value: Andreas Gal
     count: 1
   - value: Jiri Kosina

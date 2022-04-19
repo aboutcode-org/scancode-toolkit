@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Steven J. Hill (sjhill@realitydiluted.com)
 holders:
   - Steven J. Hill
-holders_tallies:
+holders_summary:
   - value: Steven J. Hill
     count: 1

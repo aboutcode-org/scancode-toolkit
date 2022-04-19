@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Esmertec AG
   - Copyright (c) 2008 The Android Open Source Project
 holders:
   - Esmertec AG
   - The Android Open Source Project
-holders_tallies:
+holders_summary:
   - value: Esmertec AG
     count: 1
   - value: The Android Open Source Project, Inc.

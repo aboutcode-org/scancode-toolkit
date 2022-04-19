@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005 Matthias Clasen <mclasen@redhat.com>
 holders:
   - Matthias Clasen
-holders_tallies:
+holders_summary:
   - value: Matthias Clasen
     count: 1

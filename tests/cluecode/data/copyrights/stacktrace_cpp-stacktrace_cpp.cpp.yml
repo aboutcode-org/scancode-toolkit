@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2003, 2004 Rickard E. Faith (faith@dict.org)
 holders:
   - Rickard E. Faith
-holders_tallies:
+holders_summary:
   - value: Rickard E. Faith
     count: 1

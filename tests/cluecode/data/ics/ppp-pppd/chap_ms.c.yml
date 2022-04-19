@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995 Eric Rosenquist
   - Copyright (c) 2002 The Android Open Source Project
 holders:
   - Eric Rosenquist
   - The Android Open Source Project
-holders_tallies:
+holders_summary:
   - value: Eric Rosenquist
     count: 1
   - value: The Android Open Source Project, Inc.

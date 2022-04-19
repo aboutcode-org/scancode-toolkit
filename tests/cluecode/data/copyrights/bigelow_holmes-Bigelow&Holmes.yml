@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 1989 Sun Microsystems, Inc.
   - (c) Copyright Bigelow & Holmes 1986, 1985
 holders:
   - Sun Microsystems, Inc.
   - Bigelow & Holmes
-holders_tallies:
+holders_summary:
   - value: Bigelow & Holmes
     count: 1
   - value: Sun Microsystems, Inc.

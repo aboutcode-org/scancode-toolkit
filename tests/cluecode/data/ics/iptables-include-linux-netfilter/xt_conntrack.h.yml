@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2001 Marc Boucher (marc@mbsi.ca)
 holders:
   - Marc Boucher
-holders_tallies:
+holders_summary:
   - value: Marc Boucher
     count: 1

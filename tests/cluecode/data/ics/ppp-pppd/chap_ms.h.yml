@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995 Eric Rosenquist
 holders:
   - Eric Rosenquist
-holders_tallies:
+holders_summary:
   - value: Eric Rosenquist
     count: 1

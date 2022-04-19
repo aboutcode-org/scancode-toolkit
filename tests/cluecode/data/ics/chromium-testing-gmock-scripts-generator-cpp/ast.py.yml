@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007 Neal Norwitz
   - Portions Copyright 2007 Google Inc.
 holders:
   - Neal Norwitz
   - Google Inc.
-holders_tallies:
+holders_summary:
   - value: Google Inc.
     count: 1
   - value: Neal Norwitz

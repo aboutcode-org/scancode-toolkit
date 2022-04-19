@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 42North Inc.
 holders:
   - 42North Inc.
-holders_tallies:
+holders_summary:
   - value: 42North Inc.
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000-2008 Marc Alexander Lehmann <schmorp@schmorp.de>
 holders:
   - Marc Alexander Lehmann
-holders_tallies:
+holders_summary:
   - value: Marc Alexander Lehmann
     count: 1

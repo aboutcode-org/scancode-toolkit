@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-9 Tim Waugh <tim@cyberelk.demon.co.uk>
 holders:
   - Tim Waugh
-holders_tallies:
+holders_summary:
   - value: Tim Waugh
     count: 1

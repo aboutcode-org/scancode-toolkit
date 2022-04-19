@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) North
   - Copyright (c) South
@@ -12,7 +12,7 @@ holders:
   - South
   - the TTF2PT1 project
   - Sergey Babkin
-holders_tallies:
+holders_summary:
   - value: North
     count: 1
   - value: Sergey Babkin

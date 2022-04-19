@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Geoffrey Keating
   - Copyright (c) 2001 John Hornkvist
@@ -10,7 +10,7 @@ holders:
   - Geoffrey Keating
   - John Hornkvist
   - Free Software Foundation, Inc.
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Geoffrey Keating

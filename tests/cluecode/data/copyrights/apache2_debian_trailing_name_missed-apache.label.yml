@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright Steinar H. Gunderson <sgunderson@bigfoot.com> and Knut Auvor Grythe <knut@auvor.no>
   - Copyright (c) 1996-1997 Cisco Systems, Inc.
@@ -62,7 +62,7 @@ holders:
   - Zeus Technology Limited
   - Thai Open Source Software Center Ltd and Clark Cooper
   - Pete Harlow
-holders_tallies:
+holders_summary:
   - value: RSA Data Security, Inc.
     count: 10
   - value: Bell Communications Research, Inc.

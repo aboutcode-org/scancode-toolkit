@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) NAUMEN (tm) and Contributors
 holders:
   - NAUMEN (tm) and Contributors
-holders_tallies:
+holders_summary:
   - value: NAUMEN (tm) and Contributors
     count: 1

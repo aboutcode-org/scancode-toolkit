@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Rickard E. Faith
-holders_tallies:
+holders_summary:
   - value: Rickard E. Faith
     count: 1

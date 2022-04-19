@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project
   - Copyright (c) 2008 Timo Teras
 holders:
   - WIDE Project
   - Timo Teras
-holders_tallies:
+holders_summary:
   - value: Timo Teras
     count: 1
   - value: WIDE Project

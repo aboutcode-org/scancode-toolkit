@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright by Adam Belay <ambx1@neo.rr.com>
 holders:
   - Adam Belay
-holders_tallies:
+holders_summary:
   - value: Adam Belay
     count: 1

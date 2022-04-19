@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright (c) 2013 by Armin Ronacher
 holders:
   - Armin Ronacher
-holders_tallies:
+holders_summary:
   - value: Armin Ronacher
     count: 1

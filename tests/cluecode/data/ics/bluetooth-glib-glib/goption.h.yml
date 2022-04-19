@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Anders Carlsson <andersca@gnome.org>
 holders:
   - Anders Carlsson
-holders_tallies:
+holders_summary:
   - value: Anders Carlsson
     count: 1

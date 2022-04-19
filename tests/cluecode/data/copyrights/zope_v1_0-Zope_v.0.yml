@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Digital Creations
 holders:
   - Digital Creations
-holders_tallies:
+holders_summary:
   - value: Digital Creations
     count: 1

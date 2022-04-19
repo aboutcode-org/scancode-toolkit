@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2004-2007 Restaurant
 holders:
   - Restaurant
-holders_tallies:
+holders_summary:
   - value: Restaurant
     count: 1

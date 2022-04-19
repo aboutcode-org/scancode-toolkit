@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 XFree86 Inc
 holders:
   - XFree86 Inc
-holders_tallies:
+holders_summary:
   - value: XFree86 Inc
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996, 1997, 2003, 2004, 2005 Free Software Foundation, Inc.
 holders:
   - Free Software Foundation, Inc.
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 1

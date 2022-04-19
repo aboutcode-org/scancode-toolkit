@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Modestas Vainius <modestas@vainius.eu>
   - Copyright (c) Trolltech ASA.
@@ -12,7 +12,7 @@ holders:
   - Trolltech ASA.
   - Roberto Raggi
   - Harald Fernengel
-holders_tallies:
+holders_summary:
   - value: Harald Fernengel
     count: 1
   - value: Modestas Vainius

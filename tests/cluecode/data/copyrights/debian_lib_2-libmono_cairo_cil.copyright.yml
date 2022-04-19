@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2004 The Apache Software Foundation
   - Copyright (c) 2001-2005 Novell
@@ -39,7 +39,7 @@ holders:
   - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
   - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
   - Simon Mourier
-holders_tallies:
+holders_summary:
   - value: LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
     count: 3
   - value: James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole

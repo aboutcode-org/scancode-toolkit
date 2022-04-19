@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 Google Incorporated
 holders:
   - Google Incorporated
-holders_tallies:
+holders_summary:
   - value: Google Incorporated
     count: 1

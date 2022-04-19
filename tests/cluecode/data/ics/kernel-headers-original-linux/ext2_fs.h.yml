@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1992, 1993, 1994, 1995 Remy Card (card@masi.ibp.fr) Laboratoire MASI - Institut
     Blaise Pascal
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - Remy Card Laboratoire MASI - Institut Blaise Pascal
   - Linus Torvalds
-holders_tallies:
+holders_summary:
   - value: Linus Torvalds
     count: 1
   - value: Remy Card Laboratoire MASI - Institut Blaise Pascal

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Gianni Tedesco
   - Copyright (c) 2006 CodeSourcery
@@ -10,7 +10,7 @@ holders:
   - Gianni Tedesco
   - CodeSourcery
   - Openedhand Ltd.
-holders_tallies:
+holders_summary:
   - value: CodeSourcery
     count: 1
   - value: Gianni Tedesco

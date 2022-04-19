@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1991 by the Massachusetts Institute of Technology
 holders:
   - the Massachusetts Institute of Technology
-holders_tallies:
+holders_summary:
   - value: the Massachusetts Institute of Technology
     count: 1

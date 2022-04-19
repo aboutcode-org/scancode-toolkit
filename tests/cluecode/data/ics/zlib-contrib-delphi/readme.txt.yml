@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1997,99 Borland Corp.
   - Copyright (c) 1997,99 Borland
 holders:
   - Borland Corp.
   - Borland
-holders_tallies:
+holders_summary:
   - value: Borland Corp.
     count: 2

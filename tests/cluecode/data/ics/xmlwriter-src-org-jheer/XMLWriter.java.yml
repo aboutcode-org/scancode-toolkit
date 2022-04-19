@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004-2006 Regents of the University of California
 holders:
   - Regents of the University of California
-holders_tallies:
+holders_summary:
   - value: The Regents of the University of California
     count: 1

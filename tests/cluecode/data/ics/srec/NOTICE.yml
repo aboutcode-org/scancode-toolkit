@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007, 2008 Nuance Communications
 holders:
   - Nuance Communications
-holders_tallies:
+holders_summary:
   - value: Nuance Communications
     count: 1

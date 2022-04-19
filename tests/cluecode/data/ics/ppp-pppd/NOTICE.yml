@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1984-2000 Carnegie Mellon University
   - Copyright (c) 1995 Pedro Roque Marques
@@ -36,7 +36,7 @@ holders:
   - Tommi Komulainen
   - INRIA
   - Francis.Dupont@inria.fr
-holders_tallies:
+holders_summary:
   - value: Paul Mackerras
     count: 7
   - value: Carnegie Mellon University

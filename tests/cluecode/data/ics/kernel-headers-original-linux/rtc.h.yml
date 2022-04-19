@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Hewlett-Packard Co.
   - Copyright (c) 1999 Stephane Eranian <eranian@hpl.hp.com>
 holders:
   - Hewlett-Packard Co.
   - Stephane Eranian
-holders_tallies:
+holders_summary:
   - value: Hewlett-Packard, Inc.
     count: 1
   - value: Stephane Eranian

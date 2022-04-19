@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2000 Maxim Krasnyansky <max_mk@yahoo.com>
 holders:
   - Maxim Krasnyansky
-holders_tallies:
+holders_summary:
   - value: Maxim Krasnyansky
     count: 1

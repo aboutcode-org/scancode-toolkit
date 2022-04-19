@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2015-2018 Alt Three Services Limited
 holders:
   - Alt Three Services Limited
-holders_tallies:
+holders_summary:
   - value: Alt Three Services Limited
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1997, 1998, 1999, 2000 Ingo Molnar
 holders:
   - Ingo Molnar
-holders_tallies:
+holders_summary:
   - value: Ingo Molnar
     count: 1

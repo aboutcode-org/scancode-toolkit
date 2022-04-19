@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 2007 Hewlett-Packard Development Company, L.P.
   - (c) Copyright 2008 Hewlett-Packard Development Company, L.P.
@@ -20,7 +20,7 @@ holders:
   - Hewlett-Packard Development Company, L.P.
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_tallies:
+holders_summary:
   - value: Hewlett-Packard Development Company, L.P.
     count: 4
   - value: Alan D. Brunelle

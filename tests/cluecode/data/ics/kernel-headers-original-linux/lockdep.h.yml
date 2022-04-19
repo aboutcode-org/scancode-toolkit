@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006 Red Hat, Inc., Ingo Molnar <mingo@redhat.com>
 holders:
   - Red Hat, Inc., Ingo Molnar
-holders_tallies:
+holders_summary:
   - value: Red Hat, Inc., Ingo Molnar
     count: 1

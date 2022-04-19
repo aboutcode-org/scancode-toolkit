@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1993-2001 by Xi Graphics, Inc.
 holders:
   - Xi Graphics, Inc.
-holders_tallies:
+holders_summary:
   - value: Xi Graphics, Inc.
     count: 1

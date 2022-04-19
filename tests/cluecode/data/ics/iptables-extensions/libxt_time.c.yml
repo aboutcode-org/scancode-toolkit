@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) CC Computer Consultants GmbH, 2007
 holders:
   - CC Computer Consultants GmbH
-holders_tallies:
+holders_summary:
   - value: CC Computer Consultants GmbH
     count: 1

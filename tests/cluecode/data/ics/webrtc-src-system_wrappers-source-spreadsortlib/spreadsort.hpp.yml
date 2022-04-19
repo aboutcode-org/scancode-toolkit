@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Steven J. Ross 2001 - 2009
 holders:
   - Steven J. Ross
-holders_tallies:
+holders_summary:
   - value: Steven J. Ross
     count: 1

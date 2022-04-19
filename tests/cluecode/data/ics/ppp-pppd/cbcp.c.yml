@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995 Pedro Roque Marques
 holders:
   - Pedro Roque Marques
-holders_tallies:
+holders_summary:
   - value: Pedro Roque Marques
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1999,2000 Clark Cooper <coopercc@netheaven.com>
 holders:
   - Clark Cooper
-holders_tallies:
+holders_summary:
   - value: Clark Cooper
     count: 1

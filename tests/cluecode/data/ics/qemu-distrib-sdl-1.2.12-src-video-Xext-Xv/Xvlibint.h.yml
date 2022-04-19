@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts
     Institute of Technology, Cambridge, Massachusetts
 holders:
   - Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts Institute of
     Technology, Cambridge, Massachusetts
-holders_tallies:
+holders_summary:
   - value: Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts Institute
       of Technology, Cambridge, Massachusetts
     count: 1

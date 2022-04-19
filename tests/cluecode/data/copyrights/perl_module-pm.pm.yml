@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2000 Name Surname
 holders:
   - Name Surname
-holders_tallies:
+holders_summary:
   - value: Name Surname
     count: 1

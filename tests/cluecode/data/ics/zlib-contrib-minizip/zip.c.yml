@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html
   - Copyright (c) 2009-2010 Mathias Svensson http://result42.com
@@ -10,7 +10,7 @@ holders:
   - Gilles Vollant
   - Mathias Svensson
   - Gilles Vollant
-holders_tallies:
+holders_summary:
   - value: Gilles Vollant
     count: 2
   - value: Mathias Svensson

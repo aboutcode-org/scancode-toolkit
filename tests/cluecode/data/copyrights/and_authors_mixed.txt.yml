@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Softweyr LLC.
   - Copyright (c) 1988, 1993 The Regents of the University of California
 holders:
   - Softweyr LLC.
   - The Regents of the University of California
-holders_tallies:
+holders_summary:
   - value: Softweyr LLC.
     count: 1
   - value: The Regents of the University of California

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Copyright 1990-2009 Adobe Systems Incorporated
 holders:
   - Adobe Systems Incorporated
-holders_tallies:
+holders_summary:
   - value: Adobe Systems Incorporated
     count: 1

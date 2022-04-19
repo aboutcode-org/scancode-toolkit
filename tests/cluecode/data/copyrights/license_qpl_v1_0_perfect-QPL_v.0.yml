@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Trolltech AS, Norway
 holders:
   - Trolltech AS, Norway
-holders_tallies:
+holders_summary:
   - value: Trolltech AS, Norway
     count: 1

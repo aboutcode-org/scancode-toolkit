@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Research In Motion Limited 2010
 holders:
   - Research In Motion Limited
-holders_tallies:
+holders_summary:
   - value: Research In Motion Limited
     count: 1

@@ -192,7 +192,7 @@ def tally_copyrights(texts, _detector=CopyrightDetector()):
     Return a list of mapping of {value:string, count:int} given a
     list of copyright strings or Text() objects.
     """
-    texts = []
+    texts_to_tally = []
     no_detection_counter = 0
     for text in texts:
         if not text:
@@ -200,7 +200,7 @@ def tally_copyrights(texts, _detector=CopyrightDetector()):
             continue
         # Keep Text objects as-is
         if isinstance(text, Text):
-            texts.append(text)
+            texts_to_tally.append(text)
         else:
             # FIXME: redetect to strip year should not be needed!!
             statements_without_years = _detector.detect(
@@ -213,9 +213,9 @@ def tally_copyrights(texts, _detector=CopyrightDetector()):
 
             for detection in statements_without_years:
                 copyr = detection.copyright
-                texts.append(Text(copyr, copyr))
+                texts_to_tally.append(Text(copyr, copyr))
 
-    counter = tally(texts)
+    counter = tally(texts_to_tally)
     if no_detection_counter:
         counter[None] = no_detection_counter
 

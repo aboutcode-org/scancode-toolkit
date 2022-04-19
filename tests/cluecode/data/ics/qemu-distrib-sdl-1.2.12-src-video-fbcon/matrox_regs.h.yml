@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1996 The XFree86 Project, Inc.
 holders:
   - The XFree86 Project, Inc.
-holders_tallies:
+holders_summary:
   - value: The XFree86 Project, Inc.
     count: 1

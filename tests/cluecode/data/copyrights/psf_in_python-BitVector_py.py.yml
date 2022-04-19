@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright (c) 2008 Avinash Kak. Python Software Foundation
 holders:
   - Avinash Kak. Python Software Foundation
-holders_tallies:
+holders_summary:
   - value: Avinash Kak. Python Software Foundation
     count: 1

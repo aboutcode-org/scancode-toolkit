@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1993 Ulrich Pegelow <pegelow@moorea.uni-muenster.de>
   - Copyright (c) 1993 Branko Lankester <branko@hacktic.nl>
@@ -12,7 +12,7 @@ holders:
   - Branko Lankester
   - Rick Sladkey
   - Wichert Akkerman
-holders_tallies:
+holders_summary:
   - value: Branko Lankester
     count: 1
   - value: Rick Sladkey

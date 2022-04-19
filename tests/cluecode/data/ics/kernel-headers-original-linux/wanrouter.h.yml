@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2000 Sangoma Technologies Inc.
 holders:
   - Sangoma Technologies Inc.
-holders_tallies:
+holders_summary:
   - value: Sangoma Technologies Inc.
     count: 1

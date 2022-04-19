@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2016 nexB Inc.
 holders:
   - nexB Inc.
-holders_tallies:
+holders_summary:
   - value: nexB Inc.
     count: 1

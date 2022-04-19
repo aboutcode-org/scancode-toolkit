@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000, 2001 WIDE Project
 holders:
   - WIDE Project
-holders_tallies:
+holders_summary:
   - value: WIDE Project
     count: 1

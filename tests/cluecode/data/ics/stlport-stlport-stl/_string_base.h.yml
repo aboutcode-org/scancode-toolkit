@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1997-1999 Silicon Graphics Computer Systems, Inc.
   - Copyright (c) 1999 Boris Fomitchev
@@ -10,7 +10,7 @@ holders:
   - Silicon Graphics Computer Systems, Inc.
   - Boris Fomitchev
   - Francois Dumont
-holders_tallies:
+holders_summary:
   - value: Boris Fomitchev
     count: 1
   - value: Francois Dumont

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2000 Nicolas Pitre <nico@cam.org>
 holders:
   - Nicolas Pitre
-holders_tallies:
+holders_summary:
   - value: Nicolas Pitre
     count: 1

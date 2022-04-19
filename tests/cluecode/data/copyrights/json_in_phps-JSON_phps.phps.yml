@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright 2005 Michal Migurski
 holders:
   - Michal Migurski
-holders_tallies:
+holders_summary:
   - value: Michal Migurski
     count: 1

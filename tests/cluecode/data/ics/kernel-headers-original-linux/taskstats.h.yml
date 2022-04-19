@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Shailabh Nagar, IBM Corp. 2006
   - (c) Balbir Singh, IBM Corp. 2006
 holders:
   - Shailabh Nagar, IBM Corp.
   - Balbir Singh, IBM Corp.
-holders_tallies:
+holders_summary:
   - value: Balbir Singh, IBM Corp.
     count: 1
   - value: Shailabh Nagar, IBM Corp.

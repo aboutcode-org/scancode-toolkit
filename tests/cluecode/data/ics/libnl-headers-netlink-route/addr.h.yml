@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2008 Thomas Graf <tgraf@suug.ch>
   - Copyright (c) 2003-2006 Baruch Even <baruch@ev-en.org> , Mediatrix Telecom, inc. <ericb@mediatrix.com>
 holders:
   - Thomas Graf
   - Baruch Even , Mediatrix Telecom, inc.
-holders_tallies:
+holders_summary:
   - value: Baruch Even , Mediatrix Telecom, inc.
     count: 1
   - value: Thomas Graf

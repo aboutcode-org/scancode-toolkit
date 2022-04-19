@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009, Yahoo! Inc.
   - Copyright 2001 Robert Penner
 holders:
   - Yahoo! Inc.
   - Robert Penner
-holders_tallies:
+holders_summary:
   - value: Robert Penner
     count: 1
   - value: Yahoo! Inc.

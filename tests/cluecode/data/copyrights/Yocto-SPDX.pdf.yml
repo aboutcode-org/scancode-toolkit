@@ -1,5 +1,5 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 notes: from https://github.com/ttgurney/yocto-spdx/blob/master/doc/Yocto-SPDX_Manual_Install_Walkthrough.pdf

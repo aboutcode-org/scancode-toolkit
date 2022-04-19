@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1999-2006 The Apache Software Foundation
   - copyright (c) 1999-2002, Lotus Development Corporation., http://www.lotus.com
@@ -20,7 +20,7 @@ holders:
   - Sun Microsystems
   - IBM Corporation
   - Sun Microsystems
-holders_tallies:
+holders_summary:
   - value: IBM Corporation
     count: 3
   - value: Sun Microsystems, Inc.

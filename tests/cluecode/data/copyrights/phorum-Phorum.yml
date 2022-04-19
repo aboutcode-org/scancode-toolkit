@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 The Phorum Development Team
 holders:
   - The Phorum Development Team
-holders_tallies:
+holders_summary:
   - value: The Phorum Development Team
     count: 1

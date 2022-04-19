@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 by Andreas R. Kleinert
 holders:
   - Andreas R. Kleinert
-holders_tallies:
+holders_summary:
   - value: Andreas R. Kleinert
     count: 1

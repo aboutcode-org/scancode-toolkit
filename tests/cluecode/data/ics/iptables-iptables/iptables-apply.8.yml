@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright by Martin F. Krafft
 holders:
   - Martin F. Krafft
-holders_tallies:
+holders_summary:
   - value: Martin F. Krafft
     count: 1

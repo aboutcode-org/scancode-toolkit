@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2007 The TCPDUMP project
 holders:
   - The TCPDUMP project
-holders_tallies:
+holders_summary:
   - value: The TCPDUMP project
     count: 1

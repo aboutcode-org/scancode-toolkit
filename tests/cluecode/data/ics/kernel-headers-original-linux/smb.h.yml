@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996 by Paal-Kr. Engstad and Volker Lendecke
   - Copyright (c) 1997 by Volker Lendecke
 holders:
   - Paal-Kr. Engstad and Volker Lendecke
   - Volker Lendecke
-holders_tallies:
+holders_summary:
   - value: Paal-Kr. Engstad and Volker Lendecke
     count: 1
   - value: Volker Lendecke

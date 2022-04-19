@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) ARM Limited 1998
 holders:
   - ARM Limited
-holders_tallies:
+holders_summary:
   - value: ARM Limited
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2011 Samsung Electronics Co. Ltd.
 holders:
   - Samsung Electronics Co. Ltd.
-holders_tallies:
+holders_summary:
   - value: Samsung Electronics Co. Ltd.
     count: 1

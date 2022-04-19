@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Motorola, Inc.
   - Copyright (c) 2011 Motorola Mobility, Inc.
 holders:
   - Motorola, Inc.
   - Motorola Mobility, Inc.
-holders_tallies:
+holders_summary:
   - value: Motorola Mobility, Inc.
     count: 1
   - value: Motorola, Inc.

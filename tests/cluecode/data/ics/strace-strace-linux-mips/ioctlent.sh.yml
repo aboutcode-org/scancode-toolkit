@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1993, 1994, 1995 Rick Sladkey <jrs@world.std.com>
   - Copyright (c) 1995, 1996 Michael Elizabeth Chastain <mec@duracef.shout.net>
 holders:
   - Rick Sladkey
   - Michael Elizabeth Chastain
-holders_tallies:
+holders_summary:
   - value: Michael Elizabeth Chastain
     count: 1
   - value: Rick Sladkey

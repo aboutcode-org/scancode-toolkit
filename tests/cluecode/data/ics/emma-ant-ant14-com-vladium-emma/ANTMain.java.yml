@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Vladimir Roubtsov
   - Vlad Roubtsov, (c) 2004
 holders:
   - Vladimir Roubtsov
   - Vlad Roubtsov
-holders_tallies:
+holders_summary:
   - value: Vlad Roubtsov
     count: 1
   - value: Vladimir Roubtsov

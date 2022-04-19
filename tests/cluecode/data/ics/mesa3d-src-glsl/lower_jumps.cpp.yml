@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 Luca Barbieri
 holders:
   - Luca Barbieri
-holders_tallies:
+holders_summary:
   - value: Luca Barbieri
     count: 1

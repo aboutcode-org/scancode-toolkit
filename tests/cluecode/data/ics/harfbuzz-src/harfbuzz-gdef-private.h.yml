@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2004 David Turner and Werner Lemberg
   - Copyright (c) 2006 Behdad Esfahbod
 holders:
   - David Turner and Werner Lemberg
   - Behdad Esfahbod
-holders_tallies:
+holders_summary:
   - value: Behdad Esfahbod
     count: 1
   - value: David Turner and Werner Lemberg

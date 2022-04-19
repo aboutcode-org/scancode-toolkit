@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2002 by Harald Welte <laforge@gnumonks.org>
   - (c) 2010 by Red Hat, Inc
 holders:
   - Harald Welte
   - Red Hat, Inc
-holders_tallies:
+holders_summary:
   - value: Harald Welte
     count: 1
   - value: Red Hat, Inc.

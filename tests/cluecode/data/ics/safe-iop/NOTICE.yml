@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007,2008 Will Drewry <redpig@dataspill.org>
 holders:
   - Will Drewry
-holders_tallies:
+holders_summary:
   - value: Will Drewry
     count: 1

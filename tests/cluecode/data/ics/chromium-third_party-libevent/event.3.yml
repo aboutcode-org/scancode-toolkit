@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Artur Grabowski <art@openbsd.org>
 holders:
   - Artur Grabowski
-holders_tallies:
+holders_summary:
   - value: Artur Grabowski
     count: 1

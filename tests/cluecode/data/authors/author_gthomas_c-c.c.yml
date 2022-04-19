@@ -1,10 +1,10 @@
 what:
   - authors
-  - authors_tallies
+  - authors_summary
 authors:
   - gthomas, sorin@netappi.com
   - gthomas, sorin@netappi.com, andrew.lunn@ascom.ch
-authors_tallies:
+authors_summary:
   - value: gthomas, sorin@netappi.com
     count: 1
   - value: gthomas, sorin@netappi.com, andrew.lunn@ascom.ch

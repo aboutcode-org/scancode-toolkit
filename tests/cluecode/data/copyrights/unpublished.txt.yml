@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Unpublished Work of Sample Group, Inc.
 holders:
   - Unpublished Work of Sample Group, Inc.
-holders_tallies:
+holders_summary:
   - value: Unpublished Work of Sample Group, Inc.
     count: 1

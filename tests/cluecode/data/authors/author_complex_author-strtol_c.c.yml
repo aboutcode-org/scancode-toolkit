@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_tallies
+  - authors_summary
 authors:
   - the University of California, Berkeley and its contributors
-authors_tallies:
+authors_summary:
   - value: the University of California, Berkeley and its contributors
     count: 1

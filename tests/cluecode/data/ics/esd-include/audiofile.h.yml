@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2000, Michael Pruett <michael@68k.org>
 holders:
   - Michael Pruett
-holders_tallies:
+holders_summary:
   - value: Michael Pruett
     count: 1

@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-1998 NVIDIA, Corp.
   - Copyright (c) 1996-1998 NVIDIA, Corp.
 holders:
   - NVIDIA, Corp.
   - NVIDIA, Corp.
-holders_tallies:
+holders_summary:
   - value: NVIDIA, Corp.
     count: 2

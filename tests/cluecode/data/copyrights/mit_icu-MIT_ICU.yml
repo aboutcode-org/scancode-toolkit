@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2006 International Business Machines Corporation and others
 holders:
   - International Business Machines Corporation and others
-holders_tallies:
+holders_summary:
   - value: International Business Machines Corporation and others
     count: 1

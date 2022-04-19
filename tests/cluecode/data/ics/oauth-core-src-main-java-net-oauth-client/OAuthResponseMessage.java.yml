@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2008 Netflix, Inc.
 holders:
   - Netflix, Inc.
-holders_tallies:
+holders_summary:
   - value: Netflix, Inc.
     count: 1

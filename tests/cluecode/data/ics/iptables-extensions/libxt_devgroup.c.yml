@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2011 Patrick McHardy <kaber@trash.net>
 holders:
   - Patrick McHardy
-holders_tallies:
+holders_summary:
   - value: Patrick McHardy
     count: 1

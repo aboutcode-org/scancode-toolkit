@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 1998 Raph Levien
   - (c) 2001 ALTLinux, Moscow
@@ -10,7 +10,7 @@ holders:
   - Raph Levien
   - ALTLinux, Moscow
   - Laszlo Nemeth
-holders_tallies:
+holders_summary:
   - value: ALTLinux, Moscow
     count: 1
   - value: Laszlo Nemeth

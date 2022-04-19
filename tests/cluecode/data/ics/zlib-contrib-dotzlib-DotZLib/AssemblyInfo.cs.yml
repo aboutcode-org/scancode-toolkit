@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 by Henrik Ravn
 holders:
   - Henrik Ravn
-holders_tallies:
+holders_summary:
   - value: Henrik Ravn
     count: 1

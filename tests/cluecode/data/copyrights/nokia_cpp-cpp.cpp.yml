@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002, Nokia Mobile Phones
 holders:
   - Nokia Mobile Phones
-holders_tallies:
+holders_summary:
   - value: Nokia Mobile Phones
     count: 1

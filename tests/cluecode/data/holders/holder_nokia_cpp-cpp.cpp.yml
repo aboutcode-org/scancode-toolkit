@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Nokia Mobile Phones
-holders_tallies:
+holders_summary:
   - value: Nokia Mobile Phones
     count: 1

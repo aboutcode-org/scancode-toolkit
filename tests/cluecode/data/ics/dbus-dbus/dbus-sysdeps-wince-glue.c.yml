@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002, 2003 Red Hat, Inc.
   - Copyright (c) 2003 CodeFactory AB
@@ -16,7 +16,7 @@ holders:
   - Ralf Habacker
   - Peter Kummel
   - Christian Ehrlicher
-holders_tallies:
+holders_summary:
   - value: Christian Ehrlicher
     count: 1
   - value: CodeFactory AB

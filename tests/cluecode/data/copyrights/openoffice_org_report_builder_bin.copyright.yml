@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
   - Copyright (c) 2002-2009 ooo-build/Go-OO Team
@@ -307,7 +307,7 @@ holders:
   - SuSE, Inc.
   - Glyph & Cog, LLC.
   - Jean-loup Gailly and Mark Adler
-holders_tallies:
+holders_summary:
   - value: The Apache Software Foundation
     count: 11
   - value: Free Software Foundation, Inc.

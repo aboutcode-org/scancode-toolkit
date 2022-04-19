@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Intel Corporation
   - Copyright (c) 1999-2002,2007 Greg Roelofs
@@ -10,7 +10,7 @@ holders:
   - Intel Corporation
   - Greg Roelofs
   - Glenn Randers-Pehrson
-holders_tallies:
+holders_summary:
   - value: Glenn Randers-Pehrson
     count: 1
   - value: Greg Roelofs

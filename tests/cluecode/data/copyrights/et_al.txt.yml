@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2017 Contributors et.al
 holders:
   - Contributors et.al
-holders_tallies:
+holders_summary:
   - value: Contributors et.al
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1993 by OpenVision Technologies, Inc.
 holders:
   - OpenVision Technologies, Inc.
-holders_tallies:
+holders_summary:
   - value: OpenVision Technologies, Inc.
     count: 1

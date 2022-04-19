@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
-holders_tallies:
+holders_summary:
   - value: Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
     count: 1

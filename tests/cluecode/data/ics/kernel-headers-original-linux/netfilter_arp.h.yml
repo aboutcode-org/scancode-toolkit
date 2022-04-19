@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2002 Rusty Russell IBM
 holders:
   - Rusty Russell IBM
-holders_tallies:
+holders_summary:
   - value: Rusty Russell IBM
     count: 1

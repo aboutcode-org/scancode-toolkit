@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007 by David Turner
 holders:
   - David Turner
-holders_tallies:
+holders_summary:
   - value: David Turner
     count: 1

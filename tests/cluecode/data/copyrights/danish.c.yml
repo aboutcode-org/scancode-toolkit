@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2016 Nordea ApS
 holders:
   - Nordea ApS
-holders_tallies:
+holders_summary:
   - value: Nordea ApS
     count: 1

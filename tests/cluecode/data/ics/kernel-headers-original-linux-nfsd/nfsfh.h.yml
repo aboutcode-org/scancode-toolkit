@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996, 1997 Olaf Kirch <okir@monad.swb.de>
 holders:
   - Olaf Kirch
-holders_tallies:
+holders_summary:
   - value: Olaf Kirch
     count: 1

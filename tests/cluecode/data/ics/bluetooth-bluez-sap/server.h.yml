@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 ST-Ericsson SA
 holders:
   - ST-Ericsson SA
-holders_tallies:
+holders_summary:
   - value: ST-Ericsson SA
     count: 1

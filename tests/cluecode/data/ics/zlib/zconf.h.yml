@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2010 Jean-loup Gailly
 holders:
   - Jean-loup Gailly
-holders_tallies:
+holders_summary:
   - value: Jean-loup Gailly
     count: 1

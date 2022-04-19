@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Dag-Erling Codan Smrgrav
 holders:
   - Dag-Erling Codan Smrgrav
-holders_tallies:
+holders_summary:
   - value: Dag-Erling Codan Smrgrav
     count: 1

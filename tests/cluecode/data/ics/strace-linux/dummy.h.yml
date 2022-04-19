@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1993 Branko Lankester <branko@hacktic.nl>
   - Copyright (c) 1993, 1994, 1995 Rick Sladkey <jrs@world.std.com>
 holders:
   - Branko Lankester
   - Rick Sladkey
-holders_tallies:
+holders_summary:
   - value: Branko Lankester
     count: 1
   - value: Rick Sladkey

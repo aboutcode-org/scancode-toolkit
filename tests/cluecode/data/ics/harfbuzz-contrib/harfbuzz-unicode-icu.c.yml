@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2010, The Android Open Source Project
   - Copyright 2010, Google Inc.
 holders:
   - The Android Open Source Project
   - Google Inc.
-holders_tallies:
+holders_summary:
   - value: Google Inc.
     count: 1
   - value: The Android Open Source Project, Inc.

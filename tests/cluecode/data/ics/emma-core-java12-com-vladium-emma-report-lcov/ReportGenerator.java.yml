@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2009 Google Inc.
   - Copyright (c) 2003 Vladimir Roubtsov
@@ -12,7 +12,7 @@ holders:
   - Vladimir Roubtsov
   - Vlad Roubtsov
   - Tim Baverstock
-holders_tallies:
+holders_summary:
   - value: Google Inc.
     count: 1
   - value: Tim Baverstock

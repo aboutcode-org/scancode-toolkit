@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Martin F. Krafft <madduck@madduck.net>
 holders:
   - Martin F. Krafft
-holders_tallies:
+holders_summary:
   - value: Martin F. Krafft
     count: 1

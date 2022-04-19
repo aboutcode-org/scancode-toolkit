@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi> and contributors
 holders:
   - Jouni Malinen and contributors
-holders_tallies:
+holders_summary:
   - value: Jouni Malinen and contributors
     count: 1

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1988 Richard M. Stallman
   - Copyright (c) 1989 Aladdin Enterprises
 holders:
   - Richard M. Stallman
   - Aladdin Enterprises
-holders_tallies:
+holders_summary:
   - value: Aladdin Enterprises
     count: 1
   - value: Richard M. Stallman

@@ -1,8 +1,8 @@
 what:
   - authors
-  - authors_tallies
+  - authors_summary
 authors:
   - Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>
-authors_tallies:
+authors_summary:
   - value: Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>
     count: 1

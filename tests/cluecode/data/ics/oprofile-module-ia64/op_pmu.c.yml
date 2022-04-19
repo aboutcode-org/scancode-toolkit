@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002 OProfile
   - Copyright (c) 1999 Ganesh Venkitachalam <venkitac@us.ibm.com>
@@ -11,7 +11,7 @@ holders:
   - OProfile
   - Ganesh Venkitachalam
   - Hewlett Packard Co Stephane Eranian David Mosberger-Tang
-holders_tallies:
+holders_summary:
   - value: Ganesh Venkitachalam
     count: 1
   - value: Hewlett Packard Co Stephane Eranian David Mosberger-Tang

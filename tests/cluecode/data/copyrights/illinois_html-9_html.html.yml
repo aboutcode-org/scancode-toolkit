@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1999,2000,2001,2002,2003,2004 The Board of Trustees of the University of Illinois
 holders:
   - The Board of Trustees of the University of Illinois
-holders_tallies:
+holders_summary:
   - value: The Board of Trustees of the University of Illinois
     count: 1

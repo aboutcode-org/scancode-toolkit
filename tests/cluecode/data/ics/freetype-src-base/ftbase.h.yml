@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2008, 2010 by David Turner, Robert Wilhelm, Werner Lemberg, and suzuki toshiya
 holders:
   - David Turner, Robert Wilhelm, Werner Lemberg, and suzuki toshiya
-holders_tallies:
+holders_summary:
   - value: David Turner, Robert Wilhelm, Werner Lemberg, and suzuki toshiya
     count: 1

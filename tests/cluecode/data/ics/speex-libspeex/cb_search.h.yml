@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Jean-Marc Valin & David Rowe
 holders:
   - Jean-Marc Valin & David Rowe
-holders_tallies:
+holders_summary:
   - value: Jean-Marc Valin & David Rowe
     count: 1

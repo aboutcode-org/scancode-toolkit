@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2003 by Texas Instruments Incorporated
   - Copyright (c) 2001 RidgeRun, Inc. (http://www.ridgerun.com)
 holders:
   - Texas Instruments Incorporated
   - RidgeRun, Inc.
-holders_tallies:
+holders_summary:
   - value: RidgeRun, Inc.
     count: 1
   - value: Texas Instruments Incorporated

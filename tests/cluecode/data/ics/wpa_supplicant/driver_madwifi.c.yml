@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004, Sam Leffler <sam@errno.com>
   - Copyright (c) 2004-2005, Jouni Malinen <j@w1.fi>
 holders:
   - Sam Leffler
   - Jouni Malinen
-holders_tallies:
+holders_summary:
   - value: Jouni Malinen
     count: 1
   - value: Sam Leffler

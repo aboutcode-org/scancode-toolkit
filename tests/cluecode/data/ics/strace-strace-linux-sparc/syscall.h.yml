@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1991, 1992 Paul Kranenburg <pk@cs.few.eur.nl>
   - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
 holders:
   - Paul Kranenburg
   - Rick Sladkey
-holders_tallies:
+holders_summary:
   - value: Paul Kranenburg
     count: 1
   - value: Rick Sladkey

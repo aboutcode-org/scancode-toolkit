@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1989, 1991, 1992 by Carnegie Mellon University
 holders:
   - Carnegie Mellon University
-holders_tallies:
+holders_summary:
   - value: Carnegie Mellon University
     count: 1

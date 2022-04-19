@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Nickolai Zeldovich <kolya@MIT.EDU>
 holders:
   - Nickolai Zeldovich
-holders_tallies:
+holders_summary:
   - value: Nickolai Zeldovich
     count: 1

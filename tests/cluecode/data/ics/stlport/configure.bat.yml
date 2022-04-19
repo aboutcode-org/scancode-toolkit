@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004,2005 Michael Fink
 holders:
   - Michael Fink
-holders_tallies:
+holders_summary:
   - value: Michael Fink
     count: 1

@@ -1,10 +1,10 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Carnegie Mellon University
   - TGV, Incorporated
-holders_tallies:
+holders_summary:
   - value: Carnegie Mellon University
     count: 1
   - value: TGV, Incorporated

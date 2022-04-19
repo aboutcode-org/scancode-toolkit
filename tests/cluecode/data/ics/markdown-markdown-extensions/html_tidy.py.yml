@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Waylan Limberg (http://achinghead.com)
 holders:
   - Waylan Limberg
-holders_tallies:
+holders_summary:
   - value: Waylan Limberg
     count: 1

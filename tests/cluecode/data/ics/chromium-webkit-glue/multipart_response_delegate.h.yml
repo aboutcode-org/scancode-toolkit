@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006-2009 The Chromium Authors
   - Copyright (c) 1998 the Initial Developer
 holders:
   - The Chromium Authors
   - the Initial Developer
-holders_tallies:
+holders_summary:
   - value: The Chromium Authors
     count: 1
   - value: the Initial Developer

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2003-2009 The Apache Geronimo development community
 holders:
   - The Apache Geronimo development community
-holders_tallies:
+holders_summary:
   - value: The Apache Geronimo development community
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 ARC International (UK) LTD
 holders:
   - ARC International (UK) LTD
-holders_tallies:
+holders_summary:
   - value: ARC International (UK) LTD
     count: 1

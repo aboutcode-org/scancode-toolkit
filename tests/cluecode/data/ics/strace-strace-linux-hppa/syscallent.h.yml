@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Hewlett-Packard, Matthew Wilcox
 holders:
   - Hewlett-Packard, Matthew Wilcox
-holders_tallies:
+holders_summary:
   - value: Hewlett-Packard, Matthew Wilcox
     count: 1

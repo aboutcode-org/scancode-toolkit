@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996, 2007, 2008 Red Hat, Inc.
   - Copyright (c) 2008 David Daney
 holders:
   - Red Hat, Inc.
   - David Daney
-holders_tallies:
+holders_summary:
   - value: David Daney
     count: 1
   - value: Red Hat, Inc.

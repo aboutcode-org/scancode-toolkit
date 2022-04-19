@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 2009 Hewlett-Packard Development Company, L.P.
 holders:
   - Hewlett-Packard Development Company, L.P.
-holders_tallies:
+holders_summary:
   - value: Hewlett-Packard Development Company, L.P.
     count: 1

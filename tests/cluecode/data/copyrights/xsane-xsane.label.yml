@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2005 Oliver Rauch
 holders:
   - Oliver Rauch
-holders_tallies:
+holders_summary:
   - value: Oliver Rauch
     count: 1

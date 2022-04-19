@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright IBM, Corp. 2008
   - Copyright Dell MessageOne 2008
 holders:
   - IBM, Corp.
   - Dell MessageOne
-holders_tallies:
+holders_summary:
   - value: Dell MessageOne
     count: 1
   - value: IBM, Corp.

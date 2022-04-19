@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Michael J. Fromberger
 holders:
   - Michael J. Fromberger
-holders_tallies:
+holders_summary:
   - value: Michael J. Fromberger
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>
 holders:
   - Kevin Vandersloot Erik Johnsson
-holders_tallies:
+holders_summary:
   - value: Kevin Vandersloot Erik Johnsson
     count: 1

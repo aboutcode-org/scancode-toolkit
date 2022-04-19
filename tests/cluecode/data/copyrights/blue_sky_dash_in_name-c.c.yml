@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996 - Blue Sky Software Corp.
 holders:
   - Blue Sky Software Corp.
-holders_tallies:
+holders_summary:
   - value: Blue Sky Software Corp.
     count: 1

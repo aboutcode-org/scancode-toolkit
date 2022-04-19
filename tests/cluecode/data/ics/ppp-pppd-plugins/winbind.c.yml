@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Andrew Bartlet <abartlet@samba.org>
   - Copyright 1999 Paul Mackerras, Alan Curry
@@ -28,7 +28,7 @@ holders:
   - Andrew Tridgell
   - Simo Sorce
   - Martin Pool
-holders_tallies:
+holders_summary:
   - value: Lars Fenneberg
     count: 2
   - value: Roaring Penguin Software Inc.

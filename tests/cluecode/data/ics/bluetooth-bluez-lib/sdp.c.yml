@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001-2002 Nokia Corporation
   - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
@@ -12,7 +12,7 @@ holders:
   - Maxim Krasnyansky
   - Marcel Holtmann
   - Stephen Crane
-holders_tallies:
+holders_summary:
   - value: Marcel Holtmann
     count: 1
   - value: Maxim Krasnyansky

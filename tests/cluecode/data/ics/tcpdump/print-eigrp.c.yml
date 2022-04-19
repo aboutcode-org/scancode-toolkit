@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2004 Hannes Gredler <hannes@tcpdump.org> The TCPDUMP project
 holders:
   - Hannes Gredler The TCPDUMP project
-holders_tallies:
+holders_summary:
   - value: Hannes Gredler The TCPDUMP project
     count: 1

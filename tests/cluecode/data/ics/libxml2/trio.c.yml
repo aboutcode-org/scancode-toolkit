@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Bjorn Reese and Daniel Stenberg
 holders:
   - Bjorn Reese and Daniel Stenberg
-holders_tallies:
+holders_summary:
   - value: Bjorn Reese and Daniel Stenberg
     count: 1

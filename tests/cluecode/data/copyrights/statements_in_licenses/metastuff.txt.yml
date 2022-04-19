@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2001-2005 (c) MetaStuff, Ltd.
 holders:
   - MetaStuff, Ltd.
-holders_tallies:
+holders_summary:
   - value: MetaStuff, Ltd.
     count: 1

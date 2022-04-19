@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005 Jens Axboe <axboe@suse.de>
   - Copyright (c) 2006 Jens Axboe <axboe@kernel.dk>
 holders:
   - Jens Axboe
   - Jens Axboe
-holders_tallies:
+holders_summary:
   - value: Jens Axboe
     count: 2

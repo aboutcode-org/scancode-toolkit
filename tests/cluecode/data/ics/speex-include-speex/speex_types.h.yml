@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) COPYRIGHT 1994-2002 by the Xiph.Org Foundation http://www.xiph.org
 holders:
   - the Xiph.Org Foundation
-holders_tallies:
+holders_summary:
   - value: the Xiph.Org Foundation
     count: 1

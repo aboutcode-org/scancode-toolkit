@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Oracle and/or its affiliates
-holders_tallies:
+holders_summary:
   - value: Oracle and/or its affiliates
     count: 1

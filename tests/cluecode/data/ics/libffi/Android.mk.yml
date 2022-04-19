@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007 The Android Open Source Project
 holders:
   - The Android Open Source Project
-holders_tallies:
+holders_summary:
   - value: The Android Open Source Project, Inc.
     count: 1

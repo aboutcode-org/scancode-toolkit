@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007-2014 IOLA and Ole Laursen
 holders:
   - IOLA and Ole Laursen
-holders_tallies:
+holders_summary:
   - value: IOLA and Ole Laursen
     count: 1

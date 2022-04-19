@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts
 holders:
   - Digital Equipment Corporation, Maynard, Massachusetts
-holders_tallies:
+holders_summary:
   - value: Digital Equipment Corporation, Maynard, Massachusetts
     count: 1

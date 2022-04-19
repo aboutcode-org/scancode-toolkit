@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000-2001 Qualcomm Incorporated
   - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
@@ -10,7 +10,7 @@ holders:
   - Qualcomm Incorporated
   - Maxim Krasnyansky
   - Marcel Holtmann
-holders_tallies:
+holders_summary:
   - value: Marcel Holtmann
     count: 1
   - value: Maxim Krasnyansky

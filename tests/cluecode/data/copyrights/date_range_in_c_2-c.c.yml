@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 2005 to 2007 ImageSilicon? Tech.,ltd
 holders:
   - ImageSilicon? Tech.,ltd
-holders_tallies:
+holders_summary:
   - value: ImageSilicon? Tech.,ltd
     count: 1

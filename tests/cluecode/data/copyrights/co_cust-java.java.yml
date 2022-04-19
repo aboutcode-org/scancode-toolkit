@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Company Customer Identity Hidden
 holders:
   - Company Customer Identity Hidden
-holders_tallies:
+holders_summary:
   - value: Company Customer Identity Hidden
     count: 1

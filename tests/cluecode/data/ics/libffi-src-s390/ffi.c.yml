@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000, 2007 Software AG
   - Copyright (c) 2008 Red Hat, Inc
 holders:
   - Software AG
   - Red Hat, Inc
-holders_tallies:
+holders_summary:
   - value: Red Hat, Inc.
     count: 1
   - value: Software AG

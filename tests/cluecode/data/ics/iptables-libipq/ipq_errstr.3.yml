@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Netfilter Core Team
   - Copyright (c) 2000-2001 Netfilter Core Team
 holders:
   - Netfilter Core Team
   - Netfilter Core Team
-holders_tallies:
+holders_summary:
   - value: Netfilter Core Team
     count: 2

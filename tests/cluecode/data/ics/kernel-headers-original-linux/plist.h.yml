@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2002-2003 Intel Corp Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com>
   - (c) MontaVista Software, Inc. Daniel Walker <dwalker@mvista.com>
@@ -10,7 +10,7 @@ holders:
   - Intel Corp Inaky Perez-Gonzalez
   - MontaVista Software, Inc. Daniel Walker
   - Thomas Gleixner
-holders_tallies:
+holders_summary:
   - value: Intel Corp Inaky Perez-Gonzalez
     count: 1
   - value: MontaVista Software, Inc. Daniel Walker

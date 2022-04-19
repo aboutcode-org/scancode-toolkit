@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Christian Nentwich (brn@eleet.mcb.at)
 holders:
   - Christian Nentwich
-holders_tallies:
+holders_summary:
   - value: Christian Nentwich
     count: 1

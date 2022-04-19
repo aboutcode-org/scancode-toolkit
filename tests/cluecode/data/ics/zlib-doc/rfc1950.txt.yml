@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996 L. Peter Deutsch and Jean-Loup Gailly
 holders:
   - L. Peter Deutsch and Jean-Loup Gailly
-holders_tallies:
+holders_summary:
   - value: L. Peter Deutsch and Jean-Loup Gailly
     count: 1

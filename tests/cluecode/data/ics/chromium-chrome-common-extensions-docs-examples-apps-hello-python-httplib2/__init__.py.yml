@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
   - authors
 copyrights:
   - Copyright 2006, Joe Gregorio
@@ -10,6 +10,6 @@ holders:
 authors:
   - Joe Gregorio (joe@bitworking.org)
   - Thomas Broyer
-holders_tallies:
+holders_summary:
   - value: Joe Gregorio
     count: 1

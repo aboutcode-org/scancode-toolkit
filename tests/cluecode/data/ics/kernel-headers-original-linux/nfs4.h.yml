@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 The Regents of the University of Michigan
 holders:
   - The Regents of the University of Michigan
-holders_tallies:
+holders_summary:
   - value: The Regents of the University of Michigan
     count: 1

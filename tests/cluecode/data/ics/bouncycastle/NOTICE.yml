@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000-2010 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
 holders:
   - The Legion Of The Bouncy Castle
-holders_tallies:
+holders_summary:
   - value: The Legion Of The Bouncy Castle
     count: 1

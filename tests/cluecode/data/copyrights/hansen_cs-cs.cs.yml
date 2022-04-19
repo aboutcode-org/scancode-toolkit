@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2009 - Thomas Hansen thomas@ra-ajax.org
 holders:
   - Thomas Hansen
-holders_tallies:
+holders_summary:
   - value: Thomas Hansen
     count: 1

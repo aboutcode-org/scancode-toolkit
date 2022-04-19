@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007-2011 University of Illinois at Urbana-Champaign
 holders:
   - University of Illinois at Urbana-Champaign
-holders_tallies:
+holders_summary:
   - value: University of Illinois at Urbana-Champaign
     count: 1

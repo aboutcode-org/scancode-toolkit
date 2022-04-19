@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Tommi Komulainen
 holders:
   - Tommi Komulainen
-holders_tallies:
+holders_summary:
   - value: Tommi Komulainen
     count: 1

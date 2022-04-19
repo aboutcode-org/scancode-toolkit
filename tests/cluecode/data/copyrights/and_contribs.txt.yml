@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Standard C++ Foundation and its contributors
 holders:
   - Standard C++ Foundation and its contributors
-holders_tallies:
+holders_summary:
   - value: Standard C++ Foundation and its contributors
     count: 1

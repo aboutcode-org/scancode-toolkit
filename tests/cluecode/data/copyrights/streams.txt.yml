@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2013-2015 Streams Standard Reference Implementation Authors
 holders:
   - Streams Standard Reference Implementation Authors
-holders_tallies:
+holders_summary:
   - value: Streams Standard Reference Implementation Authors
     count: 1

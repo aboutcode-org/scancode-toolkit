@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 2000-2003 by Michal Zalewski <lcamtuf@coredump.cx>
   - (c) Copyright 2003 by Mike Frantzen <frantzen@w4g.org>
 holders:
   - Michal Zalewski
   - Mike Frantzen
-holders_tallies:
+holders_summary:
   - value: Michal Zalewski
     count: 1
   - value: Mike Frantzen

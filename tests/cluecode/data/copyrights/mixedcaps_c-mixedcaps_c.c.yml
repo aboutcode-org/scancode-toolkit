@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - COPYRIGHT (c) 2006 MyCompany2 MYCOP
   - copyright (c) 2006 MyCompany2 MYCOP
@@ -36,7 +36,7 @@ holders:
   - NEC Systems Laboratory
   - Glyph & Cog, LLC
   - Zeus Technology Limited
-holders_tallies:
+holders_summary:
   - value: NEC Systems Laboratory
     count: 3
   - value: Glyph & Cog, LLC.

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright OProfile authors
   - Copyright (c) International Business Machines, 2009
 holders:
   - OProfile authors
   - International Business Machines
-holders_tallies:
+holders_summary:
   - value: International Business Machines
     count: 1
   - value: OProfile authors

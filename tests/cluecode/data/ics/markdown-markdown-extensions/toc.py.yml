@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2008 Jack Miller (http://codezen.org)
 holders:
   - Jack Miller
-holders_tallies:
+holders_summary:
   - value: Jack Miller
     count: 1

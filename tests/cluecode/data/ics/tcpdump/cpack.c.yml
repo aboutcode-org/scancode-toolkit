@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003, 2004 David Young
 holders:
   - David Young
-holders_tallies:
+holders_summary:
   - value: David Young
     count: 1

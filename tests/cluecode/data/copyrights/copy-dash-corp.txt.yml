@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Intel Corporation / Qualcomm Inc.
 holders:
   - Intel Corporation / Qualcomm Inc.
-holders_tallies:
+holders_summary:
   - value: Intel Corporation / Qualcomm Inc.
     count: 1

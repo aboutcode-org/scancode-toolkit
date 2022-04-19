@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1991 Lance Norskog And Sundry Contributors
 holders:
   - Lance Norskog And Sundry Contributors
-holders_tallies:
+holders_summary:
   - value: Lance Norskog And Sundry Contributors
     count: 1

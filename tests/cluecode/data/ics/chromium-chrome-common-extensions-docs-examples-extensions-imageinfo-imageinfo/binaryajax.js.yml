@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com, http://blog.nihilogic.dk
 holders:
   - Jacob Seidelin
-holders_tallies:
+holders_summary:
   - value: Jacob Seidelin
     count: 1

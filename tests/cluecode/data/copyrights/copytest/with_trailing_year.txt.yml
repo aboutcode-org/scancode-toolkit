@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) The Internet Society (2004)
 holders:
   - The Internet Society
-holders_tallies:
+holders_summary:
   - value: The Internet Society
     count: 1

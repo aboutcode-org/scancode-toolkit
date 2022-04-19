@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-1997 Id Software, Inc.
   - Copyright (c) 1991-2, RSA Data Security, Inc.
@@ -10,7 +10,7 @@ holders:
   - Id Software, Inc.
   - RSA Data Security, Inc.
   - RSA Data Security, Inc.
-holders_tallies:
+holders_summary:
   - value: RSA Data Security, Inc.
     count: 2
   - value: Id Software, Inc.

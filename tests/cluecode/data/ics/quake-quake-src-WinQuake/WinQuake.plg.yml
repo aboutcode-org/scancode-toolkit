@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Microsoft Corp 1984-1998
   - Copyright (c) Microsoft Corp 1981-1993
@@ -76,6 +76,6 @@ holders:
   - Microsoft Corp
   - Microsoft Corp
   - Microsoft Corp
-holders_tallies:
+holders_summary:
   - value: Microsoft
     count: 36

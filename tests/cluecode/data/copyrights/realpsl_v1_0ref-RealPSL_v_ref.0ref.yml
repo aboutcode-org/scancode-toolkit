@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2004 RealNetworks, Inc.
 holders:
   - RealNetworks, Inc.
-holders_tallies:
+holders_summary:
   - value: RealNetworks, Inc.
     count: 1

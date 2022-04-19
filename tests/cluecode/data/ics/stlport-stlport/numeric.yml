@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1994 Hewlett-Packard Company
   - Copyright (c) 1996,1997 Silicon Graphics Computer Systems, Inc.
@@ -10,7 +10,7 @@ holders:
   - Hewlett-Packard Company
   - Silicon Graphics Computer Systems, Inc.
   - Boris Fomitchev
-holders_tallies:
+holders_summary:
   - value: Boris Fomitchev
     count: 1
   - value: Hewlett-Packard, Inc.

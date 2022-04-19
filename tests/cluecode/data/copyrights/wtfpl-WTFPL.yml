@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Sam Hocevar
 holders:
   - Sam Hocevar
-holders_tallies:
+holders_summary:
   - value: Sam Hocevar
     count: 1

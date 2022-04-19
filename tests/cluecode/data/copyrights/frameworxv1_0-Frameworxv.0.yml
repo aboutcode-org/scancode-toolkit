@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) THE FRAMEWORX COMPANY 2003
 holders:
   - THE FRAMEWORX COMPANY
-holders_tallies:
+holders_summary:
   - value: THE FRAMEWORX COMPANY
     count: 1

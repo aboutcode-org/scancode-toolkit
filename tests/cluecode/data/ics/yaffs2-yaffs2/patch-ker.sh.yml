@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Aleph One Ltd.
 holders:
   - Aleph One Ltd.
-holders_tallies:
+holders_summary:
   - value: Aleph One Ltd.
     count: 1

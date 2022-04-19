@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 The Chromium Authors
   - (c) Kasim 2005
@@ -14,7 +14,7 @@ holders:
   - Entrust.net Limited
   - Kasim
   - Entrust.net Limited
-holders_tallies:
+holders_summary:
   - value: Entrust.net Limited
     count: 2
   - value: Kasim

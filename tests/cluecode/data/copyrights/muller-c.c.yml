@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2003 Ronald Bultje <rbultje@ronald.bitfreak.net>
   - (c) 2006 Tim-Philipp Muller
@@ -12,7 +12,7 @@ holders:
   - Tim-Philipp Muller
   - Sebastian Droge
   - Debarshi Ray
-holders_tallies:
+holders_summary:
   - value: Debarshi Ray
     count: 1
   - value: Ronald Bultje

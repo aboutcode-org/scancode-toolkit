@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-1999 Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm,
     Sweden)
 holders:
   - Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)
-holders_tallies:
+holders_summary:
   - value: Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)
     count: 1

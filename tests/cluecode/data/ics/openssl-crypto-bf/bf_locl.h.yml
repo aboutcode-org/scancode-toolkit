@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-1997 Eric Young (eay@cryptsoft.com)
   - holder is Tim Hudson (tjh@cryptsoft.com)
 holders:
   - Eric Young
   - Tim Hudson
-holders_tallies:
+holders_summary:
   - value: Eric Young
     count: 1
   - value: Tim Hudson

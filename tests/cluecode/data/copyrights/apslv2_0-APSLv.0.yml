@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Portions Copyright (c) 1999-2007 Apple Inc.
 holders:
   - Apple Inc.
-holders_tallies:
+holders_summary:
   - value: Apple Inc.
     count: 1

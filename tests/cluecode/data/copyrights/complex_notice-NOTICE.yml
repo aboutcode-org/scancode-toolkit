@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003, Steven G. Kargl
   - Copyright (c) 2003 Mike Barcroft <mike@FreeBSD.org>
@@ -55,7 +55,7 @@ holders:
   - David Schultz
   - Steven G. Kargl
   - The Regents of the University of California
-holders_tallies:
+holders_summary:
   - value: David Schultz
     count: 9
   - value: Sun Microsystems, Inc.

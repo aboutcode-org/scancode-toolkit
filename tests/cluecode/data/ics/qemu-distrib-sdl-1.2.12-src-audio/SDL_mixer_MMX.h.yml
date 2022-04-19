@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002 Stephane Marchesin (stephane.marchesin@wanadoo.fr)
 holders:
   - Stephane Marchesin
-holders_tallies:
+holders_summary:
   - value: Stephane Marchesin
     count: 1

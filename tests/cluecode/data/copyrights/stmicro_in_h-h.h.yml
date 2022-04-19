@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - COPYRIGHT (c) ST-Microelectronics 1998
 holders:
   - ST-Microelectronics
-holders_tallies:
+holders_summary:
   - value: ST-Microelectronics
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Gary Pennington and Daniel Veillard
 holders:
   - Gary Pennington and Daniel Veillard
-holders_tallies:
+holders_summary:
   - value: Gary Pennington and Daniel Veillard
     count: 1

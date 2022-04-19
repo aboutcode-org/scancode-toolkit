@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006. Bob Jenkins (bob_jenkins@burtleburtle.net)
   - Copyright (c) 2009 Jozsef Kadlecsik (kadlec@blackhole.kfki.hu)
 holders:
   - Bob Jenkins
   - Jozsef Kadlecsik
-holders_tallies:
+holders_summary:
   - value: Bob Jenkins
     count: 1
   - value: Jozsef Kadlecsik

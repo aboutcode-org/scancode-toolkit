@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996 Lars Fenneberg
 holders:
   - Lars Fenneberg
-holders_tallies:
+holders_summary:
   - value: Lars Fenneberg
     count: 1

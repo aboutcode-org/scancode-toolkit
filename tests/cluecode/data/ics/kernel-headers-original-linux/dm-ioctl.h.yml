@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 - 2003 Sistina Software (UK) Limited
   - Copyright (c) 2004 - 2005 Red Hat, Inc.
 holders:
   - Sistina Software (UK) Limited
   - Red Hat, Inc.
-holders_tallies:
+holders_summary:
   - value: Red Hat, Inc.
     count: 1
   - value: Sistina Software (UK) Limited

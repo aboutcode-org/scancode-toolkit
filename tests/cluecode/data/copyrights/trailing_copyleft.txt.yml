@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1992 Ronald S. Karr
 holders:
   - Ronald S. Karr
-holders_tallies:
+holders_summary:
   - value: Ronald S. Karr
     count: 1

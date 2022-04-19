@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995 Jon Tombs
   - Copyright (c) 1995,1996 The XFree86 Project, Inc
 holders:
   - Jon Tombs
   - The XFree86 Project, Inc
-holders_tallies:
+holders_summary:
   - value: Jon Tombs
     count: 1
   - value: The XFree86 Project, Inc

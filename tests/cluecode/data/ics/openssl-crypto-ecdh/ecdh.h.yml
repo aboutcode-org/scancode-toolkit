@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002 Sun Microsystems, Inc.
   - Copyright (c) 2000-2002 The OpenSSL Project
 holders:
   - Sun Microsystems, Inc.
   - The OpenSSL Project
-holders_tallies:
+holders_summary:
   - value: Sun Microsystems, Inc.
     count: 1
   - value: The OpenSSL Project

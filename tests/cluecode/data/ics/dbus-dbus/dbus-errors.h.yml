@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Red Hat Inc.
   - Copyright (c) 2003 CodeFactory AB
 holders:
   - Red Hat Inc.
   - CodeFactory AB
-holders_tallies:
+holders_summary:
   - value: CodeFactory AB
     count: 1
   - value: Red Hat, Inc.

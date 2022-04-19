@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2003 Ronald Bultje <rbultje@ronald.bitfreak.net>
   - (c) 2011 Debarshi Ray <rishi@gnu.org>
 holders:
   - Ronald Bultje
   - Debarshi Ray
-holders_tallies:
+holders_summary:
   - value: Debarshi Ray
     count: 1
   - value: Ronald Bultje

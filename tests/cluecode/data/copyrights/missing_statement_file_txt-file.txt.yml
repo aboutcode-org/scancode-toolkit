@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2003-2009 The Apache Geronimo development community
   - Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
 holders:
   - The Apache Geronimo development community
   - The Legion Of The Bouncy Castle
-holders_tallies:
+holders_summary:
   - value: The Apache Geronimo development community
     count: 1
   - value: The Legion Of The Bouncy Castle

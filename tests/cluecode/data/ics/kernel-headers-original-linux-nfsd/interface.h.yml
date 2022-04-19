@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Neil Brown <neilb@cse.unsw.edu.au>
 holders:
   - Neil Brown
-holders_tallies:
+holders_summary:
   - value: Neil Brown
     count: 1

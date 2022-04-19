@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-1999 The Apache Group
 holders:
   - The Apache Group
-holders_tallies:
+holders_summary:
   - value: The Apache Software Foundation
     count: 1

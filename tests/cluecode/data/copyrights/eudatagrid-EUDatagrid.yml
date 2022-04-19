@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 EU DataGrid
 holders:
   - EU DataGrid
-holders_tallies:
+holders_summary:
   - value: EU DataGrid
     count: 1

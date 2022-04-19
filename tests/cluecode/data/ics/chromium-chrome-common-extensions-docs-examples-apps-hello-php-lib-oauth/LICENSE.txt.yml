@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 Andy Smith
 holders:
   - Andy Smith
-holders_tallies:
+holders_summary:
   - value: Andy Smith
     count: 1

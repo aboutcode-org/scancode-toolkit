@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006-2008 CSIRO, Jean-Marc Valin, Xiph.Org Foundation
 holders:
   - CSIRO, Jean-Marc Valin, Xiph.Org Foundation
-holders_tallies:
+holders_summary:
   - value: CSIRO, Jean-Marc Valin, Xiph.Org Foundation
     count: 1

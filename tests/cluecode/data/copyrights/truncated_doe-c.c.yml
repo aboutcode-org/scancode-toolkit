@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 by John Doe
 holders:
   - John Doe
-holders_tallies:
+holders_summary:
   - value: John Doe
     count: 1

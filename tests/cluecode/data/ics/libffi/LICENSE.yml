@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-2008 Red Hat, Inc and others
 holders:
   - Red Hat, Inc and others
-holders_tallies:
+holders_summary:
   - value: Red Hat, Inc and others
     count: 1

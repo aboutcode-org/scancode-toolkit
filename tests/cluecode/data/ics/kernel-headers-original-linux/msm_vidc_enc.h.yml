@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009, Code Aurora Forum
 holders:
   - Code Aurora Forum
-holders_tallies:
+holders_summary:
   - value: Code Aurora Forum
     count: 1

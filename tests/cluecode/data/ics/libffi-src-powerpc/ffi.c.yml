@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Geoffrey Keating
   - Copyright (c) 2007 Free Software Foundation, Inc
@@ -10,7 +10,7 @@ holders:
   - Geoffrey Keating
   - Free Software Foundation, Inc
   - Red Hat, Inc
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Geoffrey Keating

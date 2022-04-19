@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Restricted Icon
 holders:
   - Restricted Icon
-holders_tallies:
+holders_summary:
   - value: Restricted Icon
     count: 1

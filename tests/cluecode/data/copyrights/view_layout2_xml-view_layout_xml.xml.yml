@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Esmertec AG.
 holders:
   - Esmertec AG.
-holders_tallies:
+holders_summary:
   - value: Esmertec AG.
     count: 1

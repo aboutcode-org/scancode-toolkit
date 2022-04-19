@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1985-1988 Supoj Sutantavibul
   - Copyright (c) 1991-1999 Micah Beck
@@ -38,7 +38,7 @@ holders:
   - David Koblas
   - Massachusetts Institute of Technology
   - Michael Pfeiffer
-holders_tallies:
+holders_summary:
   - value: Anthony Starks
     count: 1
   - value: Brian Boyter

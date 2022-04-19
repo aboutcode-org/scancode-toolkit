@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Asbjoern Pettersen
 holders:
   - Asbjoern Pettersen
-holders_tallies:
+holders_summary:
   - value: Asbjoern Pettersen
     count: 1

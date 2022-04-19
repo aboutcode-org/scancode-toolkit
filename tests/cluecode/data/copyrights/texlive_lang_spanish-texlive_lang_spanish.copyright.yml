@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright by Norbert Preining <preining@logic.at> (2005-) Frank Kuster <frank@kuesterei.ch>
   - Copyright 1999 2002-2006 LaTeX3 Project
 holders:
   - Norbert Preining Frank Kuster
   - LaTeX3 Project
-holders_tallies:
+holders_summary:
   - value: LaTeX3 Project
     count: 1
   - value: Norbert Preining Frank Kuster

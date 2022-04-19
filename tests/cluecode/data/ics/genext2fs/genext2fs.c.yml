@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Xavier Bestel <xavier.bestel@free.fr>
   - Copyright (c) 1999,2000 by Lineo, inc. and John Beppu
@@ -18,7 +18,7 @@ holders:
   - Ixia communications
   - Ixia communications
   - Ixia communications
-holders_tallies:
+holders_summary:
   - value: Ixia communications
     count: 3
   - value: Edward Betts

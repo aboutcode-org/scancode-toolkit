@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2006 Tim-Philipp Muller
   - (c) 2008 Sebastian Droge <slomo@circular-chaos.org>
 holders:
   - Tim-Philipp Muller
   - Sebastian Droge
-holders_tallies:
+holders_summary:
   - value: Sebastian Droge
     count: 1
   - value: Tim-Philipp Muller

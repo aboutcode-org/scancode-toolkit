@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Tor Lillqvist
 holders:
   - Tor Lillqvist
-holders_tallies:
+holders_summary:
   - value: Tor Lillqvist
     count: 1

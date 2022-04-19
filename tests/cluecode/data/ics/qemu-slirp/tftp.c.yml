@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Magnus Damm <damm@opensource.se>
 holders:
   - Magnus Damm
-holders_tallies:
+holders_summary:
   - value: Magnus Damm
     count: 1

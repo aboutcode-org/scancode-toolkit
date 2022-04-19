@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2018 Nordea Bank Abp, Satamaradankatu
 holders:
   - Nordea Bank Abp, Satamaradankatu
-holders_tallies:
+holders_summary:
   - value: Nordea Bank Abp, Satamaradankatu
     count: 1

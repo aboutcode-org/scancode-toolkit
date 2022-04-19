@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996 - 2008. Adobe Systems Incorporated
   - (c) 2001-2009, Takuo KITAME, Bart Martens, and Canonical, LTD
 holders:
   - Adobe Systems Incorporated
   - Takuo KITAME, Bart Martens, and Canonical, LTD
-holders_tallies:
+holders_summary:
   - value: Adobe Systems Incorporated
     count: 1
   - value: Takuo KITAME, Bart Martens, and Canonical, LTD

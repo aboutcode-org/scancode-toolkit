@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996, 1997 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
 holders:
   - Ulrich Drepper
-holders_tallies:
+holders_summary:
   - value: Ulrich Drepper
     count: 1

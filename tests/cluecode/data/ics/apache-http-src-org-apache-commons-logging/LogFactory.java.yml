@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2001-2006 The Apache Software Foundation
 holders:
   - The Apache Software Foundation
-holders_tallies:
+holders_summary:
   - value: The Apache Software Foundation
     count: 1

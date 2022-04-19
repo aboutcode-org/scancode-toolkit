@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Microsoft Corporation
   - Copyright (c) Microsoft Corporation
 holders:
   - Microsoft Corporation
   - Microsoft Corporation
-holders_tallies:
+holders_summary:
   - value: Microsoft
     count: 2

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006 Volker Ruppert
 holders:
   - Volker Ruppert
-holders_tallies:
+holders_summary:
   - value: Volker Ruppert
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2004 Russell King
 holders:
   - Russell King
-holders_tallies:
+holders_summary:
   - value: Russell King
     count: 1

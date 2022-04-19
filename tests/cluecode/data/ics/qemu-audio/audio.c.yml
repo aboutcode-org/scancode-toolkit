@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007-2008 The Android Open Source Project
   - Copyright (c) 2003-2005 Vassili Karpov
 holders:
   - The Android Open Source Project
   - Vassili Karpov
-holders_tallies:
+holders_summary:
   - value: The Android Open Source Project, Inc.
     count: 1
   - value: Vassili Karpov

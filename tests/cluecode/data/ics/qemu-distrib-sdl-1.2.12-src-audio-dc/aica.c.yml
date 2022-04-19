@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2000 Dan Potter
 holders:
   - Dan Potter
-holders_tallies:
+holders_summary:
   - value: Dan Potter
     count: 1

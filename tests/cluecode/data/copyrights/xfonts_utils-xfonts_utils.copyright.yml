@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1991, 1993, 1998 The Open Group
   - Copyright 2005 Red Hat, Inc.
@@ -36,7 +36,7 @@ holders:
   - Branden Robinson
   - Branden Robinson
   - Steve Langasek
-holders_tallies:
+holders_summary:
   - value: Branden Robinson
     count: 3
   - value: Juliusz Chroboczek

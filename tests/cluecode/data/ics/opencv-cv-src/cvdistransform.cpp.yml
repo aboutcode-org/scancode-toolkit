@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000, Intel Corporation
   - (c) 2006 by Jay Stavinzky
 holders:
   - Intel Corporation
   - Jay Stavinzky
-holders_tallies:
+holders_summary:
   - value: Intel Corporation
     count: 1
   - value: Jay Stavinzky

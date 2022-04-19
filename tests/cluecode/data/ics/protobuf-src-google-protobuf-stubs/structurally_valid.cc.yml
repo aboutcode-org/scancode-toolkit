@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2005-2008 Google Inc.
 holders:
   - Google Inc.
-holders_tallies:
+holders_summary:
   - value: Google Inc.
     count: 1

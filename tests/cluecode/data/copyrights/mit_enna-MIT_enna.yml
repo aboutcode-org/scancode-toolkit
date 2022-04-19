@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Carsten Haitzler and various contributors
 holders:
   - Carsten Haitzler and various contributors
-holders_tallies:
+holders_summary:
   - value: Carsten Haitzler and various contributors
     count: 1

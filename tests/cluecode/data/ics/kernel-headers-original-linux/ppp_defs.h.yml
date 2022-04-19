@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1994 The Australian National University
 holders:
   - The Australian National University
-holders_tallies:
+holders_summary:
   - value: The Australian National University
     count: 1

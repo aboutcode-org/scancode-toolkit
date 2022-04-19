@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Torsten Duwe <duwe@informatik.uni-erlangen.de> 1993
   - Copyright Motorola 1984
 holders:
   - Torsten Duwe
   - Motorola
-holders_tallies:
+holders_summary:
   - value: Motorola
     count: 1
   - value: Torsten Duwe

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project
   - Copyright (c) 2004 Emmanuel Dreyfus
@@ -28,7 +28,7 @@ holders:
   - International Business Machines Corporation
   - Trusted Computer Solutions, Inc.
   - Aaron D. Gifford
-holders_tallies:
+holders_summary:
   - value: WIDE Project
     count: 4
   - value: Emmanuel Dreyfus

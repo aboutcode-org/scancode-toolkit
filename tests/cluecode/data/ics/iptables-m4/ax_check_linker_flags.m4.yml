@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Mike Frysinger <vapier@gentoo.org>
   - Copyright (c) 2009 Steven G. Johnson <stevenj@alum.mit.edu>
@@ -10,7 +10,7 @@ holders:
   - Mike Frysinger
   - Steven G. Johnson
   - Matteo Frigo
-holders_tallies:
+holders_summary:
   - value: Matteo Frigo
     count: 1
   - value: Mike Frysinger

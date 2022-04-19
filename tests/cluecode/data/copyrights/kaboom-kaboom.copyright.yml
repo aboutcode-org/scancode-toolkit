@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Sune Vuorela <sune@vuorela.dk>
   - Copyright (c) 2007-2009 George Kiagiadakis <gkiagiad@csd.uoc.gr>
@@ -12,7 +12,7 @@ holders:
   - George Kiagiadakis
   - Modestas Vainius
   - Debian Qt/KDE Maintainers
-holders_tallies:
+holders_summary:
   - value: Debian Qt/KDE Maintainers
     count: 1
   - value: George Kiagiadakis

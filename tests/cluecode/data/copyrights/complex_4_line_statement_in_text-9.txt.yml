@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002 Jonas Borgstrom <jonas@codefactory.se> 2002 Daniel Lundin <daniel@codefactory.se>
     2002 CodeFactory AB
@@ -9,7 +9,7 @@ copyrights:
 holders:
   - Jonas Borgstrom Daniel Lundin CodeFactory AB
   - The Regents of the University of California
-holders_tallies:
+holders_summary:
   - value: Jonas Borgstrom Daniel Lundin CodeFactory AB
     count: 1
   - value: The Regents of the University of California

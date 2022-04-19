@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1994-2000 the Initial Developer
 holders:
   - the Initial Developer
-holders_tallies:
+holders_summary:
   - value: the Initial Developer
     count: 1

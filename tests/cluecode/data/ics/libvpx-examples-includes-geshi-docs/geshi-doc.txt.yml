@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
   - authors
 copyrights:
   - Copyright (c) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
@@ -13,7 +13,7 @@ holders:
 authors:
   - Nigel McNie, Benny Baumann
   - Nigel McNie (nigel@geshi.org)
-holders_tallies:
+holders_summary:
   - value: Nigel McNie
     count: 1
   - value: Nigel McNie, - Benny Baumann

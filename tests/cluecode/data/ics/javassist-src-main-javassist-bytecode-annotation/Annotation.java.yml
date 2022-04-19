@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Bill Burke
 holders:
   - Bill Burke
-holders_tallies:
+holders_summary:
   - value: Bill Burke
     count: 1

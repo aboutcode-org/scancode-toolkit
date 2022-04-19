@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 RidgeRun, Inc.
 holders:
   - RidgeRun, Inc.
-holders_tallies:
+holders_summary:
   - value: RidgeRun, Inc.
     count: 1

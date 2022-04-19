@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2005 MontaVista Software, Inc.
 holders:
   - MontaVista Software, Inc.
-holders_tallies:
+holders_summary:
   - value: MontaVista Software, Inc.
     count: 1

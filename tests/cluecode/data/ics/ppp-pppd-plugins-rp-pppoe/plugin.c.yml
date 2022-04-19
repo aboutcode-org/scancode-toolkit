@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 by Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim
   - Copyright 2000 Michal Ostrowski <mostrows@styx.uwaterloo.ca> , Jamal Hadi Salim <hadi@cyberus.ca>
 holders:
   - Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim
   - Michal Ostrowski , Jamal Hadi Salim
-holders_tallies:
+holders_summary:
   - value: Michal Ostrowski , Jamal Hadi Salim
     count: 1
   - value: Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim

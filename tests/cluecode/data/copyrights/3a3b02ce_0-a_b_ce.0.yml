@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005, OU OISTE Foundation
   - Copyright (c) 2005, OU OISTE Foundation
 holders:
   - OISTE Foundation
   - OISTE Foundation
-holders_tallies:
+holders_summary:
   - value: OISTE Foundation
     count: 2
 notes: |

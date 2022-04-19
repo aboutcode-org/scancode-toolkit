@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2003 Joshua Chamas
   - Copyright (c) 1998 Gisle Aas
@@ -10,7 +10,7 @@ holders:
   - Joshua Chamas
   - Gisle Aas
   - Stephen Zander
-holders_tallies:
+holders_summary:
   - value: Gisle Aas
     count: 1
   - value: Joshua Chamas

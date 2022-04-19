@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002-2009 http://www.graphics.cornell.edu/~eric/' Eric Lafortune
 holders:
   - Eric Lafortune
-holders_tallies:
+holders_summary:
   - value: Eric Lafortune
     count: 1

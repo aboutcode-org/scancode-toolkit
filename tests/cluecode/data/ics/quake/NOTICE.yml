@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1996-2000 Id Software Inc.
   - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
@@ -14,7 +14,7 @@ holders:
   - the Free Software Foundation
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 4
   - value: Id Software Inc.

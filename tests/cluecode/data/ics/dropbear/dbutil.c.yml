@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002,2003 Matt Johnston
   - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
 holders:
   - Matt Johnston
   - Todd C. Miller
-holders_tallies:
+holders_summary:
   - value: Matt Johnston
     count: 1
   - value: Todd C. Miller

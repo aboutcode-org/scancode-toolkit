@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
     National de Recherche en Informatique et en Automatique, Keio University)
 holders:
   - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
     Recherche en Informatique et en Automatique, Keio University)
-holders_tallies:
+holders_summary:
   - value: World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National
       de Recherche en Informatique et en Automatique, Keio University)
     count: 1

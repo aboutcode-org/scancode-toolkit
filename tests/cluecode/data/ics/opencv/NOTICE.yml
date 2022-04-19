@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000-2006, Intel Corporation
   - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
@@ -54,7 +54,7 @@ holders:
   - Yossi Rubner Computer Science Department, Stanford University
   - Simon Perreault
   - Intel Corporation
-holders_tallies:
+holders_summary:
   - value: Intel Corporation
     count: 12
   - value: Ken Turkowski

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1992, Linus Torvalds
 holders:
   - Linus Torvalds
-holders_tallies:
+holders_summary:
   - value: Linus Torvalds
     count: 1

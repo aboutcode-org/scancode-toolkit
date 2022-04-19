@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Project Mayo
 holders:
   - Project Mayo
-holders_tallies:
+holders_summary:
   - value: Project Mayo
     count: 1

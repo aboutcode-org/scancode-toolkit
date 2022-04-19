@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1987-1999 Carnegie Mellon University
   - Copyright (c) 1987-1999 Carnegie Mellon University
 holders:
   - Carnegie Mellon University
   - Carnegie Mellon University
-holders_tallies:
+holders_summary:
   - value: Carnegie Mellon University
     count: 2

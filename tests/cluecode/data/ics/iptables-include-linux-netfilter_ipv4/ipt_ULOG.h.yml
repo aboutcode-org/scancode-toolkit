@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2000-2002 by Harald Welte <laforge@gnumonks.org>
 holders:
   - Harald Welte
-holders_tallies:
+holders_summary:
   - value: Harald Welte
     count: 1

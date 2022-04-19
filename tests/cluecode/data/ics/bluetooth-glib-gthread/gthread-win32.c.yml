@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright 1998-2001 Sebastian Wilhelmi University of Karlsruhe
@@ -10,7 +10,7 @@ holders:
   - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Sebastian Wilhelmi University of Karlsruhe
   - Hans Breuer
-holders_tallies:
+holders_summary:
   - value: Hans Breuer
     count: 1
   - value: Peter Mattis, Spencer Kimball and Josh MacDonald

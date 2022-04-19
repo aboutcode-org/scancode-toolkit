@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1993 by Theodore Ts'o
 holders:
   - Theodore Ts'o
-holders_tallies:
+holders_summary:
   - value: Theodore Ts'o
     count: 1

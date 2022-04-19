@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 - 2003 NetGroup, Politecnico di Torino (Italy)
 holders:
   - NetGroup, Politecnico di Torino (Italy)
-holders_tallies:
+holders_summary:
   - value: NetGroup, Politecnico di Torino (Italy)
     count: 1

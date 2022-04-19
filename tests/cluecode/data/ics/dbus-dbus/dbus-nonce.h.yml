@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
 holders:
   - Klaralvdalens Datakonsult AB, a KDAB Group company
-holders_tallies:
+holders_summary:
   - value: Klaralvdalens Datakonsult AB, a KDAB Group company
     count: 1

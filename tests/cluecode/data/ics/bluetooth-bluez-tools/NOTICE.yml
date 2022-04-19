@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000-2001 Qualcomm Incorporated
   - Copyright (c) 2001-2002 Nokia Corporation
@@ -30,7 +30,7 @@ holders:
   - Texas Instruments, Inc.
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-holders_tallies:
+holders_summary:
   - value: Marcel Holtmann
     count: 4
   - value: Free Software Foundation, Inc.

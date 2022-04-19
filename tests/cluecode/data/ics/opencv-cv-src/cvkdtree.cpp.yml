@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008, Xavier Delacour
 holders:
   - Xavier Delacour
-holders_tallies:
+holders_summary:
   - value: Xavier Delacour
     count: 1

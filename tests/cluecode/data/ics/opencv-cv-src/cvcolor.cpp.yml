@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000, Intel Corporation
   - Copyright (c) 2002, MD-Mathematische Dienste GmbH Im Defdahl
 holders:
   - Intel Corporation
   - MD-Mathematische Dienste GmbH Im Defdahl
-holders_tallies:
+holders_summary:
   - value: Intel Corporation
     count: 1
   - value: MD-Mathematische Dienste GmbH Im Defdahl

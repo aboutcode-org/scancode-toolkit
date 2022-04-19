@@ -1,6 +1,6 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - ibm technologies
   - IBM Corporation
@@ -8,7 +8,7 @@ holders:
   - ibm.com
   - IBM technology
   - IBM company
-holders_tallies:
+holders_summary:
   - value: IBM Corporation
     count: 2
   - value: IBM company

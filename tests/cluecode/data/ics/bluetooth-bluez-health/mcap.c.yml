@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos
 holders:
   - GSyC/LibreSoft, Universidad Rey Juan Carlos
-holders_tallies:
+holders_summary:
   - value: GSyC/LibreSoft, Universidad Rey Juan Carlos
     count: 1

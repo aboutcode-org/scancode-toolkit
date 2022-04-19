@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyrighted by Linus Torvalds and others
 holders:
   - Linus Torvalds and others
-holders_tallies:
+holders_summary:
   - value: Linus Torvalds and others
     count: 1

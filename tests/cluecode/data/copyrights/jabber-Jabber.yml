@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2000 Jabber.com, Inc.
   - Portions Copyright (c) 1998-1999 Jeremie Miller
 holders:
   - Jabber.com, Inc.
   - Jeremie Miller
-holders_tallies:
+holders_summary:
   - value: Jabber.com, Inc.
     count: 1
   - value: Jeremie Miller

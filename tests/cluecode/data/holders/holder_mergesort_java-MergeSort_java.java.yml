@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Sun Microsystems, Inc.
-holders_tallies:
+holders_summary:
   - value: Sun Microsystems, Inc.
     count: 1

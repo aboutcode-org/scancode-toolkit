@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008 Bull S.A.S.
   - Copyright (c) 2007 Anthony Liguori <anthony@codemonkey.ws>
 holders:
   - Bull S.A.S.
   - Anthony Liguori
-holders_tallies:
+holders_summary:
   - value: Anthony Liguori
     count: 1
   - value: Bull S.A.S.

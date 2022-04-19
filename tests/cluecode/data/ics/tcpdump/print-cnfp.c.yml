@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998 Michael Shalayeff
 holders:
   - Michael Shalayeff
-holders_tallies:
+holders_summary:
   - value: Michael Shalayeff
     count: 1

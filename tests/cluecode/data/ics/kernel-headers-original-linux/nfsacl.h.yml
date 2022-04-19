@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2003 Andreas Gruenbacher <agruen@suse.de>
 holders:
   - Andreas Gruenbacher
-holders_tallies:
+holders_summary:
   - value: Andreas Gruenbacher
     count: 1

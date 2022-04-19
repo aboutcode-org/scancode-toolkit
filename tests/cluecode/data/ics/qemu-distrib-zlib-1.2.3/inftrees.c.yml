@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995-2005 Mark Adler
   - Copyright 1995-2005 Mark Adler
 holders:
   - Mark Adler
   - Mark Adler
-holders_tallies:
+holders_summary:
   - value: Mark Adler
     count: 2

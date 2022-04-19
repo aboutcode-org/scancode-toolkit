@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2008 Dr Nic Williams
 holders:
   - Dr Nic Williams
-holders_tallies:
+holders_summary:
   - value: Dr Nic Williams
     count: 1

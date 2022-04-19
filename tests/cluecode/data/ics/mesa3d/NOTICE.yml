@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2008 Brian Paul
   - Copyright (c) 2008-1010 Intel Corporation
@@ -16,7 +16,7 @@ holders:
   - Luca Barbieri
   - Alexander Chemeris
   - The Android Open Source Project
-holders_tallies:
+holders_summary:
   - value: 2008-1010 Intel Corporation
     count: 1
   - value: Alexander Chemeris

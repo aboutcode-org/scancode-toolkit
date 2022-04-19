@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright 1985-1999 ADVANCED TECHNOLOGY SYSTEMS
 holders:
   - ADVANCED TECHNOLOGY SYSTEMS
-holders_tallies:
+holders_summary:
   - value: ADVANCED TECHNOLOGY SYSTEMS
     count: 1

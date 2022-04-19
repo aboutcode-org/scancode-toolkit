@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1982, 1986, 1988, 1990, 1993, 1994 The Regents of the University of California
   - Copyright (c) 1995 Danny Gasparovski
 holders:
   - The Regents of the University of California
   - Danny Gasparovski
-holders_tallies:
+holders_summary:
   - value: Danny Gasparovski
     count: 1
   - value: The Regents of the University of California

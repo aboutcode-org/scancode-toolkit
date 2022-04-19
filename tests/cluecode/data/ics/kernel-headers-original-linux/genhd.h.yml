@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1992 Drew Eckhardt
 holders:
   - Drew Eckhardt
-holders_tallies:
+holders_summary:
   - value: Drew Eckhardt
     count: 1

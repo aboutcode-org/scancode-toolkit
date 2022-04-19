@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Jean Tourrilhes
-holders_tallies:
+holders_summary:
   - value: Jean Tourrilhes
     count: 1

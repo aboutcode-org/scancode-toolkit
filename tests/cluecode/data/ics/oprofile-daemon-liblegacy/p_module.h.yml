@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1996, 1997 Linux International
 holders:
   - Linux International
-holders_tallies:
+holders_summary:
   - value: Linux International
     count: 1

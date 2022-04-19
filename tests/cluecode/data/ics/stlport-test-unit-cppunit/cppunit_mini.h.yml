@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003, 2004 Zdenek Nemec
 holders:
   - Zdenek Nemec
-holders_tallies:
+holders_summary:
   - value: Zdenek Nemec
     count: 1

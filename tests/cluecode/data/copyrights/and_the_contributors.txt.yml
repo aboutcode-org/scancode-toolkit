@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2012, AstaXie and The Contributors
 holders:
   - AstaXie and The Contributors
-holders_tallies:
+holders_summary:
   - value: AstaXie and The Contributors
     count: 1

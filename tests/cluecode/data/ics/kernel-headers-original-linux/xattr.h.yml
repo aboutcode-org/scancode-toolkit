@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 by Andreas Gruenbacher <a.gruenbacher@computer.org>
   - Copyright (c) 2001-2002 Silicon Graphics, Inc.
@@ -10,7 +10,7 @@ holders:
   - Andreas Gruenbacher
   - Silicon Graphics, Inc.
   - Red Hat, Inc., James Morris
-holders_tallies:
+holders_summary:
   - value: Andreas Gruenbacher
     count: 1
   - value: Red Hat, Inc., James Morris

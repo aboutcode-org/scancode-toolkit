@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2000 Andre Lucas
   - Portions copyright (c) 1998 Todd C. Miller
@@ -12,7 +12,7 @@ holders:
   - Todd C. Miller
   - Jason Downs
   - Theo de Raadt
-holders_tallies:
+holders_summary:
   - value: Andre Lucas
     count: 1
   - value: Jason Downs

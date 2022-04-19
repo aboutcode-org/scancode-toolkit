@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2007 the contributors
 holders:
   - the contributors
-holders_tallies:
+holders_summary:
   - value: the contributors
     count: 1

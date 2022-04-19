@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 by Dimitri van Heesch
   - Copyright (c) 2003-2008 Greg Valure
 holders:
   - Dimitri van Heesch
   - Greg Valure
-holders_tallies:
+holders_summary:
   - value: Dimitri van Heesch
     count: 1
   - value: Greg Valure

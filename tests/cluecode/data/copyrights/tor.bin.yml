@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001-2004, Roger Dingledine
   - Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson
@@ -10,7 +10,7 @@ holders:
   - Roger Dingledine
   - Roger Dingledine, Nick Mathewson
   - The Tor Project, Inc.
-holders_tallies:
+holders_summary:
   - value: Roger Dingledine
     count: 1
   - value: Roger Dingledine, Nick Mathewson

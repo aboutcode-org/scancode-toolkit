@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2010 - by Gilles Vollant
 holders:
   - Gilles Vollant
-holders_tallies:
+holders_summary:
   - value: Gilles Vollant
     count: 1

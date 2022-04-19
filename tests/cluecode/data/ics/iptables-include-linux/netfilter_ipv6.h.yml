@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 1998 Rusty Russell
   - (c) 1999 David Jeffery
 holders:
   - Rusty Russell
   - David Jeffery
-holders_tallies:
+holders_summary:
   - value: David Jeffery
     count: 1
   - value: Rusty Russell

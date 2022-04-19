@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1996 David Mazieres <dm@lcs.mit.edu>
 holders:
   - David Mazieres
-holders_tallies:
+holders_summary:
   - value: David Mazieres
     count: 1

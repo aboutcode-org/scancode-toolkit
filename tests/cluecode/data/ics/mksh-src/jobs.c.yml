@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003, 2004, 2005, 2006, 2007, 2008, 2009 Thorsten Glaser <tg@mirbsd.org>
 holders:
   - Thorsten Glaser
-holders_tallies:
+holders_summary:
   - value: Thorsten Glaser
     count: 1

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein <rocky@gnu.org>
   - Copyright (c) 2000, 2001, 2003, 2004, 2005, 2008 Herbert Valerio Riedel
@@ -43,7 +43,7 @@ holders:
   - VideoLAN Johan Bilien and Gildas Bazin
   - Eric Youngdale
   - Rocky Bernstein and Herbert Valerio Riedel
-holders_tallies:
+holders_summary:
   - value: Ben Fennema
     count: 1
   - value: Burkhard Plaum

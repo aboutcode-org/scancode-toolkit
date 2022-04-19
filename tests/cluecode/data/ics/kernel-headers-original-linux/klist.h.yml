@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005 Patrick Mochel
 holders:
   - Patrick Mochel
-holders_tallies:
+holders_summary:
   - value: Patrick Mochel
     count: 1

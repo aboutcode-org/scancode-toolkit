@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Codethink Limited
 holders:
   - Codethink Limited
-holders_tallies:
+holders_summary:
   - value: Codethink Limited
     count: 1

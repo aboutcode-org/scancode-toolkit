@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2006, Jouni Malinen <j@w1.fi>
   - Copyright (c) 2004, Instant802 Networks, Inc.
@@ -10,7 +10,7 @@ holders:
   - Jouni Malinen
   - Instant802 Networks, Inc.
   - Devicescape Software, Inc.
-holders_tallies:
+holders_summary:
   - value: Devicescape Software, Inc.
     count: 1
   - value: Instant802 Networks, Inc.

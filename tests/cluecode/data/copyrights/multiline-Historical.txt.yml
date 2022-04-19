@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - COPYRIGHT (c) 1990-1994 BY GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.
 holders:
   - GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.
-holders_tallies:
+holders_summary:
   - value: GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.
     count: 1

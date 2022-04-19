@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 by Harald Welte <laforge@gnumonks.org>
   - Copyright 2001 by Robert Olsson <robert.olsson@its.uu.se> Uppsala University, Sweden
 holders:
   - Harald Welte
   - Robert Olsson Uppsala University, Sweden
-holders_tallies:
+holders_summary:
   - value: Harald Welte
     count: 1
   - value: Robert Olsson Uppsala University, Sweden

@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright unitedHeroes.net
   - Copyright (c) 2009, unitedHeroes.net
@@ -11,7 +11,7 @@ holders:
   - unitedHeroes.net
   - unitedHeroes.net
   - Paul Johnston - Other contributors Greg Holt, Andrew Kepert, Ydnar, Lostinet
-holders_tallies:
+holders_summary:
   - value: unitedHeroes.net
     count: 2
   - value: Paul Johnston - Other contributors Greg Holt, Andrew Kepert, Ydnar, Lostinet

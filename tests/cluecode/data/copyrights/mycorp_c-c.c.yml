@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2012 MyCorp Inc.
 holders:
   - MyCorp Inc.
-holders_tallies:
+holders_summary:
   - value: MyCorp Inc.
     count: 1

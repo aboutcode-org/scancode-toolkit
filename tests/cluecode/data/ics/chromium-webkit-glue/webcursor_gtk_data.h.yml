@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Tim Copperfield <timecop@network.email.ne.jp>
   - Copyright (c) 2007 Christian Dywan <christian@twotoasts.de>
 holders:
   - Tim Copperfield
   - Christian Dywan
-holders_tallies:
+holders_summary:
   - value: Christian Dywan
     count: 1
   - value: Tim Copperfield

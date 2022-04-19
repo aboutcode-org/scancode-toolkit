@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Richard Offer and Shawn T. Amundson (amundson@gtk.org)
 holders:
   - Richard Offer and Shawn T. Amundson
-holders_tallies:
+holders_summary:
   - value: Richard Offer and Shawn T. Amundson
     count: 1

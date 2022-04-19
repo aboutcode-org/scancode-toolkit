@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) <2013> , GENIVI Alliance, Inc.
 holders:
   - GENIVI Alliance, Inc.
-holders_tallies:
+holders_summary:
   - value: GENIVI Alliance, Inc.
     count: 1

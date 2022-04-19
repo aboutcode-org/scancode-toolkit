@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 Affero Inc.
 holders:
   - Affero Inc.
-holders_tallies:
+holders_summary:
   - value: Affero Inc.
     count: 1

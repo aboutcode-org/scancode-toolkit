@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 SuSE Linux AG, Nuernberg, Germany
 holders:
   - SuSE Linux AG, Nuernberg, Germany
-holders_tallies:
+holders_summary:
   - value: SuSE Linux AG, Nuernberg, Germany
     count: 1

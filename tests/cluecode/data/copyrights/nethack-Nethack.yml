@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1989 M. Stephenson
   - copyright 1988 Richard M. Stallman
 holders:
   - M. Stephenson
   - Richard M. Stallman
-holders_tallies:
+holders_summary:
   - value: M. Stephenson
     count: 1
   - value: Richard M. Stallman

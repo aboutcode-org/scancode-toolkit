@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html
   - Copyright (c) 2007-2008 Even Rouault
@@ -18,7 +18,7 @@ holders:
   - Even Rouault
   - Gilles Vollant, Even Rouault, Mathias Svensson
   - Gilles Vollant
-holders_tallies:
+holders_summary:
   - value: Even Rouault
     count: 2
   - value: Gilles Vollant

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2006 UfoMechanic
 holders:
   - UfoMechanic
-holders_tallies:
+holders_summary:
   - value: UfoMechanic
     count: 1

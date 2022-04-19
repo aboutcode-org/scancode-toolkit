@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002-2003 by Tungsten Graphics, Inc., Cedar Park, Texas
 holders:
   - Tungsten Graphics, Inc., Cedar Park, Texas
-holders_tallies:
+holders_summary:
   - value: Tungsten Graphics, Inc., Cedar Park, Texas
     count: 1

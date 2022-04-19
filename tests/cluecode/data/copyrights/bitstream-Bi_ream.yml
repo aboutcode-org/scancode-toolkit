@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 by Bitstream, Inc.
 holders:
   - Bitstream, Inc.
-holders_tallies:
+holders_summary:
   - value: Bitstream, Inc.
     count: 1

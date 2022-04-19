@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001 Freddy Vulto
 holders:
   - Freddy Vulto
-holders_tallies:
+holders_summary:
   - value: Freddy Vulto
     count: 1

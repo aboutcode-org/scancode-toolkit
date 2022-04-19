@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 1991-9 Silicon Graphics, Inc.
 holders:
   - Silicon Graphics, Inc.
-holders_tallies:
+holders_summary:
   - value: Silicon Graphics, Inc.
     count: 1

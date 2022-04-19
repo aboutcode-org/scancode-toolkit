@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1992-2002 by P.J. Plauger
 holders:
   - P.J. Plauger
-holders_tallies:
+holders_summary:
   - value: P.J. Plauger
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003-2008 Jody Goldberg (jody@gnome.org) and others
 holders:
   - Jody Goldberg and others
-holders_tallies:
+holders_summary:
   - value: Jody Goldberg and others
     count: 1

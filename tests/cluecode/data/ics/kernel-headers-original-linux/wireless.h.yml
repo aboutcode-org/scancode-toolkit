@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1997-2006 Jean Tourrilhes
 holders:
   - Jean Tourrilhes
-holders_tallies:
+holders_summary:
   - value: Jean Tourrilhes
     count: 1

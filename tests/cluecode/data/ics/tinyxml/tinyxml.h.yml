@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright (c) 2000-2002 Lee Thomason (www.grinninglizard.com)
 holders:
   - Lee Thomason
-holders_tallies:
+holders_summary:
   - value: Lee Thomason
     count: 1

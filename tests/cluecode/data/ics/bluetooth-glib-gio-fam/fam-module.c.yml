@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2006-2007 Red Hat, Inc.
   - Copyright (c) 2007 Sebastian Droge
 holders:
   - Red Hat, Inc.
   - Sebastian Droge
-holders_tallies:
+holders_summary:
   - value: Red Hat, Inc.
     count: 1
   - value: Sebastian Droge

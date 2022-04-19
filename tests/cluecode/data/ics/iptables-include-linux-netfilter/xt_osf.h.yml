@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003+ Evgeniy Polyakov <johnpol@2ka.mxt.ru>
 holders:
   - Evgeniy Polyakov
-holders_tallies:
+holders_summary:
   - value: Evgeniy Polyakov
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995,1999 Theo de Raadt
 holders:
   - Theo de Raadt
-holders_tallies:
+holders_summary:
   - value: Theo de Raadt
     count: 1

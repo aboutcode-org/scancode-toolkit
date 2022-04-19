@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2004 David Turner and Werner Lemberg
   - Copyright (c) 2008 Nokia Corporation and/or its subsidiary(-ies)
@@ -10,7 +10,7 @@ holders:
   - David Turner and Werner Lemberg
   - Nokia Corporation and/or its subsidiary(-ies)
   - Red Hat, Inc.
-holders_tallies:
+holders_summary:
   - value: David Turner and Werner Lemberg
     count: 1
   - value: Nokia Corporation and/or its subsidiary(-ies)

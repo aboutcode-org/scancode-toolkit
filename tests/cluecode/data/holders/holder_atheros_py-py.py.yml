@@ -1,11 +1,11 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - Atheros Communications, Inc.
   - Atheros Communications, Inc.
   - Intel Corporation
-holders_tallies:
+holders_summary:
   - value: Atheros Communications, Inc.
     count: 2
   - value: Intel Corporation

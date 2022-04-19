@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 Chris Lattner
 holders:
   - Chris Lattner
-holders_tallies:
+holders_summary:
   - value: Chris Lattner
     count: 1

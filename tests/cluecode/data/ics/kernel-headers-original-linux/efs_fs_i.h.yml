@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Al Smith
   - (c) 1988 Silicon Graphics
 holders:
   - Al Smith
   - Silicon Graphics
-holders_tallies:
+holders_summary:
   - value: Al Smith
     count: 1
   - value: Silicon Graphics

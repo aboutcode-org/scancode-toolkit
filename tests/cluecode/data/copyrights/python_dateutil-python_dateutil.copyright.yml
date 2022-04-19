@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2001, 2002 Python Software Foundation
   - Copyright (c) 1995-2001 Corporation for National Research Initiatives
@@ -10,7 +10,7 @@ holders:
   - Python Software Foundation
   - Corporation for National Research Initiatives
   - Stichting Mathematisch Centrum Amsterdam, The Netherlands
-holders_tallies:
+holders_summary:
   - value: Corporation for National Research Initiatives
     count: 1
   - value: Python Software Foundation

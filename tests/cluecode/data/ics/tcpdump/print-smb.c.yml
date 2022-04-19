@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Andrew Tridgell 1995-1999
 holders:
   - Andrew Tridgell
-holders_tallies:
+holders_summary:
   - value: Andrew Tridgell
     count: 1

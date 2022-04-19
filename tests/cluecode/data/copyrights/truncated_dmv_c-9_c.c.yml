@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1995 DMV - DigiMedia Vision
 holders:
   - DMV - DigiMedia Vision
-holders_tallies:
+holders_summary:
   - value: DMV - DigiMedia Vision
     count: 1

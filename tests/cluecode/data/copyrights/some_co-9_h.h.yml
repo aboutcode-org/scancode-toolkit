@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright The Uber Company, inc.
 holders:
   - The Uber Company, inc.
-holders_tallies:
+holders_summary:
   - value: The Uber Company, inc.
     count: 1

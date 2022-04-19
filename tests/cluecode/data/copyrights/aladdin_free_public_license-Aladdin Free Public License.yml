@@ -1,12 +1,12 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1994, 1995, 1997, 1998, 1999, 2000 Aladdin Enterprises, Menlo Park, California,
     U.S.A.
 holders:
   - Aladdin Enterprises, Menlo Park, California, U.S.A.
-holders_tallies:
+holders_summary:
   - value: Aladdin Enterprises, Menlo Park, California, U.S.A.
     count: 1

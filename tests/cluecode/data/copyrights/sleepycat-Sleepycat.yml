@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1990-1999 Sleepycat Software
 holders:
   - Sleepycat Software
-holders_tallies:
+holders_summary:
   - value: Sleepycat Software
     count: 1

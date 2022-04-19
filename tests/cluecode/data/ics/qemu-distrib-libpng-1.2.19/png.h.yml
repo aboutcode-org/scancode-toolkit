@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1998-2007 Glenn Randers-Pehrson
   - Copyright (c) 1996, 1997 Andreas Dilger
@@ -20,7 +20,7 @@ holders:
   - Glenn Randers-Pehrson
   - Andreas Dilger
   - Guy Eric Schalnat, Group 42, Inc.
-holders_tallies:
+holders_summary:
   - value: Glenn Randers-Pehrson
     count: 4
   - value: Andreas Dilger

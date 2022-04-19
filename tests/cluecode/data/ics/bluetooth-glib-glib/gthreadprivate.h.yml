@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2003 Sebastian Wilhelmi
 holders:
   - Sebastian Wilhelmi
-holders_tallies:
+holders_summary:
   - value: Sebastian Wilhelmi
     count: 1

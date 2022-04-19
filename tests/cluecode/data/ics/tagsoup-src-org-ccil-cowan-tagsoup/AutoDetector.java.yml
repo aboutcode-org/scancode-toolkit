@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002-2008 by John Cowan
 holders:
   - John Cowan
-holders_tallies:
+holders_summary:
   - value: John Cowan
     count: 1

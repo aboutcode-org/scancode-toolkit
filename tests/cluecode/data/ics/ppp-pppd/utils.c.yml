@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2002 Paul Mackerras
 holders:
   - Paul Mackerras
-holders_tallies:
+holders_summary:
   - value: Paul Mackerras
     count: 1

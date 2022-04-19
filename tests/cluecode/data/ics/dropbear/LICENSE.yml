@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2004 Mihnea Stoenescu
   - Copyright (c) 2002-2006 Matt Johnston
@@ -20,7 +20,7 @@ holders:
   - Simon Tatham
   - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
     Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
-holders_tallies:
+holders_summary:
   - value: Mihnea Stoenescu
     count: 2
   - value: Matt Johnston

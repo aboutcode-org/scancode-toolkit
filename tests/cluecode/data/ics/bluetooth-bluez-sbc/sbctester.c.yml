@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2008-2010 Nokia Corporation
   - Copyright (c) 2007-2010 Marcel Holtmann <marcel@holtmann.org>
@@ -14,7 +14,7 @@ holders:
   - Frederic Dalleau
   - Marcel Holtmann
   - Frederic Dalleau
-holders_tallies:
+holders_summary:
   - value: Frederic Dalleau
     count: 2
   - value: Marcel Holtmann

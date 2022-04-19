@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright Svend Olaf Mikkelsen
   - Copyright Eric A. Young
 holders:
   - Svend Olaf Mikkelsen
   - Eric A. Young
-holders_tallies:
+holders_summary:
   - value: Eric A. Young
     count: 1
   - value: Svend Olaf Mikkelsen

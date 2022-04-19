@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2017 The Chromium Authors
 holders:
   - The Chromium Authors
-holders_tallies:
+holders_summary:
   - value: The Chromium Authors
     count: 1

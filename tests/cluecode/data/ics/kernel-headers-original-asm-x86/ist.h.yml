@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002 Andy Grover <andrew.grover@intel.com>
 holders:
   - Andy Grover
-holders_tallies:
+holders_summary:
   - value: Andy Grover
     count: 1

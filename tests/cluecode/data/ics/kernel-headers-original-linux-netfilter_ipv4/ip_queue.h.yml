@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2000 James Morris
 holders:
   - James Morris
-holders_tallies:
+holders_summary:
   - value: James Morris
     count: 1

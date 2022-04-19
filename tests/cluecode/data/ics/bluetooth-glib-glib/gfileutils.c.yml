@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2000 Red Hat, Inc.
   - Copyright (c) 1991,92,93,94,95,96,97,98,99 Free Software Foundation, Inc.
 holders:
   - Red Hat, Inc.
   - Free Software Foundation, Inc.
-holders_tallies:
+holders_summary:
   - value: Free Software Foundation, Inc.
     count: 1
   - value: Red Hat, Inc.

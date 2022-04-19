@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) Copyright Greg Colvin and Beman Dawes 1998, 1999
   - Copyright (c) 2001, 2002 Peter Dimov
 holders:
   - Greg Colvin and Beman Dawes
   - Peter Dimov
-holders_tallies:
+holders_summary:
   - value: Greg Colvin and Beman Dawes
     count: 1
   - value: Peter Dimov

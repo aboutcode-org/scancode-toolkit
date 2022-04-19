@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Daryle Walker
   - Portions Copyright (c) 2002 Thomas Wegner
 holders:
   - Daryle Walker
   - Thomas Wegner
-holders_tallies:
+holders_summary:
   - value: Daryle Walker
     count: 1
   - value: Thomas Wegner

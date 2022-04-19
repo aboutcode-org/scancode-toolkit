@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2005 Matt Johnston
 holders:
   - Matt Johnston
-holders_tallies:
+holders_summary:
   - value: Matt Johnston
     count: 1

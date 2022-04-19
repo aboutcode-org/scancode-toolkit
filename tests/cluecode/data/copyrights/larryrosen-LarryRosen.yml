@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 Lawrence E. Rosen
 holders:
   - Lawrence E. Rosen
-holders_tallies:
+holders_summary:
   - value: Lawrence E. Rosen
     count: 1

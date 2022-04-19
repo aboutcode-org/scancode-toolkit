@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 1996..2005 by Phillip Vandry <vandry@TZoNE.ORG>
 holders:
   - Phillip Vandry
-holders_tallies:
+holders_summary:
   - value: Phillip Vandry
     count: 1

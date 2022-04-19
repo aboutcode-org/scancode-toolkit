@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 1999 Paul Rusty Russell
   - (c) 2000-2004 by the Netfilter Core Team <coreteam@netfilter.org>
 holders:
   - Paul Rusty Russell
   - the Netfilter Core Team
-holders_tallies:
+holders_summary:
   - value: Paul Rusty Russell
     count: 1
   - value: the Netfilter Core Team

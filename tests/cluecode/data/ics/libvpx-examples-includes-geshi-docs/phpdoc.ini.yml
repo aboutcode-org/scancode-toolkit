@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2002, Greg Beaver <cellog@users.sourceforge.net>
 holders:
   - Greg Beaver
-holders_tallies:
+holders_summary:
   - value: Greg Beaver
     count: 1

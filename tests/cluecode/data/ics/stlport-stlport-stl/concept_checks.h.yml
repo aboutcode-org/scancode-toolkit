@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999 Silicon Graphics Computer Systems, Inc.
 holders:
   - Silicon Graphics Computer Systems, Inc.
-holders_tallies:
+holders_summary:
   - value: Silicon Graphics Computer Systems, Inc.
     count: 1

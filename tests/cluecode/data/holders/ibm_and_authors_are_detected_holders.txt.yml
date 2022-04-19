@@ -1,8 +1,8 @@
 what:
   - holders
-  - holders_tallies
+  - holders_summary
 holders:
   - IBM, Corp.
-holders_tallies:
+holders_summary:
   - value: IBM, Corp.
     count: 1

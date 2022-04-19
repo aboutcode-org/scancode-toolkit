@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2002 Zend Technologies Ltd.
 holders:
   - Zend Technologies Ltd.
-holders_tallies:
+holders_summary:
   - value: Zend Technologies Ltd.
     count: 1

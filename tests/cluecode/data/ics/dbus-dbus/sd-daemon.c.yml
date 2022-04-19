@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2010 Lennart Poettering
 holders:
   - Lennart Poettering
-holders_tallies:
+holders_summary:
   - value: Lennart Poettering
     count: 1

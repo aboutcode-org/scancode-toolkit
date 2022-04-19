@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1999-2000 Veridian Information Solutions, Inc.
 holders:
   - Veridian Information Solutions, Inc.
-holders_tallies:
+holders_summary:
   - value: Veridian Information Solutions, Inc.
     count: 1

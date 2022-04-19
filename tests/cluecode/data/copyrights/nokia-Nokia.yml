@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) Nokia and others
 holders:
   - Nokia and others
-holders_tallies:
+holders_summary:
   - value: Nokia and others
     count: 1

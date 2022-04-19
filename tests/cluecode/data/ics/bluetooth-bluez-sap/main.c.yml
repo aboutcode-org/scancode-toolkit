@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2010 Instituto Nokia de Tecnologia - INdT
 holders:
   - Instituto Nokia de Tecnologia - INdT
-holders_tallies:
+holders_summary:
   - value: Instituto Nokia de Tecnologia - INdT
     count: 1

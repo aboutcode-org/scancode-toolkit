@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - (c) 2002,2004 MARA Systems AB <http://www.marasystems.com>
 holders:
   - MARA Systems AB
-holders_tallies:
+holders_summary:
   - value: MARA Systems AB
     count: 1

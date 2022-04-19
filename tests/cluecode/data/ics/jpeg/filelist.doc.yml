@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 1994-1998, Thomas G. Lane
 holders:
   - Thomas G. Lane
-holders_tallies:
+holders_summary:
   - value: Thomas G. Lane
     count: 1

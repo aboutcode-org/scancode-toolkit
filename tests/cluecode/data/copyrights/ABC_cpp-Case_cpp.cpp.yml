@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) ABC Company
 holders:
   - ABC Company
-holders_tallies:
+holders_summary:
   - value: ABC Company
     count: 1

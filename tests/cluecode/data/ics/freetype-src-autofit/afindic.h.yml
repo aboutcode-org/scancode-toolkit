@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2007 by Rahul Bhalerao <rahul.bhalerao@redhat.com>
 holders:
   - Rahul Bhalerao
-holders_tallies:
+holders_summary:
   - value: Rahul Bhalerao
     count: 1

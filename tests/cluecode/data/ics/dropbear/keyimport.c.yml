@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - copyright 2003 Matt Johnston
   - copyright 1997-2003 Simon Tatham
@@ -12,7 +12,7 @@ holders:
   - Simon Tatham
   - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
     Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
-holders_tallies:
+holders_summary:
   - value: Matt Johnston
     count: 1
   - value: Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Fabrice Bellard
   - Copyright (c) 2005 Filip Navara
 holders:
   - Fabrice Bellard
   - Filip Navara
-holders_tallies:
+holders_summary:
   - value: Fabrice Bellard
     count: 1
   - value: Filip Navara

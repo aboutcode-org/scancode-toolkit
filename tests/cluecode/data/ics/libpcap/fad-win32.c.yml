@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2002 - 2005 NetGroup, Politecnico di Torino (Italy)
   - Copyright (c) 2005 - 2006 CACE Technologies, Davis (California)
 holders:
   - NetGroup, Politecnico di Torino (Italy)
   - CACE Technologies, Davis (California)
-holders_tallies:
+holders_summary:
   - value: CACE Technologies, Davis (California)
     count: 1
   - value: NetGroup, Politecnico di Torino (Italy)

@@ -1,14 +1,14 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2004 Martin Carlsson
   - Portions (c) 2004 Matt Johnston
 holders:
   - Martin Carlsson
   - Matt Johnston
-holders_tallies:
+holders_summary:
   - value: Martin Carlsson
     count: 1
   - value: Matt Johnston

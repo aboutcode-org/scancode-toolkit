@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - COPYRIGHT (c) DIONYSOS 2006 - 2009
 holders:
   - DIONYSOS
-holders_tallies:
+holders_summary:
   - value: DIONYSOS
     count: 1

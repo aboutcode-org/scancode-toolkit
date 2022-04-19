@@ -1,7 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2009 Google Inc.
   - Copyright (c) 2010 John Resig
@@ -12,7 +12,7 @@ holders:
   - John Resig
   - Andy Smith
   - Mewp
-holders_tallies:
+holders_summary:
   - value: Andy Smith
     count: 1
   - value: Google Inc.

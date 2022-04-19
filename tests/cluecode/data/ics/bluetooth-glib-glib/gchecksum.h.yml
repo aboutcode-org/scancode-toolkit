@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2007 Emmanuele Bassi <ebassi@gnome.org>
 holders:
   - Emmanuele Bassi
-holders_tallies:
+holders_summary:
   - value: Emmanuele Bassi
     count: 1

@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright 2008 Sean Sullivan
 holders:
   - Sean Sullivan
-holders_tallies:
+holders_summary:
   - value: Sean Sullivan
     count: 1

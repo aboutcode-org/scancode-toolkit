@@ -1,13 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_tallies
+  - holders_summary
 copyrights:
   - Copyright (c) 2009 The Chromium Authors
   - Copyright (c) 2009 The Chromium Authors
 holders:
   - The Chromium Authors
   - The Chromium Authors
-holders_tallies:
+holders_summary:
   - value: The Chromium Authors
     count: 2
