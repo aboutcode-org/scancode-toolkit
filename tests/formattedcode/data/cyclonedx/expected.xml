@@ -1,4 +1,15 @@
-<bom xmlns="http://cyclonedx.org/schema/bom/1.3" version="1" serialNumber="">
+<?xml version="1.0" encoding="UTF-8"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.3" version="1" serialNumber="urn:uuid:cd08d8e2-49b8-4baa-b7b2-c96258cb3aa5">
+  <metadata>
+    <timestamp>2022-04-20T17:16:54Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>AboutCode.org</vendor>
+        <name>scancode-toolkit</name>
+        <version>31.0.0b1</version>
+      </tool>
+    </tools>
+  </metadata>
   <components>
     <component type="library" bom-ref="pkg:npm/npm@2.13.5">
       <name>npm</name>

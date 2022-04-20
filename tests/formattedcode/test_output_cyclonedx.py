@@ -64,14 +64,13 @@ def check_cyclone_xml_output(expected_file, result_file, regen=REGEN_TEST_FIXTUR
     Check that expected and result_file are equal. Ignore headers.
     If `regen` is True the expected_file is overwritten with `results_file`.
     """
-    result = load_and_clean_xml(result_file)
     if regen:
-        expected = result
-        with open(expected_file, 'w') as o:
-            o.write(result)
-    else:
-        expected = load_and_clean_xml(expected_file)
+        with open(result_file) as rf, open(expected_file, 'w') as ef:
+            expected = rf.read()
+            ef.write(expected)
 
+    result = load_and_clean_xml(result_file)
+    expected = load_and_clean_xml(expected_file)
     assert result == expected
 
 
