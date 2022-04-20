@@ -2,13 +2,11 @@ what:
   - copyrights
   - holders
   - authors
-
 copyrights:
-    - Copyright 2008 Red Hat Inc.
+  - Copyright 2008 Red Hat Inc.
 holders:
-    - Red Hat Inc.
+  - Red Hat Inc.
 authors:
-    - Adam Jackson <ajax@redhat.com>
-    - Bill Nottingham <notting@redhat.com>
-    - Ray Strode <rstrode@redhat.com>
-
+  - Adam Jackson <ajax@redhat.com>
+  - Bill Nottingham <notting@redhat.com>
+  - Ray Strode <rstrode@redhat.com>

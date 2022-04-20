@@ -15,6 +15,7 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 8
@@ -22,13 +23,7 @@
     }
   ],
   "summary": {
-    "primary_license_expression": "mit OR apache-2.0",
-    "declared_license_expressions": [
-      "mit OR apache-2.0",
-      "apache-2.0",
-      "apache-2.0 OR mit",
-      "mit"
-    ],
+    "declared_license_expression": "mit OR apache-2.0",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,

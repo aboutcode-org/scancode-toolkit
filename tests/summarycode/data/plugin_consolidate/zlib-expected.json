@@ -20,6 +20,7 @@
       "output_format_version": null,
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "files_count": 253
       }
@@ -36,8 +37,11 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [
+        "The --consolidate option will be deprecated in a future version of scancode-toolkit."
+      ],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
+        "spdx_license_list_version": "3.16",
         "files_count": 253
       }
     }

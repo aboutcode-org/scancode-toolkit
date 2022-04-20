@@ -175,8 +175,8 @@ def make_copyright_test_functions(
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from summarycode.copyright_summary import summarize_copyrights
-    from summarycode.copyright_summary import summarize_persons
+    from summarycode.copyright_tallies import tally_copyrights
+    from summarycode.copyright_tallies import tally_persons
 
     def closure_test_function(*args, **kwargs):
         detections = detect_copyrights(test_file)
@@ -184,15 +184,15 @@ def make_copyright_test_functions(
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = as_sorted_mapping(summarize_persons(holders))
+            holders_summary = as_sorted_mapping(tally_persons(holders))
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
-            copyrights_summary = as_sorted_mapping(summarize_copyrights(copyrights))
+            copyrights_summary = as_sorted_mapping(tally_copyrights(copyrights))
 
         authors_summary = []
         if 'authors_summary' in test.what:
-            authors_summary = as_sorted_mapping(summarize_persons(authors))
+            authors_summary = as_sorted_mapping(tally_persons(authors))
 
         results = dict(
             copyrights=copyrights,

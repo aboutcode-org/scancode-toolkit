@@ -15,7 +15,7 @@ holders:
 holders_summary:
   - value: Eric Young
     count: 1
-  - value: Microsoft Corp.
+  - value: Microsoft
     count: 1
   - value: The OpenSSL Project
     count: 1

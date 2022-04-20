@@ -15,6 +15,7 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 3
@@ -22,8 +23,7 @@
     }
   ],
   "summary": {
-    "primary_license_expression": "",
-    "declared_license_expressions": [],
+    "declared_license_expression": "",
     "license_clarity_score": {
       "score": 0,
       "declared_license": false,
@@ -31,7 +31,7 @@
       "has_license_text": false,
       "declared_copyrights": false,
       "conflicting_license_categories": false,
-      "ambigous_compound_licensing": false
+      "ambigous_compound_licensing": true
     }
   },
   "files": [

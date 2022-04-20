@@ -30,7 +30,7 @@ Important API changes:
   return "package_data" package information at the manifest file-level
   rather than "packages". This has all the data attributes of a "package_data"
   field plus others: "package_uuid", "package_data_files" and "files".
-  
+
 - There is a a new top-level "packages" attribute that contains package
   instances that can be aggregating data from multiple manifests.
 
@@ -46,6 +46,14 @@ Important API changes:
 
 - The data structure for CSV output has been changed to rename the Resource
   column to "path". The "copyright_holder" has been ranmed to "holder"
+
+- The license clarity scoring plugin has been overhauled to show new license
+  clarity criteria. More details of the new criteria are provided below.
+
+- The functionality of the summary plugin has been changed to provide declared
+  origin information for the codebase being scanned. The previous summary plugin
+  functionality has been preserved in the new ``tallies`` plugin. More details
+  are provided below.
 
 
 Copyright detection:
@@ -142,7 +150,7 @@ Package detection:
     as these are really package data that are being detected, and can be manifests,
     lockfiles or other package data. This has all the data attributes of a `package_data`
     field plus others: `package_uuid`, `package_data_files` and `files`.
-  
+
 
   - A new top-level attribute `packages` has been added which contains package
     instances created from `package_data` detected in the codebase.
@@ -156,7 +164,7 @@ Package detection:
 
   - There is a new resource-level attribute `for_packages` which refers to packages
     through package_uuids (pURL + uuid string).
-  
+
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` having a package data mapping.
     Also the `requirement` attribute here is renamed to `extracted_requirement`.
@@ -222,64 +230,20 @@ License Clarity Scoring Update
      - Scoring Weight = -20
 
 
-License Clarity Scoring Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary Plugin Update
+~~~~~~~~~~~~~~~~~~~~~
+The summary plugin's behavior has been changed. Previously, it provided a count
+of the detected license expressions, copyrights, holders, authors, and
+programming languages from a scan. We have preserved this functionality by
+creating a new plugin called ``tallies``. All functionality of the previous
+summary plugin have been preserved in the tallies plugin.
 
- - We are moving away from the license clarity scoring defined by ClearlyDefined
-   in the license clarity score plugin. The previous license clarity scoring
-   logic produced a score that was misleading, where it would return a low score
-   when scanning packages due to the stringent scoring criteria. We are now
-   using more general criteria to get a sense of what provenance information has
-   been provided and whether or not there is a conflict in licensing between
-   what licenses were declared at the top-level key files and what licenses have
-   been detected in the files under the top-level.
-
- - The license clarity score is a value from 0-100 calculated by combining the
-   weighted values determined for each of the scoring elements:
-
-   - Declared license:
-
-     - When true, indicates that the software package licensing is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 40
-
-   - Identification precision:
-
-     - Indicates how well the license statement(s) of the software identify known
-       licenses that can be designated by precise keys (identifiers) as provided in
-       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
-       license list, the OSI license list, or a URL pointing to a specific license
-       text in a project or organization website.
-     - Scoring Weight = 40
-
-   - License texts:
-
-     - License texts are provided to support the declared license expression in
-       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
-     - Scoring Weight = 10
-
-   - Declared copyright:
-
-     - When true, indicates that the software package copyright is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 10
-
-   - Ambiguous compound licensing:
-
-     - When true, indicates that the software has a license declaration that
-       makes it difficult to construct a reliable license expression, such as in
-       the case of multiple licenses where the conjunctive versus disjunctive
-       relationship is not well defined.
-     - Scoring Weight = -10
-
-   - Conflicting license categories:
-
-     - When true, indicates the declared license expression of the software is in
-       the permissive category, but that other potentially conflicting categories,
-       such as copyleft and proprietary, have been detected in lower level code.
-     - Scoring Weight = -20
+The plugin now attempts to determine a declared license expression, holder, and
+primary programming language from a scan. The license clarity score is provided
+context on what origin information is provided from key files. It also returns
+lists of tallies of the other detected license expressions, holders, and
+programming languages. All information is provided in the codebase level
+attribute named ``summary``.
 
 
 Outputs:
@@ -287,6 +251,9 @@ Outputs:
 
  - Add new outputs for the CycloneDx format.
    The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+
+ - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+   that contains any warning messages that occur during a scan.
 
 
 Output version

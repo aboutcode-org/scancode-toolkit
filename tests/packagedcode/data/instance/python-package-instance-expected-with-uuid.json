@@ -10,9 +10,10 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "3.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 7
@@ -28,8 +29,8 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/colorama?uuid=7424c04d-8d58-4573-b6cf-7a3cc08f8348",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=732998ac-1c28-448e-be0c-bbbbea2b2f9e",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "lockfile": "METADATA"
     },
     {
@@ -40,8 +41,8 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=0910d9ea-5b43-4bd8-bff4-3c9297e6d12e",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=757cc640-7c92-4c4b-9ae7-1b63615c26d4",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "lockfile": "METADATA"
     },
     {
@@ -52,8 +53,8 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/colorama?uuid=953ceae5-6f73-42e3-962f-42553646086a",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=52178881-3370-4169-9b15-cda8dd71984f",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "lockfile": "setup.py"
     },
     {
@@ -64,8 +65,8 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=679d8571-4893-45af-b629-5d2be3e52788",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=428f8422-742b-4031-adf9-26ab295281cf",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "lockfile": "setup.py"
     },
     {
@@ -76,8 +77,8 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/pre-commit?uuid=88de6ab9-d253-4fcf-ac9a-2f7d9cf8e04f",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "dependency_uuid": "pkg:pypi/pre-commit?uuid=93498734-5b50-4aa2-a3e3-f40cc5e03b57",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "lockfile": "tox.ini"
     }
   ],
@@ -136,7 +137,7 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a",
+      "package_uuid": "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c",
       "package_data_files": [
         "METADATA",
         "setup.cfg",
@@ -164,7 +165,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -173,7 +174,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -262,7 +263,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -271,7 +272,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -316,7 +317,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -380,7 +381,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     },
@@ -435,7 +436,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=3ab772cf-2208-437c-9dd0-2d39352db69a"
+        "pkg:pypi/click@8.0.1?uuid=21bf14d1-a101-4324-a0d7-9c79bbdb872c"
       ],
       "scan_errors": []
     }

@@ -1,20 +1,19 @@
 license_expressions:
-    - gpl-2.0-plus AND gpl-3.0-plus
-    - gpl-1.0-plus WITH mif-exception
-    - gpl-1.0-plus WITH ada-linking-exception
-    - gpl-1.0-plus
-    - gpl-1.0-plus
-    - gpl-1.0-plus WITH gcc-compiler-exception-2.0
-    - gpl-1.0-plus WITH classpath-exception-2.0
-    - gpl-1.0-plus WITH gcc-linking-exception-2.0
-    - linking-exception-2.0-plus
-    - gpl-1.0-plus WITH gcc-linking-exception-2.0
-    - gpl-1.0-plus WITH linking-exception-2.0-plus
-    - gpl-2.0-plus
-    - unknown-license-reference
-    - d-zlib
-    - lgpl-2.0-plus WITH linking-exception-2.0-plus
-    - unknown-license-reference
-    - mit
-    - gfdl-1.2
-
+  - gpl-2.0-plus AND gpl-3.0-plus
+  - gpl-1.0-plus WITH mif-exception
+  - gpl-1.0-plus WITH ada-linking-exception
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus WITH gcc-compiler-exception-2.0
+  - gpl-1.0-plus WITH classpath-exception-2.0
+  - gpl-1.0-plus WITH gcc-linking-exception-2.0
+  - linking-exception-2.0-plus
+  - gpl-1.0-plus WITH gcc-linking-exception-2.0
+  - gpl-1.0-plus WITH linking-exception-2.0-plus
+  - gpl-2.0-plus
+  - unknown-license-reference
+  - d-zlib
+  - lgpl-2.0-plus WITH linking-exception-2.0-plus
+  - unknown-license-reference
+  - mit
+  - gfdl-1.2

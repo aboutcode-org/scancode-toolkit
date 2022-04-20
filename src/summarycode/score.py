@@ -9,7 +9,7 @@
 
 import attr
 
-from commoncode.datautils import Mapping
+from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
@@ -70,7 +70,10 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        compute_license_score(codebase)
+        scoring_elements, declared_license_expression = compute_license_score(codebase)
+        codebase.attributes.summary['declared_license_expression'] = declared_license_expression
+        codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
+
 
 
 def compute_license_score(codebase):
@@ -153,18 +156,18 @@ def compute_license_score(codebase):
         ):
             scoring_elements.score -= 20
 
-    primary_license = get_primary_license(declared_license_expressions)
-    if (
-        not primary_license
-        and scoring_elements.score > 0
-    ):
+    declared_license_expression = get_primary_license(unique_declared_license_expressions)
+
+    if not declared_license_expression:
+        # If we cannot get a single primary license, then we combine and simplify the license expressions from key files
+        combined_declared_license_expression = combine_expressions(unique_declared_license_expressions)
+        if combined_declared_license_expression:
+            declared_license_expression = str(Licensing().parse(combined_declared_license_expression).simplify())
         scoring_elements.ambigous_compound_licensing = True
-        scoring_elements.score -= 10
+        if scoring_elements.score > 0:
+            scoring_elements.score -= 10
 
-    codebase.attributes.summary['primary_license_expression'] = primary_license
-    codebase.attributes.summary['declared_license_expressions'] = unique_declared_license_expressions
-    codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
-
+    return scoring_elements, declared_license_expression or ''
 
 
 def unique(objects):
@@ -178,6 +181,7 @@ def unique(objects):
             uniques.append(obj)
             seen.add(obj)
     return uniques
+
 
 @attr.s()
 class ScoringElements:
@@ -392,17 +396,20 @@ def group_license_expressions(unique_license_expressions):
     unique_joined_expressions = []
     seen_joined_expression = []
     len_joined_expressions = len(joined_expressions)
-    for i, j in enumerate(joined_expressions, start=1):
-        if i > len_joined_expressions:
-            break
-        for j1 in joined_expressions[i:]:
-            if licensing.is_equivalent(j, j1):
-                if (
-                    j not in unique_joined_expressions
-                    and j not in seen_joined_expression
-                ):
-                    unique_joined_expressions.append(j)
-                    seen_joined_expression.append(j1)
+    if len_joined_expressions > 1:
+        for i, j in enumerate(joined_expressions, start=1):
+            if i > len_joined_expressions:
+                break
+            for j1 in joined_expressions[i:]:
+                if licensing.is_equivalent(j, j1):
+                    if (
+                        j not in unique_joined_expressions
+                        and j not in seen_joined_expression
+                    ):
+                        unique_joined_expressions.append(j)
+                        seen_joined_expression.append(j1)
+    else:
+        unique_joined_expressions = joined_expressions
 
     return unique_joined_expressions, single_expressions
 
