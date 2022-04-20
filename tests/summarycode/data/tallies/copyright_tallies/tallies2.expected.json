@@ -20,7 +20,16 @@
     }
   ],
   "tallies": {
-    "copyrights": [],
+    "copyrights": [
+      {
+        "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
+        "count": 1
+      },
+      {
+        "value": "copyright Sun Microsystems Inc.",
+        "count": 1
+      }
+    ],
     "holders": [
       {
         "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",

@@ -24,6 +24,54 @@
       {
         "value": null,
         "count": 4
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Mark Adler",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+        "count": 3
+      },
+      {
+        "value": "Copyright (c) Brian Goetz and Tim Peierls",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Dmitriy Anisimkov",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) by Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright JBoss Inc., and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat, Inc. and individual contributors",
+        "count": 1
       }
     ],
     "holders": [
@@ -103,6 +151,54 @@
           {
             "value": null,
             "count": 4
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 4
+          },
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 4
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 3
+          },
+          {
+            "value": "Copyright (c) Brian Goetz and Tim Peierls",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Dmitriy Anisimkov",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) by Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright JBoss Inc., and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "count": 1
           }
         ],
         "holders": [
@@ -183,6 +279,22 @@
           {
             "value": null,
             "count": 3
+          },
+          {
+            "value": "Copyright (c) Brian Goetz and Tim Peierls",
+            "count": 1
+          },
+          {
+            "value": "Copyright JBoss Inc., and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "count": 1
           }
         ],
         "holders": [
@@ -231,6 +343,22 @@
           {
             "value": null,
             "count": 3
+          },
+          {
+            "value": "Copyright (c) Brian Goetz and Tim Peierls",
+            "count": 1
+          },
+          {
+            "value": "Copyright JBoss Inc., and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "count": 1
           }
         ],
         "holders": [
@@ -287,7 +415,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright JBoss Inc., and individual contributors",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "JBoss Inc., and individual contributors",
@@ -328,7 +461,12 @@
         }
       ],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Brian Goetz and Tim Peierls",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Brian Goetz and Tim Peierls",
@@ -363,7 +501,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Red Hat, Inc. and individual contributors",
@@ -466,7 +609,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Red Hat Middleware LLC, and individual contributors",
@@ -551,7 +699,20 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
@@ -594,7 +755,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Mark Adler",
@@ -629,7 +795,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly and Mark Adler",
@@ -664,7 +835,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
@@ -687,7 +863,40 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 3
+          },
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 3
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 2
+          },
+          {
+            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Dmitriy Anisimkov",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) by Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright Henrik Ravn",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
@@ -738,7 +947,12 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Dmitriy Anisimkov",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Dmitriy Anisimkov",
@@ -773,7 +987,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Dmitriy Anisimkov",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Dmitriy Anisimkov",
@@ -808,7 +1027,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Mark Adler",
@@ -843,7 +1067,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly and Mark Adler",
@@ -878,7 +1107,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
@@ -901,7 +1135,16 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) by Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright Henrik Ravn",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Henrik Ravn",
@@ -936,7 +1179,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) by Henrik Ravn",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Henrik Ravn",
@@ -971,7 +1219,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright Henrik Ravn",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Henrik Ravn",
@@ -994,7 +1247,12 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -1035,7 +1293,12 @@
         }
       ],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -1058,7 +1321,12 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 2
+          }
+        ],
         "holders": [
           {
             "value": "Mark Adler",
@@ -1093,7 +1361,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Mark Adler",
@@ -1128,7 +1401,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Mark Adler",
@@ -1151,7 +1429,12 @@
       "holders": [],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Christian Michelsen Research AS Advanced Computing",
@@ -1186,7 +1469,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Christian Michelsen Research AS Advanced Computing",
@@ -1221,7 +1509,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly and Mark Adler",
@@ -1256,7 +1549,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
@@ -1291,7 +1589,12 @@
       ],
       "authors": [],
       "tallies": {
-        "copyrights": [],
+        "copyrights": [
+          {
+            "value": "Copyright (c) Jean-loup Gailly",
+            "count": 1
+          }
+        ],
         "holders": [
           {
             "value": "Jean-loup Gailly",
