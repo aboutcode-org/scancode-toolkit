@@ -234,6 +234,7 @@ def get_origin_info_from_package_data(key_file_package_data):
             declared_holders = holders
         elif parties:
             declared_holders = [party['name'] for party in parties]
+        declared_holders = unique(declared_holders)
 
         # Programming language
         unique_programming_languages = unique(programming_languages)
