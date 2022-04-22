@@ -470,7 +470,7 @@ def scancode(
             **kwargs
         )
 
-        #echo outdated message if newer version is available
+        # echo outdated message if newer version is available
         if not quiet and outdated:
             echo_stderr(outdated, fg='yellow')
 
@@ -879,7 +879,7 @@ def run_scan(
         success = success and pre_scan_success
 
         ########################################################################
-        # 6. run scans.
+        # Run scans
         ########################################################################
 
         scan_success = run_scanners(
@@ -897,7 +897,7 @@ def run_scan(
         success = success and scan_success
 
         ########################################################################
-        # 7. run postscans
+        # Run postscans
         ########################################################################
 
         # TODO: add progress indicator
@@ -915,7 +915,7 @@ def run_scan(
         success = success and post_scan_success
 
         ########################################################################
-        # 8. apply output filters
+        # Apply output filters
         ########################################################################
 
         # TODO: add progress indicator
@@ -933,7 +933,7 @@ def run_scan(
         success = success and output_filter_success
 
         ########################################################################
-        # 9. save outputs
+        # Save outputs
         ########################################################################
 
         counts = codebase.compute_counts(skip_root=strip_root, skip_filtered=True)
@@ -967,7 +967,7 @@ def run_scan(
             success = success and output_success
 
         ########################################################################
-        # 9. display summary
+        # Display summary
         ########################################################################
         codebase.timings['total'] = time() - processing_start
 
@@ -984,7 +984,7 @@ def run_scan(
             )
 
         ########################################################################
-        # 10. optionally assemble results to return
+        # Optionally assemble results to return
         ########################################################################
         if return_results:
             # the structure is exactly the same as the JSON output
@@ -1112,8 +1112,7 @@ def run_scanners(
 
     progress_manager = None
     if not quiet:
-        echo_func('Scan files for: %(scan_names)s '
-                    'with %(processes)d process(es)...' % locals())
+        echo_func(f'Scan files for: {scan_names} with {processes} process(es)...')
         item_show_func = partial(path_progress_message, verbose=verbose)
         progress_manager = partial(progressmanager,
             item_show_func=item_show_func,
@@ -1370,7 +1369,7 @@ def scan_resource(
             else:
                 deadline = sys.maxsize
 
-            runner = partial(scanner.function, location, deadline=deadline)
+            runner = partial(scanner.function, location, rid=rid, deadline=deadline)
             error, values_mapping = interruptor(runner, timeout=timeout)
             if error:
                 msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + error
