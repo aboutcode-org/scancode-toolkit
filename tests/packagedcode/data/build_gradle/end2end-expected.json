@@ -20,52 +20,56 @@
   ],
   "dependencies": [
     {
-      "purl": "pkg:build.gradle/com.google/guava@1.0",
+      "purl": "pkg:maven/com.google/guava@1.0",
       "extracted_requirement": "1.0",
       "scope": "api",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/com.google/guava@1.0",
-      "for_package": null,
-      "lockfile": "build.gradle"
+      "dependency_uid": "pkg:maven/com.google/guava@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "build.gradle",
+      "datasource_id": "build_gradle"
     },
     {
-      "purl": "pkg:build.gradle/org.apache/commons@1.0",
+      "purl": "pkg:maven/org.apache/commons@1.0",
       "extracted_requirement": "1.0",
       "scope": "usageDependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.apache/commons@1.0",
-      "for_package": null,
-      "lockfile": "build.gradle"
+      "dependency_uid": "pkg:maven/org.apache/commons@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "build.gradle",
+      "datasource_id": "build_gradle"
     },
     {
-      "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+      "purl": "pkg:maven/org.jacoco.ant@0.7.4.201502262128",
       "extracted_requirement": "0.7.4.201502262128",
       "scope": "",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
-      "for_package": null,
-      "lockfile": "build.gradle"
+      "dependency_uid": "pkg:maven/org.jacoco.ant@0.7.4.201502262128?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "build.gradle",
+      "datasource_id": "build_gradle"
     },
     {
-      "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+      "purl": "pkg:maven/org.jacoco.agent@0.7.4.201502262128",
       "extracted_requirement": "0.7.4.201502262128",
       "scope": "",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
-      "for_package": null,
-      "lockfile": "build.gradle"
+      "dependency_uid": "pkg:maven/org.jacoco.agent@0.7.4.201502262128?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "build.gradle",
+      "datasource_id": "build_gradle"
     }
   ],
   "packages": [],
@@ -75,7 +79,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "build.gradle",
+          "type": "maven",
           "namespace": null,
           "name": null,
           "version": null,
@@ -100,12 +104,12 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:build.gradle/com.google/guava@1.0",
+              "purl": "pkg:maven/com.google/guava@1.0",
               "extracted_requirement": "1.0",
               "scope": "api",
               "is_runtime": true,
@@ -114,7 +118,7 @@
               "resolved_package": {}
             },
             {
-              "purl": "pkg:build.gradle/org.apache/commons@1.0",
+              "purl": "pkg:maven/org.apache/commons@1.0",
               "extracted_requirement": "1.0",
               "scope": "usageDependencies",
               "is_runtime": true,
@@ -123,7 +127,7 @@
               "resolved_package": {}
             },
             {
-              "purl": "pkg:build.gradle/org.jacoco.ant@0.7.4.201502262128",
+              "purl": "pkg:maven/org.jacoco.ant@0.7.4.201502262128",
               "extracted_requirement": "0.7.4.201502262128",
               "scope": "",
               "is_runtime": true,
@@ -132,7 +136,7 @@
               "resolved_package": {}
             },
             {
-              "purl": "pkg:build.gradle/org.jacoco.agent@0.7.4.201502262128",
+              "purl": "pkg:maven/org.jacoco.agent@0.7.4.201502262128",
               "extracted_requirement": "0.7.4.201502262128",
               "scope": "",
               "is_runtime": true,
@@ -141,10 +145,11 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "build_gradle",
+          "purl": null
         }
       ],
       "for_packages": [],
