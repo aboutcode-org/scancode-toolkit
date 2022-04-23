@@ -7,21 +7,19 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import base64
-from collections import defaultdict
-from functools import partial
 import io
 import json
-import logging
 import re
+import urllib.parse
+from functools import partial
+from itertools import islice
 
-import attr
 from packageurl import PackageURL
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
+import saneyaml
 
 """
 Handle Node.js npm packages
@@ -32,101 +30,112 @@ per https://docs.npmjs.com/files/package.json
 To check https://github.com/npm/normalize-package-data
 """
 
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-
-def logger_debug(*args):
-    pass
-
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
 # TODO: add os and engines from package.json??
-# add lock files and yarn details
+# TODO: add new yarn v2 lock file format
+# TODO: add pnp.js and pnpm-lock.yaml https://pnpm.io/
+# TODO: add support for "lockfileVersion": 2 for package-lock.json and lockfileVersion: 3
 
 
-@attr.s()
-class NpmPackageData(models.PackageData):
-    # TODO: add new lock files and yarn lock files
-    mimetypes = ('application/x-tar',)
-    default_type = 'npm'
+class BaseNpmHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        datafile_name_patterns = (
+            'package.json',
+            'package-lock.json',
+            '.package-lock.json',
+            'npm-shrinkwrap.json',
+            'yarn.lock',
+        )
+
+        if resource.has_parent():
+            dir_resource=resource.parent(codebase)
+        else:
+            dir_resource=resource
+
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=datafile_name_patterns,
+            directory=dir_resource,
+            codebase=codebase,
+        )
+
+    @classmethod
+    def walk_npm(cls, resource, codebase, depth=0):
+        """
+        Walk the ``codebase`` Codebase top-down, breadth-first starting from the
+        ``resource`` Resource.
+
+        Skip a first level child directory named "node_modules": this avoids
+        reporting nested vendored packages as being part of their parent.
+        Instead they will be reported on their own.
+        """
+        for child in resource.children(codebase):
+            if depth == 0 and child.name == 'node_modules':
+                continue
+
+            yield child
+
+            if child.is_dir:
+                depth += 1
+                for subchild in cls.walk_skip(child, codebase, depth=depth):
+                    yield subchild
+
+    # TODO: this MUST BE USED
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        """
+        Yield the Resources of an npm Package, ignoring nested mode_modules.
+        """
+        root = resource.parent(codebase)
+        if root:
+            yield from cls.walk_npm(resource=root, codebase=codebase)
+
+
+def get_urls(namespace, name, version):
+    return dict(
+        repository_homepage_url=npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'),
+        repository_download_url=npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'),
+        api_data_url=npm_api_url(namespace, name, version, registry='https://registry.npmjs.org'),
+    )
+
+
+class NpmPackageJsonHandler(BaseNpmHandler):
+    datasource_id = 'npm_package_json'
+    path_patterns = ('*/package.json',)
+    default_package_type = 'npm'
     default_primary_language = 'JavaScript'
-    default_web_baseurl = 'https://www.npmjs.com/package'
-    default_download_baseurl = 'https://registry.npmjs.org'
-    default_api_baseurl = 'https://registry.npmjs.org'
+    description = 'npm package.json'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    @classmethod
-    def ignore_resource(cls, resource, codebase):
-        return resource.is_dir and resource.name == 'node_modules'
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return npm_homepage_url(self.namespace, self.name, registry=baseurl)
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        return npm_download_url(self.namespace, self.name, self.version, registry=baseurl)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
-
-
-@attr.s()
-class PackageJson(NpmPackageData, models.PackageDataFile):
-
-    file_patterns = ('package.json',)
-    extensions = ('.tgz',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'package.json'
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        
+
         name = package_data.get('name')
         version = package_data.get('version')
-        homepage = package_data.get('homepage', '')
+        homepage_url = package_data.get('homepage', '')
 
-        if not name:
-            # a package.json without name and version is not a usable npm package
-            # FIXME: raise error?
-            return
+        # a package.json without name and version can be a private package
 
-        if isinstance(homepage, list):
-            if homepage:
-                homepage = homepage[0]
-            else:
-                homepage = ''
+        if homepage_url and isinstance(homepage_url, list):
+            # TODO: should we keep other URLs
+            homepage_url = homepage_url[0]
+        homepage_url = homepage_url.strip() or None
+
         namespace, name = split_scoped_package_name(name)
-        package = cls(
+
+        urls = get_urls(namespace, name, version)
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
             namespace=namespace or None,
             name=name,
             version=version or None,
             description=package_data.get('description', '').strip() or None,
-            homepage_url=homepage.strip() or None,
+            homepage_url=homepage_url,
+            **urls,
         )
         vcs_revision = package_data.get('gitHead') or None
 
@@ -150,7 +159,6 @@ class PackageJson(NpmPackageData, models.PackageDataFile):
         ]
 
         for source, func in field_mappers:
-            if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
             value = package_data.get(source) or None
             if value:
                 if isinstance(value, str):
@@ -167,319 +175,484 @@ class PackageJson(NpmPackageData, models.PackageDataFile):
         lic = package_data.get('license')
         lics = package_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
-        if TRACE:
-            declared_license = package.declared_license
-            logger.debug(
-                'parse: license: {lic} licenses: {lics} '
-                'declared_license: {declared_license}'.format(locals()))
+
+        if not package.license_expression and package.declared_license:
+            package.license_expression = compute_normalized_license(package.declared_license)
 
         yield package
 
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return compute_normalized_license(package.declared_license)
 
-@attr.s()
-class PackageLockJson(NpmPackageData, models.PackageDataFile):
 
-    file_patterns = (
-        'npm-shrinkwrap.json',
-        'package-lock.json',
-    )
-    extensions = ('.tgz',)
-
-    @staticmethod
-    def is_package_lock(location):
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'package-lock.json')
-
-    @staticmethod
-    def is_npm_shrinkwrap(location):
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
+class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return cls.is_package_lock(location) or cls.is_npm_shrinkwrap(location)
+    def parse(cls, location):
 
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
-        packages = []
-        dev_packages = []
-        for dependency, values in package_data.get('dependencies', {}).items():
-            is_dev = values.get('dev', False)
-            dep_deps = []
-            namespace = None
-            name = dependency
-            if '/' in dependency:
-                namespace, _slash, name = dependency.partition('/')
-            # Handle the case where an entry in `dependencies` from a
-            # package-lock.json file has `requires`
-            for dep, dep_req in values.get('requires', {}).items():
-                purl = PackageURL(type='npm', name=dep, version=dep_req).to_string()
-                if is_dev:
-                    dep_deps.append(
-                        models.DependentPackage(
-                            purl=purl,
-                            scope='requires-dev',
-                            extracted_requirement=dep_req,
-                            is_runtime=False,
-                            is_optional=True,
-                            is_resolved=True,
-                        )
-                    )
-                else:
-                    dep_deps.append(
-                        models.DependentPackage(
-                            purl=purl,
-                            scope='requires',
-                            extracted_requirement=dep_req,
-                            is_runtime=True,
-                            is_optional=False,
-                            is_resolved=True,
-                        )
-                    )
+        # we have two formats: v1 and v2
+        lockfile_version = package_data.get('lockfileVersion', 1)
+        root_name = package_data.get('name')
+        root_version = package_data.get('version')
+        root_ns, _ , root_name = root_name.rpartition('/')
 
-            # Handle the case where an entry in `dependencies` from a
-            # npm-shrinkwrap.json file has `dependencies`
-            for dep, dep_values in values.get('dependencies', {}).items():
-                dep_version = dep_values.get('version')
-                requirement = None
-                split_requirement = dep_values.get('from', '').rsplit('@')
-                if len(split_requirement) == 2:
-                    # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
-                    _, requirement = split_requirement
-                dep_deps.append(
-                    models.DependentPackage(
-                        purl=PackageURL(
-                            type='npm',
-                            name=dep,
-                            version=dep_version,
-                        ).to_string(),
-                        scope='dependencies',
-                        extracted_requirement=requirement,
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
-                    )
-                )
-
-            p = cls(
-                namespace=namespace,
-                name=name,
-                version=values.get('version'),
-                download_url=values.get('resolved'),
-                dependencies=dep_deps,
-            )
-            if is_dev:
-                dev_packages.append(p)
-            else:
-                packages.append(p)
-
-        package_deps = []
-        for package in packages:
-            package_deps.append(
-                models.DependentPackage(
-                    purl=package.purl,
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-
-        dev_package_deps = []
-        for dev_package in dev_packages:
-            dev_package_deps.append(
-                models.DependentPackage(
-                    purl=dev_package.purl,
-                    scope='dependencies-dev',
-                    is_runtime=False,
-                    is_optional=True,
-                    is_resolved=True,
-                )
-            )
-
-        yield cls(
-            name=package_data.get('name'),
-            version=package_data.get('version'),
-            dependencies=package_deps + dev_package_deps,
+        extra_data = dict(lockfile_version=lockfile_version)
+        # this is the top level element that we return
+        root_package_data = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            namespace=root_ns,
+            name=root_name,
+            version=root_version,
+            extra_data=extra_data,
+            **get_urls(root_ns, root_name, root_version)
         )
 
-        for package in packages + dev_packages:
-            yield package
+        # https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json#lockfileversion
+        if lockfile_version == 1:
+            deps_key = 'dependencies'
+        else:
+            # v2 and may be v3???
+            deps_key = 'packages'
 
+        deps_mapping = package_data.get(deps_key) or {}
 
-@attr.s()
-class YarnLockJson(NpmPackageData, models.PackageDataFile):
+        dependencies = []
 
-    file_patterns = ('yarn.lock',)
-    extensions = ('.tgz',)
+        for dep, dep_data in deps_mapping.items():
+            is_dev = dep_data.get('dev', False)
+            is_optional = dep_data.get('optional', False)
+            is_devoptional = dep_data.get('devOptional', False)
+            if is_dev or is_devoptional:
+                is_runtime = False
+                is_optional = True
+                scope = 'devDependencies'
+            else:
+                is_runtime = True
+                is_optional = is_optional
+                scope = 'dependencies'
 
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'yarn.lock')
+            if not dep:
+                # in v2 format the first dep is the same as the top level
+                # package and has no name
+                pass
 
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        with io.open(location, encoding='utf-8') as yarn_lock_lines:
-
-            packages = []
-            packages_reqs = []
-            current_package_data = {}
-            dependencies = False
-            for line in yarn_lock_lines:
-                # Check if this is not an empty line or comment
-                if line.strip() and not line.startswith('#'):
-                    if line.startswith(' '):
-                        if not dependencies:
-                            if line.strip().startswith('version'):
-                                current_package_data['version'] = line.partition('version')[2].strip().strip('\"')
-                            elif line.strip().startswith('resolved'):
-                                current_package_data['download_url'] = line.partition('resolved')[2].strip().strip('\"')
-                            elif line.strip().startswith('dependencies'):
-                                dependencies = True
-                            else:
-                                continue
-                        else:
-                            split_line = line.strip().split()
-                            if len(split_line) == 2:
-                                k, v = split_line
-                                # Remove leading and following quotation marks on values
-                                v = v[1:-1]
-                                if 'dependencies' in current_package_data:
-                                    current_package_data['dependencies'].append((k, v))
-                                else:
-                                    current_package_data['dependencies'] = [(k, v)]
-                    else:
-                        dependencies = False
-                        # Clean up dependency name and requirement strings
-                        line = line.strip().replace('\"', '').replace(':', '')
-                        split_line_for_name_req = line.split(',')
-                        dep_names_and_reqs = defaultdict(list)
-                        for segment in split_line_for_name_req:
-                            segment = segment.strip()
-                            dep_name_and_req = segment.rsplit('@', 1)
-                            dep, req = dep_name_and_req
-                            dep_names_and_reqs[dep].append(req)
-                        # We should only have one key `dep_names_and_reqs`, where it is the
-                        # current dependency we are looking at
-                        if len(dep_names_and_reqs.keys()) == 1:
-                            dep, req = list(dep_names_and_reqs.items())[0]
-                            if '@' in dep and '/' in dep:
-                                namespace, name = dep.split('/')
-                                current_package_data['namespace'] = namespace
-                                current_package_data['name'] = name
-                            else:
-                                current_package_data['name'] = dep
-                            current_package_data['requirement'] = ', '.join(req)
+            # only present for first top level
+            # otherwise get name from dep
+            name = dep_data.get('name')
+            if not name:
+                if 'node_modules/' in dep:
+                    # the name is the last segment as the dep can be:
+                    # "node_modules/ansi-align/node_modules/ansi-regex"
+                    _, _, name = dep.rpartition('node_modules/')
                 else:
-                    deps = []
-                    if current_package_data:
-                        for dep, req in current_package_data.get('dependencies', []):
-                            deps.append(
-                                models.DependentPackage(
-                                    purl=PackageURL(type='npm', name=dep).to_string(),
-                                    scope='dependencies',
-                                    extracted_requirement=req,
-                                    is_runtime=True,
-                                    is_optional=False,
-                                    is_resolved=True,
-                                )
-                            )
-                        packages.append(
-                            cls(
-                                namespace=current_package_data.get('namespace'),
-                                name=current_package_data.get('name'),
-                                version=current_package_data.get('version'),
-                                download_url=current_package_data.get('download_url'),
-                                dependencies=deps
-                            )
-                        )
-                        packages_reqs.append(current_package_data.get('requirement'))
-                        current_package_data = {}
+                    name = dep
+            ns, _ , name = name.rpartition('/')
+            version = dep_data.get('version')
 
-            # Add the last element if it's not already added
-            if current_package_data:
-                for dep, req in current_package_data.get('dependencies', []):
-                    deps.append(
-                        models.DependentPackage(
-                            purl=PackageURL(type='npm', name=dep).to_string(),
-                            scope='dependencies',
-                            extracted_requirement=req,
-                            is_runtime=True,
-                            is_optional=False,
-                            is_resolved=True,
-                        )
-                    )
-                packages.append(
-                    cls(
-                        namespace=current_package_data.get('namespace'),
-                        name=current_package_data.get('name'),
-                        version=current_package_data.get('version'),
-                        download_url=current_package_data.get('download_url'),
-                        dependencies=deps
-                    )
-                )
-                packages_reqs.append(current_package_data.get('requirement'))
+            dep_purl = PackageURL(
+                type=cls.default_package_type,
+                namespace=ns,
+                name=name,
+                version=version,
+            ).to_string()
 
-            packages_dependencies = []
-            for package, requirement in zip(packages, packages_reqs):
-                packages_dependencies.append(
+            dependency = models.DependentPackage(
+                purl=dep_purl,
+                extracted_requirement=version,
+                scope=scope,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_resolved=True,
+            )
+
+            # only seen in v2 for the top level package... but good to keep
+            declared_license = dep_data.get('license')
+
+            # URLs and checksums
+            misc = get_urls(ns, name, version)
+            resolved = dep_data.get('resolved')
+            misc.update(get_checksum_and_url(resolved).items())
+            integrity = dep_data.get('integrity')
+            misc.update(get_algo_hexsum(integrity).items())
+
+            resolved_package = models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=ns,
+                name=name,
+                version=version,
+                declared_license=declared_license,
+                **misc,
+            )
+            # these are paths t the root of the installed package in v2
+            if dep:
+                resolved_package.file_references = [models.FileReference(path=dep)],
+
+            # v1 as name/constraint pairs
+            subrequires = dep_data.get('requires') or {}
+
+            # in v1 these are further nested dependencies
+            # in v2 these are name/constraint pairs like v1 requires
+            subdependencies = dep_data.get('dependencies')
+
+            # v2? ignored for now
+            dev_subdependencies = dep_data.get('devDependencies')
+            optional_subdependencies = dep_data.get('optionalDependencies')
+            engines = dep_data.get('engines')
+            funding = dep_data.get('funding')
+
+            if lockfile_version == 1:
+                subdeps_data = subrequires
+            else:
+                subdeps_data = subdependencies
+            subdeps_data = subdeps_data or {}
+
+            sub_deps = []
+            for subdep, subdep_req in subdeps_data.items():
+                sdns, _ , sdname = subdep.rpartition('/')
+                sdpurl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=sdns,
+                    name=sdname
+                ).to_string()
+                sub_deps.append(
                     models.DependentPackage(
-                        purl=PackageURL(
-                            type='npm',
-                            name=package.name,
-                            version=package.version
-                        ).to_string(),
-                        extracted_requirement=requirement,
-                        scope='dependencies',
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
+                        purl=sdpurl,
+                        scope=scope,
+                        extracted_requirement=subdep_req,
+                        is_runtime=is_runtime,
+                        is_optional=is_optional,
+                        is_resolved=False,
                     )
                 )
+            resolved_package.dependencies = sub_deps
+            dependency.resolved_package = resolved_package.to_dict()
+            dependencies.append(dependency)
 
-            yield cls(dependencies=packages_dependencies)
-            for package in packages:
-                yield package
+        root_package_data.dependencies = dependencies
+
+        yield root_package_data
 
 
-@attr.s()
-class NpmPackage(NpmPackageData, models.Package):
+class NpmPackageLockJsonHandler(BaseNpmLockHandler):
+    # Note that there are multiple lockfileVersion 1 and 2 (and even 3)
+    # and each have a different layout
+    datasource_id = 'npm_package_lock_json'
+    path_patterns = (
+        '*/package-lock.json',
+        '*/.package-lock.json',
+    )
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'npm package-lock.json lockfile'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json'
+
+
+class NpmShrinkwrapJsonHandler(BaseNpmLockHandler):
+    datasource_id = 'npm_shrinkwrap_json'
+    path_patterns = ('*/npm-shrinkwrap.json',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'npm shrinkwrap.json lockfile'
+    documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json'
+
+
+class UnknownYarnLockFormat(Exception):
+    pass
+
+
+def is_yarn_v2(location):
     """
-    A NPM Package that is created out of one/multiple npm package
-    manifests, lockfiles, build scripts and package-like data, with it's files.
+    Return True if this is a yarn.lock format version 2 and False if this is
+    version 1. Raise an UnknownYarnLockFormat exception if neither v1 or v2.
+
+    v1 is a custom, almost-like-YAMl format. v2 is a proper subset of YAML.
+
+    The start of v1 file has this:
+        # THIS IS AN AUTOGENERATED FILE. DO NOT EDIT THIS FILE DIRECTLY.
+        # yarn lockfile v1
+
+    The start of v2 file has this:
+        # This file is generated by running "yarn install" inside your project.
+        # Manual changes might be lost - proceed with caution!
+
+        __metadata:
     """
+    with open(location) as ylf:
+        # check only in the first 10 lines
+        for line in islice(ylf, 0, 10):
+            if '__metadata:' in line:
+                return True
+            if 'yarn lockfile v1' in line:
+                return False
 
-    @property
-    def ignore_paths(self):
-        return [
-            "node_modules"
-        ]
+    raise UnknownYarnLockFormat(location)
 
-    @property
-    def manifests(self):
-        return [
-            PackageJson,
-            PackageLockJson,
-            YarnLockJson
-        ]
+
+class YarnLockV2Handler(BaseNpmHandler):
+    """
+    Handle yarn.lock v2 format, which is YAML
+    """
+    datasource_id = 'yarn_lock_v2'
+    path_patterns = ('*/yarn.lock',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'yarn.lock lockfile v2 format'
+    documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Parse a bew yarn.lock v2 YAML format which looks like this:
+
+        "@algolia/cache-browser-local-storage@npm:4.2.0":
+          version: 4.2.0
+          resolution: "@algolia/cache-browser-local-storage@npm:4.2.0"
+          dependencies:
+            "@algolia/cache-common": 4.2.0
+          checksum: 72ac158925eb5a51e015aa22df5d2026fc0c0b6b58eb8c1290712e0
+          languageName: node
+          linkType: hard
+
+        Yield a single PackageData
+        """
+        with open(location) as yl:
+            lock_data = saneyaml.load(yl.read())
+        top_dependencies = []
+
+        for spec, details in lock_data.items():
+            if spec == '__metadata':
+                continue
+            version = details.get('version')
+            resolution = details.get('resolution')
+            ns_name, _, version = resolution.rpartition('@')
+            ns, _, name = ns_name.rpartition('/')
+            if version.startswith('npm:'):
+                _npm, _, version = version.partition(':')
+            purl = PackageURL(
+                type=cls.default_package_type,
+                namespace=ns,
+                name=name,
+                version=version,
+            )
+
+            # TODO: add resolved_package with its own deps
+            checksum = details.get('checksum')
+            dependencies = details.get('dependencies') or {}
+            peer_dependencies = details.get('peerDependencies') or {}
+            dependencies_meta = details.get('dependenciesMeta') or {}
+            # these are file references
+            bin = details.get('bin') or []
+
+            dependency = models.DependentPackage(
+                    purl=str(purl),
+                    extracted_requirement=version,
+                    is_resolved=True,
+                    # FIXME: these are NOT correct
+                    scope='dependencies',
+                    # TODO: get details  from metadata
+                    is_optional=False,
+                    is_runtime=True,
+                )
+            top_dependencies.append(dependency)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=top_dependencies,
+        )
+
+
+class YarnLockV1Handler(BaseNpmHandler):
+    """
+    Handle yarn.lock v1 format, which is more or less but not quite like YAML
+    """
+    datasource_id = 'yarn_lock_v1'
+    path_patterns = ('*/yarn.lock',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'yarn.lock lockfile v1 format'
+    documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return super().is_datafile(location, filetypes=filetypes) and not is_yarn_v2(location)
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Parse a classic yarn.lock format which looks like this:
+            "@babel/core@^7.1.0", "@babel/core@^7.3.4":
+              version "7.3.4"
+              resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.3.4.tgz#921a5a13746c21e32445bf0798680e9d11a6530b"
+              integrity sha512-jRsuseXBo9pN197KnDwhhaaBzyZr2oIcLHHTt2oDdQrej5Qp57dCCJafWx5ivU8/alEYDpssYqv1MUqcxwQlrA==
+              dependencies:
+                "@babel/code-frame" "^7.0.0"
+                "@babel/generator" "^7.3.4"
+
+        Yield a single PackageData
+        """
+        with io.open(location, encoding='utf-8') as yl:
+            yl_dependencies = yl.read().split('\n\n')
+
+        dependencies = []
+        for yl_dependency in yl_dependencies:
+            lines = yl_dependency.splitlines(False)
+            if all(l.startswith('#') or not l.strip() for l in lines):
+                # header or empty blocks are all comments or empties
+                continue
+
+            top_requirements = []
+            dependency_data = {}
+            sub_dependencies = []
+
+            for line in lines:
+                stripped = line.strip()
+                comment = line.startswith('#')
+                if not stripped or comment:
+                    continue
+
+                if line.startswith(' ' * 4):
+                    # "@babel/code-frame" "^7.0.0"
+                    # hosted-git-info "^2.1.4"
+                    # semver "2 || 3 || 4 || 5"
+                    ns_name, _, constraint = stripped.partition(' ')
+                    ns, _ , name = ns_name.rpartition('/')
+                    sub_dependencies.append((ns, name, constraint,))
+
+                elif line.startswith(' ' * 2) :
+                    # version "7.3.4"
+                    # resolved "https://registry.yarnpkg.com/@babel...."
+                    # integrity sha512-jRsuseXBo9
+                    key, _, value = stripped.partition(' ')
+                    value = value.strip().strip("\"'")
+                    key = key.strip()
+                    if key != 'dependencies':
+                        dependency_data[key] = value
+
+                elif not line.startswith(' ') and stripped.endswith(':'):
+                    # the first line of a dependency has the name and requirements
+                    # "@babel/core@^7.1.0", "@babel/core@^7.3.4":
+                    requirements = stripped.strip(':').split(', ')
+                    requirements = [r.strip().strip("\"'") for r in requirements]
+                    for req in requirements:
+                        if req.startswith('@'):
+                            assert req.count('@') == 2
+
+                        ns_name, _, constraint = req.rpartition('@')
+                        ns, _ , name = ns_name.rpartition('/')
+                        constraint = constraint.strip("\"'")
+                        top_requirements.append((ns, name, constraint,))
+
+                else:
+                    raise Exception('Inconsistent content')
+
+            # top_requirements should be all for the same package
+            ns_names = set([(ns, name) for ns, name, _constraint in top_requirements])
+            assert len(ns_names) == 1, f'Different names for same dependency is not supported: {ns_names!r}'
+            ns, name = ns_names.pop()
+            version = dependency_data.get('version')
+            extracted_requirement = ' '.join(constraint for _ns, _name, constraint in top_requirements)
+
+            misc = get_urls(ns, name, version)
+            resolved = dependency_data.get('resolved')
+            misc.update(get_checksum_and_url(resolved).items())
+            integrity = dependency_data.get('integrity')
+            misc.update(get_algo_hexsum(integrity).items())
+
+            # we create a resolve package with the details
+            resolved_package_data = models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                namespace=ns,
+                name=name,
+                version=version,
+                primary_language=cls.default_primary_language,
+                **misc,
+            )
+
+            # we add the sub-deps to the resolved package
+            for subns, subname, subconstraint in sub_dependencies:
+                subpurl = PackageURL(type=cls.default_package_type, namespace=subns, name=subname)
+                subconstraint = subconstraint.strip("\"'")
+                subdep = models.DependentPackage(
+                    purl=str(subpurl),
+                    extracted_requirement=subconstraint,
+                    # FIXME: these are NOT correct
+                    scope='dependencies',
+                    is_optional=False,
+                    is_runtime=True,
+                )
+                resolved_package_data.dependencies.append(subdep)
+
+            # we create a purl with a version, since we are resolved
+            dep_purl = PackageURL(
+                type=cls.default_package_type,
+                namespace=ns,
+                name=name,
+                version=version,
+            )
+
+            dep = models.DependentPackage(
+                purl=str(dep_purl),
+                extracted_requirement=extracted_requirement,
+                is_resolved=True,
+                # FIXME: these are NOT correct
+                scope='dependencies',
+                is_optional=False,
+                is_runtime=True,
+                resolved_package=resolved_package_data.to_dict(),
+            )
+            dependencies.append(dep)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
+
+
+def get_checksum_and_url(url):
+    """
+    Return a mapping of {download_url, sha1} where the checksum can be a
+    fragment for a sha1.
+    """
+    if not url:
+        return {}
+
+    url, checksum = urllib.parse.urldefrag(url)
+    sha1_hex_len = 40
+    if checksum and len(checksum) == sha1_hex_len:
+        return dict(download_url=url, sha1=checksum)
+    else:
+        return dict(download_url=url)
+
+
+def get_algo_hexsum(checksum):
+    """
+    Return a mapping of {alogo: checksum in hex} given a prefixed checksum from
+    an npm manifest.
+    """
+    if not checksum or '-' not in checksum:
+        return {}
+
+    algo, _, checksum = checksum.partition('-')
+    # value is base64 encoded: we convert to hex
+    checksum = base64.b64decode(checksum.encode('ascii')).hex()
+    return {algo: checksum}
 
 
 def compute_normalized_license(declared_license):
@@ -536,19 +709,26 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     version and a base registry web interface URL.
 
     For example:
-    >>> assert npm_homepage_url('@invisionag', 'eslint-config-ivx') == 'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
-    >>> assert npm_homepage_url(None, 'angular') == 'https://www.npmjs.com/package/angular'
-    >>> assert npm_homepage_url('', 'angular') == 'https://www.npmjs.com/package/angular'
-    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/') == 'https://yarnpkg.com/en/package/angular'
-    >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == 'https://yarnpkg.com/en/package/@ang/angular'
-    """
-    registry = registry.rstrip('/')
+    >>> expected = 'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> assert npm_homepage_url('@invisionag', 'eslint-config-ivx') == expected
 
+    >>> expected = 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url(None, 'angular') == expected
+
+    >>> expected = 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url('', 'angular') == expected
+
+    >>> expected = 'https://yarnpkg.com/en/package/angular'
+    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package') == expected
+
+    >>> expected = 'https://yarnpkg.com/en/package/@ang/angular'
+    >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == expected
+    """
     if namespace:
-        ns_name = '/'.join([namespace, name])
+        ns_name = f'{namespace}/{name}'
     else:
         ns_name = name
-    return '%(registry)s/%(ns_name)s' % locals()
+    return f'{registry}/{ns_name}'
 
 
 def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
@@ -557,16 +737,21 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
     and a base registry URL.
 
     For example:
-    >>> assert npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4') == 'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
-    >>> assert npm_download_url('', 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
-    >>> assert npm_download_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> expected = 'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> assert npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4') == expected
+
+    >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url('', 'angular', '1.6.6') == expected
+
+    >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url(None, 'angular', '1.6.6') == expected
     """
-    registry = registry.rstrip('/')
     if namespace:
-        ns_name = '/'.join([namespace, name])
+        ns_name = f'{namespace}/{name}'
+
     else:
         ns_name = name
-    return '{registry}/{ns_name}/-/{name}-{version}.tgz'.format(**locals())
+    return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
 
 
 def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
@@ -580,15 +765,15 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     applied for scoped npms.
 
     For example:
-    >>> x = npm_api_url(
-    ... '@invisionag', 'eslint-config-ivx', '0.1.4',
-    ... 'https://registry.yarnpkg.com')
-    >>> assert x == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
+    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
     """
-    registry = registry.rstrip('/')
     version = version or ''
     if namespace:
+        # this is a legacy wart: older registries used to always encode this /
+        # FIXME: do NOT encode and use plain / instead
         ns_name = '%2f'.join([namespace, name])
         # there is no version-specific URL for scoped packages
         version = ''
@@ -596,8 +781,8 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
         ns_name = name
 
     if version:
-        version = '/' + version
-    return '{registry}/{ns_name}{version}'.format(**locals())
+        version = f'/{version}'
+    return f'{registry}/{ns_name}{version}'
 
 
 def is_scoped_package(name):
@@ -648,6 +833,7 @@ def split_scoped_package_name(name):
     if not name:
         return None, None
 
+    # FIXME: this legacy percent encoding/decoding should no longer be needed
     name = name.replace('%40', '@').replace('%2f', '/').replace('%2F', '/')
     name = name.rstrip('@').strip('/').strip()
     if not name:
@@ -826,22 +1012,12 @@ def dist_mapper(dist, package):
     if not isinstance(dist, dict):
         return
 
-    integrity = dist.get('integrity') or None
-    if integrity:
-        algo, _, b64value = integrity.partition('-')
-        algo = algo.lower()
-        assert 'sha512' == algo
+    integrity = dist.get('integrity')
+    for algo, hexsum in get_algo_hexsum(integrity).items():
+        if hasattr(package, algo):
+            setattr(package, algo, hexsum)
 
-        decoded_b64value = base64.b64decode(b64value)
-        if isinstance(decoded_b64value, str):
-            sha512 = decoded_b64value.encode('hex')
-        elif isinstance(decoded_b64value, bytes):
-            sha512 = decoded_b64value.hex()
-        package.sha512 = sha512
-
-    sha1 = dist.get('shasum')
-    if sha1:
-        package.sha1 = sha1
+    package.sha1 = dist.get('shasum') or None
 
     dnl_url = dist.get('dnl_url')
     if not dnl_url:

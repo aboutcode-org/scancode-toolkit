@@ -1,0 +1,70 @@
+{
+  "name": "babel-runtime",
+  "version": "6.23.0",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "ansi-regex": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
+      "integrity": "sha1-w7M6te42DYbg5ijwRorn7yfWVN8=",
+      "dev": true
+    },
+    "babel-helpers": {
+      "version": "6.24.1",
+      "resolved": "https://registry.npmjs.org/babel-helpers/-/babel-helpers-6.24.1.tgz",
+      "integrity": "sha1-NHHenK7DiOXIUOWX5Yom3fN2ArI=",
+      "dev": true,
+      "requires": {
+        "babel-runtime": "6.25.0",
+        "babel-template": "6.25.0"
+      }
+    },
+    "babel-messages": {
+      "version": "6.23.0",
+      "resolved": "https://registry.npmjs.org/babel-messages/-/babel-messages-6.23.0.tgz",
+      "integrity": "sha1-8830cDhYA1sqKVHG7F7fbGLyYw4=",
+      "dev": true,
+      "requires": {
+        "babel-runtime": "6.25.0"
+      }
+    },
+    "babel-plugin-transform-runtime": {
+      "version": "6.23.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz",
+      "integrity": "sha1-iEkNRGUC6puOfvsP4J7E2ZR5se4=",
+      "dev": true,
+      "requires": {
+        "babel-runtime": "6.25.0"
+      }
+    },
+    "babel-runtime": {
+      "version": "6.25.0",
+      "resolved": "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.25.0.tgz",
+      "integrity": "sha1-M7mOql1IK7AajRqmtDetKwGuxBw=",
+      "dev": true,
+      "requires": {
+        "core-js": "2.5.0"
+      }
+    },
+    "babel-template": {
+      "version": "6.25.0",
+      "resolved": "https://registry.npmjs.org/babel-template/-/babel-template-6.25.0.tgz",
+      "integrity": "sha1-ZlJBFmt8KqTGGdceGSlpVSsQwHE=",
+      "dev": true,
+      "requires": {
+        "babel-runtime": "6.25.0",
+        "babel-traverse": "6.25.0",
+        "babel-types": "6.25.0",
+        "babylon": "6.18.0",
+        "lodash": "4.17.4"
+      }
+    },
+    "to-fast-properties": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
+      "integrity": "sha1-uDVx+k2MJbguIxsG46MFXeTKGkc=",
+      "dev": true
+    }
+  }
+}
