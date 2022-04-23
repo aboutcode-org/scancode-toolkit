@@ -82,8 +82,8 @@
     "license_expression": "gpl-3.0",
     "declared_license": "GPL (>= 3)",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -96,9 +96,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:cran/geometry@0.4.2",
     "repository_homepage_url": "https://cran.r-project.org/package=geometry",
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "cran_description",
+    "purl": "pkg:cran/geometry@0.4.2"
   }
 ]

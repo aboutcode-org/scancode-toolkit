@@ -40,8 +40,8 @@
     "license_expression": "gpl-1.0-plus",
     "declared_license": "GPL",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -54,9 +54,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:cran/codetools@0.2-16",
     "repository_homepage_url": "https://cran.r-project.org/package=codetools",
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "cran_description",
+    "purl": "pkg:cran/codetools@0.2-16"
   }
 ]
