@@ -1,0 +1,233 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json-pp": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 1
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:bower/get-size",
+      "extracted_requirement": "~1.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/bower.json",
+      "datasource_id": "bower_json"
+    },
+    {
+      "purl": "pkg:bower/eventEmitter",
+      "extracted_requirement": "~4.2.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/bower.json",
+      "datasource_id": "bower_json"
+    },
+    {
+      "purl": "pkg:bower/qunit",
+      "extracted_requirement": "~1.16.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/bower.json",
+      "datasource_id": "bower_json"
+    }
+  ],
+  "packages": [
+    {
+      "type": "bower",
+      "namespace": null,
+      "name": "John Doe",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Physics-like animations for pretty particles",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "author",
+          "name": "Betty Beta <bbeta@example.com>",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "author",
+          "name": "John Doe",
+          "email": "john@doe.com",
+          "url": "http://johndoe.com"
+        }
+      ],
+      "keywords": [
+        "motion",
+        "physics",
+        "particles"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "mit AND apache-2.0 AND bsd-new",
+      "declared_license": [
+        "MIT",
+        "Apache 2.0",
+        "BSD-3-Clause"
+      ],
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/bower.json"
+      ],
+      "datasource_ids": [
+        "bower_json"
+      ],
+      "purl": "pkg:bower/John%20Doe"
+    }
+  ],
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/bower.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "bower",
+          "namespace": null,
+          "name": "John Doe",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Physics-like animations for pretty particles",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "author",
+              "name": "Betty Beta <bbeta@example.com>",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "author",
+              "name": "John Doe",
+              "email": "john@doe.com",
+              "url": "http://johndoe.com"
+            }
+          ],
+          "keywords": [
+            "motion",
+            "physics",
+            "particles"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": [
+            "MIT",
+            "Apache 2.0",
+            "BSD-3-Clause"
+          ],
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:bower/get-size",
+              "extracted_requirement": "~1.2.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:bower/eventEmitter",
+              "extracted_requirement": "~4.2.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:bower/qunit",
+              "extracted_requirement": "~1.16.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "bower_json",
+          "purl": "pkg:bower/John%20Doe"
+        }
+      ],
+      "for_packages": [
+        "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
