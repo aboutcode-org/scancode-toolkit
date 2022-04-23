@@ -7,70 +7,30 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
 import xmltodict
 
 from packagedcode import models
-from commoncode import filetype
 
 
-# Tracing flags
-TRACE = False
-
-
-def logger_debug(*args):
-    pass
-
-
-if TRACE:
-    import logging
-    import sys
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-@attr.s()
-class MicrosoftUpdatePackage(models.PackageData):
-    extensions = ('.mum',)
+class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'microsoft_update_manifest_mum'
+    path_patterns = ('*.mum',)
     filetypes = ('xml 1.0 document',)
-    mimetypes = ('text/xml',)
-
-    default_type = 'windows-update'
-
-
-@attr.s()
-class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageDataFile):
+    default_package_type = 'windows-update'
+    description = 'Microsoft Update Manifest .mum file'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.mum')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location , 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
-        if TRACE:
-            logger_debug('parsed:', parsed)
         if not parsed:
             return
 
         assembly = parsed.get('assembly', {})
         description = assembly.get('@description', '')
         company = assembly.get('@company', '')
-        copyright = assembly.get('@copyright', '')
+        copyrght = assembly.get('@copyright', '')
         support_url = assembly.get('@supportInformation', '')
 
         assembly_identity = assembly.get('assemblyIdentity', {})
@@ -87,11 +47,13 @@ class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageDataFile):
                 )
             )
 
-        yield cls(
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             version=version,
             description=description,
             homepage_url=support_url,
             parties=parties,
-            copyright=copyright,
+            copyright=copyrght,
         )

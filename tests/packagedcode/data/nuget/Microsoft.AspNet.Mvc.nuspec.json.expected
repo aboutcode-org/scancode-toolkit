@@ -40,13 +40,14 @@
     "license_expression": "ms-net-library",
     "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7",
     "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
     "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
-    "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json"
+    "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json",
+    "datasource_id": "nuget_nupsec",
+    "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7"
   }
 ]

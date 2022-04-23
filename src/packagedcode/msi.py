@@ -12,14 +12,11 @@ import re
 import warnings
 from shutil import which
 
-import attr
-
 from commoncode.command import execute
 from commoncode.command import find_in_path
 from commoncode.system import on_linux
 from commoncode.version import VERSION_PATTERNS_REGEX
 from packagedcode import models
-
 
 MSIINFO_BIN_LOCATION = 'packagedcode_msitools.msiinfo'
 
@@ -91,6 +88,7 @@ def get_msi_info(location):
     installing the `packagedcode-msiinfo` plugin or by installing `msitools`
     through a package manager.
     """
+    # FIXME: what about the return code? we ignore it?
     rc, stdout, stderr = execute(
         cmd_loc=get_msiinfo_bin_location(),
         args=[
@@ -98,9 +96,8 @@ def get_msi_info(location):
             location,
         ],
     )
-    if stderr:
-        error_message = f'Error encountered when reading MSI information from {location}: '
-        error_message = error_message + stderr
+    if stderr or rc:
+        error_message = f'Error encountered when reading MSI information from {location}: {stderr}'
         raise MsiinfoException(error_message)
     return parse_msiinfo_suminfo_output(stdout)
 
@@ -123,11 +120,15 @@ def get_version_from_subject_line(subject_line):
             return v
 
 
-def create_package_from_msiinfo_results(msiinfo_results):
+def create_package_data_from_msiinfo_results(
+    msiinfo_results,
+    datasource_id='msi_installer',
+    package_type='msi',
+):
     """
-    Return an MsiInstallerPackage from the dictionary `msiinfo_results`
+    Return PackageData from a mapping of `msiinfo_results`
     """
-    author_name = msiinfo_results.get('Author', '')
+    author_name = msiinfo_results.pop('Author', '')
     parties = []
     if author_name:
         parties.append(
@@ -143,13 +144,15 @@ def create_package_from_msiinfo_results(msiinfo_results):
     # the time. Getting the version out of the `Subject` string is not
     # straightforward because the format of the string is usually different
     # between different MSIs
-    subject = msiinfo_results.get('Subject', '')
+    subject = msiinfo_results.pop('Subject', '')
     name = subject
     version = get_version_from_subject_line(subject)
-    description = msiinfo_results.get('Comments', '')
-    keywords = msiinfo_results.get('Keywords', '')
+    description = msiinfo_results.pop('Comments', '')
+    keywords = msiinfo_results.pop('Keywords', [])
 
-    return MsiInstallerPackage(
+    return models.PackageData(
+        datasource_id=datasource_id,
+        type=package_type,
         name=name,
         version=version,
         description=description,
@@ -159,22 +162,35 @@ def create_package_from_msiinfo_results(msiinfo_results):
     )
 
 
-def msi_parse(location):
+def msi_parse(location,
+    datasource_id='msi_installer',
+    package_type='msi',
+):
     """
-    Return an MsiInstallerPackage from `location`
+    Return PackageData from ``location``
     """
-    info = get_msi_info(location)
-    return create_package_from_msiinfo_results(info)
+    if on_linux:
+        info = get_msi_info(location)
+        return create_package_data_from_msiinfo_results(
+            msiinfo_results=info,
+            datasource_id=datasource_id,
+            package_type=package_type,
+        )
+    else:
+        return models.PackageData(
+            datasource_id=datasource_id,
+            type=package_type,
+        )
 
 
-@attr.s()
-class MsiInstallerPackage(models.PackageData, models.PackageDataFile):
+class MsiInstallerHandler(models.DatafileHandler):
+    datasource_id = 'msi_installer'
     filetypes = ('msi installer',)
-    mimetypes = ('application/x-msi',)
-    extensions = ('.msi',)
-    default_type = 'msi'
+    path_patterns = ('*.msi',)
+    default_package_type = 'msi'
+    description = 'Microsoft MSI installer'
+    documentation_url = 'https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal'
 
     @classmethod
-    def recognize(cls, location):
-        if on_linux:
-            yield msi_parse(location)
+    def parse(cls, location):
+        yield msi_parse(location)

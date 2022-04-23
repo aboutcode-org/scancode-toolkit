@@ -33,13 +33,14 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "microsoft_update_manifest_mum",
+    "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4"
   }
 ]
