@@ -31,10 +31,8 @@ file.
 This is heavily modified version from the original.
 """
 
-
 from io import BytesIO
 import struct
-
 
 """""
 RPM constants
@@ -96,6 +94,7 @@ RPM_DATA_TYPES = (
 )
 
 # tags to collect
+# see https://rpm-software-management.github.io/rpm/manual/tags.html
 
 RPMTAG_NAME = 1000
 RPMTAG_VERSION = 1001
@@ -103,20 +102,106 @@ RPMTAG_RELEASE = 1002
 RPMTAG_EPOCH = 1003
 RPMTAG_SUMMARY = 1004
 RPMTAG_DESCRIPTION = 1005
+
+# Distribution name
 RPMTAG_DISTRIBUTION = 1010
+
 RPMTAG_VENDOR = 1011
 RPMTAG_COPYRIGHT = 1014
 RPMTAG_LICENSE = 1014
 RPMTAG_PACKAGER = 1015
 RPMTAG_GROUP = 1016
+
 RPMTAG_PATCH = 1019
+
+# Package URL, typically project upstream website.
 RPMTAG_URL = 1020
+# Package source code VCS location. rarely seen
+RPMTAG_VCS = 5034
+
 RPMTAG_OS = 1021
 RPMTAG_ARCH = 1022
+
+RPMTAG_CHANGELOG = 1017
+RPMTAG_CHANGELOGTIME = 1080
+RPMTAG_CHANGELOGNAME = 1081
+RPMTAG_CHANGELOGTEXT = 1082
+
+# A list of source archive names as in strace-4.24.tar.xz
+RPMTAG_SOURCE = 1018
+# the full RPM archive file name for the source package of a binary RPM
 RPMTAG_SOURCERPM = 1044
-# a number ... not clear what it is
+# integer set to 1 for source RPMs
 RPMTAG_SOURCEPACKAGE = 1106
+
+# URL to a package bug tracker
+RPMTAG_BUGURL = 5012
+
+RPMTAG_FILESIZES = 1028
+RPMTAG_FILEDIGESTS = 1035
+
+# ID of file digest algorithm.
+# MD5: 0 (default if missing)
+# SHA1: 2
+# SHA256: 8
+# SHA384: 9
+# SHA512: 10
+RPMTAG_FILEDIGESTALGO    = 5011
+
+RPMTAG_FILELINKTOS = 1036
+# File virtual attributes (doc, license, ghost, artifact etc)
+# doc:2, license:128, 0 is most common
+RPMTAG_FILEFLAGS = 1037
+
+RPMTAG_DIRINDEXES = 1116
+RPMTAG_BASENAMES = 1117
+RPMTAG_DIRNAMES = 1118
+# is zero unless this is a special/char device file
+RPMTAG_FILERDEVS = 1033
+
+# File “color” - 1 for 32bit ELF, 2 for 64bit ELF and 0 otherwise
+RPMTAG_FILECOLORS = 1140
+
+# Original file paths for relocated packages only
+# same design as RPMTAG_DIRINDEXES et al.
+RPMTAG_ORIGDIRINDEXES = 1119
+RPMTAG_ORIGBASENAMES = 1120
+RPMTAG_ORIGDIRNAMES = 1121
+
+RPMTAG_PROVIDES = 1047
+RPMTAG_PROVIDEFLAGS = 1112
+RPMTAG_PROVIDEVERSION = 1113
+
+RPMTAG_REQUIRES = 1049
+RPMTAG_REQUIREFLAGS = 1048
+RPMTAG_REQUIREVERSION = 1050
+
+RPMTAG_CONFLICTS = 1054
+RPMTAG_CONFLICTFLAGS = 1053
+RPMTAG_CONFLICTVERSION = 1055
+
+RPMTAG_OBSOLETES = 1090
+RPMTAG_OBSOLETEFLAGS = 1114
+RPMTAG_OBSOLETEVERSION = 1115
+
+# Distribution specific URL of the package. Seen only in Suse with obs:// links
 RPMTAG_DISTURL = 1123
+
+# Distribution acronym: never seen in practice
+RPMTAG_DISTTAG = 1155
+
+# Package platform (arch-os-vendor) as in x86_64-suse-linux or x86_64-redhat-linux-gnu
+RPMTAG_PLATFORM = 1132
+
+# an index for each file to RPMTAG_CLASSDICT
+RPMTAG_FILECLASS = 1141
+# a "file" libmagic filetype
+RPMTAG_CLASSDICT = 1142
+
+# Payload format (cpio)
+RPMTAG_PAYLOADFORMAT = 1124
+# Payload compressor name (as passed to rpmio Fopen()): for instance: gzip
+RPMTAG_PAYLOADCOMPRESSOR = 1125
 
 RPMTAGS = {
    RPMTAG_NAME: 'name',
@@ -136,6 +221,7 @@ RPMTAGS = {
    RPMTAG_ARCH: 'arch',
    RPMTAG_SOURCERPM: 'source_rpm',
    RPMTAG_DISTURL: 'dist_url',
+   RPMTAG_FILEDIGESTALGO: 'files_digest_algo',
 }
 
 
@@ -161,6 +247,7 @@ class Entry(object):
     """
     RPM Header Entry
     """
+
     def __init__(self, tag, type, value):  # NOQA
         self.tag = tag
         self.type = type
@@ -294,7 +381,7 @@ class RPMError(BaseException):
     pass
 
 
-class RPM(object):
+class RPM:
 
     def __init__(self, rpm):
         """
@@ -421,7 +508,7 @@ class RPM(object):
     @property
     def epoch(self):
         """
-        Return a epoch or None for the epoch 0 and if no epoch is defined.
+        Return an epoch or None for the epoch 0 and if no epoch is defined.
         """
         epoch = self.get_entry_value(RPMTAG_EPOCH)
         if not epoch:
@@ -434,7 +521,7 @@ class RPM(object):
             return
         if epoch.lower() == 'none':
             return
-        return epoch or None
+        return epoch
 
     @property
     def version(self):
@@ -502,6 +589,10 @@ class RPM(object):
         return '-'.join([self.name, self.version])
 
     @property
+    def files_digest_algo(self):
+        return self.get_entry_value(RPMTAG_FILEDIGESTALGO)
+
+    @property
     def filename(self):
         name = '-'.join([self.package, self.release])
         arch = self.arch
@@ -542,4 +633,5 @@ class RPM(object):
             dist_url=self.dist_url,
             source_rpm=self.source_rpm,
             is_binary=self.is_binary,
+            files_digest_algo=self.files_digest_algo,
         )
