@@ -10,11 +10,8 @@
 import io
 import logging
 
-import attr
 import saneyaml
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
@@ -32,35 +29,20 @@ if TRACE:
     logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
-@attr.s()
-class FreeBSDPackageData(models.PackageData):
-    file_patterns = ('+COMPACT_MANIFEST',)
-    default_type = 'freebsd'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
+# see also https://github.com/freebsd/pkg#the-metadata
+# TODO: use the libucl Python binding
+# TODO: support +MANIFETS and its file references
 
 
-@attr.s()
-class CompactManifest(FreeBSDPackageData, models.PackageDataFile):
-
-    file_patterns = ('+COMPACT_MANIFEST',)
+class CompactManifestHandler(models.DatafileHandler):
+    datasource_id = 'freebsd_compact_manifest'
+    path_patterns = ('*/+COMPACT_MANIFEST',)
+    default_package_type = 'freebsd'
+    description = 'FreeBSD compact package manifest'
+    documentation_url = 'https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == '+compact_manifest')
-
-    @classmethod
-    def recognize(cls, location):
+    def parse(cls, location):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
@@ -68,17 +50,16 @@ class CompactManifest(FreeBSDPackageData, models.PackageDataFile):
         with io.open(location, encoding='utf-8') as loc:
             freebsd_manifest = saneyaml.load(loc)
 
-        # construct the package
-        package = cls()
+        package_data = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            qualifiers=dict(
+                arch=freebsd_manifest.get('arch'),
+                origin=freebsd_manifest.get('origin'),
+            )
+        )
 
-        # add freebsd-specific package 'qualifiers'
-        qualifiers = dict([
-            ('arch', freebsd_manifest.get('arch')),
-            ('origin', freebsd_manifest.get('origin')),
-        ])
-        package.qualifiers = qualifiers
-
-        # mapping of top level package.json items to the Package object field name
+        # mapping of top level manifest items to the PackageData object field name
         plain_fields = [
             ('name', 'name'),
             ('version', 'version'),
@@ -93,7 +74,7 @@ class CompactManifest(FreeBSDPackageData, models.PackageDataFile):
                 if isinstance(value, str):
                     value = value.strip()
                 if value:
-                    setattr(package, target, value)
+                    setattr(package_data, target, value)
 
         # mapping of top level +COMPACT_MANIFEST items to a function accepting as
         # arguments the package.json element value and returning an iterable of key,
@@ -108,62 +89,57 @@ class CompactManifest(FreeBSDPackageData, models.PackageDataFile):
             logger.debug('parse: %(source)r, %(func)r' % locals())
             value = freebsd_manifest.get(source) or None
             if value:
-                func(value, package)
+                func(value, package_data)
 
         # license_mapper needs multiple fields
-        license_mapper(freebsd_manifest, package)
+        license_mapper(freebsd_manifest, package_data)
 
-        yield package
+        if package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(package_data)
+
+        yield package_data
+
+    @classmethod
+    def compute_normalized_license(cls, package):
+        """
+        Return a normalized license expression string or None detected from a ``package`` Package
+        declared license items or an ordered dict.
+        """
+        declared_license = package.declared_license
+        if not declared_license:
+            return
+
+        if not isinstance(declared_license, dict):
+            return models.compute_normalized_license(declared_license=declared_license)
+
+        licenses = declared_license.get('licenses')
+        if not licenses:
+            return
+
+        license_logic = declared_license.get('licenselogic')
+        # the default in FreebSD expressions is AND
+        relation = 'AND'
+        if license_logic:
+            if license_logic == 'or' or license_logic == 'dual':
+                relation = 'OR'
+
+        detected_licenses = []
+        for lic in licenses:
+            detected = models.compute_normalized_license(declared_license=lic)
+            if detected:
+                detected_licenses.append(detected)
+
+        if detected_licenses:
+            return combine_expressions(expressions=detected_licenses, relation=relation)
 
 
-@attr.s()
-class FreebsdPackage(FreeBSDPackageData, models.Package):
+def license_mapper(freebsd_manifest, package):
     """
-    A Freebsd Package that is created out of one/multiple Freebsd package
-    manifests and package-like data, with it's files.
+    Update ``package`` Package declared licensing using ``freebsd_manifest`` and
+    return package. Licensing structure for FreeBSD packages is a list of
+    FreeBSD own license keys and a 'licenselogic' field.
     """
-
-    @property
-    def manifests(self):
-        return [
-            CompactManifest
-        ]
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items or an ordered dict.
-    """
-    if not declared_license:
-        return
-
-    licenses = declared_license.get('licenses')
-    if not licenses:
-        return
-
-    license_logic = declared_license.get('licenselogic')
-    relation = 'AND'
-    if license_logic:
-        if license_logic == 'or' or license_logic == 'dual':
-            relation = 'OR'
-
-    detected_licenses = []
-    for declared in licenses:
-        detected_license = models.compute_normalized_license(declared)
-        if detected_license:
-            detected_licenses.append(detected_license)
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses, relation)
-
-
-def license_mapper(package_data, package):
-    """
-    Update package licensing and return package. Licensing structure for FreeBSD
-    packages is a list of (non-scancode) license keys and a 'licenselogic' field.
-    """
-    license_logic, licenses = package_data.get('licenselogic'), package_data.get('licenses')
+    licenses = freebsd_manifest.get('licenses')
 
     if not licenses:
         return
@@ -171,11 +147,13 @@ def license_mapper(package_data, package):
     declared_license = {}
     lics = [l.strip() for l in licenses if l and l.strip()]
     declared_license['licenses'] = lics
+
+    license_logic = freebsd_manifest.get('licenselogic')
     if license_logic:
         declared_license['licenselogic'] = license_logic
 
     package.declared_license = declared_license
-    return package
+    return
 
 
 def maintainer_mapper(maintainer, package):
@@ -192,8 +170,10 @@ def origin_mapper(origin, package):
     Update package code_view_url using FreeBSD origin information and return package.
     """
     # the 'origin' field allows us to craft a code_view_url
+    # TODO: the origin may need to be the namespace??
     package.qualifiers['origin'] = origin
-    package.code_view_url = 'https://svnweb.freebsd.org/ports/head/{}'.format(origin)
+    package.code_view_url = f'https://svnweb.freebsd.org/ports/head/{origin}'
+    return package
 
 
 def arch_mapper(arch, package):
@@ -203,5 +183,5 @@ def arch_mapper(arch, package):
     # the 'arch' field allows us to craft a binary download_url
     # FIXME: due to the rolling-release nature of binary ports, some download URLs
     # will lead to 404 errors if a newer release of a particular port is availible
-    package.download_url = 'https://pkg.freebsd.org/{}/latest/All/{}-{}.txz'.format(arch, package.name, package.version)
+    package.download_url = f'https://pkg.freebsd.org/{arch}/latest/All/{package.name}-{package.version}.txz'
     return package
