@@ -45,13 +45,14 @@
       ]
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/xmltodict",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/xmltodict",
     "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/xmltodict/json"
+    "api_data_url": "https://pypi.org/pypi/xmltodict/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/xmltodict"
   }
 ]

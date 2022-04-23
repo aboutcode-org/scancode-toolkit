@@ -35,13 +35,14 @@
       "license": "Apache License 2.0"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/%40name%40",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/@NAME@",
     "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/@NAME@/json"
+    "api_data_url": "https://pypi.org/pypi/@NAME@/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/%40name%40"
   }
 ]

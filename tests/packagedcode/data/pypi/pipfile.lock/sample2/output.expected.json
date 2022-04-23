@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -163,7 +162,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
   "source_packages": [],
   "extra_data": {},
   "purl": null,

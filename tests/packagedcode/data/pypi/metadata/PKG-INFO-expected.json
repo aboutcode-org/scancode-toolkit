@@ -46,13 +46,14 @@
       ]
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/python-mimeparse@1.6.0",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/python-mimeparse",
     "repository_download_url": "https://pypi.org/packages/source/p/python-mimeparse/python-mimeparse-1.6.0.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/python-mimeparse/1.6.0/json"
+    "api_data_url": "https://pypi.org/pypi/python-mimeparse/1.6.0/json",
+    "datasource_id": "pypi_sdist_pkginfo",
+    "purl": "pkg:pypi/python-mimeparse@1.6.0"
   }
 ]

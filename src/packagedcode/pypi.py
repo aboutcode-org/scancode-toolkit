@@ -9,7 +9,6 @@
 #
 
 import ast
-import fnmatch
 import io
 import json
 import logging
@@ -19,25 +18,23 @@ import sys
 import zipfile
 from pathlib import Path
 
-import attr
 import dparse2
 import pip_requirements_parser
 import pkginfo2
+from commoncode import fileutils
 from packageurl import PackageURL
-from packaging.requirements import Requirement
 from packaging import markers
+from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 
-try:
-    import importlib.metadata as importlib_metadata
-except ImportError:
-    import importlib_metadata
+# FIXME: we always want to use the external library rather than the built-in for now
+import importlib_metadata
+import base64
+from commoncode.fileutils import as_posixpath
 
 try:
     from zipfile import Path as ZipPath
@@ -48,6 +45,8 @@ except ImportError:
 Detect and collect Python packages information.
 """
 # TODO: add support for poetry and setup.cfg and metadata.json
+# TODO: add support for pex, pyz, etc.
+# TODO: Add missing ABOUT file for Pyserial code
 
 TRACE = False
 
@@ -66,64 +65,240 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-@attr.s()
-class PythonPackageData(models.PackageData):
-    default_type = 'pypi'
+class BasePypiHandler(models.DatafileHandler):
+
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return compute_normalized_license(package.declared_license)
+
+
+class PythonEggPkgInfoFile(BasePypiHandler):
+    datasource_id = 'pypi_egg_pkginfo'
+    default_package_type = 'pypi'
     default_primary_language = 'Python'
-    default_web_baseurl = 'https://pypi.org'
-    default_download_baseurl = 'https://pypi.org/packages/source'
-    default_api_baseurl = 'https://pypi.org/pypi'
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.name:
-            return f'{baseurl}/project/{baseurl}'
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        if self.name and self.version:
-            name = self.name
-            name1 = name[0]
-            return f'{baseurl}/{name1}/{name}/{name}-{self.version}.tar.gz'
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        if self.name:
-            if self.version:
-                return f'{baseurl}/{self.name}/{self.version}/json'
-            else:
-                return f'{baseurl}/{self.name}/json'
-
-
-meta_dir_suffixes = '.dist-info', '.egg-info', 'EGG-INFO',
-meta_file_names = 'PKG-INFO', 'METADATA',
-
-
-@attr.s()
-class MetadataFile(PythonPackageData, models.PackageDataFile):
-
-    file_patterns = meta_file_names
+    path_patterns = ('*/EGG-INFO/PKG-INFO',)
+    description = 'PyPI extracted egg PKG-INFO'
+    documentation_url = 'https://peps.python.org/pep-0376/'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith(meta_file_names)
+    def parse(cls, location):
+        yield parse_metadata(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        yield parse_metadata(cls, location)
+    def assign_package_to_resources(cls, package, resource, codebase):
+        # two levels up
+        root = resource.parent(codebase).parent(codebase)
+        if root:
+            return cls.assign_package_to_resources(package, root, codebase)
 
 
-def parse_metadata(cls, location):
+class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
+    datasource_id = 'pypi_editable_egg_pkginfo'
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    path_patterns = ('*.egg-info/PKG-INFO',)
+    description = 'PyPI editable local installation PKG-INFO'
+    documentation_url = 'https://peps.python.org/pep-0376/'
+
+    @classmethod
+    def parse(cls, location):
+        yield parse_metadata(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        # only the parent for now... though it can be more complex
+        return cls.assign_package_to_parent_tree(package, resource, codebase)
+
+
+class BaseExtractedPythonLayout(BasePypiHandler):
     """
-    Return a PythonPackage from an  PKG-INFO or METADATA file ``location``
-    string or pathlib.Path-like object.
+    Base class for development repos, sdist tarballs and other related extracted
+    layourt for Python packages that can use and mix multiple datafiles.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        # a source distribution can have many manifests
+        datafile_name_patterns = (
+            'PKG-INFO',
+            'setup.py',
+            'setup.cfg',
+            'Pipfile.lock',
+            'Pipfile',
+        ) + PipRequirementsFileHandler.path_patterns
+
+        parent = resource.parent(codebase)
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=datafile_name_patterns,
+            directory=parent,
+            codebase=codebase,
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return cls.assign_package_to_parent_tree(package, resource, codebase)
+
+
+class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
+    datasource_id = 'pypi_sdist_pkginfo'
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    path_patterns = ('*/PKG-INFO',)
+    description = 'PyPI extracted sdist PKG-INFO'
+    documentation_url = 'https://peps.python.org/pep-0314/'
+
+    @classmethod
+    def parse(cls, location):
+        yield parse_metadata(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+
+
+class PythonInstalledWheelMetadataFile(BasePypiHandler):
+    datasource_id = 'pypi_wheel_metadata'
+    path_patterns = ('*.dist-info/METADATA',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'PyPI installed wheel METADATA'
+    documentation_url = 'https://packaging.python.org/en/latest/specifications/core-metadata/'
+
+    @classmethod
+    def parse(cls, location):
+        yield parse_metadata(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        """
+        Assign files to package for an installed wheel. This requires a bit
+        of navigation around as the files can be in multiple places.
+        """
+        site_packages = resource.parent(codebase).parent(codebase).parent(codebase)
+        if not site_packages:
+            return
+        package_data = resource.package_data
+        assert len(resource.package_data) == 1, (
+            f'Unsupported Pypi METADATA wheel structure: {resource.path!r} '
+            f'with multiple {package_data!r}'
+        )
+
+        package_data = models.PackageData.from_dict(package_data[0])
+
+        package_uid = package.package_uid
+
+        # save thyself!
+        resource.for_packages.append(package_uid)
+        resource.save(codebase)
+
+        # collect actual paths based on the file references
+        for file_ref in package_data.file_references:
+            path_ref = file_ref.path
+            if path_ref.startswith('..'):
+                # relative paths need special treatment
+                # most of thense are references to bin ../../../bin/wheel
+                cannot_resolve = False
+                ref_resource = None
+                while path_ref.startswith('..'):
+                    _, _, path_ref.partition('../')
+                    ref_resource = site_packages.parent(codebase)
+                    if not ref_resource:
+                        cannot_resolve = True
+                        break
+                if cannot_resolve or not ref_resource:
+                    # TODO:w e should log these kind of things
+                    continue
+                else:
+                    ref_resource.for_packages.append(package_uid)
+                    ref_resource.save(codebase)
+            else:
+                ref_resource = get_resource_for_path(
+                    path=path_ref,
+                    root=site_packages,
+                    codebase=codebase,
+                )
+                if ref_resource:
+                    ref_resource.for_packages.append(package_uid)
+                    ref_resource.save(codebase)
+
+
+def get_resource_for_path(path, root, codebase):
+    """
+    Return a resource in ``codebase`` that has a ``path`` relative to the
+    ``root` Resource
+
+    For example, say we start from this:
+        path: this/is/that therefore segments [this, is, that]
+        root: /usr/foo
+
+    We would have these iterations:
+    iteration1
+        root = /usr/foo
+        segments = [this, is, that]
+        seg  this
+        segments = [is, that]
+        children = [/usr/foo/this]
+        root = /usr/foo/this
+
+    iteration2
+        root = /usr/foo/this
+        segments = [is, that]
+        seg  is
+        segments = [that]
+        children = [/usr/foo/this/is]
+        root = /usr/foo/this/is
+
+    iteration3
+        root = /usr/foo/this/is
+        segments = [that]
+        seg  that
+        segments = []
+        children = [/usr/foo/this/is/that]
+        root = /usr/foo/this/is/that
+
+    finally return root as /usr/foo/this/is/that
+    """
+    segments = path.strip('/').split('/')
+    while segments:
+        seg = segments.pop(0)
+        children = [c for c in root.children(codebase) if c.name == seg]
+        if len(children) != 1:
+            return
+        else:
+            root = children[0]
+    return root
+
+
+# FIXME: Implement me
+class PyprojectTomlHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'pypi_pyproject_toml'
+    path_patterns = ('*pyproject.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pyproject.toml'
+    documentation_url = 'https://peps.python.org/pep-0621/'
+
+
+META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
+
+
+def parse_metadata(location, datasource_id, package_type):
+    """
+    Return a PackageData object from a PKG-INFO or METADATA file at ``location``
+    which is a path string or pathlib.Path-like object (including a possible zip
+    file ZipPath for a wheel)
 
     Looks in neighboring files as needed when an installed layout is found.
     """
@@ -133,92 +308,167 @@ def parse_metadata(cls, location):
 
     # build from dir if we are an installed distro
     parent = path.parent
-    if parent.name.endswith(meta_dir_suffixes):
+    if parent.name.endswith(META_DIR_SUFFIXES):
         path = parent
 
     dist = importlib_metadata.PathDistribution(path)
 
-    # FIXME: handle other_urls
     meta = dist.metadata
-    urls, other_urls = get_urls(meta)
 
-    return cls(
-        name=get_attribute(meta, 'Name'),
-        version=get_attribute(meta, 'Version'),
+    name = get_attribute(meta, 'Name')
+    version = get_attribute(meta, 'Version')
+
+    urls = get_urls(metainfo=meta, name=name, version=version)
+
+    dependencies = get_dist_dependencies(dist)
+
+    file_references = list(get_file_references(dist))
+
+    package_data = models.PackageData(
+        datasource_id=datasource_id,
+        type=package_type,
+        primary_language='Python',
+        name=name,
+        version=version,
         description=get_description(meta, location),
         declared_license=get_declared_license(meta),
         keywords=get_keywords(meta),
         parties=get_parties(meta),
-        dependencies=get_dist_dependencies(dist),
+        dependencies=dependencies,
+        file_references=file_references,
         **urls,
     )
 
+    if not package_data.license_expression and package_data.declared_license:
+        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
-bdist_file_suffixes = '.whl', '.egg',
+    return package_data
 
 
-@attr.s()
-class BinaryDistArchive(PythonPackageData, models.PackageDataFile):
+def urlsafe_b64decode(data):
+    """
+    urlsafe_b64decode without padding
+    SPDX-License-Identifier: MIT
+    Copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and contributors.
+    From: https://github.com/pypa/wheel/blob/66208910ab51f4008b034ef4833acfdc920f7606/src/wheel/util.py#L23
+    """
+    pad = b'=' * (4 - (len(data) & 3))
+    return base64.urlsafe_b64decode(data.encode('ASCII') + pad)
 
-    file_patterns = ('*.whl', '*.egg',)
-    extensions = bdist_file_suffixes
+
+def get_file_references(dist):
+    """
+    Yield FileReference found in a ``dist`` importlib_metadata.Distribution.
+    """
+    if not dist.files:
+        return
+
+    for filepath in dist.files or []:
+        # FIXME: the path is relative to the "site-packages" directory or the
+        # root of a wheel but this should be a scan path
+        ref = models.FileReference(
+            path=as_posixpath(str(filepath)),
+            size=filepath.size,
+        )
+
+        filehash = filepath.hash
+        if filehash:
+            algo = filehash.mode
+            value = filehash.value
+            if algo in ('sha256', 'sha512'):
+                # convert back to hex as this is a base64 without padding otherwise
+                value = urlsafe_b64decode(value).hex()
+            setattr(ref, algo, value)
+        yield ref
+
+
+class PypiWheelHandler(BasePypiHandler):
+    datasource_id = 'pypi_wheel'
+    path_patterns = ('*.whl',)
+    filetypes = ('zip archive',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'PyPI wheel'
+    documentation_url = 'https://peps.python.org/pep-0427/'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith(bdist_file_suffixes)
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with zipfile.ZipFile(location) as zf:
             for path in ZipPath(zf).iterdir():
-                if not path.name.endswith(meta_dir_suffixes):
+                if not path.name.endswith(META_DIR_SUFFIXES):
                     continue
                 for metapath in path.iterdir():
-                    if metapath.name.endswith(meta_file_names):
-                        yield parse_metadata(cls, metapath)
+                    if not metapath.name.endswith('METADATA'):
+                        continue
+
+                    yield parse_metadata(
+                        location=metapath,
+                        datasource_id=cls.datasource_id,
+                        package_type=cls.default_package_type,
+                    )
 
 
-sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
-
-
-@attr.s()
-class SourceDistArchive(PythonPackageData, models.PackageDataFile):
-    # TODO: we are ignoing sdists such as pex, pyz, etc.
-    file_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
-    extensions = sdist_file_suffixes
+class PypiEggHandler(BasePypiHandler):
+    datasource_id = 'pypi_egg'
+    path_patterns = ('*.egg',)
+    filetypes = ('zip archive',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'PyPI egg'
+    documentation_url = 'https://web.archive.org/web/20210604075235/http://peak.telecommunity.com/DevCenter/PythonEggs'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith(sdist_file_suffixes)
+    def parse(cls, location):
+        with zipfile.ZipFile(location) as zf:
+            for path in ZipPath(zf).iterdir():
+                if not path.name.endswith(META_DIR_SUFFIXES):
+                    continue
+
+                for metapath in path.iterdir():
+                    if not metapath.name.endswith('PKG-INFO'):
+                        continue
+
+                    yield parse_metadata(
+                        location=metapath,
+                        datasource_id=cls.datasource_id,
+                        package_type=cls.default_package_type,
+                    )
+
+
+class PypiSdistArchiveHandler(BasePypiHandler):
+    datasource_id = 'pypi_sdist'
+    path_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python source distribution'
+    documentation_url = 'https://peps.python.org/pep-0643/'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def is_datafile(cls, location, filetypes=tuple()):
+        if super().is_datafile(location, filetypes=filetypes):
+            # TODO: there is a structure to an sdists name: aboutcode-toolkit-7.0.0.tar.gz
+            # TODO: there is more to it than this... based on actual listing of files inside
+            return True
 
+    @classmethod
+    def parse(cls, location):
         # FIXME: add dependencies
-        # FIXME: handle other_urls
 
         try:
             sdist = pkginfo2.SDist(location)
         except ValueError:
             return
-        urls, other_urls = get_urls(sdist)
-        yield cls(
-            name=sdist.name,
-            version=sdist.version,
+
+        name = sdist.name
+        version = sdist.version
+        urls = get_urls(metainfo=sdist, name=name, version=version)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name=name,
+            version=version,
             description=get_description(sdist, location=location),
             declared_license=get_declared_license(sdist),
             keywords=get_keywords(sdist),
@@ -227,40 +477,34 @@ class SourceDistArchive(PythonPackageData, models.PackageDataFile):
         )
 
 
-@attr.s()
-class SetupPy(PythonPackageData, models.PackageDataFile):
-
-    file_patterns = ('setup.py',)
-    extensions = ('.py',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('setup.py')
+class PythonSetupPyHandler(BaseExtractedPythonLayout):
+    datasource_id = 'pypi_setup_py'
+    path_patterns = ('*setup.py',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python setup.py'
+    documentation_url = 'https://docs.python.org/3/distutils/setupscript.html'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         setup_args = get_setup_py_args(location)
 
         # it may be legit to have a name-less package?
         # in anycase we do not want to fail because of that
-        package_name = setup_args.get('name')
-        urls, other_urls = get_urls(setup_args)
+        name = setup_args.get('name')
 
-        detected_version = setup_args.get('version')
-        if not detected_version:
+        version = setup_args.get('version')
+        if not version:
             # search for possible dunder versions here and elsewhere
-            detected_version = detect_version_attribute(location)
+            version = detect_version_attribute(location)
 
-        yield cls(
-            name=package_name,
-            version=detected_version,
+        urls = get_urls(metainfo=setup_args, name=name, version=version)
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name=name,
+            version=version,
             description=get_description(setup_args),
             parties=get_parties(setup_args),
             declared_license=get_declared_license(setup_args),
@@ -270,60 +514,59 @@ class SetupPy(PythonPackageData, models.PackageDataFile):
         )
 
 
-@attr.s()
-class DependencyFile(PythonPackageData, models.PackageDataFile):
-
-    file_patterns = (
-        'Pipfile',
-        'conda.yml',
-        'setup.cfg',
-        'tox.ini',
-    )
+class BaseDependencyFileHandler(BasePypiHandler):
+    """
+    Base class for a dependency files parsed with the same library
+    """
 
     @classmethod
-    def is_package_data_file(cls, location):
-        for file_pattern in cls.file_patterns:
-            if filetype.is_file(location) and location.endswith(file_pattern):
-                return True
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         file_name = fileutils.file_name(location)
 
         dependency_type = get_dparse2_supported_file_name(file_name)
         if not dependency_type:
             return
 
-        dependent_packages = parse_with_dparse2(
+        dependencies = parse_with_dparse2(
             location=location,
             file_name=dependency_type,
         )
-        yield cls(dependencies=dependent_packages)
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
 
 
-@attr.s()
-class PipfileLock(PythonPackageData, models.PackageDataFile):
+class SetupCfgHandler(BaseExtractedPythonLayout):
+    datasource_id = 'pypi_setup_cfg'
+    path_patterns = ('*setup.cfg',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python setup.cfg'
+    documentation_url = 'https://peps.python.org/pep-0390/'
 
-    file_patterns = ('Pipfile.lock',)
-    extensions = ('.lock',)
+
+class PipfileHandler(BaseDependencyFileHandler):
+    datasource_id = 'pipfile'
+    path_patterns = ('*Pipfile',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Pipfile'
+    documentation_url = 'https://github.com/pypa/pipfile'
+
+
+class PipfileLockHandler(BaseDependencyFileHandler):
+    datasource_id = 'pipfile_lock'
+    path_patterns = ('*Pipfile.lock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Pipfile.lock'
+    documentation_url = 'https://github.com/pypa/pipfile'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('Pipfile.lock')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location) as f:
             content = f.read()
 
@@ -339,37 +582,69 @@ class PipfileLock(PythonPackageData, models.PackageDataFile):
             location=location,
             file_name='Pipfile.lock',
         )
-        yield cls(sha256=sha256, dependencies=dependent_packages)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            sha256=sha256,
+            dependencies=dependent_packages,
+        )
 
 
-@attr.s()
-class RequirementsFile(PythonPackageData, models.PackageDataFile):
+class PipRequirementsFileHandler(BaseDependencyFileHandler):
+    """
+    A pip requirements (or constraints) file.
 
-    file_patterns = (
+    Some example::
+    >>> PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True)
+    True
+    >>> PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True)
+    True
+    """
+    datasource_id = 'pip_requirements'
+
+    path_patterns = (
         '*requirement*.txt',
         '*requirement*.pip',
         '*requirement*.in',
-        'requires.txt',
-        'requirements/*.txt',
-        'requirements/*.pip',
-        'requirements/*.in',
+        '*requires.txt',
+        '*requirements/*.txt',
+        '*requirements/*.pip',
+        '*requirements/*.in',
+        '*reqs.txt',
     )
 
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the ``location`` is likely a pip requirements file.
-        """
-        return filetype.is_file(location) and is_requirements_file(location)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'pip requirements file'
+    documentation_url = 'https://pip.pypa.io/en/latest/reference/requirements-file-format/'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         dependencies = get_requirements_txt_dependencies(location=location)
-        yield cls(dependencies=dependencies)
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
 
 
 def get_requirements_txt_dependencies(location):
@@ -426,25 +701,6 @@ def get_requirements_txt_dependencies(location):
         )
 
     return dependent_packages
-
-@attr.s()
-class PythonPackage(PythonPackageData, models.Package):
-    """
-    A Python Package that is created out of one/multiple python package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            MetadataFile,
-            RequirementsFile,
-            PipfileLock,
-            DependencyFile,
-            SetupPy,
-            BinaryDistArchive,
-            SourceDistArchive
-        ]
 
 
 def get_attribute(metainfo, name, multiple=False):
@@ -541,7 +797,7 @@ def clean_description(description):
 
 def get_legacy_description(location):
     """
-    Return the text of a legacy DESCRIPTION.rst.
+    Return the text of a legacy DESCRIPTION.rst file.
     """
     location = os.path.join(location, 'DESCRIPTION.rst')
     if os.path.exists(location):
@@ -569,8 +825,8 @@ def get_declared_license(metainfo):
 
 def get_classifiers(metainfo):
     """
-    Return a two tuple of (license_classifiers, other_classifiers) found in a
-    ``metainfo`` object or mapping.
+    Return a two tuple of lists of (license_classifiers, other_classifiers)
+    found in a ``metainfo`` object or mapping.
     """
 
     classifiers = (
@@ -647,8 +903,14 @@ def get_setup_py_dependencies(setup_args):
     setup.py arguments or an empty list.
     """
     dependencies = []
+
+    python_requires = setup_args.get('python_requires')
+    if python_requires:
+        # FIXME: handle python_requires = >=3.6.*
+        pass
+
     install_requires = setup_args.get('install_requires')
-    dependencies.extend(get_requires_dependencies(install_requires))
+    dependencies.extend(get_requires_dependencies(install_requires, default_scope='install'))
 
     tests_requires = setup_args.get('tests_requires')
     dependencies.extend(
@@ -697,6 +959,7 @@ def get_requires_dependencies(requires, default_scope='install'):
     requirement strings or an empty list.
     """
     if not is_simple_requires(requires):
+        # FIXME: when does this happen? should we log this?
         return []
     dependent_packages = []
     for req in (requires or []):
@@ -766,49 +1029,6 @@ def get_extra(marker):
             return value.value
 
 
-def is_requirements_file(location):
-    """
-    Return True if the ``location`` is likely for a pip requirements file.
-
-    For example::
-    >>> is_requirements_file('dev-requirements.txt')
-    True
-    >>> is_requirements_file('requirements.txt')
-    True
-    >>> is_requirements_file('requirement.txt')
-    True
-    >>> is_requirements_file('requirements.in')
-    True
-    >>> is_requirements_file('requirements.pip')
-    True
-    >>> is_requirements_file('requirements-dev.txt')
-    True
-    >>> is_requirements_file('some-requirements-dev.txt')
-    True
-    >>> is_requirements_file('requires.txt')
-    True
-    >>> is_requirements_file('requirements/base.txt')
-    True
-    >>> is_requirements_file('reqs.txt')
-    False
-    """
-    filename = fileutils.file_name(location)
-    req_files = (
-        '*requirement*.txt',
-        '*requirement*.pip',
-        '*requirement*.in',
-        'requires.txt',
-    )
-    is_req = any(fnmatch.fnmatchcase(filename, rf) for rf in req_files)
-    if is_req:
-        return True
-
-    parent = fileutils.parent_directory(location)
-    parent_name = fileutils.file_name(parent)
-    pip_extensions = ('.txt', 'pip', '.in',)
-    return parent_name == 'requirements' and filename.endswith(pip_extensions)
-
-
 def get_dparse2_supported_file_name(file_name):
     """
     Return the file_name if this is supported or None given a `file_name`
@@ -820,7 +1040,6 @@ def get_dparse2_supported_file_name(file_name):
         'Pipfile',
         'conda.yml',
         'setup.cfg',
-        'tox.ini',
     )
 
     for dfile_name in dfile_names:
@@ -930,10 +1149,36 @@ def get_setup_py_args(location):
     return setup_args
 
 
-def get_urls(metainfo):
+def get_pypi_urls(name, version):
     """
-    Return a mapping of Package URLs and a mapping of other URLs collected from
-    metainfo.
+    Return a mapping of computed Pypi URLs for this package
+    """
+    api_data_url = None
+    if name and version:
+        api_data_url = f'https://pypi.org/pypi/{name}/{version}/json'
+    else:
+        api_data_url = name and f'https://pypi.org/pypi/{name}/json'
+
+    repository_download_url = (
+        name
+        and version
+        and f'https://pypi.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz'
+    )
+
+    repository_homepage_url = name and f'https://pypi.org/project/{name}'
+
+    return dict(
+        repository_homepage_url=repository_homepage_url,
+        repository_download_url=repository_download_url,
+        api_data_url=api_data_url,
+    )
+
+
+def get_urls(metainfo, name, version, extra_data=None):
+    """
+    Return a mapping for URLs of this package:
+    - as plain name/values for URL attributes known in PackageData
+    - as a nested extra_data: mapping for other URLs (possibly updating extra_data if provided).
     """
     # Misc URLs to possibly track
     # Project-URL: Release notes
@@ -969,19 +1214,19 @@ def get_urls(metainfo):
     # Project-URL: Twine source
     # Project-URL: Say Thanks!
 
-    urls = {}
-    other_urls = {}
+    extra_data = extra_data or {}
+    urls = get_pypi_urls(name, version)
 
     def add_url(_url, _utype=None, _attribute=None):
         """
-        Add ``_url`` to ``urls`` as _``_attribute`` or to ``other_urls`` as
+        Add ``_url`` to ``urls`` as _``_attribute`` or to ``extra_data`` as
         ``_utype`` if already defined or no ``_attribute`` is provided.
         """
         if _url:
             if _attribute and _attribute not in urls:
                 urls[_attribute] = _url
             elif _utype:
-                other_urls[_utype] = _url
+                extra_data[_utype] = _url
 
     # get first as this is the most common one
     homepage_url = (
@@ -1019,7 +1264,7 @@ def get_urls(metainfo):
         ):
             add_url(url, _utype=utype, _attribute='code_view_url')
 
-        elif utypel in ('github: repo', 'repository'):
+        elif utypel in ('github', 'gitlab', 'github: repo', 'repository'):
             add_url(url, _utype=utype, _attribute='vcs_url')
 
         elif utypel in ('website', 'homepage', 'home',):
@@ -1029,11 +1274,13 @@ def get_urls(metainfo):
             add_url(url, _utype=utype)
 
     # FIXME: this may not be the actual correct package download URL, so for now
-    # we incorrectly set this as  the vcs_url
+    # we incorrectly set this as the vcs_url
     download_url = get_attribute(metainfo, 'Download-URL')
     add_url(download_url, _utype='Download-URL', _attribute='vcs_url')
 
-    return urls, other_urls
+    if extra_data:
+        urls['extra_data'] = extra_data
+    return urls
 
 
 def find_pattern(location, pattern):

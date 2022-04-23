@@ -37,8 +37,8 @@
       "license": "MIT"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -51,9 +51,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/setuppycheck",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/setuppycheck",
     "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/setuppycheck/json"
+    "api_data_url": "https://pypi.org/pypi/setuppycheck/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/setuppycheck"
   }
 ]

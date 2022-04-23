@@ -44,13 +44,14 @@
       ]
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/six@1.10.0",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/six",
     "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
+    "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/six@1.10.0"
   }
 ]
