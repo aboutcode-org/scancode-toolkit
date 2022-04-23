@@ -59,24 +59,19 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:cargo/codebase",
-      "package_data_files": [
-        "codebase/cargo.toml"
-      ],
-      "files": [
-        "codebase/apache-2.0.LICENSE",
-        "codebase/cargo.toml",
-        "codebase/mit.LICENSE",
-        "codebase/README.txt",
-        "codebase/setup.py"
-      ],
-      "purl": "pkg:cargo/codebase",
       "repository_homepage_url": "https://crates.io/crates/codebase",
       "repository_download_url": null,
-      "api_data_url": "https://crates.io/api/v1/crates/codebase"
+      "api_data_url": "https://crates.io/api/v1/crates/codebase",
+      "package_uid": "pkg:cargo/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "codebase/cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/codebase"
     },
     {
       "type": "pypi",
@@ -114,24 +109,19 @@
         "license": "apache-2.0"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/codebase",
-      "package_data_files": [
-        "codebase/setup.py"
-      ],
-      "files": [
-        "codebase/apache-2.0.LICENSE",
-        "codebase/cargo.toml",
-        "codebase/mit.LICENSE",
-        "codebase/README.txt",
-        "codebase/setup.py"
-      ],
-      "purl": "pkg:pypi/codebase",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/codebase",
       "repository_download_url": null,
-      "api_data_url": "https://pypi.org/pypi/codebase/json"
+      "api_data_url": "https://pypi.org/pypi/codebase/json",
+      "package_uid": "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "codebase/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/codebase"
     }
   ],
   "summary": {
@@ -365,10 +355,7 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:cargo/codebase",
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -446,10 +433,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:cargo/codebase",
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -541,7 +525,7 @@
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Rust",
-          "description": null,
+          "description": "",
           "release_date": null,
           "parties": [
             {
@@ -564,22 +548,22 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:cargo/codebase",
           "repository_homepage_url": "https://crates.io/crates/codebase",
           "repository_download_url": null,
-          "api_data_url": "https://crates.io/api/v1/crates/codebase"
+          "api_data_url": "https://crates.io/api/v1/crates/codebase",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/codebase"
         }
       ],
       "for_packages": [
-        "pkg:cargo/codebase",
-        "pkg:pypi/codebase"
+        "pkg:cargo/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
       "is_manifest": true,
@@ -658,10 +642,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:cargo/codebase",
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -770,24 +751,24 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "apache-2.0",
+          "license_expression": null,
           "declared_license": {
             "license": "apache-2.0"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/codebase",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/codebase",
           "repository_download_url": null,
-          "api_data_url": "https://pypi.org/pypi/codebase/json"
+          "api_data_url": "https://pypi.org/pypi/codebase/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/codebase"
         }
       ],
       "for_packages": [
-        "pkg:cargo/codebase",
-        "pkg:pypi/codebase"
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
       "is_manifest": true,

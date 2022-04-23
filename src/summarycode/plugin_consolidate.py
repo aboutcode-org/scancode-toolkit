@@ -17,8 +17,7 @@ from cluecode.copyrights import CopyrightDetector
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from commoncode.text import python_safe_name
-from packagedcode import get_package_instance
-from packagedcode.build import BaseBuildManifestPackageData
+from packagedcode import models
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -240,11 +239,11 @@ def get_consolidated_packages(codebase):
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
-            package = get_package_instance(package_data)
+            package = models.PackageData.from_dict(scan_data)(package_data)
             package_root = package.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
-            is_build_file = isinstance(package, BaseBuildManifestPackageData)
+            is_build_file = isinstance(package,     )
             package_resources = list(package.get_package_resources(package_root, codebase))
             package_license_expression = package.license_expression
             package_copyright = package.copyright

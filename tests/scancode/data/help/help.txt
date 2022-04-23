@@ -9,7 +9,8 @@ Options:
 
   primary scans:
     -l, --license    Scan <input> for licenses.
-    -p, --package    Scan <input> for package data and build scripts.
+    -p, --package    Scan <input> for package and dependency manifests, lockfiles
+                     and related data.
     -c, --copyright  Scan <input> for copyrights.
 
   other scans:
@@ -163,7 +164,7 @@ Options:
     --about          Show information about ScanCode and licensing and exit.
     --version        Show the version and exit.
     --examples       Show command examples and exit.
-    --list-packages  Show the list of supported package types and exit.
+    --list-packages  Show the list of supported package manifest parsers and exit.
     --plugins        Show the list of available ScanCode plugins and exit.
     --print-options  Show the list of selected options and exit.
 

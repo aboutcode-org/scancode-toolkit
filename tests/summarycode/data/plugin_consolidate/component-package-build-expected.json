@@ -27,6 +27,46 @@
   "dependencies": [],
   "packages": [
     {
+      "type": "buck",
+      "namespace": null,
+      "name": "demo",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "component-package-build/build/BUCK"
+      ],
+      "datasource_ids": [
+        "buck_file"
+      ],
+      "purl": "pkg:buck/demo"
+    },
+    {
       "type": "npm",
       "namespace": null,
       "name": "test-package",
@@ -54,22 +94,19 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/test-package@0.0.1",
-      "package_data_files": [
-        "component-package-build/package/package.json"
-      ],
-      "files": [
-        "component-package-build/package/package.json",
-        "component-package-build/package/src1",
-        "component-package-build/package/src2"
-      ],
-      "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "package_uid": "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "component-package-build/package/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/test-package@0.0.1"
     }
   ],
   "consolidated_components": [
@@ -255,20 +292,23 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:buck/demo",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "buck_file",
+          "purl": "pkg:buck/demo"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -806,18 +846,19 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:npm/test-package@0.0.1",
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-          "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
+          "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/test-package@0.0.1"
         }
       ],
       "for_packages": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "consolidated_to": [
         "apache_software_1"
@@ -906,9 +947,7 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/test-package@0.0.1"
-      ],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -994,9 +1033,7 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/test-package@0.0.1"
-      ],
+      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],

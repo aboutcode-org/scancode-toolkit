@@ -61,23 +61,19 @@
         "license": "apache-2.0"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/codebase",
-      "package_data_files": [
-        "codebase/setup.py"
-      ],
-      "files": [
-        "codebase/apache-2.0.LICENSE",
-        "codebase/mit.LICENSE",
-        "codebase/README.txt",
-        "codebase/setup.py"
-      ],
-      "purl": "pkg:pypi/codebase",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/codebase",
       "repository_download_url": null,
-      "api_data_url": "https://pypi.org/pypi/codebase/json"
+      "api_data_url": "https://pypi.org/pypi/codebase/json",
+      "package_uid": "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "codebase/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/codebase"
     }
   ],
   "summary": {
@@ -307,9 +303,7 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -387,9 +381,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -467,9 +459,7 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase"
-      ],
+      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -578,23 +568,24 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "apache-2.0",
+          "license_expression": null,
           "declared_license": {
             "license": "apache-2.0"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/codebase",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/codebase",
           "repository_download_url": null,
-          "api_data_url": "https://pypi.org/pypi/codebase/json"
+          "api_data_url": "https://pypi.org/pypi/codebase/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/codebase"
         }
       ],
       "for_packages": [
-        "pkg:pypi/codebase"
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
       "is_manifest": true,
