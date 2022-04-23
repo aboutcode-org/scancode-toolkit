@@ -1,0 +1,35 @@
+[package]
+name = "daachorse"
+version = "0.4.1"
+edition = "2021"
+authors = [
+    "Koichi Akabe <vbkaisetsu@gmail.com>",
+    "Shunsuke Kanda <shnsk.knd@gmail.com>",
+]
+description = "Daachorse: Double-Array Aho-Corasick"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/daac-tools/daachorse"
+repository = "https://github.com/daac-tools/daachorse"
+readme = "README.md"
+keywords = ["search", "text", "aho", "multi", "double-array"]
+categories = ["text-processing", "algorithms", "data-structures", "no-std"]
+exclude = [".*"]
+
+[dependencies]
+
+[dev-dependencies]
+
+[features]
+default = ["std"]
+
+std = []
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[workspace]
+members = [
+    "bench",
+    "daacfind",
+]

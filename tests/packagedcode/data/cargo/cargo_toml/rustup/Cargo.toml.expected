@@ -19,7 +19,7 @@
       }
     ],
     "keywords": [],
-    "homepage_url": null,
+    "homepage_url": "https://github.com/rust-lang/rustup.rs",
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -28,18 +28,19 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "https://github.com/rust-lang/rustup.rs",
     "copyright": null,
     "license_expression": "mit OR apache-2.0",
     "declared_license": "MIT OR Apache-2.0",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:cargo/rustup@1.17.0",
     "repository_homepage_url": "https://crates.io/crates/rustup",
     "repository_download_url": "https://crates.io/api/v1/crates/rustup/1.17.0/download",
-    "api_data_url": "https://crates.io/api/v1/crates/rustup"
+    "api_data_url": "https://crates.io/api/v1/crates/rustup",
+    "datasource_id": "cargo_toml",
+    "purl": "pkg:cargo/rustup@1.17.0"
   }
 ]
