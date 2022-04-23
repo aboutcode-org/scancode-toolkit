@@ -7,19 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from functools import partial
 import io
 import json
-import logging
-import sys
+from functools import partial
 
-import attr
-
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
-
 
 """
 Parse PHP composer package manifests, see https://getcomposer.org/ and
@@ -29,109 +22,101 @@ TODO: add support for composer.lock and packagist formats: both are fairly
 similar.
 """
 
-TRACE = False
 
-
-def logger_debug(*args):
-    pass
-
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-@attr.s()
-class PhpComposerPackageData(models.PackageData):
-    
-    mimetypes = ('application/json',)
-
-    default_type = 'composer'
-    default_primary_language = 'PHP'
-    default_web_baseurl = 'https://packagist.org'
-    default_download_baseurl = None
-    default_api_baseurl = 'https://packagist.org/p'
+class BasePhpComposerHandler(models.DatafileHandler):
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
+    def assemble(cls, package_data, resource, codebase):
+        datafile_name_patterns = (
+            'composer.json',
+            'composer.lock',
+        )
 
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.namespace:
-            return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+        if resource.has_parent():
+            dir_resource=resource.parent(codebase)
         else:
-            return '{}/packages/{}'.format(baseurl, self.name)
+            dir_resource=resource
 
-    def api_data_url(self, baseurl=default_api_baseurl):
-        if self.namespace:
-            return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
-        else:
-            return '{}/packages/{}.json'.format(baseurl, self.name)
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=datafile_name_patterns,
+            directory=dir_resource,
+            codebase=codebase,
+        )
 
-    def compute_normalized_license(self):
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return super().assign_package_to_parent_tree(package, resource, codebase)
+
+    @classmethod
+    def compute_normalized_license(cls, package):
         """
         Per https://getcomposer.org/doc/04-schema.md#license this is an expression
         """
-        return compute_normalized_license(self.declared_license)
+        return compute_normalized_license(package.declared_license)
 
 
-@attr.s()
-class ComposerJson(PhpComposerPackageData, models.PackageDataFile):
-
-    file_patterns = (
-        'composer.json',
-    )
-    extensions = ('.json',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
+class PhpComposerJsonHandler(BasePhpComposerHandler):
+    datasource_id = 'php_composer_json'
+    path_patterns = ('*composer.json',)
+    default_package_type = 'composer'
+    default_primary_language = 'PHP'
+    description = 'PHP composer manifest'
+    documentation_url = 'https://getcomposer.org/doc/04-schema.md'
 
     @classmethod
-    def recognize(cls, location):
+    def parse(cls, location):
         """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
+        Yield one or more Package manifest objects given a file ``location``
+        pointing to a package archive, manifest or similar.
 
-        Note that this is NOT exactly the packagist .json format (all are closely related of
-        course but have important (even if minor) differences.
+        Note that this is NOT exactly the packagist.json format (all are closely
+        related of course but have important (even if minor) differences.
         """
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
+            package_json = json.load(loc)
 
-        yield build_package_data(cls, package_data)
+        yield build_package_data(package_json)
 
 
-def build_package_data(cls, package_data):
-    
-    # A composer.json without name and description is not a usable PHP
-    # composer package. Name and description fields are required but
-    # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name
-    # We want to catch both published and non-published packages here.
-    # Therefore, we use "private-package-without-a-name" as a package name if
-    # there is no name.
+def get_repository_homepage_url(namespace, name):
+    if namespace and name:
+        return f'https://packagist.org/packages/{namespace}/{name}'
+    elif name:
+        return f'https://packagist.org/packages/{name}'
+
+
+def get_api_data_url(namespace, name):
+    if namespace and name:
+        return f'https://packagist.org/p/packages/{namespace}/{name}.json'
+    elif name:
+        return f'https://packagist.org/p/packages/{name}.json'
+
+
+def build_package_data(package_data):
+
+    # Note: A composer.json without name and description is not a usable PHP
+    # composer package. Name and description fields are required but only for
+    # published packages: https://getcomposer.org/doc/04-schema.md#name We want
+    # to catch both published and non-published packages here. Therefore, we use
+    # None as a package name if there is no name.
 
     ns_name = package_data.get('name')
     is_private = False
     if not ns_name:
         ns = None
-        name = 'private-package-without-a-name'
+        name = None
         is_private = True
     else:
         ns, _, name = ns_name.rpartition('/')
 
-    package = cls(
+    package = models.PackageData(
+        datasource_id=PhpComposerJsonHandler.datasource_id,
+        type=PhpComposerJsonHandler.default_package_type,
         namespace=ns,
         name=name,
+        repository_homepage_url=get_repository_homepage_url(ns, name),
+        api_data_url=get_api_data_url(ns, name),
+        primary_language=PhpComposerJsonHandler.default_primary_language,
     )
 
     # mapping of top level composer.json items to the Package object field name
@@ -167,50 +152,41 @@ def build_package_data(cls, package_data):
     ]
 
     for source, func in field_mappers:
-        logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source)
         if value:
             if isinstance(value, str):
                 value = value.strip()
             if value:
                 func(value, package)
+
     # Parse vendor from name value
     vendor_mapper(package)
+
+    if not package.license_expression and package.declared_license:
+        package.license_expression = models.compute_normalized_license(package.declared_license)
+
     return package
 
-@attr.s()
-class ComposerLock(PhpComposerPackageData, models.PackageDataFile):
 
-    file_patterns = (
-        'composer.lock',
-    )
-    extensions = ('.lock',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
+class PhpComposerLockHandler(BasePhpComposerHandler):
+    datasource_id = 'php_composer_lock'
+    path_patterns = ('*composer.lock',)
+    default_package_type = 'composer'
+    default_primary_language = 'PHP'
+    description = 'PHP composer lockfile'
+    documentation_url = 'https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-
-        Note that this is NOT exactly the packagist .json format (all are closely related of
-        course but have important (even if minor) differences.
-        """
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        
+
         packages = [
-            build_package_data(cls, p)
+            build_package_data(p)
             for p in package_data.get('packages', [])
         ]
         packages_dev = [
-            build_package_data(cls, p)
+            build_package_data(p)
             for p in package_data.get('packages-dev', [])
         ]
 
@@ -223,25 +199,15 @@ class ComposerLock(PhpComposerPackageData, models.PackageDataFile):
             for p in packages_dev
         ]
 
-        yield cls(dependencies=required_deps + required_dev_deps)
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=required_deps + required_dev_deps
+        )
 
         for package in packages + packages_dev:
             yield package
-
-
-@attr.s()
-class PhpPackage(PhpComposerPackageData, models.Package):
-    """
-    A PHP Package that is created out of one/multiple python package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            ComposerJson,
-            ComposerLock
-        ]
 
 
 def compute_normalized_license(declared_license):
@@ -429,4 +395,3 @@ def build_dep_package(package, scope, is_runtime, is_optional):
         is_optional=is_optional,
         is_resolved=True,
     )
-
