@@ -7,262 +7,252 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
 import os
 from os.path import abspath
 from os.path import expanduser
 
-import attr
 import saneyaml
+from commoncode import archive
+from commoncode import fileutils
 from packageurl import PackageURL
 
-from commoncode import archive
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
+from packagedcode import spec
 from packagedcode.gemfile_lock import GemfileLockParser
-from packagedcode.spec import Spec
 from packagedcode.utils import combine_expressions
+from packagedcode.utils import build_description
+from packagedcode.utils import get_ancestor
+
+# TODO: also support https://github.com/byrneg7/MWL_api/blob/master/.ruby-version
+
+# TODO: support installed rails/bundler apps with vendor directory
+# see https://github.com/brotandgames/ciao and logstash (jRuby) are good examples
 
 
-# TODO: check:
-# https://github.com/hugomaiavieira/pygments-rspec
-# https://github.com/tushortz/pygeminfo
-# https://github.com/mfwarren/gemparser/blob/master/src/gemparser/__init__.py
-# https://gitlab.com/balasankarc/gemfileparser
+class BaseGemHandler(models.DatafileHandler):
 
-TRACE = False
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return compute_normalized_license(package.declared_license)
 
 
-def logger_debug(*args):
-    pass
-
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(
-            isinstance(a, str) and a or repr(a) for a in args))
-
-
-@attr.s()
-class RubyGemData(models.PackageData):
-    filetypes = ('.tar', 'tar archive',)
-    mimetypes = ('application/x-tar',)
-    default_type = 'gem'
+class GemArchiveHandler(BaseGemHandler):
+    path_patterns = ('*.gem',)
+    filetypes = ('posix tar archive',)
+    datasource_id = 'gem_archive'
+    default_package_type = 'gem'
     default_primary_language = 'Ruby'
-    default_web_baseurl = 'https://rubygems.org/gems/'
-    default_download_baseurl = 'https://rubygems.org/downloads'
-    default_api_baseurl = 'https://rubygems.org/api'
+    description = 'RubyGems gem package archive'
+    documentation_url = (
+        'https://web.archive.org/web/20220326093616/'
+        'https://piotrmurach.com/articles/looking-inside-a-ruby-gem/'
+    )
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        # FIXME: this can vary if we have a plain checkout or install vs. a .gem
-        # archive where we have "multiple" roots
-        if manifest_resource.name.endswith('.gem'):
-            return manifest_resource
-
-        if manifest_resource.name == 'metadata.gz-extract':
-            # first level is metadata.gz-extract/
-            parent = manifest_resource.parent(codebase)
-            # second level is actual .gem-extract/ directory
-            return parent.parent(codebase)
-
-        if manifest_resource.name.endswith(('.gemspec', 'Gemfile', 'Gemfile.lock',)):
-            return manifest_resource.parent(codebase)
-
-        # unknown?
-        return manifest_resource
-
-    def compute_normalized_license(self):
-        return compute_normalized_license(self.declared_license)
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return rubygems_homepage_url(self.name, self.version, repo=baseurl)
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        quals = self.qualifiers or {}
-        platform = quals.get('platform') or None
-        return rubygems_download_url(self.name, self.version, platform, repo=baseurl)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        return rubygems_api_url(self.name, self.version, repo=baseurl)
-
-    @classmethod
-    def extra_key_files(cls):
-        return ['metadata.gz-extract', 'metadata.gz-extract/metadata.gz-extract']
-
-    @classmethod
-    def extra_root_dirs(cls):
-        return ['data.tar.gz-extract', 'metadata.gz-extract']
-
-
-@attr.s()
-class GemArchive(RubyGemData, models.PackageDataFile):
-
-    file_patterns = ('*.gem',)
-    extensions = ('.gem',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.gem')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        metadata = get_gem_metadata(location)
+    def parse(cls, location):
+        metadata = extract_gem_metadata(location)
         metadata = saneyaml.load(metadata)
-        yield build_rubygem_package(cls, metadata, download_url=None, package_url=None)
+        yield build_rubygem_package_data(
+            gem_data=metadata,
+            datasource_id=cls.datasource_id,
+        )
 
 
-@attr.s()
-class GemArchiveExtracted(RubyGemData, models.PackageDataFile):
+def assemble_extracted_gem(cls, package_data, resource, codebase):
+    """
+    An assemble implementation shared by handlers for manifests found in an
+    extracted gem using extractcode.
+    """
+    datafile_name_patterns = (
+        'metadata.gz-extract/metadata.gz-extract',
+        'data.gz-extract/*.gemspec',
+        'data.gz-extract/Gemfile',
+        'data.gz-extract/Gemfile.lock',
+    )
 
-    file_patterns = ('metadata.gz-extract',)
-    extensions = ('.gz-extract',)
+    gemroot = get_ancestor(levels_up=2, resource=resource, codebase=codebase)
+
+    yield from cls.assemble_from_many_datafiles(
+        datafile_name_patterns=datafile_name_patterns,
+        directory=gemroot,
+        codebase=codebase,
+    )
+
+
+class GemMetadataArchiveExtractedHandler(BaseGemHandler):
+    datasource_id = 'gem_archive_extracted'
+    path_patterns = ('*/metadata.gz-extract',)
+    default_package_type = 'gem'
+    default_primary_language = 'Ruby'
+    description = 'RubyGems gem package extracted archive'
+    documentation_url = (
+        'https://web.archive.org/web/20220326093616/'
+        'https://piotrmurach.com/articles/looking-inside-a-ruby-gem/'
+    )
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.gz-extract')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location, 'rb') as met:
             metadata = met.read()
         metadata = saneyaml.load(metadata)
-        yield build_rubygem_package(cls, metadata)
-
-
-@attr.s()
-class GemSpec(RubyGemData, models.PackageDataFile):
-
-    file_patterns = ('*.gemspec',)
-    extensions = ('.gemspec',)
+        yield build_rubygem_package_data(
+            gem_data=metadata,
+            datasource_id=cls.datasource_id,
+        )
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.gemspec')
+    def assemble(cls, package_data, resource, codebase):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+
+
+class BaseGemProjectHandler(BaseGemHandler):
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        gemspec_object = Spec()
-        gemspec_data = gemspec_object.parse_spec(location)
-        
-        name = gemspec_data.get('name')
-        version = gemspec_data.get('version')
-        homepage_url = gemspec_data.get('homepage_url')
-        summary = gemspec_data.get('summary')
-        description = gemspec_data.get('description')
-        if len(summary) > len(description):
-            description = summary
+    def assemble(cls, package_data, resource, codebase):
+        datafile_name_patterns = (
+            '*.gemspec',
+            'Gemfile',
+            'Gemfile.lock',
+        )
 
-        declared_license = gemspec_data.get('license')
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=datafile_name_patterns,
+            directory=resource.parent(codebase),
+            codebase=codebase,
+        )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        return cls.assign_package_to_parent_tree(package, resource, codebase)
+
+
+class GemspecHandler(BaseGemHandler):
+    datasource_id = 'gemspec'
+    path_patterns = ('*.gemspec',)
+    default_package_type = 'gem'
+    default_primary_language = 'Ruby'
+    description = 'RubyGems gemspec manifest'
+    documentation_url = 'https://guides.rubygems.org/specification-reference/'
+
+    @classmethod
+    def parse(cls, location):
+        gemspec = spec.parse_spec(
+            location=location,
+            package_type=cls.default_package_type,
+        )
+
+        name = gemspec.get('name')
+        version = gemspec.get('version')
+        homepage_url = gemspec.get('homepage')
+
+        description = build_description(
+            summary=gemspec.get('summary'),
+            description=gemspec.get('description'),
+        )
+        vcs_url = gemspec.get('source')
+
+        declared_license = gemspec.get('license')
         if declared_license:
+            # FIXME: why splitting here? this is a job for the license detection
             declared_license = declared_license.split(',')
 
-        author = gemspec_data.get('author') or []
-        email = gemspec_data.get('email') or []
-        parties = list(party_mapper(author, email))
+        parties = get_parties(gemspec)
+        dependencies = gemspec.get('dependencies') or []
 
-        package_data = cls(
+        urls = get_urls(name=name, version=version)
+
+        package_data = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             version=version,
             parties=parties,
             homepage_url=homepage_url,
             description=description,
-            declared_license=declared_license
+            declared_license=declared_license,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+            **urls
         )
 
-        dependencies = gemspec_data.get('dependencies', {}) or {}
-        package_dependencies = []
-        for name, version in dependencies.items():
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='gem',
-                        name=name
-                    ).to_string(),
-                    extracted_requirement=', '.join(version),
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=False,
-                )
-            )
-        package_data.dependencies = package_dependencies
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
         yield package_data
 
 
-@attr.s()
-class Gemfile(RubyGemData, models.PackageDataFile):
-
-    file_patterns = ('Gemfile',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('Gemfile')
+class GemspecInExtractedGemHandler(GemspecHandler):
+    datasource_id = 'gemspec_extracted'
+    path_patterns = ('*/data.gz-extract/*.gemspec',)
+    description = 'RubyGems gemspec manifest - extracted data layout'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        # TODO: Implement me
-        pass
+    def assemble(cls, package_data, resource, codebase):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
 
-@attr.s()
-class GemfileLock(RubyGemData, models.PackageDataFile):
 
-    file_patterns = ('Gemfile.lock',)
-    extensions = ('.lock',)
+class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
+    """
+    A special handler for gemspec seen in the vendor/bundle/*/specifications
+    directory when installed by Bundler. In this case, we have a special layout:
+    all the .gemspec are processed and compiled in a specifications/ dir by
+    Bundler. But these gemspec are standing alone and have been detached from
+    their original "gem" directory. They are also different from the base
+    gemspec for the same gem as they have been modified (?streamlined or
+    normalized?) by Bundler including freezing strings.
+
+    We reuse the default DatafileHandler.assemble() implementation such that
+    each such gemspec is considered standing alone and have no other companion
+    datafile or files assigned to a Package.
+    """
+    datasource_id = 'gem_gemspec_installed_specifications'
+    # seen in vendor/bundle/jruby/2.5.0/specifications/* style layouts
+    # and bundle/specifications/* style layouts
+    # TODO: also report "jruby/2.5.0/" as extra or qualifiers
+    path_patterns = ('*/specifications/*.gemspec',)
+    description = 'RubyGems gemspec manifest - installed vendor/bundle/specifications layout'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('Gemfile.lock')
+    def assemble(cls, package_data, resource, codebase):
+        # TODO: consider assembling datafiles across vendor/ subdirs
+        yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+
+
+# Note: we subclass GemspecHandler as the parsing code can handle both Ruby files
+# TODO: https://stackoverflow.com/questions/41454333/meaning-of-new-block-git-sourcegithub-in-gemfile
+class GemfileHandler(GemspecHandler):
+    datasource_id = 'gemfile'
+    path_patterns = ('*/Gemfile', '*/*.gemfile', '*/Gemfile-*')
+    default_package_type = 'gem'
+    default_primary_language = 'Ruby'
+    description = 'RubyGems Bundler Gemfile'
+    documentation_url = 'https://bundler.io/man/gemfile.5.html'
+
+
+class GemfileInExtractedGemHandler(GemfileHandler):
+    datasource_id = 'gemfile_extracted'
+    path_patterns = ('*/data.gz-extract/Gemfile',)
+    description = 'RubyGems Bundler Gemfile - extracted layout'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def assemble(cls, package_data, resource, codebase):
+        return assemble_extracted_gem(cls, package_data, resource, codebase)
+
+
+class GemfileLockHandler(BaseGemProjectHandler):
+    datasource_id = 'gemfile_lock'
+    path_patterns = ('*/Gemfile.lock',)
+    default_package_type = 'gem'
+    default_primary_language = 'Ruby'
+    description = 'RubyGems Bundler Gemfile.lock'
+    documentation_url = 'https://bundler.io/man/gemfile.5.html'
+
+    @classmethod
+    def parse(cls, location):
         gemfile_lock = GemfileLockParser(location)
-        package_dependencies = []
+        dependencies = []
         for _, gem in gemfile_lock.all_gems.items():
-            package_dependencies.append(
+            dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
                         type='gem',
@@ -270,6 +260,7 @@ class GemfileLock(RubyGemData, models.PackageDataFile):
                         version=gem.version
                     ).to_string(),
                     extracted_requirement=', '.join(gem.requirements),
+                    # FIXME: get proper scope... This does not seem right
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
@@ -277,7 +268,12 @@ class GemfileLock(RubyGemData, models.PackageDataFile):
                 )
             )
 
-        yield cls(dependencies=package_dependencies)
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=dependencies,
+            primary_language=cls.default_primary_language,
+        )
 
         for _, gem in gemfile_lock.all_gems.items():
             deps = []
@@ -296,30 +292,27 @@ class GemfileLock(RubyGemData, models.PackageDataFile):
                         is_resolved=True,
                     )
                 )
+            urls = get_urls(gem.name, gem.version)
 
-            yield cls(
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                primary_language=cls.default_primary_language,
+                type=cls.default_package_type,
                 name=gem.name,
                 version=gem.version,
-                dependencies=deps
+                dependencies=deps,
+                **urls
             )
 
 
-@attr.s()
-class RubyPackage(RubyGemData, models.Package):
-    """
-    A Ruby Package that is created out of one/multiple ruby package
-    manifests and package-like data, with it's files.
-    """
+class GemfileLockInExtractedGemHandler(GemfileLockHandler):
+    datasource_id = 'gemfile_lock_extracted'
+    path_patterns = ('*/data.gz-extract/Gemfile.lock',)
+    description = 'RubyGems Bundler Gemfile.lock - extracted layout'
 
-    @property
-    def manifests(self):
-        return [
-            GemArchive,
-            GemArchiveExtracted,
-            Gemfile,
-            GemSpec,
-            GemfileLock
-        ]
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
 
 
 def compute_normalized_license(declared_license):
@@ -341,69 +334,91 @@ def compute_normalized_license(declared_license):
         return combine_expressions(detected_licenses)
 
 
-def rubygems_homepage_url(name, version, repo='https://rubygems.org/gems'):
+def get_urls(name, version=None, platform=None):
     """
-    Return a Rubygems.org homepage URL given a name, optional version and a base
-    rubygems `repo` web interface URL.
+    Return a mapping of standard URLs
+    """
+    dnlu = rubygems_download_url(name, version, platform)
+    return dict(
+        repository_homepage_url=rubygems_homepage_url(name, version),
+        repository_download_url=dnlu,
+        api_data_url=rubygems_api_url(name, version),
+        download_url=dnlu,
+    )
 
-    For instance: https://rubygems.org/gems/mocha/versions/1.7.0 or
-    https://rubygems.org/gems/mocha
+
+def rubygems_homepage_url(name, version=None):
+    """
+    Return a Rubygems.org homepage URL given a ``name`` and optional
+    ``version``, or None if ``name`` is empty.
+
+    For example:
+    >>> url = rubygems_homepage_url(name='mocha', version='1.7.0')
+    >>> assert url == 'https://rubygems.org/gems/mocha/versions/1.7.0'
+
+    >>> url = rubygems_homepage_url(name='mocha')
+    >>> assert url == 'https://rubygems.org/gems/mocha'
     """
     if not name:
         return
-    repo = repo.rstrip('/')
     if version:
         version = version.strip().strip('/')
-        home_url = '{repo}/{name}/versions/{version}'
+        return f'https://rubygems.org/gems/{name}/versions/{version}'
     else:
-        home_url = '{repo}/{name}'
-    return home_url.format(**locals())
+        return f'https://rubygems.org/gems/{name}'
 
 
-def rubygems_download_url(name, version, platform=None, repo='https://rubygems.org/downloads'):
+def rubygems_download_url(name, version, platform=None):
     """
     Return a .gem download URL given a name, version, and optional platform (e.g. java)
     and a base repo URL.
 
-    For example: https://rubygems.org/downloads/mocha-1.7.0.gem
+    For example:
+
+    >>> url = rubygems_download_url(name='mocha', version='1.7.0')
+    >>> assert url == 'https://rubygems.org/downloads/mocha-1.7.0.gem'
     """
     if not name or not version:
         return
-    repo = repo.rstrip('/')
     name = name.strip().strip('/')
     version = version.strip().strip('/')
     version_plat = version
     if platform  and platform != 'ruby':
-        version_plat = '{version}-{platform}'.format(**locals())
-    return '{repo}/{name}-{version_plat}.gem'.format(**locals())
+        version_plat = f'{version}-{platform}'
+    return f'https://rubygems.org/downloads/{name}-{version_plat}.gem'
 
 
-def rubygems_api_url(name, version=None, repo='https://rubygems.org/api'):
+def rubygems_api_url(name, version=None):
     """
     Return a package API data URL given a name, an optional version and a base
     repo API URL.
 
     For instance:
-    https://rubygems.org/api/v2/rubygems/action_tracker/versions/1.0.2.json
+    >>> url = rubygems_api_url(name='turbolinks', version='1.0.2')
+    >>> assert url == 'https://rubygems.org/api/v2/rubygems/turbolinks/versions/1.0.2.json'
 
     If no version, we return:
-    https://rubygems.org/api/v1/versions/turbolinks.json
+    >>> url = rubygems_api_url(name='turbolinks')
+    >>> assert url == 'https://rubygems.org/api/v1/versions/turbolinks.json'
 
-    Unused:
+    Things we could return: a summary for the latest version, with deps
     https://rubygems.org/api/v1/gems/mqlight.json
     """
-    repo = repo.rstrip('/')
+    if not name:
+        return
+
     if version:
-        api_url = '{repo}/v2/rubygems/{name}/versions/{version}.json'
+        return f'https://rubygems.org/api/v2/rubygems/{name}/versions/{version}.json'
     else:
-        api_url = '{repo}/v1/versions/{name}.json'
-    return api_url.format(**locals())
+        return f'https://rubygems.org/api/v1/versions/{name}.json'
 
 
-def get_gem_metadata(location):
+# FIXME: we should unify this with handling extracted gems
+def extract_gem_metadata(location):
     """
     Return the string content of the metadata of a .gem archive file at
-    `location` or None
+    ``location`` or None.
+    This performs an extracion to a temp directory.
     """
     extract_loc = None
     try:
@@ -422,10 +437,10 @@ def get_gem_metadata(location):
                 content = met.read()
 
         elif os.path.exists(metadata_gz):
-            content= archive.get_gz_compressed_file_content(metadata_gz)
+            content = archive.get_gz_compressed_file_content(metadata_gz)
 
         else:
-            raise Exception('No gem metadata found in RubyGemData .gem file.')
+            raise Exception(f'No RubyGems metadata file found inside .gem archive: {location!r}')
 
         return content
 
@@ -434,37 +449,65 @@ def get_gem_metadata(location):
             fileutils.delete(extract_loc)
 
 
-def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
+def build_rubygem_package_data(gem_data, datasource_id):
     """
-    Return a Package built from a Gem `gem_data` mapping or None.
-    The `gem_data can come from a .gemspec or .gem/gem_data.
-    Optionally use the provided `download_url` and `purl` strings.
+    Return a PackageData for ``datasource_id`` built from a Gem `gem_data`
+    mapping or None. The ``gem_data`` can come from a .gemspec or .gem/metadata.
+    Optionally use the provided ``download_url`` and `package_url`` strings.
     """
     if not gem_data:
         return
 
+    metadata = gem_data.get('metadata') or {}
+
     name = gem_data.get('name')
+    # there are two levels of nesting for version:
+    version1 = gem_data.get('version') or {}
+    version = version1.get('version') or None
 
-    short_desc = gem_data.get('summary') or ''
-    long_desc = gem_data.get('description') or ''
-    if long_desc == short_desc:
-        long_desc = None
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
-    description = '\n'.join(descriptions)
+    platform = gem_data.get('platform')
+    if platform != 'ruby':
+        qualifiers = dict(platform=platform)
+    else:
+        qualifiers = {}
 
-    # Since the gem spec doc is not clear https://guides.rubygems.org
-    # /specification-reference/#licenseo, we will treat a list of licenses and a
-    # conjunction for now (e.g. AND)
+    description = build_description(
+        summary=gem_data.get('summary'),
+        description=gem_data.get('description'),
+    )
+
+    # Since the gem spec doc is not clear wrt. to the default being OR or AND
+    # we will treat a list of licenses and a conjunction for now (e.g. AND)
+    # See https://guides.rubygems.org/specification-reference/#licenseo
     lic = gem_data.get('license')
     licenses = gem_data.get('licenses')
     declared_license = licenses_mapper(lic, licenses)
 
-    package_data = cls(
+    # we may have tow homepages and one may be wrong.
+    # we prefer the one from the metadata
+    homepage_url = metadata.get('homepage_uri')
+    if not homepage_url:
+        homepage_url = gem_data.get('homepage')
+
+    urls = get_urls(name, version, platform)
+    dependencies = get_dependencies(gem_data.get('dependencies'))
+    file_references = get_file_references(metadata.get('files'))
+
+    package_data = models.PackageData(
+        datasource_id=datasource_id,
+        type=GemArchiveHandler.default_package_type,
+        primary_language=GemArchiveHandler.default_primary_language,
         name=name,
+        version=version,
+        qualifiers=qualifiers,
         description=description,
-        homepage_url=gem_data.get('homepage'),
-        download_url=download_url,
-        declared_license=declared_license
+        homepage_url=homepage_url,
+        declared_license=declared_license,
+        bug_tracking_url=metadata.get('bug_tracking_uri'),
+        code_view_url=metadata.get('source_code_uri'),
+        file_references=file_references,
+        dependencies=dependencies,
+        **urls,
     )
 
     # we can have one singular or a plural list of authors
@@ -478,7 +521,7 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
             party = models.Party(name=author, role='author')
             package_data.parties.append(party)
 
-    # TODO: we have a email that is either a string or a list of string
+    # TODO: we have an email that is either a string or a list of string
 
     # date: 2019-01-09 00:00:00.000000000 Z
     date = gem_data.get('date')
@@ -486,54 +529,19 @@ def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
         date = date[:10]
         package_data.release_date = date[:10]
 
+    # TODO: infer source purl and add purl to package_data.source_packages
 
-    # there are two levels of nesting
-    version1 = gem_data.get('version') or {}
-    version = version1.get('version') or None
-    package_data.version = version
-    package_data.set_purl(package_url)
-
-    metadata = gem_data.get('metadata') or {}
-    if metadata:
-        homepage_url = metadata.get('homepage_uri')
-        if homepage_url:
-            if not package_data.homepage_url:
-                package_data.homepage_url = homepage_url
-            elif package_data.homepage_url == homepage_url:
-                pass
-            else:
-                # we have both and one is wrong.
-                # we prefer the existing one from the metadata
-                pass
-
-        package_data.bug_tracking_url = metadata.get('bug_tracking_uri')
-
-        source_code_url = metadata.get('source_code_uri')
-        if source_code_url:
-            package_data.code_view_url = source_code_url
-            # TODO: infer purl and add purl to package_data.source_packages
-
-        # not used for now
-        #   "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
-        #   "wiki_uri"          => "https://example.com/user/bestgemever/wiki"
-        #   "mailing_list_uri"  => "https://groups.example.com/bestgemever",
-        #   "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
-
-    platform = gem_data.get('platform')
-    if platform != 'ruby':
-        qualifiers = dict(platform=platform)
-        if not package_data.qualifiers:
-            package_data.qualifiers = {}
-
-        package_data.qualifiers.update(qualifiers)
-
-    package_data.dependencies = get_dependencies(gem_data.get('dependencies'))
-
-    if not package_data.download_url:
-        package_data.download_url = package_data.repository_download_url()
+    # not used for now
+    #   "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
+    #   "wiki_uri"          => "https://example.com/user/bestgemever/wiki"
+    #   "mailing_list_uri"  => "https://groups.example.com/bestgemever",
+    #   "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
 
     if not package_data.homepage_url:
-        package_data.homepage_url = package_data.repository_homepage_url()
+        package_data.homepage_url = rubygems_homepage_url(name, version)
+
+    if not package_data.license_expression and package_data.declared_license:
+        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
     return package_data
 
@@ -636,8 +644,8 @@ def get_dependencies(dependencies):
         if not name:
             continue
 
+        # the default value is runtime
         scope = dependency.get('type', '').strip(':') or 'runtime'
-        # the other value is runtime
         is_optional = scope == 'development'
         is_runtime = scope == 'runtime'
 
@@ -651,7 +659,7 @@ def get_dependencies(dependencies):
             # constraints and versions
             if ((constraint == '>=' and version == '0') or not (constraint and version)):
                 continue
-            version_constraint = '{} {}'.format(constraint, version)
+            version_constraint = f'{constraint} {version}'
             constraints.append(version_constraint)
 
         # if we have only one version constraint and this is "=" then we are resolved
@@ -659,10 +667,11 @@ def get_dependencies(dependencies):
         if constraints and len(constraints) == 1:
             is_resolved = constraint == '='
 
+        # FIXME: check this is correct and complies with vers.
         version_constraint = ', '.join(constraints)
 
         dep = models.DependentPackage(
-            purl=RubyGemData.create(name=name).purl,
+            purl=str(PackageURL(type='gem', name=name)),
             extracted_requirement=version_constraint or None,
             scope=scope,
             is_runtime=is_runtime,
@@ -712,87 +721,38 @@ LICENSES_MAPPING = {
 }
 
 
-################################################################################
-def spec_defaults():
+def party_mapper(role, names=[], emails=[]):
     """
-    Return a mapping with spec attribute defaults to ensure that the
-    returned results are the same on RubyGemDatas 1.8 and RubyGemDatas 2.0
+    Yields Party with ``role`` objects from a ``names`` list of string.
     """
-    return {
-        'base_dir': None,
-        'bin_dir': None,
-        'cache_dir': None,
-        'doc_dir': None,
-        'gem_dir': None,
-        'gems_dir': None,
-        'ri_dir': None,
-        'spec_dir': None,
-        'spec_file': None,
-        'cache_file': None,
-        'full_gem_path': None,
-        'full_name': None,
-        'gem_data': {},
-        'full_name': None,
-        'homepage': '',
-        'licenses': [],
-        'loaded_from': None,
-    }
+    if names:
+        return (
+            models.Party(type=models.party_person, name=name, role=role)
+            for name in names
+        )
+    elif emails:
+        return (
+            models.Party(type=models.party_person, email=email, role=role)
+            for email in emails
+        )
 
 
-# known gem fields. other are ignored
-known_fields = [
-    'platform',
-    'name',
-    'version',
-    'homepage',
-    'summary',
-    'description',
-    'licenses',
-    'email',
-    'authors',
-    'date',
-    'requirements',
-    'dependencies',
-
-    # extra fields
-    'files',
-    'test_files',
-    'extra_rdoc_files',
-
-    'rubygems_version',
-    'required_ruby_version',
-
-    'rubyforge_project',
-    'loaded_from',
-    'original_platform',
-    'new_platform',
-    'specification_version',
-]
-
-
-def normalize(gem_data, known_fields=known_fields):
+def get_parties(gem_data):
     """
-    Return a mapping of gem data filtering out any field that is not a known
-    field in a gem mapping. Ensure that all known fields are present
-    even if empty.
+    Return a lits of Party from a mapping of ``gem_data``
     """
-    return dict(
-        [(k, gem_data.get(k) or None) for k in known_fields]
-    )
+    parties = []
+    authors = gem_data.get('author') or []
+    parties.extend(party_mapper(names=authors, role='author'))
+    # FIXME: emails is NOT a party
+    emails = gem_data.get('email') or []
+    parties.extend(party_mapper(emails=emails, role='author'))
+    return parties
 
 
-def party_mapper(author, email):
+def get_file_references(files):
     """
-    Yields a Party object with author and email.
+    Return a list of FileReference from a ``files`` list of gem file paths.
     """
-    for person in author:
-        yield models.Party(
-            type=models.party_person,
-            name=person,
-            role='author')
-
-    for person in email:
-        yield models.Party(
-            type=models.party_person,
-            email=person,
-            role='email')
+    files = files or []
+    return [models.FileReference(path) for path in files]

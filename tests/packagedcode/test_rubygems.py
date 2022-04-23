@@ -11,7 +11,6 @@ import io
 import json
 import os
 
-import saneyaml
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 
@@ -19,65 +18,65 @@ from packagedcode import rubygems
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
 # this is a multiple personality package (Java  and Ruby)
 # see also https://rubygems.org/downloads/jaro_winkler-1.5.1-java.gem
+
 
 class TestGemSpec(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_is_manifest_ruby_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
-        assert rubygems.GemSpec.is_package_data_file(test_file)
+        assert rubygems.GemspecHandler.is_datafile(test_file)
 
     def test_rubygems_can_parse_gemspec_address_standardization_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_can_parse_gemspec_arel_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/arel.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/arel.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_cat_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/cat.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/cat.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_github_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/github.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/github.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_mecab_ruby_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/mecab-ruby.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/mecab-ruby.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_oj_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/oj.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/oj.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_rubocop_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/rubocop.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/rubocop.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_rubygems_with_variables_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/with_variables.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/with_variables.gemspec.expected.json')
-        packages = rubygems.GemSpec.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestRubyGemMetadata(FileBasedTesting):
@@ -85,11 +84,11 @@ class TestRubyGemMetadata(FileBasedTesting):
 
     def test_is_manifest_ruby_archive_extracted(self):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
-        assert rubygems.GemArchiveExtracted.is_package_data_file(test_file)
+        assert rubygems.GemMetadataArchiveExtractedHandler.is_datafile(test_file)
 
     def test_build_rubygem_package_does_not_crash(self):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
-        rubygems.GemArchiveExtracted.recognize(test_file)
+        rubygems.GemMetadataArchiveExtractedHandler.parse(test_file)
 
 
 def relative_walk(dir_path, extension='.gem'):
@@ -110,13 +109,14 @@ def create_test_function(test_loc, test_name, regen=REGEN_TEST_FIXTURES):
     """
     Return a test function closed on test arguments.
     """
+
     # closure on the test params
     def check_rubygem(self):
         loc = self.get_test_loc(test_loc)
         expected_json_loc = loc + '.json'
-        packages = list(rubygems.GemArchive.recognize(location=loc))
+        packages = list(rubygems.GemArchiveHandler.parse(location=loc))
         package = packages[0]
-        package.license_expression = package.compute_normalized_license()
+        package.license_expression = rubygems.GemArchiveHandler.compute_normalized_license(package)
         package = [package.to_dict()]
         if regen:
             with io.open(expected_json_loc, 'w') as ex:
@@ -159,14 +159,18 @@ class TestGemfileLock(PackageTester):
 
     def test_is_manifest_ruby_gemfilelock(self):
         test_file = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock')
-        assert rubygems.GemfileLock.is_package_data_file(test_file)
+        assert rubygems.GemfileLockHandler.is_datafile(test_file)
 
     def test_ruby_gemfile_lock_as_dict(self):
         test_file = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock')
         expected_loc = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock.expected')
-        packages = rubygems.GemfileLock.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+        packages = rubygems.GemfileLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
-build_tests(test_dir='rubygems/gem', clazz=TestRubyGemsDataDriven,
-            prefix='test_get_gem_package_', regen=REGEN_TEST_FIXTURES)
+build_tests(
+    test_dir='rubygems/gem',
+    clazz=TestRubyGemsDataDriven,
+    prefix='test_get_gem_package_',
+    regen=REGEN_TEST_FIXTURES
+)

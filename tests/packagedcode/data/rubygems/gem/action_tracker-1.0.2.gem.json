@@ -42,8 +42,8 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -137,9 +137,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/action_tracker@1.0.2",
     "repository_homepage_url": "https://rubygems.org/gems/action_tracker/versions/1.0.2",
     "repository_download_url": "https://rubygems.org/downloads/action_tracker-1.0.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/action_tracker/versions/1.0.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/action_tracker/versions/1.0.2.json",
+    "datasource_id": "gem_archive",
+    "purl": "pkg:gem/action_tracker@1.0.2"
   }
 ]

@@ -56,8 +56,8 @@
       "MIT"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -178,9 +178,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/m2r@2.1.0",
     "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
     "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
+    "datasource_id": "gem_archive",
+    "purl": "pkg:gem/m2r@2.1.0"
   }
 ]
