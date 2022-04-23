@@ -1,0 +1,347 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json-pp": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 6
+      }
+    }
+  ],
+  "dependencies": [],
+  "packages": [
+    {
+      "type": "deb",
+      "namespace": null,
+      "name": "libncurses5",
+      "version": "6.1-1ubuntu1",
+      "qualifiers": {
+        "architecture": "amd64"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "maintainer",
+          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [
+        "libs"
+      ],
+      "homepage_url": "https://invisible-island.net/ncurses/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:deb/ncurses"
+      ],
+      "extra_data": {
+        "multi_arch": "same"
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "end-to-end.tgz/var/lib/dpkg/status"
+      ],
+      "datasource_ids": [
+        "debian_installed_status_db"
+      ],
+      "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
+    }
+  ],
+  "files": [
+    {
+      "path": "end-to-end.tgz",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/lib/x86_64-linux-gnu",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/lib/x86_64-linux-gnu/libncurses.so.5.9",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/lib/x86_64-linux-gnu",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/lib/x86_64-linux-gnu/libform.so.5.9",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/lib/x86_64-linux-gnu/libmenu.so.5.9",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/lib/x86_64-linux-gnu/libpanel.so.5.9",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/share",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/usr/share/doc",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var/lib/dpkg",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var/lib/dpkg/info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": null,
+          "name": "libncurses5",
+          "version": null,
+          "qualifiers": {
+            "arch": "amd64"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [
+            {
+              "path": "lib/x86_64-linux-gnu/libncurses.so.5.9",
+              "size": 0,
+              "sha1": null,
+              "md5": "6c91c3a185ae5b0764bd3019c7aceddc",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/lib/x86_64-linux-gnu/libform.so.5.9",
+              "size": 0,
+              "sha1": null,
+              "md5": "741024ffeb87886243c049e507bea509",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/lib/x86_64-linux-gnu/libmenu.so.5.9",
+              "size": 0,
+              "sha1": null,
+              "md5": "307c46447fdee4ae0459aa98bf74eaf1",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/lib/x86_64-linux-gnu/libpanel.so.5.9",
+              "size": 0,
+              "sha1": null,
+              "md5": "613820edd4f95050a7cde4aec0dde01c",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            }
+          ],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_installed_md5sums",
+          "purl": "pkg:deb/libncurses5?arch=amd64"
+        }
+      ],
+      "for_packages": [
+        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end-to-end.tgz/var/lib/dpkg/status",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": null,
+          "name": "libncurses5",
+          "version": "6.1-1ubuntu1",
+          "qualifiers": {
+            "architecture": "amd64"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [
+            "libs"
+          ],
+          "homepage_url": "https://invisible-island.net/ncurses/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:deb/ncurses"
+          ],
+          "file_references": [],
+          "extra_data": {
+            "multi_arch": "same"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_installed_status_db",
+          "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}
