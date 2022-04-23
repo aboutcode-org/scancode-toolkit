@@ -24,8 +24,8 @@
   "license_expression": "public-domain",
   "declared_license": "Public-Domain",
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -49,8 +49,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/sqlite@3.35.5-r0",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/sqlite@3.35.5-r0"
 }
