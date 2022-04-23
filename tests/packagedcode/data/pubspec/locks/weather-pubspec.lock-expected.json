@@ -25,8 +25,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -660,9 +660,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "pubspec_lock",
+    "purl": null
   }
 ]
