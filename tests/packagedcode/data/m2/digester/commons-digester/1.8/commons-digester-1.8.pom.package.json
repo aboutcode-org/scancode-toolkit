@@ -193,10 +193,10 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/commons-digester/commons-digester@1.8?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -236,8 +236,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/commons-digester/commons-digester@1.8",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/commons-digester/commons-digester@1.8"
 }

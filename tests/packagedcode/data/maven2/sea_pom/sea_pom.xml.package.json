@@ -46,10 +46,10 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -386,8 +386,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT"
 }

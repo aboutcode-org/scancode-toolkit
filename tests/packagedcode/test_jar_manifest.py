@@ -14,7 +14,7 @@ import os.path
 from commoncode import text
 from commoncode import testcase
 
-from packagedcode.jar_manifest import get_normalized_package_data
+from packagedcode.jar_manifest import get_normalized_java_manifest_data
 from packagedcode.jar_manifest import parse_manifest
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -43,15 +43,15 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
 
         assert json.dumps(parsed_manifest) == json.dumps(expected)
 
-    def check_get_normalized_package_data(self, test_manifest, regen=REGEN_TEST_FIXTURES):
+    def check_get_normalized_java_manifest_data(self, test_manifest, regen=REGEN_TEST_FIXTURES):
         """
-        Test the get_normalized_package_data() function using the MANIFEST  file
+        Test the get_normalized_java_manifest_data() function using the MANIFEST  file
         at `test_manifest` against an expected JSON from the same name with a
         .package-data.json extension.
         """
         test_manifest_loc = self.get_test_loc(test_manifest)
         manifest_sections = parse_manifest(test_manifest_loc)
-        package = get_normalized_package_data(manifest_sections[0]) or {}
+        package = get_normalized_java_manifest_data(manifest_sections[0]) or {}
 
         expected_json_loc = test_manifest_loc + '.package-data.json'
 
@@ -96,7 +96,7 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=R
             self.check_parse_manifest(test_manifest_loc, regen)
     else:
         def test_manifest(self):
-            self.check_get_normalized_package_data(test_manifest_loc, regen)
+            self.check_get_normalized_java_manifest_data(test_manifest_loc, regen)
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes

@@ -60,10 +60,10 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -229,8 +229,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/easyconf/easyconf@0.9.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/easyconf/easyconf@0.9.0"
 }

@@ -39,10 +39,10 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.springframework/spring-aspects@2.5.3?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -91,8 +91,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.springframework/spring-aspects@2.5.3",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.3/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.3/spring-aspects-2.5.3.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.3/spring-aspects-2.5.3.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.3/spring-aspects-2.5.3.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.springframework/spring-aspects@2.5.3"
 }
