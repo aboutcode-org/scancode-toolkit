@@ -7,21 +7,10 @@
 #
 
 import io
-import logging
 import re
 
 import attr
 from packageurl import PackageURL
-
-
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
 
 
 @attr.s()
@@ -44,59 +33,6 @@ class GoModule(object):
                     version=version
                 ).to_string()
 
-
-#######################################################################################
-"""
-This part handles go.mod files from Go.
-See https://golang.org/ref/mod#go.mod-files for details
-
-For example:
-
-module example.com/my/thing
-
-go 1.12
-
-require example.com/other/thing v1.0.2
-require example.com/new/thing v2.3.4
-exclude example.com/old/thing v1.2.3
-require (
-    example.com/new/thing v2.3.4
-    example.com/old/thing v1.2.3
-)
-require (
-    example.com/new/thing v2.3.4
-    example.com/old/thing v1.2.3
-)
-
-"""
-
-"""
-module is in the form
-require github.com/davecgh/go-spew v1.1.1
-or
-exclude github.com/davecgh/go-spew v1.1.1
-or
-module github.com/alecthomas/participle
-
-For example:
->>> p = parse_module('module github.com/alecthomas/participle')
->>> assert p.group('type') == ('module')
->>> assert p.group('ns_name') == ('github.com/alecthomas/participle')
-
->>> p = parse_module('require github.com/davecgh/go-spew v1.1.1')
->>> assert p.group('type') == ('require')
->>> assert p.group('ns_name') == ('github.com/davecgh/go-spew')
->>> assert p.group('version') == ('v1.1.1')
-
-require or exclude can be in the form
-github.com/davecgh/go-spew v1.1.1
-
-For example:
->>> p = parse_dep_link('github.com/davecgh/go-spew v1.1.1')
->>> assert p.group('namespace') == ('github.com/davecgh')
->>> assert p.group('name') == ('go-spew')
->>> assert p.group('version') == ('v1.1.1')
-"""
 
 # Regex expressions to parse different types of go.mod file dependency
 parse_module = re.compile(
@@ -128,6 +64,55 @@ def preprocess(line):
 def parse_gomod(location):
     """
     Return a dictionary containing all the important go.mod file data.
+
+    Handle go.mod files from Go.
+    See https://golang.org/ref/mod#go.mod-files for details
+
+    For example:
+
+        module example.com/my/thing
+
+        go 1.12
+
+        require example.com/other/thing v1.0.2
+        require example.com/new/thing v2.3.4
+        exclude example.com/old/thing v1.2.3
+        require (
+            example.com/new/thing v2.3.4
+            example.com/old/thing v1.2.3
+        )
+        require (
+            example.com/new/thing v2.3.4
+            example.com/old/thing v1.2.3
+        )
+
+    Each module line is in the form
+        require github.com/davecgh/go-spew v1.1.1
+    or
+        exclude github.com/davecgh/go-spew v1.1.1
+    or
+        module github.com/alecthomas/participle
+
+    For example::
+
+        >>> p = parse_module('module github.com/alecthomas/participle')
+        >>> assert p.group('type') == ('module')
+        >>> assert p.group('ns_name') == ('github.com/alecthomas/participle')
+
+        >>> p = parse_module('require github.com/davecgh/go-spew v1.1.1')
+        >>> assert p.group('type') == ('require')
+        >>> assert p.group('ns_name') == ('github.com/davecgh/go-spew')
+        >>> assert p.group('version') == ('v1.1.1')
+
+    A line for require or exclude can be in the form:
+
+        github.com/davecgh/go-spew v1.1.1
+
+    For example::
+
+        >>> p = parse_dep_link('github.com/davecgh/go-spew v1.1.1')
+        >>> assert p.group('ns_name') == ('github.com/davecgh/go-spew')
+        >>> assert p.group('version') == ('v1.1.1')
     """
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()
@@ -140,7 +125,7 @@ def parse_gomod(location):
         line = preprocess(line)
 
         if 'require' in line and '(' in line:
-            for req in lines[i+1:]:
+            for req in lines[i + 1:]:
                 req = preprocess(req)
                 if ')' in req:
                     break
@@ -157,7 +142,7 @@ def parse_gomod(location):
             continue
 
         if 'exclude' in line and '(' in line:
-            for exc in lines[i+1:]:
+            for exc in lines[i + 1:]:
                 exc = preprocess(exc)
                 if ')' in exc:
                     break
@@ -207,29 +192,6 @@ def parse_gomod(location):
     return gomods
 
 
-#######################################################################################
-"""
-This part handles go.sum files from Go.
-See https://blog.golang.org/using-go-modules for details
-
-A go.sum file contains pinned Go modules checksums of two styles:
-
-For example:
-github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
-github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-
-... where the line with /go.mod is for a check of that go.mod file 
-and the other line contains a dirhash for that path as documented as
-https://pkg.go.dev/golang.org/x/mod/sumdb/dirhash
-
-Here are some example of usage of this module::
-
->>> p = get_dependency('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
->>> assert p.group('ns_name') == ('github.com/BurntSushi/toml')
->>> assert p.group('version') == ('v0.3.1')
->>> assert p.group('checksum') == ('WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
-"""
-
 # Regex expressions to parse go.sum file dependency
 # dep example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....
 get_dependency = re.compile(
@@ -244,6 +206,28 @@ get_dependency = re.compile(
 def parse_gosum(location):
     """
     Return a list of GoSum from parsing the go.sum file at `location`.
+
+    Handles go.sum file from Go.
+
+    See https://blog.golang.org/using-go-modules for details
+
+    A go.sum file contains pinned Go modules checksums of two styles:
+
+    For example::
+
+    github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+    github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+
+    ... where the line with /go.mod is for a check of that go.mod file
+    and the other line contains a dirhash for that path as documented as
+    https://pkg.go.dev/golang.org/x/mod/sumdb/dirhash
+
+    For example::
+
+        >>> p = get_dependency('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
+        >>> assert p.group('ns_name') == ('github.com/BurntSushi/toml')
+        >>> assert p.group('version') == ('v0.3.1')
+        >>> assert p.group('checksum') == ('WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
     """
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()

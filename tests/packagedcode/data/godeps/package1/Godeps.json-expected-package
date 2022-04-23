@@ -1,0 +1,120 @@
+[
+  {
+    "type": "golang",
+    "namespace": "github.com/calmh",
+    "name": "mole",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/bitbucket.org/kardianos/osext",
+        "extracted_requirement": "364fb577de68fb646c4cb39cc0e09c887ee16376",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/code.google.com/p/go.crypto/ssh",
+        "extracted_requirement": "6478cc9340cbbe6c04511280c5007722269108e9",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/code.google.com/p/go.crypto/twofish",
+        "extracted_requirement": "6478cc9340cbbe6c04511280c5007722269108e9",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/code.google.com/p/go.net/proxy",
+        "extracted_requirement": "55437409069bb181ad562b1ad1e5f361c44aff17",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/calmh/ini",
+        "extracted_requirement": "1020b6d8618a7dc6031cda4a7782324eac346875",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/calmh/randomart",
+        "extracted_requirement": "c93aeb3ba3f3e6081cd41b1f2c46e95403491ec5",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/mavricknz/asn1-ber",
+        "extracted_requirement": "e10e7f5ff26c0805e6dd35fe3f5ec0d6de09c160",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/mavricknz/ldap",
+        "extracted_requirement": "6e4860d2f38e0a6ccbbb8eda955d80ab4e39f692",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/sbinet/liner",
+        "extracted_requirement": "3d8e6ee550f5d4f4105967410a16fd5c8b47bde4",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/github.com/calmh/mole"
+  }
+]

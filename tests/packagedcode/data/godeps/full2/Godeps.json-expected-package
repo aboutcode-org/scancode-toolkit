@@ -1,0 +1,129 @@
+[
+  {
+    "type": "golang",
+    "namespace": "github.com/xanzy",
+    "name": "chef-guard",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/bitbucket.org/kardianos/osext",
+        "extracted_requirement": "5d3ddcf53a508cc2f7404eaebf546ef2cb5cdb6e",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/code.google.com/p/gcfg",
+        "extracted_requirement": "c2d3050044d05357eaf6c3547249ba57c5e235cb",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/code.google.com/p/goauth2/oauth",
+        "extracted_requirement": "6a3615e294b534a1c24cb5d3d7570fa8bbc30c99",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/google/go-github/github",
+        "extracted_requirement": "823c72494dd3822890a5c878896a788eda197b94",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/google/go-querystring/query",
+        "extracted_requirement": "ec0a78e0f4db229b7897be36596a8944230b857a",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/gorilla/context",
+        "extracted_requirement": "14f550f51af52180c2eefed15e5fd18d63c0a64a",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/gorilla/mux",
+        "extracted_requirement": "14cafe28513321476c73967a5a4f3454b6129c46",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/marpaia/chef-golang",
+        "extracted_requirement": "89f0d0cdd0068c39e1f90f5e657b7c82899fc2c8",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/marpaia/graphite-golang",
+        "extracted_requirement": "c5518419e353360b24b340ebd1066af7cab612c3",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/xanzy/go-pathspec",
+        "extracted_requirement": "1df22d11e0dfefec0469a9f2c7c4588308b9a5c0",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/github.com/xanzy/chef-guard"
+  }
+]

@@ -6,12 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-import logging
 
-import attr
-
-from commoncode import fileutils
-from commoncode import filetype
 from packagedcode import go_mod
 from packagedcode import models
 
@@ -19,64 +14,47 @@ from packagedcode import models
 Handle Go packages including go.mod and go.sum files.
 """
 
-# TODO:
-# go.mod file does not contain version number.
+# FIXME: !!improve how we handle packages names vs. subpath.
+# we need to have shorter names and use subpath
+
+# TODO: go.mod file does not contain version number.
 # valid download url need version number
 # CHECK: https://forum.golangbridge.org/t/url-to-download-package/19811
 
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+# TODO: use the LICENSE file convention!
+# TODO: support "vendor" and "workspace" layouts
 
 
-@attr.s()
-class GolangPackageData(models.PackageData):
-    default_type = 'golang'
+class BaseGoModuleHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        """
+        Always use go.mod first then go.sum
+        """
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=('go.mod', 'go.sum',),
+            directory=resource.parent(codebase),
+            codebase=codebase,
+        )
+
+
+class GoModHandler(BaseGoModuleHandler):
+    datasource_id = 'go_mod'
+    path_patterns = ('*/go.mod',)
+    default_package_type = 'golang'
     default_primary_language = 'Go'
-    default_web_baseurl = 'https://pkg.go.dev'
-    default_download_baseurl = None
-    default_api_baseurl = None
+    description = 'Go modules file'
+    documentation_url = 'https://go.dev/ref/mod'
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.namespace and self.name:
-            return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
-
-
-@attr.s()
-class GoMod(GolangPackageData, models.PackageDataFile):
-
-    file_patterns = ('go.mod',)
-    extensions = ('.mod',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        filename = fileutils.file_name(location).lower()
-        return filetype.is_file(location) and filename == 'go.mod'
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         gomods = go_mod.parse_gomod(location)
 
-        package_dependencies = []
+        dependencies = []
         require = gomods.require or []
         for gomod in require:
-            package_dependencies.append(
+            dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
                     extracted_requirement=gomod.version,
@@ -89,7 +67,7 @@ class GoMod(GolangPackageData, models.PackageDataFile):
 
         exclude = gomods.exclude or []
         for gomod in exclude:
-            package_dependencies.append(
+            dependencies.append(
                 models.DependentPackage(
                     purl=gomod.purl(include_version=True),
                     extracted_requirement=gomod.version,
@@ -102,40 +80,38 @@ class GoMod(GolangPackageData, models.PackageDataFile):
 
         name = gomods.name
         namespace = gomods.namespace
-        homepage_url = 'https://pkg.go.dev/{}/{}'.format(gomods.namespace, gomods.name)
-        vcs_url = 'https://{}/{}.git'.format(gomods.namespace, gomods.name)
 
-        yield cls(
+        homepage_url = f'https://pkg.go.dev/{gomods.namespace}/{gomods.name}'
+        vcs_url = f'https://{gomods.namespace}/{gomods.name}.git'
+
+        repository_homepage_url = None
+        if namespace and name:
+            repository_homepage_url = f'https://pkg.go.dev/{namespace}/{name}'
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             namespace=namespace,
             vcs_url=vcs_url,
             homepage_url=homepage_url,
-            dependencies=package_dependencies
+            repository_homepage_url=repository_homepage_url,
+            dependencies=dependencies,
+            primary_language=cls.default_primary_language,
         )
 
 
-@attr.s()
-class GoSum(GolangPackageData, models.PackageDataFile):
-
-    file_patterns = ('go.sum',)
-    extensions = ('.sum',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        filename = fileutils.file_name(location).lower()
-        return filetype.is_file(location) and filename == 'go.sum'
+class GoSumHandler(BaseGoModuleHandler):
+    datasource_id = 'go_sum'
+    path_patterns = ('*/go.sum',)
+    default_package_type = 'golang'
+    default_primary_language = 'Go'
+    description = 'Go module cheksums file'
+    documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         gosums = go_mod.parse_gosum(location)
-
         package_dependencies = []
         for gosum in gosums:
             package_dependencies.append(
@@ -149,19 +125,9 @@ class GoSum(GolangPackageData, models.PackageDataFile):
                 )
             )
 
-        yield cls(dependencies=package_dependencies)
-
-
-@attr.s()
-class GoPackage(GolangPackageData, models.Package):
-    """
-    A Golang Package that is created out of one/multiple go package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            GoMod,
-            GoSum
-        ]
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=package_dependencies,
+            primary_language=cls.default_primary_language,
+        )

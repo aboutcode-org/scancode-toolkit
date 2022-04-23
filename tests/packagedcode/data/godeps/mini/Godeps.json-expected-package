@@ -2,7 +2,7 @@
   {
     "type": "golang",
     "namespace": null,
-    "name": null,
+    "name": "app",
     "version": null,
     "qualifiers": {},
     "subpath": null,
@@ -28,30 +28,11 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [
-      {
-        "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.2",
-        "extracted_requirement": "v2.2.2",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true,
-        "resolved_package": {}
-      },
-      {
-        "purl": "pkg:golang/honnef.co/go/tools@v0.0.1-2019.2.3",
-        "extracted_requirement": "v0.0.1-2019.2.3",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true,
-        "resolved_package": {}
-      }
-    ],
+    "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "datasource_id": "go_sum",
-    "purl": null
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/app"
   }
 ]

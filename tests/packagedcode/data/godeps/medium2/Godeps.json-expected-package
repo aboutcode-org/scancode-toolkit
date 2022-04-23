@@ -1,8 +1,8 @@
 [
   {
     "type": "golang",
-    "namespace": null,
-    "name": null,
+    "namespace": "github.com/sanbornm/go-selfupdate",
+    "name": "selfupdate",
     "version": null,
     "qualifiers": {},
     "subpath": null,
@@ -30,46 +30,37 @@
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:golang/golang.org/x/text@v0.3.1-0.20180807135948-17ff2d5776d2",
-        "extracted_requirement": "v0.3.1-0.20180807135948-17ff2d5776d2",
-        "scope": "dependency",
+        "purl": "pkg:golang/bitbucket.org/kardianos/osext",
+        "extracted_requirement": "5d3ddcf53a508cc2f7404eaebf546ef2cb5cdb6e",
+        "scope": "Deps",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_resolved": false,
         "resolved_package": {}
       },
       {
-        "purl": "pkg:golang/golang.org/x/tools@v0.0.0-20190311212946-11955173bddd",
-        "extracted_requirement": "v0.0.0-20190311212946-11955173bddd",
-        "scope": "dependency",
+        "purl": "pkg:golang/github.com/inconshreveable/go-update",
+        "extracted_requirement": "3f0466666779bd2143f368a207b0641f0ed536e8",
+        "scope": "Deps",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_resolved": false,
         "resolved_package": {}
       },
       {
-        "purl": "pkg:golang/golang.org/x/tools@v0.0.0-20190621195816-6e04913cbbac",
-        "extracted_requirement": "v0.0.0-20190621195816-6e04913cbbac",
-        "scope": "dependency",
+        "purl": "pkg:golang/github.com/kr/binarydist",
+        "extracted_requirement": "9955b0ab8708602d411341e55fffd7e0700f86bd",
+        "scope": "Deps",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
-        "resolved_package": {}
-      },
-      {
-        "purl": "pkg:golang/golang.org/x/tools@v0.0.0-20191029041327-9cc4af7d6b2c",
-        "extracted_requirement": "v0.0.0-20191029041327-9cc4af7d6b2c",
-        "scope": "dependency",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": true,
+        "is_resolved": false,
         "resolved_package": {}
       }
     ],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "datasource_id": "go_sum",
-    "purl": null
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/github.com/sanbornm/go-selfupdate/selfupdate"
   }
 ]
