@@ -7,78 +7,60 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import defaultdict
 import ast
-import logging
-import os
-
-import attr
+from collections import defaultdict
 
 from commoncode import fileutils
+
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from scancode.api import get_licenses
 
-
-TRACE = False
-
-logger = logging.getLogger(__name__)
-
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-
 """
 Detect as Packages common build tools and environment such as Make, Autotools,
-gradle, Buck, Bazel, Pants, etc.
+Buck, Bazel, Pants, etc.
 """
 
 
-@attr.s()
-class BaseBuildManifestPackageData(models.PackageData):
-    file_patterns = tuple()
+class AutotoolsConfigureHandler(models.DatafileHandler):
+    datasource_id = 'autotools_configure'
+    path_patterns = ('*/configure', '*/configure.ac',)
+    default_package_type = 'autotools'
+    description = 'Autotools configure script'
+    documentation_url = 'https://www.gnu.org/software/automake/'
 
     @classmethod
-    def recognize(cls, location):
-        if not cls.is_package_data_file(location):
-            return
-
-        # we use the parent directory as a name
+    def parse(cls, location):
+        # we use the parent directory as a package name
         name = fileutils.file_name(fileutils.parent_directory(location))
         # we could use checksums as version in the future
         version = None
 
         # there is an optional array of license file names in targets that we could use
         # declared_license = None
-        # there is are dependencies we could use
+
+        # there are dependencies we could use
         # dependencies = []
-        yield cls(
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
-            version=version)
+            version=version,
+        )
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
+    def assign_package_to_resources(cls, package, resource, codebase):
+        cls.assign_package_to_parent_tree(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+        )
 
 
-@attr.s()
-class AutotoolsPackage(BaseBuildManifestPackageData, models.PackageDataFile):
-    file_patterns = ('configure', 'configure.ac',)
-    default_type = 'autotools'
-
-
-starlark_rule_types = [
-    'binary',
-    'library'
-]
-
-
-def check_rule_name_ending(rule_name):
+def check_rule_name_ending(rule_name, starlark_rule_types=('binary', 'library')):
     """
     Return True if `rule_name` ends with a rule type from `starlark_rule_types`
-
     Return False otherwise
     """
     for rule_type in starlark_rule_types:
@@ -87,16 +69,48 @@ def check_rule_name_ending(rule_name):
     return False
 
 
-@attr.s()
-class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFile):
+class BaseStarlarkManifestHandler(models.DatafileHandler):
+    """
+    Common base class for Bazel and Buck that both use the Starlark syntax.
+    """
 
     @classmethod
-    def recognize(cls, location):
-        if not cls.is_package_data_file(location):
-            return
+    def assemble(cls, package_data, resource, codebase):
+        """
+        Given a ``package_data`` PackageData found in the ``resource`` datafile
+        of the ``codebase``, assemble package their files and dependencies
+        from one or more datafiles.
+        """
+        datafile_path = resource.path
+        # do we have enough to create a package?
+        if package_data.purl:
+            package = models.Package.from_package_data(
+                package_data=package_data,
+                datafile_path=datafile_path,
+            )
 
-        # Thanks to Starlark being a Python dialect, we can use the `ast`
-        # library to parse it
+            if not package.license_expression:
+                package.license_expression = compute_normalized_license(
+                    package=package,
+                    resource=resource,
+                    codebase=codebase,
+                )
+
+            cls.assign_package_to_resources(
+                package=package,
+                resource=resource,
+                codebase=codebase,
+            )
+
+            yield package
+
+        # we yield this as we do not want this further processed
+        yield resource
+
+    @classmethod
+    def parse(cls, location):
+
+        # Thanks to Starlark being a Python dialect, we can use `ast` to parse it
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
 
@@ -104,11 +118,13 @@ class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFi
         for statement in tree.body:
             # We only care about function calls or assignments to functions whose
             # names ends with one of the strings in `rule_types`
-            if (isinstance(statement, ast.Expr)
-                    or isinstance(statement, ast.Call)
-                    or isinstance(statement, ast.Assign)
-                    and isinstance(statement.value, ast.Call)
-                    and isinstance(statement.value.func, ast.Name)):
+            if (
+                isinstance(statement, ast.Expr)
+                or isinstance(statement, ast.Call)
+                or isinstance(statement, ast.Assign)
+                and isinstance(statement.value, ast.Call)
+                and isinstance(statement.value.func, ast.Name)
+            ):
                 rule_name = statement.value.func.id
                 # Ensure that we are only creating packages from the proper
                 # build rules
@@ -120,9 +136,14 @@ class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFi
                     arg_name = kw.arg
                     if isinstance(kw.value, ast.Str):
                         args[arg_name] = kw.value.s
+
                     if isinstance(kw.value, ast.List):
-                        # We collect the elements of a list if the element is not a function call
-                        args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
+                        # We collect the elements of a list if the element is
+                        # not a function call
+                        args[arg_name] = [
+                            elt.s for elt in kw.value.elts
+                            if not isinstance(elt, ast.Call)
+                        ]
                 if args:
                     build_rules[rule_name].append(args)
 
@@ -130,68 +151,123 @@ class StarlarkManifestPackage(BaseBuildManifestPackageData, models.PackageDataFi
             for rule_name, rule_instances_args in build_rules.items():
                 for args in rule_instances_args:
                     name = args.get('name')
+
+                    # FIXME: we could still return partial package data
                     if not name:
                         continue
+
                     license_files = args.get('licenses')
 
-                    manifest = cls(
+                    yield models.PackageData(
+                        datasource_id=cls.datasource_id,
+                        type=cls.default_package_type,
                         name=name,
                         declared_license=license_files,
                     )
-                    manifest.license_expression = manifest.compute_normalized_license(
-                        manifest_parent_path=fileutils.parent_directory(location)
-                    )
-                    yield manifest
+
         else:
-            # If we don't find anything in the manifest file, we yield a Package with
-            # the parent directory as the name
-            yield cls(
+            # If we don't find anything in the pkgdata file, we yield a Package
+            # with the parent directory as the name
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
 
-    def compute_normalized_license(self, manifest_parent_path):
-        """
-        Return a normalized license expression string detected from a list of
-        declared license items.
-        """
-        declared_license = self.declared_license
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase, skip_name=None):
+        package_uid = package.package_uid
+        parent = resource.parent(codebase)
+        for res in walk_build(resource=parent, codebase=codebase, skip_name=skip_name):
+            res.for_packages.append(package_uid)
+            res.save(codebase)
 
-        if not declared_license or not manifest_parent_path:
-            return
 
-        license_expressions = []
-        for license_file in declared_license:
-            license_file_path = os.path.join(manifest_parent_path, license_file)
-            if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
-                licenses = get_licenses(license_file_path)
+def walk_build(resource, codebase, skip_name):
+    """
+    Walk the ``codebase`` starting at ``resource`` and stop when ``skip_name``
+    is found in a subdirectory. The idea is to avoid walking recursively sub-
+    directories that contain a build script such as a Bazel or BUCK file as they
+    define their own file tree.
+    """
+    for child in resource.children(codebase):
+        yield child
+        if not child.is_dir:
+            continue
+        if not any(r.name == skip_name for r in child.children(codebase)):
+            for subchild in walk_build(child, codebase, skip_name=skip_name):
+                yield subchild
+
+
+def compute_normalized_license(package, resource, codebase):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+    """
+    declared_licenses = package.declared_license
+    if not declared_licenses:
+        return
+
+    declared_licenses = set(declared_licenses)
+
+    license_expressions = []
+
+    parent = resource.parent(codebase)
+    # FIXME: we should be able to get the path relatively to the ABOUT file resource
+    for child in parent.children(codebase):
+        if child.name in declared_licenses:
+            licenses = get_licenses(child.location)
+            if not licenses:
+                license_expressions.append('unknown')
+            else:
                 license_expressions.extend(licenses.get('license_expressions', []))
 
-        return combine_expressions(license_expressions)
+    return combine_expressions(license_expressions)
 
 
-@attr.s()
-class BazelPackage(StarlarkManifestPackage):
-    file_patterns = ('BUILD',)
-    default_type = 'bazel'
-
-
-@attr.s()
-class BuckPackage(StarlarkManifestPackage):
-    file_patterns = ('BUCK',)
-    default_type = 'buck'
-
-
-@attr.s()
-class MetadataBzl(BaseBuildManifestPackageData, models.PackageDataFile):
-    file_patterns = ('METADATA.bzl',)
-    # TODO: Not sure what the default type should be, change this to something
-    # more appropriate later
-    default_type = 'METADATA.bzl'
+class BazelBuildHandler(BaseStarlarkManifestHandler):
+    datasource_id = 'bazel_build'
+    path_patterns = ('*/BUILD',)
+    default_package_type = 'bazel'
+    description = 'Bazel BUILD'
+    documentation_url = 'https://bazel.build/'
 
     @classmethod
-    def recognize(cls, location):
-        if not cls.is_package_data_file(location):
-            return
+    def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUILD'):
+        return super().assign_package_to_resources(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+            skip_name=skip_name,
+        )
+
+
+class BuckPackageHandler(BaseStarlarkManifestHandler):
+    datasource_id = 'buck_file'
+    path_patterns = ('*/BUCK',)
+    default_package_type = 'buck'
+    description = 'Buck file'
+    documentation_url = 'https://buck.build/'
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUCK'):
+        return super().assign_package_to_resources(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+            skip_name=skip_name,
+        )
+
+
+class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
+    datasource_id = 'buck_metadata'
+    path_patterns = ('*/METADATA.bzl',)
+    default_package_type = 'buck'
+    description = 'Buck metadata file'
+    documentation_url = 'https://buck.build/'
+
+    @classmethod
+    def parse(cls, location):
 
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
@@ -200,6 +276,7 @@ class MetadataBzl(BaseBuildManifestPackageData, models.PackageDataFile):
         for statement in tree.body:
             if not (hasattr(statement, 'targets') and isinstance(statement, ast.Assign)):
                 continue
+
             # We are looking for a dictionary assigned to the variable `METADATA`
             for target in statement.targets:
                 if not (target.id == 'METADATA' and isinstance(statement.value, ast.Dict)):
@@ -234,28 +311,34 @@ class MetadataBzl(BaseBuildManifestPackageData, models.PackageDataFile):
 
         # TODO: Create function that determines package type from download URL,
         # then create a package of that package type from the metadata info
-        yield cls(
-            type=metadata_fields.get('upstream_type', ''),
-            name=metadata_fields.get('name', ''),
-            version=metadata_fields.get('version', ''),
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=metadata_fields.get('upstream_type', cls.default_package_type),
+            name=metadata_fields.get('name'),
+            version=metadata_fields.get('version'),
             declared_license=metadata_fields.get('licenses', []),
             parties=parties,
             homepage_url=metadata_fields.get('upstream_address', ''),
             # TODO: Store 'upstream_hash` somewhere
         )
 
-    def compute_normalized_license(self):
-        """
-        Return a normalized license expression string detected from a list of
-        declared license strings.
-        """
-        if not self.declared_license:
+    @classmethod
+    def compute_normalized_license(cls, package):
+        if not package.declared_license:
             return
 
         detected_licenses = []
-        for declared in self.declared_license:
+        for declared in package.declared_license:
             detected_license = models.compute_normalized_license(declared)
             detected_licenses.append(detected_license)
 
         if detected_licenses:
             return combine_expressions(detected_licenses)
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        cls.assign_package_to_parent_tree(
+            package_=package,
+            resource=resource,
+            codebase=codebase,
+        )
