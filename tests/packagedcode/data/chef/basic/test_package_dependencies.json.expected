@@ -25,8 +25,8 @@
     "license_expression": "public-domain",
     "declared_license": "public-domain",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -39,9 +39,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:chef/test@0.01",
-    "repository_homepage_url": null,
+    "repository_homepage_url": "https://supermarket.chef.io/cookbooks/test/versions/0.01/",
     "repository_download_url": "https://supermarket.chef.io/cookbooks/test/versions/0.01/download",
-    "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/test/versions/0.01"
+    "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/test/versions/0.01",
+    "datasource_id": "chef_cookbook_metadata_rb",
+    "purl": "pkg:chef/test@0.01"
   }
 ]
