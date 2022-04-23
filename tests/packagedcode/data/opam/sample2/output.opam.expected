@@ -40,8 +40,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -99,9 +99,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:opam/js_of_ocaml",
-    "repository_homepage_url": "https://opam.ocaml.org/packages/js_of_ocaml",
+    "repository_homepage_url": "{https://opam.ocaml.org/packages}/{name}",
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "opam_file",
+    "purl": "pkg:opam/js_of_ocaml"
   }
 ]
