@@ -42,7 +42,7 @@
         }
       ],
       "keywords": [],
-      "homepage_url": null,
+      "homepage_url": "https://clap.rs/",
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -51,25 +51,24 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": null,
+      "vcs_url": "https://github.com/clap-rs/clap",
       "copyright": null,
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:cargo/clap@2.32.0",
-      "package_data_files": [
-        "Cargo.toml"
-      ],
-      "files": [
-        "Cargo.toml"
-      ],
-      "purl": "pkg:cargo/clap@2.32.0",
       "repository_homepage_url": "https://crates.io/crates/clap",
       "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
-      "api_data_url": "https://crates.io/api/v1/crates/clap"
+      "api_data_url": "https://crates.io/api/v1/crates/clap",
+      "package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/clap@2.32.0"
     }
   ],
   "files": [
@@ -97,7 +96,7 @@
             }
           ],
           "keywords": [],
-          "homepage_url": null,
+          "homepage_url": "https://clap.rs/",
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -106,23 +105,24 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": null,
+          "vcs_url": "https://github.com/clap-rs/clap",
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:cargo/clap@2.32.0",
           "repository_homepage_url": "https://crates.io/crates/clap",
           "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
-          "api_data_url": "https://crates.io/api/v1/crates/clap"
+          "api_data_url": "https://crates.io/api/v1/crates/clap",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/clap@2.32.0"
         }
       ],
       "for_packages": [
-        "pkg:cargo/clap@2.32.0"
+        "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

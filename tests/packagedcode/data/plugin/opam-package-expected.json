@@ -29,9 +29,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/ocaml",
-      "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/ocaml?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-unix",
@@ -41,9 +42,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-unix",
-      "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-unix?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-bigarray",
@@ -53,9 +55,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-bigarray",
-      "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-bigarray?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     },
     {
       "purl": "pkg:opam/base-threads",
@@ -65,9 +68,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:opam/base-threads",
-      "for_package": null,
-      "lockfile": "ocaml-variants.opam"
+      "dependency_uid": "pkg:opam/base-threads?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "ocaml-variants.opam",
+      "datasource_id": "opam_file"
     }
   ],
   "packages": [],
@@ -152,8 +156,8 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -193,10 +197,11 @@
               "resolved_package": {}
             }
           ],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "opam_file",
+          "purl": null
         }
       ],
       "for_packages": [],

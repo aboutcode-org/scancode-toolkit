@@ -29,9 +29,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/ffi-rzmq",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/ffi-rzmq?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/ffi",
@@ -41,9 +42,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/ffi",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/ffi?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/multi_json",
@@ -53,9 +55,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/multi_json",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/multi_json?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/tnetstring",
@@ -65,9 +68,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/tnetstring",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/tnetstring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/rack",
@@ -77,9 +81,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/rack",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/rack?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/rake",
@@ -89,9 +94,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/rake",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/minitest",
@@ -101,9 +107,10 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/minitest",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/minitest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/mocha",
@@ -113,9 +120,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/mocha",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/bbq",
@@ -125,9 +133,10 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/bbq",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/bbq?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/capybara-mechanize",
@@ -137,9 +146,10 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/capybara-mechanize",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/capybara-mechanize?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/activesupport",
@@ -149,9 +159,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/activesupport",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/activesupport?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/yard",
@@ -161,9 +172,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/yard",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/yard?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     },
     {
       "purl": "pkg:gem/kramdown",
@@ -173,9 +185,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:gem/kramdown",
-      "for_package": "pkg:gem/m2r@2.1.0",
-      "lockfile": "m2r-2.1.0.gem"
+      "dependency_uid": "pkg:gem/kramdown?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
     }
   ],
   "packages": [
@@ -236,21 +249,19 @@
         "MIT"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:gem/m2r@2.1.0",
-      "package_data_files": [
-        "m2r-2.1.0.gem"
-      ],
-      "files": [
-        "m2r-2.1.0.gem",
-        "m2r-2.1.0.gem.json"
-      ],
-      "purl": "pkg:gem/m2r@2.1.0",
       "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
       "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
-      "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json"
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
+      "package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "m2r-2.1.0.gem"
+      ],
+      "datasource_ids": [
+        "gem_archive"
+      ],
+      "purl": "pkg:gem/m2r@2.1.0"
     }
   ],
   "files": [
@@ -315,8 +326,8 @@
             "MIT"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -437,14 +448,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:gem/m2r@2.1.0",
           "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
           "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
-          "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json"
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
+          "datasource_id": "gem_archive",
+          "purl": "pkg:gem/m2r@2.1.0"
         }
       ],
       "for_packages": [
-        "pkg:gem/m2r@2.1.0"
+        "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -452,9 +464,7 @@
       "path": "m2r-2.1.0.gem.json",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:gem/m2r@2.1.0"
-      ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

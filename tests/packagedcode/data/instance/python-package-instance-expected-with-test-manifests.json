@@ -16,72 +16,11 @@
       "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "files_count": 9
+        "files_count": 8
       }
     }
   ],
-  "dependencies": [
-    {
-      "purl": "pkg:pypi/towncrier",
-      "extracted_requirement": "towncrier",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/towncrier",
-      "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
-    },
-    {
-      "purl": "pkg:pypi/bump2version",
-      "extracted_requirement": "bump2version",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/bump2version",
-      "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
-    },
-    {
-      "purl": "pkg:pypi/build",
-      "extracted_requirement": "build",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/build",
-      "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
-    },
-    {
-      "purl": "pkg:pypi/twine",
-      "extracted_requirement": ">=3",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/twine",
-      "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
-    },
-    {
-      "purl": "pkg:pypi/jaraco.develop",
-      "extracted_requirement": ">=7.1",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:pypi/jaraco.develop",
-      "for_package": "pkg:pypi/setuptools@58.2.0",
-      "lockfile": "tox.ini"
-    }
-  ],
+  "dependencies": [],
   "packages": [
     {
       "type": "pypi",
@@ -131,30 +70,21 @@
         ]
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
-      "extra_data": {},
-      "package_uuid": "pkg:pypi/setuptools@58.2.0",
-      "package_data_files": [
-        "PKG-INFO",
-        "setup.py",
-        "tox.ini"
-      ],
-      "files": [
-        "LICENSE",
-        "MANIFEST.in",
-        "PKG-INFO",
-        "pyproject.toml",
-        "README.rst",
-        "setup.cfg",
-        "setup.py",
-        "tox.ini",
-        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
-      ],
-      "purl": "pkg:pypi/setuptools@58.2.0",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "extra_data": {
+        "Documentation": "Documentation, https://setuptools.readthedocs.io/"
+      },
+      "repository_homepage_url": "https://pypi.org/project/setuptools",
       "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json"
+      "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json",
+      "package_uid": "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "PKG-INFO"
+      ],
+      "datasource_ids": [
+        "pypi_sdist_pkginfo"
+      ],
+      "purl": "pkg:pypi/setuptools@58.2.0"
     },
     {
       "type": "pypi",
@@ -182,20 +112,19 @@
       "license_expression": null,
       "declared_license": null,
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/my-test-package@1.0",
-      "package_data_files": [
-        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
-      ],
-      "files": [
-        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
-      ],
-      "purl": "pkg:pypi/my-test-package@1.0",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_homepage_url": "https://pypi.org/project/my-test-package",
       "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json"
+      "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json",
+      "package_uid": "pkg:pypi/my-test-package@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
+      ],
+      "datasource_ids": [
+        "pypi_sdist"
+      ],
+      "purl": "pkg:pypi/my-test-package@1.0"
     }
   ],
   "files": [
@@ -203,18 +132,14 @@
       "path": "LICENSE",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "MANIFEST.in",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -269,18 +194,21 @@
             ]
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
-          "extra_data": {},
+          "file_references": [],
+          "extra_data": {
+            "Documentation": "Documentation, https://setuptools.readthedocs.io/"
+          },
           "dependencies": [],
-          "purl": "pkg:pypi/setuptools@58.2.0",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/setuptools",
           "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json"
+          "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json",
+          "datasource_id": "pypi_sdist_pkginfo",
+          "purl": "pkg:pypi/setuptools@58.2.0"
         }
       ],
       "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -288,9 +216,7 @@
       "path": "README.rst",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -351,37 +277,109 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:pypi/my-test-package@1.0",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_homepage_url": "https://pypi.org/project/my-test-package",
           "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json"
+          "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json",
+          "datasource_id": "pypi_sdist",
+          "purl": "pkg:pypi/my-test-package@1.0"
         }
       ],
       "for_packages": [
-        "pkg:pypi/setuptools@58.2.0",
-        "pkg:pypi/my-test-package@1.0"
+        "pkg:pypi/my-test-package@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
     {
       "path": "pyproject.toml",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "pypi_pyproject_toml",
+          "purl": null
+        }
       ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "setup.cfg",
       "type": "file",
-      "package_data": [],
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "pypi_setup_cfg",
+          "purl": null
+        }
+      ],
       "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -415,109 +413,19 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": null,
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "pypi_setup_py",
+          "purl": null
         }
       ],
       "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "tox.ini",
-      "type": "file",
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": null,
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "dependencies": [
-            {
-              "purl": "pkg:pypi/towncrier",
-              "extracted_requirement": "towncrier",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {}
-            },
-            {
-              "purl": "pkg:pypi/bump2version",
-              "extracted_requirement": "bump2version",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {}
-            },
-            {
-              "purl": "pkg:pypi/build",
-              "extracted_requirement": "build",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {}
-            },
-            {
-              "purl": "pkg:pypi/twine",
-              "extracted_requirement": ">=3",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {}
-            },
-            {
-              "purl": "pkg:pypi/jaraco.develop",
-              "extracted_requirement": ">=7.1",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {}
-            }
-          ],
-          "purl": null,
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
-        }
-      ],
-      "for_packages": [
-        "pkg:pypi/setuptools@58.2.0"
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

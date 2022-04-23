@@ -23,27 +23,29 @@
   "dependencies": [
     {
       "purl": "pkg:chef/nodejs",
-      "extracted_requirement": ">= 0.0.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "dependency_uuid": "pkg:chef/nodejs",
-      "for_package": "pkg:chef/301@0.1.0",
-      "lockfile": "metadata.json"
-    },
-    {
-      "purl": "pkg:chef/nodejs",
       "extracted_requirement": null,
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:chef/nodejs",
-      "for_package": "pkg:chef/301@0.1.0",
-      "lockfile": "metadata.rb"
+      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "metadata.rb",
+      "datasource_id": "chef_cookbook_metadata_rb"
+    },
+    {
+      "purl": "pkg:chef/nodejs",
+      "extracted_requirement": ">= 0.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "metadata.json",
+      "datasource_id": "chef_cookbook_metadata_json"
     }
   ],
   "packages": [
@@ -81,22 +83,19 @@
       "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:chef/301@0.1.0",
-      "package_data_files": [
-        "metadata.json",
-        "metadata.rb"
-      ],
-      "files": [
-        "metadata.json",
-        "metadata.rb"
-      ],
-      "purl": "pkg:chef/301@0.1.0",
-      "repository_homepage_url": null,
+      "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
       "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0"
+      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
+      "package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "metadata.rb"
+      ],
+      "datasource_ids": [
+        "chef_cookbook_metadata_rb"
+      ],
+      "purl": "pkg:chef/301@0.1.0"
     }
   ],
   "files": [
@@ -138,8 +137,8 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -152,14 +151,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:chef/301@0.1.0",
-          "repository_homepage_url": null,
+          "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
           "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0"
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
+          "datasource_id": "chef_cookbook_metadata_json",
+          "purl": "pkg:chef/301@0.1.0"
         }
       ],
       "for_packages": [
-        "pkg:chef/301@0.1.0"
+        "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -201,8 +201,8 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -215,14 +215,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:chef/301@0.1.0",
-          "repository_homepage_url": null,
+          "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
           "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0"
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
+          "datasource_id": "chef_cookbook_metadata_rb",
+          "purl": "pkg:chef/301@0.1.0"
         }
       ],
       "for_packages": [
-        "pkg:chef/301@0.1.0"
+        "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

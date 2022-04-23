@@ -20,28 +20,232 @@
       }
     }
   ],
-  "dependencies": [],
-  "packages": [],
+  "dependencies": [
+    {
+      "purl": "pkg:conda/zlib",
+      "extracted_requirement": "1.2.8 3",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/zlib?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/setuptools",
+      "extracted_requirement": "27.2.0 py35_0",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/setuptools?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/sqlite",
+      "extracted_requirement": "3.13.0 0",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/sqlite?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/openssl",
+      "extracted_requirement": "1.0.2k 1",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/openssl?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/xz",
+      "extracted_requirement": "5.2.2 1",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/xz?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/krb5",
+      "extracted_requirement": "1.13.2 0",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/krb5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/pykerberos",
+      "extracted_requirement": "1.1.10 py35_0",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/pykerberos?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/python",
+      "extracted_requirement": "3.5.3 1",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/python?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/requests",
+      "extracted_requirement": "2.13.0 py35_0",
+      "scope": "build",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/requests?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/python",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/python?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/requests",
+      "extracted_requirement": ">=1.1.0",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/requests?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/pykerberos",
+      "extracted_requirement": ">=1.1.8,<2.0.0",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:conda/pykerberos?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    }
+  ],
+  "packages": [
+    {
+      "type": "conda",
+      "namespace": null,
+      "name": "requests-kerberos",
+      "version": "0.8.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Kerberos authentication handler for python-requests",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "https://github.com/requests/requests-kerberos",
+      "download_url": "https://pypi.python.org/packages/source/r/requests-kerberos/requests-kerberos-0.8.0.tar.gz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "unknown",
+      "declared_license": "Other",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "info/recipe.tar-extract/recipe/meta.yaml"
+      ],
+      "datasource_ids": [
+        "conda_meta_yaml"
+      ],
+      "purl": "pkg:conda/requests-kerberos@0.8.0"
+    }
+  ],
   "files": [
     {
       "path": "info",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -74,14 +278,95 @@
           "license_expression": "unknown",
           "declared_license": "Other",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
+              "purl": "pkg:conda/zlib",
+              "extracted_requirement": "1.2.8 3",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/setuptools",
+              "extracted_requirement": "27.2.0 py35_0",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/sqlite",
+              "extracted_requirement": "3.13.0 0",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/openssl",
+              "extracted_requirement": "1.0.2k 1",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/xz",
+              "extracted_requirement": "5.2.2 1",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/krb5",
+              "extracted_requirement": "1.13.2 0",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/pykerberos",
+              "extracted_requirement": "1.1.10 py35_0",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
               "purl": "pkg:conda/python",
-              "extracted_requirement": null,
-              "scope": "dependencies",
+              "extracted_requirement": "3.5.3 1",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/requests",
+              "extracted_requirement": "2.13.0 py35_0",
+              "scope": "build",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:conda/python",
+              "extracted_requirement": "",
+              "scope": "run",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
@@ -90,7 +375,7 @@
             {
               "purl": "pkg:conda/requests",
               "extracted_requirement": ">=1.1.0",
-              "scope": "dependencies",
+              "scope": "run",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
@@ -99,20 +384,23 @@
             {
               "purl": "pkg:conda/pykerberos",
               "extracted_requirement": ">=1.1.8,<2.0.0",
-              "scope": "dependencies",
+              "scope": "run",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:conda/requests-kerberos@0.8.0",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "conda_meta_yaml",
+          "purl": "pkg:conda/requests-kerberos@0.8.0"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

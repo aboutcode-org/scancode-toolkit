@@ -66,20 +66,19 @@
         "licenselogic": "single"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
-      "package_data_files": [
-        "+COMPACT_MANIFEST"
-      ],
-      "files": [
-        "+COMPACT_MANIFEST"
-      ],
-      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
       "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "+COMPACT_MANIFEST"
+      ],
+      "datasource_ids": [
+        "freebsd_compact_manifest"
+      ],
+      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
     }
   ],
   "files": [
@@ -131,18 +130,19 @@
             "licenselogic": "single"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "freebsd_compact_manifest",
+          "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
         }
       ],
       "for_packages": [
-        "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
+        "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }
