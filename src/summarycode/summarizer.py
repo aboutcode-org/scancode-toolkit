@@ -17,14 +17,14 @@ from plugincode.post_scan import PostScanPlugin, post_scan_impl
 
 from cluecode.copyrights import CopyrightDetector
 from packagedcode.utils import combine_expressions
-from summarycode.score import (compute_license_score,
-                               get_field_values_from_codebase_resources,
-                               unique)
+from packagedcode import models
+from summarycode.score import compute_license_score
+from summarycode.score import get_field_values_from_codebase_resources
+from summarycode.score import unique
 from summarycode.tallies import compute_codebase_tallies
 
-
 # Tracing flags
-TRACE = True
+TRACE = False
 TRACE_LIGHT = False
 
 
@@ -53,19 +53,21 @@ class ScanSummary(PostScanPlugin):
     """
     Summarize a scan at the codebase level.
     """
+
     sort_order = 10
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
     options = [
-        PluggableCommandLineOption(('--summary',),
+        PluggableCommandLineOption(
+            ('--summary',),
             is_flag=True,
             default=False,
             help='Summarize scans by providing declared origin '
-                 'information and other detected origin info at the '
-                 'codebase attribute level.',
+            'information and other detected origin info at the '
+            'codebase attribute level.',
             help_group=POST_SCAN_GROUP,
-            required_options=['classify']
+            required_options=['classify'],
         )
     ]
 
@@ -73,7 +75,8 @@ class ScanSummary(PostScanPlugin):
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
-        if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
+        if TRACE_LIGHT:
+            logger_debug('ScanSummary:process_codebase')
 
         # Get tallies
         tallies = compute_codebase_tallies(codebase, keep_details=False, **kwargs)
@@ -81,21 +84,24 @@ class ScanSummary(PostScanPlugin):
         holders_tallies = tallies.get('holders') or []
         programming_language_tallies = tallies.get('programming_language') or []
 
-        # Get Package data from key files
-        key_files_package_data = get_field_values_from_codebase_resources(
-            codebase,
-            'package_data',
-            key_files_only=True
-        )
-        # Remove any package that has no name
-        key_file_package_data = [
-            package_data
-            for package_data in key_files_package_data
-            if package_data.get('name')
-        ]
+        # Determine declared license expression, declared holder, and primary
+        # language from Package data at the top level.
 
-        # Determine declared license expression, declared holder, and primary language from Package data
-        declared_license_expression, declared_holders, primary_language = get_origin_info_from_package_data(key_file_package_data)
+        declared_license_expression = None
+        declared_holders = None
+        primary_language = None
+
+        # use top level packages
+        if hasattr(codebase.attributes, 'packages'):
+            top_level_packages = codebase.attributes.packages
+            (
+                declared_license_expression,
+                declared_holders,
+                primary_language,
+            ) = get_origin_info_from_top_level_packages(
+                top_level_packages=top_level_packages,
+                codebase=codebase,
+            )
 
         if declared_license_expression:
             scoring_elements, _ = compute_license_score(codebase)
@@ -103,7 +109,9 @@ class ScanSummary(PostScanPlugin):
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
             scoring_elements, declared_license_expression = compute_license_score(codebase)
-        other_license_expressions = remove_from_tallies(declared_license_expression, license_expressions_tallies)
+        other_license_expressions = remove_from_tallies(
+            declared_license_expression, license_expressions_tallies
+        )
 
         if not declared_holders:
             declared_holders = get_declared_holders(codebase, holders_tallies)
@@ -131,9 +139,12 @@ def remove_from_tallies(entry, tallies):
     pruned_tallies = []
     for t in tallies:
         if (
-            isinstance(entry, dict) and t == entry
-            or isinstance(entry, (list, tuple)) and t in entry
-            or isinstance(entry, (list, tuple)) and t.get('value') in entry
+            isinstance(entry, dict)
+            and t == entry
+            or isinstance(entry, (list, tuple))
+            and t in entry
+            or isinstance(entry, (list, tuple))
+            and t.get('value') in entry
             or t.get('value') == entry
         ):
             continue
@@ -150,16 +161,20 @@ def get_declared_holders(codebase, holders_tallies):
     highest amount of refrences throughout the codebase.
     """
     entry_by_holders = {
-        fingerprints.generate(entry['value']): entry
-        for entry in holders_tallies if entry['value']
+        fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
-    key_file_holders = get_field_values_from_codebase_resources(codebase, 'holders', key_files_only=True)
+    key_file_holders = get_field_values_from_codebase_resources(
+        codebase, 'holders', key_files_only=True
+    )
     entry_by_key_file_holders = {
         fingerprints.generate(entry['holder']): entry
-        for entry in key_file_holders if entry['holder']
+        for entry in key_file_holders
+        if entry['holder']
     }
     unique_key_file_holders = unique(entry_by_key_file_holders.keys())
-    unique_key_file_holders_entries = [entry_by_holders[holder] for holder in unique_key_file_holders]
+    unique_key_file_holders_entries = [
+        entry_by_holders[holder] for holder in unique_key_file_holders
+    ]
 
     holder_by_counts = defaultdict(list)
     for holder_entry in unique_key_file_holders_entries:
@@ -186,8 +201,7 @@ def get_primary_language(programming_language_tallies):
     Return the most common detected programming language as the primary language.
     """
     programming_languages_by_count = {
-        entry['count']: entry['value']
-        for entry in programming_language_tallies
+        entry['count']: entry['value'] for entry in programming_language_tallies
     }
     primary_language = ''
     if programming_languages_by_count:
@@ -196,71 +210,71 @@ def get_primary_language(programming_language_tallies):
     return primary_language
 
 
-def get_origin_info_from_package_data(key_file_package_data):
+def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     """
     Return a 3-tuple containing the strings of declared license expression,
-    copyright holder, and primary programming language from a list of detected
-    package data.
+    copyright holder, and primary programming language from a
+    ``top_level_packages`` list of detected top-level packages mapping and a
+    ``codebase``.
     """
-    if not key_file_package_data:
+    if not top_level_packages:
         return '', '', ''
 
-    if len(key_file_package_data) > 1:
-        license_expressions = []
-        programming_languages = []
-        copyrights = []
-        parties = []
-        for package_data in key_file_package_data:
-            license_expression = package_data.get('license_expression') or ''
-            programming_language = package_data.get('primary_language') or ''
-            copyright_statement = package_data.get('copyright') or ''
-            package_parties = package_data.get('parties', [])
+    license_expressions = []
+    programming_languages = []
+    copyrights = []
+    parties = []
+
+    for package_mapping in top_level_packages:
+        package = models.Package.from_dict(package_mapping)
+        # we are only interested in key packages
+        if not is_key_package(package, codebase):
+            continue
+
+        license_expression = package.license_expression
+        if license_expression:
             license_expressions.append(license_expression)
+
+        programming_language = package.primary_language
+        if programming_language:
             programming_languages.append(programming_language)
+
+        copyright_statement = package.copyright
+        if copyright_statement:
             copyrights.append(copyright_statement)
-            parties.extend(package_parties)
 
-        # Combine license expressions
-        unique_license_expressions = unique(license_expressions)
-        combined_declared_license_expression = combine_expressions(unique_license_expressions)
-        declared_license_expression = ''
-        if combined_declared_license_expression:
-            declared_license_expression = str(Licensing().parse(combined_declared_license_expression).simplify())
+        parties.extend(package.parties or [])
 
-        # Get holders
-        holders = list(get_holders_from_copyright(copyrights))
-        declared_holders = []
-        if holders:
-            declared_holders = holders
-        elif parties:
-            declared_holders = [party['name'] for party in parties]
+    # Combine license expressions
+    unique_license_expressions = unique(license_expressions)
+    combined_declared_license_expression = combine_expressions(
+        expressions=unique_license_expressions,
+        relation='AND',
+    )
 
-        # Programming language
-        unique_programming_languages = unique(programming_languages)
-        primary_language = ''
-        if len(unique_programming_languages) == 1:
-            primary_language = unique_programming_languages[0]
+    declared_license_expression = ''
+    if combined_declared_license_expression:
+        declared_license_expression = str(
+            Licensing().parse(combined_declared_license_expression).simplify()
+        )
 
-        return declared_license_expression, declared_holders, primary_language
+    # Get holders
+    holders = list(get_holders_from_copyright(copyrights))
+    declared_holders = []
+    if holders:
+        declared_holders = holders
+    elif parties:
+        declared_holders = [party.name for party in parties or []]
 
-    package = key_file_package_data[0]
-    declared_license_expression = package.get('license_expression') or ''
-    package_primary_language = package.get('primary_language') or ''
+    declared_holders = unique(declared_holders)
 
-    # Determine holders from Package copyright statement
-    package_copyright = package.get('copyright', '')
-    package_holders = []
-    if package_copyright:
-        package_holders = list(get_holders_from_copyright(package_copyright))
+    # Programming language
+    unique_programming_languages = unique(programming_languages)
+    primary_language = ''
+    if len(unique_programming_languages) == 1:
+        primary_language = unique_programming_languages[0]
 
-    if package_holders:
-        declared_holder = package_holders
-    else:
-        # If there is no copyright statement on the package, collect the
-        # detected party members and return them as a holder
-        declared_holder = [party['name'] for party in package.get('parties', [])]
-
-    return declared_license_expression, declared_holder, package_primary_language
+    return declared_license_expression, declared_holders, primary_language
 
 
 def get_holders_from_copyright(copyright):
@@ -270,13 +284,9 @@ def get_holders_from_copyright(copyright):
     numbered_lines = []
     if isinstance(copyright, list):
         for i, c in enumerate(copyright):
-            numbered_lines.append(
-                (i, c)
-            )
+            numbered_lines.append((i, c))
     else:
-        numbered_lines.append(
-            (0, copyright)
-        )
+        numbered_lines.append((0, copyright))
 
     holder_detections = CopyrightDetector().detect(
         numbered_lines,
@@ -287,3 +297,21 @@ def get_holders_from_copyright(copyright):
 
     for holder_detection in holder_detections:
         yield holder_detection.holder
+
+
+def is_key_package(package, codebase):
+    """
+    Return True if the ``package`` Package is a key, top-level package.
+    """
+    # get the datafile_paths of the package
+    # get the top level files in the codebase
+    # return True if any datafile_paths is also a top level files? or key file?
+
+    datafile_paths = set(package.datafile_paths or [])
+    for resource in codebase.walk(topdown=True):
+        if not resource.is_top_level:
+            break
+        if resource.path in datafile_paths:
+            return True
+
+    return False

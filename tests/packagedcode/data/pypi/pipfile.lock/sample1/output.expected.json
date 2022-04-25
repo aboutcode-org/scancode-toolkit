@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:pypi/django@1.7.1",
@@ -99,7 +98,6 @@
       "is_resolved": true
     }
   ],
-  "contains_source_code": null,
   "source_packages": [],
   "extra_data": {},
   "purl": null,

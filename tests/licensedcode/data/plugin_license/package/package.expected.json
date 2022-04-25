@@ -12,7 +12,6 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
-      "warnings": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
         "files_count": 1
@@ -28,9 +27,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/dicer",
-      "for_package": "pkg:npm/busboy@0.2.14",
-      "lockfile": "package.json"
+      "dependency_uid": "pkg:npm/dicer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/readable-stream",
@@ -40,9 +40,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/readable-stream",
-      "for_package": "pkg:npm/busboy@0.2.14",
-      "lockfile": "package.json"
+      "dependency_uid": "pkg:npm/readable-stream?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
     }
   ],
   "packages": [
@@ -90,20 +91,19 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/busboy@0.2.14",
-      "package_data_files": [
-        "package.json"
-      ],
-      "files": [
-        "package.json"
-      ],
-      "purl": "pkg:npm/busboy@0.2.14",
       "repository_homepage_url": "https://www.npmjs.com/package/busboy",
       "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
-      "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
+      "api_data_url": "https://registry.npmjs.org/busboy/0.2.14",
+      "package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/busboy@0.2.14"
     }
   ],
   "files": [
@@ -199,8 +199,8 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -222,14 +222,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:npm/busboy@0.2.14",
           "repository_homepage_url": "https://www.npmjs.com/package/busboy",
           "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
-          "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
+          "api_data_url": "https://registry.npmjs.org/busboy/0.2.14",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/busboy@0.2.14"
         }
       ],
       "for_packages": [
-        "pkg:npm/busboy@0.2.14"
+        "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

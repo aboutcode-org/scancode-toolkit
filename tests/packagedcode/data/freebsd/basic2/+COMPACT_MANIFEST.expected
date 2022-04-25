@@ -43,13 +43,14 @@
       "licenselogic": "single"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:freebsd/0d1n@2.3?arch=freebsd:10:x86:64&origin=security/0d1n",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "freebsd_compact_manifest",
+    "purl": "pkg:freebsd/0d1n@2.3?arch=freebsd:10:x86:64&origin=security/0d1n"
   }
 ]

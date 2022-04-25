@@ -24,8 +24,8 @@
   "license_expression": "gpl-2.0-plus",
   "declared_license": "GPL-2.0-or-later",
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [],
+  "file_references": [],
   "extra_data": {
     "sources": [
       {
@@ -41,8 +41,9 @@
     ]
   },
   "dependencies": [],
-  "purl": "pkg:alpine/kwrited@5.22.0-r0",
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": "alpine_apkbuild",
+  "purl": "pkg:alpine/kwrited@5.22.0-r0"
 }

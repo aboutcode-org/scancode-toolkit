@@ -39,10 +39,10 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -91,8 +91,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b",
   "repository_homepage_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/",
   "repository_download_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/jds-2.17.0718b.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/jds-2.17.0718b.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/jds-2.17.0718b.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b"
 }

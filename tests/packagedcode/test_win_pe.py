@@ -39,7 +39,7 @@ class TestWinPePeInfo(FileBasedTesting):
 
     def test_gosum_is_package_data_file(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')
-        assert win_pe.WindowsExecutable.is_package_data_file(test_file)
+        assert win_pe.WindowsExecutableHandler.is_datafile(test_file)
 
     def test_win_pe_ctypes_test_pyd(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')
@@ -109,6 +109,6 @@ class TestWinPeParseToPackage(TestWinPePeInfo):
 
     def get_results(self, test_file):
         package_data = []
-        for manifest in win_pe.WindowsExecutable.recognize(test_file):
+        for manifest in win_pe.WindowsExecutableHandler.parse(test_file):
             package_data.append(manifest.to_dict())
         return package_data

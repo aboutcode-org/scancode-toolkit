@@ -49,7 +49,7 @@ def check_json(result, expected_file, regen=REGEN_TEST_FIXTURES):
 
 
 def check_csvs(result_file, expected_file,
-               ignore_keys=('date', 'file_type', 'mime_type', 'package_uuid'),
+               ignore_keys=('date', 'file_type', 'mime_type', 'package_uid'),
                regen=REGEN_TEST_FIXTURES):
     """
     Load and compare two CSVs.

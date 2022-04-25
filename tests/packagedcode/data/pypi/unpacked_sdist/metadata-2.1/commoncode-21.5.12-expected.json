@@ -44,13 +44,14 @@
       "license": "Apache-2.0"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/commoncode@21.5.12",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/commoncode",
     "repository_download_url": "https://pypi.org/packages/source/c/commoncode/commoncode-21.5.12.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/commoncode/21.5.12/json"
+    "api_data_url": "https://pypi.org/pypi/commoncode/21.5.12/json",
+    "datasource_id": "pypi_sdist_pkginfo",
+    "purl": "pkg:pypi/commoncode@21.5.12"
   }
 ]

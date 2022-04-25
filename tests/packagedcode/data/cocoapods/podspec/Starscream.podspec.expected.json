@@ -13,28 +13,14 @@
       {
         "type": "person",
         "role": "author",
-        "name": "Dalton Cherry",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "author",
-        "name": "Austin Cherry",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "Dalton Cherry ",
         "email": "http://daltoniam.com",
         "url": null
       },
       {
         "type": "person",
-        "role": "email",
-        "name": null,
+        "role": "author",
+        "name": " Austin Cherry ",
         "email": "http://austincherry.me",
         "url": null
       }
@@ -47,22 +33,21 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": null,
-    "code_view_url": null,
+    "bug_tracking_url": "https://github.com/daltoniam/Starscream/issues/",
+    "code_view_url": "https://github.com/daltoniam/Starscream/tree/4.0.3",
     "vcs_url": "https://github.com/daltoniam/Starscream.git",
     "copyright": null,
     "license_expression": "apache-2.0",
     "declared_license": "Apache License, Version 2.0",
     "notice_text": null,
-    "contains_source_code": null,
-    "source_packages": [
-      "https://github.com/daltoniam/Starscream.git"
-    ],
+    "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pods/Starscream@4.0.3",
     "repository_homepage_url": "https://cocoapods.org/pods/Starscream",
-    "repository_download_url": "https://github.com/daltoniam/Starscream/archive/4.0.3.zip",
-    "api_data_url": null
+    "repository_download_url": "https://github.com/daltoniam/Starscream/archive/refs/tags/4.0.3.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/2/f/Starscream/4.0.3/Starscream.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/Starscream@4.0.3"
   }
 ]

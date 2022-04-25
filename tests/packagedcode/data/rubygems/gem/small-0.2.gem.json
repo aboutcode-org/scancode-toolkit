@@ -33,13 +33,14 @@
     "license_expression": null,
     "declared_license": [],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/small@0.2",
     "repository_homepage_url": "https://rubygems.org/gems/small/versions/0.2",
     "repository_download_url": "https://rubygems.org/downloads/small-0.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/small/versions/0.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/small/versions/0.2.json",
+    "datasource_id": "gem_archive",
+    "purl": "pkg:gem/small@0.2"
   }
 ]

@@ -40,8 +40,8 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -90,9 +90,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:opam/bap-elf@1.0.0",
-    "repository_homepage_url": "https://opam.ocaml.org/packages/bap-elf",
+    "repository_homepage_url": "{https://opam.ocaml.org/packages}/{name}",
     "repository_download_url": null,
-    "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam"
+    "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam",
+    "datasource_id": "opam_file",
+    "purl": "pkg:opam/bap-elf@1.0.0"
   }
 ]

@@ -1,11 +1,11 @@
 [
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -25,7 +25,7 @@
     ],
     "homepage_url": "https://invisible-island.net/ncurses/",
     "download_url": null,
-    "size": "283",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -37,26 +37,27 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/ncurses"
+      "pkg:deb/ncurses"
     ],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "same"
     },
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "libcom-err2",
     "version": "1.44.1-1ubuntu1.1",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -76,7 +77,7 @@
     ],
     "homepage_url": "http://e2fsprogs.sourceforge.net",
     "download_url": null,
-    "size": "87",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -88,26 +89,27 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/e2fsprogs"
+      "pkg:deb/e2fsprogs"
     ],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "same"
     },
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/libcom-err2@1.44.1-1ubuntu1.1?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "libapt-pkg5.0",
     "version": "1.6.11",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -127,7 +129,7 @@
     ],
     "homepage_url": null,
     "download_url": null,
-    "size": "3139",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -139,26 +141,27 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/apt"
+      "pkg:deb/apt"
     ],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "same"
     },
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/libapt-pkg5.0@1.6.11?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "libaudit1",
     "version": "1:2.8.2-1ubuntu1",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -178,7 +181,7 @@
     ],
     "homepage_url": "https://people.redhat.com/sgrubb/audit/",
     "download_url": null,
-    "size": "147",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -190,26 +193,27 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/audit"
+      "pkg:deb/audit"
     ],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "same"
     },
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/libaudit1@1:2.8.2-1ubuntu1?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "perl-base",
     "version": "5.26.1-6ubuntu0.3",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -229,7 +233,7 @@
     ],
     "homepage_url": "http://dev.perl.org/perl5/",
     "download_url": null,
-    "size": "7826",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -241,24 +245,25 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/perl"
+      "pkg:deb/perl"
     ],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/perl-base@5.26.1-6ubuntu0.3?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": "ubuntu",
+    "namespace": null,
     "name": "libudev1",
     "version": "237-3ubuntu10.22",
     "qualifiers": {
-      "arch": "amd64"
+      "architecture": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -278,7 +283,7 @@
     ],
     "homepage_url": "https://www.freedesktop.org/wiki/Software/systemd",
     "download_url": null,
-    "size": "227",
+    "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
@@ -290,17 +295,18 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
-      "pkg:deb/ubuntu/systemd"
+      "pkg:deb/systemd"
     ],
+    "file_references": [],
     "extra_data": {
       "multi_arch": "same"
     },
     "dependencies": [],
-    "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/libudev1@237-3ubuntu10.22?architecture=amd64"
   }
 ]

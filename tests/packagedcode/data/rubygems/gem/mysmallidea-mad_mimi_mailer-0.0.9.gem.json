@@ -33,13 +33,14 @@
     "license_expression": null,
     "declared_license": [],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/mysmallidea-mad_mimi_mailer@0.0.9",
     "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-mad_mimi_mailer/versions/0.0.9",
     "repository_download_url": "https://rubygems.org/downloads/mysmallidea-mad_mimi_mailer-0.0.9.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mysmallidea-mad_mimi_mailer/versions/0.0.9.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mysmallidea-mad_mimi_mailer/versions/0.0.9.json",
+    "datasource_id": "gem_archive",
+    "purl": "pkg:gem/mysmallidea-mad_mimi_mailer@0.0.9"
   }
 ]

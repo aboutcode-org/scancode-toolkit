@@ -1,0 +1,86 @@
+[
+  {
+    "type": "deb",
+    "namespace": null,
+    "name": "mockutil",
+    "version": null,
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [
+      {
+        "path": "usr/bin/mokutil",
+        "size": 0,
+        "sha1": null,
+        "md5": "7a1a2629613d260e43dabc793bebdf19",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/bash-completion/completions/mokutil",
+        "size": 0,
+        "sha1": null,
+        "md5": "9086049384eaf0360dca4371ca50acbf",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/doc/mokutil/changelog.Debian.gz",
+        "size": 0,
+        "sha1": null,
+        "md5": "b3f4bb874bd61e4609823993857b9c17",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/doc/mokutil/copyright",
+        "size": 0,
+        "sha1": null,
+        "md5": "24dd593b630976a785b4c5ed097bbd96",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/man/man1/mokutil.1.gz",
+        "size": 0,
+        "sha1": null,
+        "md5": "b608675058a943d834129b6972b8509a",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_md5sums",
+    "purl": "pkg:deb/mockutil?arch=amd64"
+  }
+]

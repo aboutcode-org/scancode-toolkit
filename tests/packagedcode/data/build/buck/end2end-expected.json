@@ -19,7 +19,90 @@
     }
   ],
   "dependencies": [],
-  "packages": [],
+  "packages": [
+    {
+      "type": "buck",
+      "namespace": null,
+      "name": "end2end",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "end2end/BUCK"
+      ],
+      "datasource_ids": [
+        "buck_file"
+      ],
+      "purl": "pkg:buck/end2end"
+    },
+    {
+      "type": "buck",
+      "namespace": null,
+      "name": "bin",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "apache-2.0",
+      "declared_license": [
+        "LICENSE"
+      ],
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "end2end/subdir2/BUCK"
+      ],
+      "datasource_ids": [
+        "buck_file"
+      ],
+      "purl": "pkg:buck/bin"
+    }
+  ],
   "files": [
     {
       "path": "end2end",
@@ -55,55 +138,68 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:buck/end2end",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "buck_file",
+          "purl": "pkg:buck/end2end"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir/file1",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/file1",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -133,50 +229,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "apache-2.0",
+          "license_expression": null,
           "declared_license": [
             "LICENSE"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:buck/bin",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "buck_file",
+          "purl": "pkg:buck/bin"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/LICENSE",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

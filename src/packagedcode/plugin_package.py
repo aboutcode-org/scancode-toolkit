@@ -7,65 +7,64 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
 import attr
 import click
 import os
-import sys
-import uuid
+import logging
 
-from plugincode.scan import ScanPlugin
-from plugincode.scan import scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
+from commoncode.resource import Resource
+from plugincode.scan import scan_impl
+from plugincode.scan import ScanPlugin
 
-from packageurl import PackageURL
-from packagedcode import get_package_instance
-from packagedcode import PACKAGE_DATA_CLASSES
-from packagedcode import PACKAGE_INSTANCES_BY_TYPE
+from packagedcode import get_package_handler
 from packagedcode.models import Dependency
-
+from packagedcode.models import Package
+from packagedcode.models import PackageData
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
 if TRACE:
+    import sys
 
-    use_print = True
-
-    if use_print:
-        printer = print
-    else:
-        import logging
-
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        printer = logger.debug
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return printer(' '.join(isinstance(a, str) and a or repr(a)
-                                     for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
 
 def print_packages(ctx, param, value):
+    """
+    Print the list of supported package manifests and datafile formats
+    """
     if not value or ctx.resilient_parsing:
         return
-    for package_cls in sorted(PACKAGE_DATA_CLASSES, key=lambda pc: (pc.default_type)):
+
+    from packagedcode import PACKAGE_DATAFILE_HANDLERS
+
+    for cls in sorted(
+        PACKAGE_DATAFILE_HANDLERS, key=lambda pc: (pc.default_package_type or '', pc.datasource_id)
+    ):
+        pp = ', '.join(repr(p) for p in cls.path_patterns)
         click.echo('--------------------------------------------')
-        click.echo('Package: {self.default_type}'.format(self=package_cls))
-        click.echo(
-            '  class: {self.__module__}:{self.__name__}'.format(self=package_cls))
-        if package_cls.file_patterns:
-            click.echo('  file_patterns: ', nl=False)
-            click.echo(', '.join(package_cls.file_patterns))
-        if package_cls.extensions:
-            click.echo('  extensions: ', nl=False)
-            click.echo(', '.join(package_cls.extensions))
-        if package_cls.filetypes:
-            click.echo('  filetypes: ', nl=False)
-            click.echo(', '.join(package_cls.filetypes))
-        click.echo('')
+        click.echo(f'Package type:  {cls.default_package_type}')
+        if cls.datasource_id is None:
+            raise Exception(cls)
+        click.echo(f'  datasource_id:     {cls.datasource_id}')
+        click.echo(f'  documentation URL: {cls.documentation_url}')
+        click.echo(f'  primary language:  {cls.default_primary_language}')
+        click.echo(f'  description:       {cls.description}')
+        click.echo(f'  path_patterns:    {pp}')
     ctx.exit()
 
 
@@ -73,34 +72,47 @@ def print_packages(ctx, param, value):
 class PackageScanner(ScanPlugin):
     """
     Scan a Resource for Package data and report these as "package_data" at the
-    right file or directory level. Then create package instances with these and
-    other package information and files, and report these as "packages" at the
-    top level (codebase level).
+    file level. Then create "packages" from these "package_data" at the top
+    level.
     """
-    resource_attributes = {}
-    codebase_attributes = {}
-    codebase_attributes['dependencies'] = attr.ib(default=attr.Factory(list), repr=False)
-    codebase_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
-    resource_attributes['package_data'] = attr.ib(default=attr.Factory(list), repr=False)
-    resource_attributes['for_packages'] = attr.ib(default=attr.Factory(list), repr=False)
+
+    codebase_attributes = dict(
+        # a list of dependencies
+        dependencies=attr.ib(default=attr.Factory(list), repr=False),
+        # a list of packages
+        packages=attr.ib(default=attr.Factory(list), repr=False),
+    )
+    resource_attributes = dict(
+        # a list of package data
+        package_data=attr.ib(default=attr.Factory(list), repr=False),
+        # a list of purls with UUID that a file belongs to
+        for_packages=attr.ib(default=attr.Factory(list), repr=False),
+    )
+
+    required_plugins = ['scan:licenses']
 
     sort_order = 6
 
-    required_plugins = ['scan:licenses', ]
-
     options = [
-        PluggableCommandLineOption(('-p', '--package',),
-            is_flag=True, default=False,
-            help='Scan <input> for package data and build scripts.',
+        PluggableCommandLineOption(
+            (
+                '-p',
+                '--package',
+            ),
+            is_flag=True,
+            default=False,
+            help='Scan <input> for package and dependency manifests, lockfiles and related data.',
             help_group=SCAN_GROUP,
-            sort_order=20),
-
+            sort_order=20,
+        ),
         PluggableCommandLineOption(
             ('--list-packages',),
-            is_flag=True, is_eager=True,
+            is_flag=True,
+            is_eager=True,
             callback=print_packages,
-            help='Show the list of supported package types and exit.',
-            help_group=DOC_GROUP),
+            help='Show the list of supported package manifest parsers and exit.',
+            help_group=DOC_GROUP,
+        ),
     ]
 
     def is_enabled(self, package, **kwargs):
@@ -108,175 +120,85 @@ class PackageScanner(ScanPlugin):
 
     def get_scanner(self, **kwargs):
         """
-        Return a scanner callable to scan a Resource for packages.
+        Return a scanner callable to scan a file for package data.
         """
         from scancode.api import get_package_data
+
         return get_package_data
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Populate top level `packages` with package instances.
+        Populate the ``codebase`` top level ``packages`` and ``dependencies``
+        with package and dependency instances, assembling parsed package data
+        from one or more datafiles as needed.
         """
-        create_package_and_dep_instances(codebase, **kwargs)
+        create_package_and_deps(codebase, **kwargs)
 
 
-def create_package_and_dep_instances(codebase, **kwargs):
+def create_package_and_deps(codebase, **kwargs):
     """
-    Create package instances from package data present in the codebase.
+    Create and save top-level Package and Dependency from the parsed
+    package data present in the codebase.
     """
-    package_data_files = []
-    package_instance_by_id = {}
-
-    dependency_data_paths = []
-    dependency_instance_by_id = {}
+    # track resource ids that have been already processed
+    seen_resource_ids = set()
+    dependencies_top_level = []
+    packages_top_level = []
 
     for resource in codebase.walk(topdown=False):
         if not resource.package_data:
             continue
 
-        # continue if this resource is already in a package_instance
-        if resource.path in package_data_files:
+        if resource.rid in seen_resource_ids:
             continue
 
         if TRACE:
-            logger_debug(
-                'create_package_and_dep_instances:',
-                'location:', resource.location,
+            logger_debug('create_package_and_deps: location:', resource.location)
+
+        for package_data in resource.package_data:
+            try:
+                package_data = PackageData.from_dict(package_data)
+            except Exception as e:
+                raise Exception(
+                    'create_package_and_deps: Failed to create PackageData:',
+                    package_data,
+                ) from e
+
+            if TRACE:
+                logger_debug('  create_package_and_deps: package_data:', package_data)
+
+            # Find a handler for this package datasource to assemble collect
+            # packages and deps
+            handler = get_package_handler(package_data)
+            if TRACE:
+                logger_debug('  create_package_and_deps: handler:', handler)
+            click.echo(f'  create_package_and_deps: handler: {handler}')
+            items = handler.assemble(
+                package_data=package_data,
+                resource=resource,
+                codebase=codebase,
             )
 
-        # Currently we assume there is only one PackageData 
-        # ToDo: Do this for multiple PackageDatas per resource
-        package_data = resource.package_data[0]
+            for item in items:
+                if TRACE:
+                    logger_debug('    create_package_and_deps: item:', item)
 
-        # Check if the package data has all the mandatory attributes to create a pURL
-        if not package_data.get("name"):
+                if isinstance(item, Package):
+                    packages_top_level.append(item)
 
-            # Check if package_data is from lockfile
-            if package_data.get("dependencies"):
-                dependency_data_paths.append(resource.path)
-                for dependency_instance in create_dependency_instances(
-                    resource.path,
-                    package_data.get("dependencies")
-                ):
-                    dependency_instance_by_id[dependency_instance.dependency_uuid] = dependency_instance
+                elif isinstance(item, Dependency):
+                    dependencies_top_level.append(item)
 
-            continue
+                elif isinstance(item, Resource):
+                    seen_resource_ids.add(item.rid)
+                    if TRACE:
+                        logger_debug(
+                            '    create_package_and_deps: seen_resource_ids:',
+                            seen_resource_ids,
+                        )
 
-        # Check if Package is implemented for this package type
-        pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(package_data["type"])
-        if not pk_instance_class:
-            continue
+                else:
+                    raise Exception(f'Unknown package assembly item type: {item!r}')
 
-        # create a Package object of the package type which this manifest belongs to
-        pk_instance = pk_instance_class()
-        pk_instance_uuid = uuid.uuid4()
-        package_instance_by_id[pk_instance_uuid] = pk_instance
-
-        # use `get_other_package_data` to get other package_data files of this instance
-        package_data_by_path = pk_instance.get_other_package_data(resource, codebase)
-        package_data_by_path[resource.path] = package_data
-
-        # populate Package with data from it's package_data files
-        pk_instance.populate_package_data(package_data_by_path, uuid=pk_instance_uuid)
-
-        if TRACE:
-            logger_debug(
-                'create_package_and_dep_instances:',
-                'package_data_by_path:', package_data_by_path,
-            )
-
-        # add `path` into `package_data_files` for all package_datas
-        for path, package_data in package_data_by_path.items():
-            package_data_files.append(path)
-
-            if package_data.get("dependencies"):
-                if path in dependency_data_paths:
-                    set_package_uuid_for_dependencies(
-                        dependency_instance_by_id,
-                        path,
-                        pk_instance.package_uuid,
-                    )
-                    continue
-
-                dependency_data_paths.append(path)
-                for dep_instance in create_dependency_instances(
-                    path,
-                    package_data.get("dependencies")
-                ):
-                    dependency_instance_by_id[dep_instance.dependency_uuid] = dep_instance
-                    dep_instance.for_package = pk_instance.package_uuid
-
-        # get files for this Package
-        pk_instance.files = tuple(pk_instance.get_package_files(resource, codebase))
-
-        # add `package_uuid` to `for_packages` for all files of that package
-        update_files_with_package_uuid(pk_instance.files, codebase, pk_instance.package_uuid)
-
-        if TRACE:
-            logger_debug(
-                'create_package_and_dep_instances:',
-                'pk_instance:', pk_instance,
-            )
-
-    if TRACE:
-        logger_debug(
-            'create_package_and_dep_instances:',
-            'package_data_files:', package_data_files,
-        )
-
-    # Get unique Package objects from `package_instance_by_id`
-    for package_instance in list(package_instance_by_id.values()):
-        codebase.attributes.packages.append(package_instance.to_dict())
-
-     # Get unique Dependency objects from `dependency_instance_by_id`
-    for dependency_instance in list(dependency_instance_by_id.values()):
-        codebase.attributes.dependencies.append(dependency_instance.to_dict())
-
-
-def update_files_with_package_uuid(file_paths, codebase, package_uuid):
-    """
-    For the corresponding resources to a list of `file_paths` for a Package,
-    set their `for_packages` with the `package_uuid`. 
-    """
-    for file_path in file_paths:
-        resource = codebase.get_resource_from_path(file_path)
-        resource.for_packages.append(package_uuid)
-        resource.save(codebase)
-
-
-def set_package_uuid_for_dependencies(dependency_instance_by_id, path, pk_instance_uuid):
-    """
-    For all dependency instances in `dependency_instance_by_id` which were collected from a
-    specific `path` update their `for_package` attribute to `pk_instance_uuid`. 
-    """
-    for dep_instance in dependency_instance_by_id.values():
-        if path is dep_instance.lockfile:
-            dep_instance.for_package = pk_instance_uuid
-
-
-def create_dependency_instances(path, dependencies):
-    """
-    Return a list of Dependency obejcts corresponding to
-    each dependency in the `package_data` level `dependencies` list. 
-    """
-    dependency_instances = []
-
-    for dependency in dependencies:
-        purl = PackageURL.from_string(dependency['purl'])
-        purl.qualifiers["uuid"] = str(uuid.uuid4())
-
-        dependency_instances.append(
-            Dependency(
-                dependency_uuid=purl.to_string(),
-                lockfile=path,
-                purl=dependency['purl'],
-                extracted_requirement=dependency['extracted_requirement'],
-                scope=dependency['scope'],
-                is_runtime=dependency['is_runtime'],
-                is_optional=dependency['is_optional'],
-                is_resolved=dependency['is_resolved'],
-                resolved_package=dependency['resolved_package']
-            )
-        )
-
-    return dependency_instances
+    codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
+    codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)

@@ -28,9 +28,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular-devkit/build-optimizer",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular-devkit/build-optimizer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/autoprefixer",
@@ -40,9 +41,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/autoprefixer",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/autoprefixer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/chalk",
@@ -52,9 +54,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/chalk",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/chalk?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/chokidar",
@@ -64,9 +67,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/chokidar",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/chokidar?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/clean-css",
@@ -76,9 +80,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/clean-css",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/clean-css?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/cross-spawn",
@@ -88,9 +93,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/cross-spawn",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/cross-spawn?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/express",
@@ -100,9 +106,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/express",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/express?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/fs-extra",
@@ -112,9 +119,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/fs-extra",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/fs-extra?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/glob",
@@ -124,9 +132,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/glob",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/glob?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/json-loader",
@@ -136,9 +145,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/json-loader",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/json-loader?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/node-sass",
@@ -148,9 +158,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/node-sass",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/node-sass?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/os-name",
@@ -160,9 +171,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/os-name",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/os-name?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/postcss",
@@ -172,9 +184,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/postcss",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/postcss?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/proxy-middleware",
@@ -184,9 +197,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/proxy-middleware",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/proxy-middleware?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/reflect-metadata",
@@ -196,9 +210,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/reflect-metadata",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/reflect-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rollup",
@@ -208,9 +223,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rollup",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rollup?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rollup-plugin-commonjs",
@@ -220,9 +236,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rollup-plugin-commonjs",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rollup-plugin-commonjs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rollup-plugin-node-resolve",
@@ -232,9 +249,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rollup-plugin-node-resolve",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rollup-plugin-node-resolve?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/source-map",
@@ -244,9 +262,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/source-map",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/source-map?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/tiny-lr",
@@ -256,9 +275,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/tiny-lr",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/tiny-lr?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/tslint",
@@ -268,9 +288,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/tslint",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/tslint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/tslint-eslint-rules",
@@ -280,9 +301,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/tslint-eslint-rules",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/tslint-eslint-rules?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/uglify-es",
@@ -292,9 +314,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/uglify-es",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/uglify-es?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/webpack",
@@ -304,9 +327,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/webpack",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/webpack?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/ws",
@@ -316,9 +340,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/ws",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/ws?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/xml2js",
@@ -328,9 +353,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/xml2js",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/xml2js?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/animations",
@@ -340,9 +366,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/animations",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/animations?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/common",
@@ -352,9 +379,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/common",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/compiler",
@@ -364,9 +392,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/compiler",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/compiler?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/compiler-cli",
@@ -376,9 +405,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/compiler-cli",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/compiler-cli?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/core",
@@ -388,9 +418,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/core",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/forms",
@@ -400,9 +431,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/forms",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/http",
@@ -412,9 +444,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/http",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/http?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/platform-browser",
@@ -424,9 +457,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/platform-browser",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/platform-browser?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/platform-browser-dynamic",
@@ -436,9 +470,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/platform-browser-dynamic",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/platform-browser-dynamic?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/platform-server",
@@ -448,9 +483,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/platform-server",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/platform-server?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40angular/tsc-wrapped",
@@ -460,9 +496,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40angular/tsc-wrapped",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40angular/tsc-wrapped?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/chokidar",
@@ -472,9 +509,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/chokidar",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/chokidar?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/clean-css",
@@ -484,9 +522,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/clean-css",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/clean-css?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/express",
@@ -496,9 +535,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/express",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/express?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/fs-extra",
@@ -508,9 +548,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/fs-extra",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/fs-extra?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/glob",
@@ -520,9 +561,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/glob",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/glob?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/jest",
@@ -532,9 +574,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/jest",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/jest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/mock-fs",
@@ -544,9 +587,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/mock-fs",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/mock-fs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/node",
@@ -556,9 +600,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/node",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/node?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/node-sass",
@@ -568,9 +613,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/node-sass",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/node-sass?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/rewire",
@@ -580,9 +626,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/rewire",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/rewire?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/webpack",
@@ -592,9 +639,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/webpack",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/webpack?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/%40types/ws",
@@ -604,9 +652,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/%40types/ws",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/%40types/ws?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/conventional-changelog-cli",
@@ -616,9 +665,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/conventional-changelog-cli",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/conventional-changelog-cli?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/github",
@@ -628,9 +678,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/github",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/github?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/ionic-cz-conventional-changelog",
@@ -640,9 +691,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/ionic-cz-conventional-changelog",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/ionic-cz-conventional-changelog?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/jest",
@@ -652,9 +704,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/jest",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/jest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/mock-fs",
@@ -664,9 +717,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/mock-fs",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/mock-fs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rewire",
@@ -676,9 +730,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rewire",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rewire?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rimraf",
@@ -688,9 +743,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rimraf",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rimraf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/rxjs",
@@ -700,9 +756,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/rxjs",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/sw-toolbox",
@@ -712,9 +769,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/sw-toolbox",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/sw-toolbox?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/tslint-ionic-rules",
@@ -724,9 +782,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/tslint-ionic-rules",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/tslint-ionic-rules?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/typescript",
@@ -736,9 +795,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/typescript",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/typescript?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/zone.js",
@@ -748,9 +808,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:npm/zone.js",
-      "for_package": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "lockfile": "scan/scoped1/package.json"
+      "dependency_uid": "pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/scoped1/package.json",
+      "datasource_id": "npm_package_json"
     }
   ],
   "packages": [
@@ -777,7 +838,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "public-domain",
+      "license_expression": "public-domain AND unknown",
       "declared_license": [
         {
           "name": "Public Domain",
@@ -787,22 +848,21 @@
         }
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
-      "package_data_files": [
-        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
-      ],
-      "files": [
-        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
-      ],
-      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
       "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
-      "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+      "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+      "package_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0"
     },
     {
       "type": "freebsd",
@@ -848,20 +908,19 @@
         "licenselogic": "single"
       },
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
-      "package_data_files": [
-        "scan/freebsd/basic/+COMPACT_MANIFEST"
-      ],
-      "files": [
-        "scan/freebsd/basic/+COMPACT_MANIFEST"
-      ],
-      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
       "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/freebsd/basic/+COMPACT_MANIFEST"
+      ],
+      "datasource_ids": [
+        "freebsd_compact_manifest"
+      ],
+      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
     },
     {
       "type": "npm",
@@ -899,20 +958,19 @@
         "MIT"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
-      "package_data_files": [
-        "scan/scoped1/package.json"
-      ],
-      "files": [
-        "scan/scoped1/package.json"
-      ],
-      "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
       "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
       "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-      "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts"
+      "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
+      "package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/scoped1/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
     }
   ],
   "tallies": {},
@@ -935,14 +993,18 @@
       "path": "scan/aopalliance/aopalliance",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -972,7 +1034,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "public-domain",
+          "license_expression": "public-domain AND unknown",
           "declared_license": [
             {
               "name": "Public Domain",
@@ -982,20 +1044,21 @@
             }
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
           ],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:maven/aopalliance/aopalliance@1.0",
           "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
           "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
-          "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+          "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/aopalliance/aopalliance@1.0"
         }
       ],
       "for_packages": [
-        "pkg:maven/aopalliance/aopalliance@1.0"
+        "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1061,18 +1124,19 @@
             "licenselogic": "single"
           },
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "freebsd_compact_manifest",
+          "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
         }
       ],
       "for_packages": [
-        "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
+        "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1123,8 +1187,8 @@
             "MIT"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -1677,14 +1741,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
           "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
           "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-          "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts"
+          "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
         }
       ],
       "for_packages": [
-        "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
+        "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

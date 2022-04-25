@@ -27,11 +27,14 @@ from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
 from licensedcode.models import Rule
 from licensedcode.spans import Span
-from packagedcode.utils import combine_expressions
+from packagedcode import models
 from packagedcode.licensing import get_license_expression_from_matches
 from packagedcode.licensing import get_license_matches
 from packagedcode.licensing import get_license_matches_from_query_string
+from packagedcode.utils import combine_expressions
 from textcode.analysis import unicode_text
+import fnmatch
+from pathlib import Path
 
 """
 Detect licenses and copyright in Debian copyright files. Can handle dep-5
@@ -51,7 +54,6 @@ See https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
-MATCHER_UNKNOWN = '5-unknown'
 
 
 def logger_debug(*args):
@@ -69,19 +71,120 @@ if TRACE:
             ' '.join(isinstance(a, str) and a or repr(a) for a in args)
         )
 
+MATCHER_UNKNOWN = '5-unknown'
+
+class BaseDebianCopyrightFileHandler(models.DatafileHandler):
+    default_package_type = 'deb'
+    documentation_url = 'https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple(), strict=False):
+        isdc = (
+            super().is_datafile(location, filetypes=filetypes)
+            # we want the filename to be lowercase
+            and location.endswith('copyright')
+        )
+        if isdc:
+            if strict:
+                text = unicode_text(location)
+                return EnhancedDebianCopyright.is_machine_readable_copyright(text)
+            else:
+                return True
+
+    @classmethod
+    def compute_normalized_license(cls, package):
+        return
+
+    @classmethod
+    def parse(cls, location):
+        dc = parse_copyright_file(location)
+        # TODO: collect the upstream source package details
+
+        # find a name... TODO: this should be pushed down to each handler
+        if fnmatch.fnmatch(name=location, pat='*usr/share/doc/*/copyright'):
+            path = Path(location)
+            name = path.parent.name
+        else:
+            # no name otherwise for now
+            name = None
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            declared_license=dc.get_declared_license(),
+            license_expression=dc.get_license_expression(),
+            copyright=dc.get_copyright(),
+        )
+
+
+class DebianCopyrightFileInSourceHandler(BaseDebianCopyrightFileHandler):
+    datasource_id = 'debian_copyright_in_source'
+    description = 'Debian machine readable file in source'
+
+    path_patterns = (
+        # Seen in a source repo or in *.debian.tar.xz tarball
+        # See https://github.com/Debian/dcs/blob/c88c75b9fb776b9d3075698716af8c0fd8d7558f/debian/copyright ]
+        # See http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16+dfsg-4.debian.tar.xz
+        '*/debian/copyright',
+    )
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        # two levels up
+        root = resource.parent(codebase).parent(codebase)
+        if root:
+            return cls.assign_package_to_resources(package, root, codebase)
+
+
+# TODO: distiguish the cased of an installed package vs. the case of an extracted .deb
+class DebianCopyrightFileInPackageHandler(BaseDebianCopyrightFileHandler):
+    datasource_id = 'debian_copyright_in_package'
+    description = 'Debian machine readable file in source'
+
+    path_patterns = (
+        # Standard form when seen in an installed form in /usr/share/doc/
+        # and in the same place in the data.tar.xz inner archive of a .deb archive
+        # See http://ftp.us.debian.org/debian/pool/main/p/python-docutils/python3-docutils_0.16+dfsg-4_all.deb
+        '*usr/share/doc/*/copyright',
+    )
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        # DO NOTHING: let other handler reuse this
+        return []
+
+
+class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):
+    datasource_id = 'debian_copyright_standalone'
+    description = 'Debian machine readable file standalone'
+
+    path_patterns = (
+        # other places... may be we should treat this strictly wrt. being a structure file only?
+        '*/copyright',
+        # Seen in http://metadata.ftp-master.debian.org/changelogs/main/d/dtrx/dtrx_8.2.2-1_copyright
+        '*_copyright',
+    )
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
+        # assemble is the default
+        yield from super().assemble(package_data, resource, codebase)
+
 
 class NotReallyStructuredCopyrightFile(Exception):
     """
-    Raised when a file has a dep5 format declared, but is really not structured
+    Raised when a file has a dep5, machine readable copyrigh file format
+    declared, but is not strictly structured.
     """
 
 
 def parse_copyright_file(location, check_consistency=False):
     """
     Return a DebianDetector Object containing copyright and license detections
-    extracted from the debain copyright file at `location`.
+    extracted from the debian copyright file at ``location``.
 
-    If `check_consistency` is True, check if debian copyright file is
+    If ``check_consistency`` is True, check if debian copyright file is
     consistently structured according to the guidelines specified at
     https://www.debian.org/doc/packaging-manuals/copyright-format/1.0
     """
@@ -158,28 +261,28 @@ class DebianDetector:
         """
         Return a DebianDetector object with License and Copyright detections.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_copyright(self, *args, **kwargs):
         """
         Return a copyright string (found in Copyright: structured fields or in
         plain text).
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_license_expression(self, *args, **kwargs):
         """
         Return a license expression string suitable to use as a
-        DebianPackage.license_expression.
+        PackageData.license_expression.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
     def get_declared_license(self, *args, **kwargs):
         """
         Return a list of declared license string suitable to use as a
-        DebianPackage.declared_license.
+        PackageData.declared_license.
         """
-        return NotImplementedError
+        raise NotImplementedError
 
 
 @attr.s
@@ -525,7 +628,7 @@ class StructuredCopyrightProcessor(DebianDetector):
         If `skip_debian_packaging` is True, skips the declared license for
         `Files: debian/*` paragraph.
 
-        If `simplify_licenses` is True, license expressions are deduplicated by
+            If `simplify_licenses` is True, license expressions are deduplicated by
         Licensing.dedup() and then returned.
         """
         if not self.license_detections:
@@ -1213,7 +1316,10 @@ class EnhancedDebianCopyright:
         return True
 
     def get_all_license_expressions(self):
-
+        """
+        Return a list of all the license expressions detected in this copyright
+        file.
+        """
         license_expressions = []
 
         for paragraph in self.debian_copyright.paragraphs:

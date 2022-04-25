@@ -29,9 +29,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:cran/R",
-      "for_package": "pkg:cran/codetools@0.2-16",
-      "lockfile": "DESCRIPTION"
+      "dependency_uid": "pkg:cran/R?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "DESCRIPTION",
+      "datasource_id": "cran_description"
     }
   ],
   "packages": [
@@ -76,20 +77,19 @@
       "license_expression": "gpl-1.0-plus",
       "declared_license": "GPL",
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:cran/codetools@0.2-16",
-      "package_data_files": [
-        "DESCRIPTION"
-      ],
-      "files": [
-        "DESCRIPTION"
-      ],
-      "purl": "pkg:cran/codetools@0.2-16",
       "repository_homepage_url": "https://cran.r-project.org/package=codetools",
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "DESCRIPTION"
+      ],
+      "datasource_ids": [
+        "cran_description"
+      ],
+      "purl": "pkg:cran/codetools@0.2-16"
     }
   ],
   "files": [
@@ -138,8 +138,8 @@
           "license_expression": "gpl-1.0-plus",
           "declared_license": "GPL",
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -152,14 +152,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:cran/codetools@0.2-16",
           "repository_homepage_url": "https://cran.r-project.org/package=codetools",
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "cran_description",
+          "purl": "pkg:cran/codetools@0.2-16"
         }
       ],
       "for_packages": [
-        "pkg:cran/codetools@0.2-16"
+        "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

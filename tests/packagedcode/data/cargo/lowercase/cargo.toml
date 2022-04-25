@@ -1,0 +1,15 @@
+[package]
+name = 'bkg-cli-log'
+edition = '2021'
+categories = ['command-line-utilities', 'development-tools::debugging']
+keywords = ['logging']
+description = 'Simple logger for command line applications'
+license = 'Apache-2.0'
+version = '0.2.0'
+repository = 'https://github.com/kalkin/rust-bkg-cli-log'
+
+[lib]
+name = 'cli_log'
+
+[dependencies]
+log = '0.4'

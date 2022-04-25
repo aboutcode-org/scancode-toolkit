@@ -40,8 +40,8 @@
     "license_expression": null,
     "declared_license": [],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -333,9 +333,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/react-mobile-navigation-modal@0.1.0-rc.3",
     "repository_homepage_url": "https://www.npmjs.com/package/react-mobile-navigation-modal",
     "repository_download_url": "https://registry.npmjs.org/react-mobile-navigation-modal/-/react-mobile-navigation-modal-0.1.0-rc.3.tgz",
-    "api_data_url": "https://registry.npmjs.org/react-mobile-navigation-modal/0.1.0-rc.3"
+    "api_data_url": "https://registry.npmjs.org/react-mobile-navigation-modal/0.1.0-rc.3",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/react-mobile-navigation-modal@0.1.0-rc.3"
   }
 ]

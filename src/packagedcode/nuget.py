@@ -7,127 +7,58 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
 import xmltodict
 
-from commoncode import filetype
 from packagedcode import models
 from packagedcode.utils import build_description
 
-
+"""
+Handle NuGet packages and their manifests.
+"""
 # TODO: add dependencies
 
-"""
-Handle nuget.org Nuget packages.
-"""
 
-# Tracing flags
-TRACE = False
-
-
-def logger_debug(*args):
-    pass
-
-
-if TRACE:
-    import logging
-    import sys
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-@attr.s()
-class NugetPackageData(models.PackageData):
-    # file_patterns = ('[Content_Types].xml', '*.nuspec',)
-    filetypes = ('zip archive', 'microsoft ooxml',)
-    mimetypes = ('application/zip', 'application/octet-stream',)
-    # extensions = ('.nupkg',)
-
-    default_type = 'nuget'
-    default_web_baseurl = 'https://www.nuget.org/packages/'
-    default_download_baseurl = 'https://www.nuget.org/api/v2/package/'
-    default_api_baseurl = 'https://api.nuget.org/v3/registration3/'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.endswith('.nupkg'):
-            return manifest_resource
-        if manifest_resource.name.endswith(('[Content_Types].xml', '.nuspec',)):
-            return manifest_resource.parent(codebase)
-        return manifest_resource
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return baseurl + '{name}/{version}'.format(
-            name=self.name, version=self.version)
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        return baseurl + '{name}/{version}'.format(
-            name=self.name, version=self.version)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        # the name is lowercased
+def get_urls(name, version):
+    return dict(
+        repository_homepage_url=f'https://www.nuget.org/packages/{name}/{version}',
+        repository_download_url=f'https://www.nuget.org/api/v2/package/{name}/{version}',
+        # the name is lowercased as in
         # https://api.nuget.org/v3/registration3/newtonsoft.json/10.0.1.json
-        return baseurl + '{name}/{version}.json'.format(
-            name=self.name.lower(), version=self.version)
+        api_data_url=f'https://api.nuget.org/v3/registration3/{name.lower()}/{version}.json',
+    )
 
 
-nuspec_tags = [
-    'id',
-    'version',
-    'title',
-    'authors',
-    'owners',
-    'licenseUrl',
-    'projectUrl',
-    'requireLicenseAcceptance',
-    'description',
-    'summary',
-    'releaseNotes',
-    'copyright',
-    'repository/@type',
-    'repository/@url',
-]
+class NugetNupkgHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'nuget_nupkg'
+    path_patterns = ('*.nupkg',)
+    default_package_type = 'nuget'
+    filetypes = ('zip archive', 'microsoft ooxml',)
+    description = 'NuGet nupkg package archive'
+    documentation_url = 'https://en.wikipedia.org/wiki/Open_Packaging_Conventions'
 
 
-@attr.s()
-class Nuspec(NugetPackageData, models.PackageDataFile):
-
-    file_patterns = ('*.nuspec',)
-    extensions = ('.nuspec',)
+class NugetNuspecHandler(models.DatafileHandler):
+    datasource_id = 'nuget_nupsec'
+    path_patterns = ('*.nuspec',)
+    default_package_type = 'nuget'
+    description = 'NuGet nuspec package manifest'
+    documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/nuspec'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.nuspec')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with open(location , 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
-        if TRACE:
-            logger_debug('parsed:', parsed)
         if not parsed:
             return
 
-        pack = parsed.get('package', {}) or {}
+        pack = parsed.get('package') or {}
         nuspec = pack.get('metadata')
         if not nuspec:
             return
 
-        name=nuspec.get('id')
-        version=nuspec.get('version')
+        name = nuspec.get('id')
+        version = nuspec.get('version')
 
         # Summary: A short description of the package for UI display. If omitted, a
         # truncated version of description is used.
@@ -149,37 +80,35 @@ class Nuspec(NugetPackageData, models.PackageDataFile):
         if owners:
             parties.append(models.Party(name=owners, role='owner'))
 
+        vcs_url = None
+
         repo = nuspec.get('repository') or {}
-        vcs_tool = repo.get('@type') or ''
         vcs_repository = repo.get('@url') or ''
-        vcs_url =None
         if vcs_repository:
+            vcs_tool = repo.get('@type') or ''
             if vcs_tool:
-                vcs_url = '{}+{}'.format(vcs_tool, vcs_repository)
+                vcs_url = f'{vcs_tool}+{vcs_repository}'
             else:
                 vcs_url = vcs_repository
 
-        yield cls(
+        urls = get_urls(name, version)
+
+        package_data = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
             name=name,
             version=version,
             description=description or None,
             homepage_url=nuspec.get('projectUrl') or None,
             parties=parties,
+            # FIXME: license has evolved and is now SPDX...
             declared_license=nuspec.get('licenseUrl') or None,
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
+            **urls,
         )
 
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(package_data)
 
-@attr.s()
-class NugetPackage(NugetPackageData, models.Package):
-    """
-    A Nuget Package that is created out of one/multiple nuget package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            Nuspec
-        ]
+        yield package_data

@@ -29,9 +29,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/get-size",
-      "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     },
     {
       "purl": "pkg:bower/eventEmitter",
@@ -41,9 +42,10 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/eventEmitter",
-      "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     },
     {
       "purl": "pkg:bower/qunit",
@@ -53,9 +55,10 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
-      "dependency_uuid": "pkg:bower/qunit",
-      "for_package": "pkg:bower/blue-leaf",
-      "lockfile": "bower.json"
+      "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     }
   ],
   "packages": [
@@ -99,20 +102,19 @@
         "MIT"
       ],
       "notice_text": null,
-      "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:bower/blue-leaf",
-      "package_data_files": [
-        "bower.json"
-      ],
-      "files": [
-        "bower.json"
-      ],
-      "purl": "pkg:bower/blue-leaf",
       "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": null
+      "api_data_url": null,
+      "package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "bower.json"
+      ],
+      "datasource_ids": [
+        "bower_json"
+      ],
+      "purl": "pkg:bower/blue-leaf"
     }
   ],
   "files": [
@@ -155,13 +157,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
+          "license_expression": null,
           "declared_license": [
             "MIT"
           ],
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
@@ -192,14 +194,15 @@
               "resolved_package": {}
             }
           ],
-          "purl": "pkg:bower/blue-leaf",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "bower_json",
+          "purl": "pkg:bower/blue-leaf"
         }
       ],
       "for_packages": [
-        "pkg:bower/blue-leaf"
+        "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

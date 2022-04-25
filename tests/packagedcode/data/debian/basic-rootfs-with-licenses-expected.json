@@ -37,11 +37,10 @@
     "license_expression": "x11-fsf AND x11-xconsortium AND bsd-new",
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:deb/debian/ncurses"
     ],
-    "installed_files": [
+    "file_references": [
       {
         "path": "/lib/x86_64-linux-gnu/libncurses.so.5.9",
         "size": 0,
@@ -124,11 +123,10 @@
       "LGPL-2.1+"
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [
       "pkg:deb/debian/libndp"
     ],
-    "installed_files": [
+    "file_references": [
       {
         "path": "/usr/lib/x86_64-linux-gnu/libndp.so.0.0.2",
         "size": 0,

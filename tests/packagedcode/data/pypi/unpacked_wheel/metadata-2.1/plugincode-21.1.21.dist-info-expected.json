@@ -47,8 +47,216 @@
       "license": "Apache-2.0"
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [
+      {
+        "path": "plugincode-21.1.21.dist-info/AUTHORS.rst",
+        "size": 267,
+        "sha1": null,
+        "md5": null,
+        "sha256": "96f54b7f596bb8fe45880940c1c03d65ecadb6af71615998ad3b463c69e4e616",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/CHANGELOG.rst",
+        "size": 296,
+        "sha1": null,
+        "md5": null,
+        "sha256": "1b03ac729fc4cb14654bf14624ebf033a1ad886404997ff763694bd0d3511377",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/INSTALLER",
+        "size": 4,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/METADATA",
+        "size": 1648,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c25fa304c12c2f78ec9f2c01946d432ab4b3800cca283d207027a0481523bab7",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/NOTICE",
+        "size": 752,
+        "sha1": null,
+        "md5": null,
+        "sha256": "48cec42c5f9c9321de7b1683497ecfd84a836e36246fa4bc73f09672c74cc973",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/RECORD",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/WHEEL",
+        "size": 92,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3aa464174798e461ecb0ca2b16395b4c8ab4ef6be91e917ad1f21003a952f710",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/apache-2.0.LICENSE",
+        "size": 11357,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode-21.1.21.dist-info/top_level.txt",
+        "size": 11,
+        "sha1": null,
+        "md5": null,
+        "sha256": "c68f6ae59a5f15150b912687eba258d807651417a8473918b2005d17174255eb",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__init__.py",
+        "size": 9494,
+        "sha1": null,
+        "md5": null,
+        "sha256": "6b4bc351c7b56c078c8fa2150bb484ae5c15c87c4d4f1ae6bf201b056e48ec99",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/__init__.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/location_provider.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/output.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/output_filter.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/post_scan.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/pre_scan.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/__pycache__/scan.cpython-36.pyc",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/location_provider.py",
+        "size": 6209,
+        "sha1": null,
+        "md5": null,
+        "sha256": "bf53ea4b198f5dc782b3bfebc5159d013c325943efa7d82e23c9f57be94f6127",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/output.py",
+        "size": 2830,
+        "sha1": null,
+        "md5": null,
+        "sha256": "d6f0ff03cdf3aaa7394d269d4086006a775e672ef5de0e0042bd8dab5e262624",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/output_filter.py",
+        "size": 1541,
+        "sha1": null,
+        "md5": null,
+        "sha256": "300c6a057569c671279ffa20342db70c63ceb8badee5ae69c32ae55a2ae62b42",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/post_scan.py",
+        "size": 1366,
+        "sha1": null,
+        "md5": null,
+        "sha256": "49bb401382c6f3f24ef173880f461265fda0723233fd9544e250ba961ff6d321",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/pre_scan.py",
+        "size": 1331,
+        "sha1": null,
+        "md5": null,
+        "sha256": "ed83e58ba949ee5a416bc35ce5e2eb0f81299eaacb35e401c07f8ac40c01e378",
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "plugincode/scan.py",
+        "size": 3799,
+        "sha1": null,
+        "md5": null,
+        "sha256": "3bd20b359371e057793c232b258b3a2decb27fb3e3052a518176c05ec37c9152",
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
     "extra_data": {},
     "dependencies": [
       {
@@ -124,9 +332,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pypi/plugincode@21.1.21",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/plugincode",
     "repository_download_url": "https://pypi.org/packages/source/p/plugincode/plugincode-21.1.21.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/plugincode/21.1.21/json"
+    "api_data_url": "https://pypi.org/pypi/plugincode/21.1.21/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/plugincode@21.1.21"
   }
 ]

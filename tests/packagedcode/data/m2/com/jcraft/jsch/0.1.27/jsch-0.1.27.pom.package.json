@@ -39,10 +39,10 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.27?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -55,8 +55,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/com.jcraft/jsch@0.1.27",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.27/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.27/jsch-0.1.27.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.27/jsch-0.1.27.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.27/jsch-0.1.27.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/com.jcraft/jsch@0.1.27"
 }

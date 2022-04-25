@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    trilogy (2.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    benchmark-ips (2.7.2)
+    minitest (5.11.3)
+    mysql2 (0.5.2)
+    rake (13.0.1)
+    rake-compiler (1.0.7)
+      rake
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  benchmark-ips
+  minitest (~> 5.5)
+  mysql2
+  rake-compiler (~> 1.0)
+  trilogy!

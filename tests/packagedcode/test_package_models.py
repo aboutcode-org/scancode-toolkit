@@ -9,9 +9,9 @@
 
 import os.path
 
+from packagedcode import misc
 from packagedcode import models
-from packagedcode import PACKAGE_INSTANCE_CLASSES
-from packagedcode import PACKAGE_DATA_CLASSES
+from packagedcode import PACKAGE_DATAFILE_HANDLERS
 from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packages_test_utils import PackageTester
@@ -22,15 +22,17 @@ class TestModels(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_Package_creation_and_dump(self):
-        package = models.AndroidApp(name='someAndroidPAcakge')
+        pd = misc.AndroidAppArchiveHandler.create_default_package_data(
+            name='someAndroidPAcakge',
+        )
         expected = [
-            ('type', u'android'),
+            ('type', 'android'),
             ('namespace', None),
-            ('name', u'someAndroidPAcakge'),
+            ('name', 'someAndroidPAcakge'),
             ('version', None),
             ('qualifiers', {}),
             ('subpath', None),
-            ('primary_language', u'Java'),
+            ('primary_language', 'Java'),
             ('description', None),
             ('release_date', None),
             ('parties', []),
@@ -49,59 +51,47 @@ class TestModels(PackageTester):
             ('license_expression', None),
             ('declared_license', None),
             ('notice_text', None),
-            ('contains_source_code', None),
             ('source_packages', []),
+            ('file_references', []),
             ('extra_data', {}),
             ('dependencies', []),
-            ('purl', u'pkg:android/someAndroidPAcakge'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),
             ('api_data_url', None),
+            ('datasource_id', 'android_apk'),
+            ('purl', 'pkg:android/someAndroidPAcakge'),
         ]
-        assert list(package.to_dict().items()) == expected
+        assert list(pd.to_dict().items()) == expected
 
     def test_Package_simple(self):
         package = PackageData(
+            datasource_id = 'rpm_archive',
             type='rpm',
             name='Sample',
             description='Some package',
-            parties=[Party(
-                    name='Some Author',
-                    role='author',
-                    email='some@email.com'
-                )
-            ],
+            parties=[Party(name='Some Author', role='author', email='some@email.com')],
             keywords=['some', 'keyword'],
             vcs_url='git+https://somerepo.com/that.git',
-            declared_license='apache-2.0'
+            declared_license='apache-2.0',
         )
         expected_loc = 'models/simple-expected.json'
-        self.check_package(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_package_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
         package = models.PackageData(
-            type='maven',
-            name='this',
-            version='23',
-            qualifiers=dict(this='that')
+            type='maven', name='this', version='23', qualifiers=dict(this='that')
         )
         assert package.to_dict()['qualifiers'] == dict(this='that')
 
     def test_Package_model_qualifiers_are_kept_as_mappings(self):
         package = models.PackageData(
-            type='maven',
-            name='this',
-            version='23',
-            qualifiers=dict(this='that')
+            type='maven', name='this', version='23', qualifiers=dict(this='that')
         )
         assert package.qualifiers == dict(this='that')
 
     def test_Package_model_qualifiers_are_converted_to_mappings(self):
         package = models.PackageData(
-            type='maven',
-            name='this',
-            version='23',
-            qualifiers='this=that'
+            type='maven', name='this', version='23', qualifiers='this=that'
         )
         assert package.qualifiers == dict(this='that')
 
@@ -117,13 +107,7 @@ class TestModels(PackageTester):
             description='Some package',
             size=12312312312,
             release_date='2012-10-21',
-            parties=[
-                Party(
-                    name='Some Author',
-                    role='author',
-                    email='some@email.com'
-                )
-            ],
+            parties=[Party(name='Some Author', role='author', email='some@email.com')],
             keywords=['some', 'other', 'keyword'],
             homepage_url='http://homepage.com',
             download_url='http://homepage.com/dnl',
@@ -138,82 +122,33 @@ class TestModels(PackageTester):
             license_expression='apache-2.0',
             declared_license=u'apache-2.0',
             notice_text='licensed under the apacche 2.0 \nlicense',
-            contains_source_code=True,
-            source_packages=[
-                "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
-            ],
+            source_packages=["pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"],
         )
         expected_loc = 'models/full-expected.json'
-        self.check_package(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_package_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_Package_get_package_resource_works_with_nested_packages_and_ignores(self):
-        from packagedcode import get_package_instance
-        from packagedcode import npm
-        from commoncode.resource import VirtualCodebase
-        scan_loc = self.get_test_loc('models/nested-npm-packages.json')
-        codebase = VirtualCodebase(scan_loc)
-        for resource in codebase.walk():
-            for package_data in resource.packages:
-                package = get_package_instance(package_data)
-                assert isinstance(package, npm.NpmPackageData)
-                package_resources = list(package.get_package_resources(resource, codebase))
-                assert any(r.name == 'package.json' for r in package_resources), resource.path
-
-
-class TestManifestInstanceModels(PackageTester):
-
-    def test_package_data_types(self):
-        check_package_data_classes()
-
-    def test_package_instance_types(self):
-        check_package_instance_classes()
-
-
-def check_package_instance_classes():
-    """
-    Check that we don't have two package instance classes with the same
-    default_type.
-    """
-    package_instances_by_type = {
-        cls.default_type: cls
-        for cls in PACKAGE_INSTANCE_CLASSES
-    }
-
-    if len(package_instances_by_type) != len(PACKAGE_INSTANCE_CLASSES):
-        seen_types = {}
-        for pt in PACKAGE_INSTANCE_CLASSES:
-            pk_instance = pt()
-            assert pk_instance.default_type
-            seen = seen_types.get(pk_instance.default_type)
-            if seen:
-                msg = ('Invalid duplicated packagedcode.Package types: '
-                    '"{}:{}" and "{}:{}" have the same type.'
-                    .format(pk_instance.default_type, pk_instance.__name__, seen.default_type, seen.__name__,))
-                raise Exception(msg)
-            else:
-                seen_types[pk_instance.default_type] = pk_instance
-
-
-def check_package_data_classes():
-    """
-    Check that we don't have two package manifest classes with the same
-    package_data_type.
-    """
-    package_data_by_type = {
-        cls.default_type: cls
-        for cls in PACKAGE_DATA_CLASSES
-    }
-
-    if len(package_data_by_type) != len(PACKAGE_DATA_CLASSES):
-        seen_types = {}
-        for pmt in PACKAGE_DATA_CLASSES:
-            manifest = pmt()
-            assert manifest.package_data_type
-            seen = seen_types.get(manifest.package_data_type)
-            if seen:
-                msg = ('Invalid duplicated packagedcode.Package types: '
-                    '"{}:{}" and "{}:{}" have the same type.'
-                    .format(manifest.package_data_type, manifest.__name__, seen.package_data_type, seen.__name__,))
-                raise Exception(msg)
-            else:
-                seen_types[manifest.package_data_type] = manifest
+    def test_package_data_datasource_id_are_unique(self):
+        """
+        Check that we do not have two DataFileHandlers with the same
+        datasource_id and that all have one.
+        """
+        seen = {}
+        for pdh in PACKAGE_DATAFILE_HANDLERS:
+            pdhid = pdh.datasource_id
+            assert pdhid
+            assert (
+                pdh.datasource_id not in seen
+            ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
+            seen[pdh.datasource_id] = pdh
+    
+    def test_package_data_file_patterns_are_tuples(self):
+        """
+        Check that all file patterns are tuples, as if they are
+        strings the matching will happen per character and will be
+        True for most of the cases.
+        """
+        for pdh in PACKAGE_DATAFILE_HANDLERS:
+            if pdh.path_patterns:
+                assert type(pdh.path_patterns) == tuple, pdh
+            if pdh.filetypes:
+                assert type(pdh.filetypes) == tuple, pdh

@@ -1,0 +1,57 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "six",
+    "version": "1.10.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Python 2 and 3 compatibility utilities\nSix is a Python 2 and 3 compatibility library.  It provides utility functions\nfor smoothing over the differences between the Python versions with the goal of\nwriting Python code that is compatible on both Python versions.  See the\ndocumentation for more information on what is provided.\n\nSix supports every Python version since 2.6.  It is contained in only one Python\nfile, so it can be easily copied into your project. (The copyright and license\nnotice must be retained.)\n\nOnline documentation is at https://pythonhosted.org/six/.\n\nBugs can be reported to https://bitbucket.org/gutworth/six.  The code can also\nbe found there.\n\nFor questions about six or porting in general, email the python-porting mailing\nlist: https://mail.python.org/mailman/listinfo/python-porting",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Benjamin Peterson",
+        "email": "benjamin@python.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 3",
+      "Intended Audience :: Developers",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "http://pypi.python.org/pypi/six/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/six",
+    "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/six@1.10.0"
+  }
+]

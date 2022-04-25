@@ -21,36 +21,28 @@ class TestHaxe(PackageTester):
 
     def test_is_manifest_haxelib_json(self):
         test_file = self.get_test_loc('haxe/basic/haxelib.json')
-        assert haxe.HaxelibJson.is_package_data_file(test_file)
+        assert haxe.HaxelibJsonHandler.is_datafile(test_file)
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('haxe/basic/haxelib.json')
         expected_loc = self.get_test_loc('haxe/basic/haxelib.json.expected')
-        package = haxe.HaxelibJson.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        package = haxe.HaxelibJsonHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_basic2(self):
         test_file = self.get_test_loc('haxe/basic2/haxelib.json')
         expected_loc = self.get_test_loc('haxe/basic2/haxelib.json.expected')
-        package = haxe.HaxelibJson.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        package = haxe.HaxelibJsonHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_deps(self):
         test_file = self.get_test_loc('haxe/deps/haxelib.json')
         expected_loc = self.get_test_loc('haxe/deps/haxelib.json.expected')
-        package = haxe.HaxelibJson.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        package = haxe.HaxelibJsonHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_tags(self):
         test_file = self.get_test_loc('haxe/tags/haxelib.json')
         expected_loc = self.get_test_loc('haxe/tags/haxelib.json.expected')
-        package = haxe.HaxelibJson.recognize(test_file)
-        self.check_packages(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_root_dir(self):
-        test_file = self.get_test_loc('haxe/tags/haxelib.json')
-        test_dir = self.get_test_loc('haxe/tags')
-        codebase = Codebase(test_dir)
-        manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
-        proot = haxe.HaxePackage.get_package_root(manifest_resource, codebase)
-        assert proot.location == test_dir
+        package = haxe.HaxelibJsonHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)

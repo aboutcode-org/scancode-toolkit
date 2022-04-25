@@ -26,10 +26,10 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -132,8 +132,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.war",
-  "api_data_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war"
 }

@@ -1,6 +1,6 @@
 [
   {
-    "type": "pubspec",
+    "type": "dart",
     "namespace": null,
     "name": "openapi",
     "version": "1.0.0",
@@ -40,8 +40,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -72,9 +72,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:pubspec/openapi@1.0.0",
     "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
     "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
-    "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0"
+    "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0",
+    "datasource_id": "pubspec_yaml",
+    "purl": "pkg:dart/openapi@1.0.0"
   }
 ]

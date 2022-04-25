@@ -39,13 +39,15 @@
   "license_expression": "apache-2.0",
   "declared_license": "apache-2.0",
   "notice_text": "licensed under the apacche 2.0 \nlicense",
-  "contains_source_code": true,
   "source_packages": [
     "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
-  "purl": "pkg:rpm/fedora/Sample@12.2.3?abc=12&this=that#asdasd/asdasd/asdasd",
+  "dependencies": [],
   "repository_homepage_url": null,
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": null,
+  "datasource_id": null,
+  "purl": "pkg:rpm/fedora/Sample@12.2.3?abc=12&this=that#asdasd/asdasd/asdasd"
 }

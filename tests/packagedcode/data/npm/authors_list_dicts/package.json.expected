@@ -58,8 +58,8 @@
       }
     ],
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -117,9 +117,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:npm/grunt-csscomb@3.1.1",
     "repository_homepage_url": "https://www.npmjs.com/package/grunt-csscomb",
     "repository_download_url": "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz",
-    "api_data_url": "https://registry.npmjs.org/grunt-csscomb/3.1.1"
+    "api_data_url": "https://registry.npmjs.org/grunt-csscomb/3.1.1",
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/grunt-csscomb@3.1.1"
   }
 ]

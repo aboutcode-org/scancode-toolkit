@@ -10,22 +10,18 @@ import io
 import json
 import logging
 
-import attr
+from commoncode import fileutils
 from packageurl import PackageURL
 from pygments import highlight
 from pygments.formatter import Formatter
-from pygments.lexers import RubyLexer
+from pygments.lexers.ruby import RubyLexer
 from pygments.token import Token
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
-
 
 """
 Handle Chef cookbooks
 """
-
 
 TRACE = False
 
@@ -37,31 +33,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-@attr.s()
-class ChefPackageData(models.PackageData):
-    filetypes = ('.tgz',)
-    mimetypes = ('application/x-tar',)
-    default_type = 'chef'
-    default_primary_language = 'Ruby'
-    default_web_baseurl = 'https://supermarket.chef.io/cookbooks'
-    default_download_baseurl = 'https://supermarket.chef.io/cookbooks'
-    default_api_baseurl = 'https://supermarket.chef.io/api/v1'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-    def repository_download_url(self, baseurl=default_download_baseurl):
-        return chef_download_url(self.name, self.version, registry=baseurl)
-
-    def api_data_url(self, baseurl=default_api_baseurl):
-        return chef_api_url(self.name, self.version, registry=baseurl)
-
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
-
-def chef_download_url(name, version, registry='https://supermarket.chef.io/cookbooks'):
+def chef_download_url(name, version):
     """
     Return an Chef cookbook download url given a name, version, and base registry URL.
 
@@ -69,11 +41,10 @@ def chef_download_url(name, version, registry='https://supermarket.chef.io/cookb
     >>> c = chef_download_url('seven_zip', '1.0.4')
     >>> assert c == u'https://supermarket.chef.io/cookbooks/seven_zip/versions/1.0.4/download'
     """
-    registry = registry.rstrip('/')
-    return '{registry}/{name}/versions/{version}/download'.format(**locals())
+    return name and version and f'https://supermarket.chef.io/cookbooks/{name}/versions/{version}/download'
 
 
-def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
+def chef_api_url(name, version):
     """
     Return a package API data URL given a name, version and a base registry URL.
 
@@ -81,8 +52,21 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     >>> c = chef_api_url('seven_zip', '1.0.4')
     >>> assert c == u'https://supermarket.chef.io/api/v1/cookbooks/seven_zip/versions/1.0.4'
     """
-    registry = registry.rstrip('/')
-    return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
+    return name and version and f'https://supermarket.chef.io/api/v1/cookbooks/{name}/versions/{version}'
+
+
+def get_urls(name, version):
+    """
+    Return a mapping of URLs given a name and version.
+    """
+    dnl = chef_download_url(name, version)
+    rhu = name and version and f'https://supermarket.chef.io/cookbooks/{name}/versions/{version}/'
+    return dict(
+        download_url=dnl,
+        repository_download_url=dnl,
+        repository_homepage_url=rhu,
+        api_data_url=chef_api_url(name, version),
+    )
 
 
 class ChefMetadataFormatter(Formatter):
@@ -155,93 +139,89 @@ class ChefMetadataFormatter(Formatter):
         json.dump(metadata, outfile)
 
 
-@attr.s()
-class MetadataJson(ChefPackageData, models.PackageDataFile):
-
-    file_patterns = ('metadata.json',)
-    extensions = ('.json',)
+class BaseChefMetadataHandler(models.DatafileHandler):
 
     @classmethod
-    def is_package_data_file(cls, location):
+    def assemble(cls, package_data, resource, codebase):
         """
-        Return True if `location` path is for a Chef metadata.json file.
-        The metadata.json is also used in Python installed packages in a 'dist-info'
-        directory.
+        Assemble Package from Chef metadata.rb, then from metadata.json files.
         """
-        return (
-            filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'metadata.json'
-            and not fileutils.file_name(fileutils.parent_directory(location))
-                .lower().endswith('dist-info')
+        yield from cls.assemble_from_many_datafiles(
+            datafile_name_patterns=('metadata.rb', 'metadata.json',),
+            directory=resource.parent(codebase),
+            codebase=codebase,
         )
 
+
+# TODO: implemet me: extract and parse and register
+class ChefCookbookHandler(BaseChefMetadataHandler):
+    datasource_id = 'chef_cookbook_tarball'
+    path_patterns = ('*.tgz',)
+    default_package_type = 'chef'
+    default_primary_language = 'Ruby'
+    description = 'Chef cookbook tarball'
+
+
+class ChefMetadataJsonHandler(BaseChefMetadataHandler):
+    datasource_id = 'chef_cookbook_metadata_json'
+    path_patterns = ('*/metadata.json',)
+    default_package_type = 'chef'
+    default_primary_language = 'Ruby'
+    description = 'Chef cookbook metadata.json'
+    documentation_url = 'https://docs.chef.io/config_rb_metadata/'
+
     @classmethod
-    def recognize(cls, location):
+    def is_datafile(cls, location, filetypes=tuple()):
         """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
+        Return True if `location` path is for a Chef metadata.json file. The
+        metadata.json is/was also used in Python legacy wheels in a 'dist-info'
+        directory.
+        """
+        if super().is_datafile(location, filetypes=filetypes):
+            parent = fileutils.file_name(fileutils.parent_directory(location))
+            return not parent.endswith('dist-info')
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location``
+        pointing to a package archive, manifest or similar.
         """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        return build_package(cls, package_data)
+        return build_package(package_data, datasource_id=cls.datasource_id)
 
 
-@attr.s()
-class Metadatarb(ChefPackageData, models.PackageDataFile):
-
-    file_patterns = ('metadata.rb',)
-    extensions = ('.rb',)
-
-    @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if `location` path is for a Chef metadata.json file.
-        The metadata.json is also used in Python installed packages in a 'dist-info'
-        directory.
-        """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'metadata.rb')
+class ChefMetadataRbHandler(BaseChefMetadataHandler):
+    datasource_id = 'chef_cookbook_metadata_rb'
+    path_patterns = ('*/metadata.rb',)
+    default_package_type = 'chef'
+    default_primary_language = 'Ruby'
+    description = 'Chef cookbook metadata.rb'
+    documentation_url = 'https://docs.chef.io/config_rb_metadata/'
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
+
+        # we use a Pygments formatter for parsing lexed Ruby code
         formatted_file_contents = highlight(
-            file_contents, RubyLexer(), ChefMetadataFormatter())
+            file_contents,
+            RubyLexer(),
+            ChefMetadataFormatter()
+        )
         package_data = json.loads(formatted_file_contents)
-        return build_package(cls, package_data)
+        return build_package(package_data, datasource_id=cls.datasource_id)
 
 
-@attr.s()
-class ChefPackage(ChefPackageData, models.Package):
+def build_package(package_data, datasource_id):
     """
-    A Chef Package that is created out of one/multiple chef package
-    manifests.
-    """
-
-    @property
-    def manifests(self):
-        return [
-            MetadataJson,
-            Metadatarb
-        ]
-
-
-def build_package(cls, package_data):
-    """
-    Return a Package object from a package_data mapping (from a metadata.json or
-    similar) or None.
+    Return a PackageData object from a package_data mapping from a metadata.json
+    or similar or None.
     """
     name = package_data.get('name')
     version = package_data.get('version')
-    if not name or not version:
-        # a metadata.json without name and version is not a usable chef package
-        # FIXME: raise error?
-        return
 
     maintainer_name = package_data.get('maintainer', '')
     maintainer_email = package_data.get('maintainer_email', '')
@@ -249,21 +229,30 @@ def build_package(cls, package_data):
     if maintainer_name or maintainer_email:
         parties.append(
             models.Party(
-                name=maintainer_name or None,
+                name=maintainer_name.strip() or None,
                 role='maintainer',
-                email=maintainer_email or None,
+                email=maintainer_email.strip() or None,
             )
         )
 
+    # TODO: combine descriptions as done elsewhere
     description = package_data.get('description', '') or package_data.get('long_description', '')
     lic = package_data.get('license', '')
+    declared_license = None
+    license_expression = None
+    if lic:
+        declared_license=lic.strip()
+        if declared_license:
+            license_expression = models.compute_normalized_license(declared_license)
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    dependencies = package_data.get('dependencies', {}) or package_data.get('depends', {})
-    package_dependencies = []
-    for dependency_name, requirement in dependencies.items():
-        package_dependencies.append(
+    deps = dict(package_data.get('dependencies', {}) or {})
+    deps.update(package_data.get('depends', {}) or {})
+
+    dependencies = []
+    for dependency_name, requirement in deps.items():
+        dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(type='chef', name=dependency_name).to_string(),
                 scope='dependencies',
@@ -273,14 +262,18 @@ def build_package(cls, package_data):
             )
         )
 
-    yield cls(
+    yield models.PackageData(
+        datasource_id=datasource_id,
+        type=ChefMetadataJsonHandler.default_package_type,
         name=name,
         version=version,
         parties=parties,
         description=description.strip() or None,
-        declared_license=lic.strip() or None,
+        declared_license=declared_license,
+        license_expression=license_expression,
         code_view_url=code_view_url.strip() or None,
         bug_tracking_url=bug_tracking_url.strip() or None,
-        download_url=chef_download_url(name, version).strip(),
-        dependencies=package_dependencies,
+        dependencies=dependencies,
+        primary_language='Ruby',
+        **get_urls(name, version),
     )

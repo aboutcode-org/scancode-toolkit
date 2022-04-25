@@ -53,13 +53,14 @@
       ]
     },
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pypi/packageurl-python@0.8.5",
-    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_homepage_url": "https://pypi.org/project/packageurl-python",
     "repository_download_url": "https://pypi.org/packages/source/p/packageurl-python/packageurl-python-0.8.5.tar.gz",
-    "api_data_url": "https://pypi.org/pypi/packageurl-python/0.8.5/json"
+    "api_data_url": "https://pypi.org/pypi/packageurl-python/0.8.5/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/packageurl-python@0.8.5"
   }
 ]

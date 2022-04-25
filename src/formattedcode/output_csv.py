@@ -6,6 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import attr
 import csv
 
 import saneyaml
@@ -231,6 +232,8 @@ def get_package_columns(_columns=set()):
 
     from packagedcode.models import PackageData
 
+    package_data_fields = [field.name for field in attr.fields(PackageData)]
+
     # exclude some columns for now that contain list of items
     excluded_columns = {
         # list of strings
@@ -252,7 +255,7 @@ def get_package_columns(_columns=set()):
         'notice_url',
     ]
 
-    fields = PackageData.fields() + extra_columns
+    fields = package_data_fields + extra_columns
     _columns = set(f for f in fields if f not in excluded_columns)
     return _columns
 

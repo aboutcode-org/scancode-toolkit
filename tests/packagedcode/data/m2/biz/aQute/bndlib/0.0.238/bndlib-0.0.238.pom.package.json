@@ -39,14 +39,15 @@
     }
   ],
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/biz.aQute/bndlib@0.0.238?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [],
-  "purl": "pkg:maven/biz.aQute/bndlib@0.0.238",
   "repository_homepage_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.238/",
   "repository_download_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.238/bndlib-0.0.238.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.238/bndlib-0.0.238.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.238/bndlib-0.0.238.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/biz.aQute/bndlib@0.0.238"
 }

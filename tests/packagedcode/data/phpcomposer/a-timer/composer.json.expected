@@ -40,8 +40,8 @@
     "license_expression": "mit",
     "declared_license": "MIT",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -72,9 +72,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:composer/jandreasn/a-timer",
     "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
     "repository_download_url": null,
-    "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
+    "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
+    "datasource_id": "php_composer_json",
+    "purl": "pkg:composer/jandreasn/a-timer"
   }
 ]

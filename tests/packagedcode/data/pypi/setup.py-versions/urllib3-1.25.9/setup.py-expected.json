@@ -54,9 +54,7 @@
     ]
   },
   "notice_text": null,
-  "root_path": null,
   "dependencies": [],
-  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/urllib3@1.25.9",
   "repository_homepage_url": "https://pypi.org/project/urllib3",

@@ -25,21 +25,27 @@ class TestAlpineInstalledPackage(PackageTester):
     def test_parse_alpine_installed_db_small(self):
         test_installed = self.get_test_loc('alpine/small-installed/installed')
         result = [package.to_dict(_detailed=True)
-            for package in alpine.parse_alpine_installed_db(test_installed)]
+            for package in alpine.parse_alpine_installed_db(
+                location=test_installed, datasource_id='alpine_installed_db', package_type='alpine',
+            )]
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_alpine_installed_db_single(self):
         test_installed = self.get_test_loc('alpine/single-installed/installed')
         result = [package.to_dict(_detailed=True)
-            for package in alpine.parse_alpine_installed_db(test_installed)]
+            for package in alpine.parse_alpine_installed_db(
+                location=test_installed, datasource_id='alpine_installed_db', package_type='alpine',
+            )]
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_alpine_installed_db_full(self):
         test_installed = self.get_test_loc('alpine/full-installed/installed')
         result = [package.to_dict(_detailed=True)
-            for package in alpine.parse_alpine_installed_db(test_installed)]
+            for package in alpine.parse_alpine_installed_db(
+                location=test_installed, datasource_id='alpine_installed_db', package_type='alpine',
+            )]
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 

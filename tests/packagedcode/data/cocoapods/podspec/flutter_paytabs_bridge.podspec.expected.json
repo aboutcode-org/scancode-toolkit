@@ -1,0 +1,46 @@
+[
+  {
+    "type": "pods",
+    "namespace": null,
+    "name": "flutter_paytabs_bridge",
+    "version": "2.2.5",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Objective-C",
+    "description": "A new flutter plugin project.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Your Company ",
+        "email": "email@example.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://example.com",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "./issues/",
+    "code_view_url": "./tree/2.2.5",
+    "vcs_url": ".",
+    "copyright": null,
+    "license_expression": "unknown",
+    "declared_license": ":file = ../LICENSE",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://cocoapods.org/pods/flutter_paytabs_bridge",
+    "repository_download_url": "./archive/refs/tags/2.2.5.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/4/flutter_paytabs_bridge/2.2.5/flutter_paytabs_bridge.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/flutter_paytabs_bridge@2.2.5"
+  }
+]

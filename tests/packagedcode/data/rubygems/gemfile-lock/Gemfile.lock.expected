@@ -25,8 +25,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -606,10 +606,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "gemfile_lock",
+    "purl": null
   },
   {
     "type": "gem",
@@ -624,7 +625,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/actioncable-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -637,8 +638,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -669,10 +670,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/actioncable@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/actioncable/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/actioncable-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/actioncable/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/actioncable/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/actioncable@5.0.6"
   },
   {
     "type": "gem",
@@ -687,7 +689,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/actionpack-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -700,8 +702,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -759,10 +761,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/actionpack@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/actionpack/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/actionpack-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionpack/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionpack/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/actionpack@5.0.6"
   },
   {
     "type": "gem",
@@ -777,7 +780,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/nio4r-2.1.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -790,14 +793,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/nio4r@2.1.0",
     "repository_homepage_url": "https://rubygems.org/gems/nio4r/versions/2.1.0",
     "repository_download_url": "https://rubygems.org/downloads/nio4r-2.1.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/nio4r/versions/2.1.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/nio4r/versions/2.1.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/nio4r@2.1.0"
   },
   {
     "type": "gem",
@@ -812,7 +816,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/websocket-driver-0.6.5.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -825,8 +829,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -839,10 +843,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/websocket-driver@0.6.5",
     "repository_homepage_url": "https://rubygems.org/gems/websocket-driver/versions/0.6.5",
     "repository_download_url": "https://rubygems.org/downloads/websocket-driver-0.6.5.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/websocket-driver/versions/0.6.5.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/websocket-driver/versions/0.6.5.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/websocket-driver@0.6.5"
   },
   {
     "type": "gem",
@@ -857,7 +862,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/actionmailer-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -870,8 +875,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -920,10 +925,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/actionmailer@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/actionmailer/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/actionmailer-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionmailer/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionmailer/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/actionmailer@5.0.6"
   },
   {
     "type": "gem",
@@ -938,7 +944,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/actionview-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -951,8 +957,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1001,10 +1007,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/actionview@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/actionview/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/actionview-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionview/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/actionview/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/actionview@5.0.6"
   },
   {
     "type": "gem",
@@ -1019,7 +1026,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/activejob-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1032,8 +1039,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1055,10 +1062,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/activejob@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/activejob/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/activejob-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/activejob/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/activejob/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/activejob@5.0.6"
   },
   {
     "type": "gem",
@@ -1073,7 +1081,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/mail-2.6.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1086,8 +1094,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1100,10 +1108,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/mail@2.6.6",
     "repository_homepage_url": "https://rubygems.org/gems/mail/versions/2.6.6",
     "repository_download_url": "https://rubygems.org/downloads/mail-2.6.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mail/versions/2.6.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mail/versions/2.6.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/mail@2.6.6"
   },
   {
     "type": "gem",
@@ -1118,7 +1127,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rails-dom-testing-2.0.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1131,8 +1140,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1154,10 +1163,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/rails-dom-testing@2.0.3",
     "repository_homepage_url": "https://rubygems.org/gems/rails-dom-testing/versions/2.0.3",
     "repository_download_url": "https://rubygems.org/downloads/rails-dom-testing-2.0.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails-dom-testing/versions/2.0.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails-dom-testing/versions/2.0.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rails-dom-testing@2.0.3"
   },
   {
     "type": "gem",
@@ -1172,7 +1182,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/activesupport-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1185,8 +1195,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1226,10 +1236,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/activesupport@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/activesupport/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/activesupport-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/activesupport/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/activesupport/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/activesupport@5.0.6"
   },
   {
     "type": "gem",
@@ -1244,7 +1255,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rack-2.0.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1257,14 +1268,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/rack@2.0.3",
     "repository_homepage_url": "https://rubygems.org/gems/rack/versions/2.0.3",
     "repository_download_url": "https://rubygems.org/downloads/rack-2.0.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rack/versions/2.0.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rack/versions/2.0.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rack@2.0.3"
   },
   {
     "type": "gem",
@@ -1279,7 +1291,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rack-test-0.6.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1292,8 +1304,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1306,10 +1318,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/rack-test@0.6.3",
     "repository_homepage_url": "https://rubygems.org/gems/rack-test/versions/0.6.3",
     "repository_download_url": "https://rubygems.org/downloads/rack-test-0.6.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rack-test/versions/0.6.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rack-test/versions/0.6.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rack-test@0.6.3"
   },
   {
     "type": "gem",
@@ -1324,7 +1337,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rails-html-sanitizer-1.0.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1337,8 +1350,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1351,10 +1364,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/rails-html-sanitizer@1.0.3",
     "repository_homepage_url": "https://rubygems.org/gems/rails-html-sanitizer/versions/1.0.3",
     "repository_download_url": "https://rubygems.org/downloads/rails-html-sanitizer-1.0.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails-html-sanitizer/versions/1.0.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails-html-sanitizer/versions/1.0.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rails-html-sanitizer@1.0.3"
   },
   {
     "type": "gem",
@@ -1369,7 +1383,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/builder-3.2.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1382,14 +1396,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/builder@3.2.3",
     "repository_homepage_url": "https://rubygems.org/gems/builder/versions/3.2.3",
     "repository_download_url": "https://rubygems.org/downloads/builder-3.2.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/builder/versions/3.2.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/builder/versions/3.2.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/builder@3.2.3"
   },
   {
     "type": "gem",
@@ -1404,7 +1419,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/erubis-2.7.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1417,14 +1432,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/erubis@2.7.0",
     "repository_homepage_url": "https://rubygems.org/gems/erubis/versions/2.7.0",
     "repository_download_url": "https://rubygems.org/downloads/erubis-2.7.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/erubis/versions/2.7.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/erubis/versions/2.7.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/erubis@2.7.0"
   },
   {
     "type": "gem",
@@ -1439,7 +1455,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/globalid-0.4.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1452,8 +1468,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1466,10 +1482,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/globalid@0.4.0",
     "repository_homepage_url": "https://rubygems.org/gems/globalid/versions/0.4.0",
     "repository_download_url": "https://rubygems.org/downloads/globalid-0.4.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/globalid/versions/0.4.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/globalid/versions/0.4.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/globalid@0.4.0"
   },
   {
     "type": "gem",
@@ -1484,7 +1501,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/activemodel-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1497,8 +1514,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1511,10 +1528,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/activemodel@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/activemodel/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/activemodel-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/activemodel/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/activemodel/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/activemodel@5.0.6"
   },
   {
     "type": "gem",
@@ -1529,7 +1547,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/activerecord-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1542,8 +1560,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1574,10 +1592,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/activerecord@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/activerecord/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/activerecord-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/activerecord/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/activerecord/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/activerecord@5.0.6"
   },
   {
     "type": "gem",
@@ -1592,7 +1611,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/arel-7.1.4.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1605,14 +1624,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/arel@7.1.4",
     "repository_homepage_url": "https://rubygems.org/gems/arel/versions/7.1.4",
     "repository_download_url": "https://rubygems.org/downloads/arel-7.1.4.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/7.1.4.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/7.1.4.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/arel@7.1.4"
   },
   {
     "type": "gem",
@@ -1627,7 +1647,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/concurrent-ruby-1.0.5.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1640,14 +1660,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/concurrent-ruby@1.0.5",
     "repository_homepage_url": "https://rubygems.org/gems/concurrent-ruby/versions/1.0.5",
     "repository_download_url": "https://rubygems.org/downloads/concurrent-ruby-1.0.5.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/concurrent-ruby/versions/1.0.5.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/concurrent-ruby/versions/1.0.5.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/concurrent-ruby@1.0.5"
   },
   {
     "type": "gem",
@@ -1662,7 +1683,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/i18n-0.8.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1675,14 +1696,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/i18n@0.8.6",
     "repository_homepage_url": "https://rubygems.org/gems/i18n/versions/0.8.6",
     "repository_download_url": "https://rubygems.org/downloads/i18n-0.8.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/i18n/versions/0.8.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/i18n/versions/0.8.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/i18n@0.8.6"
   },
   {
     "type": "gem",
@@ -1697,7 +1719,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/minitest-5.10.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1710,14 +1732,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/minitest@5.10.3",
     "repository_homepage_url": "https://rubygems.org/gems/minitest/versions/5.10.3",
     "repository_download_url": "https://rubygems.org/downloads/minitest-5.10.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/minitest/versions/5.10.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/minitest/versions/5.10.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/minitest@5.10.3"
   },
   {
     "type": "gem",
@@ -1732,7 +1755,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/tzinfo-1.2.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1745,8 +1768,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1759,10 +1782,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/tzinfo@1.2.3",
     "repository_homepage_url": "https://rubygems.org/gems/tzinfo/versions/1.2.3",
     "repository_download_url": "https://rubygems.org/downloads/tzinfo-1.2.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/tzinfo/versions/1.2.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/tzinfo/versions/1.2.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/tzinfo@1.2.3"
   },
   {
     "type": "gem",
@@ -1777,7 +1801,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/bindex-0.5.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1790,14 +1814,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/bindex@0.5.0",
     "repository_homepage_url": "https://rubygems.org/gems/bindex/versions/0.5.0",
     "repository_download_url": "https://rubygems.org/downloads/bindex-0.5.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/bindex/versions/0.5.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/bindex/versions/0.5.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/bindex@0.5.0"
   },
   {
     "type": "gem",
@@ -1812,7 +1837,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/byebug-9.1.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1825,14 +1850,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/byebug@9.1.0",
     "repository_homepage_url": "https://rubygems.org/gems/byebug/versions/9.1.0",
     "repository_download_url": "https://rubygems.org/downloads/byebug-9.1.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/byebug/versions/9.1.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/byebug/versions/9.1.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/byebug@9.1.0"
   },
   {
     "type": "gem",
@@ -1847,7 +1873,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/coffee-rails-4.2.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1860,8 +1886,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1883,10 +1909,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/coffee-rails@4.2.2",
     "repository_homepage_url": "https://rubygems.org/gems/coffee-rails/versions/4.2.2",
     "repository_download_url": "https://rubygems.org/downloads/coffee-rails-4.2.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-rails/versions/4.2.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-rails/versions/4.2.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/coffee-rails@4.2.2"
   },
   {
     "type": "gem",
@@ -1901,7 +1928,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/coffee-script-2.4.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1914,8 +1941,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -1937,10 +1964,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/coffee-script@2.4.1",
     "repository_homepage_url": "https://rubygems.org/gems/coffee-script/versions/2.4.1",
     "repository_download_url": "https://rubygems.org/downloads/coffee-script-2.4.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-script/versions/2.4.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-script/versions/2.4.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/coffee-script@2.4.1"
   },
   {
     "type": "gem",
@@ -1955,7 +1983,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/railties-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -1968,8 +1996,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2018,10 +2046,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/railties@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/railties/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/railties-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/railties/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/railties/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/railties@5.0.6"
   },
   {
     "type": "gem",
@@ -2036,7 +2065,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/coffee-script-source-1.12.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2049,14 +2078,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/coffee-script-source@1.12.2",
     "repository_homepage_url": "https://rubygems.org/gems/coffee-script-source/versions/1.12.2",
     "repository_download_url": "https://rubygems.org/downloads/coffee-script-source-1.12.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-script-source/versions/1.12.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/coffee-script-source/versions/1.12.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/coffee-script-source@1.12.2"
   },
   {
     "type": "gem",
@@ -2071,7 +2101,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/execjs-2.7.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2084,14 +2114,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/execjs@2.7.0",
     "repository_homepage_url": "https://rubygems.org/gems/execjs/versions/2.7.0",
     "repository_download_url": "https://rubygems.org/downloads/execjs-2.7.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/execjs/versions/2.7.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/execjs/versions/2.7.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/execjs@2.7.0"
   },
   {
     "type": "gem",
@@ -2106,7 +2137,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/crass-1.0.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2119,14 +2150,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/crass@1.0.2",
     "repository_homepage_url": "https://rubygems.org/gems/crass/versions/1.0.2",
     "repository_download_url": "https://rubygems.org/downloads/crass-1.0.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/crass/versions/1.0.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/crass/versions/1.0.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/crass@1.0.2"
   },
   {
     "type": "gem",
@@ -2141,7 +2173,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/ffi-1.9.18.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2154,14 +2186,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/ffi@1.9.18",
     "repository_homepage_url": "https://rubygems.org/gems/ffi/versions/1.9.18",
     "repository_download_url": "https://rubygems.org/downloads/ffi-1.9.18.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/ffi/versions/1.9.18.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/ffi/versions/1.9.18.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/ffi@1.9.18"
   },
   {
     "type": "gem",
@@ -2176,7 +2209,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/jbuilder-2.7.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2189,8 +2222,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2212,10 +2245,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/jbuilder@2.7.0",
     "repository_homepage_url": "https://rubygems.org/gems/jbuilder/versions/2.7.0",
     "repository_download_url": "https://rubygems.org/downloads/jbuilder-2.7.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/jbuilder/versions/2.7.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/jbuilder/versions/2.7.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/jbuilder@2.7.0"
   },
   {
     "type": "gem",
@@ -2230,7 +2264,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/multi_json-1.12.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2243,14 +2277,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/multi_json@1.12.2",
     "repository_homepage_url": "https://rubygems.org/gems/multi_json/versions/1.12.2",
     "repository_download_url": "https://rubygems.org/downloads/multi_json-1.12.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/multi_json/versions/1.12.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/multi_json/versions/1.12.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/multi_json@1.12.2"
   },
   {
     "type": "gem",
@@ -2265,7 +2300,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/jquery-rails-4.3.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2278,8 +2313,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2310,10 +2345,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/jquery-rails@4.3.1",
     "repository_homepage_url": "https://rubygems.org/gems/jquery-rails/versions/4.3.1",
     "repository_download_url": "https://rubygems.org/downloads/jquery-rails-4.3.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/jquery-rails/versions/4.3.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/jquery-rails/versions/4.3.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/jquery-rails@4.3.1"
   },
   {
     "type": "gem",
@@ -2328,7 +2364,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/thor-0.20.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2341,14 +2377,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/thor@0.20.0",
     "repository_homepage_url": "https://rubygems.org/gems/thor/versions/0.20.0",
     "repository_download_url": "https://rubygems.org/downloads/thor-0.20.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/thor/versions/0.20.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/thor/versions/0.20.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/thor@0.20.0"
   },
   {
     "type": "gem",
@@ -2363,7 +2400,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/listen-3.0.8.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2376,8 +2413,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2399,10 +2436,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/listen@3.0.8",
     "repository_homepage_url": "https://rubygems.org/gems/listen/versions/3.0.8",
     "repository_download_url": "https://rubygems.org/downloads/listen-3.0.8.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/listen/versions/3.0.8.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/listen/versions/3.0.8.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/listen@3.0.8"
   },
   {
     "type": "gem",
@@ -2417,7 +2455,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rb-fsevent-0.10.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2430,14 +2468,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/rb-fsevent@0.10.2",
     "repository_homepage_url": "https://rubygems.org/gems/rb-fsevent/versions/0.10.2",
     "repository_download_url": "https://rubygems.org/downloads/rb-fsevent-0.10.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rb-fsevent/versions/0.10.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rb-fsevent/versions/0.10.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rb-fsevent@0.10.2"
   },
   {
     "type": "gem",
@@ -2452,7 +2491,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rb-inotify-0.9.10.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2465,8 +2504,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2479,10 +2518,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/rb-inotify@0.9.10",
     "repository_homepage_url": "https://rubygems.org/gems/rb-inotify/versions/0.9.10",
     "repository_download_url": "https://rubygems.org/downloads/rb-inotify-0.9.10.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rb-inotify/versions/0.9.10.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rb-inotify/versions/0.9.10.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rb-inotify@0.9.10"
   },
   {
     "type": "gem",
@@ -2497,7 +2537,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/loofah-2.1.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2510,8 +2550,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2533,10 +2573,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/loofah@2.1.1",
     "repository_homepage_url": "https://rubygems.org/gems/loofah/versions/2.1.1",
     "repository_download_url": "https://rubygems.org/downloads/loofah-2.1.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/loofah/versions/2.1.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/loofah/versions/2.1.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/loofah@2.1.1"
   },
   {
     "type": "gem",
@@ -2551,7 +2592,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/nokogiri-1.8.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2564,8 +2605,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2578,10 +2619,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/nokogiri@1.8.1",
     "repository_homepage_url": "https://rubygems.org/gems/nokogiri/versions/1.8.1",
     "repository_download_url": "https://rubygems.org/downloads/nokogiri-1.8.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/nokogiri/versions/1.8.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/nokogiri/versions/1.8.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/nokogiri@1.8.1"
   },
   {
     "type": "gem",
@@ -2596,7 +2638,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/mime-types-3.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2609,8 +2651,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2623,10 +2665,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/mime-types@3.1",
     "repository_homepage_url": "https://rubygems.org/gems/mime-types/versions/3.1",
     "repository_download_url": "https://rubygems.org/downloads/mime-types-3.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mime-types/versions/3.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mime-types/versions/3.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/mime-types@3.1"
   },
   {
     "type": "gem",
@@ -2641,7 +2684,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/method_source-0.9.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2654,14 +2697,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/method_source@0.9.0",
     "repository_homepage_url": "https://rubygems.org/gems/method_source/versions/0.9.0",
     "repository_download_url": "https://rubygems.org/downloads/method_source-0.9.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/method_source/versions/0.9.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/method_source/versions/0.9.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/method_source@0.9.0"
   },
   {
     "type": "gem",
@@ -2676,7 +2720,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/mime-types-data-3.2016.0521.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2689,14 +2733,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/mime-types-data@3.2016.0521",
     "repository_homepage_url": "https://rubygems.org/gems/mime-types-data/versions/3.2016.0521",
     "repository_download_url": "https://rubygems.org/downloads/mime-types-data-3.2016.0521.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mime-types-data/versions/3.2016.0521.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mime-types-data/versions/3.2016.0521.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/mime-types-data@3.2016.0521"
   },
   {
     "type": "gem",
@@ -2711,7 +2756,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/mini_portile2-2.3.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2724,14 +2769,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/mini_portile2@2.3.0",
     "repository_homepage_url": "https://rubygems.org/gems/mini_portile2/versions/2.3.0",
     "repository_download_url": "https://rubygems.org/downloads/mini_portile2-2.3.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mini_portile2/versions/2.3.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mini_portile2/versions/2.3.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/mini_portile2@2.3.0"
   },
   {
     "type": "gem",
@@ -2746,7 +2792,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/puma-3.10.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2759,14 +2805,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/puma@3.10.0",
     "repository_homepage_url": "https://rubygems.org/gems/puma/versions/3.10.0",
     "repository_download_url": "https://rubygems.org/downloads/puma-3.10.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/puma/versions/3.10.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/puma/versions/3.10.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/puma@3.10.0"
   },
   {
     "type": "gem",
@@ -2781,7 +2828,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rails-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2794,8 +2841,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2889,10 +2936,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/rails@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/rails/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/rails-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rails/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rails@5.0.6"
   },
   {
     "type": "gem",
@@ -2907,7 +2955,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sprockets-rails-3.2.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2920,8 +2968,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -2952,10 +3000,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/sprockets-rails@3.2.1",
     "repository_homepage_url": "https://rubygems.org/gems/sprockets-rails/versions/3.2.1",
     "repository_download_url": "https://rubygems.org/downloads/sprockets-rails-3.2.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sprockets-rails/versions/3.2.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sprockets-rails/versions/3.2.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sprockets-rails@3.2.1"
   },
   {
     "type": "gem",
@@ -2970,7 +3019,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/rake-12.1.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -2983,14 +3032,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/rake@12.1.0",
     "repository_homepage_url": "https://rubygems.org/gems/rake/versions/12.1.0",
     "repository_download_url": "https://rubygems.org/downloads/rake-12.1.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rake/versions/12.1.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rake/versions/12.1.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/rake@12.1.0"
   },
   {
     "type": "gem",
@@ -3005,7 +3055,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sass-3.5.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3018,8 +3068,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3032,10 +3082,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/sass@3.5.2",
     "repository_homepage_url": "https://rubygems.org/gems/sass/versions/3.5.2",
     "repository_download_url": "https://rubygems.org/downloads/sass-3.5.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass/versions/3.5.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass/versions/3.5.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sass@3.5.2"
   },
   {
     "type": "gem",
@@ -3050,7 +3101,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sass-listen-4.0.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3063,8 +3114,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3086,10 +3137,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/sass-listen@4.0.0",
     "repository_homepage_url": "https://rubygems.org/gems/sass-listen/versions/4.0.0",
     "repository_download_url": "https://rubygems.org/downloads/sass-listen-4.0.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass-listen/versions/4.0.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass-listen/versions/4.0.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sass-listen@4.0.0"
   },
   {
     "type": "gem",
@@ -3104,7 +3156,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sass-rails-5.0.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3117,8 +3169,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3167,10 +3219,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/sass-rails@5.0.6",
     "repository_homepage_url": "https://rubygems.org/gems/sass-rails/versions/5.0.6",
     "repository_download_url": "https://rubygems.org/downloads/sass-rails-5.0.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass-rails/versions/5.0.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sass-rails/versions/5.0.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sass-rails@5.0.6"
   },
   {
     "type": "gem",
@@ -3185,7 +3238,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sprockets-3.7.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3198,8 +3251,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3221,10 +3274,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/sprockets@3.7.1",
     "repository_homepage_url": "https://rubygems.org/gems/sprockets/versions/3.7.1",
     "repository_download_url": "https://rubygems.org/downloads/sprockets-3.7.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sprockets/versions/3.7.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sprockets/versions/3.7.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sprockets@3.7.1"
   },
   {
     "type": "gem",
@@ -3239,7 +3293,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/tilt-2.0.8.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3252,14 +3306,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/tilt@2.0.8",
     "repository_homepage_url": "https://rubygems.org/gems/tilt/versions/2.0.8",
     "repository_download_url": "https://rubygems.org/downloads/tilt-2.0.8.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/tilt/versions/2.0.8.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/tilt/versions/2.0.8.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/tilt@2.0.8"
   },
   {
     "type": "gem",
@@ -3274,7 +3329,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/spring-2.0.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3287,8 +3342,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3301,10 +3356,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/spring@2.0.2",
     "repository_homepage_url": "https://rubygems.org/gems/spring/versions/2.0.2",
     "repository_download_url": "https://rubygems.org/downloads/spring-2.0.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/spring/versions/2.0.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/spring/versions/2.0.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/spring@2.0.2"
   },
   {
     "type": "gem",
@@ -3319,7 +3375,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/spring-watcher-listen-2.0.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3332,8 +3388,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3355,10 +3411,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/spring-watcher-listen@2.0.1",
     "repository_homepage_url": "https://rubygems.org/gems/spring-watcher-listen/versions/2.0.1",
     "repository_download_url": "https://rubygems.org/downloads/spring-watcher-listen-2.0.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/spring-watcher-listen/versions/2.0.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/spring-watcher-listen/versions/2.0.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/spring-watcher-listen@2.0.1"
   },
   {
     "type": "gem",
@@ -3373,7 +3430,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/sqlite3-1.3.13.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3386,14 +3443,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/sqlite3@1.3.13",
     "repository_homepage_url": "https://rubygems.org/gems/sqlite3/versions/1.3.13",
     "repository_download_url": "https://rubygems.org/downloads/sqlite3-1.3.13.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/sqlite3/versions/1.3.13.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/sqlite3/versions/1.3.13.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/sqlite3@1.3.13"
   },
   {
     "type": "gem",
@@ -3408,7 +3466,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/thread_safe-0.3.6.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3421,14 +3479,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/thread_safe@0.3.6",
     "repository_homepage_url": "https://rubygems.org/gems/thread_safe/versions/0.3.6",
     "repository_download_url": "https://rubygems.org/downloads/thread_safe-0.3.6.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/thread_safe/versions/0.3.6.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/thread_safe/versions/0.3.6.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/thread_safe@0.3.6"
   },
   {
     "type": "gem",
@@ -3443,7 +3502,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/turbolinks-5.0.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3456,8 +3515,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3470,10 +3529,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/turbolinks@5.0.1",
     "repository_homepage_url": "https://rubygems.org/gems/turbolinks/versions/5.0.1",
     "repository_download_url": "https://rubygems.org/downloads/turbolinks-5.0.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/turbolinks/versions/5.0.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/turbolinks/versions/5.0.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/turbolinks@5.0.1"
   },
   {
     "type": "gem",
@@ -3488,7 +3548,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/turbolinks-source-5.0.3.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3501,14 +3561,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/turbolinks-source@5.0.3",
     "repository_homepage_url": "https://rubygems.org/gems/turbolinks-source/versions/5.0.3",
     "repository_download_url": "https://rubygems.org/downloads/turbolinks-source-5.0.3.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/turbolinks-source/versions/5.0.3.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/turbolinks-source/versions/5.0.3.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/turbolinks-source@5.0.3"
   },
   {
     "type": "gem",
@@ -3523,7 +3584,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/uglifier-3.2.0.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3536,8 +3597,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3550,10 +3611,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/uglifier@3.2.0",
     "repository_homepage_url": "https://rubygems.org/gems/uglifier/versions/3.2.0",
     "repository_download_url": "https://rubygems.org/downloads/uglifier-3.2.0.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/uglifier/versions/3.2.0.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/uglifier/versions/3.2.0.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/uglifier@3.2.0"
   },
   {
     "type": "gem",
@@ -3568,7 +3630,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/web-console-3.5.1.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3581,8 +3643,8 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -3622,10 +3684,11 @@
         "resolved_package": {}
       }
     ],
-    "purl": "pkg:gem/web-console@3.5.1",
     "repository_homepage_url": "https://rubygems.org/gems/web-console/versions/3.5.1",
     "repository_download_url": "https://rubygems.org/downloads/web-console-3.5.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/web-console/versions/3.5.1.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/web-console/versions/3.5.1.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/web-console@3.5.1"
   },
   {
     "type": "gem",
@@ -3640,7 +3703,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/websocket-extensions-0.1.2.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -3653,14 +3716,15 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/websocket-extensions@0.1.2",
     "repository_homepage_url": "https://rubygems.org/gems/websocket-extensions/versions/0.1.2",
     "repository_download_url": "https://rubygems.org/downloads/websocket-extensions-0.1.2.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/websocket-extensions/versions/0.1.2.json"
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/websocket-extensions/versions/0.1.2.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/websocket-extensions@0.1.2"
   },
   {
     "type": "gem",
@@ -3688,13 +3752,14 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:gem/tzinfo-data",
     "repository_homepage_url": "https://rubygems.org/gems/tzinfo-data",
     "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/tzinfo-data.json"
+    "api_data_url": "https://rubygems.org/api/v1/versions/tzinfo-data.json",
+    "datasource_id": "gemfile_lock",
+    "purl": "pkg:gem/tzinfo-data"
   }
 ]

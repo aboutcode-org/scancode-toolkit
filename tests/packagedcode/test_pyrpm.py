@@ -69,6 +69,7 @@ class RPMTest(FileBasedTesting):
             'dist_url': None,
             'distribution': u'Mandriva Linux',
             'epoch': None,
+            'files_digest_algo': None,
             'group': u'Terminals',
             'is_binary': True,
             'license': u'BSD',

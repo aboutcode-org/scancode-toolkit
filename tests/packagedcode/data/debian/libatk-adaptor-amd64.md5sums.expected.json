@@ -1,0 +1,95 @@
+[
+  {
+    "type": "deb",
+    "namespace": null,
+    "name": "libatk-adaptor",
+    "version": null,
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [
+      {
+        "path": "usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop",
+        "size": 0,
+        "sha1": null,
+        "md5": "34900bd11562f427776ed2c05ba6002d",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/lib/unity-settings-daemon-1.0/gtk-modules/at-spi2-atk.desktop",
+        "size": 0,
+        "sha1": null,
+        "md5": "34900bd11562f427776ed2c05ba6002d",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so",
+        "size": 0,
+        "sha1": null,
+        "md5": "6ddbc10b64afe708945c3b1497714aaa",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/doc/libatk-adaptor/NEWS.gz",
+        "size": 0,
+        "sha1": null,
+        "md5": "3a24add33624132b6b3b4c2ed08a4394",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/doc/libatk-adaptor/README",
+        "size": 0,
+        "sha1": null,
+        "md5": "452c2e9db46c9ac92a10e700d116b120",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      },
+      {
+        "path": "usr/share/doc/libatk-adaptor/copyright",
+        "size": 0,
+        "sha1": null,
+        "md5": "971e4b2093741db8c51d263cd5c3ee48",
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_md5sums",
+    "purl": "pkg:deb/libatk-adaptor?arch=amd64"
+  }
+]

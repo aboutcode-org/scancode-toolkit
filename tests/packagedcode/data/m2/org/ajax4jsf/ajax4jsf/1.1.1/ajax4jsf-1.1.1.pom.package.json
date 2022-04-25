@@ -24,10 +24,10 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.ajax4jsf/ajax4jsf@1.1.1?classifier=sources"
   ],
+  "file_references": [],
   "extra_data": {},
   "dependencies": [
     {
@@ -175,8 +175,9 @@
       "resolved_package": {}
     }
   ],
-  "purl": "pkg:maven/org.ajax4jsf/ajax4jsf@1.1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/ajax4jsf-1.1.1.jar",
-  "api_data_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/ajax4jsf-1.1.1.pom"
+  "api_data_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/ajax4jsf-1.1.1.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.ajax4jsf/ajax4jsf@1.1.1"
 }

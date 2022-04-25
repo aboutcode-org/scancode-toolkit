@@ -54,8 +54,8 @@
     "license_expression": "gpl-3.0",
     "declared_license": "GPL-3.0-only",
     "notice_text": null,
-    "contains_source_code": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [
       {
@@ -86,9 +86,10 @@
         "resolved_package": {}
       }
     ],
-    "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "datasource_id": "opam_file",
+    "purl": null
   }
 ]

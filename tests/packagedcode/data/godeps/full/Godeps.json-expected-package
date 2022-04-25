@@ -1,0 +1,165 @@
+[
+  {
+    "type": "golang",
+    "namespace": "github.com/cloudfoundry-incubator",
+    "name": "etcd-metrics-server",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry-incubator/metricz",
+        "extracted_requirement": "d9bdb1b78384f05faa694175782055d5ba3966b5",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/gosteno",
+        "extracted_requirement": "5eb8c6e554f0dfc39d6468813b8ac19ec28fe74f",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/gunk/natsrunner",
+        "extracted_requirement": "8c166e2e973df123b29351b396bb8d356192bd81",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/gunk/runner_support",
+        "extracted_requirement": "8c166e2e973df123b29351b396bb8d356192bd81",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/gunk/test_server",
+        "extracted_requirement": "8c166e2e973df123b29351b396bb8d356192bd81",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/gunk/urljoiner",
+        "extracted_requirement": "8c166e2e973df123b29351b396bb8d356192bd81",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/loggregatorlib/cfcomponent/localip",
+        "extracted_requirement": "90e9aee1f6ae4ba750c6656c3fb529bf217b4908",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/storeadapter",
+        "extracted_requirement": "75297e7f1b7c70951bb78c8122bc266288870829",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/cloudfoundry/yagnats",
+        "extracted_requirement": "8bf15e48f3abf6db1765ff908ee678a6f347ce0a",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/coreos/go-etcd/etcd",
+        "extracted_requirement": "1e26d8ee84cf9b1000d2af8acfb45b2521f49be5",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/nu7hatch/gouuid",
+        "extracted_requirement": "179d4d0c4d8d407a32af483c2354df1d2c91e6c3",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/onsi/ginkgo",
+        "extracted_requirement": "462cb7e31b222093d2fd2f4f0cbbce324f6ab3be",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/onsi/gomega",
+        "extracted_requirement": "426c03a406ae6e4ffb9b65528d62439831d7c901",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/vito/cmdtest",
+        "extracted_requirement": "215c451d78ba1382cbccb2736c280c60a11b4b86",
+        "scope": "Deps",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "godeps",
+    "purl": "pkg:golang/github.com/cloudfoundry-incubator/etcd-metrics-server"
+  }
+]

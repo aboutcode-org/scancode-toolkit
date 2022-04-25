@@ -66,9 +66,7 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "root_path": "package-files-not-counted-in-license-holders/package",
       "dependencies": [],
-      "contains_source_code": null,
       "source_packages": [],
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
@@ -259,9 +257,7 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "root_path": "package-files-not-counted-in-license-holders/package",
           "dependencies": [],
-          "contains_source_code": null,
           "source_packages": [],
           "purl": "pkg:npm/test-package@0.0.1",
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",

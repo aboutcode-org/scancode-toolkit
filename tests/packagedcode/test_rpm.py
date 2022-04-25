@@ -22,7 +22,7 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
-        for package_data in rpm.RpmManifest.recognize(test_file):
+        for package_data in rpm.RpmArchiveHandler.parse(test_file):
             break
 
         expected = [
@@ -60,14 +60,15 @@ class TestRpmBasics(FileBasedTesting):
             ('license_expression', None),
             ('declared_license', 'LGPLv2+'),
             ('notice_text', None),
-            ('contains_source_code', None),
             ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
+            ('file_references', []),
             ('extra_data', {}),
             ('dependencies', []),
-            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),
             ('api_data_url', None),
+            ('datasource_id', 'rpm_archive'),
+            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
         ]
         assert list(package_data.to_dict().items()) == expected
 
@@ -79,6 +80,7 @@ class TestRpmBasics(FileBasedTesting):
         expected = {
             'arch': 'noarch',
             'epoch': None,
+            'files_digest_algo': None,
             'description': 'These bindings permit access to QuesoGLC, an '
                            'open source\nimplementation of TrueType font '
                            'rendering for OpenGL.',
@@ -130,11 +132,11 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_rpm_is_manifest_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert not rpm.RpmManifest.is_package_data_file(test_file)
+        assert not rpm.RpmArchiveHandler.is_datafile(test_file)
 
     def test_rpm_is_manifest_rpm_file(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
-        assert rpm.RpmManifest.is_package_data_file(test_file)
+        assert rpm.RpmArchiveHandler.is_datafile(test_file)
 
 
 def check_json(result, expected_file, regen=REGEN_TEST_FIXTURES):

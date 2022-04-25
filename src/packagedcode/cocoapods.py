@@ -9,19 +9,17 @@
 
 import hashlib
 import json
+import os
 import logging
-import re
 
-import attr
 import saneyaml
+from packageurl import PackageURL
 
-from commoncode import filetype
 from packagedcode import models
 from packagedcode.licensing import get_license_matches
 from packagedcode.licensing import get_license_expression_from_matches
-from packagedcode.spec import Spec
-
-from packageurl import PackageURL
+from packagedcode import spec
+from packagedcode import utils
 
 """
 Handle cocoapods packages manifests for macOS and iOS
@@ -30,9 +28,11 @@ and .podspec.json files from https://github.com/CocoaPods/Specs.
 See https://cocoapods.org
 """
 
-# TODO: override the license detection to detect declared_license correctly.
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
-TRACE = False
+def logger_debug(*args):
+    pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -41,246 +41,302 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
-@attr.s()
-class CocoapodsPackageData(models.PackageData):
-    default_type = 'pods'
-    default_primary_language = 'Objective-C'
-    default_web_baseurl = 'https://cocoapods.org'
-    github_specs_repo_baseurl = 'https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs'
-    default_cdn_baseurl='https://cdn.cocoapods.org/Specs'
+# TODO: consider merging Gemfile.lock and Podfile.lock in one module: this is the same format
 
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return f'{baseurl}/pods/{self.name}'
+# TODO: override the license detection to detect declared_license correctly.
 
-    def repository_download_url(self):
-        if self.homepage_url:
-            return f'{self.homepage_url}/archive/{self.version}.zip'
-        elif self.reponame:
-            return f'{self.reponame}/archive/refs/tags/{self.version}.zip'
 
-    def get_api_data_url(self):
-        return self.specs_json_github_url
+def get_repo_base_url(vcs_url):
+    """
+    Return the repository base_url given a ``vcs_url`` version control URL or
+    None.
 
-    def get_code_view_url(self):
-        if isinstance(self.reponame, str):
-            return self.reponame+'/tree/'+self.version
+    For example::
+    >>> assert get_repo_base_url('https://github.com/jogendra/BadgeHub.git') == 'https://github.com/jogendra/BadgeHub'
+    >>> assert get_repo_base_url('https://github.com/jogendra/BadgeHub') == 'https://github.com/jogendra/BadgeHub'
+    >>> assert get_repo_base_url(None) == None
+    """
+    if not vcs_url:
+        return
 
-    def get_bug_tracking_url(self):
-        if isinstance(self.reponame, str):
-            return self.reponame+'/issues/'
+    if not vcs_url.startswith('https://github.com/'):
+        # TODO: we may not know what to do if this is not a GH repo?
+        pass
 
-    def specs_json_cdn_url(self, baseurl=default_cdn_baseurl):
-        return f'{baseurl}/{self.hashed_path}/{self.name}/{self.version}/{self.name}.podspec.json'
+    if vcs_url.endswith('.git'):
+        reponame, _, _ = vcs_url.partition('.git')
+    else:
+        reponame = vcs_url
 
-    def specs_json_github_url(self, baseurl=github_specs_repo_baseurl):
-        return f'{baseurl}/{self.hashed_path}/{self.name}/{self.version}/{self.name}.podspec.json'
+    return reponame
 
-    @property
-    def reponame(self):
-        if isinstance(self.vcs_url, str):
-            if self.vcs_url[-4:] == '.git':
-                return self.vcs_url[:-4]
 
-    @property
-    def hashed_path(self):
+def get_podname_proper(podname):
+    """
+    Podnames in cocoapods sometimes are files inside a pods package (like 'OHHTTPStubs/Default')
+    This returns proper podname in those cases.
+    """
+    if '/' in podname:
+        return podname.split('/')[0]
+    return podname
+
+
+def get_hashed_path(name):
+    """
+    Returns a string with a part of the file path derived from the md5 hash.
+
+    From https://github.com/CocoaPods/cdn.cocoapods.org:
+    "There are a set of known prefixes for all Podspec paths, you take the name of the pod,
+    create a hash (using md5) of it and take the first three characters."
+    """
+    if not name:
+        return
+    podname = get_podname_proper(name)
+    if name != podname:
+        name_to_hash = podname
+    else:
+        name_to_hash = name
+
+    hash_init = get_first_three_md5_hash_characters(name_to_hash)
+    hashed_path = '/'.join(list(hash_init))
+    return hashed_path
+
+
+def get_first_three_md5_hash_characters(podname):
+    return hashlib.md5(podname.encode('utf-8')).hexdigest()[0:3]
+
+
+class BasePodHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase):
         """
-        Returns a string with a part of the file path derived from the md5 hash.
-
-        From https://github.com/CocoaPods/cdn.cocoapods.org:
-        "There are a set of known prefixes for all Podspec paths, you take the name of the pod,
-        create a hash (using md5) of it and take the first three characters."
+        Assemble pod packages and dependencies and handle the specific cases where
+        there are more than one podspec in the same directory.
+        This is designed to process .podspec, Podfile and Podfile.lock
         """
-        podname = self.get_podname_proper(self.name)
-        if self.name != podname:
-            name_to_hash = podname
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
         else:
-            name_to_hash = self.name
+            # do we have more than one podspec?
+            parent = resource.parent(codebase)
+            sibling_podspecs = [
+                r for r in parent.children(codebase)
+                if r.name.endswith('.podspec')
+            ]
 
-        hash_init = self.get_first_3_mdf_hash_characters(name_to_hash)
-        hashed_path = '/'.join(list(hash_init))
-        return hashed_path
+            siblings_counts = len(sibling_podspecs)
+            has_single_podspec = siblings_counts == 1
+            has_multiple_podspec = siblings_counts > 1
 
-    @staticmethod
-    def get_first_3_mdf_hash_characters(podname):
-        return hashlib.md5(podname.encode('utf-8')).hexdigest()[0:3] 
+            datafile_name_patterns = (
+                'Podfile.lock',
+                'Podfile',
+            )
 
-    @staticmethod
-    def get_podname_proper(podname):
-        """
-        Podnames in cocoapods sometimes are files inside a pods package (like 'OHHTTPStubs/Default')
-        This returns proper podname in those cases.
-        """
-        if '/' in podname:
-            return podname.split('/')[0]
-        return podname
+            if has_single_podspec:
+                # we can treat all podfile/spec as being for one package
+                datafile_name_patterns = (sibling_podspecs[0].name,) + datafile_name_patterns
+
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
+
+            elif has_multiple_podspec:
+                # treat each of podspec and podfile alone without meraging
+                # as we cannot determine easily which podfile is for which
+                # podspec
+                podspec = sibling_podspecs.pop()
+                datafile_name_patterns = (podspec.name,) + datafile_name_patterns
+
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
+
+                for resource in sibling_podspecs:
+                    datafile_path = resource.path
+                    yield resource
+                    for package_data in resource.package_data:
+                        package_data = models.PackageData.from_dict(package_data)
+                        package = models.Package.from_package_data(
+                            package_data=package_data,
+                            datafile_path=datafile_path,
+                        )
+                        cls.assign_package_to_resources(package, resource, codebase)
+                        yield package
+
+            else:
+                # has_no_podspec:
+                yield from models.DatafileHandler.assemble_from_many_datafiles(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=parent,
+                    codebase=codebase,
+                )
 
 
-@attr.s()
-class Podspec(CocoapodsPackageData, models.PackageDataFile):
-
-    file_patterns = ('*.podspec',)
-    extensions = ('.podspec',)
+class PodspecHandler(BasePodHandler):
+    datasource_id = 'cocoapods_podspec'
+    path_patterns = ('*.podspec',)
+    default_package_type = 'pods'
+    default_primary_language = 'Objective-C'
+    description = 'Cocoapods .podspec'
+    documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
 
     @classmethod
-    def is_package_data_file(cls, location):
+    def parse(cls, location):
         """
-        Return True if the file at ``location`` is likely a manifest of this type.
+        Yield one or more Package manifest objects given a file ``location``
+        pointing to a package archive, manifest or similar.
         """
-        return filetype.is_file(location) and location.endswith('.podspec')
+        podspec = spec.parse_spec(
+            location=location,
+            package_type=cls.default_package_type,
+        )
 
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        podspec_object = Spec()
-        data = podspec_object.parse_spec(location)
+        name = podspec.get('name')
+        version = podspec.get('version')
+        homepage_url = podspec.get('homepage')
+        declared_license = podspec.get('license')
+        license_expression = None
+        if declared_license:
+            license_expression = models.compute_normalized_license(declared_license)
+        summary = podspec.get('summary')
+        description = podspec.get('description')
+        description = utils.build_description(
+            summary=summary,
+            description=description,
+        )
+        vcs_url = podspec.get('source') or ''
+        authors = podspec.get('author') or []
 
-        name = data.get('name')
-        version = data.get('version')
-        declared_license = data.get('license')
-        summary = data.get('summary', '')
-        description = data.get('description', '')
-        homepage_url = data.get('homepage_url')
-        source = data.get('source')
-        authors = data.get('author') or []
-        if summary and not description.startswith(summary):
-            desc = [summary]
-            if description:
-                desc += [description]
-            description = '\n'.join(desc)
-
-        author_names = []
-        author_email = []
+        # FIXME: we are doing nothing with the email list
+        parties = []
         if authors:
-            for split_author in authors:
-                split_author = split_author.strip()
-                author, email = parse_person(split_author)
-                author_names.append(author)
-                author_email.append(email)
+            for author in authors:
+                auth, email = parse_person(author)
+                party = models.Party(
+                    type=models.party_person,
+                    name=auth,
+                    email=email,
+                    role='author',
+                )
+                parties.append(party)
 
-        parties = list(party_mapper(author_names, author_email))
-
-        yield cls(
+        urls = get_urls(
             name=name,
             version=version,
-            vcs_url=source,
-            source_packages=list(source.split('\n')),
+            homepage_url=homepage_url,
+            vcs_url=vcs_url)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            primary_language=cls.default_primary_language,
+            vcs_url=vcs_url,
+            # FIXME: a source should be a PURL, not a list of URLs
+            # source_packages=vcs_url.split('\n'),
             description=description,
             declared_license=declared_license,
+            license_expression=license_expression,
             homepage_url=homepage_url,
-            parties=parties
+            parties=parties,
+            **urls,
         )
 
 
-@attr.s()
-class PodfileLock(CocoapodsPackageData, models.PackageDataFile):
+class PodfileHandler(PodspecHandler):
+    datasource_id = 'cocoapods_podfile'
+    path_patterns = ('*Podfile',)
+    default_package_type = 'pods'
+    default_primary_language = 'Objective-C'
+    description = 'Cocoapods Podfile'
+    documentation_url = 'https://guides.cocoapods.org/using/the-podfile.html'
 
-    file_patterns = ('*podfile.lock',)
-    extensions = ('.lock',)
+
+class PodfileLockHandler(BasePodHandler):
+    datasource_id = 'cocoapods_podfile_lock'
+    path_patterns = ('*Podfile.lock',)
+    default_package_type = 'pods'
+    default_primary_language = 'Objective-C'
+    description = 'Cocoapods Podfile.lock'
+    documentation_url = 'https://guides.cocoapods.org/using/the-podfile.html'
 
     @classmethod
-    def is_package_data_file(cls, location):
+    def parse(cls, location):
         """
-        Return True if the file at ``location`` is likely a manifest of this type.
+        Yield PackageData from a YAML Podfile.lock.
         """
-        return (filetype.is_file(location) and location.endswith(('podfile.lock', 'Podfile.lock')))
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        data = cls.read_podfile_lock(location)
+        with open(location) as pfl:
+            data = saneyaml.load(pfl)
 
         pods = data['PODS']
-        pod_deps = []
+        dependencies = []
 
         for pod in pods:
-
             if isinstance(pod, dict):
                 for main_pod, _dep_pods in pod.items():
 
-                    podname, namespace, version = get_data_from_pods(main_pod)
+                    purl, xreq = parse_dep_requirements(main_pod)
 
-                    purl = PackageURL(
-                        type='pods',
-                        namespace=namespace,
-                        name=podname,
-                        version=version,
-                    ).to_string()
-
-                    pod_deps.append(
+                    dependencies.append(
                         models.DependentPackage(
-                            purl=purl,
-                            scope='requires-dev',
-                            extracted_requirement=version,
+                            purl=str(purl),
+                            # FIXME: why dev?
+                            scope='requires',
+                            extracted_requirement=xreq,
                             is_runtime=False,
                             is_optional=True,
                             is_resolved=True,
                         )
                     )
 
-            elif isinstance(pod, str):  
-                podname, namespace, version = get_data_from_pods(pod)
-                purl = PackageURL(
-                    type='pods',
-                    namespace=namespace,
-                    name=podname,
-                    version=version,
-                ).to_string()
+            elif isinstance(pod, str):
 
-                pod_deps.append(
+                purl, xreq = parse_dep_requirements(pod)
+
+                dependencies.append(
                     models.DependentPackage(
-                        purl=purl,
-                        scope='requires-dev',
-                        extracted_requirement=version,
+                        purl=str(purl),
+                        # FIXME: why dev?
+                        scope='requires',
+                        extracted_requirement=xreq,
                         is_runtime=False,
                         is_optional=True,
                         is_resolved=True,
                     )
                 )
 
-        yield cls(
-            dependencies=pod_deps,
-            declared_license=None,
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
         )
 
 
-    @staticmethod
-    def read_podfile_lock(location):
-        """
-        Reads from podfile.lock file at location as YML.
-        """
-        with open(location, 'r') as file:
-            data = saneyaml.load(file) 
-
-        return data
-
-
-@attr.s()
-class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
-
-    file_patterns = ('*.podspec.json',)
-    extensions = ('.json',)
+class PodspecJsonHandler(models.DatafileHandler):
+    datasource_id = 'cocoapods_podspec_json'
+    path_patterns = ('*.podspec.json',)
+    default_package_type = 'pods'
+    default_primary_language = 'Objective-C'
+    description = 'Cocoapods .podspec.json'
+    documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
 
     @classmethod
-    def is_package_data_file(cls, location):
-        """
-        Return True if the file at ``location`` is likely a manifest of this type.
-        """
-        return filetype.is_file(location) and location.endswith('.podspec.json')
-
-    @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
-        data = cls.read_podspec_json(location)
+    def parse(cls, location):
+        with open(location) as psj:
+            data = json.load(psj)
 
         name = data.get('name')
         version = data.get('version')
@@ -288,11 +344,11 @@ class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
         description = data.get('description', '')
         homepage_url = data.get('homepage')
 
-        license = data.get('license')
-        if isinstance(license, dict):
-            declared_license = ' '.join(list(license.values()))
+        lic = data.get('license')
+        if isinstance(lic, dict):
+            declared_license = ' '.join(list(lic.values()))
         else:
-            declared_license = license
+            declared_license = lic
 
         source = data.get('source')
         vcs_url = None
@@ -305,9 +361,9 @@ class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
                 vcs_url = git_url
             elif http_url:
                 download_url = http_url
-
-        if not vcs_url:
-            vcs_url = source
+        elif isinstance(source, str):
+            if not vcs_url:
+                vcs_url = source
 
         authors = data.get('authors') or {}
 
@@ -330,7 +386,7 @@ class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
                     party = models.Party(
                         type=models.party_org,
                         name=key,
-                        url=value+'.com',
+                        url=value + '.com',
                         role='owner'
                     )
                     parties.append(party)
@@ -341,7 +397,7 @@ class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
                     role='owner'
                 )
                 parties.append(party)
-        
+
         extra_data = {}
         extra_data['source'] = data['source']
         dependencies = data.get('dependencies', '')
@@ -349,47 +405,58 @@ class PodspecJson(CocoapodsPackageData, models.PackageDataFile):
             extra_data['dependencies'] = dependencies
         extra_data['podspec.json'] = data
 
-        package_data = cls(
+        urls = get_urls(
+            name=name,
+            version=version, homepage_url=homepage_url, vcs_url=vcs_url)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            primary_language=cls.default_primary_language,
+            type=cls.default_package_type,
             name=name,
             version=version,
-            vcs_url=vcs_url,
             description=description,
             declared_license=declared_license,
             license_expression=license_expression,
+            parties=parties,
+            vcs_url=vcs_url,
             homepage_url=homepage_url,
             download_url=download_url,
-            parties=parties,
+            **urls,
         )
 
-        package_data.api_data_url = package_data.get_api_data_url()
 
-        yield package_data
-
-    @staticmethod
-    def read_podspec_json(location):
-        """
-        Reads from podspec.json file at location as JSON.
-        """
-        with open(location, "r") as file:
-            data = json.load(file)
-
-        return data
-
-
-@attr.s()
-class CocoapodsPackage(CocoapodsPackageData, models.Package):
+def get_urls(name=None, version=None, homepage_url=None, vcs_url=None):
     """
-    A cocoapods Package that is created out of one/multiple cocoapods package
-    manifests and package-like data, with it's files.
+    Return a mapping of podspec URLS.
     """
+    reponame = get_repo_base_url(vcs_url) or ''
 
-    @property
-    def manifests(self):
-        return [
-            Podspec,
-            PodspecJson,
-            PodfileLock
-        ]
+    repository_download_url = None
+    if version:
+        if homepage_url:
+            repository_download_url = f'{homepage_url}/archive/{version}.zip'
+        if reponame:
+            repository_download_url = f'{reponame}/archive/refs/tags/{version}.zip'
+
+    hashed_path = get_hashed_path(name)
+    # not used yet, alternative for api_data_url
+    specs_json_cdn_url = f'https://cdn.cocoapods.org/Specs/{hashed_path}/{name}/{version}/{name}.podspec.json'
+
+    api_data_url = (
+        hashed_path
+        and name
+        and version
+        and f'https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/{hashed_path}/{name}/{version}/{name}.podspec.json'
+    )
+
+    return dict(
+        repository_download_url=repository_download_url or None,
+        repository_homepage_url=name and f'https://cocoapods.org/pods/{name}' or None,
+        code_view_url=reponame and version and f'{reponame}/tree/{version}' or None,
+        bug_tracking_url=reponame and f'{reponame}/issues/' or None,
+        api_data_url=api_data_url or None,
+    )
 
 
 def party_mapper(author, email):
@@ -400,24 +467,15 @@ def party_mapper(author, email):
         yield models.Party(
             type=models.party_person,
             name=person,
-            role='author')
+            role='author',
+        )
 
     for person in email:
         yield models.Party(
             type=models.party_person,
             email=person,
-            role='email')
-
-
-person_parser = re.compile(
-    r'^(?P<name>[\w\s(),-_.,]+)'
-    r'=>'
-    r'(?P<email>[\S+]+$)'
-).match
-
-person_parser_only_name = re.compile(
-    r'^(?P<name>[\w\s(),-_.,]+)'
-).match
+            role='email',
+        )
 
 
 def parse_person(person):
@@ -429,43 +487,66 @@ def parse_person(person):
         s.author = 'Rohit Potter'
         or
         s.author = 'Rohit Potter=>rohit@gmail.com'
-    Author check:
+
     >>> p = parse_person('Rohit Potter=>rohit@gmail.com')
-    >>> assert p == ('Rohit Potter', 'rohit@gmail.com')
+    >>> assert p == ('Rohit Potter', 'rohit@gmail.com'), p
     >>> p = parse_person('Rohit Potter')
-    >>> assert p == ('Rohit Potter', None)
+    >>> assert p == ('Rohit Potter', None), p
     """
-    parsed = person_parser(person)
-    if not parsed:
-        parsed = person_parser_only_name(person)
-        name = parsed.group('name')
-        email = None
+    if '=>' in person:
+        name, _, email = person.partition('=>')
+        email = email.strip('\'" =')
+    elif '=' in person:
+        name, _, email = person.partition('=')
+        email = email.strip('\'" ')
     else:
-        name = parsed.group('name')
-        email = parsed.group('email')
+        name = person
+        email = None
+
+    name = name.strip('\'"')
 
     return name, email
 
 
-def get_sha1_file(location):
+def parse_dep_requirements(dep):
     """
-    Get sha1 hash for a file at location.
+    Return a tuple of (Package URL, version constraint) given a ``dep``
+    dependency requirement string extracted from a podspec.
+
+    For example:
+
+    >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs@9.0.0'), '9.0.0'
+    >>> assert parse_dep_requirements('OHHTTPStubs (9.0.0)') == expected
+
+    >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs/NSURLSession'), None
+    >>> result = parse_dep_requirements('OHHTTPStubs/NSURLSession')
+    >>> assert result == expected, result
+
+    >>> expected = PackageURL.from_string('pkg:pods/AFNetworking/Serialization@3.0.4'), '= 3.0.4'
+    >>> result = parse_dep_requirements(' AFNetworking/Serialization (= 3.0.4) ')
+    >>> assert result == expected, result
     """
-    with open(location, "rb") as f:
-        return hashlib.sha1(f.read()).hexdigest()
+    if '(' in dep:
+        name, _, version = dep.partition('(')
+        version = version.strip(')( ')
+        requirement = version
+        version = requirement.strip('= ')
 
-
-def get_data_from_pods(dep_pod_version):
-    
-    if '(' in dep_pod_version:
-        podname, _, version = dep_pod_version.strip(')').partition(' (')
     else:
         version = None
-        podname = dep_pod_version
-        
-    if '/' in podname:
-        namespace, _, podname = podname.partition('/')
+        requirement = None
+        name = dep
+
+    name = name.strip(')')
+    if '/' in name:
+        namespace, _, name = name.partition('/')
     else:
         namespace = None
 
-    return podname, namespace, version
+    purl = PackageURL(
+        type='pods',
+        namespace=namespace,
+        name=name,
+        version=version,
+    )
+    return purl, requirement

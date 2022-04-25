@@ -12,6 +12,7 @@ from pathlib import Path
 from pathlib import PureWindowsPath
 
 import attr
+
 try:
     from regipy.exceptions import NoRegistrySubkeysException
     from regipy.exceptions import RegistryKeyNotFoundException
@@ -21,74 +22,68 @@ except ImportError:
 
 from packagedcode import models
 
-
-# Tracing flags
-TRACE = False
-
-
-def logger_debug(*args):
-    pass
-
-
-if TRACE:
-    import sys
-    import logging
-
-    logger = logging.getLogger(__name__)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str)
-                                     and a or repr(a) for a in args))
-
-
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
 # TODO: Windows appstore
 
+
 def get_registry_name_key_entry(registry_hive, registry_path):
     """
-    Given a RegistryHive `registry_hive`, return the name key entry for
-    `registry_path` from `registry_hive`
-
-    Return if the registry path cannot be found.
+    Return the "name" key entry for ```registry_path`` from the ```registry_hive``
+    RegistryHive. Return None if the ``registry_path`` is not found.
     """
     try:
-        name_key_entry = registry_hive.get_key(registry_path)
-    except (RegistryKeyNotFoundException, NoRegistrySubkeysException) as ex:
-        if TRACE:
-            logger_debug('Did not find the key: {}'.format(ex))
+        return registry_hive.get_key(registry_path)
+    except (RegistryKeyNotFoundException, NoRegistrySubkeysException):
         return
-    return name_key_entry
 
 
 def get_registry_tree(registry_location, registry_path):
     """
-    Return a list of dictionaries of Window registry entries found under a given
-    registry path
+    Return a list of dictionaries of Window registry entries from the hive at
+    ``registry_location`` found under a given ``registry_path``.
     """
     registry_hive = RegistryHive(registry_location)
     name_key_entry = get_registry_name_key_entry(
-        registry_hive=registry_hive,
-        registry_path=registry_path
+        registry_hive=registry_hive, registry_path=registry_path
     )
     if not name_key_entry:
         return []
-    return [attr.asdict(entry) for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)]
+    return [
+        attr.asdict(entry) for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)
+    ]
 
 
-def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET Framework Setup\\NDP'):
+def get_installed_dotnet_versions_from_hive(
+    location,
+    datasource_id,
+    package_type,
+    registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+):
     """
-    Yield the installed versions of .NET framework from `location`. The logic to
-    retrieve installed .NET version has been outlined here:
+    Yield PackageData for the installed versions of .NET framework from the
+    registry hive at ``location``.
+
+    The logic to retrieve installed .NET version has been outlined here:
     https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
     """
-    registry_tree = get_registry_tree(location, registry_path)
-    return _report_installed_dotnet_versions(registry_tree)
+    registry_tree = get_registry_tree(registry_location=location, registry_path=registry_path)
+    yield from get_installed_dotnet_versions_from_regtree(
+        registry_tree=registry_tree,
+        datasource_id=datasource_id,
+        package_type=package_type,
+    )
 
 
-def _report_installed_dotnet_versions(registry_tree):
+def get_installed_dotnet_versions_from_regtree(
+    registry_tree,
+    datasource_id,
+    package_type,
+):
+    """
+    Yield PackageData for the installed versions of .NET framework from a
+    Windows ``registry_tree``.
+    """
     if not registry_tree:
         return
 
@@ -98,80 +93,84 @@ def _report_installed_dotnet_versions(registry_tree):
         if not entry.get('path', '').endswith('\\Full'):
             continue
 
-        dotnet_info = {}
-        for dotnet_info_value in entry.get('values', []):
-            dotnet_info_value_name = dotnet_info_value.get('name')
-            dotnet_info_value_value = dotnet_info_value.get('value')
-            if dotnet_info_value_name == 'Version':
-                dotnet_info['version'] = dotnet_info_value_value
-            if dotnet_info_value_name == 'InstallPath':
-                dotnet_info['InstallPath'] = dotnet_info_value_value
+        file_references = []
+        version = None
+        for values in entry.get('values', []):
+            key = values.get('name')
+            value = values.get('value')
 
-        version = dotnet_info.get('version')
-        if not version:
-            continue
+            if key == 'Version':
+                version = value
+            if key == 'InstallPath':
+                file_references.append(models.FileReference(path=value))
 
-        install_path = dotnet_info.get('InstallPath')
-        extra_data = {}
-        if install_path:
-            extra_data['install_location'] = install_path
-
-        # Yield package
-        yield InstalledWindowsProgram(
-            name='Microsoft .NET Framework',
+        yield models.PackageData(
+            datasource_id=datasource_id,
+            type=package_type,
+            name='microsoft-dot-net-framework',
             version=version,
-            extra_data=extra_data,
+            file_references=file_references,
         )
 
 
-def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall'):
+def get_installed_windows_programs_from_hive(
+    location,
+    datasource_id,
+    package_type,
+    registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+):
     """
-    Yield installed Windows packages from a Windows registry file at `location`.
+    Yield installed Windows PackageData from a Windows registry file at
+    ``location``.
+
     This is done by looking at the entries of the uninstallable programs list.
 
-    If `registry_path` is provided, then we will load Registry entries starting
-    from `registry_path`
+    If ``registry_path`` is provided, then we will load Registry entries
+    starting from ``registry_path``
     """
-    registry_tree = get_registry_tree(location, registry_path)
-    return _report_installed_programs(registry_tree)
+    registry_tree = get_registry_tree(registry_location=location, registry_path=registry_path)
+    yield from get_installed_windows_programs_from_regtree(
+        registry_tree=registry_tree,
+        datasource_id=datasource_id,
+        package_type=package_type,
+    )
 
 
-def _report_installed_programs(registry_tree):
+def get_installed_windows_programs_from_regtree(
+    registry_tree,
+    datasource_id,
+    package_type,
+):
+    """
+    Yield installed Windows PackageData from a Windows ``registry_tree``.
+    """
     if not registry_tree:
         return
 
-    # Collect Package information and create Package if we have a valid Package name
+    field_by_regkey = {
+        'DisplayName': 'name',
+        'DisplayVersion': 'version',
+        'URLInfoAbout': 'homepage_url',
+        'Publisher': 'publisher',
+        'DisplayIcon': 'display_icon',
+        'UninstallString': 'uninstall_string',
+        'InstallLocation': 'install_location',
+    }
+
     for entry in registry_tree:
         package_info = {}
         for entry_value in entry.get('values', []):
-            name = entry_value.get('name')
+            key = entry_value.get('name')
             value = entry_value.get('value')
-
-            if name == 'DisplayName':
-                package_info['name'] = value
-            if name == 'DisplayVersion':
-                package_info['version'] = value
-            if name == 'InstallLocation':
-                package_info['install_location'] = value
-            if name == 'Publisher':
-                package_info['publisher'] = value
-            if name == 'URLInfoAbout':
-                package_info['homepage_url'] = value
-            if name == 'DisplayIcon':
-                package_info['DisplayIcon'] = value
-            if name == 'UninstallString':
-                package_info['UninstallString'] = value
+            pkg_field = field_by_regkey.get(key)
+            if pkg_field:
+                package_info[pkg_field] = value
 
         name = package_info.get('name')
-        if not name:
-            continue
-
         version = package_info.get('version')
+
         homepage_url = package_info.get('homepage_url')
-        install_location = package_info.get('install_location')
         publisher = package_info.get('publisher')
-        display_icon = package_info.get('DisplayIcon')
-        uninstall_string = package_info.get('UninstallString')
 
         parties = []
         if publisher:
@@ -179,85 +178,91 @@ def _report_installed_programs(registry_tree):
                 models.Party(
                     type=models.party_org,
                     role='publisher',
-                    name=publisher
+                    name=publisher,
                 )
             )
 
-        known_program_files = []
-        if display_icon:
-            known_program_files.append(display_icon)
-        if uninstall_string:
-            known_program_files.append(uninstall_string)
-
-        extra_data = {}
+        file_references = []
+        install_location = package_info.get('install_location')
         if install_location:
-            extra_data['install_location'] = install_location
-        if known_program_files:
-            extra_data['known_program_files'] = known_program_files
+            file_references.append(models.FileReference(path=install_location))
 
-        yield InstalledWindowsProgram(
+        display_icon = package_info.get('display_icon')
+        if display_icon:
+            file_references.append(models.FileReference(path=display_icon))
+
+        uninstall_string = package_info.get('uninstall_string')
+        if uninstall_string:
+            file_references.append(models.FileReference(path=uninstall_string))
+
+        yield models.PackageData(
+            datasource_id=datasource_id,
+            type=package_type,
             name=name,
             version=version,
             parties=parties,
             homepage_url=homepage_url,
-            extra_data=extra_data
+            file_references=file_references,
         )
 
 
-def reg_parse(location):
+def get_packages_from_registry_from_hive(
+    location,
+    datasource_id,
+    package_type,
+):
     """
-    Yield InstalledWindowsPrograms from `location` using
-    `report_installed_programs` and `report_installed_dotnet_versions`
+    Yield PackageData for Installed Windows Programs from the Windows registry
+    hive at ``location``
     """
-    for installed_program in report_installed_programs(location):
-        yield installed_program
-    for installed_program in report_installed_programs(
-        location,
-        registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall'
-    ):
-        yield installed_program
-    for installed_dotnet in report_installed_dotnet_versions(location):
-        yield installed_dotnet
+    yield from get_installed_windows_programs_from_hive(
+        location=location,
+        datasource_id=datasource_id,
+        package_type=package_type,
+        registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+    )
+
+    yield from get_installed_windows_programs_from_hive(
+        location=location,
+        datasource_id=datasource_id,
+        package_type=package_type,
+        registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+    )
+
+    yield from get_installed_dotnet_versions_from_hive(
+        location=location,
+        datasource_id=datasource_id,
+        package_type=package_type,
+        registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+    )
 
 
 def get_installed_packages(root_dir, is_container=True):
     """
-    Yield InstalledWindowsProgram objects for every detected installed program
-    from Windows registry files in known locations
+    Yield PackageData for Installed Windows Programs for every detected
+    installed program from Windows registry hive files found in well known
+    locations under a ``root_dir`` root filesystem directory.
     """
     # These paths are relative to a Windows docker image layer root directory
     if is_container:
-        hives_software_delta_loc = os.path.join(root_dir, 'Hives', 'Software_Delta')
-        files_software_loc = os.path.join(
-            root_dir,
-            'Files',
-            'Windows',
-            'System32',
-            'config',
-            'SOFTWARE'
-        )
+        hives_software_delta_loc = os.path.join(root_dir, 'Hives/Software_Delta')
+        files_software_loc = os.path.join(root_dir, 'Files/Windows/System32/config/SOFTWARE')
         utilityvm_software_loc = os.path.join(
-            root_dir,
-            'UtilityVM',
-            'Files',
-            'Windows',
-            'System32',
-            'config',
-            'SOFTWARE'
+            root_dir, 'UtilityVM/Files/Windows/System32/config/SOFTWARE'
         )
-        root_prefixes_by_software_registry_locations = {
+        root_prefixes_by_software_reg_locations = {
             hives_software_delta_loc: 'Files',
             files_software_loc: 'Files',
-            utilityvm_software_loc: os.path.join('UtilityVM', 'Files')
+            utilityvm_software_loc: 'UtilityVM/Files',
         }
     else:
         # TODO: Add support for virtual machines
         raise Exception('Unsuported file system type')
 
-    for software_registry_loc, root_prefix in root_prefixes_by_software_registry_locations.items():
-        if not os.path.exists(software_registry_loc):
+    for software_reg_loc, root_prefix in root_prefixes_by_software_reg_locations.items():
+        if not os.path.exists(software_reg_loc):
             continue
-        for package in reg_parse(software_registry_loc):
+        for package in get_packages_from_registry_from_hive(software_reg_loc):
             package.populate_installed_files(root_dir, root_prefix=root_prefix)
             yield package
 
@@ -308,60 +313,101 @@ def create_relative_file_path(file_path, root_dir, root_prefix=''):
     return relative_file_path
 
 
-@attr.s()
-class InstalledWindowsProgram(models.PackageData, models.PackageDataFile):
-    default_type = 'windows-program'
+class BaseRegInstalledProgramHandler(models.DatafileHandler):
+    default_package_type = 'windows-program'
+    documentation_url = 'https://en.wikipedia.org/wiki/Windows_Registry'
+
+    # The rootfs location (of a Docker image layer) can be in a
+    # subdirectory of the layer tree. This is a path to the root of the windows filesystem relative to the
+    # datafile (e.g. the registry hive file)
+
+    root_path_relative_to_datafile_path = None
 
     @classmethod
-    def recognize(cls, location):
-        for installed in reg_parse(location):
-            yield installed
-
-    def populate_installed_files(self, root_dir, root_prefix=''):
-        install_location = self.extra_data.get('install_location')
-        if not install_location:
-            return
-
-        if root_prefix:
-            # The rootfs location of a Docker image layer can be in a
-            # subdirectory of the layer directory (where `root_dir` is the path
-            # to the layer directory), so we append `root_prefix` (where prefix
-            # is relative to the file paths within the Docker image layer's
-            # rootfs files) to `root_dir`
-            root_dir = os.path.join(root_dir, root_prefix)
-
-        absolute_install_location = create_absolute_installed_file_path(
-            root_dir=root_dir,
-            file_path=install_location
+    def parse(cls, location):
+        yield from get_packages_from_registry_from_hive(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
         )
-        if not os.path.exists(absolute_install_location):
+
+    @classmethod
+    def get_root_resource(cls, resource, codebase):
+        """
+        Return the root Resource given  a datafile ``resource`` in ``codebase``.
+        """
+        segments = cls.root_path_relative_to_datafile_path.split('/')
+
+        for segment in segments:
+            if segment == '..':
+                resource = resource.parent(codebase)
+            else:
+                ress = [r for r in resource.children(codebase) if r.name == segment]
+                if not len(ress) == 1:
+                    return
+                resource = ress[0]
+
+            if not resource:
+                return
+        return resource
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase):
+        package_uid = package.package_uid
+        resource.for_packages.append(package_uid)
+        resource.save(codebase)
+
+        refs = package.file_references
+        if not refs:
             return
 
-        installed_files = []
-        for root, _, files in os.walk(absolute_install_location):
-            for file in files:
-                installed_file_location = os.path.join(root, file)
-                relative_installed_file_path = create_relative_file_path(
-                    file_path=installed_file_location,
-                    root_dir=root_dir,
-                    root_prefix=root_prefix
-                )
-                installed_files.append(relative_installed_file_path)
+        root = cls.get_root_resource(resource, codebase)
+        if not root:
+            # FIXME: this should not happen
+            return
 
-        known_program_files = self.extra_data.get('known_program_files', [])
-        for known_program_file_path in known_program_files:
-            known_program_file_location = create_absolute_installed_file_path(
-                root_dir=root_dir,
-                file_path=known_program_file_path,
-            )
-            relative_known_file_path = create_relative_file_path(
-                file_path=known_program_file_location,
-                root_dir=root_dir,
-                root_prefix=root_prefix
-            )
-            if (not os.path.exists(known_program_file_location)
-                    or relative_known_file_path in installed_files):
+        root_path = Path(root.path)
+
+        refs_by_path = {}
+        for ref in refs:
+            # a file ref may be a Windows path with a drive
+            ref_path = remove_drive_letter(ref.path)
+            # a file ref extends from the root of the Windows filesystem
+            refs_by_path[str(root_path / ref_path)] = ref
+
+        for res in root.walk(codebase):
+            ref = refs_by_path.get(res.path)
+            if not ref:
                 continue
-            installed_files.append(relative_known_file_path)
 
-        self.installed_files = [models.PackageFile(path=path) for path in sorted(installed_files)]
+            # path is found and processed: remove it, so we can check if we
+            # found all of them
+            del refs_by_path[res.path]
+            res.for_packages.append(package_uid)
+            res.save(codebase)
+
+        # if we have left over file references, add these to extra data
+        if refs_by_path:
+            missing = sorted(refs_by_path.values(), key=lambda r: r.path)
+            package.extra_data['missing_file_references'] = missing
+
+
+class InstalledProgramFromDockerSoftwareDeltaHandler(BaseRegInstalledProgramHandler):
+    datasource_id = 'win_reg_installed_programs_docker_software_delta'
+    path_patterns = ('*/Hives/Software_Delta',)
+    description = 'Windows Registry Installed Program - Docker Software Delta'
+    root_path_relative_to_datafile_path = '../../Files'
+
+
+class InstalledProgramFromDockerFilesSoftwareHandler(BaseRegInstalledProgramHandler):
+    datasource_id = 'win_reg_installed_programs_docker_file_software'
+    path_patterns = ('*/Files/Windows/System32/config/SOFTWARE',)
+    description = 'Windows Registry Installed Program - Docker SOFTWARE'
+    root_path_relative_to_datafile_path = '../../../..'
+
+
+class InstalledProgramFromDockerUtilityvmSoftwareHandler(BaseRegInstalledProgramHandler):
+    datasource_id = 'win_reg_installed_programs_docker_utility_software'
+    path_patterns = ('*/UtilityVM/Files/Windows/System32/config/SOFTWARE',)
+    description = 'Windows Registry Installed Program - Docker UtilityVM SOFTWARE'
+    root_path_relative_to_datafile_path = '../../../..'

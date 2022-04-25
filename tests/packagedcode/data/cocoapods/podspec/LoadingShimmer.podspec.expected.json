@@ -7,20 +7,13 @@
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Objective-C",
-    "description": "An easy way to add a shimmering effect to any view with just one line of code. It is useful as an unobtrusive loading indicator.\n An easy way to add a shimmering effect to any view with just single line of code. It is useful as an unobtrusive loading indicator. This is a network request waiting for the framework, the framework to increase the dynamic effect, convenient and fast, a line of code can be used.",
+    "description": "An easy way to add a shimmering effect to any view with just one line of code. It is useful as an unobtrusive loading indicator.\nAn easy way to add a shimmering effect to any view with just single line of code. It is useful as an unobtrusive loading indicator. This is a network request waiting for the framework, the framework to increase the dynamic effect, convenient and fast, a line of code can be used.",
     "release_date": null,
     "parties": [
       {
         "type": "person",
         "role": "author",
-        "name": "jogendra",
-        "email": null,
-        "url": null
-      },
-      {
-        "type": "person",
-        "role": "email",
-        "name": null,
+        "name": "jogendra ",
         "email": "jogendrafx@gmail.com",
         "url": null
       }
@@ -33,22 +26,21 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": null,
-    "code_view_url": null,
+    "bug_tracking_url": "https://github.com/jogendra/LoadingShimmer/issues/",
+    "code_view_url": "https://github.com/jogendra/LoadingShimmer/tree/1.0.3",
     "vcs_url": "https://github.com/jogendra/LoadingShimmer.git",
     "copyright": null,
     "license_expression": "mit AND unknown",
-    "declared_license": ":type => MIT, :file => LICENSE",
+    "declared_license": ":type = MIT, :file = LICENSE",
     "notice_text": null,
-    "contains_source_code": null,
-    "source_packages": [
-      "https://github.com/jogendra/LoadingShimmer.git"
-    ],
+    "source_packages": [],
+    "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "purl": "pkg:pods/LoadingShimmer@1.0.3",
     "repository_homepage_url": "https://cocoapods.org/pods/LoadingShimmer",
-    "repository_download_url": "https://github.com/jogendra/LoadingShimmer/archive/1.0.3.zip",
-    "api_data_url": null
+    "repository_download_url": "https://github.com/jogendra/LoadingShimmer/archive/refs/tags/1.0.3.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/7/6/8/LoadingShimmer/1.0.3/LoadingShimmer.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:pods/LoadingShimmer@1.0.3"
   }
 ]

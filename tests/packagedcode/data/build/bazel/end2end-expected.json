@@ -19,7 +19,88 @@
     }
   ],
   "dependencies": [],
-  "packages": [],
+  "packages": [
+    {
+      "type": "bazel",
+      "namespace": null,
+      "name": "end2end",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "end2end/BUILD"
+      ],
+      "datasource_ids": [
+        "bazel_build"
+      ],
+      "purl": "pkg:bazel/end2end"
+    },
+    {
+      "type": "bazel",
+      "namespace": null,
+      "name": "subdir2",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "end2end/subdir2/BUILD"
+      ],
+      "datasource_ids": [
+        "bazel_build"
+      ],
+      "purl": "pkg:bazel/subdir2"
+    }
+  ],
   "files": [
     {
       "path": "end2end",
@@ -55,55 +136,68 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:bazel/end2end",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "bazel_build",
+          "purl": "pkg:bazel/end2end"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir/file1",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/file1",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -133,41 +227,50 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "contains_source_code": null,
           "source_packages": [],
+          "file_references": [],
           "extra_data": {},
           "dependencies": [],
-          "purl": "pkg:bazel/subdir2",
           "repository_homepage_url": null,
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": null,
+          "datasource_id": "bazel_build",
+          "purl": "pkg:bazel/subdir2"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

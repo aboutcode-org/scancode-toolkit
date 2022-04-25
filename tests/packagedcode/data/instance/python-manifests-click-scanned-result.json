@@ -49,10 +49,9 @@
     ]
   },
   "notice_text": null,
-  "contains_source_code": null,
   "source_packages": [],
   "extra_data": {},
-  "package_uuid": null,
+  "package_uid": null,
   "package_data_files": [],
   "files": [],
   "purl": "pkg:pypi/click@8.0.1",
