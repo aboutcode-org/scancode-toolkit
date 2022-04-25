@@ -179,7 +179,7 @@ def compute_license_score(codebase):
             declared_license_expression = str(
                 Licensing().parse(combined_declared_license_expression).simplify()
             )
-        scoring_elements.ambigous_compound_licensing = True
+        scoring_elements.ambiguous_compound_licensing = True
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
 
@@ -207,7 +207,7 @@ class ScoringElements:
     has_license_text = attr.ib(default=False)
     declared_copyrights = attr.ib(default=False)
     conflicting_license_categories = attr.ib(default=False)
-    ambigous_compound_licensing = attr.ib(default=False)
+    ambiguous_compound_licensing = attr.ib(default=False)
 
     def to_dict(self):
         return {
@@ -217,7 +217,7 @@ class ScoringElements:
             'has_license_text': self.has_license_text,
             'declared_copyrights': self.declared_copyrights,
             'conflicting_license_categories': self.conflicting_license_categories,
-            'ambigous_compound_licensing': self.ambigous_compound_licensing,
+            'ambiguous_compound_licensing': self.ambiguous_compound_licensing,
         }
 
 

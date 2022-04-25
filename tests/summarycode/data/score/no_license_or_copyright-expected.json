@@ -31,7 +31,7 @@
       "has_license_text": false,
       "declared_copyrights": false,
       "conflicting_license_categories": false,
-      "ambigous_compound_licensing": true
+      "ambiguous_compound_licensing": true
     }
   },
   "files": [
