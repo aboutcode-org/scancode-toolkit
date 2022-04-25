@@ -1,0 +1,18 @@
+key: w3c-test-suite
+short_name: W3C Test Suite
+name: W3C Test Suite Licence
+category: Free Restricted
+owner: W3C - World Wide Web Consortium
+homepage_url: https://www.w3.org/Consortium/Legal/2008/04-testsuite-license.html
+spdx_license_key: LicenseRef-scancode-w3c-test-suite
+text_urls:
+    - https://raw.githubusercontent.com/gonum/gonum/master/THIRD_PARTY_LICENSES/W3C-TestSuite-LICENSE
+faq_url: https://www.w3.org/Consortium/Legal/2008/04-testsuite-copyright.html#lic2
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/issues/2910
+ignorable_copyrights:
+    - Copyright (c) World Wide Web Consortium, (MIT, ERCIM, Keio, Beihang) and others
+ignorable_holders:
+    - World Wide Web Consortium, (MIT, ERCIM, Keio, Beihang) and others
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2008/04-testsuite-copyright.html
