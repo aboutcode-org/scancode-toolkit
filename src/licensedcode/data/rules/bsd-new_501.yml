@@ -1,0 +1,6 @@
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+notes: seen in pear packages
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-3-Clause

@@ -1,0 +1,5 @@
+license_expression: openldap-2.4
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/OLDAP-2.4
