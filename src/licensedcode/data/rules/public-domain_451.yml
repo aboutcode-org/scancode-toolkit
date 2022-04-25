@@ -1,0 +1,4 @@
+license_expression: public-domain
+is_license_tag: yes
+relevance: 100
+notes: See https://github.com/NationalSecurityAgency/ghidra for various oddities such as https://github.com/NationalSecurityAgency/ghidra/blob/e43ef9baaf3c21efb5ea20c3a4d3314d64fdb5cf/GPL/GnuDisassembler/certification.manifest#L3
