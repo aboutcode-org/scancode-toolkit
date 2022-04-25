@@ -13,14 +13,18 @@ from scancode.pool import get_pool
 # Import early because of the side effects
 import scancode_config
 
+import logging
+import os
+import platform 
+import sys
+import traceback
+
 from collections import defaultdict
 from functools import partial
-import os
-import logging
-import sys
 from time import sleep
 from time import time
-import traceback
+
+import commoncode
 
 # this exception is not available on posix
 try:
@@ -847,6 +851,14 @@ def run_scan(
         cle.output_format_version = scancode_config.__output_format_version__
         cle.notice = notice
         cle.options = pretty_params or {}
+        # useful for debugging
+        cle.extra_data['system_environment'] = system_environment= {}
+        system_environment['operating_system'] = commoncode.system.current_os
+        system_environment['cpu_architecture'] = commoncode.system.current_arch
+        system_environment['platform'] = platform.platform()
+        system_environment['platform_version'] = platform.version()
+        system_environment['python_version'] = sys.version
+
         cle.extra_data['spdx_license_list_version'] = scancode_config.spdx_license_list_version
         if outdated:
             cle.extra_data['OUTDATED'] = outdated
