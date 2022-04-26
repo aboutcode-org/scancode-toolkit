@@ -3,9 +3,9 @@ language: jp
 short_name: NYSL 0.9982 JP
 name: NYSL 0.9982 Japanese
 category: Permissive
-spdx_license_key: LicenseRef-scancode-nysl-0.9982-jp
 owner: Kazuhiro Inaba
 homepage_url: http://www.kmonos.net/nysl/index.en.html
+spdx_license_key: LicenseRef-scancode-nysl-0.9982-jp
 text_urls:
     - https://raw.githubusercontent.com/uasi/license-templates/0f48d7532fb4cc9c26fc6093db680e0601bf5738/LICENSE.NYSL.txt
 faq_url: http://www.kmonos.net/nysl/readme.html
