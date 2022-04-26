@@ -1351,6 +1351,7 @@ def synchronize_licenses(
 
     added_to_external = [externals_by_key[k] for k in added_to_external]
     updated_in_external = [externals_by_key[k] for k in updated_in_external]
+    external_source.externals_by_key = externals_by_key
     return added_to_external, updated_in_external
 
 
@@ -1439,9 +1440,6 @@ def cli(
             api_url = external_source.api_base_url
             api_key = external_source.api_key
             for i, new_lic in enumerate(added_to_external):
-                if i == 2:
-                    break
-
                 if new_lic.key in dejacode_special_skippable_keys:
                     continue
                 if TRACE:
@@ -1451,8 +1449,6 @@ def cli(
         if update_external:
             externals_by_key = external_source.externals_by_key
             for i, modified_lic in enumerate(updated_in_external):
-                if i == 2:
-                    break
                 if modified_lic.key in dejacode_special_skippable_keys:
                     continue
                 mold = license_to_dict(modified_lic)
