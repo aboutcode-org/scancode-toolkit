@@ -516,17 +516,23 @@ class License:
         errors = defaultdict(list)
 
         # used for global dedupe of texts
-        by_spdx_key = defaultdict(list)
+        by_spdx_key_lowered = defaultdict(list)
         by_text = defaultdict(list)
-        by_short_name = defaultdict(list)
-        by_name = defaultdict(list)
+        by_short_name_lowered = defaultdict(list)
+        by_name_lowered = defaultdict(list)
 
         for key, lic in licenses.items():
             warn = warnings[key].append
             info = infos[key].append
             error = errors[key].append
-            by_name[lic.name].append(lic)
-            by_short_name[lic.short_name].append(lic)
+            if lic.name:
+                by_name_lowered[lic.name.lower()].append(lic)
+            else:
+                by_name_lowered[lic.name].append(lic)
+            if lic.short_name:
+                by_short_name_lowered[lic.short_name.lower()].append(lic)
+            else:
+                by_short_name_lowered[lic.short_name].append(lic)
 
             if lic.key != lic.key.lower():
                 error('Incorrect license key case. Should be lowercase.')
@@ -608,17 +614,17 @@ class License:
                 if len(lic.spdx_license_key) > 50:
                     error('spdx_license_key must be 50 characters or less.')
 
-                by_spdx_key[lic.spdx_license_key].append(key)
+                by_spdx_key_lowered[lic.spdx_license_key.lower()].append(key)
             else:
                 # SPDX license key is now mandatory
                 error('No SPDX license key')
 
             for oslk in lic.other_spdx_license_keys:
-                by_spdx_key[oslk].append(key)
+                by_spdx_key_lowered[oslk].append(key)
 
         # global SPDX consistency
         multiple_spdx_keys_used = {
-            k: v for k, v in by_spdx_key.items()
+            k: v for k, v in by_spdx_key_lowered.items()
             if len(v) > 1
         }
 
@@ -638,20 +644,20 @@ class License:
                 )
 
         # global short_name dedupe
-        for short_name, licenses in by_short_name.items():
+        for short_name, licenses in by_short_name_lowered.items():
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate short name: {short_name} in licenses: ' +
+                f'Duplicate short name (ignoring case): {short_name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
         # global name dedupe
-        for name, licenses in by_name.items():
+        for name, licenses in by_name_lowered.items():
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate name: {name} in licenses: ' +
+                f'Duplicate name (ignoring case): {name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
@@ -835,7 +841,6 @@ def build_rule_from_license(license_obj):
             ignorable_urls=license_obj.ignorable_urls,
             ignorable_emails=license_obj.ignorable_emails,
         )
-
 
 
 def get_all_spdx_keys(licenses_db):

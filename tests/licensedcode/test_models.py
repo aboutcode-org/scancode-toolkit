@@ -106,9 +106,9 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/license_rules.expected.json')
         check_json(expected, results)
 
-    def test_validate_license_library(self):
+    def test_validate_license_library_data(self):
         errors, warnings, infos = models.License.validate(
-            licenses=models.load_licenses(),
+            licenses=models.load_licenses(with_deprecated=False),
             verbose=False,
         )
         assert errors == {}
@@ -127,8 +127,8 @@ class TestLicense(FileBasedTesting):
         expected_errors = {
             'GLOBAL': [
                 'Duplicate texts in multiple licenses: apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
-                'Duplicate short name: GPL 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
-                'Duplicate name: GNU General Public License 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
+                'Duplicate short name (ignoring case): gpl 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
+                'Duplicate name (ignoring case): gnu general public license 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
