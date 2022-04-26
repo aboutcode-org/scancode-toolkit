@@ -34,7 +34,7 @@
       "has_license_text": true,
       "declared_copyrights": false,
       "conflicting_license_categories": false,
-      "ambigous_compound_licensing": false
+      "ambiguous_compound_licensing": false
     },
     "declared_holder": "",
     "primary_language": "C",

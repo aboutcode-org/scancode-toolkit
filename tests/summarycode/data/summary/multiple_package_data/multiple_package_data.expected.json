@@ -133,7 +133,7 @@
       "has_license_text": true,
       "declared_copyrights": true,
       "conflicting_license_categories": false,
-      "ambigous_compound_licensing": false
+      "ambiguous_compound_licensing": false
     },
     "declared_holder": "Demo Corporation, Example Corp.",
     "primary_language": "Python",

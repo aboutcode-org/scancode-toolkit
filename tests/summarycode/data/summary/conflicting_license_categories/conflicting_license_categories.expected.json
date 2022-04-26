@@ -34,7 +34,7 @@
       "has_license_text": true,
       "declared_copyrights": true,
       "conflicting_license_categories": true,
-      "ambigous_compound_licensing": true
+      "ambiguous_compound_licensing": true
     },
     "declared_holder": "Example Corp.",
     "primary_language": "Python",
