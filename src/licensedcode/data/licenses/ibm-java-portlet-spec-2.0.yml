@@ -1,0 +1,15 @@
+key: ibm-java-portlet-spec-2.0
+short_name: IBM Java Portlet Specification 2.0
+name: IBM Java Portlet Specification 2.0 License
+category: Permissive
+owner: IBM
+homepage_url: https://docs.oracle.com/cloud/latest/big-data-discovery-cloud/BDDLG/cl_ibm_java_portlet_spec_2.htm#BDDLG-concept_8F2CD6740028425B9BA5429DBDEE9BB3
+spdx_license_key: LicenseRef-scancode-ibm-java-portlet-spec-2.0
+other_urls:
+    - https://docs.oracle.com/cloud/latest/big-data-discovery-cloud/BDDLG/cl_third_party_notices.htm#BDDLG-concept_E7DC20A76AC94E44922974A6503BEC4B
+ignorable_copyrights:
+    - Copyright 2008 IBM Corp.
+ignorable_holders:
+    - IBM Corp.
+ignorable_urls:
+    - http://www.jcp.org/en/jsr/detail?id=286
