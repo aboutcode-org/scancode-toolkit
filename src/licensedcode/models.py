@@ -33,6 +33,7 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode.languages import LANG_INFO as known_languages
 from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
@@ -535,7 +536,7 @@ class License:
                 by_short_name_lowered[lic.short_name].append(lic)
 
             if lic.key != lic.key.lower():
-                error('Incorrect license key case. Should be lowercase.')
+                error('Incorrect license key case: must be all lowercase.')
 
             if len(lic.key) > 50:
                 error('key must be 50 characters or less.')
@@ -560,13 +561,19 @@ class License:
             if not lic.owner:
                 error('No owner: Use "Unspecified" if not known.')
 
+            lang = lic.language
+            if lang and lang != 'en' and lang not in known_languages:
+                error(f'Unknown language: {lang}')
+
             if lic.is_unknown:
                 if not 'unknown' in lic.key:
-                    error('is_unknown can be true only for licenses with '
-                          '"unknown " in their key string.')
+                    error(
+                        'is_unknown can be true only for licenses with '
+                        '"unknown " in their key string.'
+                    )
 
             if lic.is_generic and lic.is_unknown:
-                error('is_generic and is_unknown are incompatible')
+                error('is_generic and is_unknown flags are incompatible')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -1474,10 +1481,14 @@ class BasicRule:
             if any(ignorables):
                 yield 'is_false_positive rule cannot have ignorable_* attributes.'
 
-        if not (0 <= self.minimum_coverage <= 100):
-            yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
+        lang = self.language
+        if lang and lang != 'en' and lang not in known_languages:
+            yield f'Unknown language: {lang}'
 
         if not is_false_positive:
+            if not (0 <= self.minimum_coverage <= 100):
+                yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
+
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
 
@@ -1876,6 +1887,8 @@ class Rule(BasicRule):
         self.ignorable_authors = data.get('ignorable_authors', [])
         self.ignorable_urls = data.get('ignorable_urls', [])
         self.ignorable_emails = data.get('ignorable_emails', [])
+
+        self.language = data.get('language') or 'en'
 
         return self
 
