@@ -409,6 +409,9 @@ class License:
             if not value:
                 return False
 
+            if isinstance(value, str) and not value.strip():
+                return False
+
             if attr.name in ('data_file', 'text_file', 'src_dir',):
                 return False
 
@@ -561,9 +564,8 @@ class License:
             if not lic.owner:
                 error('No owner: Use "Unspecified" if not known.')
 
-            lang = lic.language
-            if lang and lang != 'en' and lang not in known_languages:
-                error(f'Unknown language: {lang}')
+            if lic.language not in known_languages:
+                error(f'Unknown language: {lic.language}')
 
             if lic.is_unknown:
                 if not 'unknown' in lic.key:
@@ -1481,9 +1483,8 @@ class BasicRule:
             if any(ignorables):
                 yield 'is_false_positive rule cannot have ignorable_* attributes.'
 
-        lang = self.language
-        if lang and lang != 'en' and lang not in known_languages:
-            yield f'Unknown language: {lang}'
+        if self.language not in known_languages:
+            yield f'Unknown language: {self.language}'
 
         if not is_false_positive:
             if not (0 <= self.minimum_coverage <= 100):
@@ -1508,13 +1509,19 @@ class BasicRule:
                 yield 'Missing license_expression.'
             else:
                 if not has_only_lower_license_keys(license_expression):
-                    yield f'Invalid license_expression: {license_expression} Keys should be lowercase.'
+                    yield (
+                        f'Invalid license_expression: {license_expression} ,'
+                        'keys should be lowercase.'
+                    )
 
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
                     except ExpressionError as e:
-                        yield f'Failed to parse and validate license_expression: {license_expression} with error: {e}'
+                        yield (
+                            f'Failed to parse and validate license_expression: '
+                            f'{license_expression} with error: {e}'
+                        )
 
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
