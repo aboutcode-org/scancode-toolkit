@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) Django Software Foundation and individual contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+# Originally from https://raw.githubusercontent.com/django/django/ce586ed6931092d3a5f06df9031cdeb891793ddb/django/conf/locale/__init__.py
+# 
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+#
+
 """
 LANG_INFO is a dictionary structure to provide meta information about languages.
 
