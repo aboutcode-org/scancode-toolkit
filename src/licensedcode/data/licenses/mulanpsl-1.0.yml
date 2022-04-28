@@ -9,9 +9,8 @@ spdx_license_key: MulanPSL-1.0
 text_urls:
     - https://github.com/yuwenlong/longphp/blob/25dfb70cc2a466dc4bb55ba30901cbce08d164b5/LICENSE
 ignorable_copyrights:
-  - Copyright (c) 2019 name
+    - Copyright (c) 2019 name
 ignorable_holders:
-  - name
+    - name
 ignorable_urls:
-  - http://license.coscl.org.cn/MulanPSL
-
+    - http://license.coscl.org.cn/MulanPSL
