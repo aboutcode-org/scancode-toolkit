@@ -523,6 +523,7 @@ class DejaSource(ExternalLicensesSource):
         "category",
         "owner",
         "text_urls",
+        "language",
         "osi_url",
         "faq_url",
         "other_urls",
@@ -668,7 +669,8 @@ class DejaSource(ExternalLicensesSource):
     def patch_spdx_license(self, api_url, license_key, spdx_license_key):
         """
         PATCH the DejaCode ``license_key`` to set the ``spdx_license_key``
-        using the DejaCode API Raise an exception on failure.
+        using the DejaCode API.
+        Raise an exception on failure.
         """
         headers = {
             "Authorization": f"Token {self.api_key}",
@@ -891,6 +893,7 @@ def license_to_dict(lico):
         name=lico.name,
         owner=lico.owner,
         is_exception=lico.is_exception,
+        language=lico.language or "en",
         full_text=lico.text,
         spdx_license_key=lico.spdx_license_key,
         reference_notes=lico.notes,
