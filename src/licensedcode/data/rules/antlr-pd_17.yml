@@ -1,0 +1,5 @@
+license_expression: antlr-pd
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/ANTLR-PD

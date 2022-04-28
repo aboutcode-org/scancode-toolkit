@@ -1,0 +1,7 @@
+license_expression: odmg
+is_license_text: yes
+notes: See http://www.odmg.org/
+ignorable_authors:
+    - E. Wray Johnson
+ignorable_urls:
+    - http://www.odmg.org/

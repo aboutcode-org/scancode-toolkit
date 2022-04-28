@@ -1,0 +1,7 @@
+license_expression: apache-2.0 WITH llvm-exception
+is_license_text: yes
+minimum_coverage: 95
+notes: Seen in https://github.com/bytecodealliance/wasi
+ignorable_urls:
+    - http://www.apache.org/licenses/
+    - http://www.apache.org/licenses/LICENSE-2.0

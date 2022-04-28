@@ -1,0 +1,5 @@
+license_expression: liliq-r-1.1
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/LiLiQ-R-1.1

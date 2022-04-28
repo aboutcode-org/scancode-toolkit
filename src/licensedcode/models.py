@@ -33,6 +33,7 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode.languages import LANG_INFO as known_languages
 from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
@@ -408,6 +409,9 @@ class License:
             if not value:
                 return False
 
+            if isinstance(value, str) and not value.strip():
+                return False
+
             if attr.name in ('data_file', 'text_file', 'src_dir',):
                 return False
 
@@ -516,20 +520,26 @@ class License:
         errors = defaultdict(list)
 
         # used for global dedupe of texts
-        by_spdx_key = defaultdict(list)
+        by_spdx_key_lowered = defaultdict(list)
         by_text = defaultdict(list)
-        by_short_name = defaultdict(list)
-        by_name = defaultdict(list)
+        by_short_name_lowered = defaultdict(list)
+        by_name_lowered = defaultdict(list)
 
         for key, lic in licenses.items():
             warn = warnings[key].append
             info = infos[key].append
             error = errors[key].append
-            by_name[lic.name].append(lic)
-            by_short_name[lic.short_name].append(lic)
+            if lic.name:
+                by_name_lowered[lic.name.lower()].append(lic)
+            else:
+                by_name_lowered[lic.name].append(lic)
+            if lic.short_name:
+                by_short_name_lowered[lic.short_name.lower()].append(lic)
+            else:
+                by_short_name_lowered[lic.short_name].append(lic)
 
             if lic.key != lic.key.lower():
-                error('Incorrect license key case. Should be lowercase.')
+                error('Incorrect license key case: must be all lowercase.')
 
             if len(lic.key) > 50:
                 error('key must be 50 characters or less.')
@@ -554,13 +564,18 @@ class License:
             if not lic.owner:
                 error('No owner: Use "Unspecified" if not known.')
 
+            if lic.language not in known_languages:
+                error(f'Unknown language: {lic.language}')
+
             if lic.is_unknown:
                 if not 'unknown' in lic.key:
-                    error('is_unknown can be true only for licenses with '
-                          '"unknown " in their key string.')
+                    error(
+                        'is_unknown can be true only for licenses with '
+                        '"unknown " in their key string.'
+                    )
 
             if lic.is_generic and lic.is_unknown:
-                error('is_generic and is_unknown are incompatible')
+                error('is_generic and is_unknown flags are incompatible')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -608,17 +623,17 @@ class License:
                 if len(lic.spdx_license_key) > 50:
                     error('spdx_license_key must be 50 characters or less.')
 
-                by_spdx_key[lic.spdx_license_key].append(key)
+                by_spdx_key_lowered[lic.spdx_license_key.lower()].append(key)
             else:
                 # SPDX license key is now mandatory
                 error('No SPDX license key')
 
             for oslk in lic.other_spdx_license_keys:
-                by_spdx_key[oslk].append(key)
+                by_spdx_key_lowered[oslk].append(key)
 
         # global SPDX consistency
         multiple_spdx_keys_used = {
-            k: v for k, v in by_spdx_key.items()
+            k: v for k, v in by_spdx_key_lowered.items()
             if len(v) > 1
         }
 
@@ -638,20 +653,20 @@ class License:
                 )
 
         # global short_name dedupe
-        for short_name, licenses in by_short_name.items():
+        for short_name, licenses in by_short_name_lowered.items():
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate short name: {short_name} in licenses: ' +
+                f'Duplicate short name (ignoring case): {short_name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
         # global name dedupe
-        for name, licenses in by_name.items():
+        for name, licenses in by_name_lowered.items():
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate name: {name} in licenses: ' +
+                f'Duplicate name (ignoring case): {name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
@@ -835,7 +850,6 @@ def build_rule_from_license(license_obj):
             ignorable_urls=license_obj.ignorable_urls,
             ignorable_emails=license_obj.ignorable_emails,
         )
-
 
 
 def get_all_spdx_keys(licenses_db):
@@ -1469,10 +1483,13 @@ class BasicRule:
             if any(ignorables):
                 yield 'is_false_positive rule cannot have ignorable_* attributes.'
 
-        if not (0 <= self.minimum_coverage <= 100):
-            yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
+        if self.language not in known_languages:
+            yield f'Unknown language: {self.language}'
 
         if not is_false_positive:
+            if not (0 <= self.minimum_coverage <= 100):
+                yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
+
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
 
@@ -1492,13 +1509,19 @@ class BasicRule:
                 yield 'Missing license_expression.'
             else:
                 if not has_only_lower_license_keys(license_expression):
-                    yield f'Invalid license_expression: {license_expression} Keys should be lowercase.'
+                    yield (
+                        f'Invalid license_expression: {license_expression} ,'
+                        'keys should be lowercase.'
+                    )
 
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
                     except ExpressionError as e:
-                        yield f'Failed to parse and validate license_expression: {license_expression} with error: {e}'
+                        yield (
+                            f'Failed to parse and validate license_expression: '
+                            f'{license_expression} with error: {e}'
+                        )
 
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
@@ -1871,6 +1894,8 @@ class Rule(BasicRule):
         self.ignorable_authors = data.get('ignorable_authors', [])
         self.ignorable_urls = data.get('ignorable_urls', [])
         self.ignorable_emails = data.get('ignorable_emails', [])
+
+        self.language = data.get('language') or 'en'
 
         return self
 

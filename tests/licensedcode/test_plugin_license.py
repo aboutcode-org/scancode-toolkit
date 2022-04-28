@@ -19,7 +19,6 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -239,6 +238,7 @@ def test_match_reference_license():
 
 
 def test_reindex_licenses_works():
+    run_scan_click(['--reindex-licenses-for-all-languages'])
     run_scan_click(['--reindex-licenses'])
 
 
