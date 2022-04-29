@@ -108,8 +108,10 @@ SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE = SCANCODE_DEBUG_PACKAGE_API
 TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_API
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -1086,7 +1088,10 @@ class DatafileHandler:
         if not codebase.has_single_resource:
             siblings = list(directory.children(codebase))
         else:
-            siblings = [directory]
+            if directory:
+                siblings = [directory]
+            else:
+                siblings = []
 
         pkgdata_resources = []
 
