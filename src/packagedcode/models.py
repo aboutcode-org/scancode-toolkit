@@ -436,12 +436,17 @@ class Dependency(DependentPackage):
         """
         dependent_packages = dependent_packages or []
         for dependent_package in dependent_packages:
-            yield Dependency.from_dependent_package(
-                dependent_package=dependent_package,
-                datafile_path=datafile_path,
-                datasource_id=datasource_id,
-                package_uid=package_uid,
-            )
+            if dependent_package.purl:
+                yield Dependency.from_dependent_package(
+                    dependent_package=dependent_package,
+                    datafile_path=datafile_path,
+                    datasource_id=datasource_id,
+                    package_uid=package_uid,
+                )
+            else:
+                if TRACE:
+                    logger_debug(f' Dependency.from_dependent_packages: dependent_package (does not have purl): {dependent_package}')
+                pass
 
 
 @attr.attributes(slots=True)
