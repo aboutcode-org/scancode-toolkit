@@ -269,11 +269,11 @@ def fetch_thirdparty(
                 if TRACE:
                     if not fetched:
                         print(
-                            f"    ====> Sdist already available: {name}=={version} on: {environment}"
+                            f"    ====> Sdist already available: {name}=={version}"
                         )
                     else:
                         print(
-                            f"    ====> Sdist fetched: {fetched} for {name}=={version} on: {environment}"
+                            f"    ====> Sdist fetched: {fetched} for {name}=={version}"
                         )
 
             except utils_thirdparty.DistributionNotFound as e:

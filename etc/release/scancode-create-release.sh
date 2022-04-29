@@ -17,16 +17,15 @@
 
 # Supported current app Python version and OS
 # one archive or installer is built for each python x OS combo
-PYTHON_APP_DOT_VERSIONS="3.6 3.7 3.8 3.9"
+PYTHON_APP_DOT_VERSIONS="3.9"
 
-PYTHON_PYPI_TESTS_DOT_VERSIONS="3.6 3.7 3.8 3.9"
+PYTHON_PYPI_TESTS_DOT_VERSIONS="3.9"
 
 PYPI_LINKS=https://thirdparty.aboutcode.org/pypi
 
 OPERATING_SYSTEMS="linux macos windows"
 
-QUIET=""
-#QUIET="--quiet"
+QUIET="--quiet"
 
 
 ################################################################################
@@ -298,13 +297,12 @@ function build_app_archive {
         fi
 
         # 1. Collect thirdparty deps only for the subset for this Python/operating_system
-        $BIN_DIR/python etc/scripts/fetch_requirements.py \
-            --requirements-file=requirements.txt \
-            --thirdparty-dir=thirdparty \
+        $BIN_DIR/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements.txt \
+            --dest=thirdparty \
             --python-version=$python_app_version \
             --operating-system=$operating_system \
-            --with-about \
-            --remote-links-url=$PYPI_LINKS
+            --wheels
 
         # 2. Create tarball or zip.
         # For now as a shortcut we use the Python setup.py sdist to create a tarball.
@@ -330,12 +328,10 @@ function build_source_archive {
     mkdir -p thirdparty
 
     # 1. collect thirdparty deps sources
-    $BIN_DIR/python etc/scripts/fetch_requirements.py \
-        --requirements-file=requirements.txt \
-        --thirdparty-dir=thirdparty \
-        --with-about \
-        --only-sources \
-        --remote-links-url=$PYPI_LINKS
+    $BIN_DIR/python etc/scripts/fetch_thirdparty.py \
+        --requirements=requirements.txt \
+        --dest=thirdparty \
+        --sdists
 
     # 2. Create tarball
     # For now as a shortcut we use the Python setup.py sdist to create a tarball.
@@ -372,7 +368,7 @@ fi
 
 
 # wheels
-build_wheels
+#build_wheels
 
 # build the app combos on the current App Python
 for operating_system in $OPERATING_SYSTEMS

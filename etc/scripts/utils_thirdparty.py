@@ -112,7 +112,7 @@ Wheel downloader
 """
 
 TRACE = True
-TRACE_DEEP = False
+TRACE_DEEP = True
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
@@ -233,7 +233,7 @@ def download_wheel(
     tuple of lists of (fetched_wheel_filenames, existing_wheel_filenames)
     """
     if TRACE_DEEP:
-        print(f"  download_wheel: {name}=={version}: {environment}")
+        print(f"  download_wheel: {name}=={version}: {environment} and index_urls: {index_urls}")
 
     fetched_wheel_filenames = []
     existing_wheel_filenames = []
@@ -546,7 +546,7 @@ class Distribution(NameVer):
         If none is found, return a synthetic remote URL.
         """
         for index_url in index_urls:
-            pypi_package = get_pypi_package(
+            pypi_package = get_pypi_package_data(
                 name=self.normalized_name,
                 version=self.version,
                 index_url=index_url,
@@ -1494,8 +1494,8 @@ class PypiPackage(NameVer):
         >>> assert expected == result
         """
         dists = []
-        if TRACE_DEEP:
-            print("   ###paths_or_urls:", paths_or_urls)
+        if TRACE_ULTRA_DEEP:
+            print("     ###paths_or_urls:", paths_or_urls)
         installable = [f for f in paths_or_urls if f.endswith(EXTENSIONS_INSTALLABLE)]
         for path_or_url in installable:
             try:
@@ -1703,7 +1703,7 @@ class PypiSimpleRepository:
             _LINKS[index_url] = [l for l in links if l.endswith(EXTENSIONS)]
 
         links = _LINKS[index_url]
-        if TRACE_DEEP:
+        if TRACE_ULTRA_DEEP:
             print(f"          Found links {links!r}")
         return links
 
@@ -1824,18 +1824,20 @@ def get_pypi_repo(index_url, _PYPI_REPO={}):
     return _PYPI_REPO[index_url]
 
 
-def get_pypi_package(name, version, index_url, verbose=TRACE_DEEP):
+def get_pypi_package_data(name, version, index_url, verbose=TRACE_DEEP):
     """
     Return a PypiPackage or None.
     """
     try:
+        if verbose:
+            print(f"    get_pypi_package_data: Fetching {name} @ {version} info from {index_url}")
         package = get_pypi_repo(index_url).get_package(name, version)
         if verbose:
-            print(f"    get_pypi_package: {name} @ {version} info from {index_url}: {package}")
+            print(f"      get_pypi_package_data: Fetched")# {package}")
         return package
 
     except RemoteNotFetchedException as e:
-        print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
+        print(f"      get_pypi_package_data: Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
 
 
 ################################################################################
