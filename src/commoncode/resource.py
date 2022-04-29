@@ -604,19 +604,23 @@ class Codebase(object):
             msg = ['    Codebase._use_disk_cache_for_resource:, rid:', rid, 'mode:']
             if rid == 0:
                 msg.append('root')
+            elif rid is  None:
+                msg.append('from memory')
             elif self.all_on_disk:
                 msg.append('all_on_disk')
             elif self.all_in_memory:
                 msg.append('all_in_memory')
             else:
                 msg.extend(['mixed:', 'self.max_in_memory:', self.max_in_memory])
-                if rid < self.max_in_memory:
+                if rid and rid < self.max_in_memory:
                     msg.append('from memory')
                 else:
                     msg.append('from disk')
             logger_debug(*msg)
 
         if rid == 0:
+            return False
+        elif rid is  None:
             return False
         elif self.all_on_disk:
             return True
