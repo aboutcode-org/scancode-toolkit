@@ -12,13 +12,14 @@ import os
 from unittest.case import skipIf
 
 import pytest
-
 from commoncode.system import on_windows
 
 from packagedcode import pypi
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
@@ -235,6 +236,13 @@ class TestPypiUnpackedSdist(PackageTester):
         package = pypi.PythonSdistPkgInfoFile.parse(test_file)
         expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-2.1/commoncode-21.5.12-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_can_parse_solo_metadata_from_command_line(self):
+        test_file = self.get_test_loc('pypi/solo-metadata/PKG-INFO')
+        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPipRequirementsFileHandler(PackageTester):
