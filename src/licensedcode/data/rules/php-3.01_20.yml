@@ -1,0 +1,6 @@
+license_expression: php-3.01
+is_license_tag: yes
+relevance: 95
+notes: seen in pear packages
+ignorable_urls:
+    - http://www.php.net/license

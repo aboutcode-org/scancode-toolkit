@@ -1,0 +1,19 @@
+IBM Java Portlet Specification 2.0 License
+
+Java(TM) Portlet Specification ("Specification") Version: 2.0
+
+Status: Final, Specification Lead: IBM Corp.
+
+Copyright 2008 IBM Corp. All rights reserved.
+
+IBM Corporation (the "Spec Lead"), for the JSR 286 specification (the "Specification"), hereby grants permission to copy and display the Specification, in any medium without fee or royalty, provided that you include the following on ALL copies, or portions thereof, that you make:
+
+    1. A link or URL to the Specification at this location: http://www.jcp.org/en/jsr/detail?id=286
+    2. The copyright notice as shown herein.
+    3. The Spec Lead commits to grant a perpetual, non-exclusive, worldwide, non sub-licensable, non-transferable, fully paid up license, under royalty-free and other reasonable and non-discriminatory terms and conditions, to certain of their respective patent claims that the Spec Lead deems necessary to implement required portions of the Specification, provided a reciprocal license is granted.
+
+THE SPECIFICATION IS PROVIDED "AS IS," AND THE SPEC LEAD AND ANY OTHER AUTHORS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR TITLE; THAT THE CONTENTS OF THE SPECIFICATION 25 ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. THE SPEC LEAD AND ANY OTHER AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF 30 ANY USE OF THE SPECIFICATION OR THE PERFORMANCE OR IMPLEMENTATION OF THE CONTENTS THEREOF.
+
+The name and trademarks of the Spec Lead or any other Authors may NOT be used in any manner, including advertising or publicity pertaining to the Specification or its contents without specific, written prior permission. Title to copyright in the Specification will at all times remain with the Authors.
+
+No other rights are granted by implication, estoppel or otherwise.

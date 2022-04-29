@@ -10,11 +10,10 @@ other_urls:
     - http://www.google.com/privacy.html
     - https://support.google.com/analytics/#topic=3544906
 ignorable_urls:
-  - http://www.google.com/analytics
-  - http://www.google.com/analytics/policies
-  - http://www.google.com/analytics/policies/
-  - http://www.google.com/policies/privacy/partners
-  - https://support.google.com/marketingplatform/answer/9047313
-  - https://www.google.com/analytics/terms
-  - https://www.google.com/policies/privacy
-
+    - http://www.google.com/analytics
+    - http://www.google.com/analytics/policies
+    - http://www.google.com/analytics/policies/
+    - http://www.google.com/policies/privacy/partners
+    - https://support.google.com/marketingplatform/answer/9047313
+    - https://www.google.com/analytics/terms
+    - https://www.google.com/policies/privacy

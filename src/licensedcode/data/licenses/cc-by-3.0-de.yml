@@ -1,9 +1,9 @@
 key: cc-by-3.0-de
 language: de
-category: Permissive
-owner: Creative Commons
 short_name: Creative Commons Attribution 3.0 Germany
 name: Creative Commons Attribution 3.0 Germany
+category: Permissive
+owner: Creative Commons
 spdx_license_key: CC-BY-3.0-DE
 other_urls:
     - https://creativecommons.org/licenses/by/3.0/de/legalcode

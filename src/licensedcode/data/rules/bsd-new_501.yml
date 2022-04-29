@@ -1,7 +1,6 @@
 license_expression: bsd-new
-is_license_notice: yes
+is_license_tag: yes
 relevance: 100
-referenced_filenames:
-    - LICENSE
+notes: seen in pear packages
 ignorable_urls:
-    - http://opencv.org/license.html
+    - http://opensource.org/licenses/BSD-3-Clause

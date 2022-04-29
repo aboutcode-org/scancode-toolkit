@@ -21,7 +21,6 @@ from licensedcode import cache
 from licensedcode import models
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 """
 Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
@@ -144,8 +143,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         models.set_ignorables(licish, result , verbose=verbose)
         licish.dump()
         if is_from_license:
-            licensish= models.build_rule_from_license(licish)
-
+            licensish = models.build_rule_from_license(licish)
 
     expected = models.get_normalized_ignorables(licensish)
 
@@ -194,6 +192,10 @@ def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
 
     for chunk, cls in zip(chunks, test_classes):
         for rule in chunk:
+            # we exclude the non-english rules from validation
+            # as they are not included in the standard indexing
+            if rule.language != 'en':
+                continue
             if rule.text_file and os.path.exists(rule.text_file):
                 test_name = (
                     'test_validate_detect_' +

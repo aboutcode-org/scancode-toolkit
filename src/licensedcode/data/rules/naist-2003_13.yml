@@ -1,0 +1,5 @@
+license_expression: naist-2003
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/NAIST-2003
