@@ -142,7 +142,7 @@ class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return super().assign_package_to_resources(package, root, codebase)
 
 
 # TODO: also look into neighboring copyright files!!!
@@ -169,7 +169,7 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return super().assign_package_to_resources(package, root, codebase)
 
 
 class DebianDscFileHandler(models.DatafileHandler):
@@ -489,7 +489,7 @@ class DebianMd5sumFilelistInPackageHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return super().assign_package_to_resources(package, root, codebase)
 
 
 def build_package_data_from_package_filename(filename, datasource_id, package_type,):

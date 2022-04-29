@@ -17,8 +17,21 @@ from commoncode.system import on_windows
 
 from packagedcode import pypi
 from packages_test_utils import check_result_equals_expected_json
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
+
+
+class TestPyPiEndtoEnd(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data/pypi/source-package/')
+
+    def test_package_scan_pypi_end_to_end(self):
+        test_dir = self.get_test_loc('pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pip-22.0.4-pypi-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
