@@ -53,11 +53,18 @@ class BaseNpmHandler(models.DatafileHandler):
         else:
             dir_resource=resource
 
-        yield from cls.assemble_from_many_datafiles(
+        for assembled in cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
             directory=dir_resource,
             codebase=codebase,
-        )
+        ):
+            if isinstance(assembled, models.Package):
+                cls.assign_package_to_resources(
+                    package=assembled,
+                    resource=resource,
+                    codebase=codebase,
+                )
+            yield assembled
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
