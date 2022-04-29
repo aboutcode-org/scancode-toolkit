@@ -1,0 +1,17 @@
+AUTHORS.txt
+LICENSE.txt
+MANIFEST.in
+NEWS.rst
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+src/pip/__init__.py
+src/pip/__main__.py
+src/pip/py.typed
+src/pip.egg-info/PKG-INFO
+src/pip.egg-info/SOURCES.txt
+src/pip.egg-info/dependency_links.txt
+src/pip.egg-info/entry_points.txt
+src/pip.egg-info/not-zip-safe
+src/pip.egg-info/top_level.txt
