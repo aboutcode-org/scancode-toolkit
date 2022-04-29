@@ -201,6 +201,10 @@ def create_package_and_deps(codebase, **kwargs):
                 resource.scan_errors.append(msg)
                 resource.save(codebase)
 
+                if TRACE:
+                    import traceback
+                    msg += traceback.format_exc()
+                    raise Exception(msg) from e
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)

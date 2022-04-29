@@ -234,7 +234,7 @@ class BazelBuildHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUILD'):
-        return models.DatafileHandler.assign_package_to_resources(
+        return super().assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -251,7 +251,7 @@ class BuckPackageHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUCK'):
-        return models.DatafileHandler.assign_package_to_resources(
+        return super().assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
