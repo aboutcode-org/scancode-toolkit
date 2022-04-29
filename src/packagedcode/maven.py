@@ -115,7 +115,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
         if resource.path.endswith('.pom'):
             # we only treat the parent as the root
-            return super().assign_package_to_parent_tree(package, resource, codebase)
+            return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
         # the root is either the parent or further up for poms stored under
         # a META-INF dir
@@ -139,7 +139,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
         if not root:
             root = resource.parent(codebase)
 
-        return super().assign_package_to_resources(package, resource=root, codebase=codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource=root, codebase=codebase)
 
     @classmethod
     def compute_normalized_license(cls, package):

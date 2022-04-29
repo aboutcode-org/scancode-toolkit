@@ -51,7 +51,7 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        super().assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -234,7 +234,7 @@ class BazelBuildHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUILD'):
-        return super().assign_package_to_resources(
+        return models.DatafileHandler.assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -251,7 +251,7 @@ class BuckPackageHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUCK'):
-        return super().assign_package_to_resources(
+        return models.DatafileHandler.assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -376,7 +376,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        super().assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package_=package,
             resource=resource,
             codebase=codebase,
