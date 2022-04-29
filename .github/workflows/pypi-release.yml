@@ -1,4 +1,4 @@
-name: Release library as a PyPI wheel and sdist on tag
+name: Release library as a PyPI wheel and sdist on GH release creation
 
 on:
   release:
