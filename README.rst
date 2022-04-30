@@ -3,13 +3,25 @@ ScanCode toolkit
 ================
 
 A typical software project often reuses hundreds of third-party packages.
-License and origin information is not always easy to find and not normalized:
-ScanCode discovers and normalizes this data for you.
+License and packages, dependencies and origin information is not always easy to
+find and not normalized: ScanCode discovers and normalizes this data for you.
 
-Read more about ScanCode here: `scancode-toolkit.readthedocs.io 
-<https://scancode-toolkit.readthedocs.io/>`_.
+Read more about ScanCode here: https://scancode-toolkit.readthedocs.io/.
 
 Check out the code at https://github.com/nexB/scancode-toolkit
+
+
+Build and tests status
+======================
+
+We run 30,000+ tests on each commit on multiple CIs to ensure a good platform
+compabitility with multiple versions of Windows, Linux and macOS.
+
++--------------+--------------+--------------+
+| **Appveyor** | **Azure**    | **RTD Build**|
++==============+==============+==============+
+| |appveyor|   |    |azure|   | |docs-rtd|   |
++--------------+--------------+--------------+
 
 
 Why use ScanCode?
@@ -57,9 +69,9 @@ Why use ScanCode?
 
 - ScanCode has an extensive and growing documentation.
 
-- ScanCode can process these packages, build manifest and lockfile formats to extract metadata:
-  Alpine packages, BUCK files, ABOUT files, Android apps, Autotools, Bazel, 
-  JavaScript Bower, Java Axis, MS Cab, Rust Cargo, Chef Chrome apps, 
+- ScanCode can process these packages, build manifest and lockfile formats to collect Package URLs and
+  extract metadata: Alpine packages, BUCK files, ABOUT files, Android apps, Autotools, Bazel, 
+  JavaScript Bower, Java Axis, MS Cab, Rust Cargo, Cocoapods, Chef Chrome apps, 
   PHP Composer and composer.lock, Conda, CPAN, Debian, Apple dmg,
   Java EAR, WAR, JAR, FreeBSD packages, Rubygems gemspec, Gemfile and Gemfile.lock, 
   Go modules, Haxe packages, InstallShield installers, iOS apps, ISO images, 
@@ -68,24 +80,13 @@ Why use ScanCode?
   NSIS Installers, NugGet, OPam, Cocoapods, Python PyPI setup.py, setup.cfg, and 
   several related lockfile formats, semi structured README
   files such as README.android, README.chromium, README.facebook, README.google,
-  README.thirdparty, RPMs, Shell Archives, Squashfs images, Java WAR, Windows executables.
+  README.thirdparty, RPMs, Shell Archives, Squashfs images, Java WAR, Windows
+  executables and the Windows registry
+  and a few more.
 
 
 See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_
 for upcoming features.
-
-
-Build and tests status
-======================
-
-We run tests on multiple CIs to ensure a good platform compabitility and on
-multiple version of Windows, Linux and macOS.
-
-+--------------+--------------+--------------+
-| **Appveyor** | **Azure**    | **RTD Build**|
-+==============+==============+==============+
-| |appveyor|   |    |azure|   | |docs-rtd|   |
-+--------------+--------------+--------------+
 
 
 Documentation
@@ -120,14 +121,14 @@ Installation
 ============
 
 Before installing ScanCode make sure that you have installed the prerequisites
-properly. This means installing Python (Python 3.6 or higher is required).
+properly. This means installing Python 3.9 for x86/64 architectures. (Python 3.6+ is supported).
 
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.
 
 There are a few common ways to `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
-- `*Recommended* installation as an application: Download a release archive, extract and run.
+- **Installation as an application: Install Python 3.9, download a release archive, extract and run**. `This is the recommended installation method.
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-as-an-application-downloading-releases>`_
 
 - `Development installation from source code using a git clone
@@ -219,7 +220,7 @@ License
 * Apache-2.0 as the overall license
 * CC-BY-4.0 for reference datasets (initially was in the Public Domain).
 * Multiple other secondary permissive or copyleft licenses (LGPL, MIT,
-  BSD, GPL 2/3, etc.) for third-party components.
+  BSD, GPL 2/3, etc.) for third-party components and test suite code and data.
 
 
 See the NOTICE file and the .ABOUT files that document the origin and license of
