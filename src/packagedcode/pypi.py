@@ -93,7 +93,7 @@ class PythonEggPkgInfoFile(BasePypiHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
 
 
 class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
@@ -115,7 +115,7 @@ class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
         # only the parent for now... though it can be more complex
-        return cls.assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
 class BaseExtractedPythonLayout(BasePypiHandler):
@@ -144,7 +144,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        return cls.assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
 class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):

@@ -10,6 +10,7 @@
 # virtualenv and other misc bits
 /src/*.egg-info
 *.egg-info
+!tests/packagedcode/data/pypi/source-package/pip-22.0.4/src/pip.egg-info
 /dist
 /build
 /bin
