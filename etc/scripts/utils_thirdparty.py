@@ -8,8 +8,8 @@
 # See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-from collections import defaultdict
 import email
+import functools
 import itertools
 import os
 import re
@@ -18,6 +18,8 @@ import subprocess
 import tempfile
 import time
 import urllib
+from collections import defaultdict
+from urllib.parse import quote_plus
 
 import attr
 import license_expression
@@ -29,7 +31,6 @@ from commoncode.hash import multi_checksums
 from commoncode.text import python_safe_name
 from packaging import tags as packaging_tags
 from packaging import version as packaging_version
-from urllib.parse import quote_plus
 
 import utils_pip_compatibility_tags
 from utils_requirements import load_requirements
@@ -111,8 +112,8 @@ Wheel downloader
 
 """
 
-TRACE = True
-TRACE_DEEP = True
+TRACE = False
+TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
@@ -311,6 +312,7 @@ def download_sdist(
     raise DistributionNotFound(f"Failed to fetch sdist: {name}=={version}: No sources found")
 
 
+@functools.cache
 def get_package_versions(
     name,
     version=None,
@@ -321,15 +323,28 @@ def get_package_versions(
     repository ``index_urls`` list of URLs.
     If ``version`` is not provided, return the latest available versions.
     """
+    found = []
+    not_found = []
     for index_url in index_urls:
         try:
             repo = get_pypi_repo(index_url)
             package = repo.get_package(name, version)
-            if package:
-                yield package
-        except RemoteNotFetchedException as e:
-            print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
 
+            if package:
+                found.append((package, index_url))
+            else:
+                not_found.append((name, version, index_url))
+        except RemoteNotFetchedException as e:
+            if TRACE_ULTRA_DEEP:
+                print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
+            not_found.append((name, version, index_url))
+
+    if not found:
+        raise Exception(f"No PyPI package {name} @ {version} found!")
+
+    for package, index_url in found:
+        print(f"Fetched PyPI package {package.name} @ {package.version} info from {index_url}")
+        yield package
 
 ################################################################################
 #
@@ -553,7 +568,7 @@ class Distribution(NameVer):
             )
             if pypi_package:
                 if isinstance(pypi_package, tuple):
-                    raise Exception("############", repr(pypi_package))
+                    raise Exception("############", repr(pypi_package), self.normalized_name, self.version, index_url)
                 try:
                     pypi_url = pypi_package.get_url_for_filename(self.filename)
                 except Exception as e:
@@ -1450,7 +1465,7 @@ class PypiPackage(NameVer):
         nvs = [p for p in cls.get_versions(name, packages) if p.version == version]
 
         if not nvs:
-            return name, version
+            return
 
         if len(nvs) == 1:
             return nvs[0]
@@ -1618,7 +1633,6 @@ class Environment:
             )
         )
 
-
 ################################################################################
 #
 # PyPI repo and link index for package wheels and sources
@@ -1657,7 +1671,10 @@ class PypiSimpleRepository:
         The list may be empty.
         """
         name = name and NameVer.normalize_name(name)
-        self._populate_links_and_packages(name)
+        try:
+            self._populate_links_and_packages(name)
+        except Exception as e:
+            print(f"        ==> Cannot find versions of {name}: {e}")
         return self.packages_by_normalized_name.get(name, [])
 
     def get_latest_version(self, name):
@@ -1803,7 +1820,6 @@ class LinksRepository:
             _LINKS_REPO[url] = cls(url=url)
         return _LINKS_REPO[url]
 
-
 ################################################################################
 # Globals for remote repos to be lazily created and cached on first use for the
 # life of the session together with some convenience functions.
@@ -1824,6 +1840,7 @@ def get_pypi_repo(index_url, _PYPI_REPO={}):
     return _PYPI_REPO[index_url]
 
 
+@functools.cache
 def get_pypi_package_data(name, version, index_url, verbose=TRACE_DEEP):
     """
     Return a PypiPackage or None.
@@ -1833,12 +1850,11 @@ def get_pypi_package_data(name, version, index_url, verbose=TRACE_DEEP):
             print(f"    get_pypi_package_data: Fetching {name} @ {version} info from {index_url}")
         package = get_pypi_repo(index_url).get_package(name, version)
         if verbose:
-            print(f"      get_pypi_package_data: Fetched")# {package}")
+            print(f"      get_pypi_package_data: Fetched: {package}")
         return package
 
     except RemoteNotFetchedException as e:
         print(f"      get_pypi_package_data: Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
-
 
 ################################################################################
 #
@@ -2000,7 +2016,6 @@ def fetch_and_save_path_or_url(
         fo.write(content)
     return content
 
-
 ################################################################################
 # Requirements processing
 ################################################################################
@@ -2037,7 +2052,6 @@ def get_required_packages(
         if TRACE:
             print("  get_required_packages: name:", name, "version:", version)
         yield repo.get_package(name, version)
-
 
 ################################################################################
 # Functions to update or fetch ABOUT and license files
@@ -2117,7 +2131,6 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
                 for p in packages_by_name[local_package.name]
                 if p.version != local_package.version
             ]
-
             other_local_version = other_local_packages and other_local_packages[-1]
             if other_local_version:
                 latest_local_dists = list(other_local_version.get_distributions())
@@ -2188,7 +2201,6 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
             if lic_errs:
                 lic_errs = "\n".join(lic_errs)
                 print(f"Failed to fetch some licenses:: {lic_errs}")
-
 
 ################################################################################
 #
@@ -2320,9 +2332,9 @@ def build_wheels_locally_if_pure_python(
             "--wheel-dir",
             wheel_dir,
         ]
-        + deps
-        + verbose
-        + [requirements_specifier]
+        +deps
+        +verbose
+        +[requirements_specifier]
     )
 
     print(f"Building local wheels for: {requirements_specifier}")

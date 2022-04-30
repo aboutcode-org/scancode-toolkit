@@ -222,7 +222,7 @@ function clean_egg_info {
 
 
 function clean_build {
-    rm -rf build dist thirdparty PYTHON_EXECUTABLE SCANCODE_DEV_MODE
+    rm -rf build dist thirdparty PYTHON_EXECUTABLE
     clean_egg_info
 }
 
@@ -368,7 +368,7 @@ fi
 
 
 # wheels
-#build_wheels
+build_wheels
 
 # build the app combos on the current App Python
 for operating_system in $OPERATING_SYSTEMS

@@ -18,7 +18,8 @@ import click
 import utils_thirdparty
 import utils_requirements
 
-TRACE = True
+TRACE = False
+TRACE_DEEP = False
 
 
 @click.command()
@@ -204,7 +205,7 @@ def fetch_thirdparty(
                     existing_wheels = None
 
                 if existing_wheels:
-                    if TRACE:
+                    if TRACE_DEEP:
                         print(
                             f"====> Wheels already available: {name}=={version} on: {environment}: {existing_package.wheels!r}"
                         )
@@ -213,7 +214,7 @@ def fetch_thirdparty(
                     else:
                         continue
 
-                if TRACE:
+                if TRACE_DEEP:
                     print(f"Fetching wheel for: {name}=={version} on: {environment}")
 
                 try:
