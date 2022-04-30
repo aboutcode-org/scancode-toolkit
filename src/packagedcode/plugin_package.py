@@ -158,47 +158,53 @@ def create_package_and_deps(codebase, **kwargs):
         for package_data in resource.package_data:
             try:
                 package_data = PackageData.from_dict(package_data)
-            except Exception as e:
-                raise Exception(
-                    'create_package_and_deps: Failed to create PackageData:',
-                    package_data,
-                ) from e
 
-            if TRACE:
-                logger_debug('  create_package_and_deps: package_data:', package_data)
-
-            # Find a handler for this package datasource to assemble collect
-            # packages and deps
-            handler = get_package_handler(package_data)
-            if TRACE:
-                logger_debug('  create_package_and_deps: handler:', handler)
-            click.echo(f'  create_package_and_deps: handler: {handler}')
-            items = handler.assemble(
-                package_data=package_data,
-                resource=resource,
-                codebase=codebase,
-            )
-
-            for item in items:
                 if TRACE:
-                    logger_debug('    create_package_and_deps: item:', item)
+                    logger_debug('  create_package_and_deps: package_data:', package_data)
 
-                if isinstance(item, Package):
-                    packages_top_level.append(item)
+                # Find a handler for this package datasource to assemble collect
+                # packages and deps
+                handler = get_package_handler(package_data)
+                if TRACE:
+                    logger_debug('  create_package_and_deps: handler:', handler)
+                click.echo(f'  create_package_and_deps: handler: {handler}')
+ 
+                items = handler.assemble(
+                    package_data=package_data,
+                    resource=resource,
+                    codebase=codebase,
+                )
 
-                elif isinstance(item, Dependency):
-                    dependencies_top_level.append(item)
-
-                elif isinstance(item, Resource):
-                    seen_resource_ids.add(item.rid)
+                for item in items:
                     if TRACE:
-                        logger_debug(
-                            '    create_package_and_deps: seen_resource_ids:',
-                            seen_resource_ids,
-                        )
+                        logger_debug('    create_package_and_deps: item:', item)
 
-                else:
-                    raise Exception(f'Unknown package assembly item type: {item!r}')
+                    if isinstance(item, Package):
+                        packages_top_level.append(item)
+
+                    elif isinstance(item, Dependency):
+                        dependencies_top_level.append(item)
+
+                    elif isinstance(item, Resource):
+                        seen_resource_ids.add(item.rid)
+                        if TRACE:
+                            logger_debug(
+                                '    create_package_and_deps: seen_resource_ids:',
+                                seen_resource_ids,
+                            )
+
+                    else:
+                        raise Exception(f'Unknown package assembly item type: {item!r}')
+
+            except Exception as e:
+                msg = f'create_package_and_deps: Failed to assemble PackageData: {package_data}: \n {e}'
+                resource.scan_errors.append(msg)
+                resource.save(codebase)
+
+                if TRACE:
+                    import traceback
+                    msg += traceback.format_exc()
+                    raise Exception(msg) from e
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)

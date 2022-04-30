@@ -53,7 +53,7 @@ class JavaJarManifestHandler(models.DatafileHandler):
             parent = resource.parent(codebase)
 
         if parent:
-            super().assign_package_to_resources(package, resource=parent, codebase=codebase)
+            models.DatafileHandler.assign_package_to_resources(package, resource=parent, codebase=codebase)
 
 
 

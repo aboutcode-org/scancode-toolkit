@@ -51,7 +51,7 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -376,7 +376,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package_=package,
             resource=resource,
             codebase=codebase,

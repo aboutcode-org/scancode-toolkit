@@ -993,9 +993,7 @@
       "path": "scan/aopalliance/aopalliance",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
