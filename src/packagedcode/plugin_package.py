@@ -167,7 +167,6 @@ def create_package_and_deps(codebase, **kwargs):
                 handler = get_package_handler(package_data)
                 if TRACE:
                     logger_debug('  create_package_and_deps: handler:', handler)
-                click.echo(f'  create_package_and_deps: handler: {handler}')
  
                 items = handler.assemble(
                     package_data=package_data,
