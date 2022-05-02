@@ -36,35 +36,106 @@ To check https://github.com/npm/normalize-package-data
 # TODO: add support for "lockfileVersion": 2 for package-lock.json and lockfileVersion: 3
 
 
+def yield_npm_dependencies_from_package_data(package_data, datafile_path, package_uid):
+    """
+    Yield a Dependency for each dependency from ``package_data.dependencies``
+    """
+    dependent_packages = package_data.dependencies
+    if dependent_packages:
+        yield from models.Dependency.from_dependent_packages(
+            dependent_packages=dependent_packages,
+            datafile_path=datafile_path,
+            datasource_id=package_data.datasource_id,
+            package_uid=package_uid,
+        )
+
+
+def yield_npm_dependencies_from_package_resource(resource, package_uid=None):
+    """
+    Yield a Dependency for each dependency from each package from``resource.package_data``
+    """
+    for pkg_data in resource.package_data:
+        pkg_data = models.PackageData.from_dict(pkg_data)
+        yield_npm_dependencies_from_package_data(pkg_data, resource.location, package_uid)
+
+
 class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
+        """
+        If ``resource``, or one of its siblings, is a package.json file, use it
+        to create and yield the package, the package dependencies, and the
+        package resources.
+
+        When reporting the resources of a package, we alk the codebase, skipping
+        the node_modules directory, assign resources to the package and yield
+        resources.
+
+        For each lock file, assign dependencies to package instances and yield dependencies.
+
+        If there is no package.json, we do not have a package instance. In this
+        case, we yield each of the dependencies in each lock file.
+        """
         datafile_name_patterns = (
-            'package.json',
             'package-lock.json',
             '.package-lock.json',
             'npm-shrinkwrap.json',
             'yarn.lock',
         )
 
-        if resource.has_parent():
-            dir_resource=resource.parent(codebase)
-        else:
-            dir_resource=resource
+        package_resource = None
+        if resource.name == 'package.json':
+            package_resource = resource
+        elif resource.name in datafile_name_patterns:
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'package.json']
+                if package_resource:
+                    package_resource = package_resource[0]
 
-        for assembled in cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=dir_resource,
-            codebase=codebase,
-        ):
-            if isinstance(assembled, models.Package):
-                cls.assign_package_to_resources(
-                    package=assembled,
-                    resource=resource,
-                    codebase=codebase,
+        if package_resource:
+            # do we have enough to create a package?
+            if package_data.purl:
+                package = models.Package.from_package_data(
+                    package_data=package_data,
+                    datafile_path=package_resource.path,
                 )
-            yield assembled
+                package_uid = package.package_uid
+
+                if not package.license_expression:
+                    package.license_expression = compute_normalized_license(package.declared_license)
+
+                root = resource.parent(codebase)
+                if root:
+                    for npm_res in cls.walk_npm(resource=root, codebase=codebase):
+                        if package_uid not in npm_res.for_packages:
+                            npm_res.for_packages.append(package_uid)
+                            npm_res.save(codebase)
+                        yield npm_res
+
+                yield package
+            else:
+                # we have no package, so deps are not for a specific package uid
+                package_uid = None
+
+            # in all cases yield possible dependencies
+            yield_npm_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+
+            # we yield this as we do not want this further processed
+            yield package_resource
+
+            for sibling in package_resource.siblings(codebase):
+                if sibling.name in datafile_name_patterns:
+                    yield_npm_dependencies_from_package_resource(sibling, package_uid)
+
+                    if package_uid not in sibling.for_packages:
+                        sibling.for_packages.append(package_uid)
+                        sibling.save(codebase)
+                    yield sibling
+        else:
+            # we do not have a package.json
+            yield_npm_dependencies_from_package_resource(resource)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -86,16 +157,6 @@ class BaseNpmHandler(models.DatafileHandler):
                 depth += 1
                 for subchild in cls.walk_skip(child, codebase, depth=depth):
                     yield subchild
-
-    # TODO: this MUST BE USED
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        """
-        Yield the Resources of an npm Package, ignoring nested mode_modules.
-        """
-        root = resource.parent(codebase)
-        if root:
-            yield from cls.walk_npm(resource=root, codebase=codebase)
 
 
 def get_urls(namespace, name, version):
