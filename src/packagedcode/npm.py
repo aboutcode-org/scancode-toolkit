@@ -120,7 +120,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 package_uid = None
 
             # in all cases yield possible dependencies
-            yield_npm_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+            yield from yield_npm_dependencies_from_package_data(package_data, package_resource.path, package_uid)
 
             # we yield this as we do not want this further processed
             yield package_resource
