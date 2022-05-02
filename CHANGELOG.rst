@@ -1,6 +1,26 @@
 Release notes
 =============
 
+Version (next) 
+------------------------------
+
+- Remove Python upper version limit.
+
+
+Version 30.2.0 - (2022-05-02)
+------------------------------
+
+- Relax dependencies version requirements by removing upper bounds.
+- Use latest skeleton.
+
+
+Version 30.1.2 - (2022-04-29)
+------------------------------
+
+- Minor improved utilities
+- More robust handling of Codebase with a single Resource
+
+
 Version 30.1.1 (2022-04-18)
 ------------------------------
 
