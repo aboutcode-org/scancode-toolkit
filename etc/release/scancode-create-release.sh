@@ -339,7 +339,7 @@ function build_source_archive {
     # would take a distutils manifest-like input
 
     $BIN_DIR/python setup.py $QUIET sdist --formats=xztar
-    $BIN_DIR/python etc/release/scancode_rename_archives.py dist/ $src _sources
+    $BIN_DIR/python etc/release/scancode_rename_archives.py dist/ _sources
     mkdir -p release/archives
     mv dist/* release/archives/
 }

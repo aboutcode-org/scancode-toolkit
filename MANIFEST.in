@@ -1,7 +1,6 @@
 graft src
 
 graft thirdparty
-recursive-include etc configure.py
 graft etc/thirdparty
 recursive-include etc/thirdparty *
 
@@ -14,7 +13,7 @@ include *.rst
 include setup.*
 include configure*
 include requirements*
-include .git*
+include .giti*
 
 include extractcode*
 include scancode*

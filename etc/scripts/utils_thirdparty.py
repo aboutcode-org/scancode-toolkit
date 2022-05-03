@@ -312,7 +312,7 @@ def download_sdist(
     raise DistributionNotFound(f"Failed to fetch sdist: {name}=={version}: No sources found")
 
 
-@functools.cache
+@functools.lru_cache(maxsize=None)
 def get_package_versions(
     name,
     version=None,
@@ -2364,7 +2364,7 @@ def build_wheels_locally_if_pure_python(
 
 def check_about(dest_dir=THIRDPARTY_DIR):
     try:
-        subprocess.check_output(f"about check {dest_dir}".split())
+        subprocess.check_output(f"venv/bin/about check {dest_dir}".split())
     except subprocess.CalledProcessError as cpe:
         print()
         print("Invalid ABOUT files:")
