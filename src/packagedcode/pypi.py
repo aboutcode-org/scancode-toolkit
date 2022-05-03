@@ -30,6 +30,8 @@ from packaging.utils import canonicalize_name
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
+from packagedcode.utils import yield_dependencies_from_package_data
+from packagedcode.utils import yield_dependencies_from_package_resource
 
 # FIXME: we always want to use the external library rather than the built-in for now
 import importlib_metadata
@@ -116,29 +118,6 @@ class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
     def assign_package_to_resources(cls, package, resource, codebase):
         # only the parent for now... though it can be more complex
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
-
-
-def yield_dependencies_from_package_data(package_data, datafile_path, package_uid):
-    """
-    Yield a Dependency for each dependency from ``package_data.dependencies``
-    """
-    dependent_packages = package_data.dependencies
-    if dependent_packages:
-        yield from models.Dependency.from_dependent_packages(
-            dependent_packages=dependent_packages,
-            datafile_path=datafile_path,
-            datasource_id=package_data.datasource_id,
-            package_uid=package_uid,
-        )
-
-
-def yield_dependencies_from_package_resource(resource, package_uid=None):
-    """
-    Yield a Dependency for each dependency from each package from``resource.package_data``
-    """
-    for pkg_data in resource.package_data:
-        pkg_data = models.PackageData.from_dict(pkg_data)
-        yield_dependencies_from_package_data(pkg_data, resource.location, package_uid)
 
 
 class BaseExtractedPythonLayout(BasePypiHandler):

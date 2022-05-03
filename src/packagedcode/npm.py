@@ -19,6 +19,8 @@ from packageurl import PackageURL
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import yield_dependencies_from_package_data
+from packagedcode.utils import yield_dependencies_from_package_resource
 import saneyaml
 
 """
@@ -34,29 +36,6 @@ To check https://github.com/npm/normalize-package-data
 # TODO: add new yarn v2 lock file format
 # TODO: add pnp.js and pnpm-lock.yaml https://pnpm.io/
 # TODO: add support for "lockfileVersion": 2 for package-lock.json and lockfileVersion: 3
-
-
-def yield_npm_dependencies_from_package_data(package_data, datafile_path, package_uid):
-    """
-    Yield a Dependency for each dependency from ``package_data.dependencies``
-    """
-    dependent_packages = package_data.dependencies
-    if dependent_packages:
-        yield from models.Dependency.from_dependent_packages(
-            dependent_packages=dependent_packages,
-            datafile_path=datafile_path,
-            datasource_id=package_data.datasource_id,
-            package_uid=package_uid,
-        )
-
-
-def yield_npm_dependencies_from_package_resource(resource, package_uid=None):
-    """
-    Yield a Dependency for each dependency from each package from``resource.package_data``
-    """
-    for pkg_data in resource.package_data:
-        pkg_data = models.PackageData.from_dict(pkg_data)
-        yield_npm_dependencies_from_package_data(pkg_data, resource.location, package_uid)
 
 
 class BaseNpmHandler(models.DatafileHandler):
@@ -120,14 +99,14 @@ class BaseNpmHandler(models.DatafileHandler):
                 package_uid = None
 
             # in all cases yield possible dependencies
-            yield from yield_npm_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+            yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
 
             # we yield this as we do not want this further processed
             yield package_resource
 
             for sibling in package_resource.siblings(codebase):
                 if sibling.name in datafile_name_patterns:
-                    yield_npm_dependencies_from_package_resource(sibling, package_uid)
+                    yield_dependencies_from_package_resource(sibling, package_uid)
 
                     if package_uid not in sibling.for_packages:
                         sibling.for_packages.append(package_uid)
@@ -135,7 +114,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     yield sibling
         else:
             # we do not have a package.json
-            yield_npm_dependencies_from_package_resource(resource)
+            yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
