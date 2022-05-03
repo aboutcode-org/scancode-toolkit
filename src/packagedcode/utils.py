@@ -206,4 +206,4 @@ def yield_dependencies_from_package_resource(resource, package_uid=None):
     from packagedcode import models
     for pkg_data in resource.package_data:
         pkg_data = models.PackageData.from_dict(pkg_data)
-        yield_dependencies_from_package_data(pkg_data, resource.location, package_uid)
+        yield from yield_dependencies_from_package_data(pkg_data, resource.path, package_uid)

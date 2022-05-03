@@ -28,6 +28,13 @@
       "errors": [],
       "warnings": [],
       "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-107-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#121~18.04.1-Ubuntu SMP Thu Mar 24 17:21:33 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
         "spdx_license_list_version": "3.16",
         "files_count": 26
       }
@@ -3754,7 +3761,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3789,7 +3798,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3877,7 +3888,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -3979,7 +3992,9 @@
         }
       ],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -4080,7 +4095,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -4129,7 +4146,9 @@
         }
       ],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4172,7 +4191,9 @@
         }
       ],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4262,7 +4283,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -4311,7 +4334,9 @@
         }
       ],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4348,7 +4373,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -4396,7 +4423,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4486,7 +4515,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4576,7 +4607,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -4685,7 +4718,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4763,7 +4798,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8084,7 +8121,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8119,7 +8158,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8247,7 +8288,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8339,7 +8382,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8431,7 +8476,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8523,7 +8570,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8560,7 +8609,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8607,7 +8658,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8699,7 +8752,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -8742,7 +8797,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8836,7 +8893,9 @@
         }
       ],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -8889,7 +8948,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8979,7 +9040,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -9071,7 +9134,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -9108,7 +9173,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -9196,7 +9263,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [
         {
@@ -9292,7 +9361,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -9395,7 +9466,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -9487,7 +9560,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "emails": [],
       "urls": [],
       "facets": [

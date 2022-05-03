@@ -16,6 +16,8 @@ import os
 import re
 import sys
 import zipfile
+from configparser import ConfigParser
+from io import StringIO
 from pathlib import Path
 
 import dparse2
@@ -178,13 +180,14 @@ class BaseExtractedPythonLayout(BasePypiHandler):
 
             for sibling in package_resource.siblings(codebase):
                 if sibling.name in datafile_name_patterns:
-                    yield_dependencies_from_package_resource(sibling, package_uid)
+                    yield from yield_dependencies_from_package_resource(sibling, package_uid)
+
                     if package_uid not in sibling.for_packages:
                         sibling.for_packages.append(package_uid)
                         sibling.save(codebase)
                     yield sibling
         else:
-            yield_dependencies_from_package_resource(resource)
+            yield from yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -590,6 +593,63 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
     default_primary_language = 'Python'
     description = 'Python setup.cfg'
     documentation_url = 'https://peps.python.org/pep-0390/'
+
+    @classmethod
+    def parse(cls, location):
+        file_name = fileutils.file_name(location)
+
+        with open(location) as f:
+            content = f.read()
+
+        metadata = {}
+        parser = ConfigParser()
+        parser.readfp(StringIO(content))
+        for section in parser.values():
+            if section.name == 'metadata':
+                options = (
+                    'name',
+                    'version',
+                    'license',
+                    'url',
+                    'author',
+                    'author_email',
+                )
+                for name in options:
+                    content = section.get(name)
+                    if not content:
+                        continue
+                    metadata[name] = content
+
+        parties = []
+        author = metadata.get('author')
+        if author:
+            parties = [
+                models.Party(
+                    type=models.party_person,
+                    name=author,
+                    role='author',
+                    email=metadata.get('author_email'),
+                )
+            ]
+
+        dependency_type = get_dparse2_supported_file_name(file_name)
+        if not dependency_type:
+            return
+
+        dependencies = parse_with_dparse2(
+            location=location,
+            file_name=dependency_type,
+        )
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=metadata.get('name'),
+            version=metadata.get('version'),
+            parties=parties,
+            homepage_url=metadata.get('url'),
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
 
 
 class PipfileHandler(BaseDependencyFileHandler):

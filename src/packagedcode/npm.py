@@ -106,7 +106,7 @@ class BaseNpmHandler(models.DatafileHandler):
 
             for sibling in package_resource.siblings(codebase):
                 if sibling.name in datafile_name_patterns:
-                    yield_dependencies_from_package_resource(sibling, package_uid)
+                    yield from yield_dependencies_from_package_resource(sibling, package_uid)
 
                     if package_uid not in sibling.for_packages:
                         sibling.for_packages.append(package_uid)
@@ -114,7 +114,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     yield sibling
         else:
             # we do not have a package.json
-            yield_dependencies_from_package_resource(resource)
+            yield from yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -134,7 +134,7 @@ class BaseNpmHandler(models.DatafileHandler):
 
             if child.is_dir:
                 depth += 1
-                for subchild in cls.walk_skip(child, codebase, depth=depth):
+                for subchild in cls.walk_npm(child, codebase, depth=depth):
                     yield subchild
 
 

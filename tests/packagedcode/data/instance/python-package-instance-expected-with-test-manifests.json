@@ -92,46 +92,6 @@
         "pypi_sdist_pkginfo"
       ],
       "purl": "pkg:pypi/setuptools@58.2.0"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "my-test-package",
-      "version": "1.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://pypi.org/project/my-test-package",
-      "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json",
-      "package_uid": "pkg:pypi/my-test-package@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip"
-      ],
-      "datasource_ids": [
-        "pypi_sdist"
-      ],
-      "purl": "pkg:pypi/my-test-package@1.0"
     }
   ],
   "files": [
@@ -139,14 +99,18 @@
       "path": "LICENSE",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "MANIFEST.in",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -223,7 +187,9 @@
       "path": "README.rst",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -296,7 +262,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/my-test-package@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -341,50 +307,15 @@
           "purl": null
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "setup.cfg",
       "type": "file",
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": null,
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null,
-          "datasource_id": "pypi_setup_cfg",
-          "purl": null
-        }
-      ],
+      "package_data": [],
       "for_packages": [
         "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],

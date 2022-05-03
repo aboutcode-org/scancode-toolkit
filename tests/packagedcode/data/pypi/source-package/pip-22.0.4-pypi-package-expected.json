@@ -399,16 +399,24 @@
         {
           "type": "pypi",
           "namespace": null,
-          "name": null,
-          "version": null,
+          "name": "",
+          "version": "",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Python",
           "description": null,
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": null,
+              "url": null
+            }
+          ],
           "keywords": [],
-          "homepage_url": null,
+          "homepage_url": "",
           "download_url": null,
           "size": null,
           "sha1": null,
