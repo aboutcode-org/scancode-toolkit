@@ -92,6 +92,11 @@ class BaseNpmHandler(models.DatafileHandler):
                             npm_res.for_packages.append(package_uid)
                             npm_res.save(codebase)
                         yield npm_res
+                elif codebase.has_single_resource:
+                    if package_uid not in package_resource.for_packages:
+                        package_resource.for_packages.append(package_uid)
+                        package_resource.save(codebase)
+                    yield package_resource
 
                 yield package
             else:
