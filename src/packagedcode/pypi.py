@@ -118,6 +118,29 @@ class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
+def yield_dependencies_from_package_data(package_data, datafile_path, package_uid):
+    """
+    Yield a Dependency for each dependency from ``package_data.dependencies``
+    """
+    dependent_packages = package_data.dependencies
+    if dependent_packages:
+        yield from models.Dependency.from_dependent_packages(
+            dependent_packages=dependent_packages,
+            datafile_path=datafile_path,
+            datasource_id=package_data.datasource_id,
+            package_uid=package_uid,
+        )
+
+
+def yield_dependencies_from_package_resource(resource, package_uid=None):
+    """
+    Yield a Dependency for each dependency from each package from``resource.package_data``
+    """
+    for pkg_data in resource.package_data:
+        pkg_data = models.PackageData.from_dict(pkg_data)
+        yield_dependencies_from_package_data(pkg_data, resource.location, package_uid)
+
+
 class BaseExtractedPythonLayout(BasePypiHandler):
     """
     Base class for development repos, sdist tarballs and other related extracted
@@ -135,12 +158,54 @@ class BaseExtractedPythonLayout(BasePypiHandler):
             'Pipfile',
         ) + PipRequirementsFileHandler.path_patterns
 
-        parent = resource.parent(codebase)
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=parent,
-            codebase=codebase,
-        )
+        package_resource = None
+        if resource.name in datafile_name_patterns:
+            package_resource = resource
+
+        if package_resource:
+            # do we have enough to create a package?
+            if package_data.purl:
+                package = models.Package.from_package_data(
+                    package_data=package_data,
+                    datafile_path=package_resource.path,
+                )
+                package_uid = package.package_uid
+
+                if not package.license_expression:
+                    package.license_expression = compute_normalized_license(package.declared_license)
+
+                root = package_resource.parent(codebase)
+                if root:
+                    for py_res in root.walk(codebase):
+                        if py_res.is_dir:
+                            continue
+                        if package_uid not in py_res.for_packages:
+                            py_res.for_packages.append(package_uid)
+                            py_res.save(codebase)
+                        yield py_res
+                elif codebase.has_single_resource:
+                    if package_uid not in package_resource.for_packages:
+                        package_resource.for_packages.append(package_uid)
+                        package_resource.save(codebase)
+                    yield package_resource
+                yield package
+            else:
+                # we have no package, so deps are not for a specific package uid
+                package_uid = None
+
+            # in all cases yield possible dependencies
+            yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+            yield package_resource
+
+            for sibling in package_resource.siblings(codebase):
+                if sibling.name in datafile_name_patterns:
+                    yield_dependencies_from_package_resource(sibling, package_uid)
+                    if package_uid not in sibling.for_packages:
+                        sibling.for_packages.append(package_uid)
+                        sibling.save(codebase)
+                    yield sibling
+        else:
+            yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
