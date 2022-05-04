@@ -8,25 +8,25 @@ Changelog
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Adopt the new skeleton from https://github.com/nexB/skeleton
+- Adopted the new skeleton from https://github.com/nexB/skeleton
   The key change is the location of the virtual environment. It used to be
-  created at the root of the scancode-toolkit directory. Its is now created
-  instead under the ``venv`` subdirectory.
+  created at the root of the scancode-toolkit directory. It is now created
+  under the ``venv`` subdirectory.
 
-- Main package API function `get_package_infos` is now deprecated, and is
+- The main package API function `get_package_infos` is deprecated, and
   replaced by `get_package_data`.
 
 - The data structure of the JSON output has changed for copyrights, authors
-  and holders: we now use proper name for attributes and not a generic "value".
+  and holders. We now use a proper name for attributes and not a generic "value".
 
-- The data structure of the JSON output has changed for licenses: we now
+- The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
-  "license_references" attributes that contains the data details for each
-  detected licenses only once. This data can contain the reference license text
+  "license_references" attribute that contains the data details for each
+  detected license only once. This data can contain the reference license text
   as an option.
 
-- The data structure of the JSON output has changed for packages: we now
+- The data structure of the JSON output has changed for packages. We now
   return "package_data" package information at the manifest file-level
   rather than "packages". This has all the data attributes of a "package_data"
   field plus others: "package_uuid", "package_data_files" and "files".
@@ -41,11 +41,11 @@ Important API changes:
   through package_uuids (pURL + uuid string).
 
 - The data structure for HTML output has been changed to include emails and
-  urls under the  "infos" object. Now HTML template will output holders,
+  urls under the  "infos" object. The HTML template displays output for holders,
   authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
 - The data structure for CSV output has been changed to rename the Resource
-  column to "path". The "copyright_holder" has been ranmed to "holder"
+  column to "path". "copyright_holder" has been renamed to "holder"
 
 - The license clarity scoring plugin has been overhauled to show new license
   clarity criteria. More details of the new criteria are provided below.
@@ -60,7 +60,7 @@ Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
 - The data structure in the JSON is now using consistently named attributes as
-  opposed to a plain value.
+  opposed to plain values.
 - Several copyright detection bugs have been fixed.
 - French and German copyright detection is improved.
 - Some spurious trailing dots in holders are not stripped.
@@ -95,12 +95,12 @@ License detection:
   weakly matched. This helps detects things that look like a license but are not
   yet known as licenses.
 
-- False positive detection of "license lists" like list seen in license and
+- False positive detection of "license lists" like the lists seen in license and
   package management tools has been entirely reworked. Rather than using
-  thousands of small false positive rules, there is now a new filter to detect
-  long run of license references and tags that are typical of license lists.
+  thousands of small false positive rules, there is a new filter to detect a
+  long run of license references and tags that is typical of license lists.
   As a results, thousands of rules have been replaced by a simpler filter, and
-  the license detection is both more accurate, faster and has fewer false
+  the license detection is more accurate, faster and has fewer false
   positives.
 
 - The new license flag "is_generic" tags licenses that are "generic" licenses
@@ -108,7 +108,7 @@ License detection:
   returned in the JSON API.
 
 - When scanning binary files, the detection of single word rules is filtered when
-  surrounded by gibberish or is using mixed case. For instance $#%$GpL$ is a false
+  surrounded by gibberish or mixed case. For instance $#%$GpL$ is a false
   positive and is no longer reported.
 
 - Several rules we tagged as is_license_notice incorrectly but were references
@@ -117,14 +117,14 @@ License detection:
   this way.
 
 - Matches to small license rules (with small defined as under 15 words)
-  that are scattered on too many lines are now filtered as false matches.
+  that are scattered over too many lines are now filtered as false matches.
 
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
 
 - The new --licenses-reference option adds a new "licenses_reference" top
   level attribute to a scan when using the JSON and YAML outputs. This contains
-  all the details and the full text of every licenses seen in a file or
+  all the details and the full text of every license seen in a file or
   package license expression of a scan. This can be added added after the fact
   using the --from-json option.
 
@@ -142,15 +142,14 @@ Package detection:
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
-- Major changes in packages detection and reporting, codebase-level attribute `packages`
+- Major changes in package detection and reporting, codebase-level attribute `packages`
   with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
 
   - The resource level attribute `packages` has been renamed to `package_data`,
-    as these are really package data that are being detected, and can be manifests,
-    lockfiles or other package data. This has all the data attributes of a `package_data`
+    as these are really package data that are being detected, such as manifests,
+    lockfiles or other package data. This has the data attributes of a `package_data`
     field plus others: `package_uuid`, `package_data_files` and `files`.
-
 
   - A new top-level attribute `packages` has been added which contains package
     instances created from `package_data` detected in the codebase.
@@ -166,8 +165,8 @@ Package detection:
     through package_uuids (pURL + uuid string).
 
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
-    now has a new attribute `resolved_package` having a package data mapping.
-    Also the `requirement` attribute here is renamed to `extracted_requirement`.
+    now has a new attribute `resolved_package` with a package data mapping.
+    Also the `requirement` attribute is renamed to `extracted_requirement`.
 
 
 License Clarity Scoring Update
@@ -175,8 +174,8 @@ License Clarity Scoring Update
 
  - We are moving away from the license clarity scoring defined by ClearlyDefined
    in the license clarity score plugin. The previous license clarity scoring
-   logic produced a score that was misleading, where it would return a low score
-   when scanning packages due to the stringent scoring criteria. We are now
+   logic produced a score that was misleading when it would return a low score
+   due to the stringent scoring criteria. We are now
    using more general criteria to get a sense of what provenance information has
    been provided and whether or not there is a conflict in licensing between
    what licenses were declared at the top-level key files and what licenses have
@@ -224,7 +223,7 @@ License Clarity Scoring Update
 
    - Conflicting license categories:
 
-     - When true, indicates the declared license expression of the software is in
+     - When true, indicates that the declared license expression of the software is in
        the permissive category, but that other potentially conflicting categories,
        such as copyleft and proprietary, have been detected in lower level code.
      - Scoring Weight = -20
@@ -239,7 +238,7 @@ creating a new plugin called ``tallies``. All functionality of the previous
 summary plugin have been preserved in the tallies plugin.
 
 The plugin now attempts to determine a declared license expression, holder, and
-primary programming language from a scan. The license clarity score is provided
+primary programming language from a scan. The license clarity score provides
 context on what origin information is provided from key files. It also returns
 lists of tallies of the other detected license expressions, holders, and
 programming languages. All information is provided in the codebase level
@@ -249,7 +248,7 @@ attribute named ``summary``.
 Outputs:
 ~~~~~~~~
 
- - Add new outputs for the CycloneDx format.
+ - Added new outputs for the CycloneDx format.
    The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
  - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
@@ -273,7 +272,7 @@ Changes:
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Various documentations have been updated to reflects API changes and
+- Various documentation files have been updated to reflects API changes and
   correct minor documentation issues.
 
 
@@ -285,7 +284,7 @@ Development environment changes:
   instead the --reindex-licenses option to rebuild the license index.
 
 - We can now regenerate updated test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
-  environemnt variable. There is no need to replace the regen=False with regen=True
+  environment variable. There is no need to replace the regen=False with regen=True
   in the code.
 
 
