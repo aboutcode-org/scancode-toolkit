@@ -169,7 +169,7 @@ PACKAGE_DATAFILE_HANDLERS = [
     pypi.PipfileLockHandler,
     pypi.PipRequirementsFileHandler,
     pypi.PypiEggHandler,
-    pypi.PypiSdistArchiveHandler,
+    # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
     pypi.PyprojectTomlHandler,
     pypi.PythonEditableInstallationPkgInfoFile,

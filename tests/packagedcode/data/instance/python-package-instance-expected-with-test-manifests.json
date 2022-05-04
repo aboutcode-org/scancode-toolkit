@@ -18,8 +18,8 @@
         "system_environment": {
           "operating_system": "linux",
           "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-107-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#121~18.04.1-Ubuntu SMP Thu Mar 24 17:21:33 UTC 2022",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
           "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
         },
         "spdx_license_list_version": "3.16",
@@ -223,44 +223,7 @@
     {
       "path": "pkg_resources/tests/data/my-test-package-zip/my-test-package.zip",
       "type": "file",
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": "my-test-package",
-          "version": "1.0",
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": "",
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": {},
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": "https://pypi.org/project/my-test-package",
-          "repository_download_url": "https://pypi.org/packages/source/m/my-test-package/my-test-package-1.0.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/my-test-package/1.0/json",
-          "datasource_id": "pypi_sdist",
-          "purl": "pkg:pypi/my-test-package@1.0"
-        }
-      ],
+      "package_data": [],
       "for_packages": [
         "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],

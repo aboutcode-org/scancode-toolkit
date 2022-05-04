@@ -56,17 +56,17 @@ class BaseNpmHandler(models.DatafileHandler):
         If there is no package.json, we do not have a package instance. In this
         case, we yield each of the dependencies in each lock file.
         """
-        datafile_name_patterns = (
+        lockfile_names = {
             'package-lock.json',
             '.package-lock.json',
             'npm-shrinkwrap.json',
             'yarn.lock',
-        )
+        }
 
         package_resource = None
         if resource.name == 'package.json':
             package_resource = resource
-        elif resource.name in datafile_name_patterns:
+        elif resource.name in lockfile_names:
             if resource.has_parent():
                 siblings = resource.siblings(codebase)
                 package_resource = [r for r in siblings if r.name == 'package.json']
@@ -74,10 +74,14 @@ class BaseNpmHandler(models.DatafileHandler):
                     package_resource = package_resource[0]
 
         if package_resource:
+            assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
+            pkg_data = package_resource.package_data[0]
+            pkg_data = models.PackageData.from_dict(pkg_data)
+
             # do we have enough to create a package?
-            if package_data.purl:
+            if pkg_data.purl:
                 package = models.Package.from_package_data(
-                    package_data=package_data,
+                    package_data=pkg_data,
                     datafile_path=package_resource.path,
                 )
                 package_uid = package.package_uid
@@ -96,27 +100,28 @@ class BaseNpmHandler(models.DatafileHandler):
                     if package_uid not in package_resource.for_packages:
                         package_resource.for_packages.append(package_uid)
                         package_resource.save(codebase)
-                    yield package_resource
 
+                # Always yield the package resource in all cases
+                yield package_resource
                 yield package
             else:
                 # we have no package, so deps are not for a specific package uid
                 package_uid = None
 
             # in all cases yield possible dependencies
-            yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+            yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
 
             # we yield this as we do not want this further processed
             yield package_resource
 
-            for sibling in package_resource.siblings(codebase):
-                if sibling.name in datafile_name_patterns:
-                    yield from yield_dependencies_from_package_resource(sibling, package_uid)
+            for lock_file in package_resource.siblings(codebase):
+                if lock_file.name in lockfile_names:
+                    yield from yield_dependencies_from_package_resource(lock_file, package_uid)
 
-                    if package_uid not in sibling.for_packages:
-                        sibling.for_packages.append(package_uid)
-                        sibling.save(codebase)
-                    yield sibling
+                    if package_uid not in lock_file.for_packages:
+                        lock_file.for_packages.append(package_uid)
+                        lock_file.save(codebase)
+                    yield lock_file
         else:
             # we do not have a package.json
             yield from yield_dependencies_from_package_resource(resource)

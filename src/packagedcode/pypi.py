@@ -9,6 +9,7 @@
 #
 
 import ast
+from distutils.core import setup
 import io
 import json
 import logging
@@ -132,66 +133,109 @@ class BaseExtractedPythonLayout(BasePypiHandler):
     def assemble(cls, package_data, resource, codebase):
         # a source distribution can have many manifests
         datafile_name_patterns = (
-            'PKG-INFO',
-            'setup.py',
-            'setup.cfg',
             'Pipfile.lock',
             'Pipfile',
         ) + PipRequirementsFileHandler.path_patterns
 
-        package_resource = None
-        if resource.name in datafile_name_patterns:
-            package_resource = resource
+        # TODO: we want PKG-INFO first, then (setup.py, setup.cfg), then pyproject.toml for poetry
+        # then we have the rest of the lock files (pipfile, pipfile.lock, etc.)
 
+        package_resource = None
+        if resource.name == 'PKG-INFO':
+            package_resource = resource
+        elif resource.name in datafile_name_patterns:
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'PKG-INFO']
+                if package_resource:
+                    package_resource = package_resource[0]
+
+        package = None
         if package_resource:
-            # do we have enough to create a package?
-            if package_data.purl:
+            pkg_data = package_resource.package_data[0]
+            pkg_data = models.PackageData.from_dict(pkg_data)
+            if pkg_data.purl:
                 package = models.Package.from_package_data(
-                    package_data=package_data,
+                    package_data=pkg_data,
                     datafile_path=package_resource.path,
                 )
-                package_uid = package.package_uid
+                package_resource.for_packages.append(package.package_uid)
+                package_resource.save(codebase)
+                yield package_resource
 
-                if not package.license_expression:
-                    package.license_expression = compute_normalized_license(package.declared_license)
-
-                root = package_resource.parent(codebase)
-                if root:
-                    for py_res in root.walk(codebase):
-                        if py_res.is_dir:
-                            continue
-                        if package_uid not in py_res.for_packages:
-                            py_res.for_packages.append(package_uid)
-                            py_res.save(codebase)
-                        yield py_res
-                elif codebase.has_single_resource:
-                    if package_uid not in package_resource.for_packages:
-                        package_resource.for_packages.append(package_uid)
-                        package_resource.save(codebase)
-                    yield package_resource
-                yield package
-            else:
-                # we have no package, so deps are not for a specific package uid
-                package_uid = None
-
-            # in all cases yield possible dependencies
-            yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
-            yield package_resource
-
-            for sibling in package_resource.siblings(codebase):
-                if sibling.name in datafile_name_patterns:
-                    yield from yield_dependencies_from_package_resource(sibling, package_uid)
-
-                    if package_uid not in sibling.for_packages:
-                        sibling.for_packages.append(package_uid)
-                        sibling.save(codebase)
-                    yield sibling
+                yield from yield_dependencies_from_package_data(
+                    package_data=pkg_data,
+                    datafile_path=package_resource.path,
+                    package_uid=package.package_uid
+                )
         else:
-            yield from yield_dependencies_from_package_resource(resource)
+            setup_resources = []
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                setup_resources = [r for r in siblings if r.name in ('setup.py', 'setup.cfg')]
+                setup_package_data = [
+                    (setup_resource, models.PackageData.from_dict(setup_resource.package_data[0]))
+                    for setup_resource in setup_resources
+                ]
+                setup_package_data = sorted(setup_package_data, key=lambda s: bool(s[1].purl), reverse=True)
+                for setup_resource, setup_pkg_data in setup_package_data:
+                    if setup_pkg_data.purl:
+                        if not package:
+                            package = models.Package.from_package_data(
+                                package_data=setup_pkg_data,
+                                datafile_path=setup_resource.path,
+                            )
+                            package_resource = setup_resource
+                        else:
+                            package.update(setup_pkg_data, setup_resource.path)
+                if package:
+                    for setup_resource, setup_pkg_data in setup_package_data:
+                        setup_resource.for_packages.append(package.package_uid)
+                        setup_resource.save(codebase)
+                        yield setup_resource
 
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+                        yield from yield_dependencies_from_package_data(
+                            package_data=setup_pkg_data,
+                            datafile_path=setup_resource.path,
+                            package_uid=package.package_uid
+                        )
+
+        if package:
+            if not package.license_expression:
+                package.license_expression = compute_normalized_license(package.declared_license)
+            package_uid = package.package_uid
+
+            root = package_resource.parent(codebase)
+            if root:
+                # TODO: skip site-package directory
+                for py_res in root.walk(codebase):
+                    if py_res.is_dir:
+                        continue
+                    if package_uid not in py_res.for_packages:
+                        py_res.for_packages.append(package_uid)
+                        py_res.save(codebase)
+                    yield py_res
+            elif codebase.has_single_resource:
+                if package_uid not in package_resource.for_packages:
+                    package_resource.for_packages.append(package_uid)
+                    package_resource.save(codebase)
+
+            yield package
+
+        else:
+            package_uid = None
+
+        for sibling in package_resource.siblings(codebase):
+            if sibling.name in datafile_name_patterns:
+                yield from yield_dependencies_from_package_resource(
+                    resource=sibling,
+                    package_uid=package_uid
+                )
+
+                if package_uid and package_uid not in sibling.for_packages:
+                    sibling.for_packages.append(package_uid)
+                    sibling.save(codebase)
+                yield sibling
 
 
 class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
