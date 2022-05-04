@@ -26,7 +26,7 @@ html5lib==1.1
 idna==3.3
 importlib-metadata==4.8.3
 inflection==0.5.1
-intbitset==2.4.1
+intbitset==3.0.1
 isodate==0.6.1
 jaraco.functools==3.4.0
 javaproperties==0.8.1
@@ -50,7 +50,7 @@ pluggy==1.0.0
 plugincode==21.1.21
 ply==3.11
 publicsuffix2==2.20191221
-pyahocorasick==1.4.4
+pyahocorasick==2.0.0b1
 pycparser==2.21
 pygmars==0.7.0
 Pygments==2.11.2
