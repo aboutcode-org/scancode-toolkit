@@ -1,0 +1,293 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-107-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#121~18.04.1-Ubuntu SMP Thu Mar 24 17:21:33 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
+        "spdx_license_list_version": "3.16",
+        "files_count": 2
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/%40types/node",
+      "extracted_requirement": "^8.0.24",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/%40types/node?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/electron-download",
+      "extracted_requirement": "^4.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/electron-download?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/extract-zip",
+      "extracted_requirement": "^1.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/extract-zip?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/home-path",
+      "extracted_requirement": "^0.1.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/home-path?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/path-exists",
+      "extracted_requirement": "^2.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/path-exists?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/standard",
+      "extracted_requirement": "^5.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/standard?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "electron",
+      "version": "3.1.11",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Electron Community",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [
+        "electron"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/electron/electron",
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": [
+        "MIT"
+      ],
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/electron",
+      "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+      "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
+      "package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/electron@3.1.11"
+    }
+  ],
+  "files": [
+    {
+      "path": "package",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "package/cli.js",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "package/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "electron",
+          "version": "3.1.11",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Electron Community",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [
+            "electron"
+          ],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/electron/electron",
+          "copyright": null,
+          "license_expression": "mit",
+          "declared_license": [
+            "MIT"
+          ],
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/%40types/node",
+              "extracted_requirement": "^8.0.24",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/electron-download",
+              "extracted_requirement": "^4.1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/extract-zip",
+              "extracted_requirement": "^1.0.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/home-path",
+              "extracted_requirement": "^0.1.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/path-exists",
+              "extracted_requirement": "^2.0.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            },
+            {
+              "purl": "pkg:npm/standard",
+              "extracted_requirement": "^5.4.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/electron",
+          "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+          "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/electron@3.1.11"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

@@ -184,3 +184,26 @@ def find_root_resource(path, resource, codebase):
     return resource
 
 
+def yield_dependencies_from_package_data(package_data, datafile_path, package_uid):
+    """
+    Yield a Dependency for each dependency from ``package_data.dependencies``
+    """
+    from packagedcode import models
+    dependent_packages = package_data.dependencies
+    if dependent_packages:
+        yield from models.Dependency.from_dependent_packages(
+            dependent_packages=dependent_packages,
+            datafile_path=datafile_path,
+            datasource_id=package_data.datasource_id,
+            package_uid=package_uid,
+        )
+
+
+def yield_dependencies_from_package_resource(resource, package_uid=None):
+    """
+    Yield a Dependency for each dependency from each package from``resource.package_data``
+    """
+    from packagedcode import models
+    for pkg_data in resource.package_data:
+        pkg_data = models.PackageData.from_dict(pkg_data)
+        yield from yield_dependencies_from_package_data(pkg_data, resource.path, package_uid)

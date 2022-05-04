@@ -16,6 +16,8 @@ import os
 import re
 import sys
 import zipfile
+from configparser import ConfigParser
+from io import StringIO
 from pathlib import Path
 
 import dparse2
@@ -30,6 +32,8 @@ from packaging.utils import canonicalize_name
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
+from packagedcode.utils import yield_dependencies_from_package_data
+from packagedcode.utils import yield_dependencies_from_package_resource
 
 # FIXME: we always want to use the external library rather than the built-in for now
 import importlib_metadata
@@ -135,12 +139,55 @@ class BaseExtractedPythonLayout(BasePypiHandler):
             'Pipfile',
         ) + PipRequirementsFileHandler.path_patterns
 
-        parent = resource.parent(codebase)
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=parent,
-            codebase=codebase,
-        )
+        package_resource = None
+        if resource.name in datafile_name_patterns:
+            package_resource = resource
+
+        if package_resource:
+            # do we have enough to create a package?
+            if package_data.purl:
+                package = models.Package.from_package_data(
+                    package_data=package_data,
+                    datafile_path=package_resource.path,
+                )
+                package_uid = package.package_uid
+
+                if not package.license_expression:
+                    package.license_expression = compute_normalized_license(package.declared_license)
+
+                root = package_resource.parent(codebase)
+                if root:
+                    for py_res in root.walk(codebase):
+                        if py_res.is_dir:
+                            continue
+                        if package_uid not in py_res.for_packages:
+                            py_res.for_packages.append(package_uid)
+                            py_res.save(codebase)
+                        yield py_res
+                elif codebase.has_single_resource:
+                    if package_uid not in package_resource.for_packages:
+                        package_resource.for_packages.append(package_uid)
+                        package_resource.save(codebase)
+                    yield package_resource
+                yield package
+            else:
+                # we have no package, so deps are not for a specific package uid
+                package_uid = None
+
+            # in all cases yield possible dependencies
+            yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+            yield package_resource
+
+            for sibling in package_resource.siblings(codebase):
+                if sibling.name in datafile_name_patterns:
+                    yield from yield_dependencies_from_package_resource(sibling, package_uid)
+
+                    if package_uid not in sibling.for_packages:
+                        sibling.for_packages.append(package_uid)
+                        sibling.save(codebase)
+                    yield sibling
+        else:
+            yield from yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -546,6 +593,63 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
     default_primary_language = 'Python'
     description = 'Python setup.cfg'
     documentation_url = 'https://peps.python.org/pep-0390/'
+
+    @classmethod
+    def parse(cls, location):
+        file_name = fileutils.file_name(location)
+
+        with open(location) as f:
+            content = f.read()
+
+        metadata = {}
+        parser = ConfigParser()
+        parser.readfp(StringIO(content))
+        for section in parser.values():
+            if section.name == 'metadata':
+                options = (
+                    'name',
+                    'version',
+                    'license',
+                    'url',
+                    'author',
+                    'author_email',
+                )
+                for name in options:
+                    content = section.get(name)
+                    if not content:
+                        continue
+                    metadata[name] = content
+
+        parties = []
+        author = metadata.get('author')
+        if author:
+            parties = [
+                models.Party(
+                    type=models.party_person,
+                    name=author,
+                    role='author',
+                    email=metadata.get('author_email'),
+                )
+            ]
+
+        dependency_type = get_dparse2_supported_file_name(file_name)
+        if not dependency_type:
+            return
+
+        dependencies = parse_with_dparse2(
+            location=location,
+            file_name=dependency_type,
+        )
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=metadata.get('name'),
+            version=metadata.get('version'),
+            parties=parties,
+            homepage_url=metadata.get('url'),
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
 
 
 class PipfileHandler(BaseDependencyFileHandler):

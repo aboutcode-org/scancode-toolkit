@@ -15,8 +15,15 @@
       "errors": [],
       "warnings": [],
       "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-107-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#121~18.04.1-Ubuntu SMP Thu Mar 24 17:21:33 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
         "spdx_license_list_version": "3.16",
-        "files_count": 7
+        "files_count": 3
       }
     }
   ],
@@ -30,7 +37,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "dependency_uid": "pkg:pypi/colorama?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "setup.py",
       "datasource_id": "pypi_setup_py"
     },
@@ -43,7 +50,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "setup.py",
       "datasource_id": "pypi_setup_py"
     }
@@ -53,15 +60,23 @@
       "type": "pypi",
       "namespace": null,
       "name": "click",
-      "version": null,
+      "version": "attr: click.__version__",
       "qualifiers": {},
       "subpath": null,
       "primary_language": "Python",
       "description": null,
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Armin Ronacher",
+          "email": "armin.ronacher@active-4.com",
+          "url": null
+        }
+      ],
       "keywords": [],
-      "homepage_url": null,
+      "homepage_url": "https://palletsprojects.com/p/click/",
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -77,46 +92,27 @@
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
-      "repository_homepage_url": "https://pypi.org/project/click",
+      "repository_homepage_url": null,
       "repository_download_url": null,
-      "api_data_url": "https://pypi.org/pypi/click/json",
-      "package_uid": "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "api_data_url": null,
+      "package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "setup.py"
+        "setup.cfg"
       ],
       "datasource_ids": [
-        "pypi_setup_py"
+        "pypi_setup_cfg"
       ],
-      "purl": "pkg:pypi/click"
+      "purl": "pkg:pypi/click@attr:%20click.__version__"
     }
   ],
   "files": [
     {
-      "path": "LICENSE.rst",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
-      "scan_errors": []
-    },
-    {
       "path": "MANIFEST.in",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
-      "scan_errors": []
-    },
-    {
-      "path": "METADATA",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
-      "scan_errors": []
-    },
-    {
-      "path": "README.rst",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -126,16 +122,24 @@
         {
           "type": "pypi",
           "namespace": null,
-          "name": null,
-          "version": null,
+          "name": "click",
+          "version": "attr: click.__version__",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Python",
           "description": null,
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Armin Ronacher",
+              "email": "armin.ronacher@active-4.com",
+              "url": null
+            }
+          ],
           "keywords": [],
-          "homepage_url": null,
+          "homepage_url": "https://palletsprojects.com/p/click/",
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -157,11 +161,11 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
-          "purl": null
+          "purl": "pkg:pypi/click@attr:%20click.__version__"
         }
       ],
       "for_packages": [
-        "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -226,15 +230,8 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "tox.ini",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     }
   ]
