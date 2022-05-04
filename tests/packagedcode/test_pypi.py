@@ -25,12 +25,19 @@ from scancode.cli_test_utils import run_scan_click
 
 
 class TestPyPiEndtoEnd(PackageTester):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data/pypi/source-package/')
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_package_scan_pypi_end_to_end(self):
-        test_dir = self.get_test_loc('pip-22.0.4/')
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('pip-22.0.4-pypi-package-expected.json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_scan_pypi_end_to_end_skip_site_packages(self):
+        test_dir = self.get_test_loc('pypi/site-packages/codebase')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/site-packages/site-packages-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 

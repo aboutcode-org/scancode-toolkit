@@ -89,7 +89,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 if not package.license_expression:
                     package.license_expression = compute_normalized_license(package.declared_license)
 
-                root = resource.parent(codebase)
+                root = package_resource.parent(codebase)
                 if root:
                     for npm_res in cls.walk_npm(resource=root, codebase=codebase):
                         if package_uid not in npm_res.for_packages:

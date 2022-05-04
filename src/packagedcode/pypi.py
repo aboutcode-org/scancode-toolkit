@@ -207,8 +207,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
 
             root = package_resource.parent(codebase)
             if root:
-                # TODO: skip site-package directory
-                for py_res in root.walk(codebase):
+                for py_res in cls.walk_pypi(resource=root, codebase=codebase):
                     if py_res.is_dir:
                         continue
                     if package_uid not in py_res.for_packages:
@@ -236,6 +235,26 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                     sibling.for_packages.append(package_uid)
                     sibling.save(codebase)
                 yield sibling
+
+    @classmethod
+    def walk_pypi(cls, resource, codebase):
+        """
+        Walk the ``codebase`` Codebase top-down, breadth-first starting from the
+        ``resource`` Resource.
+
+        Skip the directory named "site-packages": this avoids
+        reporting nested vendored packages as being part of their parent.
+        Instead they will be reported on their own.
+        """
+        for child in resource.children(codebase):
+            if child.name == 'site-packages':
+                continue
+
+            yield child
+
+            if child.is_dir:
+                for subchild in cls.walk_pypi(child, codebase):
+                    yield subchild
 
 
 class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
