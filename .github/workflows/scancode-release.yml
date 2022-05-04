@@ -1,0 +1,388 @@
+name: Create ScanCode release archives, then test and publish to GH and PyPI
+
+# This is executed automatically on a tag
+
+# Summary of the steps:
+# - build wheel and sdist for main and same for mini flavor
+#   - then upload all wheels and sdist to PyPI
+# - build release app archives, one for each of linux, windows, macos on Python 3.8
+#   - then create gh-release and upload app archives to release
+# TODO: for each of linux, windows, macos: smoke test wheel, sdist and release archives
+# TODO: add changelog to release text body
+
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+
+  build_scancode_for_pypi:
+    name: Build ScanCode PyPI archives
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+          ./scancode --reindex-licenses
+
+
+      - name: Build main wheel
+        run: |
+          venv/bin/python setup.py --quiet bdist_wheel
+          venv/bin/twine check dist/*
+
+      - name: Collect built main wheel
+        uses: actions/upload-artifact@v3
+        with:
+          name: main_wheel
+          path: dist/*
+
+      - name: Build main sdist
+        run: |
+          rm -rf dist
+          venv/bin/python setup.py --quiet sdist
+          venv/bin/twine check dist/*
+
+      - name: Collect built main sdist
+        uses: actions/upload-artifact@v3
+        with:
+          name: main_sdist
+          path: dist/*
+
+
+  build_scancode_for_pypi_mini:
+    name: Build ScanCode PyPI archives mini
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+          ./scancode --reindex-licenses
+
+      - name: Build mini wheel
+        run: |
+          rm -rf build dist
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          cp setup-mini.cfg setup.cfg
+          venv/bin/python setup.py --quiet bdist_wheel
+          venv/bin/twine check dist/*
+
+      - name: Collect built mini wheel
+        uses: actions/upload-artifact@v3
+        with:
+          name: mini_wheel
+          path: dist/*
+
+      - name: Build mini sdist
+        run: |
+          rm -rf build dist
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          cp setup-mini.cfg setup.cfg
+          venv/bin/python setup.py --quiet sdist
+          venv/bin/twine check dist/*
+
+      - name: Collect built mini sdist
+        uses: actions/upload-artifact@v3
+        with:
+          name: mini_sdist
+          path: dist/*
+
+
+  build_scancode_for_release_linux:
+    name: Build ScanCode Release archives for linux
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+          ./scancode --reindex-licenses
+
+      - name: Build linux app archive
+        run: |
+          source venv/bin/activate
+          formats=xztar
+          operating_system=linux
+          python_dot_version=3.8
+          python_version=38
+          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
+          rm -rf thirdparty build dist
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          mkdir -p thirdparty
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements.txt \
+            --dest=thirdparty \
+            --python-version=$python_version \
+            --operating-system=$operating_system \
+            --wheels
+          venv/bin/python setup.py --quiet sdist --formats=$formats 
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
+
+      - name: Collect built linux app
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux_app
+          path: dist/*
+
+
+  build_scancode_for_release_mac:
+    name: Build ScanCode Release archives for mac
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+          ./scancode --reindex-licenses
+
+
+      - name: Build mac app archive
+        run: |
+          source venv/bin/activate
+          formats=xztar
+          operating_system=macos
+          python_dot_version=3.8
+          python_version=38
+          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
+          rm -rf thirdparty build dist
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          mkdir -p thirdparty
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements.txt \
+            --dest=thirdparty \
+            --python-version=$python_version \
+            --operating-system=$operating_system \
+            --wheels
+          venv/bin/python setup.py --quiet sdist --formats=$formats 
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
+ 
+      - name: Collect built mac app
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos_app
+          path: dist/*
+
+
+  build_scancode_for_release_win:
+    name: Build ScanCode Release archives for windows
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+          ./scancode --reindex-licenses
+ 
+      - name: Build windows app archive
+        run: |
+          source venv/bin/activate
+          formats=zip
+          operating_system=windows
+          python_dot_version=3.8
+          python_version=38
+          echo -n "py -$python_dot_version" > PYTHON_EXECUTABLE
+          rm -rf thirdparty build dist
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          mkdir -p thirdparty
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements.txt \
+            --dest=thirdparty \
+            --python-version=$python_version \
+            --operating-system=$operating_system \
+            --wheels
+          venv/bin/python setup.py --quiet sdist --formats=$formats 
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
+ 
+      - name: Collect built windows app
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows_app
+          path: dist/*
+
+  build_scancode_for_release_source:
+    name: Build ScanCode Release archives source
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install requirements and prepare index
+        run: |
+          ./configure --dev
+
+      - name: Build source archive with deps
+        run: |
+          source venv/bin/activate
+          formats=xztar
+          rm -rf thirdparty build dist src/licensedcode/data/cache
+          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+          mkdir -p thirdparty
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements.txt \
+            --dest=thirdparty \
+            --sdists
+          venv/bin/python setup.py --quiet sdist --formats=$formats 
+          venv/bin/python etc/release/scancode_rename_archives.py dist/  _sources
+ 
+      - name: Collect built source app tarball
+        uses: actions/upload-artifact@v3
+        with:
+          name: source_app
+          path: dist/*
+
+
+  publish_to_pypi:
+    name: Publish to PyPI
+    needs: [build_scancode_for_pypi, build_scancode_for_pypi_mini]
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        dist_names: [main_wheel, main_sdist, mini_wheel, mini_sdist]
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ matrix.dist_names }}
+          path: dist
+
+      - name: Publish distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+
+  publish_to_gh_release:
+    name: Publish to GH Release
+    needs:
+      - build_scancode_for_release_linux
+      - build_scancode_for_release_win
+      - build_scancode_for_release_mac
+      - build_scancode_for_release_source
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Download a single artifact source_app
+        uses: actions/download-artifact@v3
+        with:
+          name: source_app
+          path: dist
+
+      - name: Download a single artifact macos_app
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app
+          path: dist
+
+      - name: Download a single artifact linux_app
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app
+          path: dist
+
+      - name: Download a single artifact windows_app
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app
+          path: dist
+
+      - name: Create release and publish archives
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: dist/*
