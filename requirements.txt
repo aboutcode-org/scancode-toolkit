@@ -40,7 +40,7 @@ normality==2.3.0
 packagedcode-msitools==0.101.210706
 packageurl-python==0.9.9
 packaging==21.3
-parameter-expansion-patched==0.2.1b4
+parameter-expansion-patched==0.3.0
 patch==1.16
 pdfminer.six==20211012
 pefile==2021.9.3
