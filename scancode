@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: Apache-2.0 AND MIT
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
 # ScanCode is a trademark of nexB Inc.
 # See https://github.com/nexB/scancode-toolkit for support or download.
@@ -114,7 +114,7 @@ SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/venv/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     set -e
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=-qq "$SCANCODE_ROOT_DIR/configure"
+    CFG_QUIET=-qq "$SCANCODE_ROOT_DIR/configure"
     set +e
 fi
 
