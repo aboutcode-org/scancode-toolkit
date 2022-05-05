@@ -16,8 +16,8 @@
         "system_environment": {
           "operating_system": "linux",
           "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-107-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#121~18.04.1-Ubuntu SMP Thu Mar 24 17:21:33 UTC 2022",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
           "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
         },
         "spdx_license_list_version": "3.16",
@@ -27,184 +27,17 @@
   ],
   "dependencies": [
     {
-      "purl": "pkg:npm/ms@2.0.0",
-      "extracted_requirement": "2.0.0",
-      "scope": "devDependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {
-        "type": "npm",
-        "namespace": "",
-        "name": "ms",
-        "version": "2.0.0",
-        "qualifiers": {},
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "description": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-        "size": null,
-        "sha1": "5608aeadfc00be6c2901df5f9861788de0d597c8",
-        "md5": null,
-        "sha256": null,
-        "sha512": null,
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_url": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
-        "notice_text": null,
-        "source_packages": [],
-        "file_references": [
-          [
-            {
-              "path": "ms",
-              "size": 0,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ]
-        ],
-        "extra_data": {},
-        "dependencies": [],
-        "repository_homepage_url": "https://www.npmjs.com/package/ms",
-        "repository_download_url": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-        "api_data_url": "https://registry.npmjs.org/ms/2.0.0",
-        "datasource_id": "npm_package_lock_json",
-        "purl": "pkg:npm/ms@2.0.0"
-      },
-      "dependency_uid": "pkg:npm/ms@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "scan/package.json",
-      "datasource_id": "npm_package_lock_json"
-    },
-    {
-      "purl": "pkg:npm/regenerator-runtime@0.11.0",
-      "extracted_requirement": "0.11.0",
+      "purl": "pkg:npm/lodash._baseclone",
+      "extracted_requirement": "~4.5.0",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
-      "resolved_package": {
-        "type": "npm",
-        "namespace": "",
-        "name": "regenerator-runtime",
-        "version": "0.11.0",
-        "qualifiers": {},
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "description": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz",
-        "size": null,
-        "sha1": null,
-        "md5": null,
-        "sha256": null,
-        "sha512": "fda03490b7916f937d2b47787f0ee8a046c8fb10def83283e3df4442aca01aa792f0ddf1b68d79a74f6e636c63ee2c4ff35b0d3d7bd12e701022a7554ad81bd4",
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_url": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
-        "notice_text": null,
-        "source_packages": [],
-        "file_references": [
-          [
-            {
-              "path": "regenerator-runtime",
-              "size": 0,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ]
-        ],
-        "extra_data": {},
-        "dependencies": [],
-        "repository_homepage_url": "https://www.npmjs.com/package/regenerator-runtime",
-        "repository_download_url": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz",
-        "api_data_url": "https://registry.npmjs.org/regenerator-runtime/0.11.0",
-        "datasource_id": "npm_package_lock_json",
-        "purl": "pkg:npm/regenerator-runtime@0.11.0"
-      },
-      "dependency_uid": "pkg:npm/regenerator-runtime@0.11.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/lodash._baseclone?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
-      "datasource_id": "npm_package_lock_json"
-    },
-    {
-      "purl": "pkg:npm/to-fast-properties@1.0.3",
-      "extracted_requirement": "1.0.3",
-      "scope": "devDependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {
-        "type": "npm",
-        "namespace": "",
-        "name": "to-fast-properties",
-        "version": "1.0.3",
-        "qualifiers": {},
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "description": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
-        "size": null,
-        "sha1": "b83571fa4d8c25b82e231b06e3a3055de4ca1a47",
-        "md5": null,
-        "sha256": null,
-        "sha512": null,
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_url": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
-        "notice_text": null,
-        "source_packages": [],
-        "file_references": [
-          [
-            {
-              "path": "to-fast-properties",
-              "size": 0,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ]
-        ],
-        "extra_data": {},
-        "dependencies": [],
-        "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
-        "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
-        "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
-        "datasource_id": "npm_package_lock_json",
-        "purl": "pkg:npm/to-fast-properties@1.0.3"
-      },
-      "dependency_uid": "pkg:npm/to-fast-properties@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "scan/package.json",
-      "datasource_id": "npm_package_lock_json"
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/ms@2.0.0",
@@ -387,124 +220,69 @@
       "datasource_id": "npm_package_lock_json"
     },
     {
-      "purl": "pkg:npm/ansi-regex@2.1.1",
-      "extracted_requirement": "2.1.1",
-      "scope": "devDependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {
-        "type": "npm",
-        "namespace": "",
-        "name": "ansi-regex",
-        "version": "2.1.1",
-        "qualifiers": {},
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "description": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
-        "size": null,
-        "sha1": "c3b33ab5ee360d86e0e628f0468ae7ef27d654df",
-        "md5": null,
-        "sha256": null,
-        "sha512": null,
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_url": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
-        "notice_text": null,
-        "source_packages": [],
-        "file_references": [
-          [
-            {
-              "path": "ansi-regex",
-              "size": 0,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ]
-        ],
-        "extra_data": {},
-        "dependencies": [],
-        "repository_homepage_url": "https://www.npmjs.com/package/ansi-regex",
-        "repository_download_url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
-        "api_data_url": "https://registry.npmjs.org/ansi-regex/2.1.1",
-        "datasource_id": "npm_package_lock_json",
-        "purl": "pkg:npm/ansi-regex@2.1.1"
-      },
-      "dependency_uid": "pkg:npm/ansi-regex@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "purl": "pkg:npm/bluebird",
+      "extracted_requirement": "^3.3.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
-      "datasource_id": "npm_package_lock_json"
+      "datasource_id": "npm_package_json"
     },
     {
-      "purl": "pkg:npm/to-fast-properties@1.0.3",
-      "extracted_requirement": "1.0.3",
+      "purl": "pkg:npm/wkx",
+      "extracted_requirement": "0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/wkx?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/sequelize/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai",
+      "extracted_requirement": "^3.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
-      "resolved_package": {
-        "type": "npm",
-        "namespace": "",
-        "name": "to-fast-properties",
-        "version": "1.0.3",
-        "qualifiers": {},
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "description": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
-        "size": null,
-        "sha1": "b83571fa4d8c25b82e231b06e3a3055de4ca1a47",
-        "md5": null,
-        "sha256": null,
-        "sha512": null,
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_url": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
-        "notice_text": null,
-        "source_packages": [],
-        "file_references": [
-          [
-            {
-              "path": "to-fast-properties",
-              "size": 0,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ]
-        ],
-        "extra_data": {},
-        "dependencies": [],
-        "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
-        "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
-        "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
-        "datasource_id": "npm_package_lock_json",
-        "purl": "pkg:npm/to-fast-properties@1.0.3"
-      },
-      "dependency_uid": "pkg:npm/to-fast-properties@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
-      "datasource_id": "npm_package_lock_json"
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/chai-as-promised",
+      "extracted_requirement": "^5.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/chai-as-promised?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/sequelize/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/watchr",
+      "extracted_requirement": "~2.4.11",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "dependency_uid": "pkg:npm/watchr?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/node_modules/sequelize/package.json",
+      "datasource_id": "npm_package_json"
     },
     {
       "purl": "pkg:npm/ansi-regex@2.1.1",
@@ -838,12 +616,44 @@
       "qualifiers": {},
       "subpath": null,
       "primary_language": "JavaScript",
-      "description": null,
+      "description": "The lodash method `_.cloneDeep` exported as a module.",
       "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "keywords": [
+        "lodash-modularized",
+        "clonedeep"
+      ],
+      "homepage_url": "https://lodash.com/",
+      "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
       "size": null,
       "sha1": null,
       "md5": null,
@@ -851,15 +661,15 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": null,
+      "vcs_url": "https://github.com/lodash/lodash",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "license_expression": "mit",
+      "declared_license": [
+        "MIT"
+      ],
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {
-        "lockfile_version": 1
-      },
+      "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
       "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
       "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
@@ -868,7 +678,7 @@
         "scan/package.json"
       ],
       "datasource_ids": [
-        "npm_package_lock_json"
+        "npm_package_json"
       ],
       "purl": "pkg:npm/lodash.clonedeep@4.3.2"
     },
@@ -880,28 +690,68 @@
       "qualifiers": {},
       "subpath": null,
       "primary_language": "JavaScript",
-      "description": null,
+      "description": "Multi dialect ORM for Node.JS/io.js",
       "release_date": null,
-      "parties": [],
-      "keywords": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Jan Aagaard Meier",
+          "email": "janzeh@gmail.com\njmei@itu.dk",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Daniel Durante",
+          "email": "me@danieldurante.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mick Hansen",
+          "email": "mick.kasper.hansen@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "mysql",
+        "nodejs",
+        "object relational mapper"
+      ],
       "homepage_url": null,
-      "download_url": null,
+      "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
       "size": null,
       "sha1": null,
       "md5": null,
       "sha256": null,
       "sha512": null,
-      "bug_tracking_url": null,
+      "bug_tracking_url": "https://github.com/sequelize/sequelize/issues",
       "code_view_url": null,
-      "vcs_url": null,
+      "vcs_url": "git+https://github.com/sequelize/sequelize.git",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "license_expression": "mit",
+      "declared_license": [
+        "MIT"
+      ],
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {
-        "lockfile_version": 1
-      },
+      "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
       "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
       "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
@@ -910,7 +760,7 @@
         "scan/node_modules/sequelize/package.json"
       ],
       "datasource_ids": [
-        "npm_package_lock_json"
+        "npm_package_json"
       ],
       "purl": "pkg:npm/sequelize@3.30.2"
     }
