@@ -395,6 +395,48 @@ class TestPipRequirementsFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_PipRequirementsFileHandler_is_datafile(self):
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True),
+            True
+        )
+
 
 class TestPyPiPipfile(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

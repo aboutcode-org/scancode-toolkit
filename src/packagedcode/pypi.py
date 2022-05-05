@@ -760,31 +760,6 @@ class PipfileLockHandler(BaseDependencyFileHandler):
 
 
 class PipRequirementsFileHandler(BaseDependencyFileHandler):
-    """
-    A pip requirements (or constraints) file.
-
-    Some example::
-    >>> PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True)
-    True
-    >>> PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True)
-    True
-    """
     datasource_id = 'pip_requirements'
 
     path_patterns = (
