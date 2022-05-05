@@ -135,7 +135,12 @@ def fetch_thirdparty(
 
     Download wheels and sdists the provided PyPI simple --index-url INDEX(s) URLs.
     """
+    if not (wheels or sdists):
+        print("Error: one or both of --wheels  and --sdists is required.")
+        sys.exit(1)
+
     print(f"COLLECTING REQUIRED NAMES & VERSIONS FROM {dest_dir}")
+
     existing_packages_by_nv = {
         (package.name, package.version): package
         for package in utils_thirdparty.get_local_packages(directory=dest_dir)
@@ -157,45 +162,46 @@ def fetch_thirdparty(
         )
         required_name_versions.add(nv)
 
+    if latest_version:
+        names = set(name for name, _version in sorted(required_name_versions))
+        required_name_versions = {(n, None) for n in names}
+
     if not required_name_versions:
         print("Error: no requirements requested.")
         sys.exit(1)
 
-    if not os.listdir(dest_dir) and not (wheels or sdists):
-        print("Error: one or both of --wheels  and --sdists is required.")
-        sys.exit(1)
-
-    if latest_version:
-        latest_name_versions = set()
-        names = set(name for name, _version in sorted(required_name_versions))
-        for name in sorted(names):
-            latests = utils_thirdparty.PypiPackage.sorted(
-                utils_thirdparty.get_package_versions(
-                    name=name, version=None, index_urls=index_urls
-                )
-            )
-            if not latests:
-                print(f"No distribution found for: {name}")
-            continue
-            latest = latests[-1]
-            latest_name_versions.add((latest.name, latest.version))
-        required_name_versions = latest_name_versions
-
-    if TRACE:
-        print("required_name_versions:", required_name_versions)
+    if TRACE_DEEP:
+        print("required_name_versions:")
+        for n, v in required_name_versions:
+            print(f"    {n} @ {v}")
 
     if wheels:
         # create the environments matrix we need for wheels
         evts = itertools.product(python_versions, operating_systems)
         environments = [utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in evts]
+        if TRACE:
+            print("wheel environments:")
+            for envt in environments:
+                print("  ", envt)
+
 
     wheels_not_found = {}
     sdists_not_found = {}
+
+    fetched_wheel_filenames = []
+    existing_wheel_filenames = []
+
     # iterate over requirements, one at a time
     for name, version in sorted(required_name_versions):
         nv = name, version
+        print(f"Processing: {name} @ {version}")
+
         existing_package = existing_packages_by_nv.get(nv)
+        if TRACE:
+            print(f"    existing_package: {existing_package}")
         if wheels:
+            import pdb; pdb.set_trace()
+
             for environment in environments:
                 if existing_package:
                     existing_wheels = list(
@@ -205,60 +211,48 @@ def fetch_thirdparty(
                     existing_wheels = None
 
                 if existing_wheels:
-                    if TRACE_DEEP:
-                        print(
-                            f"====> Wheels already available: {name}=={version} on: {environment}: {existing_package.wheels!r}"
-                        )
-                    if all(w.is_pure() for w in existing_wheels):
-                        break
-                    else:
-                        continue
+                    if TRACE:
+                        print(f"    ====> Wheels already available: {name}=={version} on: {environment}:")
+                        for ew in existing_wheels:
+                            print("     ", ew)
+                    continue
 
-                if TRACE_DEEP:
-                    print(f"Fetching wheel for: {name}=={version} on: {environment}")
+                if TRACE:
+                    print(f"    =====> Fetching wheel for: {name}=={version} on: {environment}")
 
                 try:
-                    (
-                        fetched_wheel_filenames,
-                        existing_wheel_filenames,
-                    ) = utils_thirdparty.download_wheel(
+                    fwfns, ewfns = utils_thirdparty.download_wheel(
                         name=name,
                         version=version,
                         environment=environment,
                         dest_dir=dest_dir,
                         index_urls=index_urls,
                     )
+                    fetched_wheel_filenames.extend(fwfns)
+                    existing_wheel_filenames.extend(ewfns)
+
                     if TRACE:
-                        if existing_wheel_filenames:
-                            print(
-                                f"    ====> Wheels already available: {name}=={version} on: {environment}"
-                            )
-                            for whl in existing_wheel_filenames:
-                                print(f"        {whl}")
-                        if fetched_wheel_filenames:
+                        if fwfns:
                             print(f"    ====> Wheels fetched: {name}=={version} on: {environment}")
-                            for whl in fetched_wheel_filenames:
+                            for whl in fwfns:
                                 print(f"        {whl}")
 
-                    fwfns = fetched_wheel_filenames + existing_wheel_filenames
-
-                    if all(utils_thirdparty.Wheel.from_filename(f).is_pure() for f in fwfns):
-                        break
 
                 except utils_thirdparty.DistributionNotFound as e:
                     wheels_not_found[f"{name}=={version}"] = str(e)
+                    raise
 
         if sdists:
             if existing_package and existing_package.sdist:
                 if TRACE:
                     print(
-                        f"  ====> Sdist already available: {name}=={version}: {existing_package.sdist!r}"
+                        f"  ====> Sdist already available: {name}=={version}: "
+                        f"{existing_package.sdist!r}"
                     )
                 continue
 
             if TRACE:
                 print(f"  Fetching sdist for: {name}=={version}")
-
             try:
                 fetched = utils_thirdparty.download_sdist(
                     name=name,
