@@ -110,6 +110,8 @@ def get_installed_reqs(site_packages_dir):
     Return the installed pip requirements as text found in `site_packages_dir`
     as a text.
     """
+    if not os.path.exists(site_packages_dir):
+        raise Exception(f"site_packages directory: {site_packages_dir!r} does not exists")
     # Also include these packages in the output with --all: wheel, distribute,
     # setuptools, pip
     args = ["pip", "freeze", "--exclude-editable", "--all", "--path", site_packages_dir]
