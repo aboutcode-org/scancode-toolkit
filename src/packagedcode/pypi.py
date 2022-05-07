@@ -661,12 +661,11 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
     def parse(cls, location):
         file_name = fileutils.file_name(location)
 
-        with open(location) as f:
-            content = f.read()
-
         metadata = {}
         parser = ConfigParser()
-        parser.readfp(StringIO(content))
+        with open(location) as f:
+            parser.readfile(f)
+
         for section in parser.values():
             if section.name == 'metadata':
                 options = (
