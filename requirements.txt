@@ -21,18 +21,18 @@ extractcode-7z==16.5.210531
 extractcode-libarchive==3.5.1.210531
 fasteners==0.17.3
 fingerprints==1.0.3
-ftfy==6.1.1
+ftfy==6.0.3
 future==0.18.2
 gemfileparser==0.8.0
 html5lib==1.1
 idna==3.3
-importlib-metadata==4.11.3
+importlib-metadata==4.8.3
 inflection==0.5.1
 intbitset==3.0.1
 isodate==0.6.1
-jaraco.functools==3.5.0
+jaraco.functools==3.4.0
 javaproperties==0.8.1
-Jinja2==3.1.2
+Jinja2==3.0.3
 jsonstreams==0.6.0
 license-expression==21.6.14
 lxml==4.8.0
@@ -60,7 +60,7 @@ pymaven-patch==0.3.0
 pyparsing==3.0.8
 pytz==2022.1
 PyYAML==6.0
-rdflib==6.1.1
+rdflib==5.0.0
 regipy==2.2.2
 requests==2.27.1
 rpm-inspector-rpm==4.16.1.3.210404
@@ -77,4 +77,4 @@ urlpy==0.5
 wcwidth==0.2.5
 webencodings==0.5.1
 xmltodict==0.12.0
-zipp==3.8.0
+zipp==3.6.0
