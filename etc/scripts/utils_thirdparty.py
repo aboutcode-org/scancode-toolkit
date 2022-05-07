@@ -1316,16 +1316,6 @@ class PypiPackage(NameVer):
         metadata=dict(help="List of Wheel for this package"),
     )
 
-    reposiroty = attr.ib(
-        repr=False,
-        type="PypiSimpleRepository",
-        default=None,
-        metadata=dict(
-            help="Optional PypiSimpleRepository for this package. "
-            "May be empty for local packages."
-        ),
-    )
-
     def get_supported_wheels(self, environment, verbose=TRACE_ULTRA_DEEP):
         """
         Yield all the Wheel of this package supported and compatible with the
