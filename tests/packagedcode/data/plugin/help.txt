@@ -672,13 +672,6 @@ Package type:  pypi
   path_patterns:    '*pyproject.toml'
 --------------------------------------------
 Package type:  pypi
-  datasource_id:     pypi_sdist
-  documentation URL: https://peps.python.org/pep-0643/
-  primary language:  Python
-  description:       Python source distribution
-  path_patterns:    '*.tar.gz', '*.tar.bz2', '*.zip'
---------------------------------------------
-Package type:  pypi
   datasource_id:     pypi_sdist_pkginfo
   documentation URL: https://peps.python.org/pep-0314/
   primary language:  Python
