@@ -10,7 +10,6 @@
 #
 import email
 import itertools
-import pathlib
 import os
 import re
 import shutil
@@ -187,12 +186,6 @@ PLATFORMS_BY_OS = {
 
 THIRDPARTY_DIR = "thirdparty"
 CACHE_THIRDPARTY_DIR = ".cache/thirdparty"
-
-LOCAL_THIRDPARTY_PACKAGE_REPO = (
-    pathlib.Path(__file__).absolute().parent.parent.parent / "thirdparty-packages" / "pypi"
-)
-
-has_local_thirdparty_checkout = LOCAL_THIRDPARTY_PACKAGE_REPO.exists()
 
 ################################################################################
 
