@@ -200,7 +200,6 @@ PYPI_INDEX_URLS = (PYPI_SIMPLE_URL, ABOUT_PYPI_SIMPLE_URL)
 EXTENSIONS_APP = (".pyz",)
 EXTENSIONS_SDIST = (
     ".tar.gz",
-    ".tar.bz2",
     ".zip",
     ".tar.xz",
 )
