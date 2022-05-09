@@ -473,7 +473,7 @@ Package type:  maven
   documentation URL: None
   primary language:  None
   description:       Gradle build script
-  path_patterns:    '*/build.gradle', 'build.gradle.kts'
+  path_patterns:    '*/build.gradle', '*/build.gradle.kts'
 --------------------------------------------
 Package type:  maven
   datasource_id:     maven_pom
