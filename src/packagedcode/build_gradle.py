@@ -11,8 +11,8 @@ from packageurl import PackageURL
 from pygmars import Token
 from pygmars.parse import Parser
 from pygments import lex
-from pygments.lexers.jvm import GroovyLexer
 
+from packagedcode import groovy_lexer
 from packagedcode import models
 
 # TODO: split groovy and kotlin handlers
@@ -64,7 +64,7 @@ def get_tokens(contents):
     """
     Yield tuples of (position, Token, value) from lexing a ``contents`` string.
     """
-    for i, (token, value) in enumerate(lex(contents, GroovyLexer())):
+    for i, (token, value) in enumerate(lex(contents, groovy_lexer.GroovyLexer())):
         yield i, token, value
 
 
