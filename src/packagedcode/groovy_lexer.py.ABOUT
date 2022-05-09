@@ -1,0 +1,12 @@
+about_resource: groovy_lexer.py
+attribute: yes
+copyright: Copyright (c) the Pygments team
+description: This is a fork of the Groovy lexer derived from Pygments lexers
+download_url: https://raw.githubusercontent.com/pygments/pygments/c81e97c3c281492ac6fdf4abc841ac5b63f3f303/pygments/lexers/jvm.py
+homepage_url: http://pygments.org/
+license_expression: bsd-simplified
+name: groovy_lexer.py
+notice_file: bashlex.py.NOTICE
+package_url: pkg:generic/groovy_lexer.py
+primary_language: Python
+notes: this is a Groovy lexer derived from Pygments
