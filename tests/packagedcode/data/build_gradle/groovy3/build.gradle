@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+group 'org.ossreviewtoolkit.gradle.example'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.12.2"))
+    implementation("com.fasterxml.jackson.core:jackson-core")
+
+    testImplementation(platform("org.junit:junit-bom:5.7.2"))
+    testImplementation("org.junit.platform:junit-platform-commons")
+}
+
+logger.quiet("The current working directory is set to: " + System.properties['user.dir'])

@@ -20,7 +20,7 @@ from packagedcode import models
 
 class BuildGradleHandler(models.DatafileHandler):
     datasource_id = 'build_gradle'
-    path_patterns = ('*/build.gradle', 'build.gradle.kts',)
+    path_patterns = ('*/build.gradle', '*/build.gradle.kts',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
     default_package_type = 'maven'

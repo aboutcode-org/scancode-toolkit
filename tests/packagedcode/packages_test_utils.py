@@ -21,31 +21,15 @@ from scancode_config import REGEN_TEST_FIXTURES
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_package_parse(
-        self,
-        package_function,
-        manifest_loc,
-        expected_loc,
-        regen=REGEN_TEST_FIXTURES,
-    ):
-        """
-        Helper to test the creation of a package object with ``package_function``
-        and test it against an expected JSON file.
-        """
-        manifest_loc = self.get_test_loc(manifest_loc, must_exist=True)
-        package = package_function(manifest_loc)
-        if not package:
-            raise Exception(f'Failed to parse package: {manifest_loc}')
-        return self.check_package_data(package, expected_loc, regen)
-
     def check_package_data(self, package_data, expected_loc, regen=REGEN_TEST_FIXTURES):
         """
         Helper to test a package object against an expected JSON file.
         """
+        expected_loc = self.get_test_loc(expected_loc, must_exist=False)
+
         compute_and_set_license_expression(package_data)
         results = package_data.to_dict()
 
-        expected_loc = self.get_test_loc(expected_loc, must_exist=False)
         check_result_equals_expected_json(
             result=results,
             expected_loc=expected_loc,
