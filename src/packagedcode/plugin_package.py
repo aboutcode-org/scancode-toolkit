@@ -196,13 +196,13 @@ def create_package_and_deps(codebase, **kwargs):
                         raise Exception(f'Unknown package assembly item type: {item!r}')
 
             except Exception as e:
-                msg = f'create_package_and_deps: Failed to assemble PackageData: {package_data}: \n {e}'
+                import traceback
+                msg = f'create_package_and_deps: Failed to assemble PackageData: {package_data}:\n'
+                msg += traceback.format_exc()
                 resource.scan_errors.append(msg)
                 resource.save(codebase)
 
-                if TRACE:
-                    import traceback
-                    msg += traceback.format_exc()
+                if True:
                     raise Exception(msg) from e
 
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
