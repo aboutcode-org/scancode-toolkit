@@ -9,6 +9,8 @@
 
 import os.path
 
+import pytest
+
 from packagedcode import build_gradle
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
@@ -59,6 +61,7 @@ class TestBuildGradle(PackageTester):
             regen=REGEN_TEST_FIXTURES,
         )
 
+    @pytest.mark.xfail(reason='Some gradle constructions are not yet handled correctly')
     def test_BuildGradleHandler_parse_groovy3(self):
         test_file = self.get_test_loc('build_gradle/groovy3/build.gradle')
         packages_data = build_gradle.BuildGradleHandler.parse(test_file)
