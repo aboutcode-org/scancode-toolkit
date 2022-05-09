@@ -1,11 +1,8 @@
 """
-    pygments.lexers.jvm
-    ~~~~~~~~~~~~~~~~~~~
-
-    Pygments lexers for JVM languages.
-
-    :copyright: Copyright 2006-2022 by the Pygments team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
+Minimal lexer for POSIX and Bash shells.
+Derived from pygments.lexers.jvm and significantly modified
+copyright: Copyright 2006-2021 by the Pygments team, see groovy_lexer.py.AUTHORS.
+SPDX-License-Identifier: BSD-2-Clause
 """
 
 import re
