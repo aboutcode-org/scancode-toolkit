@@ -667,7 +667,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
         metadata = {}
         parser = ConfigParser()
         with open(location) as f:
-            parser.readfile(f)
+            parser.read_file(f)
 
         for section in parser.values():
             if section.name == 'metadata':
