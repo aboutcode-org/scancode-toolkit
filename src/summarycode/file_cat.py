@@ -7,8 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
-
 from commoncode.datautils import String
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -56,14 +54,10 @@ class FileCategorizer(PostScanPlugin):
     """
     Categorize a file.
     """
-    # resource_attributes = dict([
-    #     ('category',
-    #      String(help='Category.')),
-
-    #     ('subcategory',
-    #      String(help='Subcategory.')),
-    # ])
     resource_attributes = dict([
+        ('analysis_priority',
+         String(help='Analysis priority.')),
+
         ('file_category',
          String(help='File category.')),
 
@@ -74,7 +68,6 @@ class FileCategorizer(PostScanPlugin):
     sort_order = 50
 
     options = [
-        # PluggableCommandLineOption(('--categorize',),
         PluggableCommandLineOption(('--file-cat',),
             is_flag=True, default=False,
             help='Categorize files.',
@@ -83,14 +76,9 @@ class FileCategorizer(PostScanPlugin):
         )
     ]
 
-    # def is_enabled(self, categorize, **kwargs):
-    #     return categorize
     def is_enabled(self, file_cat, **kwargs):
         return file_cat
 
-    # def process_codebase(self, codebase, categorize, **kwargs):
-    #     if not categorize:
-    #         return
     def process_codebase(self, codebase, file_cat, **kwargs):
         if not file_cat:
             return
@@ -100,8 +88,7 @@ class FileCategorizer(PostScanPlugin):
                 category = categorize_resource(resource)
                 if not category:
                     continue
-                # resource.category = category.file_category
-                # resource.subcategory = category.file_subcategory
+                resource.analysis_priority = category.analysis_priority
                 resource.file_category = category.file_category
                 resource.file_subcategory = category.file_subcategory
                 resource.save(codebase)
@@ -109,11 +96,11 @@ class FileCategorizer(PostScanPlugin):
 
 class Categorizer:
     order = 0
-    rule_applied = None
     analysis_priority = None
     file_category = None
     file_subcategory = None
-    notes = None
+    category_notes = None
+    rule_applied = None
 
     @classmethod
     def categorize(cls, resource):
@@ -124,637 +111,1266 @@ class Categorizer:
         raise NotImplementedError
 
 
-class archive_debian(Categorizer):
-    order = 1
+class ArchiveAndroid(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'archive'
+    file_subcategory = 'Android'
+    rule_applied = 'ArchiveAndroid'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.apk', '.aar'])
+        )
+
+
+class ArchiveDebian(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'archive'
     file_subcategory = 'debian'
-    notes = 'special type of archive'
+    category_notes = 'special type of archive'
+    rule_applied = 'ArchiveDebian'
 
     @classmethod
     def categorize(cls, resource):
         return (
-        resource.extension.lower() in [".deb"]
+            extension_in(resource.extension, ['.deb'])
         )
 
 
-class archive_general(Categorizer):
-    order = 1
+class ArchiveGeneral(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'archive'
     file_subcategory = 'general'
+    rule_applied = 'ArchiveGeneral'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".7zip", ".bz", ".bz2", ".bzip", ".gz", ".gzi", ".tar", ".tgz", ".xz", ".zip"]
+            extension_in(resource.extension, [
+                '.7zip', '.bz', '.bz2', '.bzip', '.gz', '.gzi', '.tar', '.tgz', '.xz', '.zip'
+            ])
         )
 
 
-class archive_rpm(Categorizer):
-    order = 1
+class ArchiveIos(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'archive'
+    file_subcategory = 'iOS'
+    rule_applied = 'ArchiveIos'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.ipa'])
+        )
+
+
+class ArchiveRpm(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'archive'
     file_subcategory = 'rpm'
-    notes = 'special type of archive'
+    category_notes = 'special type of archive'
+    rule_applied = 'ArchiveRpm'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".rpm"]
+            extension_in(resource.extension, ['.rpm'])
         )
 
 
-class binary_ar(Categorizer):
-    order = 1
+class BinaryAr(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'ar'
+    rule_applied = 'BinaryAr'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-archive"]
+            resource.mime_type in ['application/x-archive']
         )
 
 
-class binary_elf_exec(Categorizer):
-    order = 1
+class BinaryElfExec(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'elf-exec'
+    rule_applied = 'BinaryElfExec'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-executable"]
+            resource.mime_type in ['application/x-executable']
         )
 
 
-class binary_elf_ko(Categorizer):
-    order = 1
+class BinaryElfKo(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'elf-ko'
+    rule_applied = 'BinaryElfKo'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-object"]
+            resource.mime_type in ['application/x-object']
             and
-            resource.extension.lower().startswith('.ko')
+            extension_startswith(resource.extension, ('.ko'))
         )
 
 
-class binary_elf_o(Categorizer):
-    order = 1
+class BinaryElfO(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'elf-o'
+    rule_applied = 'BinaryElfO'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-object"]
+            resource.mime_type in ['application/x-object']
             and
-            not resource.extension.lower().startswith('.ko')
+            not extension_startswith(resource.extension, ('.ko'))
         )
 
 
-class binary_elf_so(Categorizer):
-    order = 1
+class BinaryElfSo(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'elf-so'
+    rule_applied = 'BinaryElfSo'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-sharedlib"]
+            resource.mime_type in ['application/x-sharedlib']
         )
 
 
-class binary_java(Categorizer):
-    order = 1
+class BinaryJava(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'java'
+    rule_applied = 'BinaryJava'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".class", ".jar"]
+            extension_in(resource.extension, ['.class', '.jar', '.ear', '.sar', '.war'])
         )
 
 
-class binary_windows(Categorizer):
-    order = 1
+class BinaryPython(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'binary'
+    file_subcategory = 'Python'
+    rule_applied = 'BinaryPython'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.pyc', '.pyo'])
+        )
+
+
+class BinaryWindows(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'binary'
     file_subcategory = 'windows'
-    notes = 'For DLL and EXE binaries in Windows'
+    category_notes = 'For DLL and EXE binaries in Windows'
+    rule_applied = 'BinaryWindows'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["application/x-dosexec"]
+            resource.mime_type in ['application/x-dosexec']
         )
 
 
-class config_general(Categorizer):
-    order = 1
+class BuildBazel(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'build'
+    file_subcategory = 'Bazel'
+    rule_applied = 'BuildBazel'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.bzl'])
+            or
+            (
+                name_in(resource.name, ['build.bazel'])
+                and
+                resource.type == 'file'
+            )
+        )
+
+
+class BuildBuck(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'build'
+    file_subcategory = 'BUCK'
+    rule_applied = 'BuildBuck'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['buck'])
+            and
+            resource.type == 'file'
+        )
+
+
+class BuildDocker(Categorizer):
+    order = 0
+    analysis_priority = '2'
+    file_category = 'build'
+    file_subcategory = 'Docker'
+    category_notes = 'May have an "arbitrary" extension'
+    rule_applied = 'BuildDocker'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_substring(resource.name, ['dockerfile'])
+            and
+            resource.type == 'file'
+        )
+
+
+class BuildMake(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'build'
+    file_subcategory = 'make'
+    category_notes = '"Makefile" may have an "arbitrary" extension'
+    rule_applied = 'BuildMake'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            (
+                name_substring(resource.name, ['makefile'])
+                and
+                resource.type == 'file'
+            )
+            or
+            extension_in(resource.extension, ['.mk', '.make'])
+        )
+
+
+class BuildQt(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'build'
+    file_subcategory = 'Qt'
+    rule_applied = 'BuildQt'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.pri', '.pro'])
+        )
+
+
+class Certificate(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'certificate'
+    file_subcategory = ''
+    rule_applied = 'Certificate'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.crt', '.der', '.pem'])
+        )
+
+
+class ConfigGeneral(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'config'
     file_subcategory = 'general'
+    rule_applied = 'ConfigGeneral'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".bat", ".cfg", ".conf", ".config", ".sh", ".yaml", ".yml"]
+            extension_in(resource.extension, [
+                '.cfg', '.conf', '.config', '.jxs', '.properties', '.yaml', '.yml'
+            ])
         )
 
 
-class config_xml(Categorizer):
-    order = 1
+class ConfigInitialPeriod(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'initial_period'
+    rule_applied = 'ConfigInitialPeriod'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_startswith(resource.name, ('.'))
+            and
+            resource.type == 'file'
+        )
+
+
+class ConfigMacro(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'macro'
+    rule_applied = 'ConfigMacro'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.m4'])
+        )
+
+
+class ConfigPython(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'Python'
+    rule_applied = 'ConfigPython'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['__init__.py'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ConfigTemplate(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'template'
+    rule_applied = 'ConfigTemplate'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.tmpl'])
+        )
+
+
+class ConfigVisualCpp(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'Visual-CPP'
+    category_notes = 'vcproj is older version'
+    rule_applied = 'ConfigVisualCpp'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.vcxproj', '.vcproj'])
+        )
+
+
+class ConfigXcode(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'config'
+    file_subcategory = 'xcode'
+    rule_applied = 'ConfigXcode'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['info.plist'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ConfigXml(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'config'
     file_subcategory = 'xml'
+    rule_applied = 'ConfigXml'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".dtd", ".xml", ".xsd", ".xsl", ".xslt"]
+            extension_in(resource.extension, ['.dtd', '.xml', '.xsd', '.xsl', '.xslt'])
         )
 
 
-class data_json(Categorizer):
-    order = 1
+class DataJson(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'data'
     file_subcategory = 'json'
+    rule_applied = 'DataJson'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".json"]
+            extension_in(resource.extension, ['.json'])
         )
 
 
-class doc_general(Categorizer):
-    order = 1
+class DataProtoBuf(Categorizer):
+    order = 10
+    analysis_priority = '2'
+    file_category = 'data'
+    file_subcategory = 'ProtoBuf'
+    rule_applied = 'DataProtoBuf'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.proto'])
+        )
+
+
+class Directory(Categorizer):
+    order = 10
+    analysis_priority = '4'
+    file_category = 'directory'
+    file_subcategory = ''
+    rule_applied = 'Directory'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            resource.type == 'directory'
+        )
+
+
+class DocGeneral(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'doc'
     file_subcategory = 'general'
+    rule_applied = 'DocGeneral'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".csv", ".doc", ".docx", ".md", ".odp", ".ods", ".odt", ".pdf", ".ppt", ".pptx", ".rtf", ".tex", ".txt", ".xls", ".xlsm", ".xlsx"]
+            extension_in(resource.extension, [
+                '.csv', '.doc', '.docx', '.man', '.md', '.odp', '.ods', '.odt', '.pdf', '.ppt', '.pptx',
+                '.rtf', '.tex', '.txt', '.xls', '.xlsm', '.xlsx'
+            ])
+            or
+            (
+                name_in(resource.name, ['changelog', 'changes'])
+                and
+                resource.type == 'file'
+            )
         )
 
 
-class doc_readme(Categorizer):
+class DocLicense(Categorizer):
+    order = 0
+    analysis_priority = '3'
+    file_category = 'doc'
+    file_subcategory = 'license'
+    rule_applied = 'DocLicense'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_substring(resource.name, ['copying', 'copyright', 'license', 'notice'])
+            and
+            resource.type == 'file'
+        )
+
+
+class DocReadme(Categorizer):
     order = 0
     analysis_priority = '3'
     file_category = 'doc'
     file_subcategory = 'readme'
+    rule_applied = 'DocReadme'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            "readme" in resource.name.lower()
+            name_substring(resource.name, ['readme'])
+            and
+            resource.type == 'file'
         )
 
 
-class font(Categorizer):
-    order = 1
+class Font(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'font'
+    rule_applied = 'Font'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".fnt", ".otf", ".ttf", ".woff", ".woff2", ".eot"]
+            extension_in(resource.extension, ['.fnt', '.otf', '.ttf', '.woff', '.woff2', '.eot'])
         )
 
 
-class manifest_npm(Categorizer):
+class ManifestBower(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Bower'
+    rule_applied = 'ManifestBower'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['bower.json'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestCargo(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Cargo'
+    category_notes = 'For Rust, Not sure about Cargo.toml ?'
+    rule_applied = 'ManifestCargo'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['cargo.toml', 'cargo.lock'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestCocoaPod(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'CocoaPod'
+    rule_applied = 'ManifestCocoaPod'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.podspec'])
+        )
+
+
+class ManifestComposer(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Composer'
+    category_notes = 'For PHP'
+    rule_applied = 'ManifestComposer'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['composer.json', 'composer.lock'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestGolang(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Golang'
+    rule_applied = 'ManifestGolang'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['go.mod', 'go.sum'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestGradle(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Gradle'
+    rule_applied = 'ManifestGradle'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['build.gradle'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestHaxe(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Haxe'
+    rule_applied = 'ManifestHaxe'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['haxelib.json'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestIvy(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'Ivy'
+    rule_applied = 'ManifestIvy'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['ivy.xml'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestMaven(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'maven'
+    rule_applied = 'ManifestMaven'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['pom.xml'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestNpm(Categorizer):
     order = 0
     analysis_priority = '1'
     file_category = 'manifest'
     file_subcategory = 'npm'
+    rule_applied = 'ManifestNpm'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.name.lower() in ["package.json", "package-lock.json"]
+            name_in(resource.name, ['package.json', 'package-lock.json', 'yarn.lock'])
+            and
+            resource.type == 'file'
         )
 
 
-class media_audio(Categorizer):
-    order = 1
+class ManifestNuGet(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'NuGet'
+    rule_applied = 'ManifestNuGet'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.nuspec'])
+        )
+
+
+class ManifestPyPi(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'PyPi'
+    rule_applied = 'ManifestPyPi'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['requirements.txt'])
+            and
+            resource.type == 'file'
+        )
+
+
+class ManifestRubyGem(Categorizer):
+    order = 0
+    analysis_priority = '1'
+    file_category = 'manifest'
+    file_subcategory = 'RubyGem'
+    rule_applied = 'ManifestRubyGem'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            name_in(resource.name, ['gemfile', 'gemfile.lock'])
+            and
+            resource.type == 'file'
+        )
+
+
+class MediaAudio(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'media'
     file_subcategory = 'audio'
+    rule_applied = 'MediaAudio'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".mp3", ".mpa", ".ogg", ".wav", ".wma"]
+            extension_in(resource.extension, [
+                '.3pg', '.aac', '.amr', '.awb', '.m4a', '.mp3',
+                '.mpa', '.ogg', '.opus', '.wav', '.wma'
+            ])
         )
 
 
-class media_image(Categorizer):
-    order = 1
+class MediaImage(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'media'
     file_subcategory = 'image'
+    rule_applied = 'MediaImage'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".bmp", ".gif", ".ico", ".jpg", ".jpeg", ".png", ".svg"]
+            extension_in(resource.extension, [
+                '.bmp', '.gif', '.ico', '.jpg', '.jpeg', '.png', '.svg', '.webp'
+            ])
         )
 
 
-class media_video(Categorizer):
-    order = 1
+class MediaVideo(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'media'
     file_subcategory = 'video'
+    rule_applied = 'MediaVideo'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".avi", ".h264", ".mp4", ".mpg", ".mpeg", ".swf", ".wmv"]
+            extension_in(resource.extension, [
+                '.avi', '.h264', '.mp4', '.mpg', '.mpeg', '.swf', '.wmv'
+            ])
         )
 
 
-class script_bash(Categorizer):
-    order = 1
+class ScriptBash(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'script'
     file_subcategory = 'bash'
+    rule_applied = 'ScriptBash'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".bash"]
+            extension_in(resource.extension, ['.bash'])
         )
 
 
-class script_build(Categorizer):
-    order = 1
-    analysis_priority = '3'
-    file_category = 'build'
-    file_subcategory = 'script'
-
-    @classmethod
-    def categorize(cls, resource):
-        return (
-            resource.extension.lower() in [".cmake", ".cmakelist"]
-        )
-
-
-class script_perl(Categorizer):
-    order = 1
+class ScriptBatSh(Categorizer):
+    order = 10
     analysis_priority = '3'
     file_category = 'script'
-    file_subcategory = 'perl'
-    notes = 'We will treat all Perl as script'
+    file_subcategory = 'bat_sh'
+    rule_applied = 'ScriptBatSh'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.mime_type in ["text/x-perl"]
+            extension_in(resource.extension, ['.bat', '.sh'])
         )
 
 
-class script_data(Categorizer):
-    order = 1
+class ScriptBuild(Categorizer):
+    order = 10
     analysis_priority = '3'
-    file_category = 'data'
-    file_subcategory = 'script'
+    file_category = 'script'
+    file_subcategory = 'build'
+    rule_applied = 'ScriptBuild'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".sql", ".psql"]
+            extension_in(resource.extension, ['.cmake', '.cmakelist'])
+            or
+            resource.mime_type in ['text/x-makefile']
         )
 
 
-class source_c(Categorizer):
-    order = 1
+class ScriptData(Categorizer):
+    order = 10
+    analysis_priority = '3'
+    file_category = 'script'
+    file_subcategory = 'data'
+    rule_applied = 'ScriptData'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.sql', '.psql'])
+        )
+
+
+class SourceAssembler(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'source'
+    file_subcategory = 'assembler'
+    category_notes = 'upper case only'
+    rule_applied = 'SourceAssembler'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_uppercase_in(resource.extension, ['.S'])
+        )
+
+
+class SourceC(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'c'
+    rule_applied = 'SourceC'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".c"]
+            extension_in(resource.extension, ['.c'])
             or
             (
-                resource.extension.lower() in [".h"]
+                extension_in(resource.extension, ['.h'])
                 and
-                resource.mime_type in ["text/x-c"]
+                resource.mime_type in ['text/x-c']
             )
         )
 
 
-class source_cpp(Categorizer):
-    order = 1
+class SourceCoffeeScript(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'source'
+    file_subcategory = 'CoffeeScript'
+    category_notes = 'transcompiles to JS'
+    rule_applied = 'SourceCoffeeScript'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.coffee'])
+        )
+
+
+class SourceCpp(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'c++'
+    rule_applied = 'SourceCpp'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".cpp", ".hpp", ".cc"]
+            extension_in(resource.extension, ['.cpp', '.hpp', '.cc'])
             or
             (
-                resource.extension.lower() in [".h"]
+                extension_in(resource.extension, ['.h'])
                 and
-                resource.mime_type in ["text/x-c++"]
+                resource.mime_type in ['text/x-c++']
             )
         )
 
 
-class source_csharp(Categorizer):
-    order = 1
+class SourceCsharp(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'c#'
+    rule_applied = 'SourceCsharp'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".cs"]
+            extension_in(resource.extension, ['.cs'])
         )
 
 
-class source_go(Categorizer):
-    order = 1
+class SourceGo(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'go'
+    rule_applied = 'SourceGo'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".go"]
+            extension_in(resource.extension, ['.go'])
         )
 
 
-class source_haskell(Categorizer):
-    order = 1
+class SourceHaskell(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'haskell'
+    rule_applied = 'SourceHaskell'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".hs", ".lhs"]
+            extension_in(resource.extension, ['.hs', '.lhs'])
         )
 
 
-class source_java(Categorizer):
-    order = 1
+class SourceJava(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'java'
+    rule_applied = 'SourceJava'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".java"]
+            extension_in(resource.extension, ['.java'])
         )
 
 
-class source_javascript(Categorizer):
-    order = 1
+class SourceJavascript(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'javascript'
+    rule_applied = 'SourceJavascript'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".js"]
+            extension_in(resource.extension, ['.js'])
         )
 
 
-class source_javaserverpage(Categorizer):
-    order = 1
+class SourceJavaserverpage(Categorizer):
+    order = 10
     analysis_priority = '2'
     file_category = 'source'
     file_subcategory = 'javaserverpage'
+    rule_applied = 'SourceJavaserverpage'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".jsp"]
+            extension_in(resource.extension, ['.jsp'])
         )
 
 
-class source_kotlin(Categorizer):
-    order = 1
+class SourceKotlin(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'kotlin'
+    rule_applied = 'SourceKotlin'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".kt"]
+            extension_in(resource.extension, ['.kt'])
         )
 
 
-class source_objectivec(Categorizer):
-    order = 1
+class SourceObjectivec(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'objectivec'
+    rule_applied = 'SourceObjectivec'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".m", ".mm"]
+            extension_in(resource.extension, ['.m', '.mm'])
             or
             (
-                resource.extension.lower() in [".h"]
+                extension_in(resource.extension, ['.h'])
                 and
-                resource.mime_type in ["text/x-objective-c"]
+                resource.mime_type in ['text/x-objective-c']
             )
         )
 
 
-class source_php(Categorizer):
-    order = 1
+class SourcePerl(Categorizer):
+    order = 10
+    analysis_priority = '1'
+    file_category = 'source'
+    file_subcategory = 'perl'
+    rule_applied = 'SourcePerl'
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.pl', '.pm'])
+        )
+
+
+class SourcePhp(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'php'
+    rule_applied = 'SourcePhp'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".php", ".php3", ".php4", ".php5"]
+            extension_in(resource.extension, ['.php', '.php3', '.php4', '.php5'])
         )
 
 
-class source_python(Categorizer):
-    order = 1
+class SourcePython(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'python'
+    rule_applied = 'SourcePython'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".py"]
+            extension_in(resource.extension, ['.py'])
         )
 
 
-class source_ruby(Categorizer):
-    order = 1
+class SourceRuby(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'ruby'
+    rule_applied = 'SourceRuby'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".rb", ".rake"]
+            extension_in(resource.extension, ['.rb', '.rake'])
         )
 
 
-class source_rust(Categorizer):
-    order = 1
+class SourceRust(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'rust'
+    rule_applied = 'SourceRust'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".rs"]
+            extension_in(resource.extension, ['.rs'])
         )
 
 
-class source_scala(Categorizer):
-    order = 1
+class SourceScala(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'scala'
+    rule_applied = 'SourceScala'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".scala"]
+            extension_in(resource.extension, ['.scala'])
         )
 
 
-class source_swift(Categorizer):
-    order = 1
+class SourceSwift(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'swift'
+    rule_applied = 'SourceSwift'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".swift"]
+            extension_in(resource.extension, ['.swift'])
         )
 
 
-class source_typescript(Categorizer):
-    order = 1
+class SourceTypescript(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'source'
     file_subcategory = 'typescript'
-    notes = '.ts extension is not definitive'
+    category_notes = '.ts extension is not definitive'
+    rule_applied = 'SourceTypescript'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".ts"]
+            extension_in(resource.extension, ['.ts'])
             and
-            resource.programming_language in ["TypeScript"]
+            resource.programming_language in ['TypeScript']
         )
 
 
-class web_css(Categorizer):
-    order = 1
+class WebCss(Categorizer):
+    order = 10
     analysis_priority = '1'
     file_category = 'web'
     file_subcategory = 'css'
+    rule_applied = 'WebCss'
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".css"]
+            extension_in(resource.extension, ['.css', '.less', '.scss'])
         )
 
 
-class web_html(Categorizer):
-    order = 1
+class WebHtml(Categorizer):
+    order = 10
     analysis_priority = '2'
     file_category = 'web'
     file_subcategory = 'html'
+    rule_applied = "WebHtml"
 
     @classmethod
     def categorize(cls, resource):
         return (
-            resource.extension.lower() in [".htm", ".html"]
+            extension_in(resource.extension, ['.htm', '.html'])
+        )
+
+
+class WebRuby(Categorizer):
+    order = 10
+    analysis_priority = '2'
+    file_category = 'web'
+    file_subcategory = 'Ruby'
+    rule_applied = "WebRuby"
+
+    @classmethod
+    def categorize(cls, resource):
+        return (
+            extension_in(resource.extension, ['.erb'])
         )
 
 
 categories = [
-    archive_debian,
-    archive_general,
-    archive_rpm,
-    binary_ar,
-    binary_elf_exec,
-    binary_elf_ko,
-    binary_elf_o,
-    binary_elf_so,
-    binary_java,
-    binary_windows,
-    config_general,
-    config_xml,
-    data_json,
-    doc_general,
-    doc_readme,
-    font,
-    manifest_npm,
-    media_audio,
-    media_image,
-    media_video,
-    script_bash,
-    script_build,
-    script_data,
-    script_perl,
-    source_c,
-    source_cpp,
-    source_csharp,
-    source_go,
-    source_haskell,
-    source_java,
-    source_javascript,
-    source_javaserverpage,
-    source_kotlin,
-    source_objectivec,
-    source_php,
-    source_python,
-    source_ruby,
-    source_rust,
-    source_scala,
-    source_swift,
-    source_typescript,
-    web_css,
-    web_html
+    ArchiveAndroid,
+    ArchiveDebian,
+    ArchiveGeneral,
+    ArchiveIos,
+    ArchiveRpm,
+    BinaryAr,
+    BinaryElfExec,
+    BinaryElfKo,
+    BinaryElfO,
+    BinaryElfSo,
+    BinaryJava,
+    BinaryPython,
+    BinaryWindows,
+    BuildBazel,
+    BuildBuck,
+    BuildDocker,
+    BuildMake,
+    BuildQt,
+    Certificate,
+    ConfigGeneral,
+    ConfigInitialPeriod,
+    ConfigMacro,
+    ConfigPython,
+    ConfigTemplate,
+    ConfigVisualCpp,
+    ConfigXcode,
+    ConfigXml,
+    DataJson,
+    DataProtoBuf,
+    Directory,
+    DocGeneral,
+    DocLicense,
+    DocReadme,
+    Font,
+    ManifestBower,
+    ManifestCargo,
+    ManifestCocoaPod,
+    ManifestComposer,
+    ManifestGolang,
+    ManifestGradle,
+    ManifestHaxe,
+    ManifestIvy,
+    ManifestMaven,
+    ManifestNpm,
+    ManifestNuGet,
+    ManifestPyPi,
+    ManifestRubyGem,
+    MediaAudio,
+    MediaImage,
+    MediaVideo,
+    ScriptBash,
+    ScriptBatSh,
+    ScriptBuild,
+    ScriptData,
+    SourceAssembler,
+    SourceC,
+    SourceCoffeeScript,
+    SourceCpp,
+    SourceCsharp,
+    SourceGo,
+    SourceHaskell,
+    SourceJava,
+    SourceJavascript,
+    SourceJavaserverpage,
+    SourceKotlin,
+    SourceObjectivec,
+    SourcePerl,
+    SourcePhp,
+    SourcePython,
+    SourceRuby,
+    SourceRust,
+    SourceScala,
+    SourceSwift,
+    SourceTypescript,
+    WebCss,
+    WebHtml,
+    WebRuby
 ]
 
 
@@ -766,6 +1382,31 @@ def categorize_resource(resource):
     """
     Return a Categorizer for this ``resource`` Resource object, or None.
     """
-    for category in sorted(categories, key=category_key):
+    sorted_categories = sorted(categories, key=category_key)
+    for category in sorted_categories:
         if category.categorize(resource):
             return category
+
+
+def extension_in(ext, exts):
+    return str(ext).lower() in exts
+
+
+def extension_uppercase_in(ext, exts):
+    return ext in exts
+
+
+def extension_startswith(ext, exts):
+    return str(ext).lower().startswith(exts)
+
+
+def name_in(name, names):
+    return str(name).lower() in names
+
+
+def name_substring(name, names):
+    return any(string in str(name).lower() for string in names)
+
+
+def name_startswith(name, names):
+    return str(name).lower().startswith(names)
