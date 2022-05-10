@@ -54,11 +54,10 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 ################################
 # Thirdparty package locations and index handling
-# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+# Find packages from the local thirdparty directory
 if [ -d "$CFG_ROOT_DIR/thirdparty" ]; then
     PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty"
 fi
-PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS --find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
 
 
 ################################
