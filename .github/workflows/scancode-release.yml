@@ -159,6 +159,10 @@ jobs:
             --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
 
@@ -210,6 +214,10 @@ jobs:
             --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
  
@@ -260,6 +268,10 @@ jobs:
             --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
  

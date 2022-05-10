@@ -17,9 +17,9 @@
 
 # Supported current app Python version and OS
 # one archive or installer is built for each python x OS combo
-PYTHON_APP_DOT_VERSIONS="3.9"
+PYTHON_APP_DOT_VERSIONS="3.8"
 
-PYTHON_PYPI_TESTS_DOT_VERSIONS="3.9"
+PYTHON_PYPI_TESTS_DOT_VERSIONS="3.8"
 
 PYPI_LINKS=https://thirdparty.aboutcode.org/pypi
 
@@ -45,153 +45,6 @@ fi
 CLI_ARGS=$1
 
 BIN_DIR=venv/bin
-
-################################
-# Run tests and exist with --test
-################################
-
-function run_app_smoke_tests {
-    # Call romp with an archive to run the smoke tests on the selected
-    # operating system remotely using Azure
-    #
-    # Arguments:
-    #   operating_system: One of windows, linux or macos
-    #   python_app_dot_version: the python version to test (no dot)
-
-    operating_system=$1
-    python_app_dot_version=$2
-    # remove dots
-    python_app_version=${python_app_dot_version/./}
-
-    echo " "
-    echo "### Testing app with Python $python_app_dot_version on OS: $operating_system"
-
-    # check if the tag file exist meaning we have already completed the tests
-    tag_file="scancode-release-tested-for-python-$python_app_dot_version-$operating_system"
-    if [ ! -f $tag_file ]; then
-        archive_to_test=$(ls -1 -R release/archives/ | grep "$python_app_version-$operating_system")
-
-        echo "#### Testing $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
-
-        # Check checksum of archive and script since it transits through file.io
-        sha_arch=$(sha256sum release/archives/$archive_to_test | awk '{ print $1 }')
-        sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
-
-        echo "#### Creating a temp archive that contains the tested archive: $archive_file and the test script"
-        archive_file=input.tar.gz
-        tar -czf $archive_file \
-            -C release/archives $archive_to_test \
-            -C ../../etc/release scancode_release_tests.py
-
-        tar -tvf $archive_file
-
-        echo "#### Remote test command: python scancode_release_tests.py app $archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
-
-        romp \
-            --interpreter cpython \
-            --architecture x86_64 \
-            --check-period 5 \
-            --version $python_app_dot_version \
-            --platform $operating_system \
-            --archive-file $archive_file \
-            --command "python scancode_release_tests.py app $archive_to_test $sha_arch $sha_py"
-
-        echo "#### RELEASE TEST: Completed App tests of $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
-        touch $tag_file
-    else
-        echo "#### RELEASE TEST: NOT RE-TESTING $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
-    fi
-}
-
-
-function run_pypi_smoke_tests {
-    # Call romp with a PyPI archive to pip install and run the smoke tests on
-    # the selected Python and operating system remotely using Azure
-    #
-    # Arguments:
-    #   archive_to_test: The naem of a wheel file or tar.gz  sdist file
-    #   python_dot_versions:  run with these Python version as in "3.6 3.7"
-    #   operating_systems: run on these operating_systems as in "windows linux macos"
-
-    archive_to_test=$1
-    python_dot_versions=$2
-    operating_systems=$3
-
-    # check if the tag file exist meaning we have already completed the tests
-    tag_file="scancode-release-pypi-tested-for-$archive_to_test"
-
-    echo " "
-    echo "### Testing $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
-
-    if [ ! -f $tag_file ]; then
-
-        # Check checksum of archive and script since it transits through file.io
-        sha_arch=$(sha256sum release/pypi/$archive_to_test | awk '{ print $1 }')
-        sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
-
-        echo "#### Creating a temp archive that contains the tested archive: $archive_to_test and the test script: release scancode_release_tests.py"
-        archive_file=input.tar.gz
-        tar -czf $archive_file \
-            -C release/pypi $archive_to_test \
-            -C ../../etc/release scancode_release_tests.py
-
-        tar -tvf $archive_file
-
-        echo "#### Remote test command: python scancode_release_tests.py pypi archive_to_test:$archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
-
-        # build options for Python versions and OS
-        ver_opts=" "
-        for pdv in $python_dot_versions
-            do
-            ver_opts="$ver_opts --version $pdv"
-        done
-
-        os_opts=" "
-        for os in $operating_systems
-            do
-            os_opts="$os_opts --platform $os"
-        done
-
-        romp \
-            --interpreter cpython \
-            --architecture x86_64 \
-            --check-period 5 \
-            $ver_opts \
-            $os_opts \
-            --archive-file $archive_file \
-            --command "python scancode_release_tests.py pypi $archive_to_test $sha_arch $sha_py"
-
-        echo "#### RELEASE TEST: Completed PyPI tests of $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
-        touch $tag_file
-    else
-        echo "#### RELEASE TEST: NOT RE-TESTING Pypi $archive_to_test with Python $python_app_dot_version on OSses: $operating_systems"
-    fi
-
-}
-
-
-if [ "$CLI_ARGS" == "--test" ]; then
-    echo "##########################################################################"
-    echo "### TESTING build for Python: $PYTHON_APP_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
-    for operating_system in $OPERATING_SYSTEMS
-        do
-        for pyver in $PYTHON_APP_DOT_VERSIONS
-            do
-            run_app_smoke_tests $operating_system $pyver
-        done
-    done
-
-    echo "##########################################################################"
-    echo "### TESTING PyPI archives for Python: $PYTHON_PYPI_TESTS_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
-    for archive in $(find release/pypi/ -type f -printf "%f\n")
-        do
-        run_pypi_smoke_tests $archive "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
-    done
-    set +e
-    set +x
-    exit
-fi
-
 
 echo "##########################################################################"
 echo "### BUILDING App for Python: $PYTHON_APP_VERSIONS on OS: $OPERATING_SYSTEMS"
@@ -304,7 +157,13 @@ function build_app_archive {
             --operating-system=$operating_system \
             --wheels
 
-        # 2. Create tarball or zip.
+        # 2. Collect thirdparty deps source for native
+        $BIN_DIR/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --dest=thirdparty \
+            --sdists
+
+        # 3. Create tarball or zip.
         # For now as a shortcut we use the Python setup.py sdist to create a tarball.
         # This is hackish and we should instead use our own archiving code that
         # would take a distutils manifest-like input
