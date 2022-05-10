@@ -1,0 +1,6 @@
+cffi==1.15.0
+intbitset==3.0.1
+MarkupSafe==2.0.1
+pyahocorasick==2.0.0b1
+PyYAML==6.0
+

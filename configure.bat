@@ -57,7 +57,6 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 if exist "%CFG_ROOT_DIR%\thirdparty" (
     set PIP_EXTRA_ARGS=--no-index --find-links "%CFG_ROOT_DIR%\thirdparty"
 )
-set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% --find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
 
 
 @rem ################################
@@ -70,7 +69,6 @@ if not defined CFG_QUIET (
 @rem ################################
 @rem # Main command line entry point
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
-set "NO_INDEX=--no-index"
 
 :again
 if not "%1" == "" (
