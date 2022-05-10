@@ -1,5 +1,5 @@
 """
-Minimal lexer for POSIX and Bash shells.
+Minimal lexer for Groovy
 Derived from pygments.lexers.jvm and significantly modified
 copyright: Copyright 2006-2021 by the Pygments team, see groovy_lexer.py.AUTHORS.
 SPDX-License-Identifier: BSD-2-Clause
