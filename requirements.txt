@@ -2,7 +2,7 @@ attrs==21.4.0
 banal==1.0.6
 beautifulsoup4==4.11.1
 binaryornot==0.4.4
-boolean.py==3.8
+boolean.py==4.0
 certifi==2021.10.8
 cffi==1.15.0
 chardet==4.0.0
@@ -34,7 +34,7 @@ jaraco.functools==3.4.0
 javaproperties==0.8.1
 Jinja2==3.0.3
 jsonstreams==0.6.0
-license-expression==21.6.14
+license-expression==30.0.0
 lxml==4.8.0
 MarkupSafe==2.0.1
 more-itertools==8.13.0
