@@ -269,6 +269,14 @@ class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
     documentation_url = 'https://peps.python.org/pep-0314/'
 
     @classmethod
+    def is_datafile(cls, location):
+        return (
+            super().is_datafile(location) and
+            not PythonEggPkgInfoFile.is_datafile(location) and
+            not PythonEditableInstallationPkgInfoFile.is_datafile(location)
+        )
+
+    @classmethod
     def parse(cls, location):
         yield parse_metadata(
             location=location,
