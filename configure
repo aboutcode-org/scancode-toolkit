@@ -102,14 +102,25 @@ create_virtualenv() {
             wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
-        $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-            --wheel embed --pip embed --setuptools embed \
-            --seeder pip \
-            --never-download \
-            --no-periodic-update \
-            --no-vcs-ignore \
-            $CFG_QUIET \
-            "$CFG_ROOT_DIR/$VENV_DIR"
+        if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
+            arch -x86_64 /bin/bash -c "$PYTHON_EXECUTABLE \"$VIRTUALENV_PYZ\" \
+                --wheel embed --pip embed --setuptools embed \
+                --seeder pip \
+                --never-download \
+                --no-periodic-update \
+                --no-vcs-ignore \
+                $CFG_QUIET \
+                \"$CFG_ROOT_DIR/$VENV_DIR\" "
+        else
+            $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
+                --wheel embed --pip embed --setuptools embed \
+                --seeder pip \
+                --never-download \
+                --no-periodic-update \
+                --no-vcs-ignore \
+                $CFG_QUIET \
+                "$CFG_ROOT_DIR/$VENV_DIR"
+        fi
     fi
 }
 
