@@ -311,14 +311,15 @@ class TestCodebase(FileBasedTesting):
     def test_walk_skipped_directories_should_not_be_yielded(self):
         # Resources that we continue past should not be added to the result list
         test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
-        codebase = Codebase(test_codebase)
-        result = []
+        cdbs = Codebase(test_codebase)
 
-        def _ignored(_resource, _codebase):
-            return _resource.is_dir and _resource.name == 'skip-this-directory'
+        def _ignored(resource, codebase):
+            return resource.is_dir and resource.name == 'skip-this-directory'
 
-        for resource in codebase.walk(topdown=True, ignored=_ignored,):
-            result.append(resource.name)
+        result = [
+            res.name
+            for res in cdbs.walk(topdown=True, ignored=_ignored,)
+        ]
 
         expected = ['skip_directories_during_walk', 'this-should-be-returned']
         assert result == expected
@@ -339,11 +340,22 @@ class TestCodebase(FileBasedTesting):
         expected = [('resource', False), (u'some child', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
-    def test_get_resource(self):
+    def test_get_resource_for_single_resource_codebase(self):
         test_codebase = self.get_temp_dir('resource')
         codebase = Codebase(test_codebase)
-        assert not (codebase.root is codebase.get_resource(0))
-        assert codebase.get_resource(0) == codebase.root
+        assert not (codebase.root is codebase.get_resource('resource'))
+        assert codebase.get_resource('resource') == codebase.root
+
+    def test_get_resource_for_multiple_resource_codebase(self):
+        test_codebase = self.get_temp_dir('resource')
+        for name in ('a', 'b' , 'c'):
+            with open(os.path.join(test_codebase, name), 'w') as o:
+                o.write('\n')
+
+        codebase = Codebase(test_codebase)
+        assert codebase.get_resource('resource/a').path == 'resource/a'
+        assert codebase.get_resource('/resource/c').path == 'resource/c'
+        assert codebase.get_resource('resource/dsasda/../b/').path == 'resource/b'
 
     def test_get_path(self):
         test_dir = self.get_test_loc('resource/samples')
@@ -431,32 +443,6 @@ class TestCodebase(FileBasedTesting):
         assert 11 == dirs_count
         assert 0 == size_count
 
-    def test_low_max_in_memory_does_not_raise_exception_when_ignoring_files(self):
-
-        from commoncode.fileset import is_included
-
-        test_codebase = self.get_test_loc('resource/client')
-        codebase = Codebase(test_codebase, strip_root=True, max_in_memory=1)
-
-        # Ignore GIFs, code taken from scancode/plugin_ignore.py
-        ignores = {
-            '*.gif': 'User ignore: Supplied by --ignore'
-        }
-        remove_resource = codebase.remove_resource
-
-        for resource in codebase.walk(topdown=True):
-            if not is_included(resource.path, excludes=ignores):
-                for child in resource.children(codebase):
-                    remove_resource(child)
-                if not resource.is_root:
-                    remove_resource(resource)
-
-        # Walk through the codebase and save each Resource,
-        # UnknownResource exception should not be raised
-        save_resource = codebase.save_resource
-        for resource in codebase.walk(topdown=True):
-            save_resource(resource)
-
     def test_lowest_common_parent_1(self):
         test_codebase = self.get_test_loc('resource/lcp/test1')
         codebase = Codebase(test_codebase)
@@ -468,8 +454,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/lcp/test1')
         codebase = Codebase(test_codebase, strip_root=True)
         lcp = codebase.lowest_common_parent()
-        assert lcp.path == ''
         assert lcp.name == 'test1'
+        assert lcp.path == ''
 
     def test_lowest_common_parent_full(self):
         test_codebase = self.get_test_loc('resource/lcp/test1')
@@ -523,11 +509,11 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_dir)
         assert codebase.root.distance(test_dir) == 0
 
-        res = codebase.get_resource(1)
+        res = codebase.get_resource('dist/JGroups')
         assert res.name == 'JGroups'
         assert res.distance(codebase) == 1
 
-        res = codebase.get_resource(10)
+        res = codebase.get_resource('dist/simple/META-INF/MANIFEST.MF')
         assert res.name == 'MANIFEST.MF'
         assert res.distance(codebase) == 3
 
@@ -662,67 +648,76 @@ class TestCodebaseCache(FileBasedTesting):
     def test_codebase_cache_default(self):
         test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase)
+
         assert codebase.temp_dir
         assert codebase.cache_dir
-        codebase.cache_dir
+
         root = codebase.root
 
-        cp = codebase._get_resource_cache_location(root.rid, create=False)
-        assert not exists(cp)
-        cp = codebase._get_resource_cache_location(root.rid, create=True)
+        cp = codebase._get_resource_cache_location(root.path, create_dirs=True)
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        child = codebase._create_resource('child', root, is_file=True)
+        child = codebase._create_resource(name='child', parent=root, is_file=True)
         child.size = 12
         codebase.save_resource(child)
-        child_2 = codebase.get_resource(child.rid)
+        child_2 = codebase.get_resource(path=child.path)
         assert child_2 == child
 
     def test_codebase_cache_all_in_memory(self):
         test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase, max_in_memory=0)
-        for rid in codebase.resource_ids:
-            if rid == 0:
-                assert codebase.get_resource(rid) == codebase.root
-                assert codebase._exists_in_memory(rid)
-                assert not codebase._exists_on_disk(rid)
+        for path, res in codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = codebase.get_resource(path)
+            if res.is_root:
+                assert codebase.get_resource(path) == codebase.root == res
+                assert codebase._exists_in_memory(path)
+                assert not codebase._exists_on_disk(path)
             else:
-                assert codebase._exists_in_memory(rid)
-                assert not codebase._exists_on_disk(rid)
+                assert codebase._exists_in_memory(path)
+                assert not codebase._exists_on_disk(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resource_ids)
+        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
 
     def test_codebase_cache_all_on_disk(self):
         test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase, max_in_memory=-1)
-        for rid in codebase.resource_ids:
-            if rid == 0:
-                assert codebase.get_resource(rid) == codebase.root
-                assert codebase._exists_in_memory(rid)
-                assert not codebase._exists_on_disk(rid)
+        for path, res in codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = codebase.get_resource(path)
+            if res.is_root:
+                assert codebase.get_resource(path) == codebase.root == res
+                assert codebase._exists_in_memory(path)
+                assert not codebase._exists_on_disk(path)
             else:
-                assert not codebase._exists_in_memory(rid)
-                assert codebase._exists_on_disk(rid)
+                assert not codebase._exists_in_memory(path)
+                assert codebase._exists_on_disk(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resource_ids)
+        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
 
     def test_codebase_cache_mixed_two_in_memory(self):
         test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase, max_in_memory=2)
-        for rid in codebase.resource_ids:
-            if rid == 0:
-                assert codebase.get_resource(rid) == codebase.root
-                assert codebase._exists_in_memory(rid)
-                assert not codebase._exists_on_disk(rid)
-            elif rid < 2:
-                assert codebase._exists_in_memory(rid)
-                assert not codebase._exists_on_disk(rid)
-            else:
-                assert not codebase._exists_in_memory(rid)
-                assert codebase._exists_on_disk(rid)
+        counter = 0
+        for path, res in codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = codebase.get_resource(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resource_ids)
+            if res.is_root:
+                assert codebase.get_resource(path) == codebase.root == res
+                assert codebase._exists_in_memory(path)
+                assert not codebase._exists_on_disk(path)
+                counter += 1
+            elif counter < 2:
+                assert codebase._exists_in_memory(path)
+                assert not codebase._exists_on_disk(path)
+                counter += 1
+            else:
+                assert not codebase._exists_in_memory(path)
+                assert codebase._exists_on_disk(path)
+
+        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
 
 
 class TestVirtualCodebase(FileBasedTesting):
@@ -1016,8 +1011,8 @@ class TestVirtualCodebase(FileBasedTesting):
     def test_virtual_codebase_get_resource(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/resource.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
-        assert not (virtual_codebase.root is virtual_codebase.get_resource(0))
-        assert virtual_codebase.get_resource(0) == virtual_codebase.root
+        assert not (virtual_codebase.root is virtual_codebase.get_resource('resource'))
+        assert virtual_codebase.get_resource('resource') == virtual_codebase.root
 
     def test_virtual_codebase_can_process_minimal_resources_without_info(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/noinfo.json')
@@ -1063,7 +1058,7 @@ class TestVirtualCodebase(FileBasedTesting):
         resources_fingerprint = [resource.fingerprint for resource in codebase.walk()]
         assert "e30cf09443e7878dfed3288886e97542" in resources_fingerprint
         assert None in resources_fingerprint
-        assert codebase.get_resource(0) == codebase.root
+        assert codebase.get_resource('apache_to_all_notable_lic_new') == codebase.root
         assert resources_fingerprint.count(None) == 2
 
 
@@ -1154,65 +1149,75 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         virtual_codebase.cache_dir
         root = virtual_codebase.root
 
-        cp = virtual_codebase._get_resource_cache_location(root.rid, create=False)
+        cp = virtual_codebase._get_resource_cache_location(root.path, create_dirs=False)
         assert not exists(cp)
-        cp = virtual_codebase._get_resource_cache_location(root.rid, create=True)
+
+        cp = virtual_codebase._get_resource_cache_location(root.path, create_dirs=True)
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
         child = virtual_codebase._create_resource('child', root, is_file=True)
         child.size = 12
         virtual_codebase.save_resource(child)
-        child_2 = virtual_codebase.get_resource(child.rid)
+        child_2 = virtual_codebase.get_resource(child.path)
         assert child_2 == child
 
     def test_virtual_codebase_cache_all_in_memory(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
-        virtual_codebase = VirtualCodebase(location=scan_data,
-                                           max_in_memory=0)
-        for rid in virtual_codebase.resource_ids:
-            if rid == 0:
-                assert virtual_codebase.get_resource(rid) == virtual_codebase.root
-                assert virtual_codebase._exists_in_memory(rid)
-                assert not virtual_codebase._exists_on_disk(rid)
-            else:
-                assert virtual_codebase._exists_in_memory(rid)
-                assert not virtual_codebase._exists_on_disk(rid)
+        virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=0)
+        for path, res in virtual_codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = virtual_codebase.get_resource(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resource_ids)
+            if res.is_root:
+                assert virtual_codebase.get_resource(path) == virtual_codebase.root
+                assert virtual_codebase._exists_in_memory(path)
+                assert not virtual_codebase._exists_on_disk(path)
+            else:
+                assert virtual_codebase._exists_in_memory(path)
+                assert not virtual_codebase._exists_on_disk(path)
+
+        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
 
     def test_virtual_codebase_cache_all_on_disk(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
-        virtual_codebase = VirtualCodebase(location=scan_data,
-                                           max_in_memory=-1)
-        for rid in virtual_codebase.resource_ids:
-            if rid == 0:
-                assert virtual_codebase.get_resource(rid) == virtual_codebase.root
-                assert virtual_codebase._exists_in_memory(rid)
-                assert not virtual_codebase._exists_on_disk(rid)
-            else:
-                assert not virtual_codebase._exists_in_memory(rid)
-                assert virtual_codebase._exists_on_disk(rid)
+        virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=-1)
+        for path, res in virtual_codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = virtual_codebase.get_resource(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resource_ids)
+            if res.is_root:
+                assert virtual_codebase.get_resource(path) == virtual_codebase.root
+                assert virtual_codebase._exists_in_memory(path)
+                assert not virtual_codebase._exists_on_disk(path)
+            else:
+                assert not virtual_codebase._exists_in_memory(path)
+                assert virtual_codebase._exists_on_disk(path)
+
+        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
 
     def test_virtual_codebase_cache_mixed_two_in_memory(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
-        virtual_codebase = VirtualCodebase(location=scan_data,
-                                           max_in_memory=2)
-        for rid in virtual_codebase.resource_ids:
-            if rid == 0:
-                assert virtual_codebase.get_resource(rid) == virtual_codebase.root
-                assert virtual_codebase._exists_in_memory(rid)
-                assert not virtual_codebase._exists_on_disk(rid)
-            elif rid < 2:
-                assert virtual_codebase._exists_in_memory(rid)
-                assert not virtual_codebase._exists_on_disk(rid)
-            else:
-                assert not virtual_codebase._exists_in_memory(rid)
-                assert virtual_codebase._exists_on_disk(rid)
+        virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=2)
+        counter = 0
+        for path, res in virtual_codebase.resources_by_path.items():
+            if res is Codebase.CACHED_RESOURCE:
+                res = virtual_codebase.get_resource(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resource_ids)
+            if res.is_root:
+                assert virtual_codebase.get_resource(path) == virtual_codebase.root
+                assert virtual_codebase._exists_in_memory(path)
+                assert not virtual_codebase._exists_on_disk(path)
+                counter += 1
+            elif counter < 2:
+                assert virtual_codebase._exists_in_memory(path)
+                assert not virtual_codebase._exists_on_disk(path)
+                counter += 1
+            else:
+                assert not virtual_codebase._exists_in_memory(path)
+                assert virtual_codebase._exists_on_disk(path)
+
+        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
 
 
 class TestVirtualCodebaseCreation(FileBasedTesting):
@@ -1332,8 +1337,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         test_file = self.get_test_loc("resource/virtual_codebase/path_full_root.json")
         codebase = VirtualCodebase(test_file)
         resource = sorted(r for r in codebase.walk())[0]
-        assert "/Users/sesser/code/nexb/scancode-toolkit/samples/README" == resource.path
-        assert 1 == codebase.compute_counts()[0]
+        assert resource.path == "Users/sesser/code/nexb/scancode-toolkit/samples/README"
+        assert codebase.compute_counts()[0] == 1
 
     def test_VirtualCodebase_can_compute_counts_with_null(self):
         # was failing with
