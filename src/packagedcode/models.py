@@ -1325,6 +1325,25 @@ class Package(PackageData):
 
         return True
 
+    def get_packages_files(self, codebase):
+        """
+        Yield all the Resource of this package found in codebase.
+        """
+        package_uid = self.package_uid
+        for resource in codebase.walk():
+            if package_uid in resource.for_packages:
+                yield resource
+
+
+def get_files_for_packages(codebase):
+    """
+    Yield tuple of (Resource, package_uid) for all resources in codebase that are
+    for a package.
+    """
+    for resource in codebase.walk():
+        for package_uid in resource.for_packages:
+            yield resource, package_uid
+
 
 def merge_sequences(list1, list2, **kwargs):
     """
