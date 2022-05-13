@@ -7,9 +7,9 @@
 #
 
 import os
-
 from os.path import join
 from os.path import exists
+from unittest import skipIf
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -194,7 +194,7 @@ class CountTest(FileBasedTesting):
             assert result == count
 
 
-def SymlinkTest(FileBasedTesting):
+class SymlinkTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     @skipIf(on_windows, 'os.symlink does not work on Windows')
