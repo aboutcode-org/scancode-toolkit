@@ -6,10 +6,12 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import fnmatch
 import os
 import sys
 from collections import defaultdict
 from itertools import chain
+from pathlib import Path
 
 import attr
 from debian_inspector.copyright import CatchAllParagraph
@@ -33,8 +35,6 @@ from packagedcode.licensing import get_license_matches
 from packagedcode.licensing import get_license_matches_from_query_string
 from packagedcode.utils import combine_expressions
 from textcode.analysis import unicode_text
-import fnmatch
-from pathlib import Path
 
 """
 Detect licenses and copyright in Debian copyright files. Can handle dep-5
