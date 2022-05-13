@@ -7,11 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import functools
+import logging
+import os
+
 import attr
 import click
-import os
-import logging
-
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
@@ -50,10 +51,11 @@ def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
 
-    from packagedcode import PACKAGE_DATAFILE_HANDLERS
+    from packagedcode import ALL_DATAFILE_HANDLERS
 
     for cls in sorted(
-        PACKAGE_DATAFILE_HANDLERS, key=lambda pc: (pc.default_package_type or '', pc.datasource_id)
+        ALL_DATAFILE_HANDLERS,
+        key=lambda pc: (pc.default_package_type or '', pc.datasource_id),
     ):
         pp = ', '.join(repr(p) for p in cls.path_patterns)
         click.echo('--------------------------------------------')
@@ -101,10 +103,21 @@ class PackageScanner(ScanPlugin):
             ),
             is_flag=True,
             default=False,
-            help='Scan <input> for package and dependency manifests, lockfiles and related data.',
+            help='Scan <input> for application package and dependency manifests, lockfiles and related data.',
             help_group=SCAN_GROUP,
             sort_order=20,
         ),
+        PluggableCommandLineOption(
+            (
+                '--system-package',
+            ),
+            is_flag=True,
+            default=False,
+            help='Scan <input> for installed system package databases.',
+            help_group=SCAN_GROUP,
+            sort_order=21,
+        ),
+
         PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True,
@@ -115,16 +128,20 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, **kwargs):
-        return package
+    def is_enabled(self, package, system_package, **kwargs):
+        return package or system_package
 
-    def get_scanner(self, **kwargs):
+    def get_scanner(self, package=True, system_package=False, **kwargs):
         """
         Return a scanner callable to scan a file for package data.
         """
         from scancode.api import get_package_data
 
-        return get_package_data
+        return functools.partial(
+            get_package_data,
+            application=package,
+            system=system_package,
+        )
 
     def process_codebase(self, codebase, **kwargs):
         """
@@ -140,34 +157,45 @@ def create_package_and_deps(codebase, **kwargs):
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
     """
-    # track resource ids that have been already processed
-    seen_resource_ids = set()
-    dependencies_top_level = []
-    packages_top_level = []
+    packages, dependencies = get_package_and_deps(codebase, **kwargs)
+    codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages)
+    codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
+
+def get_package_and_deps(codebase, **kwargs):
+    """
+    Return a tuple of (Packages list, Dependency list) from the parsed package
+    data present in the codebase files.package_data attributes.
+    """
+    packages = []
+    dependencies = []
+
+    seen_resource_paths = set()
+
+    # track resource ids that have been already processed
     for resource in codebase.walk(topdown=False):
         if not resource.package_data:
             continue
 
-        if resource.rid in seen_resource_ids:
+        if resource.path in seen_resource_paths:
             continue
 
         if TRACE:
-            logger_debug('create_package_and_deps: location:', resource.location)
+            logger_debug('get_package_and_deps: location:', resource.location)
 
         for package_data in resource.package_data:
             try:
                 package_data = PackageData.from_dict(package_data)
 
                 if TRACE:
-                    logger_debug('  create_package_and_deps: package_data:', package_data)
+                    logger_debug('  get_package_and_deps: package_data:', package_data)
 
                 # Find a handler for this package datasource to assemble collect
                 # packages and deps
                 handler = get_package_handler(package_data)
                 if TRACE:
-                    logger_debug('  create_package_and_deps: handler:', handler)
- 
+                    logger_debug('  get_package_and_deps: handler:', handler)
+
                 items = handler.assemble(
                     package_data=package_data,
                     resource=resource,
@@ -176,20 +204,19 @@ def create_package_and_deps(codebase, **kwargs):
 
                 for item in items:
                     if TRACE:
-                        logger_debug('    create_package_and_deps: item:', item)
+                        logger_debug('    get_package_and_deps: item:', item)
 
                     if isinstance(item, Package):
-                        packages_top_level.append(item)
-
+                        packages.append(item)
                     elif isinstance(item, Dependency):
-                        dependencies_top_level.append(item)
-
+                        dependencies.append(item)
                     elif isinstance(item, Resource):
-                        seen_resource_ids.add(item.rid)
+                        seen_resource_paths.add(item.path)
+
                         if TRACE:
                             logger_debug(
-                                '    create_package_and_deps: seen_resource_ids:',
-                                seen_resource_ids,
+                                '    get_package_and_deps: seen_resource_path:',
+                                seen_resource_paths,
                             )
 
                     else:
@@ -197,13 +224,12 @@ def create_package_and_deps(codebase, **kwargs):
 
             except Exception as e:
                 import traceback
-                msg = f'create_package_and_deps: Failed to assemble PackageData: {package_data}:\n'
+                msg = f'get_package_and_deps: Failed to assemble PackageData: {package_data}:\n'
                 msg += traceback.format_exc()
                 resource.scan_errors.append(msg)
                 resource.save(codebase)
 
-                if True:
+                if TRACE:
                     raise Exception(msg) from e
 
-    codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages_top_level)
-    codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies_top_level)
+    return packages, dependencies

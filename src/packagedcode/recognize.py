@@ -11,7 +11,9 @@ import os
 import sys
 
 from commoncode import filetype
-from packagedcode import PACKAGE_DATAFILE_HANDLERS
+from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
+from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
+from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode import models
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
@@ -40,25 +42,44 @@ Recognize and parse package datafiles, manifests, or lockfiles.
 """
 
 
-def recognize_package_data(location):
+def recognize_package_data(
+    location,
+    application=True,
+    system=False,
+):
     """
     Return a list of Package objects if any package_data were recognized for
     this `location`, or None if there were no Packages found. Raises Exceptions
     on errors.
+    Include ``application`` packages (such as pypi) and/or ``system`` packages.
+    Default to use application packages
     """
-
     if not filetype.is_file(location):
         return []
 
-    return list(_parse(location))
+    assert application or system
+    if application and system:
+        datafile_handlers = ALL_DATAFILE_HANDLERS
+    elif application:
+        datafile_handlers = APPLICATION_PACKAGE_DATAFILE_HANDLERS
+    elif system:
+        datafile_handlers = SYSTEM_PACKAGE_DATAFILE_HANDLERS
+
+    return list(_parse(location, datafile_handlers=datafile_handlers))
 
 
-def _parse(location):
+def _parse(
+    location,
+    datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
+):
     """
     Yield parsed PackageData objects from ``location``. Raises Exceptions on errors.
+
+    Use the provided ``datafile_handlers`` list of DatafileHandler classes.
+    Default to use application packages
     """
 
-    for handler in PACKAGE_DATAFILE_HANDLERS:
+    for handler in datafile_handlers:
         if not handler.is_datafile(location):
             continue
 
