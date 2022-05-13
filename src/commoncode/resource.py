@@ -12,19 +12,18 @@ import os
 import posixpath
 import traceback
 import sys
-from pathlib import Path
-
 from collections import deque
 from functools import partial
+from hashlib import md5
 from os import walk as os_walk
 from os.path import abspath
 from os.path import exists
 from os.path import expanduser
 from os.path import join
 from os.path import normpath
+from pathlib import Path
 
 import attr
-from intbitset import intbitset
 
 try:
     from scancode_config import scancode_temp_dir as temp_dir
@@ -33,13 +32,13 @@ except ImportError:
     import tempfile
     temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
+from commoncode import ignore
+from commoncode import paths
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
-
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
-
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import delete
@@ -47,9 +46,6 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
-
-from commoncode import ignore
-from commoncode import paths
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -76,13 +72,11 @@ if TRACE or TRACE_DEEP:
     import logging
 
     logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(
-            ' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class ResourceNotInCache(Exception):
@@ -93,32 +87,41 @@ class UnknownResource(Exception):
     pass
 
 
-def skip_ignored(_loc):
-    """Always ignore VCS and some special filetypes."""
+def skip_ignored(location):
+    """
+    Return True if ``location`` should be skipped.
+    Always ignore VCS and some special filetypes.
+    """
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
 
     if TRACE_DEEP:
         logger_debug()
-        logger_debug('Codebase.populate: walk: ignored loc:', _loc,
-                     'ignored:', ignored(_loc),
-                     'is_special:', is_special(_loc))
+        logger_debug(
+            'Codebase.populate: walk: ignored loc:', location,
+            'ignored:', ignored(location),
+            'is_special:', is_special(location),
+        )
 
-    return is_special(_loc) or ignored(_loc)
+    return is_special(location) or ignored(location)
 
 
-def depth_walk(root_location, max_depth, error_handler=lambda:None):
+def depth_walk(
+    root_location,
+    max_depth,
+    skip_ignored=skip_ignored,
+    error_handler=lambda: None,
+):
     """
-    Yield a (top, dirs, files) tuple at each step of walking the `root_location` directory
-    recursively up to `max_depth` path segments extending from the `root_location`.
-    The behaviour is similar of `os.walk`.
+    Yield a (top, dirs, files) tuple at each step of walking the ``root_location``
+    directory recursively up to ``max_depth`` path segments extending from the
+    ``root_location``. The behaviour is similar of ``os.walk``.
 
     Arguments:
-       - root_location: Absolute, normalized path for the directory to be walked
-       - max_depth: positive integer for fixed depth limit. 0 for no limit.
-       - skip_ignored: Callback function that takes `top` as argument and returns a boolean
-                       indicating whether to ignore files in that location. No ignoring
-                       by default.
-       - error_handler: Error handler callback. No action taken by default.
+   - root_location: Absolute, normalized path for the directory to be walked
+   - max_depth: positive integer for fixed depth limit. 0 for no limit.
+   - skip_ignored: Callback function that takes a location as argument and
+     returns a boolean indicating whether to ignore files in that location.
+   - error_handler: Error handler callback. No action taken by default.
     """
 
     if max_depth < 0:
@@ -139,14 +142,14 @@ def depth_walk(root_location, max_depth, error_handler=lambda:None):
             dirs[:] = []
             files[:] = []
             continue
-        yield (top, dirs, files)
+        yield top, dirs, files
 
 
 @attr.s(slots=True)
 class Header(object):
     """
-    Represent a codebase header. Each tool that transforms the codebase
-    should create a Header and append it to the codebase log_entries list.
+    Represent a Codebase header. Each tool that transforms the codebase
+    should create a Header and append it to the Codebase.headers list.
     """
     tool_name = String(help='Name of the tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
@@ -170,26 +173,8 @@ class Header(object):
         Return a Header object deserialized from a `kwargs` mapping of
         key/values. Unknown attributes are ignored.
         """
-        known_attributes = set([
-            'tool_name',
-            'tool_version',
-            'options',
-            'notice',
-            'start_timestamp',
-            'end_timestamp',
-            'output_format_version',
-            'duration',
-            'message',
-            'errors',
-            'warnings',
-            'extra_data',
-        ])
-
-        # pop unknowns
-        for kwarg in list(kwargs.keys()):
-            if kwarg not in known_attributes:
-                kwargs.pop(kwarg)
-
+        known_attributes = set(attr.fields_dict(Header))
+        kwargs = {k: v for k, v in kwargs.items() if k in known_attributes}
         return cls(**kwargs)
 
 
@@ -203,9 +188,9 @@ def ignore_nothing(resource, codebase):
     return False
 
 
-class Codebase(object):
+class Codebase:
     """
-    Represent a codebase being scanned. A Codebase is a tree of Resources.
+    Represent a codebase being scanned. A Codebase is a list of Resources.
     """
 
     # we do not really need slots but this is a way to ensure we have tight
@@ -219,13 +204,14 @@ class Codebase(object):
         'has_single_resource',
         'resource_attributes',
         'resource_class',
-        'resource_ids',
         'root',
         'is_file',
 
         'temp_dir',
 
-        'resources',
+        'resources_by_path',
+        'resources_count',
+        'paths',
         'max_in_memory',
         'all_in_memory',
         'all_on_disk',
@@ -242,39 +228,55 @@ class Codebase(object):
         'errors',
     )
 
-    def __init__(self, location,
-                 resource_attributes=None,
-                 codebase_attributes=None,
-                 full_root=False, strip_root=False,
-                 temp_dir=temp_dir,
-                 max_in_memory=10000, max_depth=0):
+    # the value returned if the resource is cached
+    CACHED_RESOURCE = 1
+
+    def __init__(
+        self,
+        location,
+        resource_attributes=None,
+        codebase_attributes=None,
+        full_root=False,
+        strip_root=False,
+        temp_dir=temp_dir,
+        max_in_memory=10000,
+        max_depth=0,
+        paths=tuple(),
+        *args,
+        **kwargs,
+    ):
         """
-        Initialize a new codebase rooted at the `location` existing file or
+        Initialize a new codebase rooted at the ``location`` existing file or
         directory.
 
-        `resource_attributes` is an ordered mapping of attr Resource attributes
+        Use an optional list of ``paths`` strings that are paths relative to the
+        root ``location`` such that joining the root ``location`` and such a
+        path is the ``location`` of this path. If these ``paths`` are provided,
+        the codebase will only contain these paths and no other path.
+
+        ``resource_attributes`` is an ordered mapping of attr Resource attributes
         such as plugin-provided attributes: these will be added to a Resource
         sub-class crafted for this codebase.
 
-        `codebase_attributes` is an ordered mapping of attr Codebase attributes
+        ``codebase_attributes`` is an ordered mapping of attr Codebase attributes
         such as plugin-provided attributes: these will be added to a
         CodebaseAttributes sub-class crafted for this codebase.
 
-        `strip_root` and `full_root`: boolean flags: these control the values
+        ``strip_root`` and ``full_root``: boolean flags: these control the values
         of the path attribute of the codebase Resources. These are mutually
         exclusive.
-        If `strip_root` is True, strip the first `path` segment of a Resource
+        If ``strip_root`` is True, strip the first ``path`` segment of a Resource
         unless the codebase contains a single root Resource.
-        If `full_root` is True the path is an an absolute path.
+        If ``full_root`` is True the path is an an absolute path.
 
-        `temp_dir` is the base temporary directory to use to cache resources on
+        ``temp_dir`` is the base temporary directory to use to cache resources on
         disk and other temporary files.
 
-        `max_in_memory` is the maximum number of Resource instances to keep in
+        ``max_in_memory`` is the maximum number of Resource instances to keep in
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
 
-        `max_depth` is the maximum depth of subdirectories to descend below and
+        ``max_depth`` is the maximum depth of subdirectories to descend below and
         including `location`.
         """
         self.original_location = location
@@ -285,36 +287,42 @@ class Codebase(object):
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
 
-        self.resource_attributes = resource_attributes or dict()
-        self.codebase_attributes = codebase_attributes or dict()
+        self.resource_attributes = resource_attributes or {}
+        self.codebase_attributes = codebase_attributes or {}
 
         # setup location
         ########################################################################
         location = os.fsdecode(location)
-
         location = abspath(normpath(expanduser(location)))
         location = location.rstrip('/\\')
-
-        # TODO: we should also accept to create "virtual" codebase without a
-        # backing filesystem location
+        # TODO: what if is_special(location)???
         assert exists(location)
-        # FIXME: what if is_special(location)???
         self.location = location
+
         self.is_file = filetype_is_file(location)
 
         # True if this codebase root is a file or an empty directory.
         self.has_single_resource = bool(self.is_file or not os.listdir(location))
 
+        ########################################################################
         # Set up caching, summary, timing, and error info
         self._setup_essentials(temp_dir, max_in_memory)
 
-        # finally walk the location and populate
-        ########################################################################
+        # finally populate
+        self.paths = self._clean_paths(paths)
         self._populate()
+
+    def _clean_paths(self, paths=tuple()):
+        """
+        Return a new list cleaned ``paths``.
+        """
+        paths = paths or []
+        # convert to posix and ensure we have no slash at both ends
+        return [clean_path(p) for p in paths]
 
     def _setup_essentials(self, temp_dir=temp_dir, max_in_memory=10000):
         """
-        Set the remaining Codebase attributes
+        Set the remaining Code=base attributes
 
         `temp_dir` is the base temporary directory to use to cache resources on
         disk and other temporary files.
@@ -329,23 +337,22 @@ class Codebase(object):
         # root resource, never cached on disk
         self.root = None
 
-        # set index of existing resource ids ints, initially allocated with
-        # 10000 positions (this will grow as needed)
-        self.resource_ids = intbitset(10000)
+        # mapping of {path: Resource}. This the key data structure of a Codebase.
+        # All resources MUST exist there. When cached to disk the value is CACHED_RESOURCE
+        self.resources_by_path = {}
+        self.resources_count = 0
 
         # setup caching
         ########################################################################
         # dir used for caching and other temp files
         self.temp_dir = temp_dir
 
-        # maximmum number of Resource objects kept in memory cached in this
+        # maximum number of Resource objects kept in memory cached in this
         # Codebase. When the number of in-memory Resources exceed this number,
         # the next Resource instances are saved to disk instead and re-loaded
         # from disk when used/needed.
         self.max_in_memory = max_in_memory
 
-        # map of {rid: resource} for resources that are kept in memory
-        self.resources = {}
         # use only memory
         self.all_in_memory = max_in_memory == 0
         # use only disk
@@ -375,31 +382,33 @@ class Codebase(object):
         # unreadable file, etc).
         self.errors = []
 
-    def _get_next_rid(self):
-        """
-        Return the next available resource id.
-        """
-        return len(self.resource_ids)
-
-    def _get_resource_cache_location(self, rid, create=False):
+    def _get_resource_cache_location(self, path, create_dirs=False):
         """
         Return the location where to get/put a Resource in the cache given a
-        Resource `rid`. Create the directories if requested.
+        Resource `path`. Create the directories if requested.
         """
         if not self.cache_dir:
             return
-        # Note this is hex
-        resid = '%08x' % rid
+
+        if isinstance(path, Resource):
+            path = path.path
+
+        path = clean_path(path)
+
+        # for the cached file name, we use an md5 of the path to avoid things being too long
+        resid = str(md5(path.encode('utf-8')).hexdigest())
         cache_sub_dir, cache_file_name = resid[-2:], resid
+
         parent = join(self.cache_dir, cache_sub_dir)
-        if create and not exists(parent):
+        if create_dirs and not exists(parent):
             create_dir(parent)
+
         return join(parent, cache_file_name)
 
     # TODO: add populate progress manager!!!
     def _populate(self):
         """
-        Populate this codebase with Resource objects.
+        Populate this codebase with Resource objects
 
         Population is done by walking its `location` topdown, breadth-first,
         first creating first file then directory Resources both sorted in case-
@@ -417,30 +426,18 @@ class Codebase(object):
             name='ScannedResource',
             attrs=self.resource_attributes or {},
             slots=True,
-            # frozen=True,
             bases=(Resource,)
         )
 
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                'ERROR: cannot populate codebase: {}\n'.format(_error)
-                +traceback.format_exc())
-
-        def create_resources(_seq, _top, _parent, _is_file):
-            """Create Resources of parent from a seq of files or directories."""
-            _seq.sort(key=lambda p: (p.lower(), p))
-            for name in _seq:
-                location = join(_top, name)
-                if skip_ignored(location):
-                    continue
-                res = self._create_resource(name, parent=_parent, is_file=_is_file)
-                if not _is_file:
-                    # on the plain, bare FS, files cannot be parents
-                    parent_by_loc[location] = res
-                if TRACE: logger_debug('Codebase.populate:', res)
+                f'ERROR: cannot populate codebase: '
+                f'{_error}\n{traceback.format_exc()}'
+            )
 
         root = self._create_root_resource()
+
         if TRACE: logger_debug('Codebase.populate: root:', root)
 
         if self.has_single_resource:
@@ -454,10 +451,39 @@ class Codebase(object):
         parent_by_loc = {root.location: root}
 
         # Walk over the directory and build the resource tree
-        for (top, dirs, files) in depth_walk(root.location, self.max_depth, err):
-                parent = parent_by_loc.pop(top)
-                create_resources(files, top, parent, _is_file=True)
-                create_resources(dirs, top, parent, _is_file=False)
+        for (top, dirs, files) in depth_walk(
+            root_location=root.location,
+            max_depth=self.max_depth,
+            error_handler=err,
+        ):
+            parent = parent_by_loc.pop(top)
+            for created in self._create_resources(
+                parent=parent,
+                top=top,
+                dirs=dirs,
+                files=files,
+            ):
+                # on the plain, bare FS, files cannot be parents
+                if not created.is_file:
+                    parent_by_loc[created.location] = created
+
+    def _create_resources(self, parent, top, dirs, files):
+        """
+        Create and yield ``files`` and ``dirs`` children Resources of a ``parent`` Resource.
+        """
+        for names, is_file in [(dirs, False), (files, True)]:
+            names.sort(key=lambda p: (p.lower(), p))
+            for name in names:
+                location = join(top, name)
+                if skip_ignored(location):
+                    continue
+                res = self._create_resource(
+                    name=name,
+                    parent=parent,
+                    is_file=is_file,
+                )
+                if TRACE: logger_debug('Codebase.create_resources:', res)
+                yield res
 
     def _create_root_resource(self):
         """
@@ -486,6 +512,9 @@ class Codebase(object):
                 full_root=self.full_root,
                 strip_root=self.strip_root,
             )
+
+        path = clean_path(path)
+
         if TRACE:
             logger_debug('  Codebase._create_root_resource:', path)
             logger_debug()
@@ -494,63 +523,65 @@ class Codebase(object):
             name=name,
             location=location,
             path=path,
-            rid=0,
-            pid=None,
+            is_root=True,
             is_file=self.is_file,
         )
 
-        self.resource_ids.add(0)
-        self.resources[0] = root
+        self.resources_by_path[path] = root
+        self.resources_count += 1
         self.root = root
         return root
 
-    def _create_resource(self, name, parent, is_file=False, path=None, resource_data=None):
+    def _create_resource(
+        self,
+        name,
+        parent,
+        is_file=False,
+        path=None,
+        resource_data=None,
+    ):
         """
-        Create and return a new Resource in this codebase with `name` as a child
-        of the `parent` Resource.
-        `name` is always in native OS-preferred encoding (e.g. byte on Linux,
-        unicode elsewhere).
+        Create and return a new codebase Resource with ``path`` and ``location``.
         """
         if parent is None:
             raise TypeError('Cannot create resource without parent.')
 
-        rid = self._get_next_rid()
+        # If the codebase is virtual, we provide the path
+        if not path:
+            path = posixpath.join(parent.path, name)
 
-        if self._use_disk_cache_for_resource(rid):
-            cache_location = self._get_resource_cache_location(rid, create=True)
+        path = clean_path(path)
+
+        if self._use_disk_cache_for_resource():
+            cache_location = self._get_resource_cache_location(path=path, create_dirs=True)
         else:
             cache_location = None
 
-        # If the codebase is virtual, then there is no location
+        # NOTE: If the codebase is virtual, then there is no location
         parent_location = parent.location
         if parent_location:
             location = join(parent_location, name)
         else:
             location = None
 
-        # If the codebase is virtual, we provide the path
-        if not path:
-            path = posixpath.join(parent.path, name)
-
         if TRACE:
-            logger_debug('  Codebase._create_resource: parent.path:', parent.path, 'path:', path)
+            logger_debug('  Codebase._create_resource: path:', path)
 
         resource_data = resource_data or {}
         if resource_data:
             resource_data = remove_properties_and_basics(resource_data)
+
         child = self.resource_class(
             name=name,
             location=location,
             path=path,
             cache_location=cache_location,
-            rid=rid,
-            pid=parent.rid,
             is_file=is_file,
             **resource_data
         )
+        self.resources_count += 1
 
-        self.resource_ids.add(rid)
-        parent.children_rids.append(rid)
+        parent.children_names.append(name)
         # TODO: fixme, this is not great to save also the parent :|
         self.save_resource(parent)
         self.save_resource(child)
@@ -591,86 +622,93 @@ class Codebase(object):
 
     def exists(self, resource):
         """
-        Return True if the Resource with `rid` exists in the codebase.
+        Return True if the Resource path exists in the codebase.
         """
-        return resource.rid in self.resource_ids
+        return resource.path in self.resources_by_path
 
-    def _use_disk_cache_for_resource(self, rid):
+    def _use_disk_cache_for_resource(self):
         """
-        Return True if Resource `rid` should be cached on-disk or False if it
-        should be cached in-memory.
+        Return True if Resource ``res`` should be cached on-disk or False if it
+        should be kept in-memory.
         """
         if TRACE:
-            msg = ['    Codebase._use_disk_cache_for_resource:, rid:', rid, 'mode:']
-            if rid == 0:
-                msg.append('root')
-            elif rid is  None:
-                msg.append('from memory')
-            elif self.all_on_disk:
-                msg.append('all_on_disk')
-            elif self.all_in_memory:
-                msg.append('all_in_memory')
-            else:
-                msg.extend(['mixed:', 'self.max_in_memory:', self.max_in_memory])
-                if rid and rid < self.max_in_memory:
-                    msg.append('from memory')
-                else:
-                    msg.append('from disk')
-            logger_debug(*msg)
+            msg = ['    Codebase._use_disk_cache_for_resource mode:']
 
-        if rid == 0:
-            return False
-        elif rid is  None:
-            return False
-        elif self.all_on_disk:
-            return True
+        use_disk_cache = False
+        if self.all_on_disk:
+            if TRACE: msg.append('all_on_disk')
+            use_disk_cache = True
         elif self.all_in_memory:
-            return False
-        # mixed case where some are in memory and some on disk
-        elif  rid < self.max_in_memory:
-            return False
+            use_disk_cache = False
+            if TRACE: msg.append('all_in_memory')
         else:
-            return True
-
-    def _exists_in_memory(self, rid):
-        """
-        Return True if Resource `rid` exists in the codebase memory cache.
-        """
-        return rid in self.resources
-
-    def _exists_on_disk(self, rid):
-        """
-        Return True if Resource `rid` exists in the codebase disk cache.
-        """
-        cache_location = self._get_resource_cache_location(rid)
-        if cache_location:
-            return exists(cache_location)
-
-    def get_resource(self, rid):
-        """
-        Return the Resource with `rid` or None if it does not exists.
-        """
-        if TRACE:
-            msg = ['  Codebase.get_resource:', 'rid:', rid]
-            if rid == 0:
-                msg.append('root')
-            elif not rid or rid not in self.resource_ids:
-                msg.append('not in resources!')
-            elif self._use_disk_cache_for_resource(rid):
-                msg.extend(['from disk', 'exists:', self._exists_on_disk(rid)])
+            # mixed case where some are in memory and some on disk
+            if TRACE: msg.extend(['mixed:', 'self.max_in_memory:', self.max_in_memory])
+            if self.resources_count < self.max_in_memory:
+                use_disk_cache = False
+                if TRACE: msg.append('from memory')
             else:
-                msg.extend(['from memory', 'exists:', self._exists_in_memory(rid)])
+                use_disk_cache = True
+                if TRACE: msg.append('from disk')
+
+        if TRACE: logger_debug(*msg)
+
+        return use_disk_cache
+
+    def _exists_in_memory(self, path):
+        """
+        Return True if Resource `path` exists in the codebase memory cache.
+        """
+        path = clean_path(path)
+        return isinstance(self.resources_by_path.get(path), Resource)
+
+    def _exists_on_disk(self, path):
+        """
+        Return True if Resource `path` exists in the codebase disk cache.
+        """
+        path = clean_path(path)
+        if not self._exists_in_memory(path):
+            cache_location = self._get_resource_cache_location(path, create_dirs=False)
+            if cache_location:
+                return exists(cache_location)
+
+    ########### FIXME: the PATH SHOULD NOT INCLUDE THE ROOT NAME
+    def get_resource(self, path):
+        """
+        Return the Resource with `path` or None if it does not exists.
+        The ``path`` must be relative to the root (and including the root
+        name as its first segment).
+        """
+        assert path and isinstance(path, str), f'Invalid path: {path!r} is not a string.'
+        path = clean_path(path)
+        if TRACE:
+            msg = ['  Codebase.get_resource:', 'path:', path]
+            if not path or path not in self.resources_by_path:
+                msg.append('not in resources!')
+            else:
+                msg.extend(['exists on disk:', self._exists_on_disk(path)])
+                msg.extend(['exists in memo:', self._exists_in_memory(path)])
             logger_debug(*msg)
 
-        if rid == 0:
-            res = attr.evolve(self.root)
-        elif self._use_disk_cache_for_resource(rid):
-            res = self._load_resource(rid)
-        elif not rid or rid not in self.resource_ids:
-            res = None
-        else:
-            res = self.resources.get(rid)
+        # NOTE: we keep leading slash if any: a full root codebase has full paths
+        path = posixpath.normpath(path.replace('\\', '/').rstrip('/'))
+
+        # we use 1 as a semaphore more non-existing resource
+        # to differentiate from None that means present but cached on disk
+        res = self.resources_by_path.get(path)
+
+        # None means the Resource is cached on disk.
+        if res is Codebase.CACHED_RESOURCE:
+            # we need to load from disk instead
+            res = self._load_resource(path)
+
+        if isinstance(res, Resource):
             res = attr.evolve(res)
+        elif res is None:
+            pass
+        else:
+            raise Exception(f'get_resource: Internal error when getting {path!r}')
+
         if TRACE:
             logger_debug('    Resource:', res)
         return res
@@ -679,34 +717,23 @@ class Codebase(object):
         """
         Save the `resource` Resource to cache (in memory or disk).
         """
-        if TRACE:
-            msg = ['  Codebase.save_resource:', resource]
-            rid = resource.rid
-            if resource.is_root:
-                msg.append('root')
-            elif rid not in self.resource_ids:
-                msg.append('missing resource')
-            elif self._use_disk_cache_for_resource(rid):
-                msg.extend(['to disk:', 'exists:', self._exists_on_disk(rid)])
-            else:
-                msg.extend(['to memory:', 'exists:', self._exists_in_memory(rid)])
-            logger_debug(*msg)
-
         if not resource:
             return
 
-        rid = resource.rid
-        if rid not in self.resource_ids:
-            raise UnknownResource('Not part of codebase: %(resource)r' % locals())
+        path = clean_path(resource.path)
+
+        if TRACE:
+            logger_debug('  Codebase.save_resource:', resource)
 
         if resource.is_root:
             # this can possibly damage things badly
             self.root = resource
 
-        if self._use_disk_cache_for_resource(rid):
+        elif resource.cache_location:
             self._dump_resource(resource)
+            self.resources_by_path[path] = Codebase.CACHED_RESOURCE
         else:
-            self.resources[rid] = resource
+            self.resources_by_path[path] = resource
 
     def _dump_resource(self, resource):
         """
@@ -725,11 +752,12 @@ class Codebase(object):
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
-    def _load_resource(self, rid):
+    def _load_resource(self, path):
         """
-        Return a Resource with `rid` loaded from the disk cache.
+        Return a Resource with ``path`` loaded from the disk cache.
         """
-        cache_location = self._get_resource_cache_location(rid, create=False)
+        path = clean_path(path)
+        cache_location = self._get_resource_cache_location(path, create_dirs=False)
 
         if TRACE:
             logger_debug(
@@ -738,7 +766,8 @@ class Codebase(object):
 
         if not exists(cache_location):
             raise ResourceNotInCache(
-                'Failed to load Resource: %(rid)d from %(cache_location)r' % locals())
+                f'Failed to load Resource: {path} from {cache_location!r}'
+            )
 
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
@@ -760,74 +789,71 @@ class Codebase(object):
 
     def _remove_resource(self, resource):
         """
-        Remove the `resource` Resource object from the resource tree.
+        Remove the ``resource`` Resource object from this codebase.
         Does not remove children.
         """
         if resource.is_root:
-            raise TypeError(
-                'Cannot remove the root resource from '
-                'codebase: ' + repr(resource))
-        rid = resource.rid
-        # remove from index.
-        self.resource_ids.discard(rid)
+            raise TypeError(f'Cannot remove the root resource from codebase: {resource!r}')
+
         # remove from in-memory cache. The disk cache is cleared on exit.
-        self.resources.pop(rid, None)
+        self.resources_by_path.pop(resource.path, None)
         if TRACE:
             logger_debug('Codebase._remove_resource:', resource)
 
     def remove_resource(self, resource):
         """
         Remove the `resource` Resource object and all its children from the
-        resource tree. Return a set of removed Resource ids.
+        codebase. Return a set of removed Resource paths.
         """
         if TRACE:
             logger_debug('Codebase.remove_resource')
             logger_debug('  resource', resource)
 
         if resource.is_root:
-            raise TypeError(
-                'Cannot remove the root resource from codebase:' + repr(resource))
+            raise TypeError(f'Cannot remove the root resource from codebase: {resource!r}')
 
-        removed_rids = set()
+        removed_paths = set()
 
         # remove all descendants bottom up to avoid out-of-order access to
         # removed resources
         for descendant in resource.walk(self, topdown=False):
             self._remove_resource(descendant)
-            removed_rids.add(descendant.rid)
+            removed_paths.add(descendant.location)
 
         # remove resource from parent
         parent = resource.parent(self)
         if TRACE: logger_debug('    parent', parent)
-        parent.children_rids.remove(resource.rid)
+        parent.children_names.remove(resource.name)
         parent.save(self)
 
         # remove resource proper
         self._remove_resource(resource)
-        removed_rids.add(resource.rid)
+        removed_paths.add(resource.location)
 
-        return removed_rids
+        return removed_paths
 
     def walk(self, topdown=True, skip_root=False, ignored=ignore_nothing):
         """
-        Yield all resources for this Codebase walking its resource tree.
-        Walk the tree top-down, depth-first if `topdown` is True, otherwise walk
+        Yield all resources for this Codebase walking its resource tree. Walk
+        the tree top-down, depth-first if ``topdown`` is True, otherwise walk
         bottom-up.
 
-        Each level is sorted by children sort order (e.g. without-children, then
-        with-children and each group by case-insensitive name)
+        Each level is sorted by children woth this sort order: resource without-
+        children first, then resource with-children and each group sorted by
+        case-insensitive name.
 
-        If `skip_root` is True, the root resource is not returned unless this is
-        a codebase with a single resource.
+        If ``skip_root`` is True, the root resource is not returned unless this
+        is a codebase with a single resource.
 
-        `ignored` is a callable that accepts two arguments, `resource` and `codebase`,
-        and returns True if `resource` should be ignored.
+        ``ignored`` is a callable that accepts two arguments, ``resource`` and
+        ``codebase``, and returns True if ``resource`` should be ignored.
         """
         root = self.root
 
-        if ignored(root, self):
+        if ignored(resource=root, codebase=self):
             return
 
+        # make a copy
         root = attr.evolve(root)
 
         # include root if no children (e.g. codebase with a single resource)
@@ -844,26 +870,15 @@ class Codebase(object):
         if not topdown and not skip_root:
             yield root
 
-    def get_resource_from_path(self, path, absolute=False):
-        """
-        Return a Resource that matches the path or or None. If `absolute` is
-        True, treat the path as an absolute location. Otherwise as relative to
-        the root (and including it).
-        """
-        for res in self.walk():
-            if absolute:
-                if path == res.location:
-                    return res
-            else:
-                if path == res.path:
-                    return res
+    def __iter__(self):
+        yield from self.walk()
 
     def walk_filtered(self, topdown=True, skip_root=False):
         """
         Walk this Codebase as with walk() but does not return Resources with
         `is_filtered` flag set to True.
         """
-        for resource in self.walk(topdown, skip_root):
+        for resource in self.walk(topdown=topdown, skip_root=skip_root):
             if resource.is_filtered:
                 continue
             yield resource
@@ -930,15 +945,17 @@ class Codebase(object):
         """
         if self.has_single_resource:
             return self.root
+
         for res in self.walk(topdown=True):
             if not res.is_file:
                 kids = res.children(self)
                 if len(kids) == 1 and not kids[0].is_file:
-                    # this is an empty dir with a single dir child
+                    # this is an empty dir with a single dir child, therefore
                     # we shall continue the descent walk
                     continue
                 else:
-                    # the dir starts to branch: we have our root
+                    # the dir starts to branch: we have our lowest common parent
+                    # root
                     break
             else:
                 # we are in a case that should never happen
@@ -956,7 +973,7 @@ def to_decoded_posix_path(path):
 @attr.attributes(slots=True)
 class Resource(object):
     """
-    A resource represent a file or directory with essential "file information"
+    A resource represents a file or directory with essential "file information"
     and the scanned data details.
 
     A Resource is a tree that models the fileystem tree structure.
@@ -964,10 +981,11 @@ class Resource(object):
     In order to support lightweight and smaller objects that can be serialized
     and deserialized (such as pickled in multiprocessing) without pulling in a
     whole object tree, a Resource does not store its related objects directly:
-    the Codebase it belongs to, its parent Resource and its Resource children
-    objects are stored only as integer ids. Querying the Resource relationships
-    and walking the Resources tree requires to lookup the corresponding object
-    by id in the codebase object.
+    - the Codebase it belongs to is never stored.
+    - its parent Resource and its Resource children objects are queryable by path.
+
+    Querying the Resource relationships and walking the Resources tree typically
+    requires to lookup the corresponding object by path in the Codebase object.
     """
     # the file or directory name in the OS preferred representation (either
     # bytes on Linux and Unicode elsewhere)
@@ -988,14 +1006,6 @@ class Resource(object):
     #   path
     path = attr.attrib(converter=to_decoded_posix_path)
 
-    # resource id as an integer
-    # the root of a Resource tree has a pid==0 by convention
-    rid = attr.ib()
-
-    # parent resource id of this resource as an integer
-    # the root of a Resource tree has a pid==None by convention
-    pid = attr.ib()
-
     # location of the file where this resource can be chached on disk in the OS
     # preferred representation (either bytes on Linux and Unicode elsewhere)
     cache_location = attr.attrib(default=None, repr=False)
@@ -1007,8 +1017,8 @@ class Resource(object):
     # returned list of resources
     is_filtered = attr.ib(default=False)
 
-    # a list of rids
-    children_rids = attr.ib(default=attr.Factory(list), repr=TRACE)
+    # a list of names
+    children_names = attr.ib(default=attr.Factory(list), repr=TRACE)
 
     # external data to serialize
     size = attr.ib(default=0, type=int, repr=TRACE)
@@ -1028,18 +1038,15 @@ class Resource(object):
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
     scan_timings = attr.ib(default=attr.Factory(dict), repr=False)
 
-    # stores a mapping of extra data for this Resource this data is
-    # never returned in a to_dict() and not meant to be saved in the
-    # final scan results. Instead it can be used to store extra data
-    # attributes that may be useful during a scan processing but are not
-    # usefuol afterwards. Be careful when using this not to override
-    # keys/valoues that may have been created by some other plugin or
-    # process
+    # stores a mapping of extra data for this Resource this data is never
+    # returned in a to_dict() and not meant to be saved in the final scan
+    # results. Instead it can be used to store extra data attributes that may be
+    # useful during a scan processing but are not usefuol afterwards. Be careful
+    # not to override keys/values that may have been created by some other
+    # plugin or process
     extra_data = attr.ib(default=attr.Factory(dict), repr=False)
 
-    @property
-    def is_root(self):
-        return self.rid == 0
+    is_root = attr.ib(default=False, type=bool, repr=False)
 
     @property
     def type(self):
@@ -1054,9 +1061,10 @@ class Resource(object):
 
     def get_path(self, strip_root=False):
         if strip_root:
-            return strip_first_path_segment(self.path)
+            path = strip_first_path_segment(self.path)
         else:
-            return self.path
+            path = self.path
+        return clean_path(path)
 
     @property
     def is_dir(self):
@@ -1099,12 +1107,12 @@ class Resource(object):
                 return c
 
     @classmethod
-    def get(cls, codebase, rid):
+    def get(cls, codebase, path):
         """
-        Return the Resource with `rid` in `codebase` or None if it does not
+        Return the Resource with `path` in `codebase` or None if it does not
         exists.
         """
-        return codebase.get_resource(rid)
+        return codebase.get_resource(path)
 
     def save(self, codebase):
         """
@@ -1115,7 +1123,7 @@ class Resource(object):
     def remove(self, codebase):
         """
         Remove this resource and all its children from the codebase.
-        Return a set of removed Resource ids.
+        Return a set of removed Resource paths.
         """
         return codebase.remove_resource(self)
 
@@ -1125,7 +1133,7 @@ class Resource(object):
         with `name`. `name` is always in native OS-preferred encoding (e.g. byte
         on Linux, unicode elsewhere).
         """
-        return codebase._create_resource(name, self, is_file)
+        return codebase._create_resource(name=name, parent=self, is_file=is_file)
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
         """
@@ -1181,9 +1189,15 @@ class Resource(object):
                 child = attr.evolve(child)
                 if topdown:
                     yield child
-                for subchild in child.walk(codebase, topdown=topdown, ignored=ignored):
+
+                for subchild in child.walk(
+                    codebase=codebase,
+                    topdown=topdown,
+                    ignored=ignored,
+                ):
                     if not ignored(subchild, codebase):
                         yield subchild
+
                 if not topdown:
                     yield child
 
@@ -1191,7 +1205,7 @@ class Resource(object):
         """
         Return True is this Resource has children.
         """
-        return bool(self.children_rids)
+        return bool(self.children_names)
 
     def children(self, codebase):
         """
@@ -1200,9 +1214,20 @@ class Resource(object):
         Sorting is by resources without children, then resource with children
         (e.g. directories or files with children), then case-insentive name.
         """
+        if not self.children_names:
+            return []
+
         _sorter = lambda r: (r.has_children(), r.name.lower(), r.name)
+
+        parent_path = self.path
+        children_paths = [posixpath.join(parent_path, name) for name in self.children_names]
+
         get_resource = codebase.get_resource
-        return sorted((get_resource(rid) for rid in self.children_rids), key=_sorter)
+        children = [get_resource(cpath) for cpath in children_paths]
+        try:
+            return sorted(children, key=_sorter)
+        except Exception as e:
+            raise Exception(f'Cannot sort children: {children!r}:\n{children_paths!r}') from e
 
     def has_parent(self):
         """
@@ -1210,11 +1235,17 @@ class Resource(object):
         """
         return not self.is_root
 
+    def parent_path(self):
+        """
+        Return the parent path of this Resource or None.
+        """
+        return self.has_parent and parent_directory(self.path)
+
     def parent(self, codebase):
         """
         Return the parent Resource object for this Resource or None.
         """
-        return codebase.get_resource(self.pid)
+        return codebase.get_resource(self.parent_path())
 
     def has_siblings(self, codebase):
         """
@@ -1233,7 +1264,7 @@ class Resource(object):
 
     def ancestors(self, codebase):
         """
-        Return a sequence of ancestor Resource objects from self to root
+        Return a sequence of ancestor Resource objects from root to self
         (includes self).
         """
         if self.is_root:
@@ -1241,12 +1272,11 @@ class Resource(object):
 
         ancestors = deque()
         ancestors_appendleft = ancestors.appendleft
-        codebase_get_resource = codebase.get_resource
         current = self
         # walk up the parent tree up to the root
         while not current.is_root:
             ancestors_appendleft(current)
-            current = codebase_get_resource(current.pid)
+            current = current.parent(codebase)
         # append root too
         ancestors_appendleft(current)
         return list(ancestors)
@@ -1256,7 +1286,7 @@ class Resource(object):
         Return a sequence of descendant Resource objects
         (does NOT include self).
         """
-        return list(self.walk(codebase, topdown=True))
+        return list(self.walk(codebase=codebase, topdown=True))
 
     def distance(self, codebase):
         """
@@ -1329,9 +1359,21 @@ class Resource(object):
         return saveable
 
 
+def clean_path(path):
+    """
+    Return a cleaned and normalized POSIX ``path``.
+    """
+    path = path or ''
+    # convert to posix and ensure we have no slash at both ends
+    path = posixpath.normpath(path.replace('\\', '/').strip('/'))
+    if path == '.':
+        path = ''
+    return path
+
+
 def get_path(root_location, location, full_root=False, strip_root=False):
     """
-    Return a unicode srting POSIX path (using "/"  separators) derived from
+    Return a unicode string POSIX path (using "/"  separators) derived from
     `root_location` of the codebase and the `location` of a resource. Both
     locations are absolute native locations.
 
@@ -1440,13 +1482,19 @@ class VirtualCodebase(Codebase):
         'has_single_resource',
     )
 
-    def __init__(self, location,
-                 resource_attributes=None,
-                 codebase_attributes=None,
-                 full_root=False, strip_root=False,
-                 temp_dir=temp_dir,
-                 max_in_memory=10000,
-                 *args, **kwargs):
+    def __init__(
+        self,
+        location,
+        resource_attributes=None,
+        codebase_attributes=None,
+        full_root=False,
+        strip_root=False,
+        temp_dir=temp_dir,
+        max_in_memory=10000,
+        paths=tuple(),
+        *args,
+        **kwargs,
+    ):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
@@ -1463,6 +1511,7 @@ class VirtualCodebase(Codebase):
         self.location = location
 
         scan_data = self._get_scan_data(location)
+        self.paths = self._clean_paths(paths)
         self._populate(scan_data)
 
     def _get_scan_data_helper(self, location):
@@ -1485,74 +1534,89 @@ class VirtualCodebase(Codebase):
         - a path string
         - a JSON string
         - a Python mapping
-
-        or `location` is a List or a Tuple that contains multiple paths to scans that are to be joined together.
+        - or `location` is a List or a Tuple that contains multiple paths to scans
+          that are to be joined together.
         """
         if isinstance(location, dict):
             return location
-        if isinstance(location, (list, tuple,)):
-            combined_scan_data = dict(headers=[], files=[])
-            for loc in location:
-                scan_data = self._get_scan_data_helper(loc)
-                headers = scan_data.get('headers')
-                if headers:
-                    combined_scan_data['headers'].extend(headers)
-                files = scan_data.get('files')
-                if files:
-                    combined_scan_data['files'].extend(files)
-                else:
-                    raise Exception('Input file does not have Resources to import: {}'.format(loc))
-            combined_scan_data['headers'] = sorted(combined_scan_data['headers'], key=lambda x: x['start_timestamp'])
-            return combined_scan_data
-        return self._get_scan_data_helper(location)
+
+        if not isinstance(location, (list, tuple,)):
+            return self._get_scan_data_helper(location)
+
+        combined_scan_data = dict(headers=[], files=[])
+        for loc in location:
+            scan_data = self._get_scan_data_helper(loc)
+            headers = scan_data.get('headers')
+            if headers:
+                combined_scan_data['headers'].extend(headers)
+            files = scan_data.get('files')
+            if files:
+                combined_scan_data['files'].extend(files)
+            else:
+                raise Exception(f'Input file does not have Resources to import: {loc}')
+
+        combined_scan_data['headers'] = sorted(
+            combined_scan_data['headers'],
+            key=lambda x: x['start_timestamp'],
+        )
+        return combined_scan_data
 
     def _create_empty_resource_data(self):
         """
         Return a dictionary of Resource fields and their default values.
 
-        The fields returned are that which are not part of the standard set of Resource attributes.
+        The fields returned are that which are not part of the standard set of
+        Resource attributes.
         """
         # Get fields from the base Resource class and the ScannedResource class
         base_fields = attr.fields(Resource)
         resource_fields = attr.fields(self.resource_class)
-        # Create dict of {field: field_default_value} for the dynamically created fields
-        resource_data = dict()
+
+        # A mapping of {field: field_default_value} for the dynamically created fields
+        resource_data = {}
+
         for field in resource_fields:
             if field in base_fields:
                 # We only want the fields that are not part of the base set of fields
                 continue
+
             value = field.default
             if isinstance(value, attr.Factory):
-                # For fields that have Factories as values, we set their values to be an
-                # instance of whatever type the factory makes
+                # For fields that have Factories as values, we set their values
+                # to be an instance of whatever type the factory makes
                 value = value.factory()
             resource_data[field.name] = value
         return resource_data
 
     def _get_or_create_parent(self, path, parent_by_path):
         """
-        Return a parent resource for a given `path` from `parent_by_path`.
+        Return a parent resource for a given ``path`` from ``parent_by_path``.
 
-        If a parent resource for a `path` does not exist in `parent_by_path`, it
-        is created recursively.
+        If a parent resource for a ``path`` does not exist in
+        ``parent_by_path``, it is created recursively.
 
         Note: the root path and root Resource must already be in
-        `parent_by_path` or else this function does not work.
+        ``parent_by_path`` or else this function does not work.
         """
-        parent_path = parent_directory(path).rstrip('/').rstrip('\\').lstrip('/')
+        parent_path = clean_path(parent_directory(path))
         existing_parent = parent_by_path.get(parent_path)
         if existing_parent:
             return existing_parent
-        parent_parent = self._get_or_create_parent(parent_path, parent_by_path)
+
+        parent_parent = self._get_or_create_parent(
+            path=parent_path,
+            parent_by_path=parent_by_path,
+        )
         parent_name = file_base_name(parent_path)
         parent_is_file = False
         parent_resource_data = self._create_empty_resource_data()
+
         parent_resource = self._create_resource(
-            parent_name,
-            parent_parent,
-            parent_is_file,
-            parent_path,
-            parent_resource_data,
+            name=parent_name,
+            parent=parent_parent,
+            is_file=parent_is_file,
+            path=parent_path,
+            resource_data=parent_resource_data,
         )
         parent_by_path[parent_path] = parent_resource
         return parent_resource
@@ -1561,18 +1625,19 @@ class VirtualCodebase(Codebase):
         for resource_data in resources_data:
             resource_path = Path(resource_data['path'])
             new_resource_path = Path(new_root_directory_path)
-            new_resource_path = new_resource_path.joinpath(resource_path)
-            resource_data['path'] = str(new_resource_path)
+            new_resource_path = new_resource_path / resource_path
+            resource_data['path'] = clean_path(str(new_resource_path))
 
     def _populate(self, scan_data):
         """
-        Populate this codebase with Resource objects.
-        The actual class of Resource objects will be created as a side effect.
+        Populate this codebase with Resource objects. The actual subclass of
+        Resource objects used in this codebase will be created as a side effect.
 
         Population is done by loading JSON scan results and creating new
-        Resources for each result.
+        Resources for each files mappings.
 
-        This assumes that the input JSON scan results are in top-down order.
+        FIXME: This assumes that the input JSON scan results are in top-down
+        sorted order.
         """
         # Collect headers
         ##########################################################
@@ -1607,7 +1672,8 @@ class VirtualCodebase(Codebase):
         if not resources_data:
             raise Exception('Input has no file-level scan results.')
 
-        # We iterate through all the Resource(s) so that we can build attributes each resource contains
+        # We iterate through all the Resource(s) so that we can build attributes
+        # each resource contains
 
         sample_resource_data = dict()
 
@@ -1623,6 +1689,7 @@ class VirtualCodebase(Codebase):
         # We collect attributes that are not in standard_res_attributes already
         # FIXME: we should not have to infer the schema may be?
         all_res_attributes = build_attributes_defs(sample_resource_data, standard_res_attributes)
+
         # We add the attributes that we collected from the plugins. They come
         # last for now.
         for name, plugin_attribute in self.resource_attributes.items():
@@ -1634,7 +1701,6 @@ class VirtualCodebase(Codebase):
             name='ScannedResource',
             attrs=all_res_attributes or dict(),
             slots=True,
-            # frozen=True,
             bases=(Resource,))
 
         # do we have file information attributes in this codebase data?
@@ -1650,8 +1716,9 @@ class VirtualCodebase(Codebase):
 
         # Create Resources from scan info
         ##########################################################
-        # Create root resource without setting root data just yet. If we run into the root data
-        # while we iterate through `resources_data`, we fill in the data then.
+        # Create root resource without setting root data just yet. If we run
+        # into the root data while we iterate through `resources_data`, we fill
+        # in the data then.
 
         # Create a virtual root if we are merging multiple scans together
         multiple_input = isinstance(self.location, (list, tuple,)) and len(self.location) > 1
@@ -1667,6 +1734,7 @@ class VirtualCodebase(Codebase):
                 resource_path = resource_data.get('path')
                 resource_path = resource_path.strip('/')
                 resource_root_path = resource_path.split('/')[0]
+
                 # If not, set a common root directory for all Resources.
                 if resource_root_path != root_path:
                     self._set_new_root_directory(
@@ -1691,12 +1759,13 @@ class VirtualCodebase(Codebase):
         parent_by_path = {root_path: root_resource}
 
         for resource_data in resources_data:
-            path = resource_data.get('path')
-            # Append virtual_root path to imported Resource path if we are merging multiple scans
+            path = clean_path(resource_data.get('path'))
+            # Append virtual_root path to imported Resource path if we are
+            # merging multiple scans
             if multiple_input:
                 path = posixpath.join(root_path, path)
 
-            name = resource_data.get('name', None)
+            name = resource_data.get('name') or None
             if not name:
                 name = file_name(path)
 
@@ -1704,7 +1773,7 @@ class VirtualCodebase(Codebase):
 
             existing_parent = parent_by_path.get(path)
             if existing_parent:
-                # We update the empty parent Resouorce we in
+                # We update the empty parent Resource we in
                 # _get_or_create_parent() with the data from the scan
                 for k, v in resource_data.items():
                     setattr(existing_parent, k, v)
@@ -1734,20 +1803,23 @@ class VirtualCodebase(Codebase):
         # we cannot recreate a root if it exists!!
         if self.root:
             raise TypeError('Root resource already exists and cannot be recreated')
+
+        path = clean_path(path)
+
         if root_data:
             root_data = remove_properties_and_basics(root_data)
+
         root = self.resource_class(
             name=name,
             location=None,
             path=path,
-            rid=0,
-            pid=None,
+            is_root=True,
             is_file=is_file,
             **root_data,
         )
 
-        self.resource_ids.add(0)
-        self.resources[0] = root
+        self.resources_by_path[path] = root
+        self.resources_count += 1
         self.root = root
         return root
 
@@ -1757,5 +1829,8 @@ def remove_properties_and_basics(resource_data):
     Given a mapping of resource_data attributes to use as "kwargs", return a new
     mapping with the known properties removed.
     """
-    return dict([(k, v) for k, v in resource_data.items()
-            if k not in ('type', 'base_name', 'extension', 'path', 'name')])
+    return {
+        k: v
+        for k, v in resource_data.items()
+        if k not in ('type', 'base_name', 'extension', 'path', 'name')
+    }
