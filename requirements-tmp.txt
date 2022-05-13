@@ -1,0 +1,1 @@
+git+https://github.com/nexB/commoncode@1a7244570ed2e21e10faf0b768f9d5efac627b3f#egg=commoncode

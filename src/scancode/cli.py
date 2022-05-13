@@ -15,7 +15,7 @@ import scancode_config
 
 import logging
 import os
-import platform 
+import platform
 import sys
 import traceback
 
@@ -852,7 +852,7 @@ def run_scan(
         cle.notice = notice
         cle.options = pretty_params or {}
         # useful for debugging
-        cle.extra_data['system_environment'] = system_environment= {}
+        cle.extra_data['system_environment'] = system_environment = {}
         system_environment['operating_system'] = commoncode.system.current_os
         system_environment['cpu_architecture'] = commoncode.system.current_arch
         system_environment['platform'] = platform.platform()
@@ -1186,16 +1186,13 @@ def scan_codebase(
     execution time (as a float in seconds). This is added to the `scan_timings`
     mapping of each Resource as {scanner.name: execution time}.
 
-    Provide optional progress feedback in the UI using the `progress_manager`
-    callable that accepts an iterable of tuple of (location, rid, scan_errors,
-    scan_result ) as argument.
+    Provide optional progress feedback in the UI using the ``progress_manager``
+    callable that accepts an iterable of tuple of (location, path, scan_errors,
+    scan_result) as argument.
     """
 
-    # FIXME: this path computation is super inefficient tuples of  (absolute
-    # location, resource id)
-
     # NOTE: we never scan directories
-    resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file)
+    resources = ((r.location, r.path) for r in codebase.walk() if r.is_file)
 
     use_threading = processes >= 0
     runner = partial(
@@ -1238,7 +1235,7 @@ def scan_codebase(
         while True:
             try:
                 (location,
-                 rid,
+                 path,
                  scan_errors,
                  scan_time,
                  scan_result,
@@ -1248,14 +1245,14 @@ def scan_codebase(
                     logger_debug(
                     'scan_codebase: location:', location, 'results:', scan_result)
 
-                resource = get_resource(rid)
+                resource = get_resource(path=path)
 
                 if not resource:
                     # this should never happen
                     msg = (
                         'ERROR: Internal error in scan_codebase: Resource '
-                        'at %(rid)r is missing from codebase.\n'
-                        'Scan result not saved:\n%(scan_result)r.' % locals()
+                        f'at {path!r} is missing from codebase.\n'
+                        f'Scan result not saved:\n{scan_result!r}.'
                     )
                     codebase.errors.append(msg)
                     success = False
@@ -1328,22 +1325,22 @@ def terminate_pool_with_backoff(pool, number_of_trials=3):
 
 
 def scan_resource(
-    location_rid,
+    location_path,
     scanners,
     timeout=DEFAULT_TIMEOUT,
     with_timing=False,
     with_threading=True,
 ):
     """
-    Return a tuple of:
-        (location, rid, scan_errors, scan_time, scan_results, timings)
-    by running the `scanners` Scanner objects for the file or directory resource
-    with id `rid` at `location` provided as a `location_rid` tuple of (location,
-    rid) for up to `timeout` seconds. If `with_threading` is False, threading is
-    disabled.
+    Given a ``location_path`` tuple pf (location, path), return a tuple of:
+        (location, path, scan_errors, scan_time, scan_results, timings)
+    by running the ``scanners`` Scanner objects for the file or directory
+    resource at ``location`` and ``path`` for up to ``timeout`` seconds. If
+    ``with_threading`` is False, threading is disabled. Include detailed timings
+    if ``with_timing`` is True.
 
     The returned tuple has these values:
-    - `location` and `rid` are the original arguments.
+    - `location` and `path` are the original arguments.
     - `scan_errors` is a list of error strings.
     - `scan_results` is a mapping of scan results from all scanners.
     - `scan_time` is the duration in seconds to run all scans for this resource.
@@ -1351,11 +1348,11 @@ def scan_resource(
       tracking the execution duration each each scan individually.
       `timings` is empty unless `with_timing` is True.
 
-    All these values MUST be serializable/pickable because of the way multi-
-    processing/threading works.
+    All these values MUST be serializable and pickable because of the way multi-
+    processing and threading works.
     """
     scan_time = time()
-    location, rid = location_rid
+    location, path = location_path
     results = {}
     scan_errors = []
     timings = {} if with_timing else None
@@ -1381,7 +1378,7 @@ def scan_resource(
             else:
                 deadline = sys.maxsize
 
-            runner = partial(scanner.function, location, rid=rid, deadline=deadline)
+            runner = partial(scanner.function, location, path=path, deadline=deadline)
             error, values_mapping = interruptor(runner, timeout=timeout)
             if error:
                 msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + error
@@ -1399,7 +1396,7 @@ def scan_resource(
 
     scan_time = time() - scan_time
 
-    return location, rid, scan_errors, scan_time, results, timings
+    return location, path, scan_errors, scan_time, results, timings
 
 
 def display_summary(codebase, scan_names, processes, errors, echo_func=echo_stderr):
