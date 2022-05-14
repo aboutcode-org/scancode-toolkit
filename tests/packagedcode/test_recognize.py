@@ -8,16 +8,14 @@
 #
 
 import os
-from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 
-import pytest
+from packagedcode import models
 from packagedcode.recognize import recognize_package_data
 
-from packagedcode import models
-
 # TODO: this needs to be updated to use either a full scan of to use parse and assemble
+
 
 class TestRecognize(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

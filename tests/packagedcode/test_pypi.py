@@ -16,8 +16,6 @@ from commoncode.system import on_windows
 
 from packagedcode import pypi
 from packages_test_utils import check_result_equals_expected_json
-from scancode.cli_test_utils import check_json_scan
-from scancode.cli_test_utils import run_scan_click
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import check_json_scan
