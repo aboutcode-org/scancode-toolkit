@@ -1207,27 +1207,41 @@ class Resource(object):
         """
         return bool(self.children_names)
 
-    def children(self, codebase):
+    def child(self, codebase, name):
         """
-        Return a sorted sequence of direct children Resource objects for this Resource
-        or an empty sequence.
+        return a direct child Resource with ``name`` for this Resource or None.
+        """
+        return codebase.get_resource(path=self.child_path(name))
+
+    def child_path(self, name):
+        """
+        Return the child path for ``name`` of this Resource or None.
+        """
+        return posixpath.join(self.path, name)
+
+    def children(self, codebase, names=()):
+        """
+        Return a sorted sequence of direct children Resource objects for this
+        Resource or an empty sequence.
+
         Sorting is by resources without children, then resource with children
         (e.g. directories or files with children), then case-insentive name.
         """
-        if not self.children_names:
+        children_names = self.children_names or []
+        if not children_names:
             return []
 
+        if names:
+            kids = set(children_names)
+            children_names = [n for n in names if n in kids]
+            if not children_names:
+                return []
+
+        get_child = self.child
+        children = [get_child(codebase, name) for name in children_names]
+
         _sorter = lambda r: (r.has_children(), r.name.lower(), r.name)
-
-        parent_path = self.path
-        children_paths = [posixpath.join(parent_path, name) for name in self.children_names]
-
-        get_resource = codebase.get_resource
-        children = [get_resource(cpath) for cpath in children_paths]
-        try:
-            return sorted(children, key=_sorter)
-        except Exception as e:
-            raise Exception(f'Cannot sort children: {children!r}:\n{children_paths!r}') from e
+        return sorted((c for c in children if c), key=_sorter)
 
     def has_parent(self):
         """
