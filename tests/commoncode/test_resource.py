@@ -1061,6 +1061,13 @@ class TestVirtualCodebase(FileBasedTesting):
         assert codebase.get_resource('apache_to_all_notable_lic_new') == codebase.root
         assert resources_fingerprint.count(None) == 2
 
+    def test_VirtualCodebase_works_with_mapping_backed_codebase(self):
+        test_file = self.get_test_loc("resource/virtual_codebase/license-scan.json")
+        codebase = VirtualCodebase(test_file)
+        resource = codebase.get_resource('scan-ref/license-notice.txt')
+        assert resource
+        assert len(resource.license_expressions) == 1
+
 
 class TestCodebaseLowestCommonParent(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
