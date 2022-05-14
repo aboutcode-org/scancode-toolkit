@@ -1553,27 +1553,24 @@ class VirtualCodebase(Codebase):
         """
         if isinstance(location, dict):
             return location
-
-        if not isinstance(location, (list, tuple,)):
-            return self._get_scan_data_helper(location)
-
-        combined_scan_data = dict(headers=[], files=[])
-        for loc in location:
-            scan_data = self._get_scan_data_helper(loc)
-            headers = scan_data.get('headers')
-            if headers:
-                combined_scan_data['headers'].extend(headers)
-            files = scan_data.get('files')
-            if files:
-                combined_scan_data['files'].extend(files)
-            else:
-                raise Exception(f'Input file does not have Resources to import: {loc}')
-
-        combined_scan_data['headers'] = sorted(
-            combined_scan_data['headers'],
-            key=lambda x: x['start_timestamp'],
-        )
-        return combined_scan_data
+        if isinstance(location, (list, tuple,)):
+            combined_scan_data = dict(headers=[], files=[])
+            for loc in location:
+                scan_data = self._get_scan_data_helper(loc)
+                headers = scan_data.get('headers')
+                if headers:
+                    combined_scan_data['headers'].extend(headers)
+                files = scan_data.get('files')
+                if files:
+                    combined_scan_data['files'].extend(files)
+                else:
+                    raise Exception(f'Input file does not have Resources to import: {loc}')
+            combined_scan_data['headers'] = sorted(
+                combined_scan_data['headers'],
+                key=lambda x: x['start_timestamp'],
+            )
+            return combined_scan_data
+        return self._get_scan_data_helper(location)
 
     def _create_empty_resource_data(self):
         """
@@ -1585,15 +1582,12 @@ class VirtualCodebase(Codebase):
         # Get fields from the base Resource class and the ScannedResource class
         base_fields = attr.fields(Resource)
         resource_fields = attr.fields(self.resource_class)
-
-        # A mapping of {field: field_default_value} for the dynamically created fields
+        # A dict of {field: field_default_value} for the dynamically created fields
         resource_data = {}
-
         for field in resource_fields:
             if field in base_fields:
                 # We only want the fields that are not part of the base set of fields
                 continue
-
             value = field.default
             if isinstance(value, attr.Factory):
                 # For fields that have Factories as values, we set their values
@@ -1616,15 +1610,10 @@ class VirtualCodebase(Codebase):
         existing_parent = parent_by_path.get(parent_path)
         if existing_parent:
             return existing_parent
-
-        parent_parent = self._get_or_create_parent(
-            path=parent_path,
-            parent_by_path=parent_by_path,
-        )
+        parent_parent = self._get_or_create_parent(parent_path, parent_by_path)
         parent_name = file_base_name(parent_path)
         parent_is_file = False
         parent_resource_data = self._create_empty_resource_data()
-
         parent_resource = self._create_resource(
             name=parent_name,
             parent=parent_parent,
@@ -1639,7 +1628,7 @@ class VirtualCodebase(Codebase):
         for resource_data in resources_data:
             resource_path = Path(resource_data['path'])
             new_resource_path = Path(new_root_directory_path)
-            new_resource_path = new_resource_path / resource_path
+            new_resource_path = new_resource_path.joinpath(resource_path)
             resource_data['path'] = clean_path(str(new_resource_path))
 
     def _populate(self, scan_data):
@@ -1703,7 +1692,6 @@ class VirtualCodebase(Codebase):
         # We collect attributes that are not in standard_res_attributes already
         # FIXME: we should not have to infer the schema may be?
         all_res_attributes = build_attributes_defs(sample_resource_data, standard_res_attributes)
-
         # We add the attributes that we collected from the plugins. They come
         # last for now.
         for name, plugin_attribute in self.resource_attributes.items():
@@ -1748,7 +1736,6 @@ class VirtualCodebase(Codebase):
                 resource_path = resource_data.get('path')
                 resource_path = resource_path.strip('/')
                 resource_root_path = resource_path.split('/')[0]
-
                 # If not, set a common root directory for all Resources.
                 if resource_root_path != root_path:
                     self._set_new_root_directory(
@@ -1817,12 +1804,9 @@ class VirtualCodebase(Codebase):
         # we cannot recreate a root if it exists!!
         if self.root:
             raise TypeError('Root resource already exists and cannot be recreated')
-
         path = clean_path(path)
-
         if root_data:
             root_data = remove_properties_and_basics(root_data)
-
         root = self.resource_class(
             name=name,
             location=None,
