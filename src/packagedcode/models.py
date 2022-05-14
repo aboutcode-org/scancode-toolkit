@@ -90,7 +90,9 @@ The key models defined here are:
   dependencies. When implementing a new package type and manifest file format,
   subclass DatafileHandler and implement the parse() and assemble() methods for
   this package datafile format and package type. Then register this class in
-  ``packagedcode.PACKAGE_DATAFILE_HANDLERS``.
+  ``packagedcode.APPLICATION_PACKAGE_DATAFILE_HANDLERS`` if this is an
+  application package or ``packagedcode.SYSTEM_PACKAGE_DATAFILE_HANDLERS`` if
+  this is a system package.
 
 
 Beyond these we have a few secondary models:
