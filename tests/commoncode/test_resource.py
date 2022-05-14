@@ -1333,6 +1333,20 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         ]
         assert results == expected
 
+    def test_VirtualCodebase_create_from_multiple_scans_shared_directory_names(self):
+        test_file_1 = self.get_test_loc('resource/virtual_codebase/combine-shared-directory-name-1.json')
+        test_file_2 = self.get_test_loc('resource/virtual_codebase/combine-shared-directory-name-2.json')
+        vinput = (test_file_1, test_file_2)
+        codebase = VirtualCodebase(vinput)
+        results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
+        expected = [
+            dict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/codebase'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/codebase/test1.c'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/codebase/test2.py'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
+        ]
+        assert results == expected
+
     def test_VirtualCodebase_scanning_full_root(self):
         test_file = self.get_test_loc("resource/virtual_codebase/path_full_root.json")
         codebase = VirtualCodebase(test_file)
