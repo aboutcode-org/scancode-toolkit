@@ -30,19 +30,20 @@ class TestCodebase(FileBasedTesting):
         results = list(codebase.walk())
         expected = [
             ('codebase', False),
-              ('abc', True),
-              ('et131x.h', True),
-              ('dir', False),
-                ('that', True),
-                ('this', True),
-              ('other dir', False),
-                ('file', True),
+            (  'abc', True),
+            (  'et131x.h', True),
+            (  'dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_Codebase_do_not_ignore_by_default_older_sccs_and_rcs_dirs(self):
         # See https://github.com/nexB/scancode-toolkit/issues/1422
         from commoncode.fileutils import create_dir
+
         test_codebase = self.get_temp_dir()
         create_dir(join(test_codebase, 'sccs', 'a'))
         create_dir(join(test_codebase, 'rcs', 'b'))
@@ -57,13 +58,13 @@ class TestCodebase(FileBasedTesting):
         results = list(codebase.walk(topdown=True))
         expected = [
             ('codebase', False),
-              ('abc', True),
-              ('et131x.h', True),
-              ('dir', False),
-                ('that', True),
-                ('this', True),
-              ('other dir', False),
-                ('file', True),
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -72,13 +73,13 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase)
         results = list(codebase.walk(topdown=False))
         expected = [
-              ('abc', True),
-              ('et131x.h', True),
-                ('that', True),
-                ('this', True),
-              ('dir', False),
-                ('file', True),
-              ('other dir', False),
+            ('abc', True),
+            ('et131x.h', True),
+            ('that', True),
+            ('this', True),
+            ('dir', False),
+            ('file', True),
+            ('other dir', False),
             ('codebase', False),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
@@ -91,10 +92,10 @@ class TestCodebase(FileBasedTesting):
             ('abc', True),
             ('et131x.h', True),
             ('dir', False),
-              ('that', True),
-              ('this', True),
+            ('that', True),
+            ('this', True),
             ('other dir', False),
-              ('file', True),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -204,11 +205,11 @@ class TestCodebase(FileBasedTesting):
 
         results = list(codebase.walk_filtered(topdown=True))
         expected = [
-              ('abc', True),
-              ('et131x.h', True),
-                ('that', True),
-                ('this', True),
-                ('file', True),
+            ('abc', True),
+            ('et131x.h', True),
+            ('that', True),
+            ('this', True),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -243,18 +244,14 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
         results = list(codebase.walk(skip_root=True))
-        expected = [
-            ('et131x.h', True)
-        ]
+        expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_walk_filtered_with_skip_root_and_single_file_not_filtered(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
         results = list(codebase.walk_filtered(skip_root=True))
-        expected = [
-            ('et131x.h', True)
-        ]
+        expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_walk_filtered__with_skip_root_and_filtered_single_file(self):
@@ -263,8 +260,7 @@ class TestCodebase(FileBasedTesting):
         codebase.root.is_filtered = True
         codebase.save_resource(codebase.root)
         results = list(codebase.walk_filtered(skip_root=True))
-        expected = [
-        ]
+        expected = []
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_walk_skip_root_single_file_with_children(self):
@@ -274,9 +270,7 @@ class TestCodebase(FileBasedTesting):
         c1 = codebase._create_resource('some child', parent=codebase.root, is_file=True)
         _c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(codebase.walk(skip_root=True))
-        expected = [
-            ('some child', True), ('some child2', False)
-        ]
+        expected = [('some child', True), ('some child2', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_walk_filtered_with_skip_root_and_single_file_with_children(self):
@@ -303,9 +297,7 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase, strip_root=True)
 
         results = list(codebase.walk(skip_root=True))
-        expected = [
-            ('walk', False)
-        ]
+        expected = [('walk', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_walk_skipped_directories_should_not_be_yielded(self):
@@ -318,7 +310,10 @@ class TestCodebase(FileBasedTesting):
 
         result = [
             res.name
-            for res in cdbs.walk(topdown=True, ignored=_ignored,)
+            for res in cdbs.walk(
+                topdown=True,
+                ignored=_ignored,
+            )
         ]
 
         expected = ['skip_directories_during_walk', 'this-should-be-returned']
@@ -348,7 +343,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_get_resource_for_multiple_resource_codebase(self):
         test_codebase = self.get_temp_dir('resource')
-        for name in ('a', 'b' , 'c'):
+        for name in ('a', 'b', 'c'):
             with open(os.path.join(test_codebase, name), 'w') as o:
                 o.write('\n')
 
@@ -367,10 +362,15 @@ class TestCodebase(FileBasedTesting):
                 locations.append(os.path.join(top, x))
 
         expected_default = [
-            'samples/JGroups', 'samples/zlib', 'samples/arch',
-            'samples/README', 'samples/screenshot.png',
-            'samples/JGroups/src', 'samples/JGroups/licenses',
-            'samples/JGroups/LICENSE', 'samples/JGroups/EULA',
+            'samples/JGroups',
+            'samples/zlib',
+            'samples/arch',
+            'samples/README',
+            'samples/screenshot.png',
+            'samples/JGroups/src',
+            'samples/JGroups/licenses',
+            'samples/JGroups/LICENSE',
+            'samples/JGroups/EULA',
             'samples/JGroups/src/GuardedBy.java',
             'samples/JGroups/src/ImmutableReference.java',
             'samples/JGroups/src/RouterStub.java',
@@ -382,12 +382,18 @@ class TestCodebase(FileBasedTesting):
             'samples/JGroups/licenses/bouncycastle.txt',
             'samples/JGroups/licenses/lgpl.txt',
             'samples/JGroups/licenses/apache-2.0.txt',
-            'samples/JGroups/licenses/apache-1.1.txt', 'samples/zlib/dotzlib',
-            'samples/zlib/iostream2', 'samples/zlib/infback9',
-            'samples/zlib/gcc_gvmat64', 'samples/zlib/ada',
-            'samples/zlib/deflate.h', 'samples/zlib/zutil.c',
-            'samples/zlib/zlib.h', 'samples/zlib/deflate.c',
-            'samples/zlib/zutil.h', 'samples/zlib/adler32.c',
+            'samples/JGroups/licenses/apache-1.1.txt',
+            'samples/zlib/dotzlib',
+            'samples/zlib/iostream2',
+            'samples/zlib/infback9',
+            'samples/zlib/gcc_gvmat64',
+            'samples/zlib/ada',
+            'samples/zlib/deflate.h',
+            'samples/zlib/zutil.c',
+            'samples/zlib/zlib.h',
+            'samples/zlib/deflate.c',
+            'samples/zlib/zutil.h',
+            'samples/zlib/adler32.c',
             'samples/zlib/dotzlib/AssemblyInfo.cs',
             'samples/zlib/dotzlib/LICENSE_1_0.txt',
             'samples/zlib/dotzlib/readme.txt',
@@ -396,33 +402,59 @@ class TestCodebase(FileBasedTesting):
             'samples/zlib/iostream2/zstream.h',
             'samples/zlib/infback9/infback9.c',
             'samples/zlib/infback9/infback9.h',
-            'samples/zlib/gcc_gvmat64/gvmat64.S', 'samples/zlib/ada/zlib.ads',
-            'samples/arch/zlib.tar.gz']
+            'samples/zlib/gcc_gvmat64/gvmat64.S',
+            'samples/zlib/ada/zlib.ads',
+            'samples/arch/zlib.tar.gz',
+        ]
 
         default = sorted(get_path(test_dir, loc) for loc in locations)
         assert default == sorted(expected_default)
 
         expected_strip_root = [
-            'JGroups', 'zlib', 'arch', 'README', 'screenshot.png',
-            'JGroups/src', 'JGroups/licenses', 'JGroups/LICENSE',
-            'JGroups/EULA', 'JGroups/src/GuardedBy.java',
+            'JGroups',
+            'zlib',
+            'arch',
+            'README',
+            'screenshot.png',
+            'JGroups/src',
+            'JGroups/licenses',
+            'JGroups/LICENSE',
+            'JGroups/EULA',
+            'JGroups/src/GuardedBy.java',
             'JGroups/src/ImmutableReference.java',
-            'JGroups/src/RouterStub.java', 'JGroups/src/S3_PING.java',
+            'JGroups/src/RouterStub.java',
+            'JGroups/src/S3_PING.java',
             'JGroups/src/FixedMembershipToken.java',
             'JGroups/src/RouterStubManager.java',
-            'JGroups/src/RATE_LIMITER.java', 'JGroups/licenses/cpl-1.0.txt',
-            'JGroups/licenses/bouncycastle.txt', 'JGroups/licenses/lgpl.txt',
+            'JGroups/src/RATE_LIMITER.java',
+            'JGroups/licenses/cpl-1.0.txt',
+            'JGroups/licenses/bouncycastle.txt',
+            'JGroups/licenses/lgpl.txt',
             'JGroups/licenses/apache-2.0.txt',
-            'JGroups/licenses/apache-1.1.txt', 'zlib/dotzlib',
-            'zlib/iostream2', 'zlib/infback9', 'zlib/gcc_gvmat64',
-            'zlib/ada', 'zlib/deflate.h', 'zlib/zutil.c', 'zlib/zlib.h',
-            'zlib/deflate.c', 'zlib/zutil.h', 'zlib/adler32.c',
-            'zlib/dotzlib/AssemblyInfo.cs', 'zlib/dotzlib/LICENSE_1_0.txt',
-            'zlib/dotzlib/readme.txt', 'zlib/dotzlib/ChecksumImpl.cs',
-            'zlib/iostream2/zstream_test.cpp', 'zlib/iostream2/zstream.h',
-            'zlib/infback9/infback9.c', 'zlib/infback9/infback9.h',
-            'zlib/gcc_gvmat64/gvmat64.S', 'zlib/ada/zlib.ads',
-            'arch/zlib.tar.gz']
+            'JGroups/licenses/apache-1.1.txt',
+            'zlib/dotzlib',
+            'zlib/iostream2',
+            'zlib/infback9',
+            'zlib/gcc_gvmat64',
+            'zlib/ada',
+            'zlib/deflate.h',
+            'zlib/zutil.c',
+            'zlib/zlib.h',
+            'zlib/deflate.c',
+            'zlib/zutil.h',
+            'zlib/adler32.c',
+            'zlib/dotzlib/AssemblyInfo.cs',
+            'zlib/dotzlib/LICENSE_1_0.txt',
+            'zlib/dotzlib/readme.txt',
+            'zlib/dotzlib/ChecksumImpl.cs',
+            'zlib/iostream2/zstream_test.cpp',
+            'zlib/iostream2/zstream.h',
+            'zlib/infback9/infback9.c',
+            'zlib/infback9/infback9.h',
+            'zlib/gcc_gvmat64/gvmat64.S',
+            'zlib/ada/zlib.ads',
+            'arch/zlib.tar.gz',
+        ]
 
         skipped = sorted(get_path(test_dir, loc, strip_root=True) for loc in locations)
         assert skipped == sorted(expected_strip_root)
@@ -432,7 +464,9 @@ class TestCodebase(FileBasedTesting):
         for full_loc, ending in zip(full, expected_full_ends):
             assert full_loc.endswith((ending))
 
-        full_skipped = sorted(get_path(test_dir, loc, full_root=True, strip_root=True) for loc in locations)
+        full_skipped = sorted(
+            get_path(test_dir, loc, full_root=True, strip_root=True) for loc in locations
+        )
         assert full_skipped == full
 
     def test_compute_counts_when_using_disk_cache(self):
@@ -521,10 +555,7 @@ class TestCodebase(FileBasedTesting):
         test_dir = self.get_test_loc('resource/ignore')
         codebase = Codebase(test_dir)
         # The `cvs` directory should not be visited
-        expected = [
-            'ignore',
-            'ignore/file1'
-        ]
+        expected = ['ignore', 'ignore/file1']
         result = [r.path for r in codebase.walk(topdown=True)]
         self.assertEqual(expected, result)
 
@@ -559,11 +590,16 @@ class TestCodebase(FileBasedTesting):
         results = list(depth_walk(test_codebase, 2))
         result_dirs = [i for j in results for i in j[1]].sort()
         result_files = [i for j in results for i in j[2]].sort()
-        expected_files = ['level1_file1', 'level1_file2', 'level2_file2',
-                          'level2_file1', 'level2_file3', 'level2_file4',
-                          'level2_file5'].sort()
-        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1',
-                         'level2_dir3'].sort()
+        expected_files = [
+            'level1_file1',
+            'level1_file2',
+            'level2_file2',
+            'level2_file1',
+            'level2_file3',
+            'level2_file4',
+            'level2_file5',
+        ].sort()
+        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 'level2_dir3'].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
 
@@ -572,12 +608,26 @@ class TestCodebase(FileBasedTesting):
         results = list(depth_walk(test_codebase, 3))
         result_dirs = [i for j in results for i in j[1]].sort()
         result_files = [i for j in results for i in j[2]].sort()
-        expected_files = ['level1_file1', 'level1_file2', 'level2_file2',
-                          'level2_file1', 'level3_file2', 'level3_file1',
-                          'level2_file3', 'level2_file4', 'level2_file5',
-                          'level3_file4', 'level3_file3'].sort()
-        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1',
-                         'level3_dir1', 'level2_dir3'].sort()
+        expected_files = [
+            'level1_file1',
+            'level1_file2',
+            'level2_file2',
+            'level2_file1',
+            'level3_file2',
+            'level3_file1',
+            'level2_file3',
+            'level2_file4',
+            'level2_file5',
+            'level3_file4',
+            'level3_file3',
+        ].sort()
+        expected_dirs = [
+            'level1_dir1',
+            'level1_dir2',
+            'level2_dir1',
+            'level3_dir1',
+            'level2_dir3',
+        ].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
 
@@ -587,10 +637,10 @@ class TestCodebase(FileBasedTesting):
         results = list(codebase.walk())
         expected = [
             ('deeply_nested', False),
-                ('level1_dir1', False),
-                ('level1_dir2', False),
-                ('level1_file1', True),
-                ('level1_file2', True),
+            ('level1_dir1', False),
+            ('level1_dir2', False),
+            ('level1_file1', True),
+            ('level1_file2', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -601,17 +651,17 @@ class TestCodebase(FileBasedTesting):
 
         expected = [
             ('deeply_nested', False),
-                ('level1_file1', True),
-                ('level1_file2', True),
-                ('level1_dir1', False),
-                    ('level2_dir1', False),
-                    ('level2_file1', True),
-                    ('level2_file2', True),
-                ('level1_dir2', False),
-                    ('level2_dir3', False),
-                    ('level2_file3', True),
-                    ('level2_file4', True),
-                    ('level2_file5', True),
+            ('level1_file1', True),
+            ('level1_file2', True),
+            ('level1_dir1', False),
+            ('level2_dir1', False),
+            ('level2_file1', True),
+            ('level2_file2', True),
+            ('level1_dir2', False),
+            ('level2_dir3', False),
+            ('level2_file3', True),
+            ('level2_file4', True),
+            ('level2_file5', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -622,22 +672,22 @@ class TestCodebase(FileBasedTesting):
 
         expected = [
             ('deeply_nested', False),
-                ('level1_file1', True),
-                ('level1_file2', True),
-                ('level1_dir1', False),
-                    ('level2_file1', True),
-                    ('level2_file2', True),
-                    ('level2_dir1', False),
-                        ('level3_dir1', False),
-                        ('level3_file1', True),
-                        ('level3_file2', True),
-                ('level1_dir2', False),
-                    ('level2_file3', True),
-                    ('level2_file4', True),
-                    ('level2_file5', True),
-                    ('level2_dir3', False),
-                        ('level3_file3', True),
-                        ('level3_file4', True),
+            ('level1_file1', True),
+            ('level1_file2', True),
+            ('level1_dir1', False),
+            ('level2_file1', True),
+            ('level2_file2', True),
+            ('level2_dir1', False),
+            ('level3_dir1', False),
+            ('level3_file1', True),
+            ('level3_file2', True),
+            ('level1_dir2', False),
+            ('level2_file3', True),
+            ('level2_file4', True),
+            ('level2_file5', True),
+            ('level2_dir3', False),
+            ('level3_file3', True),
+            ('level3_file4', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -678,7 +728,11 @@ class TestCodebaseCache(FileBasedTesting):
                 assert codebase._exists_in_memory(path)
                 assert not codebase._exists_on_disk(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
+        assert (
+            len(list(codebase.walk()))
+            == len(codebase.resources_by_path)
+            == codebase.resources_count
+        )
 
     def test_codebase_cache_all_on_disk(self):
         test_codebase = self.get_test_loc('resource/cache2')
@@ -694,7 +748,11 @@ class TestCodebaseCache(FileBasedTesting):
                 assert not codebase._exists_in_memory(path)
                 assert codebase._exists_on_disk(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
+        assert (
+            len(list(codebase.walk()))
+            == len(codebase.resources_by_path)
+            == codebase.resources_count
+        )
 
     def test_codebase_cache_mixed_two_in_memory(self):
         test_codebase = self.get_test_loc('resource/cache2')
@@ -717,7 +775,11 @@ class TestCodebaseCache(FileBasedTesting):
                 assert not codebase._exists_in_memory(path)
                 assert codebase._exists_on_disk(path)
 
-        assert len(list(codebase.walk())) == len(codebase.resources_by_path) == codebase.resources_count
+        assert (
+            len(list(codebase.walk()))
+            == len(codebase.resources_by_path)
+            == codebase.resources_count
+        )
 
 
 class TestVirtualCodebase(FileBasedTesting):
@@ -729,13 +791,13 @@ class TestVirtualCodebase(FileBasedTesting):
         results = list(codebase.walk())
         expected = [
             ('codebase', False),
-              ('abc', True),
-              ('et131x.h', True),
-              ('dir', False),
-                ('that', True),
-                ('this', True),
-              ('other dir', False),
-                ('file', True),
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -745,13 +807,13 @@ class TestVirtualCodebase(FileBasedTesting):
         results = list(codebase.walk(topdown=True))
         expected = [
             ('codebase', False),
-              ('abc', True),
-              ('et131x.h', True),
-              ('dir', False),
-                ('that', True),
-                ('this', True),
-              ('other dir', False),
-                ('file', True),
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -760,13 +822,13 @@ class TestVirtualCodebase(FileBasedTesting):
         codebase = VirtualCodebase(location=test_file)
         results = list(codebase.walk(topdown=False))
         expected = [
-              ('abc', True),
-              ('et131x.h', True),
-                ('that', True),
-                ('this', True),
-              ('dir', False),
-                ('file', True),
-              ('other dir', False),
+            ('abc', True),
+            ('et131x.h', True),
+            ('that', True),
+            ('this', True),
+            ('dir', False),
+            ('file', True),
+            ('other dir', False),
             ('codebase', False),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
@@ -779,10 +841,10 @@ class TestVirtualCodebase(FileBasedTesting):
             ('abc', True),
             ('et131x.h', True),
             ('dir', False),
-              ('that', True),
-              ('this', True),
+            ('that', True),
+            ('this', True),
             ('other dir', False),
-              ('file', True),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -899,11 +961,11 @@ class TestVirtualCodebase(FileBasedTesting):
                 virtual_codebase.save_resource(res)
         results = list(virtual_codebase.walk_filtered(topdown=True))
         expected = [
-              ('abc', True),
-              ('et131x.h', True),
-                ('that', True),
-                ('this', True),
-                ('file', True),
+            ('abc', True),
+            ('et131x.h', True),
+            ('that', True),
+            ('this', True),
+            ('file', True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -939,18 +1001,14 @@ class TestVirtualCodebase(FileBasedTesting):
         scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = list(virtual_codebase.walk(skip_root=True))
-        expected = [
-            ('et131x.h', True)
-        ]
+        expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_not_filtered(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = list(virtual_codebase.walk_filtered(skip_root=True))
-        expected = [
-            ('et131x.h', True)
-        ]
+        expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered__with_skip_root_and_filtered_single_file(self):
@@ -959,25 +1017,26 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase.root.is_filtered = True
         virtual_codebase.save_resource(virtual_codebase.root)
         results = list(virtual_codebase.walk_filtered(skip_root=True))
-        expected = [
-        ]
+        expected = []
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_skip_root_single_file_with_children(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
-        c1 = virtual_codebase._create_resource('some child', parent=virtual_codebase.root, is_file=True)
+        c1 = virtual_codebase._create_resource(
+            'some child', parent=virtual_codebase.root, is_file=True
+        )
         _c2 = virtual_codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(virtual_codebase.walk(skip_root=True))
-        expected = [
-            ('some child', True), ('some child2', False)
-        ]
+        expected = [('some child', True), ('some child2', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_with_children(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
-        c1 = virtual_codebase._create_resource('some child', parent=virtual_codebase.root, is_file=True)
+        c1 = virtual_codebase._create_resource(
+            'some child', parent=virtual_codebase.root, is_file=True
+        )
         c2 = virtual_codebase._create_resource('some child2', parent=c1, is_file=False)
         c2.is_filtered = True
         virtual_codebase.save_resource(c2)
@@ -1018,20 +1077,20 @@ class TestVirtualCodebase(FileBasedTesting):
         scan_data = self.get_test_loc('resource/virtual_codebase/noinfo.json')
         codebase = VirtualCodebase(location=scan_data)
         expected = [
-            dict([
-                ('path', 'NOTICE'),
-                ('type', 'file'),
-                ('copyrights', [
-                    dict([
-                        ('statements', ['Copyright (c) 2017 nexB Inc. and others.']),
-                        ('holders', ['nexB Inc. and others.']),
-                        ('authors', []),
-                        ('start_line', 4),
-                        ('end_line', 4)
-                    ])
-                ]),
-                ('scan_errors', [])
-            ])
+            {
+                'path': 'NOTICE',
+                'type': 'file',
+                'copyrights': [
+                    {
+                        'statements': ['Copyright (c) 2017 nexB Inc. and others.'],
+                        'holders': ['nexB Inc. and others.'],
+                        'authors': [],
+                        'start_line': 4,
+                        'end_line': 4,
+                    }
+                ],
+                'scan_errors': [],
+            }
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
 
@@ -1039,16 +1098,8 @@ class TestVirtualCodebase(FileBasedTesting):
         scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
         codebase = VirtualCodebase(location=scan_data)
         expected = [
-                dict([
-                ('path', 'samples'),
-                ('type', 'directory'),
-                ('scan_errors', [])
-            ]),
-            dict([
-                ('path', 'samples/NOTICE'),
-                ('type', 'file'),
-                ('scan_errors', [])
-            ])
+            {'path': 'samples', 'type': 'directory', 'scan_errors': []},
+            {'path': 'samples/NOTICE', 'type': 'file', 'scan_errors': []},
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
 
@@ -1184,7 +1235,11 @@ class TestVirtualCodebaseCache(FileBasedTesting):
                 assert virtual_codebase._exists_in_memory(path)
                 assert not virtual_codebase._exists_on_disk(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
+        assert (
+            len(list(virtual_codebase.walk()))
+            == len(virtual_codebase.resources_by_path)
+            == virtual_codebase.resources_count
+        )
 
     def test_virtual_codebase_cache_all_on_disk(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
@@ -1201,7 +1256,11 @@ class TestVirtualCodebaseCache(FileBasedTesting):
                 assert not virtual_codebase._exists_in_memory(path)
                 assert virtual_codebase._exists_on_disk(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
+        assert (
+            len(list(virtual_codebase.walk()))
+            == len(virtual_codebase.resources_by_path)
+            == virtual_codebase.resources_count
+        )
 
     def test_virtual_codebase_cache_mixed_two_in_memory(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
@@ -1224,7 +1283,11 @@ class TestVirtualCodebaseCache(FileBasedTesting):
                 assert not virtual_codebase._exists_in_memory(path)
                 assert virtual_codebase._exists_on_disk(path)
 
-        assert len(list(virtual_codebase.walk())) == len(virtual_codebase.resources_by_path) == virtual_codebase.resources_count
+        assert (
+            len(list(virtual_codebase.walk()))
+            == len(virtual_codebase.resources_by_path)
+            == virtual_codebase.resources_count
+        )
 
 
 class TestVirtualCodebaseCreation(FileBasedTesting):
@@ -1269,27 +1332,16 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
 
     def test_VirtualCodebase_can_be_created_from_dict(self):
         test_scan = {
-              "scancode_notice": "Generated with ScanCode and provided on an ....",
-              "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
-              "scancode_options": {
-                "input": "han/",
-                "--json-pp": "-"
-              },
-              "scan_start": "2018-11-23T123252.191917",
-              "files_count": 1,
-              "files": [
-                {
-                  "path": "han",
-                  "type": "directory",
-                  "scan_errors": []
-                },
-                {
-                  "path": "han/bar.svg",
-                  "type": "file",
-                  "scan_errors": []
-                }
-              ]
-            }
+            "scancode_notice": "Generated with ScanCode and provided on an ....",
+            "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+            "scancode_options": {"input": "han/", "--json-pp": "-"},
+            "scan_start": "2018-11-23T123252.191917",
+            "files_count": 1,
+            "files": [
+                {"path": "han", "type": "directory", "scan_errors": []},
+                {"path": "han/bar.svg", "type": "file", "scan_errors": []},
+            ],
+        }
         codebase = VirtualCodebase(test_scan)
 
         results = sorted(r.name for r in codebase.walk())
@@ -1298,7 +1350,9 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
 
     def test_VirtualCodebase_create_from_scan_with_no_root_and_missing_parents(self):
         test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
-        result_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings-expected.json')
+        result_file = self.get_test_loc(
+            'resource/virtual_codebase/samples-only-findings-expected.json'
+        )
         codebase = VirtualCodebase(test_file)
         expected_scan = json.load(open(result_file))
         results = sorted(r.path for r in codebase.walk())
@@ -1310,18 +1364,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(test_file)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            dict([
-                ('path', 'samples'),
-                ('type', 'directory'),
-                ('summary', ['asd']),
-                ('scan_errors', [])
-            ]),
-            dict([
-                ('path', 'samples/NOTICE'),
-                ('type', 'file'),
-                ('summary', []),
-                ('scan_errors', [])
-            ])
+            {'path': 'samples', 'type': 'directory', 'summary': ['asd'], 'scan_errors': []},
+            {'path': 'samples/NOTICE', 'type': 'file', 'summary': [], 'scan_errors': []},
         ]
         assert results == expected
 
@@ -1332,25 +1376,69 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(vinput)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            dict([('path', 'virtual_root'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/samples'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/samples/NOTICE'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/thirdparty'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/thirdparty/example.zip'), ('type', 'file'), ('summary', []), ('scan_errors', [])])
+            {
+                'path': 'virtual_root',
+                'type': 'directory',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/samples',
+                'type': 'directory',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/samples/NOTICE',
+                'type': 'file',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/thirdparty',
+                'type': 'directory',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/thirdparty/example.zip',
+                'type': 'file',
+                'summary': [],
+                'scan_errors': [],
+            },
         ]
         assert results == expected
 
     def test_VirtualCodebase_create_from_multiple_scans_shared_directory_names(self):
-        test_file_1 = self.get_test_loc('resource/virtual_codebase/combine-shared-directory-name-1.json')
-        test_file_2 = self.get_test_loc('resource/virtual_codebase/combine-shared-directory-name-2.json')
+        test_file_1 = self.get_test_loc(
+            'resource/virtual_codebase/combine-shared-directory-name-1.json'
+        )
+        test_file_2 = self.get_test_loc(
+            'resource/virtual_codebase/combine-shared-directory-name-2.json'
+        )
         vinput = (test_file_1, test_file_2)
         codebase = VirtualCodebase(vinput)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            dict([('path', 'virtual_root'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/codebase'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/codebase/test1.c'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
-            dict([('path', 'virtual_root/codebase/test2.py'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
+            {'path': 'virtual_root', 'type': 'directory', 'summary': [], 'scan_errors': []},
+            {
+                'path': 'virtual_root/codebase',
+                'type': 'directory',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/codebase/test1.c',
+                'type': 'file',
+                'summary': [],
+                'scan_errors': [],
+            },
+            {
+                'path': 'virtual_root/codebase/test2.py',
+                'type': 'file',
+                'summary': [],
+                'scan_errors': [],
+            },
         ]
         assert results == expected
 
@@ -1400,15 +1488,55 @@ class TestResource(FileBasedTesting):
             results.append((r.path, extracted_to_path, extracted_from_path))
 
         expected = [
-            ('test', '', ''),
-            ('test/c', '', ''),
-            ('test/foo.tar.gz', 'test/foo.tar.gz-extract', ''),
-            ('test/foo.tar.gz-extract', '', 'test/foo.tar.gz'),
-            ('test/foo.tar.gz-extract/foo', '', 'test/foo.tar.gz'),
-            ('test/foo.tar.gz-extract/foo/a', '', 'test/foo.tar.gz'),
-            ('test/foo.tar.gz-extract/foo/bar.tar.gz', 'test/foo.tar.gz-extract/foo/bar.tar.gz-extract', 'test/foo.tar.gz'),
-            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz'),
-            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz'),
-            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar/b', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz')
+            (
+                'test',
+                '',
+                '',
+            ),
+            (
+                'test/c',
+                '',
+                '',
+            ),
+            (
+                'test/foo.tar.gz',
+                'test/foo.tar.gz-extract',
+                '',
+            ),
+            (
+                'test/foo.tar.gz-extract',
+                '',
+                'test/foo.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo',
+                '',
+                'test/foo.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo/a',
+                '',
+                'test/foo.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo/bar.tar.gz',
+                'test/foo.tar.gz-extract/foo/bar.tar.gz-extract',
+                'test/foo.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo/bar.tar.gz-extract',
+                '',
+                'test/foo.tar.gz-extract/foo/bar.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar',
+                '',
+                'test/foo.tar.gz-extract/foo/bar.tar.gz',
+            ),
+            (
+                'test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar/b',
+                '',
+                'test/foo.tar.gz-extract/foo/bar.tar.gz',
+            ),
         ]
         assert results == expected
