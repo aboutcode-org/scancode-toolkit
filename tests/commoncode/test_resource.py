@@ -275,7 +275,7 @@ class TestCodebase(FileBasedTesting):
         _c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(codebase.walk(skip_root=True))
         expected = [
-            (u'some child', True), (u'some child2', False)
+            ('some child', True), ('some child2', False)
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -289,7 +289,7 @@ class TestCodebase(FileBasedTesting):
         codebase.save_resource(c2)
 
         results = list(codebase.walk_filtered(skip_root=True))
-        expected = [(u'some child', True)]
+        expected = [('some child', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
         c1.is_filtered = True
@@ -329,7 +329,7 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase)
         codebase._create_resource('some child', codebase.root, is_file=True)
         results = list(codebase.walk())
-        expected = [('et131x.h', True), (u'some child', True)]
+        expected = [('et131x.h', True), ('some child', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test__create_resource_can_add_child_to_dir(self):
@@ -337,7 +337,7 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase)
         codebase._create_resource('some child', codebase.root, is_file=False)
         results = list(codebase.walk())
-        expected = [('resource', False), (u'some child', False)]
+        expected = [('resource', False), ('some child', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_get_resource_for_single_resource_codebase(self):
@@ -367,62 +367,62 @@ class TestCodebase(FileBasedTesting):
                 locations.append(os.path.join(top, x))
 
         expected_default = [
-            u'samples/JGroups', u'samples/zlib', u'samples/arch',
-            u'samples/README', u'samples/screenshot.png',
-            u'samples/JGroups/src', u'samples/JGroups/licenses',
-            u'samples/JGroups/LICENSE', u'samples/JGroups/EULA',
-            u'samples/JGroups/src/GuardedBy.java',
-            u'samples/JGroups/src/ImmutableReference.java',
-            u'samples/JGroups/src/RouterStub.java',
-            u'samples/JGroups/src/S3_PING.java',
-            u'samples/JGroups/src/FixedMembershipToken.java',
-            u'samples/JGroups/src/RouterStubManager.java',
-            u'samples/JGroups/src/RATE_LIMITER.java',
-            u'samples/JGroups/licenses/cpl-1.0.txt',
-            u'samples/JGroups/licenses/bouncycastle.txt',
-            u'samples/JGroups/licenses/lgpl.txt',
-            u'samples/JGroups/licenses/apache-2.0.txt',
-            u'samples/JGroups/licenses/apache-1.1.txt', u'samples/zlib/dotzlib',
-            u'samples/zlib/iostream2', u'samples/zlib/infback9',
-            u'samples/zlib/gcc_gvmat64', u'samples/zlib/ada',
-            u'samples/zlib/deflate.h', u'samples/zlib/zutil.c',
-            u'samples/zlib/zlib.h', u'samples/zlib/deflate.c',
-            u'samples/zlib/zutil.h', u'samples/zlib/adler32.c',
-            u'samples/zlib/dotzlib/AssemblyInfo.cs',
-            u'samples/zlib/dotzlib/LICENSE_1_0.txt',
-            u'samples/zlib/dotzlib/readme.txt',
-            u'samples/zlib/dotzlib/ChecksumImpl.cs',
-            u'samples/zlib/iostream2/zstream_test.cpp',
-            u'samples/zlib/iostream2/zstream.h',
-            u'samples/zlib/infback9/infback9.c',
-            u'samples/zlib/infback9/infback9.h',
-            u'samples/zlib/gcc_gvmat64/gvmat64.S', u'samples/zlib/ada/zlib.ads',
-            u'samples/arch/zlib.tar.gz']
+            'samples/JGroups', 'samples/zlib', 'samples/arch',
+            'samples/README', 'samples/screenshot.png',
+            'samples/JGroups/src', 'samples/JGroups/licenses',
+            'samples/JGroups/LICENSE', 'samples/JGroups/EULA',
+            'samples/JGroups/src/GuardedBy.java',
+            'samples/JGroups/src/ImmutableReference.java',
+            'samples/JGroups/src/RouterStub.java',
+            'samples/JGroups/src/S3_PING.java',
+            'samples/JGroups/src/FixedMembershipToken.java',
+            'samples/JGroups/src/RouterStubManager.java',
+            'samples/JGroups/src/RATE_LIMITER.java',
+            'samples/JGroups/licenses/cpl-1.0.txt',
+            'samples/JGroups/licenses/bouncycastle.txt',
+            'samples/JGroups/licenses/lgpl.txt',
+            'samples/JGroups/licenses/apache-2.0.txt',
+            'samples/JGroups/licenses/apache-1.1.txt', 'samples/zlib/dotzlib',
+            'samples/zlib/iostream2', 'samples/zlib/infback9',
+            'samples/zlib/gcc_gvmat64', 'samples/zlib/ada',
+            'samples/zlib/deflate.h', 'samples/zlib/zutil.c',
+            'samples/zlib/zlib.h', 'samples/zlib/deflate.c',
+            'samples/zlib/zutil.h', 'samples/zlib/adler32.c',
+            'samples/zlib/dotzlib/AssemblyInfo.cs',
+            'samples/zlib/dotzlib/LICENSE_1_0.txt',
+            'samples/zlib/dotzlib/readme.txt',
+            'samples/zlib/dotzlib/ChecksumImpl.cs',
+            'samples/zlib/iostream2/zstream_test.cpp',
+            'samples/zlib/iostream2/zstream.h',
+            'samples/zlib/infback9/infback9.c',
+            'samples/zlib/infback9/infback9.h',
+            'samples/zlib/gcc_gvmat64/gvmat64.S', 'samples/zlib/ada/zlib.ads',
+            'samples/arch/zlib.tar.gz']
 
         default = sorted(get_path(test_dir, loc) for loc in locations)
         assert default == sorted(expected_default)
 
         expected_strip_root = [
-            u'JGroups', u'zlib', u'arch', u'README', u'screenshot.png',
-            u'JGroups/src', u'JGroups/licenses', u'JGroups/LICENSE',
-            u'JGroups/EULA', u'JGroups/src/GuardedBy.java',
-            u'JGroups/src/ImmutableReference.java',
-            u'JGroups/src/RouterStub.java', u'JGroups/src/S3_PING.java',
-            u'JGroups/src/FixedMembershipToken.java',
-            u'JGroups/src/RouterStubManager.java',
-            u'JGroups/src/RATE_LIMITER.java', u'JGroups/licenses/cpl-1.0.txt',
-            u'JGroups/licenses/bouncycastle.txt', u'JGroups/licenses/lgpl.txt',
-            u'JGroups/licenses/apache-2.0.txt',
-            u'JGroups/licenses/apache-1.1.txt', u'zlib/dotzlib',
-            u'zlib/iostream2', u'zlib/infback9', u'zlib/gcc_gvmat64',
-            u'zlib/ada', u'zlib/deflate.h', u'zlib/zutil.c', u'zlib/zlib.h',
-            u'zlib/deflate.c', u'zlib/zutil.h', u'zlib/adler32.c',
-            u'zlib/dotzlib/AssemblyInfo.cs', u'zlib/dotzlib/LICENSE_1_0.txt',
-            u'zlib/dotzlib/readme.txt', u'zlib/dotzlib/ChecksumImpl.cs',
-            u'zlib/iostream2/zstream_test.cpp', u'zlib/iostream2/zstream.h',
-            u'zlib/infback9/infback9.c', u'zlib/infback9/infback9.h',
-            u'zlib/gcc_gvmat64/gvmat64.S', u'zlib/ada/zlib.ads',
-            u'arch/zlib.tar.gz']
+            'JGroups', 'zlib', 'arch', 'README', 'screenshot.png',
+            'JGroups/src', 'JGroups/licenses', 'JGroups/LICENSE',
+            'JGroups/EULA', 'JGroups/src/GuardedBy.java',
+            'JGroups/src/ImmutableReference.java',
+            'JGroups/src/RouterStub.java', 'JGroups/src/S3_PING.java',
+            'JGroups/src/FixedMembershipToken.java',
+            'JGroups/src/RouterStubManager.java',
+            'JGroups/src/RATE_LIMITER.java', 'JGroups/licenses/cpl-1.0.txt',
+            'JGroups/licenses/bouncycastle.txt', 'JGroups/licenses/lgpl.txt',
+            'JGroups/licenses/apache-2.0.txt',
+            'JGroups/licenses/apache-1.1.txt', 'zlib/dotzlib',
+            'zlib/iostream2', 'zlib/infback9', 'zlib/gcc_gvmat64',
+            'zlib/ada', 'zlib/deflate.h', 'zlib/zutil.c', 'zlib/zlib.h',
+            'zlib/deflate.c', 'zlib/zutil.h', 'zlib/adler32.c',
+            'zlib/dotzlib/AssemblyInfo.cs', 'zlib/dotzlib/LICENSE_1_0.txt',
+            'zlib/dotzlib/readme.txt', 'zlib/dotzlib/ChecksumImpl.cs',
+            'zlib/iostream2/zstream_test.cpp', 'zlib/iostream2/zstream.h',
+            'zlib/infback9/infback9.c', 'zlib/infback9/infback9.h',
+            'zlib/gcc_gvmat64/gvmat64.S', 'zlib/ada/zlib.ads',
+            'arch/zlib.tar.gz']
 
         skipped = sorted(get_path(test_dir, loc, strip_root=True) for loc in locations)
         assert skipped == sorted(expected_strip_root)
@@ -970,7 +970,7 @@ class TestVirtualCodebase(FileBasedTesting):
         _c2 = virtual_codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(virtual_codebase.walk(skip_root=True))
         expected = [
-            (u'some child', True), (u'some child2', False)
+            ('some child', True), ('some child2', False)
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
@@ -983,7 +983,7 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase.save_resource(c2)
 
         results = list(virtual_codebase.walk_filtered(skip_root=True))
-        expected = [(u'some child', True)]
+        expected = [('some child', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
         c1.is_filtered = True
@@ -997,7 +997,7 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase._create_resource('some child', virtual_codebase.root, is_file=True)
         results = list(virtual_codebase.walk())
-        expected = [('et131x.h', True), (u'some child', True)]
+        expected = [('et131x.h', True), ('some child', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase__create_resource_can_add_child_to_dir(self):
@@ -1005,7 +1005,7 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase._create_resource('some child', virtual_codebase.root, is_file=False)
         results = list(virtual_codebase.walk())
-        expected = [('resource', False), (u'some child', False)]
+        expected = [('resource', False), ('some child', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_get_resource(self):
@@ -1019,18 +1019,18 @@ class TestVirtualCodebase(FileBasedTesting):
         codebase = VirtualCodebase(location=scan_data)
         expected = [
             dict([
-                (u'path', u'NOTICE'),
-                (u'type', u'file'),
-                (u'copyrights', [
+                ('path', 'NOTICE'),
+                ('type', 'file'),
+                ('copyrights', [
                     dict([
-                        (u'statements', [u'Copyright (c) 2017 nexB Inc. and others.']),
-                        (u'holders', [u'nexB Inc. and others.']),
-                        (u'authors', []),
-                        (u'start_line', 4),
-                        (u'end_line', 4)
+                        ('statements', ['Copyright (c) 2017 nexB Inc. and others.']),
+                        ('holders', ['nexB Inc. and others.']),
+                        ('authors', []),
+                        ('start_line', 4),
+                        ('end_line', 4)
                     ])
                 ]),
-                (u'scan_errors', [])
+                ('scan_errors', [])
             ])
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
@@ -1040,14 +1040,14 @@ class TestVirtualCodebase(FileBasedTesting):
         codebase = VirtualCodebase(location=scan_data)
         expected = [
                 dict([
-                (u'path', u'samples'),
-                (u'type', u'directory'),
-                (u'scan_errors', [])
+                ('path', 'samples'),
+                ('type', 'directory'),
+                ('scan_errors', [])
             ]),
             dict([
-                (u'path', u'samples/NOTICE'),
-                (u'type', u'file'),
-                (u'scan_errors', [])
+                ('path', 'samples/NOTICE'),
+                ('type', 'file'),
+                ('scan_errors', [])
             ])
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
@@ -1311,16 +1311,16 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
             dict([
-                (u'path', u'samples'),
-                (u'type', u'directory'),
-                (u'summary', [u'asd']),
-                (u'scan_errors', [])
+                ('path', 'samples'),
+                ('type', 'directory'),
+                ('summary', ['asd']),
+                ('scan_errors', [])
             ]),
             dict([
-                (u'path', u'samples/NOTICE'),
-                (u'type', u'file'),
-                (u'summary', []),
-                (u'scan_errors', [])
+                ('path', 'samples/NOTICE'),
+                ('type', 'file'),
+                ('summary', []),
+                ('scan_errors', [])
             ])
         ]
         assert results == expected
@@ -1332,11 +1332,11 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(vinput)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            dict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/samples'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/samples/NOTICE'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/thirdparty'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
+            dict([('path', 'virtual_root'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/samples'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/samples/NOTICE'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/thirdparty'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/thirdparty/example.zip'), ('type', 'file'), ('summary', []), ('scan_errors', [])])
         ]
         assert results == expected
 
@@ -1347,10 +1347,10 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(vinput)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            dict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/codebase'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/codebase/test1.c'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
-            dict([(u'path', u'virtual_root/codebase/test2.py'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
+            dict([('path', 'virtual_root'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/codebase'), ('type', 'directory'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/codebase/test1.c'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
+            dict([('path', 'virtual_root/codebase/test2.py'), ('type', 'file'), ('summary', []), ('scan_errors', [])]),
         ]
         assert results == expected
 
