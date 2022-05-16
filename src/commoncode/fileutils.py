@@ -206,14 +206,15 @@ def file_name(path, force_posix=False):
     return resource_name(path, force_posix)
 
 
-def parent_directory(path, force_posix=False):
+def parent_directory(path, force_posix=False, with_trail=True):
     """
     Return the parent directory path of a file or directory `path`.
+    The returned directory has a trailing path separator unless with_trail is False.
     """
     left, _right = split_parent_resource(path, force_posix)
     use_posix = force_posix or is_posixpath(path)
     sep = '/' if use_posix else '\\'
-    trail = sep if left != sep else ''
+    trail = sep if with_trail and left != sep else ''
     return left + trail
 
 
