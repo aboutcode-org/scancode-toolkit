@@ -17,6 +17,7 @@ from operator import itemgetter
 from os import walk as os_walk
 from os.path import abspath
 from os.path import exists
+from os.path import isfile
 from os.path import expanduser
 from os.path import join
 from os.path import normpath
@@ -33,7 +34,6 @@ except ImportError:
     temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
 from commoncode import ignore
-from commoncode import paths
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
@@ -45,6 +45,7 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+from commoncode.paths import split as paths_split
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -59,7 +60,7 @@ This module handles all the details of walking files, path handling and caching.
 """
 
 # Tracing flags
-TRACE = False
+TRACE = True
 TRACE_DEEP = False
 
 
@@ -308,16 +309,18 @@ class Codebase:
         self._setup_essentials(temp_dir, max_in_memory)
 
         # finally populate
-        self.paths = self._clean_paths(paths)
+        self.paths = self._prepare_clean_paths(paths)
         self._populate()
 
-    def _clean_paths(self, paths=tuple()):
+    def _prepare_clean_paths(self, paths=tuple()):
         """
-        Return a new list cleaned ``paths``.
+        Return a new set of cleaned ``paths`` possibly empty.
+        We convert to POSIX and ensure we have no slash at both ends.
         """
-        paths = paths or []
-        # convert to posix and ensure we have no slash at both ends
-        return [clean_path(p) for p in paths]
+        paths = (clean_path(p) for p in (paths or []) if p)
+        # we sort by path segments (e.g. essentially a topo sort)
+        _sorter = lambda p: p.split('/')
+        return sorted(paths, key=_sorter)
 
     def _setup_essentials(self, temp_dir=temp_dir, max_in_memory=10000):
         """
@@ -465,10 +468,79 @@ class Codebase:
             # childless directory
             return
 
+        if self.paths:
+            return self._create_resources_from_paths(root=root, paths=self.paths)
+        else:
+            return self._create_resources_from_root(root=root)
+
+    def _create_resources_from_paths(self, root, paths):
+        # without paths we iterate the provided paths. We report an error
+        # if a path is missing on disk.
+
+        # !!!NOTE: WE DO NOT skip_ignored in this case!!!!!
+
+        base_location = parent_directory(root.location)
+
+        # track resources parents by path during construction to avoid
+        # recreating all ancestor directories
+        parents_by_path = {root.path: root}
+
+        for path in paths:
+            res_loc = join(base_location, path)
+            if not exists(res_loc):
+                msg = (
+                    f'ERROR: cannot populate codebase: '
+                    f'path: {path!r} not found in {res_loc!r}'
+                )
+                self.errors.append(msg)
+                raise Exception(path, join(base_location, path))
+                continue
+
+            # create all parents. The last parent is the one we want to use
+            parent = root
+            if TRACE:
+                logger_debug('Codebase._create_resources_from_paths: parent', parent)
+            for parent_path in get_ancestor_paths(path, include_self=False):
+                if TRACE:
+                    logger_debug('  Codebase._create_resources_from_paths: parent_path', repr(parent_path))
+                if not parent_path:
+                    continue
+                newpar = parents_by_path.get(parent_path)
+                if TRACE:
+                    logger_debug('  Codebase._create_resources_from_paths: newpar', repr(newpar))
+
+                if not newpar:
+                    newpar = self._get_or_create_resource(
+                        name=file_name(parent_path),
+                        parent=parent,
+                        path=parent_path,
+                        is_file=False,
+                    )
+                    if not newpar:
+                        raise Exception(f'ERROR: Codebase._create_resources_from_paths: cannot create parent for: {parent_path}')
+                    parent = newpar
+
+                    parents_by_path[parent_path] = parent
+
+                    if TRACE:
+                        logger_debug('Codebase._create_resources_from_paths: created newpar:', repr(newpar))
+
+            res = self._get_or_create_resource(
+                name=file_name(path),
+                parent=parent,
+                path=path,
+                is_file=isfile(res_loc),
+            )
+            if TRACE:
+                logger_debug('Codebase._create_resources_from_paths: resource', res)
+
+    def _create_resources_from_root(self, root):
+        # without paths we walks the root location top-down
+
         # track resources parents by location during construction.
         # NOTE: this cannot exhaust memory on a large codebase, because we do
         # not keep parents already walked and we walk topdown.
-        parent_by_loc = {root.location: root}
+        parents_by_loc = {root.location: root}
 
         def err(_error):
             """os.walk error handler"""
@@ -483,7 +555,7 @@ class Codebase:
             max_depth=self.max_depth,
             error_handler=err,
         ):
-            parent = parent_by_loc.pop(top)
+            parent = parents_by_loc.pop(top)
             for created in self._create_resources(
                 parent=parent,
                 top=top,
@@ -492,7 +564,7 @@ class Codebase:
             ):
                 # on the plain, bare FS, files cannot be parents
                 if not created.is_file:
-                    parent_by_loc[created.location] = created
+                    parents_by_loc[created.location] = created
 
     def _create_resources(self, parent, top, dirs, files, skip_ignored=skip_ignored):
         """
@@ -575,7 +647,7 @@ class Codebase:
         Create and return a new codebase Resource with ``path`` and ``location``.
         """
         if not parent:
-            raise TypeError('Cannot create resource without parent.')
+            raise TypeError(f'Cannot create resource without parent: name: {name!r}, path: {path!r}')
 
         # If the codebase is virtual, we provide the path
         if not path:
@@ -1461,7 +1533,7 @@ def strip_first_path_segment(path):
         >>> strip_first_path_segment('foo/')
         'foo/'
     """
-    segments = paths.split(path)
+    segments = paths_split(path)
     if not segments or len(segments) == 1:
         return path
     stripped = segments[1:]
@@ -1566,7 +1638,7 @@ class VirtualCodebase(Codebase):
         self.location = location
 
         scan_data = self._get_scan_data(location)
-        self.paths = self._clean_paths(paths)
+        self.paths = self._prepare_clean_paths(paths)
         self._populate(scan_data)
 
     def _get_scan_data_helper(self, location):
@@ -1754,7 +1826,7 @@ class VirtualCodebase(Codebase):
 
         for fdata in files_data:
             sample_resource_data_update(fdata)
-            segments =  fdata['path'].split('/')
+            segments = fdata['path'].split('/')
             root_names_add(segments[0])
             fdata['path_segments'] = segments
 
@@ -1816,11 +1888,20 @@ class VirtualCodebase(Codebase):
                 setattr(root, name, value)
 
         if TRACE: logger_debug('VirtualCodebase.populate: root:', root)
+
+        # TODO: report error if filtering the root with a paths?
         self.save_resource(root)
 
         if self.has_single_resource:
             if TRACE: logger_debug('VirtualCodebase.populate: with single resource.')
             return
+
+        all_paths = None
+        if self.paths:
+            # build a set of all all paths and all their ancestors
+            all_paths = set()
+            for path in self.paths:
+                all_paths.update(get_ancestor_paths(path, include_self=True))
 
         # Create other Resources from scan info
 
@@ -1833,10 +1914,15 @@ class VirtualCodebase(Codebase):
         duplicated_paths = set()
         last_path = None
         for fdata in files_data:
+            path = fdata.get('path')
+
+            # skip the ones we did not request
+            if all_paths and path not in all_paths:
+                continue
+
             # these are no longer needed
             path_segments = fdata.pop('path_segments')
 
-            path = fdata.get('path')
             if not last_path:
                 last_path = path
             elif last_path == path:
@@ -1935,3 +2021,27 @@ def remove_properties_and_basics(resource_data):
     mapping with the known properties removed.
     """
     return {k: v for k, v in resource_data.items() if k not in KNOW_PROPS}
+
+
+def get_ancestor_paths(path, include_self=False):
+    """
+    Yield all subpaths from a POSIX path.
+
+    For example::
+    >>> path = 'foo/bar/baz'
+    >>> results = list(get_ancestor_paths(path))
+    >>> assert results == ['foo', 'foo/bar'], results
+    >>> results = list(get_ancestor_paths(path, include_self=True))
+    >>> assert results == ['foo', 'foo/bar', 'foo/bar/baz'], results
+    >>> results = list(get_ancestor_paths('foo', include_self=False))
+    >>> assert results == [], results
+    """
+    assert path
+    segments = path.split('/')
+    if not include_self:
+        segments = segments[:-1]
+    subpath = []
+    for segment in segments:
+        subpath.append(segment)
+        yield '/'.join(subpath)
+
