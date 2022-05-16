@@ -4,17 +4,45 @@ Release notes
 Version (next) 
 ------------------------------
 
+TBD.
+
 Version 31.0.0 - (2022-05-16)
 ------------------------------
 
 This is a major version with API-breaking behavious changes in the reosurce
 module.
 
+- The Resource has no rid (resource id) and no pid (parent id). Instead
+  we now use internally a simpler mapping of {path: Resource} object.
+  As a result the iteration on a Codebase is faster but this requires more
+  memory.
+
+- The Codebase and VirtualCodebase accepts a new "paths" argument that is list
+  of paths. When provided, the Codebase will only contain Resources with these
+  paths and no other resources. This handy to create a Codebase with only a
+  subset of paths of interest. When we create a Codebase or VirtualCodebase
+  with paths, we also always create any internediate directories. So if you
+  ask for a path of "root/dir/file", we create three resources: "root",
+  "root/dir" and "root/dir/file". We accumulate codebase errors if the paths
+  does not exists in the Codebase or VirtualCodebase. The paths must start with
+  the root path segment and must be POSIX paths.
+
 - When you create a VirtualCodebase with multiple scans, we now prefix each
   scan path with a codebase-1/, codebase-2/, etc. directory in addition to the
   "virtual_root" shared root directory. Otherwise files data was overwritten
   and inconsistent when each location "files" were sharing leading path
-  segments.
+  segments. So if you provide to JSON inputs with that each contain the path
+  "root/dir/file", the VirtualCodebase will contain these paths:
+    - "virtual_root/codebase-1/root/dir/file"
+    - "virtual_root/codebase-2/root/dir/file"
+  It is otherwise practically impossble to correctly merge file data from
+  multiple codebases reliably, so adding this prefix ensures that we are doing
+  the right thing
+
+- The Resource.path now never contains leading or trailing slash. We also
+  normalize the path everywhere. In particular this behaviour is visible when
+  you create a Codebase with a "full_root" argument. Previously, the paths of a
+  "full_root" Codebase were prefixed with a slash "/".
 
 - When you create a VirtualCodebase with more than one Resource, we now recreate
   the directory tree for any intermediary directory used in a path that is
@@ -24,23 +52,8 @@ module.
   missing paths of a "full_root" Codebase were kept unchanged. 
   Noet that the VirtualCodebase has always ignored the "full_root" argument.
 
-- The Resource has no rid (resource id) and no pid (parent id). Instead
-  we now use internally a simpler mapping of {path: Resource} object.
-
-- The Codebase and VirtualCodebase accepts a new "paths" argument that is list
-  of paths. When provided, the Codebase will only contain Resources with these
-  paths and no other resources. has no rid (resource id) and no pid (parent id).
-  Instead we now use internally a simpler mapping of {path: Resource} object.
-  As a result the iteration on a Codebase is faster but this requires more
-  memory.
-
 - The Codebase and VirtualCodebase are now iterable. Iterating on a codebase
   is the same as a top-down walk.
-
-- The Resource.path now never contains leading or trailing slash. We also
-  normalize the path everywhere. In particular this behaviour is visible when
-  you create a Codebase with a "full_root" argument. Previously, the paths of a
-  "full_root" Codebase were prefixed with a slash "/".
 
 
 Other changes:
