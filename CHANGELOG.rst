@@ -4,7 +4,52 @@ Release notes
 Version (next) 
 ------------------------------
 
+Version 31.0.0 - (2022-05-16)
+------------------------------
+
+This is a major version with API-breaking behavious changes in the reosurce
+module.
+
+- When you create a VirtualCodebase with multiple scans, we now prefix each
+  scan path with a codebase-1/, codebase-2/, etc. directory in addition to the
+  "virtual_root" shared root directory. Otherwise files data was overwritten
+  and inconsistent when each location "files" were sharing leading path
+  segments.
+
+- When you create a VirtualCodebase with more than one Resource, we now recreate
+  the directory tree for any intermediary directory used in a path that is
+  otherwise missing from files path list.
+  In particular this behaviour changed when you create a VirtualCodebase from
+  a pervious Codebase created with a "full_root" argument. Previously, the
+  missing paths of a "full_root" Codebase were kept unchanged. 
+  Noet that the VirtualCodebase has always ignored the "full_root" argument.
+
+- The Resource has no rid (resource id) and no pid (parent id). Instead
+  we now use internally a simpler mapping of {path: Resource} object.
+
+- The Codebase and VirtualCodebase accepts a new "paths" argument that is list
+  of paths. When provided, the Codebase will only contain Resources with these
+  paths and no other resources. has no rid (resource id) and no pid (parent id).
+  Instead we now use internally a simpler mapping of {path: Resource} object.
+  As a result the iteration on a Codebase is faster but this requires more
+  memory.
+
+- The Codebase and VirtualCodebase are now iterable. Iterating on a codebase
+  is the same as a top-down walk.
+
+- The Resource.path now never contains leading or trailing slash. We also
+  normalize the path everywhere. In particular this behaviour is visible when
+  you create a Codebase with a "full_root" argument. Previously, the paths of a
+  "full_root" Codebase were prefixed with a slash "/".
+
+
+Other changes:
+
 - Remove Python upper version limit.
+- Merge latest skeleton
+- fileutils.parent_directory() now accepts a "with_trail" argument. 
+  The returned directory has a trailing path separator unless with_trail is False.
+  The default is True and the default behavious is unchanged.
 
 
 Version 30.2.0 - (2022-05-02)
