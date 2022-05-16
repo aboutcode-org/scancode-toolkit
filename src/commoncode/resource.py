@@ -1352,11 +1352,18 @@ class Resource(object):
         """
         return not self.is_root
 
+    def parent_path(self):
+        """
+        Return the parent Resource object for this Resource or None.
+        """
+        return self.has_parent() and parent_directory(self.path, with_trail=False)
+
     def parent(self, codebase):
         """
         Return the parent Resource object for this Resource or None.
         """
-        return codebase.get_resource(parent_directory(self.path, with_trail=False))
+        parent_path = self.parent_path()
+        return parent_path and codebase.get_resource(parent_path)
 
     def has_siblings(self, codebase):
         """
