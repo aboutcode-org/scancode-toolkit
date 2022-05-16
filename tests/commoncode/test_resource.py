@@ -693,6 +693,35 @@ class TestCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
 
+class TestCodebaseWithPath(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_Codebase_with_paths_works(self):
+        test_codebase = self.get_test_loc('resource/with_path/codebase')
+        paths = ['codebase/other dir/file']
+        codebase = Codebase(location=test_codebase, paths=paths)
+        assert not codebase.errors
+        results = [r.to_dict() for r in codebase.walk()]
+        print(r.path for r in codebase.walk())
+        expected_file = self.get_test_loc(
+            'resource/with_path/codebase-expected.json',
+            must_exist=False,
+        )
+        check_against_expected_json_file(results, expected_file, regen=False)
+
+    def test_VirtualCodebase_with_paths_works(self):
+        test_codebase = self.get_test_loc('resource/with_path/virtual-codebase.json')
+        paths = ['codebase/other dir/file']
+        codebase = VirtualCodebase(location=test_codebase, paths=paths)
+        assert not codebase.errors
+        results = [r.to_dict() for r in codebase.walk()]
+        expected_file = self.get_test_loc(
+            'resource/with_path/virtual-codebase-expected.json',
+            must_exist=False,
+        )
+        check_against_expected_json_file(results, expected_file, regen=False)
+
+
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
