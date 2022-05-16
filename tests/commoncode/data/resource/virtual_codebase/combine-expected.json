@@ -1,0 +1,44 @@
+[
+  {
+    "path": "virtual_root",
+    "type": "directory",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1",
+    "type": "directory",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1/samples",
+    "type": "directory",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1/samples/NOTICE",
+    "type": "file",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2",
+    "type": "directory",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2/thirdparty",
+    "type": "directory",
+    "summary": [],
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2/thirdparty/example.zip",
+    "type": "file",
+    "summary": [],
+    "scan_errors": []
+  }
+]
