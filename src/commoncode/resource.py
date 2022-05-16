@@ -60,7 +60,7 @@ This module handles all the details of walking files, path handling and caching.
 """
 
 # Tracing flags
-TRACE = True
+TRACE = False
 TRACE_DEEP = False
 
 
