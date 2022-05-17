@@ -26,11 +26,6 @@ from summarycode import file_cat
 resource_class = attr.make_class(
         name='TestResource',
         attrs=InfoScanner.resource_attributes,
-        # attrs={
-        #     "mime_type": attr.ib(default=None, repr=False),
-        #     "file_type": attr.ib(default=None, repr=False),
-        #     "programming_language": attr.ib(default=None, repr=False)
-        # },
         slots=True,
         bases=(Resource,)
     )
@@ -41,9 +36,8 @@ class TestFileCat(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_ArchiveAndroid(self):
-    # def test_ArchiveAndroid(self, resource_class):
         test_resource_01 = resource_class(
-            name='baloney.apk',
+            name='foo.apk',
             location='',
             path='',
             rid='',
@@ -54,58 +48,61 @@ class TestFileCat(FileBasedTesting):
             programming_language=''
         )
         assert file_cat.ArchiveAndroid.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == 'archive'
 
+        test_resource_02 = resource_class(
+            name='foo.aar',
+            location='',
+            path='',
+            rid='',
+            pid='',
+            is_file='file',
+            mime_type='',
+            file_type='',
+            programming_language=''
+        )
+        assert file_cat.ArchiveAndroid.categorize(test_resource_02)
+        assert file_cat.categorize_resource(test_resource_02).file_category == 'archive'
 
-    # Test with commented-out efforts:
+    def test_ArchiveDebian(self):
+        test_resource_01 = resource_class(
+            name='foo.deb',
+            location='',
+            path='',
+            rid='',
+            pid='',
+            is_file='file',
+            mime_type='',
+            file_type='',
+            programming_language=''
+        )
+        assert file_cat.ArchiveDebian.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == 'archive'
 
-    # def test_ArchiveAndroid(self):
-    # # def test_ArchiveAndroid(self, test_resource_class):
-    #     test_resource_class = attr.make_class(
-    #             name='TestResource',
-    #             # attrs=self.resource_attributes or {},
-    #             # attrs=Codebase.resource_attributes or {},
-    #             # attrs=Codebase.resource_attributes,
-    #             # attrs=Codebase._populate(self),
-    #             attrs={
-    #                 "mime_type": attr.ib(default=None, repr=False),
-    #                 "file_type": attr.ib(default=None, repr=False),
-    #                 "programming_language": attr.ib(default=None, repr=False)
-    #             },
-    #             slots=True,
-    #             # frozen=True,
-    #             bases=(Resource,)
-    #         )
+        test_resource_02 = resource_class(
+            name='foo.2',
+            location='',
+            path='',
+            rid='',
+            pid='',
+            is_file='file',
+            mime_type='',
+            file_type='',
+            programming_language=''
+        )
+        assert not file_cat.ArchiveDebian.categorize(test_resource_02)
 
-    #     test_resource = test_resource_class(
-    #     # test_resource = self.test_resource_class(
-    #         name='baloney.apk',
-    #         location='',
-    #         path='',
-    #         rid='',
-    #         pid='',
-    #         is_file='file',
-    #         mime_type='',
-    #         file_type='',
-    #         programming_language=''
-    #     )
-    #     assert file_cat.ArchiveAndroid.categorize(test_resource)
-
-
-
-# Original test from SPATS file-cat:
-
-# class TestFileCat(FileBasedTesting):
-
-#     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-#     def test_ArchiveAndroid(self):
-#         test_resource = Resource(
-#             path='',
-#             type='file',
-#             name='',
-#             extension='.apk',
-#             mime_type='',
-#             file_type='',
-#             programming_language=''
-#         )
-#         assert file_cat_rules.ArchiveAndroid.categorize(test_resource)
+    def test_ArchiveGeneral(self):
+        test_resource_01 = resource_class(
+            name='foo.7zip',
+            location='',
+            path='',
+            rid='',
+            pid='',
+            is_file='file',
+            mime_type='',
+            file_type='',
+            programming_language=''
+        )
+        assert file_cat.ArchiveGeneral.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == 'archive'
