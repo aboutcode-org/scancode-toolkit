@@ -18,8 +18,12 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.fileutils import file_name
-from scancode.api import SCANCODE_LICENSEDB_URL
 
+from licensedcode.cache import get_cache
+from licensedcode.cache import build_spdx_license_expression
+from licensedcode.detection import SCANCODE_LICENSEDB_URL
+from licensedcode.detection import get_detected_license_expression
+from licensedcode.detection import get_matches_from_detections
 
 TRACE = False
 
@@ -84,7 +88,9 @@ class LicenseScanner(ScanPlugin):
 
     resource_attributes = dict([
         ('licenses', attr.ib(default=attr.Factory(list))),
+        ('license_clues', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
+        ('spdx_license_expressions', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
@@ -213,29 +219,53 @@ def add_referenced_filenames_license_matches(resource, codebase):
     if not resource.is_file:
         return
 
-    license_matches = resource.licenses
-    if not license_matches:
+    license_detections = resource.licenses
+    if not license_detections:
         return
-
-    license_expressions = resource.license_expressions
 
     modified = False
 
-    for referenced_filename in get_referenced_filenames(license_matches):
-        referenced_resource = find_referenced_resource(
-            referenced_filename=referenced_filename,
-            resource=resource,
-            codebase=codebase,
-        )
+    for detection in license_detections:
+        matches = detection["matches"]
+        referenced_filenames = get_referenced_filenames(matches)
+        if not referenced_filenames:
+            continue 
+        
+        for referenced_filename in referenced_filenames:
+            referenced_resource = find_referenced_resource(
+                referenced_filename=referenced_filename,
+                resource=resource,
+                codebase=codebase,
+            )
 
         if referenced_resource and referenced_resource.licenses:
             modified = True
-            # TODO: we should hint that these matches were defererenced from
-            # following a referenced filename
-            license_matches.extend(referenced_resource.licenses)
-            license_expressions.extend(referenced_resource.license_expressions)
+                matches.extend(
+                    get_matches_from_detections(
+                        license_detections=referenced_resource.licenses
+                    )
+                )
+
+        reasons, license_expression = get_detected_license_expression(
+            matches=matches,
+            analysis="unknown-file-reference-local",
+        )
+        detection["license_expression"] = str(license_expression)
+        detection["spdx_license_expression"] = str(build_spdx_license_expression(
+                license_expression=str(license_expression),
+                licensing=get_cache().licensing,
+            ))
+        detection["combination_reasons"].extend(reasons)
 
     if modified:
+        resource.license_expressions = [detection["license_expression"] for detection in resource.licenses]
+        resource.spdx_license_expressions = [
+            str(build_spdx_license_expression(
+                license_expression=detection["license_expression"],
+                licensing=get_cache().licensing,
+            ))
+            for detection in resource.licenses
+        ]
         codebase.save_resource(resource)
         return resource
 
