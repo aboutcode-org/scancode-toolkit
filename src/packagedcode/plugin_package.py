@@ -17,6 +17,7 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.resource import Resource
+from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
 from plugincode.scan import ScanPlugin
 
@@ -143,26 +144,26 @@ class PackageScanner(ScanPlugin):
             system=system_package,
         )
 
-    def process_codebase(self, codebase, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
         from one or more datafiles as needed.
         """
-        create_package_and_deps(codebase, **kwargs)
+        create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
 
-def create_package_and_deps(codebase, **kwargs):
+def create_package_and_deps(codebase, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
     """
-    packages, dependencies = get_package_and_deps(codebase, **kwargs)
+    packages, dependencies = get_package_and_deps(codebase, strip_root=strip_root, **kwargs)
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 
-def get_package_and_deps(codebase, **kwargs):
+def get_package_and_deps(codebase, strip_root=False, **kwargs):
     """
     Return a tuple of (Packages list, Dependency list) from the parsed package
     data present in the codebase files.package_data attributes.
@@ -172,6 +173,7 @@ def get_package_and_deps(codebase, **kwargs):
 
     seen_resource_paths = set()
 
+    has_single_resource = codebase.has_single_resource
     # track resource ids that have been already processed
     for resource in codebase.walk(topdown=False):
         if not resource.package_data:
@@ -185,7 +187,7 @@ def get_package_and_deps(codebase, **kwargs):
 
         for package_data in resource.package_data:
             try:
-                package_data = PackageData.from_dict(package_data)
+                package_data = PackageData.from_dict(mapping=package_data)
 
                 if TRACE:
                     logger_debug('  get_package_and_deps: package_data:', package_data)
@@ -207,9 +209,18 @@ def get_package_and_deps(codebase, **kwargs):
                         logger_debug('    get_package_and_deps: item:', item)
 
                     if isinstance(item, Package):
+                        if strip_root and not has_single_resource:
+                            item.datafile_paths = [
+                                strip_first_path_segment(dfp)
+                                for dfp in item.datafile_paths
+                            ]
                         packages.append(item)
+
                     elif isinstance(item, Dependency):
+                        if strip_root and not has_single_resource:
+                            item.datafile_path = strip_first_path_segment(item.datafile_path)
                         dependencies.append(item)
+
                     elif isinstance(item, Resource):
                         seen_resource_paths.add(item.path)
 
