@@ -8,10 +8,11 @@ Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
 Options:
 
   primary scans:
-    -l, --license    Scan <input> for licenses.
-    -p, --package    Scan <input> for package and dependency manifests, lockfiles
-                     and related data.
-    -c, --copyright  Scan <input> for copyrights.
+    -l, --license     Scan <input> for licenses.
+    -p, --package     Scan <input> for application package and dependency
+                      manifests, lockfiles and related data.
+    --system-package  Scan <input> for installed system package databases.
+    -c, --copyright   Scan <input> for copyrights.
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
