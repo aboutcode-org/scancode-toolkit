@@ -47,11 +47,77 @@ if TRACE:
         return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def matches_compact_repr(matches):
-    """
-    Return a string representing a list of license matches in a compact way.
-    """
-    return ', '.join(m.rule.identifier for m in matches)
+SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
+DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
+SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
+
+# All values of match_coverage less than this value are taken as
+# `near-perfect-match-coverage` cases
+NEAR_PERFECT_MATCH_COVERAGE_THR = 100
+
+# Values of match_coverage less than this are taken as `imperfect-match-coverage` cases
+IMPERFECT_MATCH_COVERAGE_THR = 95
+
+# Values of match_coverage less than this are reported as `license_clues` matches
+CLUES_MATCH_COVERAGE_THR = 60
+
+# How many Lines in between has to be present for two matches being of a different group
+# (i.e. and therefore, different rule)
+LINES_THRESHOLD = 4
+
+# Threshold Values of start line and rule length for a match to likely be a false positive
+# (more than the start_line threshold and less than the rule_length threshold)
+FALSE_POSITIVE_START_LINE_THRESHOLD = 1000
+FALSE_POSITIVE_RULE_LENGTH_THRESHOLD = 3
+
+# Whether to Use the NLP BERT Models
+USE_LICENSE_CASE_BERT_MODEL = False
+USE_FALSE_POSITIVE_BERT_MODEL = False
+
+ISSUE_CASES_VERSION = 0.1
+
+
+
+DETECTION_CATEGORIES = {
+    "perfect-detection": "The license detection is accurate.",
+    "imperfect-match-coverage": (
+        "The license detection is inconclusive with high confidence, because only "
+        "a small part of the rule text is matched."
+    ),
+    "near-perfect-match-coverage": (
+        "The license detection is conclusive with a medium confidence because "
+        "because most, but not all of the rule text is matched."
+    ),
+    "extra-words": (
+        "The license detection is conclusive with high confidence because all the "
+        "rule text is matched, but some unknown extra words have been inserted in "
+        "the text."
+    ),
+    "false-positive": (
+        "The license detection is inconclusive, and is unlikely to be about a "
+        "license as a piece of code/text is detected.",
+    ),
+    "unknown-match": (
+        "The license detection is inconclusive, as the license matches have "
+        "been matched to rules having unknown as their license key"
+    ),
+}
+
+
+class CombinationReason(Enum):
+    NOT_COMBINED = 'not-combined'
+    UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file' 
+    UNKNOWN_INTRO_FOLLOWED_BY_MATCH = 'unknown-intro-followed-by-match'
+    CONTAINED_SAME_LICENSE = 'contained-with-same-license'
+    NOTICE_FOLLOWED_BY_TEXT = 'notice-followed-by-text'
+    CONTIGUOUS_SAME_LICENSE = 'contiguous-with-same-license'
+    REF_FOLLOWED_BY_NOTICE = 'ref-followed-by-notice'
+    REF_FOLLOWED_BY_TEXT = 'ref-followed-by-text'
+    TAG_FOLLOWED_BY_NOTICE = 'tag-followed-by-notice'
+    TAG_FOLLOWED_BY_TEXT = 'tag-followed-by-text'
+    TAG_FOLLOWED_BY_REF = 'tag-followed-by-ref'
+    UNKNOWN_FOLLOWED_BY_MATCH = 'unknown-ref-followed-by-match'
+    UNVERSIONED_FOLLOWED_BY_VERSIONED = 'un-versioned-followed-by-versioned'
 
 
 @attr.s(slots=True, eq=False, order=False)
@@ -123,6 +189,49 @@ class LicenseDetection:
             isinstance(other, LicenseDetection)
             and self.matches == other.matches
         )
+
+    @property
+    def query(self):
+        # A LicenseDetection will always be created with matches
+        if self.matches:
+            # All the matches in a file or in a LicenseDetection point to the
+            # same query
+            return self.matches[0].query
+    
+    @property
+    def qspans(self):
+        return [match.qspan for match in self.matches]
+
+    @property
+    def identifier(self):
+        """
+        This is an identifier for a license detection, based on it's underlying
+        license matches.
+        """
+        data = []
+        for license_match in self.original_licenses:
+            identifier = (license_match.rule_identifier, license_match.coverage(),)
+            data.append(identifier)
+
+        return tuple(data)
+    
+    @property
+    def identifier_with_text(self):
+        """
+        This is an identifier for a issue, which is an unknown license intro,
+        based on it's underlying license matches.
+        """
+        data = []
+        for license_match in self.original_licenses:
+            tokenized_matched_text = tuple(query_tokenizer(license_match.matched_text))
+            identifier = (
+                license_match.rule_identifier,
+                license_match.coverage(),
+                tokenized_matched_text,
+            )
+            data.append(identifier)
+
+        return tuple(data)
 
     def rules_length(self):
         """
@@ -264,6 +373,167 @@ class LicenseDetection:
         )
 
 
+def matches_compact_repr(matches):
+    """
+    Return a string representing a list of license matches in a compact way.
+    """
+    return ', '.join(m.rule.identifier for m in matches)
+
+
+def is_correct_detection(license_matches):
+    """
+    Return True if all the license matches in a file-region are correct
+    license detections, as they are either SPDX license tags, or the file content has
+    a exact match with a license hash.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    """
+    matchers = (license_match.matcher for license_match in license_matches)
+    return (
+        all(matcher in ("1-hash", "1-spdx-id") for matcher in matchers)
+        and not has_unknown_matches(license_matches)
+    )
+
+
+def is_match_coverage_less_than_threshold(license_matches, threshold):
+    """
+    Returns True if any of the license matches in a file-region has a `match_coverage`
+    value below the threshold.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    :param threshold: int
+        A `match_coverage` threshold value in between 0-100
+    """
+    coverage_values = (
+        license_match.coverage() for license_match in license_matches
+    )
+    return any(coverage_value < threshold for coverage_value in coverage_values)
+
+
+def calculate_query_coverage_coefficient(license_match):
+    """
+    Calculates a `query_coverage_coefficient` value for that match. For a match:
+    1. If this value is 0, i.e. `score`==`match_coverage`*`rule_Relevance`, then
+       there are no extra words in that license match.
+    2. If this value is a +ve number, i.e. `score`!=`match_coverage`*`rule_Relevance`,
+       then there are extra words in that match.
+
+    :param matched_license: LicenseMatch.
+    """
+    score_coverage_relevance = (
+        license_match.coverage() * license_match.rule.relevance
+    ) / 100
+
+    return score_coverage_relevance - license_match.score()
+
+
+def is_extra_words(license_matches):
+    """
+    Return True if any of the license matches in a file-region has extra words. Having
+    extra words means contains a perfect match with a license/rule, but there are some
+    extra words in addition to the matched text.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    """
+    match_query_coverage_diff_values = (
+        calculate_query_coverage_coefficient(license_match)
+        for license_match in license_matches
+    )
+    return any(
+        match_query_coverage_diff_value > 0
+        for match_query_coverage_diff_value in match_query_coverage_diff_values
+    )
+
+
+def is_false_positive(license_matches):
+    """
+    Return True if all of the license matches in a file-region are false positives.
+    False Positive occurs when other text/code is falsely matched to a license rule,
+    because it matches with a one-word license rule with it's `is_license_tag` value as
+    True. Note: Usually if it's a false positive, there's only one match in that region.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    """
+    start_line_region = min(
+        license_match.start_line for license_match in license_matches
+    )
+    match_rule_length_values = [
+        license_match.rule.length for license_match in license_matches
+    ]
+
+    if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
+        match_rule_length_value <= FALSE_POSITIVE_RULE_LENGTH_THRESHOLD
+        for match_rule_length_value in match_rule_length_values
+    ):
+        return True
+
+    match_is_license_tag_flags = (
+        license_match.rule.is_license_tag for license_match in license_matches
+    )
+    return all(
+        (is_license_tag_flag and match_rule_length == 1)
+        for is_license_tag_flag, match_rule_length in zip(
+            match_is_license_tag_flags, match_rule_length_values
+        )
+    )
+
+
+def has_unknown_matches(license_matches):
+    """
+    Return True if any on the license matches has a license match with an
+    `unknown` rule identifier.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    """
+    return any(match.rule.has_unknown for match in license_matches)
+
+
+def is_unknown_intro(license_match):
+    """
+    Return True if all the license matches is an unknown intro LicenseMatch.
+
+    :param license_matches: list
+        List of LicenseMatch.
+    """
+    return (
+        license_match.rule.has_unknown and
+        license_match.rule.is_license_intro
+    )
+
+
+def is_license_clues(license_matches):
+    """
+    """
+    return not is_correct_detection(license_matches) and (
+        has_unknown_matches(license_matches) or
+        is_match_coverage_less_than_threshold(
+            license_matches=license_matches,
+            threshold=CLUES_MATCH_COVERAGE_THR,
+        )
+    )
+
+
+def has_unknown_intro_before_detection(license_matches):
+
+    has_unknown_intro = False
+    has_unknown_intro_before_detection = False
+
+    for match in license_matches:
+        if is_unknown_intro(match):
+            has_unknown_intro = True
+            continue
+
+        if has_unknown_intro:
+            has_unknown_intro_before_detection = True
+
+    return has_unknown_intro_before_detection
+
+
 def combine_license_intros(license_matches):
     """
     Return a filtered ``license_matches`` list of LicenseMatch objects removing
@@ -275,7 +545,6 @@ def combine_license_intros(license_matches):
     license notice. In these cases, the license introduction can be discarded as
     this is for the license match that follows it.
     """
-
     return [match for match in license_matches if not is_license_intro(match)]
 
 
