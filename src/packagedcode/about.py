@@ -130,7 +130,7 @@ class AboutFileHandler(models.DatafileHandler):
 
             yield package
 
-            if resource.pid is not None and package_data.file_references:
+            if resource.has_parent() and package_data.file_references:
                 parent_resource = resource.parent(codebase)
                 if parent_resource and package_data.file_references:
                     root_path = Path(parent_resource.path)
