@@ -19,6 +19,7 @@ from packagedcode import models
 from textcode.analysis import as_unicode
 
 TRACE = False
+TRACE_DEEP = False
 
 
 def logger_debug(*args):
@@ -526,12 +527,12 @@ def collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc):
             f'collect_installed_rpmdb_xmlish_from_rpmdb_loc:\n'
             f'cmd: {full_cmd}')
 
-    rc, stdout_loc, stderr_loc = command.execute2(
+    rc, stdout_loc, stderr_loc = command.execute(
         cmd_loc=cmd_loc,
         args=args,
-        lib_dir=rpm_bin_dir,
         env=env,
         to_files=True,
+        log=TRACE,
     )
 
     if TRACE:

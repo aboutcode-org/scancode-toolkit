@@ -11,7 +11,7 @@ import os.path
 
 from packagedcode import misc
 from packagedcode import models
-from packagedcode import PACKAGE_DATAFILE_HANDLERS
+from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packages_test_utils import PackageTester
@@ -133,7 +133,7 @@ class TestModels(PackageTester):
         datasource_id and that all have one.
         """
         seen = {}
-        for pdh in PACKAGE_DATAFILE_HANDLERS:
+        for pdh in ALL_DATAFILE_HANDLERS:
             pdhid = pdh.datasource_id
             assert pdhid
             assert (
@@ -147,7 +147,7 @@ class TestModels(PackageTester):
         strings the matching will happen per character and will be
         True for most of the cases.
         """
-        for pdh in PACKAGE_DATAFILE_HANDLERS:
+        for pdh in ALL_DATAFILE_HANDLERS:
             if pdh.path_patterns:
                 assert type(pdh.path_patterns) == tuple, pdh
             if pdh.filetypes:

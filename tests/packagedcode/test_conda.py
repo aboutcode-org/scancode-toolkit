@@ -45,9 +45,9 @@ class TestConda(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_root_dir(self):
-        test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')
+        test_path = 'requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml'
         test_dir = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract')
         codebase = Codebase(test_dir)
-        resource = codebase.get_resource_from_path(test_file, absolute=True)
+        resource = codebase.get_resource(path=test_path)
         proot = conda.CondaMetaYamlHandler.get_conda_root(resource, codebase)
         assert proot.location == test_dir

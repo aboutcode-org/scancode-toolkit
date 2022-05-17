@@ -140,12 +140,12 @@ def combine_expressions(
 
 def get_ancestor(levels_up, resource, codebase):
     """
-    Return the nth-``levels_up`` ancestor Resource of ``resource`` in ``codebase``
-    or None.
+    Return the nth-``levels_up`` ancestor Resource of ``resource`` in
+    ``codebase`` or None.
 
     For example, with levels_up=2 and starting  with a resource path of
-    `gem-extract/metadata.gz-extract/metadata.gz-extract`, gem-extract/ should be
-    returned.
+    `gem-extract/metadata.gz-extract/metadata.gz-extract`, 
+    then `gem-extract/` should be returned.
     """
     rounds = 0
     while rounds < levels_up:

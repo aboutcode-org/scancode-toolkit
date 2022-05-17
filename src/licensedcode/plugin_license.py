@@ -7,21 +7,22 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import posixpath
 from functools import partial
 
 import attr
-
-from plugincode.scan import ScanPlugin
-from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-from commoncode.fileutils import file_name
+from commoncode.resource import clean_path
+from plugincode.scan import ScanPlugin
+from plugincode.scan import scan_impl
+
 from scancode.api import SCANCODE_LICENSEDB_URL
 
-
 TRACE = False
+
 
 def logger_debug(*args): pass
 
@@ -274,8 +275,16 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     ``resource``. ``referenced_filename`` is the path or filename referenced in
     a LicenseMatch of ``resource``,
     """
-    # this can be a path
-    ref_filename = file_name(referenced_filename)
-    for child in resource.parent(codebase).children(codebase):
-        if child.name == ref_filename:
-            return child
+    if not resource:
+        return
+
+    parent_path = resource.parent_path()
+    if not parent_path:
+        return
+
+    # this can be a path or a plain name
+    referenced_filename = clean_path(referenced_filename)
+    path = posixpath.join(parent_path, referenced_filename)
+    resource = codebase.get_resource(path=path)
+    if resource:
+        return resource

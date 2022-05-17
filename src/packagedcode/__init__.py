@@ -45,12 +45,11 @@ from packagedcode import win_reg
 
 # Note: the order matters: from the most to the least specific parser.
 # a handler classes MUST be added to this list to be active
-PACKAGE_DATAFILE_HANDLERS = [
+APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     about.AboutFileHandler,
 
     alpine.AlpineApkArchiveHandler,
     alpine.AlpineApkbuildHandler,
-    alpine.AlpineInstalledDatabaseHandler,
 
     bower.BowerJsonHandler,
 
@@ -78,14 +77,7 @@ PACKAGE_DATAFILE_HANDLERS = [
     cran.CranDescriptionFileHandler,
 
     debian_copyright.DebianCopyrightFileInPackageHandler,
-    debian_copyright.DebianCopyrightFileInSourceHandler,
-    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
-
     debian.DebianDscFileHandler,
-    debian.DebianDistrolessInstalledDatabaseHandler,
-    debian.DebianInstalledFilelistHandler,
-    debian.DebianInstalledMd5sumFilelistHandler,
-    debian.DebianInstalledStatusDatabaseHandler,
 
     debian.DebianControlFileInExtractedDebHandler,
     debian.DebianControlFileInSourceHandler,
@@ -182,9 +174,6 @@ PACKAGE_DATAFILE_HANDLERS = [
     readme.ReadmeHandler,
 
     rpm.RpmArchiveHandler,
-    rpm.RpmInstalledBdbDatabaseHandler,
-    rpm.RpmInstalledSqliteDatabaseHandler,
-    rpm.RpmInstalledNdbDatabaseHandler,
     rpm.RpmSpecfileHandler,
 
     rubygems.GemMetadataArchiveExtractedHandler,
@@ -206,15 +195,40 @@ PACKAGE_DATAFILE_HANDLERS = [
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
+]
+
+
+SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
+    alpine.AlpineInstalledDatabaseHandler,
+
+    debian_copyright.DebianCopyrightFileInPackageHandler,
+    debian_copyright.DebianCopyrightFileInSourceHandler,
+
+    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
+
+    debian.DebianDistrolessInstalledDatabaseHandler,
+
+    debian.DebianInstalledFilelistHandler,
+    debian.DebianInstalledMd5sumFilelistHandler,
+    debian.DebianInstalledStatusDatabaseHandler,
+
+    rpm.RpmInstalledBdbDatabaseHandler,
+    rpm.RpmInstalledSqliteDatabaseHandler,
+    rpm.RpmInstalledNdbDatabaseHandler,
 
     win_reg.InstalledProgramFromDockerSoftwareDeltaHandler,
     win_reg.InstalledProgramFromDockerFilesSoftwareHandler,
     win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
 ]
 
-HANDLER_BY_DATASOURCE_ID = {
-    handler.datasource_id: handler for handler in PACKAGE_DATAFILE_HANDLERS
-}
+ALL_DATAFILE_HANDLERS= (
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
+        p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS 
+        if p not in APPLICATION_PACKAGE_DATAFILE_HANDLERS
+    ]
+)
+
+HANDLER_BY_DATASOURCE_ID = {handler.datasource_id: handler for handler in ALL_DATAFILE_HANDLERS}
 
 
 class UnknownPackageDatasource(Exception):

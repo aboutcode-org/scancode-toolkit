@@ -22,11 +22,11 @@ from scancode_config import REGEN_TEST_FIXTURES
 class TestDebianPackageGetInstalledPackages(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_basic_rootfs(self):
+    def test_scan_system_package_end_to_end_installed_debian_basic_rootfs(self):
         test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         expected_file = self.get_test_loc('debian/basic-rootfs-expected.json')
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
@@ -60,18 +60,18 @@ class TestDebian(PackageTester):
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
-    def test_parse_end_to_end(self):
+    def test_test_scan_system_package_end_to_end_installed_debian(self):
         test_dir = self.extract_test_tar('debian/end-to-end.tgz')
         expected_file = self.get_test_loc('debian/end-to-end.tgz.expected.json', must_exist=False)
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_get_installed_packages_ubuntu_with_missing_md5sums(self):
+    def test_scan_system_package_end_to_end_installed_ubuntu_with_missing_md5sums(self):
         test_dir = self.get_test_loc('debian/ubuntu-var-lib-dpkg/')
         expected_file = self.get_test_loc('debian/ubuntu-var-lib-dpkg/expected.json')
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 class TestDebianGetListOfInstalledFiles(PackageTester):

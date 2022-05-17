@@ -41,9 +41,15 @@ class EtcOsReleaseHandler(models.NonAssemblableDatafileHandler):
         elif distro_identifier == 'ubuntu' and distro.id_like == 'debian':
             namespace = 'debian'
             name = 'ubuntu'
-        else:
+
+        elif distro_identifier.startswith('fedora') or  distro.id_like == 'fedora':
             namespace = distro_identifier
-            name = 'ubuntu'
+            name = distro.id_like or distro_identifier
+
+        else:
+            # FIXME: this needs to be seriously updated
+            namespace = distro_identifier
+            name = distro.id_like or distro_identifier
 
         version = distro.version_id
 

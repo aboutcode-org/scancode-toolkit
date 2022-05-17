@@ -239,7 +239,7 @@ def get_consolidated_packages(codebase):
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
-            package = models.PackageData.from_dict(scan_data)(package_data)
+            package = models.PackageData.from_dict(package_data)
             package_root = package.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
