@@ -134,8 +134,6 @@ def get_licenses(
     min_score=0,
     include_text=False,
     license_text_diagnostics=False,
-    license_url_template=SCANCODE_LICENSEDB_URL,
-    unknown_licenses=False,
     deadline=sys.maxsize,
     **kwargs,
 ):
@@ -160,44 +158,44 @@ def get_licenses(
 
     If ``unknown_licenses`` is True, also detect unknown licenses.
     """
-    from licensedcode import cache
-    from licensedcode.spans import Span
+    from licensedcode.detection import detect_licenses
 
-    idx = cache.get_index()
-
+    license_clues = []
     detected_licenses = []
     detected_expressions = []
+    detected_spdx_expressions = []
 
-    matches = idx.match(
+    detections = detect_licenses(
         location=location,
         min_score=min_score,
         deadline=deadline,
-        unknown_licenses=unknown_licenses,
         **kwargs,
     )
 
-    qspans = []
-    match = None
-    for match in matches:
-        qspans.append(match.qspan)
+    all_qspans = []
+    detection = None
+    for detection in detections:
+        if detection.license_expression == None:
+            license_clues.extend(detection.matches)
 
-        detected_expressions.append(match.rule.license_expression)
+        all_qspans.extend(detection.qspans)
 
-        detected_licenses.extend(
-            _licenses_data_from_match(
-                match=match,
+        detected_expressions.append(detection.license_expression)
+        detected_spdx_expressions.append(detection.spdx_license_expression)
+        detected_licenses.append(
+            detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
-                license_url_template=license_url_template)
+            )
         )
 
     percentage_of_license_text = 0
     if detection:
         percentage_of_license_text = detection.percentage_license_text_of_file(all_qspans)
 
-    detected_spdx_expressions = []
     return dict([
         ('licenses', detected_licenses),
+        ('license_clues', license_clues),
         ('license_expressions', detected_expressions),
         ('spdx_license_expressions', detected_spdx_expressions),
         ('percentage_of_license_text', percentage_of_license_text),
