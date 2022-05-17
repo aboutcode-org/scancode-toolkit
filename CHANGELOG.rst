@@ -9,8 +9,7 @@ TBD.
 Version 31.0.0 - (2022-05-16)
 ------------------------------
 
-This is a major version with API-breaking behavious changes in the reosurce
-module.
+This is a major version with API-breaking changes in the resource module.
 
 - The Resource has no rid (resource id) and no pid (parent id). Instead
   we now use internally a simpler mapping of {path: Resource} object.
@@ -21,7 +20,7 @@ module.
   of paths. When provided, the Codebase will only contain Resources with these
   paths and no other resources. This handy to create a Codebase with only a
   subset of paths of interest. When we create a Codebase or VirtualCodebase
-  with paths, we also always create any internediate directories. So if you
+  with paths, we also always create any intermediate directories. So if you
   ask for a path of "root/dir/file", we create three resources: "root",
   "root/dir" and "root/dir/file". We accumulate codebase errors if the paths
   does not exists in the Codebase or VirtualCodebase. The paths must start with
@@ -33,9 +32,11 @@ module.
   and inconsistent when each location "files" were sharing leading path
   segments. So if you provide to JSON inputs with that each contain the path
   "root/dir/file", the VirtualCodebase will contain these paths:
+
     - "virtual_root/codebase-1/root/dir/file"
     - "virtual_root/codebase-2/root/dir/file"
-  It is otherwise practically impossble to correctly merge file data from
+
+  It is otherwise practically impossible to correctly merge file data from
   multiple codebases reliably, so adding this prefix ensures that we are doing
   the right thing
 
@@ -48,13 +49,32 @@ module.
   the directory tree for any intermediary directory used in a path that is
   otherwise missing from files path list.
   In particular this behaviour changed when you create a VirtualCodebase from
-  a pervious Codebase created with a "full_root" argument. Previously, the
+  a previous Codebase created with a "full_root" argument. Previously, the
   missing paths of a "full_root" Codebase were kept unchanged. 
-  Noet that the VirtualCodebase has always ignored the "full_root" argument.
+  Note that the VirtualCodebase has always ignored the "full_root" argument.
 
 - The Codebase and VirtualCodebase are now iterable. Iterating on a codebase
   is the same as a top-down walk.
 
+- The "Codebase.original_location" attributed has been removed.
+  No known users of commoncode used this.
+
+- The Codebase and VirtualCodebase no longer have a "full_root" and
+  "strip_root" constructor arguments and attributes. These can still be
+  passed but they will be ignored.
+
+  - Resource.path is now always the plain path where the first segment
+    is the last segment of the root location, e.g. the root fiename.
+
+  - The Resource now has new "full_root_path" and "strip_root_path"
+    properties that return the corresponding paths.
+
+  - The Resource.to_dict and the new Codebase.to_list both have a new
+    "full_root" and "strip_root" arguments
+
+  - The Resource.get_path() method accepts "full_root" and "strip_root" arguments.
+
+- The Resource.create_child() method has been removed.
 
 Other changes:
 
@@ -62,7 +82,7 @@ Other changes:
 - Merge latest skeleton
 - fileutils.parent_directory() now accepts a "with_trail" argument. 
   The returned directory has a trailing path separator unless with_trail is False.
-  The default is True and the default behavious is unchanged.
+  The default is True and the default behaviour is unchanged.
 
 
 Version 30.2.0 - (2022-05-02)
@@ -97,7 +117,7 @@ Version 30.1.0 (2022-04-05)
 Version 30.0.0 (2021-09-24)
 ------------------------------
 
-- Switch back from clamver to semver.
+- Switch back from calver to semver.
 - Adopt latest skeleton. The default virtualenv directory is now venv and no
   longer tmp
 - Fix issue with Click progressbar API #23 that prohibited to use all supported
