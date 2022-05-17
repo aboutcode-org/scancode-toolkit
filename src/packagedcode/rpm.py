@@ -17,8 +17,9 @@ from license_expression import Licensing
 
 from packagedcode import models
 from packagedcode import nevra
-from packagedcode import rpm_installed
 from packagedcode.pyrpm import RPM
+from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rpmdb_loc
+from packagedcode.rpm_installed import parse_rpm_xmlish
 from packagedcode.utils import build_description
 from packagedcode.utils import get_ancestor
 
@@ -124,9 +125,14 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
+        # we receive the location of the Package database file and we need to
+        # scan the parent which is the directory that contains the rpmdb
+        loc_path = Path(location)
+        rpmdb_loc = str(loc_path.parent)
+
         # dump and parse the rpmdb to XMLish
-        xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rpmdb_loc(location)
-        package_data = rpm_installed.parse_rpm_xmlish(
+        xmlish_loc = collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc=rpmdb_loc)
+        package_data = parse_rpm_xmlish(
             location=xmlish_loc,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
@@ -143,8 +149,12 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
     def assemble(cls, package_data, resource, codebase):
         # get the root resource of the rootfs
         # take the 1st pattern as a reference
+        # for instance: '*usr/lib/sysimage/rpm/Packages.db'
         base_path_patterns = cls.path_patterns[0]
+
+        # how many levels up are there to the root of the rootfs?
         levels_up = len(base_path_patterns.split('/'))
+
         root_resource = get_ancestor(
             levels_up=levels_up,
             resource=resource,
@@ -157,16 +167,20 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
+        root_path = root_resource.path
         # get etc/os-release for namespace
         namespace = None
-        os_release_paths = ('etc/os-release', 'usr/lib/os-release',)
-        for res in root_resource.walk(codebase):
-            if res.path.endswith(os_release_paths):
-                # there can be only one distro
-                distro = res.package_data and res.package_data[0]
-                if distro:
-                    namespace = distro.namespace
-                    break
+        os_release_rootfs_paths = ('etc/os-release', 'usr/lib/os-release',)
+        for os_release_rootfs_path in os_release_rootfs_paths:
+            os_release_path = '/'.join([root_path, os_release_rootfs_path])
+            os_release_res = codebase.get_resource(os_release_path)
+            if not os_release_res:
+                continue
+            # there can be only one distro
+            distro = os_release_res.package_data and os_release_res.package_data[0]
+            if distro:
+                namespace = distro.namespace
+                break
 
         package.namespace = namespace
 
@@ -188,29 +202,22 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                 yield dep
 
         # tag files from refs
-        root_path = Path(root_resource.path)
+        missing_file_references = []
         # a file ref extends from the root of the filesystem
-        file_references_by_path = {
-            str(root_path / ref.path): ref
-            for ref in package.file_references
-        }
-
-        for res in root_resource.walk(codebase):
-            ref = file_references_by_path.get(res.path)
-            if not ref:
-                continue
-
-            # path is found and processed: remove it, so we can check if we
-            # found all of them
-            del file_references_by_path[res.path]
-            res.for_packages.append(package_uid)
-            res.save(codebase)
-
-            yield res
+        for ref in package.file_references:
+            ref_path = '/'.join([root_path, ref.path])
+            res = codebase.get_resource(ref_path)
+            if not res:
+                missing_file_references.append(ref)
+            else:
+                # path is found and processed: remove it, so we can check if we
+                # found all of them
+                res.for_packages.append(package_uid)
+                res.save(codebase)
 
         # if we have left over file references, add these to extra data
-        if file_references_by_path:
-            missing = sorted(file_references_by_path.values(), key=lambda r:r.path)
+        if missing_file_references:
+            missing = sorted(missing_file_references, key=lambda r: r.path)
             package.extra_data['missing_file_references'] = missing
 
         yield package
