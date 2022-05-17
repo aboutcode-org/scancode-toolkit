@@ -23,6 +23,7 @@ from os.path import join
 from os.path import normpath
 from posixpath import join as posixpath_join
 from posixpath import normpath as posixpath_normpath
+from posixpath import dirname as posixpath_parent
 
 import attr
 
@@ -1169,13 +1170,21 @@ class Resource(object):
         to ``root_location`. Both locations are absolute native locations.
         The returned path has no leading and trailing slashes.  The first segment
         of this path is always the last segment of the ``root_location``.
+        For example:
+        >>> result = Resource.build_path(r'D:\\foo\\bar', r'D:\\foo\\bar\\baz')
+        >>> assert result == 'bar/baz', repr(result)
+        >>> result = Resource.build_path('/foo/bar/', '/foo/bar/baz')
+        >>> assert result == 'bar/baz', result
+        >>> result = Resource.build_path('/foo/bar/', '/foo/bar')
+        >>> assert result  == 'bar', result
         """
         root_loc = clean_path(root_location)
         loc = clean_path(location)
         assert loc.startswith(root_loc)
+
         # keep the root directory name by default
-        root_loc = parent_directory(root_loc, with_trail=True)
-        path = loc.replace(root_loc, '', 1)
+        root_loc = posixpath_parent(root_loc).strip('/')
+        path = loc.replace(root_loc, '', 1).strip('/')
         if TRACE:
             logger_debug('build_path:', root_loc, loc, path)
         return path
@@ -1580,6 +1589,7 @@ def get_codebase_cache_dir(temp_dir):
 
 @attr.s(slots=True)
 class _CodebaseAttributes(object):
+
     def to_dict(self):
         return attr.asdict(self, dict_factory=dict)
 
