@@ -109,6 +109,57 @@ def test_license_option_reports_license_texts_diag_long_lines():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_match_unknown_license_intro_with_imperfect_matches():
+    test_dir = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-with-imperfect-matches/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-with-imperfect-matches.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_match_unknown_license_intro_with_dual_license():
+    test_dir = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-dual-license/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-dual-license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_match_unknown_license_with_license_ref_to_key_file_at_root():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/unknown-ref-to-key-file-root', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/unknown-ref-to-key-file-root.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_match_unknown_license_with_license_reference():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -118,7 +169,6 @@ def test_license_match_unknown_license_with_license_reference():
         '--license-text-diagnostics',
         '--strip-root',
         '--verbose',
-        '--unknown-licenses',
         '--json', result_file,
         test_dir,
     ]
