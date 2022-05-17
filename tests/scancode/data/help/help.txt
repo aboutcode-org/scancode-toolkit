@@ -94,6 +94,7 @@ Options:
   post-scan:
     --classify               Classify files with flags telling if the file is a
                              legal, or readme or test file, etc.
+    --file-cat               Categorize files.
     --consolidate            Group resources by Packages or license and copyright
                              holder and return those groupings as a list of
                              consolidated packages and a list of consolidated
