@@ -29,7 +29,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -911,11 +910,8 @@ def test_merge_multiple_scans():
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('merge_scans/expected.json')
-    with open(expected) as f:
-        expected_files = json.loads(f.read())['files']
-    with open(result_file) as f:
-        result_files = json.loads(f.read())['files']
-    assert result_files == expected_files
+
+    check_json_scan(expected_file=expected, result_file=result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_VirtualCodebase_output_with_from_json_is_same_as_original():
@@ -934,6 +930,7 @@ def test_VirtualCodebase_output_with_from_json_is_same_as_original():
 
     assert json.dumps(results , indent=2) == json.dumps(expected, indent=2)
     assert len(results_headers) == len(expected_headers) + 1
+
 
 def test_getting_version_returns_valid_yaml():
     import saneyaml
