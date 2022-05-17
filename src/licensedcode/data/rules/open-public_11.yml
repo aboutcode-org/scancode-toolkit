@@ -1,0 +1,5 @@
+license_expression: open-public
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/OPL-1.0

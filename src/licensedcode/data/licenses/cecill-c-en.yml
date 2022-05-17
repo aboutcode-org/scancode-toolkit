@@ -4,9 +4,7 @@ name: CeCILL-C Free Software License Agreement English
 category: Copyleft
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
-notes: |
-    This is the English translation of 
-    http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html
+notes: "This is the English translation of \nhttp://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html\n"
 spdx_license_key: LicenseRef-scancode-cecill-c-en
 text_urls:
     - http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html

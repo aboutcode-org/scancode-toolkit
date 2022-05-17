@@ -118,11 +118,21 @@ set to regenerate test data for specific tests like this:
 
 This command will only regenerate test data for only the tests in `test_package_models.py`,
 and we can further specify the tests to regen by using more pytest options like `--lf` and
-`-k test_instances`. 
+`-k test_instances`.
 
 If test data is regenerated, it is important to review the diff for test files and
 carefully go through all of it to make sure there are no unintended changes there,
 and then commit all the regenerated test data.
+
+To help debug in scancode, we use logging. There are different environement variables
+you need to set to turn on logging. In packagedcode::
+
+``SCANCODE_DEBUG_PACKAGE=yes pytest -vvs tests/packagedcode/ --lf``
+
+Or set the ``TRACE`` variable to ``True``. This enables ``logger_debug`` functions
+logging variables and shows code execution paths by logging and printing the logs
+in the terminal. If debugging full scans run by click, you have to raise exceptions
+in addition to setting the TRACE to enable logging.
 
 .. _scancode_toolkit_development_thirdparty_libraries:
 

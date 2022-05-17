@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - copyrights_summary
+copyrights:
+  - Copyright (c) Microsoft
+  - (c) Adobe 1999
+  - Copyright (c) Microsoft
+holders:
+  - Microsoft
+  - Adobe
+  - Microsoft
+copyrights_summary:
+  - value: Copyright (c) Microsoft
+    count: 2
+  - value: (c) Adobe
+    count: 1

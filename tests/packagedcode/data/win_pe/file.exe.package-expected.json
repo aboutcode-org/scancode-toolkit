@@ -30,7 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2009 Ian F. Darwin",
-    "license_expression": null,
+    "license_expression": "bsd-simplified-darwin AND unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2009 Ian F. Darwin",
       "LegalTrademarks": "GnuWin32\u00ae, File\u00ae, file\u00ae",

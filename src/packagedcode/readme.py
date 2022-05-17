@@ -101,4 +101,7 @@ def build_package(readme_manifest):
             continue
         setattr(package, package_key, value)
 
+    if not package.license_expression and package.declared_license:
+        package.license_expression = models.compute_normalized_license(package.declared_license)
+
     return package

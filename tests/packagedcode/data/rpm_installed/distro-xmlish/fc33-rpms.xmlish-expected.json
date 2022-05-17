@@ -28,19 +28,15 @@
     "declared_license": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
-    "purl": "pkg:rpm/libgcc@10.1.1?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null,
     "file_references": [
       {
         "path": "/lib64/libgcc_s-10-20200507.so.1",
         "size": 0,
         "sha1": null,
-        "md5": "f0983775e8e6b1d6bd76db2a9f52cde1d6198b115f4e44a6167a5cb8eb0e6235",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "f0983775e8e6b1d6bd76db2a9f52cde1d6198b115f4e44a6167a5cb8eb0e6235",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/lib64/libgcc_s.so.1",
@@ -48,7 +44,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/lib/.build-id",
@@ -56,7 +53,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/lib/.build-id/6c",
@@ -64,7 +62,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/lib/.build-id/6c/87948c636ed6c91b75603625e32915177b72e9",
@@ -72,7 +71,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc",
@@ -80,49 +80,62 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc/COPYING",
         "size": 0,
         "sha1": null,
-        "md5": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc/COPYING.LIB",
         "size": 0,
         "sha1": null,
-        "md5": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc/COPYING.RUNTIME",
         "size": 0,
         "sha1": null,
-        "md5": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc/COPYING3",
         "size": 0,
         "sha1": null,
-        "md5": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/libgcc/COPYING3.LIB",
         "size": 0,
         "sha1": null,
-        "md5": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+        "sha512": null,
+        "extra_data": {}
       }
-    ]
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/libgcc@10.1.1?arch=x86_64"
   },
   {
     "type": "rpm",
@@ -153,28 +166,32 @@
     "declared_license": "MIT",
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
-    "purl": "pkg:rpm/fedora-release-identity-container@33?arch=noarch",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null,
     "file_references": [
       {
         "path": "/usr/lib/os-release",
         "size": 0,
         "sha1": null,
-        "md5": "e06cbdb1d9d52da73588f081b5dcf90fdf54e3abf60e4a07ec4e690639e4b982",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "e06cbdb1d9d52da73588f081b5dcf90fdf54e3abf60e4a07ec4e690639e4b982",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/lib/swidtag/fedoraproject.org/org.fedoraproject.Fedora-edition.swidtag",
         "size": 0,
         "sha1": null,
-        "md5": "c389a9a15d21e774f6e621ba4e8236b6b8304305f7bd8b5aa3b74ccd147c2ae7",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "c389a9a15d21e774f6e621ba4e8236b6b8304305f7bd8b5aa3b74ccd147c2ae7",
+        "sha512": null,
+        "extra_data": {}
       }
-    ]
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/fedora-release-identity-container@33?arch=noarch"
   }
 ]

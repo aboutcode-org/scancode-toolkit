@@ -94,6 +94,7 @@ def run_scan_click(
     If retry is True, wait 10 seconds after a failure and retry once
     """
     import click
+    import shutil
     from click.testing import CliRunner
     from scancode import cli
 
@@ -104,7 +105,7 @@ def run_scan_click(
 
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-        monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+        monkeypatch.setattr(shutil , 'get_terminal_size', lambda : (80, 43,))
 
     if not env:
         env = dict(os.environ)
@@ -191,6 +192,9 @@ def check_json_scan(
     if remove_uuid:
         results = remove_uuid_from_scan(results)
 
+    if not check_headers:
+        results.pop('headers', None)
+
     if regen:
         with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
@@ -199,10 +203,9 @@ def check_json_scan(
         expected = load_json_result(location=expected_file, remove_file_date=remove_file_date)
         if remove_uuid:
             expected = remove_uuid_from_scan(expected)
+        if not check_headers:
+            expected.pop('headers', None)
 
-    if not check_headers:
-        results.pop('headers', None)
-        expected.pop('headers', None)
 
     # NOTE we redump the JSON as a YAML string for easier display of
     # the failures comparison/diff

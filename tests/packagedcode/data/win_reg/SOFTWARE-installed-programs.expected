@@ -467,7 +467,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{351016A7-AED4-4824-8D2E-2F9ED497CF77}"
+      {
+        "path": "MsiExec.exe /I{351016A7-AED4-4824-8D2E-2F9ED497CF77}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -513,7 +521,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}"
+      {
+        "path": "MsiExec.exe /I{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -559,7 +575,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{6504EEE5-2172-4D34-A76D-0372356396B4}"
+      {
+        "path": "MsiExec.exe /I{6504EEE5-2172-4D34-A76D-0372356396B4}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -605,7 +629,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{843C07B6-040E-4E83-B244-5383247D70AB}"
+      {
+        "path": "MsiExec.exe /I{843C07B6-040E-4E83-B244-5383247D70AB}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -651,7 +683,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{AEE58901-97A1-422A-B964-4FD9BF3327B8}"
+      {
+        "path": "MsiExec.exe /I{AEE58901-97A1-422A-B964-4FD9BF3327B8}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -697,7 +737,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{F4DC18F4-6323-4BE8-A322-38268831BC24}"
+      {
+        "path": "MsiExec.exe /I{F4DC18F4-6323-4BE8-A322-38268831BC24}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],
@@ -743,7 +791,15 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [
-      "MsiExec.exe /I{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}"
+      {
+        "path": "MsiExec.exe /I{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "extra_data": {}
+      }
     ],
     "extra_data": {},
     "dependencies": [],

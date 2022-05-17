@@ -111,8 +111,7 @@ def parse_gomod(location):
     For example::
 
         >>> p = parse_dep_link('github.com/davecgh/go-spew v1.1.1')
-        >>> assert p.group('namespace') == ('github.com/davecgh')
-        >>> assert p.group('name') == ('go-spew')
+        >>> assert p.group('ns_name') == ('github.com/davecgh/go-spew')
         >>> assert p.group('version') == ('v1.1.1')
     """
     with io.open(location, encoding='utf-8', closefd=True) as data:

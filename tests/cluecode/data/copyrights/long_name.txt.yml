@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+
+copyrights:
+  - Copyright (c) 2021 Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Zeus
+
+holders:
+  - Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Zeus
+
+expected_failures:
+  - copyrights
+  - holders
+notes: we should not detect very long names

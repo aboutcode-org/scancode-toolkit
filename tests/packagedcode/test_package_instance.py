@@ -7,16 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-import json
 import os
 
-from packagedcode import models
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
-import pytest
 
 
 class TestPackageAndDependency(PackageTester):
@@ -45,43 +41,3 @@ class TestPackageAndDependency(PackageTester):
         expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
-
-    @pytest.mark.xfail(
-        reason='FIXME: this tests requires a complex setup that is hard to reproduce when the schema changes ... '
-        'we cannot do it this way: the test needs to create its own data input'
-    )
-    def test_package_data_merge_generic(self, regen=REGEN_TEST_FIXTURES):
-        input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')
-        expected_file = self.get_test_loc('instance/python-manifests-click-scanned-result.json')
-
-        with io.open(input_file, encoding='utf-8') as res:
-            packages_data = json.load(res)
-
-        pk_instance = None
-        for package_data in packages_data:
-            if not pk_instance:
-                pk_instance = models.Package.from_package_data(package_data, datafile_path='click')
-            else:
-                pk_instance.update(package_data, datafile_path='click')
-
-        self.check_package_data(pk_instance.to_dict(), expected_file, regen)
-
-    @pytest.mark.xfail(
-        reason='FIXME: this tests requires a complex setup that is hard to reproduce when the schema changes ... '
-        'we cannot do it this way: the test needs to create its own data input'
-    )
-    def test_package_data_merge_with_dependencies(self, regen=REGEN_TEST_FIXTURES):
-        input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
-        expected_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned-result.json')
-
-        with io.open(input_file, encoding='utf-8') as res:
-                packages_data = json.load(res)
-
-        pk_instance = None
-        for package_data in packages_data:
-            if not pk_instance:
-                pk_instance = models.Package.from_package_data(package_data, datafile_path='atomicwrites')
-            else:
-                pk_instance.update(package_data, datafile_path='atomicwrites')
-
-        self.check_package_data(pk_instance.to_dict(), expected_file, regen)

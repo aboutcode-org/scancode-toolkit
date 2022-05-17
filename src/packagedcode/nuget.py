@@ -93,7 +93,7 @@ class NugetNuspecHandler(models.DatafileHandler):
 
         urls = get_urls(name, version)
 
-        yield models.PackageData(
+        package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -107,3 +107,8 @@ class NugetNuspecHandler(models.DatafileHandler):
             vcs_url=vcs_url,
             **urls,
         )
+
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(package_data)
+
+        yield package_data

@@ -90,7 +90,9 @@ The key models defined here are:
   dependencies. When implementing a new package type and manifest file format,
   subclass DatafileHandler and implement the parse() and assemble() methods for
   this package datafile format and package type. Then register this class in
-  ``packagedcode.PACKAGE_DATAFILE_HANDLERS``.
+  ``packagedcode.APPLICATION_PACKAGE_DATAFILE_HANDLERS`` if this is an
+  application package or ``packagedcode.SYSTEM_PACKAGE_DATAFILE_HANDLERS`` if
+  this is a system package.
 
 
 Beyond these we have a few secondary models:
@@ -108,8 +110,10 @@ SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE = SCANCODE_DEBUG_PACKAGE_API
 TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_API
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -158,7 +162,7 @@ def to_tuple(collection):
     Return a tuple of basic Python values by recursively converting a mapping
     and all its sub-mappings.
     For example::
-    >>> as_tuple({7: [1,2,3], 9: {1: [2,6,8]}})
+    >>> to_tuple({7: [1,2,3], 9: {1: [2,6,8]}})
     ((7, (1, 2, 3)), (9, ((1, (2, 6, 8)),)))
     """
     if isinstance(collection, dict):
@@ -436,12 +440,17 @@ class Dependency(DependentPackage):
         """
         dependent_packages = dependent_packages or []
         for dependent_package in dependent_packages:
-            yield Dependency.from_dependent_package(
-                dependent_package=dependent_package,
-                datafile_path=datafile_path,
-                datasource_id=datasource_id,
-                package_uid=package_uid,
-            )
+            if dependent_package.purl:
+                yield Dependency.from_dependent_package(
+                    dependent_package=dependent_package,
+                    datafile_path=datafile_path,
+                    datasource_id=datasource_id,
+                    package_uid=package_uid,
+                )
+            else:
+                if TRACE:
+                    logger_debug(f' Dependency.from_dependent_packages: dependent_package (does not have purl): {dependent_package}')
+                pass
 
 
 @attr.attributes(slots=True)
@@ -820,7 +829,7 @@ class DatafileHandler:
     documentation_url = None
 
     @classmethod
-    def is_datafile(cls, location, filetypes=tuple()):
+    def is_datafile(cls, location, filetypes=tuple(), _bare_filename=False):
         """
         Return True if the file at ``location`` is likely a package data file
         that this parser can handle. This implementation is based on:
@@ -832,9 +841,11 @@ class DatafileHandler:
         - if defined, ensuring that the filetype of the file at ``location``
           contains any of the type listed in the ``filetypes`` class attribute.
 
+        - ``_bare_filename`` is for testing using a bare path that does not
+        point to real files.
         Subclasses can override to implement more complex data file recognition.
         """
-        if filetype.is_file(location):
+        if filetype.is_file(location) or _bare_filename:
             loc = as_posixpath(location)
             if any(fnmatchcase(loc, pat) for pat in cls.path_patterns):
                 filetypes = filetypes or cls.filetypes
@@ -1050,6 +1061,8 @@ class DatafileHandler:
             res.save(codebase)
 
         if package:
+            if not package.license_expression:
+                package.license_expression = cls.compute_normalized_license(package)
             yield package
 
     @classmethod
@@ -1077,7 +1090,10 @@ class DatafileHandler:
         if not codebase.has_single_resource:
             siblings = list(directory.children(codebase))
         else:
-            siblings = [directory]
+            if directory:
+                siblings = [directory]
+            else:
+                siblings = []
 
         pkgdata_resources = []
 
@@ -1310,6 +1326,25 @@ class Package(PackageData):
                 if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
         return True
+
+    def get_packages_files(self, codebase):
+        """
+        Yield all the Resource of this package found in codebase.
+        """
+        package_uid = self.package_uid
+        for resource in codebase.walk():
+            if package_uid in resource.for_packages:
+                yield resource
+
+
+def get_files_for_packages(codebase):
+    """
+    Yield tuple of (Resource, package_uid) for all resources in codebase that are
+    for a package.
+    """
+    for resource in codebase.walk():
+        for package_uid in resource.for_packages:
+            yield resource, package_uid
 
 
 def merge_sequences(list1, list2, **kwargs):

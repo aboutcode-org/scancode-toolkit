@@ -25,26 +25,26 @@ class InvalidDistributionFilename(Exception):
 
 def get_package_name_from_filename(filename):
     """
-    Return the package name extracted from a package ``filename``.
-    Optionally ``normalize`` the name according to distribution name rules.
+    Return the normalized package name extracted from a package ``filename``.
+    Normalization is done according to distribution name rules.
     Raise an ``InvalidDistributionFilename`` if the ``filename`` is invalid::
 
     >>> get_package_name_from_filename("foo-1.2.3_rc1.tar.gz")
     'foo'
-    >>> get_package_name_from_filename("foo-bar-1.2-py27-none-any.whl")
+    >>> get_package_name_from_filename("foo_bar-1.2-py27-none-any.whl")
     'foo-bar'
     >>> get_package_name_from_filename("Cython-0.17.2-cp26-none-linux_x86_64.whl")
     'cython'
     >>> get_package_name_from_filename("python_ldap-2.4.19-cp27-none-macosx_10_10_x86_64.whl")
     'python-ldap'
-    >>> get_package_name_from_filename("foo.whl")
-    Traceback (most recent call last):
-        ...
-    InvalidDistributionFilename: ...
-    >>> get_package_name_from_filename("foo.png")
-    Traceback (most recent call last):
-        ...
-    InvalidFilePackageName: ...
+    >>> try:
+    ...     get_package_name_from_filename("foo.whl")
+    ... except InvalidDistributionFilename:
+    ...     pass
+    >>> try:
+    ...     get_package_name_from_filename("foo.png")
+    ... except InvalidDistributionFilename:
+    ...     pass
     """
     if not filename or not filename.endswith(dist_exts):
         raise InvalidDistributionFilename(filename)

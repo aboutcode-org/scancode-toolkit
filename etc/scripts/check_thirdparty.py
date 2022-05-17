@@ -16,7 +16,7 @@ import utils_thirdparty
 @click.command()
 @click.option(
     "-d",
-    "--dest_dir",
+    "--dest",
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     required=True,
     help="Path to the thirdparty directory to check.",
@@ -35,7 +35,7 @@ import utils_thirdparty
 )
 @click.help_option("-h", "--help")
 def check_thirdparty_dir(
-    dest_dir,
+    dest,
     wheels,
     sdists,
 ):
@@ -45,7 +45,7 @@ def check_thirdparty_dir(
     # check for problems
     print(f"==> CHECK FOR PROBLEMS")
     utils_thirdparty.find_problems(
-        dest_dir=dest_dir,
+        dest_dir=dest,
         report_missing_sources=sdists,
         report_missing_wheels=wheels,
     )

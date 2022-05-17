@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'org.apache.commons:commons-text:1.1'
+    implementation 'org.apache.struts:struts2-assembly:2.5.14.1:min-lib@zip'
+    testImplementation 'junit:junit:4.12'
+}
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        licenses {
+            license {
+                name 'The Apache License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            }
+        }
+    }
+}
+
+logger.quiet("The current working directory is set to: " + System.properties['user.dir'])

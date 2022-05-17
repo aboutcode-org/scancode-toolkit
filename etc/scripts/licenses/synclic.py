@@ -523,6 +523,7 @@ class DejaSource(ExternalLicensesSource):
         "category",
         "owner",
         "text_urls",
+        "language",
         "osi_url",
         "faq_url",
         "other_urls",
@@ -668,7 +669,8 @@ class DejaSource(ExternalLicensesSource):
     def patch_spdx_license(self, api_url, license_key, spdx_license_key):
         """
         PATCH the DejaCode ``license_key`` to set the ``spdx_license_key``
-        using the DejaCode API Raise an exception on failure.
+        using the DejaCode API.
+        Raise an exception on failure.
         """
         headers = {
             "Authorization": f"Token {self.api_key}",
@@ -891,6 +893,7 @@ def license_to_dict(lico):
         name=lico.name,
         owner=lico.owner,
         is_exception=lico.is_exception,
+        language=lico.language or "en",
         full_text=lico.text,
         spdx_license_key=lico.spdx_license_key,
         reference_notes=lico.notes,
@@ -1351,6 +1354,7 @@ def synchronize_licenses(
 
     added_to_external = [externals_by_key[k] for k in added_to_external]
     updated_in_external = [externals_by_key[k] for k in updated_in_external]
+    external_source.externals_by_key = externals_by_key
     return added_to_external, updated_in_external
 
 
@@ -1439,9 +1443,6 @@ def cli(
             api_url = external_source.api_base_url
             api_key = external_source.api_key
             for i, new_lic in enumerate(added_to_external):
-                if i == 2:
-                    break
-
                 if new_lic.key in dejacode_special_skippable_keys:
                     continue
                 if TRACE:
@@ -1451,8 +1452,6 @@ def cli(
         if update_external:
             externals_by_key = external_source.externals_by_key
             for i, modified_lic in enumerate(updated_in_external):
-                if i == 2:
-                    break
                 if modified_lic.key in dejacode_special_skippable_keys:
                     continue
                 mold = license_to_dict(modified_lic)

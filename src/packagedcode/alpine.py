@@ -52,7 +52,11 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        yield from parse_alpine_installed_db(location)
+        yield from parse_alpine_installed_db(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
@@ -70,7 +74,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
-        package.license_expression = cls.compute_normalized_license(package=package)
+        package.license_expression = cls.compute_normalized_license(package)
 
         dependent_packages = package_data.dependencies
         if dependent_packages:
@@ -129,7 +133,7 @@ class AlpineApkbuildHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,

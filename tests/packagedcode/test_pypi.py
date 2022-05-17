@@ -12,13 +12,32 @@ import os
 from unittest.case import skipIf
 
 import pytest
-
 from commoncode.system import on_windows
 
 from packagedcode import pypi
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
+
+
+class TestPyPiEndtoEnd(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_package_scan_pypi_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_scan_pypi_end_to_end_skip_site_packages(self):
+        test_dir = self.get_test_loc('pypi/site-packages/codebase')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/site-packages/site-packages-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
@@ -236,6 +255,13 @@ class TestPypiUnpackedSdist(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-2.1/commoncode-21.5.12-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_can_parse_solo_metadata_from_command_line(self):
+        test_file = self.get_test_loc('pypi/solo-metadata/PKG-INFO')
+        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPipRequirementsFileHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -366,6 +392,48 @@ class TestPipRequirementsFileHandler(PackageTester):
         package = pypi.PipRequirementsFileHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_PipRequirementsFileHandler_is_datafile(self):
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True),
+            True
+        )
+        self.assertEqual(
+            pypi.PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True),
+            True
+        )
 
 
 class TestPyPiPipfile(PackageTester):

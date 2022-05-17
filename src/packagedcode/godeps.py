@@ -9,7 +9,6 @@
 
 import io
 import json
-from collections import namedtuple
 
 from commoncode import datautils
 
@@ -76,7 +75,7 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        super().assign_package_to_parent_tree(package, resource, codebase)
+        models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
 @attr.s

@@ -39,7 +39,7 @@
     "code_view_url": null,
     "vcs_url": "Repository, https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
-    "license_expression": "agpl-3.0-plus",
+    "license_expression": "agpl-3.0-plus AND agpl-3.0-plus",
     "declared_license": {
       "license": "AGPL-3.0-or-later",
       "classifiers": [

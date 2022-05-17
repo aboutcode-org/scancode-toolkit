@@ -51,7 +51,7 @@
     "code_view_url": null,
     "vcs_url": "https://pypi.python.org/pypi/pyldap/",
     "copyright": null,
-    "license_expression": "unknown AND python",
+    "license_expression": "python AND python",
     "declared_license": {
       "license": "Python style",
       "classifiers": [

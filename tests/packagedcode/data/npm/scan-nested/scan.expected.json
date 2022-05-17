@@ -11,7 +11,15 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
         "spdx_license_list_version": "3.16",
         "files_count": 5
       }
@@ -786,8 +794,8 @@
         {
           "type": "npm",
           "namespace": "",
-          "name": "babel-runtime",
-          "version": "6.23.0",
+          "name": "sequelize",
+          "version": "3.30.2",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
@@ -928,11 +936,11 @@
               }
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/babel-runtime",
-          "repository_download_url": "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.23.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/babel-runtime/6.23.0",
+          "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
+          "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+          "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
           "datasource_id": "npm_package_lock_json",
-          "purl": "pkg:npm/babel-runtime@6.23.0"
+          "purl": "pkg:npm/sequelize@3.30.2"
         }
       ],
       "for_packages": [
@@ -1314,8 +1322,8 @@
         {
           "type": "npm",
           "namespace": "",
-          "name": "babel-runtime",
-          "version": "6.23.0",
+          "name": "lodash.clonedeep",
+          "version": "4.3.2",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
@@ -1512,11 +1520,11 @@
               }
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/babel-runtime",
-          "repository_download_url": "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.23.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/babel-runtime/6.23.0",
+          "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
+          "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+          "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
           "datasource_id": "npm_package_lock_json",
-          "purl": "pkg:npm/babel-runtime@6.23.0"
+          "purl": "pkg:npm/lodash.clonedeep@4.3.2"
         }
       ],
       "for_packages": [

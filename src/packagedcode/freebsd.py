@@ -94,6 +94,9 @@ class CompactManifestHandler(models.DatafileHandler):
         # license_mapper needs multiple fields
         license_mapper(freebsd_manifest, package_data)
 
+        if package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(package_data)
+
         yield package_data
 
     @classmethod
@@ -139,7 +142,7 @@ def license_mapper(freebsd_manifest, package):
     licenses = freebsd_manifest.get('licenses')
 
     if not licenses:
-        return package
+        return
 
     declared_license = {}
     lics = [l.strip() for l in licenses if l and l.strip()]
@@ -150,7 +153,7 @@ def license_mapper(freebsd_manifest, package):
         declared_license['licenselogic'] = license_logic
 
     package.declared_license = declared_license
-    return package
+    return
 
 
 def maintainer_mapper(maintainer, package):

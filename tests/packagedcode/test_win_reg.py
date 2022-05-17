@@ -14,9 +14,10 @@ import pytest
 
 from commoncode.system import on_linux
 
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 from packagedcode.win_reg import InstalledProgramFromDockerFilesSoftwareHandler
 from packagedcode.win_reg import create_absolute_installed_file_path
-from packagedcode.win_reg import get_installed_packages
 from packagedcode.win_reg import get_installed_dotnet_versions_from_regtree
 from packagedcode.win_reg import get_installed_windows_programs_from_regtree
 from packagedcode.win_reg import remove_drive_letter
@@ -68,8 +69,12 @@ class TestWinReg(PackageTester):
         expected_path = '/home/test/c/Program Files/Test Program'
         self.assertEqual(result, expected_path)
 
-    def test_win_reg_get_installed_packages(self):
-        test_root_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')
-        expected_loc = self.get_test_loc('win_reg/get_installed_packages_docker/expected-results')
-        results = list(p.to_dict(_detailed=True) for p in get_installed_packages(test_root_dir))
-        check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_scan_system_package_end_to_end_installed_win_reg(self):
+        test_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')
+        expected_file = self.get_test_loc(
+            'win_reg/get_installed_packages_docker/expected-results.json',
+            must_exist=False,
+        )
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

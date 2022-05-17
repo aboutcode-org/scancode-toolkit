@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - copyrights_summary
+copyrights:
+  - Copyright (c) RandomCompany
+holders:
+  - RandomCompany
+copyrights_summary:
+  - value: Copyright (c) RandomCompany
+    count: 1

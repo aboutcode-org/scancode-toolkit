@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import warnings
 from collections import Counter
 
 import attr
@@ -20,7 +21,7 @@ from packagedcode import models
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from summarycode import copyright_summary
+from summarycode import copyright_tallies
 
 # Tracing flags
 TRACE = False
@@ -108,6 +109,10 @@ class ConsolidatedPackage(object):
         return package
 
 
+class ConsolidatorPluginDeprecationWarning(DeprecationWarning):
+    pass
+
+
 @post_scan_impl
 class Consolidator(PostScanPlugin):
     """
@@ -151,6 +156,16 @@ class Consolidator(PostScanPlugin):
         return consolidate
 
     def process_codebase(self, codebase, **kwargs):
+        deprecation_message = "The --consolidate option will be deprecated in a future version of scancode-toolkit."
+        warnings.simplefilter('always', ConsolidatorPluginDeprecationWarning)
+        warnings.warn(
+            deprecation_message,
+            ConsolidatorPluginDeprecationWarning,
+            stacklevel=2,
+        )
+        codebase_header = codebase.get_or_create_current_header()
+        codebase_header.warnings.append(deprecation_message)
+
         # Collect ConsolidatedPackages and ConsolidatedComponents
         # TODO: Have a "catch-all" Component for the things that we haven't grouped
         consolidations = []
@@ -224,7 +239,7 @@ def get_consolidated_packages(codebase):
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
-            package = models.PackageData.from_dict(scan_data)(package_data)
+            package = models.PackageData.from_dict(package_data)
             package_root = package.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
@@ -273,10 +288,10 @@ def get_consolidated_packages(codebase):
             c = Consolidation(
                 core_license_expression=package_license_expression,
                 # Sort holders by holder key
-                core_holders=[h for h, _ in sorted(copyright_summary.cluster(package_holders), key=lambda t: t[0].key)],
+                core_holders=[h for h, _ in sorted(copyright_tallies.cluster(package_holders), key=lambda t: t[0].key)],
                 other_license_expression=simplified_discovered_license_expression,
                 # Sort holders by holder key
-                other_holders=[h for h, _ in sorted(copyright_summary.cluster(discovered_holders), key=lambda t: t[0].key)],
+                other_holders=[h for h, _ in sorted(copyright_tallies.cluster(discovered_holders), key=lambda t: t[0].key)],
                 files_count=len([package_resource for package_resource in package_resources if package_resource.is_file]),
                 resources=package_resources,
             )
@@ -294,12 +309,12 @@ def get_consolidated_packages(codebase):
 
 
 def process_holders(holders):
-    holders = [copyright_summary.Text(key=holder, original=holder) for holder in holders]
+    holders = [copyright_tallies.Text(key=holder, original=holder) for holder in holders]
 
     for holder in holders:
         holder.normalize()
 
-    holders = list(copyright_summary.filter_junk(holders))
+    holders = list(copyright_tallies.filter_junk(holders))
 
     for holder in holders:
         holder.normalize()

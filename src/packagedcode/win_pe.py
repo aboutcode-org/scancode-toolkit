@@ -328,7 +328,7 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             parties = [Party(type=party_org, role='author', name=cname)]
         homepage_url = get_first(infos, 'URL', 'WWW')
 
-        yield models.PackageData(
+        package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -340,3 +340,8 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             parties=parties,
             homepage_url=homepage_url,
         )
+
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
+
+        yield package_data

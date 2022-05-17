@@ -19,7 +19,6 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -193,7 +192,7 @@ def test_find_referenced_resource():
     # test proper
     from commoncode.resource import VirtualCodebase
     codebase = VirtualCodebase(scan_loc)
-    resource = codebase.get_resource_from_path('scan-ref/license-notice.txt')
+    resource = codebase.get_resource('scan-ref/license-notice.txt')
     result = find_referenced_resource(referenced_filename='LICENSE', resource=resource, codebase=codebase)
     assert result.path == 'scan-ref/LICENSE'
 
@@ -210,7 +209,7 @@ def test_find_referenced_resource_does_not_find_based_file_name_suffix():
     # test proper
     from commoncode.resource import VirtualCodebase
     codebase = VirtualCodebase(scan_loc)
-    resource = codebase.get_resource_from_path('scan-ref-dupe-name-suffix/license-notice.txt')
+    resource = codebase.get_resource('scan-ref-dupe-name-suffix/license-notice.txt')
     result = find_referenced_resource(referenced_filename='LICENSE', resource=resource, codebase=codebase)
     assert result.path == 'scan-ref-dupe-name-suffix/LICENSE'
 
@@ -232,13 +231,14 @@ def test_match_reference_license():
     # test proper
     from commoncode.resource import VirtualCodebase
     codebase = VirtualCodebase(scan_loc)
-    resource = codebase.get_resource_from_path('scan-ref/license-notice.txt')
+    resource = codebase.get_resource('scan-ref/license-notice.txt')
     assert len(resource.licenses) == 2
     result = add_referenced_filenames_license_matches(resource=resource, codebase=codebase)
     assert len(result.licenses) == 3
 
 
 def test_reindex_licenses_works():
+    run_scan_click(['--reindex-licenses-for-all-languages'])
     run_scan_click(['--reindex-licenses'])
 
 

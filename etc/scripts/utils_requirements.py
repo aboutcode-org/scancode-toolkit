@@ -41,23 +41,23 @@ def get_required_name_versions(requirement_lines, with_unpinned=False):
         if req_line.startswith("-") or (not with_unpinned and not "==" in req_line):
             print(f"Requirement line is not supported: ignored: {req_line}")
             continue
-        yield get_name_version(requirement=req_line, with_unpinned=with_unpinned)
+        yield get_required_name_version(requirement=req_line, with_unpinned=with_unpinned)
 
 
-def get_name_version(requirement, with_unpinned=False):
+def get_required_name_version(requirement, with_unpinned=False):
     """
     Return a (name, version) tuple given a`requirement` specifier string.
     Requirement version must be pinned. If ``with_unpinned`` is True, unpinned
     requirements are accepted and only the name portion is returned.
 
     For example:
-    >>> assert get_name_version("foo==1.2.3") == ("foo", "1.2.3")
-    >>> assert get_name_version("fooA==1.2.3.DEV1") == ("fooa", "1.2.3.dev1")
-    >>> assert get_name_version("foo==1.2.3", with_unpinned=False) == ("foo", "1.2.3")
-    >>> assert get_name_version("foo", with_unpinned=True) == ("foo", "")
-    >>> assert get_name_version("foo>=1.2", with_unpinned=True) == ("foo", ""), get_name_version("foo>=1.2")
+    >>> assert get_required_name_version("foo==1.2.3") == ("foo", "1.2.3")
+    >>> assert get_required_name_version("fooA==1.2.3.DEV1") == ("fooa", "1.2.3.dev1")
+    >>> assert get_required_name_version("foo==1.2.3", with_unpinned=False) == ("foo", "1.2.3")
+    >>> assert get_required_name_version("foo", with_unpinned=True) == ("foo", "")
+    >>> assert get_required_name_version("foo>=1.2", with_unpinned=True) == ("foo", ""), get_required_name_version("foo>=1.2")
     >>> try:
-    ...   assert not get_name_version("foo", with_unpinned=False)
+    ...   assert not get_required_name_version("foo", with_unpinned=False)
     ... except Exception as e:
     ...   assert "Requirement version must be pinned" in str(e)
     """
@@ -110,6 +110,8 @@ def get_installed_reqs(site_packages_dir):
     Return the installed pip requirements as text found in `site_packages_dir`
     as a text.
     """
+    if not os.path.exists(site_packages_dir):
+        raise Exception(f"site_packages directory: {site_packages_dir!r} does not exists")
     # Also include these packages in the output with --all: wheel, distribute,
     # setuptools, pip
     args = ["pip", "freeze", "--exclude-editable", "--all", "--path", site_packages_dir]

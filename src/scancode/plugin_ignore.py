@@ -79,41 +79,43 @@ class ProcessIgnore(PreScanPlugin):
 
         included = partial(is_included, includes=includes, excludes=excludes)
 
-        rids_to_remove = set()
-        rids_to_remove_add = rids_to_remove.add
-        rids_to_remove_discard = rids_to_remove.discard
+        paths_to_remove = set()
+        paths_to_remove_add = paths_to_remove.add
+        paths_to_remove_discard = paths_to_remove.discard
 
-        # First, walk the codebase from the top-down and collect the rids of
-        # Resources that can be removed.
+        # Walk codebase top-down to collect the paths of Resources to remove.
         for resource in codebase.walk(topdown=True):
             if resource.is_root:
                 continue
-            resource_rid = resource.rid
 
-            if not included(resource.path):
+            resource_path = resource.path
+
+            if not included(resource_path):
                 for child in resource.children(codebase):
-                    rids_to_remove_add(child.rid)
-                rids_to_remove_add(resource_rid)
+                    paths_to_remove_add(child.path)
+                paths_to_remove_add(resource_path)
             else:
                 # we may have been selected for removal based on a parent dir
                 # but may be explicitly included. Honor that
-                rids_to_remove_discard(resource_rid)
+                paths_to_remove_discard(resource_path)
+
         if TRACE:
-            logger_debug('process_codebase: rids_to_remove')
-            logger_debug(rids_to_remove)
-            for rid in sorted(rids_to_remove):
-                logger_debug(codebase.get_resource(rid))
+            logger_debug('process_codebase: paths_to_remove')
+            logger_debug(paths_to_remove)
+            for path in sorted(paths_to_remove):
+                logger_debug(codebase.get_resource(path))
 
         remove_resource = codebase.remove_resource
 
         # Then, walk bottom-up and remove the non-included Resources from the
-        # Codebase if the Resource's rid is in our list of rid's to remove.
+        # Codebase if the Resource path is in our list of paths to remove.
         for resource in codebase.walk(topdown=False):
-            resource_rid = resource.rid
+            resource_path = resource.path
             if resource.is_root:
                 continue
-            if resource.is_dir:  # removing dirs will also remove its files
+            # removing dirs will also remove its files
+            if resource.is_dir:  
                 continue
-            if resource_rid in rids_to_remove:
-                rids_to_remove_discard(resource_rid)
+            if resource_path in paths_to_remove:
+                paths_to_remove_discard(resource_path)
                 remove_resource(resource)

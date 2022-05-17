@@ -7,14 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
-
 from commoncode.datautils import Boolean
-from commoncode.fileset import get_matches
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
-from plugincode.post_scan import PostScanPlugin
-from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import PRE_SCAN_GROUP
 
@@ -24,6 +19,7 @@ Tag files as "key" or important and top-level files.
 
 # Tracing flag
 TRACE = False
+
 
 def logger_debug(*args):
     pass
@@ -43,12 +39,10 @@ if TRACE:
             except Exception:
                 self.handleError(record)
 
-
     logger = logging.getLogger(__name__)
     logger.handlers = [ClickHandler()]
     logger.propagate = False
     logger.setLevel(logging.DEBUG)
-
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
@@ -138,97 +132,6 @@ def get_relative_path(root_path, path):
     return path[len(root_path):].lstrip('/')
 
 
-@post_scan_impl
-class PackageTopAndKeyFilesTagger(PostScanPlugin):
-    """
-    Tag resources as key or top level based on Package-type specific settings.
-    """
-
-    sort_order = 0
-
-    def is_enabled(self, classify, **kwargs):
-        return classify
-
-    def process_codebase(self, codebase, classify, **kwargs):
-        """
-        Tag resource as key or top level files based on Package type-specific
-        rules.
-        """
-        if not classify:
-            logger_debug('PackageTopAndKeyFilesTagger: return')
-            return
-
-        from packagedcode import get_package_class
-
-        if codebase.has_single_resource:
-            # What if we scanned a single file and we do not have a root proper?
-            return
-
-        root_path = codebase.root.path
-
-        has_package_data = hasattr(codebase.root, 'package_data')
-        if not has_package_data:
-            # FIXME: this is not correct... we may still have cases where this
-            # is wrong: e.g. a META-INF directory and we may not have a package
-            return
-
-
-        for resource in codebase.walk(topdown=True):
-            package_data_all = resource.package_data or []
-
-            if not package_data_all:
-                continue
-            if not resource.has_children():
-                continue
-
-            descendants = None
-
-            for package_data in package_data_all:
-                package_class = get_package_class(package_data)
-                extra_root_dirs = package_class.extra_root_dirs()
-                extra_key_files = package_class.extra_key_files()
-                if TRACE:
-                    logger_debug('PackageTopAndKeyFilesTagger: extra_root_dirs:', extra_root_dirs)
-                    logger_debug('PackageTopAndKeyFilesTagger: extra_key_files:', extra_key_files)
-
-                if not (extra_root_dirs or extra_key_files):
-                    # FIXME: this is not correct!
-                    # we may still have other files under the actual root.
-                    continue
-
-                if not descendants:
-                    descendants = {
-                        get_relative_path(root_path, r.path): r
-                                   for r in resource.descendants(codebase)}
-
-                    if TRACE:
-                        logger_debug('PackageTopAndKeyFilesTagger: descendants')
-                        for rpath, desc in descendants.items():
-                            logger_debug('rpath:', rpath, 'desc:', desc)
-
-                for rpath, desc in descendants.items():
-                    if extra_root_dirs and get_matches(rpath, extra_root_dirs):
-                        if TRACE:
-                            logger_debug('PackageTopAndKeyFilesTagger: get_matches for:', rpath, desc)
-                        desc.is_top_level = True
-                        if desc.is_file:
-                            set_classification_flags(desc)
-                        desc.save(codebase)
-
-                        for child in desc.children(codebase):
-                            if TRACE:
-                                logger_debug('PackageTopAndKeyFilesTagger: set is_top_level for:', child)
-
-                            child.is_top_level = True
-                            if child.is_file:
-                                set_classification_flags(child)
-                            child.save(codebase)
-
-                    if extra_key_files and get_matches(rpath, extra_key_files):
-                        desc.is_key_file = True
-                        desc.save(codebase)
-
-
 LEGAL_STARTS_ENDS = (
     'copying',
     'copyright',
@@ -250,7 +153,6 @@ LEGAL_STARTS_ENDS = (
     'patent',
     'patents',
 )
-
 
 _MANIFEST_ENDS = {
     '.about': 'ABOUT file',
@@ -298,9 +200,7 @@ _MANIFEST_ENDS = {
 
 }
 
-
 MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
-
 
 README_STARTS_ENDS = (
     'readme',
@@ -323,9 +223,10 @@ def check_resource_name_start_and_end(resource, STARTS_ENDS):
 
 
 def set_classification_flags(resource,
-        _LEGAL=LEGAL_STARTS_ENDS,
-        _MANIF=MANIFEST_ENDS,
-        _README=README_STARTS_ENDS):
+    _LEGAL=LEGAL_STARTS_ENDS,
+    _MANIF=MANIFEST_ENDS,
+    _README=README_STARTS_ENDS,
+):
     """
     Set classification flags on the `resource` Resource
     """
@@ -333,7 +234,8 @@ def set_classification_flags(resource,
 
     resource.is_legal = is_legal = check_resource_name_start_and_end(resource, _LEGAL)
     resource.is_readme = is_readme = check_resource_name_start_and_end(resource, _README)
-    resource.is_manifest = is_manifest = path.endswith(_MANIF)
-    resource.is_key_file = (resource.is_top_level
-                            and (is_readme or is_legal or is_manifest))
+    # FIXME: this will never be picked up as this is NOT available in a pre-scan plugin
+    has_package_data = bool(getattr(resource, 'package_data', False))
+    resource.is_manifest = is_manifest = path.endswith(_MANIF) or has_package_data
+    resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest))
     return resource

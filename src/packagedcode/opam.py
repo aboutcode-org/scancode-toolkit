@@ -90,7 +90,7 @@ class OpamFileHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -112,9 +112,14 @@ class OpamFileHandler(models.DatafileHandler):
             primary_language=cls.default_primary_language
         )
 
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
+
+        yield package_data
+
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
 def get_repository_homepage_url(name):
@@ -176,51 +181,6 @@ def parse_opam_from_text(text):
     """
     Return a mapping of package data collected from the opam OCaml package
     manifest ``text``.
-
-    Example:
-
-    >>> opam_text = '''
-    ... opam-version: "2.0"
-    ... version: "4.11.0+trunk"
-    ... synopsis: "OCaml development version"
-    ... depends: [
-    ...   "ocaml" {= "4.11.0" & post}
-    ...   "base-unix" {post}
-    ... ]
-    ... conflict-class: "ocaml-core-compiler"
-    ... flags: compiler
-    ... setenv: CAML_LD_LIBRARY_PATH = "%{lib}%/stublibs"
-    ... build: [
-    ...   ["./configure" "--prefix=%{prefix}%"]
-    ...   [make "-j%{jobs}%"]
-    ... ]
-    ... install: [make "install"]
-    ... maintainer: "caml-list@inria.fr"
-    ... homepage: "https://github.com/ocaml/ocaml/"
-    ... bug-reports: "https://github.com/ocaml/ocaml/issues"
-    ... authors: [
-    ...   "Xavier Leroy"
-    ...   "Damien Doligez"
-    ...   "Alain Frisch"
-    ...   "Jacques Garrigue"
-    ... ]'''
-
-    >>> p = parse_opam_from_text(opam_text)
-    >>> for k, v in p.items():
-    >>>     print(k, v)
-    opam-version 2.0
-    version 4.11.0+trunk
-    synopsis OCaml development version
-    depends [Opam(name='ocaml', version='= 4.11.0 & post'), Opam(name='base-unix', version='post')]
-    conflict-class ocaml-core-compiler
-    flags compiler
-    setenv CAML_LD_LIBRARY_PATH = %{lib}%/stublibs
-    build
-    install make install
-    maintainer ['caml-list@inria.fr']
-    homepage https://github.com/ocaml/ocaml/
-    bug-reports https://github.com/ocaml/ocaml/issues
-    authors ['Xavier Leroy', 'Damien Doligez', 'Alain Frisch', 'Jacques Garrigue']
     """
 
     opam_data = {}

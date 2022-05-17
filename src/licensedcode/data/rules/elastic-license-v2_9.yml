@@ -1,0 +1,5 @@
+license_expression: elastic-license-v2
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/Elastic-2.0

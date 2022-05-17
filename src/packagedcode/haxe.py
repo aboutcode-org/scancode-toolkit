@@ -80,6 +80,9 @@ class HaxelibJsonHandler(models.DatafileHandler):
             primary_language=cls.default_primary_language,
         )
 
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(package_data)
+
         if name and version:
             download_url = f'https://lib.haxe.org/p/{name}/{version}/download/'
             package_data.repository_download_url = download_url

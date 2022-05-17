@@ -1,25 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true,
-        "--processes": "-1",
-        "--strip-root": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "spdx_license_list_version": "3.16",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 31.0.0b1 released on: 2021-09-24. A new version 42.5.1 is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
-        "files_count": 1
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:pubspec/http",

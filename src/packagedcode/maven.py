@@ -115,7 +115,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
         if resource.path.endswith('.pom'):
             # we only treat the parent as the root
-            return super().assign_package_to_parent_tree(package, resource, codebase)
+            return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
         # the root is either the parent or further up for poms stored under
         # a META-INF dir
@@ -128,7 +128,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
             # /META-INF/maven/log4j/log4j/pom.xml: This requires going up 5 times
             upward_segments = 5
             root = resource
-            for _ in upward_segments:
+            for _ in range(upward_segments):
                 root = root.parent(codebase)
         else:
             # Second case: a pom.xml at the root of codebase tree
@@ -139,7 +139,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
         if not root:
             root = resource.parent(codebase)
 
-        return super().assign_package_to_resources(package, resource=root, codebase=codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource=root, codebase=codebase)
 
     @classmethod
     def compute_normalized_license(cls, package):
@@ -1161,7 +1161,7 @@ def parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    yield models.PackageData(
+    package_data = models.PackageData(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1179,6 +1179,10 @@ def parse(
         **urls,
     )
 
+    if not package_data.license_expression and package_data.declared_license:
+        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
+
+    yield package_data
 
 def build_vcs_and_code_view_urls(scm):
     """
@@ -1189,7 +1193,9 @@ def build_vcs_and_code_view_urls(scm):
     ...     connection='scm:git:git@github.com:histogrammar/histogrammar-scala.git',
     ...     tag='HEAD',
     ...     url='https://github.com/histogrammar/histogrammar-scala')
-    >>> expected = {'vcs_url': 'sdfasdasd', 'code_view_url': 'asdasda'}
+    >>> expected = {
+    ...     'vcs_url': 'git+https://github.com/histogrammar/histogrammar-scala.git',
+    ...     'code_view_url': 'https://github.com/histogrammar/histogrammar-scala'}
     >>> assert build_vcs_and_code_view_urls(scm) == expected
     """
 

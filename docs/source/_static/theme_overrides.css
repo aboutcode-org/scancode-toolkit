@@ -1,0 +1,353 @@
+body {
+    color: #000000;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.wy-plain-list-disc, .rst-content .section ul, .rst-content .toctree-wrapper ul, article ul {
+    margin-bottom: 10px;
+}
+
+.custom_header_01 {
+    color: #cc0000;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #000000;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+h6 {
+    font-size: 15px;
+    color: #000000;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* custom admonitions */
+/* success */
+.custom-admonition-success  .admonition-title {
+    color: #000000;
+    background: #ccffcc;
+    border-radius: 5px 5px 0px 0px;
+}
+div.custom-admonition-success.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+/* important */
+.custom-admonition-important  .admonition-title {
+    color: #000000;
+    background: #ccffcc;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px #000000;
+}
+div.custom-admonition-important.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+/* caution */
+.custom-admonition-caution  .admonition-title {
+    color: #000000;
+    background: #ffff99;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px #e8e8e8;
+}
+div.custom-admonition-caution.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+/* note */
+.custom-admonition-note  .admonition-title {
+    color: #ffffff;
+    background: #006bb3;
+    border-radius: 5px 5px 0px 0px;
+}
+div.custom-admonition-note.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+/* todo */
+.custom-admonition-todo  .admonition-title {
+    color: #000000;
+    background: #cce6ff;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px #99ccff;
+}
+div.custom-admonition-todo.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #99ccff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+/* examples */
+.custom-admonition-examples  .admonition-title {
+    color: #000000;
+    background: #ffe6cc;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px #d8d8d8;
+}
+div.custom-admonition-examples.admonition {
+    color: #000000;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 3px #d8d8d8;
+    margin: 20px 0px 30px 0px;
+}
+
+.wy-nav-content {
+    max-width: 100%;
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: #f2f2f2;
+}
+
+div.rst-content {
+    background-color: #ffffff;
+    border: solid 1px #e5e5e5;
+    padding: 20px 40px 20px 40px;
+}
+
+.rst-content .guilabel {
+    border: 1px solid #ffff99;
+    background: #ffff99;
+    font-size: 100%;
+    font-weight: normal;
+    border-radius: 4px;
+    padding: 2px 0px;
+    margin: auto 2px;
+    vertical-align: middle;
+}
+
+.rst-content kbd {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",Courier,monospace;
+    border: solid 1px #d8d8d8;
+    background-color: #f5f5f5;
+    padding: 0px 3px;
+    border-radius: 3px;
+}
+
+.wy-nav-content-wrap a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.wy-nav-content-wrap a:hover {
+    color: #0099cc;
+    text-decoration: underline;
+}
+
+.wy-nav-top a {
+    color: #ffffff;
+}
+
+/* Based on numerous similar approaches e.g., https://github.com/readthedocs/sphinx_rtd_theme/issues/117 and https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html -- but remove form-factor limits to enable table wrap on full-size and smallest-size form factors */
+.wy-table-responsive table td {
+    white-space: normal !important;
+}
+
+.rst-content table.docutils td,
+.rst-content table.docutils th {
+    padding: 5px 10px 5px 10px;
+}
+.rst-content table.docutils td p,
+.rst-content table.docutils th p {
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.rst-content table.docutils td p cite,
+.rst-content table.docutils th p cite {
+    font-size: 14px;
+    background-color: transparent;
+}
+
+.colwidths-given th {
+    border: solid 1px #d8d8d8 !important;
+}
+.colwidths-given td {
+    border: solid 1px #d8d8d8 !important;
+}
+
+/*handles single-tick inline code*/
+.wy-body-for-nav cite {
+    color: #000000;
+    background-color: transparent;
+    font-style: normal;
+    font-family: "Courier New";
+    font-size: 13px;
+    padding: 3px 3px 3px 3px;
+}
+
+.rst-content pre.literal-block, .rst-content div[class^="highlight"] pre, .rst-content .linenodiv pre {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",Courier,monospace;
+    font-size: 13px;
+    overflow: visible;
+    white-space: pre-wrap;
+    color: #000000;
+}
+
+.rst-content pre.literal-block, .rst-content div[class^='highlight'] {
+    background-color: #f8f8f8;
+    border: solid 1px #e8e8e8;
+}
+
+/* This enables inline code to wrap. */
+code, .rst-content tt, .rst-content code {
+    white-space: pre-wrap;
+    padding: 2px 3px 1px;
+    border-radius: 3px;
+    font-size: 13px;
+    background-color: #ffffff;
+}
+
+/* use this added class for code blocks attached to bulleted list items */
+.highlight-top-margin {
+    margin-top: 20px !important;
+}
+
+/* change color of inline code block */
+span.pre {
+    color: #e01e5a;
+}
+
+.wy-body-for-nav blockquote {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 4px solid #ddd;
+    color: #000000;
+}
+
+/* Fix the unwanted top and bottom padding inside a nested bulleted/numbered list */
+.rst-content .section ol p, .rst-content .section ul p {
+    margin-bottom: 0px;
+}
+
+/* add spacing between bullets for legibility */
+.rst-content .section ol li, .rst-content .section ul li {
+    margin-bottom: 5px;
+}
+
+.rst-content .section ol li:first-child, .rst-content .section ul li:first-child {
+    margin-top: 5px;
+}
+
+/* but exclude the toctree bullets */
+.rst-content .toctree-wrapper ul li, .rst-content .toctree-wrapper ul li:first-child {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* remove extra space at bottom of multine list-table cell */
+.rst-content .line-block {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    line-height: 24px;
+}
+
+/* fix extra vertical spacing in page toctree */
+.rst-content .toctree-wrapper ul li ul, article ul li ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* this is used by the genindex added via layout.html (see source/_templates/) to sidebar toc */
+.reference.internal.toc-index {
+    color: #d9d9d9;
+}
+
+.reference.internal.toc-index.current {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+.toc-index-div {
+    border-top: solid 1px #000000;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.indextable ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* The next 2 fix the poor vertical spacing in genindex.html (the alphabetized index) */
+.indextable.genindextable {
+    margin-bottom: 20px;
+}
+
+div.genindex-jumpbox {
+    margin-bottom: 10px;
+}
+
+/* rst image classes */
+
+.clear-both {
+    clear: both;
+  }
+
+.float-left {
+    float: left;
+    margin-right: 20px;
+}
+
+img {
+    border: solid 1px #e8e8e8;
+}
+
+/* These are custom and need to be defined in conf.py to access in all pages, e.g., '.. role:: red' */
+.img-title {
+    color: #000000;
+    /* neither padding nor margin works for vertical spacing bc it's a span -- line-height does, sort of */
+    line-height: 3.0;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.img-title-para {
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.red {
+    color: red;
+}

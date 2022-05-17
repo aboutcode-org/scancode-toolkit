@@ -28,8 +28,9 @@ CLI_ARGS=$1
 ################################
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable . --constraint requirements.txt"
+REQUIREMENTS="--editable .[packages] --constraint requirements.txt"
 DEV_REQUIREMENTS="--editable .[testing,packages] --constraint requirements.txt --constraint requirements-dev.txt"
+DOCS_REQUIREMENTS="--editable .[docs] --constraint requirements.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -55,10 +56,8 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 # Thirdparty package locations and index handling
 # Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
 # offline mode for scancode installation with no index at all
-if [ -f "$CFG_ROOT_DIR/thirdparty" ]; then
+if [ -d "$CFG_ROOT_DIR/thirdparty" ]; then
     PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
-else
-    PIP_EXTRA_ARGS="--find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
 fi
 
 ################################
@@ -103,14 +102,25 @@ create_virtualenv() {
             wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
-        $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-            --wheel embed --pip embed --setuptools embed \
-            --seeder pip \
-            --never-download \
-            --no-periodic-update \
-            --no-vcs-ignore \
-            $CFG_QUIET \
-            "$CFG_ROOT_DIR/$VENV_DIR"
+        if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
+            arch -x86_64 /bin/bash -c "$PYTHON_EXECUTABLE \"$VIRTUALENV_PYZ\" \
+                --wheel embed --pip embed --setuptools embed \
+                --seeder pip \
+                --never-download \
+                --no-periodic-update \
+                --no-vcs-ignore \
+                $CFG_QUIET \
+                \"$CFG_ROOT_DIR/$VENV_DIR\" "
+        else
+            $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
+                --wheel embed --pip embed --setuptools embed \
+                --seeder pip \
+                --never-download \
+                --no-periodic-update \
+                --no-vcs-ignore \
+                $CFG_QUIET \
+                "$CFG_ROOT_DIR/$VENV_DIR"
+        fi
     fi
 }
 
@@ -178,6 +188,7 @@ while getopts :-: optchar; do
                 help  ) cli_help;;
                 clean ) find_python && clean;;
                 dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
+                docs   ) CFG_REQUIREMENTS="$DOCS_REQUIREMENTS";;
             esac;;
     esac
 done

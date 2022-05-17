@@ -8,54 +8,64 @@ now plain field and not always computed fields.
 31.0.0 (next, roadmap)
 -----------------------
 
+This is a major release with important bug and security fixes, new and improved
+features and API changes.
+
+
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Adopt the new skeleton from https://github.com/nexB/skeleton
-  The key change is the location of the virtual environment. It used to be
-  created at the root of the scancode-toolkit directory. Its is now created
-  instead under the ``venv`` subdirectory.
-
-- Main package API function `get_package_infos` is now deprecated, and is
-  replaced by `get_package_data`.
-
 - The data structure of the JSON output has changed for copyrights, authors
-  and holders: we now use proper name for attributes and not a generic "value".
+  and holders. We now use a proper name for attributes and not a generic "value".
 
-- The data structure of the JSON output has changed for licenses: we now
+- The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
-  "license_references" attributes that contains the data details for each
-  detected licenses only once. This data can contain the reference license text
+  "license_references" attribute that contains the data details for each
+  detected license only once. This data can contain the reference license text
   as an option.
 
-- The data structure of the JSON output has changed for packages: we now
+- The data structure of the JSON output has changed for packages. We now
   return "package_data" package information at the manifest file-level
   rather than "packages". This has all the data attributes of a "package_data"
   field plus others: "package_uuid", "package_data_files" and "files".
-  
-- There is a a new top-level "packages" attribute that contains package
-  instances that can be aggregating data from multiple manifests.
 
-- There is a a new top-level "dependencies" attribute that contains each dependency
-  instance, these can be standalone or releated to a package.
+  - There is a a new top-level "packages" attribute that contains package
+    instances that can be aggregating data from multiple manifests.
 
-- There is a new resource-level attribute "for_packages" which refers to packages
-  through package_uuids (pURL + uuid string).
+  - There is a a new top-level "dependencies" attribute that contains each
+    dependency instance, these can be standalone or releated to a package.
+
+  - There is a new resource-level attribute "for_packages" which refers to
+    packages through package_uuids (pURL + uuid string).
 
 - The data structure for HTML output has been changed to include emails and
-  urls under the  "infos" object. Now HTML template will output holders,
+  urls under the  "infos" object. The HTML template displays output for holders,
   authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
 - The data structure for CSV output has been changed to rename the Resource
-  column to "path". The "copyright_holder" has been ranmed to "holder"
+  column to "path". "copyright_holder" has been renamed to "holder"
+
+- The license clarity scoring plugin has been overhauled to show new license
+  clarity criteria. More details of the new scoring criteria are provided below.
+
+- The functionality of the summary plugin has been imprived to provide declared
+  origin and license information for the codebase being scanned. The previous
+  summary plugin functionality has been preserved in the new ``tallies`` plugin.
+  More details are provided below.
+
+- ScanCode has adopted the new code skeleton from https://github.com/nexB/skeleton
+  The key change is the location of the virtual environment. It used to be
+  created at the root of the scancode-toolkit directory. It is now created
+  under the ``venv`` subdirectory. You mus be aware of this if you use ScanCode
+  from a git clone
 
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
 - The data structure in the JSON is now using consistently named attributes as
-  opposed to a plain value.
+  opposed to plain values.
 - Several copyright detection bugs have been fixed.
 - French and German copyright detection is improved.
 - Some spurious trailing dots in holders are not stripped.
@@ -71,7 +81,7 @@ License detection:
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
   - XXXX existing false positive license rules have been removed (see below).
-  - The SPDX license list has been updated to the latest v3.15
+  - The SPDX license list has been updated to the latest v3.16
 
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
@@ -80,22 +90,22 @@ License detection:
   The processing for "is_continous" has been merged in "key phrases" processing
   below.
 
-- Key phrases can now be defined in RULEs by surrounding one or more words with
-  `{{` and `}}`. When defined a RULE will only match when the key phrases match
-  exactly. When all the text of rule is a "key phrase", this is the same as being
-  "is_continuous".
+- Key phrases can now be defined in a RULE text by surrounding one or more words
+  with double curly braces `{{` and `}}`. When defined a RULE will only match
+  when the key phrases match exactly. When all the text of rule is a "key phrase",
+  this is the same as being "is_continuous".
 
 - The "--unknown-licenses" option now also detects unknown licenses using a
   simple and effective ngrams-based matching in area that are not matched or
   weakly matched. This helps detects things that look like a license but are not
   yet known as licenses.
 
-- False positive detection of "license lists" like list seen in license and
+- False positive detection of "license lists" like the lists seen in license and
   package management tools has been entirely reworked. Rather than using
-  thousands of small false positive rules, there is now a new filter to detect
-  long run of license references and tags that are typical of license lists.
+  thousands of small false positive rules, there is a new filter to detect a
+  long run of license references and tags that is typical of license lists.
   As a results, thousands of rules have been replaced by a simpler filter, and
-  the license detection is both more accurate, faster and has fewer false
+  the license detection is more accurate, faster and has fewer false
   positives.
 
 - The new license flag "is_generic" tags licenses that are "generic" licenses
@@ -103,7 +113,7 @@ License detection:
   returned in the JSON API.
 
 - When scanning binary files, the detection of single word rules is filtered when
-  surrounded by gibberish or is using mixed case. For instance $#%$GpL$ is a false
+  surrounded by gibberish or mixed case. For instance $#%$GpL$ is a false
   positive and is no longer reported.
 
 - Several rules we tagged as is_license_notice incorrectly but were references
@@ -112,14 +122,14 @@ License detection:
   this way.
 
 - Matches to small license rules (with small defined as under 15 words)
-  that are scattered on too many lines are now filtered as false matches.
+  that are scattered over too many lines are now filtered as false matches.
 
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
 
 - The new --licenses-reference option adds a new "licenses_reference" top
   level attribute to a scan when using the JSON and YAML outputs. This contains
-  all the details and the full text of every licenses seen in a file or
+  all the details and the full text of every license seen in a file or
   package license expression of a scan. This can be added added after the fact
   using the --from-json option.
 
@@ -130,6 +140,7 @@ License detection:
   tagged and they may not be detected unless you activate this new indexing
   feature.
 
+
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
@@ -137,15 +148,14 @@ Package detection:
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
-- Major changes in packages detection and reporting, codebase-level attribute `packages`
+- Major changes in package detection and reporting, codebase-level attribute `packages`
   with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
 
   - The resource level attribute `packages` has been renamed to `package_data`,
-    as these are really package data that are being detected, and can be manifests,
-    lockfiles or other package data. This has all the data attributes of a `package_data`
+    as these are really package data that are being detected, such as manifests,
+    lockfiles or other package data. This has the data attributes of a `package_data`
     field plus others: `package_uuid`, `package_data_files` and `files`.
-  
 
   - A new top-level attribute `packages` has been added which contains package
     instances created from `package_data` detected in the codebase.
@@ -159,143 +169,110 @@ Package detection:
 
   - There is a new resource-level attribute `for_packages` which refers to packages
     through package_uuids (pURL + uuid string).
-  
+
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
-    now has a new attribute `resolved_package` having a package data mapping.
-    Also the `requirement` attribute here is renamed to `extracted_requirement`.
+    now has a new attribute `resolved_package` with a package data mapping.
+    Also the `requirement` attribute is renamed to `extracted_requirement`.
 
 
 License Clarity Scoring Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - We are moving away from the license clarity scoring defined by ClearlyDefined
-   in the license clarity score plugin. The previous license clarity scoring
-   logic produced a score that was misleading, where it would return a low score
-   when scanning packages due to the stringent scoring criteria. We are now
-   using more general criteria to get a sense of what provenance information has
-   been provided and whether or not there is a conflict in licensing between
-   what licenses were declared at the top-level key files and what licenses have
-   been detected in the files under the top-level.
+- We are moving away from the original license clarity scoring designed for
+  ClearlyDefined in the license clarity score plugin. The previous license
+  clarity scoring logic produced a score that was misleading when it would
+  return a low score due to the stringent scoring criteria. We are now using
+  more general criteria to get a sense of what provenance information has been
+  provided and whether or not there is a conflict in licensing between what
+  licenses were declared at the top-level key files and what licenses have been
+  detected in the files under the top-level.
 
- - The license clarity score is a value from 0-100 calculated by combining the
-   weighted values determined for each of the scoring elements:
+- The license clarity score is a value from 0-100 calculated by combining the
+  weighted values determined for each of the scoring elements:
 
-   - Declared license:
+  - Declared license:
 
-     - When true, indicates that the software package licensing is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 40
+    - When true, indicates that the software package licensing is documented at
+      top-level or well-known locations in the software project, typically in a
+      package manifest, NOTICE, LICENSE, COPYING or README file.
+    - Scoring Weight = 40
 
-   - Identification precision:
+  - Identification precision:
 
-     - Indicates how well the license statement(s) of the software identify known
-       licenses that can be designated by precise keys (identifiers) as provided in
-       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
-       license list, the OSI license list, or a URL pointing to a specific license
-       text in a project or organization website.
-     - Scoring Weight = 40
+    - Indicates how well the license statement(s) of the software identify known
+      licenses that can be designated by precise keys (identifiers) as provided in
+      a publicly available license list, such as the ScanCode LicenseDB, the SPDX
+      license list, the OSI license list, or a URL pointing to a specific license
+      text in a project or organization website.
+    - Scoring Weight = 40
 
-   - License texts:
+  - License texts:
 
-     - License texts are provided to support the declared license expression in
-       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
-     - Scoring Weight = 10
+    - License texts are provided to support the declared license expression in
+      files such as a package manifest, NOTICE, LICENSE, COPYING or README.
+    - Scoring Weight = 10
 
-   - Declared copyright:
+  - Declared copyright:
 
-     - When true, indicates that the software package copyright is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 10
+    - When true, indicates that the software package copyright is documented at
+      top-level or well-known locations in the software project, typically in a
+      package manifest, NOTICE, LICENSE, COPYING or README file.
+    - Scoring Weight = 10
 
-   - Ambiguous compound licensing:
+  - Ambiguous compound licensing:
 
-     - When true, indicates that the software has a license declaration that
-       makes it difficult to construct a reliable license expression, such as in
-       the case of multiple licenses where the conjunctive versus disjunctive
-       relationship is not well defined.
-     - Scoring Weight = -10
+    - When true, indicates that the software has a license declaration that
+      makes it difficult to construct a reliable license expression, such as in
+      the case of multiple licenses where the conjunctive versus disjunctive
+      relationship is not well defined.
+    - Scoring Weight = -10
 
-   - Conflicting license categories:
+  - Conflicting license categories:
 
-     - When true, indicates the declared license expression of the software is in
-       the permissive category, but that other potentially conflicting categories,
-       such as copyleft and proprietary, have been detected in lower level code.
-     - Scoring Weight = -20
+    - When true, indicates that the declared license expression of the software
+      is in the permissive category, but that other potentially conflicting
+      categories, such as copyleft and proprietary, have been detected in lower
+      level code.
+    - Scoring Weight = -20
 
 
-License Clarity Scoring Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary Plugin Update
+~~~~~~~~~~~~~~~~~~~~~
 
- - We are moving away from the license clarity scoring defined by ClearlyDefined
-   in the license clarity score plugin. The previous license clarity scoring
-   logic produced a score that was misleading, where it would return a low score
-   when scanning packages due to the stringent scoring criteria. We are now
-   using more general criteria to get a sense of what provenance information has
-   been provided and whether or not there is a conflict in licensing between
-   what licenses were declared at the top-level key files and what licenses have
-   been detected in the files under the top-level.
+- The summary plugin's behavior has been changed. Previously, it provided a
+  count of the detected license expressions, copyrights, holders, authors, and
+  programming languages from a scan. 
 
- - The license clarity score is a value from 0-100 calculated by combining the
-   weighted values determined for each of the scoring elements:
+  We have preserved this functionality by creating a new plugin called ``tallies``.
+  All functionality of the previous summary plugin have been preserved in the
+  tallies plugin.
 
-   - Declared license:
+- The new summary plugin now attempts to determine a declared license expression,
+  declared holder, and the primary programming language from a scan. And the
+  updated license clarity score provides context on the quality  of the license
+  information provided in the codebase key files.
+  
+- The new summary plugin also returns lists of tallies for the other "secondary"
+  detected license expressions, copyright holders, and programming languages.
 
-     - When true, indicates that the software package licensing is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 40
-
-   - Identification precision:
-
-     - Indicates how well the license statement(s) of the software identify known
-       licenses that can be designated by precise keys (identifiers) as provided in
-       a publicly available license list, such as the ScanCode LicenseDB, the SPDX
-       license list, the OSI license list, or a URL pointing to a specific license
-       text in a project or organization website.
-     - Scoring Weight = 40
-
-   - License texts:
-
-     - License texts are provided to support the declared license expression in
-       files such as a package manifest, NOTICE, LICENSE, COPYING or README.
-     - Scoring Weight = 10
-
-   - Declared copyright:
-
-     - When true, indicates that the software package copyright is documented at
-       top-level or well-known locations in the software project, typically in a
-       package manifest, NOTICE, LICENSE, COPYING or README file.
-     - Scoring Weight = 10
-
-   - Ambiguous compound licensing:
-
-     - When true, indicates that the software has a license declaration that
-       makes it difficult to construct a reliable license expression, such as in
-       the case of multiple licenses where the conjunctive versus disjunctive
-       relationship is not well defined.
-     - Scoring Weight = -10
-
-   - Conflicting license categories:
-
-     - When true, indicates the declared license expression of the software is in
-       the permissive category, but that other potentially conflicting categories,
-       such as copyleft and proprietary, have been detected in lower level code.
-     - Scoring Weight = -20
+All summary information is provided at the codebase-level attribute named ``summary``.
 
 
 Outputs:
 ~~~~~~~~
 
- - Add new outputs for the CycloneDx format.
+ - Added new outputs for the CycloneDx format.
    The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+
+ - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+   that contains any warning messages that occur during a scan.
 
 
 Output version
 --------------
 
-Scancode Data Output Version is now 3.0.0.
+Scancode Data Output Version is now 2.0.0.
+
 
 Changes:
 
@@ -309,20 +286,26 @@ Changes:
 Documentation Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Various documentations have been updated to reflects API changes and
+- Various documentation files have been updated to reflects API changes and
   correct minor documentation issues.
 
 
-Development environment changes:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Development environment and Code API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The license cache consistency is not checked anymore when you are using a Git
+- The main package API function `get_package_infos` is deprecated, and
+  replaced by `get_package_data`.
+
+- The Resources path are always the same regardless of the strip-root or
+  full-root arguments.
+
+- The license cache consistency is not checked anymore when you are using a git
   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
   instead the --reindex-licenses option to rebuild the license index.
 
-- We can now regenerate updated test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
-  environemnt variable. There is no need to replace the regen=False with regen=True
-  in the code.
+- We can now regenerate test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
+  environment variable. There is no need to replace the regen=False with
+  regen=True in the code.
 
 
 30.1.0 - 2021-09-25

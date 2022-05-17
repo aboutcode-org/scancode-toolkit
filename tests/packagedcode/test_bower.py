@@ -14,7 +14,6 @@ from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 
 
-
 class TestBower(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -39,3 +38,13 @@ class TestBower(PackageTester):
         package = bower.BowerJsonHandler.parse(test_file)
         expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_end2end_bower_scan_is_moved_to_parent(self):
+        from scancode.cli_test_utils import check_json_scan
+        from scancode.cli_test_utils import run_scan_click
+
+        test_file = self.get_test_loc('bower/scan')
+        expected_file = self.get_test_loc('bower/scan-expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

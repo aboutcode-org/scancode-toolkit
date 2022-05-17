@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL_V2.1-fr.html
 spdx_license_key: CECILL-2.1
+osi_license_key: CECILL-2.1
 text_urls:
     - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
     - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
@@ -15,4 +16,3 @@ other_urls:
     - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
 ignorable_urls:
     - http://www.cecill.info/index.en.html
-osi_license_key: CECILL-2.1

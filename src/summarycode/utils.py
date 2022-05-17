@@ -58,3 +58,37 @@ def sorted_counter(counter):
         dict([('value', value), ('count', count)])
         for value, count in sorted(counter.items(), key=by_count_value)]
     return summarized
+
+
+def get_resource_tallies(resource, key, as_attribute=False):
+    """
+    Return the "tallies" value as mapping for the `key` tallies attribute of a
+    resource.
+
+    This is collected either from a direct Resource.tallies attribute if
+    `as_attribute` is True or as a Resource.extra_data tallies item otherwise.
+    """
+    if as_attribute:
+        tallies = resource.tallies
+    else:
+        tallies = resource.extra_data.get('tallies', {})
+    tallies = tallies or {}
+    return tallies.get(key) or None
+
+
+def set_resource_tallies(resource, key, value, as_attribute=False):
+    """
+    Set `value` as the "tallies" value for the `key` tallies attribute of a
+    resource
+
+    This is set either in a direct Resource.tallies attribute if `as_attribute`
+    is True or as a Resource.extra_data tallies item otherwise.
+    """
+    if as_attribute:
+        resource.tallies[key] = value
+    else:
+        tallies = resource.extra_data.get('tallies')
+        if not tallies:
+            tallies = dict([(key, value)])
+            resource.extra_data['tallies'] = tallies
+        tallies[key] = value

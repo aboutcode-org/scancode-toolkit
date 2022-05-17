@@ -140,12 +140,12 @@ def combine_expressions(
 
 def get_ancestor(levels_up, resource, codebase):
     """
-    Return the nth-``levels_up`` ancestor Resource of ``resource`` in ``codebase``
-    or None.
+    Return the nth-``levels_up`` ancestor Resource of ``resource`` in
+    ``codebase`` or None.
 
     For example, with levels_up=2 and starting  with a resource path of
-    `gem-extract/metadata.gz-extract/metadata.gz-extract`, gem-extract/ should be
-    returned.
+    `gem-extract/metadata.gz-extract/metadata.gz-extract`, 
+    then `gem-extract/` should be returned.
     """
     rounds = 0
     while rounds < levels_up:
@@ -184,3 +184,26 @@ def find_root_resource(path, resource, codebase):
     return resource
 
 
+def yield_dependencies_from_package_data(package_data, datafile_path, package_uid):
+    """
+    Yield a Dependency for each dependency from ``package_data.dependencies``
+    """
+    from packagedcode import models
+    dependent_packages = package_data.dependencies
+    if dependent_packages:
+        yield from models.Dependency.from_dependent_packages(
+            dependent_packages=dependent_packages,
+            datafile_path=datafile_path,
+            datasource_id=package_data.datasource_id,
+            package_uid=package_uid,
+        )
+
+
+def yield_dependencies_from_package_resource(resource, package_uid=None):
+    """
+    Yield a Dependency for each dependency from each package from``resource.package_data``
+    """
+    from packagedcode import models
+    for pkg_data in resource.package_data:
+        pkg_data = models.PackageData.from_dict(pkg_data)
+        yield from yield_dependencies_from_package_data(pkg_data, resource.path, package_uid)

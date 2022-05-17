@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+copyrights:
+  - Copyright (c) Microsoft
+  - Copyright (c) 2000-2001 Alias Ltd.
+  - Copyright (c) Microsoft
+holders:
+  - Microsoft
+  - Alias Ltd.
+  - Microsoft
+copyrights_summary:
+  - value: Copyright (c) Microsoft
+    count: 2
+  - value: Copyright (c) 2000-2001 Alias Ltd.
+    count: 1

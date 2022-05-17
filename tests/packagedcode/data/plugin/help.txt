@@ -109,14 +109,14 @@ Package type:  cargo
   documentation URL: https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
   primary language:  Rust
   description:       Rust Cargo.lock dependencies lockfile
-  path_patterns:    '*/Cargo.lock'
+  path_patterns:    '*/Cargo.lock', '*/cargo.lock'
 --------------------------------------------
 Package type:  cargo
   datasource_id:     cargo_toml
   documentation URL: https://doc.rust-lang.org/cargo/reference/manifest.html
   primary language:  Rust
   description:       Rust Cargo.toml package manifest
-  path_patterns:    '*/Cargo.toml'
+  path_patterns:    '*/Cargo.toml', '*/cargo.toml'
 --------------------------------------------
 Package type:  chef
   datasource_id:     chef_cookbook_metadata_json
@@ -473,7 +473,7 @@ Package type:  maven
   documentation URL: None
   primary language:  None
   description:       Gradle build script
-  path_patterns:    '*/build.gradle', 'build.gradle.kts'
+  path_patterns:    '*/build.gradle', '*/build.gradle.kts'
 --------------------------------------------
 Package type:  maven
   datasource_id:     maven_pom
@@ -670,13 +670,6 @@ Package type:  pypi
   primary language:  Python
   description:       Python pyproject.toml
   path_patterns:    '*pyproject.toml'
---------------------------------------------
-Package type:  pypi
-  datasource_id:     pypi_sdist
-  documentation URL: https://peps.python.org/pep-0643/
-  primary language:  Python
-  description:       Python source distribution
-  path_patterns:    '*.tar.gz', '*.tar.bz2', '*.zip'
 --------------------------------------------
 Package type:  pypi
   datasource_id:     pypi_sdist_pkginfo

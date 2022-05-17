@@ -1,0 +1,8 @@
+license_expression: apache-2.0 
+is_license_notice: yes
+relevance: 99
+notes: the license of OpenCV changed from bsd to apache with 4.5.0 See https://opencv.org/opencv-is-to-change-the-license-to-apache-2/
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://opencv.org/license.html

@@ -13,6 +13,8 @@ from packagedcode import alpine
 from packages_test_utils  import build_tests
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
 
@@ -48,6 +50,15 @@ class TestAlpineInstalledPackage(PackageTester):
             )]
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
+
+    def test_scan_system_package_end_to_end_installed_alpine(self):
+        test_dir = self.extract_test_tar('alpine/rootfs/alpine-rootfs.tar.xz')
+        test_dir = os.path.join(test_dir, 'alpine-rootfs')
+        expected_file = self.get_test_loc('alpine/rootfs/alpine-rootfs.tar.xz-expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 
 def apkbuild_tester(location):

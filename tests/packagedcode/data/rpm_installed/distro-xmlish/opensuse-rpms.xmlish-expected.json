@@ -28,11 +28,6 @@
     "declared_license": "BSL-1.0",
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
-    "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null,
     "file_references": [
       {
         "path": "/usr/share/licenses/boost-license1_71_0",
@@ -40,17 +35,26 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/licenses/boost-license1_71_0/LICENSE_1_0.txt",
         "size": 0,
         "sha1": null,
-        "md5": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+        "sha512": null,
+        "extra_data": {}
       }
-    ]
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch"
   },
   {
     "type": "rpm",
@@ -81,36 +85,41 @@
     "declared_license": "LGPL-2.1",
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
-    "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null,
     "file_references": [
       {
         "path": "/pw_dict.hwm",
         "size": 0,
         "sha1": null,
-        "md5": "6787c3ee0d1f03e47a6cfc6d639fb89575ef5e28bbb0c8b2ccdc2876b0713669",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "6787c3ee0d1f03e47a6cfc6d639fb89575ef5e28bbb0c8b2ccdc2876b0713669",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/pw_dict.pwd",
         "size": 0,
         "sha1": null,
-        "md5": "c5de5d3ab2fa1e8d1bec21ab2937dfff48e59493fc9af2d7835968516e1d1f68",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "c5de5d3ab2fa1e8d1bec21ab2937dfff48e59493fc9af2d7835968516e1d1f68",
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/pw_dict.pwi",
         "size": 0,
         "sha1": null,
-        "md5": "7fabf3751149bae4104b400b916b674fac3749c138fec9e9a63cfe8bde6d6044",
-        "sha256": null,
-        "sha512": null
+        "md5": null,
+        "sha256": "7fabf3751149bae4104b400b916b674fac3749c138fec9e9a63cfe8bde6d6044",
+        "sha512": null,
+        "extra_data": {}
       }
-    ]
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64"
   }
 ]

@@ -38,10 +38,12 @@ class JavaJarManifestHandler(models.DatafileHandler):
             main_section = sections[0]
             manifest = get_normalized_java_manifest_data(main_section)
             if manifest:
-                return models.PackageData(
-                    
-                    **manifest,
-                )
+                package_data = models.PackageData(**manifest,)
+
+                if not package_data.license_expression and package_data.declared_license:
+                    package_data.license_expression = cls.compute_normalized_license(package_data)
+
+                yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -51,7 +53,7 @@ class JavaJarManifestHandler(models.DatafileHandler):
             parent = resource.parent(codebase)
 
         if parent:
-            super().assign_package_to_resources(package, resource=parent, codebase=codebase)
+            models.DatafileHandler.assign_package_to_resources(package, resource=parent, codebase=codebase)
 
 
 

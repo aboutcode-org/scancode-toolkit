@@ -45,7 +45,7 @@ class BasePhpComposerHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
     @classmethod
     def compute_normalized_license(cls, package):
@@ -161,6 +161,9 @@ def build_package_data(package_data):
 
     # Parse vendor from name value
     vendor_mapper(package)
+
+    if not package.license_expression and package.declared_license:
+        package.license_expression = models.compute_normalized_license(package.declared_license)
 
     return package
 

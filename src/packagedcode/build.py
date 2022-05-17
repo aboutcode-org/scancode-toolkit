@@ -51,7 +51,7 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -294,12 +294,12 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                             if not isinstance(e, ast.Str):
                                 continue
                             value.append(e.s)
-                    if isinstance(statement_v, ast.Str):
+                    if isinstance(statement_v, (ast.Str, ast.Constant)):
                         value = statement_v.s
                     metadata_fields[key_name] = value
 
         parties = []
-        maintainers = metadata_fields.get('maintainers', [])
+        maintainers = metadata_fields.get('maintainers', []) or []
         for maintainer in maintainers:
             parties.append(
                 models.Party(
@@ -309,35 +309,74 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 )
             )
 
-        # TODO: Create function that determines package type from download URL,
-        # then create a package of that package type from the metadata info
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=metadata_fields.get('upstream_type', cls.default_package_type),
-            name=metadata_fields.get('name'),
-            version=metadata_fields.get('version'),
-            declared_license=metadata_fields.get('licenses', []),
-            parties=parties,
-            homepage_url=metadata_fields.get('upstream_address', ''),
-            # TODO: Store 'upstream_hash` somewhere
-        )
+        if (
+            'upstream_type'
+            and 'name'
+            and 'version'
+            and 'licenses'
+            and 'upstream_address'
+            in metadata_fields
+        ):
+            # TODO: Create function that determines package type from download URL,
+            # then create a package of that package type from the metadata info
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=metadata_fields.get('upstream_type', cls.default_package_type),
+                name=metadata_fields.get('name'),
+                version=metadata_fields.get('version'),
+                declared_license=metadata_fields.get('licenses', []),
+                parties=parties,
+                homepage_url=metadata_fields.get('upstream_address', ''),
+                # TODO: Store 'upstream_hash` somewhere
+            )
+
+        if (
+            'package_type'
+            and 'name'
+            and 'version'
+            and 'license_expression'
+            and 'homepage_url'
+            and 'download_url'
+            and 'vcs_url'
+            and 'download_archive_sha1'
+            and 'vcs_commit_hash'
+            in metadata_fields
+        ):
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=metadata_fields.get('package_type', cls.default_package_type),
+                name=metadata_fields.get('name'),
+                version=metadata_fields.get('version'),
+                declared_license=metadata_fields.get('license_expression', ''),
+                parties=parties,
+                homepage_url=metadata_fields.get('homepage_url', ''),
+                download_url=metadata_fields.get('download_url', ''),
+                vcs_url=metadata_fields.get('vcs_url', ''),
+                sha1=metadata_fields.get('download_archive_sha1', ''),
+                extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
+            )
 
     @classmethod
     def compute_normalized_license(cls, package):
-        if not package.declared_license:
+        declared_license = package.declared_license
+        if not declared_license:
             return
 
-        detected_licenses = []
-        for declared in package.declared_license:
-            detected_license = models.compute_normalized_license(declared)
-            detected_licenses.append(detected_license)
+        if isinstance(declared_license, (list, tuple,)):
+            detected_licenses = [
+                models.compute_normalized_license(declared)
+                for declared in declared_license
+            ]
 
-        if detected_licenses:
-            return combine_expressions(detected_licenses)
+            if detected_licenses:
+                return combine_expressions(detected_licenses)
+
+        if isinstance(declared_license, str):
+            return models.compute_normalized_license(declared_license)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package_=package,
             resource=resource,
             codebase=codebase,

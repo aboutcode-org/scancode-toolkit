@@ -123,7 +123,7 @@ class BaseGemProjectHandler(BaseGemHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        return cls.assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
 class GemspecHandler(BaseGemHandler):
@@ -174,6 +174,9 @@ class GemspecHandler(BaseGemHandler):
             dependencies=dependencies,
             **urls
         )
+
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
         yield package_data
 
@@ -395,8 +398,8 @@ def rubygems_api_url(name, version=None):
     >>> assert url == 'https://rubygems.org/api/v2/rubygems/turbolinks/versions/1.0.2.json'
 
     If no version, we return:
-    >>> url = rubygems_api_url(name='turbolinks'')
-    >>> assert url == 'https://rubygems.org/api/v2/rubygems/turbolinks.json'
+    >>> url = rubygems_api_url(name='turbolinks')
+    >>> assert url == 'https://rubygems.org/api/v1/versions/turbolinks.json'
 
     Things we could return: a summary for the latest version, with deps
     https://rubygems.org/api/v1/gems/mqlight.json
@@ -536,6 +539,9 @@ def build_rubygem_package_data(gem_data, datasource_id):
 
     if not package_data.homepage_url:
         package_data.homepage_url = rubygems_homepage_url(name, version)
+
+    if not package_data.license_expression and package_data.declared_license:
+        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
     return package_data
 

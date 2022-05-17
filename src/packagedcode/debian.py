@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
+import logging
 from pathlib import Path
 
 from commoncode import fileutils
@@ -21,6 +23,26 @@ from packagedcode.utils import get_ancestor
 """
 Handle Debian package archives, control files and installed databases.
 """
+
+SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
+
+TRACE = SCANCODE_DEBUG_PACKAGE_API
+
+def logger_debug(*args):
+    pass
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
+
 
 # TODO: add dependencies
 
@@ -45,7 +67,7 @@ class DebianDebPackageHandler(models.DatafileHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
         # only assign this resource
-        return super().assign_package_to_resources(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource, codebase)
 
 
 # TODO: introspect archive
@@ -70,7 +92,7 @@ class DebianSourcePackageMetadataTarballHandler(models.DatafileHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
         # only assign this resource
-        return super().assign_package_to_resources(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource, codebase)
 
 
 # TODO: introspect archive
@@ -95,7 +117,7 @@ class DebianSourcePackageTarballHandler(models.DatafileHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
         # only assign this resource
-        return super().assign_package_to_resources(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource, codebase)
 
 
 # TODO: also look into neighboring md5sum and data.tarball copyright files!!!
@@ -120,7 +142,7 @@ class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
 
 
 # TODO: also look into neighboring copyright files!!!
@@ -147,7 +169,7 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
 
 
 class DebianDscFileHandler(models.DatafileHandler):
@@ -176,7 +198,7 @@ class DebianDscFileHandler(models.DatafileHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
         # only assign this resource
-        return super().assign_package_to_resources(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_resources(package, resource, codebase)
 
 
 class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
@@ -213,6 +235,9 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             package_data=package_data,
             datafile_path=resource.path,
         )
+
+        package_file_references = []
+        package_file_references.extend(package_data.file_references)
         package_uid = package.package_uid
 
         dependent_packages = package_data.dependencies
@@ -230,7 +255,13 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
         # We only need to adjust the md5sum/list path in the case of `same`
         qualifiers = package_data.qualifiers or {}
         architecture = qualifiers.get('architecture')
-        multi_arch = package_data.extra_data.get('multi-arch')
+
+        multi_arch = package_data.extra_data.get('multi_arch')
+
+        if TRACE:
+            logger_debug(f' debian: assemble: multi_arch: {multi_arch}')
+            logger_debug(f' debian: assemble: architecture: {architecture}')
+
         if multi_arch == 'same':
             arch_path = f':{architecture}'
         else:
@@ -254,21 +285,23 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 continue
 
             for pkgdt in res.package_data:
+                package_data = models.PackageData.from_dict(pkgdt)
                 package.update(
-                    package_data=pkgdt,
+                    package_data=package_data,
                     datafile_path=res.path,
-            )
+                )
+                package_file_references.extend(package_data.file_references)
 
             res.for_packages.append(package_uid)
             res.save(codebase)
 
             # yield possible dependencies
-            dependent_packages = pkgdt.dependencies
+            dependent_packages = package_data.dependencies
             if dependent_packages:
                 yield from models.Dependency.from_dependent_packages(
                     dependent_packages=dependent_packages,
                     datafile_path=res.path,
-                    datasource_id=pkgdt.datasource_id,
+                    datasource_id=package_data.datasource_id,
                     package_uid=package_uid,
                 )
 
@@ -280,7 +313,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
         # FIXME: should we consider ONLY the md5sums?
         # merge references for the same path (e.g. .list amd .md5sum)
         file_references_by_path = {}
-        for ref in package.file_references:
+        for ref in package_file_references:
             # a file ref extends from the root of the filesystem
             ref_path = str(root_path / ref.path)
             existing = file_references_by_path.get(ref_path)
@@ -288,8 +321,6 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 existing.update(ref)
             else:
                 file_references_by_path[ref_path] = ref
-
-        package.file_references = sorted(file_references_by_path.values(), key=lambda r: r.path)
 
         for res in root_resource.walk(codebase):
             ref = file_references_by_path.get(res.path)
@@ -405,7 +436,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase):
         # this is assembled only from a database entry
-       return
+        return
 
 
 class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
@@ -458,7 +489,7 @@ class DebianMd5sumFilelistInPackageHandler(models.DatafileHandler):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
 
 
 def build_package_data_from_package_filename(filename, datasource_id, package_type,):
@@ -514,6 +545,9 @@ def parse_debian_files_list(location, datasource_id, package_type):
 
             ref = models.FileReference(path=path, md5=md5sum)
             file_references.append(ref)
+    
+    if not file_references:
+        return
 
     yield models.PackageData(
         datasource_id=datasource_id,

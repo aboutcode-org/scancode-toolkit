@@ -48,7 +48,7 @@
     "code_view_url": "Code, https://github.com/urllib3/urllib3",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
+    "license_expression": "mit AND mit",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

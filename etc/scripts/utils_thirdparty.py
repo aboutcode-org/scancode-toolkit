@@ -8,7 +8,6 @@
 # See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-from collections import defaultdict
 import email
 import itertools
 import os
@@ -18,6 +17,8 @@ import subprocess
 import tempfile
 import time
 import urllib
+from collections import defaultdict
+from urllib.parse import quote_plus
 
 import attr
 import license_expression
@@ -29,10 +30,8 @@ from commoncode.hash import multi_checksums
 from commoncode.text import python_safe_name
 from packaging import tags as packaging_tags
 from packaging import version as packaging_version
-from urllib.parse import quote_plus
 
 import utils_pip_compatibility_tags
-from utils_requirements import load_requirements
 
 """
 Utilities to manage Python thirparty libraries source, binaries and metadata in
@@ -111,7 +110,7 @@ Wheel downloader
 
 """
 
-TRACE = True
+TRACE = False
 TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
@@ -168,6 +167,16 @@ PLATFORMS_BY_OS = {
         "macosx_10_15_x86_64",
         "macosx_11_0_x86_64",
         "macosx_11_intel",
+        "macosx_11_0_x86_64",
+        "macosx_11_intel",
+        "macosx_10_9_universal2",
+        "macosx_10_10_universal2",
+        "macosx_10_11_universal2",
+        "macosx_10_12_universal2",
+        "macosx_10_13_universal2",
+        "macosx_10_14_universal2",
+        "macosx_10_15_universal2",
+        "macosx_11_0_universal2",
         # 'macosx_11_0_arm64',
     ],
     "windows": [
@@ -178,18 +187,19 @@ PLATFORMS_BY_OS = {
 THIRDPARTY_DIR = "thirdparty"
 CACHE_THIRDPARTY_DIR = ".cache/thirdparty"
 
-ABOUT_BASE_URL = "https://thirdparty.aboutcode.org/pypi"
+################################################################################
 
+ABOUT_BASE_URL = "https://thirdparty.aboutcode.org/pypi"
 ABOUT_PYPI_SIMPLE_URL = f"{ABOUT_BASE_URL}/simple"
 ABOUT_LINKS_URL = f"{ABOUT_PYPI_SIMPLE_URL}/links.html"
-
 PYPI_SIMPLE_URL = "https://pypi.org/simple"
-PYPI_INDEXES = (PYPI_SIMPLE_URL, ABOUT_PYPI_SIMPLE_URL)
+PYPI_INDEX_URLS = (PYPI_SIMPLE_URL, ABOUT_PYPI_SIMPLE_URL)
+
+################################################################################
 
 EXTENSIONS_APP = (".pyz",)
 EXTENSIONS_SDIST = (
     ".tar.gz",
-    ".tar.bz2",
     ".zip",
     ".tar.xz",
 )
@@ -216,120 +226,90 @@ class DistributionNotFound(Exception):
     pass
 
 
-def download_wheel(
-    name,
-    version,
-    environment,
-    dest_dir=THIRDPARTY_DIR,
-    index_urls=PYPI_INDEXES,
-):
+def download_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR, repos=tuple()):
     """
     Download the wheels binary distribution(s) of package ``name`` and
-    ``version`` matching the ``environment`` Environment constraints from the
-    PyPI simple repository ``index_urls`` list of URLs into the ``dest_dir``
-    directory.
+    ``version`` matching the ``environment`` Environment constraints into the
+    ``dest_dir`` directory. Return a list of fetched_wheel_filenames, possibly
+    empty.
 
-    Raise a DistributionNotFound if no wheel is not found. Otherwise, return a
-    tuple of lists of (fetched_wheel_filenames, existing_wheel_filenames)
+    Use the first PyPI simple repository from a list of ``repos`` that contains this wheel.
     """
     if TRACE_DEEP:
-        print(f"  download_wheel: {name}=={version}: {environment}")
+        print(f"  download_wheel: {name}=={version} for envt: {environment}")
+
+    if not repos:
+        repos = DEFAULT_PYPI_REPOS
 
     fetched_wheel_filenames = []
-    existing_wheel_filenames = []
-    try:
-        for pypi_package in get_package_versions(
-            name=name,
-            version=version,
-            index_urls=index_urls,
-        ):
-            if not pypi_package.wheels:
-                continue
 
-            supported_wheels = list(pypi_package.get_supported_wheels(environment=environment))
-            if not supported_wheels:
-                continue
+    for repo in repos:
+        package = repo.get_package_version(name=name, version=version)
+        if not package:
+            if TRACE_DEEP:
+                print(f"    download_wheel: No package in {repo.index_url} for {name}=={version}")
+            continue
+        supported_wheels = list(package.get_supported_wheels(environment=environment))
+        if not supported_wheels:
+            if TRACE_DEEP:
+                print(
+                    f"    download_wheel: No supported wheel for {name}=={version}: {environment} "
+                )
+            continue
 
-            for wheel in supported_wheels:
-                if os.path.exists(os.path.join(dest_dir, wheel.filename)):
-                    # do not refetch
-                    existing_wheel_filenames.append(wheel.filename)
-                    continue
+        for wheel in supported_wheels:
+            if TRACE_DEEP:
+                print(
+                    f"    download_wheel: Getting wheel from index (or cache): {wheel.download_url}"
+                )
+            fetched_wheel_filename = wheel.download(dest_dir=dest_dir)
+            fetched_wheel_filenames.append(fetched_wheel_filename)
 
-                if TRACE:
-                    print(f"  Fetching wheel from index: {wheel.download_url}")
-                fetched_wheel_filename = wheel.download(dest_dir=dest_dir)
-                fetched_wheel_filenames.add(fetched_wheel_filename)
+        if fetched_wheel_filenames:
+            # do not futher fetch from other repos if we find in first, typically PyPI
+            break
 
-    except Exception as e:
-        raise DistributionNotFound(f"Failed to fetch wheel: {name}=={version}: {e}") from e
-
-    if not fetched_wheel_filenames and not existing_wheel_filenames:
-        raise DistributionNotFound(f"Failed to fetch wheel: {name}=={version}: No wheel found")
-
-    return fetched_wheel_filenames, existing_wheel_filenames
+    return fetched_wheel_filenames
 
 
-def download_sdist(
-    name,
-    version,
-    dest_dir=THIRDPARTY_DIR,
-    index_urls=PYPI_INDEXES,
-):
+def download_sdist(name, version, dest_dir=THIRDPARTY_DIR, repos=tuple()):
     """
     Download the sdist source distribution of package ``name`` and ``version``
-    from the PyPI simple repository ``index_urls`` list of URLs into the
-    ``dest_dir`` directory.
+    into the ``dest_dir`` directory. Return a fetched filename or None.
 
-    Raise a DistributionNotFound if this was not found. Return the filename if
-    downloaded and False if not downloaded because it already exists.
+    Use the first PyPI simple repository from a list of ``repos`` that contains
+    this sdist.
     """
-    if TRACE_DEEP:
-        print(f"download_sdist: {name}=={version}: ")
+    if TRACE:
+        print(f"  download_sdist: {name}=={version}")
 
-    try:
-        for pypi_package in get_package_versions(
-            name=name,
-            version=version,
-            index_urls=index_urls,
-        ):
-            if not pypi_package.sdist:
-                continue
+    if not repos:
+        repos = DEFAULT_PYPI_REPOS
 
-            if os.path.exists(os.path.join(dest_dir, pypi_package.sdist.filename)):
-                # do not refetch
-                return False
-            if TRACE:
-                print(f"  Fetching sources from index: {pypi_package.sdist.download_url}")
-            fetched = pypi_package.sdist.download(dest_dir=dest_dir)
-            if fetched:
-                return pypi_package.sdist.filename
+    fetched_sdist_filename = None
 
-    except Exception as e:
-        raise DistributionNotFound(f"Failed to fetch sdist: {name}=={version}: {e}") from e
+    for repo in repos:
+        package = repo.get_package_version(name=name, version=version)
 
-    raise DistributionNotFound(f"Failed to fetch sdist: {name}=={version}: No sources found")
+        if not package:
+            if TRACE_DEEP:
+                print(f"    download_sdist: No package in {repo.index_url} for {name}=={version}")
+            continue
+        sdist = package.sdist
+        if not sdist:
+            if TRACE_DEEP:
+                print(f"    download_sdist: No sdist for {name}=={version}")
+            continue
 
+        if TRACE_DEEP:
+            print(f"    download_sdist: Getting sdist from index (or cache): {sdist.download_url}")
+        fetched_sdist_filename = package.sdist.download(dest_dir=dest_dir)
 
-def get_package_versions(
-    name,
-    version=None,
-    index_urls=PYPI_INDEXES,
-):
-    """
-    Yield PypiPackages with ``name`` and ``version`` from the PyPI simple
-    repository ``index_urls`` list of URLs.
-    If ``version`` is not provided, return the latest available versions.
-    """
-    for index_url in index_urls:
-        try:
-            repo = get_pypi_repo(index_url)
-            package = repo.get_package(name, version)
-            if package:
-                yield package
-        except RemoteNotFetchedException as e:
-            print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
+        if fetched_sdist_filename:
+            # do not futher fetch from other repos if we find in first, typically PyPI
+            break
 
+    return fetched_sdist_filename
 
 ################################################################################
 #
@@ -362,17 +342,6 @@ class NameVer:
         """
         return name and re.sub(r"[-_.]+", "-", name).lower() or name
 
-    @staticmethod
-    def standardize_name(name):
-        """
-        Return a standardized package name, e.g. lowercased and using - not _
-        """
-        return name and re.sub(r"[-_]+", "-", name).lower() or name
-
-    @property
-    def name_ver(self):
-        return f"{self.name}-{self.version}"
-
     def sortable_name_version(self):
         """
         Return a tuple of values to sort by name, then version.
@@ -388,7 +357,7 @@ class NameVer:
 @attr.attributes
 class Distribution(NameVer):
 
-    # field names that can be updated from another dist of mapping
+    # field names that can be updated from another Distribution or mapping
     updatable_fields = [
         "license_expression",
         "copyright",
@@ -404,6 +373,13 @@ class Distribution(NameVer):
         type=str,
         default="",
         metadata=dict(help="File name."),
+    )
+
+    path_or_url = attr.ib(
+        repr=False,
+        type=str,
+        default="",
+        metadata=dict(help="Path or URL"),
     )
 
     sha256 = attr.ib(
@@ -530,36 +506,50 @@ class Distribution(NameVer):
         """
         Return a Package URL string of self.
         """
-        return str(packageurl.PackageURL(**self.purl_identifiers()))
+        return str(
+            packageurl.PackageURL(
+                type=self.type,
+                namespace=self.namespace,
+                name=self.name,
+                version=self.version,
+                subpath=self.subpath,
+                qualifiers=self.qualifiers,
+            )
+        )
 
     @property
     def download_url(self):
         return self.get_best_download_url()
 
-    def get_best_download_url(
-        self,
-        index_urls=tuple([PYPI_SIMPLE_URL, ABOUT_PYPI_SIMPLE_URL]),
-    ):
+    def get_best_download_url(self, repos=tuple()):
         """
-        Return the best download URL for this distribution where best means that
-        PyPI is better and our selfhosted repo URLs are second.
-        If none is found, return a synthetic remote URL.
+        Return the best download URL for this distribution where best means this
+        is the first URL found for this distribution found in the list of
+        ``repos``.
+
+        If none is found, return a synthetic PyPI remote URL.
         """
-        for index_url in index_urls:
-            pypi_package = get_pypi_package(
-                name=self.normalized_name,
-                version=self.version,
-                index_url=index_url,
-            )
-            if pypi_package:
-                if isinstance(pypi_package, tuple):
-                    raise Exception("############", repr(pypi_package))
-                try:
-                    pypi_url = pypi_package.get_url_for_filename(self.filename)
-                except Exception as e:
-                    raise Exception(repr(pypi_package)) from e
-                if pypi_url:
-                    return pypi_url
+
+        if not repos:
+            repos = DEFAULT_PYPI_REPOS
+
+        for repo in repos:
+            package = repo.get_package_version(name=self.name, version=self.version)
+            if not package:
+                if TRACE:
+                    print(
+                        f"     get_best_download_url: {self.name}=={self.version} "
+                        f"not found in {repo.index_url}"
+                    )
+                continue
+            pypi_url = package.get_url_for_filename(self.filename)
+            if pypi_url:
+                return pypi_url
+            else:
+                if TRACE:
+                    print(
+                        f"     get_best_download_url: {self.filename} not found in {repo.index_url}"
+                    )
 
     def download(self, dest_dir=THIRDPARTY_DIR):
         """
@@ -567,16 +557,17 @@ class Distribution(NameVer):
         Return the fetched filename.
         """
         assert self.filename
-        if TRACE:
+        if TRACE_DEEP:
             print(
                 f"Fetching distribution of {self.name}=={self.version}:",
                 self.filename,
             )
 
-        fetch_and_save_path_or_url(
-            filename=self.filename,
-            dest_dir=dest_dir,
+        # FIXME:
+        fetch_and_save(
             path_or_url=self.path_or_url,
+            dest_dir=dest_dir,
+            filename=self.filename,
             as_text=False,
         )
         return self.filename
@@ -601,7 +592,7 @@ class Distribution(NameVer):
     def from_path_or_url(cls, path_or_url):
         """
         Return a distribution built from the data found in the filename of a
-        `path_or_url` string. Raise an exception if this is not a valid
+        ``path_or_url`` string. Raise an exception if this is not a valid
         filename.
         """
         filename = os.path.basename(path_or_url.strip("/"))
@@ -631,47 +622,6 @@ class Distribution(NameVer):
         filename = os.path.basename(filename.strip("/"))
         clazz = cls.get_dist_class(filename)
         return clazz.from_filename(filename)
-
-    def purl_identifiers(self, skinny=False):
-        """
-        Return a mapping of non-empty identifier name/values for the purl
-        fields. If skinny is True, only inlucde type, namespace and name.
-        """
-        identifiers = dict(
-            type=self.type,
-            namespace=self.namespace,
-            name=self.name,
-        )
-
-        if not skinny:
-            identifiers.update(
-                version=self.version,
-                subpath=self.subpath,
-                qualifiers=self.qualifiers,
-            )
-
-        return {k: v for k, v in sorted(identifiers.items()) if v}
-
-    def identifiers(self, purl_as_fields=True):
-        """
-        Return a mapping of non-empty identifier name/values.
-        Return each purl fields separately if purl_as_fields is True.
-        Otherwise return a package_url string for the purl.
-        """
-        if purl_as_fields:
-            identifiers = self.purl_identifiers()
-        else:
-            identifiers = dict(package_url=self.package_url)
-
-        identifiers.update(
-            download_url=self.download_url,
-            filename=self.filename,
-            md5=self.md5,
-            sha1=self.sha1,
-            package_url=self.package_url,
-        )
-
-        return {k: v for k, v in sorted(identifiers.items()) if v}
 
     def has_key_metadata(self):
         """
@@ -802,7 +752,7 @@ class Distribution(NameVer):
         NOTICE file if any. Return True if the data was updated.
         """
         try:
-            about_text = fetch_content_from_path_or_url_through_cache(
+            about_text = CACHE.get(
                 path_or_url=self.about_download_url,
                 as_text=True,
             )
@@ -816,7 +766,7 @@ class Distribution(NameVer):
         notice_file = about_data.pop("notice_file", None)
         if notice_file:
             try:
-                notice_text = fetch_content_from_path_or_url_through_cache(
+                notice_text = CACHE.get(
                     path_or_url=self.notice_download_url,
                     as_text=True,
                 )
@@ -867,12 +817,12 @@ class Distribution(NameVer):
             return ["unknown"]
         return keys
 
-    def fetch_license_files(self, dest_dir=THIRDPARTY_DIR):
+    def fetch_license_files(self, dest_dir=THIRDPARTY_DIR, use_cached_index=False):
         """
         Fetch license files if missing in `dest_dir`.
         Return True if license files were fetched.
         """
-        urls = LinksRepository.from_url().links
+        urls = LinksRepository.from_url(use_cached_index=use_cached_index).links
         errors = []
         extra_lic_names = [l.get("file") for l in self.extra_data.get("licenses", {})]
         extra_lic_names += [self.extra_data.get("license_file")]
@@ -887,10 +837,10 @@ class Distribution(NameVer):
                 # try remotely first
                 lic_url = get_license_link_for_filename(filename=filename, urls=urls)
 
-                fetch_and_save_path_or_url(
-                    filename=filename,
-                    dest_dir=dest_dir,
+                fetch_and_save(
                     path_or_url=lic_url,
+                    dest_dir=dest_dir,
+                    filename=filename,
                     as_text=True,
                 )
                 if TRACE:
@@ -900,10 +850,10 @@ class Distribution(NameVer):
                 try:
                     # try licensedb second
                     lic_url = f"{LICENSEDB_API_URL}/{filename}"
-                    fetch_and_save_path_or_url(
-                        filename=filename,
-                        dest_dir=dest_dir,
+                    fetch_and_save(
                         path_or_url=lic_url,
+                        dest_dir=dest_dir,
+                        filename=filename,
                         as_text=True,
                     )
                     if TRACE:
@@ -1062,6 +1012,84 @@ class InvalidDistributionFilename(Exception):
     pass
 
 
+def get_sdist_name_ver_ext(filename):
+    """
+    Return a (name, version, extension) if filename is a valid sdist name. Some legacy
+    binary builds have weird names. Return False otherwise.
+
+    In particular they do not use PEP440 compliant versions and/or mix tags, os
+    and arch names in tarball names and versions:
+
+    >>> assert get_sdist_name_ver_ext("intbitset-1.3.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("intbitset-1.3.linux-x86_64.tar.gz")
+    >>> assert get_sdist_name_ver_ext("intbitset-1.4a.tar.gz")
+    >>> assert get_sdist_name_ver_ext("intbitset-1.4a.zip")
+    >>> assert not get_sdist_name_ver_ext("intbitset-2.0.linux-x86_64.tar.gz")
+    >>> assert get_sdist_name_ver_ext("intbitset-2.0.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("intbitset-2.1-1.src.rpm")
+    >>> assert not get_sdist_name_ver_ext("intbitset-2.1-1.x86_64.rpm")
+    >>> assert not get_sdist_name_ver_ext("intbitset-2.1.linux-x86_64.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("cffi-1.2.0-1.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("html5lib-1.0-reupload.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("selenium-2.0-dev-9429.tar.gz")
+    >>> assert not get_sdist_name_ver_ext("testfixtures-1.8.0dev-r4464.tar.gz")
+    """
+    name_ver = None
+    extension = None
+
+    for ext in EXTENSIONS_SDIST:
+        if filename.endswith(ext):
+            name_ver, extension, _ = filename.rpartition(ext)
+            break
+
+    if not extension or not name_ver:
+        return False
+
+    name, _, version = name_ver.rpartition("-")
+
+    if not name or not version:
+        return False
+
+    # weird version
+    if any(
+        w in version
+        for w in (
+            "x86_64",
+            "i386",
+        )
+    ):
+        return False
+
+    # all char versions
+    if version.isalpha():
+        return False
+
+    # non-pep 440 version    
+    if "-" in version:
+        return False
+
+    # single version    
+    if version.isdigit() and len(version) == 1:
+        return False
+
+    # r1 version    
+    if len(version) == 2 and version[0]=="r" and version[1].isdigit():
+        return False
+
+    # dotless version (but calver is OK)
+    if "." not in version and len(version) < 3:
+        return False
+
+    # version with dashes selenium-2.0-dev-9429.tar.gz
+    if name.endswith(("dev",)) and "." not in version:
+        return False
+    # version pre or post, old legacy
+    if version.startswith(("beta", "rc", "pre", "post", "final")):
+        return False
+
+    return name, version, extension
+
+
 @attr.attributes
 class Sdist(Distribution):
 
@@ -1078,21 +1106,11 @@ class Sdist(Distribution):
         Return a Sdist object built from a filename.
         Raise an exception if this is not a valid sdist filename
         """
-        name_ver = None
-        extension = None
-
-        for ext in EXTENSIONS_SDIST:
-            if filename.endswith(ext):
-                name_ver, extension, _ = filename.rpartition(ext)
-                break
-
-        if not extension or not name_ver:
+        name_ver_ext = get_sdist_name_ver_ext(filename)
+        if not name_ver_ext:
             raise InvalidDistributionFilename(filename)
 
-        name, _, version = name_ver.rpartition("-")
-
-        if not name or not version:
-            raise InvalidDistributionFilename(filename)
+        name, version, extension = name_ver_ext
 
         return cls(
             type="pypi",
@@ -1280,8 +1298,8 @@ def is_pure_wheel(filename):
 @attr.attributes
 class PypiPackage(NameVer):
     """
-    A Python package with its "distributions", e.g. wheels and source
-    distribution , ABOUT files and licenses or notices.
+    A Python package contains one or more wheels and one source distribution
+    from a repository.
     """
 
     sdist = attr.ib(
@@ -1297,16 +1315,6 @@ class PypiPackage(NameVer):
         default=attr.Factory(list),
         metadata=dict(help="List of Wheel for this package"),
     )
-
-    @property
-    def specifier(self):
-        """
-        A requirement specifier for this package
-        """
-        if self.version:
-            return f"{self.name}=={self.version}"
-        else:
-            return self.name
 
     def get_supported_wheels(self, environment, verbose=TRACE_ULTRA_DEEP):
         """
@@ -1389,17 +1397,20 @@ class PypiPackage(NameVer):
         Yield PypiPackages built from files found in at directory path.
         """
         base = os.path.abspath(directory)
+
         paths = [os.path.join(base, f) for f in os.listdir(base) if f.endswith(EXTENSIONS)]
+
         if TRACE_ULTRA_DEEP:
             print("packages_from_dir: paths:", paths)
-        return cls.packages_from_many_paths_or_urls(paths)
+        return PypiPackage.packages_from_many_paths_or_urls(paths)
 
     @classmethod
     def packages_from_many_paths_or_urls(cls, paths_or_urls):
         """
         Yield PypiPackages built from a list of paths or URLs.
+        These are sorted by name and then by version from oldest to newest.
         """
-        dists = cls.dists_from_paths_or_urls(paths_or_urls)
+        dists = PypiPackage.dists_from_paths_or_urls(paths_or_urls)
         if TRACE_ULTRA_DEEP:
             print("packages_from_many_paths_or_urls: dists:", dists)
 
@@ -1415,53 +1426,10 @@ class PypiPackage(NameVer):
             yield package
 
     @classmethod
-    def get_versions(cls, name, packages):
-        """
-        Return a subset list of package versions from a list of `packages` that
-        match PypiPackage `name`.
-        The list is sorted by version from oldest to most recent.
-        """
-        norm_name = NameVer.normalize_name(name)
-        versions = [p for p in packages if p.normalized_name == norm_name]
-        return cls.sorted(versions)
-
-    @classmethod
-    def get_latest_version(cls, name, packages):
-        """
-        Return the latest version of PypiPackage `name` from a list of `packages`.
-        """
-        versions = cls.get_versions(name, packages)
-        if not versions:
-            return
-        return versions[-1]
-
-    @classmethod
-    def get_name_version(cls, name, version, packages):
-        """
-        Return the PypiPackage with `name` and `version` from a list of `packages`
-        or None if it is not found.
-        If `version` is None, return the latest version found.
-        """
-        if TRACE_ULTRA_DEEP:
-            print("get_name_version:", name, version, packages)
-        if not version:
-            return cls.get_latest_version(name, packages)
-
-        nvs = [p for p in cls.get_versions(name, packages) if p.version == version]
-
-        if not nvs:
-            return name, version
-
-        if len(nvs) == 1:
-            return nvs[0]
-
-        raise Exception(f"More than one PypiPackage with {name}=={version}")
-
-    @classmethod
     def dists_from_paths_or_urls(cls, paths_or_urls):
         """
         Return a list of Distribution given a list of
-        `paths_or_urls` to wheels or source distributions.
+        ``paths_or_urls`` to wheels or source distributions.
 
         Each Distribution receives two extra attributes:
             - the path_or_url it was created from
@@ -1473,29 +1441,24 @@ class PypiPackage(NameVer):
         ...     bitarray-0.8.1-cp36-cp36m-macosx_10_9_x86_64.macosx_10_10_x86_64.whl
         ...     bitarray-0.8.1-cp36-cp36m-win_amd64.whl
         ...     https://example.com/bar/bitarray-0.8.1.tar.gz
-        ...     bitarray-0.8.1.tar.gz.ABOUT bit.LICENSE'''.split()
-        >>> result = list(PypiPackage.dists_from_paths_or_urls(paths_or_urls))
+        ...     bitarray-0.8.1.tar.gz.ABOUT
+        ...     bit.LICENSE'''.split()
+        >>> results = list(PypiPackage.dists_from_paths_or_urls(paths_or_urls))
         >>> for r in results:
-        ...    r.filename = ''
-        ...    r.path_or_url = ''
-        >>> expected = [
-        ...     Wheel(name='bitarray', version='0.8.1', build='',
-        ...         python_versions=['cp36'], abis=['cp36m'],
-        ...         platforms=['linux_x86_64']),
-        ...     Wheel(name='bitarray', version='0.8.1', build='',
-        ...         python_versions=['cp36'], abis=['cp36m'],
-        ...         platforms=['macosx_10_9_x86_64', 'macosx_10_10_x86_64']),
-        ...     Wheel(name='bitarray', version='0.8.1', build='',
-        ...         python_versions=['cp36'], abis=['cp36m'],
-        ...         platforms=['win_amd64']),
-        ...     Sdist(name='bitarray', version='0.8.1'),
-        ...     Sdist(name='bitarray', version='0.8.1')
-        ... ]
-        >>> assert expected == result
+        ...    print(r.__class__.__name__, r.name, r.version)
+        ...    if isinstance(r, Wheel):
+        ...       print(" ", ", ".join(r.python_versions), ", ".join(r.platforms))
+        Wheel bitarray 0.8.1
+          cp36 linux_x86_64
+        Wheel bitarray 0.8.1
+          cp36 macosx_10_9_x86_64, macosx_10_10_x86_64
+        Wheel bitarray 0.8.1
+          cp36 win_amd64
+        Sdist bitarray 0.8.1
         """
         dists = []
-        if TRACE_DEEP:
-            print("   ###paths_or_urls:", paths_or_urls)
+        if TRACE_ULTRA_DEEP:
+            print("     ###paths_or_urls:", paths_or_urls)
         installable = [f for f in paths_or_urls if f.endswith(EXTENSIONS_INSTALLABLE)]
         for path_or_url in installable:
             try:
@@ -1503,7 +1466,14 @@ class PypiPackage(NameVer):
                 dists.append(dist)
                 if TRACE_DEEP:
                     print(
-                        "     ===> dists_from_paths_or_urls:", dist, "with URL:", dist.download_url
+                        "     ===> dists_from_paths_or_urls:",
+                        dist,
+                        "\n     ",
+                        "with URL:",
+                        dist.download_url,
+                        "\n     ",
+                        "from URL:",
+                        path_or_url,
                     )
             except InvalidDistributionFilename:
                 if TRACE_DEEP:
@@ -1618,7 +1588,6 @@ class Environment:
             )
         )
 
-
 ################################################################################
 #
 # PyPI repo and link index for package wheels and sources
@@ -1639,98 +1608,105 @@ class PypiSimpleRepository:
         metadata=dict(help="Base PyPI simple URL for this index."),
     )
 
-    packages_by_normalized_name = attr.ib(
+    # we keep a nested mapping of PypiPackage that has this shape:
+    # {name: {version: PypiPackage, version: PypiPackage, etc}
+    # the inner versions mapping is sorted by version from oldest to newest
+
+    packages = attr.ib(
         type=dict,
-        default=attr.Factory(lambda: defaultdict(list)),
-        metadata=dict(help="Mapping of {package name: [package objects]} available in this repo"),
+        default=attr.Factory(lambda: defaultdict(dict)),
+        metadata=dict(
+            help="Mapping of {name: {version: PypiPackage, version: PypiPackage, etc} available in this repo"
+        ),
     )
 
-    packages_by_normalized_name_version = attr.ib(
-        type=dict,
-        default=attr.Factory(dict),
-        metadata=dict(help="Mapping of {(name, version): package object} available in this repo"),
+    fetched_package_normalized_names = attr.ib(
+        type=set,
+        default=attr.Factory(set),
+        metadata=dict(help="A set of already fetched package normalized names."),
     )
 
-    def get_versions(self, name):
-        """
-        Return a list of all available PypiPackage version for this package name.
-        The list may be empty.
-        """
-        name = name and NameVer.normalize_name(name)
-        self._populate_links_and_packages(name)
-        return self.packages_by_normalized_name.get(name, [])
+    use_cached_index = attr.ib(
+        type=bool,
+        default=False,
+        metadata=dict(help="If True, use any existing on-disk cached PyPI index files. Otherwise, fetch and cache."),
+    )
 
-    def get_latest_version(self, name):
+    def _get_package_versions_map(self, name):
         """
-        Return the latest PypiPackage version for this package name or None.
+        Return a mapping of all available PypiPackage version for this package name.
+        The mapping may be empty. It is ordered by version from oldest to newest
         """
-        versions = self.get_versions(name)
-        return PypiPackage.get_latest_version(name, versions)
+        assert name
+        normalized_name = NameVer.normalize_name(name)
+        versions = self.packages[normalized_name]
+        if not versions and normalized_name not in self.fetched_package_normalized_names:
+            self.fetched_package_normalized_names.add(normalized_name)
+            try:
+                links = self.fetch_links(normalized_name=normalized_name)
+                # note that thsi is sorted so the mapping is also sorted
+                versions = {
+                    package.version: package
+                    for package in PypiPackage.packages_from_many_paths_or_urls(paths_or_urls=links)
+                }
+                self.packages[normalized_name] = versions
+            except RemoteNotFetchedException as e:
+                if TRACE:
+                    print(f"failed to fetch package name: {name} from: {self.index_url}:\n{e}")
 
-    def get_package(self, name, version):
+        if not versions and TRACE:
+            print(f"WARNING: package {name} not found in repo: {self.index_url}")
+
+        return versions
+
+    def get_package_versions(self, name):
+        """
+        Return a mapping of all available PypiPackage version as{version:
+        package} for this package name. The mapping may be empty but not None.
+        It is sorted by version from oldest to newest.
+        """
+        return dict(self._get_package_versions_map(name))
+
+    def get_package_version(self, name, version=None):
         """
         Return the PypiPackage with name and version or None.
+        Return the latest PypiPackage version if version is None.
         """
-        versions = self.get_versions(name)
-        if TRACE_DEEP:
-            print("PypiPackage.get_package:versions:", versions)
-        return PypiPackage.get_name_version(name, version, versions)
+        if not version:
+            versions = list(self._get_package_versions_map(name).values())
+            return versions and versions[-1]
+        else:
+            return self._get_package_versions_map(name).get(version)
 
-    def _fetch_links(self, name, _LINKS={}):
+    def fetch_links(self, normalized_name):
         """
         Return a list of download link URLs found in a PyPI simple index for package
         name using the `index_url` of this repository.
         """
-        name = name and NameVer.normalize_name(name)
-        index_url = self.index_url
-
-        name = name and NameVer.normalize_name(name)
-        index_url = index_url.strip("/")
-        index_url = f"{index_url}/{name}"
-
-        if TRACE_DEEP:
-            print(
-                f"    Finding links for {name!r} from PyPI index: {index_url} : cached?:",
-                index_url in _LINKS,
-            )
-
-        if index_url not in _LINKS:
-            text = fetch_content_from_path_or_url_through_cache(path_or_url=index_url, as_text=True)
-            links = collect_urls(text)
-            # TODO: keep sha256
-            links = [l.partition("#sha256=") for l in links]
-            links = [url for url, _, _sha256 in links]
-            _LINKS[index_url] = [l for l in links if l.endswith(EXTENSIONS)]
-
-        links = _LINKS[index_url]
-        if TRACE_DEEP:
-            print(f"          Found links {links!r}")
+        package_url = f"{self.index_url}/{normalized_name}"
+        text = CACHE.get(
+            path_or_url=package_url,
+            as_text=True,
+            force=not self.use_cached_index,
+        )
+        links = collect_urls(text)
+        # TODO: keep sha256
+        links = [l.partition("#sha256=") for l in links]
+        links = [url for url, _, _sha256 in links]
         return links
 
-    def _populate_links_and_packages(self, name):
-        name = name and NameVer.normalize_name(name)
 
-        if TRACE_DEEP:
-            print("PypiPackage._populate_links_and_packages:name:", name)
-
-        links = self._fetch_links(name)
-        packages = list(PypiPackage.packages_from_many_paths_or_urls(paths_or_urls=links))
-
-        if TRACE_DEEP:
-            print("PypiPackage._populate_links_and_packages:packages:", packages)
-
-        self.packages_by_normalized_name[name] = packages
-
-        for p in packages:
-            name = name and NameVer.normalize_name(p.name)
-            self.packages_by_normalized_name_version[(name, p.version)] = p
+PYPI_PUBLIC_REPO = PypiSimpleRepository(index_url=PYPI_SIMPLE_URL)
+PYPI_SELFHOSTED_REPO = PypiSimpleRepository(index_url=ABOUT_PYPI_SIMPLE_URL)
+DEFAULT_PYPI_REPOS = PYPI_PUBLIC_REPO, PYPI_SELFHOSTED_REPO
+DEFAULT_PYPI_REPOS_BY_URL = {r.index_url: r for r in DEFAULT_PYPI_REPOS}
 
 
 @attr.attributes
 class LinksRepository:
     """
-    Represents a simple links repository such an HTTP directory listing or a
-    page with links.
+    Represents a simple links repository such an HTTP directory listing or an
+    HTML page with links.
     """
 
     url = attr.ib(
@@ -1745,14 +1721,23 @@ class LinksRepository:
         metadata=dict(help="List of links available in this repo"),
     )
 
+    use_cached_index = attr.ib(
+        type=bool,
+        default=False,
+        metadata=dict(help="If True, use any existing on-disk cached index files. Otherwise, fetch and cache."),
+    )
+
     def __attrs_post_init__(self):
         if not self.links:
             self.links = self.find_links()
 
-    def find_links(self):
+    def find_links(self, _CACHE=[]):
         """
         Return a list of link URLs found in the HTML page at `self.url`
         """
+        if _CACHE:
+            return _CACHE
+
         links_url = self.url
         if TRACE_DEEP:
             print(f"Finding links from: {links_url}")
@@ -1764,9 +1749,10 @@ class LinksRepository:
         if TRACE_DEEP:
             print(f"Base URL {base_url}")
 
-        text = fetch_content_from_path_or_url_through_cache(
+        text = CACHE.get(
             path_or_url=links_url,
             as_text=True,
+            force=not self.use_cached_index,
         )
 
         links = []
@@ -1795,14 +1781,14 @@ class LinksRepository:
 
         if TRACE:
             print(f"Found {len(links)} links at {links_url}")
+        _CACHE.extend(links)
         return links
 
     @classmethod
-    def from_url(cls, url=ABOUT_BASE_URL, _LINKS_REPO={}):
+    def from_url(cls, url=ABOUT_BASE_URL, _LINKS_REPO={}, use_cached_index=False):
         if url not in _LINKS_REPO:
-            _LINKS_REPO[url] = cls(url=url)
+            _LINKS_REPO[url] = cls(url=url, use_cached_index=use_cached_index)
         return _LINKS_REPO[url]
-
 
 ################################################################################
 # Globals for remote repos to be lazily created and cached on first use for the
@@ -1816,27 +1802,6 @@ def get_local_packages(directory=THIRDPARTY_DIR):
     an empty list if the package cannot be found.
     """
     return list(PypiPackage.packages_from_dir(directory=directory))
-
-
-def get_pypi_repo(index_url, _PYPI_REPO={}):
-    if index_url not in _PYPI_REPO:
-        _PYPI_REPO[index_url] = PypiSimpleRepository(index_url=index_url)
-    return _PYPI_REPO[index_url]
-
-
-def get_pypi_package(name, version, index_url, verbose=TRACE_DEEP):
-    """
-    Return a PypiPackage or None.
-    """
-    try:
-        package = get_pypi_repo(index_url).get_package(name, version)
-        if verbose:
-            print(f"    get_pypi_package: {name} @ {version} info from {index_url}: {package}")
-        return package
-
-    except RemoteNotFetchedException as e:
-        print(f"Failed to fetch PyPI package {name} @ {version} info from {index_url}: {e}")
-
 
 ################################################################################
 #
@@ -1857,25 +1822,31 @@ class Cache:
     def __attrs_post_init__(self):
         os.makedirs(self.directory, exist_ok=True)
 
-    def clear(self):
-        shutil.rmtree(self.directory)
-
-    def get(self, path_or_url, as_text=True):
+    def get(self, path_or_url, as_text=True, force=False):
         """
-        Get a file from a `path_or_url` through the cache.
-        `path_or_url` can be a path or a URL to a file.
+        Return the content fetched from a ``path_or_url`` through the cache.
+        Raise an Exception on errors. Treats the content as text if as_text is
+        True otherwise as treat as binary. `path_or_url` can be a path or a URL
+        to a file.
         """
         cache_key = quote_plus(path_or_url.strip("/"))
         cached = os.path.join(self.directory, cache_key)
 
-        if not os.path.exists(cached):
+        if force or not os.path.exists(cached):
+            if TRACE_DEEP:
+                print(f"        FILE CACHE MISS: {path_or_url}")
             content = get_file_content(path_or_url=path_or_url, as_text=as_text)
             wmode = "w" if as_text else "wb"
             with open(cached, wmode) as fo:
                 fo.write(content)
             return content
         else:
+            if TRACE_DEEP:
+                print(f"        FILE CACHE HIT: {path_or_url}")
             return get_local_file_content(path=cached, as_text=as_text)
+
+
+CACHE = Cache()
 
 
 def get_file_content(path_or_url, as_text=True):
@@ -1884,7 +1855,7 @@ def get_file_content(path_or_url, as_text=True):
     remote URL. Return the content as bytes is `as_text` is False.
     """
     if path_or_url.startswith("https://"):
-        if TRACE:
+        if TRACE_DEEP:
             print(f"Fetching: {path_or_url}")
         _headers, content = get_remote_file_content(url=path_or_url, as_text=as_text)
         return content
@@ -1936,7 +1907,7 @@ def get_remote_file_content(
     # using a GET with stream=True ensure we get the the final header from
     # several redirects and that we can ignore content there. A HEAD request may
     # not get us this last header
-    print(f"    DOWNLOADING {url}")
+    print(f"    DOWNLOADING: {url}")
     with requests.get(url, allow_redirects=True, stream=True, headers=headers) as response:
         status = response.status_code
         if status != requests.codes.ok:  # NOQA
@@ -1960,35 +1931,19 @@ def get_remote_file_content(
         return response.headers, response.text if as_text else response.content
 
 
-def fetch_content_from_path_or_url_through_cache(
+def fetch_and_save(
     path_or_url,
-    as_text=True,
-    cache=Cache(),
-):
-    """
-    Return the content from fetching at path or URL. Raise an Exception on
-    errors. Treats the content as text if as_text is True otherwise as treat as
-    binary. Use the provided file cache. This is the main entry for using the
-    cache.
-
-    Note: the `cache` argument is a global, though it does not really matter
-    since it does not hold any state which is only kept on disk.
-    """
-    return cache.get(path_or_url=path_or_url, as_text=as_text)
-
-
-def fetch_and_save_path_or_url(
-    filename,
     dest_dir,
-    path_or_url,
+    filename,
     as_text=True,
 ):
     """
-    Return the content from fetching the `filename` file name at URL or path
-    and save to `dest_dir`. Raise an Exception on errors. Treats the content as
-    text if as_text is True otherwise as treat as binary.
+    Fetch content at ``path_or_url`` URL or path and save this to
+    ``dest_dir/filername``. Return the fetched content. Raise an Exception on
+    errors. Treats the content as text if as_text is True otherwise as treat as
+    binary.
     """
-    content = fetch_content_from_path_or_url_through_cache(
+    content = CACHE.get(
         path_or_url=path_or_url,
         as_text=as_text,
     )
@@ -1998,47 +1953,10 @@ def fetch_and_save_path_or_url(
         fo.write(content)
     return content
 
-
 ################################################################################
-# Requirements processing
-################################################################################
-
-
-def get_required_remote_packages(
-    requirements_file="requirements.txt",
-    index_url=PYPI_SIMPLE_URL,
-):
-    """
-    Yield tuple of (name, version, PypiPackage) for packages listed in the
-    `requirements_file` requirements file and found in the PyPI index
-    ``index_url`` URL.
-    """
-    required_name_versions = load_requirements(requirements_file=requirements_file)
-    return get_required_packages(required_name_versions=required_name_versions, index_url=index_url)
-
-
-def get_required_packages(
-    required_name_versions,
-    index_url=PYPI_SIMPLE_URL,
-):
-    """
-    Yield tuple of (name, version) or a PypiPackage for package name/version
-    listed in the ``required_name_versions`` list and found in the PyPI index
-    ``index_url`` URL.
-    """
-    if TRACE:
-        print("get_required_packages", index_url)
-
-    repo = get_pypi_repo(index_url=index_url)
-
-    for name, version in required_name_versions:
-        if TRACE:
-            print("  get_required_packages: name:", name, "version:", version)
-        yield repo.get_package(name, version)
-
-
-################################################################################
+#
 # Functions to update or fetch ABOUT and license files
+#
 ################################################################################
 
 
@@ -2059,7 +1977,7 @@ def clean_about_files(
                 local_dist.save_about_and_notice_files(dest_dir)
 
 
-def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
+def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
     """
     Given a thirdparty dir, add missing ABOUT. LICENSE and NOTICE files using
     best efforts:
@@ -2069,6 +1987,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
     - derive from existing distribution with same name and latest version that
       would have such ABOUT file
     - extract ABOUT file data from distributions PKGINFO or METADATA files
+
+    Use available existing on-disk cached index if use_cached_index is True.
     """
 
     def get_other_dists(_package, _dist):
@@ -2078,7 +1998,6 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
         """
         return [d for d in _package.get_distributions() if d != _dist]
 
-    selfhosted_repo = get_pypi_repo(index_url=ABOUT_PYPI_SIMPLE_URL)
     local_packages = get_local_packages(directory=dest_dir)
     packages_by_name = defaultdict(list)
     for local_package in local_packages:
@@ -2094,7 +2013,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # lets try to get from another dist of the same local package
@@ -2106,7 +2025,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # try to get another version of the same package that is not our version
@@ -2115,7 +2034,6 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
                 for p in packages_by_name[local_package.name]
                 if p.version != local_package.version
             ]
-
             other_local_version = other_local_packages and other_local_packages[-1]
             if other_local_version:
                 latest_local_dists = list(other_local_version.get_distributions())
@@ -2133,7 +2051,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
                 # if has key data we may look to improve later, but we can move on
                 if local_dist.has_key_metadata():
                     local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                    local_dist.fetch_license_files(dest_dir=dest_dir)
+                    local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
                     continue
 
             # lets try to fetch remotely
@@ -2142,14 +2060,16 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # try to get a latest version of the same package that is not our version
+            # and that is in our self hosted repo
+            lpv = local_package.version
+            lpn = local_package.name
+
             other_remote_packages = [
-                p
-                for p in selfhosted_repo.get_versions(local_package.name)
-                if p.version != local_package.version
+                p for v, p in PYPI_SELFHOSTED_REPO.get_package_versions(lpn).items() if v != lpv
             ]
 
             latest_version = other_remote_packages and other_remote_packages[-1]
@@ -2169,7 +2089,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
                 # if has key data we may look to improve later, but we can move on
                 if local_dist.has_key_metadata():
                     local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                    local_dist.fetch_license_files(dest_dir=dest_dir)
+                    local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
                     continue
 
             # try to get data from pkginfo (no license though)
@@ -2179,14 +2099,13 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
             # if local_dist.has_key_metadata() or not local_dist.has_key_metadata():
             local_dist.save_about_and_notice_files(dest_dir)
 
-            lic_errs = local_dist.fetch_license_files(dest_dir)
+            lic_errs = local_dist.fetch_license_files(dest_dir, use_cached_index=use_cached_index)
 
             if not local_dist.has_key_metadata():
                 print(f"Unable to add essential ABOUT data for: {local_dist}")
             if lic_errs:
                 lic_errs = "\n".join(lic_errs)
                 print(f"Failed to fetch some licenses:: {lic_errs}")
-
 
 ################################################################################
 #
@@ -2291,66 +2210,16 @@ def download_wheels_with_pip(
     downloaded = existing ^ set(os.listdir(dest_dir))
     return sorted(downloaded), error
 
-
-def build_wheels_locally_if_pure_python(
-    requirements_specifier,
-    with_deps=False,
-    verbose=False,
-    dest_dir=THIRDPARTY_DIR,
-):
-    """
-    Given pip `requirements_specifier` string (such as package names or as
-    name==version), build the corresponding binary wheel(s) locally.
-
-    If all these are "pure" Python wheels that run on all Python 3 versions and
-    operating systems, copy them back in `dest_dir` if they do not exists there
-
-    Return a tuple of (True if all wheels are "pure", list of built wheel file names)
-    """
-    deps = [] if with_deps else ["--no-deps"]
-    verbose = ["--verbose"] if verbose else []
-
-    wheel_dir = tempfile.mkdtemp(prefix="scancode-release-wheels-local-")
-    cli_args = (
-        [
-            "pip",
-            "wheel",
-            "--wheel-dir",
-            wheel_dir,
-        ]
-        + deps
-        + verbose
-        + [requirements_specifier]
-    )
-
-    print(f"Building local wheels for: {requirements_specifier}")
-    print(f"Using command:", " ".join(cli_args))
-    call(cli_args)
-
-    built = os.listdir(wheel_dir)
-    if not built:
-        return []
-
-    all_pure = all(is_pure_wheel(bwfn) for bwfn in built)
-
-    if not all_pure:
-        print(f"  Some wheels are not pure")
-
-    print(f"  Copying local wheels")
-    pure_built = []
-    for bwfn in built:
-        owfn = os.path.join(dest_dir, bwfn)
-        if not os.path.exists(owfn):
-            nwfn = os.path.join(wheel_dir, bwfn)
-            fileutils.copyfile(nwfn, owfn)
-        pure_built.append(bwfn)
-        print(f"    Built local wheel: {bwfn}")
-    return all_pure, pure_built
+################################################################################
+#
+# Functions to check for problems
+#
+################################################################################
 
 
 def check_about(dest_dir=THIRDPARTY_DIR):
     try:
-        subprocess.check_output(f"about check {dest_dir}".split())
+        subprocess.check_output(f"venv/bin/about check {dest_dir}".split())
     except subprocess.CalledProcessError as cpe:
         print()
         print("Invalid ABOUT files:")

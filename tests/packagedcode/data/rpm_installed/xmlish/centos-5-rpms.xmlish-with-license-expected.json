@@ -28,11 +28,6 @@
     "declared_license": "public domain",
     "notice_text": null,
     "source_packages": [],
-    "extra_data": {},
-    "purl": "pkg:rpm/setup@2.5.58?arch=noarch",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null,
     "file_references": [
       {
         "path": "/etc/aliases",
@@ -40,7 +35,8 @@
         "sha1": null,
         "md5": "039e9bb0c206d57c616c8fab3cb82c2a",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/bashrc",
@@ -48,7 +44,8 @@
         "sha1": null,
         "md5": "4d93be6a1e2c112096e6545faf8f829c",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/csh.cshrc",
@@ -56,7 +53,8 @@
         "sha1": null,
         "md5": "0e866df1fad20b59214c563f56412b45",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/csh.login",
@@ -64,7 +62,8 @@
         "sha1": null,
         "md5": "106d1a19969f1d12b1949bc331975c47",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/environment",
@@ -72,7 +71,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/exports",
@@ -80,7 +80,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/filesystems",
@@ -88,7 +89,8 @@
         "sha1": null,
         "md5": "59b5f604a6899aca8dc54e6e6897086e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/fstab",
@@ -96,7 +98,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/group",
@@ -104,7 +107,8 @@
         "sha1": null,
         "md5": "71803878c7d0b35d21a22c7b9349c1a6",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/gshadow",
@@ -112,7 +116,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/host.conf",
@@ -120,7 +125,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/hosts.allow",
@@ -128,7 +134,8 @@
         "sha1": null,
         "md5": "25fd7a8a9ec4794960ef198a60f66d22",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/hosts.deny",
@@ -136,7 +143,8 @@
         "sha1": null,
         "md5": "75febde367e30a4fdf539eb679d59120",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/inputrc",
@@ -144,7 +152,8 @@
         "sha1": null,
         "md5": "b2a7c18ae5159070abb2a4e4a615f999",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/motd",
@@ -152,7 +161,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/mtab",
@@ -160,7 +170,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/passwd",
@@ -168,7 +179,8 @@
         "sha1": null,
         "md5": "b4936b3216c0a2655fc4abedcefbdbd4",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/printcap",
@@ -176,7 +188,8 @@
         "sha1": null,
         "md5": "dc208a34b021823564a290720169534e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/profile",
@@ -184,7 +197,8 @@
         "sha1": null,
         "md5": "e685859fe01e8c62fd9de8a2c1934001",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/profile.d",
@@ -192,7 +206,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/protocols",
@@ -200,7 +215,8 @@
         "sha1": null,
         "md5": "21a25996ed4424d22d2902ee94029f6a",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/securetty",
@@ -208,7 +224,8 @@
         "sha1": null,
         "md5": "30afa82e759c95ea880593a4fb43e25e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/services",
@@ -216,7 +233,8 @@
         "sha1": null,
         "md5": "dde31302b080df6ec5fcacee0d56dc90",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/shadow",
@@ -224,7 +242,8 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/etc/shells",
@@ -232,7 +251,8 @@
         "sha1": null,
         "md5": "11bf793328a6037085fbd47931d69a1f",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/doc/setup-2.5.58",
@@ -240,7 +260,8 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/usr/share/doc/setup-2.5.58/uidgid",
@@ -248,7 +269,8 @@
         "sha1": null,
         "md5": "72a2ada9ad25c217338369667c6ef302",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       },
       {
         "path": "/var/log/lastlog",
@@ -256,9 +278,17 @@
         "sha1": null,
         "md5": "d41d8cd98f00b204e9800998ecf8427e",
         "sha256": null,
-        "sha512": null
+        "sha512": null,
+        "extra_data": {}
       }
-    ]
+    ],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/setup@2.5.58?arch=noarch"
   },
   {
     "type": "rpm",
@@ -276,7 +306,7 @@
     "keywords": [],
     "homepage_url": null,
     "download_url": null,
-    "size": 0,
+    "size": null,
     "sha1": "640b66efc6a459ebf80e53622f217dbc1fc49983",
     "md5": null,
     "sha256": null,
@@ -289,11 +319,13 @@
     "declared_license": "public domain",
     "notice_text": null,
     "source_packages": [],
+    "file_references": [],
     "extra_data": {},
-    "purl": "pkg:rpm/basesystem@8.0?arch=noarch",
+    "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "file_references": []
+    "datasource_id": "rpm_installed_database_sqlite",
+    "purl": "pkg:rpm/basesystem@8.0?arch=noarch"
   }
 ]

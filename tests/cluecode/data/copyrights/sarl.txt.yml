@@ -2,9 +2,8 @@ what:
   - copyrights
   - holders
 copyrights:
-    - Copyright (c) 2010-2020 Oryx Embedded SARL.
-    - Copyright (c) 2010-2013 S.A.R.L Ether Creation (http://www.ethercreation.com)
+  - Copyright (c) 2010-2020 Oryx Embedded SARL.
+  - Copyright (c) 2010-2013 S.A.R.L Ether Creation (http://www.ethercreation.com)
 holders:
-    - Oryx Embedded SARL.
-    - S.A.R.L Ether Creation
-  
+  - Oryx Embedded SARL.
+  - S.A.R.L Ether Creation

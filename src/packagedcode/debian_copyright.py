@@ -6,10 +6,12 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import fnmatch
 import os
 import sys
 from collections import defaultdict
 from itertools import chain
+from pathlib import Path
 
 import attr
 from debian_inspector.copyright import CatchAllParagraph

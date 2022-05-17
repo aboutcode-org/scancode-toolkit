@@ -17,7 +17,7 @@ from packagedcode import models
 from packagedcode.models import Party
 from packagedcode.msi import create_package_data_from_msiinfo_results
 from packagedcode.msi import parse_msiinfo_suminfo_output
-
+from packagedcode.msi import MsiInstallerHandler
 from packages_test_utils import PackageTester
 
 
@@ -46,12 +46,16 @@ class TestMsi(PackageTester):
         with open(test_file) as f:
             msiinfo_results = f.read()
         result = parse_msiinfo_suminfo_output(msiinfo_results)
-        print(result)
+
         assert result == self.python_3_9_5_add_to_path_results
 
     def test_msi_create_package_data_from_msiinfo_results(self):
-        result = create_package_data_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
+        result = create_package_data_from_msiinfo_results(
+            self.python_3_9_5_add_to_path_results.copy()
+        ).to_dict()
         expected = models.PackageData(
+            type=MsiInstallerHandler.default_package_type,
+            datasource_id=MsiInstallerHandler.datasource_id,
             name='Python 3.9.5 Add to Path (64-bit)',
             version='v 3.9.5',
             description='This installer database contains the logic and data required to install Python 3.9.5 Add to Path (64-bit).',
@@ -63,6 +67,6 @@ class TestMsi(PackageTester):
                 )
             ],
             keywords='Installer',
-            extra_data=self.python_3_9_5_add_to_path_results
-        )
-        self.assertEqual(result.to_dict(), expected.to_dict())
+        ).to_dict()
+        result['extra_data'] = {}
+        assert result == expected

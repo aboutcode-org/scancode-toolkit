@@ -11,8 +11,8 @@ from packageurl import PackageURL
 from pygmars import Token
 from pygmars.parse import Parser
 from pygments import lex
-from pygments.lexers.jvm import GroovyLexer
 
+from packagedcode import groovy_lexer
 from packagedcode import models
 
 # TODO: split groovy and kotlin handlers
@@ -20,7 +20,7 @@ from packagedcode import models
 
 class BuildGradleHandler(models.DatafileHandler):
     datasource_id = 'build_gradle'
-    path_patterns = ('*/build.gradle', 'build.gradle.kts',)
+    path_patterns = ('*/build.gradle', '*/build.gradle.kts',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
     default_package_type = 'maven'
@@ -35,7 +35,7 @@ class BuildGradleHandler(models.DatafileHandler):
     # TODO: handle complex cases of nested builds with many packages
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        cls.assign_package_to_parent_tree(
+        models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
@@ -64,7 +64,7 @@ def get_tokens(contents):
     """
     Yield tuples of (position, Token, value) from lexing a ``contents`` string.
     """
-    for i, (token, value) in enumerate(lex(contents, GroovyLexer())):
+    for i, (token, value) in enumerate(lex(contents, groovy_lexer.GroovyLexer())):
         yield i, token, value
 
 

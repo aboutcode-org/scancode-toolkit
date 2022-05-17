@@ -9,14 +9,13 @@
 
 import attr
 
-from commoncode.datautils import Mapping
-from plugincode.post_scan import PostScanPlugin
-from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
-
 from license_expression import Licensing
+from plugincode.post_scan import PostScanPlugin
+from plugincode.post_scan import post_scan_impl
 
+from packagedcode.utils import combine_expressions
 
 # Tracing flags
 TRACE = False
@@ -48,12 +47,14 @@ class LicenseClarityScore(PostScanPlugin):
     """
     Compute a License clarity score at the codebase level.
     """
+
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
     sort_order = 5
 
     options = [
-        PluggableCommandLineOption(('--license-clarity-score',),
+        PluggableCommandLineOption(
+            ('--license-clarity-score',),
             is_flag=True,
             default=False,
             help='Compute a summary license clarity score at the codebase level.',
@@ -70,7 +71,9 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        compute_license_score(codebase)
+        scoring_elements, declared_license_expression = compute_license_score(codebase)
+        codebase.attributes.summary['declared_license_expression'] = declared_license_expression
+        codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
 def compute_license_score(codebase):
@@ -121,12 +124,25 @@ def compute_license_score(codebase):
     """
 
     scoring_elements = ScoringElements()
-    declared_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=True)
-    declared_license_expressions = get_field_values_from_codebase_resources(codebase, 'license_expressions', key_files_only=True)
+    declared_licenses = get_field_values_from_codebase_resources(
+        codebase=codebase,
+        field_name='licenses',
+        key_files_only=True,
+    )
+    declared_license_expressions = get_field_values_from_codebase_resources(
+        codebase=codebase, field_name='license_expressions', key_files_only=True
+    )
+
     unique_declared_license_expressions = unique(declared_license_expressions)
     declared_license_categories = get_license_categories(declared_licenses)
-    copyrights = get_field_values_from_codebase_resources(codebase, 'copyrights', key_files_only=True)
-    other_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=False)
+
+    copyrights = get_field_values_from_codebase_resources(
+        codebase=codebase, field_name='copyrights', key_files_only=True
+    )
+
+    other_licenses = get_field_values_from_codebase_resources(
+        codebase=codebase, field_name='licenses', key_files_only=False
+    )
 
     scoring_elements.declared_license = bool(declared_licenses)
     if scoring_elements.declared_license:
@@ -146,25 +162,28 @@ def compute_license_score(codebase):
 
     is_permissively_licensed = check_declared_license_categories(declared_license_categories)
     if is_permissively_licensed:
-        scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(other_licenses)
-        if (
-            scoring_elements.conflicting_license_categories
-            and scoring_elements.score > 0
-        ):
+        scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(
+            other_licenses
+        )
+        if scoring_elements.conflicting_license_categories and scoring_elements.score > 0:
             scoring_elements.score -= 20
 
-    primary_license = get_primary_license(declared_license_expressions)
-    if (
-        not primary_license
-        and scoring_elements.score > 0
-    ):
-        scoring_elements.ambigous_compound_licensing = True
-        scoring_elements.score -= 10
+    declared_license_expression = get_primary_license(unique_declared_license_expressions)
 
-    codebase.attributes.summary['primary_license_expression'] = primary_license
-    codebase.attributes.summary['declared_license_expressions'] = unique_declared_license_expressions
-    codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
+    if not declared_license_expression:
+        # If we cannot get a single primary license, then we combine and simplify the license expressions from key files
+        combined_declared_license_expression = combine_expressions(
+            unique_declared_license_expressions
+        )
+        if combined_declared_license_expression:
+            declared_license_expression = str(
+                Licensing().parse(combined_declared_license_expression).simplify()
+            )
+        scoring_elements.ambiguous_compound_licensing = True
+        if scoring_elements.score > 0:
+            scoring_elements.score -= 10
 
+    return scoring_elements, declared_license_expression or ''
 
 
 def unique(objects):
@@ -179,6 +198,7 @@ def unique(objects):
             seen.add(obj)
     return uniques
 
+
 @attr.s()
 class ScoringElements:
     score = attr.ib(default=0)
@@ -187,7 +207,7 @@ class ScoringElements:
     has_license_text = attr.ib(default=False)
     declared_copyrights = attr.ib(default=False)
     conflicting_license_categories = attr.ib(default=False)
-    ambigous_compound_licensing = attr.ib(default=False)
+    ambiguous_compound_licensing = attr.ib(default=False)
 
     def to_dict(self):
         return {
@@ -197,7 +217,7 @@ class ScoringElements:
             'has_license_text': self.has_license_text,
             'declared_copyrights': self.declared_copyrights,
             'conflicting_license_categories': self.conflicting_license_categories,
-            'ambigous_compound_licensing': self.ambigous_compound_licensing
+            'ambiguous_compound_licensing': self.ambiguous_compound_licensing,
         }
 
 
@@ -231,13 +251,15 @@ def is_good_license(detected_license):
     rule = detected_license['matched_rule']
     coverage = rule.get('match_coverage') or 0
     relevance = rule.get('rule_relevance') or 0
-    match_types = dict([
-        ('is_license_text', rule['is_license_text']),
-        ('is_license_notice', rule['is_license_notice']),
-        ('is_license_reference', rule['is_license_reference']),
-        ('is_license_tag', rule['is_license_tag']),
-        ('is_license_intro', rule['is_license_intro']),
-    ])
+    match_types = dict(
+        [
+            ('is_license_text', rule['is_license_text']),
+            ('is_license_notice', rule['is_license_notice']),
+            ('is_license_reference', rule['is_license_reference']),
+            ('is_license_tag', rule['is_license_tag']),
+            ('is_license_intro', rule['is_license_intro']),
+        ]
+    )
     matched = False
     for match_type, mval in match_types.items():
         if mval:
@@ -252,9 +274,11 @@ def is_good_license(detected_license):
         if score >= thresholds.min_score:
             return True
     else:
-        if (score >= thresholds.min_score
-        and coverage >= thresholds.min_coverage
-        and relevance >= thresholds.min_relevance):
+        if (
+            score >= thresholds.min_score
+            and coverage >= thresholds.min_coverage
+            and relevance >= thresholds.min_relevance
+        ):
             return True
 
     return False
@@ -266,11 +290,7 @@ def check_declared_licenses(declared_licenses):
 
     If so, return True. Otherwise, return False.
     """
-    return any(
-        is_good_license(declared_license)
-        for declared_license
-        in declared_licenses
-    )
+    return any(is_good_license(declared_license) for declared_license in declared_licenses)
 
 
 def get_field_values_from_codebase_resources(codebase, field_name, key_files_only=False):
@@ -320,10 +340,12 @@ def check_for_license_texts(declared_licenses):
     """
     for declared_license in declared_licenses:
         matched_rule = declared_license.get('matched_rule', {})
-        if any([
-            matched_rule.get('is_license_text', False),
-            matched_rule.get('is_license_notice', False),
-        ]):
+        if any(
+            [
+                matched_rule.get('is_license_text', False),
+                matched_rule.get('is_license_notice', False),
+            ]
+        ):
             return True
     return False
 
@@ -358,10 +380,7 @@ def check_for_conflicting_licenses(other_licenses):
     If so, return True. Otherwise, return False.
     """
     for license_info in other_licenses:
-        if (
-            license_info.get('category', '')
-            in CONFLICTING_LICENSE_CATEGORIES
-        ):
+        if license_info.get('category', '') in CONFLICTING_LICENSE_CATEGORIES:
             return True
     return False
 
@@ -392,17 +411,17 @@ def group_license_expressions(unique_license_expressions):
     unique_joined_expressions = []
     seen_joined_expression = []
     len_joined_expressions = len(joined_expressions)
-    for i, j in enumerate(joined_expressions, start=1):
-        if i > len_joined_expressions:
-            break
-        for j1 in joined_expressions[i:]:
-            if licensing.is_equivalent(j, j1):
-                if (
-                    j not in unique_joined_expressions
-                    and j not in seen_joined_expression
-                ):
-                    unique_joined_expressions.append(j)
-                    seen_joined_expression.append(j1)
+    if len_joined_expressions > 1:
+        for i, j in enumerate(joined_expressions, start=1):
+            if i > len_joined_expressions:
+                break
+            for j1 in joined_expressions[i:]:
+                if licensing.is_equivalent(j, j1):
+                    if j not in unique_joined_expressions and j not in seen_joined_expression:
+                        unique_joined_expressions.append(j)
+                        seen_joined_expression.append(j1)
+    else:
+        unique_joined_expressions = joined_expressions
 
     return unique_joined_expressions, single_expressions
 
@@ -438,9 +457,7 @@ def get_primary_license(declared_license_expressions):
     # Group single expressions to joined expressions to see if single
     # expressions are accounted for in a joined expression
     single_expressions_by_joined_expressions = {
-        joined_expression: []
-        for joined_expression
-        in unique_joined_expressions
+        joined_expression: [] for joined_expression in unique_joined_expressions
     }
     not_in_joined_expressions = []
     # Check to see if the single expression is in the joined expression

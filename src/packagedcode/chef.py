@@ -238,6 +238,12 @@ def build_package(package_data, datasource_id):
     # TODO: combine descriptions as done elsewhere
     description = package_data.get('description', '') or package_data.get('long_description', '')
     lic = package_data.get('license', '')
+    declared_license = None
+    license_expression = None
+    if lic:
+        declared_license=lic.strip()
+        if declared_license:
+            license_expression = models.compute_normalized_license(declared_license)
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
@@ -263,7 +269,8 @@ def build_package(package_data, datasource_id):
         version=version,
         parties=parties,
         description=description.strip() or None,
-        declared_license=lic.strip() or None,
+        declared_license=declared_license,
+        license_expression=license_expression,
         code_view_url=code_view_url.strip() or None,
         bug_tracking_url=bug_tracking_url.strip() or None,
         dependencies=dependencies,

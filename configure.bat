@@ -28,6 +28,7 @@
 @rem # Requirement arguments passed to pip and used by default or with --dev.
 set "REQUIREMENTS=--editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
+set "DOCS_REQUIREMENTS=--editable .[docs] --constraint requirements.txt"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
@@ -56,7 +57,6 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 if exist "%CFG_ROOT_DIR%\thirdparty" (
     set PIP_EXTRA_ARGS=--no-index --find-links "%CFG_ROOT_DIR%\thirdparty"
 )
-set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% --find-links https://thirdparty.aboutcode.org/pypi/simple/links.html"
 
 
 @rem ################################
@@ -69,7 +69,6 @@ if not defined CFG_QUIET (
 @rem ################################
 @rem # Main command line entry point
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
-set "NO_INDEX=--no-index"
 
 :again
 if not "%1" == "" (
@@ -77,6 +76,9 @@ if not "%1" == "" (
     if "%1" EQU "--clean"  (goto clean)
     if "%1" EQU "--dev"    (
         set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+    )
+    if "%1" EQU "--docs"    (
+        set "CFG_REQUIREMENTS=%DOCS_REQUIREMENTS%"
     )
     shift
     goto again

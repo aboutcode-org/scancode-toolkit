@@ -30,7 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
-    "license_expression": null,
+    "license_expression": "zlib AND unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
       "LegalTrademarks": "GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae",

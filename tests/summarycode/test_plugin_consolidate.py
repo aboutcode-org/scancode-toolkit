@@ -19,12 +19,6 @@ from scancode_config import REGEN_TEST_FIXTURES
 class TestConsolidate(FileDrivenTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data')
 
-    def get_scan(self, test_loc, cli_options='-clip'):
-        scan_loc = self.get_test_loc(test_loc)
-        scan_file = self.get_temp_file('json')
-        run_scan_click(['-clip', scan_loc, '--json', scan_file])
-        return scan_file
-
     def test_consolidate_package(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package')
         result_file = self.get_temp_file('json')
@@ -43,17 +37,18 @@ class TestConsolidate(FileDrivenTesting):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_component_package_from_json_can_run_twice(self):
-        scan_file = self.get_scan('plugin_consolidate/component-package', cli_options='-clip')
+        scan_loc = self.get_test_loc('plugin_consolidate/component-package')
+        scan_file = self.get_temp_file('json')
+        run_scan_click(['-clip', scan_loc, '--json', scan_file])
         expected_file = self.get_test_loc('plugin_consolidate/component-package-expected.json')
-
         result_file = self.get_temp_file('json')
         run_scan_click(['--from-json', scan_file, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
-
+ 
         # rerun with result_file from last run
         result_file2 = self.get_temp_file('json')
         run_scan_click(['--from-json', result_file, '--consolidate', '--json', result_file2])
-        check_json_scan(expected_file, result_file2, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
+        check_json_scan(expected_file, result_file2, remove_uuid=True, regen=False, remove_file_date=True)
 
     def test_consolidate_component_package_from_live_scan(self):
         scan_loc = self.get_test_loc('plugin_consolidate/component-package')
@@ -68,17 +63,6 @@ class TestConsolidate(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_consolidate/package-manifest-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
-
-    def test_get_package_resources_on_nested_packages_should_include_manifest(self):
-        from packagedcode import get_package_instance
-        from commoncode.resource import VirtualCodebase
-        scan_file = self.get_scan('plugin_consolidate/nested-packages', cli_options='-p')
-        codebase = VirtualCodebase(scan_file)
-        for resource in codebase.walk():
-            for package_data in resource.package_data:
-                package = get_package_instance(package_data)
-                package_resources = list(package.get_package_resources(resource, codebase))
-                assert any(r.name == 'package.json' for r in package_resources), resource.path
 
     def test_consolidate_multiple_same_holder_and_license(self):
         scan_loc = self.get_test_loc('plugin_consolidate/multiple-same-holder-and-license')

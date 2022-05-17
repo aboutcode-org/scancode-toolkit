@@ -19,6 +19,7 @@ from packagedcode import models
 from textcode.analysis import as_unicode
 
 TRACE = False
+TRACE_DEEP = False
 
 
 def logger_debug(*args):
@@ -37,7 +38,7 @@ if TRACE:
 
 def parse_rpm_xmlish(location, datasource_id, package_type):
     """
-    Yield RpmPackage(s) from a RPM XML'ish file at `location`. This is a file
+    Yield PackageData built from an RPM XML'ish file at ``location``. This is a file
     created with the rpm CLI with the xml query option.
     """
     if not location or not os.path.exists(location):
@@ -53,7 +54,11 @@ def parse_rpm_xmlish(location, datasource_id, package_type):
 
     for rpm_raw_tags in collect_rpms(rpms):
         tags = collect_tags(rpm_raw_tags)
-        yield build_package(tags, datasource_id, package_type)
+        yield build_package(
+            rpm_tags=tags,
+            datasource_id=datasource_id,
+            package_type=package_type,
+        )
 
 
 def collect_rpms(text):
@@ -147,10 +152,18 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None)
         # TODO: add more fields
         # TODO: merge with tag handling in rpm.py
         if handler:
-            handled = handler(value, **converted)
+            try:
+                handled = handler(value, **converted)
+            except Exception as e:
+                raise Exception(value, converted) from e
             converted.update(handled)
 
-    return models.PackageData.from_dict(**converted)
+    package_data = models.PackageData.from_dict(converted)
+
+    if not package_data.license_expression and package_data.declared_license:
+        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
+
+    return package_data
 
 ################################################################################
 # Each handler function accepts a value and returns a {name: value} mapping
@@ -159,7 +172,7 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None)
 
 # TODO: process lists in a more explict way
 # Most handler do not use it, but parallel list handlers (such as for files) use
-# this to process such lists
+# this to process such lists by accumulating data passed around
 
 
 def name_value_str_handler(name):
@@ -185,25 +198,28 @@ def arch_handler(value, **kwargs):
     return {'qualifiers': f'arch={value}'}
 
 
-def checksum_handler(value, current_filerefs, **kwargs):
+def checksum_handler(value, **kwargs):
     """
-    Return a list which contains the a checksum hash
+    Return a list which contains the a checksum hash.
     """
     return {'current_filerefs': value}
 
 
-def dir_index_handler(value, current_filerefs, **kwargs):
+def dir_index_handler(value, **kwargs):
     """
-    Return a list of tuples with (dirindexes, md5)
+    Return a list of tuples with (dirindexes, md5).
     """
+    current_filerefs = kwargs.get('current_filerefs')
     return {'current_filerefs': list(zip(value, current_filerefs))}
 
 
-def basename_handler(value, current_filerefs, **kwargs):
+def basename_handler(value, **kwargs):
     """
-    Return a list of tuples with (dirindexes, md5, basename)
+    Return a list of tuples with (dirindexes, md5, basename).
     """
     data = []
+
+    current_filerefs = kwargs.get('current_filerefs') or []
     for index, file in enumerate(current_filerefs):
         basename = (value[index],)
         data.append(file + basename)
@@ -231,13 +247,14 @@ def infer_digest_algo(digest):
     return digest and ALGO_BY_HEX_LEN.get(len(digest))
 
 
-def dirname_handler(value, current_filerefs, **kwargs):
+def dirname_handler(value, **kwargs):
     """
-    Update the ``current_filerefs`` by adding the correct dir and basename along
-    with the md5 value. Add to file_references and return a mapping of
-    {'file_references': <list of FileReference>}
+    Return a mapping of {'file_references': <list of FileReference dicts>}.
+    Update the ``current_filerefs`` found in `kwargs` by adding the correct dir,
+    basename and checksum value.
     """
     file_references = []
+    current_filerefs = kwargs.get('current_filerefs') or []
     for dirindexes, checksum, basename in current_filerefs:
         dirname = value[int(dirindexes)]
         # TODO: review this. Empty filename does not make sense, unless these
@@ -261,7 +278,7 @@ def dirname_handler(value, current_filerefs, **kwargs):
             setattr(file_reference, algo, checksum)
         file_references.append(file_reference)
 
-    return {'file_references': file_references}
+    return {'file_references': [fr.to_dict() for fr in file_references]}
 
 #
 # Mapping of:
@@ -510,12 +527,12 @@ def collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc):
             f'collect_installed_rpmdb_xmlish_from_rpmdb_loc:\n'
             f'cmd: {full_cmd}')
 
-    rc, stdout_loc, stderr_loc = command.execute2(
+    rc, stdout_loc, stderr_loc = command.execute(
         cmd_loc=cmd_loc,
         args=args,
-        lib_dir=rpm_bin_dir,
         env=env,
         to_files=True,
+        log=TRACE,
     )
 
     if TRACE:

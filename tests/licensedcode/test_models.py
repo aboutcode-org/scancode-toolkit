@@ -22,7 +22,6 @@ from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -106,9 +105,9 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/license_rules.expected.json')
         check_json(expected, results)
 
-    def test_validate_license_library(self):
+    def test_validate_license_library_data(self):
         errors, warnings, infos = models.License.validate(
-            licenses=models.load_licenses(),
+            licenses=models.load_licenses(with_deprecated=False),
             verbose=False,
         )
         assert errors == {}
@@ -127,14 +126,15 @@ class TestLicense(FileBasedTesting):
         expected_errors = {
             'GLOBAL': [
                 'Duplicate texts in multiple licenses: apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
-                'Duplicate short name: GPL 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
-                'Duplicate name: GNU General Public License 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
+                'Duplicate short name (ignoring case): gpl 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
+                'Duplicate name (ignoring case): gnu general public license 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
                 'No category: Use "Unstated License" if not known.',
                 'No owner: Use "Unspecified" if not known.',
                 'No SPDX license key'],
+            'foo-2.0': ['Unknown language: foobar', 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
                 'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
@@ -163,7 +163,10 @@ class TestLicense(FileBasedTesting):
 
         assert warnings == expected_warnings
 
-        expected_infos = {'w3c-docs-19990405': [u'No license text']}
+        expected_infos = {
+            'foo-2.0': ['No license text'],
+            'w3c-docs-19990405': ['No license text'],
+        }
         assert infos == expected_infos
 
     def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
@@ -538,6 +541,20 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/rule_validate')
         rule = list(models.load_rules(rule_dir))[0]
         assert list(rule.validate()) == []
+
+    def test_Rule__validate_with_invalid_language(self):
+        rule_dir = self.get_test_loc('models/rule_validate_lang')
+        validations = []
+        for rule in sorted(models.load_rules(rule_dir)):
+            validations.extend(rule.validate())
+        expected = [
+            'Unknown language: foobar',
+            'Invalid rule is_license_* flags. Only one allowed.',
+            'At least one is_license_* flag is needed.',
+            'Invalid rule is_license_* flags. Only one allowed.',
+            'At least one is_license_* flag is needed.',
+        ]
+        assert validations == expected
 
     def test_key_phrases_yields_spans(self):
         rule_stored_text = (

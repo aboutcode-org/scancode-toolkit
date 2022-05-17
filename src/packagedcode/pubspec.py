@@ -10,7 +10,6 @@
 import warnings
 
 import saneyaml
-from commoncode import filetype
 from packageurl import PackageURL
 
 from packagedcode import models
@@ -366,5 +365,7 @@ def build_package(pubspec_data):
         repository_download_url=repository_download_url,
     )
 
-    return package
+    if not package.license_expression and package.declared_license:
+        package.license_expression = models.compute_normalized_license(package.declared_license)
 
+    return package

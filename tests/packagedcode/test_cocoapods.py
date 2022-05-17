@@ -200,5 +200,3 @@ class TestCocoapodsEndToEndAssemble(PackageTester):
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
-
-

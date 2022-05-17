@@ -18,21 +18,23 @@ That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::
 
     cd scancode-toolkit
-    virtualenv -p /usr/bin/python3 docs-venv
-    source docs-venv/bin/activate
+    ./configure --docs
 
-Now, the following prerequisites are installed
+.. note::
+
+    In case of windows, run ``configure --docs`` instead of this.
+
+Now, this will install the following prerequisites:
 
 - Sphinx
 - sphinx_rtd_theme (the format theme used by ReadTheDocs)
 - docs8 (style linter)
 
-::
-
-    pip install Sphinx sphinx_rtd_theme doc8
+These requirements are already present in setup.cfg and `./configure --docs` installs them.
 
 Now you can build the HTML documents locally::
 
+    source venv/bin/activate
     cd docs
     make html
 
@@ -102,6 +104,10 @@ So run these scripts at your local system before creating a Pull Request::
     ./scripts/sphinx_build_link_check.sh
     ./scripts/doc8_style_check.sh
 
+If you don't have permission to run the scripts, run::
+
+    chmod u+x ./scripts/doc8_style_check.sh
+
 .. _doc_style_docs8:
 
 Style Checks Using ``Doc8``
@@ -110,9 +116,10 @@ Style Checks Using ``Doc8``
 How To Run Style Tests
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In the project root, run the following command::
+In the project root, run the following commands::
 
-    $ doc8 --max-line-length 100 docs/source/ --ignore D000
+    $ cd docs
+    $ ./scripts/doc8_style_check.sh
 
 A sample output is::
 

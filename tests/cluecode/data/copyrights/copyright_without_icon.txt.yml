@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - copyrights_summary
+  - holders_summary
+copyrights:
+  - Copyright Foobar Pvt. Ltd
+holders:
+  - Foobar Pvt. Ltd
+holders_summary:
+  - value: Foobar Pvt. Ltd
+    count: 1
+copyrights_summary:
+  - value: Copyright Foobar Pvt. Ltd
+    count: 1

@@ -11,7 +11,6 @@ import hashlib
 import json
 import os
 import logging
-from struct import pack
 
 import saneyaml
 from packageurl import PackageURL
@@ -165,6 +164,7 @@ class BasePodHandler(models.DatafileHandler):
 
                 for resource in sibling_podspecs:
                     datafile_path = resource.path
+                    yield resource
                     for package_data in resource.package_data:
                         package_data = models.PackageData.from_dict(package_data)
                         package = models.Package.from_package_data(
@@ -206,6 +206,9 @@ class PodspecHandler(BasePodHandler):
         version = podspec.get('version')
         homepage_url = podspec.get('homepage')
         declared_license = podspec.get('license')
+        license_expression = None
+        if declared_license:
+            license_expression = models.compute_normalized_license(declared_license)
         summary = podspec.get('summary')
         description = podspec.get('description')
         description = utils.build_description(
@@ -239,13 +242,13 @@ class PodspecHandler(BasePodHandler):
             type=cls.default_package_type,
             name=name,
             version=version,
-
             primary_language=cls.default_primary_language,
             vcs_url=vcs_url,
             # FIXME: a source should be a PURL, not a list of URLs
             # source_packages=vcs_url.split('\n'),
             description=description,
             declared_license=declared_license,
+            license_expression=license_expression,
             homepage_url=homepage_url,
             parties=parties,
             **urls,

@@ -16,22 +16,16 @@ import pytest
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
-from commoncode.resource import Codebase
 
 from packagedcode import maven
 from packagedcode import models
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
 
 class TestIsPom(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-    @pytest.mark.xfail(
-        reason='FIXME: is_datafile is created such that file pattern match is enough to detect'
-    )
-    def test_is_pom_non_pom(self):
-        test_file = self.get_test_loc('maven_misc/non-maven.pom')
-        assert not maven.MavenPomXmlHandler.is_datafile(test_file)
 
     def test_is_pom_maven2(self):
         test_dir = self.get_test_loc('maven2')
@@ -42,13 +36,6 @@ class TestIsPom(testcase.FileBasedTesting):
             loc = os.path.join(test_dir, test_file)
             assert maven.MavenPomXmlHandler.is_datafile(loc), loc + ' should be a POM'
 
-    @pytest.mark.xfail(
-        reason='FIXME: is_datafile is created such that file contents would be enough to detect'
-    )
-    def test_is_pom_not_misc2(self):
-        test_file = self.get_test_loc('maven_misc/properties-section-single.xml')
-        assert not maven.PomXmlHandler.is_datafile(test_file)
-
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
         for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
@@ -58,12 +45,13 @@ class TestIsPom(testcase.FileBasedTesting):
             loc = os.path.join(test_dir, test_file)
             assert maven.MavenPomXmlHandler.is_datafile(loc), 'file://' + loc + ' should be a POM'
 
-    @pytest.mark.xfail(
-        reason='FIXME: is_datafile is created such that file contents would be enough to detect'
-    )
-    def test_is_pom_not_misc(self):
+    def test_is_pom_is_detected_based_content(self):
         test_file = self.get_test_loc('maven_misc/properties-section.xml')
-        assert not maven.PomXmlHandler.is_datafile(test_file)
+        assert maven.MavenPomXmlHandler.is_datafile(test_file)
+
+    def test_is_pom_is_detected_based_content2(self):
+        test_file = self.get_test_loc('maven_misc/properties-section-single.xml')
+        assert maven.MavenPomXmlHandler.is_datafile(test_file)
 
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=REGEN_TEST_FIXTURES):
@@ -215,23 +203,15 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         packages = maven.MavenPomXmlHandler.parse(location=test_file)
         package = list(packages).pop()
-        package2 = models.PackageData.from_dict(**package.to_dict())
+        package2 = models.PackageData.from_dict(package.to_dict())
         assert package2.to_dict().items() == package.to_dict().items()
 
-    @pytest.mark.xfail(
-        reason='FIXME: We do not have a get_package_root function anymore'
-    )
-    def test_package_root_is_properly_returned_for_metainf_poms(self):
-        from packagedcode.plugin_package import PackageScanner
-        test_dir = self.get_test_loc('maven_misc/package_root')
-        codebase = Codebase(test_dir, resource_attributes=PackageScanner.resource_attributes)
-        resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
-        packages = list(maven.MavenPomXmlHandler.parse(resource.location))
-        assert packages
-        resource.package_data.append(packages[0].to_dict())
-        resource.save(codebase)
-        proot = maven.MavenPomPackageData.get_package_root(resource, codebase)
-        assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'
+    def test_package_with_extracted_jars_and_metainf_poms_is_detected_correctly(self):
+        test_dir = self.get_test_loc('maven_misc/extracted-jar')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/extracted-jar-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
@@ -516,6 +496,7 @@ class TestMavenDataDrivenPomMisc(BaseMavenCase):
     pytestmark = pytest.mark.scanslow
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+
 build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
             prefix='test_maven2_parse_misc_', check_pom=True, regen=REGEN_TEST_FIXTURES)
 
@@ -526,6 +507,7 @@ build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
 class TestMavenDataDrivenPomBasic(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+
 build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
             prefix='test_maven2_basic_parse_', check_pom=True, regen=REGEN_TEST_FIXTURES)
 build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
@@ -535,6 +517,7 @@ build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
 class TestMavenDataDrivenPomComprehensive(BaseMavenCase):
     pytestmark = pytest.mark.scanslow
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
 
 # note: we use short dir names to deal with Windows long paths limitations
 build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,

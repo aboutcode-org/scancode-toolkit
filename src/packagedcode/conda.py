@@ -71,7 +71,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
-        return super().assign_package_to_resources(
+        return models.DatafileHandler.assign_package_to_resources(
             package=package,
             resource=cls.get_conda_root(resource, codebase),
             codebase=codebase,
@@ -101,6 +101,8 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         about = metayaml.get('about') or {}
         package.homepage_url = about.get('home')
         package.declared_license = about.get('license')
+        if package.declared_license:
+            package.license_expression = cls.compute_normalized_license(package)
         package.description = about.get('summary')
         package.vcs_url = about.get('dev_url')
 

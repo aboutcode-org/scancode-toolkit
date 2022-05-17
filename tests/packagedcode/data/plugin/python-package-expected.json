@@ -1,24 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true,
-        "--processes": "-1",
-        "--strip-root": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "spdx_license_list_version": "3.16",
-        "files_count": 8
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -313,7 +293,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "bsd-simplified",
       "declared_license": {
         "license": "Simplified BSD"
       },
@@ -371,7 +351,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit",
+      "license_expression": "mit AND mit",
       "declared_license": {
         "license": "MIT",
         "classifiers": [
@@ -416,7 +396,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
       "source_packages": [],
@@ -470,7 +450,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit",
+      "license_expression": "mit AND mit",
       "declared_license": {
         "license": "MIT",
         "classifiers": [
@@ -523,7 +503,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "bsd-new",
       "declared_license": {
         "license": "BSD"
       },
@@ -606,7 +586,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "mit AND mit",
           "declared_license": {
             "license": "MIT",
             "classifiers": [
@@ -657,7 +637,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
           "source_packages": [],
@@ -718,7 +698,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "bsd-new",
           "declared_license": {
             "license": "BSD"
           },
@@ -1050,7 +1030,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
+          "license_expression": "mit AND mit",
           "declared_license": {
             "license": "MIT",
             "classifiers": [

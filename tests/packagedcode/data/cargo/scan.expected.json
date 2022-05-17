@@ -11,7 +11,15 @@
       "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
         "spdx_license_list_version": "3.16",
         "files_count": 3
       }
@@ -324,7 +332,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/indygreg/PyOxidizer.git",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mpl-2.0",
       "declared_license": "MPL-2.0",
       "notice_text": null,
       "source_packages": [],
@@ -379,7 +387,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/daac-tools/daachorse",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mit OR apache-2.0",
       "declared_license": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],

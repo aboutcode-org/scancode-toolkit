@@ -7,11 +7,14 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
+import sys
 from pathlib import Path
 from pathlib import PureWindowsPath
 
 import attr
+
 try:
     from regipy.exceptions import NoRegistrySubkeysException
     from regipy.exceptions import RegistryKeyNotFoundException
@@ -24,6 +27,22 @@ from packagedcode import models
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
 # TODO: Windows appstore
+
+TRACE = True
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def get_registry_name_key_entry(registry_hive, registry_path):
@@ -44,14 +63,12 @@ def get_registry_tree(registry_location, registry_path):
     """
     registry_hive = RegistryHive(registry_location)
     name_key_entry = get_registry_name_key_entry(
-        registry_hive=registry_hive,
-        registry_path=registry_path
+        registry_hive=registry_hive, registry_path=registry_path
     )
     if not name_key_entry:
         return []
     return [
-        attr.asdict(entry)
-        for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)
+        attr.asdict(entry) for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)
     ]
 
 
@@ -149,14 +166,13 @@ def get_installed_windows_programs_from_regtree(
         return
 
     field_by_regkey = {
-        'DisplayName':'name',
-        'DisplayVersion':'version',
-        'URLInfoAbout':'homepage_url',
-
-        'Publisher':'publisher',
-        'DisplayIcon':'display_icon',
-        'UninstallString':'uninstall_string',
-        'InstallLocation':'install_location',
+        'DisplayName': 'name',
+        'DisplayVersion': 'version',
+        'URLInfoAbout': 'homepage_url',
+        'Publisher': 'publisher',
+        'DisplayIcon': 'display_icon',
+        'UninstallString': 'uninstall_string',
+        'InstallLocation': 'install_location',
     }
 
     for entry in registry_tree:
@@ -180,22 +196,22 @@ def get_installed_windows_programs_from_regtree(
                 models.Party(
                     type=models.party_org,
                     role='publisher',
-                    name=publisher
+                    name=publisher,
                 )
             )
 
         file_references = []
         install_location = package_info.get('install_location')
         if install_location:
-            file_references.append(install_location)
+            file_references.append(models.FileReference(path=install_location))
 
         display_icon = package_info.get('display_icon')
         if display_icon:
-            file_references.append(display_icon)
+            file_references.append(models.FileReference(path=display_icon))
 
         uninstall_string = package_info.get('uninstall_string')
         if uninstall_string:
-            file_references.append(uninstall_string)
+            file_references.append(models.FileReference(path=uninstall_string))
 
         yield models.PackageData(
             datasource_id=datasource_id,
@@ -228,7 +244,7 @@ def get_packages_from_registry_from_hive(
         location=location,
         datasource_id=datasource_id,
         package_type=package_type,
-        registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall'
+        registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
     )
 
     yield from get_installed_dotnet_versions_from_hive(
@@ -248,16 +264,14 @@ def get_installed_packages(root_dir, is_container=True):
     # These paths are relative to a Windows docker image layer root directory
     if is_container:
         hives_software_delta_loc = os.path.join(root_dir, 'Hives/Software_Delta')
-        files_software_loc = os.path.join(
-            root_dir, 'Files/Windows/System32/config/SOFTWARE'
-        )
+        files_software_loc = os.path.join(root_dir, 'Files/Windows/System32/config/SOFTWARE')
         utilityvm_software_loc = os.path.join(
             root_dir, 'UtilityVM/Files/Windows/System32/config/SOFTWARE'
         )
         root_prefixes_by_software_reg_locations = {
             hives_software_delta_loc: 'Files',
             files_software_loc: 'Files',
-            utilityvm_software_loc: 'UtilityVM/Files'
+            utilityvm_software_loc: 'UtilityVM/Files',
         }
     else:
         # TODO: Add support for virtual machines
@@ -342,18 +356,26 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
         """
         segments = cls.root_path_relative_to_datafile_path.split('/')
 
+        has_root = True
         for segment in segments:
             if segment == '..':
                 resource = resource.parent(codebase)
+                if not resource:
+                    has_root = False
+                    break
             else:
-                ress = [r for r in resource.children if r.name == segment]
+                ress = [r for r in resource.children(codebase) if r.name == segment]
                 if not len(ress) == 1:
-                    return
+                    has_root = False
+                    break
                 resource = ress[0]
 
             if not resource:
-                return
-        return resource
+                has_root = False
+                break
+
+        if has_root:
+            return resource
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -384,7 +406,8 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
             if not ref:
                 continue
 
-            # path is found and processed: remove it, so we can check if we found all of them
+            # path is found and processed: remove it, so we can check if we
+            # found all of them
             del refs_by_path[res.path]
             res.for_packages.append(package_uid)
             res.save(codebase)

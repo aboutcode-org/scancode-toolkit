@@ -19,6 +19,8 @@ from packageurl import PackageURL
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import yield_dependencies_from_package_data
+from packagedcode.utils import yield_dependencies_from_package_resource
 import saneyaml
 
 """
@@ -40,24 +42,89 @@ class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):
-        datafile_name_patterns = (
-            'package.json',
+        """
+        If ``resource``, or one of its siblings, is a package.json file, use it
+        to create and yield the package, the package dependencies, and the
+        package resources.
+
+        When reporting the resources of a package, we alk the codebase, skipping
+        the node_modules directory, assign resources to the package and yield
+        resources.
+
+        For each lock file, assign dependencies to package instances and yield dependencies.
+
+        If there is no package.json, we do not have a package instance. In this
+        case, we yield each of the dependencies in each lock file.
+        """
+        lockfile_names = {
             'package-lock.json',
             '.package-lock.json',
             'npm-shrinkwrap.json',
             'yarn.lock',
-        )
+        }
 
-        if resource.has_parent():
-            dir_resource=resource.parent(codebase)
+        package_resource = None
+        if resource.name == 'package.json':
+            package_resource = resource
+        elif resource.name in lockfile_names:
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'package.json']
+                if package_resource:
+                    package_resource = package_resource[0]
+
+        if package_resource:
+            assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
+            pkg_data = package_resource.package_data[0]
+            pkg_data = models.PackageData.from_dict(pkg_data)
+
+            # do we have enough to create a package?
+            if pkg_data.purl:
+                package = models.Package.from_package_data(
+                    package_data=pkg_data,
+                    datafile_path=package_resource.path,
+                )
+                package_uid = package.package_uid
+
+                if not package.license_expression:
+                    package.license_expression = compute_normalized_license(package.declared_license)
+
+                root = package_resource.parent(codebase)
+                if root:
+                    for npm_res in cls.walk_npm(resource=root, codebase=codebase):
+                        if package_uid not in npm_res.for_packages:
+                            npm_res.for_packages.append(package_uid)
+                            npm_res.save(codebase)
+                        yield npm_res
+                elif codebase.has_single_resource:
+                    if package_uid not in package_resource.for_packages:
+                        package_resource.for_packages.append(package_uid)
+                        package_resource.save(codebase)
+
+                # Always yield the package resource in all cases
+                yield package_resource
+                yield package
+            else:
+                # we have no package, so deps are not for a specific package uid
+                package_uid = None
+
+            # in all cases yield possible dependencies
+            yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+            # we yield this as we do not want this further processed
+            yield package_resource
+
+            for lock_file in package_resource.siblings(codebase):
+                if lock_file.name in lockfile_names:
+                    yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                    if package_uid not in lock_file.for_packages:
+                        lock_file.for_packages.append(package_uid)
+                        lock_file.save(codebase)
+                    yield lock_file
         else:
-            dir_resource=resource
-
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=dir_resource,
-            codebase=codebase,
-        )
+            # we do not have a package.json
+            yield from yield_dependencies_from_package_resource(resource)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -77,18 +144,8 @@ class BaseNpmHandler(models.DatafileHandler):
 
             if child.is_dir:
                 depth += 1
-                for subchild in cls.walk_skip(child, codebase, depth=depth):
+                for subchild in cls.walk_npm(child, codebase, depth=depth):
                     yield subchild
-
-    # TODO: this MUST BE USED
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        """
-        Yield the Resources of an npm Package, ignoring nested mode_modules.
-        """
-        root = resource.parent(codebase)
-        if root:
-            yield from cls.walk_npm(resource=root, codebase=codebase)
 
 
 def get_urls(namespace, name, version):
@@ -719,7 +776,7 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     >>> assert npm_homepage_url('', 'angular') == expected
 
     >>> expected = 'https://yarnpkg.com/en/package/angular'
-    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/') == expected
+    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package') == expected
 
     >>> expected = 'https://yarnpkg.com/en/package/@ang/angular'
     >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == expected

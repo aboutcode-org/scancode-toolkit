@@ -29,7 +29,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -163,7 +162,8 @@ def test_scan_info_returns_full_root():
     result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert len(file_paths) == 12
-    root = fileutils.as_posixpath(test_dir)
+    # note that we strip paths from leading and trailing slashes
+    root = fileutils.as_posixpath(test_dir).strip('/')
     assert all(p.startswith(root) for p in file_paths)
 
 
@@ -178,7 +178,8 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     assert len(files) == 1
     scanned_file = files[0]
     # and we check that the path is the full path without repeating the file name
-    assert scanned_file['path'] == fileutils.as_posixpath(test_file)
+    # note that the path never contain leading and trailing slashes
+    assert scanned_file['path'] == fileutils.as_posixpath(test_file).strip('/')
 
 
 def test_scan_info_returns_does_not_strip_root_with_single_file():
@@ -791,23 +792,23 @@ def test_get_displayable_summary():
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('summaries/client')
-    codebase = Codebase(test_codebase, strip_root=True)
+    codebase = Codebase(test_codebase)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
     processes = 23
     errors = ['failed to scan ABCD']
     results = get_displayable_summary(codebase, scan_names, processes, errors)
     expected = (
-        [u'Some files failed to scan properly:', u'failed to scan ABCD'],
+        ['Some files failed to scan properly:', 'failed to scan ABCD'],
         [
-            u'Summary:        foo, bar, baz with 23 process(es)',
-            u'Errors count:   1',
-            u'Scan Speed:     0.00 files/sec. ',
-            u'Initial counts: 0 resource(s): 0 file(s) and 0 directorie(s) ',
-            u'Final counts:   0 resource(s): 0 file(s) and 0 directorie(s) ',
-            u'Timings:',
-            u'  scan_start: None',
-            u'  scan_end:   None']
+            'Summary:        foo, bar, baz with 23 process(es)',
+            'Errors count:   1',
+            'Scan Speed:     0.00 files/sec. ',
+            'Initial counts: 0 resource(s): 0 file(s) and 0 directorie(s) ',
+            'Final counts:   0 resource(s): 0 file(s) and 0 directorie(s) ',
+            'Timings:',
+            '  scan_start: None',
+            '  scan_end:   None']
     )
     assert results == expected
 
@@ -821,7 +822,7 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('summaries/client')
-    codebase = Codebase(test_codebase, strip_root=True)
+    codebase = Codebase(test_codebase)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
     processes = 23
@@ -909,11 +910,8 @@ def test_merge_multiple_scans():
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('merge_scans/expected.json')
-    with open(expected) as f:
-        expected_files = json.loads(f.read())['files']
-    with open(result_file) as f:
-        result_files = json.loads(f.read())['files']
-    assert result_files == expected_files
+
+    check_json_scan(expected_file=expected, result_file=result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_VirtualCodebase_output_with_from_json_is_same_as_original():
@@ -932,6 +930,7 @@ def test_VirtualCodebase_output_with_from_json_is_same_as_original():
 
     assert json.dumps(results , indent=2) == json.dumps(expected, indent=2)
     assert len(results_headers) == len(expected_headers) + 1
+
 
 def test_getting_version_returns_valid_yaml():
     import saneyaml

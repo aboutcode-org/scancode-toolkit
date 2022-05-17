@@ -45,7 +45,7 @@
     "code_view_url": "Source, https://github.com/pypa/pip",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
+    "license_expression": "mit AND mit",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

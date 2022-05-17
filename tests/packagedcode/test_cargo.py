@@ -20,9 +20,20 @@ from scancode.cli_test_utils import check_json_scan
 class TestCargo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_is_manifest_cargo_toml(self):
+    def test_is_datafile_cargo_toml(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
         assert cargo.CargoTomlHandler.is_datafile(test_file)
+
+    def test_is_datafile_cargo_lock(self):
+        test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
+        assert cargo.CargoLockHandler.is_datafile(test_file)
+
+    def test_is_datafile_accepts_lowercase_cargo_toml_and_cargo_lock(self):
+        test_file = self.get_test_loc('cargo/lowercase/cargo.toml')
+        assert cargo.CargoTomlHandler.is_datafile(test_file)
+
+        test_file = self.get_test_loc('cargo/lowercase/cargo.lock')
+        assert cargo.CargoLockHandler.is_datafile(test_file)
 
     def test_parse_cargo_toml_clap(self):
         test_file = self.get_test_loc('cargo/cargo_toml/clap/Cargo.toml')
@@ -53,10 +64,6 @@ class TestCargo(PackageTester):
         expected_loc = self.get_test_loc('cargo/cargo_toml/rustup/Cargo.toml.expected')
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_is_manifest_cargo_lock(self):
-        test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
-        assert cargo.CargoLockHandler.is_datafile(test_file)
 
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')

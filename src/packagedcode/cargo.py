@@ -22,7 +22,7 @@ Handle Rust cargo crates
 
 class CargoTomlHandler(models.DatafileHandler):
     datasource_id = 'cargo_toml'
-    path_patterns = ('*/Cargo.toml',)
+    path_patterns = ('*/Cargo.toml', '*/cargo.toml',)
     default_package_type = 'cargo'
     default_primary_language = 'Rust'
     description = 'Rust Cargo.toml package manifest'
@@ -39,8 +39,8 @@ class CargoTomlHandler(models.DatafileHandler):
         description = core_package_data.get('description') or ''
         description = description.strip()
 
-        authors = core_package_data.get('authors')
-        parties = list(party_mapper(authors, party_role='author'))
+        authors = core_package_data.get('authors') or []
+        parties = list(get_parties(person_names=authors, party_role='author'))
 
         declared_license = core_package_data.get('license')
         # TODO: load as a notice_text
@@ -90,19 +90,15 @@ class CargoTomlHandler(models.DatafileHandler):
         Assemble Cargo.toml and possible Cargo.lock datafiles
         """
         yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('Cargo.toml', 'Cargo.lock',),
+            datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
             directory=resource.parent(codebase),
             codebase=codebase,
         )
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return super().compute_normalized_license(package)
-
 
 class CargoLockHandler(models.DatafileHandler):
     datasource_id = 'cargo_lock'
-    path_patterns = ('*/Cargo.lock',)
+    path_patterns = ('*/Cargo.lock', '*/cargo.lock',)
     default_package_type = 'cargo'
     default_primary_language = 'Rust'
     description = 'Rust Cargo.lock dependencies lockfile'
@@ -187,18 +183,19 @@ def dependency_mapper(dependencies, scope='dependencies'):
         )
 
 
-def party_mapper(party, party_role):
+def get_parties(person_names, party_role):
     """
-    Yields a Party object with party of `party_role`.
+    Yields Party of `party_role` given a list of ``person_names`` strings.
     https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
     """
-    for person in party:
-        name, email = parse_person(person)
+    for person_name in person_names:
+        name, email = parse_person(person_name)
         yield models.Party(
             type=models.party_person,
             name=name,
             role=party_role,
-            email=email)
+            email=email,
+        )
 
 
 person_parser = re.compile(
