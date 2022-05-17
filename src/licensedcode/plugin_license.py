@@ -130,15 +130,6 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(
-            ('--unknown-licenses',),
-            is_flag=True,
-            required_options=['license'],
-            help='[EXPERIMENTAL] Detect unknown licenses and follow license '
-                 'references such as "See license in file COPYING".',
-            help_group=SCAN_OPTIONS_GROUP,
-        ),
-
-        PluggableCommandLineOption(
             ('--reindex-licenses',),
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
@@ -174,7 +165,6 @@ class LicenseScanner(ScanPlugin):
         license_text=False,
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
-        unknown_licenses=False,
         **kwargs
     ):
 
@@ -184,35 +174,33 @@ class LicenseScanner(ScanPlugin):
             include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template,
-            unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, unknown_licenses, **kwargs):
+    def process_codebase(self, codebase, **kwargs):
         """
         Post process the codebase to further detect unknown licenses and follow
         license references to other files.
 
         This is an EXPERIMENTAL feature for now.
         """
-        if unknown_licenses:
-            if codebase.has_single_resource:
-                return
+        if codebase.has_single_resource:
+            return
 
-            for resource in codebase.walk(topdown=False):
-                # follow license references to other files
-                if TRACE:
-                    license_expressions_before = list(resource.license_expressions)
+        for resource in codebase.walk(topdown=False):
+            # follow license references to other files
+            if TRACE:
+                license_expressions_before = list(resource.license_expressions)
 
-                modified = add_referenced_filenames_license_matches(resource, codebase)
+            modified = add_referenced_filenames_license_matches(resource, codebase)
 
-                if TRACE and modified:
-                    license_expressions_after = list(resource.license_expressions)
-                    logger_debug(
-                        f'add_referenced_filenames_license_matches: Modfied:',
-                        f'{resource.path} with license_expressions:\n'
-                        f'before: {license_expressions_before}\n'
-                        f'after : {license_expressions_after}'
-                    )
+            if TRACE and modified:
+                license_expressions_after = list(resource.license_expressions)
+                logger_debug(
+                    f'add_referenced_filenames_matches: Modfied:',
+                    f'{resource.path} with license_expressions:\n'
+                    f'before: {license_expressions_before}\n'
+                    f'after : {license_expressions_after}'
+                )
 
 
 def add_referenced_filenames_license_matches(resource, codebase):
