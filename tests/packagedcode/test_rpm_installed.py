@@ -136,4 +136,4 @@ class TestRpmInstalled(PackageTester):
         expected_file= os.path.join(expected_file, 'bdb-fedora-rootfs.tar.xz-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, check_headers=True)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
