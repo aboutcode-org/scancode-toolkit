@@ -26,7 +26,7 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         expected_file = self.get_test_loc('debian/basic-rootfs-expected.json')
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
