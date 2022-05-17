@@ -17,8 +17,8 @@ from operator import itemgetter
 from os import walk as os_walk
 from os.path import abspath
 from os.path import exists
-from os.path import isfile
 from os.path import expanduser
+from os.path import isfile
 from os.path import join
 from os.path import normpath
 from posixpath import join as posixpath_join
@@ -31,6 +31,7 @@ try:
 except ImportError:
     # alway have something there.
     import tempfile
+
     temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
 from commoncode import ignore
@@ -45,7 +46,6 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
-from commoncode.paths import split as paths_split
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -97,9 +97,12 @@ def skip_ignored(location):
     if TRACE_DEEP:
         logger_debug()
         logger_debug(
-            'Codebase.populate: walk: ignored loc:', location,
-            'ignored:', ignored(location),
-            'is_special:', is_special(location),
+            'Codebase.populate: walk: ignored loc:',
+            location,
+            'ignored:',
+            ignored(location),
+            'is_special:',
+            is_special(location),
         )
 
     return is_special(location) or ignored(location)
@@ -117,11 +120,12 @@ def depth_walk(
     ``root_location``. The behaviour is similar of ``os.walk``.
 
     Arguments:
-   - root_location: Absolute, normalized path for the directory to be walked
-   - max_depth: positive integer for fixed depth limit. 0 for no limit.
-   - skip_ignored: Callback function that takes a location as argument and
-     returns a boolean indicating whether to ignore files in that location.
-   - error_handler: Error handler callback. No action taken by default.
+
+    - root_location: Absolute, normalized path for the directory to be walked
+    - max_depth: positive integer for fixed depth limit. 0 for no limit.
+    - skip_ignored: Callback function that takes a location as argument and
+      returns a boolean indicating whether to ignore files in that location.
+    - error_handler: Error handler callback. No action taken by default.
     """
 
     if max_depth < 0:
@@ -151,13 +155,14 @@ class Header(object):
     Represent a Codebase header. Each tool that transforms the codebase
     should create a Header and append it to the Codebase.headers list.
     """
+
     tool_name = String(help='Name of the tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
     options = Mapping(help='Mapping of key/values describing the options used with this tool.')
     notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this header.')
     end_timestamp = String(help='End timestamp for this header.')
-    output_format_version = String(help='Version for the scancode output data format, such as v1.1 .')
+    output_format_version = String(help='Version for the output data format, such as v1.1 .')
     duration = String(help='Scan duration in seconds.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
@@ -196,9 +201,6 @@ class Codebase:
     # we do not really need slots but this is a way to ensure we have tight
     # control on object attributes
     __slots__ = (
-        'original_location',
-        'full_root',
-        'strip_root',
         'max_depth',
         'location',
         'has_single_resource',
@@ -206,9 +208,7 @@ class Codebase:
         'resource_class',
         'root',
         'is_file',
-
         'temp_dir',
-
         'resources_by_path',
         'resources_count',
         'paths',
@@ -216,13 +216,10 @@ class Codebase:
         'all_in_memory',
         'all_on_disk',
         'cache_dir',
-
         'headers',
         'current_header',
-
         'codebase_attributes',
         'attributes',
-
         'counters',
         'timings',
         'errors',
@@ -236,8 +233,6 @@ class Codebase:
         location,
         resource_attributes=None,
         codebase_attributes=None,
-        full_root=False,
-        strip_root=False,
         temp_dir=temp_dir,
         max_in_memory=10000,
         max_depth=0,
@@ -262,13 +257,6 @@ class Codebase:
         such as plugin-provided attributes: these will be added to a
         CodebaseAttributes sub-class crafted for this codebase.
 
-        ``strip_root`` and ``full_root``: boolean flags: these control the values
-        of the path attribute of the codebase Resources. These are mutually
-        exclusive.
-        If ``strip_root`` is True, strip the first ``path`` segment of a Resource
-        unless the codebase contains a single root Resource.
-        If ``full_root`` is True the path is an an absolute path.
-
         ``temp_dir`` is the base temporary directory to use to cache resources on
         disk and other temporary files.
 
@@ -279,9 +267,6 @@ class Codebase:
         ``max_depth`` is the maximum depth of subdirectories to descend below and
         including `location`.
         """
-        self.original_location = location
-        self.full_root = full_root
-        self.strip_root = strip_root
         self.max_depth = max_depth
 
         # Resource sub-class to use: Configured with attributes in _populate
@@ -422,7 +407,7 @@ class Codebase:
             name='ScannedResource',
             attrs=self.resource_attributes or {},
             slots=True,
-            bases=(Resource,)
+            bases=(Resource,),
         )
 
     # TODO: add populate progress manager!!!
@@ -461,7 +446,8 @@ class Codebase:
         # Create root first
         ##########################################################
         root = self._create_root_resource()
-        if TRACE: logger_debug('Codebase.populate: root:', root)
+        if TRACE:
+            logger_debug('Codebase.populate: root:', root)
 
         if self.has_single_resource:
             # there is nothing else to do for a single file or a single
@@ -488,10 +474,7 @@ class Codebase:
         for path in paths:
             res_loc = join(base_location, path)
             if not exists(res_loc):
-                msg = (
-                    f'ERROR: cannot populate codebase: '
-                    f'path: {path!r} not found in {res_loc!r}'
-                )
+                msg = f'ERROR: cannot populate codebase: path: {path!r} not found in {res_loc!r}'
                 self.errors.append(msg)
                 raise Exception(path, join(base_location, path))
                 continue
@@ -502,7 +485,9 @@ class Codebase:
                 logger_debug('Codebase._create_resources_from_paths: parent', parent)
             for parent_path in get_ancestor_paths(path, include_self=False):
                 if TRACE:
-                    logger_debug('  Codebase._create_resources_from_paths: parent_path', repr(parent_path))
+                    logger_debug(
+                        f'  Codebase._create_resources_from_paths: parent_path: {parent_path!r}'
+                    )
                 if not parent_path:
                     continue
                 newpar = parents_by_path.get(parent_path)
@@ -517,13 +502,18 @@ class Codebase:
                         is_file=False,
                     )
                     if not newpar:
-                        raise Exception(f'ERROR: Codebase._create_resources_from_paths: cannot create parent for: {parent_path}')
+                        raise Exception(
+                            f'ERROR: Codebase._create_resources_from_paths: cannot create parent for: {parent_path!r}'
+                        )
                     parent = newpar
 
                     parents_by_path[parent_path] = parent
 
                     if TRACE:
-                        logger_debug('Codebase._create_resources_from_paths: created newpar:', repr(newpar))
+                        logger_debug(
+                            f'  Codebase._create_resources_from_paths:',
+                            f'created newpar: {newpar!r}',
+                        )
 
             res = self._get_or_create_resource(
                 name=file_name(path),
@@ -545,8 +535,7 @@ class Codebase:
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                f'ERROR: cannot populate codebase: '
-                f'{_error}\n{traceback.format_exc()}'
+                f'ERROR: cannot populate codebase: {_error}\n{traceback.format_exc()}'
             )
 
         # Walk over the directory and build the resource tree
@@ -584,7 +573,8 @@ class Codebase:
                     parent=parent,
                     is_file=is_file,
                 )
-                if TRACE: logger_debug('Codebase.create_resources:', res)
+                if TRACE:
+                    logger_debug('Codebase.create_resources:', res)
                 yield res
 
     def _create_root_resource(self):
@@ -599,23 +589,7 @@ class Codebase:
         name = file_name(location)
 
         # do not strip root for codebase with a single Resource.
-        if self.strip_root:
-            if self.has_single_resource:
-                path = name
-            else:
-                # NOTE: this may seem weird but the root path will be an empty
-                # string for a codebase root with strip_root=True if not
-                # single_resource
-                path = ''
-        else:
-            path = get_path(
-                root_location=location,
-                location=location,
-                full_root=self.full_root,
-                strip_root=self.strip_root,
-            )
-
-        path = clean_path(path)
+        path = Resource.build_path(root_location=location, location=location)
 
         if TRACE:
             logger_debug(f'  Codebase._create_root_resource: {path} is_file: {self.is_file}')
@@ -647,7 +621,9 @@ class Codebase:
         Create and return a new codebase Resource with ``path`` and ``location``.
         """
         if not parent:
-            raise TypeError(f'Cannot create resource without parent: name: {name!r}, path: {path!r}')
+            raise TypeError(
+                f'Cannot create resource without parent: name: {name!r}, path: {path!r}'
+            )
 
         # If the codebase is virtual, we provide the path
         if not path:
@@ -793,23 +769,20 @@ class Codebase:
                 msg.extend(['exists in memo:', self._exists_in_memory(path)])
             logger_debug(*msg)
 
-        # NOTE: we keep leading slash if any: a full root codebase has full paths
-        path = posixpath_normpath(path.replace('\\', '/').rstrip('/'))
-
-        # we use 1 as a semaphore more non-existing resource
-        # to differentiate from None that means present but cached on disk
+        # we use Codebase.CACHED_RESOURCE as a semaphore for existing but only
+        # on-disk, non-in-memory resource that we need to load from the disk
+        # cache to differentiate from None which means missing
         res = self.resources_by_path.get(path)
-
-        # None means the Resource is cached on disk.
         if res is Codebase.CACHED_RESOURCE:
-            # we need to load from disk instead
             res = self._load_resource(path)
 
         elif isinstance(res, Resource):
             res = attr.evolve(res)
+
         elif res is None:
             pass
         else:
+            # this should never happen
             raise Exception(f'get_resource: Internal error when getting {path!r}')
 
         if TRACE:
@@ -829,13 +802,13 @@ class Codebase:
             logger_debug('  Codebase.save_resource:', resource)
 
         if resource.is_root:
-            # this can possibly damage things badly
             self.root = resource
             self.resources_by_path[path] = resource
 
         elif resource.cache_location:
             self._dump_resource(resource)
             self.resources_by_path[path] = Codebase.CACHED_RESOURCE
+
         else:
             self.resources_by_path[path] = resource
 
@@ -847,12 +820,11 @@ class Codebase:
 
         if not cache_location:
             raise TypeError(
-                'Resource cannot be dumped to disk and is used only'
-                f'in memory: {resource}'
+                'Resource cannot be dumped to disk and is used only' f'in memory: {resource}'
             )
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        with open(cache_location , 'w') as cached:
+        with open(cache_location, 'w') as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
@@ -865,13 +837,14 @@ class Codebase:
 
         if TRACE:
             logger_debug(
-                '    Codebase._load_resource: exists:', exists(cache_location),
-                'cache_location:', cache_location)
+                '    Codebase._load_resource: exists:',
+                exists(cache_location),
+                'cache_location:',
+                cache_location,
+            )
 
         if not exists(cache_location):
-            raise ResourceNotInCache(
-                f'Failed to load Resource: {path} from {cache_location!r}'
-            )
+            raise ResourceNotInCache(f'Failed to load Resource: {path} from {cache_location!r}')
 
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
@@ -880,16 +853,14 @@ class Codebase:
                 # TODO: Consider using simplejson
                 data = json.load(cached)
                 return self.resource_class(**data)
-        except Exception:
+        except Exception as e:
             with open(cache_location, 'rb') as cached:
                 cached_data = cached.read()
             msg = (
                 f'ERROR: failed to load resource from cached location: {cache_location} '
-                'with content:\n\n'
-                +repr(cached_data)
-                +'\n\n'
-                +traceback.format_exc())
-            raise Exception(msg)
+                'with content:\n\n' + repr(cached_data) + '\n\n' + traceback.format_exc()
+            )
+            raise Exception(msg) from e
 
     def _remove_resource(self, resource):
         """
@@ -926,7 +897,8 @@ class Codebase:
 
         # remove resource from parent
         parent = resource.parent(self)
-        if TRACE: logger_debug('    parent', parent)
+        if TRACE:
+            logger_debug('    parent', parent)
         parent.children_names.remove(resource.name)
         parent.save(self)
 
@@ -961,7 +933,7 @@ class Codebase:
         root = attr.evolve(root)
 
         # include root if no children (e.g. codebase with a single resource)
-        if skip_root and not root.has_children():
+        if self.has_single_resource or (skip_root and not root.has_children()):
             skip_root = False
 
         root = attr.evolve(root)
@@ -983,9 +955,8 @@ class Codebase:
         `is_filtered` flag set to True.
         """
         for resource in self.walk(topdown=topdown, skip_root=skip_root):
-            if resource.is_filtered:
-                continue
-            yield resource
+            if not resource.is_filtered:
+                yield resource
 
     def compute_counts(self, skip_root=False, skip_filtered=False):
         """
@@ -1041,9 +1012,10 @@ class Codebase:
 
     def lowest_common_parent(self):
         """
-        Return a Resource that is the lowest common parent of all the files of
-        this codebase, skipping empty root directory segments.
-        Return None is this codebase contains a single resource.
+        Return a Resource that is the lowest common parent (aka. lowest common
+        ancestor) of all the files of this codebase, skipping root directory
+        segments that are "empty" e.g. with a single child. Return None is this
+        codebase contains a single resource.
         """
         if self.has_single_resource:
             return self.root
@@ -1064,12 +1036,45 @@ class Codebase:
                 return self.root
         return res
 
+    def to_list(
+        self,
+        with_timing=False,
+        with_info=False,
+        skinny=False,
+        full_root=False,
+        strip_root=False,
+    ):
+        """
+        Return a list of all Resources of this Codebase as mappings.
+        """
+        if self.has_single_resource:
+            return [
+                self.root.to_dict(
+                    with_timing=with_timing,
+                    with_info=with_info,
+                    skinny=skinny,
+                    # we never strip root for single res codebase
+                    full_root=full_root,
+                    strip_root=False,
+                )
+            ]
+
+        td = partial(
+            Resource.to_dict,
+            with_timing=with_timing,
+            with_info=with_info,
+            skinny=skinny,
+            full_root=full_root,
+            strip_root=strip_root,
+        )
+        return [td(r) for r in self.walk(skip_root=strip_root)]
+
 
 def to_decoded_posix_path(path):
     """
     Return `path` as a Unicode POSIX path given a unicode or bytes path string.
     """
-    return os.fsdecode(as_posixpath(path))
+    return clean_path(os.fsdecode(as_posixpath(path)))
 
 
 @attr.attributes(slots=True)
@@ -1089,6 +1094,7 @@ class Resource(object):
     Querying the Resource relationships and walking the Resources tree typically
     requires to lookup the corresponding object by path in the Codebase object.
     """
+
     # the file or directory name in the OS preferred representation (either
     # bytes on Linux and Unicode elsewhere)
     name = attr.attrib(repr=False)
@@ -1099,13 +1105,8 @@ class Resource(object):
     location = attr.attrib(repr=False)
 
     # the file or directory POSIX path decoded as unicode using the filesystem
-    # encoding. This is the path that will be reported in output and can be
-    # either one of these:
-    # - if the codebase was created with strip_root==True, this is a path
-    #   relative to the root, stripped from its root segment unless the codebase
-    #   contains a single file.
-    # - if the codebase was created with full_root==True, this is an absolute
-    #   path
+    # encoding. This is the path that will be reported in output and is always
+    # relative to and starting with the root directory.
     path = attr.attrib(converter=to_decoded_posix_path)
 
     # location of the file where this resource can be chached on disk in the OS
@@ -1161,12 +1162,63 @@ class Resource(object):
         else:
             self.is_file = False
 
-    def get_path(self, strip_root=False):
-        if strip_root:
-            path = strip_first_path_segment(self.path)
+    @classmethod
+    def build_path(cls, root_location, location):
+        """
+        Return a POSIX path string (using "/"  separators) of ``location`` relative
+        to ``root_location`. Both locations are absolute native locations.
+        The returned path has no leading and trailing slashes.  The first segment
+        of this path is always the last segment of the ``root_location``.
+        """
+        root_loc = clean_path(root_location)
+        loc = clean_path(location)
+        assert loc.startswith(root_loc)
+        # keep the root directory name by default
+        root_loc = parent_directory(root_loc, with_trail=True)
+        path = loc.replace(root_loc, '', 1)
+        if TRACE:
+            logger_debug('build_path:', root_loc, loc, path)
+        return path
+
+    def get_path(self, full_root=False, strip_root=False):
+        """
+        Return a POSIX path string (using "/"  separators) for this resource.
+        The returned path has no leading and trailing slashes.
+
+        - If ``full_root`` is True, return an absolute path.
+
+        - If ``strip_root`` is True, return a relative path without the first
+          root segment. Ignored if ``full_root`` is True.
+
+        - Otherwise return a relative path where the first segment is the
+          ``location`` last path segment.
+        """
+        if full_root:
+            return self.full_root_path
+        elif strip_root:
+            return self.strip_root_path
         else:
-            path = self.path
-        return clean_path(path)
+            return self.path
+
+    @property
+    def full_root_path(self):
+        """
+        Return a fully rooted POSIX path stripped from leading and trailing slash
+        """
+        location = self.location
+        if location:
+            return clean_path(as_posixpath(self.location))
+        else:
+            return self.path
+
+    @property
+    def strip_root_path(self):
+        """
+        Return a path relative to the root, stripped from its root segment
+        unless the codebase contains a single file or there is only one segment
+        in the path.
+        """
+        return strip_first_path_segment(self.path)
 
     @property
     def is_dir(self):
@@ -1229,14 +1281,6 @@ class Resource(object):
         Return a set of removed Resource paths.
         """
         return codebase.remove_resource(self)
-
-    def create_child(self, codebase, name, is_file=False):
-        """
-        Create and return a new child Resource of this resource in `codebase`
-        with `name`. `name` is always in native OS-preferred encoding (e.g. byte
-        on Linux, unicode elsewhere).
-        """
-        return codebase._get_or_create_resource(name=name, parent=self, is_file=is_file)
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
         """
@@ -1310,18 +1354,6 @@ class Resource(object):
         """
         return bool(self.children_names)
 
-    def child(self, codebase, name):
-        """
-        return a direct child Resource with ``name`` for this Resource or None.
-        """
-        return codebase.get_resource(path=self.child_path(name))
-
-    def child_path(self, name):
-        """
-        Return the child path for ``name`` of this Resource or None.
-        """
-        return posixpath_join(self.path, name)
-
     def children(self, codebase, names=()):
         """
         Return a sorted sequence of direct children Resource objects for this
@@ -1340,8 +1372,9 @@ class Resource(object):
             if not children_names:
                 return []
 
-        get_child = self.child
-        children = [get_child(codebase, name) for name in children_names]
+        child_path = partial(posixpath_join, self.path)
+        get_child = codebase.get_resource
+        children = [get_child(path=child_path(name)) for name in children_names]
 
         _sorter = lambda r: (r.has_children(), r.name.lower(), r.name)
         return sorted((c for c in children if c), key=_sorter)
@@ -1422,13 +1455,28 @@ class Resource(object):
             return 0
         return len(self.ancestors(codebase)) - 1
 
-    def to_dict(self, with_timing=False, with_info=False, skinny=False):
+    def to_dict(
+        self,
+        with_timing=False,
+        with_info=False,
+        skinny=False,
+        full_root=False,
+        strip_root=False,
+    ):
         """
-        Return a mapping of representing this Resource and its scans.
+        Return a mapping of representing this Resource and its data.
+
+        The path is always a POSIX path stripped from leading and trailing
+        slashes and can be either one of these exclusive flags:
+
+        - If ``full_root`` is True, this is a full path when available.
+
+        - If ``strip_root`` is True, this is a path relative to the root,
+          stripped from its root segment unless the codebase contains a single
+          file with a single root segment. Ignored if ``full_root`` is True.
         """
-        res = dict()
-        res['path'] = self.path
-        res['type'] = self.type
+        path = self.get_path(full_root=full_root, strip_root=strip_root)
+        res = dict(path=path, type=self.type)
         if skinny:
             return res
 
@@ -1443,8 +1491,7 @@ class Resource(object):
 
         # this will catch every attribute that has been added dynamically, such
         # as scan-provided resource_attributes
-        other_data = attr.asdict(
-            self, filter=self_fields_filter, dict_factory=dict)
+        other_data = attr.asdict(self, filter=self_fields_filter, dict_factory=dict)
 
         # FIXME: make a deep copy of the data first!!!!
         # see https://github.com/nexB/scancode-toolkit/issues/1199
@@ -1466,19 +1513,18 @@ class Resource(object):
 
     def serialize(self):
         """
-        Return a mapping of representing this Resource and its scans in a form
-        that is fully serializable and can be used to reconstruct a Resource.
-        All path-derived OS-native strings are decoded to Unicode for ulterior
-        JSON serialization.
+        Return a mapping of representing this Resource and its data in a form
+        that is fully serializable (to JSON, YAML, pickle, etc.) and can be used
+        to reconstruct a Resource.
         """
         # we save all fields, not just the one in .to_dict()
-        saveable = attr.asdict(self, dict_factory=dict)
-        saveable['name'] = self.name
+        serializable = attr.asdict(self)
+        serializable['name'] = self.name
         if self.location:
-            saveable['location'] = self.location
+            serializable['location'] = self.location
         if self.cache_location:
-            saveable['cache_location'] = self.cache_location
-        return saveable
+            serializable['cache_location'] = self.cache_location
+        return serializable
 
 
 def clean_path(path):
@@ -1493,58 +1539,30 @@ def clean_path(path):
     return path
 
 
-def get_path(root_location, location, full_root=False, strip_root=False):
-    """
-    Return a POSIX path string (using "/"  separators) derived from
-    `root_location` of the codebase and the `location` of a resource. Both
-    locations are absolute native locations. The returned path has no leading
-    and trailing slashes.
-
-    - If `full_root` is True, return an absolute path. Otherwise return a
-      relative path where the first segment is the `root_location` last path
-      segment name.
-
-    - If `strip_root` is True, return a relative path without the first root
-      segment. Ignored if `full_root` is True.
-    """
-
-    posix_loc = as_posixpath(location)
-    if full_root:
-        return clean_path(posix_loc)
-
-    if strip_root:
-        root_loc = root_location
-    else:
-        # keep the root directory name by default
-        root_loc = parent_directory(root_location)
-
-    posix_root_loc = as_posixpath(root_loc).rstrip('/') + '/'
-    return clean_path(posix_loc.replace(posix_root_loc, '', 1))
-
-
 def strip_first_path_segment(path):
     """
-    Return a POSIX path stripped from its first path segment unless there is only
-    one segment in which we return this segment.
-    The returned path has no leading and trailing slashes.
+    Return a POSIX ``path`` stripped from its first path segment unless there is
+    only one segment in which case we return this segment. The returned path has
+    no leading and trailing slashes.
 
     For example::
         >>> strip_first_path_segment('')
         ''
         >>> strip_first_path_segment('foo')
-        'foo'
+        ''
         >>> strip_first_path_segment('foo/bar/baz')
         'bar/baz'
         >>> strip_first_path_segment('/foo/bar/baz/')
         'bar/baz'
         >>> strip_first_path_segment('foo/')
-        'foo/'
+        ''
     """
-    segments = paths_split(path)
-    if not segments or len(segments) == 1:
+    path = clean_path(path)
+    if '/' in path:
+        _root, _, path = path.partition('/')
         return path
-    stripped = segments[1:]
-    return clean_path('/'.join(stripped))
+    else:
+        return ''
 
 
 def get_codebase_cache_dir(temp_dir):
@@ -1562,7 +1580,6 @@ def get_codebase_cache_dir(temp_dir):
 
 @attr.s(slots=True)
 class _CodebaseAttributes(object):
-
     def to_dict(self):
         return attr.asdict(self, dict_factory=dict)
 
@@ -1576,7 +1593,7 @@ class _CodebaseAttributes(object):
             name='CodebaseAttributes',
             attrs=attributes or {},
             slots=True,
-            bases=(_CodebaseAttributes,)
+            bases=(_CodebaseAttributes,),
         )
 
 
@@ -1619,8 +1636,6 @@ class VirtualCodebase(Codebase):
         location,
         resource_attributes=None,
         codebase_attributes=None,
-        full_root=False,
-        strip_root=False,
         temp_dir=temp_dir,
         max_in_memory=10000,
         paths=tuple(),
@@ -1675,7 +1690,13 @@ class VirtualCodebase(Codebase):
         if isinstance(location, dict):
             return location
 
-        if isinstance(location, (list, tuple,)):
+        if isinstance(
+            location,
+            (
+                list,
+                tuple,
+            ),
+        ):
             combined_scan_data = dict(headers=[], files=[])
             for idx, loc in enumerate(location, 1):
                 scan_data = self._get_scan_data_helper(loc)
@@ -1688,7 +1709,9 @@ class VirtualCodebase(Codebase):
                         f['path'] = posixpath_join(f'codebase-{idx}', clean_path(f['path']))
                     combined_scan_data['files'].extend(files)
                 else:
-                    raise Exception(f'Input file is missing a "files" (aka. resources) section to load: {loc}')
+                    raise Exception(
+                        f'Input file is missing a "files" (aka. resources) section to load: {loc}'
+                    )
 
             combined_scan_data['headers'] = sorted(
                 combined_scan_data['headers'],
@@ -1727,10 +1750,13 @@ class VirtualCodebase(Codebase):
         Return a mapping of CodebaseAttributes fields to use with this Codebase
         """
         # collect attributes from scan data
-        all_attributes = build_attributes_defs(
-            mapping=scan_data,
-            ignored_keys=('headers', 'files'),
-        ) or {}
+        all_attributes = (
+            build_attributes_defs(
+                mapping=scan_data,
+                ignored_keys=('headers', 'files'),
+            )
+            or {}
+        )
 
         # We add in the attributes that we collected from the plugins. They come
         # last for now.
@@ -1807,7 +1833,7 @@ class VirtualCodebase(Codebase):
         if not files_data:
             raise Exception('Input has no "files" top-level scan results.')
 
-        if len(files_data) == 1 :
+        if len(files_data) == 1:
             # we will shortcut to populate the codebase with a single root resource
             self.has_single_resource = True
             root_is_file = files_data[0].get('type') == 'file'
@@ -1816,7 +1842,16 @@ class VirtualCodebase(Codebase):
 
         # Create a virtual root if we are merging multiple input scans together
         location = self.location
-        multiple_inputs = isinstance(location, (list, tuple,)) and len(location) > 1
+        multiple_inputs = (
+            isinstance(
+                location,
+                (
+                    list,
+                    tuple,
+                ),
+            )
+            and len(location) > 1
+        )
 
         # Iterate through all Resources to collect any attribute in any resource
         # as sample data. The paths were cleaned on loading
@@ -1843,15 +1878,18 @@ class VirtualCodebase(Codebase):
         self.resource_class = self._build_resource_class(sample_resource_data)
 
         # do we have file information attributes in this codebase data?
-        self.with_info = any(a in sample_resource_data for a in (
-            'name',
-            'base_name',
-            'extension',
-            'size',
-            'files_count',
-            'dirs_count',
-            'size_count',
-        ))
+        self.with_info = any(
+            a in sample_resource_data
+            for a in (
+                'name',
+                'base_name',
+                'extension',
+                'size',
+                'files_count',
+                'dirs_count',
+                'size_count',
+            )
+        )
 
         # walk and create resources proper
         # Create root resource first
@@ -1894,13 +1932,15 @@ class VirtualCodebase(Codebase):
             if name not in KNOW_PROPS:
                 setattr(root, name, value)
 
-        if TRACE: logger_debug('VirtualCodebase.populate: root:', root)
+        if TRACE:
+            logger_debug('VirtualCodebase.populate: root:', root)
 
         # TODO: report error if filtering the root with a paths?
         self.save_resource(root)
 
         if self.has_single_resource:
-            if TRACE: logger_debug('VirtualCodebase.populate: with single resource.')
+            if TRACE:
+                logger_debug('VirtualCodebase.populate: with single resource.')
             return
 
         all_paths = None
@@ -2051,4 +2091,3 @@ def get_ancestor_paths(path, include_self=False):
     for segment in segments:
         subpath.append(segment)
         yield '/'.join(subpath)
-
