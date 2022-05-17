@@ -5,16 +5,12 @@ Changelog
 31.0.0 (next, roadmap)
 -----------------------
 
+This is a major release with important bug and security fixes, new and improved
+features and API changes.
+
+
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Adopted the new skeleton from https://github.com/nexB/skeleton
-  The key change is the location of the virtual environment. It used to be
-  created at the root of the scancode-toolkit directory. It is now created
-  under the ``venv`` subdirectory.
-
-- The main package API function `get_package_infos` is deprecated, and
-  replaced by `get_package_data`.
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders. We now use a proper name for attributes and not a generic "value".
@@ -31,14 +27,14 @@ Important API changes:
   rather than "packages". This has all the data attributes of a "package_data"
   field plus others: "package_uuid", "package_data_files" and "files".
 
-- There is a a new top-level "packages" attribute that contains package
-  instances that can be aggregating data from multiple manifests.
+  - There is a a new top-level "packages" attribute that contains package
+    instances that can be aggregating data from multiple manifests.
 
-- There is a a new top-level "dependencies" attribute that contains each dependency
-  instance, these can be standalone or releated to a package.
+  - There is a a new top-level "dependencies" attribute that contains each
+    dependency instance, these can be standalone or releated to a package.
 
-- There is a new resource-level attribute "for_packages" which refers to packages
-  through package_uuids (pURL + uuid string).
+  - There is a new resource-level attribute "for_packages" which refers to
+    packages through package_uuids (pURL + uuid string).
 
 - The data structure for HTML output has been changed to include emails and
   urls under the  "infos" object. The HTML template displays output for holders,
@@ -48,12 +44,18 @@ Important API changes:
   column to "path". "copyright_holder" has been renamed to "holder"
 
 - The license clarity scoring plugin has been overhauled to show new license
-  clarity criteria. More details of the new criteria are provided below.
+  clarity criteria. More details of the new scoring criteria are provided below.
 
-- The functionality of the summary plugin has been changed to provide declared
-  origin information for the codebase being scanned. The previous summary plugin
-  functionality has been preserved in the new ``tallies`` plugin. More details
-  are provided below.
+- The functionality of the summary plugin has been imprived to provide declared
+  origin and license information for the codebase being scanned. The previous
+  summary plugin functionality has been preserved in the new ``tallies`` plugin.
+  More details are provided below.
+
+- ScanCode has adopted the new code skeleton from https://github.com/nexB/skeleton
+  The key change is the location of the virtual environment. It used to be
+  created at the root of the scancode-toolkit directory. It is now created
+  under the ``venv`` subdirectory. You mus be aware of this if you use ScanCode
+  from a git clone
 
 
 Copyright detection:
@@ -76,7 +78,7 @@ License detection:
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
   - XXXX existing false positive license rules have been removed (see below).
-  - The SPDX license list has been updated to the latest v3.15
+  - The SPDX license list has been updated to the latest v3.16
 
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
@@ -85,10 +87,10 @@ License detection:
   The processing for "is_continous" has been merged in "key phrases" processing
   below.
 
-- Key phrases can now be defined in RULEs by surrounding one or more words with
-  `{{` and `}}`. When defined a RULE will only match when the key phrases match
-  exactly. When all the text of rule is a "key phrase", this is the same as being
-  "is_continuous".
+- Key phrases can now be defined in a RULE text by surrounding one or more words
+  with double curly braces `{{` and `}}`. When defined a RULE will only match
+  when the key phrases match exactly. When all the text of rule is a "key phrase",
+  this is the same as being "is_continuous".
 
 - The "--unknown-licenses" option now also detects unknown licenses using a
   simple and effective ngrams-based matching in area that are not matched or
@@ -135,6 +137,7 @@ License detection:
   tagged and they may not be detected unless you activate this new indexing
   feature.
 
+
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
@@ -172,14 +175,14 @@ Package detection:
 License Clarity Scoring Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- We are moving away from the license clarity scoring defined by ClearlyDefined
-  in the license clarity score plugin. The previous license clarity scoring
-  logic produced a score that was misleading when it would return a low score
-  due to the stringent scoring criteria. We are now
-  using more general criteria to get a sense of what provenance information has
-  been provided and whether or not there is a conflict in licensing between
-  what licenses were declared at the top-level key files and what licenses have
-  been detected in the files under the top-level.
+- We are moving away from the original license clarity scoring designed for
+  ClearlyDefined in the license clarity score plugin. The previous license
+  clarity scoring logic produced a score that was misleading when it would
+  return a low score due to the stringent scoring criteria. We are now using
+  more general criteria to get a sense of what provenance information has been
+  provided and whether or not there is a conflict in licensing between what
+  licenses were declared at the top-level key files and what licenses have been
+  detected in the files under the top-level.
 
 - The license clarity score is a value from 0-100 calculated by combining the
   weighted values determined for each of the scoring elements:
@@ -223,26 +226,33 @@ License Clarity Scoring Update
 
   - Conflicting license categories:
 
-    - When true, indicates that the declared license expression of the software is in
-      the permissive category, but that other potentially conflicting categories,
-      such as copyleft and proprietary, have been detected in lower level code.
+    - When true, indicates that the declared license expression of the software
+      is in the permissive category, but that other potentially conflicting
+      categories, such as copyleft and proprietary, have been detected in lower
+      level code.
     - Scoring Weight = -20
 
 
 Summary Plugin Update
 ~~~~~~~~~~~~~~~~~~~~~
-The summary plugin's behavior has been changed. Previously, it provided a count
-of the detected license expressions, copyrights, holders, authors, and
-programming languages from a scan. We have preserved this functionality by
-creating a new plugin called ``tallies``. All functionality of the previous
-summary plugin have been preserved in the tallies plugin.
 
-The plugin now attempts to determine a declared license expression, holder, and
-primary programming language from a scan. The license clarity score provides
-context on what origin information is provided from key files. It also returns
-lists of tallies of the other detected license expressions, holders, and
-programming languages. All information is provided in the codebase level
-attribute named ``summary``.
+- The summary plugin's behavior has been changed. Previously, it provided a
+  count of the detected license expressions, copyrights, holders, authors, and
+  programming languages from a scan. 
+
+  We have preserved this functionality by creating a new plugin called ``tallies``.
+  All functionality of the previous summary plugin have been preserved in the
+  tallies plugin.
+
+- The new summary plugin now attempts to determine a declared license expression,
+  declared holder, and the primary programming language from a scan. And the
+  updated license clarity score provides context on the quality  of the license
+  information provided in the codebase key files.
+  
+- The new summary plugin also returns lists of tallies for the other "secondary"
+  detected license expressions, copyright holders, and programming languages.
+
+All summary information is provided at the codebase-level attribute named ``summary``.
 
 
 Outputs:
@@ -258,7 +268,8 @@ Outputs:
 Output version
 --------------
 
-Scancode Data Output Version is now 1.0.0.
+Scancode Data Output Version is now 2.0.0.
+
 
 Changes:
 
@@ -276,16 +287,22 @@ Documentation Update
   correct minor documentation issues.
 
 
-Development environment changes:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Development environment and Code API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The license cache consistency is not checked anymore when you are using a Git
+- The main package API function `get_package_infos` is deprecated, and
+  replaced by `get_package_data`.
+
+- The Resources path are always the same regardless of the strip-root or
+  full-root arguments.
+
+- The license cache consistency is not checked anymore when you are using a git
   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
   instead the --reindex-licenses option to rebuild the license index.
 
-- We can now regenerate updated test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
-  environment variable. There is no need to replace the regen=False with regen=True
-  in the code.
+- We can now regenerate test fixtures using the new SCANCODE_REGEN_TEST_FIXTURES
+  environment variable. There is no need to replace the regen=False with
+  regen=True in the code.
 
 
 30.1.0 - 2021-09-25
