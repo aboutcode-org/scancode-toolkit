@@ -48,10 +48,10 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         assert not is_included(location, excludes=excludes)
 
     def check_ProcessIgnore(self, test_dir, expected, ignore, include=()):
-        codebase = Codebase(test_dir, strip_root=True)
+        codebase = Codebase(test_dir)
         test_plugin = ProcessIgnore()
         test_plugin.process_codebase(codebase, ignore=ignore, include=include)
-        resources = [res.path for res in codebase.walk(skip_root=True)]
+        resources = [res.strip_root_path for res in codebase.walk(skip_root=True)]
         assert sorted(resources) == expected
 
     def test_ProcessIgnore_with_single_file(self):

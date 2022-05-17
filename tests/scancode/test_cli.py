@@ -793,23 +793,23 @@ def test_get_displayable_summary():
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('summaries/client')
-    codebase = Codebase(test_codebase, strip_root=True)
+    codebase = Codebase(test_codebase)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
     processes = 23
     errors = ['failed to scan ABCD']
     results = get_displayable_summary(codebase, scan_names, processes, errors)
     expected = (
-        [u'Some files failed to scan properly:', u'failed to scan ABCD'],
+        ['Some files failed to scan properly:', 'failed to scan ABCD'],
         [
-            u'Summary:        foo, bar, baz with 23 process(es)',
-            u'Errors count:   1',
-            u'Scan Speed:     0.00 files/sec. ',
-            u'Initial counts: 0 resource(s): 0 file(s) and 0 directorie(s) ',
-            u'Final counts:   0 resource(s): 0 file(s) and 0 directorie(s) ',
-            u'Timings:',
-            u'  scan_start: None',
-            u'  scan_end:   None']
+            'Summary:        foo, bar, baz with 23 process(es)',
+            'Errors count:   1',
+            'Scan Speed:     0.00 files/sec. ',
+            'Initial counts: 0 resource(s): 0 file(s) and 0 directorie(s) ',
+            'Final counts:   0 resource(s): 0 file(s) and 0 directorie(s) ',
+            'Timings:',
+            '  scan_start: None',
+            '  scan_end:   None']
     )
     assert results == expected
 
@@ -823,7 +823,7 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('summaries/client')
-    codebase = Codebase(test_codebase, strip_root=True)
+    codebase = Codebase(test_codebase)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
     processes = 23
