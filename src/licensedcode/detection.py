@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
+import logging
 from enum import Enum
 
 import attr
@@ -24,27 +26,24 @@ A LicenseDetection combines one or more matches together using various rules and
 heuristics.
 """
 
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_DETECTION', False)
 
 
-def logger_debug(*args): pass
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
 
 
 if TRACE:
-    use_print = True
-    if use_print:
-        prn = print
-    else:
-        import logging
-        import sys
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        prn = logger.debug
+    import sys
+
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
@@ -129,42 +128,11 @@ class LicenseDetection:
     expression.
     """
 
-    matches = attr.ib(
-        repr=matches_compact_repr,
-        default=attr.Factory(list),
-        metadata=dict(
-            help='List of license matches combined in this detection.'
-        )
-    )
-
-    length = attr.ib(
-        default=0,
-        metadata=dict(help=
-            'Detection length as the number of known tokens across all matches. '
-            'Because of the possible overlap this may be inaccurate.'
-        )
-    )
-
-    primary_license_expression = attr.ib(
-        default=None,
-        metadata=dict(
-            help='Primary license expression string '
-            'using the SPDX license expression syntax and ScanCode license keys.')
-    )
-
     license_expression = attr.ib(
         default=None,
         metadata=dict(
             help='Full license expression string '
             'using the SPDX license expression syntax and ScanCode license keys.')
-    )
-
-    primary_spdx_license_expression = attr.ib(
-        repr=False,
-        default=None,
-        metadata=dict(
-            help='License expression string for this license detection'
-            'using the SPDX license expression syntax and SPDX license ids.')
     )
 
     spdx_license_expression = attr.ib(
@@ -181,6 +149,14 @@ class LicenseDetection:
         metadata=dict(
             help='A list of detection CombinationReason explaining how '
             'this detection was created.'
+        )
+    )
+
+    matches = attr.ib(
+        #repr=matches_compact_repr,
+        default=attr.Factory(list),
+        metadata=dict(
+            help='List of license matches combined in this detection.'
         )
     )
 
@@ -264,7 +240,7 @@ class LicenseDetection:
         This is computed as the relevance of the sum of the underlying matches
         rule length.
         """
-        return compute_relevance(self.rules_len)
+        return compute_relevance(self.rules_length)
 
     def score(self):
         """
@@ -277,7 +253,7 @@ class LicenseDetection:
         """
         length = self.length
         weighted_scores = (m.score() * (m.len() / length) for m in self.matches)
-        return  min([round(sum(weighted_scores), 2), 100])
+        return min([round(sum(weighted_scores), 2), 100])
 
     def append(
         self,
@@ -330,9 +306,6 @@ class LicenseDetection:
                 license_expression,
                 licensing=licensing,
             )
-            # FIXME: we are not yet doing anything wrt. primary licenses
-            self.primary_license_expression = str(license_expression)
-            self.primary_spdx_license_expression = self.spdx_license_expression
 
             self.license_expression = str(license_expression)
 
@@ -344,9 +317,6 @@ class LicenseDetection:
                 license_expression,
                 licensing=licensing,
             )
-            # FIXME: we are not yet doing anything wrt. primary licenses
-            self.primary_license_expression = str(license_expression)
-            self.primary_spdx_license_expression = self.spdx_license_expression
 
             self.license_expression = str(license_expression)
 
@@ -620,7 +590,7 @@ def combine_matches_in_detections(matches):
             # UNKNOWN_INTRO_FOLLOWED_BY_MATCH: combine current and next
             if (
                 current_match.rule.is_license_intro and
-                current_match.rule.is_unknown and (
+                current_match.rule.has_unknown and (
                     next_match.rule.is_license_reference
                     or next_match.rule.is_license_text
                     or next_match.rule.is_license_notice
