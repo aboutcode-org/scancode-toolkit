@@ -238,8 +238,8 @@ def add_referenced_filenames_license_matches(resource, codebase):
                 codebase=codebase,
             )
 
-        if referenced_resource and referenced_resource.licenses:
-            modified = True
+            if referenced_resource and referenced_resource.licenses:
+                modified = True
                 matches.extend(
                     get_matches_from_detections(
                         license_detections=referenced_resource.licenses
@@ -287,13 +287,23 @@ def get_referenced_filenames(license_matches):
 def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     """
     Return a Resource matching the ``referenced_filename`` path or filename
-    given a ``resource`` in ``codebase``. Return None if the
-    ``referenced_filename`` cannot be found in the same directory as the base
-    ``resource``. ``referenced_filename`` is the path or filename referenced in
-    a LicenseMatch of ``resource``,
+    given a ``resource`` in ``codebase``.
+    
+    Return None if the ``referenced_filename`` cannot be found in the same
+    directory as the base ``resource``, or at the codebase ``root``.
+    
+    ``referenced_filename`` is the path or filename referenced in a
+    LicenseMatch detected at ``resource``,
     """
     # this can be a path
     ref_filename = file_name(referenced_filename)
     for child in resource.parent(codebase).children(codebase):
+        if child.name == ref_filename:
+            return child
+
+    # Also look at codebase root for referenced file
+    # TODO: look at project root identified by key-files
+    # instead of codebase scan root
+    for child in codebase.root.children(codebase):
         if child.name == ref_filename:
             return child
