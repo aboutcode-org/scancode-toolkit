@@ -148,8 +148,8 @@ def compute_license_score(codebase):
     if scoring_elements.declared_license:
         scoring_elements.score += 40
 
-    scoring_elements.precise_license_detection = check_declared_licenses(declared_licenses)
-    if scoring_elements.precise_license_detection:
+    scoring_elements.identification_precision = check_declared_licenses(declared_licenses)
+    if scoring_elements.identification_precision:
         scoring_elements.score += 40
 
     scoring_elements.has_license_text = check_for_license_texts(declared_licenses)
@@ -203,7 +203,7 @@ def unique(objects):
 class ScoringElements:
     score = attr.ib(default=0)
     declared_license = attr.ib(default=False)
-    precise_license_detection = attr.ib(default=False)
+    identification_precision = attr.ib(default=False)
     has_license_text = attr.ib(default=False)
     declared_copyrights = attr.ib(default=False)
     conflicting_license_categories = attr.ib(default=False)
@@ -213,7 +213,7 @@ class ScoringElements:
         return {
             'score': self.score,
             'declared_license': self.declared_license,
-            'precise_license_detection': self.precise_license_detection,
+            'identification_precision': self.identification_precision,
             'has_license_text': self.has_license_text,
             'declared_copyrights': self.declared_copyrights,
             'conflicting_license_categories': self.conflicting_license_categories,
