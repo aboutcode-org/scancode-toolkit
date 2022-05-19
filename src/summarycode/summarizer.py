@@ -18,6 +18,7 @@ from plugincode.post_scan import PostScanPlugin, post_scan_impl
 from cluecode.copyrights import CopyrightDetector
 from packagedcode.utils import combine_expressions
 from packagedcode import models
+from summarycode.copyright_tallies import canonical_holder
 from summarycode.score import compute_license_score
 from summarycode.score import get_field_values_from_codebase_resources
 from summarycode.score import unique
@@ -167,7 +168,7 @@ def get_declared_holders(codebase, holders_tallies):
         codebase, 'holders', key_files_only=True
     )
     entry_by_key_file_holders = {
-        fingerprints.generate(entry['holder']): entry
+        fingerprints.generate(canonical_holder(entry['holder'])): entry
         for entry in key_file_holders
         if entry['holder']
     }
