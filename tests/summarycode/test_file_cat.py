@@ -2083,6 +2083,258 @@ class TestFileCat(FileBasedTesting):
         )
         assert file_cat.MediaVideo.categorize(test_resource_07)
 
+    def test_ScriptBash(self):
+        test_resource_01 = resource_class(
+            name="foo.bash",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBash.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "script"
+
+    def test_ScriptBatSh(self):
+        test_resource_01 = resource_class(
+            name="foo.bat",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBatSh.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "script"
+
+        test_resource_02 = resource_class(
+            name="foo.sh",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBatSh.categorize(test_resource_02)
+
+    def test_ScriptBuild(self):
+        test_resource_01 = resource_class(
+            name="foo.cmake",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBuild.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "script"
+
+        test_resource_02 = resource_class(
+            name="foo.cmakelist",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBuild.categorize(test_resource_02)
+
+        test_resource_03 = resource_class(
+            name="foo.bar",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="text/x-makefile",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptBuild.categorize(test_resource_03)
+
+    def test_ScriptData(self):
+        test_resource_01 = resource_class(
+            name="foo.sql",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptData.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "script"
+
+        test_resource_02 = resource_class(
+            name="foo.psql",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.ScriptData.categorize(test_resource_02)
+
+    def test_SourceAssembler(self):
+        test_resource_01 = resource_class(
+            name="foo.S",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceAssembler.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.s",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert not file_cat.SourceAssembler.categorize(test_resource_02)
+
+    def test_SourceC(self):
+        test_resource_01 = resource_class(
+            name="foo.c",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceC.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.h",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="text/x-c",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceC.categorize(test_resource_02)
+
+    def test_SourceCoffeeScript(self):
+        test_resource_01 = resource_class(
+            name="foo.coffee",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCoffeeScript.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceCpp(self):
+        test_resource_01 = resource_class(
+            name="foo.cpp",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCpp.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.hpp",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCpp.categorize(test_resource_02)
+
+        test_resource_03 = resource_class(
+            name="foo.cc",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCpp.categorize(test_resource_03)
+
+        test_resource_04 = resource_class(
+            name="foo.h",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="text/x-c++",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCpp.categorize(test_resource_04)
+
+    def test_SourceCsharp(self):
+        test_resource_01 = resource_class(
+            name="foo.cs",
+            location="",
+            path="",
+            rid="",
+            pid="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceCsharp.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
     # ==================================
 
     def test_WebRuby(self):
