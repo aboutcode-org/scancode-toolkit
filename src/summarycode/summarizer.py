@@ -223,7 +223,6 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     license_expressions = []
     programming_languages = []
     copyrights = []
-    parties = []
 
     for package_mapping in top_level_packages:
         package = models.Package.from_dict(package_mapping)
@@ -243,8 +242,6 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
         if copyright_statement:
             copyrights.append(copyright_statement)
 
-        parties.extend(package.parties or [])
-
     # Combine license expressions
     unique_license_expressions = unique(license_expressions)
     combined_declared_license_expression = combine_expressions(
@@ -263,8 +260,6 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     declared_holders = []
     if holders:
         declared_holders = holders
-    elif parties:
-        declared_holders = [party.name for party in parties or []]
 
     declared_holders = unique(declared_holders)
 
