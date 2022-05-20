@@ -238,7 +238,7 @@ Summary Plugin Update
 
 - The summary plugin's behavior has been changed. Previously, it provided a
   count of the detected license expressions, copyrights, holders, authors, and
-  programming languages from a scan. 
+  programming languages from a scan.
 
   We have preserved this functionality by creating a new plugin called ``tallies``.
   All functionality of the previous summary plugin have been preserved in the
@@ -248,7 +248,7 @@ Summary Plugin Update
   declared holder, and the primary programming language from a scan. And the
   updated license clarity score provides context on the quality  of the license
   information provided in the codebase key files.
-  
+
 - The new summary plugin also returns lists of tallies for the other "secondary"
   detected license expressions, copyright holders, and programming languages.
 
@@ -273,11 +273,31 @@ Scancode Data Output Version is now 2.0.0.
 
 Changes:
 
-- rename resource level attribute `packages` to `package_data`.
-- add top-level attribute `packages`.
-- add top-level attribute `dependencies`.
-- add resource-level attribute `for_packages`.
-- remove `package-data` attribute `root_path`.
+- Rename resource level attribute `packages` to `package_data`.
+- Add top-level attribute `packages`.
+- Add top-level attribute `dependencies`.
+- Add resource-level attribute `for_packages`.
+- Remove `package-data` attribute `root_path`.
+- The fields of the license clarity scoring plugin have been replaced with the
+  following fields. An overview of the new fields can be found in the "License
+  Clarity Scoring Update" section above.
+    - `score`
+    - `declared_license`
+    - `identification_precision`
+    - `has_license_text`
+    - `declared_copyrights`
+    - `conflicting_license_categories`
+    - `ambigious_compound_licensing`
+- The fields of the summary plugin have been replaced with the following fields.
+  An overview of the new fields can be found in the "Summary Plugin Update"
+  section above.
+    - `declared_license_expression`
+    - `license_clarity_score`
+    - `declared_holder`
+    - `primary_language`
+    - `other_license_expressions`
+    - `other_holders`
+    - `other_languages`
 
 
 Documentation Update
