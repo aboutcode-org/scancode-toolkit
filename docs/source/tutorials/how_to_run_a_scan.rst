@@ -36,7 +36,7 @@ This extracts the zlib.tar.gz package:
 
 .. note::
 
-    ``--shallow`` option can be used to recursively extract packages.
+    Use the ``--shallow`` option to prevent recursive extraction of nested archives.
 
 
 Deciding Scan Options
