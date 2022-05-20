@@ -2005,7 +2005,347 @@ class TestFileCat(FileBasedTesting):
         assert file_cat.SourceCsharp.categorize(test_resource_01)
         assert file_cat.categorize_resource(test_resource_01).file_category == "source"
 
-    # ==================================
+    def test_SourceGo(self):
+        test_resource_01 = resource_class(
+            name="foo.go",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceGo.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceHaskell(self):
+        test_resource_01 = resource_class(
+            name="foo.hs",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceHaskell.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.lhs",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceHaskell.categorize(test_resource_02)
+
+    def test_SourceJava(self):
+        test_resource_01 = resource_class(
+            name="foo.java",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceJava.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceJavascript(self):
+        test_resource_01 = resource_class(
+            name="foo.js",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceJavascript.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceJavaserverpage(self):
+        test_resource_01 = resource_class(
+            name="foo.jsp",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceJavaserverpage.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceKotlin(self):
+        test_resource_01 = resource_class(
+            name="foo.kt",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceKotlin.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceObjectivec(self):
+        test_resource_01 = resource_class(
+            name="foo.m",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceObjectivec.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.mm",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceObjectivec.categorize(test_resource_02)
+
+        test_resource_03 = resource_class(
+            name="foo.h",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="text/x-objective-c",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceObjectivec.categorize(test_resource_03)
+
+    def test_SourcePerl(self):
+        test_resource_01 = resource_class(
+            name="foo.pl",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePerl.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.pm",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePerl.categorize(test_resource_02)
+
+    def test_SourcePhp(self):
+        test_resource_01 = resource_class(
+            name="foo.php",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePhp.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.php3",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePhp.categorize(test_resource_02)
+
+        test_resource_03 = resource_class(
+            name="foo.php4",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePhp.categorize(test_resource_03)
+
+        test_resource_04 = resource_class(
+            name="foo.php5",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePhp.categorize(test_resource_04)
+
+    def test_SourcePython(self):
+        test_resource_01 = resource_class(
+            name="foo.py",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourcePython.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceRuby(self):
+        test_resource_01 = resource_class(
+            name="foo.rb",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceRuby.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+        test_resource_02 = resource_class(
+            name="foo.rake",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceRuby.categorize(test_resource_02)
+
+    def test_SourceRust(self):
+        test_resource_01 = resource_class(
+            name="foo.rs",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceRust.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceScala(self):
+        test_resource_01 = resource_class(
+            name="foo.scala",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceScala.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceSwift(self):
+        test_resource_01 = resource_class(
+            name="foo.swift",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.SourceSwift.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_SourceTypescript(self):
+        test_resource_01 = resource_class(
+            name="foo.ts",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="TypeScript",
+        )
+        assert file_cat.SourceTypescript.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "source"
+
+    def test_WebCss(self):
+        test_resource_01 = resource_class(
+            name="foo.css",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.WebCss.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "web"
+
+        test_resource_02 = resource_class(
+            name="foo.less",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.WebCss.categorize(test_resource_02)
+
+        test_resource_03 = resource_class(
+            name="foo.scss",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.WebCss.categorize(test_resource_03)
+
+    def test_WebHtml(self):
+        test_resource_01 = resource_class(
+            name="foo.htm",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.WebHtml.categorize(test_resource_01)
+        assert file_cat.categorize_resource(test_resource_01).file_category == "web"
+
+        test_resource_02 = resource_class(
+            name="foo.html",
+            location="",
+            path="",
+            is_file=True,
+            mime_type="",
+            file_type="",
+            programming_language="",
+        )
+        assert file_cat.WebHtml.categorize(test_resource_02)
 
     def test_WebRuby(self):
         test_resource_01 = resource_class(
