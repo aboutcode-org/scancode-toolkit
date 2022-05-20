@@ -1274,6 +1274,9 @@ class Package(PackageData):
         if not package_data:
             return
 
+        if isinstance(package_data, dict):
+            package_data = PackageData.from_dict(package_data)
+
         if not self.is_compatible(package_data, include_qualifiers=False):
             if TRACE_UPDATE:
                 logger_debug(f'update: {self.purl} not compatible with: {package_data.purl}')
