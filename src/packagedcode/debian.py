@@ -402,7 +402,6 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
                 continue
 
             for pkgdt in res.package_data:
-                pkgdt = models.PackageData.from_dict(pkgdt)
                 package.update(
                     package_data=pkgdt,
                     datafile_path=res.path,
