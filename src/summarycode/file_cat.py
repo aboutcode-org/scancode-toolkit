@@ -83,14 +83,13 @@ class FileCategorizer(PostScanPlugin):
             return
 
         for resource in codebase.walk(topdown=True):
-            if resource.is_file:
-                category = categorize_resource(resource)
-                if not category:
-                    continue
-                resource.analysis_priority = category.analysis_priority
-                resource.file_category = category.file_category
-                resource.file_subcategory = category.file_subcategory
-                resource.save(codebase)
+            category = categorize_resource(resource)
+            if not category:
+                continue
+            resource.analysis_priority = category.analysis_priority
+            resource.file_category = category.file_category
+            resource.file_subcategory = category.file_subcategory
+            resource.save(codebase)
 
 
 class Categorizer:

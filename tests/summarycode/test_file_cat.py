@@ -2370,4 +2370,6 @@ def test_media01_info():
     result_file = test_env.get_temp_file("json")
     run_scan_click(["--info", "--file-cat", test_dir, "--json", result_file])
     expected = test_env.get_test_loc("file_cat/scans/media01/media01-info-scan.json")
-    check_json_scan(expected, result_file, regen=REGEN_TEST_FIXTURES)
+    check_json_scan(
+        expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES
+    )
