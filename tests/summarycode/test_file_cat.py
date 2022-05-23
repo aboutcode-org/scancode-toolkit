@@ -23,6 +23,10 @@ from scancode.plugin_info import InfoScanner
 from summarycode import file_cat
 
 
+test_env = FileDrivenTesting()
+test_env.test_data_dir = os.path.join(os.path.dirname(__file__), "data")
+
+
 resource_class = attr.make_class(
     name="TestResource",
     attrs=InfoScanner.resource_attributes,
@@ -2359,3 +2363,11 @@ class TestFileCat(FileBasedTesting):
         )
         assert file_cat.WebRuby.categorize(test_resource_01)
         assert file_cat.categorize_resource(test_resource_01).file_category == "web"
+
+
+def test_media01_info():
+    test_dir = test_env.get_test_loc("file_cat/code/media01")
+    result_file = test_env.get_temp_file("json")
+    run_scan_click(["--info", "--file-cat", test_dir, "--json", result_file])
+    expected = test_env.get_test_loc("file_cat/scans/media01/media01-info-scan.json")
+    check_json_scan(expected, result_file, regen=REGEN_TEST_FIXTURES)
