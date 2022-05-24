@@ -15,9 +15,9 @@ holders:
 holders_summary:
   - value: David S. Miller
     count: 1
-  - value: Intel Corporation
+  - value: Intel
     count: 1
   - value: Jeff Garzik
     count: 1
-  - value: Sun Microsystems, Inc.
+  - value: Sun Microsystems
     count: 1

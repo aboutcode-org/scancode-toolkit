@@ -9,7 +9,7 @@ holders:
   - The Android Open Source Project
   - MyCompanyName
 holders_summary:
-  - value: MyCompanyName
+  - value: Android Open Source Project
     count: 1
-  - value: The Android Open Source Project, Inc.
+  - value: MyCompanyName
     count: 1

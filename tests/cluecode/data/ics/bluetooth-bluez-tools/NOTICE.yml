@@ -33,7 +33,7 @@ holders:
 holders_summary:
   - value: Marcel Holtmann
     count: 4
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 2
   - value: Nokia Corporation
     count: 2

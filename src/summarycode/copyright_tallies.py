@@ -494,6 +494,7 @@ COMMON_NAMES = {
     'cisco': 'Cisco Systems',
 
     'daisy': 'Daisy',
+    'daisyltd': 'Daisy',
 
     'fsf': 'Free Software Foundation',
     'freesoftwarefoundation': 'Free Software Foundation',
@@ -541,6 +542,7 @@ COMMON_NAMES = {
     'regentsoftheuniversityofcalifornia': 'The Regents of the University of California',
 
     'borland': 'Borland',
+    'borlandcorp': 'Borland',
 
     'microsoft': 'Microsoft',
     'microsoftcorp': 'Microsoft',

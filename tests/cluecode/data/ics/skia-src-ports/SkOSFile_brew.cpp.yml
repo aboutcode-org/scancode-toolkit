@@ -9,7 +9,7 @@ holders:
   - The Android Open Source Project
   - Company 100, Inc.
 holders_summary:
-  - value: Company 100, Inc.
+  - value: Android Open Source Project
     count: 1
-  - value: The Android Open Source Project, Inc.
+  - value: Company 100, Inc.
     count: 1

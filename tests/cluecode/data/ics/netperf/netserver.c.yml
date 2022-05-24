@@ -11,6 +11,6 @@ holders:
   - Hewlett-Packard Co.
   - Hewlett-Packard Co.
 holders_summary:
-  - value: Hewlett-Packard, Inc.
+  - value: Hewlett-Packard
     count: 3
 notes: may fail on Co. vs Company.
