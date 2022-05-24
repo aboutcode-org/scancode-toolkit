@@ -20,12 +20,24 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
+def test_license_scans_without_reference():
+    test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--package', test_dir, '--json-pp', result_file, '--verbose']
+    run_scan_click(args)
+    check_json_scan(
+        test_env.get_test_loc('plugin_licenses_reference/scan-without-reference.expected.json'),
+        result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
+    )
+
+
 def test_licenses_reference_works():
     test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
         '--license', '--package', '--licenses-reference',
-        test_dir, '--json-pp', result_file, '--verbose']
+        test_dir, '--json-pp', result_file, '--verbose'
+    ]
     run_scan_click(args)
     check_json_scan(
         test_env.get_test_loc('plugin_licenses_reference/scan.expected.json'),
