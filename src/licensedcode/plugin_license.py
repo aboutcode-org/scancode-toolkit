@@ -287,7 +287,7 @@ def get_referenced_filenames(license_matches):
     """
     unique_filenames = []
     for license_match in license_matches:
-        for filename in license_match['matched_rule']['referenced_filenames']:
+        for filename in license_match['referenced_filenames']:
             if filename not in unique_filenames:
                 unique_filenames.append(filename)
 

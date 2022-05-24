@@ -362,7 +362,7 @@ class LicenseDetection:
         data_matches = []
 
         for match in matches:
-            data_matches.extend(
+            data_matches.append(
                 licenses_data_from_match(
                     match=match,
                     include_text=include_text,
@@ -400,60 +400,67 @@ def licenses_data_from_match(
     SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'
     SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL + '/{}.yml'
 
-    detected_licenses = []
+    result = {}
+
+    # Detection Level Information
+    result['score'] = match.score()
+    result['start_line'] = match.start_line
+    result['end_line'] = match.end_line
+    result['matched_length'] = match.len()
+    result['match_coverage'] = match.coverage()
+    result['matcher'] = match.matcher
+
+    # LicenseDB Level Information (Rule that was matched)
+    result['license_expression'] = match.rule.license_expression
+    result['licensedb_identifier'] = match.rule.identifier
+    result['referenced_filenames'] = match.rule.referenced_filenames
+    result['is_license_text'] = match.rule.is_license_text
+    result['is_license_notice'] = match.rule.is_license_notice
+    result['is_license_reference'] = match.rule.is_license_reference
+    result['is_license_tag'] = match.rule.is_license_tag
+    result['is_license_intro'] = match.rule.is_license_intro
+    result['rule_length'] = match.rule.length
+    result['rule_relevance'] = match.rule.relevance
+    if include_text:
+        result['matched_text'] = matched_text
+
+    # License Level Information (Individual licenses that this rule refers to)
+    result['licenses'] = detected_licenses = []
     for license_key in match.rule.license_keys():
+        detected_license = {}
+        detected_licenses.append(detected_license)
+
         lic = licenses.get(license_key)
-        result = {}
-        detected_licenses.append(result)
-        result['key'] = lic.key
-        result['score'] = match.score()
-        result['name'] = lic.name
-        result['short_name'] = lic.short_name
-        result['category'] = lic.category
-        result['is_exception'] = lic.is_exception
-        result['is_unknown'] = lic.is_unknown
-        result['owner'] = lic.owner
-        result['homepage_url'] = lic.homepage_url
-        result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-        result['reference_url'] = license_url_template.format(lic.key)
-        result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
-        result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+
+        detected_license['key'] = lic.key
+        detected_license['name'] = lic.name
+        detected_license['short_name'] = lic.short_name
+        detected_license['category'] = lic.category
+        detected_license['is_exception'] = lic.is_exception
+        detected_license['is_unknown'] = lic.is_unknown
+        detected_license['owner'] = lic.owner
+        detected_license['homepage_url'] = lic.homepage_url
+        detected_license['text_url'] = lic.text_urls[0] if lic.text_urls else ''
+        detected_license['reference_url'] = license_url_template.format(lic.key)
+        detected_license['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+        detected_license['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
 
         spdx_key = lic.spdx_license_key
-        result['spdx_license_key'] = spdx_key
+        detected_license['spdx_license_key'] = spdx_key
 
         if spdx_key:
             is_license_ref = spdx_key.lower().startswith('licenseref-')
             if is_license_ref:
                 spdx_url = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
             else:
+                # TODO: Is this replacing spdx_key???
                 spdx_key = lic.spdx_license_key.rstrip('+')
                 spdx_url = SPDX_LICENSE_URL.format(spdx_key)
         else:
             spdx_url = ''
-        result['spdx_url'] = spdx_url
-        result['start_line'] = match.start_line
-        result['end_line'] = match.end_line
-        matched_rule = result['matched_rule'] = {}
-        matched_rule['identifier'] = match.rule.identifier
-        matched_rule['license_expression'] = match.rule.license_expression
-        matched_rule['licenses'] = match.rule.license_keys()
-        matched_rule['referenced_filenames'] = match.rule.referenced_filenames
-        matched_rule['is_license_text'] = match.rule.is_license_text
-        matched_rule['is_license_notice'] = match.rule.is_license_notice
-        matched_rule['is_license_reference'] = match.rule.is_license_reference
-        matched_rule['is_license_tag'] = match.rule.is_license_tag
-        matched_rule['is_license_intro'] = match.rule.is_license_intro
-        matched_rule['has_unknown'] = match.rule.has_unknown
-        matched_rule['matcher'] = match.matcher
-        matched_rule['rule_length'] = match.rule.length
-        matched_rule['matched_length'] = match.len()
-        matched_rule['match_coverage'] = match.coverage()
-        matched_rule['rule_relevance'] = match.rule.relevance
-        # FIXME: for sanity this should always be included?????
-        if include_text:
-            result['matched_text'] = matched_text
-    return detected_licenses
+        detected_license['spdx_url'] = spdx_url
+
+    return result
 
 
 def is_correct_detection(license_matches):
@@ -622,7 +629,7 @@ def is_license_reference_local_file(license_match):
     Return True if `license_match` LicenseMatch dict has a non-empty `referenced_filename`,
     i.e. contains a license reference to a local file.
     """
-    return bool(license_match['matched_rule']['referenced_filenames'])
+    return bool(license_match['referenced_filenames'])
 
 
 def filter_license_references(license_matches):
@@ -666,7 +673,7 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
 
     if isinstance(matches[0], dict):
         combined_expression = combine_expressions(
-            expressions=[match['matched_rule']['license_expression'] for match in matches_for_expression]
+            expressions=[match['license_expression'] for match in matches_for_expression]
         )
     else:
         combined_expression = combine_expressions(
