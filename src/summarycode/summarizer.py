@@ -213,13 +213,13 @@ def get_primary_language(programming_language_tallies):
 
 def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     """
-    Return a 3-tuple containing the strings of declared license expression,
-    copyright holder, and primary programming language from a
+    Return a 3-tuple containing the declared license expression string, a list
+    of copyright holder, and primary programming language string from a
     ``top_level_packages`` list of detected top-level packages mapping and a
     ``codebase``.
     """
     if not top_level_packages:
-        return '', '', ''
+        return '', [], ''
 
     license_expressions = []
     programming_languages = []
@@ -272,6 +272,9 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
                     continue
                 holders = [h['holder'] for h in key_file_resource.holders]
                 declared_holders.extend(holders)
+    # Normalize holder names before collecting them
+    # This allows us to properly remove declared holders from `other_holders` later
+    declared_holders = [canonical_holder(h) for h in declared_holders]
     declared_holders = unique(declared_holders)
 
     # Programming language

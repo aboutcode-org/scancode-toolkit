@@ -75,10 +75,15 @@
       "conflicting_license_categories": false,
       "ambiguous_compound_licensing": false
     },
-    "declared_holder": "Example Corporation, Google Inc., Fraunhofer FKIE",
+    "declared_holder": "Google, Fraunhofer FKIE",
     "primary_language": "Python",
     "other_license_expressions": [],
-    "other_holders": [],
+    "other_holders": [
+      {
+        "value": "Example Corporation",
+        "count": 1
+      }
+    ],
     "other_languages": []
   },
   "files": [
