@@ -1,31 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json-pp": "<file>",
-        "--license": true,
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 1
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:npm/dicer",
@@ -120,46 +93,59 @@
       "type": "file",
       "licenses": [
         {
-          "key": "mit",
-          "score": 100.0,
-          "name": "MIT License",
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 15,
-          "end_line": 15,
-          "matched_rule": {
-            "identifier": "mit_272.RULE",
-            "license_expression": "mit",
-            "licenses": [
-              "mit"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "key": "mit",
+              "score": 100.0,
+              "name": "MIT License",
+              "short_name": "MIT License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "MIT",
+              "homepage_url": "http://opensource.org/licenses/mit-license.php",
+              "text_url": "http://opensource.org/licenses/mit-license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+              "spdx_license_key": "MIT",
+              "spdx_url": "https://spdx.org/licenses/MIT",
+              "start_line": 15,
+              "end_line": 15,
+              "matched_rule": {
+                "identifier": "mit_272.RULE",
+                "license_expression": "mit",
+                "licenses": [
+                  "mit"
+                ],
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": true,
+                "is_license_intro": false,
+                "has_unknown": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 100
+              }
+            }
+          ]
         }
       ],
+      "license_clues": [],
       "license_expressions": [
         "mit"
+      ],
+      "spdx_license_expressions": [
+        "MIT"
       ],
       "percentage_of_license_text": 4.05,
       "package_data": [

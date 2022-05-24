@@ -7,7 +7,9 @@
         {
           "license_expression": "mit",
           "spdx_license_expression": "MIT",
-          "combination_reasons": [],
+          "combination_reasons": [
+            "not-combined"
+          ],
           "matches": [
             {
               "key": "mit",
@@ -107,7 +109,9 @@
         {
           "license_expression": "mit",
           "spdx_license_expression": "MIT",
-          "combination_reasons": [],
+          "combination_reasons": [
+            "not-combined"
+          ],
           "matches": [
             {
               "key": "mit",
@@ -714,7 +718,9 @@
         {
           "license_expression": "mit",
           "spdx_license_expression": "MIT",
-          "combination_reasons": [],
+          "combination_reasons": [
+            "not-combined"
+          ],
           "matches": [
             {
               "key": "mit",
@@ -775,7 +781,9 @@
         {
           "license_expression": "mit",
           "spdx_license_expression": "MIT",
-          "combination_reasons": [],
+          "combination_reasons": [
+            "not-combined"
+          ],
           "matches": [
             {
               "key": "mit",

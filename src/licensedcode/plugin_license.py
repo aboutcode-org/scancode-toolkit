@@ -10,6 +10,8 @@
 from functools import partial
 
 import attr
+import os
+import logging
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
@@ -24,27 +26,29 @@ from licensedcode.cache import build_spdx_license_expression
 from licensedcode.detection import SCANCODE_LICENSEDB_URL
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detections
+from licensedcode.detection import DetectionCategory
 
-TRACE = False
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
 
 def logger_debug(*args): pass
 
 
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+
 if TRACE:
-    use_print = True
-    if use_print:
-        prn = print
-    else:
-        import logging
-        import sys
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        prn = logger.debug
+    import sys
+
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def reindex_licenses(ctx, param, value):
@@ -226,6 +230,7 @@ def add_referenced_filenames_license_matches(resource, codebase):
     modified = False
 
     for detection in license_detections:
+        detection_modified = False
         matches = detection["matches"]
         referenced_filenames = get_referenced_filenames(matches)
         if not referenced_filenames:
@@ -240,22 +245,27 @@ def add_referenced_filenames_license_matches(resource, codebase):
 
             if referenced_resource and referenced_resource.licenses:
                 modified = True
+                detection_modified = True
                 matches.extend(
                     get_matches_from_detections(
                         license_detections=referenced_resource.licenses
                     )
                 )
 
+        if not detection_modified:
+            continue
+
         reasons, license_expression = get_detected_license_expression(
             matches=matches,
-            analysis="unknown-file-reference-local",
+            analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
+            post_scan=True,
         )
         detection["license_expression"] = str(license_expression)
         detection["spdx_license_expression"] = str(build_spdx_license_expression(
                 license_expression=str(license_expression),
                 licensing=get_cache().licensing,
             ))
-        detection["combination_reasons"].extend(reasons)
+        detection["combination_reasons"] = reasons
 
     if modified:
         resource.license_expressions = [detection["license_expression"] for detection in resource.licenses]

@@ -129,6 +129,11 @@ def get_urls(location, threshold=50, **kwargs):
     return dict(urls=results)
 
 
+SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
+DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
+SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
+
+
 def get_licenses(
     location,
     min_score=0,

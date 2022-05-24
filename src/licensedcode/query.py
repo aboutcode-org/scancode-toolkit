@@ -103,6 +103,11 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_STOP_AND_UNKNOWN:
 MAX_TOKEN_PER_LINE = 25
 
 
+# Break quary in runs if there are `LINES_THRESHOLD` number of empty
+# or non-legalese/junk lines
+LINES_THRESHOLD = 4
+
+
 def build_query(
     location=None,
     query_string=None,
@@ -193,7 +198,7 @@ class Query(object):
         location=None,
         query_string=None,
         idx=None,
-        line_threshold=4,
+        line_threshold=LINES_THRESHOLD,
         start_line=1,
         _test_mode=False,
     ):

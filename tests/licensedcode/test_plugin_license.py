@@ -177,7 +177,6 @@ def test_license_match_unknown_license_with_license_reference():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-@pytest.mark.xfail(reason="Set as failing until we have proper LicenseDetection support")
 def test_license_match_unknown_license_without_license_reference():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/license-ref-see-copying', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -187,7 +186,6 @@ def test_license_match_unknown_license_without_license_reference():
         '--license-text-diagnostics',
         '--strip-root',
         '--verbose',
-        '--unknown-licenses',
         '--json', result_file,
         test_dir,
     ]
@@ -205,7 +203,6 @@ def test_license_match_referenced_filename():
         '--license-text-diagnostics',
         '--strip-root',
         '--verbose',
-        '--unknown-licenses',
         '--json', result_file,
         test_dir,
     ]
@@ -233,7 +230,6 @@ def test_find_referenced_resource():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
-        '--unknown-licenses',
         '--json', scan_loc,
         test_dir,
     ]
@@ -272,7 +268,6 @@ def test_match_reference_license():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
-        '--unknown-licenses',
         '--json', scan_loc,
         test_dir,
     ]
@@ -282,11 +277,10 @@ def test_match_reference_license():
     from commoncode.resource import VirtualCodebase
     codebase = VirtualCodebase(scan_loc)
     resource = codebase.get_resource_from_path('scan-ref/license-notice.txt')
-    assert len(resource.licenses) == 2
-    result = add_referenced_filenames_license_matches(resource=resource, codebase=codebase)
-    assert len(result.licenses) == 3
+    assert len(resource.licenses[0]["matches"]) == 2
 
 
+@pytest.mark.scanslow
 def test_reindex_licenses_works():
     run_scan_click(['--reindex-licenses-for-all-languages'])
     run_scan_click(['--reindex-licenses'])
@@ -299,7 +293,6 @@ def test_scan_license_with_url_template():
     args = [
         '--license',
         '--license-url-template', 'https://example.com/urn:{}',
-        '--unknown-licenses',
         '--json-pp', result_file,
         test_dir,
     ]
