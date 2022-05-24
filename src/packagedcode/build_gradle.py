@@ -6,6 +6,8 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import os
+import sys
 
 from packageurl import PackageURL
 from pygmars import Token
@@ -14,6 +16,35 @@ from pygments import lex
 
 from packagedcode import groovy_lexer
 from packagedcode import models
+
+# Tracing flags
+TRACE = False or os.environ.get('SCANCODE_DEBUG_PACKAGE_GRADLE', False)
+
+# set to 1 to enable pygmars deep tracing
+TRACE_DEEP = 0
+if os.environ.get('SCANCODE_DEBUG_PACKAGE_GRADLE_DEEP'):
+    TRACE_DEEP = 1
+    TRACE = False
+
+
+# Tracing flags
+def logger_debug(*args):
+    pass
+
+
+if TRACE or TRACE_DEEP:
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+    if True:
+        printer = print
+    else:
+        printer = logger.debug
+
+    def logger_debug(*args):
+        return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # TODO: split groovy and kotlin handlers
 
@@ -76,18 +107,29 @@ def get_pygmar_tokens(contents):
         yield token
 
 
-def get_parse_tree(build_gradle_location):
+def get_parse_tree(build_gradle_location, trace=TRACE_DEEP):
     """
     Return a Pygmars parse tree from a ``build_gradle_location`` build.gradle
     """
     with open(build_gradle_location) as f:
         contents = f.read()
-    parser = Parser(grammar, trace=0)
-    return parser.parse(list(get_pygmar_tokens(contents)))
+
+    parser = Parser(grammar, trace=trace)
+
+    lexed_tokens = list(get_pygmar_tokens(contents))
+    if TRACE:
+        logger_debug(f'get_parse_tree: lexed_tokens: {lexed_tokens}')
+
+    parse_tree = parser.parse(lexed_tokens)
+
+    if TRACE:
+        logger_debug(f'get_parse_tree: parse_tree: {parse_tree}')
+
+    return parse_tree
 
 
 def is_literal_string(string):
-    return string == 'LITERAL-STRING-SINGLE' or string == 'LITERAL-STRING-DOUBLE'
+    return string in ('LITERAL-STRING-SINGLE', 'LITERAL-STRING-DOUBLE')
 
 
 def remove_quotes(string):
@@ -107,7 +149,9 @@ def remove_quotes(string):
 
 
 def get_dependencies_from_parse_tree(parse_tree):
-    dependencies = []
+    """
+    Yield dependency mappings from a Pygmars parse tree.
+    """
     in_dependency_block = False
     brackets_counter = 0
     first_bracket_seen = False
@@ -120,7 +164,7 @@ def get_dependencies_from_parse_tree(parse_tree):
             continue
 
         if in_dependency_block:
-            if tree_node.label == 'OPERATOR':
+            if tree_node.label.startswith('OPERATOR'):
                 if tree_node.value == '{':
                     if not first_bracket_seen:
                         first_bracket_seen = True
@@ -159,7 +203,7 @@ def get_dependencies_from_parse_tree(parse_tree):
                         dependency[last_key] = remove_quotes(child_node.value)
                 if scope:
                     dependency['scope'] = scope
-                dependencies.append(dependency)
+                yield dependency
 
             if in_nested_dependency:
                 if tree_node.label == 'OPERATOR' and tree_node.value == ')':
@@ -186,7 +230,7 @@ def get_dependencies_from_parse_tree(parse_tree):
                             dependency[last_key] = remove_quotes(value)
                 if in_nested_dependency and scope:
                     dependency['scope'] = scope
-                dependencies.append(dependency)
+                yield dependency
 
             if tree_node.label == 'DEPENDENCY-2':
                 dependency = {}
@@ -216,25 +260,37 @@ def get_dependencies_from_parse_tree(parse_tree):
                         dependency['namespace'] = namespace
                         dependency['name'] = name
                         dependency['version'] = version
-                dependencies.append(dependency)
+                yield dependency
 
             if tree_node.label == 'DEPENDENCY-3':
                 dependency = {}
                 for child_node in tree_node.leaves():
+                    if TRACE:
+                        logger_debug('DEPENDENCY-3:', child_node)
                     if child_node.label == 'NAME':
                         dependency['scope'] = child_node.value
-                    if is_literal_string(child_node.label):
+
+                    elif is_literal_string(child_node.label):
+
                         value = child_node.value
                         value = remove_quotes(value)
+
                         # We are assuming `value` is in the form of "namespace:name:version"
                         split_dependency_string = value.split(':')
-                        if len(split_dependency_string) != 3:
-                            break
-                        namespace, name, version = split_dependency_string
-                        dependency['namespace'] = namespace
-                        dependency['name'] = name
-                        dependency['version'] = version
-                dependencies.append(dependency)
+                        if TRACE:
+                            logger_debug('DEPENDENCY-3: is_literal_string: value', value, 'split_dependency_string:', split_dependency_string)
+                        length = len(split_dependency_string)
+                        if length == 3:
+                            namespace, name, version = split_dependency_string
+                            dependency['namespace'] = namespace
+                            dependency['name'] = name
+                            dependency['version'] = version
+                        elif length == 2:
+                            namespace, name  = split_dependency_string
+                            dependency['namespace'] = namespace
+                            dependency['name'] = name
+
+                yield dependency
 
             # TODO: See if you can refactor logic with DEPENDENCY-1
             if tree_node.label == 'DEPENDENCY-4':
@@ -253,7 +309,7 @@ def get_dependencies_from_parse_tree(parse_tree):
                             last_key = 'version'
                     if is_literal_string(child_node.label):
                         dependency[last_key] = remove_quotes(child_node.value)
-                dependencies.append(dependency)
+                yield dependency
 
             if tree_node.label == 'DEPENDENCY-5':
                 dependency = {}
@@ -262,17 +318,20 @@ def get_dependencies_from_parse_tree(parse_tree):
                         dependency['scope'] = child_node.value
                     if child_node.label == 'NAME-ATTRIBUTE':
                         dependency['name'] = child_node.value
-                dependencies.append(dependency)
-    return dependencies
+                yield dependency
+
 
 
 def get_dependencies(build_gradle_location):
     parse_tree = get_parse_tree(build_gradle_location)
     # Parse `parse_tree` for dependencies and print them
-    return get_dependencies_from_parse_tree(parse_tree)
+    return list(get_dependencies_from_parse_tree(parse_tree))
 
 
 def build_package(cls, dependencies):
+    """
+    Yield PackageData from a ``dependencies`` list of mappings.
+    """
     package_dependencies = []
     for dependency in dependencies:
         # Ignore collected dependencies that do not have a name
@@ -301,6 +360,7 @@ def build_package(cls, dependencies):
                 extracted_requirement=version,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
+                is_resolved=bool(version),
             )
         )
 

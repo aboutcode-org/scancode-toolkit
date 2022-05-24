@@ -1,0 +1,3 @@
+These two files are taken from Groovy and are essentially the same:
+https://github.com/gradle/gradle/blob/d0d8706df4f115ad9c6e9127c93ec377b5959fff/subprojects/docs/src/snippets/scala/zinc/groovy/build.gradle
+https://github.com/gradle/gradle/blob/d0d8706df4f115ad9c6e9127c93ec377b5959fff/subprojects/docs/src/snippets/scala/zinc/kotlin/build.gradle.kts
