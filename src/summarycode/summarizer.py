@@ -225,12 +225,12 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     programming_languages = []
     copyrights = []
 
-    for package_mapping in top_level_packages:
-        package = models.Package.from_dict(package_mapping)
-        # we are only interested in key packages
-        if not is_key_package(package, codebase):
-            continue
-
+    top_level_packages = [
+        models.Package.from_dict(package_mapping)
+        for package_mapping in top_level_packages
+    ]
+    key_file_packages = [p for p in top_level_packages if is_key_package(p, codebase)]
+    for package in key_file_packages:
         license_expression = package.license_expression
         if license_expression:
             license_expressions.append(license_expression)
@@ -261,7 +261,17 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     declared_holders = []
     if holders:
         declared_holders = holders
-
+    else:
+        # If the package data does not contain an explicit copyright, check the
+        # key files where the package data was detected from and see if there
+        # are any holder detections that can be used.
+        for package in key_file_packages:
+            for datafile_path in package.datafile_paths:
+                key_file_resource = codebase.get_resource(path=datafile_path)
+                if not key_file_resource:
+                    continue
+                holders = [h['holder'] for h in key_file_resource.holders]
+                declared_holders.extend(holders)
     declared_holders = unique(declared_holders)
 
     # Programming language
