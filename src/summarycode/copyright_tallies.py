@@ -485,49 +485,49 @@ def filter_junk(texts):
 
 
 COMMON_NAMES = {
-    '3dfxinteractiveinc.': '3dfx Interactive, Inc.',
+    '3dfxinteractiveinc.': '3dfx Interactive',
 
     'cern': 'CERN - European Organization for Nuclear Research',
 
-    'ciscosystemsinc': 'Cisco Systems, Inc.',
-    'ciscosystems': 'Cisco Systems, Inc.',
-    'cisco': 'Cisco Systems, Inc.',
+    'ciscosystemsinc': 'Cisco Systems',
+    'ciscosystems': 'Cisco Systems',
+    'cisco': 'Cisco Systems',
 
-    'daisy': 'Daisy Ltd.',
+    'daisy': 'Daisy',
 
-    'fsf': 'Free Software Foundation, Inc.',
-    'freesoftwarefoundation': 'Free Software Foundation, Inc.',
-    'freesoftwarefoundationinc': 'Free Software Foundation, Inc.',
-    'thefreesoftwarefoundation': 'Free Software Foundation, Inc.',
-    'thefreesoftwarefoundationinc': 'Free Software Foundation, Inc.',
+    'fsf': 'Free Software Foundation',
+    'freesoftwarefoundation': 'Free Software Foundation',
+    'freesoftwarefoundationinc': 'Free Software Foundation',
+    'thefreesoftwarefoundation': 'Free Software Foundation',
+    'thefreesoftwarefoundationinc': 'Free Software Foundation',
 
-    'hp': 'Hewlett-Packard, Inc.',
-    'hewlettpackard': 'Hewlett-Packard, Inc.',
-    'hewlettpackardco': 'Hewlett-Packard, Inc.',
-    'hpcompany': 'Hewlett-Packard, Inc.',
-    'hpdevelopmentcompanylp': 'Hewlett-Packard, Inc.',
-    'hpdevelopmentcompany': 'Hewlett-Packard, Inc.',
-    'hewlettpackardcompany': 'Hewlett-Packard, Inc.',
+    'hp': 'Hewlett-Packard',
+    'hewlettpackard': 'Hewlett-Packard',
+    'hewlettpackardco': 'Hewlett-Packard',
+    'hpcompany': 'Hewlett-Packard',
+    'hpdevelopmentcompanylp': 'Hewlett-Packard',
+    'hpdevelopmentcompany': 'Hewlett-Packard',
+    'hewlettpackardcompany': 'Hewlett-Packard',
 
-    'theandroidopensourceproject': 'The Android Open Source Project, Inc.',
-    'androidopensourceproject': 'The Android Open Source Project, Inc.',
+    'theandroidopensourceproject': 'Android Open Source Project',
+    'androidopensourceproject': 'Android Open Source Project',
 
-    'ibm': 'IBM Corporation',
+    'ibm': 'IBM',
 
-    'redhat': 'Red Hat, Inc.',
-    'redhatinc': 'Red Hat, Inc.',
+    'redhat': 'Red Hat',
+    'redhatinc': 'Red Hat',
 
-    'softwareinthepublicinterest': 'Software in the Public Interest, Inc.',
-    'spiinc': 'Software in the Public Interest, Inc.',
+    'softwareinthepublicinterest': 'Software in the Public Interest',
+    'spiinc': 'Software in the Public Interest',
 
-    'suse': 'SuSE, Inc.',
-    'suseinc': 'SuSE, Inc.',
+    'suse': 'SuSE',
+    'suseinc': 'SuSE',
 
-    'sunmicrosystems': 'Sun Microsystems, Inc.',
-    'sunmicrosystemsinc': 'Sun Microsystems, Inc.',
-    'sunmicro': 'Sun Microsystems, Inc.',
+    'sunmicrosystems': 'Sun Microsystems',
+    'sunmicrosystemsinc': 'Sun Microsystems',
+    'sunmicro': 'Sun Microsystems',
 
-    'thaiopensourcesoftwarecenter': 'Thai Open Source Software Center Ltd.',
+    'thaiopensourcesoftwarecenter': 'Thai Open Source Software Center',
 
     'apachefoundation': 'The Apache Software Foundation',
     'apachegroup': 'The Apache Software Foundation',
@@ -540,20 +540,18 @@ COMMON_NAMES = {
 
     'regentsoftheuniversityofcalifornia': 'The Regents of the University of California',
 
-    # 'mit': 'the Massachusetts Institute of Technology',
-
-    'borland': 'Borland Corp.',
+    'borland': 'Borland',
 
     'microsoft': 'Microsoft',
     'microsoftcorp': 'Microsoft',
     'microsoftinc': 'Microsoft',
     'microsoftcorporation': 'Microsoft',
 
-    'google': 'Google Inc.',
-    'googlellc': 'Google Inc.',
-    'googleinc': 'Google Inc.',
+    'google': 'Google',
+    'googlellc': 'Google',
+    'googleinc': 'Google',
 
-    'intel': 'Intel Corporation',
+    'intel': 'Intel',
 }
 
 # Remove everything except letters and numbers
