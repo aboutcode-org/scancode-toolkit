@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import sys
 import os
 import logging
 from enum import Enum
@@ -95,6 +96,18 @@ class CombinationReason(Enum):
     UNVERSIONED_FOLLOWED_BY_VERSIONED = 'un-versioned-followed-by-versioned'
 
 
+@attr.s
+class FileRegion:
+    """
+    A file has one or more file-regions, which are separate regions of the file
+    containing some license information (separated by code/text/others in between),
+    and identified by a start line and an end line.
+    """
+    path = attr.ib(type=str)
+    start_line = attr.ib(type=int)
+    end_line = attr.ib(type=int)
+
+
 @attr.s(slots=True, eq=False, order=False)
 class LicenseDetection:
     """
@@ -135,6 +148,14 @@ class LicenseDetection:
         )
     )
 
+    # Only used in unique detection calculation and referencing
+    file_region = attr.ib(
+        default=attr.Factory(dict),
+        metadata=dict(
+            help='File path and start end lines to locate the detection.'
+        )
+    )
+
     @classmethod
     def from_matches(cls, matches):
         """
@@ -162,6 +183,19 @@ class LicenseDetection:
             spdx_license_expression=str(spdx_license_expression),
             combination_reasons=reasons,
         )
+    
+    @classmethod
+    def from_mapping(cls, detection):
+        """
+        Return a LicenseDetection created out of `detection` dict with
+        the same attributes.
+        """
+        return cls(
+            matches=detection['matches'],
+            license_expression=detection['license_expression'],
+            spdx_license_expression=detection['spdx_license_expression'],
+            combination_reasons=detection['combination_reasons'],
+        )
 
     def __eq__(self, other):
         return (
@@ -181,36 +215,65 @@ class LicenseDetection:
     def qspans(self):
         return [match.qspan for match in self.matches]
 
+    def get_file_region(self, path):
+        """
+        This is an identifier for a license detection, based on it's underlying
+        license matches.
+        """
+        start_line, end_line = self.get_start_end_line()
+        return FileRegion(
+            path=path,
+            start_line=start_line,
+            end_line=end_line,
+        )
+
     @property
     def identifier(self):
         """
         This is an identifier for a license detection, based on it's underlying
         license matches.
+
+        This is not guaranteed to be unique for a detection, as certain small and
+        unknown matches could have the same value for this identifier, but will
+        be unique for most other cases.
         """
         data = []
-        for license_match in self.original_licenses:
-            identifier = (license_match.rule_identifier, license_match.coverage(),)
+        for match in self.matches:
+            identifier = (match['licensedb_identifier'], match['match_coverage'],)
             data.append(identifier)
 
-        return tuple(data)
+        # Return a positive hash value for the tuple
+        return tuple(data).__hash__() % ((sys.maxsize + 1) * 2)
     
     @property
     def identifier_with_text(self):
         """
-        This is an identifier for a issue, which is an unknown license intro,
-        based on it's underlying license matches.
+        This is an identifier for a license detection, based on it's underlying
+        license matches with the tokenized matched_text.
+
+        This is guaranteed to be unique for a detection.
         """
         data = []
-        for license_match in self.original_licenses:
-            tokenized_matched_text = tuple(query_tokenizer(license_match.matched_text))
+        for match in self.matches:
+            tokenized_matched_text = tuple(query_tokenizer(match['matched_text']))
             identifier = (
-                license_match.rule_identifier,
-                license_match.coverage(),
+                match['licensedb_identifier'],
+                match['match_coverage'],
                 tokenized_matched_text,
             )
             data.append(identifier)
 
-        return tuple(data)
+        # Return a positive hash value for the tuple
+        return tuple(data).__hash__() % ((sys.maxsize + 1) * 2)
+    
+    def get_start_end_line(self):
+        """
+        Returns start and end line for a license detection issue, from the
+        license match(es).
+        """
+        start_line = min([match['start_line'] for match in self.matches])
+        end_line = max([match['end_line'] for match in self.matches])
+        return start_line, end_line
 
     def rules_length(self):
         """
@@ -373,6 +436,7 @@ class LicenseDetection:
 
         detection = attr.asdict(self)
         detection["matches"] = data_matches
+        _file_region = detection.pop('file_region')
 
         return detection
 

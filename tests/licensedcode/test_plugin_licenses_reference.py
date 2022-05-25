@@ -43,3 +43,16 @@ def test_licenses_reference_works():
         test_env.get_test_loc('plugin_licenses_reference/scan-with-reference.expected.json'),
         result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
     )
+
+def test_licenses_reference_works_with_matched_text():
+    test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license', '--package', '--licenses-reference',  '--license-text',
+        test_dir, '--json-pp', result_file, '--verbose'
+    ]
+    run_scan_click(args)
+    check_json_scan(
+        test_env.get_test_loc('plugin_licenses_reference/scan-matched-text-with-reference.expected.json'),
+        result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
+    )
