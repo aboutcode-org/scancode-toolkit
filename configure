@@ -56,9 +56,11 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 # Thirdparty package locations and index handling
 # Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
 # offline mode for scancode installation with no index at all
-if [ -d "$CFG_ROOT_DIR/thirdparty" ]; then
+thirddir=$CFG_ROOT_DIR/thirdparty
+if [[ "$(echo $thirddir/*.whl)x" != "$thirddir/*.whlx" ]]; then
     PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
 fi
+
 
 ################################
 # Set the quiet flag to empty if not defined
