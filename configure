@@ -53,10 +53,18 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 
 ################################
+# Install with or without and index. With "--no-index" this is using only local wheels
+# This is an offline mode with no index and no network operations
+# NO_INDEX="--no-index "
+NO_INDEX=""
+
+
+################################
 # Thirdparty package locations and index handling
-# Find packages from the local thirdparty directory
-if [ -d "$CFG_ROOT_DIR/thirdparty" ]; then
-    PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty"
+# Find packages from the local thirdparty directory if present
+THIRDPARDIR=$CFG_ROOT_DIR/thirdparty
+if [[ "$(echo $THIRDPARDIR/*.whl)x" != "$THIRDPARDIR/*.whlx" ]]; then
+    PIP_EXTRA_ARGS="$NO_INDEX --find-links $THIRDPARDIR"
 fi
 
 
@@ -181,6 +189,7 @@ while getopts :-: optchar; do
             esac;;
     esac
 done
+
 
 PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS"
 
