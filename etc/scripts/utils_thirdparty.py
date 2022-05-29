@@ -1678,6 +1678,7 @@ class PypiSimpleRepository:
         """
         if not version:
             versions = list(self._get_package_versions_map(name).values())
+            # return the latest version
             return versions and versions[-1]
         else:
             return self._get_package_versions_map(name).get(version)
