@@ -144,10 +144,10 @@ def test_license_match_referenced_filename():
 
 def test_get_referenced_filenames():
     license_matches = [
-        {'matched_rule': {'referenced_filenames' : ['LICENSE.txt', 'COPYING']}},
-        {'matched_rule': {'referenced_filenames' : ['COPYING', 'LICENSE.txt']}},
-        {'matched_rule': {'referenced_filenames' : ['copying']}},
-        {'matched_rule': {'referenced_filenames' : []}},
+        {'referenced_filenames' : ['LICENSE.txt', 'COPYING']},
+        {'referenced_filenames' : ['COPYING', 'LICENSE.txt']},
+        {'referenced_filenames' : ['copying']},
+        {'referenced_filenames' : []},
     ]
     expected = ['LICENSE.txt', 'COPYING', 'copying']
     assert get_referenced_filenames(license_matches) == expected

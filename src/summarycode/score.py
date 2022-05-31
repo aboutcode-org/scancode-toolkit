@@ -16,6 +16,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 from packagedcode.utils import combine_expressions
+from licensedcode.detection import get_matches_from_detections
 
 # Tracing flags
 TRACE = False
@@ -124,11 +125,12 @@ def compute_license_score(codebase):
     """
 
     scoring_elements = ScoringElements()
-    declared_licenses = get_field_values_from_codebase_resources(
+    license_detections = get_field_values_from_codebase_resources(
         codebase=codebase,
         field_name='licenses',
         key_files_only=True,
     )
+    declared_licenses = get_matches_from_detections(license_detections)
     declared_license_expressions = get_field_values_from_codebase_resources(
         codebase=codebase, field_name='license_expressions', key_files_only=True
     )
@@ -140,9 +142,10 @@ def compute_license_score(codebase):
         codebase=codebase, field_name='copyrights', key_files_only=True
     )
 
-    other_licenses = get_field_values_from_codebase_resources(
+    other_license_detections = get_field_values_from_codebase_resources(
         codebase=codebase, field_name='licenses', key_files_only=False
     )
+    other_licenses = get_matches_from_detections(other_license_detections)
 
     scoring_elements.declared_license = bool(declared_licenses)
     if scoring_elements.declared_license:
@@ -244,20 +247,19 @@ FILTERS = dict(
 
 def is_good_license(detected_license):
     """
-    Return True if a `detected license` mapping is consider to a high quality
+    Return True if a `detected license` mapping is considered to be a high quality
     conclusive match.
     """
     score = detected_license['score']
-    rule = detected_license['matched_rule']
-    coverage = rule.get('match_coverage') or 0
-    relevance = rule.get('rule_relevance') or 0
+    coverage = detected_license.get('match_coverage') or 0
+    relevance = detected_license.get('rule_relevance') or 0
     match_types = dict(
         [
-            ('is_license_text', rule['is_license_text']),
-            ('is_license_notice', rule['is_license_notice']),
-            ('is_license_reference', rule['is_license_reference']),
-            ('is_license_tag', rule['is_license_tag']),
-            ('is_license_intro', rule['is_license_intro']),
+            ('is_license_text', detected_license['is_license_text']),
+            ('is_license_notice', detected_license['is_license_notice']),
+            ('is_license_reference', detected_license['is_license_reference']),
+            ('is_license_tag', detected_license['is_license_tag']),
+            ('is_license_intro', detected_license['is_license_intro']),
         ]
     )
     matched = False
@@ -320,15 +322,24 @@ def get_field_values_from_codebase_resources(codebase, field_name, key_files_onl
     return values
 
 
-def get_license_categories(license_infos):
+def get_categories_from_match(license_match):
+    """
+    Return a list of license category strings from a single LicenseMatch mapping.
+    """
+    licenses = license_match.get('licenses')
+    return [license_info.get('category') for license_info in licenses]
+
+
+def get_license_categories(declared_licenses):
     """
     Return a list of license category strings from `license_infos`
     """
     license_categories = []
-    for license_info in license_infos:
-        category = license_info.get('category', '')
-        if category not in license_categories:
-            license_categories.append(category)
+
+    for match in declared_licenses:
+        for category in get_categories_from_match(match):
+            if category not in license_categories:
+                license_categories.append(category)
     return license_categories
 
 
@@ -339,11 +350,10 @@ def check_for_license_texts(declared_licenses):
     If so, return True. Otherwise, return False.
     """
     for declared_license in declared_licenses:
-        matched_rule = declared_license.get('matched_rule', {})
         if any(
             [
-                matched_rule.get('is_license_text', False),
-                matched_rule.get('is_license_notice', False),
+                declared_license.get('is_license_text', False),
+                declared_license.get('is_license_notice', False),
             ]
         ):
             return True
@@ -379,9 +389,10 @@ def check_for_conflicting_licenses(other_licenses):
 
     If so, return True. Otherwise, return False.
     """
-    for license_info in other_licenses:
-        if license_info.get('category', '') in CONFLICTING_LICENSE_CATEGORIES:
-            return True
+    for license_match in other_licenses:
+        for category in get_categories_from_match(license_match):
+            if category in CONFLICTING_LICENSE_CATEGORIES:
+                return True
     return False
 
 

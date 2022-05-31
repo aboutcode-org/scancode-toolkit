@@ -759,6 +759,19 @@ def get_matches_from_detections(license_detections):
     return license_matches
 
 
+def get_license_keys_from_detections(license_detections):
+    """
+    Return a list of unique license key strings from a list of LicenseDetections.
+    """
+    license_keys = set()
+
+    matches = get_matches_from_detections(license_detections)
+    for match in matches:
+        licenses = match.get('licenses')
+        license_keys.update([entry.get('key') for entry in licenses])
+    return list(license_keys)
+
+
 def analyze_detection(license_matches):
     """
     Analyse a list of LicenseMatch objects, and determine if the license detection
@@ -918,6 +931,9 @@ def detect_licenses(location, min_score, deadline, **kwargs):
         deadline=deadline,
         **kwargs,
     )
+
+    if not matches:
+        return
 
     for group_of_matches in group_matches(matches):
         yield LicenseDetection.from_matches(matches=group_of_matches)

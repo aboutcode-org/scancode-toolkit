@@ -31,8 +31,6 @@ from licensedcode.detection import DetectionCategory
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
 
-def logger_debug(*args): pass
-
 
 def logger_debug(*args):
     pass

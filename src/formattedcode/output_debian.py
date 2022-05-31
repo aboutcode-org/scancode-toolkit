@@ -16,6 +16,7 @@ from commoncode.cliutils import OUTPUT_GROUP
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
+from licensedcode.detection import get_matches_from_detections
 
 from scancode import notice
 
@@ -179,8 +180,8 @@ def get_texts(detected_licenses):
 
     # set of (start line, end line, matched_rule identifier)
     seen = set()
-    for lic in detected_licenses:
-        key = lic['start_line'], lic['end_line'], lic['matched_rule']['identifier']
+    for lic in get_matches_from_detections(detected_licenses):
+        key = lic['start_line'], lic['end_line'], lic['licensedb_identifier']
         if key not in seen:
             yield lic['matched_text']
             seen.add(key)
