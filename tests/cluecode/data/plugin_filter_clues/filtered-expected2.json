@@ -1,35 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--copyright": true,
-        "--email": true,
-        "--filter-clues": true,
-        "--info": true,
-        "--json": "<file>",
-        "--license": true,
-        "--url": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 1
-      }
-    }
-  ],
   "files": [
     {
       "path": "LICENSE2",
@@ -52,46 +21,57 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "pygres-2.2",
-          "score": 100.0,
-          "name": "PyGres License v2.2",
-          "short_name": "PyGres License 2.2",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.yml",
-          "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-          "start_line": 7,
-          "end_line": 22,
-          "matched_rule": {
-            "identifier": "pygres-2.2_2.RULE",
-            "license_expression": "pygres-2.2",
-            "licenses": [
-              "pygres-2.2"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 145,
-            "matched_length": 145,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "pygres-2.2",
+          "spdx_license_expression": "LicenseRef-scancode-pygres-2.2",
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 7,
+              "end_line": 22,
+              "matched_length": 145,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "pygres-2.2",
+              "licensedb_identifier": "pygres-2.2_2.RULE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 145,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "pygres-2.2",
+                  "name": "PyGres License v2.2",
+                  "short_name": "PyGres License 2.2",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Unspecified",
+                  "homepage_url": null,
+                  "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.yml",
+                  "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "license_clues": [],
       "license_expressions": [
         "pygres-2.2"
+      ],
+      "spdx_license_expressions": [
+        "LicenseRef-scancode-pygres-2.2"
       ],
       "percentage_of_license_text": 69.38,
       "copyrights": [

@@ -197,86 +197,6 @@
       "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
     }
   ],
-  "license_detection_references": [
-    {
-      "unique_identifier": 16124711000605823644,
-      "license_detection": {
-        "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-        "spdx_license_expression": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
-        "combination_reasons": [
-          "not-combined"
-        ],
-        "matches": [
-          {
-            "score": 100.0,
-            "start_line": 3,
-            "end_line": 16,
-            "matched_length": 119,
-            "match_coverage": 100.0,
-            "matcher": "2-aho",
-            "license_expression": "apache-2.0",
-            "licensedb_identifier": "apache-2.0_2.RULE"
-          },
-          {
-            "score": 100.0,
-            "start_line": 19,
-            "end_line": 19,
-            "matched_length": 8,
-            "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
-            "license_expression": "mit OR bsd-simplified",
-            "licensedb_identifier": "spdx-license-identifier: mit OR bsd-simplified"
-          }
-        ],
-        "file_region": {
-          "path": "scan/copyr.java",
-          "start_line": 3,
-          "end_line": 19
-        }
-      },
-      "files": [
-        {
-          "path": "scan/copyr.java",
-          "start_line": 3,
-          "end_line": 19
-        }
-      ]
-    },
-    {
-      "unique_identifier": 17188979421754288658,
-      "license_detection": {
-        "license_expression": "artistic-2.0",
-        "spdx_license_expression": "Artistic-2.0",
-        "combination_reasons": [
-          "not-combined"
-        ],
-        "matches": [
-          {
-            "score": 100.0,
-            "start_line": 28,
-            "end_line": 28,
-            "matched_length": 4,
-            "match_coverage": 100.0,
-            "matcher": "2-aho",
-            "license_expression": "artistic-2.0",
-            "licensedb_identifier": "artistic-2.0_46.RULE"
-          }
-        ],
-        "file_region": {
-          "path": "scan/package.json",
-          "start_line": 28,
-          "end_line": 28
-        }
-      },
-      "files": [
-        {
-          "path": "scan/package.json",
-          "start_line": 28,
-          "end_line": 28
-        }
-      ]
-    }
-  ],
   "files": [
     {
       "path": "scan",
@@ -297,7 +217,31 @@
         {
           "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
           "spdx_license_expression": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
-          "id": 16124711000605823644
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 16,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_2.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 19,
+              "end_line": 19,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit OR bsd-simplified",
+              "licensedb_identifier": "spdx-license-identifier: mit OR bsd-simplified"
+            }
+          ]
         }
       ],
       "license_clues": [],
@@ -321,7 +265,21 @@
         {
           "license_expression": "artistic-2.0",
           "spdx_license_expression": "Artistic-2.0",
-          "id": 17188979421754288658
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 28,
+              "end_line": 28,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "artistic-2.0",
+              "licensedb_identifier": "artistic-2.0_46.RULE"
+            }
+          ]
         }
       ],
       "license_clues": [],
