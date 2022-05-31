@@ -287,6 +287,15 @@ Development environment changes:
   environment variable. There is no need to replace the regen=False with regen=True
   in the code.
 
+Miscellaneous
+--------------
+
+- Added support for usage of shortcut flags
+  - `-A` or `--about`
+  - `-q` or `--quiet` 
+  - `-v` or `--verbose` 
+  - `-V` or `--version` can be used.
+
 
 30.1.0 - 2021-09-25
 --------------------

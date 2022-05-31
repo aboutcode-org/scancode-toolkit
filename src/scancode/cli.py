@@ -211,13 +211,13 @@ def validate_depth(ctx, param, value):
          f'[default: {DEFAULT_TIMEOUT} seconds]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
-@click.option('--quiet',
+@click.option('-q', '--quiet',
     is_flag=True,
     conflicting_options=['verbose'],
     help='Do not print summary or progress.',
     help_group=cliutils.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
-@click.option('--verbose',
+@click.option('-v', '--verbose',
     is_flag=True,
     conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
@@ -258,7 +258,7 @@ def validate_depth(ctx, param, value):
 @click.help_option('-h', '--help',
     help_group=cliutils.DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
-@click.option('--about',
+@click.option('-A', '--about',
     is_flag=True,
     is_eager=True,
     expose_value=False,
@@ -266,7 +266,7 @@ def validate_depth(ctx, param, value):
     help='Show information about ScanCode and licensing and exit.',
     help_group=cliutils.DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
-@click.option('--version',
+@click.option('-V', '--version',
     is_flag=True,
     is_eager=True,
     expose_value=False,
