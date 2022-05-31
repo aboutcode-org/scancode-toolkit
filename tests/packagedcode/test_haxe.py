@@ -9,8 +9,6 @@
 
 from os import path
 
-from commoncode.resource import Codebase
-
 from packagedcode import haxe
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES

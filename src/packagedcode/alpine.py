@@ -52,7 +52,11 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        yield from parse_alpine_installed_db(location)
+        yield from parse_alpine_installed_db(
+            location=location,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
 
     @classmethod
     def assemble(cls, package_data, resource, codebase):

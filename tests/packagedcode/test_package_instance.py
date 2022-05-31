@@ -7,16 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-import json
 import os
 
-from packagedcode import models
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
-import pytest
 
 
 class TestPackageAndDependency(PackageTester):

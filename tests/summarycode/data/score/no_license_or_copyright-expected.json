@@ -4,7 +4,7 @@
     "license_clarity_score": {
       "score": 0,
       "declared_license": false,
-      "precise_license_detection": false,
+      "identification_precision": false,
       "has_license_text": false,
       "declared_copyrights": false,
       "conflicting_license_categories": false,

@@ -9,7 +9,7 @@ chardet==4.0.0
 charset-normalizer==2.0.12
 click==8.0.4
 colorama==0.4.4
-commoncode==30.2.0
+commoncode==31.0.0b4
 construct==2.10.68
 container-inspector==31.0.0
 cryptography==36.0.2
@@ -49,7 +49,7 @@ pefile==2021.9.3
 pip-requirements-parser==31.2.0
 pkginfo2==30.0.0
 pluggy==1.0.0
-plugincode==30.0.0
+plugincode==31.0.0b1
 ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==2.0.0b1

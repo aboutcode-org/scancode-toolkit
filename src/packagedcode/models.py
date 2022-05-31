@@ -90,7 +90,9 @@ The key models defined here are:
   dependencies. When implementing a new package type and manifest file format,
   subclass DatafileHandler and implement the parse() and assemble() methods for
   this package datafile format and package type. Then register this class in
-  ``packagedcode.PACKAGE_DATAFILE_HANDLERS``.
+  ``packagedcode.APPLICATION_PACKAGE_DATAFILE_HANDLERS`` if this is an
+  application package or ``packagedcode.SYSTEM_PACKAGE_DATAFILE_HANDLERS`` if
+  this is a system package.
 
 
 Beyond these we have a few secondary models:
@@ -1272,6 +1274,9 @@ class Package(PackageData):
         if not package_data:
             return
 
+        if isinstance(package_data, dict):
+            package_data = PackageData.from_dict(package_data)
+
         if not self.is_compatible(package_data, include_qualifiers=False):
             if TRACE_UPDATE:
                 logger_debug(f'update: {self.purl} not compatible with: {package_data.purl}')
@@ -1324,6 +1329,25 @@ class Package(PackageData):
                 if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
         return True
+
+    def get_packages_files(self, codebase):
+        """
+        Yield all the Resource of this package found in codebase.
+        """
+        package_uid = self.package_uid
+        for resource in codebase.walk():
+            if package_uid in resource.for_packages:
+                yield resource
+
+
+def get_files_for_packages(codebase):
+    """
+    Yield tuple of (Resource, package_uid) for all resources in codebase that are
+    for a package.
+    """
+    for resource in codebase.walk():
+        for package_uid in resource.for_packages:
+            yield resource, package_uid
 
 
 def merge_sequences(list1, list2, **kwargs):

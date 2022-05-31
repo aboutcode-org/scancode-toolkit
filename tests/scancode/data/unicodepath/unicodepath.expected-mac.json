@@ -1,26 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--copyright": true,
-        "--email": true,
-        "--info": true,
-        "--json": "<file>",
-        "--license": true,
-        "--package": true,
-        "--strip-root": true,
-        "--url": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 3
-      }
-    }
-  ],
   "dependencies": [],
   "packages": [],
   "files": [
@@ -44,7 +22,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -59,10 +39,10 @@
       "scan_errors": []
     },
     {
-      "path": "unicodepath/Izgradnja sufiksnog polja koris\u030ctenjem Ka\u0308rkka\u0308inen \u2013 Sandersovog algoritma.pdf",
+      "path": "unicodepath/Izgradnja sufiksnog polja kori\u0161tenjem K\u00e4rkk\u00e4inen \u2013 Sandersovog algoritma.pdf",
       "type": "file",
-      "name": "Izgradnja sufiksnog polja koris\u030ctenjem Ka\u0308rkka\u0308inen \u2013 Sandersovog algoritma.pdf",
-      "base_name": "Izgradnja sufiksnog polja koris\u030ctenjem Ka\u0308rkka\u0308inen \u2013 Sandersovog algoritma",
+      "name": "Izgradnja sufiksnog polja kori\u0161tenjem K\u00e4rkk\u00e4inen \u2013 Sandersovog algoritma.pdf",
+      "base_name": "Izgradnja sufiksnog polja kori\u0161tenjem K\u00e4rkk\u00e4inen \u2013 Sandersovog algoritma",
       "extension": ".pdf",
       "size": 2,
       "sha1": "71853c6197a6a7f222db0f1978c7cb232b87c5ee",
@@ -78,7 +58,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -93,10 +75,10 @@
       "scan_errors": []
     },
     {
-      "path": "unicodepath/\u03e8\u03bf\u0313\u2328",
+      "path": "unicodepath/\u03e8\u1f40\u2328",
       "type": "file",
-      "name": "\u03e8\u03bf\u0313\u2328",
-      "base_name": "\u03e8\u03bf\u0313\u2328",
+      "name": "\u03e8\u1f40\u2328",
+      "base_name": "\u03e8\u1f40\u2328",
       "extension": "",
       "size": 9,
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
@@ -112,7 +94,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -127,10 +111,10 @@
       "scan_errors": []
     },
     {
-      "path": "unicodepath/\u03e8\u03bf\u0313\u2328a",
+      "path": "unicodepath/\u03e8\u1f40\u2328a",
       "type": "file",
-      "name": "\u03e8\u03bf\u0313\u2328a",
-      "base_name": "\u03e8\u03bf\u0313\u2328a",
+      "name": "\u03e8\u1f40\u2328a",
+      "base_name": "\u03e8\u1f40\u2328a",
       "extension": "",
       "size": 9,
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
@@ -146,7 +130,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],

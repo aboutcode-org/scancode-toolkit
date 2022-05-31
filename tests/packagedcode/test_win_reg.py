@@ -69,12 +69,12 @@ class TestWinReg(PackageTester):
         expected_path = '/home/test/c/Program Files/Test Program'
         self.assertEqual(result, expected_path)
 
-    def test_win_reg_end_to_end(self):
+    def test_scan_system_package_end_to_end_installed_win_reg(self):
         test_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')
         expected_file = self.get_test_loc(
-            'win_reg/get_installed_packages_docker/expected-results',
+            'win_reg/get_installed_packages_docker/expected-results.json',
             must_exist=False,
         )
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

@@ -210,16 +210,22 @@ def get_licenses(
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
-def _get_package_data(location, **kwargs):
+def _get_package_data(location, application=True, system=False, **kwargs):
     """
-    Return a mapping of package manifest information detected in the file at `location`.
-
+    Return a mapping of package manifest information detected in the file at ``location``.
+    Include ``application`` packages (such as pypi) and/or ``system`` packages.
     Note that all exceptions are caught if there are any errors while parsing a
     package manifest.
     """
+    assert application or system
     from packagedcode.recognize import recognize_package_data
     try:
-        return recognize_package_data(location) or []
+        return recognize_package_data(
+            location=location,
+            application=application,
+            system=system
+        ) or []
+
     except Exception as e:
         if TRACE:
             logger.error(f'_get_package_data: location: {location!r}: Exception: {e}')
@@ -247,14 +253,22 @@ def get_package_info(location, **kwargs):
     return dict(packages=[p.to_dict() for p in packages])
 
 
-def get_package_data(location, **kwargs):
+def get_package_data(location, application=True, system=False, **kwargs):
     """
-    Return a mapping of package manifest information detected in the file at `location`.
+    Return a mapping of package manifest information detected in the file at
+    `location`.
+    Include ``application`` packages (such as pypi) and/or ``system`` packages.
     """
     if TRACE:
         print('  scancode.api.get_package_data: kwargs', kwargs)
 
-    package_datas = _get_package_data(location, **kwargs) or []
+    package_datas = _get_package_data(
+        location=location,
+        application=application,
+        system=system,
+        **kwargs,
+    ) or []
+
     return dict(package_data=[pd.to_dict() for pd in package_datas])
 
 

@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import posixpath
 from functools import partial
 
 import attr
@@ -27,6 +28,11 @@ from licensedcode.detection import SCANCODE_LICENSEDB_URL
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detections
 from licensedcode.detection import DetectionCategory
+from commoncode.resource import clean_path
+from plugincode.scan import ScanPlugin
+from plugincode.scan import scan_impl
+
+from scancode.api import SCANCODE_LICENSEDB_URL
 
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
@@ -303,15 +309,25 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     ``referenced_filename`` is the path or filename referenced in a
     LicenseMatch detected at ``resource``,
     """
-    # this can be a path
-    ref_filename = file_name(referenced_filename)
-    for child in resource.parent(codebase).children(codebase):
-        if child.name == ref_filename:
-            return child
+    if not resource:
+        return
+
+    parent_path = resource.parent_path()
+    if not parent_path:
+        return
+
+    # this can be a path or a plain name
+    referenced_filename = clean_path(referenced_filename)
+    path = posixpath.join(parent_path, referenced_filename)
+    resource = codebase.get_resource(path=path)
+    if resource:
+        return resource
 
     # Also look at codebase root for referenced file
     # TODO: look at project root identified by key-files
     # instead of codebase scan root
-    for child in codebase.root.children(codebase):
-        if child.name == ref_filename:
-            return child
+    root_path = codebase.root.path
+    path = posixpath.join(root_path, referenced_filename)
+    resource = codebase.get_resource(path=path)
+    if resource:
+        return resource

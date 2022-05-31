@@ -7,7 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
+import sys
 from pathlib import Path
 from pathlib import PureWindowsPath
 
@@ -25,6 +27,22 @@ from packagedcode import models
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
 # TODO: Windows appstore
+
+TRACE = True
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def get_registry_name_key_entry(registry_hive, registry_path):
@@ -338,18 +356,26 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
         """
         segments = cls.root_path_relative_to_datafile_path.split('/')
 
+        has_root = True
         for segment in segments:
             if segment == '..':
                 resource = resource.parent(codebase)
+                if not resource:
+                    has_root = False
+                    break
             else:
                 ress = [r for r in resource.children(codebase) if r.name == segment]
                 if not len(ress) == 1:
-                    return
+                    has_root = False
+                    break
                 resource = ress[0]
 
             if not resource:
-                return
-        return resource
+                has_root = False
+                break
+
+        if has_root:
+            return resource
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):

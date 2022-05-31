@@ -405,7 +405,7 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
                 package.update(
                     package_data=pkgdt,
                     datafile_path=res.path,
-            )
+                )
 
             res.for_packages.append(package_uid)
             res.save(codebase)
@@ -545,7 +545,7 @@ def parse_debian_files_list(location, datasource_id, package_type):
 
             ref = models.FileReference(path=path, md5=md5sum)
             file_references.append(ref)
-    
+
     if not file_references:
         return
 
