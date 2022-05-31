@@ -45,8 +45,7 @@ class LicensesReference(PostScanPlugin):
     """
     codebase_attributes = dict(
         license_references=attr.ib(default=attr.Factory(list)),
-        licensedb_references=attr.ib(default=attr.Factory(list)),
-        license_detection_references=attr.ib(default=attr.Factory(list))
+        licensedb_references=attr.ib(default=attr.Factory(list))
     )
 
     sort_order = 500
@@ -69,7 +68,6 @@ class LicensesReference(PostScanPlugin):
         """
         licexps = []
         license_db_data = []
-        license_detections_by_path = {}
 
         for resource in codebase.walk():
 
@@ -87,7 +85,6 @@ class LicensesReference(PostScanPlugin):
                 get_license_db_reference_data(licence_detections=licence_detections)
             )
 
-            license_detections_by_path[resource.path] = licence_detections
             codebase.save_resource(resource)
 
         license_references = get_license_references(license_expressions=licexps)
@@ -95,9 +92,6 @@ class LicensesReference(PostScanPlugin):
 
         licensedb_references = get_licensedb_references(license_db_data=license_db_data)
         codebase.attributes.licensedb_references.extend(licensedb_references)
-
-        license_detection_references = get_license_detection_references(license_detections_by_path)
-        codebase.attributes.license_detection_references.extend(license_detection_references)
 
 
 def get_license_references(license_expressions, licensing=Licensing()):
