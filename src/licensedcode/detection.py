@@ -753,6 +753,9 @@ def get_matches_from_detections(license_detections):
     `license_detections` list of LicenseDetection dicts.
     """
     license_matches = []
+    if not license_detections:
+        return license_matches
+
     for detection in license_detections:
         license_matches.extend(detection["matches"])
     

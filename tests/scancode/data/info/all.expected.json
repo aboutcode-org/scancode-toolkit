@@ -1,33 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--copyright": true,
-        "--info": true,
-        "--json": "<file>",
-        "--license": true,
-        "--strip-root": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 6
-      }
-    }
-  ],
   "files": [
     {
       "path": "basic",
@@ -50,7 +21,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -81,7 +54,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -112,7 +87,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -143,7 +120,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -174,7 +153,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -205,7 +186,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -236,7 +219,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -267,7 +252,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -299,46 +286,57 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "bsd-original-uc",
-          "score": 100.0,
-          "name": "BSD-Original-UC",
-          "short_name": "BSD-Original-UC",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Regents of the University of California",
-          "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
-          "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-original-uc",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml",
-          "spdx_license_key": "BSD-4-Clause-UC",
-          "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC",
-          "start_line": 25,
-          "end_line": 51,
-          "matched_rule": {
-            "identifier": "bsd-original-uc_3.RULE",
-            "license_expression": "bsd-original-uc",
-            "licenses": [
-              "bsd-original-uc"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 243,
-            "matched_length": 243,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "bsd-original-uc",
+          "spdx_license_expression": "BSD-4-Clause-UC",
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 25,
+              "end_line": 51,
+              "matched_length": 243,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-original-uc",
+              "licensedb_identifier": "bsd-original-uc_3.RULE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 243,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "bsd-original-uc",
+                  "name": "BSD-Original-UC",
+                  "short_name": "BSD-Original-UC",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
+                  "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-original-uc",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml",
+                  "spdx_license_key": "BSD-4-Clause-UC",
+                  "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "license_clues": [],
       "license_expressions": [
         "bsd-original-uc"
+      ],
+      "spdx_license_expressions": [
+        "BSD-4-Clause-UC"
       ],
       "percentage_of_license_text": 4.82,
       "copyrights": [
@@ -388,7 +386,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_clues": [],
       "license_expressions": [],
+      "spdx_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -420,92 +420,76 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "gpl-2.0",
-          "score": 100.0,
-          "name": "GNU General Public License 2.0",
-          "short_name": "GPL 2.0",
-          "category": "Copyleft",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
-          "spdx_license_key": "GPL-2.0-only",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
-          "start_line": 5,
-          "end_line": 12,
-          "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
-            "license_expression": "gpl-2.0 OR bsd-new",
-            "licenses": [
-              "gpl-2.0",
-              "bsd-new"
-            ],
-            "referenced_filenames": [
-              "COPYING",
-              "README"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 50,
-            "matched_length": 50,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
-        },
-        {
-          "key": "bsd-new",
-          "score": 100.0,
-          "name": "BSD-3-Clause",
-          "short_name": "BSD-3-Clause",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Regents of the University of California",
-          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
-          "spdx_license_key": "BSD-3-Clause",
-          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
-          "start_line": 5,
-          "end_line": 12,
-          "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
-            "license_expression": "gpl-2.0 OR bsd-new",
-            "licenses": [
-              "gpl-2.0",
-              "bsd-new"
-            ],
-            "referenced_filenames": [
-              "COPYING",
-              "README"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 50,
-            "matched_length": 50,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "gpl-2.0 OR bsd-new",
+          "spdx_license_expression": "GPL-2.0-only OR BSD-3-Clause",
+          "combination_reasons": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 5,
+              "end_line": 12,
+              "matched_length": 50,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-2.0 OR bsd-new",
+              "licensedb_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
+              "referenced_filenames": [
+                "COPYING",
+                "README"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 50,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                },
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "license_clues": [],
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
+      ],
+      "spdx_license_expressions": [
+        "GPL-2.0-only OR BSD-3-Clause"
       ],
       "percentage_of_license_text": 19.01,
       "copyrights": [
