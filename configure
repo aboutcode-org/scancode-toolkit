@@ -53,12 +53,17 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 
 ################################
+# Install with or without and index. With "--no-index" this is using only local wheels
+# This is an offline mode with no index and no network operations
+NO_INDEX="--no-index "
+
+
+################################
 # Thirdparty package locations and index handling
-# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
-# offline mode for scancode installation with no index at all
+# Find packages from the local thirdparty directory if present
 thirddir=$CFG_ROOT_DIR/thirdparty
 if [[ "$(echo $thirddir/*.whl)x" != "$thirddir/*.whlx" ]]; then
-    PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
+    PIP_EXTRA_ARGS="$NO_INDEX --find-links $CFG_ROOT_DIR/thirdparty"
 fi
 
 
@@ -104,7 +109,7 @@ create_virtualenv() {
             wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
-        if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
+        if [[ $(uname) == 'Darwin' && $(uname -m) == 'arm64' ]]; then
             arch -x86_64 /bin/bash -c "$PYTHON_EXECUTABLE \"$VIRTUALENV_PYZ\" \
                 --wheel embed --pip embed --setuptools embed \
                 --seeder pip \
