@@ -16,9 +16,7 @@ from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode import models
 
-SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
-
-TRACE = False or SCANCODE_DEBUG_PACKAGE_API
+TRACE = False or os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def logger_debug(*args):
@@ -104,5 +102,5 @@ def _parse(
 
             yield pkg
 
-            if SCANCODE_DEBUG_PACKAGE_API:
+            if TRACE:
                 raise
