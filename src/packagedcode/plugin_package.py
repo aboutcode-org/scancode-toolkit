@@ -26,7 +26,7 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 
-TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def logger_debug(*args):
