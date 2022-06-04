@@ -798,15 +798,16 @@ class PipRequirementsFileHandler(BaseDependencyFileHandler):
             dependencies=dependencies,
         )
 
+# TODO: enable nested load
 
-def get_requirements_txt_dependencies(location):
+def get_requirements_txt_dependencies(location, include_nested=False):
     """
     Return a list of DependentPackage found in a requirements file at
     ``location`` or an empty list.
     """
     req_file = pip_requirements_parser.RequirementsFile.from_file(
         filename=location,
-        include_nested=False,
+        include_nested=include_nested,
     )
     if not req_file or not req_file.requirements:
         return []
