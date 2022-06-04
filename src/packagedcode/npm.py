@@ -89,6 +89,9 @@ class BaseNpmHandler(models.DatafileHandler):
                 if not package.license_expression:
                     package.license_expression = compute_normalized_license(package.declared_license)
 
+                # Always yield the package resource in all cases and first!
+                yield package
+
                 root = package_resource.parent(codebase)
                 if root:
                     for npm_res in cls.walk_npm(resource=root, codebase=codebase):
@@ -100,10 +103,8 @@ class BaseNpmHandler(models.DatafileHandler):
                     if package_uid not in package_resource.for_packages:
                         package_resource.for_packages.append(package_uid)
                         package_resource.save(codebase)
-
-                # Always yield the package resource in all cases
                 yield package_resource
-                yield package
+
             else:
                 # we have no package, so deps are not for a specific package uid
                 package_uid = None
