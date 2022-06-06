@@ -9,7 +9,6 @@ from setuptools.config import ConfigMetadataHandler, ConfigOptionsHandler
 
 # app
 from ._base import BaseReader
-from ._cached_property import cached_property
 from ._constants import FIELDS
 
 
@@ -17,7 +16,6 @@ class CfgReader(BaseReader):
     def __init__(self, path: Union[str, Path]):
         self.path = self._normalize_path(path, default_name='setup.cfg')
 
-    @cached_property
     def content(self) -> Dict[str, Any]:
         path = self.path
         if path.name == 'setup.py':

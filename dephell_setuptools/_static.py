@@ -4,26 +4,21 @@ from typing import Any, Dict, Optional
 
 # app
 from ._base import BaseReader
-from ._cached_property import cached_property
 
 
 class StaticReader(BaseReader):
-    @cached_property
     def content(self) -> Dict[str, Any]:
         if not self.call:
             raise LookupError('cannot find setup()')
         result = self._get_call_kwargs(self.call)
         return self._clean(result)
 
-    @cached_property
     def tree(self) -> tuple:
         return tuple(ast.parse(self.path.read_text(encoding='utf8')).body)
 
-    @cached_property
     def call(self) -> Optional[ast.Call]:
         return self._get_call(self.tree)
 
-    @cached_property
     def body(self) -> tuple:
         return tuple(self._get_body(self.tree))
 

@@ -6,7 +6,6 @@ from typing import Any, Callable, Dict, Iterable, Union, Type
 # app
 from ._base import BaseReader
 from ._cfg import CfgReader
-from ._cmd import CommandReader
 from ._static import StaticReader
 
 
@@ -14,8 +13,6 @@ logger = getLogger('dephell_setuptools')
 ALL_READERS = (
     StaticReader,
     CfgReader,
-    CommandReader,
-    PkgInfoReader,
 )
 
 

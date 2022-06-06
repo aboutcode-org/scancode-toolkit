@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import Any, Dict, Union
 
 # app
-from ._cached_property import cached_property
 from ._constants import FIELDS
 
 
@@ -39,6 +38,5 @@ class BaseReader:
 
         return result
 
-    @cached_property
     def content(self) -> Dict[str, Any]:
         raise NotImplementedError
