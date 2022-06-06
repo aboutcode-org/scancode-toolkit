@@ -7,7 +7,6 @@ from typing import Any, Callable, Dict, Iterable, Union, Type
 from ._base import BaseReader
 from ._cfg import CfgReader
 from ._cmd import CommandReader
-from ._pkginfo import PkgInfoReader
 from ._static import StaticReader
 
 
