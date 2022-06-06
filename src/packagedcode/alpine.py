@@ -140,6 +140,17 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         )
 
 
+def get_installed_packages(root_dir, **kwargs):
+    """
+    Yield Package objects given a ``root_dir`` rootfs directory.
+    """
+    installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
+    if not path.exists(installed_file_loc):
+        return
+    for package in parse_alpine_installed_db(installed_file_loc):
+        yield package
+
+        
 def parse_alpine_installed_db(location, datasource_id, package_type):
     """
     Yield PackageData objects from an installed database file at `location`
