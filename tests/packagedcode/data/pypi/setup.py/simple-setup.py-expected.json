@@ -14,7 +14,7 @@
         "type": "person",
         "role": "author",
         "name": "ScanCode",
-        "email": null,
+        "email": "info@scancode.io",
         "url": null
       }
     ],
@@ -238,6 +238,96 @@
         "purl": "pkg:pypi/requests",
         "extracted_requirement": "<3.0.0,>=2.7.0",
         "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/certifi",
+        "extracted_requirement": null,
+        "scope": "base",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/setuptools",
+        "extracted_requirement": null,
+        "scope": "base",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/wheel",
+        "extracted_requirement": null,
+        "scope": "base",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pip",
+        "extracted_requirement": null,
+        "scope": "base",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/wincertstore",
+        "extracted_requirement": null,
+        "scope": "base",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/execnet",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/py",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-xdist",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/bumpversion",
+        "extracted_requirement": null,
+        "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,

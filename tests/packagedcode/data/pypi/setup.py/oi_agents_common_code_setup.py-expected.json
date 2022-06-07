@@ -14,7 +14,7 @@
         "type": "person",
         "role": "author",
         "name": "__author__",
-        "email": null,
+        "email": "juga@riseup.net",
         "url": null
       }
     ],
@@ -51,7 +51,26 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/ipython",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/coverage",
+        "extracted_requirement": null,
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/agents_common",
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/agents_common/json",

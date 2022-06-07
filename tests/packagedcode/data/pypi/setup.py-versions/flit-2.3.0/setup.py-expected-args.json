@@ -1,0 +1,9 @@
+{
+  "name": "flit",
+  "version": "2.3.0",
+  "description": "A simple packaging tool for simple packages.",
+  "author": "Thomas Kluyver",
+  "author_email": "thomas@kluyver.me.uk",
+  "url": "https://github.com/takluyver/flit",
+  "python_requires": ">=3.5"
+}

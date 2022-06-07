@@ -98,7 +98,7 @@ def _parse(
                 primary_language=handler.default_primary_language,
             )
             if TRACE:
-                logger_debug('_parse: NotImplementedError: parsed', parsed)
+                logger_debug('_parse: NotImplementedError: handler', handler)
 
             yield pkg
 

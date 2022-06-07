@@ -14,7 +14,7 @@
         "type": "person",
         "role": "author",
         "name": "Test",
-        "email": null,
+        "email": "test@gmail.com",
         "url": null
       }
     ],

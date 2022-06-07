@@ -65,7 +65,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class BasePypiHandler(models.DatafileHandler):
@@ -227,17 +227,18 @@ class BaseExtractedPythonLayout(BasePypiHandler):
         else:
             package_uid = None
 
-        for sibling in package_resource.siblings(codebase):
-            if sibling.name in datafile_name_patterns:
-                yield from yield_dependencies_from_package_resource(
-                    resource=sibling,
-                    package_uid=package_uid
-                )
+        if package_resource:
+            for sibling in package_resource.siblings(codebase):
+                if sibling and sibling.name in datafile_name_patterns:
+                    yield from yield_dependencies_from_package_resource(
+                        resource=sibling,
+                        package_uid=package_uid
+                    )
 
-                if package_uid and package_uid not in sibling.for_packages:
-                    sibling.for_packages.append(package_uid)
-                    sibling.save(codebase)
-                yield sibling
+                    if package_uid and package_uid not in sibling.for_packages:
+                        sibling.for_packages.append(package_uid)
+                        sibling.save(codebase)
+                    yield sibling
 
     @classmethod
     def walk_pypi(cls, resource, codebase):
@@ -439,7 +440,7 @@ def parse_metadata(location, datasource_id, package_type):
     name = get_attribute(meta, 'Name')
     version = get_attribute(meta, 'Version')
 
-    urls = get_urls(metainfo=meta, name=name, version=version)
+    urls, extra_data = get_urls(metainfo=meta, name=name, version=version)
 
     dependencies = get_dist_dependencies(dist)
 
@@ -457,6 +458,7 @@ def parse_metadata(location, datasource_id, package_type):
         parties=get_parties(meta),
         dependencies=dependencies,
         file_references=file_references,
+        extra_data=extra_data,
         **urls,
     )
 
@@ -582,7 +584,7 @@ class PypiSdistArchiveHandler(BasePypiHandler):
 
         name = sdist.name
         version = sdist.version
-        urls = get_urls(metainfo=sdist, name=name, version=version)
+        urls, extra_data = get_urls(metainfo=sdist, name=name, version=version)
 
         yield models.PackageData(
             datasource_id=cls.datasource_id,
@@ -594,6 +596,7 @@ class PypiSdistArchiveHandler(BasePypiHandler):
             declared_license=get_declared_license(sdist),
             keywords=get_keywords(sdist),
             parties=get_parties(sdist),
+            extra_data=extra_data,
             **urls,
         )
 
@@ -619,7 +622,12 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             # search for possible dunder versions here and elsewhere
             version = detect_version_attribute(location)
 
-        urls = get_urls(metainfo=setup_args, name=name, version=version)
+        urls, extra_data = get_urls(metainfo=setup_args, name=name, version=version)
+
+        dependencies = get_setup_py_dependencies(setup_args)
+        python_requires = get_setup_py_python_requires(setup_args)
+        extra_data.update(python_requires)
+
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -627,10 +635,11 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             name=name,
             version=version,
             description=get_description(setup_args),
-            parties=get_parties(setup_args),
+            parties=get_setup_parties(setup_args),
             declared_license=get_declared_license(setup_args),
-            dependencies=get_setup_py_dependencies(setup_args),
+            dependencies=dependencies,
             keywords=get_keywords(setup_args),
+            extra_data=extra_data,
             **urls,
         )
 
@@ -790,20 +799,23 @@ class PipRequirementsFileHandler(BaseDependencyFileHandler):
 
     @classmethod
     def parse(cls, location):
-        dependencies = get_requirements_txt_dependencies(location=location)
+        dependencies, extra_data = get_requirements_txt_dependencies(location=location)
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
+            extra_data=extra_data,
         )
 
 # TODO: enable nested load
 
+
 def get_requirements_txt_dependencies(location, include_nested=False):
     """
-    Return a list of DependentPackage found in a requirements file at
-    ``location`` or an empty list.
+    Return a two-tuple of (list of deps, mapping of extra data) list of
+    DependentPackage found in a requirements file at ``location`` or tuple of
+    ([], {})
     """
     req_file = pip_requirements_parser.RequirementsFile.from_file(
         filename=location,
@@ -812,9 +824,12 @@ def get_requirements_txt_dependencies(location, include_nested=False):
     if not req_file or not req_file.requirements:
         return []
 
-    dependent_packages = []
+    # for now we ignore errors
+    extra_data = {}
+    for opt in req_file.options:
+        extra_data.update(opt.options)
 
-    # for now we ignore plain options and errors
+    dependent_packages = []
     for req in req_file.requirements:
 
         if req.name:
@@ -853,7 +868,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
             )
         )
 
-    return dependent_packages
+    return dependent_packages, extra_data
 
 
 def get_attribute(metainfo, name, multiple=False):
@@ -1021,14 +1036,24 @@ def get_keywords(metainfo):
     return keywords
 
 
-def get_parties(metainfo):
+def get_parties(
+    metainfo,
+    author_key='Author',
+    author_email_key='Author-email',
+    maintainer_key='Maintainer',
+    maintainer_email_key='Maintainer-email',
+
+):
     """
     Return a list of parties found in a ``metainfo`` object or mapping.
+    Uses the provided keys with a default to key names used in METADATA.
+    setup.py and setup.cfg use lower case valid Python identifiers instead.
     """
     parties = []
 
-    author = get_attribute(metainfo, 'Author')
-    author_email = get_attribute(metainfo, 'Author-email')
+    author = get_attribute(metainfo, author_key)
+
+    author_email = get_attribute(metainfo, author_email_key)
     if author or author_email:
         parties.append(models.Party(
             type=models.party_person,
@@ -1037,8 +1062,8 @@ def get_parties(metainfo):
             email=author_email or None,
         ))
 
-    maintainer = get_attribute(metainfo, 'Maintainer')
-    maintainer_email = get_attribute(metainfo, 'Maintainer-email')
+    maintainer = get_attribute(metainfo, maintainer_key)
+    maintainer_email = get_attribute(metainfo, maintainer_email_key)
     if maintainer or maintainer_email:
         parties.append(models.Party(
             type=models.party_person,
@@ -1050,17 +1075,38 @@ def get_parties(metainfo):
     return parties
 
 
+def get_setup_parties(setup_kwargs):
+    """
+    Return a list of parties found in a ``setup_kwargs`` mapping of data found
+    in setup.py or setup.cfg.
+    """
+    return get_parties(
+        metainfo=setup_kwargs,
+        author_key='author',
+        author_email_key='author_email',
+        maintainer_key='maintainer',
+        maintainer_email_key='maintainer_email',
+    )
+
+
+def get_setup_py_python_requires(setup_args):
+    """
+    Return a mapping of {python_requires: value} or an empty mapping found in a
+    ``setup_args`` mapping of setup.py arguments.
+    """
+    python_requires = setup_args.get('python_requires')
+    if python_requires:
+        return dict(python_requires=python_requires)
+    else:
+        return {}
+
+
 def get_setup_py_dependencies(setup_args):
     """
     Return a list of DependentPackage found in a ``setup_args`` mapping of
     setup.py arguments or an empty list.
     """
     dependencies = []
-
-    python_requires = setup_args.get('python_requires')
-    if python_requires:
-        # FIXME: handle python_requires = >=3.6.*
-        pass
 
     install_requires = setup_args.get('install_requires')
     dependencies.extend(get_requires_dependencies(install_requires, default_scope='install'))
@@ -1075,7 +1121,7 @@ def get_setup_py_dependencies(setup_args):
         get_requires_dependencies(setup_requires, default_scope='setup')
     )
 
-    extras_require = setup_args.get('extras_require', {})
+    extras_require = setup_args.get('extras_require') or {}
     for scope, requires in extras_require.items():
         dependencies.extend(
             get_requires_dependencies(requires, default_scope=scope)
@@ -1257,6 +1303,31 @@ def parse_with_dparse2(location, file_name=None):
     return dependent_packages
 
 
+def is_setup_call(statement):
+    """
+    Return if the AST ``statement`` is a call to the setup() function.
+    """
+    return (
+        isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
+        and isinstance(statement.value, ast.Call)
+        and (
+            # we look for setup and main as this is used sometimes instead of setup()
+            (
+                isinstance(statement.value.func, ast.Name)
+                and statement.value.func.id in ('setup', 'main')
+            )
+            or
+            # we also look for setuptools.setup when used instead of setup()
+            (
+                isinstance(statement.value.func, ast.Attribute)
+                and statement.value.func.attr == 'setup'
+                and isinstance(statement.value.func.value, ast.Name)
+                and statement.value.func.value.id == 'setuptools'
+            )
+        )
+    )
+
+
 def get_setup_py_args(location):
     """
     Return a mapping of arguments passed to a setup.py setup() function.
@@ -1271,13 +1342,9 @@ def get_setup_py_args(location):
     for statement in tree.body:
         # We only care about function calls or assignments to functions named
         # `setup` or `main`
-        if not (
-            isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
-            and isinstance(statement.value, ast.Call)
-            and isinstance(statement.value.func, ast.Name)
-            # we also look for main as sometimes this is used instead of setup()
-            and statement.value.func.id in ('setup', 'main')
-        ):
+
+        # TODO: also collect top level variables assigned later as arguments values
+        if not is_setup_call(statement):
             continue
 
         # Process the arguments to the setup function
@@ -1296,8 +1363,26 @@ def get_setup_py_args(location):
                 ]
                 setup_args[arg_name] = value
 
-            # TODO:  what if isinstance(kw.value, ast.Dict)
-            # or an expression like a call to version=get_version or version__version__
+            elif isinstance(kw.value, ast.Dict):
+                # we only collect simple name/value and name/[values] constructs
+                keys = [elt.value for elt in kw.value.keys]
+                values = []
+                for val in kw.value.values:
+                    if isinstance(val, ast.Str):
+                        values.append(val.s)
+                    elif isinstance(val, (ast.List, ast.Tuple, ast.Set,)):
+                        vals = [
+                            elt.s for elt in val.elts
+                            if not isinstance(elt, ast.Call)
+                        ]
+                        values.append(vals)
+                    else:
+                        values.append('SCANCODE: CANNOT PARSE')
+
+                mapping = dict(zip(keys, values))
+                setup_args[arg_name] = mapping
+
+            # TODO:  an expression like a call to version=get_version or version__version__
 
     return setup_args
 
@@ -1327,11 +1412,12 @@ def get_pypi_urls(name, version):
     )
 
 
-def get_urls(metainfo, name, version, extra_data=None):
+def get_urls(metainfo, name, version):
     """
-    Return a mapping for URLs of this package:
-    - as plain name/values for URL attributes known in PackageData
-    - as a nested extra_data: mapping for other URLs (possibly updating extra_data if provided).
+    Return a mapping of standard URLs and a mapping of extra-data URls for URLs
+    of this package:
+    - standard URLs are for URL attributes known in PackageData
+    - extra_data for other URLs (possibly updating extra_data if provided).
     """
     # Misc URLs to possibly track
     # Project-URL: Release notes
@@ -1367,7 +1453,7 @@ def get_urls(metainfo, name, version, extra_data=None):
     # Project-URL: Twine source
     # Project-URL: Say Thanks!
 
-    extra_data = extra_data or {}
+    extra_data = {}
     urls = get_pypi_urls(name, version)
 
     def add_url(_url, _utype=None, _attribute=None):
@@ -1395,45 +1481,49 @@ def get_urls(metainfo, name, version, extra_data=None):
         or []
     )
 
-    for url in project_urls:
-        utype, _, uvalue = url.partition(',')
-        uvalue = uvalue.strip()
-        utype = utype.strip()
-        utypel = utype.lower()
-        if utypel in (
-            'tracker',
-            'bug reports',
-            'github: issues',
-            'bug tracker',
-            'issues',
-            'issue tracker',
-        ):
-            add_url(url, _utype=utype, _attribute='bug_tracking_url')
+    if isinstance(project_urls, list):
+        # these come from METADATA and we convert them back to a mapping
+        project_urls = [url.partition(', ') for url in project_urls]
+        project_urls = {
+            utype.strip(): uvalue.strip()
+            for utype, _, uvalue in project_urls
+        }
+    if isinstance(project_urls, dict):
+        for utype, url in project_urls.items():
+            utypel = utype.lower()
+            if utypel in (
+                'tracker',
+                'bug reports',
+                'github: issues',
+                'bug tracker',
+                'issues',
+                'issue tracker',
+            ):
+                add_url(url, _utype=utype, _attribute='bug_tracking_url')
 
-        elif utypel in (
-            'source',
-            'source code',
-            'code',
-        ):
-            add_url(url, _utype=utype, _attribute='code_view_url')
+            elif utypel in (
+                'source',
+                'source code',
+                'code',
+            ):
+                add_url(url, _utype=utype, _attribute='code_view_url')
 
-        elif utypel in ('github', 'gitlab', 'github: repo', 'repository'):
-            add_url(url, _utype=utype, _attribute='vcs_url')
+            elif utypel in ('github', 'gitlab', 'github: repo', 'repository'):
+                add_url(url, _utype=utype, _attribute='vcs_url')
 
-        elif utypel in ('website', 'homepage', 'home',):
-            add_url(url, _utype=utype, _attribute='homepage_url')
+            elif utypel in ('website', 'homepage', 'home',):
+                add_url(url, _utype=utype, _attribute='homepage_url')
 
-        else:
-            add_url(url, _utype=utype)
+            else:
+                add_url(url, _utype=utype)
 
-    # FIXME: this may not be the actual correct package download URL, so for now
-    # we incorrectly set this as the vcs_url
+    # FIXME: this may not be the actual correct package download URL, so we keep this as an extra URL
     download_url = get_attribute(metainfo, 'Download-URL')
-    add_url(download_url, _utype='Download-URL', _attribute='vcs_url')
+    if not download_url:
+        download_url = get_attribute(metainfo, 'download_url')
+    add_url(download_url, _utype='Download-URL')
 
-    if extra_data:
-        urls['extra_data'] = extra_data
-    return urls
+    return urls, extra_data
 
 
 def find_pattern(location, pattern):

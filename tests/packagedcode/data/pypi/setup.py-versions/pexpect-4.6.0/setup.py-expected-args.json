@@ -1,0 +1,42 @@
+{
+  "name": "pexpect",
+  "packages": [
+    "pexpect"
+  ],
+  "package_data": {
+    "pexpect": [
+      "bashrc.sh"
+    ]
+  },
+  "description": "Pexpect allows easy control of interactive console applications.",
+  "author": "Noah Spurrier; Thomas Kluyver; Jeff Quast",
+  "author_email": "noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com",
+  "url": "https://pexpect.readthedocs.io/",
+  "license": "ISC license",
+  "platforms": "UNIX",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Topic :: System",
+    "Topic :: System :: Archiving :: Packaging",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Shells",
+    "Topic :: System :: Software Distribution",
+    "Topic :: Terminals"
+  ],
+  "install_requires": [
+    "ptyprocess>=0.5"
+  ]
+}
