@@ -493,6 +493,121 @@ class DebianMd5sumFilelistInPackageHandler(models.DatafileHandler):
             return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
 
 
+class DebianPackageData(models.PackageData):
+    @property
+    def multi_arch(self):
+        """
+        Multi-Arch value from a status or spec file.
+        """
+        return self.extra_data.get('multi_arch')
+
+    def populate_installed_files(self, var_lib_dpkg_info_dir):
+        """
+        Populate the installed_file  attribute given a `var_lib_dpkg_info_dir`
+        path to a Debian /var/lib/dpkg/info directory.
+        """
+        self.installed_files = self.get_list_of_installed_files(var_lib_dpkg_info_dir)
+
+    def get_list_of_installed_files(self, var_lib_dpkg_info_dir):
+        """
+        Return a list of InstalledFile given a `var_lib_dpkg_info_dir` path to a
+        Debian /var/lib/dpkg/info directory where <package>.list and/or
+        <package>.md5sums files can be found for a package name.
+        We first use the .md5sums file and switch to the .list file otherwise.
+        The .list files also contains directories.
+        """
+
+        # Multi-Arch can be: foreign, same, allowed or empty
+        # We only need to adjust the md5sum path in the case of `same`
+        if self.multi_arch == 'same':
+            arch = '_{}'.format(self.qualifiers.get('arch'))
+        else:
+            arch = ''
+
+        package_md5sum = '{}{}.md5sums'.format(self.name, arch)
+        md5sum_file = os.path.join(var_lib_dpkg_info_dir, package_md5sum)
+
+        package_list = '{}{}.list'.format(self.name, arch)
+        list_file = os.path.join(var_lib_dpkg_info_dir, package_list)
+
+        has_md5 = os.path.exists(md5sum_file)
+        has_list = os.path.exists(list_file)
+
+        if not (has_md5 or has_list):
+            return []
+
+        installed_files = []
+        directories = set()
+        if has_md5:
+            with open(md5sum_file) as info_file:
+                for line in info_file:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    md5sum, _, path = line.partition(' ')
+                    md5sum = md5sum.strip()
+
+                    path = path.strip()
+                    if not path.startswith('/'):
+                        path = '/' + path
+
+                    # we ignore dirs in general, and we ignore these that would
+                    # be created a plain dir when we can
+                    if path in ignored_root_dirs:
+                        continue
+
+                    installed_file = models.FileReference(path=path, md5=md5sum)
+
+                    installed_files.append(installed_file)
+                    directories.add(os.path.dirname(path))
+
+        elif has_list:
+            with open(list_file) as info_file:
+                for line in info_file:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    md5sum = None
+                    path = line
+
+                    path = path.strip()
+                    if not path.startswith('/'):
+                        path = '/' + path
+
+                    # we ignore dirs in general, and we ignore these that would
+                    # be created a plain dir when we can
+                    if path in ignored_root_dirs:
+                        continue
+
+                    installed_file = models.FileReference(path=path, md5=md5sum)
+                    if installed_file not in installed_files:
+                        installed_files.append(installed_file)
+                    directories.add(os.path.dirname(path))
+
+        # skip directories when possible
+        installed_files = [f for f in installed_files if f.path not in directories]
+
+        return installed_files
+
+    def get_copyright_file_path(self, root_dir):
+        """
+        Given a root_dir path to a filesystem root, return the path to a copyright file
+        for this Package
+        """
+        # We start by looking for a copyright file stored in a directory named after the
+        # package name. Otherwise we look for a copyright file stored in a source package
+        # name.
+        candidate_names = [self.name]
+        candidate_names.extend(PackageURL.from_string(sp).name for sp in self.source_packages)
+
+        copyright_file = os.path.join(root_dir, 'usr/share/doc/{}/copyright')
+
+        for name in candidate_names:
+            copyright_loc = copyright_file.format(name)
+            if os.path.exists(copyright_loc):
+                return copyright_loc
+
+
 def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **kwargs):
     """
     Yield installed Package objects given a ``root_dir`` rootfs directory.
@@ -665,7 +780,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 
         source_packages.append(source_pkg_purl)
 
-    return models.PackageData(
+    return DebianPackageData(
         datasource_id=datasource_id,
         type=package_type,
         namespace=distro,

@@ -381,7 +381,7 @@ class RpmArchiveHandler(models.DatafileHandler):
         yield package
 
 
-def get_installed_packages(root_dir, datasource_id='rpm_installed_system_package', detect_licenses=False, **kwargs):
+def get_installed_packages(root_dir, datasource_id='rpm_installed_system_package', package_type='rpm', **kwargs):
     """
     Yield Package objects given a ``root_dir`` rootfs directory.
     """
@@ -392,7 +392,7 @@ def get_installed_packages(root_dir, datasource_id='rpm_installed_system_package
 
     # dump the rpmdb to XMLish
     xmlish_loc = collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
-    return parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
+    return parse_rpm_xmlish(xmlish_loc, datasource_id=datasource_id, package_type=package_type)
 
 
 ############################################################################

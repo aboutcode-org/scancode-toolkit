@@ -150,8 +150,8 @@ def get_installed_packages(root_dir, **kwargs):
     for package in parse_alpine_installed_db(installed_file_loc):
         yield package
 
-        
-def parse_alpine_installed_db(location, datasource_id, package_type):
+
+def parse_alpine_installed_db(location, datasource_id='alpine_installed_system_package', package_type='alpine'):
     """
     Yield PackageData objects from an installed database file at `location`
     or None. Typically found at '/lib/apk/db/installed' in an Alpine
