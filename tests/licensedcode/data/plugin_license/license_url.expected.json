@@ -3,21 +3,20 @@
     {
       "path": "license_url",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
       "path": "license_url/apache-1.0.txt",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "spdx_license_expression": "Apache-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -61,12 +60,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-1.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-1.0"
-      ],
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
       "percentage_of_license_text": 97.61,
       "scan_errors": []
     }

@@ -3,10 +3,10 @@
     {
       "path": "basic.tgz",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -18,10 +18,10 @@
     {
       "path": "basic.tgz/basic",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -33,10 +33,10 @@
     {
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -48,10 +48,10 @@
     {
       "path": "basic.tgz/basic/dir",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -63,10 +63,10 @@
     {
       "path": "basic.tgz/basic/dir/e.tar",
       "type": "file",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -78,10 +78,10 @@
     {
       "path": "basic.tgz/basic/dir/subdir",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -93,10 +93,10 @@
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
       "type": "file",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -108,10 +108,10 @@
     {
       "path": "basic.tgz/basic/dir2",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -123,10 +123,10 @@
     {
       "path": "basic.tgz/basic/dir2/subdir",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -138,11 +138,10 @@
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "bsd-original-uc",
-          "spdx_license_expression": "BSD-4-Clause-UC",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -186,12 +185,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "bsd-original-uc"
-      ],
-      "spdx_license_expressions": [
-        "BSD-4-Clause-UC"
-      ],
+      "detected_license_expression": "bsd-original-uc",
+      "detected_license_expression_spdx": "BSD-4-Clause-UC",
       "percentage_of_license_text": 4.82,
       "copyrights": [
         {
@@ -233,10 +228,10 @@
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -254,11 +249,10 @@
     {
       "path": "basic.tgz/basic/main.c",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "gpl-2.0 OR bsd-new",
-          "spdx_license_expression": "GPL-2.0-only OR BSD-3-Clause",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -321,12 +315,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "gpl-2.0 OR bsd-new"
-      ],
-      "spdx_license_expressions": [
-        "GPL-2.0-only OR BSD-3-Clause"
-      ],
+      "detected_license_expression": "gpl-2.0 OR bsd-new",
+      "detected_license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
       "percentage_of_license_text": 19.01,
       "copyrights": [
         {

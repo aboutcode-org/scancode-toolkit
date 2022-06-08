@@ -56,10 +56,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -93,11 +93,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -141,12 +140,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
@@ -192,11 +187,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -240,12 +234,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
@@ -291,11 +281,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -339,12 +328,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
@@ -390,10 +375,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -427,11 +412,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -475,12 +459,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {

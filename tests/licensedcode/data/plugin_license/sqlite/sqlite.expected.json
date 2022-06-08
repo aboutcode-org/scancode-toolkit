@@ -3,21 +3,20 @@
     {
       "path": "sqlite.tgz",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
       "path": "sqlite.tgz/sqlite3-binding2.c",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -62,8 +61,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -108,8 +106,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -154,8 +151,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -200,8 +196,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -246,8 +241,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -292,8 +286,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -338,8 +331,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -384,8 +376,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -430,8 +421,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -476,8 +466,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -522,8 +511,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -568,8 +556,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -614,8 +601,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -660,8 +646,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -706,8 +691,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -752,8 +736,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -798,8 +781,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -844,8 +826,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -890,8 +871,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -936,8 +916,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -982,8 +961,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1028,8 +1006,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1074,8 +1051,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1120,8 +1096,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1166,8 +1141,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1212,8 +1186,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1258,8 +1231,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1304,8 +1276,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1350,8 +1321,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1396,8 +1366,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1442,8 +1411,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1488,8 +1456,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1534,8 +1501,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1580,8 +1546,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1626,8 +1591,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1672,8 +1636,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1718,8 +1681,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1764,8 +1726,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1810,8 +1771,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1856,8 +1816,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1902,8 +1861,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1948,8 +1906,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1994,8 +1951,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2040,8 +1996,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2086,8 +2041,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2132,8 +2086,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2178,8 +2131,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2224,8 +2176,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2270,8 +2221,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2316,8 +2266,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2362,8 +2311,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2408,8 +2356,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2454,8 +2401,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2500,8 +2446,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2546,8 +2491,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2592,8 +2536,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2638,8 +2581,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2684,8 +2626,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2730,8 +2671,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2776,8 +2716,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2822,8 +2761,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2868,8 +2806,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2914,8 +2851,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2960,8 +2896,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3006,8 +2941,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3052,8 +2986,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3098,8 +3031,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3144,8 +3076,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3190,8 +3121,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3236,8 +3166,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3282,8 +3211,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3328,8 +3256,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3374,8 +3301,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3420,8 +3346,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3466,8 +3391,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3512,8 +3436,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3558,8 +3481,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3604,8 +3526,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3650,8 +3571,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3696,8 +3616,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3742,8 +3661,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3788,8 +3706,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3834,8 +3751,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3880,8 +3796,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3926,8 +3841,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3972,8 +3886,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4018,8 +3931,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4064,8 +3976,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4110,8 +4021,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4156,8 +4066,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4202,8 +4111,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4248,8 +4156,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4294,8 +4201,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4340,8 +4246,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4386,8 +4291,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4432,8 +4336,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4478,8 +4381,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4524,8 +4426,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4570,8 +4471,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4616,8 +4516,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4662,8 +4561,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4708,8 +4606,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4754,8 +4651,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4800,8 +4696,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4846,8 +4741,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4892,8 +4786,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4938,8 +4831,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4984,8 +4876,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5030,8 +4921,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5076,8 +4966,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5122,8 +5011,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5168,8 +5056,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5214,8 +5101,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5260,8 +5146,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5306,8 +5191,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5352,8 +5236,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5398,8 +5281,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5444,8 +5326,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5490,8 +5371,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5536,8 +5416,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5582,8 +5461,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5628,8 +5506,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5674,8 +5551,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5720,8 +5596,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5766,8 +5641,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5812,8 +5686,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5858,8 +5731,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5904,8 +5776,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5950,8 +5821,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -5996,8 +5866,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6042,8 +5911,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6088,8 +5956,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6134,8 +6001,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6180,8 +6046,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6226,8 +6091,7 @@
         },
         {
           "license_expression": "blessing",
-          "spdx_license_expression": "blessing",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -6272,282 +6136,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing"
-      ],
-      "spdx_license_expressions": [
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing",
-        "blessing"
-      ],
+      "detected_license_expression": "blessing",
+      "detected_license_expression_spdx": "blessing",
       "percentage_of_license_text": 36.67,
       "scan_errors": []
     }

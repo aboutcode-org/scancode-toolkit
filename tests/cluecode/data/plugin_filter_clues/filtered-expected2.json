@@ -19,11 +19,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "pygres-2.2",
-          "spdx_license_expression": "LicenseRef-scancode-pygres-2.2",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -67,12 +66,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "pygres-2.2"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-pygres-2.2"
-      ],
+      "detected_license_expression": "pygres-2.2",
+      "detected_license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
       "percentage_of_license_text": 69.38,
       "copyrights": [
         {

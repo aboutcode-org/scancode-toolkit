@@ -14,7 +14,12 @@
     },
     "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems, Inc.",
     "primary_language": "",
-    "other_license_expressions": [],
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
     "other_holders": [],
     "other_languages": []
   },
@@ -38,10 +43,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -77,11 +82,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "jetty",
-          "spdx_license_expression": "LicenseRef-scancode-jetty",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -125,12 +129,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "jetty"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-jetty"
-      ],
+      "detected_license_expression": "jetty",
+      "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
       "percentage_of_license_text": 100.0,
       "copyrights": [
         {

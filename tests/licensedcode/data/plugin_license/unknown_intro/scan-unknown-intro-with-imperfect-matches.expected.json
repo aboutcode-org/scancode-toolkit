@@ -3,11 +3,10 @@
     {
       "path": "LICENSE.md",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -126,12 +125,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 88.02,
       "scan_errors": []
     }

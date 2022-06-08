@@ -3,11 +3,10 @@
     {
       "path": "README.md",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "epl-2.0",
-          "spdx_license_expression": "EPL-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -163,12 +162,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "epl-2.0"
-      ],
-      "spdx_license_expressions": [
-        "EPL-2.0"
-      ],
+      "detected_license_expression": "epl-2.0",
+      "detected_license_expression_spdx": "EPL-2.0",
       "percentage_of_license_text": 76.74,
       "scan_errors": []
     }

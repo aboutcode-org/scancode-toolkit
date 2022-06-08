@@ -19,10 +19,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "is_license_text": false,
       "files_count": 5,
@@ -49,11 +49,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "spdx_license_expression": "Apache-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -98,12 +97,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-1.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-1.0"
-      ],
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
       "percentage_of_license_text": 96.08,
       "is_license_text": true,
       "files_count": 0,
@@ -130,11 +125,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "spdx_license_expression": "Apache-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -179,12 +173,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-1.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-1.0"
-      ],
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
       "percentage_of_license_text": 40.98,
       "is_license_text": false,
       "files_count": 0,
@@ -211,11 +201,10 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "ja-sig",
-          "spdx_license_expression": "LicenseRef-scancode-ja-sig",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -260,8 +249,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -308,14 +296,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "ja-sig",
-        "apache-2.0"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-ja-sig",
-        "Apache-2.0"
-      ],
+      "detected_license_expression": "ja-sig AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-ja-sig AND Apache-2.0",
       "percentage_of_license_text": 91.69,
       "is_license_text": true,
       "files_count": 0,
@@ -342,11 +324,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -423,12 +404,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
-      ],
-      "spdx_license_expressions": [
-        "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB"
-      ],
+      "detected_license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "detected_license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "percentage_of_license_text": 100.0,
       "is_license_text": true,
       "files_count": 0,
@@ -455,11 +432,10 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "ja-sig",
-          "spdx_license_expression": "LicenseRef-scancode-ja-sig",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -504,8 +480,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -552,14 +527,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "ja-sig",
-        "apache-2.0"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-ja-sig",
-        "Apache-2.0"
-      ],
+      "detected_license_expression": "ja-sig AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-ja-sig AND Apache-2.0",
       "percentage_of_license_text": 30.71,
       "is_license_text": false,
       "files_count": 0,

@@ -3,11 +3,10 @@
     {
       "path": "LICENSE",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -52,23 +51,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     },
     {
       "path": "license-notice.txt",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -152,12 +146,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 0.2,
       "scan_errors": []
     }

@@ -3,11 +3,10 @@
     {
       "path": "apache-1.0.txt",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "spdx_license_expression": "Apache-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -51,23 +50,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-1.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-1.0"
-      ],
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
       "percentage_of_license_text": 97.61,
       "scan_errors": []
     },
     {
       "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -143,12 +137,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
-      ],
-      "spdx_license_expressions": [
-        "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB"
-      ],
+      "detected_license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "detected_license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     }

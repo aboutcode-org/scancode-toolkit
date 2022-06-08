@@ -3,11 +3,10 @@
     {
       "path": "license-notice.txt",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "unknown-license-reference",
-          "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -54,12 +53,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "unknown-license-reference"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-unknown-license-reference"
-      ],
+      "detected_license_expression": "unknown-license-reference",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "percentage_of_license_text": 0.2,
       "scan_errors": []
     }

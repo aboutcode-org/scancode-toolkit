@@ -741,7 +741,7 @@
         {
           "license_expression": "jboss-eula",
           "spdx_license_expression": "LicenseRef-scancode-jboss-eula",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -843,7 +843,7 @@
         {
           "license_expression": "lgpl-2.1",
           "spdx_license_expression": "LGPL-2.1-only",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -995,7 +995,7 @@
         {
           "license_expression": "apache-1.1",
           "spdx_license_expression": "Apache-1.1",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1103,7 +1103,7 @@
         {
           "license_expression": "apache-2.0",
           "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1193,7 +1193,7 @@
         {
           "license_expression": "mit",
           "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1295,7 +1295,7 @@
         {
           "license_expression": "cpl-1.0",
           "spdx_license_expression": "CPL-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1385,7 +1385,7 @@
         {
           "license_expression": "lgpl-2.1",
           "spdx_license_expression": "LGPL-2.1-only",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1537,7 +1537,7 @@
         {
           "license_expression": "lgpl-2.1-plus",
           "spdx_license_expression": "LGPL-2.1-or-later",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1645,7 +1645,7 @@
         {
           "license_expression": "cc-by-2.5",
           "spdx_license_expression": "CC-BY-2.5",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1753,7 +1753,7 @@
         {
           "license_expression": "lgpl-2.1-plus",
           "spdx_license_expression": "LGPL-2.1-or-later",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -1953,7 +1953,7 @@
         {
           "license_expression": "lgpl-2.1-plus",
           "spdx_license_expression": "LGPL-2.1-or-later",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2055,7 +2055,7 @@
         {
           "license_expression": "public-domain",
           "spdx_license_expression": "LicenseRef-scancode-public-domain",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2100,7 +2100,7 @@
         {
           "license_expression": "public-domain-disclaimer",
           "spdx_license_expression": "LicenseRef-scancode-public-domain-disclaimer",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2248,7 +2248,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2388,7 +2388,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2544,7 +2544,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2627,7 +2627,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2731,7 +2731,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -2833,7 +2833,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2973,7 +2973,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -3153,7 +3153,7 @@
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
           "spdx_license_expression": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3363,7 +3363,7 @@
         {
           "license_expression": "boost-1.0",
           "spdx_license_expression": "BSL-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -3503,7 +3503,7 @@
         {
           "license_expression": "boost-1.0",
           "spdx_license_expression": "BSL-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -3593,7 +3593,7 @@
         {
           "license_expression": "boost-1.0",
           "spdx_license_expression": "BSL-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -3676,7 +3676,7 @@
         {
           "license_expression": "boost-1.0",
           "spdx_license_expression": "BSL-1.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -3858,7 +3858,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4006,7 +4006,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4110,7 +4110,7 @@
         {
           "license_expression": "zlib",
           "spdx_license_expression": "Zlib",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -4254,7 +4254,7 @@
         {
           "license_expression": "mit-old-style",
           "spdx_license_expression": "LicenseRef-scancode-mit-old-style",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [

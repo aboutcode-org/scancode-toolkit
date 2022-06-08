@@ -23,7 +23,7 @@
         {
           "license_expression": "pcre",
           "spdx_license_expression": "LicenseRef-scancode-pcre",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [

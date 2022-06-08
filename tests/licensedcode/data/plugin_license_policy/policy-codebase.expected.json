@@ -20,10 +20,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "license_policy": {},
       "files_count": 5,
@@ -51,10 +51,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "license_policy": {},
       "files_count": 5,
@@ -82,11 +82,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "broadcom-commercial",
-          "spdx_license_expression": "LicenseRef-scancode-broadcom-commercial",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -130,12 +129,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "broadcom-commercial"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-broadcom-commercial"
-      ],
+      "detected_license_expression": "broadcom-commercial",
+      "detected_license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
       "percentage_of_license_text": 84.0,
       "license_policy": {
         "license_key": "broadcom-commercial",
@@ -168,11 +163,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "bsd-1988",
-          "spdx_license_expression": "LicenseRef-scancode-bsd-1988",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -216,12 +210,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "bsd-1988"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-bsd-1988"
-      ],
+      "detected_license_expression": "bsd-1988",
+      "detected_license_expression_spdx": "LicenseRef-scancode-bsd-1988",
       "percentage_of_license_text": 93.75,
       "license_policy": {
         "license_key": "bsd-1988",
@@ -254,11 +244,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "esri-devkit",
-          "spdx_license_expression": "LicenseRef-scancode-esri-devkit",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -302,12 +291,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "esri-devkit"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-esri-devkit"
-      ],
+      "detected_license_expression": "esri-devkit",
+      "detected_license_expression_spdx": "LicenseRef-scancode-esri-devkit",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "esri-devkit",
@@ -340,11 +325,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "oracle-java-ee-sdk-2010",
-          "spdx_license_expression": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -388,12 +372,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "oracle-java-ee-sdk-2010"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-oracle-java-ee-sdk-2010"
-      ],
+      "detected_license_expression": "oracle-java-ee-sdk-2010",
+      "detected_license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "oracle-java-ee-sdk-2010",
@@ -426,11 +406,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "rh-eula",
-          "spdx_license_expression": "LicenseRef-scancode-rh-eula",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -474,12 +453,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "rh-eula"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-rh-eula"
-      ],
+      "detected_license_expression": "rh-eula",
+      "detected_license_expression_spdx": "LicenseRef-scancode-rh-eula",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "rh-eula",

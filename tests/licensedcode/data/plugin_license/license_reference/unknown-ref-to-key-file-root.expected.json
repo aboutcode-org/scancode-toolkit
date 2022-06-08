@@ -3,11 +3,10 @@
     {
       "path": "LICENSE",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -89,23 +88,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 95.38,
       "scan_errors": []
     },
     {
       "path": "README.md",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -150,23 +144,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 0.3,
       "scan_errors": []
     },
     {
       "path": "esprima-compare.js",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -324,23 +313,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 1.65,
       "scan_errors": []
     },
     {
       "path": "generate-index.js",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -498,23 +482,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 10.81,
       "scan_errors": []
     },
     {
       "path": "index.js",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -672,23 +651,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 2.26,
       "scan_errors": []
     },
     {
       "path": "js-tokens-3.0.2.ABOUT",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -733,23 +707,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 3.7,
       "scan_errors": []
     },
     {
       "path": "package.json",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -794,23 +763,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 2.67,
       "scan_errors": []
     },
     {
       "path": "regex.coffee",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -968,33 +932,28 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 2.55,
       "scan_errors": []
     },
     {
       "path": "test",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
       "path": "test/index.js",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -1152,12 +1111,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "mit"
-      ],
-      "spdx_license_expressions": [
-        "MIT"
-      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 8.89,
       "scan_errors": []
     }

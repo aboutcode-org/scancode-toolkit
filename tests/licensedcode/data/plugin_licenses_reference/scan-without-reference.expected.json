@@ -61,10 +61,10 @@
     {
       "path": "scan",
       "type": "directory",
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "package_data": [],
       "for_packages": [],
@@ -73,11 +73,10 @@
     {
       "path": "scan/copyr.java",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-          "spdx_license_expression": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -175,12 +174,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-2.0 AND (mit OR bsd-simplified)"
-      ],
-      "spdx_license_expressions": [
-        "Apache-2.0 AND (MIT OR BSD-2-Clause)"
-      ],
+      "detected_license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
+      "detected_license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
       "percentage_of_license_text": 100.0,
       "package_data": [],
       "for_packages": [
@@ -191,11 +186,10 @@
     {
       "path": "scan/package.json",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "spdx_license_expression": "Artistic-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -239,12 +233,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "artistic-2.0"
-      ],
-      "spdx_license_expressions": [
-        "Artistic-2.0"
-      ],
+      "detected_license_expression": "artistic-2.0",
+      "detected_license_expression_spdx": "Artistic-2.0",
       "percentage_of_license_text": 5.0,
       "package_data": [
         {

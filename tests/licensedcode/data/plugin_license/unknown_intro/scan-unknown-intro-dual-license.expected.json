@@ -3,11 +3,10 @@
     {
       "path": "README.md",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "wtfpl-2.0 AND mit",
-          "spdx_license_expression": "WTFPL AND MIT",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -163,12 +162,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "wtfpl-2.0 AND mit"
-      ],
-      "spdx_license_expressions": [
-        "WTFPL AND MIT"
-      ],
+      "detected_license_expression": "wtfpl-2.0 AND mit",
+      "detected_license_expression_spdx": "WTFPL AND MIT",
       "percentage_of_license_text": 8.18,
       "scan_errors": []
     }

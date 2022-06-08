@@ -3,11 +3,10 @@
     {
       "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -84,23 +83,18 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
-      ],
-      "spdx_license_expressions": [
-        "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB"
-      ],
+      "detected_license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "detected_license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     },
     {
       "path": "short-license",
       "type": "file",
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "fsf-ap",
-          "spdx_license_expression": "FSFAP",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -145,12 +139,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "fsf-ap"
-      ],
-      "spdx_license_expressions": [
-        "FSFAP"
-      ],
+      "detected_license_expression": "fsf-ap",
+      "detected_license_expression_spdx": "FSFAP",
       "percentage_of_license_text": 91.43,
       "scan_errors": []
     }

@@ -56,10 +56,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -91,10 +91,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -128,11 +128,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -212,12 +211,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-2.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-2.0"
-      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
@@ -263,11 +258,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -347,12 +341,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-2.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-2.0"
-      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
@@ -398,10 +388,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
+      "license_detections": [],
       "license_clues": [],
-      "license_expressions": [],
-      "spdx_license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -435,11 +425,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "gpl-1.0-plus AND gpl-2.0",
-          "spdx_license_expression": "GPL-1.0-or-later AND GPL-2.0-only",
-          "combination_reasons": [
+          "detection_rules": [
             "not-combined"
           ],
           "matches": [
@@ -519,12 +508,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "gpl-1.0-plus AND gpl-2.0"
-      ],
-      "spdx_license_expressions": [
-        "GPL-1.0-or-later AND GPL-2.0-only"
-      ],
+      "detected_license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "detected_license_expression_spdx": "GPL-1.0-or-later AND GPL-2.0-only",
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
@@ -570,11 +555,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
-          "combination_reasons": [
+          "detection_rules": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -654,12 +638,8 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "apache-2.0"
-      ],
-      "spdx_license_expressions": [
-        "Apache-2.0"
-      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
