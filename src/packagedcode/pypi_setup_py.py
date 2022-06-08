@@ -31,12 +31,30 @@ FIELDS = {
     'platforms',
     'project_urls',
     'provides',
-    'provides',
+    'python_requires',
     'requires',
+    'setup_requires',
+    'tests_require',
     'url',
     'version',
 }
 
+def is_setup_call(element):
+    if (
+        isinstance(element, ast.Call)
+        and (
+            hasattr(element, 'func')
+            and isinstance(element.func, ast.Name)
+            and getattr(element.func, 'id', None) == 'setup'
+        ) or (
+            hasattr(element, 'func')
+            and isinstance(element.func, ast.Attribute)
+            and getattr(element.func, 'attr', None) == 'setup'
+            and isinstance(element.func.value, ast.Name)
+            and getattr(element.func.value, 'id', None) == 'setuptools'
+        )
+    ):
+        return True
 
 class SetupPyReader:
 
@@ -67,30 +85,31 @@ class SetupPyReader:
 
     def _get_call(self, elements):
         for element in self._get_body(elements):
-            if not isinstance(element, ast.Call):
-                continue
-            if not isinstance(element.func, ast.Name):
-                continue
-            if element.func.id != 'setup':
-                continue
-            return element
-        return None
+            if is_setup_call(element):
+                return element
+            elif isinstance(element, (ast.Assign, )):
+                if isinstance(element.value, ast.Call):
+                    if is_setup_call(element.value):
+                        return element.value
 
     def _node_to_value(self, node):
         if node is None:
-            return None
+            return
         if hasattr(ast, 'Constant'):
             if isinstance(node, ast.Constant):
                 return node.value
+
         if isinstance(node, ast.Str):
             return node.s
+
         if isinstance(node, ast.Num):
             return node.n
 
-        if isinstance(node, ast.List):
+        if isinstance(node, (ast.List, ast.Tuple, ast.Set,)):
             return [self._node_to_value(subnode) for subnode in node.elts]
+
         if isinstance(node, ast.Dict):
-            result = dict()
+            result = {}
             for key, value in zip(node.keys, node.values):
                 result[self._node_to_value(key)] = self._node_to_value(value)
             return result
@@ -102,11 +121,11 @@ class SetupPyReader:
 
         if isinstance(node, ast.Call):
             if not isinstance(node.func, ast.Name):
-                return None
+                return
             if node.func.id != 'dict':
-                return None
+                return
             return self._get_call_kwargs(node)
-        return None
+        return
 
     def _find_variable_in_body(self, body, name):
         for elem in body:
@@ -117,7 +136,6 @@ class SetupPyReader:
                     continue
                 if target.id == name:
                     return elem.value
-        return None
 
     def _get_call_kwargs(self, node: ast.Call):
         """
@@ -165,19 +183,21 @@ def clean_setup(data):
     """
     Return a cleaned mapping from setup ``data``.
     """
-    result = dict()
-    for k, v in data.items():
-        if k not in FIELDS:
-            continue
-        if not v or v == 'UNKNOWN':
-            continue
-        result[k] = v
+    result = {k: v
+        for k, v in data.items()
+        if (v and v is not False) and v != 'UNKNOWN'
+        and k in FIELDS
+    }
 
-    # split keywords string by words
-    if 'keywords' in result:
-        if isinstance(result['keywords'], str):
-            result['keywords'] = [result['keywords']]
-        result['keywords'] = sum((kw.split() for kw in result['keywords']), [])
+    # split keywords in words
+    keywords = result.get('keywords')
+    if keywords and isinstance(keywords, str):
+        # some keywords are separated by coma, some by space or lines
+        if ',' in keywords:
+            keywords = [k.strip() for k in keywords.split(',')]
+        else:
+            keywords = keywords.split()
+        result['keywords'] = keywords
 
     return result
 
