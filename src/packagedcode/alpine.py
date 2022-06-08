@@ -140,18 +140,7 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         )
 
 
-def get_installed_packages(root_dir, **kwargs):
-    """
-    Yield Package objects given a ``root_dir`` rootfs directory.
-    """
-    installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
-    if not path.exists(installed_file_loc):
-        return
-    for package in parse_alpine_installed_db(installed_file_loc):
-        yield package
-
-
-def parse_alpine_installed_db(location, datasource_id='alpine_installed_system_package', package_type='alpine'):
+def parse_alpine_installed_db(location, datasource_id, package_type):
     """
     Yield PackageData objects from an installed database file at `location`
     or None. Typically found at '/lib/apk/db/installed' in an Alpine
@@ -1783,4 +1772,3 @@ if __name__ == '__main__':
     # get_apkindex_licenses(loc, 'alpine-licenses.csv')
     get_apkbuild_licenses(loc, 'alpine-licenses.csv')
     detect_licenses('alpine-licenses.csv', 'alpine-licenses-detection.csv')
-

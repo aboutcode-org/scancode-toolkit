@@ -159,10 +159,9 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     Yield Package and their Resources as they are found in `root_dir`
     """
     from scancode import cli
-    # run proper
-    success, codebase = cli.run_scan(
+
+    _, codebase = cli.run_scan(
         input=root_dir,
-        strip_root=True,
         processes=processes,
         quiet=True,
         verbose=False,
@@ -171,6 +170,7 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
         return_codebase=True,
         system_package=True,
     )
+
     packages_by_uid = {}
     for package in codebase.attributes.packages:
         p = PackageWithResources.from_dict(package)

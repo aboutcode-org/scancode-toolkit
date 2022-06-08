@@ -19,7 +19,6 @@ from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm import RPM
 from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rpmdb_loc
-from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rootfs
 from packagedcode.rpm_installed import parse_rpm_xmlish
 from packagedcode.utils import build_description
 from packagedcode.utils import get_ancestor
@@ -379,21 +378,6 @@ class RpmArchiveHandler(models.DatafileHandler):
             logger_debug('recognize: created package:\n', package)
 
         yield package
-
-
-def get_installed_packages(root_dir, datasource_id='rpm_installed_system_package', package_type='rpm', **kwargs):
-    """
-    Yield Package objects given a ``root_dir`` rootfs directory.
-    """
-
-    # TODO:  license and docs are typically at usr/share/doc/packages/<package name>/* and should be used
-    # packages_doc_dir = os.path.join(root_dir, 'usr/share/doc/packages')
-    # note that we also have file flags that can tell us which file is a license and doc.
-
-    # dump the rpmdb to XMLish
-    xmlish_loc = collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
-    return parse_rpm_xmlish(xmlish_loc, datasource_id=datasource_id, package_type=package_type)
-
 
 ############################################################################
 # FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py
