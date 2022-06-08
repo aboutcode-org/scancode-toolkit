@@ -25,6 +25,7 @@ from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
+from commoncode.resource import Resource
 from typecode import contenttype
 
 """
@@ -1338,6 +1339,19 @@ class Package(PackageData):
         for resource in codebase.walk():
             if package_uid in resource.for_packages:
                 yield resource
+
+
+@attr.attributes(slots=True)
+class PackageWithResources(Package):
+    """
+    A Package with Resources.
+    """
+
+    resources = List(
+        item_type=Resource,
+        label='List of Resources',
+        help='List of Resources for this package.',
+    )
 
 
 def get_files_for_packages(codebase):

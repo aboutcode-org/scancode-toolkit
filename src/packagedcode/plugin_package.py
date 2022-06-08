@@ -25,6 +25,7 @@ from packagedcode import get_package_handler
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
+from packagedcode.models import PackageWithResources
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
@@ -151,6 +152,36 @@ class PackageScanner(ScanPlugin):
         from one or more datafiles as needed.
         """
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+
+
+def get_installed_packages(root_dir, processes=2, **kwargs):
+    """
+    Yield Package and their Resources as they are found in `root_dir`
+    """
+    from scancode import cli
+    # run proper
+    success, codebase = cli.run_scan(
+        input=root_dir,
+        strip_root=True,
+        processes=processes,
+        quiet=True,
+        verbose=False,
+        max_in_memory=0,
+        return_results=False,
+        return_codebase=True,
+        system_package=True,
+    )
+    packages_by_uid = {}
+    for package in codebase.attributes.packages:
+        p = PackageWithResources.from_dict(package)
+        packages_by_uid[p.package_uid] = p
+
+    for resource in codebase.walk():
+        for package_uid in resource.for_packages:
+            p = packages_by_uid[package_uid]
+            p.resources.append(resource)
+
+    yield from packages_by_uid.values()
 
 
 def create_package_and_deps(codebase, strip_root=False, **kwargs):
