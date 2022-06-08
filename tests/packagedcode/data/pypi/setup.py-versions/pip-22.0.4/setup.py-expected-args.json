@@ -58,5 +58,6 @@
       "pip=pip._internal.cli.main:main"
     ]
   },
+  "zip_safe": false,
   "python_requires": ">=3.7"
 }

@@ -1351,10 +1351,7 @@ def get_setup_py_args(location):
         for kw in getattr(statement.value, 'keywords', []):
             arg_name = kw.arg
 
-            if isinstance(kw.value, ast.Str):
-                setup_args[arg_name] = kw.value.s
-
-            elif isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
+            if isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
                 # We collect the elements of a list if the element
                 # and tag function calls
                 value = [
@@ -1381,6 +1378,16 @@ def get_setup_py_args(location):
 
                 mapping = dict(zip(keys, values))
                 setup_args[arg_name] = mapping
+
+            else:
+                # we used to consider only isinstance(kw.value, ast.Str):
+                # instead use literal_eval and ignore failures
+                # this way we can get more things such as boolean and numbers
+                try:
+                    setup_args[arg_name] = ast.literal_eval(kw.value)
+                except Exception as e:
+                    if TRACE:
+                        logger_debug('get_setup_py_args: failed:', e)
 
             # TODO:  an expression like a call to version=get_version or version__version__
 

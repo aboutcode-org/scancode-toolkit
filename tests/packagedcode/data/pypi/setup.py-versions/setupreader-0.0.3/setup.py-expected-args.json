@@ -10,6 +10,8 @@
   "py_modules": [
     "setupreader"
   ],
+  "include_package_data": true,
+  "zip_safe": false,
   "install_requires": [
     "setuptools",
     "mock"

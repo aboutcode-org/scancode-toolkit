@@ -7,7 +7,9 @@
   "package_dir": {
     "": "src"
   },
+  "include_package_data": true,
   "license": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
+  "zip_safe": false,
   "keywords": "paho",
   "classifiers": [
     "Development Status :: 4 - Beta",

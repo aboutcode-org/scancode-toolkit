@@ -9,6 +9,8 @@
   "package_dir": {
     "": "src"
   },
+  "include_package_data": true,
+  "zip_safe": false,
   "classifiers": [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",

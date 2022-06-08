@@ -10,9 +10,11 @@
   "description": "Package containing the gather functions for Example.",
   "license": "MIT license",
   "long_description_content_type": "text/markdown",
+  "include_package_data": true,
   "keywords": "civic technology, open government",
   "name": "cdp-seattle-backend",
   "python_requires": ">=3.9",
   "url": "https://github.com/CouncilDataProject/seattle",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "zip_safe": false
 }

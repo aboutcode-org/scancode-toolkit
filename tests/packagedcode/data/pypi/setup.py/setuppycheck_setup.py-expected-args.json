@@ -12,5 +12,6 @@
   "license": "MIT",
   "py_modules": [
     "setuppycheck"
-  ]
+  ],
+  "zip_safe": false
 }
