@@ -8,7 +8,5 @@
     "pytest",
     "mock"
   ],
-  "cmdclass": {
-    "test": "SCANCODE: CANNOT PARSE"
-  }
+  "cmdclass": {}
 }

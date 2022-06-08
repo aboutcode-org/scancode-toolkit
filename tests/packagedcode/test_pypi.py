@@ -545,7 +545,7 @@ def get_setup_py_test_files(test_dir):
 
 def check_setup_py_parsing(test_loc):
     expected_loc1 = f'{test_loc}-expected-args.json'
-    parsed_kwargs = pypi.get_setup_py_args(test_loc)
+    parsed_kwargs = pypi.get_setup_py_args(test_loc, include_not_parsable=False)
     check_result_equals_expected_json(
         result=parsed_kwargs,
         expected_loc=expected_loc1,

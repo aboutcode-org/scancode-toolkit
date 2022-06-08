@@ -11,10 +11,7 @@
     "future",
     "Pebble>=4.3.10"
   ],
-  "extras_require": {
-    "all": "SCANCODE: CANNOT PARSE",
-    "scoop": "SCANCODE: CANNOT PARSE"
-  },
+  "extras_require": {},
   "author": "BlueBrain Project, EPFL",
   "author_email": "werner.vangeit@epfl.ch",
   "description": "Bluebrain Python Optimisation Library (bluepyopt)",

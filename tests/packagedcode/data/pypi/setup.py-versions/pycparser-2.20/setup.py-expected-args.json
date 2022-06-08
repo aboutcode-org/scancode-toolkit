@@ -29,8 +29,5 @@
       "*.cfg"
     ]
   },
-  "cmdclass": {
-    "install": "SCANCODE: CANNOT PARSE",
-    "sdist": "SCANCODE: CANNOT PARSE"
-  }
+  "cmdclass": {}
 }

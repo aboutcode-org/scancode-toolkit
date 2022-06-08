@@ -1328,9 +1328,11 @@ def is_setup_call(statement):
     )
 
 
-def get_setup_py_args(location):
+def get_setup_py_args(location, include_not_parsable=False):
     """
-    Return a mapping of arguments passed to a setup.py setup() function.
+    Return a mapping of arguments passed to a setup.py setup() function. Also
+    include not parsable identifiers values such as variable name and attribute
+    references if ``include_not_parsable`` is True
     """
     with open(location) as inp:
         setup_text = inp.read()
@@ -1350,44 +1352,80 @@ def get_setup_py_args(location):
         # Process the arguments to the setup function
         for kw in getattr(statement.value, 'keywords', []):
             arg_name = kw.arg
+            arg_value = kw.value
 
-            if isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
+            # FIXME: use a recursive function to extract structured data
+
+            if isinstance(arg_value, (ast.List, ast.Tuple, ast.Set,)):
                 # We collect the elements of a list if the element
                 # and tag function calls
-                value = [
-                    elt.s for elt in kw.value.elts
+                val = [
+                    elt.s for elt in arg_value.elts
                     if not isinstance(elt, ast.Call)
                 ]
-                setup_args[arg_name] = value
+                setup_args[arg_name] = val
 
-            elif isinstance(kw.value, ast.Dict):
+            elif isinstance(arg_value, ast.Dict):
                 # we only collect simple name/value and name/[values] constructs
-                keys = [elt.value for elt in kw.value.keys]
+                keys = [elt.value for elt in arg_value.keys]
                 values = []
-                for val in kw.value.values:
-                    if isinstance(val, ast.Str):
-                        values.append(val.s)
-                    elif isinstance(val, (ast.List, ast.Tuple, ast.Set,)):
-                        vals = [
+                for val in arg_value.values:
+
+                    if isinstance(val, (ast.List, ast.Tuple, ast.Set,)):
+                        val = [
                             elt.s for elt in val.elts
                             if not isinstance(elt, ast.Call)
                         ]
-                        values.append(vals)
+                        values.append(val)
+
+                    elif isinstance(val, (ast.Str, ast.Constant,)):
+                        values.append(val.s)
+
                     else:
-                        values.append('SCANCODE: CANNOT PARSE')
+                        if include_not_parsable:
+                            if isinstance(val, ast.Attribute):
+                                values.append(val.attr)
+
+                            elif isinstance(val, ast.Name):
+                                values.append(val.id)
+
+                            elif not isinstance(val, (ast.Call, ast.ListComp, ast.Subscript)):
+                                # we used to consider only isinstance(val, ast.Str):
+                                # instead use literal_eval and ignore failures, skipping
+                                # only function calls this way we can get more things such
+                                # as boolean and numbers
+                                try:
+                                    values.append(ast.literal_eval(val.value))
+                                except Exception as e:
+                                    if TRACE:
+                                        logger_debug('get_setup_py_args: failed:', e)
+                                    values.append(str(val.value))
 
                 mapping = dict(zip(keys, values))
                 setup_args[arg_name] = mapping
 
+            elif isinstance(arg_value, (ast.Str, ast.Constant,)):
+                setup_args[arg_name] = arg_value.s
             else:
-                # we used to consider only isinstance(kw.value, ast.Str):
-                # instead use literal_eval and ignore failures
-                # this way we can get more things such as boolean and numbers
-                try:
-                    setup_args[arg_name] = ast.literal_eval(kw.value)
-                except Exception as e:
-                    if TRACE:
-                        logger_debug('get_setup_py_args: failed:', e)
+                if include_not_parsable:
+                    if isinstance(arg_value, ast.Attribute):
+                        setup_args[arg_name] = arg_value.attr
+
+                    elif isinstance(arg_value, ast.Name):
+                        if arg_name:
+                            setup_args[arg_name] = arg_value.id
+
+                    elif not isinstance(arg_value, (ast.Call, ast.ListComp, ast.Subscript,)):
+                        # we used to consider only isinstance(kw.value, ast.Str):
+                        # instead use literal_eval and ignore failures, skipping only
+                        # function calls this way we can get more things such as boolean
+                        # and numbers
+                        try:
+                            setup_args[arg_name] = ast.literal_eval(arg_value)
+                        except Exception as e:
+                            if TRACE:
+                                logger_debug('get_setup_py_args: failed:', e)
+                            setup_args[arg_name] = str(arg_value)
 
             # TODO:  an expression like a call to version=get_version or version__version__
 

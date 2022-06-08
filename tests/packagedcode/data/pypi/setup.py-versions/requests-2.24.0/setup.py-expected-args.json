@@ -31,9 +31,7 @@
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy"
   ],
-  "cmdclass": {
-    "test": "SCANCODE: CANNOT PARSE"
-  },
+  "cmdclass": {},
   "extras_require": {
     "security": [
       "pyOpenSSL >= 0.14",
