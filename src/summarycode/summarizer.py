@@ -80,7 +80,7 @@ class ScanSummary(PostScanPlugin):
 
         # Get tallies
         tallies = compute_codebase_tallies(codebase, keep_details=False, **kwargs)
-        license_expressions_tallies = tallies.get('license_expressions') or []
+        license_expressions_tallies = tallies.get('detected_license_expression') or []
         holders_tallies = tallies.get('holders') or []
         programming_language_tallies = tallies.get('programming_language') or []
 

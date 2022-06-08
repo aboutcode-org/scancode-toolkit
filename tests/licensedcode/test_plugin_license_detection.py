@@ -208,4 +208,4 @@ def test_match_reference_license():
     from commoncode.resource import VirtualCodebase
     codebase = VirtualCodebase(scan_loc)
     resource = codebase.get_resource(path='scan-ref/license-notice.txt')
-    assert len(resource.licenses[0]["matches"]) == 2
+    assert len(resource.license_detections[0]["matches"]) == 2

@@ -15,7 +15,6 @@ from enum import Enum
 import attr
 from license_expression import combine_expressions
 
-from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
 from licensedcode.models import compute_relevance
@@ -80,7 +79,7 @@ class DetectionCategory(Enum):
     FALSE_POSITVE = 'false-positive'
 
 
-class CombinationReason(Enum):
+class DetectionRule(Enum):
     NOT_COMBINED = 'not-combined'
     UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file' 
     UNKNOWN_INTRO_FOLLOWED_BY_MATCH = 'unknown-intro-followed-by-match'
@@ -124,19 +123,11 @@ class LicenseDetection:
             'using the SPDX license expression syntax and ScanCode license keys.')
     )
 
-    spdx_license_expression = attr.ib(
-        repr=False,
-        default=None,
-        metadata=dict(
-            help='Full license expression string for this license detection'
-            'using the SPDX license expression syntax and SPDX license ids.')
-    )
-
-    combination_reasons = attr.ib(
+    detection_rules = attr.ib(
         repr=False,
         default=attr.Factory(list),
         metadata=dict(
-            help='A list of detection CombinationReason explaining how '
+            help='A list of detection DetectionRule explaining how '
             'this detection was created.'
         )
     )
@@ -172,16 +163,12 @@ class LicenseDetection:
         if license_expression == None:
             return cls(matches=matches)
 
-        spdx_license_expression = build_spdx_license_expression(
-            str(license_expression),
-            licensing=get_cache().licensing
-        )
+        
 
         return cls(
             matches=matches,
             license_expression=str(license_expression),
-            spdx_license_expression=str(spdx_license_expression),
-            combination_reasons=reasons,
+            detection_rules=reasons,
         )
     
     @classmethod
@@ -193,8 +180,7 @@ class LicenseDetection:
         return cls(
             matches=detection['matches'],
             license_expression=detection['license_expression'],
-            spdx_license_expression=detection['spdx_license_expression'],
-            combination_reasons=detection['combination_reasons'],
+            detection_rules=detection['detection_rules'],
         )
 
     def __eq__(self, other):
@@ -331,7 +317,7 @@ class LicenseDetection:
         """
         Append the ``match`` LicenseMatch to this detection and update it
         accordingly.
-        Append the ``reason`` to the combination_reasons.
+        Append the ``reason`` to the detection_rules.
 
         If ``combine_license`` is True the license_expression of the ``match``
         is combined with the detection license_expression. Do not combine
@@ -358,7 +344,7 @@ class LicenseDetection:
         self.matches.append(match)
         self.length += match.length
         if reason:
-            self.combination_reasons.append(reason)
+            self.detection_rules.append(reason)
 
         licensing = get_cache().licensing
         if combine_license:
@@ -367,23 +353,11 @@ class LicenseDetection:
                 unique=True,
                 licensing=licensing,
             )
-
-            self.spdx_license_expression = build_spdx_license_expression(
-                license_expression,
-                licensing=licensing,
-            )
-
             self.license_expression = str(license_expression)
 
         elif override_license:
             # Use the match expression
             license_expression = licensing.parse(match.license_expression)
-
-            self.spdx_license_expression = build_spdx_license_expression(
-                license_expression,
-                licensing=licensing,
-            )
-
             self.license_expression = str(license_expression)
 
     def matched_text(
@@ -722,10 +696,10 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
 
     if analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
         matches_for_expression = filter_license_intros(matches)
-        reasons.append(CombinationReason.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
+        reasons.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
     elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value and post_scan:
         matches_for_expression = filter_license_references(matches)
-        reasons.append(CombinationReason.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
+        reasons.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
     elif (
         analysis == DetectionCategory.UNKNOWN_MATCH.value or
         analysis == DetectionCategory.LICENSE_CLUES.value
@@ -733,7 +707,7 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
         return reasons, combined_expression
     else:
         matches_for_expression = matches
-        reasons.append(CombinationReason.NOT_COMBINED.value)
+        reasons.append(DetectionRule.NOT_COMBINED.value)
 
     if isinstance(matches[0], dict):
         combined_expression = combine_expressions(
@@ -850,7 +824,7 @@ def combine_matches_in_detections(matches):
     # do not bother if there is only one match
     if len(matches) < 2:
         ld = LicenseDetection()
-        ld.append(matches[0], CombinationReason.NOT_COMBINED)
+        ld.append(matches[0], DetectionRule.NOT_COMBINED)
         return [ld]
 
     matches = sorted(matches)
@@ -892,7 +866,7 @@ def combine_matches_in_detections(matches):
             ):
                 current_detection.append(
                     match=next_match,
-                    reason=CombinationReason.UNKNOWN_INTRO_FOLLOWED_BY_MATCH,
+                    reason=DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH,
                     override_license=True,
                 )
 
@@ -903,7 +877,7 @@ def combine_matches_in_detections(matches):
             ):
                 current_detection.append(
                     match=next_match,
-                    reason=CombinationReason.CONTAINED_SAME_LICENSE,
+                    reason=DetectionRule.CONTAINED_SAME_LICENSE,
                     # no license changes
                     override_license=False,
                     combine_license=False,

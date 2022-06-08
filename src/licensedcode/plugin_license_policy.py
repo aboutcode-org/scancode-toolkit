@@ -86,7 +86,7 @@ class LicensePolicy(PostScanPlugin):
                 continue
 
             try:
-                resource_license_keys = get_license_keys_from_detections(resource.licenses)
+                resource_license_keys = get_license_keys_from_detections(resource.license_detections)
 
             except AttributeError:
                 # add license_policy regardless if there is license info or not

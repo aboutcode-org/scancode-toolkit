@@ -127,12 +127,15 @@ def compute_license_score(codebase):
     scoring_elements = ScoringElements()
     license_detections = get_field_values_from_codebase_resources(
         codebase=codebase,
-        field_name='licenses',
+        field_name='license_detections',
         key_files_only=True,
     )
     declared_licenses = get_matches_from_detections(license_detections)
     declared_license_expressions = get_field_values_from_codebase_resources(
-        codebase=codebase, field_name='license_expressions', key_files_only=True
+        codebase=codebase,
+        field_name='detected_license_expression',
+        key_files_only=True,
+        is_string=True,
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
@@ -143,7 +146,7 @@ def compute_license_score(codebase):
     )
 
     other_license_detections = get_field_values_from_codebase_resources(
-        codebase=codebase, field_name='licenses', key_files_only=False
+        codebase=codebase, field_name='license_detections', key_files_only=False
     )
     other_licenses = get_matches_from_detections(other_license_detections)
 
@@ -186,7 +189,7 @@ def compute_license_score(codebase):
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
 
-    return scoring_elements, declared_license_expression or ''
+    return scoring_elements, declared_license_expression or None
 
 
 def unique(objects):
@@ -295,7 +298,12 @@ def check_declared_licenses(declared_licenses):
     return any(is_good_license(declared_license) for declared_license in declared_licenses)
 
 
-def get_field_values_from_codebase_resources(codebase, field_name, key_files_only=False):
+def get_field_values_from_codebase_resources(
+    codebase,
+    field_name,
+    key_files_only=False,
+    is_string=False
+):
     """
     Return a list of values from the `field_name` field of the Resources from
     `codebase`
@@ -317,8 +325,13 @@ def get_field_values_from_codebase_resources(codebase, field_name, key_files_onl
             else:
                 if child.is_key_file:
                     continue
-            for detected_license in getattr(child, field_name, []) or []:
-                values.append(detected_license)
+            if is_string:
+                value = getattr(child, field_name, None) or None
+                if value:
+                    values.append(value)
+            else:
+                for value in getattr(child, field_name, []) or []:
+                    values.append(value)
     return values
 
 

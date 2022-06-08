@@ -143,13 +143,12 @@ def get_licenses(
     **kwargs,
 ):
     """
-    Return a mapping or detected_licenses for licenses detected in the file at
+    Return a mapping or license_detections for licenses detected in the file at
     `location`
 
     This mapping contains two keys:
-     - 'licenses' with a value that is list of mappings of license information.
-     - 'license_expressions' with a value that is list of license expression
-       strings.
+     - 'license_detections' with a value that is list of mappings of license information.
+     - 'detected_license_expression' with a value that is a license expression string.
 
     `min_score` is a minimum score threshold from 0 to 100. The default is 0,
     meaning that all license matches are returned. If specified, matches with a
@@ -163,12 +162,16 @@ def get_licenses(
 
     If ``unknown_licenses`` is True, also detect unknown licenses.
     """
+    from licensedcode.cache import build_spdx_license_expression
+    from licensedcode.cache import get_cache
     from licensedcode.detection import detect_licenses
+    from packagedcode.utils import combine_expressions
 
     license_clues = []
-    detected_licenses = []
+    license_detections = []
     detected_expressions = []
-    detected_spdx_expressions = []
+    detected_license_expression = None
+    detected_license_expression_spdx = None
 
     detections = detect_licenses(
         location=location,
@@ -186,23 +189,34 @@ def get_licenses(
         all_qspans.extend(detection.qspans)
 
         detected_expressions.append(detection.license_expression)
-        detected_spdx_expressions.append(detection.spdx_license_expression)
-        detected_licenses.append(
+        license_detections.append(
             detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
             )
         )
 
+    detected_license_expression = combine_expressions(
+        expressions=detected_expressions,
+        relation='AND',
+        unique=True,
+    )
+
+    if detected_license_expression:
+        detected_license_expression_spdx = str(build_spdx_license_expression(
+            detected_license_expression,
+            licensing=get_cache().licensing
+        ))
+
     percentage_of_license_text = 0
     if detection:
         percentage_of_license_text = detection.percentage_license_text_of_file(all_qspans)
 
     return dict([
-        ('licenses', detected_licenses),
+        ('license_detections', license_detections),
         ('license_clues', license_clues),
-        ('license_expressions', detected_expressions),
-        ('spdx_license_expressions', detected_spdx_expressions),
+        ('detected_license_expression', detected_license_expression),
+        ('detected_license_expression_spdx', detected_license_expression_spdx),
         ('percentage_of_license_text', percentage_of_license_text),
     ])
 

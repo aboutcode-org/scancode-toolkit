@@ -73,7 +73,7 @@ class IsLicenseText(PostScanPlugin):
                 continue
             # keep unique texts/line ranges since we repeat this for each matched licenses
             license_texts = set()
-            matches = get_matches_from_detections(resource.licenses)
+            matches = get_matches_from_detections(resource.license_detections)
             for match in matches:
                 license_texts.add(
                     (match.get('matched_text'),

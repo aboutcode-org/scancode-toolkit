@@ -277,7 +277,7 @@ def write_spdx(
             chk_sum=Algorithm('SHA1', file_data.get('sha1') or '')
         )
 
-        file_license_detections = file_data.get('licenses')
+        file_license_detections = file_data.get('license_detections')
         license_matches = get_matches_from_detections(file_license_detections)
         if license_matches:
             all_files_have_no_license = False

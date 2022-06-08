@@ -72,14 +72,16 @@ class LicensesReference(PostScanPlugin):
         for resource in codebase.walk():
 
             # Get license_expressions from both package and license detections
-            license_licexps = getattr(resource, 'license_expressions', []) or []
+            license_licexp = getattr(resource, 'detected_license_expression')
+            if license_licexp:
+                licexps.append(license_licexp)
             package_data = getattr(resource, 'package_data', []) or []
             # TODO: license_expression attribute name is changing soon
             package_licexps = [pkg['license_expression'] for pkg in package_data]
-            licexps.extend(license_licexps + package_licexps)
+            licexps.extend(package_licexps)
 
             # Get license matches from both package and license detections
-            licence_detections = getattr(resource, 'licenses', []) or []
+            licence_detections = getattr(resource, 'license_detections', []) or []
             #TODO: report license detections (with license matches) for packages
             license_db_data.extend(
                 get_license_db_reference_data(licence_detections=licence_detections)
@@ -179,7 +181,7 @@ def get_license_detection_references(license_detections_by_path):
         for detection in detections:
             detection_obj = LicenseDetection.from_mapping(detection=detection)
             _matches = detection.pop('matches')
-            _reasons = detection.pop('combination_reasons')
+            _reasons = detection.pop('detection_rules')
             detection_obj.file_region = detection_obj.get_file_region(path=path)
             detection["id"] = detection_obj.identifier
 

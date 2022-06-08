@@ -128,20 +128,18 @@ class TestAPI(FileBasedTesting):
     def test_get_license_with_expression(self):
         test_file = self.get_test_loc('api/license/apache-1.0.txt')
         results = api.get_licenses(test_file)
-        expected = [
-            'apache-1.0 AND (gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib)'
-        ]
-        assert results['license_expressions'] == expected
+        expected = 'apache-1.0 AND (gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib)'
+        assert results['detected_license_expression'] == expected
 
     def test_get_license_with_expression2(self):
         test_file = self.get_test_loc('api/license/expression.RULE')
         results = api.get_licenses(test_file)
-        expected = ['gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib']
-        assert results['license_expressions'] == expected
+        expected = 'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
+        assert results['detected_license_expression'] == expected
 
     def test_get_license_returns_correct_lines(self):
         test_file = self.get_test_loc('api/license/correct_lines2')
         results = api.get_licenses(test_file)
-        assert results['license_expressions'] == ['mit']
-        assert results['licenses'][0]['matches'][0]['start_line'] == 2
-        assert results['licenses'][0]['matches'][0]['end_line'] == 4
+        assert results['detected_license_expression'] == 'mit'
+        assert results['license_detections'][0]['matches'][0]['start_line'] == 2
+        assert results['license_detections'][0]['matches'][0]['end_line'] == 4

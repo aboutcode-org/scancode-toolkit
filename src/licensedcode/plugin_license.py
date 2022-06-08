@@ -29,6 +29,7 @@ from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detections
 from licensedcode.detection import DetectionCategory
 from commoncode.resource import clean_path
+from packagedcode.utils import combine_expressions
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
@@ -95,10 +96,10 @@ class LicenseScanner(ScanPlugin):
     """
 
     resource_attributes = dict([
-        ('licenses', attr.ib(default=attr.Factory(list))),
+        ('license_detections', attr.ib(default=attr.Factory(list))),
         ('license_clues', attr.ib(default=attr.Factory(list))),
-        ('license_expressions', attr.ib(default=attr.Factory(list))),
-        ('spdx_license_expressions', attr.ib(default=attr.Factory(list))),
+        ('detected_license_expression', attr.ib(default=None)),
+        ('detected_license_expression_spdx', attr.ib(default=None)),
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
@@ -227,7 +228,7 @@ def add_referenced_filenames_license_matches(resource, codebase):
     if not resource.is_file:
         return
 
-    license_detections = resource.licenses
+    license_detections = resource.license_detections
     if not license_detections:
         return
 
@@ -247,12 +248,12 @@ def add_referenced_filenames_license_matches(resource, codebase):
                 codebase=codebase,
             )
 
-            if referenced_resource and referenced_resource.licenses:
+            if referenced_resource and referenced_resource.license_detections:
                 modified = True
                 detection_modified = True
                 matches.extend(
                     get_matches_from_detections(
-                        license_detections=referenced_resource.licenses
+                        license_detections=referenced_resource.license_detections
                     )
                 )
 
@@ -265,21 +266,24 @@ def add_referenced_filenames_license_matches(resource, codebase):
             post_scan=True,
         )
         detection["license_expression"] = str(license_expression)
-        detection["spdx_license_expression"] = str(build_spdx_license_expression(
-                license_expression=str(license_expression),
-                licensing=get_cache().licensing,
-            ))
-        detection["combination_reasons"] = reasons
+        detection["detection_rules"] = reasons
 
     if modified:
-        resource.license_expressions = [detection["license_expression"] for detection in resource.licenses]
-        resource.spdx_license_expressions = [
-            str(build_spdx_license_expression(
-                license_expression=detection["license_expression"],
-                licensing=get_cache().licensing,
-            ))
-            for detection in resource.licenses
+        license_expressions = [
+            detection["license_expression"]
+            for detection in resource.license_detections
         ]
+        resource.detected_license_expression = combine_expressions(
+            expressions=license_expressions,
+            relation='AND',
+            unique=True,
+        )
+
+        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
+            license_expression=resource.detected_license_expression,
+            licensing=get_cache().licensing,
+        ))
+
         codebase.save_resource(resource)
         return resource
 
