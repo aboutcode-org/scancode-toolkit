@@ -1,51 +1,16 @@
-[tool.dephell.main]
-from = {format = "flit", path = "pyproject.toml"}
-to = {format = "setuppy", path = "setup.py"}
-tag = "v."
-
-[tool.dephell.pytest]
-from = {format = "flit", path = "pyproject.toml"}
-envs = ["main", "dev"]
-tests = ["tests"]
-command = "python -m pytest tests/"
-
-[tool.dephell.flake8]
-from = {format = "pip", path = "requirements-flake.txt"}
-python = ">=3.6"
-command = "flake8"
-
-[tool.dephell.typing]
-from = {format = "flit", path = "pyproject.toml"}
-envs = ["main", "dev"]
-command = "mypy --ignore-missing-imports --allow-redefinition dephell_setuptools"
-
-
-[tool.flit.metadata]
-module="dephell_setuptools"
-author="Gram (@orsinium)"
-author-email="gram@orsinium.dev"
-home-page="https://github.com/dephell/dephell_setuptools"
-requires-python=">=3.5"
-requires=[
-    "setuptools",
-]
-description-file="README.md"
-classifiers=[
-    "Development Status :: 4 - Beta",
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-]
-
-[tool.flit.metadata.requires-extra]
-dev = [
-    "mypy",
-    "pkginfo",
-    "pytest",
-]
+about_resource: .
+name: dephell_setuptools
+author: Gram (@orsinium)
+author_email: gram@orsinium.dev
+homepage_url:https://github.com/dephell/dephell_setuptools
+keywords:
+    Development Status :: 4 - Beta
+    Environment :: Console
+    Intended Audience :: Developers
+    License :: OSI Approved :: MIT License
+    Programming Language :: Python :: 3.5
+    Programming Language :: Python :: 3.6
+    Programming Language :: Python :: 3.7
+    Programming Language :: Python :: 3
+    Programming Language :: Python
+    Topic :: Software Development :: Libraries :: Python Modules

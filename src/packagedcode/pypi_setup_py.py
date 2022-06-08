@@ -1,26 +1,56 @@
-# built-in
+
 import ast
-from typing import Any, Dict, Optional
+from configparser import ConfigParser
+from copy import deepcopy
+from pathlib import Path
 
-# app
-from ._base import BaseReader
+from packagedcode.pypi_setuptools_config import ConfigMetadataHandler
+from packagedcode.pypi_setuptools_config import ConfigOptionsHandler
+
+# https://setuptools.readthedocs.io/en/latest/setuptools.html#metadata
+FIELDS = {
+    'author_email',
+    'author',
+    'classifiers',
+    'dependency_links',
+    'description',
+    'download_url',
+    'extras_require',
+    'install_requires',
+    'keywords',
+    'license_file',
+    'license',
+    'long_description_content_type',
+    'long_description',
+    'maintainer_email',
+    'maintainer',
+    'metadata_version',
+    'name',
+    'obsoletes',
+    'package_dir',
+    'platforms',
+    'project_urls',
+    'provides',
+    'provides',
+    'requires',
+    'url',
+    'version',
+}
 
 
-class StaticReader(BaseReader):
-    def content(self) -> Dict[str, Any]:
-        if not self.call:
-            raise LookupError('cannot find setup()')
-        result = self._get_call_kwargs(self.call)
-        return self._clean(result)
+class SetupPyReader:
 
-    def tree(self) -> tuple:
-        return tuple(ast.parse(self.path.read_text(encoding='utf8')).body)
+    def __init__(self, path: Path):
+        self.path = Path(path)
 
-    def call(self) -> Optional[ast.Call]:
-        return self._get_call(self.tree)
+    def parse(self):
+        self.tree = tuple(ast.parse(self.path.read_text(encoding='utf8')).body)
+        self.body = tuple(self._get_body(self.tree))
 
-    def body(self) -> tuple:
-        return tuple(self._get_body(self.tree))
+        call = self._get_call(self.tree)
+        result = self._get_call_kwargs(call)
+
+        return clean_setup(result)
 
     @classmethod
     def _get_body(cls, elements):
@@ -35,7 +65,7 @@ class StaticReader(BaseReader):
                 continue
             yield element
 
-    def _get_call(self, elements) -> Optional[ast.Call]:
+    def _get_call(self, elements):
         for element in self._get_body(elements):
             if not isinstance(element, ast.Call):
                 continue
@@ -89,9 +119,13 @@ class StaticReader(BaseReader):
                     return elem.value
         return None
 
-    def _get_call_kwargs(self, node: ast.Call) -> Dict[str, Any]:
-        result = dict()
-        for keyword in node.keywords:
+    def _get_call_kwargs(self, node: ast.Call):
+        """
+        Return a mapping of setup() method call keyword arguments.
+        """
+        result = {}
+        keywords = getattr(node, 'keywords', []) or []
+        for keyword in keywords:
             # dict unpacking
             if keyword.arg is None:
                 value = self._node_to_value(keyword.value)
@@ -104,3 +138,62 @@ class StaticReader(BaseReader):
                 continue
             result[keyword.arg] = value
         return result
+
+
+class SetupCfgReader:
+
+    def __init__(self, path):
+        self.path = Path(path)
+
+    def parse(self):
+        parser = ConfigParser()
+        parser.read(str(self.path))
+
+        options = deepcopy(parser._sections)  # type: ignore
+        for section, content in options.items():
+            for k, v in content.items():
+                options[section][k] = ('', v)
+
+        container = type('container', (), dict.fromkeys(FIELDS))()
+        ConfigOptionsHandler(container, options).parse()
+        ConfigMetadataHandler(container, options).parse()
+
+        return clean_setup(vars(container))
+
+
+def clean_setup(data):
+    """
+    Return a cleaned mapping from setup ``data``.
+    """
+    result = dict()
+    for k, v in data.items():
+        if k not in FIELDS:
+            continue
+        if not v or v == 'UNKNOWN':
+            continue
+        result[k] = v
+
+    # split keywords string by words
+    if 'keywords' in result:
+        if isinstance(result['keywords'], str):
+            result['keywords'] = [result['keywords']]
+        result['keywords'] = sum((kw.split() for kw in result['keywords']), [])
+
+    return result
+
+
+def read_setup(path):
+
+    READERS_BY_EXT = {
+        '.py': SetupPyReader,
+        '.cfg': SetupCfgReader,
+    }
+
+    for fname, reader in READERS_BY_EXT.items():
+        if path.endswith(fname):
+            return reader(path).parse()
+
+
+def dumps_setup(path):
+    import json
+    print(json.dumps(read_setup(path), indent=2))
