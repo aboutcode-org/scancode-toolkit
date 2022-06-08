@@ -1,0 +1,18 @@
+{
+  "author": "Council Data Project Contributors",
+  "classifiers": [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.9"
+  ],
+  "description": "Package containing the gather functions for Example.",
+  "license": "MIT license",
+  "long_description_content_type": "text/markdown",
+  "keywords": "civic technology, open government",
+  "name": "cdp-seattle-backend",
+  "python_requires": ">=3.9",
+  "url": "https://github.com/CouncilDataProject/seattle",
+  "version": "1.0.0"
+}
