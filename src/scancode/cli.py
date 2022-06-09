@@ -1670,4 +1670,6 @@ def get_pretty_params(ctx, generic_paths=False):
 
 
 if __name__ == '__main__':
+    # We have this __main__ block so that we can run scancode as a script.
+    # This is needed so we can use the Python debugging features in VSCode.
     scancode()
