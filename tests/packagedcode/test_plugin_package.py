@@ -218,4 +218,4 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/get_installed_packages-expected.json')
         result_file = self.get_temp_file('results.json')
         results = list(get_installed_packages(test_dir))
-        self.check_packages_data(results, expected_file, regen=REGEN_TEST_FIXTURES)
+        self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)

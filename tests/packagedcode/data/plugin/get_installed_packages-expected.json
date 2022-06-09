@@ -84,7 +84,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=84fe6563-10bc-4f05-b2f1-853a91c60186",
+    "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status"
     ],
@@ -93,24 +93,8 @@
     ],
     "resources": [
       {
-        "name": "copyright",
-        "location": "/tmp/scancode-tk-tests -313gcwpc/_ig_hfeg/basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
         "path": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
-        "cache_location": null,
-        "is_file": true,
-        "is_filtered": false,
-        "children_names": [],
-        "size": 0,
-        "size_count": 0,
-        "files_count": 0,
-        "dirs_count": 0,
-        "scan_errors": [],
-        "scan_time": 0,
-        "scan_timings": {
-          "packages": 0.9765093326568604
-        },
-        "extra_data": {},
-        "is_root": false,
+        "type": "file",
         "package_data": [
           {
             "type": "deb",
@@ -150,28 +134,13 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=84fe6563-10bc-4f05-b2f1-853a91c60186"
-        ]
+          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
       },
       {
-        "name": "libncurses5:amd64.md5sums",
-        "location": "/tmp/scancode-tk-tests -313gcwpc/_ig_hfeg/basic-rootfs.tar.gz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
         "path": "basic-rootfs.tar.gz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
-        "cache_location": null,
-        "is_file": true,
-        "is_filtered": false,
-        "children_names": [],
-        "size": 0,
-        "size_count": 0,
-        "files_count": 0,
-        "dirs_count": 0,
-        "scan_errors": [],
-        "scan_time": 0,
-        "scan_timings": {
-          "packages": 0.00043082237243652344
-        },
-        "extra_data": {},
-        "is_root": false,
+        "type": "file",
         "package_data": [
           {
             "type": "deb",
@@ -250,8 +219,9 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=84fe6563-10bc-4f05-b2f1-853a91c60186"
-        ]
+          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
       }
     ],
     "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
@@ -323,7 +293,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4",
+    "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status"
     ],
@@ -332,24 +302,8 @@
     ],
     "resources": [
       {
-        "name": "copyright",
-        "location": "/tmp/scancode-tk-tests -313gcwpc/_ig_hfeg/basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
         "path": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
-        "cache_location": null,
-        "is_file": true,
-        "is_filtered": false,
-        "children_names": [],
-        "size": 0,
-        "size_count": 0,
-        "files_count": 0,
-        "dirs_count": 0,
-        "scan_errors": [],
-        "scan_time": 0,
-        "scan_timings": {
-          "packages": 0.08331418037414551
-        },
-        "extra_data": {},
-        "is_root": false,
+        "type": "file",
         "package_data": [
           {
             "type": "deb",
@@ -393,29 +347,14 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4",
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4"
-        ]
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
       },
       {
-        "name": "copyright",
-        "location": "/tmp/scancode-tk-tests -313gcwpc/_ig_hfeg/basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
         "path": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
-        "cache_location": null,
-        "is_file": true,
-        "is_filtered": false,
-        "children_names": [],
-        "size": 0,
-        "size_count": 0,
-        "files_count": 0,
-        "dirs_count": 0,
-        "scan_errors": [],
-        "scan_time": 0,
-        "scan_timings": {
-          "packages": 0.08331418037414551
-        },
-        "extra_data": {},
-        "is_root": false,
+        "type": "file",
         "package_data": [
           {
             "type": "deb",
@@ -459,29 +398,14 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4",
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4"
-        ]
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
       },
       {
-        "name": "libndp0:amd64.md5sums",
-        "location": "/tmp/scancode-tk-tests -313gcwpc/_ig_hfeg/basic-rootfs.tar.gz/var/lib/dpkg/info/libndp0:amd64.md5sums",
         "path": "basic-rootfs.tar.gz/var/lib/dpkg/info/libndp0:amd64.md5sums",
-        "cache_location": null,
-        "is_file": true,
-        "is_filtered": false,
-        "children_names": [],
-        "size": 0,
-        "size_count": 0,
-        "files_count": 0,
-        "dirs_count": 0,
-        "scan_errors": [],
-        "scan_time": 0,
-        "scan_timings": {
-          "packages": 0.00034499168395996094
-        },
-        "extra_data": {},
-        "is_root": false,
+        "type": "file",
         "package_data": [
           {
             "type": "deb",
@@ -551,8 +475,9 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=2b022086-4693-43ba-b3a0-7e09c436c1e4"
-        ]
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
       }
     ],
     "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
