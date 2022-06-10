@@ -23,7 +23,7 @@ holders:
   - Intel Corporation
   - Craig Metz
 holders_summary:
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 2
   - value: Carnegie Mellon University
     count: 1
@@ -33,7 +33,7 @@ holders_summary:
     count: 1
   - value: Intel Corporation
     count: 1
-  - value: Sun Microsystems, Inc.
+  - value: Sun Microsystems
     count: 1
   - value: The Regents of the University of California
     count: 1

@@ -39,6 +39,8 @@ holders:
 holders_summary:
   - value: Paul Mackerras
     count: 7
+  - value: Android Open Source Project
+    count: 1
   - value: Carnegie Mellon University
     count: 1
   - value: Eric Rosenquist
@@ -51,9 +53,7 @@ holders_summary:
     count: 1
   - value: RSA Data Security, Inc.
     count: 1
-  - value: Sun Microsystems, Inc.
-    count: 1
-  - value: The Android Open Source Project, Inc.
+  - value: Sun Microsystems
     count: 1
   - value: Tommi Komulainen
     count: 1
