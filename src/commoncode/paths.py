@@ -144,7 +144,16 @@ replace_illegal_chars = re.compile(illegal_chars_re).sub
 replace_illegal_chars_exc_spaces = re.compile(illegal_chars_exc_spaces_re).sub
 
 
-def portable_filename(filename, preserve_spaces=False):
+posix_legal_punctuation = r"!@#$%^&\*\(\)-_=\+\[\{\]\}\\\|;:'\",<.>\/\?`~"
+posix_legal_chars = r"A-Za-z0-9" + posix_legal_punctuation
+posix_legal_chars_inc_spaces = posix_legal_chars + legal_spaces
+posix_illegal_chars_re = r"[^" + posix_legal_chars + r"]"
+posix_illegal_chars_exc_spaces_re = r"[^" + posix_legal_chars_inc_spaces + r"]"
+replace_illegal_posix_chars = re.compile(posix_illegal_chars_re).sub
+replace_illegal_posix_chars_exc_spaces = re.compile(posix_illegal_chars_exc_spaces_re).sub
+
+
+def portable_filename(filename, preserve_spaces=False, posix_only=False):
     """
     Return a new name for `filename` that is portable across operating systems.
 
@@ -170,55 +179,29 @@ def portable_filename(filename, preserve_spaces=False):
     if not filename:
         return '_'
 
-    if preserve_spaces:
-        filename = replace_illegal_chars_exc_spaces('_', filename)
+    if posix_only:
+        if preserve_spaces:
+            filename = replace_illegal_posix_chars_exc_spaces('_', filename)
+        else:
+            filename = replace_illegal_posix_chars('_', filename)
     else:
-        filename = replace_illegal_chars('_', filename)
+        if preserve_spaces:
+            filename = replace_illegal_chars_exc_spaces('_', filename)
+        else:
+            filename = replace_illegal_chars('_', filename)
 
-    # these are illegal both upper and lowercase and with or without an extension
-    # we insert an underscore after the base name.
-    windows_illegal_names = set([
-        'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
-        'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
-        'aux', 'con', 'nul', 'prn'
-    ])
+    if not posix_only:
+        # these are illegal both upper and lowercase and with or without an extension
+        # we insert an underscore after the base name.
+        windows_illegal_names = set([
+            'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
+            'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
+            'aux', 'con', 'nul', 'prn'
+        ])
 
-    basename, dot, extension = filename.partition('.')
-    if basename.lower() in windows_illegal_names:
-        filename = ''.join([basename, '_', dot, extension])
-
-    # no name made only of dots.
-    if set(filename) == set(['.']):
-        filename = 'dot' * len(filename)
-
-    # replaced any leading dotdot
-    if filename != '..' and filename.startswith('..'):
-        while filename.startswith('..'):
-            filename = filename.replace('..', '__', 1)
-
-    return filename
-
-
-posix_legal_punctuation = r"!@#$%^&\*\(\)-_=\+\[\{\]\}\\\|;:'\",<.>\/\?`~\ "
-posix_legal_characters = r"A-Za-z0-9" + posix_legal_punctuation
-posix_illegal_characters_re = r"[^" + posix_legal_characters + r"]"
-replace_illegal_posix_chars = re.compile(posix_illegal_characters_re).sub
-
-
-def posix_safe_filename(filename):
-    """
-    Return a new name for `filename` that is portable across POSIX systems.
-
-    Filenames returned by `posix_safe_filename` are not guarenteed to be valid
-    on Windows systems as they may contain characters not allowed in Windows
-    filenames.
-    """
-    filename = toascii(filename, translit=True)
-
-    if not filename:
-        return '_'
-
-    filename = replace_illegal_posix_chars('_', filename)
+        basename, dot, extension = filename.partition('.')
+        if basename.lower() in windows_illegal_names:
+            filename = ''.join([basename, '_', dot, extension])
 
     # no name made only of dots.
     if set(filename) == set(['.']):
