@@ -198,6 +198,40 @@ def portable_filename(filename, preserve_spaces=False):
 
     return filename
 
+
+posix_legal_punctuation = r"!@#$%^&\*\(\)-_=\+\[\{\]\}\\\|;:'\",<.>\/\?`~\ "
+posix_legal_characters = r"A-Za-z0-9" + posix_legal_punctuation
+posix_illegal_characters_re = r"[^" + posix_legal_characters + r"]"
+replace_illegal_posix_chars = re.compile(posix_illegal_characters_re).sub
+
+
+def posix_safe_filename(filename):
+    """
+    Return a new name for `filename` that is portable across POSIX systems.
+
+    Filenames returned by `posix_safe_filename` are not guarenteed to be valid
+    on Windows systems as they may contain characters not allowed in Windows
+    filenames.
+    """
+    filename = toascii(filename, translit=True)
+
+    if not filename:
+        return '_'
+
+    filename = replace_illegal_posix_chars('_', filename)
+
+    # no name made only of dots.
+    if set(filename) == set(['.']):
+        filename = 'dot' * len(filename)
+
+    # replaced any leading dotdot
+    if filename != '..' and filename.startswith('..'):
+        while filename.startswith('..'):
+            filename = filename.replace('..', '__', 1)
+
+    return filename
+
+
 #
 # paths comparisons, common prefix and suffix extraction
 #
