@@ -26,7 +26,7 @@ to OS-safe paths and to POSIX paths.
 # Build OS-portable and safer paths
 
 
-def safe_path(path, posix=False, preserve_spaces=False):
+def safe_path(path, posix=False, preserve_spaces=False, posix_only=False):
     """
     Convert `path` to a safe and portable POSIX path usable on multiple OSes.
     The returned path is an ASCII-only byte string, resolved for relative
@@ -52,7 +52,13 @@ def safe_path(path, posix=False, preserve_spaces=False):
     _pathmod, path_sep = path_handlers(path, posix)
 
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
-    segments = [portable_filename(s, preserve_spaces=preserve_spaces) for s in segments]
+    segments = [
+        portable_filename(
+            s,
+            preserve_spaces=preserve_spaces,
+            posix_only=posix_only
+        ) for s in segments
+    ]
 
     if not segments:
         return '_'
