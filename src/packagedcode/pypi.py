@@ -1196,7 +1196,7 @@ def get_requires_dependencies(requires, default_scope='install'):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                extracted_requirement=requirement,
+                extracted_requirement=str(req),
         ))
 
     return dependent_packages

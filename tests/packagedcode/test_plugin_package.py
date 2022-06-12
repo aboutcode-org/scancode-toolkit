@@ -12,6 +12,7 @@ from unittest.case import skipIf
 
 from commoncode.system import on_windows
 
+from packagedcode.plugin_package import get_installed_packages
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
@@ -211,3 +212,10 @@ class TestPlugins(PackageTester):
             with open(expected_file, 'w') as ef:
                 ef.write(result.output)
         assert result.output == open(expected_file).read()
+
+    def test_package_get_installed_packages(self):
+        test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')
+        expected_file = self.get_test_loc('plugin/get_installed_packages-expected.json')
+        result_file = self.get_temp_file('results.json')
+        results = list(get_installed_packages(test_dir))
+        self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)

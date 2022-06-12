@@ -25,6 +25,7 @@ from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
+from commoncode.resource import Resource
 from typecode import contenttype
 
 """
@@ -1201,7 +1202,7 @@ class Package(PackageData):
             self.package_uid = build_package_uid(self.purl)
 
     def to_dict(self):
-        return  super().to_dict(with_details=False)
+        return super().to_dict(with_details=False)
 
     @classmethod
     def from_package_data(cls, package_data, datafile_path):
@@ -1338,6 +1339,24 @@ class Package(PackageData):
         for resource in codebase.walk():
             if package_uid in resource.for_packages:
                 yield resource
+
+
+@attr.attributes(slots=True)
+class PackageWithResources(Package):
+    """
+    A Package with Resources.
+    """
+
+    resources = List(
+        item_type=Resource,
+        label='List of Resources',
+        help='List of Resources for this package.',
+    )
+
+    def to_dict(self):
+        package_data = super().to_dict()
+        package_data['resources'] = [resource.to_dict() for resource in self.resources]
+        return package_data
 
 
 def get_files_for_packages(codebase):

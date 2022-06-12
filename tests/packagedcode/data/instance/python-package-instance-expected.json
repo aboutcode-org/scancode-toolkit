@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/colorama",
-      "extracted_requirement": null,
+      "extracted_requirement": "colorama; platform_system == \"Windows\"",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -15,7 +15,7 @@
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
-      "extracted_requirement": null,
+      "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -177,7 +177,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
-              "extracted_requirement": null,
+              "extracted_requirement": "colorama; platform_system == \"Windows\"",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -186,7 +186,7 @@
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "extracted_requirement": null,
+              "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,

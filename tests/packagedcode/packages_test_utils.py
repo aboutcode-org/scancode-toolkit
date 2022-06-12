@@ -14,6 +14,7 @@ import saneyaml
 
 from commoncode import testcase
 from commoncode import text
+from scancode.cli_test_utils import purl_with_fake_uuid
 
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -46,6 +47,7 @@ class PackageTester(testcase.FileBasedTesting):
         packages_data,
         expected_loc,
         must_exist=True,
+        remove_uuid=True,
         regen=REGEN_TEST_FIXTURES,
     ):
         """
@@ -55,6 +57,15 @@ class PackageTester(testcase.FileBasedTesting):
 
         results = []
         for package_data in packages_data:
+            if remove_uuid and hasattr(package_data, 'package_uid'):
+                package_data.package_uid = purl_with_fake_uuid(package_data.package_uid)
+            if remove_uuid and hasattr(package_data, 'resources'):
+                for resource in package_data.resources:
+                    normalized_package_uids = [
+                        purl_with_fake_uuid(package_uid)
+                        for package_uid in resource.for_packages
+                    ]
+                    resource.for_packages = normalized_package_uids
             compute_and_set_license_expression(package_data)
             results.append(package_data.to_dict())
 

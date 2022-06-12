@@ -111,7 +111,7 @@
       "conflicting_license_categories": false,
       "ambiguous_compound_licensing": false
     },
-    "declared_holder": "Demo Corporation, Example Corp.",
+    "declared_holder": "Example Corp.",
     "primary_language": "Python",
     "other_license_expressions": [
       {

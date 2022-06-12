@@ -33,7 +33,7 @@ holders:
 holders_summary:
   - value: Marcel Holtmann
     count: 7
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 2
   - value: Maxim Krasnyansky
     count: 2

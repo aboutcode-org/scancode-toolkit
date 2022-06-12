@@ -310,17 +310,17 @@ holders:
 holders_summary:
   - value: The Apache Software Foundation
     count: 11
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 8
   - value: Netscape Communications Corporation
     count: 4
-  - value: Sun Microsystems, Inc.
+  - value: Sun Microsystems
     count: 4
   - value: TWAIN Working Group
     count: 4
   - value: The OpenSSL Project
     count: 4
-  - value: Red Hat, Inc.
+  - value: Red Hat
     count: 3
   - value: World Wide Web Consortium
     count: 3
@@ -347,8 +347,6 @@ holders_summary:
   - value: David Reveman
     count: 2
   - value: Eric Young
-    count: 2
-  - value: Hewlett-Packard, Inc.
     count: 2
   - value: James Clark
     count: 2
@@ -420,6 +418,10 @@ holders_summary:
     count: 1
   - value: Henrik Just
     count: 1
+  - value: Hewlett Packard, Inc
+    count: 1
+  - value: Hewlett-Packard
+    count: 1
   - value: INRIA, France Telecom
     count: 1
   - value: International Business Machines Corporation and others
@@ -460,7 +462,7 @@ holders_summary:
     count: 1
   - value: Software in the Public Interest, Inc.
     count: 1
-  - value: SuSE, Inc.
+  - value: SuSE
     count: 1
   - value: Tavmjong Bah
     count: 1

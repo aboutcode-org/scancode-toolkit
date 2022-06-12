@@ -1772,4 +1772,3 @@ if __name__ == '__main__':
     # get_apkindex_licenses(loc, 'alpine-licenses.csv')
     get_apkbuild_licenses(loc, 'alpine-licenses.csv')
     detect_licenses('alpine-licenses.csv', 'alpine-licenses-detection.csv')
-

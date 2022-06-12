@@ -29,7 +29,7 @@ holders:
   - Free Software Foundation, Inc.
   - Sun Microsystems, Inc.
 holders_summary:
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 1
   - value: George Lebl
     count: 1
@@ -43,9 +43,9 @@ holders_summary:
     count: 1
   - value: Ray Strode
     count: 1
-  - value: Red Hat, Inc.
+  - value: Red Hat
     count: 1
-  - value: Sun Microsystems, Inc.
+  - value: Sun Microsystems
     count: 1
   - value: Tom Tromey
     count: 1
