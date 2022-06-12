@@ -579,3 +579,12 @@ def test_parse_setup_py_with_computed_versions(test_loc):
 )
 def test_parse_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
+
+
+@pytest.mark.parametrize(
+    'test_loc',
+    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'more_setup.py'))),
+)
+def test_parse_more_setup_py(test_loc):
+    check_setup_py_parsing(test_loc)
+
