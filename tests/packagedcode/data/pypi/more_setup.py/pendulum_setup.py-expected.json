@@ -41,7 +41,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/python-dateutil",
-        "extracted_requirement": "<3.0,>=2.6",
+        "extracted_requirement": "python-dateutil<3.0,>=2.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -50,7 +50,7 @@
       },
       {
         "purl": "pkg:pypi/pytzdata",
-        "extracted_requirement": ">=2018.3",
+        "extracted_requirement": "pytzdata>=2018.3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -59,7 +59,7 @@
       },
       {
         "purl": "pkg:pypi/typing",
-        "extracted_requirement": "<4.0,>=3.6",
+        "extracted_requirement": "typing<4.0,>=3.6",
         "scope": ":python_version < \"3.5\"",
         "is_runtime": true,
         "is_optional": false,

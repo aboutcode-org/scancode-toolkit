@@ -67,7 +67,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/argparse",
-        "extracted_requirement": ">=1.4.0",
+        "extracted_requirement": "argparse>=1.4.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -76,7 +76,7 @@
       },
       {
         "purl": "pkg:pypi/beautifulsoup4",
-        "extracted_requirement": ">=4.8.1",
+        "extracted_requirement": "beautifulsoup4>=4.8.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -85,7 +85,7 @@
       },
       {
         "purl": "pkg:pypi/colorama",
-        "extracted_requirement": ">=0.4.3",
+        "extracted_requirement": "colorama>=0.4.3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -94,7 +94,7 @@
       },
       {
         "purl": "pkg:pypi/datetime",
-        "extracted_requirement": ">=4.3",
+        "extracted_requirement": "dateTime>=4.3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -103,7 +103,7 @@
       },
       {
         "purl": "pkg:pypi/decorator",
-        "extracted_requirement": ">=4.4.2",
+        "extracted_requirement": "decorator>=4.4.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -112,7 +112,7 @@
       },
       {
         "purl": "pkg:pypi/flake8",
-        "extracted_requirement": ">=3.7.9",
+        "extracted_requirement": "flake8>=3.7.9",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -121,7 +121,7 @@
       },
       {
         "purl": "pkg:pypi/google",
-        "extracted_requirement": ">=2.0.3",
+        "extracted_requirement": "google>=2.0.3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -130,7 +130,7 @@
       },
       {
         "purl": "pkg:pypi/gtts@2.1.1",
-        "extracted_requirement": "==2.1.1",
+        "extracted_requirement": "gTTS==2.1.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -139,7 +139,7 @@
       },
       {
         "purl": "pkg:pypi/newsapi-python",
-        "extracted_requirement": ">=0.2.6",
+        "extracted_requirement": "newsapi-python>=0.2.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -148,7 +148,7 @@
       },
       {
         "purl": "pkg:pypi/phonenumbers@8.10.2",
-        "extracted_requirement": "==8.10.2",
+        "extracted_requirement": "phonenumbers==8.10.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -157,7 +157,7 @@
       },
       {
         "purl": "pkg:pypi/playsound",
-        "extracted_requirement": ">=1.2.2",
+        "extracted_requirement": "playsound>=1.2.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -166,7 +166,7 @@
       },
       {
         "purl": "pkg:pypi/prompt-toolkit@1.0.14",
-        "extracted_requirement": "==1.0.14",
+        "extracted_requirement": "prompt_toolkit==1.0.14",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -175,7 +175,7 @@
       },
       {
         "purl": "pkg:pypi/psutil",
-        "extracted_requirement": ">=5.7.0",
+        "extracted_requirement": "psutil>=5.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -184,7 +184,7 @@
       },
       {
         "purl": "pkg:pypi/pyfiglet",
-        "extracted_requirement": ">=0.8.post1",
+        "extracted_requirement": "pyfiglet>=0.8.post1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -193,7 +193,7 @@
       },
       {
         "purl": "pkg:pypi/pyflakes",
-        "extracted_requirement": ">=2.2.0",
+        "extracted_requirement": "pyflakes>=2.2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -202,7 +202,7 @@
       },
       {
         "purl": "pkg:pypi/pygments",
-        "extracted_requirement": ">=2.6.1",
+        "extracted_requirement": "Pygments>=2.6.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -211,7 +211,7 @@
       },
       {
         "purl": "pkg:pypi/pyppeteer",
-        "extracted_requirement": ">=0.0.25",
+        "extracted_requirement": "pyppeteer>=0.0.25",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -220,7 +220,7 @@
       },
       {
         "purl": "pkg:pypi/python-dotenv@0.12.0",
-        "extracted_requirement": "==0.12.0",
+        "extracted_requirement": "python-dotenv==0.12.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -229,7 +229,7 @@
       },
       {
         "purl": "pkg:pypi/python-telegram-bot",
-        "extracted_requirement": ">=11.1.0",
+        "extracted_requirement": "python-telegram-bot>=11.1.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -238,7 +238,7 @@
       },
       {
         "purl": "pkg:pypi/requests",
-        "extracted_requirement": ">=2.22.0",
+        "extracted_requirement": "requests>=2.22.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -247,7 +247,7 @@
       },
       {
         "purl": "pkg:pypi/transitions",
-        "extracted_requirement": ">=0.7.2",
+        "extracted_requirement": "transitions>=0.7.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -256,7 +256,7 @@
       },
       {
         "purl": "pkg:pypi/urllib3",
-        "extracted_requirement": ">=1.25.8",
+        "extracted_requirement": "urllib3>=1.25.8",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -265,7 +265,7 @@
       },
       {
         "purl": "pkg:pypi/websockets",
-        "extracted_requirement": ">=8.1",
+        "extracted_requirement": "websockets>=8.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -274,7 +274,7 @@
       },
       {
         "purl": "pkg:pypi/whaaaaat",
-        "extracted_requirement": ">=0.5.2",
+        "extracted_requirement": "whaaaaat>=0.5.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

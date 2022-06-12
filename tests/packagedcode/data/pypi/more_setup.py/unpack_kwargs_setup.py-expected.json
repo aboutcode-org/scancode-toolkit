@@ -41,7 +41,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pendulum",
-        "extracted_requirement": ">=1.4.4",
+        "extracted_requirement": "pendulum>=1.4.4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -50,7 +50,7 @@
       },
       {
         "purl": "pkg:pypi/cachy",
-        "extracted_requirement": ">=0.2.0",
+        "extracted_requirement": "cachy[msgpack]>=0.2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

@@ -56,7 +56,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/py2-ipaddress",
-        "extracted_requirement": "<3.0,>=2.0",
+        "extracted_requirement": "py2-ipaddress<3.0,>=2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -65,7 +65,7 @@
       },
       {
         "purl": "pkg:pypi/url",
-        "extracted_requirement": ">=0.1.4",
+        "extracted_requirement": "url>=0.1.4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -74,7 +74,7 @@
       },
       {
         "purl": "pkg:pypi/publicsuffix2",
-        "extracted_requirement": null,
+        "extracted_requirement": "publicsuffix2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -83,7 +83,7 @@
       },
       {
         "purl": "pkg:pypi/nltk",
-        "extracted_requirement": "<3.0.0,>=2.0b4",
+        "extracted_requirement": "nltk<3.0.0,>=2.0b4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -92,7 +92,7 @@
       },
       {
         "purl": "pkg:pypi/patch",
-        "extracted_requirement": "<1.15,>=1.14.2",
+        "extracted_requirement": "patch<1.15,>=1.14.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -101,7 +101,7 @@
       },
       {
         "purl": "pkg:pypi/bz2file",
-        "extracted_requirement": ">=0.98",
+        "extracted_requirement": "bz2file>=0.98",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -110,7 +110,7 @@
       },
       {
         "purl": "pkg:pypi/pyyaml",
-        "extracted_requirement": "<4.0,>=3.0",
+        "extracted_requirement": "PyYAML<4.0,>=3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -119,7 +119,7 @@
       },
       {
         "purl": "pkg:pypi/beautifulsoup",
-        "extracted_requirement": "<4.0.0,>=3.2.0",
+        "extracted_requirement": "Beautifulsoup<4.0.0,>=3.2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -128,7 +128,7 @@
       },
       {
         "purl": "pkg:pypi/beautifulsoup4",
-        "extracted_requirement": "<5.0.0,>=4.3.0",
+        "extracted_requirement": "Beautifulsoup4<5.0.0,>=4.3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -137,7 +137,7 @@
       },
       {
         "purl": "pkg:pypi/html5lib",
-        "extracted_requirement": null,
+        "extracted_requirement": "html5lib",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -146,7 +146,7 @@
       },
       {
         "purl": "pkg:pypi/six",
-        "extracted_requirement": null,
+        "extracted_requirement": "six",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -155,7 +155,7 @@
       },
       {
         "purl": "pkg:pypi/pygments",
-        "extracted_requirement": "<3.0.0,>=2.0.0",
+        "extracted_requirement": "pygments<3.0.0,>=2.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -164,7 +164,7 @@
       },
       {
         "purl": "pkg:pypi/pdfminer",
-        "extracted_requirement": ">=20140328",
+        "extracted_requirement": "pdfminer>=20140328",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -173,7 +173,7 @@
       },
       {
         "purl": "pkg:pypi/chardet",
-        "extracted_requirement": "<3.0.0,>=2.1.1",
+        "extracted_requirement": "chardet<3.0.0,>=2.1.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -182,7 +182,7 @@
       },
       {
         "purl": "pkg:pypi/binaryornot",
-        "extracted_requirement": ">=0.4.0",
+        "extracted_requirement": "binaryornot>=0.4.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -191,7 +191,7 @@
       },
       {
         "purl": "pkg:pypi/click",
-        "extracted_requirement": "<5.0.0,>=4.0.0",
+        "extracted_requirement": "click<5.0.0,>=4.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -200,7 +200,7 @@
       },
       {
         "purl": "pkg:pypi/jinja2",
-        "extracted_requirement": "<3.0.0,>=2.7.0",
+        "extracted_requirement": "jinja2<3.0.0,>=2.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -209,7 +209,7 @@
       },
       {
         "purl": "pkg:pypi/markupsafe",
-        "extracted_requirement": ">=0.23",
+        "extracted_requirement": "MarkupSafe>=0.23",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -218,7 +218,7 @@
       },
       {
         "purl": "pkg:pypi/colorama",
-        "extracted_requirement": null,
+        "extracted_requirement": "colorama",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -227,7 +227,7 @@
       },
       {
         "purl": "pkg:pypi/about-code-tool",
-        "extracted_requirement": ">=0.9.0",
+        "extracted_requirement": "about-code-tool>=0.9.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -236,7 +236,7 @@
       },
       {
         "purl": "pkg:pypi/requests",
-        "extracted_requirement": "<3.0.0,>=2.7.0",
+        "extracted_requirement": "requests<3.0.0,>=2.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -245,7 +245,7 @@
       },
       {
         "purl": "pkg:pypi/certifi",
-        "extracted_requirement": null,
+        "extracted_requirement": "certifi",
         "scope": "base",
         "is_runtime": true,
         "is_optional": false,
@@ -254,7 +254,7 @@
       },
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": null,
+        "extracted_requirement": "setuptools",
         "scope": "base",
         "is_runtime": true,
         "is_optional": false,
@@ -263,7 +263,7 @@
       },
       {
         "purl": "pkg:pypi/wheel",
-        "extracted_requirement": null,
+        "extracted_requirement": "wheel",
         "scope": "base",
         "is_runtime": true,
         "is_optional": false,
@@ -272,7 +272,7 @@
       },
       {
         "purl": "pkg:pypi/pip",
-        "extracted_requirement": null,
+        "extracted_requirement": "pip",
         "scope": "base",
         "is_runtime": true,
         "is_optional": false,
@@ -281,7 +281,7 @@
       },
       {
         "purl": "pkg:pypi/wincertstore",
-        "extracted_requirement": null,
+        "extracted_requirement": "wincertstore",
         "scope": "base",
         "is_runtime": true,
         "is_optional": false,
@@ -290,7 +290,7 @@
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": null,
+        "extracted_requirement": "pytest",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -299,7 +299,7 @@
       },
       {
         "purl": "pkg:pypi/execnet",
-        "extracted_requirement": null,
+        "extracted_requirement": "execnet",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -308,7 +308,7 @@
       },
       {
         "purl": "pkg:pypi/py",
-        "extracted_requirement": null,
+        "extracted_requirement": "py",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -317,7 +317,7 @@
       },
       {
         "purl": "pkg:pypi/pytest-xdist",
-        "extracted_requirement": null,
+        "extracted_requirement": "pytest-xdist",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -326,7 +326,7 @@
       },
       {
         "purl": "pkg:pypi/bumpversion",
-        "extracted_requirement": null,
+        "extracted_requirement": "bumpversion",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,

@@ -55,7 +55,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": null,
+        "extracted_requirement": "setuptools",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

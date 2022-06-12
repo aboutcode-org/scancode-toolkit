@@ -53,7 +53,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/mysqlclient",
-        "extracted_requirement": null,
+        "extracted_requirement": "mysqlclient",
         "scope": "mysql",
         "is_runtime": true,
         "is_optional": false,
@@ -62,7 +62,7 @@
       },
       {
         "purl": "pkg:pypi/pymysql",
-        "extracted_requirement": null,
+        "extracted_requirement": "pymysql",
         "scope": "pymysql",
         "is_runtime": true,
         "is_optional": false,
@@ -71,7 +71,7 @@
       },
       {
         "purl": "pkg:pypi/psycopg2",
-        "extracted_requirement": null,
+        "extracted_requirement": "psycopg2",
         "scope": "postgresql",
         "is_runtime": true,
         "is_optional": false,
@@ -80,7 +80,7 @@
       },
       {
         "purl": "pkg:pypi/pg8000",
-        "extracted_requirement": null,
+        "extracted_requirement": "pg8000",
         "scope": "postgresql_pg8000",
         "is_runtime": true,
         "is_optional": false,
@@ -89,7 +89,7 @@
       },
       {
         "purl": "pkg:pypi/psycopg2cffi",
-        "extracted_requirement": null,
+        "extracted_requirement": "psycopg2cffi",
         "scope": "postgresql_psycopg2cffi",
         "is_runtime": true,
         "is_optional": false,
@@ -98,7 +98,7 @@
       },
       {
         "purl": "pkg:pypi/cx-oracle",
-        "extracted_requirement": null,
+        "extracted_requirement": "cx_oracle",
         "scope": "oracle",
         "is_runtime": true,
         "is_optional": false,
@@ -107,7 +107,7 @@
       },
       {
         "purl": "pkg:pypi/pyodbc",
-        "extracted_requirement": null,
+        "extracted_requirement": "pyodbc",
         "scope": "mssql_pyodbc",
         "is_runtime": true,
         "is_optional": false,
@@ -116,7 +116,7 @@
       },
       {
         "purl": "pkg:pypi/pymssql",
-        "extracted_requirement": null,
+        "extracted_requirement": "pymssql",
         "scope": "mssql_pymssql",
         "is_runtime": true,
         "is_optional": false,

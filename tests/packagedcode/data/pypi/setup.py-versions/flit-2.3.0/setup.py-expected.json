@@ -41,7 +41,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/flit-core",
-        "extracted_requirement": ">=2.3.0",
+        "extracted_requirement": "flit_core>=2.3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -50,7 +50,7 @@
       },
       {
         "purl": "pkg:pypi/requests",
-        "extracted_requirement": null,
+        "extracted_requirement": "requests",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -59,7 +59,7 @@
       },
       {
         "purl": "pkg:pypi/docutils",
-        "extracted_requirement": null,
+        "extracted_requirement": "docutils",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -68,7 +68,7 @@
       },
       {
         "purl": "pkg:pypi/pytoml",
-        "extracted_requirement": null,
+        "extracted_requirement": "pytoml",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -77,7 +77,7 @@
       },
       {
         "purl": "pkg:pypi/zipfile36",
-        "extracted_requirement": null,
+        "extracted_requirement": "zipfile36",
         "scope": ":python_version in '3.3 3.4 3.5'",
         "is_runtime": true,
         "is_optional": false,
@@ -86,7 +86,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": null,
+        "extracted_requirement": "sphinx",
         "scope": "doc",
         "is_runtime": true,
         "is_optional": false,
@@ -95,7 +95,7 @@
       },
       {
         "purl": "pkg:pypi/sphinxcontrib-github-alt",
-        "extracted_requirement": null,
+        "extracted_requirement": "sphinxcontrib_github_alt",
         "scope": "doc",
         "is_runtime": true,
         "is_optional": false,
@@ -104,7 +104,7 @@
       },
       {
         "purl": "pkg:pypi/pygments-github-lexers",
-        "extracted_requirement": null,
+        "extracted_requirement": "pygments-github-lexers",
         "scope": "doc",
         "is_runtime": true,
         "is_optional": false,
@@ -113,7 +113,7 @@
       },
       {
         "purl": "pkg:pypi/requests-download",
-        "extracted_requirement": null,
+        "extracted_requirement": "requests_download",
         "scope": "installfrom",
         "is_runtime": true,
         "is_optional": false,
@@ -122,7 +122,7 @@
       },
       {
         "purl": "pkg:pypi/testpath",
-        "extracted_requirement": null,
+        "extracted_requirement": "testpath",
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,
@@ -131,7 +131,7 @@
       },
       {
         "purl": "pkg:pypi/responses",
-        "extracted_requirement": null,
+        "extracted_requirement": "responses",
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,
@@ -140,7 +140,7 @@
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": ">=2.7.3",
+        "extracted_requirement": "pytest>=2.7.3",
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,
@@ -149,7 +149,7 @@
       },
       {
         "purl": "pkg:pypi/pytest-cov",
-        "extracted_requirement": null,
+        "extracted_requirement": "pytest-cov",
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,

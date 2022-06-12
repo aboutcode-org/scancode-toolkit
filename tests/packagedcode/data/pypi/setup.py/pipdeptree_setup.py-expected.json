@@ -56,7 +56,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pip",
-        "extracted_requirement": ">=6.0.0",
+        "extracted_requirement": "pip>=6.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -65,7 +65,7 @@
       },
       {
         "purl": "pkg:pypi/graphviz",
-        "extracted_requirement": null,
+        "extracted_requirement": "graphviz",
         "scope": "graphviz",
         "is_runtime": true,
         "is_optional": false,

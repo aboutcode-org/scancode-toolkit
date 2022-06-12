@@ -61,7 +61,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pysocks",
-        "extracted_requirement": null,
+        "extracted_requirement": "PySocks",
         "scope": "proxy",
         "is_runtime": true,
         "is_optional": false,
