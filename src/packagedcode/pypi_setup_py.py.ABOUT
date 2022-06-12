@@ -1,0 +1,8 @@
+about_resource: pypi_setup_py.py
+name: dephell_setuptools
+author: Gram (@orsinium)
+author_email: gram@orsinium.dev
+homepage_url: https://github.com/dephell/dephell_setuptools
+license_expression: mit
+package_url: pkg:github/dephell/dephell_setuptools@v.0.2.4
+notes: code heavily modified from original
