@@ -1,11 +1,19 @@
+#
+# Copyright (c) Gram and others.
+# This code is copied and modified from dephell_setuptools https://github.com/pypa/setuptools
+# SPDX-License-Identifier: MIT
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+#
+
 
 import ast
-from configparser import ConfigParser
 from copy import deepcopy
 from pathlib import Path
 
-from packagedcode.pypi_setuptools_config import ConfigMetadataHandler
-from packagedcode.pypi_setuptools_config import ConfigOptionsHandler
+"""
+Parse setup.py files.
+"""
 
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#metadata
 FIELDS = {
@@ -39,6 +47,7 @@ FIELDS = {
     'version',
 }
 
+
 def is_setup_call(element):
     if (
         isinstance(element, ast.Call)
@@ -56,137 +65,134 @@ def is_setup_call(element):
     ):
         return True
 
-class SetupPyReader:
 
-    def __init__(self, path: Path):
-        self.path = Path(path)
+def parse_setup_py(location):
+    """
+    Return a mapping of setuptools.setup() call argument found in a setup.py
+    file at ``location`` or an empty mapping.
+    """
+    path = Path(location)
+    tree = tuple(ast.parse(path.read_text(encoding='utf8')).body)
+    body = tuple(get_body(tree))
 
-    def parse(self):
-        self.tree = tuple(ast.parse(self.path.read_text(encoding='utf8')).body)
-        self.body = tuple(self._get_body(self.tree))
+    call = get_setup_call(tree)
+    result = get_call_kwargs(call, body)
 
-        call = self._get_call(self.tree)
-        result = self._get_call_kwargs(call)
+    return clean_setup(result)
 
-        return clean_setup(result)
 
-    @classmethod
-    def _get_body(cls, elements):
-        for element in elements:
-            if isinstance(element, ast.FunctionDef):
-                yield from cls._get_body(element.body)
-                continue
-            if isinstance(element, ast.If):
-                yield from cls._get_body(element.body)
-            if isinstance(element, ast.Expr):
-                yield element.value
-                continue
-            yield element
+def get_body(elements):
+    """
+    Yield the body from ``elements`` as a single iterable.
+    """
+    for element in elements:
+        if isinstance(element, ast.FunctionDef):
+            yield from get_body(element.body)
+            continue
+        if isinstance(element, ast.If):
+            yield from get_body(element.body)
+        if isinstance(element, ast.Expr):
+            yield element.value
+            continue
+        yield element
 
-    def _get_call(self, elements):
-        for element in self._get_body(elements):
-            if is_setup_call(element):
-                return element
-            elif isinstance(element, (ast.Assign, )):
-                if isinstance(element.value, ast.Call):
-                    if is_setup_call(element.value):
-                        return element.value
 
-    def _node_to_value(self, node):
-        if node is None:
-            return
-        if hasattr(ast, 'Constant'):
-            if isinstance(node, ast.Constant):
-                return node.value
+def get_setup_call(elements):
+    """
+    Return a setup() method call found in the ``elements`` or None.
+    """
+    for element in get_body(elements):
+        if is_setup_call(element):
+            return element
+        elif isinstance(element, (ast.Assign,)):
+            if isinstance(element.value, ast.Call):
+                if is_setup_call(element.value):
+                    return element.value
 
-        if isinstance(node, ast.Str):
-            return node.s
 
-        if isinstance(node, ast.Num):
-            return node.n
-
-        if isinstance(node, (ast.List, ast.Tuple, ast.Set,)):
-            return [self._node_to_value(subnode) for subnode in node.elts]
-
-        if isinstance(node, ast.Dict):
-            result = {}
-            for key, value in zip(node.keys, node.values):
-                result[self._node_to_value(key)] = self._node_to_value(value)
-            return result
-
-        if isinstance(node, ast.Name):
-            variable = self._find_variable_in_body(self.body, node.id)
-            if variable is not None:
-                return self._node_to_value(variable)
-
-        if isinstance(node, ast.Call):
-            if not isinstance(node.func, ast.Name):
-                return
-            if node.func.id != 'dict':
-                return
-            return self._get_call_kwargs(node)
+def node_to_value(node, body):
+    """
+    Return the extracted and converted value of a node or None
+    """
+    if node is None:
         return
+    if hasattr(ast, 'Constant'):
+        if isinstance(node, ast.Constant):
+            return node.value
 
-    def _find_variable_in_body(self, body, name):
-        for elem in body:
-            if not isinstance(elem, ast.Assign):
-                continue
-            for target in elem.targets:
-                if not isinstance(target, ast.Name):
-                    continue
-                if target.id == name:
-                    return elem.value
+    if isinstance(node, ast.Str):
+        return node.s
 
-    def _get_call_kwargs(self, node: ast.Call):
-        """
-        Return a mapping of setup() method call keyword arguments.
-        """
+    if isinstance(node, ast.Num):
+        return node.n
+
+    if isinstance(node, (ast.List, ast.Tuple, ast.Set,)):
+        return [node_to_value(subnode, body) for subnode in node.elts]
+
+    if isinstance(node, ast.Dict):
         result = {}
-        keywords = getattr(node, 'keywords', []) or []
-        for keyword in keywords:
-            # dict unpacking
-            if keyword.arg is None:
-                value = self._node_to_value(keyword.value)
-                if isinstance(value, dict):
-                    result.update(value)
-                continue
-            # keyword argument
-            value = self._node_to_value(keyword.value)
-            if value is None:
-                continue
-            result[keyword.arg] = value
+        for key, value in zip(node.keys, node.values):
+            result[node_to_value(key, body)] = node_to_value(value, body)
         return result
 
+    if isinstance(node, ast.Name):
+        variable = find_variable_in_body(body, node.id)
+        if variable is not None:
+            return node_to_value(variable, body)
 
-class SetupCfgReader:
+    if isinstance(node, ast.Call):
+        if not isinstance(node.func, ast.Name):
+            return
+        if node.func.id != 'dict':
+            return
+        return get_call_kwargs(node, body)
+    return
 
-    def __init__(self, path):
-        self.path = Path(path)
 
-    def parse(self):
-        parser = ConfigParser()
-        parser.read(str(self.path))
+def find_variable_in_body(body, name):
+    """
+    Return the value of the variable ``name`` found in the ``body`` ast tree or None.
+    """
+    for elem in body:
+        if not isinstance(elem, ast.Assign):
+            continue
+        for target in elem.targets:
+            if not isinstance(target, ast.Name):
+                continue
+            if target.id == name:
+                return elem.value
 
-        options = deepcopy(parser._sections)  # type: ignore
-        for section, content in options.items():
-            for k, v in content.items():
-                options[section][k] = ('', v)
 
-        container = type('container', (), dict.fromkeys(FIELDS))()
-        ConfigOptionsHandler(container, options).parse()
-        ConfigMetadataHandler(container, options).parse()
-
-        return clean_setup(vars(container))
+def get_call_kwargs(node: ast.Call, body):
+    """
+    Return a mapping of setup() method call keyword arguments.
+    """
+    result = {}
+    keywords = getattr(node, 'keywords', []) or []
+    for keyword in keywords:
+        # dict unpacking
+        if keyword.arg is None:
+            value = node_to_value(keyword.value, body)
+            if isinstance(value, dict):
+                result.update(value)
+            continue
+        # keyword argument
+        value = node_to_value(keyword.value, body)
+        if value is None:
+            continue
+        result[keyword.arg] = value
+    return result
 
 
 def clean_setup(data):
     """
-    Return a cleaned mapping from setup ``data``.
+    Return a cleaned mapping from a setup ``data`` mapping.
     """
     result = {k: v
         for k, v in data.items()
-        if (v and v is not False) and v != 'UNKNOWN'
-        and k in FIELDS
+        if k in FIELDS
+        and (v and v is not False)
+        and str(v) != 'UNKNOWN'
     }
 
     # split keywords in words
@@ -200,20 +206,3 @@ def clean_setup(data):
         result['keywords'] = keywords
 
     return result
-
-
-def read_setup(path):
-
-    READERS_BY_EXT = {
-        '.py': SetupPyReader,
-        '.cfg': SetupCfgReader,
-    }
-
-    for fname, reader in READERS_BY_EXT.items():
-        if path.endswith(fname):
-            return reader(path).parse()
-
-
-def dumps_setup(path):
-    import json
-    print(json.dumps(read_setup(path), indent=2))
