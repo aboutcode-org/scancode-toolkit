@@ -5,12 +5,5 @@
   "author": "MirrorBrain project",
   "author_email": "info@mirrorbrain.org",
   "license": "GPLv2",
-  "url": "http://mirrorbrain.org/",
-  "packages": [
-    "mb"
-  ],
-  "scripts": [
-    "mb.py"
-  ],
-  "ext_modules": []
+  "url": "http://mirrorbrain.org/"
 }

@@ -19,7 +19,14 @@
       }
     ],
     "keywords": [
-      "urllib httplib threadsafe filepost http https ssl pooling",
+      "urllib",
+      "httplib",
+      "threadsafe",
+      "filepost",
+      "http",
+      "https",
+      "ssl",
+      "pooling",
       "Environment :: Web Environment",
       "Intended Audience :: Developers",
       "Operating System :: OS Independent",

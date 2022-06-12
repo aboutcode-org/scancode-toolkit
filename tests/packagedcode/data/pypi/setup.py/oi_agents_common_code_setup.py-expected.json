@@ -19,7 +19,9 @@
       }
     ],
     "keywords": [
-      "agents development utils",
+      "agents",
+      "development",
+      "utils",
       "Development Status :: 3 - Alpha",
       "Environment :: Console",
       "Intended Audience :: Developers",

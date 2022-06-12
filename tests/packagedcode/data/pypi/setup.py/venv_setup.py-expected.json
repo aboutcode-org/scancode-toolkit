@@ -26,7 +26,10 @@
       }
     ],
     "keywords": [
-      "setuptools deployment installation distutils",
+      "setuptools",
+      "deployment",
+      "installation",
+      "distutils",
       "Development Status :: 5 - Production/Stable",
       "Intended Audience :: Developers",
       "Programming Language :: Python :: 2",

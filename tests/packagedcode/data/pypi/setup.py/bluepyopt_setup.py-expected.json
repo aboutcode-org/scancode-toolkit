@@ -132,6 +132,24 @@
         "is_optional": false,
         "is_resolved": false,
         "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/scoop",
+        "extracted_requirement": ">=0.7",
+        "scope": "all",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/scoop",
+        "extracted_requirement": ">=0.7",
+        "scope": "scoop",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/bluepyopt",

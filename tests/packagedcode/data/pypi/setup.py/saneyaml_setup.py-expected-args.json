@@ -3,15 +3,12 @@
   "version": "0.2dev",
   "license": "Apache-2.0",
   "description": "Dump readable YAML and load safely any YAML preserving ordering and avoiding surprises of type conversions. This library is a PyYaml wrapper with sane behaviour to read and write readable YAML safely, typically when used for configuration.",
-  "long_description": "",
   "author": "AboutCode authors and others.",
   "author_email": "info@nexb.com",
   "url": "http://aboutcode.org",
   "package_dir": {
     "": "src"
   },
-  "include_package_data": true,
-  "zip_safe": false,
   "platforms": "any",
   "classifiers": [
     "Development Status :: 4 - Beta",

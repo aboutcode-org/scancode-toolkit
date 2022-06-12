@@ -7,14 +7,5 @@
   "url": "http://code.google.com/p/gyp",
   "package_dir": {
     "": "pylib"
-  },
-  "packages": [
-    "gyp",
-    "gyp.generator"
-  ],
-  "entry_points": {
-    "console_scripts": [
-      "gyp=gyp:script_main"
-    ]
   }
 }

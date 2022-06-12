@@ -51,6 +51,42 @@
     },
     "dependencies": [
       {
+        "purl": "pkg:pypi/chardet",
+        "extracted_requirement": "<4,>=3.0.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/idna",
+        "extracted_requirement": "<3,>=2.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/urllib3",
+        "extracted_requirement": "!=1.25.0,!=1.25.1,<1.26,>=1.21.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/certifi",
+        "extracted_requirement": ">=2017.4.17",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
         "purl": "pkg:pypi/pyopenssl",
         "extracted_requirement": ">=0.14",
         "scope": "security",

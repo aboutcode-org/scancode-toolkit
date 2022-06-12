@@ -10,10 +10,6 @@
   ],
   "url": "http://thrift.apache.org",
   "license": "Apache License 2.0",
-  "packages": [
-    "fb303",
-    "fb303_scripts"
-  ],
   "classifiers": [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",

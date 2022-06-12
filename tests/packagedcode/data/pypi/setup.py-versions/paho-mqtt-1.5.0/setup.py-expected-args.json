@@ -7,10 +7,10 @@
   "package_dir": {
     "": "src"
   },
-  "include_package_data": true,
   "license": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
-  "zip_safe": false,
-  "keywords": "paho",
+  "keywords": [
+    "paho"
+  ],
   "classifiers": [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -29,5 +29,14 @@
     "Topic :: Communications",
     "Topic :: Internet"
   ],
-  "test_suite": "tests"
+  "tests_require": [
+    "pytest",
+    "pylama",
+    "six"
+  ],
+  "extras_require": {
+    "proxy": [
+      "PySocks"
+    ]
+  }
 }

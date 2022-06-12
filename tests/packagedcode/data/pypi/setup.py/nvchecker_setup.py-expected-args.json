@@ -4,10 +4,14 @@
   "author_email": "lilydjwg@gmail.com",
   "description": "New version checker for software",
   "license": "MIT",
-  "keywords": "new version build check",
+  "keywords": [
+    "new",
+    "version",
+    "build",
+    "check"
+  ],
   "url": "https://github.com/lilydjwg/nvchecker",
   "platforms": "any",
-  "zip_safe": true,
   "install_requires": [
     "tornado>=4.1",
     "setuptools"
@@ -16,18 +20,6 @@
     "pytest",
     "flaky"
   ],
-  "entry_points": {
-    "console_scripts": [
-      "nvchecker = nvchecker.main:main",
-      "nvtake = nvchecker.tools:take",
-      "nvcmp = nvchecker.tools:cmp"
-    ]
-  },
-  "package_data": {
-    "nvchecker": [
-      "source/vcs.sh"
-    ]
-  },
   "classifiers": [
     "Development Status :: 4 - Beta",
     "Environment :: Console",

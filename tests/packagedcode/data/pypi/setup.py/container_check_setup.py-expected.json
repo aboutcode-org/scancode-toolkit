@@ -19,7 +19,10 @@
       }
     ],
     "keywords": [
-      "containers update rpm yum",
+      "containers",
+      "update",
+      "rpm",
+      "yum",
       "Development Status :: 4 - Beta",
       "Intended Audience :: Developers",
       "Topic :: System :: Archiving :: Packaging",

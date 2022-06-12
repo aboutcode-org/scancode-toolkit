@@ -16,7 +16,11 @@
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Utilities"
   ],
-  "keywords": "agents development utils",
+  "keywords": [
+    "agents",
+    "development",
+    "utils"
+  ],
   "extras_require": {
     "dev": [
       "ipython"

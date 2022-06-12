@@ -32,10 +32,5 @@
   "tests_require": [
     "pytest",
     "hypothesis"
-  ],
-  "entry_points": {
-    "console_scripts": [
-      "chardetect = chardet.cli.chardetect:main"
-    ]
-  }
+  ]
 }

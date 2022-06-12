@@ -18,7 +18,14 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 3",
+      "Intended Audience :: Developers",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
     "homepage_url": "https://github.com/benjaminp/six",
     "download_url": null,
     "size": null,
@@ -32,7 +39,10 @@
     "copyright": null,
     "license_expression": "mit",
     "declared_license": {
-      "license": "MIT"
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
     },
     "notice_text": null,
     "source_packages": [],

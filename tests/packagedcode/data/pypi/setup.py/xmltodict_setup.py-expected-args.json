@@ -23,9 +23,6 @@
     "Programming Language :: Python :: Implementation :: PyPy",
     "Topic :: Text Processing :: Markup :: XML"
   ],
-  "py_modules": [
-    "xmltodict"
-  ],
   "tests_require": [
     "nose>=1.0",
     "coverage"

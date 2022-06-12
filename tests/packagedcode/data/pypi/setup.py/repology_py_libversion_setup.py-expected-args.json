@@ -16,10 +16,5 @@
     "Topic :: Software Development :: Version Control",
     "Topic :: System :: Archiving :: Packaging",
     "Topic :: System :: Software Distribution"
-  ],
-  "packages": [
-    "libversion"
-  ],
-  "ext_modules": [],
-  "test_suite": "tests"
+  ]
 }

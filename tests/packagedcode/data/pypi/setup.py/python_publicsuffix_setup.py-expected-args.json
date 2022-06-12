@@ -5,15 +5,6 @@
   "license": "MIT",
   "author": "Tomaz Solc",
   "author_email": "tomaz.solc@tablix.org",
-  "packages": [
-    "publicsuffix"
-  ],
-  "package_data": {
-    "publicsuffix": [
-      "public_suffix_list.dat"
-    ]
-  },
-  "test_suite": "tests",
   "classifiers": [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",

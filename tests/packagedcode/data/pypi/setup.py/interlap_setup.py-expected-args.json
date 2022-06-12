@@ -1,8 +1,5 @@
 {
   "name": "interlap",
-  "py_modules": [
-    "interlap"
-  ],
   "author": "Brent S Pedersen",
   "author_email": "bpederse@gmail.com",
   "url": "http://brentp.github.io/interlap",

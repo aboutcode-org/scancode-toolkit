@@ -19,7 +19,9 @@
       }
     ],
     "keywords": [
-      "setup.py pin dependencies"
+      "setup.py",
+      "pin",
+      "dependencies"
     ],
     "homepage_url": "https://github.com/msabramo/setuppycheck",
     "download_url": null,

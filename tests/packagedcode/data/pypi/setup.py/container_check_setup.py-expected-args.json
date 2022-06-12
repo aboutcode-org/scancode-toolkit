@@ -18,16 +18,10 @@
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5"
   ],
-  "keywords": "containers update rpm yum",
-  "install_requires": [],
-  "extras_require": {},
-  "package_data": {
-    "example": [
-      "containers_list_example.yaml"
-    ]
-  },
-  "data_files": [],
-  "scripts": [
-    "container-check"
+  "keywords": [
+    "containers",
+    "update",
+    "rpm",
+    "yum"
   ]
 }

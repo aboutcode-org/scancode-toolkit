@@ -2,16 +2,24 @@
   {
     "type": "pypi",
     "namespace": null,
-    "name": null,
+    "name": "pluggy",
     "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Python",
-    "description": "",
+    "description": "plugin and hook calling mechanisms for python",
     "release_date": null,
-    "parties": [],
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Holger Krekel",
+        "email": "holger at merlinux.eu",
+        "url": null
+      }
+    ],
     "keywords": [],
-    "homepage_url": null,
+    "homepage_url": "https://github.com/pytest-dev/pluggy",
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -22,17 +30,19 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": null,
-    "declared_license": {},
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT license"
+    },
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
     "dependencies": [],
-    "repository_homepage_url": null,
+    "repository_homepage_url": "https://pypi.org/project/pluggy",
     "repository_download_url": null,
-    "api_data_url": null,
+    "api_data_url": "https://pypi.org/pypi/pluggy/json",
     "datasource_id": "pypi_setup_py",
-    "purl": null
+    "purl": "pkg:pypi/pluggy"
   }
 ]

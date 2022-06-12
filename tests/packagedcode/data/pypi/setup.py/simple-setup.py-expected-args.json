@@ -9,8 +9,6 @@
   "package_dir": {
     "": "src"
   },
-  "include_package_data": true,
-  "zip_safe": false,
   "classifiers": [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -66,11 +64,5 @@
       "bumpversion"
     ],
     "doc": "sphinx"
-  },
-  "entry_points": {
-    "console_scripts": [
-      "scancode = scancode.cli:scancode",
-      "extractcode = scancode.extract_cli:extractcode"
-    ]
   }
 }

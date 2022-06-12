@@ -1328,7 +1328,7 @@ def is_setup_call(statement):
     )
 
 
-def get_setup_py_args(location, include_not_parsable=False):
+def get_setup_py_args_legacy(location, include_not_parsable=False):
     """
     Return a mapping of arguments passed to a setup.py setup() function. Also
     include not parsable identifiers values such as variable name and attribute
@@ -1432,6 +1432,16 @@ def get_setup_py_args(location, include_not_parsable=False):
     return setup_args
 
 
+def get_setup_py_args(location, include_not_parsable=False):
+    """
+    Return a mapping of arguments passed to a setup.py setup() function. Also
+    include not parsable identifiers values such as variable name and attribute
+    references if ``include_not_parsable`` is True
+    """
+    from packagedcode.pypi_setup_py import parse_setup_py
+    return parse_setup_py(location)
+
+    
 def get_pypi_urls(name, version):
     """
     Return a mapping of computed Pypi URLs for this package

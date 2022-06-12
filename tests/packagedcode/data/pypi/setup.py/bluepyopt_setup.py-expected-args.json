@@ -11,7 +11,14 @@
     "future",
     "Pebble>=4.3.10"
   ],
-  "extras_require": {},
+  "extras_require": {
+    "all": [
+      "scoop>=0.7"
+    ],
+    "scoop": [
+      "scoop>=0.7"
+    ]
+  },
   "author": "BlueBrain Project, EPFL",
   "author_email": "werner.vangeit@epfl.ch",
   "description": "Bluebrain Python Optimisation Library (bluepyopt)",
@@ -31,16 +38,5 @@
     "Operating System :: POSIX",
     "Topic :: Scientific/Engineering",
     "Topic :: Utilities"
-  ],
-  "entry_points": {
-    "console_scripts": [
-      "bpopt_tasksdb=bluepyopt.ipyp.bpopt_tasksdb:main"
-    ]
-  },
-  "package_data": {
-    "bluepyopt": [
-      "ephys/templates/cell_template.jinja2",
-      "ephys/examples/simplecell/simple.swc"
-    ]
-  }
+  ]
 }
