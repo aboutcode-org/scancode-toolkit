@@ -504,7 +504,9 @@ def run_scan(
     echo_func=None,
     timing=False,
     keep_temp_files=False,
+    # TODO: Review return_results as it does not return Packages and Dependencies
     return_results=True,
+    return_codebase=False,
     test_mode=False,
     test_slow_mode=False,
     test_error_mode=False,
@@ -521,6 +523,12 @@ def run_scan(
     results but as native Python. Raise Exceptions (e.g. ScancodeError) on
     error. See scancode() for arguments details.
     """
+
+    assert not (return_results is True and return_codebase is True), 'Only one of return_results and return_codebase can be True'
+
+    if return_codebase and max_in_memory > 0:
+        # We're keeping temp files otherwise the codebase is gone
+        keep_temp_files = True
 
     plugins_option_defaults = {clio.name: clio.default for clio in plugin_options}
     requested_options = dict(plugins_option_defaults)
@@ -667,7 +675,7 @@ def run_scan(
                    'selected when using only scan data.')
             raise ScancodeCliUsageError(msg)
 
-        if not output_plugins and not return_results:
+        if not output_plugins and not (return_results or return_codebase):
             msg = ('ERROR: Missing output option(s): at least one output '
                    'option is required to save scan results.')
             raise ScancodeCliUsageError(msg)
@@ -1002,6 +1010,8 @@ def run_scan(
             # the structure is exactly the same as the JSON output
             from formattedcode.output_json import get_results
             results = get_results(codebase, as_list=True, **requested_options)
+        elif return_codebase:
+            results = codebase
 
     finally:
         # remove temporary files
@@ -1657,3 +1667,9 @@ def get_pretty_params(ctx, generic_paths=False):
             options.append((cli_opt, value))
 
     return dict(sorted(args) + sorted(options))
+
+
+if __name__ == '__main__':
+    # We have this __main__ block so that we can run scancode as a script.
+    # This is needed so we can use the Python debugging features in VSCode.
+    scancode()
