@@ -14,7 +14,7 @@
         "type": "person",
         "role": "author",
         "name": "Vineet Naik",
-        "email": null,
+        "email": "naikvin@gmail.com",
         "url": null
       }
     ],
@@ -50,8 +50,29 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
-    "dependencies": [],
+    "extra_data": {
+      "python_requires": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pip",
+        "extracted_requirement": "pip>=6.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/graphviz",
+        "extracted_requirement": "graphviz",
+        "scope": "graphviz",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/pipdeptree",
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/pipdeptree/json",

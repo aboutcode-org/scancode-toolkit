@@ -22,7 +22,12 @@ from scancode_config import REGEN_TEST_FIXTURES
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_package_data(self, package_data, expected_loc, regen=REGEN_TEST_FIXTURES):
+    def check_package_data(
+        self,
+        package_data,
+        expected_loc,
+        regen=REGEN_TEST_FIXTURES,
+    ):
         """
         Helper to test a package object against an expected JSON file.
         """
@@ -43,7 +48,7 @@ class PackageTester(testcase.FileBasedTesting):
         expected_loc,
         must_exist=True,
         remove_uuid=True,
-        regen=REGEN_TEST_FIXTURES
+        regen=REGEN_TEST_FIXTURES,
     ):
         """
         Helper to test a list of package_data objects against an expected JSON file.

@@ -1,0 +1,63 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pygtrie",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Trie data structure implementation.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Michal Nazarewicz",
+        "email": "mina86@mina86.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "trie",
+      "prefix tree",
+      "data structure",
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.6",
+      "Programming Language :: Python :: 2.7",
+      "Topic :: Software Development :: Libraries :: Python Modules"
+    ],
+    "homepage_url": "https://github.com/google/pygtrie",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "apache-2.0",
+    "declared_license": {
+      "license": "Apache-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/pygtrie",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/pygtrie/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pygtrie"
+  }
+]

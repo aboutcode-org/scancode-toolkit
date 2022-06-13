@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0 AND MIT
@@ -10,7 +10,12 @@
 
 # A minimal shell wrapper to the CLI entry point fo ScanCode
 
+set -e
+#set -x
 
+COMMAND_TO_RUN=scancode
+
+###################################################################################
 ###################################################################################
 # from https://raw.githubusercontent.com/mkropat/sh-realpath/58c03982cfd8accbcf0c4426a4adf0f120a8b2bb/realpath.sh
 # realpath emulation for portability on *nix
@@ -35,6 +40,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+
 
 realpath() {
     canonicalize_path "$(resolve_symlinks "$1")"
@@ -105,10 +111,21 @@ _canonicalize_file_path() {
 }
 
 ###################################################################################
+###################################################################################
+
 # Now run scancode proper
 
+################################
+# Setup current directory where this script lives
 SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
+
+# force relaunching under X86-64 architecture on macOS M1/ARM 
+if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
+    arch -x86_64 /bin/bash -c "$SCANCODE_ROOT_DIR/$COMMAND_TO_RUN $@"
+    exit $?
+fi
+
 
 SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/venv/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
@@ -119,6 +136,5 @@ if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
 fi
 
 if [ -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
-    "$SCANCODE_ROOT_DIR/venv/bin/scancode" "$@"
+    "$SCANCODE_ROOT_DIR/venv/bin/$COMMAND_TO_RUN" "$@"
 fi
-

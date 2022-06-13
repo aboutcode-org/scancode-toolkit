@@ -1,0 +1,55 @@
+// from https://github.com/mesosphere-backup/dcos-cassandra-service/blob/76ee3af18cb04eae28dc0edeba9ac8d8bfff2216/cassandra-executor/build.gradle
+apply plugin: 'application'
+apply plugin: 'maven-publish'
+mainClassName = 'com.mesosphere.dcos.cassandra.executor.Main'
+
+ext {
+    junitVer = '4.12'
+    datastaxVer = '3.1.0'
+    awsVer = '1.11.49'
+}
+
+dependencies {
+    compile project(':cassandra-commons')
+    compile ('com.google.guava:guava:18.0'){force = true}
+    compile 'org.apache.cassandra:cassandra-all:3.0.9'
+    compile 'org.apache.commons:commons-compress:1.5'
+    compile ("com.amazonaws:aws-java-sdk-core:${awsVer}"){force = true}
+    compile "com.amazonaws:aws-java-sdk:${awsVer}"
+    compile "com.microsoft.azure:azure-storage:4.2.0"
+    compile "commons-io:commons-io:2.5"
+    compile "com.datastax.cassandra:cassandra-driver-core:${datastaxVer}"
+
+    compile 'org.xerial.snappy:snappy-java:1.1.2.1'
+    // To override the junit compile dependency that cassandra brings in.
+    compile "junit:junit:${junitVer}"
+    testCompile "junit:junit:${junitVer}"
+}
+
+def projectVersion = project.version
+distributions {
+    main {
+        baseName = 'executor'
+        version = ''
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact("$buildDir/distributions/executor.zip") {
+                extension 'zip'
+                version = projectVersion
+            }
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven parent.mavenRep
+    }
+}
+
+publishToMavenLocal.dependsOn(build)
+publish.dependsOn(build)

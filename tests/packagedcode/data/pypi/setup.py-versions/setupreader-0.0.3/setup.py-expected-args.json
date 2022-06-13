@@ -1,0 +1,13 @@
+{
+  "name": "setupreader",
+  "version": "0.0.3",
+  "description": "retrieve package specification from setup.py",
+  "author": "Lars van de Kerkhof",
+  "author_email": "lars@permanentmarkers.nl",
+  "url": "https://github.com/specialunderwear/setupreader",
+  "license": "GPL",
+  "install_requires": [
+    "setuptools",
+    "mock"
+  ]
+}

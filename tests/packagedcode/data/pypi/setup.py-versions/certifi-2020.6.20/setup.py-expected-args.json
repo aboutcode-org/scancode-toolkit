@@ -1,0 +1,30 @@
+{
+  "name": "certifi",
+  "description": "Python package for providing Mozilla's CA Bundle.",
+  "author": "Kenneth Reitz",
+  "author_email": "me@kennethreitz.com",
+  "url": "https://certifiio.readthedocs.io/en/latest/",
+  "package_dir": {
+    "certifi": "certifi"
+  },
+  "license": "MPL-2.0",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8"
+  ],
+  "download_url": "https://github.com/certifi/python-certifi",
+  "project_urls": {
+    "Documentation": "https://certifiio.readthedocs.io/en/latest/",
+    "Source": "https://github.com/certifi/python-certifi"
+  }
+}

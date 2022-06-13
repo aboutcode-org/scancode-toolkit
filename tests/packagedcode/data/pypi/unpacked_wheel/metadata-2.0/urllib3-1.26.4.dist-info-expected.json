@@ -44,8 +44,8 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": "Issue tracker, https://github.com/urllib3/urllib3/issues",
-    "code_view_url": "Code, https://github.com/urllib3/urllib3",
+    "bug_tracking_url": "https://github.com/urllib3/urllib3/issues",
+    "code_view_url": "https://github.com/urllib3/urllib3",
     "vcs_url": null,
     "copyright": null,
     "license_expression": "mit AND mit",
@@ -834,7 +834,7 @@
       }
     ],
     "extra_data": {
-      "Documentation": "Documentation, https://urllib3.readthedocs.io/"
+      "Documentation": "https://urllib3.readthedocs.io/"
     },
     "dependencies": [
       {

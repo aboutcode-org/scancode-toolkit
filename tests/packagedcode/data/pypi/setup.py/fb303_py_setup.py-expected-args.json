@@ -1,0 +1,22 @@
+{
+  "name": "thrift_fb303",
+  "version": "0.10.0",
+  "description": "Python bindings for the Apache Thrift FB303",
+  "author": [
+    "Thrift Developers"
+  ],
+  "author_email": [
+    "dev@thrift.apache.org"
+  ],
+  "url": "http://thrift.apache.org",
+  "license": "Apache License 2.0",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Networking"
+  ]
+}

@@ -9,7 +9,15 @@
     "primary_language": "Python",
     "description": "",
     "release_date": null,
-    "parties": [],
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "martinblech@gmail.com",
+        "url": null
+      }
+    ],
     "keywords": [
       "Intended Audience :: Developers",
       "Operating System :: OS Independent",

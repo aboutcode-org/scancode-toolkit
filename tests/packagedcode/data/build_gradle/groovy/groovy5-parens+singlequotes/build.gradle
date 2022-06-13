@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+group 'org.foobar.gradle.example'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.12.2"))
+    compile('com.fasterxml.jackson.core:jackson-core')
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "arpy",
+    "version": "0.1.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Library for accessing \"ar\" files",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Stanis\u0142aw Pitucha",
+        "email": "viraptor@gmail.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://bitbucket.org/viraptor/arpy",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "bsd-simplified",
+    "declared_license": {
+      "license": "Simplified BSD"
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/arpy",
+    "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/arpy@0.1.1"
+  }
+]

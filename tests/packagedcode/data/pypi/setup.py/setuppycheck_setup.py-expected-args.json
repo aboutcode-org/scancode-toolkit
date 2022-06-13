@@ -1,0 +1,16 @@
+{
+  "name": "setuppycheck",
+  "description": "Checks for questionable practices in setup.py files.",
+  "keywords": [
+    "setup.py",
+    "pin",
+    "dependencies"
+  ],
+  "author": "Marc Abramowitz",
+  "author_email": "msabramo@gmail.com",
+  "install_requires": [
+    "mock"
+  ],
+  "url": "https://github.com/msabramo/setuppycheck",
+  "license": "MIT"
+}

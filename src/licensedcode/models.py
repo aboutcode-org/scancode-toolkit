@@ -544,6 +544,9 @@ class License:
             if len(lic.key) > 50:
                 error('key must be 50 characters or less.')
 
+            if '_'in lic.key:
+                error('key cannot contain an underscore: this is not valid in SPDX.')
+
             if not lic.short_name:
                 error('No short name')
             elif len(lic.short_name) > 50:

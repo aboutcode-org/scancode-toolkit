@@ -311,6 +311,7 @@ def download_sdist(name, version, dest_dir=THIRDPARTY_DIR, repos=tuple()):
 
     return fetched_sdist_filename
 
+
 ################################################################################
 #
 # Core models
@@ -1064,16 +1065,16 @@ def get_sdist_name_ver_ext(filename):
     if version.isalpha():
         return False
 
-    # non-pep 440 version    
+    # non-pep 440 version
     if "-" in version:
         return False
 
-    # single version    
+    # single version
     if version.isdigit() and len(version) == 1:
         return False
 
-    # r1 version    
-    if len(version) == 2 and version[0]=="r" and version[1].isdigit():
+    # r1 version
+    if len(version) == 2 and version[0] == "r" and version[1].isdigit():
         return False
 
     # dotless version (but calver is OK)
@@ -1588,6 +1589,7 @@ class Environment:
             )
         )
 
+
 ################################################################################
 #
 # PyPI repo and link index for package wheels and sources
@@ -1629,7 +1631,9 @@ class PypiSimpleRepository:
     use_cached_index = attr.ib(
         type=bool,
         default=False,
-        metadata=dict(help="If True, use any existing on-disk cached PyPI index files. Otherwise, fetch and cache."),
+        metadata=dict(
+            help="If True, use any existing on-disk cached PyPI index files. Otherwise, fetch and cache."
+        ),
     )
 
     def _get_package_versions_map(self, name):
@@ -1674,6 +1678,7 @@ class PypiSimpleRepository:
         """
         if not version:
             versions = list(self._get_package_versions_map(name).values())
+            # return the latest version
             return versions and versions[-1]
         else:
             return self._get_package_versions_map(name).get(version)
@@ -1724,7 +1729,9 @@ class LinksRepository:
     use_cached_index = attr.ib(
         type=bool,
         default=False,
-        metadata=dict(help="If True, use any existing on-disk cached index files. Otherwise, fetch and cache."),
+        metadata=dict(
+            help="If True, use any existing on-disk cached index files. Otherwise, fetch and cache."
+        ),
     )
 
     def __attrs_post_init__(self):
@@ -1790,6 +1797,7 @@ class LinksRepository:
             _LINKS_REPO[url] = cls(url=url, use_cached_index=use_cached_index)
         return _LINKS_REPO[url]
 
+
 ################################################################################
 # Globals for remote repos to be lazily created and cached on first use for the
 # life of the session together with some convenience functions.
@@ -1802,6 +1810,7 @@ def get_local_packages(directory=THIRDPARTY_DIR):
     an empty list if the package cannot be found.
     """
     return list(PypiPackage.packages_from_dir(directory=directory))
+
 
 ################################################################################
 #
@@ -1953,6 +1962,7 @@ def fetch_and_save(
         fo.write(content)
     return content
 
+
 ################################################################################
 #
 # Functions to update or fetch ABOUT and license files
@@ -2051,7 +2061,9 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
                 # if has key data we may look to improve later, but we can move on
                 if local_dist.has_key_metadata():
                     local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                    local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
+                    local_dist.fetch_license_files(
+                        dest_dir=dest_dir, use_cached_index=use_cached_index
+                    )
                     continue
 
             # lets try to fetch remotely
@@ -2089,7 +2101,9 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
                 # if has key data we may look to improve later, but we can move on
                 if local_dist.has_key_metadata():
                     local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                    local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
+                    local_dist.fetch_license_files(
+                        dest_dir=dest_dir, use_cached_index=use_cached_index
+                    )
                     continue
 
             # try to get data from pkginfo (no license though)
@@ -2106,6 +2120,7 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             if lic_errs:
                 lic_errs = "\n".join(lic_errs)
                 print(f"Failed to fetch some licenses:: {lic_errs}")
+
 
 ################################################################################
 #
@@ -2209,6 +2224,7 @@ def download_wheels_with_pip(
 
     downloaded = existing ^ set(os.listdir(dest_dir))
     return sorted(downloaded), error
+
 
 ################################################################################
 #
