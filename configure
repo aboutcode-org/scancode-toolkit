@@ -118,7 +118,7 @@ CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
 
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# force relaunching under X86-64 archuitecture on macOS M1/ARM 
+# force relaunching under X86-64 architecture on macOS M1/ARM 
 if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
     arch -x86_64 /bin/bash -c "$CFG_ROOT_DIR/configure $@"
     exit $?
