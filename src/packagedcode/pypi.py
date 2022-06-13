@@ -1441,7 +1441,7 @@ def get_setup_py_args(location, include_not_parsable=False):
     from packagedcode.pypi_setup_py import parse_setup_py
     return parse_setup_py(location)
 
-    
+
 def get_pypi_urls(name, version):
     """
     Return a mapping of computed Pypi URLs for this package
@@ -1592,7 +1592,7 @@ def find_pattern(location, pattern):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    with io.open(location, encoding='utf8') as fp:
+    with open(location) as fp:
         content = fp.read()
 
     match = re.search(pattern, content)
@@ -1636,7 +1636,7 @@ def find_setup_py_dunder_version(location):
         setup(
             version=six.__version__,
         ...
-    would return six.__version__.
+    would return six.__version__
 
     Code inspired and heavily modified from:
     https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
@@ -1660,25 +1660,29 @@ def detect_version_attribute(setup_location):
     setup_version_arg = find_setup_py_dunder_version(setup_location)
     setup_py__version = find_dunder_version(setup_location)
     if TRACE:
-        logger_debug('    detect_dunder_version:', 'setup_location:', setup_location)
-        logger_debug('    setup_version_arg:', repr(setup_version_arg),)
-        logger_debug('    setup_py__version:', repr(setup_py__version),)
+        logger_debug('    detect_version_attribute():', 'setup_location:', setup_location)
+        logger_debug('      find_setup_py_dunder_version(): setup_version_arg:', repr(setup_version_arg),)
+        logger_debug('      find_dunder_version(): setup_py__version:', repr(setup_py__version),)
 
     if setup_version_arg == '__version__' and setup_py__version:
         version = setup_py__version or None
-        if TRACE: logger_debug('    detect_dunder_version: A:', version)
+        if TRACE:
+            logger_debug(
+                '     detect_dunder_version:',
+                "setup_version_arg == '__version__' and setup_py__version:", version)
         return version
 
     # here we have a more complex __version__ location
     # we start by adding the possible paths and file name
     # and we look at these in sequence
 
-    candidate_locs = []
-
     if setup_version_arg and '.' in setup_version_arg:
         segments = setup_version_arg.split('.')[:-1]
     else:
         segments = []
+
+    if TRACE:
+        logger_debug('    detect_version_attribute():', 'segments:', segments)
 
     special_names = (
         '__init__.py',
@@ -1695,6 +1699,11 @@ def detect_version_attribute(setup_location):
     setup_py_dir = fileutils.parent_directory(setup_location)
     src_dir = os.path.join(setup_py_dir, 'src')
     has_src = os.path.exists(src_dir)
+    if TRACE:
+        logger_debug('    detect_version_attribute():', 'src_dir:', src_dir)
+        logger_debug('    detect_version_attribute():', 'has_src:', has_src)
+
+    candidate_locs = []
 
     if segments:
         for n in special_names:
@@ -1720,6 +1729,8 @@ def detect_version_attribute(setup_location):
         os.path.join(setup_py_dir, *cand_loc_segs)
         for cand_loc_segs in candidate_locs
     ]
+    if TRACE:
+        logger_debug('    detect_version_attribute():', 'candidate_locs1:', candidate_locs)
 
     for fl in get_module_scripts(
         location=setup_py_dir,
@@ -1729,21 +1740,28 @@ def detect_version_attribute(setup_location):
         candidate_locs.append(fl)
 
     if TRACE:
+        logger_debug('    detect_version_attribute():', 'candidate_locs2:')
         for loc in candidate_locs:
-            logger_debug('    can loc:', loc)
+            logger_debug('        loc:', loc)
 
     version = detect_version_in_locations(
         candidate_locs=candidate_locs,
         detector=find_dunder_version
     )
+    if TRACE:
+        logger_debug('    detect_version_attribute():', 'version2:', version)
 
     if version:
         return version
 
-    return detect_version_in_locations(
+    version = detect_version_in_locations(
         candidate_locs=candidate_locs,
         detector=find_plain_version,
     )
+    if TRACE:
+        logger_debug('    detect_version_attribute():', 'version3:', version)
+
+    return version
 
 
 def detect_version_in_locations(candidate_locs, detector=find_plain_version):
@@ -1751,18 +1769,21 @@ def detect_version_in_locations(candidate_locs, detector=find_plain_version):
     Return the first version found in a location from the `candidate_locs` list
     using the `detector` callable. Return None if no version is found.
     """
+    if TRACE:
+        logger_debug('      detect_version_in_locations():', 'candidate_locs:', candidate_locs)
+
     for loc in candidate_locs:
         if not os.path.exists(loc):
             continue
 
-        if TRACE: logger_debug('detect_version_in_locations:', 'loc:', loc)
+        if TRACE: logger_debug('        detect_version_in_locations:', 'loc:', loc)
 
         # here the file exists try to get a dunder version
         version = detector(loc)
 
         if TRACE:
             logger_debug(
-                'detect_version_in_locations:',
+                '        detect_version_in_locations:',
                 'detector', detector,
                 'version:', version,
             )
@@ -1777,19 +1798,57 @@ def get_module_scripts(location, max_depth=1, interesting_names=()):
     `interesting_names` by walking the `location` directory recursively up to
     `max_depth` path segments extending from the root `location`.
     """
+    if TRACE:
+        logger_debug(
+            '        get_module_scripts():',
+            'location:', location,
+            'max_depth:', max_depth,
+            'interesting_names:', interesting_names
+        )
 
     location = location.rstrip(os.path.sep)
-    current_depth = max_depth
+    if TRACE: logger_debug('        get_module_scripts:', 'location:', location)
+
     for top, _dirs, files in os.walk(location):
-        if current_depth == 0:
+        current_depth = compute_path_depth(location, top)
+        if TRACE:
+            logger_debug('           get_module_scripts:', 'current_depth:', current_depth)
+            logger_debug('           get_module_scripts:', 'top:', top, '_dirs:', _dirs, 'files:', files)
+        if current_depth >= max_depth:
             break
         for f in files:
+            if TRACE: logger_debug('              get_module_scripts:', 'file:', f)
+
             if f in interesting_names:
                 path = os.path.join(top, f)
-                if TRACE: logger_debug('get_module_scripts:', 'path', path)
+                if TRACE: logger_debug('                  get_module_scripts:', 'path:', path)
                 yield path
 
-        current_depth -= 1
+
+def compute_path_depth(base, path):
+    """
+    Return the depth of ``path`` below ``base`` as the number of path segments
+    that ``path`` extends below ``base``.
+    For example:
+    >>> base = '/home/foo/bar'
+    >>> compute_path_depth(base, '/home/foo/bar/baz')
+    1
+    >>> compute_path_depth(base, base)
+    0
+    """
+    base = base.strip(os.path.sep)
+    path = path.strip(os.path.sep)
+
+    assert path.startswith(base)
+    subpath = path[len(base):].strip(os.path.sep)
+    segments = [s for s in subpath.split(os.path.sep) if s]
+    depth = len(segments)
+    if TRACE:
+        logger_debug(
+            '    compute_path_depth:',
+            'base:', base, 'path:', path, 'subpath:', subpath,
+            'segments:', segments, 'depth:', depth,)
+    return depth
 
 
 def compute_normalized_license(declared_license):
