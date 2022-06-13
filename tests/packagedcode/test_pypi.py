@@ -31,6 +31,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_setup_py_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json', must_exist=False)
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_end_to_end_skip_site_packages(self):
         test_dir = self.get_test_loc('pypi/site-packages/codebase')
         result_file = self.get_temp_file('json')
@@ -44,6 +51,11 @@ class TestPyPiEndtoEnd(PackageTester):
         expected_file = self.get_test_loc('pypi/solo-setup/expected.json')
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_detect_version_attribute_setup_py(self):
+        test_loc = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
+        result = pypi.detect_version_attribute(test_loc)
+        assert result == '22.0.4'
 
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
