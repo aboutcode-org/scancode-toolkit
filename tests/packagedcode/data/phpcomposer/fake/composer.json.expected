@@ -45,56 +45,13 @@
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:composer/fake/fake",
+        "purl": "pkg:composer/php",
         "extracted_requirement": ">=5.6.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {
-            "type": "composer",
-            "namespace": "fake",
-            "name": "fake",
-            "version": 5.7.0,
-            "qualifiers": {},
-            "subpath": null,
-            "primary_language": "PHP",
-            "description": null,
-            "release_date": null,
-            "parties": [
-              {
-                "type": "person",
-                "role": "author",
-                "name": "Hi",
-                "email": null,
-                "url": null
-              },
-              {
-                "type": "person",
-                "role": "vendor",
-                "name": "fake",
-                "email": null,
-                "url": null
-              }
-            ],
-            "keywords": [],
-            "homepage_url": "http://github.com/fake/fake",
-            "download_url": null,
-            "size": null,
-            "sha1": null,
-            "md5": null,
-            "sha256": null,
-            "sha512": null,
-            "bug_tracking_url": null,
-            "code_view_url": null,
-            "vcs_url": null,
-            "copyright": null,
-            "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
-            "declared_license": "(LGPL-2.1-only or GPL-3.0-or-later)",
-            "notice_text": null,
-            "source_packages": [],
-            "file_references": [],
-            "extra_data": {},        }
+        "resolved_package": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",

@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/pybind11",
-      "extracted_requirement": ">=2.5.0",
+      "extracted_requirement": "pybind11>=2.5.0",
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
@@ -30,7 +30,7 @@
           "type": "person",
           "role": "author",
           "name": "Bitshift",
-          "email": null,
+          "email": "atheris@google.com",
           "url": null
         }
       ],
@@ -279,7 +279,7 @@
               "type": "person",
               "role": "author",
               "name": "Bitshift",
-              "email": null,
+              "email": "atheris@google.com",
               "url": null
             }
           ],
@@ -304,7 +304,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pybind11",
-              "extracted_requirement": ">=2.5.0",
+              "extracted_requirement": "pybind11>=2.5.0",
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,
