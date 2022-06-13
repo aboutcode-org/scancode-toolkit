@@ -48,6 +48,10 @@ FIELDS = {
 
 
 def is_setup_call(element):
+    """
+    Return if the AST ``element`` is a call to the setup() function.
+    Note: this is derived from the code in packagedcode.pypi.py
+    """
     if (
         isinstance(element, ast.Call)
         and (
