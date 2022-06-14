@@ -142,6 +142,7 @@ def get_licenses(
     license_url_template=SCANCODE_LICENSEDB_URL,
     unknown_licenses=False,
     deadline=sys.maxsize,
+    additional_directories=None,
     **kwargs,
 ):
     """
@@ -168,7 +169,7 @@ def get_licenses(
     from licensedcode import cache
     from licensedcode.spans import Span
 
-    idx = cache.get_index()
+    idx = cache.get_index(additional_directories=additional_directories)
 
     detected_licenses = []
     detected_expressions = []
@@ -252,6 +253,7 @@ def _licenses_data_from_match(
         result['homepage_url'] = lic.homepage_url
         result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
         result['reference_url'] = license_url_template.format(lic.key)
+        # TODO: change this in the case of a private license?
         result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
         result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
 

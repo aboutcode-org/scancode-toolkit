@@ -1,0 +1,81 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "-dir": "<path>",
+        "--json": "<file>",
+        "--license": true,
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
+          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+        },
+        "spdx_license_list_version": "3.16",
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "license.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "example1",
+          "score": 100.0,
+          "name": "Example External License 1",
+          "short_name": "Example External License 1",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/example1",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.yml",
+          "spdx_license_key": "scancode-example1",
+          "spdx_url": "https://spdx.org/licenses/scancode-example1",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "example1.LICENSE",
+            "license_expression": "example1",
+            "licenses": [
+              "example1"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 9,
+            "matched_length": 9,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "example1"
+      ],
+      "percentage_of_license_text": 10.98,
+      "scan_errors": []
+    }
+  ]
+}

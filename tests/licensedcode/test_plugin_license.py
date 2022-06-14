@@ -243,6 +243,44 @@ def test_reindex_licenses_works():
 
 
 @pytest.mark.scanslow
+def test_detection_with_single_external_license_directory():
+    test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
+    example1_dir = test_env.get_test_loc('example_external_licenses/example1')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--strip-root',
+        '--verbose',
+        '-dir', example1_dir,
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/external_licenses/scan.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+@pytest.mark.scanslow
+def test_detection_with_multiple_external_license_directories():
+    test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
+    example1_dir = test_env.get_test_loc('example_external_licenses/example1')
+    example2_dir = test_env.get_test_loc('example_external_licenses/example2')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--strip-root',
+        '--verbose',
+        '-dir', example1_dir,
+        '-dir', example2_dir,
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/external_licenses/scan_multiple.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+@pytest.mark.scanslow
 def test_scan_license_with_url_template():
     test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
     result_file = test_env.get_temp_file('json')

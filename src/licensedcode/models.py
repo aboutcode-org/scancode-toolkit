@@ -22,6 +22,7 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 from time import time
+from pathlib import Path
 
 import attr
 import saneyaml
@@ -768,6 +769,68 @@ def get_rules(
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
+
+
+def get_license_dirs(
+    additional_dirs,
+):
+    """
+    Takes in a list of additional directories specified during license detection
+    and produces a list of all the subdirectories containing license files.
+    """
+    # convert to absolute path in case user passes in a relative path, which messes up building rules from licenses
+    return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
+
+
+def get_rule_dirs(
+    additional_dirs,
+):
+    """
+    Takes in a list of additional directories specified during license detection
+    and produces a list of all the subdirectories containing rule files.
+    """
+    return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
+
+
+def load_licenses_from_multiple_dirs(
+    license_directories,
+    with_deprecated=False,
+):
+    """
+    Takes in a list of directories containing additional licenses to use in
+    license detection and combines all the licenses into the same mapping.
+    """
+    combined_licenses = {}
+    for license_dir in license_directories:
+        licenses = load_licenses(licenses_data_dir=license_dir, with_deprecated=False)
+        # this syntax for merging is described here: https://stackoverflow.com/a/26853961
+        combined_licenses = {**combined_licenses, **licenses}
+    return combined_licenses
+
+
+def get_rules_from_multiple_dirs(
+    licenses_db,
+    rule_directories,
+):
+    """
+    Takes in a license database, which is a mapping from key->License objects,
+    and a list of all directories containing rules to use in license detection.
+    Combines all rules together into the same data structure and validates them.
+    """
+    if rule_directories:
+        combined_rules = []
+        for rules_dir in rule_directories:
+            r = list(load_rules(
+                rules_data_dir=rules_dir,
+            ))
+            combined_rules.append(r)
+        # flatten lists of rules into a single iterable
+        rules = list(chain.from_iterable(combined_rules))
+        validate_rules(rules, licenses_db)
+        licenses_as_rules = build_rules_from_licenses(licenses_db)
+        return chain(licenses_as_rules, rules)
+    else:
+        return get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
 
 
 class InvalidRule(Exception):

@@ -18,6 +18,7 @@ from commoncode.cliutils import SCAN_GROUP
 from commoncode.resource import clean_path
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
+import click
 
 from scancode.api import SCANCODE_LICENSEDB_URL
 
@@ -140,6 +141,15 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(
+            ('-dir', '--additional_directories'),
+            required_options=['license'],
+            multiple=True,
+            type=click.Path(exists=True, readable=True, path_type=str),
+            help='Include additional directories for license detection.',
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
+
+        PluggableCommandLineOption(
             ('--reindex-licenses',),
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
@@ -167,7 +177,8 @@ class LicenseScanner(ScanPlugin):
         loaded index.
         """
         from licensedcode.cache import populate_cache
-        populate_cache()
+        additional_directories = kwargs.get('additional_directories')
+        populate_cache(additional_directories=additional_directories)
 
     def get_scanner(
         self,
@@ -176,6 +187,7 @@ class LicenseScanner(ScanPlugin):
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
         unknown_licenses=False,
+        additional_directories=None,
         **kwargs
     ):
 
@@ -186,6 +198,7 @@ class LicenseScanner(ScanPlugin):
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template,
             unknown_licenses=unknown_licenses,
+            additional_directories=additional_directories,
         )
 
     def process_codebase(self, codebase, unknown_licenses, **kwargs):
