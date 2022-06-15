@@ -95,12 +95,12 @@ class BaseNpmHandler(models.DatafileHandler):
                 root = package_resource.parent(codebase)
                 if root:
                     for npm_res in cls.walk_npm(resource=root, codebase=codebase):
-                        if package_uid not in npm_res.for_packages:
+                        if package_uid and package_uid not in npm_res.for_packages:
                             npm_res.for_packages.append(package_uid)
                             npm_res.save(codebase)
                         yield npm_res
                 elif codebase.has_single_resource:
-                    if package_uid not in package_resource.for_packages:
+                    if package_uid and package_uid not in package_resource.for_packages:
                         package_resource.for_packages.append(package_uid)
                         package_resource.save(codebase)
                 yield package_resource
@@ -119,7 +119,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 if lock_file.name in lockfile_names:
                     yield from yield_dependencies_from_package_resource(lock_file, package_uid)
 
-                    if package_uid not in lock_file.for_packages:
+                    if package_uid and package_uid not in lock_file.for_packages:
                         lock_file.for_packages.append(package_uid)
                         lock_file.save(codebase)
                     yield lock_file

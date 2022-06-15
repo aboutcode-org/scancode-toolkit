@@ -397,20 +397,21 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
         assemblable_paths = (
             f'usr/share/doc/{package_name}/copyright',
         )
-        for res in root_resource.walk(codebase):
-            if not res.path.endswith(assemblable_paths):
-                continue
-
-            for pkgdt in res.package_data:
-                package.update(
-                    package_data=pkgdt,
-                    datafile_path=res.path,
-                )
-
-            res.for_packages.append(package_uid)
-            res.save(codebase)
-
-            yield res
+        if package_uid:
+            for res in root_resource.walk(codebase):
+                if not res.path.endswith(assemblable_paths):
+                    continue
+    
+                for pkgdt in res.package_data:
+                    package.update(
+                        package_data=pkgdt,
+                        datafile_path=res.path,
+                    )
+    
+                res.for_packages.append(package_uid)
+                res.save(codebase)
+    
+                yield res
 
         yield package
 

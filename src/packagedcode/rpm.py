@@ -210,10 +210,11 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             if not res:
                 missing_file_references.append(ref)
             else:
-                # path is found and processed: remove it, so we can check if we
-                # found all of them
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                if package_uid:
+                    # path is found and processed: remove it, so we can check if we
+                    # found all of them
+                    res.for_packages.append(package_uid)
+                    res.save(codebase)
 
         # if we have left over file references, add these to extra data
         if missing_file_references:
