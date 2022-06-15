@@ -226,8 +226,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         if not package.download_url:
             # Only add a synthetic download URL if there is none from the dist mapping.
-            dnl_url = npm_download_url(package.namespace, package.name, package.version)
-            package.download_url = dnl_url.strip()
+            package.download_url = npm_download_url(package.namespace, package.name, package.version)
 
         # licenses are a tad special with many different data structures
         lic = package_data.get('license')
@@ -781,12 +780,15 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
 
     >>> expected = 'https://yarnpkg.com/en/package/@ang/angular'
     >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == expected
+
+    >>> assert not npm_homepage_url(None, None)
     """
-    if namespace:
-        ns_name = f'{namespace}/{name}'
-    else:
-        ns_name = name
-    return f'{registry}/{ns_name}'
+    if name:
+        if namespace:
+            ns_name = f'{namespace}/{name}'
+        else:
+            ns_name = name
+        return f'{registry}/{ns_name}'
 
 
 def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
@@ -803,13 +805,15 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
 
     >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
     >>> assert npm_download_url(None, 'angular', '1.6.6') == expected
-    """
-    if namespace:
-        ns_name = f'{namespace}/{name}'
 
-    else:
-        ns_name = name
-    return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
+    >>> assert not npm_download_url(None, None, None)
+    """
+    if name and version:
+        if namespace:
+            ns_name = f'{namespace}/{name}'
+        else:
+            ns_name = name
+        return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
 
 
 def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
@@ -827,20 +831,25 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
 
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
-    """
-    version = version or ''
-    if namespace:
-        # this is a legacy wart: older registries used to always encode this /
-        # FIXME: do NOT encode and use plain / instead
-        ns_name = '%2f'.join([namespace, name])
-        # there is no version-specific URL for scoped packages
-        version = ''
-    else:
-        ns_name = name
 
-    if version:
-        version = f'/{version}'
-    return f'{registry}/{ns_name}{version}'
+    >>> assert not npm_api_url(None, None, None)
+    """
+    if name:
+        if namespace:
+            # this is a legacy wart: older registries used to always encode this /
+            # FIXME: do NOT encode and use plain / instead
+            ns_name = '%2f'.join([namespace, name])
+            # there is no version-specific URL for scoped packages
+            version = ''
+        else:
+            ns_name = name
+
+        if version:
+            version = f'/{version}'
+        else:
+            version = ''
+
+        return f'{registry}/{ns_name}{version}'
 
 
 def is_scoped_package(name):

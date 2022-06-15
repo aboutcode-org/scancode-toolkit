@@ -786,7 +786,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
-          "download_url": "https://registry.npmjs.org/None/-/None-None.tgz",
+          "download_url": null,
           "size": null,
           "sha1": null,
           "md5": null,
@@ -813,9 +813,9 @@
               "resolved_package": {}
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/None",
-          "repository_download_url": "https://registry.npmjs.org/None/-/None-None.tgz",
-          "api_data_url": "https://registry.npmjs.org/None",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
           "datasource_id": "npm_package_json",
           "purl": null
         }
