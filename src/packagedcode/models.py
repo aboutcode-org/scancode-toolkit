@@ -970,7 +970,7 @@ class DatafileHandler:
         # NOTE: we do not attach files to the Package level. Instead we
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
-        if resource:
+        if resource and package_uid:
             resource.for_packages.append(package_uid)
             resource.save(codebase)
             for res in resource.walk(codebase):
@@ -1030,8 +1030,9 @@ class DatafileHandler:
                         datafile_path=resource.path,
                     )
                     package_uid = package.package_uid
-                    resource.for_packages.append(package_uid)
-                    resource.save(codebase)
+                    if package_uid:
+                        resource.for_packages.append(package_uid)
+                        resource.save(codebase)
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
@@ -1040,8 +1041,9 @@ class DatafileHandler:
                     package_data=package_data,
                     datafile_path=resource.path,
                 )
-                resource.for_packages.append(package_uid)
-                resource.save(codebase)
+                if package_uid:
+                    resource.for_packages.append(package_uid)
+                    resource.save(codebase)
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1057,9 +1059,10 @@ class DatafileHandler:
             yield resource
 
         # the whole parent subtree of the base_resource is for this package
-        for res in base_resource.walk(codebase):
-            res.for_packages.append(package_uid)
-            res.save(codebase)
+        if package_uid:
+            for res in base_resource.walk(codebase):
+                res.for_packages.append(package_uid)
+                res.save(codebase)
 
         if package:
             if not package.license_expression:
@@ -1336,9 +1339,10 @@ class Package(PackageData):
         Yield all the Resource of this package found in codebase.
         """
         package_uid = self.package_uid
-        for resource in codebase.walk():
-            if package_uid in resource.for_packages:
-                yield resource
+        if package_uid:
+            for resource in codebase.walk():
+                if package_uid in resource.for_packages:
+                    yield resource
 
 
 @attr.attributes(slots=True)

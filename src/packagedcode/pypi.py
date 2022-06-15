@@ -212,12 +212,12 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                 for py_res in cls.walk_pypi(resource=root, codebase=codebase):
                     if py_res.is_dir:
                         continue
-                    if package_uid not in py_res.for_packages:
+                    if package_uid and package_uid not in py_res.for_packages:
                         py_res.for_packages.append(package_uid)
                         py_res.save(codebase)
                     yield py_res
             elif codebase.has_single_resource:
-                if package_uid not in package_resource.for_packages:
+                if package_uid and package_uid not in package_resource.for_packages:
                     package_resource.for_packages.append(package_uid)
                     package_resource.save(codebase)
 
@@ -320,9 +320,10 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
 
         package_uid = package.package_uid
 
-        # save thyself!
-        resource.for_packages.append(package_uid)
-        resource.save(codebase)
+        if package_uid:
+            # save thyself!
+            resource.for_packages.append(package_uid)
+            resource.save(codebase)
 
         # collect actual paths based on the file references
         for file_ref in package_data.file_references:
@@ -342,15 +343,16 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
                     # TODO:w e should log these kind of things
                     continue
                 else:
-                    ref_resource.for_packages.append(package_uid)
-                    ref_resource.save(codebase)
+                    if package_uid:
+                        ref_resource.for_packages.append(package_uid)
+                        ref_resource.save(codebase)
             else:
                 ref_resource = get_resource_for_path(
                     path=path_ref,
                     root=site_packages,
                     codebase=codebase,
                 )
-                if ref_resource:
+                if ref_resource and package_uid:
                     ref_resource.for_packages.append(package_uid)
                     ref_resource.save(codebase)
 
