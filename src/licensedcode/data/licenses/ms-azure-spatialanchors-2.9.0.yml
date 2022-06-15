@@ -1,0 +1,11 @@
+key: ms-azure-spatialanchors-2.9.0
+short_name: MS Azure Spatial Anchors WinRT 2.9.0
+name: Microsoft Azure Spatial Anchors WinRT 2.9.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.Azure.SpatialAnchors.WinRT/2.9.0/License
+spdx_license_key: LicenseRef-scancode-ms-azure-spatialanchors-2.9.0
+ignorable_urls:
+    - https://aka.ms/exporting
+    - https://aka.ms/privacy
+    - https://docs.microsoft.com/en-us/legal/gdpr

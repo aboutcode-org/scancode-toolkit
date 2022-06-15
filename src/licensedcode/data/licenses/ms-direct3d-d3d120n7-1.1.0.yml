@@ -1,0 +1,11 @@
+key: ms-direct3d-d3d120n7-1.1.0
+short_name: MS Direct3D D3D12On7 1.1.0
+name: Microsoft Direct3D D3D12On7 1.1.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.Direct3D.D3D12On7/1.1.0/License
+spdx_license_key: LicenseRef-scancode-ms-direct3d-d3d120n7-1.1.0
+ignorable_urls:
+    - http://aka.ms/exporting
+    - http://go.microsoft.com/fwlink/?LinkId=524839
+    - https://go.microsoft.com/fwlink/?LinkId=521839
