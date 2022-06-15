@@ -1,0 +1,7 @@
+license_expression: apache-2.0
+is_license_notice: yes
+notes: |
+    Seen in runc Per https://github.com/opencontainers/runc/issues/2144#issuecomment-543116397 AkihiroSuda commented on Oct 17, 2019 https://github.com/AkihiroSuda/runc/commits/ebpf I'm trying to port over libcrun/ebpf.c from crun v0.10.2, which is licensed under LGPL3 (or later) and incompatible with Apache License 2.0 @giuseppe Do you think my code should be treated as a derivative of your C code? If so, any chance to relicense ebpf.c and cgroup.c as Apache License 2.0?
+    giuseppe (Giuseppe Scrivano ) Software engineer at Red Hat Inc.commented on Oct 17, 2019 I am fine to relicense these two files under the Apache License 2.0 license
+ignorable_authors:
+    - Giuseppe Scrivano
