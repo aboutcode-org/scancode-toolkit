@@ -912,7 +912,7 @@ def add_license_creation_fields(license_mapping):
     fields needed for license creation.
     """
     license_mapping.update(
-        is_active=False,
+        is_active=None,
         reviewed=False,
         license_status="NotReviewed",
     )
