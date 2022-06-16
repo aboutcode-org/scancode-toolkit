@@ -7,3 +7,6 @@ owner: Quebec
 homepage_url: https://opensource.org/licenses/LiLiQ-P-1.1
 spdx_license_key: LiLiQ-P-1.1
 osi_url: https://opensource.org/licenses/LiLiQ-P-1.1
+other_urls:
+    - http://opensource.org/licenses/LiLiQ-P-1.1
+    - https://forge.gouv.qc.ca/licence/fr/liliq-v1-1/

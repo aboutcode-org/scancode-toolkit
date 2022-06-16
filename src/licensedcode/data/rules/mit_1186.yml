@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+notes: seen in Python bottle
