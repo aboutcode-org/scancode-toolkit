@@ -31,6 +31,11 @@ try:
 except ImportError:
     contenttype = None
 
+try:
+    from packagedcode import licensing
+except ImportError:
+    licensing = None
+
 """
 This module contain data models for package and dependencies, abstracting and
 normalizing the small differences that exist across different package types
@@ -774,7 +779,13 @@ def compute_normalized_license(declared_license, expression_symbols=None):
     if not declared_license:
         return
 
-    from packagedcode import licensing
+    if not licensing:
+        if TRACE:
+            logger_debug(
+                f'Failed to compute license for {declared_license!r}: '
+                'cannot import packagedcode.licensing')
+        return 'unknown'
+
     try:
         return licensing.get_normalized_expression(
             query_string=declared_license,
@@ -782,9 +793,9 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         )
     except Exception as e:
         # we never fail just for this
+        # FIXME: add logging
         if TRACE:
             logger_debug(f'Failed to compute license for {declared_license!r}: {e!r}')
-        # FIXME: add logging
         return 'unknown'
 
 
