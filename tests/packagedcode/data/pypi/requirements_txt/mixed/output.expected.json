@@ -40,7 +40,7 @@
       },
       {
         "purl": "pkg:pypi/django",
-        "extracted_requirement": ">=1.5,<1.6",
+        "extracted_requirement": "Django>=1.5,<1.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -49,7 +49,7 @@
       },
       {
         "purl": "pkg:pypi/numpy",
-        "extracted_requirement": "",
+        "extracted_requirement": "numpy",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -58,7 +58,7 @@
       },
       {
         "purl": "pkg:pypi/docparser",
-        "extracted_requirement": "[pdf]",
+        "extracted_requirement": "DocParser[pdf]",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

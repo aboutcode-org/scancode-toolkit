@@ -31,7 +31,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/aiohttp@3.6.2",
-        "extracted_requirement": "==3.6.2",
+        "extracted_requirement": "aiohttp==3.6.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -40,7 +40,7 @@
       },
       {
         "purl": "pkg:pypi/async-timeout@3.0.1",
-        "extracted_requirement": "==3.0.1",
+        "extracted_requirement": "async-timeout==3.0.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -49,7 +49,7 @@
       },
       {
         "purl": "pkg:pypi/attrs@19.3.0",
-        "extracted_requirement": "==19.3.0",
+        "extracted_requirement": "attrs==19.3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
