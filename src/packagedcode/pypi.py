@@ -844,12 +844,15 @@ def get_requirements_txt_dependencies(location, include_nested=False):
 
         purl = purl and purl.to_string() or None
 
-        if req.is_editable:
-            requirement = req.dumps()
-        else:
-            requirement = req.dumps(with_name=False)
+        requirement = req.dumps()
 
-        if location.endswith(('dev.txt', 'test.txt', 'tests.txt',)):
+        if location.endswith(
+            (
+                'dev.txt',
+                'test.txt',
+                'tests.txt',
+            )
+        ):
             scope = 'development'
             is_runtime = False
             is_optional = True
@@ -865,7 +868,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=req.is_pinned or False,
-                extracted_requirement=requirement
+                extracted_requirement=requirement,
             )
         )
 
