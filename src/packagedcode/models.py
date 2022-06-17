@@ -7,10 +7,10 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
 from fnmatch import fnmatchcase
-import logging
 
 import attr
 from packageurl import normalize_qualifiers
@@ -26,7 +26,10 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from typecode import contenttype
+try:
+    from typecode import contenttype
+except ImportError:
+    contenttype = None
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -852,7 +855,8 @@ class DatafileHandler:
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
-                else:
+                # we check for contenttype IFF this is available
+                if contenttype:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
