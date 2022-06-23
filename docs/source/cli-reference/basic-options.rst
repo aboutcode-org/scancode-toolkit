@@ -9,6 +9,61 @@
 
 ----
 
+``-dir, --additional_directories`` Options
+------------------------------------------
+
+    .. admonition:: Dependency
+
+        The option ``-dir, --additional_directories`` is a sub-option of and requires the option
+        ``--license``.
+
+    The ``-dir, --additional_directories`` option allows the user to include additional directories
+    of licenses to use in license detection.
+
+    This command only needs to be run once for each set of additional directories; in all subsequent
+    runs of Scancode with the same directories all the licenses in the directories will be cached.
+
+    The directory structure should look something like this::
+
+        licenses/
+        ├── privateLicense1/
+        │   ├── license/
+        │   │   ├── privateLicense1.LICENSE
+        │   │   └── privateLicense1.yml
+        │   └── rule/
+        │       ├── privateLicense1.RULE
+        │       └── privateLicense1.yml
+        └── privateLicense2/
+            ├── license/
+            │   ├── privateLicense2.LICENSE
+            │   └── privateLicense2.yml
+            └── rule/
+                ├── privateLicense2.RULE
+                └── privateLicense2.yml
+
+    A scan example using the ``-dir, --additional_directories PATH`` option with a single directory::
+
+        scancode -clpieu --json-pp output.json samples -dir /home/user/external_licenses/license1
+
+    You can also include multiple directories like so::
+
+        scancode -clpieu --json-pp output.json samples -dir /home/user/external_licenses/external1 -dir /home/user/external_licenses/external2
+
+    If you want to continue running scans with ``/home/user/external_licenses/external1`` and ``/home/user/external_licenses/external2``,
+    you can omit the ``-dir`` option in subsequent scans and they will still be included. ::
+
+        scancode -clpieu --json-pp output.json samples
+
+    However, if you wanted to run a scan with a new set of directories, such as ``home/user/external_licenses/external1``
+    and ``home/user/external_licenses/external3``, you would need to rerun the scan with those directories as parameters. ::
+
+        scancode -clpieu --json-pp output.json samples -dir /home/user/external_licenses/external1 -dir /home/user/external_licenses/external3
+
+
+    ..
+
+----
+
 ``--generated`` Options
 -----------------------
 

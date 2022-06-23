@@ -55,6 +55,13 @@ documenting a program's options. For example:
 
 .. include::  /rst_snippets/note_snippets/basic_clpieu.rst
 
+-dir, --additional_directories PATH
+
+          Include paths to directories containing additional licenses and rules to use
+          in license detection. This can be used multiple times for multiple directories.
+
+          Sub-Option of - ``--license``
+
 --generated                  Classify automatically generated code files with a flag.
 
 --max-email INT              Report only up to INT emails found in a
