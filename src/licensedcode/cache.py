@@ -362,7 +362,16 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
     """
     Load or build and cache a LicenseCache. Return None.
     """
+    from licensedcode.models import get_paths_to_installed_licenses_and_rules
     global _LICENSE_CACHE
+
+    # include installed licenses
+    if not additional_directories:
+        additional_directories = get_paths_to_installed_licenses_and_rules()
+    else:
+        # additional_directories is originally a tuple
+        additional_directories = list(additional_directories) + get_paths_to_installed_licenses_and_rules()
+
     if need_cache_rebuild(additional_directories):
         force = True
     if force or not _LICENSE_CACHE:

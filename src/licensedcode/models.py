@@ -101,6 +101,8 @@ OTHER_CATEGORIES = set([
 
 CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 
+# prefix for name of all externally installed license plugins
+EXTERNAL_LICENSE_PLUGIN_PREFIX = 'licenses'
 
 @attr.s(slots=True)
 class License:
@@ -790,6 +792,25 @@ def get_rule_dirs(
     and produces a list of all the subdirectories containing rule files.
     """
     return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
+
+
+def get_paths_to_installed_licenses_and_rules():
+    """
+    Returns a list of paths to externally packaged licenses or rules that the user has
+    installed. Gets a list of all of these licenses (installed as plugins) and
+    then gets the plugins containing licenses by checking that their names start
+    with a common prefix.
+    """
+    from importlib_metadata import entry_points
+    from plugincode.location_provider import get_location
+    installed_plugins = entry_points(group='scancode_location_provider')
+    paths = []
+    for plugin in installed_plugins:
+        if plugin.name.startswith(EXTERNAL_LICENSE_PLUGIN_PREFIX):
+            # get path to directory of licenses and/or rules
+            location_key = plugin.name
+            paths.append(get_location(location_key))
+    return paths
 
 
 def load_licenses_from_multiple_dirs(
