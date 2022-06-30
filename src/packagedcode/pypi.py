@@ -1263,9 +1263,10 @@ def parse_with_dparse2(location, file_name=None):
     dependent_packages = []
 
     for dependency in dep_file.dependencies:
-        requirement = dependency.name
+        name = dependency.name
         is_resolved = False
         purl = PackageURL(type='pypi', name=dependency.name)
+        extracted_requirement = name
 
         # note: dparse2.dependencies.Dependency.specs comes from
         # packaging.requirements.Requirement.specifier
@@ -1288,6 +1289,7 @@ def parse_with_dparse2(location, file_name=None):
                 if specifier.operator in ('==', '==='):
                     is_resolved = True
                     purl = purl._replace(version=specifier.version)
+            extracted_requirement =  f"{name}{requirement}"
 
         dependent_packages.append(
             models.DependentPackage(
@@ -1297,7 +1299,7 @@ def parse_with_dparse2(location, file_name=None):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                extracted_requirement=requirement
+                extracted_requirement=extracted_requirement
             )
         )
 
