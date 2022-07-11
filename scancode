@@ -121,8 +121,8 @@ SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
 # force relaunching under X86-64 architecture on macOS M1/ARM 
-if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
-    arch -x86_64 /bin/bash -c "$SCANCODE_ROOT_DIR/$COMMAND_TO_RUN $@"
+if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
+    arch -x86_64 /bin/bash -c "$SCANCODE_ROOT_DIR/$COMMAND_TO_RUN $*"
     exit $?
 fi
 
