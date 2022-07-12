@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import json
 import os
 from unittest.case import skipIf
 
@@ -32,12 +31,31 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_setup_py_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json', must_exist=False)
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_end_to_end_skip_site_packages(self):
         test_dir = self.get_test_loc('pypi/site-packages/codebase')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('pypi/site-packages/site-packages-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_scan_pypi_end_to_end_can_handle_solo_setup_py(self):
+        test_dir = self.get_test_loc('pypi/solo-setup/setup.py')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/solo-setup/expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_detect_version_attribute_setup_py(self):
+        test_loc = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
+        result = pypi.detect_version_attribute(test_loc)
+        assert result == '22.0.4'
 
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
@@ -207,30 +225,6 @@ class TestPypiUnpackedSdist(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3-subdir-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_with_name(self):
-        test_file = self.get_test_loc('pypi/setup.py/with_name-setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/with_name-setup.py.expected.json', must_exist=False)
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_without_name(self):
-        test_file = self.get_test_loc('pypi/setup.py/without_name-setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/without_name-setup.py.expected.json', must_exist=False)
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_get_setup_py_args_with_name(self):
-        test_file = self.get_test_loc('pypi/setup.py/with_name-setup.py')
-        kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/with_name-setup.py.args.expected.json', must_exist=False)
-        check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_get_setup_py_args_without_name(self):
-        test_file = self.get_test_loc('pypi/setup.py/without_name-setup.py')
-        kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/without_name-setup.py.args.expected.json', must_exist=False)
-        check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
-
     def test_parse_metadata_unpacked_sdist_metadata_v11_1(self):
         test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/python-mimeparse-1.6.0/PKG-INFO')
         package = pypi.PythonSdistPkgInfoFile.parse(test_file)
@@ -272,12 +266,11 @@ class TestPipRequirementsFileHandler(PackageTester):
 
     def test_get_requirements_txt_dependencies(self):
         test_file = self.get_test_loc('pypi/requirements_txt/simple/requirements.txt')
-        dependencies = [
-            d.to_dict()
-            for d in pypi.get_requirements_txt_dependencies(location=test_file)
-        ]
+        dependencies, extra_data = pypi.get_requirements_txt_dependencies(location=test_file)
+        dependencies = [d.to_dict() for d in dependencies]
+        results = dependencies, extra_data
         expected_loc = self.get_test_loc('pypi/requirements_txt/simple/output.expected.json')
-        check_result_equals_expected_json(dependencies, expected_loc, regen=REGEN_TEST_FIXTURES)
+        check_result_equals_expected_json(results, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_dependency_file_basic(self):
         test_file = self.get_test_loc('pypi/requirements_txt/basic/requirements.txt')
@@ -512,201 +505,98 @@ class TestIsPipRequirementsFileHandler(object):
         assert not pypi.PipRequirementsFileHandler.is_datafile('requiremenst.py')
 
 
-def get_setup_py_test_files(test_dir):
-    """
-    Yield tuples of (setup.py file, expected JSON file) from a `test_dir` test
-    data directory.
-    """
-    for top, _, files in os.walk(test_dir):
-        for tfile in files:
-            if tfile.endswith('setup.py'):
-                continue
-            test_loc = os.path.join(top, tfile)
-            expected_loc = test_loc + '-expected.json'
-            yield test_loc, expected_loc
-
-
-class TestSetupPyVersions(object):
-    test_data_dir = os.path.abspath(os.path.join(
-        os.path.dirname(__file__),
-        'data',
-        'setup.py-versions',
-    ))
-
-    @pytest.mark.parametrize('test_loc, expected_loc', list(get_setup_py_test_files(test_data_dir)))
-    def test_parse_setup_py_with_computed_versions(self, test_loc, expected_loc, regen=REGEN_TEST_FIXTURES):
-        package = pypi.PythonSetupPyHandler.parse(test_loc)
-        if package:
-            results = package.to_dict()
-        else:
-            results = {}
-
-        if regen:
-            with open(expected_loc, 'w') as ex:
-                json.dump(results, ex, indent=2, separators=(',', ': '))
-
-        with open(expected_loc) as ex:
-            expected = json.load(ex)
-
-        try:
-            assert results == expected
-        except AssertionError:
-            assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)
-
-
-class TestPyPiSetupPy(PackageTester):
+class TestPyPiSetupPyNotWin(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     @skipIf(on_windows, 'Somehow this fails on Windows')
     def test_parse_setup_py_arpy(self):
-        test_file = self.get_test_loc('pypi/setup.py/arpy_setup.py')
+        test_file = self.get_test_loc('pypi/setup.py-not-win/arpy_setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/arpy_setup.py-expected.json')
+        expected_loc = self.get_test_loc('pypi/setup.py-not-win/arpy_setup.py-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_pluggy(self):
-        test_file = self.get_test_loc('pypi/setup.py/pluggy_setup.py')
+
+class TestPyPiSetupPyNames(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_setup_py_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/pluggy_setup.py-expected.json')
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.expected.json', must_exist=False)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_pygtrie(self):
-        # this uses a kwargs dict
-        test_file = self.get_test_loc('pypi/setup.py/pygtrie_setup.py')
+    def test_parse_setup_py_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/pygtrie_setup.py-expected.json')
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.expected.json', must_exist=False)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_basic(self):
-        test_file = self.get_test_loc('pypi/setup.py/simple-setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_get_setup_py_args_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
+        kwargs = pypi.get_setup_py_args(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.args.expected.json', must_exist=False)
+        check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_boolean2_py(self):
-        test_file = self.get_test_loc('pypi/setup.py/boolean2_py_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/boolean2_py_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_get_setup_py_args_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
+        kwargs = pypi.get_setup_py_args(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.args.expected.json', must_exist=False)
+        check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_container_check(self):
-        test_file = self.get_test_loc('pypi/setup.py/container_check_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/container_check_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_fb303_py(self):
-        test_file = self.get_test_loc('pypi/setup.py/fb303_py_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/fb303_py_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+def get_setup_py_test_files(test_dir):
+    """
+    Yield setup.py file from a `test_dir` test data directory.
+    """
+    print(test_dir)
+    for top, _, files in os.walk(test_dir):
+        for tfile in files:
+            if tfile.endswith('setup.py'):
+                yield os.path.join(top, tfile)
 
-    def test_parse_setup_py_frell_src(self):
-        # setup.py is a temaplte with @vars
-        test_file = self.get_test_loc('pypi/setup.py/frell_src_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/frell_src_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_gyp(self):
-        test_file = self.get_test_loc('pypi/setup.py/gyp_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/gyp_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+def check_setup_py_parsing(test_loc):
+    expected_loc1 = f'{test_loc}-expected-args.json'
+    parsed_kwargs = pypi.get_setup_py_args(test_loc, include_not_parsable=False)
+    check_result_equals_expected_json(
+        result=parsed_kwargs,
+        expected_loc=expected_loc1,
+        regen=REGEN_TEST_FIXTURES,
+    )
 
-    def test_parse_setup_py_interlap(self):
-        test_file = self.get_test_loc('pypi/setup.py/interlap_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/interlap_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    expected_loc2 = f'{test_loc}-expected.json'
+    packages_data = pypi.PythonSetupPyHandler.parse(test_loc)
+    test_envt.check_packages_data(
+        packages_data=packages_data,
+        expected_loc=expected_loc2,
+        regen=REGEN_TEST_FIXTURES,
+        must_exist=False,
+    )
 
-    def test_parse_setup_py_mb(self):
-        test_file = self.get_test_loc('pypi/setup.py/mb_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/mb_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_ntfs(self):
-        test_file = self.get_test_loc('pypi/setup.py/ntfs_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/ntfs_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+test_envt = PackageTester()
 
-    def test_parse_setup_py_nvchecker(self):
-        test_file = self.get_test_loc('pypi/setup.py/nvchecker_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/nvchecker_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_oi_agents_common_code(self):
-        test_file = self.get_test_loc('pypi/setup.py/oi_agents_common_code_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/oi_agents_common_code_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+@pytest.mark.parametrize(
+    'test_loc',
+    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py-versions'))),
+)
+def test_parse_setup_py_with_computed_versions(test_loc):
+    check_setup_py_parsing(test_loc)
 
-    def test_parse_setup_py_packageurl_python(self):
-        test_file = self.get_test_loc('pypi/setup.py/packageurl_python_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/packageurl_python_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_pipdeptree(self):
-        test_file = self.get_test_loc('pypi/setup.py/pipdeptree_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/pipdeptree_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+@pytest.mark.parametrize(
+    'test_loc',
+    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py')))
+)
+def test_parse_setup_py(test_loc):
+    check_setup_py_parsing(test_loc)
 
-    def test_parse_setup_py_pydep(self):
-        test_file = self.get_test_loc('pypi/setup.py/pydep_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/pydep_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_setup_py_pyrpm_2(self):
-        test_file = self.get_test_loc('pypi/setup.py/pyrpm_2_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/pyrpm_2_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_python_publicsuffix(self):
-        test_file = self.get_test_loc('pypi/setup.py/python_publicsuffix_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/python_publicsuffix_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_repology_py_libversion(self):
-        test_file = self.get_test_loc('pypi/setup.py/repology_py_libversion_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/repology_py_libversion_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_saneyaml(self):
-        test_file = self.get_test_loc('pypi/setup.py/saneyaml_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/saneyaml_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_setuppycheck(self):
-        test_file = self.get_test_loc('pypi/setup.py/setuppycheck_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/setuppycheck_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_url_py(self):
-        test_file = self.get_test_loc('pypi/setup.py/url_py_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/url_py_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_venv(self):
-        test_file = self.get_test_loc('pypi/setup.py/venv_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/venv_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_setup_py_xmltodict(self):
-        test_file = self.get_test_loc('pypi/setup.py/xmltodict_setup.py')
-        package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+@pytest.mark.parametrize(
+    'test_loc',
+    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'more_setup.py'))),
+)
+def test_parse_more_setup_py(test_loc):
+    check_setup_py_parsing(test_loc)
 

@@ -1,1 +1,64 @@
-{}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "cffi",
+    "version": "1.14.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Foreign Function Interface for Python calling C code.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Armin Rigo, Maciej Fijalkowski",
+        "email": "python-cffi@googlegroups.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.6",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.2",
+      "Programming Language :: Python :: 3.3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy"
+    ],
+    "homepage_url": "http://cffi.readthedocs.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/cffi",
+    "repository_download_url": "https://pypi.org/packages/source/c/cffi/cffi-1.14.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/cffi/1.14.0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/cffi@1.14.0"
+  }
+]

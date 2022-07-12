@@ -1,0 +1,6 @@
+license_expression: bitstream
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2003 by Bitstream, Inc.
+ignorable_holders:
+    - Bitstream, Inc.

@@ -1,0 +1,21 @@
+{
+  "name": "interlap",
+  "author": "Brent S Pedersen",
+  "author_email": "bpederse@gmail.com",
+  "url": "http://brentp.github.io/interlap",
+  "description": "interlap: fast, simple interval overlap testing",
+  "license": "MIT",
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: Unix",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Scientific/Engineering :: Bio-Informatics"
+  ]
+}

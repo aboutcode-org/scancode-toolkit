@@ -65,7 +65,7 @@ def fetch_and_save_license(url, force=False, directory="openhub_licenses"):
 
     os.makedirs(directory, exist_ok=True)
     print(f" Fetching: {url}")
-    time.sleep(.1)
+    time.sleep(0.1)
     content = urlopen(url).read()
     with open(lic_file, "wb") as of:
         of.write(content)

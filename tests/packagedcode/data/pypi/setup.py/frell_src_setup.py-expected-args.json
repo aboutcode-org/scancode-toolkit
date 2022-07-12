@@ -1,0 +1,11 @@
+{
+  "name": "@NAME@",
+  "description": "Python module @MODULE@",
+  "author": "Brett Smith",
+  "author_email": "bc.smith@sas.com",
+  "license": "Apache License 2.0",
+  "tests_require": [
+    "pytest",
+    "mock"
+  ]
+}

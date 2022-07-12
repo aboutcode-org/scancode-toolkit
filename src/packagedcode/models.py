@@ -26,6 +26,7 @@ from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
+from commoncode.resource import Resource
 from typecode import contenttype
 
 from packagedcode.licensing import get_declared_license_expression_spdx
@@ -976,7 +977,7 @@ class DatafileHandler:
         # NOTE: we do not attach files to the Package level. Instead we
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
-        if resource:
+        if resource and package_uid:
             resource.for_packages.append(package_uid)
             resource.save(codebase)
             for res in resource.walk(codebase):
@@ -1036,8 +1037,9 @@ class DatafileHandler:
                         datafile_path=resource.path,
                     )
                     package_uid = package.package_uid
-                    resource.for_packages.append(package_uid)
-                    resource.save(codebase)
+                    if package_uid:
+                        resource.for_packages.append(package_uid)
+                        resource.save(codebase)
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
@@ -1046,8 +1048,9 @@ class DatafileHandler:
                     package_data=package_data,
                     datafile_path=resource.path,
                 )
-                resource.for_packages.append(package_uid)
-                resource.save(codebase)
+                if package_uid:
+                    resource.for_packages.append(package_uid)
+                    resource.save(codebase)
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1063,9 +1066,10 @@ class DatafileHandler:
             yield resource
 
         # the whole parent subtree of the base_resource is for this package
-        for res in base_resource.walk(codebase):
-            res.for_packages.append(package_uid)
-            res.save(codebase)
+        if package_uid:
+            for res in base_resource.walk(codebase):
+                res.for_packages.append(package_uid)
+                res.save(codebase)
 
         if package:
             package.populate_license_fields()
@@ -1236,7 +1240,7 @@ class Package(PackageData):
         self.populate_license_fields()
 
     def to_dict(self):
-        return  super().to_dict(with_details=False)
+        return super().to_dict(with_details=False)
 
     @classmethod
     def from_package_data(cls, package_data, datafile_path):
@@ -1370,9 +1374,28 @@ class Package(PackageData):
         Yield all the Resource of this package found in codebase.
         """
         package_uid = self.package_uid
-        for resource in codebase.walk():
-            if package_uid in resource.for_packages:
-                yield resource
+        if package_uid:
+            for resource in codebase.walk():
+                if package_uid in resource.for_packages:
+                    yield resource
+
+
+@attr.attributes(slots=True)
+class PackageWithResources(Package):
+    """
+    A Package with Resources.
+    """
+
+    resources = List(
+        item_type=Resource,
+        label='List of Resources',
+        help='List of Resources for this package.',
+    )
+
+    def to_dict(self):
+        package_data = super().to_dict()
+        package_data['resources'] = [resource.to_dict() for resource in self.resources]
+        return package_data
 
 
 def get_files_for_packages(codebase):

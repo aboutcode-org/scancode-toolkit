@@ -197,7 +197,8 @@ def test_CycloneDxMetadata_from_headers():
         'notice': 'some notice',
         'message': 'some message',
         'errors': ['some error'],
-        'extra_data': {'WARNING': 'some warning', 'spdx_version': '3.1.2'}
+        'warnings': ['some warning'],
+        'extra_data': {'spdx_version': '3.1.2'}
     }]
     m = CycloneDxMetadata.from_headers(headers).to_dict()
     m.pop('timestamp')
@@ -205,8 +206,8 @@ def test_CycloneDxMetadata_from_headers():
         'properties': [
             {'name': 'notice', 'value': 'some notice'},
             {'name': 'errors', 'value': ['some error']},
+            {'name': 'warnings', 'value': ['some warning']},
             {'name': 'message', 'value': 'some message'},
-            {'name': 'WARNING', 'value': 'some warning'},
             {'name': 'spdx_version', 'value': '3.1.2'},
         ],
         'tools': [
@@ -214,6 +215,14 @@ def test_CycloneDxMetadata_from_headers():
         ],
     }
     assert m == expected
+
+
+def test_cyclonedx_plugin_does_not_fail_without_packages():
+    test_dir = test_env.get_test_loc('cyclonedx/simple')
+    result_file = test_env.get_temp_file('cyclonedx.json')
+    run_scan_click([test_dir, '--cyclonedx', result_file])
+    expected_file = test_env.get_test_loc('cyclonedx/expected-without-packages.json')
+    check_cyclone_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_cyclonedx_plugin_json():

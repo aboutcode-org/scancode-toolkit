@@ -1,0 +1,42 @@
+{
+  "name": "paho-mqtt",
+  "description": "MQTT version 3.1.1 client class",
+  "author": "Roger Light",
+  "author_email": "roger@atchoo.org",
+  "url": "http://eclipse.org/paho",
+  "package_dir": {
+    "": "src"
+  },
+  "license": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
+  "keywords": [
+    "paho"
+  ],
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Communications",
+    "Topic :: Internet"
+  ],
+  "tests_require": [
+    "pytest",
+    "pylama",
+    "six"
+  ],
+  "extras_require": {
+    "proxy": [
+      "PySocks"
+    ]
+  }
+}

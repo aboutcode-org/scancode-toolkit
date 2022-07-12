@@ -53,7 +53,7 @@ def test_package_option_detects_packages(monkeypatch):
 def test_verbose_option_with_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     result_file = test_env.get_temp_file('json')
-    args = ['--package', '--verbose', test_dir, '--json', result_file]
+    args = ['--package', '-v', test_dir, '--json', result_file]
     result = run_scan_click(args, monkeypatch=monkeypatch)
     assert 'package.json' in result.output
     assert os.path.exists(result_file)
@@ -417,9 +417,15 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_verbose():
     result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('--verbose')
     assert result.output
 
+    result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('-v')
+    assert result.output
+
 
 def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_quiet():
     result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('--quiet')
+    assert not result.output
+
+    result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('-q')
     assert not result.output
 
 
@@ -451,7 +457,7 @@ def test_scan_can_handle_licenses_with_unicode_metadata():
 def test_scan_quiet_to_file_does_not_echo_anything():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
-    args = ['--quiet', '--info', test_dir, '--json', result_file]
+    args = ['-q', '--info', test_dir, '--json', result_file]
     result = run_scan_click(args)
     assert not result.output
 
@@ -464,7 +470,7 @@ def test_scan_quiet_to_stdout_only_echoes_json_results():
     assert not result_to_file.output
 
     # also test with an output of JSON to stdout
-    args = ['--quiet', '--info', test_dir, '--json-pp', '-']
+    args = ['-q', '--info', test_dir, '--json-pp', '-']
     result_to_stdout = run_scan_click(args)
 
     # outputs to file or stdout should be identical
@@ -567,7 +573,7 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
 def test_scan_logs_errors_messages_verbosely():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
     # we use a short timeout and a --test-slow-mode --email scan to simulate an error
-    args = ['-e', '--test-slow-mode', '--verbose', '-n', '0', '--timeout', '0.0001',
+    args = ['-e', '--test-slow-mode', '-v', '-n', '0', '--timeout', '0.0001',
             test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
@@ -935,10 +941,16 @@ def test_VirtualCodebase_output_with_from_json_is_same_as_original():
 def test_getting_version_returns_valid_yaml():
     import saneyaml
     import scancode_config
-    args = ['--version']
-    result = run_scan_click(args)
-    assert saneyaml.load(result.output) == {
+    test_version = {
         'ScanCode version': f'{scancode_config.__version__}',
         'ScanCode Output Format version': f'{scancode_config.__output_format_version__}',
         'SPDX License list version': f'{scancode_config.spdx_license_list_version}'
     }
+
+    args = ['--version']
+    result = run_scan_click(args)
+    assert saneyaml.load(result.output) == test_version
+
+    args = ['-V']
+    result = run_scan_click(args)
+    assert saneyaml.load(result.output) == test_version

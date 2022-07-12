@@ -208,6 +208,8 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, skip_name=None):
         package_uid = package.package_uid
+        if not package_uid:
+            return
         parent = resource.parent(codebase)
         for res in walk_build(resource=parent, codebase=codebase, skip_name=skip_name):
             res.for_packages.append(package_uid)

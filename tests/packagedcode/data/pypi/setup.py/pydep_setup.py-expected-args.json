@@ -1,0 +1,10 @@
+{
+  "name": "pydep",
+  "version": "0.0",
+  "url": "http://github.com/sourcegraph/pydep",
+  "author": "Beyang Liu",
+  "description": "A simple module that will print the dependencies of a python projectUsage: python -m pydep <dir>",
+  "install_requires": [
+    "pip==7.1.2"
+  ]
+}

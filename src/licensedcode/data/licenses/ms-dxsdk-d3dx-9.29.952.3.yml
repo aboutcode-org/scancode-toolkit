@@ -1,0 +1,12 @@
+key: ms-dxsdk-d3dx-9.29.952.3
+short_name: MS DXSDK.D3DX 9.29.952.3
+name: Microsoft DXSDK.D3DX 9.29.952.3
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.DXSDK.D3DX/9.29.952.3/License
+spdx_license_key: LicenseRef-scancode-ms-dxsdk-d3dx-9.29.952.3
+ignorable_urls:
+    - https://aka.ms/arb-agreement-4
+    - https://aka.ms/exporting
+    - https://aka.ms/privacy
+    - https://docs.microsoft.com/en-us/legal/gdpr

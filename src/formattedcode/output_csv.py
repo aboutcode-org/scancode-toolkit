@@ -140,7 +140,7 @@ def flatten_scan(scan, headers):
                     for mrk, mrv in val.items():
                         if mrk in ('match_coverage', 'rule_relevance'):
                             # normalize the string representation of this number
-                            mrv = '{:.2f}'.format(mrv)
+                            mrv = with_two_decimals(mrv)
                         else:
                             mrv = pretty(mrv)
                         mrk = 'matched_rule__' + mrk
@@ -148,8 +148,7 @@ def flatten_scan(scan, headers):
                     continue
 
                 if k == 'score':
-                    # normalize score with two decimal values
-                    val = '{:.2f}'.format(val)
+                    val = with_two_decimals(val)
 
                 # lines are present in multiple scans: keep their column name as
                 # not scan-specific. Prefix othe columns with license__
@@ -199,6 +198,17 @@ def flatten_scan(scan, headers):
             flat = flatten_package(package, path)
             collect_keys(flat, 'package')
             yield flat
+
+
+def with_two_decimals(val):
+    """
+    Return a normalized score string with two decimal values
+    """
+    if isinstance(val, (float, int)):
+        val = '{:.2f}'.format(val)
+    if not isinstance(val, str):
+        val = str(val)
+    return val
 
 
 def pretty(data):

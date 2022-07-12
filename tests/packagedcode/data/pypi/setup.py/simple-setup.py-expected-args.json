@@ -1,0 +1,68 @@
+{
+  "name": "scancode-toolkit",
+  "version": "1.5.0",
+  "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+  "description": "ScanCode is a tool to scan code for license, copyright and other interesting facts.",
+  "author": "ScanCode",
+  "author_email": "info@scancode.io",
+  "url": "https://github.com/nexB/scancode-toolkit",
+  "package_dir": {
+    "": "src"
+  },
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: CC0",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2.7",
+    "Topic :: Utilities"
+  ],
+  "keywords": [
+    "license",
+    "filetype",
+    "urn",
+    "date",
+    "codec"
+  ],
+  "install_requires": [
+    "py2-ipaddress >= 2.0, <3.0",
+    "url >= 0.1.4",
+    "publicsuffix2",
+    "nltk >= 2.0b4, <3.0.0",
+    "patch >= 1.14.2, < 1.15 ",
+    "bz2file >= 0.98",
+    "PyYAML >= 3.0, <4.0",
+    "Beautifulsoup >= 3.2.0, <4.0.0",
+    "Beautifulsoup4 >= 4.3.0, <5.0.0",
+    "html5lib",
+    "six",
+    "pygments >= 2.0.0, <3.0.0",
+    "pdfminer >= 20140328",
+    "chardet >= 2.1.1, <3.0.0",
+    "binaryornot >= 0.4.0",
+    "click >= 4.0.0, < 5.0.0",
+    "jinja2 >= 2.7.0, < 3.0.0",
+    "MarkupSafe >= 0.23",
+    "colorama",
+    "about-code-tool >= 0.9.0",
+    "requests >= 2.7.0, < 3.0.0"
+  ],
+  "extras_require": {
+    "base": [
+      "certifi",
+      "setuptools",
+      "wheel",
+      "pip",
+      "wincertstore"
+    ],
+    "dev": [
+      "pytest",
+      "execnet",
+      "py",
+      "pytest-xdist",
+      "bumpversion"
+    ],
+    "doc": "sphinx"
+  }
+}

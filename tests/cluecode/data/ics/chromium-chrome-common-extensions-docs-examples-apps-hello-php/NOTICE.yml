@@ -15,7 +15,7 @@ holders:
 holders_summary:
   - value: Andy Smith
     count: 1
-  - value: Google Inc.
+  - value: Google
     count: 1
   - value: John Resig
     count: 1

@@ -110,7 +110,6 @@ TRACE_DEEP = False
     is_flag=True,
     help="Use on disk cached PyPI indexes list of packages and versions and do not refetch if present.",
 )
-
 @click.help_option("-h", "--help")
 def fetch_thirdparty(
     requirements_files,

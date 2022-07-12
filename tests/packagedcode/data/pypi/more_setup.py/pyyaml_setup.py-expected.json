@@ -1,0 +1,63 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "PyYAML",
+    "version": "3.13",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "YAML parser and emitter for Python",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Kirill Simonov",
+        "email": "xi@resolvent.net",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Topic :: Text Processing :: Markup"
+    ],
+    "homepage_url": "http://pyyaml.org/wiki/PyYAML",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/PyYAML",
+    "repository_download_url": "https://pypi.org/packages/source/P/PyYAML/PyYAML-3.13.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/PyYAML/3.13/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pyyaml@3.13"
+  }
+]

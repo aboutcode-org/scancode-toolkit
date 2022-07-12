@@ -1,0 +1,16 @@
+key: etalab-2.0-en
+short_name: Etalab Open License 2.0 English
+name: Etalab Open License 2.0 English
+category: Permissive
+owner: DINUM
+homepage_url: https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
+notes: there is also a French version
+spdx_license_key: LicenseRef-scancode-etalab-2.0-en
+text_urls:
+    - https://github.com/etalab/licence-ouverte/blob/master/open-licence.md
+other_urls:
+    - https://github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf
+    - https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
+    - https://www.etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf
+ignorable_urls:
+    - http://www.data.gouv.fr/fr/datasets/xxx

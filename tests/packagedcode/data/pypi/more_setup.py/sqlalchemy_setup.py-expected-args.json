@@ -1,0 +1,53 @@
+{
+  "name": "SQLAlchemy",
+  "description": "Database Abstraction Library",
+  "author": "Mike Bayer",
+  "author_email": "mike_mp@zzzcomputing.com",
+  "url": "http://www.sqlalchemy.org",
+  "package_dir": {
+    "": "lib"
+  },
+  "license": "MIT License",
+  "tests_require": [
+    "pytest >= 2.5.2",
+    "mock",
+    "pytest-xdist"
+  ],
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Database :: Front-Ends",
+    "Operating System :: OS Independent"
+  ],
+  "extras_require": {
+    "mysql": [
+      "mysqlclient"
+    ],
+    "pymysql": [
+      "pymysql"
+    ],
+    "postgresql": [
+      "psycopg2"
+    ],
+    "postgresql_pg8000": [
+      "pg8000"
+    ],
+    "postgresql_psycopg2cffi": [
+      "psycopg2cffi"
+    ],
+    "oracle": [
+      "cx_oracle"
+    ],
+    "mssql_pyodbc": [
+      "pyodbc"
+    ],
+    "mssql_pymssql": [
+      "pymssql"
+    ]
+  }
+}

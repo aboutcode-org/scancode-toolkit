@@ -1,0 +1,20 @@
+{
+  "name": "urlpy",
+  "version": "0.2.0.2",
+  "description": "URL Parsing",
+  "long_description": "\nSome helper functions for parsing URLs, sanitizing them, normalizing them in pure python.\n\nThis includes support for escaping, unescaping, punycoding, unpunycoding,\ncleaning parameter and query strings, and a little more sanitization.\n\nThis version is a friendly fork of the upstream from Moz to keep a pure Python\nversion around to run on Python 2.7 and all OSes.\nIt also uses an alternate publicsuffix list provider package.\n\n",
+  "author": "Dan Lecocq",
+  "author_email": "dan@seomoz.org",
+  "url": "http://github.com/nexB/url-py",
+  "license": "MIT",
+  "classifiers": [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP"
+  ],
+  "install_requires": [
+    "publicsuffix2"
+  ]
+}

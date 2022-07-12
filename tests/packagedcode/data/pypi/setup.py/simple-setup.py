@@ -113,6 +113,7 @@ setup(
             'pytest-xdist',
             'bumpversion',
         ],
+        'doc': 'sphinx',
 
     },
     entry_points={

@@ -1,0 +1,20 @@
+{
+  "name": "pytoml",
+  "version": "0.1.21",
+  "description": "A parser for TOML-0.4.0",
+  "long_description_content_type": "text/markdown",
+  "author": "Martin Vejn\u00e1r",
+  "author_email": "vejnar.martin@gmail.com",
+  "url": "https://github.com/avakar/pytoml",
+  "license": "MIT",
+  "classifiers": [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries"
+  ]
+}

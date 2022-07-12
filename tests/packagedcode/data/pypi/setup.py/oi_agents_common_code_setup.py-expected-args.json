@@ -1,0 +1,32 @@
+{
+  "name": "agents_common",
+  "description": "Function utils for OII agents",
+  "url": "https://lab.openintegrity.org/agents/agents-common-code",
+  "author": "__author__",
+  "author_email": "juga@riseup.net",
+  "license": "GPLv3",
+  "classifiers": [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GPLv3 License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 2.7",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities"
+  ],
+  "keywords": [
+    "agents",
+    "development",
+    "utils"
+  ],
+  "extras_require": {
+    "dev": [
+      "ipython"
+    ],
+    "test": [
+      "coverage"
+    ]
+  }
+}

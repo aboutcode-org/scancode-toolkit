@@ -18,6 +18,7 @@ from plugincode.post_scan import PostScanPlugin, post_scan_impl
 from cluecode.copyrights import CopyrightDetector
 from packagedcode.utils import combine_expressions
 from packagedcode import models
+from summarycode.copyright_tallies import canonical_holder
 from summarycode.score import compute_license_score
 from summarycode.score import get_field_values_from_codebase_resources
 from summarycode.score import unique
@@ -167,7 +168,7 @@ def get_declared_holders(codebase, holders_tallies):
         codebase, 'holders', key_files_only=True
     )
     entry_by_key_file_holders = {
-        fingerprints.generate(entry['holder']): entry
+        fingerprints.generate(canonical_holder(entry['holder'])): entry
         for entry in key_file_holders
         if entry['holder']
     }
@@ -212,25 +213,24 @@ def get_primary_language(programming_language_tallies):
 
 def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     """
-    Return a 3-tuple containing the strings of declared license expression,
-    copyright holder, and primary programming language from a
+    Return a 3-tuple containing the declared license expression string, a list
+    of copyright holder, and primary programming language string from a
     ``top_level_packages`` list of detected top-level packages mapping and a
     ``codebase``.
     """
     if not top_level_packages:
-        return '', '', ''
+        return '', [], ''
 
     license_expressions = []
     programming_languages = []
     copyrights = []
-    parties = []
 
-    for package_mapping in top_level_packages:
-        package = models.Package.from_dict(package_mapping)
-        # we are only interested in key packages
-        if not is_key_package(package, codebase):
-            continue
-
+    top_level_packages = [
+        models.Package.from_dict(package_mapping)
+        for package_mapping in top_level_packages
+    ]
+    key_file_packages = [p for p in top_level_packages if is_key_package(p, codebase)]
+    for package in key_file_packages:
         license_expression = package.declared_license_expression
         if license_expression:
             license_expressions.append(license_expression)
@@ -242,8 +242,6 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
         copyright_statement = package.copyright
         if copyright_statement:
             copyrights.append(copyright_statement)
-
-        parties.extend(package.parties or [])
 
     # Combine license expressions
     unique_license_expressions = unique(license_expressions)
@@ -263,9 +261,20 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     declared_holders = []
     if holders:
         declared_holders = holders
-    elif parties:
-        declared_holders = [party.name for party in parties or []]
-
+    else:
+        # If the package data does not contain an explicit copyright, check the
+        # key files where the package data was detected from and see if there
+        # are any holder detections that can be used.
+        for package in key_file_packages:
+            for datafile_path in package.datafile_paths:
+                key_file_resource = codebase.get_resource(path=datafile_path)
+                if not key_file_resource:
+                    continue
+                holders = [h['holder'] for h in key_file_resource.holders]
+                declared_holders.extend(holders)
+    # Normalize holder names before collecting them
+    # This allows us to properly remove declared holders from `other_holders` later
+    declared_holders = [canonical_holder(h) for h in declared_holders]
     declared_holders = unique(declared_holders)
 
     # Programming language

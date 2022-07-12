@@ -1,0 +1,42 @@
+{
+  "name": "bluepyopt",
+  "install_requires": [
+    "numpy>=1.6",
+    "pandas>=0.18",
+    "deap",
+    "efel>=2.13",
+    "ipyparallel",
+    "pickleshare>=0.7.3",
+    "Jinja2>=2.8",
+    "future",
+    "Pebble>=4.3.10"
+  ],
+  "extras_require": {
+    "all": [
+      "scoop>=0.7"
+    ],
+    "scoop": [
+      "scoop>=0.7"
+    ]
+  },
+  "author": "BlueBrain Project, EPFL",
+  "author_email": "werner.vangeit@epfl.ch",
+  "description": "Bluebrain Python Optimisation Library (bluepyopt)",
+  "long_description": "The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framework for data-driven model parameter optimisation that wraps and standardises several existing open-source tools. It simplifies the task of creating and sharing these optimisations, and the associated techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks into various reusable and flexible discrete elements according to established best-practices.",
+  "license": "LGPLv3",
+  "keywords": [
+    "optimisation",
+    "neuroscience",
+    "BlueBrainProject"
+  ],
+  "url": "https://github.com/BlueBrain/BluePyOpt",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: POSIX",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Utilities"
+  ]
+}

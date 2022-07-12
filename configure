@@ -1,14 +1,128 @@
 #!/usr/bin/env bash
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: Apache-2.0 AND MIT
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# ScanCode is a trademark of nexB Inc.
 # See https://github.com/nexB/ for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 set -e
 #set -x
+
+###################################################################################
+###################################################################################
+# from https://raw.githubusercontent.com/mkropat/sh-realpath/58c03982cfd8accbcf0c4426a4adf0f120a8b2bb/realpath.sh
+# realpath emulation for portability on *nix
+# this allow running scancode from arbitrary locations and from symlinks
+#
+# Copyright (c) 2014 Michael Kropat
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+
+realpath() {
+    canonicalize_path "$(resolve_symlinks "$1")"
+}
+
+resolve_symlinks() {
+    _resolve_symlinks "$1"
+}
+
+_resolve_symlinks() {
+    _assert_no_path_cycles "$@" || return
+
+    local dir_context path
+    path=$(readlink -- "$1")
+    if [ $? -eq 0 ]; then
+        dir_context=$(dirname -- "$1")
+        _resolve_symlinks "$(_prepend_dir_context_if_necessary "$dir_context" "$path")" "$@"
+    else
+        printf '%s\n' "$1"
+    fi
+}
+
+_prepend_dir_context_if_necessary() {
+    if [ "$1" = . ]; then
+        printf '%s\n' "$2"
+    else
+        _prepend_path_if_relative "$1" "$2"
+    fi
+}
+
+_prepend_path_if_relative() {
+    case "$2" in
+        /* ) printf '%s\n' "$2" ;;
+         * ) printf '%s\n' "$1/$2" ;;
+    esac
+}
+
+_assert_no_path_cycles() {
+    local target path
+
+    target=$1
+    shift
+
+    for path in "$@"; do
+        if [ "$path" = "$target" ]; then
+            return 1
+        fi
+    done
+}
+
+canonicalize_path() {
+    if [ -d "$1" ]; then
+        _canonicalize_dir_path "$1"
+    else
+        _canonicalize_file_path "$1"
+    fi
+}
+
+_canonicalize_dir_path() {
+    (cd "$1" 2>/dev/null && pwd -P)
+}
+
+_canonicalize_file_path() {
+    local dir file
+    dir=$(dirname -- "$1")
+    file=$(basename -- "$1")
+    (cd "$dir" 2>/dev/null && printf '%s/%s\n' "$(pwd -P)" "$file")
+}
+
+###################################################################################
+###################################################################################
+
+# Now run configure proper
+
+################################
+# Setup current directory where this script lives
+CFG_BIN="$( realpath "${BASH_SOURCE[0]}" )"
+CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
+
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+
+# force relaunching under X86-64 architecture on macOS M1/ARM 
+if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
+    arch -x86_64 /bin/bash -c "$CFG_ROOT_DIR/configure $*"
+    exit $?
+fi
 
 ################################
 # A configuration script to set things up:
@@ -53,12 +167,19 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 
 ################################
+# Install with or without and index. With "--no-index" this is using only local wheels
+# This is an offline mode with no index and no network operations
+NO_INDEX="--no-index "
+
+
+################################
 # Thirdparty package locations and index handling
-# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
-# offline mode for scancode installation with no index at all
-if [ -d "$CFG_ROOT_DIR/thirdparty" ]; then
-    PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
+# Find packages from the local thirdparty directory if present
+thirddir=$CFG_ROOT_DIR/thirdparty
+if [[ "$(echo $thirddir/*.whl)x" != "$thirddir/*.whlx" ]]; then
+    PIP_EXTRA_ARGS="$NO_INDEX --find-links $CFG_ROOT_DIR/thirdparty"
 fi
+
 
 ################################
 # Set the quiet flag to empty if not defined
@@ -102,25 +223,13 @@ create_virtualenv() {
             wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
-        if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' ]]; then
-            arch -x86_64 /bin/bash -c "$PYTHON_EXECUTABLE \"$VIRTUALENV_PYZ\" \
-                --wheel embed --pip embed --setuptools embed \
-                --seeder pip \
-                --never-download \
-                --no-periodic-update \
-                --no-vcs-ignore \
-                $CFG_QUIET \
-                \"$CFG_ROOT_DIR/$VENV_DIR\" "
-        else
-            $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-                --wheel embed --pip embed --setuptools embed \
-                --seeder pip \
-                --never-download \
-                --no-periodic-update \
-                --no-vcs-ignore \
-                $CFG_QUIET \
-                "$CFG_ROOT_DIR/$VENV_DIR"
-        fi
+        $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
+            --wheel embed --pip embed --setuptools embed \
+            --never-download \
+            --no-periodic-update \
+            --no-vcs-ignore \
+            $CFG_QUIET \
+            "$CFG_ROOT_DIR/$VENV_DIR"
     fi
 }
 

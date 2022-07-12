@@ -1,58 +1,66 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "certifi",
-  "version": "2020.06.20",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "Python package for providing Mozilla's CA Bundle.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Kenneth Reitz",
-      "email": "me@kennethreitz.com",
-      "url": "https://certifiio.readthedocs.io/en/latest/"
-    }
-  ],
-  "keywords": [
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8"
-  ],
-  "homepage_url": "https://certifiio.readthedocs.io/en/latest/",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": {
-    "license": "MPL-2.0",
-    "classifiers": [
-      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
-    ]
-  },
-  "notice_text": null,
-  "dependencies": [],
-  "source_packages": [],
-  "purl": "pkg:pypi/certifi@2020.06.20",
-  "repository_homepage_url": "https://pypi.org/project/certifi",
-  "repository_download_url": "https://pypi.io/packages/source/c/certifi/certifi-2020.06.20.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/certifi/2020.06.20/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "certifi",
+    "version": "2020.06.20",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Python package for providing Mozilla's CA Bundle.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Kenneth Reitz",
+        "email": "me@kennethreitz.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Natural Language :: English",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8"
+    ],
+    "homepage_url": "https://certifiio.readthedocs.io/en/latest/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://github.com/certifi/python-certifi",
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mpl-2.0",
+    "declared_license": {
+      "license": "MPL-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "Documentation": "https://certifiio.readthedocs.io/en/latest/",
+      "Download-URL": "https://github.com/certifi/python-certifi"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/certifi",
+    "repository_download_url": "https://pypi.org/packages/source/c/certifi/certifi-2020.06.20.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/certifi/2020.06.20/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/certifi@2020.06.20"
+  }
+]
