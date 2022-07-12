@@ -8,6 +8,7 @@
 #
 
 import io
+import os
 import logging
 
 import saneyaml
@@ -19,15 +20,24 @@ from packagedcode.utils import combine_expressions
 Handle FreeBSD ports
 per https://www.freebsd.org/cgi/man.cgi?pkg-create(8)
 """
+SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE = SCANCODE_DEBUG_PACKAGE
 
-TRACE = False
+def logger_debug(*args):
+    pass
+
 
 logger = logging.getLogger(__name__)
 
 if TRACE:
     import sys
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 # see also https://github.com/freebsd/pkg#the-metadata
 # TODO: use the libucl Python binding
@@ -94,44 +104,58 @@ class CompactManifestHandler(models.DatafileHandler):
         # license_mapper needs multiple fields
         license_mapper(freebsd_manifest, package_data)
 
-        if package_data.declared_license:
-            package_data.license_expression = cls.compute_normalized_license(package_data)
+        cls.populate_license_fields(package_data)
+
+        if TRACE:
+            logger_debug(
+                f"package_data: {package_data}" 
+            )
 
         yield package_data
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        """
-        Return a normalized license expression string or None detected from a ``package`` Package
-        declared license items or an ordered dict.
-        """
-        declared_license = package.declared_license
-        if not declared_license:
-            return
+    @staticmethod
+    def get_license_detections_and_expression(package_data):
 
-        if not isinstance(declared_license, dict):
-            return models.compute_normalized_license(declared_license=declared_license)
+        from packagedcode.licensing import get_license_detections_and_expression
+        from packagedcode.licensing import get_license_detections_for_extracted_license_statement
+        from packagedcode.licensing import get_mapping_and_expression_from_detections
 
-        licenses = declared_license.get('licenses')
+        detections = []
+        expression = None
+
+        if not package_data.extracted_license_statement:
+            return detections, expression
+
+        if not isinstance(package_data.extracted_license_statement, dict):
+            return get_license_detections_and_expression(package_data.extracted_license_statement)
+
+        licenses = package_data.extracted_license_statement.get('licenses')
         if not licenses:
-            return
+            return detections, expression
 
-        license_logic = declared_license.get('licenselogic')
-        # the default in FreebSD expressions is AND
+        license_logic = package_data.extracted_license_statement.get('licenselogic')
         relation = 'AND'
         if license_logic:
             if license_logic == 'or' or license_logic == 'dual':
                 relation = 'OR'
 
-        detected_licenses = []
         for lic in licenses:
-            detected = models.compute_normalized_license(declared_license=lic)
+            detected = get_license_detections_for_extracted_license_statement(extracted_license_statement=lic)
             if detected:
-                detected_licenses.append(detected)
+                detections.extend(detected)
 
-        if detected_licenses:
-            return combine_expressions(expressions=detected_licenses, relation=relation)
+        if TRACE:
+            logger_debug(
+                f"licenses: {licenses}"
+            )
+            logger_debug(
+                f"detections: {detections}"
+            )
 
+        return get_mapping_and_expression_from_detections(
+            license_detections=detections,
+            relation=relation,
+        )
 
 def license_mapper(freebsd_manifest, package):
     """
@@ -144,15 +168,15 @@ def license_mapper(freebsd_manifest, package):
     if not licenses:
         return
 
-    declared_license = {}
+    extracted_license_statement = {}
     lics = [l.strip() for l in licenses if l and l.strip()]
-    declared_license['licenses'] = lics
+    extracted_license_statement['licenses'] = lics
 
     license_logic = freebsd_manifest.get('licenselogic')
     if license_logic:
-        declared_license['licenselogic'] = license_logic
+        extracted_license_statement['licenselogic'] = license_logic
 
-    package.declared_license = declared_license
+    package.extracted_license_statement = extracted_license_statement
     return
 
 

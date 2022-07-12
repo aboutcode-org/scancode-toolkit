@@ -23,6 +23,8 @@ from packageurl import PackageURL
 
 from packagedcode import bashparse
 from packagedcode import models
+from packagedcode.licensing import get_declared_license_expression_spdx
+from packagedcode.licensing import get_license_detections_and_expression
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import get_ancestor
 from textcode.analysis import as_unicode
@@ -38,10 +40,20 @@ class AlpineApkArchiveHandler(models.DatafileHandler):
     description = 'Alpine Linux .apk package archive'
     documentation_url = 'https://wiki.alpinelinux.org/wiki/Alpine_package_format'
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
+    @staticmethod
+    def get_license_detections_and_expression(package):
+
+        detections = []
+        expression = None
+
+        if not package.extracted_license_statement:
+            return detections, expression
+
+        _cleaned_lic_statement, detected_license_expression, license_detections = detect_declared_license(
+            declared=package.extracted_license_statement
+        )
+
+        return license_detections, detected_license_expression
 
 
 class AlpineInstalledDatabaseHandler(models.DatafileHandler):
@@ -74,7 +86,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
-        package.license_expression = cls.compute_normalized_license(package)
+        cls.populate_license_fields(package)
 
         dependent_packages = package_data.dependencies
         if dependent_packages:
@@ -122,14 +134,25 @@ class AlpineApkbuildHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        parsed = parse_apkbuild(location, strict=True)
-        if parsed:
-            yield parsed
+        package_data = parse_apkbuild(location, strict=True)
+        cls.populate_license_fields(package_data)
+        if package_data:
+            yield package_data
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
+    @staticmethod
+    def get_license_detections_and_expression(package):
+
+        detections = []
+        expression = None
+
+        if not package.extracted_license_statement:
+            return detections, expression
+
+        _cleaned_lic_statement, detected_license_expression, license_detections = detect_declared_license(
+            declared=package.extracted_license_statement
+        )
+
+        return license_detections, detected_license_expression
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -860,10 +883,13 @@ def L_license_handler(value, **kwargs):
     Return a normalized declared license and a detected license expression.
     """
     original = value
-    _declared, detected = detect_declared_license(value)
+    _declared, detected, license_detections = detect_declared_license(value)
+    detected_spdx = get_declared_license_expression_spdx(declared_license_expression=detected)
     return {
-        'declared_license': original,
-        'license_expression': detected,
+        'extracted_license_statement': original,
+        'declared_license_expression': detected,
+        'declared_license_expression_spdx': detected_spdx,
+        'license_detections': license_detections,
     }
 
 
@@ -1335,12 +1361,12 @@ def detect_declared_license(declared):
     extra_licenses = {}
     expression_symbols = get_license_symbols(extra_licenses=extra_licenses)
 
-    detected = models.compute_normalized_license(
-        declared_license=mapped,
+    license_detections, detected_license_expression = get_license_detections_and_expression(
+        extracted_license_statement=mapped,
         expression_symbols=expression_symbols,
     )
 
-    return cleaned, detected
+    return cleaned, detected_license_expression, license_detections
 
 
 def get_license_symbols(extra_licenses):

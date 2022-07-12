@@ -142,7 +142,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
+        _declared, detected = detect_declared_license(package.extracted_license_statement)
         return detected
 
     @classmethod
@@ -185,8 +185,8 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         package.namespace = namespace
 
         # detect license
-        _declared, detected = detect_declared_license(package.declared_license)
-        package.license_expression = detected
+        _declared, detected = detect_declared_license(package.extracted_license_statement)
+        package.declared_license_expression = detected
 
         # yield deps
         dependent_packages = package_data.dependencies
@@ -280,7 +280,7 @@ class RpmArchiveHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
+        _declared, detected = detect_declared_license(package.extracted_license_statement)
         return detected
 
     @classmethod
@@ -370,7 +370,7 @@ class RpmArchiveHandler(models.DatafileHandler):
             description=description or None,
             homepage_url=rpm_tags.url or None,
             parties=parties,
-            declared_license=rpm_tags.license or None,
+            extracted_license_statement=rpm_tags.license or None,
             source_packages=source_packages,
         )
 

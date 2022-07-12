@@ -9,6 +9,7 @@
 import fnmatch
 import os
 import sys
+import logging
 from collections import defaultdict
 from itertools import chain
 from pathlib import Path
@@ -23,16 +24,17 @@ from license_expression import ExpressionError
 from license_expression import LicenseSymbolLike
 from license_expression import Licensing
 
-from licensedcode.cache import get_index
-from licensedcode.query import Query
-from licensedcode.match import LicenseMatch
-from licensedcode.match import set_matched_lines
-from licensedcode.models import Rule
-from licensedcode.spans import Span
+from licensedcode.detection import get_undetected_matches
 from packagedcode import models
+from packagedcode.licensing import get_declared_license_expression_spdx
 from packagedcode.licensing import get_license_expression_from_matches
+from packagedcode.licensing import get_license_detections_from_matches
 from packagedcode.licensing import get_license_matches
 from packagedcode.licensing import get_license_matches_from_query_string
+from packagedcode.licensing import get_mapping_and_expression_from_detections
+from licensedcode.detection import LicenseDetection as ScancodeLicenseDetection
+
+
 from packagedcode.utils import combine_expressions
 from textcode.analysis import unicode_text
 
@@ -55,14 +57,13 @@ See https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
 
-
 def logger_debug(*args):
     pass
 
+logger = logging.getLogger(__name__)
 
 if TRACE:
-    import logging
-    logger = logging.getLogger(__name__)
+    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -72,6 +73,7 @@ if TRACE:
         )
 
 MATCHER_UNKNOWN = '5-unknown'
+
 
 class BaseDebianCopyrightFileHandler(models.DatafileHandler):
     default_package_type = 'deb'
@@ -98,6 +100,15 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
     @classmethod
     def parse(cls, location):
         dc = parse_copyright_file(location)
+        extracted_license_statement = dc.get_declared_license()
+        declared_license_expression = dc.get_license_expression()
+
+        declared_license_expression_spdx = get_declared_license_expression_spdx(
+            declared_license_expression=declared_license_expression
+        )
+
+        license_detections = dc.get_license_detections_mapping()
+
         # TODO: collect the upstream source package details
 
         # find a name... TODO: this should be pushed down to each handler
@@ -112,8 +123,10 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
-            declared_license=dc.get_declared_license(),
-            license_expression=dc.get_license_expression(),
+            extracted_license_statement=extracted_license_statement,
+            declared_license_expression=declared_license_expression,
+            declared_license_expression_spdx=declared_license_expression_spdx,
+            license_detections=license_detections,
             copyright=dc.get_copyright(),
         )
 
@@ -283,6 +296,13 @@ class DebianDetector:
         PackageData.declared_license.
         """
         raise NotImplementedError
+    
+    def get_license_detections_mapping(self):
+        """
+        Return a list of packagedcode.detection LicenseDetection objects
+        to be reported at `PackageData.license_detections`.
+        """
+        raise NotImplementedError
 
 
 @attr.s
@@ -382,10 +402,28 @@ class UnstructuredCopyrightProcessor(DebianDetector):
             text = unicode_text(location)
             # We have no match: return unknown as there must be some license
             # FIXME: we should track line numbers
-            license_matches = add_unknown_matches(name=None, text=text)
+            license_matches = add_undetected_debian_matches(name=None, text=text)
 
         self.license_matches = license_matches
         return license_matches
+    
+    def get_license_detections_mapping(self):
+        """
+        Return a list of packagedcode.detection LicenseDetection objects
+        to be reported at `PackageData.license_detections`.
+        """
+        if not self.license_matches:
+            return []
+        
+        license_detections = get_license_detections_from_matches(
+            matches=self.license_matches
+        )
+
+        detections_mapping, _expression = get_mapping_and_expression_from_detections(
+            license_detections=license_detections
+        )
+
+        return detections_mapping
 
 
 def is_really_structured(dc):
@@ -662,6 +700,9 @@ class StructuredCopyrightProcessor(DebianDetector):
             else:
                 raise_no_license_found_error(location=self.location)
 
+        if TRACE:
+            logger_debug(f"StructuredCopyrightProcessor: get_license_expression: license_expression: {license_expression}")
+
         if simplify_licenses:
             return dedup_expression(license_expression=license_expression)
         else:
@@ -764,6 +805,33 @@ class StructuredCopyrightProcessor(DebianDetector):
                 )
 
         return license_detections
+
+    def get_license_detections_mapping(self):
+        """
+        Return a list of packagedcode.detection LicenseDetection objects
+        to be reported at `PackageData.license_detections`.
+        """
+        if not self.license_detections:
+            return []
+
+        detections = []
+
+        for license_detection in self.license_detections:
+            license_matches = license_detection.license_matches
+            if not license_matches:
+                continue
+
+            detection = ScancodeLicenseDetection.from_matches(
+                license_matches
+            )
+
+            detections.append(detection)
+
+        detections_mapping, _expression = get_mapping_and_expression_from_detections(
+            license_detections=detections
+        )
+
+        return detections_mapping
 
 
 class NoLicenseFoundError(Exception):
@@ -1003,7 +1071,7 @@ class DebianLicensing:
         if normalized_expression == None:
             # Case where expression is not parsable and the same expression is not present in
             # the license paragraphs
-            matches = add_unknown_matches(name=exp, text=None)
+            matches = add_undetected_debian_matches(name=exp, text=None)
             normalized_expression = get_license_expression_from_matches(
                 license_matches=matches
             )
@@ -1071,7 +1139,7 @@ class DebianLicensing:
                 if text_matches:
                     matches.extend(text_matches)
                 else:
-                    matches.extend(add_unknown_matches(name=name, text=text))
+                    matches.extend(add_undetected_debian_matches(name=name, text=text))
 
             if license_paragraph.comment:
                 comment = license_paragraph.comment.text
@@ -1538,9 +1606,9 @@ def is_known_license_intro(license_match):
     )
 
 
-def add_unknown_matches(name, text):
+def add_undetected_debian_matches(name, text):
     """
-    Return a list of LicenseMatch (with a single match) created for an unknown
+    Return a list of LicenseMatch (with a single match) created for an undetected
     license match with the ``name`` license and license ``text``.
 
     Return an empty list if both name and text are empty.
@@ -1551,69 +1619,8 @@ def add_unknown_matches(name, text):
         return []
 
     # FIXME: track lines
-    license_text = f'{name}\n{text}'.strip()
-    expression_str = 'unknown-license-reference'
-
-    idx = get_index()
-    query = Query(query_string=license_text, idx=idx)
-
-    query_run = query.whole_query_run()
-
-    match_len = len(query_run)
-    match_start = query_run.start
-    matched_tokens = query_run.tokens
-
-    qspan = Span(range(match_start, query_run.end + 1))
-    ispan = Span(range(0, match_len))
-    len_legalese = idx.len_legalese
-    hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
-
-    unknown_rule = UnknownRule(
-        license_expression=expression_str,
-        stored_text=license_text,
-        length=match_len,
-    )
-
-    match = LicenseMatch(
-        rule=unknown_rule,
-        qspan=qspan,
-        ispan=ispan,
-        hispan=hispan,
-        query_run_start=match_start,
-        matcher=MATCHER_UNKNOWN,
-        query=query_run.query,
-    )
-
-    matches = [match]
-    set_matched_lines(matches, query.line_by_pos)
-    return matches
-
-
-@attr.s(slots=True, repr=False)
-class UnknownRule(Rule):
-    """
-    A specialized rule object that is used for the special case of unknown
-    matches in debian copyright files.
-
-    Since there can be a lot of unknown licenses in a debian copyright file, the
-    rule and the LicenseMatch objects for these are built at matching time.
-    """
-
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'debian-' + self.license_expression
-        expression = self.licensing.parse(self.license_expression)
-        self.license_expression = expression.render()
-        self.license_expression_object = expression
-        self.is_license_tag = True
-        self.is_small = False
-        self.relevance = 100
-        self.has_stored_relevance = True
-
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
+    query_string = f'{name}\n{text}'.strip()
+    return get_undetected_matches(query_string)
 
 
 def get_license_detections_from_other_fields(paragraph):
@@ -1687,7 +1694,7 @@ def get_license_detection_from_nameless_paragraph(paragraph):
         logger_debug('get_license_detection_from_nameless_paragraph: matches', matches)
 
     if not matches:
-        matches = add_unknown_matches(name=None, text=paragraph.license.text)
+        matches = add_undetected_debian_matches(name=None, text=paragraph.license.text)
         normalized_expression = get_license_expression_from_matches(
             license_matches=matches
         )
