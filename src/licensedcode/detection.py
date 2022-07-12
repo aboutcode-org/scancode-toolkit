@@ -15,10 +15,15 @@ from enum import Enum
 import attr
 from license_expression import combine_expressions
 
+from licensedcode.cache import get_index
 from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
+from licensedcode.match import set_matched_lines
+from licensedcode.models import Rule
 from licensedcode.models import compute_relevance
+from licensedcode.spans import Span
 from licensedcode.tokenize import query_tokenizer
+from licensedcode.query import Query
 from licensedcode.query import LINES_THRESHOLD
 
 from scancode.api import SPDX_LICENSE_URL
@@ -52,6 +57,8 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
+MATCHER_UNDETECTED = '5-undetected'
+ 
 # All values of match_coverage less than this value and more than
 # `IMPERFECT_MATCH_COVERAGE_THR` are taken as `near-perfect-match-coverage` cases
 IMPERFECT_MATCH_COVERAGE_THR = 100
@@ -77,6 +84,7 @@ class DetectionCategory(Enum):
     LICENSE_CLUES = 'license-clues'
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
     FALSE_POSITVE = 'false-positive'
+    UNDETECTED_LICENSE = 'undetected-license'
 
 
 class DetectionRule(Enum):
@@ -93,6 +101,7 @@ class DetectionRule(Enum):
     TAG_FOLLOWED_BY_REF = 'tag-followed-by-ref'
     UNKNOWN_FOLLOWED_BY_MATCH = 'unknown-ref-followed-by-match'
     UNVERSIONED_FOLLOWED_BY_VERSIONED = 'un-versioned-followed-by-versioned'
+    UNDETECTED_LICENSE = 'undetected-license'
 
 
 @attr.s
@@ -162,8 +171,6 @@ class LicenseDetection:
 
         if license_expression == None:
             return cls(matches=matches)
-
-        
 
         return cls(
             matches=matches,
@@ -501,6 +508,15 @@ def licenses_data_from_match(
     return result
 
 
+def is_undetected_license_matches(license_matches):
+    
+    if len(license_matches) != 1:
+        return False
+    
+    if license_matches[0].matcher == MATCHER_UNDETECTED:
+        return True
+
+
 def is_correct_detection(license_matches):
     """
     Return True if all the matches in `license_matches` List of LicenseMatch
@@ -694,7 +710,10 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
     combined_expression = None
     reasons = []
 
-    if analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
+    if analysis == DetectionCategory.UNDETECTED_LICENSE.value:
+        matches_for_expression = matches
+        reasons.append(DetectionRule.UNDETECTED_LICENSE.value)
+    elif analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
         matches_for_expression = filter_license_intros(matches)
         reasons.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
     elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value and post_scan:
@@ -719,6 +738,104 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
         )
 
     return reasons, combined_expression
+
+
+def get_unknown_license_detection(query_string):
+
+    undetected_matches = get_undetected_matches(query_string)
+    return LicenseDetection.from_matches(undetected_matches)
+
+
+def get_undetected_matches(query_string):
+    """
+    Return a list of LicenseMatch (with a single match) created for an unknown
+    license match with the ``name`` license and license ``text``.
+
+    Return an empty list if both name and text are empty.
+    """
+    if not query_string:
+        return []
+
+    # FIXME: track lines
+    expression_str = 'undetected-license'
+
+    idx = get_index()
+    query = Query(query_string=query_string, idx=idx)
+
+    query_run = query.whole_query_run()
+
+    match_len = len(query_run)
+    match_start = query_run.start
+    matched_tokens = query_run.tokens
+
+    qspan = Span(range(match_start, query_run.end + 1))
+    ispan = Span(range(0, match_len))
+    len_legalese = idx.len_legalese
+    hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
+
+    undetected_rule = UnDetectedRule(
+        license_expression=expression_str,
+        stored_text=query_string,
+        length=match_len,
+    )
+
+    match = LicenseMatch(
+        rule=undetected_rule,
+        qspan=qspan,
+        ispan=ispan,
+        hispan=hispan,
+        query_run_start=match_start,
+        matcher=MATCHER_UNDETECTED,
+        query=query_run.query,
+    )
+
+    matches = [match]
+    set_matched_lines(matches, query.line_by_pos)
+    return matches
+
+
+@attr.s(slots=True, repr=False)
+class UnDetectedRule(Rule):
+    """
+    A specialized rule object that is used for the special case of extracted
+    license statements without any valid license detection.
+
+    Since there is a license where there is a non empty extracted license
+    statement (typically found in a package manifest), if there is no license
+    detected by scancode, it would be incorrect to not point out that there
+    is a license (though undetected).
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.identifier = 'package-manifest-' + self.license_expression
+        expression = self.licensing.parse(self.license_expression)
+        self.license_expression = expression.render()
+        self.license_expression_object = expression
+        self.is_license_tag = True
+        self.is_small = False
+        self.relevance = 100
+        self.has_stored_relevance = True
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
+
+
+def get_matches_from_detection_objects(license_detections):
+    """
+    Return a `license_matches` list of LicenseMatch objects from a
+    `license_detections` list of LicenseDetection objects.
+    """
+    license_matches = []
+    if not license_detections:
+        return license_matches
+
+    for detection in license_detections:
+        license_matches.extend(detection.matches)
+    
+    return license_matches
 
 
 def get_matches_from_detections(license_detections):
@@ -755,7 +872,10 @@ def analyze_detection(license_matches):
     is correct or it is wrong/partially-correct/false-positive/has extra words or
     some other detection case.
     """
-    if has_unknown_references_to_local_files(license_matches):
+    if is_undetected_license_matches(license_matches):
+        return DetectionCategory.UNDETECTED_LICENSE.value
+
+    elif has_unknown_references_to_local_files(license_matches):
         return DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value
 
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
@@ -894,23 +1014,41 @@ def combine_matches_in_detections(matches):
     return detections
 
 
-def detect_licenses(location, min_score, deadline, **kwargs):
+def detect_licenses(location=None, query_string=None, min_score=0, deadline=sys.maxsize, as_expression=False, **kwargs):
     """
     Yield LicenseDetection objects for licenses detected in the file at
     `location`.
     """
+    if location and query_string:
+        raise Exception("Either location or query_string should be provided")
+
     from licensedcode import cache
     idx = cache.get_index()
 
-    matches = idx.match(
-        location=location,
-        min_score=min_score,
-        deadline=deadline,
-        **kwargs,
-    )
+    if location:
+        matches = idx.match(
+            location=location,
+            min_score=min_score,
+            deadline=deadline,
+            as_expression=as_expression,
+            **kwargs,
+        )
+    elif query_string:
+        matches = idx.match(
+            query_string=query_string,
+            min_score=min_score,
+            deadline=deadline,
+            as_expression=as_expression,
+            **kwargs,
+        )
+    else:
+        return
 
     if not matches:
         return
+
+    if TRACE:
+        logger_debug(f"detection: detect_licenses: location: {location}: query_string: {query_string}")
 
     for group_of_matches in group_matches(matches):
         yield LicenseDetection.from_matches(matches=group_of_matches)
