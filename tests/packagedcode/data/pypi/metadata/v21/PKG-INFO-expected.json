@@ -40,8 +40,8 @@
     "md5": null,
     "sha256": null,
     "sha512": null,
-    "bug_tracking_url": "Bug Tracker, https://bugs.launchpad.net/pbr/",
-    "code_view_url": "Source Code, https://git.openstack.org/cgit/openstack-dev/pbr/",
+    "bug_tracking_url": "https://bugs.launchpad.net/pbr/",
+    "code_view_url": "https://git.openstack.org/cgit/openstack-dev/pbr/",
     "vcs_url": null,
     "copyright": null,
     "declared_license_expression": "apache-2.0",
@@ -98,7 +98,7 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {
-      "Documentation": "Documentation, https://docs.openstack.org/pbr/"
+      "Documentation": "https://docs.openstack.org/pbr/"
     },
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/pbr",

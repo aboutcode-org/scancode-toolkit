@@ -19,7 +19,9 @@
       }
     ],
     "keywords": [
-      "agents development utils",
+      "agents",
+      "development",
+      "utils",
       "Development Status :: 3 - Alpha",
       "Environment :: Console",
       "Intended Audience :: Developers",
@@ -174,7 +176,26 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/ipython",
+        "extracted_requirement": "ipython",
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      },
+      {
+        "purl": "pkg:pypi/coverage",
+        "extracted_requirement": "coverage",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/agents_common",
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/agents_common/json",

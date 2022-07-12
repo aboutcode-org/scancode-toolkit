@@ -42,7 +42,7 @@
     "sha256": null,
     "sha512": null,
     "bug_tracking_url": null,
-    "code_view_url": "Source, https://github.com/pypa/pip",
+    "code_view_url": "https://github.com/pypa/pip",
     "vcs_url": null,
     "copyright": null,
     "declared_license_expression": "mit",
@@ -7381,8 +7381,8 @@
       }
     ],
     "extra_data": {
-      "Documentation": "Documentation, https://pip.pypa.io",
-      "Changelog": "Changelog, https://pip.pypa.io/en/stable/news/"
+      "Documentation": "https://pip.pypa.io",
+      "Changelog": "https://pip.pypa.io/en/stable/news/"
     },
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/pip",

@@ -147,7 +147,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pyyaml",
-        "extracted_requirement": "<=3.13,>=3.11",
+        "extracted_requirement": "PyYAML<=3.13,>=3.11",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

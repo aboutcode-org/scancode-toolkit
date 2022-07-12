@@ -19,7 +19,10 @@
       }
     ],
     "keywords": [
-      "new version build check",
+      "new",
+      "version",
+      "build",
+      "check",
       "Development Status :: 4 - Beta",
       "Environment :: Console",
       "Intended Audience :: Developers",
@@ -150,7 +153,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/tornado",
-        "extracted_requirement": ">=4.1",
+        "extracted_requirement": "tornado>=4.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -159,7 +162,7 @@
       },
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": null,
+        "extracted_requirement": "setuptools",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

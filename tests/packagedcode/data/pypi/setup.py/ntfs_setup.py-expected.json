@@ -3,7 +3,7 @@
     "type": "pypi",
     "namespace": null,
     "name": "ntfsutils",
-    "version": null,
+    "version": "0.1.1",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Python",
@@ -19,7 +19,10 @@
       }
     ],
     "keywords": [
-      "windows ntfs hardlink junction",
+      "windows",
+      "ntfs",
+      "hardlink",
+      "junction",
       "Intended Audience :: Developers",
       "Topic :: Software Development :: Libraries :: Python Modules",
       "Programming Language :: Python :: 2.5",
@@ -137,11 +140,21 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/setuptools",
+        "extracted_requirement": "setuptools",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/ntfsutils",
-    "repository_download_url": null,
-    "api_data_url": "https://pypi.org/pypi/ntfsutils/json",
+    "repository_download_url": "https://pypi.org/packages/source/n/ntfsutils/ntfsutils-0.1.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/ntfsutils/0.1.1/json",
     "datasource_id": "pypi_setup_py",
-    "purl": "pkg:pypi/ntfsutils"
+    "purl": "pkg:pypi/ntfsutils@0.1.1"
   }
 ]

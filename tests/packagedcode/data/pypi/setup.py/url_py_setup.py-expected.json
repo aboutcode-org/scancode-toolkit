@@ -137,7 +137,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/publicsuffix2",
-        "extracted_requirement": null,
+        "extracted_requirement": "publicsuffix2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

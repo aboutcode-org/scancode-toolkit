@@ -49,7 +49,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": "https://pypi.python.org/pypi/pyldap/",
+    "vcs_url": null,
     "copyright": null,
     "declared_license_expression": "python",
     "declared_license_expression_spdx": "Python-2.0",
@@ -149,7 +149,9 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "extra_data": {
+      "Download-URL": "https://pypi.python.org/pypi/pyldap/"
+    },
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/pyldap",
     "repository_download_url": "https://pypi.org/packages/source/p/pyldap/pyldap-2.4.45.tar.gz",

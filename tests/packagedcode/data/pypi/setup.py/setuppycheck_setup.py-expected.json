@@ -19,7 +19,9 @@
       }
     ],
     "keywords": [
-      "setup.py pin dependencies"
+      "setup.py",
+      "pin",
+      "dependencies"
     ],
     "homepage_url": "https://github.com/msabramo/setuppycheck",
     "download_url": null,
@@ -89,7 +91,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/mock",
-        "extracted_requirement": null,
+        "extracted_requirement": "mock",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

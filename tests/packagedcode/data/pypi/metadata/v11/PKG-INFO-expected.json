@@ -37,7 +37,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": "https://github.com/dbtsai/python-mimeparse/tarball/1.6.0",
+    "vcs_url": null,
     "copyright": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
@@ -92,7 +92,9 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "extra_data": {
+      "Download-URL": "https://github.com/dbtsai/python-mimeparse/tarball/1.6.0"
+    },
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/python-mimeparse",
     "repository_download_url": "https://pypi.org/packages/source/p/python-mimeparse/python-mimeparse-1.6.0.tar.gz",

@@ -12,7 +12,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": "https://registry.npmjs.org/bson/-/bson-None.tgz",
+    "download_url": null,
     "size": null,
     "sha1": null,
     "md5": null,
@@ -123,7 +123,7 @@
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://www.npmjs.com/package/bson",
-    "repository_download_url": "https://registry.npmjs.org/bson/-/bson-None.tgz",
+    "repository_download_url": null,
     "api_data_url": "https://registry.npmjs.org/bson",
     "datasource_id": "npm_package_json",
     "purl": "pkg:npm/bson"
