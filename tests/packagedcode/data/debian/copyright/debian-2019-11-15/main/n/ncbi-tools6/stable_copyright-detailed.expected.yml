@@ -27,6 +27,14 @@ license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND 
   AND flex-2.5 AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
   AND (public-domain AND us-govt-public-domain)
+declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
+  AND BSL-1.0 AND (LicenseRef-scancode-mit-modification-obligations AND LicenseRef-scancode-proprietary-license)
+  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
+  AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
+  AND MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND
+  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND (LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-us-govt-public-domain)
 copyright: |
   1996-2017 NCBI
   2006 John Maddock
@@ -47,284 +55,473 @@ copyright: |
   2019 Steffen Möller <moeller@debian.org>
   1996-2018 NCBI
   2018 Liubov Chuprikova <chuprikovalv@gmail.com>
-matches:
-  - score: '100.0'
-    start_line: 92
-    end_line: 92
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_128.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: put into the public domain,
-  - score: '100.0'
-    start_line: 94
-    end_line: 112
-    matcher: 2-aho
-    rule_length: 158
-    matched_length: 158
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: us-govt-public-domain_24.RULE
-    license_expression: us-govt-public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      PUBLIC DOMAIN NOTICE
-                   National Center for Biotechnology Information
+license_detections:
+  - license_expression: public-domain AND us-govt-public-domain
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 92
+        end_line: 92
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_128.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 5
+        rule_relevance: 100
+        matched_text: 'The NCBI toolkit has been put into the public domain, completely unfettered:'
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 94
+        end_line: 112
+        matched_length: 158
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: us-govt-public-domain
+        licensedb_identifier: us-govt-public-domain_24.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 158
+        rule_relevance: 100
+        matched_text: |
+                                    PUBLIC DOMAIN NOTICE
+                       National Center for Biotechnology Information
 
-      This software/database is a "United States Government Work" under the
-      terms of the United States Copyright Act.  It was written as part of
-      the author's official duties as a United States Government employee and
-      thus cannot be copyrighted.  This software/database is freely available
-      to the public for use. The National Library of Medicine and the U.S.
-      Government have not placed any restriction on its use or reproduction.
+          This software/database is a "United States Government Work" under the
+          terms of the United States Copyright Act.  It was written as part of
+          the author's official duties as a United States Government employee and
+          thus cannot be copyrighted.  This software/database is freely available
+          to the public for use. The National Library of Medicine and the U.S.
+          Government have not placed any restriction on its use or reproduction.
 
-      Although all reasonable efforts have been taken to ensure the accuracy
-      and reliability of the software and data, the NLM and the U.S.
-      Government do not and cannot warrant the performance or results that
-      may be obtained by using this software or data. The NLM and the U.S.
-      Government disclaim all warranties, express or implied, including
-      warranties of performance, merchantability or fitness for any particular
-      purpose.
+          Although all reasonable efforts have been taken to ensure the accuracy
+          and reliability of the software and data, the NLM and the U.S.
+          Government do not and cannot warrant the performance or results that
+          may be obtained by using this software or data. The NLM and the U.S.
+          Government disclaim all warranties, express or implied, including
+          warranties of performance, merchantability or fitness for any particular
+          purpose.
 
-      Please cite the author in any work or product based on this material.
-  - score: '100.0'
-    start_line: 115
-    end_line: 135
-    matcher: 1-hash
-    rule_length: 202
-    matched_length: 202
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: boost-1.0_9.RULE
-    license_expression: boost-1.0
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person or organization
-      obtaining a copy of the software and accompanying documentation covered by
-      this license (the "Software") to use, reproduce, display, distribute,
-      execute, and transmit the Software, and to prepare derivative works of the
-      Software, and to permit third-parties to whom the Software is furnished to
-      do so, all subject to the following:
+          Please cite the author in any work or product based on this material.
+        licenses:
+          - key: us-govt-public-domain
+            name: United States Government Public Domain
+            short_name: US Government Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: US Government
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/us-govt-public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/us-govt-public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/us-govt-public-domain.yml
+            spdx_license_key: LicenseRef-scancode-us-govt-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/us-govt-public-domain.LICENSE
+  - license_expression: boost-1.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 115
+        end_line: 135
+        matched_length: 202
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: boost-1.0
+        licensedb_identifier: boost-1.0_9.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 202
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person or organization
+          obtaining a copy of the software and accompanying documentation covered by
+          this license (the "Software") to use, reproduce, display, distribute,
+          execute, and transmit the Software, and to prepare derivative works of the
+          Software, and to permit third-parties to whom the Software is furnished to
+          do so, all subject to the following:
 
-      The copyright notices in the Software and this entire statement, including
-      the above license grant, this restriction and the following disclaimer,
-      must be included in all copies of the Software, in whole or in part, and
-      all derivative works of the Software, unless such copies or derivative
-      works are solely in the form of machine-executable object code generated by
-      a source language processor.
+          The copyright notices in the Software and this entire statement, including
+          the above license grant, this restriction and the following disclaimer,
+          must be included in all copies of the Software, in whole or in part, and
+          all derivative works of the Software, unless such copies or derivative
+          works are solely in the form of machine-executable object code generated by
+          a source language processor.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-      FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
-      SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
-      FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
-      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-      DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 138
-    end_line: 154
-    matcher: 1-hash
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy
-      of this software and associated documentation files (the "Software"), to
-      deal in the Software without restriction, including without limitation the
-      rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-      sell copies of the Software, and to permit persons to whom the Software is
-      furnished to do so, subject to the following conditions:
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+          SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+          FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+          ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+          DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: boost-1.0
+            name: Boost Software License 1.0
+            short_name: Boost 1.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Boost
+            homepage_url: http://www.boost.org/users/license.html
+            text_url: http://www.boost.org/LICENSE_1_0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/boost-1.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.yml
+            spdx_license_key: BSL-1.0
+            spdx_url: https://spdx.org/licenses/BSL-1.0
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 138
+        end_line: 154
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit
+        licensedb_identifier: mit.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 161
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to
+          deal in the Software without restriction, including without limitation the
+          rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+          sell copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included in
-      all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included in
+          all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-      IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 157
-    end_line: 172
-    matcher: 2-aho
-    rule_length: 153
-    matched_length: 153
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit-with-modification-obligations_4.RULE
-    license_expression: mit-with-modification-obligations
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software and its
-      documentation for any purpose and without fee is hereby granted,
-      provided that the above copyright notice appear in all copies and that
-      both that copyright notice and this permission notice appear in
-      supporting documentation, and that the name of M.I.T. not be used in
-      advertising or publicity pertaining to distribution of the software
-      without specific, written prior permission.  Furthermore if you modify
-      this software you must label your software as modified software and not
-      distribute it in such a fashion that it might be confused with the
-      original MIT software. M.I.T. makes no representations about the
-      suitability of this software for any purpose.  It is provided "as is"
-      without express or implied warranty.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+          FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+          IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: mit-with-modification-obligations AND proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 157
+        end_line: 172
+        matched_length: 153
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit-with-modification-obligations
+        licensedb_identifier: mit-with-modification-obligations_4.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 153
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software and its
+          documentation for any purpose and without fee is hereby granted,
+          provided that the above copyright notice appear in all copies and that
+          both that copyright notice and this permission notice appear in
+          supporting documentation, and that the name of M.I.T. not be used in
+          advertising or publicity pertaining to distribution of the software
+          without specific, written prior permission.  Furthermore if you modify
+          this software you must label your software as modified software and not
+          distribute it in such a fashion that it might be confused with the
+          original MIT software. M.I.T. makes no representations about the
+          suitability of this software for any purpose.  It is provided "as is"
+          without express or implied warranty.
 
-      THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
-      WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
-      MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 179
-    end_line: 185
-    matcher: 2-aho
-    rule_length: 57
-    matched_length: 57
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_136.RULE
-    license_expression: proprietary-license
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      No commercial use of these trademarks may be made without prior
-      written permission of MIT.
+          THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
+          WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+          MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: mit-with-modification-obligations
+            name: MIT With Modification Obligations
+            short_name: MIT With Modification Obligations
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mit-with-modification-obligations
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-with-modification-obligations.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-with-modification-obligations.yml
+            spdx_license_key: LicenseRef-scancode-mit-modification-obligations
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-with-modification-obligations.LICENSE
+      - score: '100.0'
+        start_line: 179
+        end_line: 185
+        matched_length: 57
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_136.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 57
+        rule_relevance: 100
+        matched_text: |
+          (MIT).  No commercial use of these trademarks may be made without prior
+          written permission of MIT.
 
-      "Commercial use" means use of a name in a product or other for-profit
-      manner.  It does NOT prevent a commercial firm from referring to the MIT
-      trademarks in order to convey information (although in doing so,
-      recognition of their trademark status should be given).
-  - score: '100.0'
-    start_line: 188
-    end_line: '194'
-    matcher: 1-hash
-    rule_length: 36
-    matched_length: 36
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_359.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This source file is placed in the public domian.
-      Any resemblance to NCSA Telnet, living or dead, is purely coincidental.
+          "Commercial use" means use of a name in a product or other for-profit
+          manner.  It does NOT prevent a commercial firm from referring to the MIT
+          trademarks in order to convey information (although in doing so,
+          recognition of their trademark status should be given).
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+  - license_expression: public-domain
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 188
+        end_line: '194'
+        matched_length: 36
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: public-domain
+        licensedb_identifier: public-domain_359.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 36
+        rule_relevance: 100
+        matched_text: |
+          This source file is placed in the public domian.
+          Any resemblance to NCSA Telnet, living or dead, is purely coincidental.
 
-           National Center for Supercomputing Applications
-           152 Computing Applications Building
-           605 E. Springfield Ave.
-           Champaign, IL  61820
-  - score: '100.0'
-    start_line: '197'
-    end_line: 209
-    matcher: 1-hash
-    rule_length: 122
-    matched_length: 122
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: flex-2.5_6.RULE
-    license_expression: flex-2.5
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted
-      provided that: (1) source distributions retain this entire copyright
-      notice and comment, and (2) distributions including binaries display
-      the following acknowledgement:  ``This product includes software
-      developed by the University of California, Berkeley and its contributors''
-      in the documentation or other materials provided with the distribution
-      and in all advertising materials mentioning features or use of this
-      software. Neither the name of the University nor the names of its
-      contributors may be used to endorse or promote products derived
-      from this software without specific prior written permission.
-      THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
-      IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 211
-    end_line: 211
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 212
-    end_line: 231
-    matcher: 1-hash
-    rule_length: 139
-    matched_length: 139
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_845.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it
-      and/or modify it under the terms of the GNU General Public
-      License as published by the Free Software Foundation; either
-      version 2 of the License, or (at your option) any later
-      version.
+               National Center for Supercomputing Applications
+               152 Computing Applications Building
+               605 E. Springfield Ave.
+               Champaign, IL  61820
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression: flex-2.5
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: '197'
+        end_line: 209
+        matched_length: 122
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: flex-2.5
+        licensedb_identifier: flex-2.5_6.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 122
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms are permitted
+          provided that: (1) source distributions retain this entire copyright
+          notice and comment, and (2) distributions including binaries display
+          the following acknowledgement:  ``This product includes software
+          developed by the University of California, Berkeley and its contributors''
+          in the documentation or other materials provided with the distribution
+          and in all advertising materials mentioning features or use of this
+          software. Neither the name of the University nor the names of its
+          contributors may be used to endorse or promote products derived
+          from this software without specific prior written permission.
+          THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: flex-2.5
+            name: Flex License v2.5
+            short_name: Flex 2.5
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.html
+            text_url: http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/flex-2.5
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.yml
+            spdx_license_key: LicenseRef-scancode-flex-2.5
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 211
+        end_line: 211
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 212
+        end_line: 231
+        matched_length: 139
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_845.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 139
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it
+          and/or modify it under the terms of the GNU General Public
+          License as published by the Free Software Foundation; either
+          version 2 of the License, or (at your option) any later
+          version.
 
-      This program is distributed in the hope that it will be
-      useful, but WITHOUT ANY WARRANTY; without even the implied
-      warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-      PURPOSE.  See the GNU General Public License for more
-      details.
+          This program is distributed in the hope that it will be
+          useful, but WITHOUT ANY WARRANTY; without even the implied
+          warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+          PURPOSE.  See the GNU General Public License for more
+          details.
 
-      You should have received a copy of the GNU General Public
-      License along with this package; if not, write to the Free
-      Software Foundation, Inc., 51 Franklin St, Fifth Floor,
-      Boston, MA  02110-1301 USA
+          You should have received a copy of the GNU General Public
+          License along with this package; if not, write to the Free
+          Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+          Boston, MA  02110-1301 USA
 
-      On Debian systems, the full text of the GNU General Public
-      License version 2 can be found in the file
-      `/usr/share/common-licenses/GPL-2'.
+          On Debian systems, the full text of the GNU General Public
+          License version 2 can be found in the file
+          `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later

@@ -30,8 +30,56 @@
     "code_view_url": "https://github.com/jogendra/BadgeHub/tree/0.1.1",
     "vcs_url": "https://github.com/jogendra/BadgeHub.git",
     "copyright": null,
-    "license_expression": "mit AND unknown",
-    "declared_license": ":type = MIT, :file = LICENSE",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 90.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "mit",
+            "licensedb_identifier": "mit_273.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 90,
+            "matched_text": ":type = MIT, :file = LICENSE",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": ":type = MIT, :file = LICENSE",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

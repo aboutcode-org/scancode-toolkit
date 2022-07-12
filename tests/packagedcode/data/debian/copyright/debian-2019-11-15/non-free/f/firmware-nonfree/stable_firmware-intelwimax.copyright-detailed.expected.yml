@@ -1,42 +1,64 @@
 primary_license:
 declared_license:
 license_expression: intel
+declared_license_expression_spdx: LicenseRef-scancode-intel
 copyright: Copyright (c) 2008, Intel Corporation
-matches:
-  - score: '95.0'
-    start_line: 8
-    end_line: 46
-    matcher: 2-aho
-    rule_length: 268
-    matched_length: 268
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: intel_2.RULE
-    license_expression: intel
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "Redistribution.  \n\nRedistribution and use in binary form, without modification,\
-      \ are\npermitted provided that the following conditions are met:\n\n * Redistributions\
-      \ must reproduce the above copyright notice and the\n   following disclaimer in the documentation\
-      \ and/or other materials\n   provided with the distribution.\n\n * Neither the name of\
-      \ Intel Corporation nor the names of its\n   suppliers may be used to endorse or promote\
-      \ products derived from\n   this software without specific prior written permission.\n\
-      \n * No reverse engineering, decompilation, or disassembly of this\n   software is permitted.\n\
-      \nLimited patent license.\n\nIntel Corporation grants a world-wide, royalty-free, non-exclusive\n\
-      license under patents it now or hereafter owns or controls to make,\nhave made, use, import,\
-      \ offer to sell and sell (“Utilize”) this\nsoftware, but solely to the extent that any\
-      \ such patent is necessary\nto Utilize the software alone.  The patent license shall not\
-      \ apply to\nany combinations which include this software.  No hardware per se is\nlicensed\
-      \ hereunder.\n\nDISCLAIMER.  \n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND\
-      \ CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n\
-      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE\
-      \ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\nOWNER OR CONTRIBUTORS BE LIABLE FOR\
-      \ ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,\
-      \ BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA,\
-      \ OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY,\
-      \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
-      \ ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
-      \ OF SUCH DAMAGE."
+license_detections:
+  - license_expression: intel
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 8
+        end_line: 46
+        matched_length: 268
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: intel
+        licensedb_identifier: intel_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 268
+        rule_relevance: 95
+        matched_text: "Redistribution.  \n\nRedistribution and use in binary form, without modification,\
+          \ are\npermitted provided that the following conditions are met:\n\n * Redistributions\
+          \ must reproduce the above copyright notice and the\n   following disclaimer in the\
+          \ documentation and/or other materials\n   provided with the distribution.\n\n * Neither\
+          \ the name of Intel Corporation nor the names of its\n   suppliers may be used to\
+          \ endorse or promote products derived from\n   this software without specific prior\
+          \ written permission.\n\n * No reverse engineering, decompilation, or disassembly\
+          \ of this\n   software is permitted.\n\nLimited patent license.\n\nIntel Corporation\
+          \ grants a world-wide, royalty-free, non-exclusive\nlicense under patents it now or\
+          \ hereafter owns or controls to make,\nhave made, use, import, offer to sell and sell\
+          \ (“Utilize”) this\nsoftware, but solely to the extent that any such patent is necessary\n\
+          to Utilize the software alone.  The patent license shall not apply to\nany combinations\
+          \ which include this software.  No hardware per se is\nlicensed hereunder.\n\nDISCLAIMER.\
+          \  \n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\"\
+          \ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED\
+          \ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED.\
+          \ IN NO EVENT SHALL THE COPYRIGHT\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,\
+          \ INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,\
+          \ BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n\
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY,\
+          \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
+          \ ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
+          \ OF SUCH DAMAGE."
+        licenses:
+          - key: intel
+            name: Intel Limited Patent License
+            short_name: Intel Limited Patent License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Intel Corporation
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
+            reference_url: https://scancode-licensedb.aboutcode.org/intel
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.yml
+            spdx_license_key: LicenseRef-scancode-intel
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE

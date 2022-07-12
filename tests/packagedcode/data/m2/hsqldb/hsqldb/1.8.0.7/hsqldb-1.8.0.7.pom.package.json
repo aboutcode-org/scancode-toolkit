@@ -21,15 +21,101 @@
   "code_view_url": "http://sourceforge.net/cvs/?group_id=23316",
   "vcs_url": "http://sourceforge.net/cvs/?group_id=23316",
   "copyright": null,
-  "license_expression": "bsd-new",
-  "declared_license": [
+  "declared_license_expression": "bsd-new",
+  "declared_license_expression_spdx": "BSD-3-Clause",
+  "license_detections": [
     {
-      "name": "HSQLDB License",
-      "url": "http://hsqldb.org/web/hsqlLicense.html",
-      "comments": null,
-      "distribution": "repo"
+      "license_expression": "bsd-new",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "licensedb_identifier": "bsd-new_363.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 100,
+          "matched_text": "HSQLDB License",
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "bsd-new",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "licensedb_identifier": "bsd-new_82.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "matched_text": "http://hsqldb.org/web/hsqlLicense.html",
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'HSQLDB License', 'url': 'http://hsqldb.org/web/hsqlLicense.html', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/hsqldb/hsqldb@1.8.0.7?classifier=sources"

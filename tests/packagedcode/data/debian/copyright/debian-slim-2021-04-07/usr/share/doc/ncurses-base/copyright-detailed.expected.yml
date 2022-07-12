@@ -7,125 +7,186 @@ declared_license:
   - X11
   - BSD-3-clause
 license_expression: x11-fsf AND x11-xconsortium AND bsd-new
+declared_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND BSD-3-Clause
 copyright: |
   1998-2017,2018 Free Software Foundation, Inc.
   1996-2019,2020 Thomas E. Dickey
   2001 Pradeep Padala
   1994 X Consortium
   1980,1991,1992,1993 The Regents of the University of California
-matches:
-  - score: '100.0'
-    start_line: 22
-    end_line: 44
-    matcher: 1-hash
-    rule_length: 200
-    matched_length: 200
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-fsf.LICENSE
-    license_expression: x11-fsf
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      copy of this software and associated documentation files (the
-      "Software"), to deal in the Software without restriction, including
-      without limitation the rights to use, copy, modify, merge, publish,
-      distribute, distribute with modifications, sublicense, and/or sell
-      copies of the Software, and to permit persons to whom the Software is
-      furnished to do so, subject to the following conditions:
+license_detections:
+  - license_expression: x11-fsf
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 22
+        end_line: 44
+        matched_length: 200
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: x11-fsf
+        licensedb_identifier: x11-fsf.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 200
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a
+          copy of this software and associated documentation files (the
+          "Software"), to deal in the Software without restriction, including
+          without limitation the rights to use, copy, modify, merge, publish,
+          distribute, distribute with modifications, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included
-      in all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included
+          in all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-      OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-      IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-      DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-      OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
-      THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+          OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+          IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+          DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+          OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+          THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-      Except as contained in this notice, the name(s) of the above copyright
-      holders shall not be used in advertising or otherwise to promote the
-      sale, use or other dealings in this Software without prior written
-      authorization.
-  - score: '100.0'
-    start_line: 47
-    end_line: 67
-    matcher: 1-hash
-    rule_length: 201
-    matched_length: 201
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-xconsortium_2.RULE
-    license_expression: x11-xconsortium
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy
-      of this software and associated documentation files (the "Software"), to
-      deal in the Software without restriction, including without limitation the
-      rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-      sell copies of the Software, and to permit persons to whom the Software is
-      furnished to do so, subject to the following conditions:
+          Except as contained in this notice, the name(s) of the above copyright
+          holders shall not be used in advertising or otherwise to promote the
+          sale, use or other dealings in this Software without prior written
+          authorization.
+        licenses:
+          - key: x11-fsf
+            name: X11-Style (FSF)
+            short_name: X11-Style (FSF)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-fsf
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml
+            spdx_license_key: X11-distribute-modifications-variant
+            spdx_url: https://spdx.org/licenses/X11-distribute-modifications-variant
+  - license_expression: x11-xconsortium
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 47
+        end_line: 67
+        matched_length: 201
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: x11-xconsortium
+        licensedb_identifier: x11-xconsortium_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 201
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to
+          deal in the Software without restriction, including without limitation the
+          rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+          sell copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included in
-      all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included in
+          all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-      X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
-      AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
-      TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+          X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+          AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+          TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-      Except as contained in this notice, the name of the X Consortium shall not
-      be used in advertising or otherwise to promote the sale, use or other deal-
-      ings in this Software without prior written authorization from the X Consor-
-      tium.
-  - score: '100.0'
-    start_line: 70
-    end_line: 92
-    matcher: 1-hash
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_19.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. Neither the name of the University nor the names of its contributors
-         may be used to endorse or promote products derived from this software
-         without specific prior written permission.
+          Except as contained in this notice, the name of the X Consortium shall not
+          be used in advertising or otherwise to promote the sale, use or other deal-
+          ings in this Software without prior written authorization from the X Consor-
+          tium.
+        licenses:
+          - key: x11-xconsortium
+            name: X11-Style (X Consortium)
+            short_name: X11-Style (X Consortium)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: X Consortium
+            homepage_url: http://www.xfree86.org/current/LICENSE5.html
+            text_url: http://www.xfree86.org/current/LICENSE5.html
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
+            spdx_license_key: X11
+            spdx_url: https://spdx.org/licenses/X11
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 70
+        end_line: 92
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_19.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. Neither the name of the University nor the names of its contributors
+             may be used to endorse or promote products derived from this software
+             without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause

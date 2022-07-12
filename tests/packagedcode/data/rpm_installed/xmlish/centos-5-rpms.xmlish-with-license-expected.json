@@ -24,8 +24,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "public domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "licensedb_identifier": "public-domain_bare_words.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 70,
+            "matched_text": "public domain",
+            "licenses": [
+              {
+                "key": "public-domain",
+                "name": "Public Domain",
+                "short_name": "Public Domain",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Unspecified",
+                "homepage_url": "http://www.linfo.org/publicdomain.html",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml",
+                "spdx_license_key": "LicenseRef-scancode-public-domain",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "public domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [
@@ -315,8 +363,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "public domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "licensedb_identifier": "public-domain_bare_words.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 70,
+            "matched_text": "public domain",
+            "licenses": [
+              {
+                "key": "public-domain",
+                "name": "Public Domain",
+                "short_name": "Public Domain",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Unspecified",
+                "homepage_url": "http://www.linfo.org/publicdomain.html",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml",
+                "spdx_license_key": "LicenseRef-scancode-public-domain",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "public domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

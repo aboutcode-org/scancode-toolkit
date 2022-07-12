@@ -9,6 +9,10 @@ declared_license:
 license_expression: stmicroelectronics-linux-firmware AND (clear-bsd AND isc AND bsd-no-mod
   AND gpl-2.0-plus WITH ecos-exception-2.0 AND mit) AND qca-linux-firmware AND qca-linux-firmware
   AND qca-linux-firmware
+declared_license_expression_spdx: LicenseRef-scancode-stmicro-linux-firmware AND (BSD-3-Clause-Clear
+  AND ISC AND LicenseRef-scancode-bsd-no-mod AND GPL-2.0-or-later WITH eCos-exception-2.0 AND
+  MIT) AND LicenseRef-scancode-qca-linux-firmware AND LicenseRef-scancode-qca-linux-firmware
+  AND LicenseRef-scancode-qca-linux-firmware
 copyright: |
   2008-2010, Atheros Communications, Inc.
   1998-2002, Red Hat, Inc.
@@ -46,296 +50,435 @@ copyright: |
   2011-2012, 2014-2015, Qualcomm Atheros, Inc.
   2015-2016, The Android Open Source Project
   2015, Qualcomm Atheros, Inc.
-matches:
-  - score: '96.74'
-    start_line: 12
-    end_line: 46
-    matcher: 3-seq
-    rule_length: 276
-    matched_length: 267
-    match_coverage: '96.74'
-    rule_relevance: 100
-    identifier: stmicroelectronics-linux-firmware.LICENSE
-    license_expression: stmicroelectronics-linux-firmware
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.  Redistribution and use in binary form, without
-      modification, are permitted provided that the following conditions are
-      met:
+license_detections:
+  - license_expression: stmicroelectronics-linux-firmware
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '96.74'
+        start_line: 12
+        end_line: 46
+        matched_length: 267
+        match_coverage: '96.74'
+        matcher: 3-seq
+        license_expression: stmicroelectronics-linux-firmware
+        licensedb_identifier: stmicroelectronics-linux-firmware.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 276
+        rule_relevance: 100
+        matched_text: |
+          Redistribution.  Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      * Redistributions must reproduce the above copyright notice and the
-        following disclaimer in the documentation and/or other materials
-        provided with the distribution.
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
 
-      * Neither the name of [Atheros] [Communications], [Inc]. nor the names of
-        its suppliers may be used to endorse or promote products derived
-        from this software without specific prior written permission.
+          * Neither the name of Atheros Communications, Inc. nor the names of
+            its suppliers may be used to endorse or promote products derived
+            from this software without specific prior written permission.
 
-      * No reverse engineering, decompilation, or disassembly of this
-        software is permitted.
+          * No reverse engineering, decompilation, or disassembly of this
+            software is permitted.
 
-      Limited patent license.  [Atheros] [Communications], [Inc]. grants a
-      world-wide, royalty-free, non-exclusive license under patents it
-      now or hereafter owns or controls to make, have made, use, import,
-      offer to sell and sell ("Utilize") this software, but solely to
-      the extent that any such patent is necessary to Utilize the software
-      in conjunction with an [Atheros] Chipset. The patent license shall not
-      apply to any other combinations which include this software. No
-      hardware per se is licensed hereunder.
+          Limited patent license.  Atheros Communications, Inc. grants a
+          world-wide, royalty-free, non-exclusive license under patents it
+          now or hereafter owns or controls to make, have made, use, import,
+          offer to sell and sell ("Utilize") this software, but solely to
+          the extent that any such patent is necessary to Utilize the software
+          in conjunction with an Atheros Chipset. The patent license shall not
+          apply to any other combinations which include this software. No
+          hardware per se is licensed hereunder.
 
-      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS [AND]
-      [CONTRIBUTORS] "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
-      THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '99.15'
-    start_line: 57
-    end_line: 85
-    matcher: 3-seq
-    rule_length: 234
-    matched_length: 234
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: clear-bsd_3.RULE
-    license_expression: clear-bsd
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted (subject to the limitations in the
-      disclaimer below) provided that the following conditions are met:
+          DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+          THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: stmicroelectronics-linux-firmware
+            name: STMicroelectronics Linux Firmware License
+            short_name: STMicroelectronics Linux Firmware License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: STMicroelectronics
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cw1200
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.tda7706-firmware.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/stmicroelectronics-linux-firmware
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.yml
+            spdx_license_key: LicenseRef-scancode-stmicro-linux-firmware
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
+  - license_expression: clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus WITH ecos-exception-2.0
+      AND mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.15'
+        start_line: 57
+        end_line: 85
+        matched_length: 234
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: clear-bsd
+        licensedb_identifier: clear-bsd_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 234
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted (subject to the limitations in the
+          disclaimer below) provided that the following conditions are met:
 
-       * Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
+           * Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
 
-       * Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the
-         distribution.
+           * Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the
+             distribution.
 
-       * Neither the name of [Qualcomm] [Atheros] nor the names of its
-         contributors may be used to endorse or promote products derived
-         from this software without specific prior written permission.
+           * Neither the name of Qualcomm Atheros nor the names of its
+             contributors may be used to endorse or promote products derived
+             from this software without specific prior written permission.
 
-      NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
-      GRANTED BY THIS LICENSE.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
-      HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-      BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-      OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 87
-    end_line: 97
-    matcher: 2-aho
-    rule_length: 112
-    matched_length: 112
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc.LICENSE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and/or distribute this software for any
-      purpose with or without fee is hereby granted, provided that the above
-      copyright notice and this permission notice appear in all copies.
+          NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+          GRANTED BY THIS LICENSE.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+          HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+          WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+          MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+          DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+          BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+          WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+          OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+          IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: clear-bsd
+            name: Clear BSD License
+            short_name: Clear BSD License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MetaCarta
+            homepage_url: http://labs.metacarta.com/license-explanation.html
+            text_url: http://labs.metacarta.com/license-explanation.html#license
+            reference_url: https://scancode-licensedb.aboutcode.org/clear-bsd
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/clear-bsd.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/clear-bsd.yml
+            spdx_license_key: BSD-3-Clause-Clear
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause-Clear
+      - score: '100.0'
+        start_line: 87
+        end_line: 97
+        matched_length: 112
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: isc
+        licensedb_identifier: isc.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 112
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and/or distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies.
 
-      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-      WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-      MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-      ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-      WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-      ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-      OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-  - score: '100.0'
-    start_line: 99
-    end_line: 128
-    matcher: 2-aho
-    rule_length: 231
-    matched_length: 231
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-no-mod.LICENSE
-    license_expression: bsd-no-mod
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted
-      provided that the following conditions are met:
-      1. The materials contained herein are unmodified and are used
-         unmodified.
-      2. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following NO
-         ''WARRANTY'' disclaimer below (''Disclaimer''), without
-         modification.
-      3. Redistributions in binary form must reproduce at minimum a
-         disclaimer similar to the Disclaimer below and any redistribution
-         must be conditioned upon including a substantially similar
-         Disclaimer requirement for further binary redistribution.
-      4. Neither the names of the above-listed copyright holders nor the
-         names of any contributors may be used to endorse or promote
-         product derived from this software without specific prior written
-         permission.
+          THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+          WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+          MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+          ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+          WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+          ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+          OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+      - score: '100.0'
+        start_line: 99
+        end_line: 128
+        matched_length: 231
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-no-mod
+        licensedb_identifier: bsd-no-mod.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 231
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms are permitted
+          provided that the following conditions are met:
+          1. The materials contained herein are unmodified and are used
+             unmodified.
+          2. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following NO
+             ''WARRANTY'' disclaimer below (''Disclaimer''), without
+             modification.
+          3. Redistributions in binary form must reproduce at minimum a
+             disclaimer similar to the Disclaimer below and any redistribution
+             must be conditioned upon including a substantially similar
+             Disclaimer requirement for further binary redistribution.
+          4. Neither the names of the above-listed copyright holders nor the
+             names of any contributors may be used to endorse or promote
+             product derived from this software without specific prior written
+             permission.
 
-      NO WARRANTY
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-      ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-      LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT,
-      MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-      IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
-      FOR SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
-      USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-      OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGES.
-  - score: '100.0'
-    start_line: 130
-    end_line: 142
-    matcher: 2-aho
-    rule_length: 138
-    matched_length: 138
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
-    license_expression: gpl-2.0-plus WITH ecos-exception-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      eCos is free software; you can redistribute it and/or modify it under
-      the terms of the GNU General Public License as published by the Free
-      Software Foundation; either version 2 or (at your option) any later version.
+          NO WARRANTY
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT,
+          MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+          IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+          FOR SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+          LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+          USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+          OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+          OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGES.
+        licenses:
+          - key: bsd-no-mod
+            name: Madwifi License Agreement
+            short_name: Madwifi License
+            category: Free Restricted
+            is_exception: no
+            is_unknown: no
+            owner: MadWifi
+            homepage_url: http://www.madwifi.org/
+            text_url: http://wiki.freespire.org/index.php/Madwifi_License_Agreement
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-no-mod
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.yml
+            spdx_license_key: LicenseRef-scancode-bsd-no-mod
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
+      - score: '100.0'
+        start_line: 130
+        end_line: 142
+        matched_length: 138
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+        licensedb_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 138
+        rule_relevance: 100
+        matched_text: |
+          eCos is free software; you can redistribute it and/or modify it under
+          the terms of the GNU General Public License as published by the Free
+          Software Foundation; either version 2 or (at your option) any later version.
 
-      As a special exception, if other files instantiate templates or use macros
-      or inline functions from this file, or you compile this file and link it
-      with other works to produce a work based on this file, this file does not
-      by itself cause the resulting work to be covered by the GNU General Public
-      License. However the source code for this file must still be made available
-      in accordance with section (3) of the GNU General Public License.
+          As a special exception, if other files instantiate templates or use macros
+          or inline functions from this file, or you compile this file and link it
+          with other works to produce a work based on this file, this file does not
+          by itself cause the resulting work to be covered by the GNU General Public
+          License. However the source code for this file must still be made available
+          in accordance with section (3) of the GNU General Public License.
 
-      This exception does not invalidate any other reasons why a work based on
-      this file might be covered by the GNU General Public License.
-  - score: '100.0'
-    start_line: 144
-    end_line: 161
-    matcher: 2-aho
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining
-      a copy of this software and associated documentation files (the
-      "Software"), to deal in the Software without restriction, including
-      without limitation the rights to use, copy, modify, merge, publish,
-      distribute, sublicense, and/or sell copies of the Software, and to
-      permit persons to whom the Software is furnished to do so, subject to
-      the following conditions:
+          This exception does not invalidate any other reasons why a work based on
+          this file might be covered by the GNU General Public License.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+          - key: ecos-exception-2.0
+            name: eCos Exception to GPL 2.0 or later
+            short_name: eCos Exception to GPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: yes
+            is_unknown: no
+            owner: eCos
+            homepage_url: http://ecos.sourceware.org/ecos-license/
+            text_url: http://www.fsf.org/licensing/licenses/ecos-license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/ecos-exception-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ecos-exception-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ecos-exception-2.0.yml
+            spdx_license_key: eCos-exception-2.0
+            spdx_url: https://spdx.org/licenses/eCos-exception-2.0
+      - score: '100.0'
+        start_line: 144
+        end_line: 161
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 161
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining
+          a copy of this software and associated documentation files (the
+          "Software"), to deal in the Software without restriction, including
+          without limitation the rights to use, copy, modify, merge, publish,
+          distribute, sublicense, and/or sell copies of the Software, and to
+          permit persons to whom the Software is furnished to do so, subject to
+          the following conditions:
 
-      The above copyright notice and this permission notice shall be included
-      in all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included
+          in all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-      IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-      TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-      SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 205
-    end_line: 248
-    matcher: 2-aho
-    rule_length: 390
-    matched_length: 390
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: qca-linux-firmware.LICENSE
-    license_expression: qca-linux-firmware
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution. Reproduction and redistribution in binary form, without
-      modification, for use solely in conjunction with a Qualcomm Atheros, Inc.
-      chipset, is permitted provided that the following conditions are met:
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+          EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+          IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+          CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+          TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+          SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: qca-linux-firmware
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 205
+        end_line: 248
+        matched_length: 390
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: qca-linux-firmware
+        licensedb_identifier: qca-linux-firmware.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 390
+        rule_relevance: 100
+        matched_text: |
+          Redistribution. Reproduction and redistribution in binary form, without
+          modification, for use solely in conjunction with a Qualcomm Atheros, Inc.
+          chipset, is permitted provided that the following conditions are met:
 
-        • Redistributions must reproduce the above copyright notice and the following
-          disclaimer in the documentation and/or other materials provided with the
-          distribution.
+            • Redistributions must reproduce the above copyright notice and the following
+              disclaimer in the documentation and/or other materials provided with the
+              distribution.
 
-        • Neither the name of Qualcomm Atheros, Inc. nor the names of its suppliers
-          may be used to endorse or promote products derived from this Software
-          without specific prior written permission.
+            • Neither the name of Qualcomm Atheros, Inc. nor the names of its suppliers
+              may be used to endorse or promote products derived from this Software
+              without specific prior written permission.
 
-        • No reverse engineering, decompilation, or disassembly of this Software is
-          permitted.
+            • No reverse engineering, decompilation, or disassembly of this Software is
+              permitted.
 
-      Limited patent license. Qualcomm Atheros, Inc. (“Licensor”) grants you
-      (“Licensee”) a limited, worldwide, royalty-free, non-exclusive license under
-      the Patents to make, have made, use, import, offer to sell and sell the
-      Software. No hardware per se is licensed hereunder.
-      The term “Patents” as used in this agreement means only those patents or patent
-      applications owned solely and exclusively by Licensor as of the date of
-      Licensor’s submission of the Software and any patents deriving priority (i.e.,
-      having a first effective filing date) therefrom. The term “Software” as used in
-      this agreement means the firmware image submitted by Licensor, under the terms
-      of this license, to git://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-      linux-firmware.git.
-      Notwithstanding anything to the contrary herein, Licensor does not grant and
-      Licensee does not receive, by virtue of this agreement or the Licensor’s
-      submission of any Software, any license or other rights under any patent or
-      patent application owned by any affiliate of Licensor or any other entity
-      (other than Licensor), whether expressly, impliedly, by virtue of estoppel or
-      exhaustion, or otherwise.
+          Limited patent license. Qualcomm Atheros, Inc. (“Licensor”) grants you
+          (“Licensee”) a limited, worldwide, royalty-free, non-exclusive license under
+          the Patents to make, have made, use, import, offer to sell and sell the
+          Software. No hardware per se is licensed hereunder.
+          The term “Patents” as used in this agreement means only those patents or patent
+          applications owned solely and exclusively by Licensor as of the date of
+          Licensor’s submission of the Software and any patents deriving priority (i.e.,
+          having a first effective filing date) therefrom. The term “Software” as used in
+          this agreement means the firmware image submitted by Licensor, under the terms
+          of this license, to git://git.kernel.org/pub/scm/linux/kernel/git/firmware/
+          linux-firmware.git.
+          Notwithstanding anything to the contrary herein, Licensor does not grant and
+          Licensee does not receive, by virtue of this agreement or the Licensor’s
+          submission of any Software, any license or other rights under any patent or
+          patent application owned by any affiliate of Licensor or any other entity
+          (other than Licensor), whether expressly, impliedly, by virtue of estoppel or
+          exhaustion, or otherwise.
 
-      DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
-      THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+          DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+          THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: qca-linux-firmware
+            name: QCA Linux Firmware License
+            short_name: QCA Linux Firmware License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Qualcomm Atheros
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ath10k
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ar3k
+            reference_url: https://scancode-licensedb.aboutcode.org/qca-linux-firmware
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.yml
+            spdx_license_key: LicenseRef-scancode-qca-linux-firmware
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE

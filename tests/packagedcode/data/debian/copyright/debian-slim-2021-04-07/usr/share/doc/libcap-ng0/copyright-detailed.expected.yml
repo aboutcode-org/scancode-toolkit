@@ -1,66 +1,126 @@
 primary_license:
 declared_license:
 license_expression: lgpl-2.1-plus AND gpl-2.0-plus AND gpl-3.0
+declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-or-later AND GPL-3.0-only
 copyright: |
   Copyright 2009 Red Hat Inc.
   Copyright (c) 2009 Pierre Chifflier <pollux@debian.org>
-matches:
-  - score: '100.0'
-    start_line: 10
-    end_line: 27
-    matcher: 2-aho
-    rule_length: 126
-    matched_length: 126
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_388.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "License:\n\n    This library is free software; you can redistribute it and/or\n\
-      \    modify it under the terms of the GNU Lesser General Public\n    License as published\
-      \ by the Free Software Foundation; either\n    version 2.1 of the License, or (at your\
-      \ option) any later version.\n    \n    This library is distributed in the hope that it\
-      \ will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n\
-      \    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n    Lesser General\
-      \ Public License for more details.\n    \n    You should have received a copy of the GNU\
-      \ Lesser General Public\n    License along with this library; if not, write to the Free\
-      \ Software\n    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,\n    MA 02110-1301,\
-      \ USA.\n\nsee `/usr/share/common-licenses/LGPL-2.1'."
-  - score: '100.0'
-    start_line: 30
-    end_line: 31
-    matcher: 2-aho
-    rule_length: 18
-    matched_length: 18
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_209.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      licensed under the GNU General Public License version 2 or above
-      See `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 37
-    end_line: 38
-    matcher: 2-aho
-    rule_length: 15
-    matched_length: 15
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_468.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "and is licensed under the GPL version 3, \nsee `/usr/share/common-licenses/GPL-3'."
+license_detections:
+  - license_expression: lgpl-2.1-plus AND gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 10
+        end_line: 27
+        matched_length: 126
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_388.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2.1
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 126
+        rule_relevance: 100
+        matched_text: "License:\n\n    This library is free software; you can redistribute it\
+          \ and/or\n    modify it under the terms of the GNU Lesser General Public\n    License\
+          \ as published by the Free Software Foundation; either\n    version 2.1 of the License,\
+          \ or (at your option) any later version.\n    \n    This library is distributed in\
+          \ the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the\
+          \ implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See\
+          \ the GNU\n    Lesser General Public License for more details.\n    \n    You should\
+          \ have received a copy of the GNU Lesser General Public\n    License along with this\
+          \ library; if not, write to the Free Software\n    Foundation, Inc., 51 Franklin St,\
+          \ Fifth Floor, Boston,\n    MA 02110-1301, USA.\n\nsee `/usr/share/common-licenses/LGPL-2.1'."
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+      - score: '100.0'
+        start_line: 30
+        end_line: 31
+        matched_length: 18
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_209.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 18
+        rule_relevance: 100
+        matched_text: |
+          licensed under the GNU General Public License version 2 or above
+          See `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+  - license_expression: gpl-3.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 37
+        end_line: 38
+        matched_length: 15
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0
+        licensedb_identifier: gpl-3.0_468.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 15
+        rule_relevance: 100
+        matched_text: "and is licensed under the GPL version 3, \nsee `/usr/share/common-licenses/GPL-3'."
+        licenses:
+          - key: gpl-3.0
+            name: GNU General Public License 3.0
+            short_name: GPL 3.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            spdx_license_key: GPL-3.0-only
+            spdx_url: https://spdx.org/licenses/GPL-3.0-only

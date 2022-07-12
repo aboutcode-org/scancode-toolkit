@@ -17,6 +17,10 @@ declared_license:
 license_expression: bsd-new AND fsf-unlimited-no-warranty AND bsd-new AND bsd-new AND mit AND
   isc AND (isc AND ibm-dhcp) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND
   bsd-new AND bsd-new AND free-unknown
+declared_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-fsf-unlimited-no-warranty
+  AND BSD-3-Clause AND BSD-3-Clause AND MIT AND ISC AND (ISC AND LicenseRef-scancode-ibm-dhcp)
+  AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
+  AND BSD-3-Clause AND LicenseRef-scancode-free-unknown
 copyright: |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter
@@ -47,220 +51,376 @@ copyright: |
   2012 Rosetta Contributors and Canonical Ltd 2012
   Eerik Uusi-Illikainen https://launchpad.net/~ekiuusi-4, 2012
   Timo Jyrinki <timo.jyrinki@iki.fi>, 2012
-matches:
-  - score: '100.0'
-    start_line: 17
-    end_line: 24
-    matcher: 1-hash
-    rule_length: 64
-    matched_length: 64
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-unlimited-no-warranty.RULE
-    license_expression: fsf-unlimited-no-warranty
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is free software; as a special exception the author gives
-        unlimited permission to copy and/or distribute it, with or without
-        modifications, as long as this notice is preserved.
+license_detections:
+  - license_expression: fsf-unlimited-no-warranty
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 17
+        end_line: 24
+        matched_length: 64
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: fsf-unlimited-no-warranty
+        licensedb_identifier: fsf-unlimited-no-warranty.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 64
+        rule_relevance: 100
+        matched_text: |
+          This file is free software; as a special exception the author gives
+            unlimited permission to copy and/or distribute it, with or without
+            modifications, as long as this notice is preserved.
 
-        This file is distributed in the hope that it will be useful, but
-        WITHOUT ANY WARRANTY, to the extent permitted by law; without even
-        the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-        PURPOSE.  */
-  - score: '100.0'
-    start_line: 61
-    end_line: 71
-    matcher: 1-hash
-    rule_length: 110
-    matched_length: 110
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc_20.RULE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and/or distribute this software for any
-      purpose with or without fee is hereby granted, provided that the above
-      copyright notice and this permission notice appear in all copies.
+            This file is distributed in the hope that it will be useful, but
+            WITHOUT ANY WARRANTY, to the extent permitted by law; without even
+            the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+            PURPOSE.  */
+        licenses:
+          - key: fsf-unlimited-no-warranty
+            name: FSF Unlimited License No Warranty
+            short_name: FSF Unlimited License No Warranty
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.fsf.org/licensing/licenses/
+            text_url: http://www.fsf.org/licensing/licenses/
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+  - license_expression: isc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 61
+        end_line: 71
+        matched_length: 110
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: isc
+        licensedb_identifier: isc_20.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 110
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and/or distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies.
 
-      THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH
-      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS.  IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT,
-      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
-      OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-      PERFORMANCE OF THIS SOFTWARE.
-  - score: '100.0'
-    start_line: 80
-    end_line: 91
-    matcher: 2-aho
-    rule_length: 113
-    matched_length: 113
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc_9.RULE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-      purpose with or without fee is hereby granted, provided that the above
-      copyright notice and this permission notice appear in all copies.
+          THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH
+          REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS.  IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT,
+          INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+          LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+          OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+          PERFORMANCE OF THIS SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+  - license_expression: isc AND ibm-dhcp
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 80
+        end_line: 91
+        matched_length: 113
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: isc
+        licensedb_identifier: isc_9.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 113
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies.
 
-      THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
-      ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
-      OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
-      CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
-      DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
-      PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
-      ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-      SOFTWARE.
-  - score: '100.0'
-    start_line: 96
-    end_line: 115
-    matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: ibm-dhcp.LICENSE
-    license_expression: ibm-dhcp
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      International Business Machines, Inc. (hereinafter called IBM) grants
-      permission under its copyrights to use, copy, modify, and distribute this
-      Software with or without fee, provided that the above copyright notice and
-      all paragraphs of this notice appear in all copies, and that the name of IBM
-      not be used in connection with the marketing of any product incorporating
-      the Software or modifications thereof, without specific, written prior
-      permission.
+          THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+          ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+          CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+          DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+          PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+          ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+      - score: '100.0'
+        start_line: 96
+        end_line: 115
+        matched_length: 203
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: ibm-dhcp
+        licensedb_identifier: ibm-dhcp.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 203
+        rule_relevance: 100
+        matched_text: |
+          International Business Machines, Inc. (hereinafter called IBM) grants
+          permission under its copyrights to use, copy, modify, and distribute this
+          Software with or without fee, provided that the above copyright notice and
+          all paragraphs of this notice appear in all copies, and that the name of IBM
+          not be used in connection with the marketing of any product incorporating
+          the Software or modifications thereof, without specific, written prior
+          permission.
 
-      To the extent it has a right to do so, IBM grants an immunity from suit
-      under its patents, if any, for the use, sale or manufacture of products to
-      the extent that such products are used for performing Domain Name System
-      dynamic updates in TCP/IP networks by means of the Software.  No immunity is
-      granted for any product per se or for any other function of any product.
+          To the extent it has a right to do so, IBM grants an immunity from suit
+          under its patents, if any, for the use, sale or manufacture of products to
+          the extent that such products are used for performing Domain Name System
+          dynamic updates in TCP/IP networks by means of the Software.  No immunity is
+          granted for any product per se or for any other function of any product.
 
-      THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
-      INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-      PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
-      DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
-      OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
-      IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
-  - score: '76.15'
-    start_line: 160
-    end_line: 161
-    matcher: 3-seq
-    rule_length: 11
-    matched_length: 11
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: free-unknown_79.RULE
-    license_expression: free-unknown
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is distributed under the same license as the [p11]-[kit]
-      package.
-  - score: '100.0'
-    start_line: 165
-    end_line: 187
-    matcher: 1-hash
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_19.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. Neither the name of the University nor the names of its contributors
-         may be used to endorse or promote products derived from this software
-         without specific prior written permission.
+          THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
+          INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+          PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
+          DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
+          OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
+          IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+        licenses:
+          - key: ibm-dhcp
+            name: IBM DHCP License
+            short_name: IBM DHCP License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: IBM
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/ibm-dhcp
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.yml
+            spdx_license_key: LicenseRef-scancode-ibm-dhcp
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+  - license_expression: free-unknown
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '76.15'
+        start_line: 160
+        end_line: 161
+        matched_length: 11
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: free-unknown
+        licensedb_identifier: free-unknown_79.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 11
+        rule_relevance: 90
+        matched_text: |
+          This file is distributed under the same license as the p11-kit
+          package.
+        licenses:
+          - key: free-unknown
+            name: Free unknown license detected but not recognized
+            short_name: Free unknown
+            category: Unstated License
+            is_exception: no
+            is_unknown: yes
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/free-unknown
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
+            spdx_license_key: LicenseRef-scancode-free-unknown
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 165
+        end_line: 187
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_19.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. Neither the name of the University nor the names of its contributors
+             may be used to endorse or promote products derived from this software
+             without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '80.0'
-    start_line: 46
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 86
-    matched_length: 86
-    match_coverage: '100.0'
-    rule_relevance: 80
-    identifier: mit_17.RULE
-    license_expression: mit
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person
-      * obtaining a copy of this software and associated documentation files
-      * (the "Software"), to deal in the Software without restriction,
-      * including without limitation the rights to use, copy, modify, merge,
-      * publish, distribute, sublicense, and/or sell copies of the Software,
-      * and to permit persons to whom the Software is furnished to do so,
-      * subject to the following conditions:
-      *
-      * The above copyright notice and this permission notice shall be
-      * included in all copies or substantial portions of the Software.
-  - score: '100.0'
-    start_line: 151
-    end_line: 152
-    matcher: 1-hash
-    rule_length: 17
-    matched_length: 17
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_1043.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is distributed under the same license as the
-      debian files of the p11-kit package.
+          THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '80.0'
+        start_line: 46
+        end_line: 55
+        matched_length: 86
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit_17.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 86
+        rule_relevance: 80
+        matched_text: |
+          * Permission is hereby granted, free of charge, to any person
+          * obtaining a copy of this software and associated documentation files
+          * (the "Software"), to deal in the Software without restriction,
+          * including without limitation the rights to use, copy, modify, merge,
+          * publish, distribute, sublicense, and/or sell copies of the Software,
+          * and to permit persons to whom the Software is furnished to do so,
+          * subject to the following conditions:
+          *
+          * The above copyright notice and this permission notice shall be
+          * included in all copies or substantial portions of the Software.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 151
+        end_line: 152
+        matched_length: 17
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_1043.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 17
+        rule_relevance: 100
+        matched_text: |
+          This file is distributed under the same license as the
+          debian files of the p11-kit package.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause

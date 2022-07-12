@@ -21,8 +21,88 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "ruby AND bsd-simplified AND mit",
-  "declared_license": "Ruby AND BSD-2-Clause AND MIT",
+  "declared_license_expression": "ruby AND bsd-simplified AND mit",
+  "declared_license_expression_spdx": "Ruby AND BSD-2-Clause AND MIT",
+  "license_detections": [
+    {
+      "license_expression": "ruby AND bsd-simplified AND mit",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "ruby AND bsd-simplified AND mit",
+          "licensedb_identifier": "spdx-license-identifier: ruby AND bsd-simplified AND mit",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 7,
+          "rule_relevance": 100,
+          "matched_text": "ruby AND bsd-2-clause AND mit",
+          "licenses": [
+            {
+              "key": "ruby",
+              "name": "Ruby License",
+              "short_name": "Ruby License",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Ruby",
+              "homepage_url": "http://www.ruby-lang.org/en/LICENSE.txt",
+              "text_url": "http://www.ruby-lang.org/en/LICENSE.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/ruby",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ruby.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ruby.yml",
+              "spdx_license_key": "Ruby",
+              "spdx_url": "https://spdx.org/licenses/Ruby"
+            },
+            {
+              "key": "bsd-simplified",
+              "name": "BSD-2-Clause",
+              "short_name": "BSD-2-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+              "text_url": "http://opensource.org/licenses/bsd-license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+              "spdx_license_key": "BSD-2-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+            },
+            {
+              "key": "mit",
+              "name": "MIT License",
+              "short_name": "MIT License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "MIT",
+              "homepage_url": "http://opensource.org/licenses/mit-license.php",
+              "text_url": "http://opensource.org/licenses/mit-license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+              "spdx_license_key": "MIT",
+              "spdx_url": "https://spdx.org/licenses/MIT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extracted_license_statement": "Ruby AND BSD-2-Clause AND MIT",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

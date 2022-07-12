@@ -1,29 +1,50 @@
 primary_license:
 declared_license:
 license_expression: mongodb-sspl-1.0
+declared_license_expression_spdx: SSPL-1.0
 copyright: |
   Copyright 2009 10gen
   (c) 2009, Kristina Chodorow <kristina@10gen.com>
-matches:
-  - score: '100.0'
-    start_line: 18
-    end_line: 23
-    matcher: 2-aho
-    rule_length: 28
-    matched_length: 28
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mongodb-sspl-1.0_9.RULE
-    license_expression: mongodb-sspl-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License:
+license_detections:
+  - license_expression: mongodb-sspl-1.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 18
+        end_line: 23
+        matched_length: 28
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mongodb-sspl-1.0
+        licensedb_identifier: mongodb-sspl-1.0_9.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 28
+        rule_relevance: 100
+        matched_text: |
+          License:
 
-          SSPL
+              SSPL
 
-      The Debian packaging is (C) 2009, Kristina Chodorow <kristina@10gen.com> and
-      is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'.
+          The Debian packaging is (C) 2009, Kristina Chodorow <kristina@10gen.com> and
+          is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'.
+        licenses:
+          - key: mongodb-sspl-1.0
+            name: Server Side Public License (SSPL) 1.0
+            short_name: SSPL 1.0
+            category: Source-available
+            is_exception: no
+            is_unknown: no
+            owner: MongoDB
+            homepage_url: https://www.mongodb.com/licensing/server-side-public-license
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mongodb-sspl-1.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.yml
+            spdx_license_key: SSPL-1.0
+            spdx_url: https://spdx.org/licenses/SSPL-1.0

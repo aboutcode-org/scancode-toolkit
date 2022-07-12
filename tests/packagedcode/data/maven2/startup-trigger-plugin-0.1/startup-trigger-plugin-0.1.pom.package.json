@@ -29,8 +29,10 @@
   "code_view_url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1",
   "vcs_url": "svn+https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"

@@ -24,8 +24,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": "MIT",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "licensedb_identifier": "spdx-license-identifier: mit",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "MIT",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [],
     "file_references": [
@@ -99,8 +147,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPLv2",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "licensedb_identifier": "gpl-2.0_bare_single_word.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "GPLv2",
+            "licenses": [
+              {
+                "key": "gpl-2.0",
+                "name": "GNU General Public License 2.0",
+                "short_name": "GPL 2.0",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                "spdx_license_key": "GPL-2.0-only",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "GPLv2",
     "notice_text": null,
     "source_packages": [],
     "file_references": [
@@ -165,8 +261,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-2.0-plus",
-    "declared_license": "GPLv2+",
+    "declared_license_expression": "gpl-2.0-plus",
+    "declared_license_expression_spdx": "GPL-2.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0-plus",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0-plus",
+            "licensedb_identifier": "gpl-2.0-plus_bare_single_word.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "GPLv2+",
+            "licenses": [
+              {
+                "key": "gpl-2.0-plus",
+                "name": "GNU General Public License 2.0 or later",
+                "short_name": "GPL 2.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
+                "spdx_license_key": "GPL-2.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "GPLv2+",
     "notice_text": null,
     "source_packages": [],
     "file_references": [

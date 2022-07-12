@@ -22,8 +22,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "unknown",
-    "declared_license": "BSD",
+    "declared_license_expression": "bsd-new",
+    "declared_license_expression_spdx": "BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-new",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 99.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "bsd-new",
+            "licensedb_identifier": "bsd-new_89.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 99,
+            "matched_text": "license BSD",
+            "licenses": [
+              {
+                "key": "bsd-new",
+                "name": "BSD-3-Clause",
+                "short_name": "BSD-3-Clause",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Regents of the University of California",
+                "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                "spdx_license_key": "BSD-3-Clause",
+                "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "BSD",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

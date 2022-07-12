@@ -12,6 +12,11 @@ declared_license:
 license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (public-domain AND other-permissive
   AND public-domain AND public-domain AND public-domain) AND public-domain
+declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
+  AND BSD-2-Clause AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
+  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain)
+  AND LicenseRef-scancode-public-domain
 copyright: |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>
@@ -84,249 +89,463 @@ copyright: |
   Copyright © 2012 Carsten Hey <carsten@debian.org>
   Copyright © 2014 Nir Soffer <nirs@hyperms.com>
   Copyright © 1993 Colin Plumb
-matches:
-  - score: '70.0'
-    start_line: 102
-    end_line: 102
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: public domain.
-  - score: '100.0'
-    start_line: 103
-    end_line: 104
-    matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_277.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      May be used and distributed
-      freely for any purpose.
-  - score: '100.0'
-    start_line: 106
-    end_line: 106
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_346.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: also placed in public domain.
-  - score: '100.0'
-    start_line: 107
-    end_line: 108
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_348.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      also placed in the Public
-      Domain.
-  - score: '100.0'
-    start_line: 111
-    end_line: 111
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_347.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: placed in public domain as well.
-  - score: '100.0'
-    start_line: 118
-    end_line: 120
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_303.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This code was
-      written by Colin Plumb in 1993, no copyright is claimed.
-      This code is in the public domain; do with it what you wish.
-  - score: '100.0'
-    start_line: 127
-    end_line: 127
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 128
-    end_line: 139
-    matcher: 1-hash
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_860.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
+license_detections:
+  - license_expression: public-domain AND other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '70.0'
+        start_line: 102
+        end_line: 102
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_bare_words.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 70
+        matched_text: public domain.  Based conceptually on start-stop-daemon.pl, by Ian
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 103
+        end_line: 104
+        matched_length: 9
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_277.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 9
+        rule_relevance: 100
+        matched_text: |
+          Jackson <ijackson@gnu.ai.mit.edu>.  May be used and distributed
+          freely for any purpose.  Changes by Christian Schwarz
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+      - score: '100.0'
+        start_line: 106
+        end_line: 106
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_346.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 5
+        rule_relevance: 100
+        matched_text: Console Message Standard, also placed in public domain.  Minor
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 107
+        end_line: 108
+        matched_length: 6
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_348.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 6
+        rule_relevance: 100
+        matched_text: |
+          changes by Klee Dienes <klee@debian.org>, also placed in the Public
+          Domain.
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 111
+        end_line: 111
+        matched_length: 6
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_347.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 6
+        rule_relevance: 100
+        matched_text: and --make-pidfile options, placed in public domain as well.
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression: public-domain
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 118
+        end_line: 120
+        matched_length: 26
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_303.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 26
+        rule_relevance: 100
+        matched_text: |
+          The algorithm is due to Ron Rivest.  This code was
+          written by Colin Plumb in 1993, no copyright is claimed.
+          This code is in the public domain; do with it what you wish.
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression: gpl-2.0-plus AND gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 127
+        end_line: 127
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 128
+        end_line: 139
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_860.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 141
-    end_line: 143
-    matcher: 1-hash
-    rule_length: 31
-    matched_length: 31
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1299.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the complete text of the GNU General Public License
-      can be found in ‘/usr/share/common-licenses/GPL-2’ or in the dpkg source
-      as the file ‘COPYING’.
-  - score: '100.0'
-    start_line: 145
-    end_line: 145
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_561.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2'
-  - score: '100.0'
-    start_line: 146
-    end_line: 156
-    matcher: 1-hash
-    rule_length: 92
-    matched_length: 92
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1119.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This is free software; you can redistribute it and/or modify
-      it under the terms of version 2 of the GNU General Public
-      License version 2 as published by the Free Software Foundation.
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 141
+        end_line: 143
+        matched_length: 31
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1299.RULE
+        referenced_filenames:
+          - COPYING
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 31
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the complete text of the GNU General Public License
+          can be found in ‘/usr/share/common-licenses/GPL-2’ or in the dpkg source
+          as the file ‘COPYING’.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 145
+        end_line: 145
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_561.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2'
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+      - score: '100.0'
+        start_line: 146
+        end_line: 156
+        matched_length: 92
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1119.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 92
+        rule_relevance: 100
+        matched_text: |
+          This is free software; you can redistribute it and/or modify
+          it under the terms of version 2 of the GNU General Public
+          License version 2 as published by the Free Software Foundation.
 
-      This is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  - score: '99.45'
-    start_line: 159
-    end_line: 178
-    matcher: 3-seq
-    rule_length: 183
-    matched_length: 182
-    match_coverage: '99.45'
-    rule_relevance: 100
-    identifier: bsd-simplified_52.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+  - license_expression: bsd-simplified
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.45'
+        start_line: 159
+        end_line: 178
+        matched_length: 182
+        match_coverage: '99.45'
+        matcher: 3-seq
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_52.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
 
-      THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause

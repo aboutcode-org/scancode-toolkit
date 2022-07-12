@@ -11,6 +11,17 @@ license_expression: intel AND intel AND (intel AND (bsd-new AND other-permissive
   bsd-simplified AND bsd-simplified AND bsd-new AND bsd-simplified AND bsd-simplified AND bsd-simplified
   AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND newlib-historical
   AND bsd-new AND bsd-new AND bsd-simplified)
+declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
+  (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
+  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-x11-lucent
+  AND SMLNJ AND LicenseRef-scancode-amd-historical AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-osf-1990
+  AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause
+  AND LicenseRef-scancode-amd-historical AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND BSD-2-Clause AND BSD-3-Clause AND
+  LicenseRef-scancode-delorie-historical AND LicenseRef-scancode-intel-osl-1993 AND LicenseRef-scancode-osf-1990
+  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
+  AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND BSD-3-Clause AND BSD-2-Clause)
 copyright: |
   2014, Intel Corporation.
   2014, Intel Corporation
@@ -22,1415 +33,2113 @@ copyright: |
   1993, Sun Microsystems, Inc.
   1994-2014, Red Hat Inc. and other newlib contributors
   1993, 2014-15, Intel Corporation
-matches:
-  - score: '100.0'
-    start_line: 11
-    end_line: 46
-    matcher: 2-aho
-    rule_length: 295
-    matched_length: 295
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: intel.LICENSE
-    license_expression: intel
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.  Redistribution and use in binary form, without
-      modification, are permitted provided that the following conditions are
-      met:
+license_detections:
+  - license_expression: intel
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 11
+        end_line: 46
+        matched_length: 295
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: intel
+        licensedb_identifier: intel.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 295
+        rule_relevance: 100
+        matched_text: |
+          Redistribution.  Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      * Redistributions must reproduce the above copyright notice and the
-        following disclaimer in the documentation and/or other materials
-        provided with the distribution.
-      * Neither the name of Intel Corporation nor the names of its suppliers
-        may be used to endorse or promote products derived from this software
-        without specific prior written permission.
-      * No reverse engineering, decompilation, or disassembly of this software
-        is permitted.
-
-      Limited patent license.  Intel Corporation grants a world-wide,
-      royalty-free, non-exclusive license under patents it now or hereafter
-      owns or controls to make, have made, use, import, offer to sell and
-      sell ("Utilize") this software, but solely to the extent that any
-      such patent is necessary to Utilize the software alone, or in
-      combination with an operating system licensed under an approved Open
-      Source license as listed by the Open Source Initiative at
-      http://opensource.org/licenses.  The patent license shall not apply to
-      any other combinations which include this software.  No hardware per
-      se is licensed hereunder.
-
-      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-      COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-      DAMAGE.
-  - score: '95.0'
-    start_line: 53
-    end_line: 87
-    matcher: 2-aho
-    rule_length: 268
-    matched_length: 268
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: intel_2.RULE
-    license_expression: intel
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.
-
-      Redistribution and use in binary form, without modification, are permitted
-      provided that the following conditions are met:
-      *    Redistributions must reproduce the above copyright notice and the
-           following disclaimer in the documentation and/or other materials provided
-           with the distribution.
-      *    Neither the name of Intel Corporation nor the names of its suppliers may
-           be used to endorse or promote products derived from this software without
-           specific prior written permission.
-      *    No reverse engineering, decompilation, or disassembly of this software is
-           permitted.
-
-      Limited patent license.
-
-      Intel Corporation grants a world-wide, royalty-free, non-exclusive license
-      under patents it now or hereafter owns or controls to make, have made, use,
-      import, offer to sell and sell ("Utilize") this software, but solely to the
-      extent that any such patent is necessary to Utilize the software alone. The
-      patent license shall not apply to any combinations which include this software.
-      No hardware per se is licensed hereunder.
-
-      DISCLAIMER.
-
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
-  - score: '95.0'
-    start_line: 101
-    end_line: 135
-    matcher: 2-aho
-    rule_length: 268
-    matched_length: 268
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: intel_2.RULE
-    license_expression: intel
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.
-
-      Redistribution and use in binary form, without modification, are permitted
-      provided that the following conditions are met:
-      *    Redistributions must reproduce the above copyright notice and the
-           following disclaimer in the documentation and/or other materials provided
-           with the distribution.
-      *    Neither the name of Intel Corporation nor the names of its suppliers may
-           be used to endorse or promote products derived from this software without
-           specific prior written permission.
-      *    No reverse engineering, decompilation, or disassembly of this software is
-           permitted.
-
-      Limited patent license.
-
-      Intel Corporation grants a world-wide, royalty-free, non-exclusive license
-      under patents it now or hereafter owns or controls to make, have made, use,
-      import, offer to sell and sell ("Utilize") this software, but solely to the
-      extent that any such patent is necessary to Utilize the software alone. The
-      patent license shall not apply to any combinations which include this software.
-      No hardware per se is licensed hereunder.
-
-      DISCLAIMER.
-
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 139
-    end_line: 143
-    matcher: 2-aho
-    rule_length: 48
-    matched_length: 48
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: license-intro_55.RULE
-    license_expression: bsd-new AND other-permissive AND other-copyleft
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: yes
-    matched_text: |
-      The newlib subdirectory is a collection of software from several sources.
-
-      Each file may have its own copyright/license that is embedded in the source
-      file.  Unless otherwise noted in the body of the source file(s), the following copyright
-      notices will apply to the contents of the newlib subdirectory:
-  - score: '100.0'
-    start_line: 149
-    end_line: 158
-    matcher: 2-aho
-    rule_length: 103
-    matched_length: 103
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_newlib.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This copyrighted material is made available to anyone wishing to use,
-      modify, copy, or redistribute it subject to the terms and conditions
-      of the BSD License.   This program is distributed in the hope that
-      it will be useful, but WITHOUT ANY WARRANTY expressed or implied,
-      including the implied warranties of MERCHANTABILITY or FITNESS FOR
-      A PARTICULAR PURPOSE.  A copy of this license is available at
-      http://www.opensource.org/licenses. Any Red Hat trademarks that are
-      incorporated in the source code or documentation are not subject to
-      the BSD License and may only be used or replicated with the express
-      permission of Red Hat, Inc.
-  - score: '100.0'
-    start_line: 165
-    end_line: 186
-    matcher: 2-aho
-    rule_length: 212
-    matched_length: 212
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_newlib3.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without modification,
-      are permitted provided that the following conditions are met:
-
-          * Redistributions of source code must retain the above copyright notice,
-            this list of conditions and the following disclaimer.
-          * Redistributions in binary form must reproduce the above copyright notice,
-            this list of conditions and the following disclaimer in the documentation
-            and/or other materials provided with the distribution.
-          * Neither the name of the University nor the names of its contributors
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
+          * Neither the name of Intel Corporation nor the names of its suppliers
             may be used to endorse or promote products derived from this software
             without specific prior written permission.
+          * No reverse engineering, decompilation, or disassembly of this software
+            is permitted.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-      IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-      INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-      NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
-      OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: '194'
-    end_line: 203
-    matcher: 2-aho
-    rule_length: 93
-    matched_length: 93
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-lucent.RULE
-    license_expression: x11-lucent
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-      purpose without fee is hereby granted, provided that this entire notice
-      is included in all copies of any software which is or includes a copy
-      or modification of this software and in all copies of the supporting
-      documentation for such software.
+          Limited patent license.  Intel Corporation grants a world-wide,
+          royalty-free, non-exclusive license under patents it now or hereafter
+          owns or controls to make, have made, use, import, offer to sell and
+          sell ("Utilize") this software, but solely to the extent that any
+          such patent is necessary to Utilize the software alone, or in
+          combination with an operating system licensed under an approved Open
+          Source license as listed by the Open Source Initiative at
+          http://opensource.org/licenses.  The patent license shall not apply to
+          any other combinations which include this software.  No hardware per
+          se is licensed hereunder.
 
-      THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
-      WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
-      REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
-      OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 212
-    end_line: 229
-    matcher: 2-aho
-    rule_length: 151
-    matched_length: 151
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: standard-ml-nj_3.RULE
-    license_expression: standard-ml-nj
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software and
-      its documentation for any purpose and without fee is hereby
-      granted, provided that the above copyright notice appear in all
-      copies and that both that the copyright notice and this
-      permission notice and warranty disclaimer appear in supporting
-      documentation, and that the name of Lucent or any of its entities
-      not be used in advertising or publicity pertaining to
-      distribution of the software without specific, written prior
-      permission.
+          DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+          DAMAGE.
+        licenses:
+          - key: intel
+            name: Intel Limited Patent License
+            short_name: Intel Limited Patent License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Intel Corporation
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
+            reference_url: https://scancode-licensedb.aboutcode.org/intel
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.yml
+            spdx_license_key: LicenseRef-scancode-intel
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+  - license_expression: intel
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 53
+        end_line: 87
+        matched_length: 268
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: intel
+        licensedb_identifier: intel_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 268
+        rule_relevance: 95
+        matched_text: |
+          Redistribution.
 
-      LUCENT DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-      INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
-      IN NO EVENT SHALL LUCENT OR ANY OF ITS ENTITIES BE LIABLE FOR ANY
-      SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-      WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
-      IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
-      ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
-      THIS SOFTWARE.
-  - score: '100.0'
-    start_line: 236
-    end_line: 247
-    matcher: 2-aho
-    rule_length: 98
-    matched_length: 98
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: amd-historical_1.RULE
-    license_expression: amd-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is the property of Advanced Micro Devices, Inc  (AMD)  which
-      specifically  grants the user the right to modify, use and distribute this
-      software provided this notice is not removed or altered.  All other rights
-      are reserved by AMD.
+          Redistribution and use in binary form, without modification, are permitted
+          provided that the following conditions are met:
+          *    Redistributions must reproduce the above copyright notice and the
+               following disclaimer in the documentation and/or other materials provided
+               with the distribution.
+          *    Neither the name of Intel Corporation nor the names of its suppliers may
+               be used to endorse or promote products derived from this software without
+               specific prior written permission.
+          *    No reverse engineering, decompilation, or disassembly of this software is
+               permitted.
 
-      AMD MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS
-      SOFTWARE.  IN NO EVENT SHALL AMD BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL
-      DAMAGES IN CONNECTION WITH OR ARISING FROM THE FURNISHING, PERFORMANCE, OR
-      USE OF THIS SOFTWARE.
+          Limited patent license.
 
-      So that all may benefit from your experience, please report  any  problems
-      or  suggestions about this software
-  - score: '100.0'
-    start_line: 266
-    end_line: 268
-    matcher: 2-aho
-    rule_length: 25
-    matched_length: 25
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: sunpro.LICENSE
-    license_expression: sunpro
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Developed at SunPro, a Sun Microsystems, Inc. business.
-      Permission to use, copy, modify, and distribute this
-      software is freely granted, provided that this notice is preserved.
-  - score: '100.0'
-    start_line: 274
-    end_line: 283
-    matcher: 2-aho
-    rule_length: 88
-    matched_length: 88
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: osf-1990_3.RULE
-    license_expression: osf-1990
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      To anyone who acknowledges that this file is provided "AS IS"
-      without any express or implied warranty:
-          permission to use, copy, modify, and distribute this file
-      for any purpose is hereby granted without fee, provided that
-      the above copyright notice and this notice appears in all
-      copies, and that the name of Hewlett-Packard Company not be
-      used in advertising or publicity pertaining to distribution
-      of the software without specific, written prior permission.
-      Hewlett-Packard Company makes no representations about the
-      suitability of this software for any purpose.
-  - score: '100.0'
-    start_line: 289
-    end_line: 296
-    matcher: 2-aho
-    rule_length: 55
-    matched_length: 55
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: nilsson-historical.LICENSE
-    license_expression: nilsson-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software is
-      freely granted, provided that the above copyright notice, this notice
-      and the following disclaimer are preserved with no changes.
+          Intel Corporation grants a world-wide, royalty-free, non-exclusive license
+          under patents it now or hereafter owns or controls to make, have made, use,
+          import, offer to sell and sell ("Utilize") this software, but solely to the
+          extent that any such patent is necessary to Utilize the software alone. The
+          patent license shall not apply to any combinations which include this software.
+          No hardware per se is licensed hereunder.
 
-      THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
-      IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-      PURPOSE.
-  - score: '100.0'
-    start_line: 302
-    end_line: 310
-    matcher: 2-aho
-    rule_length: 92
-    matched_length: 92
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: newlib-historical.LICENSE
-    license_expression: newlib-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The authors hereby grant permission to use, copy, modify, distribute,
-      and license this software and its documentation for any purpose, provided
-      that existing copyright notices are retained in all copies and that this
-      notice is included verbatim in any distributions. No written agreement,
-      license, or royalty fee is required for any of the authorized uses.
-      Modifications to this software may be copyrighted by their authors
-      and need not follow the licensing terms described here, provided that
-      the new terms are clearly indicated on the first page of each file where
-      they apply.
-  - score: '100.0'
-    start_line: 317
-    end_line: 337
-    matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_98.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. The name of the author may not be used to endorse or promote products
-         derived from this software without specific prior written permission.
+          DISCLAIMER.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-      IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-      IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-      NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-      THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '95.0'
-    start_line: 343
-    end_line: 354
-    matcher: 2-aho
-    rule_length: 95
-    matched_length: 95
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: amd-historical4.RULE
-    license_expression: amd-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is the property of [SuperH], Inc ([SuperH]) which specifically
-      grants the user the right to modify, use and distribute this software
-      provided this notice is not removed or altered.  All other rights are
-      reserved by [SuperH].
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: intel
+            name: Intel Limited Patent License
+            short_name: Intel Limited Patent License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Intel Corporation
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
+            reference_url: https://scancode-licensedb.aboutcode.org/intel
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.yml
+            spdx_license_key: LicenseRef-scancode-intel
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+  - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
+      AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
+      AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 101
+        end_line: 135
+        matched_length: 268
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: intel
+        licensedb_identifier: intel_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 268
+        rule_relevance: 95
+        matched_text: |
+          Redistribution.
 
-      [SUPERH] MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO
-      THIS SOFTWARE.  IN NO EVENT SHALL [SUPERH] BE LIABLE FOR INDIRECT, SPECIAL,
-      INCIDENTAL OR CONSEQUENTIAL DAMAGES IN CONNECTION WITH OR ARISING FROM
-      THE FURNISHING, PERFORMANCE, OR USE OF THIS SOFTWARE.
+          Redistribution and use in binary form, without modification, are permitted
+          provided that the following conditions are met:
+          *    Redistributions must reproduce the above copyright notice and the
+               following disclaimer in the documentation and/or other materials provided
+               with the distribution.
+          *    Neither the name of Intel Corporation nor the names of its suppliers may
+               be used to endorse or promote products derived from this software without
+               specific prior written permission.
+          *    No reverse engineering, decompilation, or disassembly of this software is
+               permitted.
 
-      So that all may benefit from your experience, please report any problems
-      or suggestions about this software to the
-  - score: '100.0'
-    start_line: 369
-    end_line: 394
-    matcher: 2-aho
-    rule_length: 212
-    matched_length: 212
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_933.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
+          Limited patent license.
 
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
+          Intel Corporation grants a world-wide, royalty-free, non-exclusive license
+          under patents it now or hereafter owns or controls to make, have made, use,
+          import, offer to sell and sell ("Utilize") this software, but solely to the
+          extent that any such patent is necessary to Utilize the software alone. The
+          patent license shall not apply to any combinations which include this software.
+          No hardware per se is licensed hereunder.
 
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          DISCLAIMER.
 
-      3. Neither the name of KTH nor the names of its contributors may be
-         used to endorse or promote products derived from this software without
-         specific prior written permission.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: intel
+            name: Intel Limited Patent License
+            short_name: Intel Limited Patent License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Intel Corporation
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
+            reference_url: https://scancode-licensedb.aboutcode.org/intel
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.yml
+            spdx_license_key: LicenseRef-scancode-intel
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+      - score: '100.0'
+        start_line: 139
+        end_line: 143
+        matched_length: 48
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new AND other-permissive AND other-copyleft
+        licensedb_identifier: license-intro_55.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: yes
+        rule_length: 48
+        rule_relevance: 100
+        matched_text: |
+          The newlib subdirectory is a collection of software from several sources.
 
-      THIS SOFTWARE IS PROVIDED BY KTH AND ITS CONTRIBUTORS ``AS IS'' AND ANY
-      EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-      PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL KTH OR ITS CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-      BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-      OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-      ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 401
-    end_line: 420
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          Each file may have its own copyright/license that is embedded in the source
+          file.  Unless otherwise noted in the body of the source file(s), the following copyright
+          notices will apply to the contents of the newlib subdirectory:
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+          - key: other-copyleft
+            name: Other Copyleft Licenses
+            short_name: Other Copyleft Licenses
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-copyleft
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.yml
+            spdx_license_key: LicenseRef-scancode-other-copyleft
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
+      - score: '100.0'
+        start_line: 149
+        end_line: 158
+        matched_length: 103
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_newlib.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 103
+        rule_relevance: 100
+        matched_text: |
+          This copyrighted material is made available to anyone wishing to use,
+          modify, copy, or redistribute it subject to the terms and conditions
+          of the BSD License.   This program is distributed in the hope that
+          it will be useful, but WITHOUT ANY WARRANTY expressed or implied,
+          including the implied warranties of MERCHANTABILITY or FITNESS FOR
+          A PARTICULAR PURPOSE.  A copy of this license is available at
+          http://www.opensource.org/licenses. Any Red Hat trademarks that are
+          incorporated in the source code or documentation are not subject to
+          the BSD License and may only be used or replicated with the express
+          permission of Red Hat, Inc.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 165
+        end_line: 186
+        matched_length: 212
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_newlib3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 212
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without modification,
+          are permitted provided that the following conditions are met:
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 427
-    end_line: 446
-    matcher: 2-aho
-    rule_length: 181
-    matched_length: 181
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_newlib3.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+              * Redistributions of source code must retain the above copyright notice,
+                this list of conditions and the following disclaimer.
+              * Redistributions in binary form must reproduce the above copyright notice,
+                this list of conditions and the following disclaimer in the documentation
+                and/or other materials provided with the distribution.
+              * Neither the name of the University nor the names of its contributors
+                may be used to endorse or promote products derived from this software
+                without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 453
-    end_line: 472
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+          IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+          INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+          NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+          PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+          WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+          OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: '194'
+        end_line: 203
+        matched_length: 93
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: x11-lucent
+        licensedb_identifier: x11-lucent.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 93
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software for any
+          purpose without fee is hereby granted, provided that this entire notice
+          is included in all copies of any software which is or includes a copy
+          or modification of this software and in all copies of the supporting
+          documentation for such software.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '99.0'
-    start_line: 480
-    end_line: 489
-    matcher: 2-aho
-    rule_length: 89
-    matched_length: 89
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: x11-hanson2.RULE
-    license_expression: x11-hanson
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-      purpose without fee is hereby granted, provided that this entire notice
-      is included in all copies of any software which is or includes a copy
-      or modification of this software and in all copies of the supporting
-      documentation for such software.
+          THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+          WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
+          REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+          OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+        licenses:
+          - key: x11-lucent
+            name: X11-Style (Lucent)
+            short_name: X11-Style (Lucent)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Alcatel-Lucent
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-lucent
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.yml
+            spdx_license_key: LicenseRef-scancode-x11-lucent
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE
+      - score: '100.0'
+        start_line: 212
+        end_line: 229
+        matched_length: 151
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: standard-ml-nj
+        licensedb_identifier: standard-ml-nj_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 151
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software and
+          its documentation for any purpose and without fee is hereby
+          granted, provided that the above copyright notice appear in all
+          copies and that both that the copyright notice and this
+          permission notice and warranty disclaimer appear in supporting
+          documentation, and that the name of Lucent or any of its entities
+          not be used in advertising or publicity pertaining to
+          distribution of the software without specific, written prior
+          permission.
 
-      THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
-      WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
-      OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
-      SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 496
-    end_line: 515
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          LUCENT DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+          INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
+          IN NO EVENT SHALL LUCENT OR ANY OF ITS ENTITIES BE LIABLE FOR ANY
+          SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+          WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+          IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+          ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+          THIS SOFTWARE.
+        licenses:
+          - key: standard-ml-nj
+            name: Standard ML of New Jersey
+            short_name: Standard ML of New Jersey
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Alcatel-Lucent
+            homepage_url: http://www.smlnj.org//license.html
+            text_url: http://directory.fsf.org/wiki/License:StandardMLofNJ
+            reference_url: https://scancode-licensedb.aboutcode.org/standard-ml-nj
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/standard-ml-nj.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/standard-ml-nj.yml
+            spdx_license_key: SMLNJ
+            spdx_url: https://spdx.org/licenses/SMLNJ
+      - score: '100.0'
+        start_line: 236
+        end_line: 247
+        matched_length: 98
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: amd-historical
+        licensedb_identifier: amd-historical_1.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 98
+        rule_relevance: 100
+        matched_text: |
+          This software is the property of Advanced Micro Devices, Inc  (AMD)  which
+          specifically  grants the user the right to modify, use and distribute this
+          software provided this notice is not removed or altered.  All other rights
+          are reserved by AMD.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 522
-    end_line: 542
-    matcher: 2-aho
-    rule_length: 200
-    matched_length: 200
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_76.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. The name of the author may not be used to endorse or promote products
-         derived from this software without specific prior written permission.
+          AMD MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS
+          SOFTWARE.  IN NO EVENT SHALL AMD BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL
+          DAMAGES IN CONNECTION WITH OR ARISING FROM THE FURNISHING, PERFORMANCE, OR
+          USE OF THIS SOFTWARE.
 
-      THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
-      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
-      THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
-      OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-      OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-      ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 548
-    end_line: 553
-    matcher: 2-aho
-    rule_length: 45
-    matched_length: 45
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: delorie-historical.LICENSE
-    license_expression: delorie-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution, modification, and use in source and binary forms is permitted
-      provided that the above copyright notice and following paragraph are
-      duplicated in all such forms.
+          So that all may benefit from your experience, please report  any  problems
+          or  suggestions about this software to the 29K Technical Support Center at
+        licenses:
+          - key: amd-historical
+            name: AMD Historical License
+            short_name: AMD Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Advanced Micro Devices
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/amd-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.yml
+            spdx_license_key: LicenseRef-scancode-amd-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
+      - score: '100.0'
+        start_line: 266
+        end_line: 268
+        matched_length: 25
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: sunpro
+        licensedb_identifier: sunpro.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 25
+        rule_relevance: 100
+        matched_text: |
+          Developed at SunPro, a Sun Microsystems, Inc. business.
+          Permission to use, copy, modify, and distribute this
+          software is freely granted, provided that this notice is preserved.
+        licenses:
+          - key: sunpro
+            name: SunPro Attribution License
+            short_name: SunPro Attribution License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Oracle (Sun)
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/sunpro
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.yml
+            spdx_license_key: LicenseRef-scancode-sunpro
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
+      - score: '100.0'
+        start_line: 274
+        end_line: 283
+        matched_length: 88
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: osf-1990
+        licensedb_identifier: osf-1990_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 88
+        rule_relevance: 100
+        matched_text: |
+          To anyone who acknowledges that this file is provided "AS IS"
+          without any express or implied warranty:
+              permission to use, copy, modify, and distribute this file
+          for any purpose is hereby granted without fee, provided that
+          the above copyright notice and this notice appears in all
+          copies, and that the name of Hewlett-Packard Company not be
+          used in advertising or publicity pertaining to distribution
+          of the software without specific, written prior permission.
+          Hewlett-Packard Company makes no representations about the
+          suitability of this software for any purpose.
+        licenses:
+          - key: osf-1990
+            name: OSF 1990 License
+            short_name: OSF 1990 License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Open Group
+            homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+            text_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+            reference_url: https://scancode-licensedb.aboutcode.org/osf-1990
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.yml
+            spdx_license_key: LicenseRef-scancode-osf-1990
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
+      - score: '100.0'
+        start_line: 289
+        end_line: 296
+        matched_length: 55
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: nilsson-historical
+        licensedb_identifier: nilsson-historical.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 55
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software is
+          freely granted, provided that the above copyright notice, this notice
+          and the following disclaimer are preserved with no changes.
 
-      This file is distributed WITHOUT ANY WARRANTY; without even the implied
-      warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 563
-    end_line: 585
-    matcher: 2-aho
-    rule_length: 210
-    matched_length: 210
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: intel-osl-1993.LICENSE
-    license_expression: intel-osl-1993
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Intel hereby grants you permission to copy, modify, and distribute this
-      software and its documentation.  Intel grants this permission provided
-      that the above copyright notice appears in all copies and that both the
-      copyright notice and this permission notice appear in supporting
-      documentation.  In addition, Intel grants this permission provided that
-      you prominently mark as "not part of the original" any modifications
-      made to this software or documentation, and that the name of Intel
-      Corporation not be used in advertising or publicity pertaining to
-      distribution of the software or the documentation without specific,
-      written prior permission.
+          THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+          PURPOSE.
+        licenses:
+          - key: nilsson-historical
+            name: Nilsson Historical License
+            short_name: Nilsson Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Hans-Peter Nilsson
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/nilsson-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.yml
+            spdx_license_key: LicenseRef-scancode-nilsson-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
+      - score: '100.0'
+        start_line: 302
+        end_line: 310
+        matched_length: 92
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: newlib-historical
+        licensedb_identifier: newlib-historical.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 92
+        rule_relevance: 100
+        matched_text: |
+          The authors hereby grant permission to use, copy, modify, distribute,
+          and license this software and its documentation for any purpose, provided
+          that existing copyright notices are retained in all copies and that this
+          notice is included verbatim in any distributions. No written agreement,
+          license, or royalty fee is required for any of the authorized uses.
+          Modifications to this software may be copyrighted by their authors
+          and need not follow the licensing terms described here, provided that
+          the new terms are clearly indicated on the first page of each file where
+          they apply.
+        licenses:
+          - key: newlib-historical
+            name: Newlib Historical License
+            short_name: Newlib Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Red Hat
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/newlib-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.yml
+            spdx_license_key: LicenseRef-scancode-newlib-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
+      - score: '100.0'
+        start_line: 317
+        end_line: 337
+        matched_length: 203
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_98.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 203
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. The name of the author may not be used to endorse or promote products
+             derived from this software without specific prior written permission.
 
-      Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
-      IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
-      OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
-      representations regarding the use of, or the results of the use of,
-      the software and documentation in terms of correctness, accuracy,
-      reliability, currentness, or otherwise; and you rely on the software,
-      documentation and results solely at your own risk.
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+          IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+          NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+          THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+          THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '95.0'
+        start_line: 343
+        end_line: 354
+        matched_length: 95
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: amd-historical
+        licensedb_identifier: amd-historical4.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 95
+        rule_relevance: 100
+        matched_text: |
+          This software is the property of SuperH, Inc (SuperH) which specifically
+          grants the user the right to modify, use and distribute this software
+          provided this notice is not removed or altered.  All other rights are
+          reserved by SuperH.
 
-      IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
-      LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
-      OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
-      PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
-  - score: '100.0'
-    start_line: 591
-    end_line: 600
-    matcher: 2-aho
-    rule_length: 88
-    matched_length: 88
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: osf-1990_3.RULE
-    license_expression: osf-1990
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      To anyone who acknowledges that this file is provided "AS IS"
-      without any express or implied warranty:
-          permission to use, copy, modify, and distribute this file
-      for any purpose is hereby granted without fee, provided that
-      the above copyright notice and this notice appears in all
-      copies, and that the name of Hewlett-Packard Company not be
-      used in advertising or publicity pertaining to distribution
-      of the software without specific, written prior permission.
-      Hewlett-Packard Company makes no representations about the
-      suitability of this software for any purpose.
-  - score: '100.0'
-    start_line: 609
-    end_line: 628
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          SUPERH MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO
+          THIS SOFTWARE.  IN NO EVENT SHALL SUPERH BE LIABLE FOR INDIRECT, SPECIAL,
+          INCIDENTAL OR CONSEQUENTIAL DAMAGES IN CONNECTION WITH OR ARISING FROM
+          THE FURNISHING, PERFORMANCE, OR USE OF THIS SOFTWARE.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 635
-    end_line: 654
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          So that all may benefit from your experience, please report any problems
+          or suggestions about this software to the SuperH Support Center via
+        licenses:
+          - key: amd-historical
+            name: AMD Historical License
+            short_name: AMD Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Advanced Micro Devices
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/amd-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.yml
+            spdx_license_key: LicenseRef-scancode-amd-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
+      - score: '100.0'
+        start_line: 369
+        end_line: 394
+        matched_length: 212
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_933.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 212
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 663
-    end_line: 682
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 693
-    end_line: 715
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_206.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-        modification, are permitted provided that the following conditions are met:
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
 
-          * Redistributions of source code must retain the above copyright notice,
-            this list of conditions and the following disclaimer.
-          * Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-          * Neither the names of the copyright holders nor the names of their
-            contributors may be used to endorse or promote products derived from this
-            software without specific prior written permission.
+          3. Neither the name of KTH nor the names of its contributors may be
+             used to endorse or promote products derived from this software without
+             specific prior written permission.
 
-        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-        LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-        CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-        SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-        INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-        CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-        POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 723
-    end_line: 742
-    matcher: 2-aho
-    rule_length: 179
-    matched_length: 179
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_8.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-        modification, are permitted provided that the following conditions
-        are met:
-        1. Redistributions of source code must retain the above copyright
+          THIS SOFTWARE IS PROVIDED BY KTH AND ITS CONTRIBUTORS ``AS IS'' AND ANY
+          EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+          PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL KTH OR ITS CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+          BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+          WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+          OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+          ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 401
+        end_line: 420
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 427
+        end_line: 446
+        matched_length: 181
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_newlib3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 181
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 453
+        end_line: 472
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '99.0'
+        start_line: 480
+        end_line: 489
+        matched_length: 89
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: x11-hanson
+        licensedb_identifier: x11-hanson2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 89
+        rule_relevance: 99
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software for any
+          purpose without fee is hereby granted, provided that this entire notice
+          is included in all copies of any software which is or includes a copy
+          or modification of this software and in all copies of the supporting
+          documentation for such software.
+
+          THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+          WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
+          OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
+          SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+        licenses:
+          - key: x11-hanson
+            name: X11-Style (David R. Hanson)
+            short_name: X11-Style (David R. Hanson)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: David R. Hanson
+            homepage_url: http://www.research.microsoft.com/~drh/
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-hanson
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.yml
+            spdx_license_key: LicenseRef-scancode-x11-hanson
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.LICENSE
+      - score: '100.0'
+        start_line: 496
+        end_line: 515
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 522
+        end_line: 542
+        matched_length: 200
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_76.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 200
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. The name of the author may not be used to endorse or promote products
+             derived from this software without specific prior written permission.
+
+          THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+          INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+          THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+          EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+          PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+          OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+          WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+          OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+          ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 548
+        end_line: 553
+        matched_length: 45
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: delorie-historical
+        licensedb_identifier: delorie-historical.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 45
+        rule_relevance: 100
+        matched_text: |
+          Redistribution, modification, and use in source and binary forms is permitted
+          provided that the above copyright notice and following paragraph are
+          duplicated in all such forms.
+
+          This file is distributed WITHOUT ANY WARRANTY; without even the implied
+          warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: delorie-historical
+            name: Delorie Historical License
+            short_name: Delorie Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: DJ Delorie
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/delorie-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/delorie-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/delorie-historical.yml
+            spdx_license_key: LicenseRef-scancode-delorie-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/delorie-historical.LICENSE
+      - score: '100.0'
+        start_line: 563
+        end_line: 585
+        matched_length: 210
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: intel-osl-1993
+        licensedb_identifier: intel-osl-1993.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 210
+        rule_relevance: 100
+        matched_text: |
+          Intel hereby grants you permission to copy, modify, and distribute this
+          software and its documentation.  Intel grants this permission provided
+          that the above copyright notice appears in all copies and that both the
+          copyright notice and this permission notice appear in supporting
+          documentation.  In addition, Intel grants this permission provided that
+          you prominently mark as "not part of the original" any modifications
+          made to this software or documentation, and that the name of Intel
+          Corporation not be used in advertising or publicity pertaining to
+          distribution of the software or the documentation without specific,
+          written prior permission.
+
+          Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+          IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+          OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+          representations regarding the use of, or the results of the use of,
+          the software and documentation in terms of correctness, accuracy,
+          reliability, currentness, or otherwise; and you rely on the software,
+          documentation and results solely at your own risk.
+
+          IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+          LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+          OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+          PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+        licenses:
+          - key: intel-osl-1993
+            name: Intel Open Source License 1993
+            short_name: Intel OSL 1993
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Intel Corporation
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/intel-osl-1993
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.yml
+            spdx_license_key: LicenseRef-scancode-intel-osl-1993
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
+      - score: '100.0'
+        start_line: 591
+        end_line: 600
+        matched_length: 88
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: osf-1990
+        licensedb_identifier: osf-1990_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 88
+        rule_relevance: 100
+        matched_text: |
+          To anyone who acknowledges that this file is provided "AS IS"
+          without any express or implied warranty:
+              permission to use, copy, modify, and distribute this file
+          for any purpose is hereby granted without fee, provided that
+          the above copyright notice and this notice appears in all
+          copies, and that the name of Hewlett-Packard Company not be
+          used in advertising or publicity pertaining to distribution
+          of the software without specific, written prior permission.
+          Hewlett-Packard Company makes no representations about the
+          suitability of this software for any purpose.
+        licenses:
+          - key: osf-1990
+            name: OSF 1990 License
+            short_name: OSF 1990 License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Open Group
+            homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+            text_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+            reference_url: https://scancode-licensedb.aboutcode.org/osf-1990
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.yml
+            spdx_license_key: LicenseRef-scancode-osf-1990
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
+      - score: '100.0'
+        start_line: 609
+        end_line: 628
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 635
+        end_line: 654
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 663
+        end_line: 682
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 693
+        end_line: 715
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_206.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+            Redistribution and use in source and binary forms, with or without
+            modification, are permitted provided that the following conditions are met:
+
+              * Redistributions of source code must retain the above copyright notice,
+                this list of conditions and the following disclaimer.
+              * Redistributions in binary form must reproduce the above copyright
+                notice, this list of conditions and the following disclaimer in the
+                documentation and/or other materials provided with the distribution.
+              * Neither the names of the copyright holders nor the names of their
+                contributors may be used to endorse or promote products derived from this
+                software without specific prior written permission.
+
+            THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+            AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+            ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+            LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+            CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+            SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+            INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+            CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+            ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+            POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 723
+        end_line: 742
+        matched_length: 179
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_8.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 179
+        rule_relevance: 100
+        matched_text: |
+            Redistribution and use in source and binary forms, with or without
+            modification, are permitted provided that the following conditions
+            are met:
+            1. Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+            2. Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+
+            THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+            ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+            ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
+            FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+            DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+            OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+            HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+            SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 749
+        end_line: 768
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+            Redistribution and use in source and binary forms, with or without
+            modification, are permitted provided that the following conditions
+            are met:
+            1. Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+            2. Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+
+            THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+            ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+            ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+            FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+            DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+            OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+            HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+            SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 775
+        end_line: 794
+        matched_length: 181
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_newlib3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 181
+        rule_relevance: 100
+        matched_text: |
+            Redistribution and use in source and binary forms, with or without
+            modification, are permitted provided that the following conditions
+            are met:
+            1. Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+            2. Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+
+            THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+            ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+            ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+            FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+            DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+            OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+            HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+            SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 801
+        end_line: 820
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_newlib5.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+            Redistribution and use in source and binary forms, with or without
+            modification, are permitted provided that the following conditions
+            are met:
+            1. Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+            2. Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+
+            THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+            ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+            ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+            FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+            DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+            OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+            HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+            SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 827
+        end_line: 846
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+           Redistribution and use in source and binary forms, with or without
+           modification, are permitted provided that the following conditions
+           are met:
+           1. Redistributions of source code must retain the above copyright
            notice, this list of conditions and the following disclaimer.
-        2. Redistributions in binary form must reproduce the above copyright
+           2. Redistributions in binary form must reproduce the above copyright
            notice, this list of conditions and the following disclaimer in the
            documentation and/or other materials provided with the distribution.
 
-        THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
-        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
-        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-        SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 749
-    end_line: 768
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-        modification, are permitted provided that the following conditions
-        are met:
-        1. Redistributions of source code must retain the above copyright
-           notice, this list of conditions and the following disclaimer.
-        2. Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+           THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+           ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+           FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 854
+        end_line: 875
+        matched_length: 203
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_183.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 203
+        rule_relevance: 100
+        matched_text: |
+           Redistribution and use in source and binary forms, with or without
+           modification, are permitted provided that the following conditions
+           are met:
+           1. Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+           2. Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in the
+              documentation and/or other materials provided with the distribution.
+           3. The name of the company may not be used to endorse or promote
+              products derived from this software without specific prior written
+              permission.
 
-        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-        SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 775
-    end_line: 794
-    matcher: 2-aho
-    rule_length: 181
-    matched_length: 181
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_newlib3.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-        modification, are permitted provided that the following conditions
-        are met:
-        1. Redistributions of source code must retain the above copyright
-           notice, this list of conditions and the following disclaimer.
-        2. Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+           THIS SOFTWARE IS PROVIDED BY ARM LTD ``AS IS'' AND ANY EXPRESS OR IMPLIED
+           WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+           MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+           IN NO EVENT SHALL ARM LTD BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+           SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+           TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+           PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 881
+        end_line: 906
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_412.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are
+          met:
 
-        THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
-        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-        SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 801
-    end_line: 820
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_newlib5.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-        modification, are permitted provided that the following conditions
-        are met:
-        1. Redistributions of source code must retain the above copyright
-           notice, this list of conditions and the following disclaimer.
-        2. Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+          1.  Redistributions source code must retain the above copyright notice,
+          this list of conditions and the following disclaimer.
 
-        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-        SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 827
-    end_line: 846
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions
-       are met:
-       1. Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
-       2. Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
-
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-       ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-       FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 854
-    end_line: 875
-    matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_183.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions
-       are met:
-       1. Redistributions of source code must retain the above copyright
-          notice, this list of conditions and the following disclaimer.
-       2. Redistributions in binary form must reproduce the above copyright
+          2.  Redistributions in binary form must reproduce the above copyright
           notice, this list of conditions and the following disclaimer in the
           documentation and/or other materials provided with the distribution.
-       3. The name of the company may not be used to endorse or promote
-          products derived from this software without specific prior written
-          permission.
 
-       THIS SOFTWARE IS PROVIDED BY ARM LTD ``AS IS'' AND ANY EXPRESS OR IMPLIED
-       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-       MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-       IN NO EVENT SHALL ARM LTD BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-       SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-       TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-       PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-       LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 881
-    end_line: 906
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_412.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are
-      met:
+          3.  Neither the name of Xilinx nor the names of its contributors may be
+          used to endorse or promote products derived from this software without
+          specific prior written permission.
 
-      1.  Redistributions source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS
+          IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+          TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+          PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+          HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+          SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+          TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+          PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+          LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+          NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 914
+        end_line: 941
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_517.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+           Redistribution and  use in source  and binary forms, with  or without
+           modification,  are permitted provided  that the  following conditions
+           are met:
 
-      2.  Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
+              Redistributions  of source  code must  retain the  above copyright
+              notice, this list of conditions and the following disclaimer.
 
-      3.  Neither the name of Xilinx nor the names of its contributors may be
-      used to endorse or promote products derived from this software without
-      specific prior written permission.
+              Redistributions in binary form  must reproduce the above copyright
+              notice, this  list of conditions  and the following  disclaimer in
+              the  documentation  and/or   other  materials  provided  with  the
+              distribution.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS
-      IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
-      TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-      HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 914
-    end_line: 941
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_517.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and  use in source  and binary forms, with  or without
-       modification,  are permitted provided  that the  following conditions
-       are met:
+              Neither the  name of Texas Instruments Incorporated  nor the names
+              of its  contributors may  be used to  endorse or  promote products
+              derived  from   this  software  without   specific  prior  written
+              permission.
 
-          Redistributions  of source  code must  retain the  above copyright
-          notice, this list of conditions and the following disclaimer.
+           THIS SOFTWARE  IS PROVIDED BY THE COPYRIGHT  HOLDERS AND CONTRIBUTORS
+           "AS IS"  AND ANY  EXPRESS OR IMPLIED  WARRANTIES, INCLUDING,  BUT NOT
+           LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+           A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+           OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+           SPECIAL,  EXEMPLARY,  OR CONSEQUENTIAL  DAMAGES  (INCLUDING, BUT  NOT
+           LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+           DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+           THEORY OF  LIABILITY, WHETHER IN CONTRACT, STRICT  LIABILITY, OR TORT
+           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 947
+        end_line: 955
+        matched_length: 92
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: newlib-historical
+        licensedb_identifier: newlib-historical.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 92
+        rule_relevance: 100
+        matched_text: |
+          The authors hereby grant permission to use, copy, modify, distribute,
+          and license this software and its documentation for any purpose, provided
+          that existing copyright notices are retained in all copies and that this
+          notice is included verbatim in any distributions. No written agreement,
+          license, or royalty fee is required for any of the authorized uses.
+          Modifications to this software may be copyrighted by their authors
+          and need not follow the licensing terms described here, provided that
+          the new terms are clearly indicated on the first page of each file where
+          they apply.
+        licenses:
+          - key: newlib-historical
+            name: Newlib Historical License
+            short_name: Newlib Historical License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Red Hat
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/newlib-historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.yml
+            spdx_license_key: LicenseRef-scancode-newlib-historical
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
+      - score: '100.0'
+        start_line: 962
+        end_line: 982
+        matched_length: 211
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_979.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 211
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
+           * Redistributions of source code must retain the above copyright notice, this
+             list of conditions and the following disclaimer.
+           * Redistributions in binary form must reproduce the above copyright notice,
+             this list of conditions and the following disclaimer in the documentation
+             and/or other materials provided with the distribution.
+           * Neither the name of Adapteva nor the names of its contributors may be used
+             to endorse or promote products derived from this software without specific
+             prior written permission.
 
-          Redistributions in binary form  must reproduce the above copyright
-          notice, this  list of conditions  and the following  disclaimer in
-          the  documentation  and/or   other  materials  provided  with  the
-          distribution.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+          DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+          SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+          CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+          OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+          OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 989
+        end_line: 1012
+        matched_length: 218
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_410.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 218
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
 
-          Neither the  name of Texas Instruments Incorporated  nor the names
-          of its  contributors may  be used to  endorse or  promote products
-          derived  from   this  software  without   specific  prior  written
-          permission.
+             o Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+             o Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+             o Neither the name of Altera Corporation nor the names of its
+               contributors may be used to endorse or promote products derived from
+               this software without specific prior written permission.
 
-       THIS SOFTWARE  IS PROVIDED BY THE COPYRIGHT  HOLDERS AND CONTRIBUTORS
-       "AS IS"  AND ANY  EXPRESS OR IMPLIED  WARRANTIES, INCLUDING,  BUT NOT
-       LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-       A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
-       OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-       SPECIAL,  EXEMPLARY,  OR CONSEQUENTIAL  DAMAGES  (INCLUDING, BUT  NOT
-       LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-       DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-       THEORY OF  LIABILITY, WHETHER IN CONTRACT, STRICT  LIABILITY, OR TORT
-       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 947
-    end_line: 955
-    matcher: 2-aho
-    rule_length: 92
-    matched_length: 92
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: newlib-historical.LICENSE
-    license_expression: newlib-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The authors hereby grant permission to use, copy, modify, distribute,
-      and license this software and its documentation for any purpose, provided
-      that existing copyright notices are retained in all copies and that this
-      notice is included verbatim in any distributions. No written agreement,
-      license, or royalty fee is required for any of the authorized uses.
-      Modifications to this software may be copyrighted by their authors
-      and need not follow the licensing terms described here, provided that
-      the new terms are clearly indicated on the first page of each file where
-      they apply.
-  - score: '100.0'
-    start_line: 962
-    end_line: 982
-    matcher: 2-aho
-    rule_length: 211
-    matched_length: 211
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_979.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:
-       * Redistributions of source code must retain the above copyright notice, this
-         list of conditions and the following disclaimer.
-       * Redistributions in binary form must reproduce the above copyright notice,
-         this list of conditions and the following disclaimer in the documentation
-         and/or other materials provided with the distribution.
-       * Neither the name of Adapteva nor the names of its contributors may be used
-         to endorse or promote products derived from this software without specific
-         prior written permission.
+          THIS SOFTWARE IS PROVIDED BY ALTERA CORPORATION, THE COPYRIGHT HOLDER,
+          AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+          INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+          THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 1019
+        end_line: 1038
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 989
-    end_line: 1012
-    matcher: 2-aho
-    rule_length: 218
-    matched_length: 218
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_410.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-
-         o Redistributions of source code must retain the above copyright
-           notice, this list of conditions and the following disclaimer.
-         o Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
-         o Neither the name of Altera Corporation nor the names of its
-           contributors may be used to endorse or promote products derived from
-           this software without specific prior written permission.
-
-      THIS SOFTWARE IS PROVIDED BY ALTERA CORPORATION, THE COPYRIGHT HOLDER,
-      AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
-      THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 1019
-    end_line: 1038
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause

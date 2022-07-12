@@ -21,8 +21,10 @@
   "code_view_url": "http://svn.apache.org/viewvc/geronimo/specs/trunk/",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/geronimo/specs/trunk/",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.geronimo.specs/specs@1.2?classifier=sources"

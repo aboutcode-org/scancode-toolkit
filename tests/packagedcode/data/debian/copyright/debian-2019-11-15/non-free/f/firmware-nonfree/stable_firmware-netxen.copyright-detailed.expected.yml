@@ -1,37 +1,60 @@
 primary_license:
 declared_license:
 license_expression: qlogic-firmware
+declared_license_expression_spdx: LicenseRef-scancode-qlogic-firmware
 copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet
-matches:
-  - score: '100.0'
-    start_line: 7
-    end_line: 34
-    matcher: 2-aho
-    rule_length: 262
-    matched_length: 262
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: qlogic-firmware.LICENSE
-    license_expression: qlogic-firmware
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "Redistribution and use in binary form, without modification, for use in conjunction\n\
-      with QLogic authorized products is permitted provided that the following conditions\n\
-      are met:\n\n1. Redistribution in binary form must reproduce the above copyright notice, this \n\
-      \   list of conditions and the following disclaimer in the documentation and/or \n   other\
-      \ materials provided with the distribution.\n2. The name of QLogic Corporation may not be used to\
-      \ endorse or promote products \n   derived from this software without specific prior written permission.\n\
-      3. Reverse engineering, decompilation, or disassembly of this firmware is not \n   permitted.\n\
-      \nREGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,THIS PROGRAM IS \nPROVIDED BY QLOGIC CORPORATION \"\
-      AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, \nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND \n\
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\
-      \ EXEMPLARY, OR \nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE \n\
-      GOODS OR SERVICES; LOSS OF USE,DATA, OR PROFITS; OR BUSINESS INTERRUPTION) \nHOWEVER CAUSED AND ON\
-      \ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT \nLIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n\
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\
-      USER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT CREATE OR GIVE \nGROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR\
-      \ OTHERWISE IN ANY INTELLECTUAL\nPROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY\n\
-      RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN\nCOMBINATION WITH THIS PROGRAM."
+license_detections:
+  - license_expression: qlogic-firmware
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 7
+        end_line: 34
+        matched_length: 262
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: qlogic-firmware
+        licensedb_identifier: qlogic-firmware.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 262
+        rule_relevance: 100
+        matched_text: "Redistribution and use in binary form, without modification, for use\
+          \ in conjunction\nwith QLogic authorized products is permitted provided that the following\
+          \ conditions\nare met:\n\n1. Redistribution in binary form must reproduce the above\
+          \ copyright notice, this \n   list of conditions and the following disclaimer in the documentation and/or \n\
+          \   other materials provided with the distribution.\n2. The name of QLogic Corporation may not be used to\
+          \ endorse or promote products \n   derived from this software without specific prior written permission.\n\
+          3. Reverse engineering, decompilation, or disassembly of this firmware is not \n \
+          \  permitted.\n\nREGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,THIS PROGRAM IS \n\
+          PROVIDED BY QLOGIC CORPORATION \"AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, \n\
+          INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND \nFITNESS FOR A\
+          \ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\
+          \ EXEMPLARY, OR \nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE \n\
+          GOODS OR SERVICES; LOSS OF USE,DATA, OR PROFITS; OR BUSINESS INTERRUPTION) \nHOWEVER CAUSED AND ON\
+          \ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT \nLIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n\
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\
+          \nUSER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT CREATE OR GIVE \n\
+          GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL\n\
+          PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY\n\
+          RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN\nCOMBINATION WITH THIS PROGRAM."
+        licenses:
+          - key: qlogic-firmware
+            name: QLogic Firmware License
+            short_name: QLogic Firmware License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: QLogic
+            homepage_url: https://github.com/wkennington/linux-firmware/blob/master/LICENCE.qla2xxx
+            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.qla2xxx
+            reference_url: https://scancode-licensedb.aboutcode.org/qlogic-firmware
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.yml
+            spdx_license_key: LicenseRef-scancode-qlogic-firmware
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE

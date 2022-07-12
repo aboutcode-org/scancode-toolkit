@@ -1,87 +1,148 @@
 primary_license:
 declared_license:
 license_expression: pcre AND bsd-new AND bsd-new
+declared_license_expression_spdx: LicenseRef-scancode-pcre AND BSD-3-Clause AND BSD-3-Clause
 copyright: |
   Copyright (c) 1997-2007 University of Cambridge
   Copyright (c) 2007, Google Inc.
-matches:
-  - score: '100.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: pcre_4.RULE
-    license_expression: pcre
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: PCRE LICENCE
-  - score: '100.0'
-    start_line: 13
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 32
-    matched_length: 32
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_645.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      PCRE is distributed under the terms of the "BSD" licence, as
-      specified below. The documentation for PCRE, supplied in the "doc"
-      directory, is distributed under the same terms as the software itself.
-  - score: '100.0'
-    start_line: 44
-    end_line: 72
-    matcher: 2-aho
-    rule_length: 223
-    matched_length: 223
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_1105.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      THE "BSD" LICENCE
-      -----------------
+license_detections:
+  - license_expression: pcre
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 7
+        end_line: 7
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: pcre
+        licensedb_identifier: pcre_4.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 100
+        matched_text: PCRE LICENCE
+        licenses:
+          - key: pcre
+            name: PCRE License
+            short_name: PCRE License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: University of Cambridge
+            homepage_url: http://www.pcre.org/licence.txt
+            text_url: http://www.pcre.org/licence.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/pcre
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.yml
+            spdx_license_key: LicenseRef-scancode-pcre
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 13
+        end_line: 15
+        matched_length: 32
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_645.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 32
+        rule_relevance: 100
+        matched_text: |
+          Release 7 of PCRE is distributed under the terms of the "BSD" licence, as
+          specified below. The documentation for PCRE, supplied in the "doc"
+          directory, is distributed under the same terms as the software itself.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 44
+        end_line: 72
+        matched_length: 223
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_1105.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 223
+        rule_relevance: 100
+        matched_text: |
+          THE "BSD" LICENCE
+          -----------------
 
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
 
-          * Redistributions of source code must retain the above copyright notice,
-            this list of conditions and the following disclaimer.
+              * Redistributions of source code must retain the above copyright notice,
+                this list of conditions and the following disclaimer.
 
-          * Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
+              * Redistributions in binary form must reproduce the above copyright
+                notice, this list of conditions and the following disclaimer in the
+                documentation and/or other materials provided with the distribution.
 
-          * Neither the name of the University of Cambridge nor the name of Google
-            Inc. nor the names of their contributors may be used to endorse or
-            promote products derived from this software without specific prior
-            written permission.
+              * Neither the name of the University of Cambridge nor the name of Google
+                Inc. nor the names of their contributors may be used to endorse or
+                promote products derived from this software without specific prior
+                written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause

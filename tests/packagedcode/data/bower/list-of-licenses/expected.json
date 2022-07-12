@@ -34,12 +34,146 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit AND apache-2.0 AND bsd-new",
-    "declared_license": [
-      "MIT",
-      "Apache 2.0",
-      "BSD-3-Clause"
+    "declared_license_expression": "mit AND apache-2.0 AND bsd-new",
+    "declared_license_expression_spdx": "MIT AND Apache-2.0 AND BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "licensedb_identifier": "spdx-license-identifier: mit",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "MIT",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "apache-2.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "apache-2.0",
+            "licensedb_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 100,
+            "matched_text": "Apache 2.0",
+            "licenses": [
+              {
+                "key": "apache-2.0",
+                "name": "Apache License 2.0",
+                "short_name": "Apache 2.0",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Apache Software Foundation",
+                "homepage_url": "http://www.apache.org/licenses/",
+                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                "spdx_license_key": "Apache-2.0",
+                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "bsd-new",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "bsd-new",
+            "licensedb_identifier": "bsd-new_10.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 100,
+            "matched_text": "BSD-3-Clause",
+            "licenses": [
+              {
+                "key": "bsd-new",
+                "name": "BSD-3-Clause",
+                "short_name": "BSD-3-Clause",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Regents of the University of California",
+                "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                "spdx_license_key": "BSD-3-Clause",
+                "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+              }
+            ]
+          }
+        ]
+      }
     ],
+    "extracted_license_statement": "['MIT', 'Apache 2.0', 'BSD-3-Clause']",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

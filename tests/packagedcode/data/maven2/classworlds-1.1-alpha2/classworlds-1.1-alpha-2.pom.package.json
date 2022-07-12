@@ -50,8 +50,10 @@
   "code_view_url": "http://cvs.classworlds.codehaus.org/",
   "vcs_url": "cvs+pserver:anonymous@cvs.codehaus.org:/scm/cvspublic/:classworlds",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"

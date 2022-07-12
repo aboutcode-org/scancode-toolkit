@@ -1,30 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 5
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:npm/lodash._baseclone",
@@ -69,8 +43,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [
@@ -129,8 +105,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [
@@ -189,8 +167,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [
@@ -314,8 +294,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [
@@ -374,8 +356,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [
@@ -434,8 +418,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
@@ -482,8 +468,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
@@ -540,8 +528,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
@@ -588,8 +578,10 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": null,
-        "declared_license": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "extracted_license_statement": null,
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
@@ -663,10 +655,56 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/lodash/lodash",
       "copyright": null,
-      "license_expression": "mit",
-      "declared_license": [
-        "MIT"
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "licensedb_identifier": "spdx-license-identifier: mit",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
       ],
+      "extracted_license_statement": "['MIT']",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -745,10 +783,56 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/sequelize/sequelize.git",
       "copyright": null,
-      "license_expression": "mit",
-      "declared_license": [
-        "MIT"
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "licensedb_identifier": "spdx-license-identifier: mit",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
       ],
+      "extracted_license_statement": "['MIT']",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -814,8 +898,10 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -853,8 +939,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [
@@ -909,8 +997,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [
@@ -1015,10 +1105,56 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/sequelize/sequelize.git",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": [
-            "MIT"
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "licensedb_identifier": "spdx-license-identifier: mit",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
           ],
+          "extracted_license_statement": "['MIT']",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -1109,8 +1245,10 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -1146,8 +1284,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
@@ -1190,8 +1330,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
@@ -1244,8 +1386,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
@@ -1288,8 +1432,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
@@ -1342,8 +1488,10 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -1381,8 +1529,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [
@@ -1437,8 +1587,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [
@@ -1493,8 +1645,10 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
-                "license_expression": null,
-                "declared_license": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "extracted_license_statement": null,
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [
@@ -1591,10 +1745,56 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/lodash/lodash",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": [
-            "MIT"
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "licensedb_identifier": "spdx-license-identifier: mit",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
           ],
+          "extracted_license_statement": "['MIT']",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

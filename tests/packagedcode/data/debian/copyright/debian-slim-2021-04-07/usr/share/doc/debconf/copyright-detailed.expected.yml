@@ -15,6 +15,9 @@ declared_license:
 license_expression: bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
   AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
   AND bsd-simplified AND bsd-simplified
+declared_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause
 copyright: |
   1999-2010 Joey Hess <joeyh@debian.org>
   2003 Tomohiro KUBOTA <kubota@debian.org>
@@ -38,40 +41,60 @@ copyright: |
   2005 Sylvain Ferriol <Sylvain.Ferriol@imag.fr>
   2005-2010 Colin Watson <cjwatson@debian.org>
   2005-2010 Joey Hess <joeyh@debian.org>
-matches:
-  - score: '99.45'
-    start_line: 59
-    end_line: 78
-    matcher: 3-seq
-    rule_length: 183
-    matched_length: 182
-    match_coverage: '99.45'
-    rule_relevance: 100
-    identifier: bsd-simplified_52.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+license_detections:
+  - license_expression: bsd-simplified
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.45'
+        start_line: 59
+        end_line: 78
+        matched_length: 182
+        match_coverage: '99.45'
+        matcher: 3-seq
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_52.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
 
-      THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause

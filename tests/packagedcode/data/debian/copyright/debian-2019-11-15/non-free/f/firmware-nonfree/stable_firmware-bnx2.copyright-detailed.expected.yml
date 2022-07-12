@@ -1,27 +1,48 @@
 primary_license:
 declared_license:
 license_expression: proprietary-license
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license
 copyright: Copyright (c) 2004 - 2010 Broadcom Corporation
-matches:
-  - score: '87.5'
-    start_line: 4
-    end_line: 9
-    matcher: 3-seq
-    rule_length: 35
-    matched_length: 35
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_599.RULE
-    license_expression: proprietary-license
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file contains firmware data derived from proprietary unpublished
-      source code, Copyright ([c]) [2004] - [2010] [Broadcom] [Corporation].
+license_detections:
+  - license_expression: proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '87.5'
+        start_line: 4
+        end_line: 9
+        matched_length: 35
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_599.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 35
+        rule_relevance: 100
+        matched_text: |
+          This file contains firmware data derived from proprietary unpublished
+          source code, Copyright (c) 2004 - 2010 Broadcom Corporation.
 
-      Permission is hereby granted for the distribution of this firmware data
-      in hexadecimal or equivalent format, provided this copyright notice is
-      accompanying it.
+          Permission is hereby granted for the distribution of this firmware data
+          in hexadecimal or equivalent format, provided this copyright notice is
+          accompanying it.
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE

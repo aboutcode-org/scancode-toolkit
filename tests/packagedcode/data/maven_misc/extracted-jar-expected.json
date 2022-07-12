@@ -1,31 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true,
-        "--processes": "-1"
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 4
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:maven/org.activiti/activiti-bpmn-model",
@@ -208,8 +181,10 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"
@@ -326,8 +301,10 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"

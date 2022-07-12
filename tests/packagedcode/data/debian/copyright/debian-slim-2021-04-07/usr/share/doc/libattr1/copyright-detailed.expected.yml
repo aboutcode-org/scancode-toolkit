@@ -4,151 +4,284 @@ declared_license:
   - LGPL-2+
 license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND gpl-2.0 AND (lgpl-2.0-plus
   AND lgpl-2.1-plus) AND lgpl-2.1-plus
+declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
+  GPL-2.0-only AND (LGPL-2.0-or-later AND LGPL-2.1-or-later) AND LGPL-2.1-or-later
 copyright: |
   Copyright © 2000-2007 Silicon Graphics, Inc.
   Copyright © 2001-2003,2006-2007,2009 Andreas Gruenbacher
   Copyright © 2001-2005 Silicon Graphics, Inc.
   Copyright © 2002,2003,2006-2007,2009 Andreas Gruenbacher
-matches:
-  - score: '100.0'
-    start_line: 8
-    end_line: 8
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 9
-    end_line: 20
-    matcher: 1-hash
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_860.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify it
-      under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 2 of the License, or
-      (at your option) any later version.
+license_detections:
+  - license_expression: gpl-2.0-plus AND gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 8
+        end_line: 8
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 9
+        end_line: 20
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_860.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+          This program is free software: you can redistribute it and/or modify it
+          under the terms of the GNU General Public License as published by
+          the Free Software Foundation, either version 2 of the License, or
+          (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 22
-    end_line: 23
-    matcher: 1-hash
-    rule_length: 22
-    matched_length: 22
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1160.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the full text of the GNU General Public License
-      can be found in '/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 32
-    end_line: 32
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_61.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2+'
-  - score: '100.0'
-    start_line: 33
-    end_line: 44
-    matcher: 1-hash
-    rule_length: 106
-    matched_length: 106
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_306.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify it
-      under the terms of the GNU Lesser General Public License as published by
-      the Free Software Foundation, either version 2.1 of the License, or
-      (at your option) any later version.
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 22
+        end_line: 23
+        matched_length: 22
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1160.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 22
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the full text of the GNU General Public License
+          can be found in '/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+  - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 32
+        end_line: 32
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: lgpl-2+'
+        licenses:
+          - key: lgpl-2.0-plus
+            name: GNU Library General Public License 2.0 or later
+            short_name: LGPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            spdx_license_key: LGPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+      - score: '100.0'
+        start_line: 33
+        end_line: 44
+        matched_length: 106
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_306.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 106
+        rule_relevance: 100
+        matched_text: |
+          This program is free software: you can redistribute it and/or modify it
+          under the terms of the GNU Lesser General Public License as published by
+          the Free Software Foundation, either version 2.1 of the License, or
+          (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU Lesser General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU Lesser General Public License for more details.
 
-      You should have received a copy of the GNU Lesser General Public License
-      along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 22
-    end_line: 23
-    matcher: 1-hash
-    rule_length: 22
-    matched_length: 22
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1160.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the full text of the GNU General Public License
-      can be found in '/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 46
-    end_line: 47
-    matcher: 1-hash
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_325.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the full text of the GNU Lesser General Public License
-      can be found in '/usr/share/common-licenses/LGPL-2.1'.
+          You should have received a copy of the GNU Lesser General Public License
+          along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 22
+        end_line: 23
+        matched_length: 22
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1160.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 22
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the full text of the GNU General Public License
+          can be found in '/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+  - license_expression: lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 46
+        end_line: 47
+        matched_length: 24
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_325.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2.1
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 24
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the full text of the GNU Lesser General Public License
+          can be found in '/usr/share/common-licenses/LGPL-2.1'.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later

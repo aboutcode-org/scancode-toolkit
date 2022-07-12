@@ -8,6 +8,9 @@ declared_license:
   - GPL-3
 license_expression: mit-xfig AND (gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)) AND (gpl-2.0-plus AND
   (gpl-2.0 OR gpl-3.0)) AND mit-old-style-no-advert AND (gpl-3.0 AND gpl-3.0-plus AND gpl-3.0)
+declared_license_expression_spdx: LicenseRef-scancode-mit-xfig AND (GPL-2.0-or-later AND (GPL-2.0-only
+  OR GPL-3.0-only)) AND (GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)) AND NTP AND (GPL-3.0-only
+  AND GPL-3.0-or-later AND GPL-3.0-only)
 copyright: |
   Copyright (c) 1991-1999 by Micah Beck
   Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul
@@ -38,161 +41,304 @@ copyright: |
   Copyright (C) 2006 Michael Pfeiffer -- p3fff@web.de
   Copyright, 1987, Massachusetts Institute of Technology
   Copyright (C) 1997, 2003-2004, 2006-2007, 2009-2015 Free Software Foundation, Inc.
-matches:
-  - score: '100.0'
-    start_line: 28
-    end_line: 35
-    matcher: 1-hash
-    rule_length: 85
-    matched_length: 85
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit-xfig_3.RULE
-    license_expression: mit-xfig
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Any party obtaining a copy of these files is granted, free of charge, a
-      full and unrestricted irrevocable, world-wide, paid up, royalty-free,
-      nonexclusive right and license to deal in this software and documentation
-      files (the "Software"), including without limitation the rights to use,
-      copy, modify, merge, publish distribute, sublicense and/or sell copies of
-      the Software, and to permit persons who receive copies from any such
-      party to do so, with the only requirement being that the above copyright
-      and this permission notice remain intact.
-  - score: '100.0'
-    start_line: 53
-    end_line: 53
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 54
-    end_line: 69
-    matcher: 1-hash
-    rule_length: 130
-    matched_length: 130
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_or_gpl-3.0_19.RULE
-    license_expression: gpl-2.0 OR gpl-3.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License version 2 or 3 as
-      published by the Free Software Foundation.
+license_detections:
+  - license_expression: mit-xfig
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 28
+        end_line: 35
+        matched_length: 85
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit-xfig
+        licensedb_identifier: mit-xfig_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 85
+        rule_relevance: 100
+        matched_text: |
+          Any party obtaining a copy of these files is granted, free of charge, a
+          full and unrestricted irrevocable, world-wide, paid up, royalty-free,
+          nonexclusive right and license to deal in this software and documentation
+          files (the "Software"), including without limitation the rights to use,
+          copy, modify, merge, publish distribute, sublicense and/or sell copies of
+          the Software, and to permit persons who receive copies from any such
+          party to do so, with the only requirement being that the above copyright
+          and this permission notice remain intact.
+        licenses:
+          - key: mit-xfig
+            name: MIT Xfig Variant
+            short_name: MIT Xfig Variant
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Xfig Project
+            homepage_url: http://www.xfig.org
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mit-xfig
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.yml
+            spdx_license_key: LicenseRef-scancode-mit-xfig
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE
+  - license_expression: gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 53
+        end_line: 53
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 54
+        end_line: 69
+        matched_length: 130
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0 OR gpl-3.0
+        licensedb_identifier: gpl-2.0_or_gpl-3.0_19.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 130
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License version 2 or 3 as
+          published by the Free Software Foundation.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program; if not, write to the Free Software Foundation,
-      Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the Free Software Foundation,
+          Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
 
-      On Debian systems, the full text of the GNU General Public
-      License version 2 can be found in the file
-      `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 75
-    end_line: 83
-    matcher: 1-hash
-    rule_length: 96
-    matched_length: 96
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit-old-style-no-advert_3.RULE
-    license_expression: mit-old-style-no-advert
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, distribute, and sell this software and its
-      documentation for any purpose is hereby granted without fee, provided that
-      the above copyright notice appear in all copies and that both that
-      copyright notice and this permission notice appear in supporting
-      documentation, and that the name of M.I.T. not be used in advertising or
-      publicity pertaining to distribution of the software without specific,
-      written prior permission.  M.I.T. makes no representations about the
-      suitability of this software for any purpose.  It is provided "as is"
-      without express or implied warranty.
-  - score: '100.0'
-    start_line: 88
-    end_line: 88
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_rdesc_1.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3'
-  - score: '100.0'
-    start_line: 89
-    end_line: 97
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_96.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 3 of the License, or
-      (at your option) any later version.
+          On Debian systems, the full text of the GNU General Public
+          License version 2 can be found in the file
+          `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+          - key: gpl-3.0
+            name: GNU General Public License 3.0
+            short_name: GPL 3.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            spdx_license_key: GPL-3.0-only
+            spdx_url: https://spdx.org/licenses/GPL-3.0-only
+  - license_expression: mit-old-style-no-advert
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 75
+        end_line: 83
+        matched_length: 96
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit-old-style-no-advert
+        licensedb_identifier: mit-old-style-no-advert_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 96
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, distribute, and sell this software and its
+          documentation for any purpose is hereby granted without fee, provided that
+          the above copyright notice appear in all copies and that both that
+          copyright notice and this permission notice appear in supporting
+          documentation, and that the name of M.I.T. not be used in advertising or
+          publicity pertaining to distribution of the software without specific,
+          written prior permission.  M.I.T. makes no representations about the
+          suitability of this software for any purpose.  It is provided "as is"
+          without express or implied warranty.
+        licenses:
+          - key: mit-old-style-no-advert
+            name: MIT Old Style no advertising
+            short_name: MIT Old Style no advertising
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.yml
+            spdx_license_key: NTP
+            spdx_url: https://spdx.org/licenses/NTP
+  - license_expression: gpl-3.0 AND gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 88
+        end_line: 88
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0
+        licensedb_identifier: gpl-3.0_rdesc_1.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-3'
+        licenses:
+          - key: gpl-3.0
+            name: GNU General Public License 3.0
+            short_name: GPL 3.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            spdx_license_key: GPL-3.0-only
+            spdx_url: https://spdx.org/licenses/GPL-3.0-only
+      - score: '100.0'
+        start_line: 89
+        end_line: 97
+        matched_length: 79
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_96.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 79
+        rule_relevance: 100
+        matched_text: |
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 3 of the License, or
+          (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-  - score: '100.0'
-    start_line: 99
-    end_line: 101
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_405.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the full text of the GNU General Public
-      License version 3 can be found in the file
-      `/usr/share/common-licenses/GPL-3'.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 99
+        end_line: 101
+        matched_length: 26
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0
+        licensedb_identifier: gpl-3.0_405.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 26
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the full text of the GNU General Public
+          License version 3 can be found in the file
+          `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0
+            name: GNU General Public License 3.0
+            short_name: GPL 3.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            spdx_license_key: GPL-3.0-only
+            spdx_url: https://spdx.org/licenses/GPL-3.0-only

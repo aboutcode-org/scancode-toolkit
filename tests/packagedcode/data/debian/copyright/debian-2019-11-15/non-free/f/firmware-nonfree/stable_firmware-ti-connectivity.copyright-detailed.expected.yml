@@ -2,54 +2,76 @@ primary_license: None
 declared_license:
   - Binary redistribution (wl1251)
 license_expression: proprietary-license
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license
 copyright: 2000-2016, Texas Instruments Incorporated
-matches:
-  - score: '100.0'
-    start_line: 9
-    end_line: 65
-    matcher: 1-hash
-    rule_length: 436
-    matched_length: 436
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_556.RULE
-    license_expression: proprietary-license
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "All rights reserved not granted herein.\n\nLimited License.\n\nTexas Instruments\
-      \ Incorporated grants a world-wide, royalty-free, non-exclusive\nlicense under copyrights\
-      \ and patents it now or hereafter owns or controls to\nmake, have made, use, import, offer\
-      \ to sell and sell (\"Utilize\") this software\nsubject to the terms herein.  With respect\
-      \ to the foregoing patent license,\nsuch license is granted  solely to the extent that\
-      \ any such patent is necessary\nto Utilize the software alone.  The patent license shall\
-      \ not apply to any\ncombinations which include this software, other than combinations\
-      \ with devices\nmanufactured by or for TI (“TI Devices”).  No hardware patent is licensed\n\
-      hereunder.\n\nRedistributions must preserve existing copyright notices and reproduce this\n\
-      license (including the above copyright notice and the disclaimer and (if\napplicable)\
-      \ source code license limitations below) in the documentation and/or\nother materials\
-      \ provided with the distribution\n\nRedistribution and use in binary form, without modification,\
-      \ are permitted\nprovided that the following conditions are met:\n\n*\tNo reverse engineering,\
-      \ decompilation, or disassembly of this software\nis permitted with respect to any software\
-      \ provided in binary form.\n\n*\tany redistribution and use are licensed by TI for use\
-      \ only with TI\nDevices.\n\n*\tNothing shall obligate TI to provide you with source code\
-      \ for the\nsoftware licensed and provided to you in object code.\n\nIf software source\
-      \ code is provided to you, modification and redistribution of\nthe source code are permitted\
-      \ provided that the following conditions are met:\n\n*\tany redistribution and use of\
-      \ the source code, including any resulting\nderivative works, are licensed by TI for use\
-      \ only with TI Devices.\n\n*\tany redistribution and use of any object code compiled from\
-      \ the source\ncode and any resulting derivative works, are licensed by TI for use\nonly\
-      \ with TI Devices.\n\nNeither the name of Texas Instruments Incorporated nor the names\
-      \ of its\nsuppliers may be used to endorse or promote products derived from this software\n\
-      without specific prior written permission.\n\nDISCLAIMER.\n\nTHIS SOFTWARE IS PROVIDED\
-      \ BY TI AND TI’S LICENSORS \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING,\
-      \ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS FOR A PARTICULAR\
-      \ PURPOSE ARE DISCLAIMED. IN NO\nEVENT SHALL TI AND TI’S LICENSORS BE LIABLE FOR ANY DIRECT,\
-      \ INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\
-      \ NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\n\
-      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER\
-      \ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING\
-      \ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH\
-      \ DAMAGE."
+license_detections:
+  - license_expression: proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 9
+        end_line: 65
+        matched_length: 436
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_556.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 436
+        rule_relevance: 100
+        matched_text: "All rights reserved not granted herein.\n\nLimited License.\n\nTexas\
+          \ Instruments Incorporated grants a world-wide, royalty-free, non-exclusive\nlicense\
+          \ under copyrights and patents it now or hereafter owns or controls to\nmake, have\
+          \ made, use, import, offer to sell and sell (\"Utilize\") this software\nsubject to\
+          \ the terms herein.  With respect to the foregoing patent license,\nsuch license is\
+          \ granted  solely to the extent that any such patent is necessary\nto Utilize the\
+          \ software alone.  The patent license shall not apply to any\ncombinations which include\
+          \ this software, other than combinations with devices\nmanufactured by or for TI (“TI\
+          \ Devices”).  No hardware patent is licensed\nhereunder.\n\nRedistributions must preserve\
+          \ existing copyright notices and reproduce this\nlicense (including the above copyright\
+          \ notice and the disclaimer and (if\napplicable) source code license limitations below)\
+          \ in the documentation and/or\nother materials provided with the distribution\n\n\
+          Redistribution and use in binary form, without modification, are permitted\nprovided\
+          \ that the following conditions are met:\n\n*\tNo reverse engineering, decompilation,\
+          \ or disassembly of this software\nis permitted with respect to any software provided\
+          \ in binary form.\n\n*\tany redistribution and use are licensed by TI for use only\
+          \ with TI\nDevices.\n\n*\tNothing shall obligate TI to provide you with source code\
+          \ for the\nsoftware licensed and provided to you in object code.\n\nIf software source\
+          \ code is provided to you, modification and redistribution of\nthe source code are\
+          \ permitted provided that the following conditions are met:\n\n*\tany redistribution\
+          \ and use of the source code, including any resulting\nderivative works, are licensed\
+          \ by TI for use only with TI Devices.\n\n*\tany redistribution and use of any object\
+          \ code compiled from the source\ncode and any resulting derivative works, are licensed\
+          \ by TI for use\nonly with TI Devices.\n\nNeither the name of Texas Instruments Incorporated\
+          \ nor the names of its\nsuppliers may be used to endorse or promote products derived\
+          \ from this software\nwithout specific prior written permission.\n\nDISCLAIMER.\n\n\
+          THIS SOFTWARE IS PROVIDED BY TI AND TI’S LICENSORS \"AS IS\" AND ANY EXPRESS OR\n\
+          IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY\
+          \ AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO\nEVENT SHALL TI AND TI’S\
+          \ LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR\
+          \ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE\
+          \ GOODS OR SERVICES; LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER\
+          \ CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\
+          \ TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\
+          \ SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE

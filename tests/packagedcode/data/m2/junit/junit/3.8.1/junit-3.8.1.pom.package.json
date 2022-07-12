@@ -29,15 +29,101 @@
   "code_view_url": "http://junit.cvs.sourceforge.net/junit/",
   "vcs_url": "http://junit.cvs.sourceforge.net/junit/",
   "copyright": null,
-  "license_expression": "cpl-1.0",
-  "declared_license": [
+  "declared_license_expression": "cpl-1.0",
+  "declared_license_expression_spdx": "CPL-1.0",
+  "license_detections": [
     {
-      "name": "Common Public License Version 1.0",
-      "url": "http://www.opensource.org/licenses/cpl1.0.txt",
-      "comments": null,
-      "distribution": null
+      "license_expression": "cpl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cpl-1.0",
+          "licensedb_identifier": "cpl-1.0_5.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "matched_text": "Common Public License Version 1.0",
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.yml",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "cpl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cpl-1.0",
+          "licensedb_identifier": "cpl-1.0_10.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "matched_text": "http://www.opensource.org/licenses/cpl1.0.txt",
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.yml",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'Common Public License Version 1.0', 'url': 'http://www.opensource.org/licenses/cpl1.0.txt', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/junit/junit@3.8.1?classifier=sources"

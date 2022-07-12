@@ -3,6 +3,7 @@ declared_license:
   - BSD-variant
   - GPL-2
 license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0)
+declared_license_expression_spdx: bzip2-1.0.6 AND (GPL-2.0-only AND GPL-2.0-only)
 copyright: |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
@@ -11,84 +12,141 @@ copyright: |
   2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
   1999-2002 Philippe Troin <phil@fifi.org>
   1997-1999 Anthony Fok <foka@debian.org>
-matches:
-  - score: '100.0'
-    start_line: 8
-    end_line: 37
-    matcher: 1-hash
-    rule_length: 233
-    matched_length: 233
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bzip2-libbzip-2010.LICENSE
-    license_expression: bzip2-libbzip-2010
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
+license_detections:
+  - license_expression: bzip2-libbzip-2010
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 8
+        end_line: 37
+        matched_length: 233
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bzip2-libbzip-2010
+        licensedb_identifier: bzip2-libbzip-2010.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 233
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
 
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
 
-      2. The origin of this software must not be misrepresented; you must
-         not claim that you wrote the original software.  If you use this
-         software in a product, an acknowledgment in the product
-         documentation would be appreciated but is not required.
+          2. The origin of this software must not be misrepresented; you must
+             not claim that you wrote the original software.  If you use this
+             software in a product, an acknowledgment in the product
+             documentation would be appreciated but is not required.
 
-      3. Altered source versions must be plainly marked as such, and must
-         not be misrepresented as being the original software.
+          3. Altered source versions must be plainly marked as such, and must
+             not be misrepresented as being the original software.
 
-      4. The name of the author may not be used to endorse or promote
-         products derived from this software without specific prior written
-         permission.
+          4. The name of the author may not be used to endorse or promote
+             products derived from this software without specific prior written
+             permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
-      OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
-      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-      GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 46
-    end_line: 46
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_561.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2'
-  - score: '100.0'
-    start_line: 47
-    end_line: 48
-    matcher: 1-hash
-    rule_length: 21
-    matched_length: 21
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1294.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The full text of the GNU General Public License version 2
-      can be found in /usr/share/common-licenses/GPL-2.
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+          OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+          GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+          WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+          NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bzip2-libbzip-2010
+            name: bzip2 License 2010
+            short_name: bzip2 License 2010
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: bzip
+            homepage_url: https://github.com/asimonov-im/bzip2/blob/master/LICENSE
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bzip2-libbzip-2010
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.yml
+            spdx_license_key: bzip2-1.0.6
+            spdx_url: https://spdx.org/licenses/bzip2-1.0.6
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 46
+        end_line: 46
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_561.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2'
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+      - score: '100.0'
+        start_line: 47
+        end_line: 48
+        matched_length: 21
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1294.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 21
+        rule_relevance: 100
+        matched_text: |
+          The full text of the GNU General Public License version 2
+          can be found in /usr/share/common-licenses/GPL-2.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only

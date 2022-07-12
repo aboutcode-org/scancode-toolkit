@@ -1,30 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 9
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:pods/AWSCore@2.27.0",
@@ -163,8 +137,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -211,8 +233,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -259,8 +329,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -307,8 +425,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -355,8 +521,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -403,8 +617,56 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": "Apache License, Version 2.0",
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "licensedb_identifier": "apache-2.0_48.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "Apache License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -464,8 +726,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -518,8 +828,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -572,8 +930,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -626,8 +1032,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -680,8 +1134,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -734,8 +1236,56 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": "Apache License, Version 2.0",
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "licensedb_identifier": "apache-2.0_48.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "Apache License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -780,8 +1330,10 @@
           "code_view_url": null,
           "vcs_url": "",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -826,8 +1378,10 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

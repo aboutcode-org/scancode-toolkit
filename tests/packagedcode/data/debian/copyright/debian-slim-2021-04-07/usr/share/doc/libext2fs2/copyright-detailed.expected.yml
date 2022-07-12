@@ -2,6 +2,8 @@ primary_license:
 declared_license:
 license_expression: (gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND ntp-0
   AND bsd-new
+declared_license_expression_spdx: (GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND NTP)
+  AND NTP-0 AND BSD-3-Clause
 copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>
   Copyright (c) 1997-2003 Yann Dirson <dirson@debian.org>
@@ -10,94 +12,193 @@ copyright: |
   Copyright (c) 1995-1996 Michael Nonweiler <mrn20@cam.ac.uk>
   Copyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o
   Copyright 1987 by the Student Information Processing Board of the Massachusetts Institute of Technology
-matches:
-  - score: '99.02'
-    start_line: 17
-    end_line: 30
-    matcher: 3-seq
-    rule_length: 102
-    matched_length: 101
-    match_coverage: '99.02'
-    rule_relevance: 100
-    identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
-    license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This package, the EXT2 filesystem utilities, are made available under\nthe\
-      \ GNU General Public License version 2, with the exception of the\n[lib]/[ext2fs] [and]\
-      \ [lib]/[e2p] libraries, which are made available under the\nGNU Library General Public\
-      \ License Version 2, the [lib]/[uuid] library\nwhich is made available under a BSD-style\
-      \ license and the [lib]/[et] [and]\n[lib]/[ss] libraries which are made available under\
-      \ an MIT-style license.\n\n\t[Copyright] ([c]) [1993], [1994], [1995], [1996], [1997],\
-      \ [1998], [1999], [2000], \n\t[2001], [2002], [2003], [2004], [2005], [2006], [2007],\
-      \ [2008] [by] [Theodore] [Ts]'[o]\n\nOn Debian GNU systems, the complete text of the GNU\
-      \ General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.  The\ncomplete\
-      \ text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
-  - score: '100.0'
-    start_line: 38
-    end_line: 45
-    matcher: 2-aho
-    rule_length: 85
-    matched_length: 85
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: ntp-0.LICENSE
-    license_expression: ntp-0
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software and
-         its documentation for any purpose is hereby granted, provided that
-         the names of M.I.T. and the M.I.T. S.I.P.B. not be used in
-         advertising or publicity pertaining to distribution of the software
-         without specific, written prior permission.  M.I.T. and the
-         M.I.T. S.I.P.B. make no representations about the suitability of
-         this software for any purpose.  It is provided "as is" without
-         express or implied warranty.
-  - score: '100.0'
-    start_line: 49
-    end_line: 73
-    matcher: 2-aho
-    rule_length: 210
-    matched_length: 210
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_117.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-         modification, are permitted provided that the following conditions
-         are met:
-         1. Redistributions of source code must retain the above copyright
-            notice, and the entire permission notice in its entirety,
-            including the disclaimer of warranties.
-         2. Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-         3. The name of the author may not be used to endorse or promote
-            products derived from this software without specific prior
-            written permission.
+license_detections:
+  - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.02'
+        start_line: 17
+        end_line: 30
+        matched_length: 101
+        match_coverage: '99.02'
+        matcher: 3-seq
+        license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+        licensedb_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+          - /usr/share/common-licenses/LGPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: "This package, the EXT2 filesystem utilities, are made available under\n\
+          the GNU General Public License version 2, with the exception of the\nlib/ext2fs and\
+          \ lib/e2p libraries, which are made available under the\nGNU Library General Public\
+          \ License Version 2, the lib/uuid library\nwhich is made available under a BSD-style\
+          \ license and the lib/et and\nlib/ss libraries which are made available under an MIT-style\
+          \ license.\n\n\tCopyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, \n\t\
+          2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o\n\nOn Debian GNU systems,\
+          \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
+          \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+          - key: lgpl-2.0
+            name: GNU Library General Public License 2.0
+            short_name: LGPL 2.0
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/lgpl-2.0.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml
+            spdx_license_key: LGPL-2.0-only
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-only
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+          - key: mit-old-style-no-advert
+            name: MIT Old Style no advertising
+            short_name: MIT Old Style no advertising
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.yml
+            spdx_license_key: NTP
+            spdx_url: https://spdx.org/licenses/NTP
+  - license_expression: ntp-0 AND bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 38
+        end_line: 45
+        matched_length: 85
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: ntp-0
+        licensedb_identifier: ntp-0.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 85
+        rule_relevance: 100
+        matched_text: |
+             Permission to use, copy, modify, and distribute this software and
+             its documentation for any purpose is hereby granted, provided that
+             the names of M.I.T. and the M.I.T. S.I.P.B. not be used in
+             advertising or publicity pertaining to distribution of the software
+             without specific, written prior permission.  M.I.T. and the
+             M.I.T. S.I.P.B. make no representations about the suitability of
+             this software for any purpose.  It is provided "as is" without
+             express or implied warranty.
+        licenses:
+          - key: ntp-0
+            name: NTP No Attribution
+            short_name: NTP-0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: https://github.com/tytso/e2fsprogs/blob/master/lib/et/et_name.c
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/ntp-0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.yml
+            spdx_license_key: NTP-0
+            spdx_url: https://spdx.org/licenses/NTP-0
+      - score: '100.0'
+        start_line: 49
+        end_line: 73
+        matched_length: 210
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_117.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 210
+        rule_relevance: 100
+        matched_text: |
+             Redistribution and use in source and binary forms, with or without
+             modification, are permitted provided that the following conditions
+             are met:
+             1. Redistributions of source code must retain the above copyright
+                notice, and the entire permission notice in its entirety,
+                including the disclaimer of warranties.
+             2. Redistributions in binary form must reproduce the above copyright
+                notice, this list of conditions and the following disclaimer in the
+                documentation and/or other materials provided with the distribution.
+             3. The name of the author may not be used to endorse or promote
+                products derived from this software without specific prior
+                written permission.
 
-         THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
-         WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-         OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, ALL OF
-         WHICH ARE HEREBY DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE
-         LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-         CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
-         OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-         BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-         LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-         USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
-         DAMAGE.
+             THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+             WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+             OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, ALL OF
+             WHICH ARE HEREBY DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE
+             LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+             CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+             OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+             BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+             LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+             (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+             USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
+             DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause

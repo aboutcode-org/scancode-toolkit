@@ -1,35 +1,57 @@
 primary_license:
 declared_license:
 license_expression: gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only
 copyright: |
   Copyright (c) 2009 Michael Meskes <meskes@debian.org>
   Copyright (c) 2004-2005 Graham Wilson <graham@debian.org>
   Copyright (c) 1997 Bernd Eckenfels
   Copyright (c) 1997 Peter Tobias <tobias@et-inf.fho-emden.de>
   Copyright (c) 1996 Free Software Foundation, Inc.
-matches:
-  - score: '100.0'
-    start_line: 12
-    end_line: 26
-    matcher: 2-aho
-    rule_length: 128
-    matched_length: 128
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1033.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This program is free software; you can redistribute it and/or modify\n\t\
-      it under the terms of the GNU General Public License as published by\n\tthe Free Software\
-      \ Foundation; version 2 of the License.\n\n\tThis program is distributed in the hope that\
-      \ it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\
-      \tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n\tGNU General Public License\
-      \ for more details.\n\n\tYou should have received a copy of the GNU General Public License\n\
-      \talong with this program; if not, write to the Free Software\n\tFoundation, Inc., 51\
-      \ Franklin St, Fifth Floor, Boston, MA 02110-1301 USA\n\nOn Debian systems, the complete\
-      \ text of the GNU General Public License\ncan be found in /usr/share/common-licenses/GPL-2\
-      \ file."
+license_detections:
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 12
+        end_line: 26
+        matched_length: 128
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1033.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 128
+        rule_relevance: 100
+        matched_text: "\tThis program is free software; you can redistribute it and/or modify\n\
+          \tit under the terms of the GNU General Public License as published by\n\tthe Free\
+          \ Software Foundation; version 2 of the License.\n\n\tThis program is distributed\
+          \ in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the\
+          \ implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See\
+          \ the\n\tGNU General Public License for more details.\n\n\tYou should have received\
+          \ a copy of the GNU General Public License\n\talong with this program; if not, write\
+          \ to the Free Software\n\tFoundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\
+          \ 02110-1301 USA\n\nOn Debian systems, the complete text of the GNU General Public\
+          \ License\ncan be found in /usr/share/common-licenses/GPL-2 file."
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only

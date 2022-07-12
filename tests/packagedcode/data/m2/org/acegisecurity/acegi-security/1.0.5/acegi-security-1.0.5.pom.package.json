@@ -21,8 +21,10 @@
   "code_view_url": "http://acegisecurity.svn.sourceforge.net/viewcvs.cgi/acegisecurity/trunk/acegisecurity/core/",
   "vcs_url": "svn+https://acegisecurity.svn.sourceforge.net/svnroot/acegisecurity/trunk/acegisecurity/core",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.acegisecurity/acegi-security@1.0.5?classifier=sources"

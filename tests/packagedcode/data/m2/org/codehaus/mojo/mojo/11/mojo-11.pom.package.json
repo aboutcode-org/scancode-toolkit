@@ -21,8 +21,10 @@
   "code_view_url": "https://svn.codehaus.org/mojo/trunk/mojo",
   "vcs_url": "svn+https://svn.codehaus.org/mojo/trunk/mojo",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/mojo@11?classifier=sources"

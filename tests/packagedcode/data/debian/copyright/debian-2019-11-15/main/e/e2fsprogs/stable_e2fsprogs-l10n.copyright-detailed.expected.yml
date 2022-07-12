@@ -1,6 +1,7 @@
 primary_license:
 declared_license:
 license_expression: gpl-2.0 AND gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only AND GPL-2.0-only
 copyright: |
   Copyright (c) 2003-2006 Theodore Ts'o <tytso@mit.edu>
   Copyright (c) 1997-2003 Yann Dirson <dirson@debian.org>
@@ -8,40 +9,80 @@ copyright: |
   Copyright (c) 1997 Klee Dienes
   Copyright (c) 1995-1996 Michael Nonweiler <mrn20@cam.ac.uk>
   Copyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o
-matches:
-  - score: '100.0'
-    start_line: 18
-    end_line: '19'
-    matcher: 2-aho
-    rule_length: 14
-    matched_length: 14
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1137.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package, the EXT2 filesystem utilities, is protected by the GNU
-      General Public License.
-  - score: '100.0'
-    start_line: 24
-    end_line: 25
-    matcher: 2-aho
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_563.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian GNU systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-2'.
+license_detections:
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 18
+        end_line: '19'
+        matched_length: 14
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1137.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 14
+        rule_relevance: 100
+        matched_text: |
+          This package, the EXT2 filesystem utilities, is protected by the GNU
+          General Public License.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only
+  - license_expression: gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 24
+        end_line: 25
+        matched_length: 23
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_563.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 23
+        rule_relevance: 100
+        matched_text: |
+          On Debian GNU systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only

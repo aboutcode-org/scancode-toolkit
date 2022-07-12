@@ -35,18 +35,254 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/gionkunz/chartist-js.git",
     "copyright": null,
-    "license_expression": "(mit OR wtfpl-2.0) AND (wtfpl-2.0 AND (wtfpl-2.0 AND unknown)) AND (mit AND (mit AND unknown))",
-    "declared_license": [
-      "MIT OR WTFPL",
+    "declared_license_expression": "(mit OR wtfpl-2.0) AND wtfpl-2.0 AND mit",
+    "declared_license_expression_spdx": "(MIT OR WTFPL) AND WTFPL AND MIT",
+    "license_detections": [
       {
-        "type": "WTFPL",
-        "url": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
+        "license_expression": "mit OR wtfpl-2.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit OR wtfpl-2.0",
+            "licensedb_identifier": "spdx-license-identifier: mit OR wtfpl-2.0",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 100,
+            "matched_text": "MIT OR WTFPL",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              },
+              {
+                "key": "wtfpl-2.0",
+                "name": "WTFPL 2.0",
+                "short_name": "WTFPL 2.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Sam Hocevar",
+                "homepage_url": "http://sam.zoy.org/wtfpl/",
+                "text_url": "http://sam.zoy.org/wtfpl/COPYING",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "spdx_license_key": "WTFPL",
+                "spdx_url": "https://spdx.org/licenses/WTFPL"
+              }
+            ]
+          }
+        ]
       },
       {
-        "type": "MIT",
-        "url": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
+        "license_expression": "wtfpl-2.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 50.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "wtfpl-2.0",
+            "licensedb_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 50,
+            "matched_text": "WTFPL",
+            "licenses": [
+              {
+                "key": "wtfpl-2.0",
+                "name": "WTFPL 2.0",
+                "short_name": "WTFPL 2.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Sam Hocevar",
+                "homepage_url": "http://sam.zoy.org/wtfpl/",
+                "text_url": "http://sam.zoy.org/wtfpl/COPYING",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "spdx_license_key": "WTFPL",
+                "spdx_url": "https://spdx.org/licenses/WTFPL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "wtfpl-2.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "wtfpl-2.0",
+            "licensedb_identifier": "wtfpl-2.0_33.RULE",
+            "referenced_filenames": [
+              "LICENSE-WTFPL"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 100,
+            "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL",
+            "licenses": [
+              {
+                "key": "wtfpl-2.0",
+                "name": "WTFPL 2.0",
+                "short_name": "WTFPL 2.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Sam Hocevar",
+                "homepage_url": "http://sam.zoy.org/wtfpl/",
+                "text_url": "http://sam.zoy.org/wtfpl/COPYING",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "spdx_license_key": "WTFPL",
+                "spdx_url": "https://spdx.org/licenses/WTFPL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "mit",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "licensedb_identifier": "spdx-license-identifier: mit",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "MIT",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "mit",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "mit",
+            "licensedb_identifier": "mit_30.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 100,
+            "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
       }
     ],
+    "extracted_license_statement": "['MIT OR WTFPL', {'type': 'WTFPL', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL'}, {'type': 'MIT', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT'}]",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

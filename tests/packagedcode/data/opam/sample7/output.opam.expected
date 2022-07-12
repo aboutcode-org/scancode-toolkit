@@ -44,8 +44,72 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/Chris00/ANSITerminal.git",
     "copyright": null,
-    "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-    "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
+    "declared_license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+    "declared_license_expression_spdx": "LGPL-3.0-only WITH OCaml-LGPL-linking-exception",
+    "license_detections": [
+      {
+        "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 9,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+            "licensedb_identifier": "spdx-license-identifier: lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 9,
+            "rule_relevance": 100,
+            "matched_text": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
+            "licenses": [
+              {
+                "key": "lgpl-3.0",
+                "name": "GNU Lesser General Public License 3.0",
+                "short_name": "LGPL 3.0",
+                "category": "Copyleft Limited",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/lgpl-3.0.html",
+                "text_url": "http://www.gnu.org/licenses/lgpl-3.0-standalone.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-3.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.yml",
+                "spdx_license_key": "LGPL-3.0-only",
+                "spdx_url": "https://spdx.org/licenses/LGPL-3.0-only"
+              },
+              {
+                "key": "ocaml-lgpl-linking-exception",
+                "name": "OCaml LGPL Linking Exception",
+                "short_name": "OCaml LGPL Linking Exception",
+                "category": "Copyleft Limited",
+                "is_exception": true,
+                "is_unknown": false,
+                "owner": "OCaml",
+                "homepage_url": "https://caml.inria.fr/ocaml/license.en.html",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/ocaml-lgpl-linking-exception",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ocaml-lgpl-linking-exception.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ocaml-lgpl-linking-exception.yml",
+                "spdx_license_key": "OCaml-LGPL-linking-exception",
+                "spdx_url": "https://spdx.org/licenses/OCaml-LGPL-linking-exception"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

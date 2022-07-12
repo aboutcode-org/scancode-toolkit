@@ -7,6 +7,14 @@ license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-ne
   AND bsd-zero AND fsf-ap AND fsf-ap AND fsf-ap AND fsf-ap AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
   AND fsf-ap AND fsf-ap AND gpl-3.0-plus WITH autoconf-exception-3.0 AND fsf-ap AND fsf-ap AND
   free-unknown
+declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND BSD-3-Clause AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND 0BSD AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND 0BSD AND 0BSD AND 0BSD AND
+  0BSD AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND BSD-3-Clause
+  AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND GPL-3.0-or-later WITH Autoconf-exception-3.0
+  AND 0BSD AND FSFAP AND FSFAP AND FSFAP AND FSFAP AND GPL-2.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
+  AND FSFAP AND FSFAP AND GPL-3.0-or-later WITH Autoconf-exception-3.0 AND FSFAP AND FSFAP AND
+  LicenseRef-scancode-free-unknown
 copyright: |
   Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL
   Copyright Free Software Foundation, Inc.
@@ -37,538 +45,1129 @@ copyright: |
   Copyright 2002, 2003, 2004 SuSE Linux AG
   Germany Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH
   Copyright 2015 Bjorn Esser
-matches:
-  - score: '97.06'
-    start_line: 14
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 33
-    matched_length: 33
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_297.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The overall license for [libxcrypt] is the GNU Lesser General Public
-      License, version 2.1 (or, at your option, any later version); see
-      the file COPYING.LIB for the full terms of this license.
-  - score: '100.0'
-    start_line: 22
-    end_line: 22
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_392.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'LGPL (v2.1 or later):'
-  - score: '100.0'
-    start_line: 25
-    end_line: 25
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_392.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'LGPL (v2.1 or later):'
-  - score: '100.0'
-    start_line: 29
-    end_line: 29
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_308.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '3-clause BSD:'
-  - score: '100.0'
-    start_line: 33
-    end_line: 33
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 36
-    end_line: 36
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 40
-    end_line: 40
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 43
-    end_line: 43
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 47
-    end_line: 47
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 50
-    end_line: 50
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 55
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 61
-    end_line: 61
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 64
-    end_line: 64
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 67
-    end_line: 67
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 71
-    end_line: 71
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 74
-    end_line: 74
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 77
-    end_line: 77
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 80
-    end_line: 80
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_308.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '3-clause BSD:'
-  - score: '100.0'
-    start_line: 83
-    end_line: 83
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 86
-    end_line: 86
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '99.0'
-    start_line: 98
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
-    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v3 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 101
-    end_line: 101
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 104
-    end_line: 104
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 107
-    end_line: 107
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 111
-    end_line: 111
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 114
-    end_line: 114
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '99.0'
-    start_line: 118
-    end_line: 118
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
-    license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v2 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 121
-    end_line: 121
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 124
-    end_line: 124
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '99.0'
-    start_line: 128
-    end_line: 128
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
-    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v3 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 131
-    end_line: 131
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 134
-    end_line: 134
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 137
-    end_line: 139
-    matcher: 2-aho
-    rule_length: 27
-    matched_length: 27
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: free-unknown_120.RULE
-    license_expression: free-unknown
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Copyright holders unknown, no statement of license (all of these
-         files are part of the testsuite and do not contribute to the
-         installed library or its headers):
+license_detections:
+  - license_expression: lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '97.06'
+        start_line: 14
+        end_line: 16
+        matched_length: 33
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_297.RULE
+        referenced_filenames:
+          - COPYING.LIB
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 33
+        rule_relevance: 100
+        matched_text: |
+          The overall license for libxcrypt is the GNU Lesser General Public
+          License, version 2.1 (or, at your option, any later version); see
+          the file COPYING.LIB for the full terms of this license.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+  - license_expression: lgpl-2.1-plus AND bsd-new AND public-domain AND bsd-zero AND bsd-simplified
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 22
+        end_line: 22
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_392.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 5
+        rule_relevance: 100
+        matched_text: ' * Copyright Thorsten Kukuk, Björn Esser, Zack Weinberg; LGPL (v2.1 or
+          later):'
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+      - score: '100.0'
+        start_line: 25
+        end_line: 25
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_392.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 5
+        rule_relevance: 100
+        matched_text: ' * Copyright Free Software Foundation, Inc.; LGPL (v2.1 or later):'
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+      - score: '100.0'
+        start_line: 29
+        end_line: 29
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_308.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright David Burren et al.; 3-clause BSD:'
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 33
+        end_line: 33
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_426.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Public domain, written by Ulrich Drepper et al.:'
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 36
+        end_line: 36
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_426.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Public domain, written by Solar Designer et al.:'
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 40
+        end_line: 40
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Solar Designer, Colin Percival; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+      - score: '100.0'
+        start_line: 43
+        end_line: 43
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Solar Designer, Colin Percival; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 47
+        end_line: 47
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Colin Percival; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 50
+        end_line: 50
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Alexey Degtyarev; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+  - license_expression: bsd-zero
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 55
+        end_line: 55
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Vitaly Chikunov, Björn Esser; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+  - license_expression: bsd-zero AND bsd-simplified AND public-domain AND bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 61
+        end_line: 61
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Alexander Peslyak; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+      - score: '100.0'
+        start_line: 64
+        end_line: 64
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Alexander Peslyak, Björn Esser; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+      - score: '100.0'
+        start_line: 67
+        end_line: 67
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Björn Esser; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+      - score: '100.0'
+        start_line: 71
+        end_line: 71
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Michael Bretterklieber, Björn Esser et al.; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 74
+        end_line: 74
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Zack Weinberg; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 77
+        end_line: 77
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_426.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Public domain, written by Steve Reid et al.:'
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+      - score: '100.0'
+        start_line: 80
+        end_line: 80
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_308.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Juniper Networks, Inc.; 3-clause BSD:'
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+      - score: '100.0'
+        start_line: 83
+        end_line: 83
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_156.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright Björn Esser; 2-clause BSD:'
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+      - score: '100.0'
+        start_line: 86
+        end_line: 86
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        licensedb_identifier: public-domain_426.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Public domain, written by Zack Weinberg et al.:'
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression:
+    detection_rules: []
+    matches:
+      - score: '99.0'
+        start_line: 98
+        end_line: 98
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
+        licensedb_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 7
+        rule_relevance: 99
+        matched_text: '   GPL (v3 or later), with Autoconf exception:'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+          - key: autoconf-exception-3.0
+            name: Autoconf exception to GPL 3.0
+            short_name: Autoconf exception to GPL 3.0
+            category: Copyleft Limited
+            is_exception: yes
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html
+            text_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html
+            reference_url: https://scancode-licensedb.aboutcode.org/autoconf-exception-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-exception-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-exception-3.0.yml
+            spdx_license_key: Autoconf-exception-3.0
+            spdx_url: https://spdx.org/licenses/Autoconf-exception-3.0
+      - score: '100.0'
+        start_line: 101
+        end_line: 101
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        licensedb_identifier: bsd-zero_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: ' * Copyright <vt at altlinux.org>; 0-clause BSD:'
+        licenses:
+          - key: bsd-zero
+            name: BSD Zero Clause License
+            short_name: BSD Zero Clause License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Rob Landley
+            homepage_url: http://landley.net/toybox/license.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-zero
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-zero.yml
+            spdx_license_key: 0BSD
+            spdx_url: https://spdx.org/licenses/0BSD
+      - score: '100.0'
+        start_line: 104
+        end_line: 104
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Kevin Cernekee; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 107
+        end_line: 107
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Maarten Bosmans; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 111
+        end_line: 111
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: '   FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 114
+        end_line: 114
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Mike Frysinger; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '99.0'
+        start_line: 118
+        end_line: 118
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+        licensedb_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 7
+        rule_relevance: 99
+        matched_text: '   GPL (v2 or later), with Autoconf exception:'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+          - key: autoconf-simple-exception-2.0
+            name: Autoconf simple exception to GPL-2.0
+            short_name: Autoconf simple exception to GPL-2.0
+            category: Copyleft Limited
+            is_exception: yes
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/autoconf-simple-exception-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.yml
+            spdx_license_key: LicenseRef-scancode-autoconf-simple-exception-2.0
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
+      - score: '100.0'
+        start_line: 121
+        end_line: 121
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Tim Toolan; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 124
+        end_line: 124
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Philip Withnall; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '99.0'
+        start_line: 128
+        end_line: 128
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
+        licensedb_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 7
+        rule_relevance: 99
+        matched_text: '   GPL (v3 or later), with Autoconf exception:'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+          - key: autoconf-exception-3.0
+            name: Autoconf exception to GPL 3.0
+            short_name: Autoconf exception to GPL 3.0
+            category: Copyleft Limited
+            is_exception: yes
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html
+            text_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html
+            reference_url: https://scancode-licensedb.aboutcode.org/autoconf-exception-3.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-exception-3.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-exception-3.0.yml
+            spdx_license_key: Autoconf-exception-3.0
+            spdx_url: https://spdx.org/licenses/Autoconf-exception-3.0
+      - score: '100.0'
+        start_line: 131
+        end_line: 131
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Francesco Salvestrini; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 134
+        end_line: 134
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        licensedb_identifier: fsf-ap_6.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: ' * Copyright Andrew Collier; FSF All Permissive License:'
+        licenses:
+          - key: fsf-ap
+            name: FSF All Permissive License
+            short_name: FSF All Permissive License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            spdx_license_key: FSFAP
+            spdx_url: https://spdx.org/licenses/FSFAP
+      - score: '100.0'
+        start_line: 137
+        end_line: 139
+        matched_length: 27
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: free-unknown
+        licensedb_identifier: free-unknown_120.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 27
+        rule_relevance: 100
+        matched_text: |
+           * Copyright holders unknown, no statement of license (all of these
+             files are part of the testsuite and do not contribute to the
+             installed library or its headers):
+        licenses:
+          - key: free-unknown
+            name: Free unknown license detected but not recognized
+            short_name: Free unknown
+            category: Unstated License
+            is_exception: no
+            is_unknown: yes
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/free-unknown
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
+            spdx_license_key: LicenseRef-scancode-free-unknown
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE

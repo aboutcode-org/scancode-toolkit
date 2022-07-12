@@ -3,106 +3,147 @@ declared_license:
   - Binary redistribution (AMD permissive)
   - Binary redistribution (AMD restrictive)
 license_expression: mit AND amd-linux-firmware
+declared_license_expression_spdx: MIT AND LicenseRef-scancode-amd-linux-firmware
 copyright: |
   2000-2009, Advanced Micro Devices, Inc.
   2009-2016, Advanced Micro Devices, Inc.
-matches:
-  - score: '97.67'
-    start_line: 14
-    end_line: 31
-    matcher: 3-seq
-    rule_length: 168
-    matched_length: 168
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit_x11-r75_58.RULE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      copy of this software and associated documentation files (the "Software"),
-      to deal in the Software without restriction, including without limitation
-      the rights to use, copy, modify, merge, publish, distribute, sublicense,
-      and/or sell copies of the Software, and to permit persons to whom the
-      Software is furnished to do so, subject to the following conditions:
+license_detections:
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '97.67'
+        start_line: 14
+        end_line: 31
+        matched_length: 168
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: mit
+        licensedb_identifier: mit_x11-r75_58.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 168
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a
+          copy of this software and associated documentation files (the "Software"),
+          to deal in the Software without restriction, including without limitation
+          the rights to use, copy, modify, merge, publish, distribute, sublicense,
+          and/or sell copies of the Software, and to permit persons to whom the
+          Software is furnished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice (including the next
-      paragraph) shall be included in all copies or substantial portions of the
-      Software.
+          The above copyright notice and this permission notice (including the next
+          paragraph) shall be included in all copies or substantial portions of the
+          Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-      [IN] [NO] [EVENT] [SHALL] THE COPYRIGHT OWNER(S) AND/OR ITS SUPPLIERS BE
-      LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-      OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 38
-    end_line: 86
-    matcher: 2-aho
-    rule_length: 427
-    matched_length: 427
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: amd-linux-firmware.LICENSE
-    license_expression: amd-linux-firmware
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      REDISTRIBUTION: Permission is hereby granted, free of any license fees,
-      to any person obtaining a copy of this microcode (the "Software"), to
-      install, reproduce, copy and distribute copies, in binary form only, of
-      the Software and to permit persons to whom the Software is provided to
-      do the same, provided that the following conditions are met:
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+          IN NO EVENT SHALL THE COPYRIGHT OWNER(S) AND/OR ITS SUPPLIERS BE
+          LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+          OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+          WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: amd-linux-firmware
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 38
+        end_line: 86
+        matched_length: 427
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: amd-linux-firmware
+        licensedb_identifier: amd-linux-firmware.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 427
+        rule_relevance: 100
+        matched_text: |
+          REDISTRIBUTION: Permission is hereby granted, free of any license fees,
+          to any person obtaining a copy of this microcode (the "Software"), to
+          install, reproduce, copy and distribute copies, in binary form only, of
+          the Software and to permit persons to whom the Software is provided to
+          do the same, provided that the following conditions are met:
 
-      No reverse engineering, decompilation, or disassembly of this Software
-      is permitted.
+          No reverse engineering, decompilation, or disassembly of this Software
+          is permitted.
 
-      Redistributions must reproduce the above copyright notice, this
-      permission notice, and the following disclaimers and notices in the
-      Software documentation and/or other materials provided with the
-      Software.
+          Redistributions must reproduce the above copyright notice, this
+          permission notice, and the following disclaimers and notices in the
+          Software documentation and/or other materials provided with the
+          Software.
 
-      DISCLAIMER: THE USE OF THE SOFTWARE IS AT YOUR SOLE RISK.  THE SOFTWARE
-      IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND AND COPYRIGHT
-      HOLDER AND ITS LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES, EXPRESS AND
-      IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
-      COPYRIGHT HOLDER AND ITS LICENSORS DO NOT WARRANT THAT THE SOFTWARE WILL
-      MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE
-      UNINTERRUPTED OR ERROR-FREE.  THE ENTIRE RISK ASSOCIATED WITH THE USE OF
-      THE SOFTWARE IS ASSUMED BY YOU.  FURTHERMORE, COPYRIGHT HOLDER AND ITS
-      LICENSORS DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE
-      OR THE RESULTS OF THE USE OF THE SOFTWARE IN TERMS OF ITS CORRECTNESS,
-      ACCURACY, RELIABILITY, CURRENTNESS, OR OTHERWISE.
+          DISCLAIMER: THE USE OF THE SOFTWARE IS AT YOUR SOLE RISK.  THE SOFTWARE
+          IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND AND COPYRIGHT
+          HOLDER AND ITS LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES, EXPRESS AND
+          IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+          COPYRIGHT HOLDER AND ITS LICENSORS DO NOT WARRANT THAT THE SOFTWARE WILL
+          MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE
+          UNINTERRUPTED OR ERROR-FREE.  THE ENTIRE RISK ASSOCIATED WITH THE USE OF
+          THE SOFTWARE IS ASSUMED BY YOU.  FURTHERMORE, COPYRIGHT HOLDER AND ITS
+          LICENSORS DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE
+          OR THE RESULTS OF THE USE OF THE SOFTWARE IN TERMS OF ITS CORRECTNESS,
+          ACCURACY, RELIABILITY, CURRENTNESS, OR OTHERWISE.
 
-      DISCLAIMER: UNDER NO CIRCUMSTANCES INCLUDING NEGLIGENCE, SHALL COPYRIGHT
-      HOLDER AND ITS LICENSORS OR ITS DIRECTORS, OFFICERS, EMPLOYEES OR AGENTS
-      ("AUTHORIZED REPRESENTATIVES") BE LIABLE FOR ANY INCIDENTAL, INDIRECT,
-      SPECIAL OR CONSEQUENTIAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS
-      PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, AND THE
-      LIKE) ARISING OUT OF THE USE, MISUSE OR INABILITY TO USE THE SOFTWARE,
-      BREACH OR DEFAULT, INCLUDING THOSE ARISING FROM INFRINGEMENT OR ALLEGED
-      INFRINGEMENT OF ANY PATENT, TRADEMARK, COPYRIGHT OR OTHER INTELLECTUAL
-      PROPERTY RIGHT EVEN IF COPYRIGHT HOLDER AND ITS AUTHORIZED
-      REPRESENTATIVES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN
-      NO EVENT SHALL COPYRIGHT HOLDER OR ITS AUTHORIZED REPRESENTATIVES TOTAL
-      LIABILITY FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION (WHETHER IN
-      CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE) EXCEED THE AMOUNT OF
-      US$10.
+          DISCLAIMER: UNDER NO CIRCUMSTANCES INCLUDING NEGLIGENCE, SHALL COPYRIGHT
+          HOLDER AND ITS LICENSORS OR ITS DIRECTORS, OFFICERS, EMPLOYEES OR AGENTS
+          ("AUTHORIZED REPRESENTATIVES") BE LIABLE FOR ANY INCIDENTAL, INDIRECT,
+          SPECIAL OR CONSEQUENTIAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS
+          PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, AND THE
+          LIKE) ARISING OUT OF THE USE, MISUSE OR INABILITY TO USE THE SOFTWARE,
+          BREACH OR DEFAULT, INCLUDING THOSE ARISING FROM INFRINGEMENT OR ALLEGED
+          INFRINGEMENT OF ANY PATENT, TRADEMARK, COPYRIGHT OR OTHER INTELLECTUAL
+          PROPERTY RIGHT EVEN IF COPYRIGHT HOLDER AND ITS AUTHORIZED
+          REPRESENTATIVES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN
+          NO EVENT SHALL COPYRIGHT HOLDER OR ITS AUTHORIZED REPRESENTATIVES TOTAL
+          LIABILITY FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION (WHETHER IN
+          CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE) EXCEED THE AMOUNT OF
+          US$10.
 
-      Notice:  The Software is subject to United States export laws and
-      regulations.  You agree to comply with all domestic and international
-      export laws and regulations that apply to the Software, including but
-      not limited to the Export Administration Regulations administered by the
-      U.S. Department of Commerce and International Traffic in Arm Regulations
-      administered by the U.S. Department of State.  These laws include
-      restrictions on destinations, end users and end use.
+          Notice:  The Software is subject to United States export laws and
+          regulations.  You agree to comply with all domestic and international
+          export laws and regulations that apply to the Software, including but
+          not limited to the Export Administration Regulations administered by the
+          U.S. Department of Commerce and International Traffic in Arm Regulations
+          administered by the U.S. Department of State.  These laws include
+          restrictions on destinations, end users and end use.
+        licenses:
+          - key: amd-linux-firmware
+            name: AMD Linux Firmware License
+            short_name: AMD Linux Firmware License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Advanced Micro Devices
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.radeon
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/amd-linux-firmware
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.yml
+            spdx_license_key: LicenseRef-scancode-amd-linux-firmware
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE

@@ -4,246 +4,331 @@ declared_license:
   - Proprietary_2
   - GPL-2+
 license_expression: proprietary-license AND broadcom-proprietary AND (gpl-2.0-plus AND gpl-2.0-plus)
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-broadcom-proprietary
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 copyright: |
   2006, Broadcom Corporation
   2015, Raspberry Pi (Trading) Ltd
   2015 Broadcom Corporation
   2015 Paolo Pisati <paolo.pisati@canonical.com>
-matches:
-  - score: '100.0'
-    start_line: 21
-    end_line: 45
-    matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_600.RULE
-    license_expression: proprietary-license
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.  Redistribution and use in binary form, without
-      modification, are permitted provided that the following conditions are
-      met:
+license_detections:
+  - license_expression: proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 21
+        end_line: 45
+        matched_length: 203
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_600.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 203
+        rule_relevance: 100
+        matched_text: |
+          Redistribution.  Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      * This software may only be used for the purposes of developing for,
-        running or using a Raspberry Pi device.
-      * Redistributions must reproduce the above copyright notice and the
-        following disclaimer in the documentation and/or other materials
-        provided with the distribution.
-      * Neither the name of Broadcom Corporation nor the names of its suppliers
-        may be used to endorse or promote products derived from this software
-        without specific prior written permission.
+          * This software may only be used for the purposes of developing for,
+            running or using a Raspberry Pi device.
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
+          * Neither the name of Broadcom Corporation nor the names of its suppliers
+            may be used to endorse or promote products derived from this software
+            without specific prior written permission.
 
-      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-      COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-      DAMAGE.
-  - score: '100.0'
-    start_line: 51
-    end_line: 254
-    matcher: 1-hash
-    rule_length: 1770
-    matched_length: 1770
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: broadcom-proprietary_1.RULE
-    license_expression: broadcom-proprietary
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
-      \ execute a separate written\nsoftware license agreement governing use of the accompanying\
-      \ software, this\nsoftware is licensed to you under the terms of this Software License\
-      \ Agreement\n(“Agreement”).\n\nANY USE, REPRODUCTION OR DISTRIBUTION OF THE SOFTWARE CONSTITUTES\
-      \ YOUR\nACCEPTANCE OF THIS AGREEMENT.\n\n1.\tDEFINITIONS.\n\n1.1.\t“Broadcom Product”\
-      \ means any of the proprietary integrated circuit\nproduct(s) sold by Broadcom with which\
-      \ the Software was designed to be used, or\ntheir successors.\n\n1.2.\t“Licensee” means\
-      \ you or if you are accepting on behalf of an entity\nthen the entity and its affiliates\
-      \ exercising rights under, and complying with\nall of the terms of this Agreement.\n\n\
-      1.3.\t“Software” shall mean that software made available by Broadcom to\nLicensee in binary\
-      \ code form with this Agreement.\n\n2.\tLICENSE GRANT; OWNERSHIP\n\n2.1.\tLicense Grants.\
-      \  Subject to the terms and conditions of this Agreement,\nBroadcom hereby grants to Licensee\
-      \ a non-exclusive, non-transferable,\nroyalty-free license (i) to use and integrate the\
-      \ Software in conjunction with\nany other software; and (ii) to reproduce and distribute\
-      \ the Software complete,\nunmodified and as provided by Broadcom, and only for use with\
-      \ a Broadcom\nProduct.\n\n2.2.\tRestriction on Modification.  Licensee may not make any\
-      \ modifications\nto the Software.\n\n2.3.\tRestriction on Distribution.  Licensee shall\
-      \ only distribute the\nSoftware under the terms of this Agreement and a copy of this Agreement\n\
-      accompanies such distribution.\n\n2.4.\tProprietary Notices.  Licensee shall not remove,\
-      \ efface or obscure any\ncopyright or trademark notices from the Software.  Licensee shall\
-      \ include\nreproductions of the Broadcom copyright notice with each copy of the Software,\n\
-      except where such Software is embedded in a manner not readily accessible to\nthe end\
-      \ user.  Licensee acknowledges that any symbols, trademarks, tradenames,\nand service\
-      \ marks adopted by Broadcom to identify the Software belong to\nBroadcom and that Licensee\
-      \ shall have no rights therein.\n\n2.5.\tOwnership.  Broadcom shall retain all right,\
-      \ title and interest,\nincluding all intellectual property rights, in and to the Software.\
-      \  Licensee\nhereby covenants that it will not assert any claim that the Software created\
-      \ by\nor for Broadcom infringe any intellectual property right owned or controlled by\n\
-      Licensee; provided however, the foregoing shall not apply in case the Agreement\nis terminated.\n\
-      \n2.6.\tNo Other Rights Granted; Restrictions.  Apart from the license rights\nexpressly\
-      \ set forth in this Agreement, Broadcom does not grant and Licensee\ndoes not receive\
-      \ any ownership right, title or interest nor any security\ninterest or other interest\
-      \ in any intellectual property rights relating to the\nSoftware, nor in any copy of any\
-      \ part of the foregoing.  No license is granted\nto Licensee in any human readable code\
-      \ of the Software (source code). Licensee\nshall not (i) use, license, sell or otherwise\
-      \ distribute the Software except as\nprovided in this Agreement, (ii) attempt to modify\
-      \ in any way, reverse\nengineer, decompile or disassemble any portion of the Software;\
-      \ or (iii) use\nthe Software or other material in violation of any applicable law or\n\
-      regulation, including but not limited to any regulatory agency, such as FCC,\nrules.\n\
-      \n3.\tNO WARRANTY OR SUPPORT\n\n3.1.\tNo Warranty. THE SOFTWARE IS OFFERED “AS IS,” AND\
-      \ BROADCOM GRANTS AND\nLICENSEE RECEIVES NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED,\
-      \ BY STATUTE,\nCOMMUNICATION OR CONDUCT WITH LICENSEE, OR OTHERWISE.  BROADCOM SPECIFICALLY\n\
-      DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A SPECIFIC\nPURPOSE OR\
-      \ NONINFRINGEMENT CONCERNING THE SOFTWARE OR ANY UPGRADES TO OR\nDOCUMENTATION FOR THE\
-      \ SOFTWARE.  WITHOUT LIMITATION OF THE ABOVE, BROADCOM\nGRANTS NO WARRANTY THAT THE SOFTWARE\
-      \ IS ERROR-FREE OR WILL OPERATE WITHOUT\nINTERRUPTION, AND GRANTS NO WARRANTY REGARDING\
-      \ ITS USE OR THE RESULTS THEREFROM\nINCLUDING, WITHOUT LIMITATION, ITS CORRECTNESS, ACCURACY\
-      \ OR RELIABILITY.\n\n3.2.\tNo Support.  Nothing in this agreement shall obligate Broadcom\
-      \ to\nprovide any support for the Software. Broadcom may, but shall be under no\nobligation\
-      \ to, correct any defects in the Software and/or provide updates to\nlicensees of the\
-      \ Software.  Licensee shall make reasonable efforts to promptly\nreport to Broadcom any\
-      \ defects it finds in the Software, as an aid to creating\nimproved revisions of the Software.\n\
-      \n3.3.\tDangerous Applications.  The Software is not designed, intended, or\ncertified\
-      \ for use in components of systems intended for the operation of\nweapons, weapons systems,\
-      \ nuclear installations, means of mass transportation,\naviation, life-support computers\
-      \ or equipment (including resuscitation\nequipment and surgical implants), pollution control,\
-      \ hazardous substances\nmanagement, or for any other dangerous application in which the\
-      \ failure of the\nSoftware could create a situation where personal injury or death may\
-      \ occur.\nLicensee understands that use of the Software in such applications is fully\
-      \ at\nthe risk of Licensee.\n\n4.\tTERM AND TERMINATION\n\n4.1.\tTermination.  This Agreement\
-      \ will automatically terminate if Licensee\nfails to comply with any of the terms and\
-      \ conditions hereof. In such event,\nLicensee must destroy all copies of the Software\
-      \ and all of its component\nparts.\n\n4.2.\tEffect Of Termination.  Upon any termination\
-      \ of this Agreement, the\nrights and licenses granted to Licensee under this Agreement\
-      \ shall immediately\nterminate.\n\n4.3.\tSurvival.  The rights and obligations under this\
-      \ Agreement which by\ntheir nature should survive termination will remain in effect after\
-      \ expiration\nor termination of this Agreement.\n\n5.\tCONFIDENTIALITY\n\n5.1.\tObligations.\
-      \  Licensee acknowledges and agrees that any documentation\nrelating to the Software,\
-      \ and any other information (if such other information\nis identified as confidential\
-      \ or should be recognized as confidential under the\ncircumstances) provided to Licensee\
-      \ by Broadcom hereunder (collectively,\n“Confidential Information”) constitute the confidential\
-      \ and proprietary\ninformation of Broadcom, and that Licensee’s protection thereof is\
-      \ an essential\ncondition to Licensee’s use and possession of the Software.  Licensee\
-      \ shall\nretain all Confidential Information in strict confidence and not disclose it\
-      \ to\nany third party or use it in any way except under a written agreement with\nterms\
-      \ and conditions at least as protective as the terms of this Section.\nLicensee will exercise\
-      \ at least the same amount of diligence in preserving the\nsecrecy of the Confidential\
-      \ Information as it uses in preserving the secrecy of\nits own most valuable confidential\
-      \ information, but in no event less than\nreasonable diligence.  Information shall not\
-      \ be considered Confidential\nInformation if and to the extent that it: (i) was in the\
-      \ public domain at the\ntime it was disclosed or has entered the public domain through\
-      \ no fault of\nLicensee; (ii) was known to Licensee, without restriction, at the time\
-      \ of\ndisclosure as proven by the files of Licensee in existence at the time of\ndisclosure;\
-      \ or (iii) becomes known to Licensee, without restriction, from a\nsource other than Broadcom\
-      \ without breach of this Agreement by Licensee and\notherwise not in violation of Broadcom’s\
-      \ rights.\n\n5.2.\tReturn of Confidential Information.  Notwithstanding the foregoing,\
-      \ all\ndocuments and other tangible objects containing or representing Broadcom\nConfidential\
-      \ Information and all copies thereof which are in the possession of\nLicensee shall be\
-      \ and remain the property of Broadcom, and shall be promptly\nreturned to Broadcom upon\
-      \ written request by Broadcom or upon termination of\nthis Agreement.\n\n6.\tLIMITATION\
-      \ OF LIABILITY TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO\nEVENT SHALL BROADCOM OR\
-      \ ANY OF BROADCOM’S LICENSORS HAVE ANY LIABILITY FOR ANY\nINDIRECT, INCIDENTAL, SPECIAL,\
-      \ OR CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER FOR\
-      \ BREACH OF CONTRACT, TORT (INCLUDING\nNEGLIGENCE) OR OTHERWISE, ARISING OUT OF THIS AGREEMENT,\
-      \ INCLUDING BUT NOT\nLIMITED TO LOSS OF PROFITS, EVEN IF SUCH PARTY HAS BEEN ADVISED OF\
-      \ THE\nPOSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL BROADCOM’S LIABILITY WHETHER IN\n\
-      CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, EXCEED THE AMOUNT PAID BY\nLICENSEE\
-      \ FOR SOFTWARE UNDER THIS AGREEMENT.  THESE LIMITATIONS SHALL APPLY\nNOTWITHSTANDING ANY\
-      \ FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.\n\n7.\tMISCELLANEOUS\n\n7.1.\tExport\
-      \ Regulations. YOU UNDERSTAND AND AGREE THAT THE SOFTWARE IS\nSUBJECT TO UNITED STATES\
-      \ AND OTHER APPLICABLE EXPORT-RELATED LAWS AND\nREGULATIONS AND THAT YOU MAY NOT EXPORT,\
-      \ RE-EXPORT OR TRANSFER THE SOFTWARE OR\nANY DIRECT PRODUCT OF THE SOFTWARE EXCEPT AS\
-      \ PERMITTED UNDER THOSE LAWS.\nWITHOUT LIMITING THE FOREGOING, EXPORT, RE-EXPORT OR TRANSFER\
-      \ OF THE SOFTWARE\nTO CUBA, IRAN, NORTH KOREA, SUDAN AND SYRIA IS PROHIBITED.\n\n7.2\t\
-      Assignment. This Agreement shall be binding upon and inure to the\nbenefit of the parties\
-      \ and their respective successors and assigns, provided,\nhowever that Licensee may not\
-      \ assign this Agreement or any rights or obligation\nhereunder, directly or indirectly,\
-      \ by operation of law or otherwise, without\nthe prior written consent of Broadcom, and\
-      \ any such attempted assignment shall\nbe void.  Notwithstanding the foregoing, Licensee\
-      \ may assign this Agreement to\na successor to all or substantially all of its business\
-      \ or assets to which this\nAgreement relates that is not a competitor of Broadcom.\n\n\
-      7.3.\tGoverning Law; Venue.  This Agreement shall be governed by the laws of\nCalifornia\
-      \ without regard to any conflict-of-laws rules, and the United Nations\nConvention on\
-      \ Contracts for the International Sale of Goods is hereby excluded.\nThe sole jurisdiction\
-      \ and venue for actions related to the subject matter\nhereof shall be the state and federal\
-      \ courts located in the County of Orange,\nCalifornia, and both parties hereby consent\
-      \ to such jurisdiction and venue.\n\n7.4.\tSeverability.  All terms and provisions of\
-      \ this Agreement shall, if\npossible, be construed in a manner which makes them valid,\
-      \ but in the event any\nterm or provision of this Agreement is found by a court of competent\n\
-      jurisdiction to be illegal or unenforceable, the validity or enforceability of\nthe remainder\
-      \ of this Agreement shall not be affected if the illegal or\nunenforceable provision does\
-      \ not materially affect the intent of this\nAgreement.  If the illegal or unenforceable\
-      \ provision materially affects the\nintent of the parties to this Agreement, this Agreement\
-      \ shall become\nterminated.\n\n7.5.\tEquitable Relief.  Licensee hereby acknowledges that\
-      \ its breach of this\nAgreement would cause irreparable harm and significant injury to\
-      \ Broadcom that\nmay be difficult to ascertain and that a remedy at law would be inadequate.\n\
-      Accordingly, Licensee agrees that Broadcom shall have the right to seek and\nobtain immediate\
-      \ injunctive relief to enforce obligations under the Agreement\nin addition to any other\
-      \ rights and remedies it may have.\n\n7.6.\tWaiver.  The waiver of, or failure to enforce,\
-      \ any breach or default\nhereunder shall not constitute the waiver of any other or subsequent\
-      \ breach or\ndefault.\n\n7.7.\tEntire Agreement.  This Agreement sets forth the entire\
-      \ Agreement\nbetween the parties and supersedes any and all prior proposals, agreements\
-      \ and\nrepresentations between them, whether written or oral concerning the Software.\n\
-      This Agreement may be changed only by mutual agreement of the parties in\nwriting."
-  - score: '100.0'
-    start_line: 260
-    end_line: 260
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 261
-    end_line: 275
-    matcher: 1-hash
-    rule_length: 126
-    matched_length: 126
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_846.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
+          DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+          DAMAGE.
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+  - license_expression: broadcom-proprietary
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 51
+        end_line: 254
+        matched_length: 1770
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: broadcom-proprietary
+        licensedb_identifier: broadcom-proprietary_1.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 1770
+        rule_relevance: 100
+        matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
+          \ execute a separate written\nsoftware license agreement governing use of the accompanying\
+          \ software, this\nsoftware is licensed to you under the terms of this Software License\
+          \ Agreement\n(“Agreement”).\n\nANY USE, REPRODUCTION OR DISTRIBUTION OF THE SOFTWARE\
+          \ CONSTITUTES YOUR\nACCEPTANCE OF THIS AGREEMENT.\n\n1.\tDEFINITIONS.\n\n1.1.\t“Broadcom\
+          \ Product” means any of the proprietary integrated circuit\nproduct(s) sold by Broadcom\
+          \ with which the Software was designed to be used, or\ntheir successors.\n\n1.2.\t\
+          “Licensee” means you or if you are accepting on behalf of an entity\nthen the entity\
+          \ and its affiliates exercising rights under, and complying with\nall of the terms\
+          \ of this Agreement.\n\n1.3.\t“Software” shall mean that software made available by\
+          \ Broadcom to\nLicensee in binary code form with this Agreement.\n\n2.\tLICENSE GRANT;\
+          \ OWNERSHIP\n\n2.1.\tLicense Grants.  Subject to the terms and conditions of this\
+          \ Agreement,\nBroadcom hereby grants to Licensee a non-exclusive, non-transferable,\n\
+          royalty-free license (i) to use and integrate the Software in conjunction with\nany\
+          \ other software; and (ii) to reproduce and distribute the Software complete,\nunmodified\
+          \ and as provided by Broadcom, and only for use with a Broadcom\nProduct.\n\n2.2.\t\
+          Restriction on Modification.  Licensee may not make any modifications\nto the Software.\n\
+          \n2.3.\tRestriction on Distribution.  Licensee shall only distribute the\nSoftware\
+          \ under the terms of this Agreement and a copy of this Agreement\naccompanies such\
+          \ distribution.\n\n2.4.\tProprietary Notices.  Licensee shall not remove, efface or\
+          \ obscure any\ncopyright or trademark notices from the Software.  Licensee shall include\n\
+          reproductions of the Broadcom copyright notice with each copy of the Software,\nexcept\
+          \ where such Software is embedded in a manner not readily accessible to\nthe end user.\
+          \  Licensee acknowledges that any symbols, trademarks, tradenames,\nand service marks\
+          \ adopted by Broadcom to identify the Software belong to\nBroadcom and that Licensee\
+          \ shall have no rights therein.\n\n2.5.\tOwnership.  Broadcom shall retain all right,\
+          \ title and interest,\nincluding all intellectual property rights, in and to the Software.\
+          \  Licensee\nhereby covenants that it will not assert any claim that the Software\
+          \ created by\nor for Broadcom infringe any intellectual property right owned or controlled\
+          \ by\nLicensee; provided however, the foregoing shall not apply in case the Agreement\n\
+          is terminated.\n\n2.6.\tNo Other Rights Granted; Restrictions.  Apart from the license\
+          \ rights\nexpressly set forth in this Agreement, Broadcom does not grant and Licensee\n\
+          does not receive any ownership right, title or interest nor any security\ninterest\
+          \ or other interest in any intellectual property rights relating to the\nSoftware,\
+          \ nor in any copy of any part of the foregoing.  No license is granted\nto Licensee\
+          \ in any human readable code of the Software (source code). Licensee\nshall not (i)\
+          \ use, license, sell or otherwise distribute the Software except as\nprovided in this\
+          \ Agreement, (ii) attempt to modify in any way, reverse\nengineer, decompile or disassemble\
+          \ any portion of the Software; or (iii) use\nthe Software or other material in violation\
+          \ of any applicable law or\nregulation, including but not limited to any regulatory\
+          \ agency, such as FCC,\nrules.\n\n3.\tNO WARRANTY OR SUPPORT\n\n3.1.\tNo Warranty.\
+          \ THE SOFTWARE IS OFFERED “AS IS,” AND BROADCOM GRANTS AND\nLICENSEE RECEIVES NO WARRANTIES\
+          \ OF ANY KIND, EXPRESS OR IMPLIED, BY STATUTE,\nCOMMUNICATION OR CONDUCT WITH LICENSEE,\
+          \ OR OTHERWISE.  BROADCOM SPECIFICALLY\nDISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY,\
+          \ FITNESS FOR A SPECIFIC\nPURPOSE OR NONINFRINGEMENT CONCERNING THE SOFTWARE OR ANY\
+          \ UPGRADES TO OR\nDOCUMENTATION FOR THE SOFTWARE.  WITHOUT LIMITATION OF THE ABOVE,\
+          \ BROADCOM\nGRANTS NO WARRANTY THAT THE SOFTWARE IS ERROR-FREE OR WILL OPERATE WITHOUT\n\
+          INTERRUPTION, AND GRANTS NO WARRANTY REGARDING ITS USE OR THE RESULTS THEREFROM\n\
+          INCLUDING, WITHOUT LIMITATION, ITS CORRECTNESS, ACCURACY OR RELIABILITY.\n\n3.2.\t\
+          No Support.  Nothing in this agreement shall obligate Broadcom to\nprovide any support\
+          \ for the Software. Broadcom may, but shall be under no\nobligation to, correct any\
+          \ defects in the Software and/or provide updates to\nlicensees of the Software.  Licensee\
+          \ shall make reasonable efforts to promptly\nreport to Broadcom any defects it finds\
+          \ in the Software, as an aid to creating\nimproved revisions of the Software.\n\n\
+          3.3.\tDangerous Applications.  The Software is not designed, intended, or\ncertified\
+          \ for use in components of systems intended for the operation of\nweapons, weapons\
+          \ systems, nuclear installations, means of mass transportation,\naviation, life-support\
+          \ computers or equipment (including resuscitation\nequipment and surgical implants),\
+          \ pollution control, hazardous substances\nmanagement, or for any other dangerous\
+          \ application in which the failure of the\nSoftware could create a situation where\
+          \ personal injury or death may occur.\nLicensee understands that use of the Software\
+          \ in such applications is fully at\nthe risk of Licensee.\n\n4.\tTERM AND TERMINATION\n\
+          \n4.1.\tTermination.  This Agreement will automatically terminate if Licensee\nfails\
+          \ to comply with any of the terms and conditions hereof. In such event,\nLicensee\
+          \ must destroy all copies of the Software and all of its component\nparts.\n\n4.2.\t\
+          Effect Of Termination.  Upon any termination of this Agreement, the\nrights and licenses\
+          \ granted to Licensee under this Agreement shall immediately\nterminate.\n\n4.3.\t\
+          Survival.  The rights and obligations under this Agreement which by\ntheir nature\
+          \ should survive termination will remain in effect after expiration\nor termination\
+          \ of this Agreement.\n\n5.\tCONFIDENTIALITY\n\n5.1.\tObligations.  Licensee acknowledges\
+          \ and agrees that any documentation\nrelating to the Software, and any other information\
+          \ (if such other information\nis identified as confidential or should be recognized\
+          \ as confidential under the\ncircumstances) provided to Licensee by Broadcom hereunder\
+          \ (collectively,\n“Confidential Information”) constitute the confidential and proprietary\n\
+          information of Broadcom, and that Licensee’s protection thereof is an essential\n\
+          condition to Licensee’s use and possession of the Software.  Licensee shall\nretain\
+          \ all Confidential Information in strict confidence and not disclose it to\nany third\
+          \ party or use it in any way except under a written agreement with\nterms and conditions\
+          \ at least as protective as the terms of this Section.\nLicensee will exercise at\
+          \ least the same amount of diligence in preserving the\nsecrecy of the Confidential\
+          \ Information as it uses in preserving the secrecy of\nits own most valuable confidential\
+          \ information, but in no event less than\nreasonable diligence.  Information shall\
+          \ not be considered Confidential\nInformation if and to the extent that it: (i) was\
+          \ in the public domain at the\ntime it was disclosed or has entered the public domain\
+          \ through no fault of\nLicensee; (ii) was known to Licensee, without restriction,\
+          \ at the time of\ndisclosure as proven by the files of Licensee in existence at the\
+          \ time of\ndisclosure; or (iii) becomes known to Licensee, without restriction, from\
+          \ a\nsource other than Broadcom without breach of this Agreement by Licensee and\n\
+          otherwise not in violation of Broadcom’s rights.\n\n5.2.\tReturn of Confidential Information.\
+          \  Notwithstanding the foregoing, all\ndocuments and other tangible objects containing\
+          \ or representing Broadcom\nConfidential Information and all copies thereof which\
+          \ are in the possession of\nLicensee shall be and remain the property of Broadcom,\
+          \ and shall be promptly\nreturned to Broadcom upon written request by Broadcom or\
+          \ upon termination of\nthis Agreement.\n\n6.\tLIMITATION OF LIABILITY TO THE MAXIMUM\
+          \ EXTENT PERMITTED BY LAW, IN NO\nEVENT SHALL BROADCOM OR ANY OF BROADCOM’S LICENSORS\
+          \ HAVE ANY LIABILITY FOR ANY\nINDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES,\
+          \ HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER FOR BREACH OF CONTRACT,\
+          \ TORT (INCLUDING\nNEGLIGENCE) OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, INCLUDING\
+          \ BUT NOT\nLIMITED TO LOSS OF PROFITS, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE\n\
+          POSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL BROADCOM’S LIABILITY WHETHER IN\nCONTRACT,\
+          \ TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, EXCEED THE AMOUNT PAID BY\nLICENSEE FOR\
+          \ SOFTWARE UNDER THIS AGREEMENT.  THESE LIMITATIONS SHALL APPLY\nNOTWITHSTANDING ANY\
+          \ FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.\n\n7.\tMISCELLANEOUS\n\n7.1.\t\
+          Export Regulations. YOU UNDERSTAND AND AGREE THAT THE SOFTWARE IS\nSUBJECT TO UNITED\
+          \ STATES AND OTHER APPLICABLE EXPORT-RELATED LAWS AND\nREGULATIONS AND THAT YOU MAY\
+          \ NOT EXPORT, RE-EXPORT OR TRANSFER THE SOFTWARE OR\nANY DIRECT PRODUCT OF THE SOFTWARE\
+          \ EXCEPT AS PERMITTED UNDER THOSE LAWS.\nWITHOUT LIMITING THE FOREGOING, EXPORT, RE-EXPORT\
+          \ OR TRANSFER OF THE SOFTWARE\nTO CUBA, IRAN, NORTH KOREA, SUDAN AND SYRIA IS PROHIBITED.\n\
+          \n7.2\tAssignment. This Agreement shall be binding upon and inure to the\nbenefit\
+          \ of the parties and their respective successors and assigns, provided,\nhowever that\
+          \ Licensee may not assign this Agreement or any rights or obligation\nhereunder, directly\
+          \ or indirectly, by operation of law or otherwise, without\nthe prior written consent\
+          \ of Broadcom, and any such attempted assignment shall\nbe void.  Notwithstanding\
+          \ the foregoing, Licensee may assign this Agreement to\na successor to all or substantially\
+          \ all of its business or assets to which this\nAgreement relates that is not a competitor\
+          \ of Broadcom.\n\n7.3.\tGoverning Law; Venue.  This Agreement shall be governed by\
+          \ the laws of\nCalifornia without regard to any conflict-of-laws rules, and the United\
+          \ Nations\nConvention on Contracts for the International Sale of Goods is hereby excluded.\n\
+          The sole jurisdiction and venue for actions related to the subject matter\nhereof\
+          \ shall be the state and federal courts located in the County of Orange,\nCalifornia,\
+          \ and both parties hereby consent to such jurisdiction and venue.\n\n7.4.\tSeverability.\
+          \  All terms and provisions of this Agreement shall, if\npossible, be construed in\
+          \ a manner which makes them valid, but in the event any\nterm or provision of this\
+          \ Agreement is found by a court of competent\njurisdiction to be illegal or unenforceable,\
+          \ the validity or enforceability of\nthe remainder of this Agreement shall not be\
+          \ affected if the illegal or\nunenforceable provision does not materially affect the\
+          \ intent of this\nAgreement.  If the illegal or unenforceable provision materially\
+          \ affects the\nintent of the parties to this Agreement, this Agreement shall become\n\
+          terminated.\n\n7.5.\tEquitable Relief.  Licensee hereby acknowledges that its breach\
+          \ of this\nAgreement would cause irreparable harm and significant injury to Broadcom\
+          \ that\nmay be difficult to ascertain and that a remedy at law would be inadequate.\n\
+          Accordingly, Licensee agrees that Broadcom shall have the right to seek and\nobtain\
+          \ immediate injunctive relief to enforce obligations under the Agreement\nin addition\
+          \ to any other rights and remedies it may have.\n\n7.6.\tWaiver.  The waiver of, or\
+          \ failure to enforce, any breach or default\nhereunder shall not constitute the waiver\
+          \ of any other or subsequent breach or\ndefault.\n\n7.7.\tEntire Agreement.  This\
+          \ Agreement sets forth the entire Agreement\nbetween the parties and supersedes any\
+          \ and all prior proposals, agreements and\nrepresentations between them, whether written\
+          \ or oral concerning the Software.\nThis Agreement may be changed only by mutual agreement\
+          \ of the parties in\nwriting."
+        licenses:
+          - key: broadcom-proprietary
+            name: Broadcom Proprietary License
+            short_name: Broadcom Proprietary
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Broadcom
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/broadcom-proprietary
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.yml
+            spdx_license_key: LicenseRef-scancode-broadcom-proprietary
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.LICENSE
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 260
+        end_line: 260
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 261
+        end_line: 275
+        matched_length: 126
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_846.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 126
+        rule_relevance: 100
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
 
-      This package is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This package is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program. If not, see <http://www.gnu.org/licenses/>
+          You should have received a copy of the GNU General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>
 
-      On Debian systems, the complete text of the GNU General
-      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+          On Debian systems, the complete text of the GNU General
+          Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later

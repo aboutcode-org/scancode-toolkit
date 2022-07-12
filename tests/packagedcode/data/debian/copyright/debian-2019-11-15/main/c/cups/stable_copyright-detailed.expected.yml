@@ -8,6 +8,8 @@ declared_license:
   - LGPL-2.0 with AOSDL exception
   - Zlib
 license_expression: cups AND cups AND (zlib AND zlib) AND bsd-simplified
+declared_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-cups AND
+  (Zlib AND Zlib) AND BSD-2-Clause
 copyright: |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.
@@ -17,239 +19,337 @@ copyright: |
   2011, Red Hat, Inc
   2007-2014, Apple Inc
   1997-2007, Easy Software Products
-matches:
-  - score: '100.0'
-    start_line: 26
-    end_line: 48
-    matcher: 1-hash
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_70.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
+license_detections:
+  - license_expression: bsd-simplified
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 26
+        end_line: 48
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_70.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
 
-        Redistributions of source code must retain the above copyright
-        notice, this list of conditions and the following disclaimer.
+            Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
 
-        Redistributions in binary form must reproduce the above copyright
-        notice, this list of conditions and the following disclaimer in the
-        documentation and/or other materials provided with the distribution.
+            Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in the
+            documentation and/or other materials provided with the distribution.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-      'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-      FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-      COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-      INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-      (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-      STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-      OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 51
-    end_line: 107
-    matcher: 1-hash
-    rule_length: 356
-    matched_length: 356
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: cups_6.RULE
-    license_expression: cups
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, version 2 of the License.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+          FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+          INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+          SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+          STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+          OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause
+  - license_expression: cups
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 51
+        end_line: 107
+        matched_length: 356
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: cups
+        licensedb_identifier: cups_6.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 356
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation, version 2 of the License.
 
-      The full text of the GPL is distributed as in
-      /usr/share/common-licenses/GPL-2 on Debian systems.
+          The full text of the GPL is distributed as in
+          /usr/share/common-licenses/GPL-2 on Debian systems.
 
-      In addition, as the copyright holder of CUPS, Apple Inc. grants
-      the following special exception:
+          In addition, as the copyright holder of CUPS, Apple Inc. grants
+          the following special exception:
 
-           1. Apple Operating System Development License Exception;
+               1. Apple Operating System Development License Exception;
 
-      a. Software that is developed by any person or entity
-      for an Apple Operating System ("Apple OS-Developed
-      Software"), including but not limited to Apple and
-      third party printer drivers, filters, and backends
-      for an Apple Operating System, that is linked to the
-      CUPS imaging library or based on any sample filters
-      or backends provided with CUPS shall not be
-      considered to be a derivative work or collective work
-      based on the CUPS program and is exempt from the
-      mandatory source code release clauses of the GNU GPL.
-      You may therefore distribute linked combinations of
-      the CUPS imaging library with Apple OS-Developed
-      Software without releasing the source code of the
-      Apple OS-Developed Software. You may also use sample
-      filters and backends provided with CUPS to develop
-      Apple OS-Developed Software without releasing the
-      source code of the Apple OS-Developed Software.
+          a. Software that is developed by any person or entity
+          for an Apple Operating System ("Apple OS-Developed
+          Software"), including but not limited to Apple and
+          third party printer drivers, filters, and backends
+          for an Apple Operating System, that is linked to the
+          CUPS imaging library or based on any sample filters
+          or backends provided with CUPS shall not be
+          considered to be a derivative work or collective work
+          based on the CUPS program and is exempt from the
+          mandatory source code release clauses of the GNU GPL.
+          You may therefore distribute linked combinations of
+          the CUPS imaging library with Apple OS-Developed
+          Software without releasing the source code of the
+          Apple OS-Developed Software. You may also use sample
+          filters and backends provided with CUPS to develop
+          Apple OS-Developed Software without releasing the
+          source code of the Apple OS-Developed Software.
 
-      b. An Apple Operating System means any operating system
-      software developed and/or marketed by Apple Computer,
-      Inc., including but not limited to all existing
-      releases and versions of Apple's Darwin, Mac OS X,
-      and Mac OS X Server products and all follow-on
-      releases and future versions thereof.
+          b. An Apple Operating System means any operating system
+          software developed and/or marketed by Apple Computer,
+          Inc., including but not limited to all existing
+          releases and versions of Apple's Darwin, Mac OS X,
+          and Mac OS X Server products and all follow-on
+          releases and future versions thereof.
 
-      c. This exception is only available for Apple
-      OS-Developed Software and does not apply to software
-      that is distributed for use on other operating
-      systems.
+          c. This exception is only available for Apple
+          OS-Developed Software and does not apply to software
+          that is distributed for use on other operating
+          systems.
 
-      d. All CUPS software that falls under this license
-      exception have the following text at the top of each
-      source file:
+          d. All CUPS software that falls under this license
+          exception have the following text at the top of each
+          source file:
 
-      This file is subject to the Apple OS-Developed
-      Software exception.
+          This file is subject to the Apple OS-Developed
+          Software exception.
 
-           2. OpenSSL Toolkit License Exception;
+               2. OpenSSL Toolkit License Exception;
 
-      a. Apple Inc. explicitly allows the compilation and
-      distribution of the CUPS software with the OpenSSL
-      Toolkit.
+          a. Apple Inc. explicitly allows the compilation and
+          distribution of the CUPS software with the OpenSSL
+          Toolkit.
 
-      No developer is required to provide these exceptions in a
-      derived work.
-  - score: '100.0'
-    start_line: 110
-    end_line: 166
-    matcher: 1-hash
-    rule_length: 357
-    matched_length: 357
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: cups_4.RULE
-    license_expression: cups
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Library General Public License as published
-      by the Free Software Foundation, version 2 of the License.
+          No developer is required to provide these exceptions in a
+          derived work.
+        licenses:
+          - key: cups
+            name: CUPS License
+            short_name: CUPS License
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Apple
+            homepage_url: http://www.cups.org/
+            text_url: http://www.cups.org/
+            reference_url: https://scancode-licensedb.aboutcode.org/cups
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.yml
+            spdx_license_key: LicenseRef-scancode-cups
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
+  - license_expression: cups
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 110
+        end_line: 166
+        matched_length: 357
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: cups
+        licensedb_identifier: cups_4.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 357
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify it
+          under the terms of the GNU Library General Public License as published
+          by the Free Software Foundation, version 2 of the License.
 
-      The full text of the LGPL is distributed as in
-      /usr/share/common-licenses/LGPL-2 on Debian systems.
+          The full text of the LGPL is distributed as in
+          /usr/share/common-licenses/LGPL-2 on Debian systems.
 
-      In addition, as the copyright holder of CUPS, Apple Inc. grants
-      the following special exception:
+          In addition, as the copyright holder of CUPS, Apple Inc. grants
+          the following special exception:
 
-           1. Apple Operating System Development License Exception;
+               1. Apple Operating System Development License Exception;
 
-      a. Software that is developed by any person or entity
-      for an Apple Operating System ("Apple OS-Developed
-      Software"), including but not limited to Apple and
-      third party printer drivers, filters, and backends
-      for an Apple Operating System, that is linked to the
-      CUPS imaging library or based on any sample filters
-      or backends provided with CUPS shall not be
-      considered to be a derivative work or collective work
-      based on the CUPS program and is exempt from the
-      mandatory source code release clauses of the GNU GPL.
-      You may therefore distribute linked combinations of
-      the CUPS imaging library with Apple OS-Developed
-      Software without releasing the source code of the
-      Apple OS-Developed Software. You may also use sample
-      filters and backends provided with CUPS to develop
-      Apple OS-Developed Software without releasing the
-      source code of the Apple OS-Developed Software.
+          a. Software that is developed by any person or entity
+          for an Apple Operating System ("Apple OS-Developed
+          Software"), including but not limited to Apple and
+          third party printer drivers, filters, and backends
+          for an Apple Operating System, that is linked to the
+          CUPS imaging library or based on any sample filters
+          or backends provided with CUPS shall not be
+          considered to be a derivative work or collective work
+          based on the CUPS program and is exempt from the
+          mandatory source code release clauses of the GNU GPL.
+          You may therefore distribute linked combinations of
+          the CUPS imaging library with Apple OS-Developed
+          Software without releasing the source code of the
+          Apple OS-Developed Software. You may also use sample
+          filters and backends provided with CUPS to develop
+          Apple OS-Developed Software without releasing the
+          source code of the Apple OS-Developed Software.
 
-      b. An Apple Operating System means any operating system
-      software developed and/or marketed by Apple Computer,
-      Inc., including but not limited to all existing
-      releases and versions of Apple's Darwin, Mac OS X,
-      and Mac OS X Server products and all follow-on
-      releases and future versions thereof.
+          b. An Apple Operating System means any operating system
+          software developed and/or marketed by Apple Computer,
+          Inc., including but not limited to all existing
+          releases and versions of Apple's Darwin, Mac OS X,
+          and Mac OS X Server products and all follow-on
+          releases and future versions thereof.
 
-      c. This exception is only available for Apple
-      OS-Developed Software and does not apply to software
-      that is distributed for use on other operating
-      systems.
+          c. This exception is only available for Apple
+          OS-Developed Software and does not apply to software
+          that is distributed for use on other operating
+          systems.
 
-      d. All CUPS software that falls under this license
-      exception have the following text at the top of each
-      source file:
+          d. All CUPS software that falls under this license
+          exception have the following text at the top of each
+          source file:
 
-      This file is subject to the Apple OS-Developed
-      Software exception.
+          This file is subject to the Apple OS-Developed
+          Software exception.
 
-           2. OpenSSL Toolkit License Exception;
+               2. OpenSSL Toolkit License Exception;
 
-      a. Apple Inc. explicitly allows the compilation and
-      distribution of the CUPS software with the OpenSSL
-      Toolkit.
+          a. Apple Inc. explicitly allows the compilation and
+          distribution of the CUPS software with the OpenSSL
+          Toolkit.
 
-      No developer is required to provide these exceptions in a
-      derived work.
-  - score: '100.0'
-    start_line: 169
-    end_line: 169
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zlib_7.RULE
-    license_expression: zlib
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: zlib License
-  - score: '100.0'
-    start_line: 171
-    end_line: 188
-    matcher: 2-aho
-    rule_length: 132
-    matched_length: 132
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zlib.LICENSE
-    license_expression: zlib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is provided 'as-is', without any express or implied
-      warranty. In no event will the authors be held liable for any damages
-      arising from the use of this software.
+          No developer is required to provide these exceptions in a
+          derived work.
+        licenses:
+          - key: cups
+            name: CUPS License
+            short_name: CUPS License
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Apple
+            homepage_url: http://www.cups.org/
+            text_url: http://www.cups.org/
+            reference_url: https://scancode-licensedb.aboutcode.org/cups
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.yml
+            spdx_license_key: LicenseRef-scancode-cups
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
+  - license_expression: zlib
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 169
+        end_line: 169
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: zlib
+        licensedb_identifier: zlib_7.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 100
+        matched_text: The zlib License
+        licenses:
+          - key: zlib
+            name: ZLIB License
+            short_name: ZLIB License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: zlib
+            homepage_url: http://www.zlib.net/
+            text_url: http://www.gzip.org/zlib/zlib_license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/zlib
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
+            spdx_license_key: Zlib
+            spdx_url: https://spdx.org/licenses/Zlib
+      - score: '100.0'
+        start_line: 171
+        end_line: 188
+        matched_length: 132
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: zlib
+        licensedb_identifier: zlib.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 132
+        rule_relevance: 100
+        matched_text: |
+          This software is provided 'as-is', without any express or implied
+          warranty. In no event will the authors be held liable for any damages
+          arising from the use of this software.
 
-      Permission is granted to anyone to use this software for any purpose,
-      including commercial applications, and to alter it and redistribute it
-      freely, subject to the following restrictions:
+          Permission is granted to anyone to use this software for any purpose,
+          including commercial applications, and to alter it and redistribute it
+          freely, subject to the following restrictions:
 
-        1. The origin of this software must not be misrepresented; you must
-           not claim that you wrote the original software. If you use this
-           software in a product, an acknowledgment in the product
-           documentation would be appreciated but is not required.
+            1. The origin of this software must not be misrepresented; you must
+               not claim that you wrote the original software. If you use this
+               software in a product, an acknowledgment in the product
+               documentation would be appreciated but is not required.
 
-        2. Altered source versions must be plainly marked as such, and must
-           not be misrepresented as being the original software.
+            2. Altered source versions must be plainly marked as such, and must
+               not be misrepresented as being the original software.
 
-        3. This notice may not be removed or altered from any source
-           distribution.
+            3. This notice may not be removed or altered from any source
+               distribution.
+        licenses:
+          - key: zlib
+            name: ZLIB License
+            short_name: ZLIB License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: zlib
+            homepage_url: http://www.zlib.net/
+            text_url: http://www.gzip.org/zlib/zlib_license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/zlib
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
+            spdx_license_key: Zlib
+            spdx_url: https://spdx.org/licenses/Zlib

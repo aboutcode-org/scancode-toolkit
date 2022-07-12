@@ -28,6 +28,14 @@ license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus AND (gpl-2.
   AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
   AND (cc0-1.0 OR (apache-2.0 AND apache-2.0)) AND (cc0-1.0 OR (apache-2.0 AND apache-2.0))
   AND gary-s-brown
+declared_license_expression_spdx: GPL-2.0-or-later WITH LicenseRef-scancode-openssl-exception-gpl-3.0-plus
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND LGPL-2.1-or-later WITH
+  LicenseRef-scancode-openssl-exception-gpl-3.0-plus AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0))
+  AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0)) AND LicenseRef-scancode-gary-s-brown
 copyright: |
   © 2004 Christophe Saout <christophe@saout.de>
   © 2004-2008 Clemens Fruhwirth <clemens@endorphin.org>
@@ -59,275 +67,493 @@ copyright: |
   © 2015 Samuel Neves
   © 2015 Thomas Pornin <pornin@bolet.org>
   © 1986 Gary S. Brown
-matches:
-  - score: '100.0'
-    start_line: 81
-    end_line: 82
-    matcher: 2-aho
-    rule_length: 16
-    matched_length: 16
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gary-s-brown.LICENSE
-    license_expression: gary-s-brown
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may use this program, or code or tables extracted from it, as
-      desired without restriction.
-  - score: '100.0'
-    start_line: 84
-    end_line: 84
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 85
-    end_line: 100
-    matcher: 1-hash
-    rule_length: 136
-    matched_length: 136
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_807.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
+license_detections:
+  - license_expression: gary-s-brown
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 81
+        end_line: 82
+        matched_length: 16
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gary-s-brown
+        licensedb_identifier: gary-s-brown.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 16
+        rule_relevance: 100
+        matched_text: |
+          You may use this program, or code or tables extracted from it, as
+          desired without restriction.
+        licenses:
+          - key: gary-s-brown
+            name: Gary S. Brown License
+            short_name: Gary S. Brown License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Gary S. Brown
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/gary-s-brown
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gary-s-brown.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gary-s-brown.yml
+            spdx_license_key: LicenseRef-scancode-gary-s-brown
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gary-s-brown.LICENSE
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 84
+        end_line: 84
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 85
+        end_line: 100
+        matched_length: 136
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_807.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 136
+        rule_relevance: 100
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
 
-      This package is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This package is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this package; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+          You should have received a copy of the GNU General Public License
+          along with this package; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-      On Debian systems, the complete text of the GNU General Public
-      License v2 can be found in `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 103
-    end_line: 130
-    matcher: 1-hash
-    rule_length: 257
-    matched_length: 257
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
-    license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
+          On Debian systems, the complete text of the GNU General Public
+          License v2 can be found in `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+  - license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 103
+        end_line: 130
+        matched_length: 257
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
+        licensedb_identifier: gpl-2.0-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 257
+        rule_relevance: 100
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
 
-      This package is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This package is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this package; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+          You should have received a copy of the GNU General Public License
+          along with this package; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-      On Debian systems, the complete text of the GNU General Public
-      License v2 can be found in `/usr/share/common-licenses/GPL-2'.
+          On Debian systems, the complete text of the GNU General Public
+          License v2 can be found in `/usr/share/common-licenses/GPL-2'.
 
-      In addition, as a special exception, the copyright holders give
-      permission to link the code of portions of this program with the
-      OpenSSL library under certain conditions as described in each
-      individual source file, and distribute linked combinations including
-      the two.  You must obey the GNU General Public License in all respects
-      for all of the code used other than OpenSSL.  If you modify file(s)
-      with this exception, you may extend this exception to your version of
-      the file(s), but you are not obligated to do so.  If you do not wish to
-      do so, delete this exception statement from your version.  If you
-      delete this exception statement from all source files in the program,
-      then also delete it here.
-  - score: '100.0'
-    start_line: 132
-    end_line: 132
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_108.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2.1+'
-  - score: '100.0'
-    start_line: 133
-    end_line: 149
-    matcher: 1-hash
-    rule_length: 143
-    matched_length: 143
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_293.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Lesser General Public License as published
-      by the Free Software Foundation; either version 2.1 of the License, or
-      (at your option) any later version.
+          In addition, as a special exception, the copyright holders give
+          permission to link the code of portions of this program with the
+          OpenSSL library under certain conditions as described in each
+          individual source file, and distribute linked combinations including
+          the two.  You must obey the GNU General Public License in all respects
+          for all of the code used other than OpenSSL.  If you modify file(s)
+          with this exception, you may extend this exception to your version of
+          the file(s), but you are not obligated to do so.  If you do not wish to
+          do so, delete this exception statement from your version.  If you
+          delete this exception statement from all source files in the program,
+          then also delete it here.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+          - key: openssl-exception-gpl-3.0-plus
+            name: OpenSSL exception to GPL 3.0 or later
+            short_name: OpenSSL exception to GPL 3.0 or later
+            category: Copyleft
+            is_exception: yes
+            is_unknown: no
+            owner: Tildeslash
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/openssl-exception-gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.yml
+            spdx_license_key: LicenseRef-scancode-openssl-exception-gpl-3.0-plus
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.LICENSE
+  - license_expression: lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 132
+        end_line: 132
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_108.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: lgpl-2.1+'
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+      - score: '100.0'
+        start_line: 133
+        end_line: 149
+        matched_length: 143
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_293.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 143
+        rule_relevance: 100
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify it
+          under the terms of the GNU Lesser General Public License as published
+          by the Free Software Foundation; either version 2.1 of the License, or
+          (at your option) any later version.
 
-      This package is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      Lesser General Public License for more details.
+          This package is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
 
-      You should have received a copy of the GNU Lesser General Public
-      License along with this package; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-      02110-1301 USA.
+          You should have received a copy of the GNU Lesser General Public
+          License along with this package; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+          02110-1301 USA.
 
-      On Debian systems, the complete text of the GNU Lesser General Public
-      License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
-  - score: '95.0'
-    start_line: 152
-    end_line: 180
-    matcher: 1-hash
-    rule_length: 265
-    matched_length: 265
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: lgpl-2.1-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
-    license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Lesser General Public License as published
-      by the Free Software Foundation; either version 2.1 of the License, or
-      (at your option) any later version.
+          On Debian systems, the complete text of the GNU Lesser General Public
+          License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+  - license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 152
+        end_line: 180
+        matched_length: 265
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+        licensedb_identifier: lgpl-2.1-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 265
+        rule_relevance: 95
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify it
+          under the terms of the GNU Lesser General Public License as published
+          by the Free Software Foundation; either version 2.1 of the License, or
+          (at your option) any later version.
 
-      This package is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      Lesser General Public License for more details.
+          This package is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
 
-      You should have received a copy of the GNU Lesser General Public
-      License along with this package; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-      02110-1301 USA.
+          You should have received a copy of the GNU Lesser General Public
+          License along with this package; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+          02110-1301 USA.
 
-      On Debian systems, the complete text of the GNU Lesser General Public
-      License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+          On Debian systems, the complete text of the GNU Lesser General Public
+          License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
 
-      In addition, as a special exception, the copyright holders give
-      permission to link the code of portions of this program with the
-      OpenSSL library under certain conditions as described in each
-      individual source file, and distribute linked combinations including
-      the two.  You must obey the GNU Lesser General Public License in all
-      respects for all of the code used other than OpenSSL.  If you modify
-      file(s) with this exception, you may extend this exception to your
-      version of the file(s), but you are not obligated to do so.  If you do
-      not wish to do so, delete this exception statement from your version.
-      If you delete this exception statement from all source files in the
-      program, then also delete it here.
-  - score: '100.0'
-    start_line: 183
-    end_line: 187
-    matcher: 1-hash
-    rule_length: 42
-    matched_length: 42
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: cc0-1.0_129.RULE
-    license_expression: cc0-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may use this work under the terms of a Creative Commons CC0 1.0
-      License/Waiver.
+          In addition, as a special exception, the copyright holders give
+          permission to link the code of portions of this program with the
+          OpenSSL library under certain conditions as described in each
+          individual source file, and distribute linked combinations including
+          the two.  You must obey the GNU Lesser General Public License in all
+          respects for all of the code used other than OpenSSL.  If you modify
+          file(s) with this exception, you may extend this exception to your
+          version of the file(s), but you are not obligated to do so.  If you do
+          not wish to do so, delete this exception statement from your version.
+          If you delete this exception statement from all source files in the
+          program, then also delete it here.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+          - key: openssl-exception-gpl-3.0-plus
+            name: OpenSSL exception to GPL 3.0 or later
+            short_name: OpenSSL exception to GPL 3.0 or later
+            category: Copyleft
+            is_exception: yes
+            is_unknown: no
+            owner: Tildeslash
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/openssl-exception-gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.yml
+            spdx_license_key: LicenseRef-scancode-openssl-exception-gpl-3.0-plus
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-3.0-plus.LICENSE
+  - license_expression: cc0-1.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 183
+        end_line: 187
+        matched_length: 42
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: cc0-1.0
+        licensedb_identifier: cc0-1.0_129.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/CC0-1.0
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 42
+        rule_relevance: 100
+        matched_text: |
+          You may use this work under the terms of a Creative Commons CC0 1.0
+          License/Waiver.
 
-      On Debian systems, the complete text of the Creative Commons CC0 1.0
-      Universal license can be found in `/usr/share/common-licenses/CC0-1.0'.
-  - score: '100.0'
-    start_line: 189
-    end_line: 189
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_65.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: apache-2.0'
-  - score: '100.0'
-    start_line: '190'
-    end_line: 203
-    matcher: 1-hash
-    rule_length: 109
-    matched_length: 109
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_845.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Licensed under the Apache License, Version 2.0 (the "License");
-      you may not use this file except in compliance with the License.
-      You may obtain a copy of the License at
+          On Debian systems, the complete text of the Creative Commons CC0 1.0
+          Universal license can be found in `/usr/share/common-licenses/CC0-1.0'.
+        licenses:
+          - key: cc0-1.0
+            name: Creative Commons CC0 1.0 Universal
+            short_name: CC0-1.0
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Creative Commons
+            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
+            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
+            spdx_license_key: CC0-1.0
+            spdx_url: https://spdx.org/licenses/CC0-1.0
+  - license_expression: apache-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 189
+        end_line: 189
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_65.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: apache-2.0'
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+      - score: '100.0'
+        start_line: '190'
+        end_line: 203
+        matched_length: 109
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_845.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/Apache-2.0
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 109
+        rule_relevance: 100
+        matched_text: |
+          Licensed under the Apache License, Version 2.0 (the "License");
+          you may not use this file except in compliance with the License.
+          You may obtain a copy of the License at
 
-      https://www.apache.org/licenses/LICENSE-2.0
+          https://www.apache.org/licenses/LICENSE-2.0
 
-      Unless required by applicable law or agreed to in writing, software
-      distributed under the License is distributed on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-      See the License for the specific language governing permissions and
-      limitations under the License.
+          Unless required by applicable law or agreed to in writing, software
+          distributed under the License is distributed on an "AS IS" BASIS,
+          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+          See the License for the specific language governing permissions and
+          limitations under the License.
 
-      On Debian systems, the complete text of the Apache version 2.0 license
-      can be found in "/usr/share/common-licenses/Apache-2.0".
+          On Debian systems, the complete text of the Apache version 2.0 license
+          can be found in "/usr/share/common-licenses/Apache-2.0".
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0

@@ -3,6 +3,10 @@ declared_license:
 license_expression: gpl-3.0-plus AND bash-exception-gpl AND gpl-1.0-plus AND other-permissive
   AND gfdl-1.3-plus AND gfdl-1.3-plus AND other-permissive AND latex2e AND latex2e AND gfdl-1.3-plus
   AND latex2e AND bsd-original-uc AND historical AND other-permissive
+declared_license_expression_spdx: GPL-3.0-or-later AND LicenseRef-scancode-bash-exception-gpl-2.0
+  AND GPL-1.0-or-later AND LicenseRef-scancode-other-permissive AND GFDL-1.3-or-later AND GFDL-1.3-or-later
+  AND LicenseRef-scancode-other-permissive AND Latex2e AND Latex2e AND GFDL-1.3-or-later AND
+  Latex2e AND BSD-4-Clause-UC AND HPND AND LicenseRef-scancode-other-permissive
 copyright: |
   Copyright (c) 1987-2014 Free Software Foundation, Inc.
   Copyright FSF
@@ -15,373 +19,638 @@ copyright: |
   Copyright (c) 1988-2014 Free Software Foundation, Inc.
   Copyright (c) 1983, 1990, 1993 The Regents of the University of California
   Portions Copyright (c) 1993 by Digital Equipment Corporation
-matches:
-  - score: '100.0'
-    start_line: 13
-    end_line: 26
-    matcher: 2-aho
-    rule_length: 118
-    matched_length: 118
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_289.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Bash is free software; you can redistribute it and/or modify it under
-      the terms of the GNU General Public License as published by the Free
-      Software Foundation; either version 3, or (at your option) any later
-      version.
+license_detections:
+  - license_expression: gpl-3.0-plus AND bash-exception-gpl AND gpl-1.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 13
+        end_line: 26
+        matched_length: 118
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_289.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 118
+        rule_relevance: 100
+        matched_text: |
+          Bash is free software; you can redistribute it and/or modify it under
+          the terms of the GNU General Public License as published by the Free
+          Software Foundation; either version 3, or (at your option) any later
+          version.
 
-      Bash is distributed in the hope that it will be useful, but WITHOUT
-      ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-      FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-      for more details.
+          Bash is distributed in the hope that it will be useful, but WITHOUT
+          ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+          FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+          for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with Bash.  If not, see <http://www.gnu.org/licenses/>.
-      On Debian systems, the complete text of the GNU General Public License
-      can be found in `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 28
-    end_line: 34
-    matcher: 2-aho
-    rule_length: 78
-    matched_length: 78
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bash-exception-gpl.LICENSE
-    license_expression: bash-exception-gpl
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The Free Software Foundation has exempted Bash from the requirement of
-      Paragraph 2c of the General Public License.  This is to say, there is
-      no requirement for Bash to print a notice when it is started
-      interactively in the usual way.  We made this exception because users
-      and standards expect shells not to print such messages.  This
-      exception applies to any program that serves as a shell and that is
-      based primarily on Bash as opposed to other GNU software.
-  - score: '100.0'
-    start_line: 37
-    end_line: 37
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl_72.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: License GPL
-  - score: '100.0'
-    start_line: 44
-    end_line: 48
-    matcher: 2-aho
-    rule_length: 45
-    matched_length: 45
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_207.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, without written agreement and
-       without license or royalty fees, to use, copy, and distribute
-       this document for any purpose, provided that the above copyright
-       notice appears in all copies of this document and that the
-       contents of this document remain unaltered.
-  - score: '100.0'
-    start_line: 55
-    end_line: 64
-    matcher: 2-aho
-    rule_length: 85
-    matched_length: 85
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus_22.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to make and distribute verbatim copies of
-       this manual provided the copyright notice and this permission notice
-       are preserved on all copies.
+          You should have received a copy of the GNU General Public License
+          along with Bash.  If not, see <http://www.gnu.org/licenses/>.
+          On Debian systems, the complete text of the GNU General Public License
+          can be found in `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 28
+        end_line: 34
+        matched_length: 78
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bash-exception-gpl
+        licensedb_identifier: bash-exception-gpl.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 78
+        rule_relevance: 100
+        matched_text: |
+          The Free Software Foundation has exempted Bash from the requirement of
+          Paragraph 2c of the General Public License.  This is to say, there is
+          no requirement for Bash to print a notice when it is started
+          interactively in the usual way.  We made this exception because users
+          and standards expect shells not to print such messages.  This
+          exception applies to any program that serves as a shell and that is
+          based primarily on Bash as opposed to other GNU software.
+        licenses:
+          - key: bash-exception-gpl
+            name: Bash exception to GPL
+            short_name: Bash exception to GPL
+            category: Copyleft
+            is_exception: yes
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url:
+            text_url: https://git.savannah.gnu.org/cgit/bash.git/plain/COPYING?h=bash-3.0-rc1&id=dd9e6dfa23d0dae4888f11fb8c6a27bc36d1b283
+            reference_url: https://scancode-licensedb.aboutcode.org/bash-exception-gpl
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.yml
+            spdx_license_key: LicenseRef-scancode-bash-exception-gpl-2.0
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
+      - score: '100.0'
+        start_line: 37
+        end_line: 37
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-1.0-plus
+        licensedb_identifier: gpl_72.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 100
+        matched_text: 'Files with other copyright statement than: Copyright FSF, License GPL'
+        licenses:
+          - key: gpl-1.0-plus
+            name: GNU General Public License 1.0 or later
+            short_name: GPL 1.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-1.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml
+            spdx_license_key: GPL-1.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 44
+        end_line: 48
+        matched_length: 45
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_207.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 45
+        rule_relevance: 100
+        matched_text: |
+           Permission is hereby granted, without written agreement and
+           without license or royalty fees, to use, copy, and distribute
+           this document for any purpose, provided that the above copyright
+           notice appears in all copies of this document and that the
+           contents of this document remain unaltered.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+  - license_expression: gfdl-1.3-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 55
+        end_line: 64
+        matched_length: 85
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.3-plus
+        licensedb_identifier: gfdl-1.3-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 85
+        rule_relevance: 100
+        matched_text: |
+           Permission is granted to make and distribute verbatim copies of
+           this manual provided the copyright notice and this permission notice
+           are preserved on all copies.
 
-       Permission is granted to copy, distribute and/or modify this document
-       under the terms of the GNU Free Documentation License, Version 1.3 or
-       any later version published by the Free Software Foundation; with no
-       Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-       A copy of the license is included in the section entitled
-       ``GNU Free Documentation License''.
-  - score: '100.0'
-    start_line: 71
-    end_line: 76
-    matcher: 2-aho
-    rule_length: 60
-    matched_length: 60
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this document
-       under the terms of the GNU Free Documentation License, Version 1.3 or
-       any later version published by the Free Software Foundation; with no
-       Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-       A copy of the license is included in the section entitled
-       ``GNU Free Documentation License''.
-  - score: '100.0'
-    start_line: 82
-    end_line: 84
-    matcher: 2-aho
-    rule_length: 25
-    matched_length: 25
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_206.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to make and distribute verbatim copies of
-       this manual provided the copyright notice and this permission notice
-       pare preserved on all copies.
-  - score: '99.0'
-    start_line: 86
-    end_line: 99
-    matcher: 2-aho
-    rule_length: 113
-    matched_length: 113
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: latex2e_7.RULE
-    license_expression: latex2e
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to process this file through TeX and print the
-       results, provided the printed document carries copying permission
-       notice identical to this one except for the removal of this paragraph
-       (this paragraph not being relevant to the printed manual).
+           Permission is granted to copy, distribute and/or modify this document
+           under the terms of the GNU Free Documentation License, Version 1.3 or
+           any later version published by the Free Software Foundation; with no
+           Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+           A copy of the license is included in the section entitled
+           ``GNU Free Documentation License''.
+        licenses:
+          - key: gfdl-1.3-plus
+            name: GNU Free Documentation License v1.3 or later
+            short_name: GFDL 1.3 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            spdx_license_key: GFDL-1.3-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
+  - license_expression: gfdl-1.3-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 71
+        end_line: 76
+        matched_length: 60
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.3-plus
+        licensedb_identifier: gfdl-1.3-plus.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 60
+        rule_relevance: 100
+        matched_text: |
+           Permission is granted to copy, distribute and/or modify this document
+           under the terms of the GNU Free Documentation License, Version 1.3 or
+           any later version published by the Free Software Foundation; with no
+           Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+           A copy of the license is included in the section entitled
+           ``GNU Free Documentation License''.
+        licenses:
+          - key: gfdl-1.3-plus
+            name: GNU Free Documentation License v1.3 or later
+            short_name: GFDL 1.3 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            spdx_license_key: GFDL-1.3-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
+  - license_expression: other-permissive AND latex2e
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 82
+        end_line: 84
+        matched_length: 25
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_206.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 25
+        rule_relevance: 100
+        matched_text: |
+           Permission is granted to make and distribute verbatim copies of
+           this manual provided the copyright notice and this permission notice
+           pare preserved on all copies.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+      - score: '99.0'
+        start_line: 86
+        end_line: 99
+        matched_length: 113
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: latex2e
+        licensedb_identifier: latex2e_7.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 113
+        rule_relevance: 99
+        matched_text: |
+           Permission is granted to process this file through TeX and print the
+           results, provided the printed document carries copying permission
+           notice identical to this one except for the removal of this paragraph
+           (this paragraph not being relevant to the printed manual).
 
-       Permission is granted to copy and distribute modified versions of this
-       manual under the conditions for verbatim copying, provided that the entire
-       resulting derived work is distributed under the terms of a permission
-       notice identical to this one.
+           Permission is granted to copy and distribute modified versions of this
+           manual under the conditions for verbatim copying, provided that the entire
+           resulting derived work is distributed under the terms of a permission
+           notice identical to this one.
 
-       Permission is granted to copy and distribute translations of this manual
-       into another language, under the above conditions for modified versions,
-       except that this permission notice may be stated in a translation approved
-       by the Foundation.
-  - score: '99.0'
-    start_line: 108
-    end_line: 124
-    matcher: 2-aho
-    rule_length: 137
-    matched_length: 137
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: latex2e_3.RULE
-    license_expression: latex2e
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to process this file through Tex and print the
-       results, provided the printed document carries copying permission notice
-       identical to this one except for the removal of this paragraph (this
-       paragraph not being relevant to the printed manual).
+           Permission is granted to copy and distribute translations of this manual
+           into another language, under the above conditions for modified versions,
+           except that this permission notice may be stated in a translation approved
+           by the Foundation.
+        licenses:
+          - key: latex2e
+            name: Latex2e License
+            short_name: Latex2e License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: LaTeX
+            homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/latex2e
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            spdx_license_key: Latex2e
+            spdx_url: https://spdx.org/licenses/Latex2e
+  - license_expression: latex2e
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.0'
+        start_line: 108
+        end_line: 124
+        matched_length: 137
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: latex2e
+        licensedb_identifier: latex2e_3.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 137
+        rule_relevance: 99
+        matched_text: |
+           Permission is granted to process this file through Tex and print the
+           results, provided the printed document carries copying permission notice
+           identical to this one except for the removal of this paragraph (this
+           paragraph not being relevant to the printed manual).
 
-       Permission is granted to make and distribute verbatim copies of this manual
-       provided the copyright notice and this permission notice are preserved on
-       all copies.
+           Permission is granted to make and distribute verbatim copies of this manual
+           provided the copyright notice and this permission notice are preserved on
+           all copies.
 
-       Permission is granted to copy and distribute modified versions of this
-       manual under the conditions for verbatim copying, provided also that the
-       GNU Copyright statement is available to the distributee, and provided that
-       the entire resulting derived work is distributed under the terms of a
-       permission notice identical to this one.
+           Permission is granted to copy and distribute modified versions of this
+           manual under the conditions for verbatim copying, provided also that the
+           GNU Copyright statement is available to the distributee, and provided that
+           the entire resulting derived work is distributed under the terms of a
+           permission notice identical to this one.
 
-       Permission is granted to copy and distribute translations of this manual
-       into another language, under the above conditions for modified versions.
-  - score: '100.0'
-    start_line: 132
-    end_line: 137
-    matcher: 2-aho
-    rule_length: 60
-    matched_length: 60
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this document
-       under the terms of the GNU Free Documentation License, Version 1.3 or
-       any later version published by the Free Software Foundation; with no
-       Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-       A copy of the license is included in the section entitled
-       ``GNU Free Documentation License''.
-  - score: '99.0'
-    start_line: 144
-    end_line: 160
-    matcher: 2-aho
-    rule_length: 137
-    matched_length: 137
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: latex2e_2.RULE
-    license_expression: latex2e
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to make and distribute verbatim copies of this manual
-       provided the copyright notice and this permission notice are preserved on
-       all copies.
+           Permission is granted to copy and distribute translations of this manual
+           into another language, under the above conditions for modified versions.
+        licenses:
+          - key: latex2e
+            name: Latex2e License
+            short_name: Latex2e License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: LaTeX
+            homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/latex2e
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            spdx_license_key: Latex2e
+            spdx_url: https://spdx.org/licenses/Latex2e
+  - license_expression: gfdl-1.3-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 132
+        end_line: 137
+        matched_length: 60
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.3-plus
+        licensedb_identifier: gfdl-1.3-plus.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 60
+        rule_relevance: 100
+        matched_text: |
+           Permission is granted to copy, distribute and/or modify this document
+           under the terms of the GNU Free Documentation License, Version 1.3 or
+           any later version published by the Free Software Foundation; with no
+           Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+           A copy of the license is included in the section entitled
+           ``GNU Free Documentation License''.
+        licenses:
+          - key: gfdl-1.3-plus
+            name: GNU Free Documentation License v1.3 or later
+            short_name: GFDL 1.3 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            spdx_license_key: GFDL-1.3-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
+  - license_expression: latex2e
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.0'
+        start_line: 144
+        end_line: 160
+        matched_length: 137
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: latex2e
+        licensedb_identifier: latex2e_2.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 137
+        rule_relevance: 99
+        matched_text: |
+           Permission is granted to make and distribute verbatim copies of this manual
+           provided the copyright notice and this permission notice are preserved on
+           all copies.
 
-       Permission is granted to process this file through Tex and print the
-       results, provided the printed document carries copying permission notice
-       identical to this one except for the removal of this paragraph (this
-       paragraph not being relevant to the printed manual).
+           Permission is granted to process this file through Tex and print the
+           results, provided the printed document carries copying permission notice
+           identical to this one except for the removal of this paragraph (this
+           paragraph not being relevant to the printed manual).
 
-       Permission is granted to copy and distribute modified versions of this
-       manual under the conditions for verbatim copying, provided also that the
-       GNU Copyright statement is available to the distributee, and provided that
-       the entire resulting derived work is distributed under the terms of a
-       permission notice identical to this one.
+           Permission is granted to copy and distribute modified versions of this
+           manual under the conditions for verbatim copying, provided also that the
+           GNU Copyright statement is available to the distributee, and provided that
+           the entire resulting derived work is distributed under the terms of a
+           permission notice identical to this one.
 
-       Permission is granted to copy and distribute translations of this manual
-       into another language, under the above conditions for modified versions.
-  - score: '100.0'
-    start_line: 168
-    end_line: '194'
-    matcher: 2-aho
-    rule_length: 243
-    matched_length: 243
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-original-uc_3.RULE
-    license_expression: bsd-original-uc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. All advertising materials mentioning features or use of this software
-       *    must display the following acknowledgement:
-       *      This product includes software developed by the University of
-       *      California, Berkeley and its contributors.
-       * 4. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: '198'
-    end_line: 212
-    matcher: 2-aho
-    rule_length: 141
-    matched_length: 141
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: historical_10.RULE
-    license_expression: historical
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-       * purpose with or without fee is hereby granted, provided that the above
-       * copyright notice and this permission notice appear in all copies, and that
-       * the name of Digital Equipment Corporation not be used in advertising or
-       * publicity pertaining to distribution of the document or software without
-       * specific, written prior permission.
-       *
-       * THE SOFTWARE IS PROVIDED "AS IS" AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL
-       * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
-       * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT
-       * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
-       * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
-       * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
-       * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-       * SOFTWARE.
-  - score: '100.0'
-    start_line: 220
-    end_line: 223
-    matcher: 2-aho
-    rule_length: 28
-    matched_length: 28
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_291.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to distribute, modify and use this program as long
-       * as this comment is not removed or changed.
-       *
-       * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY
+           Permission is granted to copy and distribute translations of this manual
+           into another language, under the above conditions for modified versions.
+        licenses:
+          - key: latex2e
+            name: Latex2e License
+            short_name: Latex2e License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: LaTeX
+            homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/latex2e
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            spdx_license_key: Latex2e
+            spdx_url: https://spdx.org/licenses/Latex2e
+  - license_expression: bsd-original-uc AND historical
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 168
+        end_line: '194'
+        matched_length: 243
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-original-uc
+        licensedb_identifier: bsd-original-uc_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 243
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. All advertising materials mentioning features or use of this software
+           *    must display the following acknowledgement:
+           *      This product includes software developed by the University of
+           *      California, Berkeley and its contributors.
+           * 4. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-original-uc
+            name: BSD-Original-UC
+            short_name: BSD-Original-UC
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            spdx_license_key: BSD-4-Clause-UC
+            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
+      - score: '100.0'
+        start_line: '198'
+        end_line: 212
+        matched_length: 141
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: historical
+        licensedb_identifier: historical_10.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 141
+        rule_relevance: 100
+        matched_text: |
+           * Permission to use, copy, modify, and distribute this software for any
+           * purpose with or without fee is hereby granted, provided that the above
+           * copyright notice and this permission notice appear in all copies, and that
+           * the name of Digital Equipment Corporation not be used in advertising or
+           * publicity pertaining to distribution of the document or software without
+           * specific, written prior permission.
+           *
+           * THE SOFTWARE IS PROVIDED "AS IS" AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL
+           * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
+           * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT
+           * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+           * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+           * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+           * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+           * SOFTWARE.
+        licenses:
+          - key: historical
+            name: Historical Permission Notice and Disclaimer
+            short_name: Historical Permission Notice and Disclaimer
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: OSI - Open Source Initiative
+            homepage_url: http://www.opensource.org/licenses/historical.php
+            text_url: http://www.opensource.org/licenses/historical.php
+            reference_url: https://scancode-licensedb.aboutcode.org/historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.yml
+            spdx_license_key: HPND
+            spdx_url: https://spdx.org/licenses/HPND
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 220
+        end_line: 223
+        matched_length: 28
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_291.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 28
+        rule_relevance: 100
+        matched_text: |
+           * Permission is granted to distribute, modify and use this program as long
+           * as this comment is not removed or changed.
+           *
+           * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY chet@po.cwru.edu FOR
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE

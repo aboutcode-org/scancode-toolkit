@@ -39,13 +39,101 @@
     "code_view_url": null,
     "vcs_url": "Repository, https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
-    "license_expression": "agpl-3.0-plus AND agpl-3.0-plus",
-    "declared_license": {
-      "license": "AGPL-3.0-or-later",
-      "classifiers": [
-        "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)"
-      ]
-    },
+    "declared_license_expression": "agpl-3.0-plus",
+    "declared_license_expression_spdx": "AGPL-3.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "agpl-3.0-plus",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "agpl-3.0-plus",
+            "licensedb_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 5,
+            "rule_relevance": 100,
+            "matched_text": "AGPL-3.0-or-later",
+            "licenses": [
+              {
+                "key": "agpl-3.0-plus",
+                "name": "GNU Affero General Public License 3.0 or later",
+                "short_name": "AGPL 3.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
+                "text_url": "http://www.gnu.org/licenses/agpl.txt",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/agpl-3.0-plus",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.yml",
+                "spdx_license_key": "AGPL-3.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "agpl-3.0-plus",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "agpl-3.0-plus",
+            "licensedb_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 12,
+            "rule_relevance": 100,
+            "matched_text": "['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']",
+            "licenses": [
+              {
+                "key": "agpl-3.0-plus",
+                "name": "GNU Affero General Public License 3.0 or later",
+                "short_name": "AGPL 3.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
+                "text_url": "http://www.gnu.org/licenses/agpl.txt",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/agpl-3.0-plus",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.yml",
+                "spdx_license_key": "AGPL-3.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'license': 'AGPL-3.0-or-later', 'classifiers': ['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [

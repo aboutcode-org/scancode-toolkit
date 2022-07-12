@@ -1,45 +1,67 @@
 primary_license:
 declared_license:
 license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
 copyright: |
   Copyright (c) 2000 Roland Bauerschmidt <rb@debian.org>
   Copyright (c) 1997, 1998, 1999 Guy Maor <maor@debian.org>
   Copyright (c) 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
   portions Copyright (c) 1994 Debian Association, Inc.
-matches:
-  - score: '100.0'
-    start_line: 28
-    end_line: 47
-    matcher: 2-aho
-    rule_length: 143
-    matched_length: 143
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_811.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      and is
-      GPL V2 as well.
+license_detections:
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 28
+        end_line: 47
+        matched_length: 143
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_811.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 143
+        rule_relevance: 100
+        matched_text: |
+          The examples directory has been contributed by John Zaitseff, and is
+          GPL V2 as well.
 
-          This program is free software; you can redistribute it and/or modify
-          it under the terms of the GNU General Public License as published by
-          the Free Software Foundation; either version 2 of the License, or
-          (at your option) any later version.
+              This program is free software; you can redistribute it and/or modify
+              it under the terms of the GNU General Public License as published by
+              the Free Software Foundation; either version 2 of the License, or
+              (at your option) any later version.
 
-          This program is distributed in the hope that it will be useful,
-          but WITHOUT ANY WARRANTY; without even the implied warranty of
-          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-          GNU General Public License for more details.
+              This program is distributed in the hope that it will be useful,
+              but WITHOUT ANY WARRANTY; without even the implied warranty of
+              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+              GNU General Public License for more details.
 
-          You should have received a copy of the GNU General Public License
-          along with this program; if not, write to the
-          Free Software Foundation, Inc.,
-          51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+              You should have received a copy of the GNU General Public License
+              along with this program; if not, write to the
+              Free Software Foundation, Inc.,
+              51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
 
-      On Debian GNU/Linux systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-2'.
+          On Debian GNU/Linux systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later

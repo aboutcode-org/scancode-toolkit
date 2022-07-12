@@ -13,6 +13,8 @@ declared_license:
   - BSD-2
 license_expression: bsd-new AND bsd-new AND bsd-new AND (isc AND bsd-simplified) AND bsd-new
   AND bsd-new AND bsd-new AND bsd-new
+declared_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND (ISC AND
+  BSD-2-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
 copyright: |
   Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
   (Royal Institute of Technology, Stockholm, Sweden).
@@ -32,96 +34,156 @@ copyright: |
   by Simon 'corecode' Schubert <corecode@fs.ei.tum.de> and
   Matthias Schmidt <matthias@dragonflybsd.org>.
   Copyright (c) 2009 - 2012 Peter Pentchev.
-matches:
-  - score: '90.0'
-    start_line: 47
-    end_line: 59
-    matcher: 1-hash
-    rule_length: 101
-    matched_length: 101
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: bsd-new_1036.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions
-       are met:
-       .
-       1. Redistributions of source code must retain the above copyright
-          notice, this list of conditions and the following disclaimer.
-       2. Redistributions in binary form must reproduce the above copyright
-          notice, this list of conditions and the following disclaimer in
-          the documentation and/or other materials provided with the
-          distribution.
-       3. Neither the name of The DragonFly Project nor the names of its
-          contributors may be used to endorse or promote products derived
-          from this software without specific, prior written permission.
-  - score: '100.0'
-    start_line: 62
-    end_line: 72
-    matcher: 1-hash
-    rule_length: 111
-    matched_length: 111
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc_14.RULE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-       purpose with or without fee is hereby granted, provided that the above
-       copyright notice and this permission notice appear in all copies.
-       .
-       THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-       WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-       MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-       ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-       WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-       OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-  - score: '100.0'
-    start_line: 75
-    end_line: 94
-    matcher: 1-hash
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions
-       are met:
-       1. Redistributions of source code must retain the above copyright
-          notice, this list of conditions and the following disclaimer.
-       2. Redistributions in binary form must reproduce the above copyright
-          notice, this list of conditions and the following disclaimer in the
-          documentation and/or other materials provided with the distribution.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-       ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-       FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       SUCH DAMAGE.
+license_detections:
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '90.0'
+        start_line: 47
+        end_line: 59
+        matched_length: 101
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_1036.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 101
+        rule_relevance: 90
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+           modification, are permitted provided that the following conditions
+           are met:
+           .
+           1. Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+           2. Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in
+              the documentation and/or other materials provided with the
+              distribution.
+           3. Neither the name of The DragonFly Project nor the names of its
+              contributors may be used to endorse or promote products derived
+              from this software without specific, prior written permission.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: isc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 62
+        end_line: 72
+        matched_length: 111
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: isc
+        licensedb_identifier: isc_14.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 111
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software for any
+           purpose with or without fee is hereby granted, provided that the above
+           copyright notice and this permission notice appear in all copies.
+           .
+           THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+           WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+           MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+           ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+  - license_expression: bsd-simplified
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 75
+        end_line: 94
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-simplified
+        licensedb_identifier: bsd-simplified_27.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 183
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+           modification, are permitted provided that the following conditions
+           are met:
+           1. Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+           2. Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in the
+              documentation and/or other materials provided with the distribution.
+           .
+           THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+           ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+           FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified
+            name: BSD-2-Clause
+            short_name: BSD-2-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+            text_url: http://opensource.org/licenses/bsd-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            spdx_license_key: BSD-2-Clause
+            spdx_url: https://spdx.org/licenses/BSD-2-Clause

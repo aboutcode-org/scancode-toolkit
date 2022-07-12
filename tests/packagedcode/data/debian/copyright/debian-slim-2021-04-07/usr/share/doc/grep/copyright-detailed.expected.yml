@@ -4,6 +4,8 @@ declared_license:
   - GPL-3+
   - GPL-3+
 license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
+declared_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later)
 copyright: |
   1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
   2004, Stepan Kasal <kasal@ucw.cz>
@@ -15,55 +17,92 @@ copyright: |
   2003, Clint Adams <schizo@debian.org> Mon, 10 Mar 2003 02:10:32 -0500
   2001 Robert van der Meulen <rvdm@debian.org>
   1996-2000 Wichert Akkerman <wakkerma@debian.org>
-matches:
-  - score: '100.0'
-    start_line: 23
-    end_line: 23
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 27
-    end_line: 45
-    matcher: 2-aho
-    rule_length: 128
-    matched_length: 128
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_481.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 3, or (at your option)
-      any later version.
+license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 23
+        end_line: 23
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_92.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-3+'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 27
+        end_line: 45
+        matched_length: 128
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_481.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 128
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 3, or (at your option)
+          any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA
-      02110-1301, USA.
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA
+          02110-1301, USA.
 
-      Comment:
+          Comment:
 
-      On a Debian system you can find a copy of this license in
-      /usr/share/common-licenses/GPL-3.
+          On a Debian system you can find a copy of this license in
+          /usr/share/common-licenses/GPL-3.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later

@@ -1,56 +1,94 @@
 primary_license:
 declared_license:
 license_expression: gpl-2.0-plus AND gpl-2.0
+declared_license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
 copyright: |
   Copyright 2006-2009 Bastian Blank <waldi@debian.org>
   Copyright 2009 Ben Hutchings <ben@decadent.org.uk>
-matches:
-  - score: '100.0'
-    start_line: 6
-    end_line: 20
-    matcher: 2-aho
-    rule_length: 114
-    matched_length: 114
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_68.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License:
+license_detections:
+  - license_expression: gpl-2.0-plus AND gpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 6
+        end_line: 20
+        matched_length: 114
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_68.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 114
+        rule_relevance: 100
+        matched_text: |
+          License:
 
-          This package is free software; you can redistribute it and/or modify
-          it under the terms of the GNU General Public License as published by
-          the Free Software Foundation; either version 2 of the License, or
-          (at your option) any later version.
+              This package is free software; you can redistribute it and/or modify
+              it under the terms of the GNU General Public License as published by
+              the Free Software Foundation; either version 2 of the License, or
+              (at your option) any later version.
 
-          This package is distributed in the hope that it will be useful,
-          but WITHOUT ANY WARRANTY; without even the implied warranty of
-          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-          GNU General Public License for more details.
+              This package is distributed in the hope that it will be useful,
+              but WITHOUT ANY WARRANTY; without even the implied warranty of
+              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+              GNU General Public License for more details.
 
-          You should have received a copy of the GNU General Public License
-          along with this package; if not, write to the Free Software
-          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
-  - score: '100.0'
-    start_line: 22
-    end_line: 23
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1120.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian systems, the complete text of the GNU General
-      Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+              You should have received a copy of the GNU General Public License
+              along with this package; if not, write to the Free Software
+              Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 22
+        end_line: 23
+        matched_length: 24
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0
+        licensedb_identifier: gpl-2.0_1120.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 24
+        rule_relevance: 100
+        matched_text: |
+          On Debian systems, the complete text of the GNU General
+          Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0
+            name: GNU General Public License 2.0
+            short_name: GPL 2.0
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            spdx_license_key: GPL-2.0-only
+            spdx_url: https://spdx.org/licenses/GPL-2.0-only

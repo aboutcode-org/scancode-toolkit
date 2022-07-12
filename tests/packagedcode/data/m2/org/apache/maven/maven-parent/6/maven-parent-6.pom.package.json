@@ -316,8 +316,10 @@
   "code_view_url": "https://svn.apache.org/repos/asf/maven/pom/tags/maven-parent-6",
   "vcs_url": "svn+https://svn.apache.org/repos/asf/maven/pom/tags/maven-parent-6",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-parent@6?classifier=sources"

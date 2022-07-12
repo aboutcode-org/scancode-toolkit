@@ -2,6 +2,8 @@ primary_license:
 declared_license:
 license_expression: lgpl-2.0-plus AND mit AND gpl-2.0-plus AND apache-2.0 AND apache-2.0 AND
   mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
+declared_license_expression_spdx: LGPL-2.0-or-later AND MIT AND GPL-2.0-or-later AND Apache-2.0
+  AND Apache-2.0 AND MIT AND MIT AND GPL-2.0-or-later AND GPL-2.0-or-later
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.
   Copyright (c) 2008-2010 Novell, Inc.
@@ -12,208 +14,369 @@ copyright: |
   Copyright 2015 Remko Troncon
   Copyright 1998-1999 Tom Tromey 2001 Red Hat Software
   Copyright 2017 Jussi Pakkanen
-matches:
-  - score: '100.0'
-    start_line: 45
-    end_line: 60
-    matcher: 2-aho
-    rule_length: 138
-    matched_length: 138
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_18.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or
-          modify it under the terms of the GNU Lesser General Public
-          License as published by the Free Software Foundation; either
-          version 2 of the License, or (at your option) any later version.
+license_detections:
+  - license_expression: lgpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 45
+        end_line: 60
+        matched_length: 138
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.0-plus
+        licensedb_identifier: lgpl-2.0-plus_18.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 138
+        rule_relevance: 100
+        matched_text: |
+              This package is free software; you can redistribute it and/or
+              modify it under the terms of the GNU Lesser General Public
+              License as published by the Free Software Foundation; either
+              version 2 of the License, or (at your option) any later version.
 
-          This package is distributed in the hope that it will be useful,
-          but WITHOUT ANY WARRANTY; without even the implied warranty of
-          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-          Lesser General Public License for more details.
+              This package is distributed in the hope that it will be useful,
+              but WITHOUT ANY WARRANTY; without even the implied warranty of
+              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+              Lesser General Public License for more details.
 
-          You should have received a copy of the GNU Lesser General Public
-          License along with this package; if not, write to the Free Software
-          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+              You should have received a copy of the GNU Lesser General Public
+              License along with this package; if not, write to the Free Software
+              Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-      On Debian systems, the complete text of the GNU Lesser General
-      Public License can be found in `/usr/share/common-licenses/LGPL'.
-  - score: '100.0'
-    start_line: 66
-    end_line: 66
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit_437.RULE
-    license_expression: mit
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: Expat'
-  - score: '100.0'
-    start_line: 74
-    end_line: 74
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: GPL-2+'
-  - score: '100.0'
-    start_line: 80
-    end_line: 80
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_65.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: Apache-2.0'
-  - score: '100.0'
-    start_line: 82
-    end_line: 96
-    matcher: 2-aho
-    rule_length: 108
-    matched_length: 108
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_1035.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License: Apache-2.0
-       Licensed under the Apache License, Version 2.0 (the "License");
-       you may not use this file except in compliance with the License.
-       You may obtain a copy of the License at
-       .
-           http://www.apache.org/licenses/LICENSE-2.0
-       .
-       Unless required by applicable law or agreed to in writing, software
-       distributed under the License is distributed on an "AS IS" BASIS,
-       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       See the License for the specific language governing permissions and
-       limitations under the License.
-       .
-       On Debian systems, a copy of the Apache license is available in
-       <file:///usr/share/common-licenses/Apache-2.0>.
-  - score: '100.0'
-    start_line: 98
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit_437.RULE
-    license_expression: mit
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: Expat'
-  - score: '100.0'
-    start_line: 99
-    end_line: 115
-    matcher: 2-aho
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy
-       of this software and associated documentation files (the "Software"), to deal
-       in the Software without restriction, including without limitation the rights
-       to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-       copies of the Software, and to permit persons to whom the Software is
-       furnished to do so, subject to the following conditions:
-       .
-       The above copyright notice and this permission notice shall be included in
-       all copies or substantial portions of the Software.
-       .
-       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-       FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-       SOFTWARE.
-  - score: '100.0'
-    start_line: 117
-    end_line: 117
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: GPL-2+'
-  - score: '100.0'
-    start_line: 118
-    end_line: 129
-    matcher: 2-aho
-    rule_length: 99
-    matched_length: 99
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_124.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-       it under the terms of the GNU General Public License as published by
-       the Free Software Foundation; either version 2, or (at your option)
-       any later version.
-       .
-       This program is distributed in the hope that it will be useful,
-       but WITHOUT ANY WARRANTY; without even the implied warranty of
-       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-       GNU General Public License for more details.
-       .
-       You should have received a copy of the GNU General Public License
-       along with this program; if not, see <http://www.gnu.org/licenses/>.
+          On Debian systems, the complete text of the GNU Lesser General
+          Public License can be found in `/usr/share/common-licenses/LGPL'.
+        licenses:
+          - key: lgpl-2.0-plus
+            name: GNU Library General Public License 2.0 or later
+            short_name: LGPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            spdx_license_key: LGPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 66
+        end_line: 66
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit_437.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 100
+        matched_text: 'License: Expat'
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 74
+        end_line: 74
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: GPL-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+  - license_expression: apache-2.0 AND mit AND gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 80
+        end_line: 80
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_65.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: Apache-2.0'
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+      - score: '100.0'
+        start_line: 82
+        end_line: 96
+        matched_length: 108
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_1035.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/Apache-2.0
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 108
+        rule_relevance: 100
+        matched_text: |
+          License: Apache-2.0
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at
+           .
+               http://www.apache.org/licenses/LICENSE-2.0
+           .
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
+           .
+           On Debian systems, a copy of the Apache license is available in
+           <file:///usr/share/common-licenses/Apache-2.0>.
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+      - score: '100.0'
+        start_line: 98
+        end_line: 98
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit_437.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 2
+        rule_relevance: 100
+        matched_text: 'License: Expat'
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+      - score: '100.0'
+        start_line: 99
+        end_line: 115
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 161
+        rule_relevance: 100
+        matched_text: |
+           Permission is hereby granted, free of charge, to any person obtaining a copy
+           of this software and associated documentation files (the "Software"), to deal
+           in the Software without restriction, including without limitation the rights
+           to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+           copies of the Software, and to permit persons to whom the Software is
+           furnished to do so, subject to the following conditions:
+           .
+           The above copyright notice and this permission notice shall be included in
+           all copies or substantial portions of the Software.
+           .
+           THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+           IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+           FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+           AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+           SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+      - score: '100.0'
+        start_line: 117
+        end_line: 117
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: GPL-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 118
+        end_line: 129
+        matched_length: 99
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_124.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 99
+        rule_relevance: 100
+        matched_text: |
+           This program is free software; you can redistribute it and/or modify
+           it under the terms of the GNU General Public License as published by
+           the Free Software Foundation; either version 2, or (at your option)
+           any later version.
+           .
+           This program is distributed in the hope that it will be useful,
+           but WITHOUT ANY WARRANTY; without even the implied warranty of
+           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+           GNU General Public License for more details.
+           .
+           You should have received a copy of the GNU General Public License
+           along with this program; if not, see <http://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later

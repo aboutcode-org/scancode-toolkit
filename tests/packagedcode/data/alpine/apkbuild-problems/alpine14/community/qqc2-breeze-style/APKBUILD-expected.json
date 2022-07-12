@@ -21,8 +21,72 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
-  "declared_license": "LicenseRef-KDE-Accepted-LGPL AND LicenseRef-KFQF-Accepted-GPL",
+  "declared_license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+  "declared_license_expression_spdx": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
+  "license_detections": [
+    {
+      "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+          "licensedb_identifier": "spdx-license-identifier: kde-accepted-lgpl AND kfqf-accepted-gpl",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 9,
+          "rule_relevance": 100,
+          "matched_text": "licenseref-kde-accepted-lgpl AND licenseref-kfqf-accepted-gpl",
+          "licenses": [
+            {
+              "key": "kde-accepted-lgpl",
+              "name": "KDE Accepted LGPL",
+              "short_name": "KDE Accepted LGPL",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "KDE Project",
+              "homepage_url": "https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/kde-accepted-lgpl",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.yml",
+              "spdx_license_key": "LicenseRef-scancode-kde-accepted-lgpl",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE"
+            },
+            {
+              "key": "kfqf-accepted-gpl",
+              "name": "KFQF Accepted GPL",
+              "short_name": "KFQF Accepted GPL",
+              "category": "Copyleft",
+              "is_exception": true,
+              "is_unknown": false,
+              "owner": "KDE Project",
+              "homepage_url": "https://github.com/KDE/licensedigger/blob/master/licensetexts/LicenseRef-KFQF-Accepted-GPL.txt",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/kfqf-accepted-gpl",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.yml",
+              "spdx_license_key": "LicenseRef-scancode-kfqf-accepted-gpl",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.LICENSE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extracted_license_statement": "LicenseRef-KDE-Accepted-LGPL AND LicenseRef-KFQF-Accepted-GPL",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

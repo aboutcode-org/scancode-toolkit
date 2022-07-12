@@ -1,196 +1,298 @@
 primary_license:
 declared_license:
 license_expression: sleepycat AND sleepycat AND bsd-new AND bsd-new AND bsd-new
+declared_license_expression_spdx: Sleepycat AND Sleepycat AND BSD-3-Clause AND BSD-3-Clause
+  AND BSD-3-Clause
 copyright: |
   Copyright (c) 1990, 2010 Oracle and/or its affiliates
   Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
   Copyright (c) 1995, 1996 The President and Fellows of Harvard University
   Copyright (c) 2000-2005 INRIA, France Telecom
-matches:
-  - score: '100.0'
-    start_line: 5
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 61
-    matched_length: 61
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: sleepycat_17.RULE
-    license_expression: sleepycat
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      http://www.oracle.com/technology/software/products/berkeley-db/db/index.html
+license_detections:
+  - license_expression: sleepycat
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 5
+        end_line: 12
+        matched_length: 61
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: sleepycat
+        licensedb_identifier: sleepycat_17.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 61
+        rule_relevance: 100
+        matched_text: |
+          http://www.oracle.com/technology/software/products/berkeley-db/db/index.html
 
-      Copyright and license:
+          Copyright and license:
 
-      The following is the license that applies to this copy of the Berkeley DB
-      software.  For a license to use the Berkeley DB software under conditions
-      other than those described here, or to purchase support for this software,
-      please contact Oracle at berkeleydb-info_us@oracle.com.
-  - score: '100.0'
-    start_line: 18
-    end_line: 47
-    matcher: 2-aho
-    rule_length: 283
-    matched_length: 283
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: sleepycat_15.RULE
-    license_expression: sleepycat
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. Redistributions in any form must be accompanied by information on
-       *    how to obtain complete source code for the DB software and any
-       *    accompanying software that uses the DB software.  The source code
-       *    must either be included in the distribution or be available for no
-       *    more than the cost of distribution plus a nominal fee, and must be
-       *    freely redistributable under reasonable conditions.  For an
-       *    executable file, complete source code means the source code for all
-       *    modules it contains.  It does not include source code for modules or
-       *    files that typically accompany the major components of the operating
-       *    system on which the executable file runs.
-       *
-       * THIS SOFTWARE IS PROVIDED BY ORACLE ``AS IS'' AND ANY EXPRESS OR
-       * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-       * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
-       * NON-INFRINGEMENT, ARE DISCLAIMED.  IN NO EVENT SHALL ORACLE BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-       * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-       * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-       * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-       * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-       * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-       * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 53
-    end_line: 75
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_19.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 81
-    end_line: 103
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_943.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 111
-    end_line: 133
-    matcher: 2-aho
-    rule_length: 216
-    matched_length: 216
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_115.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. Neither the name of the copyright holders nor the names of its
-       *    contributors may be used to endorse or promote products derived from
-       *    this software without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-       * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-       * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-       * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-       * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-       * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-       * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-       * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
-       * THE POSSIBILITY OF SUCH DAMAGE.
+          The following is the license that applies to this copy of the Berkeley DB
+          software.  For a license to use the Berkeley DB software under conditions
+          other than those described here, or to purchase support for this software,
+          please contact Oracle at berkeleydb-info_us@oracle.com.
+        licenses:
+          - key: sleepycat
+            name: Sleepycat License (Berkeley Database License)
+            short_name: Sleepycat License
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Oracle Corporation
+            homepage_url: http://opensource.org/licenses/sleepycat.html
+            text_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html
+            reference_url: https://scancode-licensedb.aboutcode.org/sleepycat
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.yml
+            spdx_license_key: Sleepycat
+            spdx_url: https://spdx.org/licenses/Sleepycat
+  - license_expression: sleepycat
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 18
+        end_line: 47
+        matched_length: 283
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: sleepycat
+        licensedb_identifier: sleepycat_15.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 283
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. Redistributions in any form must be accompanied by information on
+           *    how to obtain complete source code for the DB software and any
+           *    accompanying software that uses the DB software.  The source code
+           *    must either be included in the distribution or be available for no
+           *    more than the cost of distribution plus a nominal fee, and must be
+           *    freely redistributable under reasonable conditions.  For an
+           *    executable file, complete source code means the source code for all
+           *    modules it contains.  It does not include source code for modules or
+           *    files that typically accompany the major components of the operating
+           *    system on which the executable file runs.
+           *
+           * THIS SOFTWARE IS PROVIDED BY ORACLE ``AS IS'' AND ANY EXPRESS OR
+           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+           * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+           * NON-INFRINGEMENT, ARE DISCLAIMED.  IN NO EVENT SHALL ORACLE BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+           * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+           * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+           * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+           * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+           * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+           * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: sleepycat
+            name: Sleepycat License (Berkeley Database License)
+            short_name: Sleepycat License
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Oracle Corporation
+            homepage_url: http://opensource.org/licenses/sleepycat.html
+            text_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html
+            reference_url: https://scancode-licensedb.aboutcode.org/sleepycat
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.yml
+            spdx_license_key: Sleepycat
+            spdx_url: https://spdx.org/licenses/Sleepycat
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 53
+        end_line: 75
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_19.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 81
+        end_line: 103
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_943.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 111
+        end_line: 133
+        matched_length: 216
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_115.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 216
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. Neither the name of the copyright holders nor the names of its
+           *    contributors may be used to endorse or promote products derived from
+           *    this software without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+           * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+           * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+           * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+           * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+           * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+           * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+           * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+           * THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause

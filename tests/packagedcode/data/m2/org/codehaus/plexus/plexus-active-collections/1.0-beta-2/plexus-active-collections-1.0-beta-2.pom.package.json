@@ -21,8 +21,10 @@
   "code_view_url": null,
   "vcs_url": "svn+http://svn.codehaus.org/plexus/tags/plexus-active-collections-1.0-beta-2",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-active-collections@1.0-beta-2?classifier=sources"

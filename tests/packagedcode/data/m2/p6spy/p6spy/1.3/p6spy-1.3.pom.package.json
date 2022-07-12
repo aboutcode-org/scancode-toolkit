@@ -57,15 +57,101 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/p6spy",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy",
   "copyright": null,
-  "license_expression": "apache-1.1",
-  "declared_license": [
+  "declared_license_expression": "apache-1.1",
+  "declared_license_expression_spdx": "Apache-1.1",
+  "license_detections": [
     {
-      "name": "The P6Spy Software License, Version 1.1",
-      "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD",
-      "comments": null,
-      "distribution": null
+      "license_expression": "apache-1.1",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-1.1",
+          "licensedb_identifier": "apache-1.1_66.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 7,
+          "rule_relevance": 100,
+          "matched_text": "The P6Spy Software License, Version 1.1",
+          "licenses": [
+            {
+              "key": "apache-1.1",
+              "name": "Apache License 1.1",
+              "short_name": "Apache 1.1",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://apache.org/licenses/LICENSE-1.1",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.yml",
+              "spdx_license_key": "Apache-1.1",
+              "spdx_url": "https://spdx.org/licenses/Apache-1.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "apache-1.1",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 13,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-1.1",
+          "licensedb_identifier": "apache-1.1_64.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 13,
+          "rule_relevance": 100,
+          "matched_text": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD",
+          "licenses": [
+            {
+              "key": "apache-1.1",
+              "name": "Apache License 1.1",
+              "short_name": "Apache 1.1",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://apache.org/licenses/LICENSE-1.1",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.yml",
+              "spdx_license_key": "Apache-1.1",
+              "spdx_url": "https://spdx.org/licenses/Apache-1.1"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'The P6Spy Software License, Version 1.1', 'url': 'http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/p6spy/p6spy@1.3?classifier=sources"

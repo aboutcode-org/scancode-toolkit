@@ -1,79 +1,120 @@
 primary_license:
 declared_license:
 license_expression: x11-xconsortium-veillard AND x11-xconsortium
+declared_license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard AND X11
 copyright: |
   Copyright (c) 2001-2002 Daniel Veillard
   Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
-matches:
-  - score: '100.0'
-    start_line: 15
-    end_line: 34
-    matcher: 2-aho
-    rule_length: '199'
-    matched_length: '199'
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-xconsortium-veillard.LICENSE
-    license_expression: x11-xconsortium-veillard
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy
-      of this software and associated documentation files (the "Software"), to deal
-      in the Software without restriction, including without limitation the rights
-      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-      copies of the Software, and to permit persons to whom the Software is fur-
-      nished to do so, subject to the following conditions:
+license_detections:
+  - license_expression: x11-xconsortium-veillard
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 15
+        end_line: 34
+        matched_length: '199'
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: x11-xconsortium-veillard
+        licensedb_identifier: x11-xconsortium-veillard.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: '199'
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is fur-
+          nished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included in
-      all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included in
+          all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
-      NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-      DANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-      IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
-      NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
+          NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+          DANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+          IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
+          NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-      Except as contained in this notice, the name of Daniel Veillard shall not
-      be used in advertising or otherwise to promote the sale, use or other deal-
-      ings in this Software without prior written authorization from him.
-  - score: '100.0'
-    start_line: 43
-    end_line: 62
-    matcher: 2-aho
-    rule_length: '198'
-    matched_length: '198'
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-xconsortium_4.RULE
-    license_expression: x11-xconsortium
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy
-      of this software and associated documentation files (the "Software"), to deal
-      in the Software without restriction, including without limitation the rights
-      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-      copies of the Software, and to permit persons to whom the Software is fur-
-      nished to do so, subject to the following conditions:
+          Except as contained in this notice, the name of Daniel Veillard shall not
+          be used in advertising or otherwise to promote the sale, use or other deal-
+          ings in this Software without prior written authorization from him.
+        licenses:
+          - key: x11-xconsortium-veillard
+            name: X11-Style (X Consortium Veillard)
+            short_name: X11-Style (X Consortium Veillard)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Daniel Veillard
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium-veillard
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.yml
+            spdx_license_key: LicenseRef-scancode-x11-xconsortium-veillard
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
+  - license_expression: x11-xconsortium
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 43
+        end_line: 62
+        matched_length: '198'
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: x11-xconsortium
+        licensedb_identifier: x11-xconsortium_4.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: '198'
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is fur-
+          nished to do so, subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included in
-      all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included in
+          all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
-      NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-      AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-      IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
-      NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
+          NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+          AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+          IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
+          NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-      Except as contained in this notice, the name of the authors shall not
-      be used in advertising or otherwise to promote the sale, use or other deal-
-      ings in this Software without prior written authorization from him.
+          Except as contained in this notice, the name of the authors shall not
+          be used in advertising or otherwise to promote the sale, use or other deal-
+          ings in this Software without prior written authorization from him.
+        licenses:
+          - key: x11-xconsortium
+            name: X11-Style (X Consortium)
+            short_name: X11-Style (X Consortium)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: X Consortium
+            homepage_url: http://www.xfree86.org/current/LICENSE5.html
+            text_url: http://www.xfree86.org/current/LICENSE5.html
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
+            spdx_license_key: X11
+            spdx_url: https://spdx.org/licenses/X11

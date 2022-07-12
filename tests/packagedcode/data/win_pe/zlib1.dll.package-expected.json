@@ -30,12 +30,101 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
-    "license_expression": "zlib AND unknown",
-    "declared_license": {
-      "LegalCopyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
-      "LegalTrademarks": "GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae",
-      "License": "(C) 1995-2002 Jean-loup Gailly and Mark Adler This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions: 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 3. This notice may not be removed or altered from any source distribution. Jean-loup Gailly Mark Adler jloup@gzip.org madler@alumni.caltech.edu"
-    },
+    "declared_license_expression": "zlib",
+    "declared_license_expression_spdx": "Zlib",
+    "license_detections": [
+      {
+        "license_expression": "zlib",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 66.67,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "zlib",
+            "licensedb_identifier": "zlib_24.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 100,
+            "matched_text": "license GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae",
+            "licenses": [
+              {
+                "key": "zlib",
+                "name": "ZLIB License",
+                "short_name": "ZLIB License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "zlib",
+                "homepage_url": "http://www.zlib.net/",
+                "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                "spdx_license_key": "Zlib",
+                "spdx_url": "https://spdx.org/licenses/Zlib"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": "zlib",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 144,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "zlib",
+            "licensedb_identifier": "zlib_17.RULE",
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 144,
+            "rule_relevance": 100,
+            "matched_text": "(C) 1995-2002 Jean-loup Gailly and Mark Adler This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions: 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 3. This notice may not be removed or altered from any source distribution. Jean-loup Gailly Mark Adler jloup@gzip.org madler@alumni.caltech.edu",
+            "licenses": [
+              {
+                "key": "zlib",
+                "name": "ZLIB License",
+                "short_name": "ZLIB License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "zlib",
+                "homepage_url": "http://www.zlib.net/",
+                "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                "spdx_license_key": "Zlib",
+                "spdx_url": "https://spdx.org/licenses/Zlib"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'LegalCopyright': '\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>', 'LegalTrademarks': 'GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae', 'License': \"(C) 1995-2002 Jean-loup Gailly and Mark Adler This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions: 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 3. This notice may not be removed or altered from any source distribution. Jean-loup Gailly Mark Adler jloup@gzip.org madler@alumni.caltech.edu\"}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

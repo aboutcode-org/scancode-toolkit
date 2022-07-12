@@ -2,143 +2,254 @@ primary_license:
 declared_license:
 license_expression: (lgpl-2.1-plus AND gpl-3.0-plus) AND lgpl-2.1-plus AND gpl-3.0-plus AND
   gfdl-1.3 AND gfdl-1.3-plus
+declared_license_expression_spdx: (LGPL-2.1-or-later AND GPL-3.0-or-later) AND LGPL-2.1-or-later
+  AND GPL-3.0-or-later AND GFDL-1.3-only AND GFDL-1.3-or-later
 copyright: |
   Copyright (c) 2000-2020 Free Software Foundation, Inc.
   Copyright (c) 2000-2020 Free Software Foundation, Inc.
   Copyright (c) 2001-2020 Free Software Foundation, Inc.
-matches:
-  - score: '95.45'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 21
-    matched_length: 21
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_and_gpl-3.0-plus_2.RULE
-    license_expression: lgpl-2.1-plus AND gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The library itself is licensed as LGPLv2.1+, the build system, test-suite and
-      command-line tools (package [libtasn1]-bin) are GPLv3+.
-  - score: '99.39'
-    start_line: 23
-    end_line: 42
-    matcher: 2-aho
-    rule_length: 164
-    matched_length: 164
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_312.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The [LIBTASN1] library is free software; you can redistribute it
-       * and/or modify it under the terms of the GNU Lesser General Public
-       * License as published by the Free Software Foundation; either
-       * version 2.1 of the License, or (at your option) any later version.
-       *
-       * This library is distributed in the hope that it will be useful, but
-       * WITHOUT ANY WARRANTY; without even the implied warranty of
-       * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-       * Lesser General Public License for more details.
-       *
-       * You should have received a copy of the GNU Lesser General Public
-       * License along with this library; if not, write to the Free Software
-       * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-       * 02110-1301, USA
-       */
+license_detections:
+  - license_expression: lgpl-2.1-plus AND gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.45'
+        start_line: 14
+        end_line: 15
+        matched_length: 21
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus AND gpl-3.0-plus
+        licensedb_identifier: lgpl-2.1-plus_and_gpl-3.0-plus_2.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 21
+        rule_relevance: 100
+        matched_text: |
+          The library itself is licensed as LGPLv2.1+, the build system, test-suite and
+          command-line tools (package libtasn1-bin) are GPLv3+.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.39'
+        start_line: 23
+        end_line: 42
+        matched_length: 164
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_312.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL
+          - /usr/share/common-licenses/LGPL-2.1
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 164
+        rule_relevance: 100
+        matched_text: |
+           * The LIBTASN1 library is free software; you can redistribute it
+           * and/or modify it under the terms of the GNU Lesser General Public
+           * License as published by the Free Software Foundation; either
+           * version 2.1 of the License, or (at your option) any later version.
+           *
+           * This library is distributed in the hope that it will be useful, but
+           * WITHOUT ANY WARRANTY; without even the implied warranty of
+           * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+           * Lesser General Public License for more details.
+           *
+           * You should have received a copy of the GNU Lesser General Public
+           * License along with this library; if not, write to the Free Software
+           * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+           * 02110-1301, USA
+           */
 
-      On Debian GNU/Linux systems, the complete text of the GNU Lesser
-      General Public License can be found in
-      `/usr/share/common-licenses/LGPL'; the text of the earliest applying version
-      of the license (2.1) can be found in `/usr/share/common-licenses/LGPL-2.1'.
-  - score: '85.91'
-    start_line: 50
-    end_line: 70
-    matcher: 3-seq
-    rule_length: 149
-    matched_length: 128
-    match_coverage: '85.91'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_417.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-       * it under the terms of the GNU General Public License as published by
-       * the Free Software Foundation, either version 3 of the License, or
-       * (at your option) any later version.
-       *
-       * This [program] is distributed in the hope that it will be useful,
-       * but WITHOUT ANY WARRANTY; without even the implied warranty of
-       * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-       * GNU General Public License for more details.
-       *
-       * You should have received a copy of the GNU General Public License
-       * along with this program.  If not, see <[http]://www.gnu.org/licenses/>.
-       *
-       */
+          On Debian GNU/Linux systems, the complete text of the GNU Lesser
+          General Public License can be found in
+          `/usr/share/common-licenses/LGPL'; the text of the earliest applying version
+          of the license (2.1) can be found in `/usr/share/common-licenses/LGPL-2.1'.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+  - license_expression: gpl-3.0-plus AND gfdl-1.3 AND gfdl-1.3-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '85.91'
+        start_line: 50
+        end_line: 70
+        matched_length: 128
+        match_coverage: '85.91'
+        matcher: 3-seq
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_417.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 149
+        rule_relevance: 100
+        matched_text: |
+           * This program is free software: you can redistribute it and/or modify
+           * it under the terms of the GNU General Public License as published by
+           * the Free Software Foundation, either version 3 of the License, or
+           * (at your option) any later version.
+           *
+           * This program is distributed in the hope that it will be useful,
+           * but WITHOUT ANY WARRANTY; without even the implied warranty of
+           * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+           * GNU General Public License for more details.
+           *
+           * You should have received a copy of the GNU General Public License
+           * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+           *
+           */
 
-      On Debian GNU/Linux systems, the complete text of the GNU General Public
-      License version [3] can be found in /usr/share/common-licenses/GPL-[3].
+          On Debian GNU/Linux systems, the complete text of the GNU General Public
+          License version 3 can be found in /usr/share/common-licenses/GPL-3.
 
 
-      [The] [documentation] [is] [distributed] [under] [the] [terms] of the GNU [Free]
-      [Documentation] License (
-  - score: '100.0'
-    start_line: 69
-    end_line: 70
-    matcher: 2-aho
-    rule_length: 16
-    matched_length: 16
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3_8.RULE
-    license_expression: gfdl-1.3
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The documentation is distributed under the terms of the GNU Free
-      Documentation License (FDL 1.3):
-  - score: '100.0'
-    start_line: 74
-    end_line: 83
-    matcher: 2-aho
-    rule_length: 85
-    matched_length: 85
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus_25.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this
-        document under the terms of the GNU Free Documentation License,
-        Version 1.3 or any later version published by the Free Software
-        Foundation; with no Invariant Sections, no Front-Cover Texts, and no
-        Back-Cover Texts. A copy of the license is included in the section
-        entitled "GNU Free Documentation License".
-      ----------------------------------
+          The documentation is distributed under the terms of the GNU Free
+          Documentation License (FDL 1.3):
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 69
+        end_line: 70
+        matched_length: 16
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.3
+        licensedb_identifier: gfdl-1.3_8.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 16
+        rule_relevance: 100
+        matched_text: |
+          The documentation is distributed under the terms of the GNU Free
+          Documentation License (FDL 1.3):
+        licenses:
+          - key: gfdl-1.3
+            name: GNU Free Documentation License v1.3
+            short_name: GFDL 1.3
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3.yml
+            spdx_license_key: GFDL-1.3-only
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-only
+      - score: '100.0'
+        start_line: 74
+        end_line: 83
+        matched_length: 85
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.3-plus
+        licensedb_identifier: gfdl-1.3-plus_25.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 85
+        rule_relevance: 100
+        matched_text: |
+            Permission is granted to copy, distribute and/or modify this
+            document under the terms of the GNU Free Documentation License,
+            Version 1.3 or any later version published by the Free Software
+            Foundation; with no Invariant Sections, no Front-Cover Texts, and no
+            Back-Cover Texts. A copy of the license is included in the section
+            entitled "GNU Free Documentation License".
+          ----------------------------------
 
-      On Debian systems a copy of the complete text of the GNU FDL 1.3
-      can be found in /usr/share/common-licenses/GFDL-1.3.
+          On Debian systems a copy of the complete text of the GNU FDL 1.3
+          can be found in /usr/share/common-licenses/GFDL-1.3.
+        licenses:
+          - key: gfdl-1.3-plus
+            name: GNU Free Documentation License v1.3 or later
+            short_name: GFDL 1.3 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            spdx_license_key: GFDL-1.3-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later

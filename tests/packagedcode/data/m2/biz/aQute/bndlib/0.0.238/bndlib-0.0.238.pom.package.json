@@ -29,15 +29,101 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "apache-2.0",
-  "declared_license": [
+  "declared_license_expression": "apache-2.0",
+  "declared_license_expression_spdx": "Apache-2.0",
+  "license_detections": [
     {
-      "name": "This material is licensed under the Apache Software License, Version 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0",
-      "comments": null,
-      "distribution": "repo"
+      "license_expression": "apache-2.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "licensedb_identifier": "apache-2.0_239.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "matched_text": "This material is licensed under the Apache Software License, Version 2.0",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "apache-2.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "licensedb_identifier": "apache-2.0_25.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "matched_text": "http://www.apache.org/licenses/LICENSE-2.0",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'This material is licensed under the Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/biz.aQute/bndlib@0.0.238?classifier=sources"

@@ -7,6 +7,9 @@ declared_license:
   - Binary redistribution (QLogic 3)
 license_expression: bsd-new AND linux-openib AND qlogic-microcode AND (other-permissive AND
   proprietary-license) AND other-permissive
+declared_license_expression_spdx: BSD-3-Clause AND Linux-OpenIB AND LicenseRef-scancode-qlogic-microcode
+  AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license) AND
+  LicenseRef-scancode-other-permissive
 copyright: |
   1995, 1996, 1997, 1998, 1999, 2000, QLogic, Inc.
   2007, 2008. QLogic Corporation
@@ -14,190 +17,306 @@ copyright: |
   2013-2014, Brocade Communications Systems, Inc.
   2014-2015, QLogic Corporation.
   2015-2016, QLogic Corporation
-matches:
-  - score: '100.0'
-    start_line: 9
-    end_line: 28
-    matcher: 1-hash
-    rule_length: '199'
-    matched_length: '199'
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_1070.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted provided
-      that the following conditions are met:
-      1. Redistribution of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistribution in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. The name of the author may not be used to endorse or promote products
-         derived from this software without specific prior written permission
+license_detections:
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 9
+        end_line: 28
+        matched_length: '199'
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_1070.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: '199'
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms are permitted provided
+          that the following conditions are met:
+          1. Redistribution of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistribution in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. The name of the author may not be used to endorse or promote products
+             derived from this software without specific prior written permission
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-      IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-      IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-      NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-      THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 35
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 143
-    matched_length: 143
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: linux-openib.LICENSE
-    license_expression: linux-openib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or
-      without modification, are permitted provided that the following
-      conditions are met:
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+          IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+          NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+          THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+          THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: linux-openib
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 35
+        end_line: 55
+        matched_length: 143
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: linux-openib
+        licensedb_identifier: linux-openib.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 143
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or
+          without modification, are permitted provided that the following
+          conditions are met:
 
-       - Redistributions of source code must retain the above
-         copyright notice, this list of conditions and the following
-         disclaimer.
+           - Redistributions of source code must retain the above
+             copyright notice, this list of conditions and the following
+             disclaimer.
 
-       - Redistributions in binary form must reproduce the above
-         copyright notice, this list of conditions and the following
-         disclaimer in the documentation and/or other materials
-         provided with the distribution.
+           - Redistributions in binary form must reproduce the above
+             copyright notice, this list of conditions and the following
+             disclaimer in the documentation and/or other materials
+             provided with the distribution.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-      BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-      ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-      CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-      SOFTWARE.
-  - score: '100.0'
-    start_line: 61
-    end_line: 96
-    matcher: 1-hash
-    rule_length: 260
-    matched_length: 260
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: qlogic-microcode.LICENSE
-    license_expression: qlogic-microcode
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may redistribute the hardware specific firmware binary file
-      under the following terms:
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+          EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+          NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+          BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+          ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+          CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+          SOFTWARE.
+        licenses:
+          - key: linux-openib
+            name: Linux-OpenIB
+            short_name: Linux-OpenIB
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Linux Foundation
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h
+            text_url: https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README
+            reference_url: https://scancode-licensedb.aboutcode.org/linux-openib
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.yml
+            spdx_license_key: Linux-OpenIB
+            spdx_url: https://spdx.org/licenses/Linux-OpenIB
+  - license_expression: qlogic-microcode
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 61
+        end_line: 96
+        matched_length: 260
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: qlogic-microcode
+        licensedb_identifier: qlogic-microcode.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 260
+        rule_relevance: 100
+        matched_text: |
+          You may redistribute the hardware specific firmware binary file
+          under the following terms:
 
-      1. Redistribution of source code (only if applicable),
-      must retain the above copyright notice, this list of
-      conditions and the following disclaimer.
+          1. Redistribution of source code (only if applicable),
+          must retain the above copyright notice, this list of
+          conditions and the following disclaimer.
 
-      2. Redistribution in binary form must reproduce the above
-      copyright notice, this list of conditions and the
-      following disclaimer in the documentation and/or other
-      materials provided with the distribution.
+          2. Redistribution in binary form must reproduce the above
+          copyright notice, this list of conditions and the
+          following disclaimer in the documentation and/or other
+          materials provided with the distribution.
 
-      3. The name of QLogic Corporation may not be used to
-      endorse or promote products derived from this software
-      without specific prior written permission
+          3. The name of QLogic Corporation may not be used to
+          endorse or promote products derived from this software
+          without specific prior written permission
 
-      REGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,
-      THIS PROGRAM IS PROVIDED BY QLOGIC CORPORATION "AS IS'' AND ANY
-      EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR
-      BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-      ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
+          REGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,
+          THIS PROGRAM IS PROVIDED BY QLOGIC CORPORATION "AS IS'' AND ANY
+          EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+          PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR
+          BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+          EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+          TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+          ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+          OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
 
-      USER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT
-      CREATE OR GIVE GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR
-      OTHERWISE IN ANY INTELLECTUAL PROPERTY RIGHTS (PATENT, COPYRIGHT,
-      TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT) EMBODIED IN
-      ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
-      COMBINATION WITH THIS PROGRAM.
-  - score: '100.0'
-    start_line: 102
-    end_line: 104
-    matcher: 2-aho
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_66.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted for the distribution of this firmware data
-      in hexadecimal or equivalent format, provided this copyright notice is
-      accompanying it.
-  - score: '97.33'
-    start_line: 106
-    end_line: 112
-    matcher: 3-seq
-    rule_length: 73
-    matched_length: 73
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_310.RULE
-    license_expression: proprietary-license
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      grants permission to use and redistribute these firmware files
-      for use with [QLogic] BR-[series] devices, but not as a part of the Linux
-      kernel or in any other form which would require these files themselves
-      to be covered by the terms of the GNU General Public License.
-      These firmware files are distributed in the hope that they will be
-      useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-      of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 117
-    end_line: 119
-    matcher: 1-hash
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_66.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted for the distribution of this firmware data
-      in hexadecimal or equivalent format, provided this copyright notice is
-      accompanying it.
+          USER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT
+          CREATE OR GIVE GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR
+          OTHERWISE IN ANY INTELLECTUAL PROPERTY RIGHTS (PATENT, COPYRIGHT,
+          TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT) EMBODIED IN
+          ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
+          COMBINATION WITH THIS PROGRAM.
+        licenses:
+          - key: qlogic-microcode
+            name: QLogic Microcode
+            short_name: QLogic Microcode
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: QLogic
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/qlogic-microcode
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-microcode.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-microcode.yml
+            spdx_license_key: LicenseRef-scancode-qlogic-microcode
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-microcode.LICENSE
+  - license_expression: other-permissive AND proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 102
+        end_line: 104
+        matched_length: 23
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_66.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 23
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted for the distribution of this firmware data
+          in hexadecimal or equivalent format, provided this copyright notice is
+          accompanying it.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+      - score: '97.33'
+        start_line: 106
+        end_line: 112
+        matched_length: 73
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_310.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 73
+        rule_relevance: 100
+        matched_text: |
+          QLogic grants permission to use and redistribute these firmware files
+          for use with QLogic BR-series devices, but not as a part of the Linux
+          kernel or in any other form which would require these files themselves
+          to be covered by the terms of the GNU General Public License.
+          These firmware files are distributed in the hope that they will be
+          useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+          of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 117
+        end_line: 119
+        matched_length: 23
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_66.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 23
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted for the distribution of this firmware data
+          in hexadecimal or equivalent format, provided this copyright notice is
+          accompanying it.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE

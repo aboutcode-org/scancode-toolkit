@@ -3,6 +3,9 @@ declared_license:
 license_expression: gpl-3.0-plus AND bsd-new AND gpl-3.0-plus AND bsd-new AND gpl-3.0-plus AND
   gpl-3.0-plus AND isc AND fsf-unlimited AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
   AND gpl-3.0-plus AND gfdl-1.2-plus AND gpl-3.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later AND BSD-3-Clause AND GPL-3.0-or-later AND
+  BSD-3-Clause AND GPL-3.0-or-later AND GPL-3.0-or-later AND ISC AND FSFULLR AND GPL-3.0-or-later
+  AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GFDL-1.2-or-later AND GPL-3.0-or-later
 copyright: |
   Copyright (c) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
   Copyright (c) 1990, 1993, 1994 The Regents of the University of California
@@ -23,425 +26,702 @@ copyright: |
   Copyright (c) 1997, 1998, 1999 Colin Plumb
   Copyright 1994-1996, 2000-2008 Free Software Foundation, Inc.
   Copyright (c) 1984-2008 Free Software Foundation, Inc.
-matches:
-  - score: '81.1'
-    start_line: 22
-    end_line: 41
-    matcher: 3-seq
-    rule_length: 127
-    matched_length: 103
-    match_coverage: '81.1'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_487.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License
-      =============================
+license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '81.1'
+        start_line: 22
+        end_line: 41
+        matched_length: 103
+        match_coverage: '81.1'
+        matcher: 3-seq
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_487.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 127
+        rule_relevance: 100
+        matched_text: |
+          Copyright Holders and License
+          =============================
 
-      [lib]/[fts].[c]
-      ---------
+          lib/fts.c
+          ---------
 
-         [Copyright] ([C]) [2004], [2005], [2006], [2007], [2008] [Free] [Software] [Foundation], [Inc].
+             Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 
-         This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation; either version 3 of the License, or
-         (at your option) any later version.
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation; either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-  - score: '100.0'
-    start_line: 47
-    end_line: 69
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_42.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 4. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 78
-    end_line: 89
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_290.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation; either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 47
+        end_line: 69
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_42.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 4. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 78
+        end_line: 89
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_290.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation; either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-  - score: '100.0'
-    start_line: 95
-    end_line: 117
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_42.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 4. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 126
-    end_line: 137
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_290.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 95
+        end_line: 117
+        matched_length: 213
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_42.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 213
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 4. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 126
+        end_line: 137
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_290.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 145
-    end_line: 157
-    matcher: 2-aho
-    rule_length: 110
-    matched_length: 110
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_4.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation; either version 3, or (at your option)
-         any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 145
+        end_line: 157
+        matched_length: 110
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_4.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 110
+        rule_relevance: 100
+        matched_text: |
+             This program is free software; you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation; either version 3, or (at your option)
+             any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program; if not, write to the Free Software Foundation,
-         Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
-  - score: '100.0'
-    start_line: 162
-    end_line: 173
-    matcher: 2-aho
-    rule_length: 113
-    matched_length: 113
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc_9.RULE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-       * purpose with or without fee is hereby granted, provided that the above
-       * copyright notice and this permission notice appear in all copies.
-       *
-       * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
-       * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
-       * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
-       * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
-       * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
-       * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
-       * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-       * SOFTWARE.
-  - score: '100.0'
-    start_line: 180
-    end_line: 182
-    matcher: 2-aho
-    rule_length: 29
-    matched_length: 29
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-unlimited.LICENSE
-    license_expression: fsf-unlimited
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is free software; the Free Software Foundation
-      dnl gives unlimited permission to copy and/or distribute it,
-      dnl with or without modifications, as long as this notice is preserved.
-  - score: '75.18'
-    start_line: '193'
-    end_line: 214
-    matcher: 3-seq
-    rule_length: 141
-    matched_length: 106
-    match_coverage: '75.18'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_286.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program; if not, write to the Free Software Foundation,
+             Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: isc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 162
+        end_line: 173
+        matched_length: 113
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: isc
+        licensedb_identifier: isc_9.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 113
+        rule_relevance: 100
+        matched_text: |
+           * Permission to use, copy, modify, and distribute this software for any
+           * purpose with or without fee is hereby granted, provided that the above
+           * copyright notice and this permission notice appear in all copies.
+           *
+           * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+           * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+           * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+           * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+           * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+           * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+           * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+           * SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+  - license_expression: fsf-unlimited
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 180
+        end_line: 182
+        matched_length: 29
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-unlimited
+        licensedb_identifier: fsf-unlimited.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 29
+        rule_relevance: 100
+        matched_text: |
+          dnl This file is free software; the Free Software Foundation
+          dnl gives unlimited permission to copy and/or distribute it,
+          dnl with or without modifications, as long as this notice is preserved.
+        licenses:
+          - key: fsf-unlimited
+            name: Free Software Foundation - Unlimited License
+            short_name: FSF-Unlimited
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License#License_Retention_Variant
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.yml
+            spdx_license_key: FSFULLR
+            spdx_url: https://spdx.org/licenses/FSFULLR
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '75.18'
+        start_line: '193'
+        end_line: 214
+        matched_length: 106
+        match_coverage: '75.18'
+        matcher: 3-seq
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_286.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 141
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, [see] <http://www.gnu.org/[licenses]/>.  */
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 
-      src/[dircolors].[c]
-      ---------------
+          src/dircolors.c
+          ---------------
 
-         [Copyright] ([C]) [1996]-[2007] [Free] [Software] [Foundation], [Inc].
-         [Copyright] ([C]) [1994], [1995], [1997], [1998], [1999], [2000] [H]. [Peter] [Anvin]
+             Copyright (C) 1996-2007 Free Software Foundation, Inc.
+             Copyright (C) 1994, 1995, 1997, 1998, 1999, 2000 H. Peter Anvin
 
-         [This] [program] [is] [free] [software]: [you] [can] [redistribute] [it] [and]/[or] [modify]
-         [it] [under] [the] [terms] of the GNU General Public License
-  - score: '100.0'
-    start_line: 213
-    end_line: 224
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_290.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 213
+        end_line: 224
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_290.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-  - score: '100.0'
-    start_line: 233
-    end_line: 244
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_290.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 233
+        end_line: 244
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_290.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-  - score: '100.0'
-    start_line: 253
-    end_line: 264
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_290.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 253
+        end_line: 264
+        matched_length: 102
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_290.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 102
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 272
-    end_line: 277
-    matcher: 2-aho
-    rule_length: 62
-    matched_length: 62
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.2-plus.RULE
-    license_expression: gfdl-1.2-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this document
-      under the terms of the GNU Free Documentation License, Version 1.2 or
-      any later version published by the Free Software Foundation; with no
-      Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
-      Texts.  A copy of the license is included in the section entitled ``GNU
-      Free Documentation License''.
-  - score: '100.0'
-    start_line: 285
-    end_line: 299
-    matcher: 2-aho
-    rule_length: 124
-    matched_length: 124
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_2.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation, either version 3 of the License, or
-         (at your option) any later version.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gfdl-1.2-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 272
+        end_line: 277
+        matched_length: 62
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.2-plus
+        licensedb_identifier: gfdl-1.2-plus.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 62
+        rule_relevance: 100
+        matched_text: |
+          Permission is granted to copy, distribute and/or modify this document
+          under the terms of the GNU Free Documentation License, Version 1.2 or
+          any later version published by the Free Software Foundation; with no
+          Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+          Texts.  A copy of the license is included in the section entitled ``GNU
+          Free Documentation License''.
+        licenses:
+          - key: gfdl-1.2-plus
+            name: GNU Free Documentation License v1.2 or later
+            short_name: GFDL 1.2 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/fdl-1.2.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.2.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.2-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.2-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.2-plus.yml
+            spdx_license_key: GFDL-1.2-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.2-or-later
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 285
+        end_line: 299
+        matched_length: 124
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_2.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 124
+        rule_relevance: 100
+        matched_text: |
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation, either version 3 of the License, or
+             (at your option) any later version.
 
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
 
-         You should have received a copy of the GNU General Public License
-         along with this program.  If not, see <http://www.gnu.org/licenses/>.
+             You should have received a copy of the GNU General Public License
+             along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-      On Debian systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-3'.
+          On Debian systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later

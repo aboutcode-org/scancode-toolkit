@@ -21,8 +21,56 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "imagemagick",
-  "declared_license": "ImageMagick",
+  "declared_license_expression": "imagemagick",
+  "declared_license_expression_spdx": "ImageMagick",
+  "license_detections": [
+    {
+      "license_expression": "imagemagick",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "imagemagick",
+          "licensedb_identifier": "spdx-license-identifier: imagemagick",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 1,
+          "rule_relevance": 100,
+          "matched_text": "imagemagick",
+          "licenses": [
+            {
+              "key": "imagemagick",
+              "name": "ImageMagick License",
+              "short_name": "ImageMagick License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "ImageMagick",
+              "homepage_url": "http://www.imagemagick.org/script/license.php",
+              "text_url": "http://www.imagemagick.org/script/license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/imagemagick",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/imagemagick.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/imagemagick.yml",
+              "spdx_license_key": "ImageMagick",
+              "spdx_url": "https://spdx.org/licenses/ImageMagick"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extracted_license_statement": "ImageMagick",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

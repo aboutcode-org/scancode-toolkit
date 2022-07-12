@@ -21,6 +21,12 @@ license_expression: (lgpl-2.0-plus AND lgpl-2.0-plus) AND other-permissive AND (
   AND ((lgpl-2.0-plus AND lgpl-2.0-plus) AND tcl) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND
   (lgpl-2.0-plus AND lgpl-2.0-plus) AND unicode AND ((lgpl-2.0-plus AND lgpl-2.0-plus) AND x11)
   AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+declared_license_expression_spdx: (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND LicenseRef-scancode-other-permissive
+  AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND ((LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  AND TCL) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  AND LicenseRef-scancode-unicode AND ((LGPL-2.0-or-later AND LGPL-2.0-or-later) AND ICU) AND
+  (LGPL-2.0-or-later AND LGPL-2.0-or-later)
 copyright: |
   1999-2015 Red Hat
   2005-2007 Imendio AB
@@ -63,232 +69,349 @@ copyright: |
   2002 Red Hat
   1997-2002 International Business Machines Corporation and others
   2018 Google
-matches:
-  - score: '100.0'
-    start_line: 85
-    end_line: 87
-    matcher: 1-hash
-    rule_length: 28
-    matched_length: 28
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_324.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, distribute, and sell this example
-      for any purpose is hereby granted without fee.
-      It is provided "as is" without express or implied warranty.
-  - score: '100.0'
-    start_line: 90
-    end_line: 116
-    matcher: 1-hash
-    rule_length: 241
-    matched_length: 241
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11_2.RULE
-    license_expression: x11
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      copy of this software and associated documentation files (the "Software")
-      to deal in the Software without restriction, including without limitation
-      the rights to use, copy, modify, merge, publish, distribute, and/or sell
-      copies of the Software, and to permit persons to whom the Software is
-      furnished to do so, provided that the above copyright notice(s) and this
-      permission notice appear in all copies of the Software and that both the
-      above copyright notice(s) and this permission notice appear in supporting
-      documentation.
+license_detections:
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 85
+        end_line: 87
+        matched_length: 28
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_324.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 28
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, distribute, and sell this example
+          for any purpose is hereby granted without fee.
+          It is provided "as is" without express or implied warranty.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+  - license_expression: x11
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 90
+        end_line: 116
+        matched_length: 241
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: x11
+        licensedb_identifier: x11_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 241
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a
+          copy of this software and associated documentation files (the "Software")
+          to deal in the Software without restriction, including without limitation
+          the rights to use, copy, modify, merge, publish, distribute, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, provided that the above copyright notice(s) and this
+          permission notice appear in all copies of the Software and that both the
+          above copyright notice(s) and this permission notice appear in supporting
+          documentation.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY
-      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
-      IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE
-      BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES
-      OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS
-      WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION
-      ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-      SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+          IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE
+          BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES
+          OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS
+          WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION
+          ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          SOFTWARE.
 
-      Except as contained in this notice, the name of a copyright holder shall
-      not be used in advertising or otherwise to promote the sale, use or other
-      dealings in this Software without prior written authorization of the
-      copyright holder.
+          Except as contained in this notice, the name of a copyright holder shall
+          not be used in advertising or otherwise to promote the sale, use or other
+          dealings in this Software without prior written authorization of the
+          copyright holder.
 
-      All trademarks and registered trademarks mentioned herein are the property
-      of their respective owners.
-  - score: '100.0'
-    start_line: 118
-    end_line: 118
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_61.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2+'
-  - score: '100.0'
-    start_line: 119
-    end_line: 130
-    matcher: 1-hash
-    rule_length: 106
-    matched_length: 106
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_529.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This library is free software; you can redistribute it and/or
-      modify it under the terms of the GNU Lesser General Public
-      License as published by the Free Software Foundation; either
-      version 2 of the License, or (at your option) any later version.
+          All trademarks and registered trademarks mentioned herein are the property
+          of their respective owners.
+        licenses:
+          - key: x11
+            name: X11 License
+            short_name: X11 License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: XFree86 Project, Inc
+            homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            reference_url: https://scancode-licensedb.aboutcode.org/x11
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11.yml
+            spdx_license_key: ICU
+            spdx_url: https://spdx.org/licenses/ICU
+  - license_expression: lgpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 118
+        end_line: 118
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: lgpl-2+'
+        licenses:
+          - key: lgpl-2.0-plus
+            name: GNU Library General Public License 2.0 or later
+            short_name: LGPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            spdx_license_key: LGPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+      - score: '100.0'
+        start_line: 119
+        end_line: 130
+        matched_length: 106
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        licensedb_identifier: lgpl-2.0-plus_529.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 106
+        rule_relevance: 100
+        matched_text: |
+          This library is free software; you can redistribute it and/or
+          modify it under the terms of the GNU Lesser General Public
+          License as published by the Free Software Foundation; either
+          version 2 of the License, or (at your option) any later version.
 
-      This library is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      Lesser General Public License for more details.
+          This library is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
 
-      On Debian systems, the complete text of the GNU Lesser General Public
-      License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
-  - score: '100.0'
-    start_line: 133
-    end_line: 171
-    matcher: 1-hash
-    rule_length: 341
-    matched_length: 341
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: tcl_14.RULE
-    license_expression: tcl
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is copyrighted by the Regents of the University of
-      California, Sun Microsystems, Inc., and other parties. The following terms
-      apply to all files associated with the software unless explicitly
-      disclaimed in individual files.
+          On Debian systems, the complete text of the GNU Lesser General Public
+          License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+        licenses:
+          - key: lgpl-2.0-plus
+            name: GNU Library General Public License 2.0 or later
+            short_name: LGPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            spdx_license_key: LGPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+  - license_expression: tcl
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 133
+        end_line: 171
+        matched_length: 341
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: tcl
+        licensedb_identifier: tcl_14.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 341
+        rule_relevance: 100
+        matched_text: |
+          This software is copyrighted by the Regents of the University of
+          California, Sun Microsystems, Inc., and other parties. The following terms
+          apply to all files associated with the software unless explicitly
+          disclaimed in individual files.
 
-      The authors hereby grant permission to use, copy, modify, distribute,
-      and license this software and its documentation for any purpose,
-      provided that existing copyright notices are retained in all copies
-      and that this notice is included verbatim in any distributions. No
-      written agreement, license, or royalty fee is required for any of the
-      authorized uses. Modifications to this software may be copyrighted by
-      their authors and need not follow the licensing terms described here,
-      provided that the new terms are clearly indicated on the first page
-      of each file where they apply.
+          The authors hereby grant permission to use, copy, modify, distribute,
+          and license this software and its documentation for any purpose,
+          provided that existing copyright notices are retained in all copies
+          and that this notice is included verbatim in any distributions. No
+          written agreement, license, or royalty fee is required for any of the
+          authorized uses. Modifications to this software may be copyrighted by
+          their authors and need not follow the licensing terms described here,
+          provided that the new terms are clearly indicated on the first page
+          of each file where they apply.
 
-      IN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY
-      FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
-      ARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY
-      DERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
+          IN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY
+          FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+          ARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY
+          DERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
 
-      THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,
-      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-      NON-INFRINGEMENT. THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, AND
-      THE AUTHORS AND DISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE
-      MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+          THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,
+          INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+          NON-INFRINGEMENT. THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, AND
+          THE AUTHORS AND DISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE
+          MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
-      GOVERNMENT USE: If you are acquiring this software on behalf of the
-      U.S. government, the Government shall have only "Restricted Rights"
-      in the software and related documentation as defined in the Federal
-      Acquisition Regulations (FARs) in Clause 52.227.19 (c) (2). If you
-      are acquiring the software on behalf of the Department of Defense,
-      the software shall be classified as "Commercial Computer Software"
-      and the Government shall have only "Restricted Rights" as defined in
-      Clause 252.227-7013 (c) (1) of DFARs. Notwithstanding the foregoing,
-      the authors grant the U.S. Government and others acting in its behalf
-      permission to use and distribute the software in accordance with the
-      terms specified in this license.
-  - score: '100.0'
-    start_line: 174
-    end_line: 224
-    matcher: 1-hash
-    rule_length: 423
-    matched_length: 423
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: unicode_57.RULE
-    license_expression: unicode
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Unicode Data Files include all data files under the directories
-      http://www.unicode.org/Public/, http://www.unicode.org/reports/,
-      http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and
-      http://www.unicode.org/utility/trac/browser/.
+          GOVERNMENT USE: If you are acquiring this software on behalf of the
+          U.S. government, the Government shall have only "Restricted Rights"
+          in the software and related documentation as defined in the Federal
+          Acquisition Regulations (FARs) in Clause 52.227.19 (c) (2). If you
+          are acquiring the software on behalf of the Department of Defense,
+          the software shall be classified as "Commercial Computer Software"
+          and the Government shall have only "Restricted Rights" as defined in
+          Clause 252.227-7013 (c) (1) of DFARs. Notwithstanding the foregoing,
+          the authors grant the U.S. Government and others acting in its behalf
+          permission to use and distribute the software in accordance with the
+          terms specified in this license.
+        licenses:
+          - key: tcl
+            name: TCL/TK License
+            short_name: TCL/TK License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Tcl Developer Xchange
+            homepage_url: http://www.tcl.tk/software/tcltk/license.html
+            text_url: http://www.tcl.tk/software/tcltk/license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/tcl
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.yml
+            spdx_license_key: TCL
+            spdx_url: https://spdx.org/licenses/TCL
+  - license_expression: unicode
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 174
+        end_line: 224
+        matched_length: 423
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: unicode
+        licensedb_identifier: unicode_57.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 423
+        rule_relevance: 100
+        matched_text: |
+          Unicode Data Files include all data files under the directories
+          http://www.unicode.org/Public/, http://www.unicode.org/reports/,
+          http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and
+          http://www.unicode.org/utility/trac/browser/.
 
-      Unicode Data Files do not include PDF online code charts under the
-      directory http://www.unicode.org/Public/.
+          Unicode Data Files do not include PDF online code charts under the
+          directory http://www.unicode.org/Public/.
 
-      Software includes any source code published in the Unicode Standard
-      or under the directories
-      http://www.unicode.org/Public/, http://www.unicode.org/reports/,
-      http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and
-      http://www.unicode.org/utility/trac/browser/.
+          Software includes any source code published in the Unicode Standard
+          or under the directories
+          http://www.unicode.org/Public/, http://www.unicode.org/reports/,
+          http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and
+          http://www.unicode.org/utility/trac/browser/.
 
-      NOTICE TO USER: Carefully read the following legal agreement.
-      BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S
-      DATA FILES ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"),
-      YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE
-      TERMS AND CONDITIONS OF THIS AGREEMENT.
-      IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE
-      THE DATA FILES OR SOFTWARE.
+          NOTICE TO USER: Carefully read the following legal agreement.
+          BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S
+          DATA FILES ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"),
+          YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE
+          TERMS AND CONDITIONS OF THIS AGREEMENT.
+          IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE
+          THE DATA FILES OR SOFTWARE.
 
-      COPYRIGHT AND PERMISSION NOTICE
-      Permission is hereby granted, free of charge, to any person obtaining
-      a copy of the Unicode data files and any associated documentation
-      (the "Data Files") or Unicode software and any associated documentation
-      (the "Software") to deal in the Data Files or Software
-      without restriction, including without limitation the rights to use,
-      copy, modify, merge, publish, distribute, and/or sell copies of
-      the Data Files or Software, and to permit persons to whom the Data Files
-      or Software are furnished to do so, provided that either
-      (a) this copyright and permission notice appear with all copies
-      of the Data Files or Software, or
-      (b) this copyright and permission notice appear in associated
-      Documentation.
+          COPYRIGHT AND PERMISSION NOTICE
+          Permission is hereby granted, free of charge, to any person obtaining
+          a copy of the Unicode data files and any associated documentation
+          (the "Data Files") or Unicode software and any associated documentation
+          (the "Software") to deal in the Data Files or Software
+          without restriction, including without limitation the rights to use,
+          copy, modify, merge, publish, distribute, and/or sell copies of
+          the Data Files or Software, and to permit persons to whom the Data Files
+          or Software are furnished to do so, provided that either
+          (a) this copyright and permission notice appear with all copies
+          of the Data Files or Software, or
+          (b) this copyright and permission notice appear in associated
+          Documentation.
 
-      THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF
-      ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
-      WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-      NONINFRINGEMENT OF THIRD PARTY RIGHTS.
-      IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS
-      NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
-      DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
-      DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
-      TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-      PERFORMANCE OF THE DATA FILES OR SOFTWARE.
+          THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF
+          ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+          WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+          NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+          IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS
+          NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
+          DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+          DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+          TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+          PERFORMANCE OF THE DATA FILES OR SOFTWARE.
 
-      Except as contained in this notice, the name of a copyright holder
-      shall not be used in advertising or otherwise to promote the sale,
-      use or other dealings in these Data Files or Software without prior
-      written authorization of the copyright holder.
+          Except as contained in this notice, the name of a copyright holder
+          shall not be used in advertising or otherwise to promote the sale,
+          use or other dealings in these Data Files or Software without prior
+          written authorization of the copyright holder.
+        licenses:
+          - key: unicode
+            name: Unicode Inc License Agreement
+            short_name: Unicode Inc License Agreement
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Unicode Consortium
+            homepage_url: http://unicode.org/
+            text_url: http://unicode.org/copyright.html
+            reference_url: https://scancode-licensedb.aboutcode.org/unicode
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.yml
+            spdx_license_key: LicenseRef-scancode-unicode
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE

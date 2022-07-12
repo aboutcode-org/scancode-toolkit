@@ -1,39 +1,60 @@
 primary_license:
 declared_license:
 license_expression: zlib
+declared_license_expression_spdx: Zlib
 copyright: Copyright (c) 1995-1998 Jean-loup Gailly and Mark Adler
-matches:
-  - score: '100.0'
-    start_line: 42
-    end_line: 59
-    matcher: 2-aho
-    rule_length: 144
-    matched_length: 144
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zlib_17.RULE
-    license_expression: zlib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is provided 'as-is', without any express or implied
-        warranty.  In no event will the authors be held liable for any damages
-        arising from the use of this software.
+license_detections:
+  - license_expression: zlib
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 42
+        end_line: 59
+        matched_length: 144
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: zlib
+        licensedb_identifier: zlib_17.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 144
+        rule_relevance: 100
+        matched_text: |
+            This software is provided 'as-is', without any express or implied
+            warranty.  In no event will the authors be held liable for any damages
+            arising from the use of this software.
 
-        Permission is granted to anyone to use this software for any purpose,
-        including commercial applications, and to alter it and redistribute it
-        freely, subject to the following restrictions:
+            Permission is granted to anyone to use this software for any purpose,
+            including commercial applications, and to alter it and redistribute it
+            freely, subject to the following restrictions:
 
-        1. The origin of this software must not be misrepresented; you must not
-           claim that you wrote the original software. If you use this software
-           in a product, an acknowledgment in the product documentation would be
-           appreciated but is not required.
-        2. Altered source versions must be plainly marked as such, and must not be
-           misrepresented as being the original software.
-        3. This notice may not be removed or altered from any source distribution.
+            1. The origin of this software must not be misrepresented; you must not
+               claim that you wrote the original software. If you use this software
+               in a product, an acknowledgment in the product documentation would be
+               appreciated but is not required.
+            2. Altered source versions must be plainly marked as such, and must not be
+               misrepresented as being the original software.
+            3. This notice may not be removed or altered from any source distribution.
 
-        Jean-loup Gailly        Mark Adler
-        jloup@gzip.org          madler@alumni.caltech.edu
+            Jean-loup Gailly        Mark Adler
+            jloup@gzip.org          madler@alumni.caltech.edu
+        licenses:
+          - key: zlib
+            name: ZLIB License
+            short_name: ZLIB License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: zlib
+            homepage_url: http://www.zlib.net/
+            text_url: http://www.gzip.org/zlib/zlib_license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/zlib
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
+            spdx_license_key: Zlib
+            spdx_url: https://spdx.org/licenses/Zlib

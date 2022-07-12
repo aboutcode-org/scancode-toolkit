@@ -43,8 +43,10 @@
   "code_view_url": "http://cvs.forge.objectweb.org/cgi-bin/viewcvs.cgi/asm/asm/",
   "vcs_url": "cvs+pserver:anonymous@cvs.forge.objectweb.org:/cvsroot/asm:asm",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/asm/asm-parent@3.0?classifier=sources"

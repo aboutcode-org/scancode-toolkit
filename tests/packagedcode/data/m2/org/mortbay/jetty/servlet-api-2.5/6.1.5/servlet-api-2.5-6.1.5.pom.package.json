@@ -21,15 +21,101 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "cddl-1.0",
-  "declared_license": [
+  "declared_license_expression": "cddl-1.0",
+  "declared_license_expression_spdx": "CDDL-1.0",
+  "license_detections": [
     {
-      "name": "CDDL 1.0",
-      "url": "https://glassfish.dev.java.net/public/CDDLv1.0.html",
-      "comments": null,
-      "distribution": null
+      "license_expression": "cddl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 95.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cddl-1.0",
+          "licensedb_identifier": "spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 95,
+          "matched_text": "CDDL 1.0",
+          "licenses": [
+            {
+              "key": "cddl-1.0",
+              "name": "Common Development and Distribution License 1.0",
+              "short_name": "CDDL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Oracle Corporation",
+              "homepage_url": "http://www.sun.com/cddl/",
+              "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "spdx_license_key": "CDDL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "cddl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cddl-1.0",
+          "licensedb_identifier": "cddl-1.0_6.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 9,
+          "rule_relevance": 100,
+          "matched_text": "https://glassfish.dev.java.net/public/CDDLv1.0.html",
+          "licenses": [
+            {
+              "key": "cddl-1.0",
+              "name": "Common Development and Distribution License 1.0",
+              "short_name": "CDDL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Oracle Corporation",
+              "homepage_url": "http://www.sun.com/cddl/",
+              "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "spdx_license_key": "CDDL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'CDDL 1.0', 'url': 'https://glassfish.dev.java.net/public/CDDLv1.0.html', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/servlet-api-2.5@6.1.5?classifier=sources"

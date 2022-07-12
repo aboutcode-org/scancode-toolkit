@@ -21,8 +21,88 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
-  "declared_license": "LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0",
+  "declared_license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
+  "declared_license_expression_spdx": "LicenseRef-scancode-kde-accepted-gpl AND LicenseRef-scancode-kde-accepted-lgpl AND CC0-1.0",
+  "license_detections": [
+    {
+      "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 13,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
+          "licensedb_identifier": "spdx-license-identifier: kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 13,
+          "rule_relevance": 100,
+          "matched_text": "licenseref-kde-accepted-gpl AND licenseref-kde-accepted-lgpl AND cc0-1.0",
+          "licenses": [
+            {
+              "key": "kde-accepted-gpl",
+              "name": "KDE Accepted GPL",
+              "short_name": "KDE Accepted GPL",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "KDE Project",
+              "homepage_url": "https://github.com/KDE/licensedigger/blob/master/LICENSES/LicenseRef-KDE-Accepted-GPL.txt",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/kde-accepted-gpl",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-gpl.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-gpl.yml",
+              "spdx_license_key": "LicenseRef-scancode-kde-accepted-gpl",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-gpl.LICENSE"
+            },
+            {
+              "key": "kde-accepted-lgpl",
+              "name": "KDE Accepted LGPL",
+              "short_name": "KDE Accepted LGPL",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "KDE Project",
+              "homepage_url": "https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/kde-accepted-lgpl",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.yml",
+              "spdx_license_key": "LicenseRef-scancode-kde-accepted-lgpl",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE"
+            },
+            {
+              "key": "cc0-1.0",
+              "name": "Creative Commons CC0 1.0 Universal",
+              "short_name": "CC0-1.0",
+              "category": "Public Domain",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Creative Commons",
+              "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+              "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
+              "spdx_license_key": "CC0-1.0",
+              "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extracted_license_statement": "LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

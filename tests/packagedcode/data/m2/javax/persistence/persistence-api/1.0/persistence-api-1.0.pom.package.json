@@ -21,15 +21,101 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "cddl-1.0",
-  "declared_license": [
+  "declared_license_expression": "cddl-1.0",
+  "declared_license_expression_spdx": "CDDL-1.0",
+  "license_detections": [
     {
-      "name": "Common Development and Distribution License (CDDL) v1.0",
-      "url": "http://www.sun.com/cddl/cddl.html",
-      "comments": null,
-      "distribution": "repo"
+      "license_expression": "cddl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cddl-1.0",
+          "licensedb_identifier": "cddl-1.0.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "matched_text": "Common Development and Distribution License (CDDL) v1.0",
+          "licenses": [
+            {
+              "key": "cddl-1.0",
+              "name": "Common Development and Distribution License 1.0",
+              "short_name": "CDDL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Oracle Corporation",
+              "homepage_url": "http://www.sun.com/cddl/",
+              "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "spdx_license_key": "CDDL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "license_expression": "cddl-1.0",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cddl-1.0",
+          "licensedb_identifier": "cddl-1.0_4.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 7,
+          "rule_relevance": 100,
+          "matched_text": "http://www.sun.com/cddl/cddl.html",
+          "licenses": [
+            {
+              "key": "cddl-1.0",
+              "name": "Common Development and Distribution License 1.0",
+              "short_name": "CDDL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Oracle Corporation",
+              "homepage_url": "http://www.sun.com/cddl/",
+              "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "spdx_license_key": "CDDL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'Common Development and Distribution License (CDDL) v1.0', 'url': 'http://www.sun.com/cddl/cddl.html', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"

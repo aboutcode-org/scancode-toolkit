@@ -28,6 +28,12 @@ license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.
   AND mit AND (gpl-3.0-plus AND gpl-3.0-plus) AND ((gpl-3.0-plus AND gpl-3.0-plus) OR bsd-new)
   AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND ietf AND bsd-new
   AND (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0) AND other-permissive
+declared_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later) AND LicenseRef-scancode-fsf-unlimited-no-warranty AND LicenseRef-scancode-fsf-unlimited-no-warranty
+  AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND MIT AND (GPL-3.0-or-later AND GPL-3.0-or-later)
+  AND ((GPL-3.0-or-later AND GPL-3.0-or-later) OR BSD-3-Clause) AND (LGPL-3.0-or-later AND LGPL-3.0-or-later)
+  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND LicenseRef-scancode-ietf AND BSD-3-Clause
+  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC0-1.0 AND CC0-1.0) AND LicenseRef-scancode-other-permissive
 copyright: |
   1992, 1995-2020, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc
@@ -52,374 +58,642 @@ copyright: |
   Daniel Kahn Gillmor <dkg@fifthhorseman.net>
   NIIBE Yutaka <gniibe@fsij.org>
   2017 Daniel Kahn Gillmor <dkg@fifthhorseman.net>
-matches:
-  - score: '99.05'
-    start_line: 85
-    end_line: 110
-    matcher: 1-hash
-    rule_length: 209
-    matched_length: 209
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_594.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are
-      met:
+license_detections:
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.05'
+        start_line: 85
+        end_line: 110
+        matched_length: 209
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_594.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 209
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
+          Redistributions of source code must retain the above copyright notice,
+          this list of conditions and the following disclaimer.
 
-      Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
+          Redistributions in binary form must reproduce the above copyright
+          notice, this list of conditions and the following disclaimer in the
+          documentation and/or other materials provided with the distribution.
 
-      Neither the name of [Dimitrios] [Souflis] nor the names of the
-      contributors may be used to endorse or promote products derived from
-      this software without specific prior written permission.
+          Neither the name of Dimitrios Souflis nor the names of the
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-      ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR
-      CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 114
-    end_line: 121
-    matcher: 1-hash
-    rule_length: 64
-    matched_length: 64
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-unlimited-no-warranty.RULE
-    license_expression: fsf-unlimited-no-warranty
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is free software; as a special exception the author gives
-      unlimited permission to copy and/or distribute it, with or without
-      modifications, as long as this notice is preserved.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+          A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR
+          CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+          EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+          PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+          PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+          LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+          NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: fsf-unlimited-no-warranty
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 114
+        end_line: 121
+        matched_length: 64
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: fsf-unlimited-no-warranty
+        licensedb_identifier: fsf-unlimited-no-warranty.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 64
+        rule_relevance: 100
+        matched_text: |
+          This file is free software; as a special exception the author gives
+          unlimited permission to copy and/or distribute it, with or without
+          modifications, as long as this notice is preserved.
 
-      This file is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY, to the extent permitted by law; without even
-      the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-      PURPOSE.
-  - score: '90.0'
-    start_line: 129
-    end_line: 144
-    matcher: 2-aho
-    rule_length: 149
-    matched_length: 149
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: ietf_7.RULE
-    license_expression: ietf
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This document and translations of it may be copied and furnished to
-      others, and derivative works that comment on or otherwise explain it
-      or assist in its implementation may be prepared, copied, published
-      and distributed, in whole or in part, without restriction of any
-      kind, provided that the above copyright notice and this paragraph
-      are included on all such copies and derivative works.  However, this
-      document itself may not be modified in any way, such as by removing
-      the copyright notice or references to the Internet Society or other
-      Internet organizations, except as needed for the purpose of
-      developing Internet standards in which case the procedures for
-      copyrights defined in the Internet Standards process must be
-      followed, or as required to translate it into languages other than
-      English.
+          This file is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY, to the extent permitted by law; without even
+          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+          PURPOSE.
+        licenses:
+          - key: fsf-unlimited-no-warranty
+            name: FSF Unlimited License No Warranty
+            short_name: FSF Unlimited License No Warranty
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.fsf.org/licensing/licenses/
+            text_url: http://www.fsf.org/licensing/licenses/
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+  - license_expression: ietf
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '90.0'
+        start_line: 129
+        end_line: 144
+        matched_length: 149
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: ietf
+        licensedb_identifier: ietf_7.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 149
+        rule_relevance: 90
+        matched_text: |
+          This document and translations of it may be copied and furnished to
+          others, and derivative works that comment on or otherwise explain it
+          or assist in its implementation may be prepared, copied, published
+          and distributed, in whole or in part, without restriction of any
+          kind, provided that the above copyright notice and this paragraph
+          are included on all such copies and derivative works.  However, this
+          document itself may not be modified in any way, such as by removing
+          the copyright notice or references to the Internet Society or other
+          Internet organizations, except as needed for the purpose of
+          developing Internet standards in which case the procedures for
+          copyrights defined in the Internet Standards process must be
+          followed, or as required to translate it into languages other than
+          English.
 
-      The limited permissions granted above are perpetual and will not be
-      revoked by the Internet Society or its successors or assigns.
-  - score: '100.0'
-    start_line: 147
-    end_line: 147
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 148
-    end_line: 163
-    matcher: 1-hash
-    rule_length: 126
-    matched_length: 126
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_480.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      GnuPG is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 3 of the License, or
-      (at your option) any later version.
+          The limited permissions granted above are perpetual and will not be
+          revoked by the Internet Society or its successors or assigns.
+        licenses:
+          - key: ietf
+            name: Internet Engineering Task Force License
+            short_name: IETF License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: IETF - Internet Engineering Task Force
+            homepage_url: http://www.ietf.org/
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/ietf
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.yml
+            spdx_license_key: LicenseRef-scancode-ietf
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 147
+        end_line: 147
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_92.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-3+'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 148
+        end_line: 163
+        matched_length: 126
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_480.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 126
+        rule_relevance: 100
+        matched_text: |
+          GnuPG is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 3 of the License, or
+          (at your option) any later version.
 
-      GnuPG is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          GnuPG is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program; if not, see <https://www.gnu.org/licenses/>.
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, see <https://www.gnu.org/licenses/>.
 
-      On Debian systems, the full text of the GNU General Public
-      License version 3 can be found in the file
-      `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 165
-    end_line: 165
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_166.RULE
-    license_expression: lgpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-3+'
-  - score: '100.0'
-    start_line: 166
-    end_line: 181
-    matcher: 1-hash
-    rule_length: 132
-    matched_length: 132
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_191.RULE
-    license_expression: lgpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Lesser General Public License as
-      published by the Free Software Foundation; either version 3 of
-      the License, or (at your option) any later version.
+          On Debian systems, the full text of the GNU General Public
+          License version 3 can be found in the file
+          `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: lgpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 165
+        end_line: 165
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-3.0-plus
+        licensedb_identifier: lgpl-3.0-plus_166.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: lgpl-3+'
+        licenses:
+          - key: lgpl-3.0-plus
+            name: GNU Lesser General Public License 3.0 or later
+            short_name: LGPL 3.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.yml
+            spdx_license_key: LGPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
+      - score: '100.0'
+        start_line: 166
+        end_line: 181
+        matched_length: 132
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-3.0-plus
+        licensedb_identifier: lgpl-3.0-plus_191.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 132
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify it
+          under the terms of the GNU Lesser General Public License as
+          published by the Free Software Foundation; either version 3 of
+          the License, or (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      Lesser General Public License for more details.
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
 
-      You should have received a copy of the GNU Lesser General Public
-      License along with this program; if not, see <https://www.gnu.org/licenses/>.
+          You should have received a copy of the GNU Lesser General Public
+          License along with this program; if not, see <https://www.gnu.org/licenses/>.
 
-      On Debian systems, the full text of the GNU Lesser General Public
-      License version 3 can be found in the file
-      `/usr/share/common-licenses/LGPL-3'.
-  - score: '100.0'
-    start_line: 183
-    end_line: 183
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_108.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2.1+'
-  - score: '100.0'
-    start_line: 184
-    end_line: '199'
-    matcher: 1-hash
-    rule_length: 135
-    matched_length: 135
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_307.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Lesser General Public License as
-      published by the Free Software Foundation; either version 2.1 of
-      the License, or (at your option) any later version.
+          On Debian systems, the full text of the GNU Lesser General Public
+          License version 3 can be found in the file
+          `/usr/share/common-licenses/LGPL-3'.
+        licenses:
+          - key: lgpl-3.0-plus
+            name: GNU Lesser General Public License 3.0 or later
+            short_name: LGPL 3.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.yml
+            spdx_license_key: LGPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
+  - license_expression: lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 183
+        end_line: 183
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_108.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: lgpl-2.1+'
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+      - score: '100.0'
+        start_line: 184
+        end_line: '199'
+        matched_length: 135
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_307.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2.1
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 135
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify it
+          under the terms of the GNU Lesser General Public License as
+          published by the Free Software Foundation; either version 2.1 of
+          the License, or (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      Lesser General Public License for more details.
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
 
-      You should have received a copy of the GNU Lesser General Public
-      License along with this program; if not, see <https://www.gnu.org/licenses/>.
+          You should have received a copy of the GNU Lesser General Public
+          License along with this program; if not, see <https://www.gnu.org/licenses/>.
 
-      On Debian systems, the full text of the GNU Lesser General Public
-      License version 2.1 can be found in the file
-      `/usr/share/common-licenses/LGPL-2.1'.
-  - score: '100.0'
-    start_line: 202
-    end_line: 225
-    matcher: 1-hash
-    rule_length: 205
-    matched_length: 205
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_910.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, and the entire permission notice in its entirety,
-         including the disclaimer of warranties.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. The name of the author may not be used to endorse or promote
-         products derived from this software without specific prior
-         written permission.
+          On Debian systems, the full text of the GNU Lesser General Public
+          License version 2.1 can be found in the file
+          `/usr/share/common-licenses/LGPL-2.1'.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 202
+        end_line: 225
+        matched_length: 205
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_910.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 205
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, and the entire permission notice in its entirety,
+             including the disclaimer of warranties.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. The name of the author may not be used to endorse or promote
+             products derived from this software without specific prior
+             written permission.
 
-      THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
-      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-      DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
-      INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-      (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-      STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-      OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 228
-    end_line: 245
-    matcher: 1-hash
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      copy of this software and associated documentation files (the
-      "Software"), to deal in the Software without restriction, including
-      without limitation the rights to use, copy, modify, merge, publish,
-      distribute, sublicense, and/or sell copies of the Software, and to permit
-      persons to whom the Software is furnished to do so, subject to the
-      following conditions:
+          THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+          WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+          DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+          INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+          SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+          STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+          OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 228
+        end_line: 245
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit
+        licensedb_identifier: mit.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 161
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a
+          copy of this software and associated documentation files (the
+          "Software"), to deal in the Software without restriction, including
+          without limitation the rights to use, copy, modify, merge, publish,
+          distribute, sublicense, and/or sell copies of the Software, and to permit
+          persons to whom the Software is furnished to do so, subject to the
+          following conditions:
 
-      The above copyright notice and this permission notice shall be included
-      in all copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included
+          in all copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-      OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-      NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-      DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-      OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-      USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 247
-    end_line: 247
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: cc0-1.0_12.RULE
-    license_expression: cc0-1.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: cc0-1.0'
-  - score: '100.0'
-    start_line: 248
-    end_line: 253
-    matcher: 1-hash
-    rule_length: 57
-    matched_length: 57
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: cc0-1.0_131.RULE
-    license_expression: cc0-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      To the extent possible under law, the author(s) have dedicated all
-      copyright and related and neighboring rights to this software to the public
-      domain worldwide. This software is distributed without any warranty.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+          OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+          NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+          DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+          OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+          USE OR OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: cc0-1.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 247
+        end_line: 247
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: cc0-1.0
+        licensedb_identifier: cc0-1.0_12.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: cc0-1.0'
+        licenses:
+          - key: cc0-1.0
+            name: Creative Commons CC0 1.0 Universal
+            short_name: CC0-1.0
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Creative Commons
+            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
+            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
+            spdx_license_key: CC0-1.0
+            spdx_url: https://spdx.org/licenses/CC0-1.0
+      - score: '100.0'
+        start_line: 248
+        end_line: 253
+        matched_length: 57
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: cc0-1.0
+        licensedb_identifier: cc0-1.0_131.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/CC0-1.0
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 57
+        rule_relevance: 100
+        matched_text: |
+          To the extent possible under law, the author(s) have dedicated all
+          copyright and related and neighboring rights to this software to the public
+          domain worldwide. This software is distributed without any warranty.
 
-      On Debian systems, the complete text of the CC0 license, version 1.0,
-      can be found in /usr/share/common-licenses/CC0-1.0.
-  - score: '100.0'
-    start_line: 81
-    end_line: 81
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_321.RULE
-    license_expression: other-permissive
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: This file is licensed permissively
+          On Debian systems, the complete text of the CC0 license, version 1.0,
+          can be found in /usr/share/common-licenses/CC0-1.0.
+        licenses:
+          - key: cc0-1.0
+            name: Creative Commons CC0 1.0 Universal
+            short_name: CC0-1.0
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Creative Commons
+            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
+            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
+            spdx_license_key: CC0-1.0
+            spdx_url: https://spdx.org/licenses/CC0-1.0
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 81
+        end_line: 81
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_321.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 5
+        rule_relevance: 100
+        matched_text: This file is licensed permissively for the sake of AppStream
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE

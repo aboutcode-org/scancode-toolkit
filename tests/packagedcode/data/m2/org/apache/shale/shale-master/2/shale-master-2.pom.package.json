@@ -309,8 +309,10 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/shale/maven/trunk/master-pom",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/shale/maven/trunk/master-pom",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.shale/shale-master@2?classifier=sources"

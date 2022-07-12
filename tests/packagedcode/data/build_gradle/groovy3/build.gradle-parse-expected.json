@@ -22,8 +22,10 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": null,
-    "declared_license": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -35,15 +37,6 @@
         "scope": "enforcedPlatform",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
-        "resolved_package": {}
-      },
-      {
-        "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core",
-        "extracted_requirement": null,
-        "scope": "implementation",
-        "is_runtime": true,
-        "is_optional": false,
         "is_resolved": false,
         "resolved_package": {}
       },
@@ -51,17 +44,8 @@
         "purl": "pkg:maven/org.junit/junit-bom@5.7.2",
         "extracted_requirement": "5.7.2",
         "scope": "platform",
-        "is_runtime": false,
-        "is_optional": true,
-        "is_resolved": true,
-        "resolved_package": {}
-      }
-      {
-        "purl": "pkg:maven/org.junit.platform/junit-platform-commons",
-        "extracted_requirement": null,
-        "scope": "testImplementation",
-        "is_runtime": false,
-        "is_optional": true,
+        "is_runtime": true,
+        "is_optional": false,
         "is_resolved": false,
         "resolved_package": {}
       }

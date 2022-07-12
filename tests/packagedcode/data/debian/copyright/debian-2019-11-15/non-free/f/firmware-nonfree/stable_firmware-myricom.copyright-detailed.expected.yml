@@ -1,42 +1,63 @@
 primary_license:
 declared_license:
 license_expression: bsd-source-code
+declared_license_expression_spdx: BSD-Source-Code
 copyright: Copyright (c) 2006-2010, Myricom Inc.
-matches:
-  - score: '99.46'
-    start_line: 7
-    end_line: 27
-    matcher: 2-aho
-    rule_length: 185
-    matched_length: 185
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-source-code_8.RULE
-    license_expression: bsd-source-code
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:
+license_detections:
+  - license_expression: bsd-source-code
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.46'
+        start_line: 7
+        end_line: 27
+        matched_length: 185
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-source-code
+        licensedb_identifier: bsd-source-code_8.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 185
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
 
-       1. Redistributions of source code must retain the above copyright notice,
-          this list of conditions and the following disclaimer.
+           1. Redistributions of source code must retain the above copyright notice,
+              this list of conditions and the following disclaimer.
 
-       2. Neither the name of the [Myricom] Inc, nor the names of its
-          contributors may be used to endorse or promote products derived from
-          this software without specific prior written permission.
+           2. Neither the name of the Myricom Inc, nor the names of its
+              contributors may be used to endorse or promote products derived from
+              this software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-source-code
+            name: BSD Source Code Attribution
+            short_name: BSD Source Code Attribution
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: TSRM
+            homepage_url: https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
+            text_url: https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-source-code
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-source-code.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-source-code.yml
+            spdx_license_key: BSD-Source-Code
+            spdx_url: https://spdx.org/licenses/BSD-Source-Code

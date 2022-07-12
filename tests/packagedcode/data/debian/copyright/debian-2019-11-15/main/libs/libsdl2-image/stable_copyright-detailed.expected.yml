@@ -9,6 +9,8 @@ declared_license:
   - LGPL-2+
 license_expression: zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND unlicense AND (lgpl-2.0-plus
   AND lgpl-2.1-plus)
+declared_license_expression_spdx: Zlib AND Zlib AND (LGPL-2.0-or-later AND LGPL-2.1-or-later)
+  AND Unlicense AND (LGPL-2.0-or-later AND LGPL-2.1-or-later)
 copyright: |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>
@@ -20,112 +22,189 @@ copyright: |
   2013, Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>
   2013, Felix Geyer <fgeyer@debian.org>
   2016, Gianfranco Costamagna <locutusofborg@debian.org>
-matches:
-  - score: '100.0'
-    start_line: 33
-    end_line: 54
-    matcher: 1-hash
-    rule_length: 189
-    matched_length: 189
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: unlicense_6.RULE
-    license_expression: unlicense
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This is free and unencumbered software released into the public domain.
+license_detections:
+  - license_expression: unlicense
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 33
+        end_line: 54
+        matched_length: 189
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: unlicense
+        licensedb_identifier: unlicense_6.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 189
+        rule_relevance: 100
+        matched_text: |
+          This is free and unencumbered software released into the public domain.
 
-      Anyone is free to copy, modify, publish, use, compile, sell, or
-      distribute this software, either in source code form or as a compiled
-      binary, for any purpose, commercial or non-commercial, and by any
-      means.
+          Anyone is free to copy, modify, publish, use, compile, sell, or
+          distribute this software, either in source code form or as a compiled
+          binary, for any purpose, commercial or non-commercial, and by any
+          means.
 
-      In jurisdictions that recognize copyright laws, the author or authors
-      of this software dedicate any and all copyright interest in the
-      software to the public domain. We make this dedication for the benefit
-      of the public at large and to the detriment of our heirs and
-      successors. We intend this dedication to be an overt act of
-      relinquishment in perpetuity of all present and future rights to this
-      software under copyright law.
+          In jurisdictions that recognize copyright laws, the author or authors
+          of this software dedicate any and all copyright interest in the
+          software to the public domain. We make this dedication for the benefit
+          of the public at large and to the detriment of our heirs and
+          successors. We intend this dedication to be an overt act of
+          relinquishment in perpetuity of all present and future rights to this
+          software under copyright law.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-      IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-      OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-      OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 63
-    end_line: 77
-    matcher: 1-hash
-    rule_length: 132
-    matched_length: 132
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zlib.LICENSE
-    license_expression: zlib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is provided 'as-is', without any express or implied
-      warranty.  In no event will the authors be held liable for any damages
-      arising from the use of this software.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+          EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+          IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+          OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+          ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+          OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: unlicense
+            name: Unlicense
+            short_name: Unlicense
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unlicense
+            homepage_url: http://unlicense.org/
+            text_url: https://unlicense.org/
+            reference_url: https://scancode-licensedb.aboutcode.org/unlicense
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.yml
+            spdx_license_key: Unlicense
+            spdx_url: https://spdx.org/licenses/Unlicense
+  - license_expression: zlib
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 63
+        end_line: 77
+        matched_length: 132
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: zlib
+        licensedb_identifier: zlib.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 132
+        rule_relevance: 100
+        matched_text: |
+          This software is provided 'as-is', without any express or implied
+          warranty.  In no event will the authors be held liable for any damages
+          arising from the use of this software.
 
-      Permission is granted to anyone to use this software for any purpose,
-      including commercial applications, and to alter it and redistribute it
-      freely, subject to the following restrictions:
+          Permission is granted to anyone to use this software for any purpose,
+          including commercial applications, and to alter it and redistribute it
+          freely, subject to the following restrictions:
 
-      1. The origin of this software must not be misrepresented; you must not
-         claim that you wrote the original software. If you use this software
-         in a product, an acknowledgment in the product documentation would be
-         appreciated but is not required.
-      2. Altered source versions must be plainly marked as such, and must not be
-         misrepresented as being the original software.
-      3. This notice may not be removed or altered from any source distribution.
-  - score: '100.0'
-    start_line: 79
-    end_line: 79
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_61.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2+'
-  - score: '100.0'
-    start_line: 80
-    end_line: 86
-    matcher: 1-hash
-    rule_length: 70
-    matched_length: 70
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_419.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU Lesser General Public License as published by
-      the Free Software Foundation; either version 2.1 of the License, or (at
-      your option) any later version.
+          1. The origin of this software must not be misrepresented; you must not
+             claim that you wrote the original software. If you use this software
+             in a product, an acknowledgment in the product documentation would be
+             appreciated but is not required.
+          2. Altered source versions must be plainly marked as such, and must not be
+             misrepresented as being the original software.
+          3. This notice may not be removed or altered from any source distribution.
+        licenses:
+          - key: zlib
+            name: ZLIB License
+            short_name: ZLIB License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: zlib
+            homepage_url: http://www.zlib.net/
+            text_url: http://www.gzip.org/zlib/zlib_license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/zlib
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
+            spdx_license_key: Zlib
+            spdx_url: https://spdx.org/licenses/Zlib
+  - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 79
+        end_line: 79
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: lgpl-2+'
+        licenses:
+          - key: lgpl-2.0-plus
+            name: GNU Library General Public License 2.0 or later
+            short_name: LGPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            spdx_license_key: LGPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+      - score: '100.0'
+        start_line: 80
+        end_line: 86
+        matched_length: 70
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1-plus
+        licensedb_identifier: lgpl-2.1-plus_419.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/LGPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 70
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU Lesser General Public License as published by
+          the Free Software Foundation; either version 2.1 of the License, or (at
+          your option) any later version.
 
-      On Debian systems, the complete text of version 2 of the GNU Lesser
-      General Public License can be found in '/usr/share/common-licenses/LGPL-2'.
+          On Debian systems, the complete text of version 2 of the GNU Lesser
+          General Public License can be found in '/usr/share/common-licenses/LGPL-2'.
+        licenses:
+          - key: lgpl-2.1-plus
+            name: GNU Lesser General Public License 2.1 or later
+            short_name: LGPL 2.1 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            spdx_license_key: LGPL-2.1-or-later
+            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later

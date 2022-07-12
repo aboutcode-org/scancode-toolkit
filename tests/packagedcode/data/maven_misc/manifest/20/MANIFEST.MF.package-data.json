@@ -4,7 +4,7 @@
   "name": "org.eclipse.jetty.websocket.api.source",
   "version": "9.4.12.v20180830",
   "description": "Jetty :: Websocket :: API",
-  "declared_license": null,
+  "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": null,
   "documentation_url": null,

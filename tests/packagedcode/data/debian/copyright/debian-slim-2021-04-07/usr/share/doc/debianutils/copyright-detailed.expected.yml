@@ -1,130 +1,192 @@
 primary_license:
 declared_license:
 license_expression: (gpl-2.0-plus AND public-domain) AND smail-gpl
+declared_license_expression_spdx: (GPL-2.0-or-later AND LicenseRef-scancode-public-domain) AND
+  LicenseRef-scancode-smail-gpl
 copyright: |
   Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
   Copyright (c) 1992 Ronald S. Karr
   Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
-matches:
-  - score: '100.0'
-    start_line: 8
-    end_line: 11
-    matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_and_public-domain_810.RULE
-    license_expression: gpl-2.0-plus AND public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      redistributed under the terms of the GNU GPL, Version 2 or later,
-      found on Debian systems in the file /usr/share/common-licenses/GPL-2.
+license_detections:
+  - license_expression: gpl-2.0-plus AND public-domain
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 8
+        end_line: 11
+        matched_length: 31
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus AND public-domain
+        licensedb_identifier: gpl-2.0-plus_and_public-domain_810.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-2
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 31
+        rule_relevance: 100
+        matched_text: |
+          redistributed under the terms of the GNU GPL, Version 2 or later,
+          found on Debian systems in the file /usr/share/common-licenses/GPL-2.
 
-      which is in the public domain.
-  - score: '100.0'
-    start_line: 18
-    end_line: 161
-    matcher: 2-aho
-    rule_length: 1227
-    matched_length: 1227
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: smail-gpl.LICENSE
-    license_expression: smail-gpl
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n Copyright\
-      \ (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald S. Karr\n Copyleft\
-      \ (GNU) 1988 Landon Curt Noll & Ronald S. Karr\n\n Everyone is permitted to copy and distribute\
-      \ verbatim copies\n of this license, but changing it is not allowed.  You can also\n use\
-      \ this wording to make the terms for other programs.\n\n  The license agreements of most\
-      \ software companies keep you at the\nmercy of those companies.  By contrast, our general\
-      \ public license is\nintended to give everyone the right to share SMAIL.  To make sure\
-      \ that\nyou get the rights we want you to have, we need to make restrictions\nthat forbid\
-      \ anyone to deny you these rights or to ask you to surrender\nthe rights.  Hence this\
-      \ license agreement.\n\n  Specifically, we want to make sure that you have the right to\
-      \ give\naway copies of SMAIL, that you receive source code or else can get it\nif you\
-      \ want it, that you can change SMAIL or use pieces of it in new\nfree programs, and that\
-      \ you know you can do these things.\n\n  To make sure that everyone has such rights, we\
-      \ have to forbid you to\ndeprive anyone else of these rights.  For example, if you distribute\n\
-      copies of SMAIL, you must give the recipients all the rights that you\nhave.  You must\
-      \ make sure that they, too, receive or can get the\nsource code.  And you must tell them\
-      \ their rights.\n\n  Also, for our own protection, we must make certain that everyone\n\
-      finds out that there is no warranty for SMAIL.  If SMAIL is modified by\nsomeone else\
-      \ and passed on, we want its recipients to know that what\nthey have is not what we distributed,\
-      \ so that any problems introduced\nby others will not reflect on our reputation.\n\n \
-      \ Therefore we (Landon Curt Noll and Ronald S. Karr) make the following \nterms which\
-      \ say what you must do to be allowed to distribute or change \nSMAIL.\n\n\n\t\t\tCOPYING\
-      \ POLICIES\n\n  1. You may copy and distribute verbatim copies of SMAIL source code\n\
-      as you receive it, in any medium, provided that you conspicuously and\nappropriately publish\
-      \ on each copy a valid copyright notice \"Copyright\n(C) 1988 Landon Curt Noll & Ronald\
-      \ S. Karr\" (or with whatever year is\nappropriate); keep intact the notices on all files\
-      \ that refer to this\nLicense Agreement and to the absence of any warranty; and give any\n\
-      other recipients of the SMAIL program a copy of this License\nAgreement along with the\
-      \ program.  You may charge a distribution fee\nfor the physical act of transferring a\
-      \ copy.\n\n  2. You may modify your copy or copies of SMAIL or any portion of it,\nand\
-      \ copy and distribute such modifications under the terms of\nParagraph 1 above, provided\
-      \ that you also do the following:\n\n    a) cause the modified files to carry prominent\
-      \ notices stating\n    that you changed the files and the date of any change; and\n\n\
-      \    b) cause the whole of any work that you distribute or publish,\n    that in whole\
-      \ or in part contains or is a derivative of SMAIL or\n    any part thereof, to be licensed\
-      \ at no charge to all third\n    parties on terms identical to those contained in this\
-      \ License\n    Agreement (except that you may choose to grant more extensive\n    warranty\
-      \ protection to some or all third parties, at your option).\n\n    c) You may charge a\
-      \ distribution fee for the physical act of\n    transferring a copy, and you may at your\
-      \ option offer warranty\n    protection in exchange for a fee.\n\nMere aggregation of\
-      \ another unrelated program with this program (or its\nderivative) on a volume of a storage\
-      \ or distribution medium does not bring\nthe other program under the scope of these terms.\n\
-      \n  3. You may copy and distribute SMAIL (or a portion or derivative of it,\nunder Paragraph\
-      \ 2) in object code or executable form under the terms of\nParagraphs 1 and 2 above provided\
-      \ that you also do one of the following:\n\n    a) accompany it with the complete corresponding\
-      \ machine-readable\n    source code, which must be distributed under the terms of\n  \
-      \  Paragraphs 1 and 2 above; or,\n\n    b) accompany it with a written offer, valid for\
-      \ at least three\n    years, to give any third party free (except for a nominal\n    shipping\
-      \ charge) a complete machine-readable copy of the\n    corresponding source code, to be\
-      \ distributed under the terms of\n    Paragraphs 1 and 2 above; or,\n\n    c) accompany\
-      \ it with the information you received as to where the\n    corresponding source code\
-      \ may be obtained.  (This alternative is\n    allowed only for non-commercial distribution\
-      \ and only if you\n    received the program in object code or executable form alone.)\n\
-      \nFor an executable file, complete source code means all the source code for\nall modules\
-      \ it contains; but, as a special exception, it need not include\nsource code for modules\
-      \ which are standard libraries that accompany the\noperating system on which the executable\
-      \ file runs.\n\n  4. You may not copy, sublicense, distribute or transfer SMAIL\nexcept\
-      \ as expressly provided under this License Agreement.  Any attempt\notherwise to copy,\
-      \ sublicense, distribute or transfer SMAIL is void and\nyour rights to use the program\
-      \ under this License agreement shall be\nautomatically terminated.  However, parties who\
-      \ have received computer\nsoftware programs from you with this License Agreement will\
-      \ not have\ntheir licenses terminated so long as such parties remain in full compliance.\n\
-      \n  5. If you wish to incorporate parts of SMAIL into other free\nprograms whose distribution\
-      \ conditions are different, write to Landon\nCurt Noll & Ronald S. Karr via the Free Software\
-      \ Foundation at 51\nFranklin St, Fifth Floor, Boston, MA 02110-1301, USA.  We have not\
-      \ yet\nworked out a simple rule that can be stated here, but we will often\npermit this.\
-      \  We will be guided by the two goals of preserving the\nfree status of all derivatives\
-      \ of our free software and of promoting\nthe sharing and reuse of software.\n\nYour comments\
-      \ and suggestions about our licensing policies and our\nsoftware are welcome!  This contract\
-      \ was based on the contract made by\nthe Free Software Foundation.  Please contact the\
-      \ Free Software\nFoundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,\n\
-      USA, or call (617) 542-5942 for details on copylefted material in\ngeneral.\n\n\t\t  \
-      \     NO WARRANTY\n\n  BECAUSE SMAIL IS LICENSED FREE OF CHARGE, WE PROVIDE ABSOLUTELY\
-      \ NO\nWARRANTY, TO THE EXTENT PERMITTED BY APPLICABLE STATE LAW.  EXCEPT WHEN\nOTHERWISE\
-      \ STATED IN WRITING, LANDON CURT NOLL & RONALD S. KARR AND/OR\nOTHER PARTIES PROVIDE SMAIL\
-      \ \"AS IS\" WITHOUT WARRANTY OF ANY KIND,\nEITHER EXPRESSED OR IMPLIED, INCLUDING, BUT\
-      \ NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\
-      \ PURPOSE.\nTHE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF SMAIL IS WITH\nYOU. \
-      \ SHOULD SMAIL PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL\nNECESSARY SERVICING, REPAIR\
-      \ OR CORRECTION.\n\n  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW WILL LANDON CURT NOLL\
-      \ &\nRONALD S. KARR AND/OR ANY OTHER PARTY WHO MAY MODIFY AND REDISTRIBUTE\nSMAIL AS PERMITTED\
-      \ ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\nLOST PROFITS, LOST MONIES, OR OTHER\
-      \ SPECIAL, INCIDENTAL OR\nCONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO\
-      \ USE\n(INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED\nINACCURATE OR\
-      \ LOSSES SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE\nPROGRAM TO OPERATE WITH ANY OTHER\
-      \ PROGRAMS) SMAIL, EVEN IF YOU HAVE\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES,\
-      \ OR FOR ANY CLAIM BY\nANY OTHER PARTY."
+          which is in the public domain.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression: smail-gpl
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 18
+        end_line: 161
+        matched_length: 1227
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: smail-gpl
+        licensedb_identifier: smail-gpl.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 1227
+        rule_relevance: 100
+        matched_text: "\t\t     SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\
+          \n Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
+          \ S. Karr\n Copyleft (GNU) 1988 Landon Curt Noll & Ronald S. Karr\n\n Everyone is\
+          \ permitted to copy and distribute verbatim copies\n of this license, but changing\
+          \ it is not allowed.  You can also\n use this wording to make the terms for other\
+          \ programs.\n\n  The license agreements of most software companies keep you at the\n\
+          mercy of those companies.  By contrast, our general public license is\nintended to\
+          \ give everyone the right to share SMAIL.  To make sure that\nyou get the rights we\
+          \ want you to have, we need to make restrictions\nthat forbid anyone to deny you these\
+          \ rights or to ask you to surrender\nthe rights.  Hence this license agreement.\n\n\
+          \  Specifically, we want to make sure that you have the right to give\naway copies\
+          \ of SMAIL, that you receive source code or else can get it\nif you want it, that\
+          \ you can change SMAIL or use pieces of it in new\nfree programs, and that you know\
+          \ you can do these things.\n\n  To make sure that everyone has such rights, we have\
+          \ to forbid you to\ndeprive anyone else of these rights.  For example, if you distribute\n\
+          copies of SMAIL, you must give the recipients all the rights that you\nhave.  You\
+          \ must make sure that they, too, receive or can get the\nsource code.  And you must\
+          \ tell them their rights.\n\n  Also, for our own protection, we must make certain\
+          \ that everyone\nfinds out that there is no warranty for SMAIL.  If SMAIL is modified\
+          \ by\nsomeone else and passed on, we want its recipients to know that what\nthey have\
+          \ is not what we distributed, so that any problems introduced\nby others will not\
+          \ reflect on our reputation.\n\n  Therefore we (Landon Curt Noll and Ronald S. Karr)\
+          \ make the following \nterms which say what you must do to be allowed to distribute\
+          \ or change \nSMAIL.\n\n\n\t\t\tCOPYING POLICIES\n\n  1. You may copy and distribute\
+          \ verbatim copies of SMAIL source code\nas you receive it, in any medium, provided\
+          \ that you conspicuously and\nappropriately publish on each copy a valid copyright\
+          \ notice \"Copyright\n(C) 1988 Landon Curt Noll & Ronald S. Karr\" (or with whatever\
+          \ year is\nappropriate); keep intact the notices on all files that refer to this\n\
+          License Agreement and to the absence of any warranty; and give any\nother recipients\
+          \ of the SMAIL program a copy of this License\nAgreement along with the program. \
+          \ You may charge a distribution fee\nfor the physical act of transferring a copy.\n\
+          \n  2. You may modify your copy or copies of SMAIL or any portion of it,\nand copy\
+          \ and distribute such modifications under the terms of\nParagraph 1 above, provided\
+          \ that you also do the following:\n\n    a) cause the modified files to carry prominent\
+          \ notices stating\n    that you changed the files and the date of any change; and\n\
+          \n    b) cause the whole of any work that you distribute or publish,\n    that in\
+          \ whole or in part contains or is a derivative of SMAIL or\n    any part thereof,\
+          \ to be licensed at no charge to all third\n    parties on terms identical to those\
+          \ contained in this License\n    Agreement (except that you may choose to grant more\
+          \ extensive\n    warranty protection to some or all third parties, at your option).\n\
+          \n    c) You may charge a distribution fee for the physical act of\n    transferring\
+          \ a copy, and you may at your option offer warranty\n    protection in exchange for\
+          \ a fee.\n\nMere aggregation of another unrelated program with this program (or its\n\
+          derivative) on a volume of a storage or distribution medium does not bring\nthe other\
+          \ program under the scope of these terms.\n\n  3. You may copy and distribute SMAIL\
+          \ (or a portion or derivative of it,\nunder Paragraph 2) in object code or executable\
+          \ form under the terms of\nParagraphs 1 and 2 above provided that you also do one\
+          \ of the following:\n\n    a) accompany it with the complete corresponding machine-readable\n\
+          \    source code, which must be distributed under the terms of\n    Paragraphs 1 and\
+          \ 2 above; or,\n\n    b) accompany it with a written offer, valid for at least three\n\
+          \    years, to give any third party free (except for a nominal\n    shipping charge)\
+          \ a complete machine-readable copy of the\n    corresponding source code, to be distributed\
+          \ under the terms of\n    Paragraphs 1 and 2 above; or,\n\n    c) accompany it with\
+          \ the information you received as to where the\n    corresponding source code may\
+          \ be obtained.  (This alternative is\n    allowed only for non-commercial distribution\
+          \ and only if you\n    received the program in object code or executable form alone.)\n\
+          \nFor an executable file, complete source code means all the source code for\nall\
+          \ modules it contains; but, as a special exception, it need not include\nsource code\
+          \ for modules which are standard libraries that accompany the\noperating system on\
+          \ which the executable file runs.\n\n  4. You may not copy, sublicense, distribute\
+          \ or transfer SMAIL\nexcept as expressly provided under this License Agreement.  Any\
+          \ attempt\notherwise to copy, sublicense, distribute or transfer SMAIL is void and\n\
+          your rights to use the program under this License agreement shall be\nautomatically\
+          \ terminated.  However, parties who have received computer\nsoftware programs from\
+          \ you with this License Agreement will not have\ntheir licenses terminated so long\
+          \ as such parties remain in full compliance.\n\n  5. If you wish to incorporate parts\
+          \ of SMAIL into other free\nprograms whose distribution conditions are different,\
+          \ write to Landon\nCurt Noll & Ronald S. Karr via the Free Software Foundation at\
+          \ 51\nFranklin St, Fifth Floor, Boston, MA 02110-1301, USA.  We have not yet\nworked\
+          \ out a simple rule that can be stated here, but we will often\npermit this.  We will\
+          \ be guided by the two goals of preserving the\nfree status of all derivatives of\
+          \ our free software and of promoting\nthe sharing and reuse of software.\n\nYour comments\
+          \ and suggestions about our licensing policies and our\nsoftware are welcome!  This\
+          \ contract was based on the contract made by\nthe Free Software Foundation.  Please\
+          \ contact the Free Software\nFoundation, Inc., 51 Franklin St, Fifth Floor, Boston,\
+          \ MA 02110-1301,\nUSA, or call (617) 542-5942 for details on copylefted material in\n\
+          general.\n\n\t\t       NO WARRANTY\n\n  BECAUSE SMAIL IS LICENSED FREE OF CHARGE,\
+          \ WE PROVIDE ABSOLUTELY NO\nWARRANTY, TO THE EXTENT PERMITTED BY APPLICABLE STATE\
+          \ LAW.  EXCEPT WHEN\nOTHERWISE STATED IN WRITING, LANDON CURT NOLL & RONALD S. KARR\
+          \ AND/OR\nOTHER PARTIES PROVIDE SMAIL \"AS IS\" WITHOUT WARRANTY OF ANY KIND,\nEITHER\
+          \ EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF\
+          \ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.\nTHE ENTIRE RISK AS TO THE\
+          \ QUALITY AND PERFORMANCE OF SMAIL IS WITH\nYOU.  SHOULD SMAIL PROVE DEFECTIVE, YOU\
+          \ ASSUME THE COST OF ALL\nNECESSARY SERVICING, REPAIR OR CORRECTION.\n\n  IN NO EVENT\
+          \ UNLESS REQUIRED BY APPLICABLE LAW WILL LANDON CURT NOLL &\nRONALD S. KARR AND/OR\
+          \ ANY OTHER PARTY WHO MAY MODIFY AND REDISTRIBUTE\nSMAIL AS PERMITTED ABOVE, BE LIABLE\
+          \ TO YOU FOR DAMAGES, INCLUDING ANY\nLOST PROFITS, LOST MONIES, OR OTHER SPECIAL,\
+          \ INCIDENTAL OR\nCONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE\n\
+          (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED\nINACCURATE OR LOSSES\
+          \ SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE\nPROGRAM TO OPERATE WITH ANY OTHER\
+          \ PROGRAMS) SMAIL, EVEN IF YOU HAVE\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES,\
+          \ OR FOR ANY CLAIM BY\nANY OTHER PARTY."
+        licenses:
+          - key: smail-gpl
+            name: SMAIL General Public License
+            short_name: SMAIL GPL
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: SMAIL Project
+            homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+            text_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+            reference_url: https://scancode-licensedb.aboutcode.org/smail-gpl
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.yml
+            spdx_license_key: LicenseRef-scancode-smail-gpl
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE

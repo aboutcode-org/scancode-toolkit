@@ -37,8 +37,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright \u00a9 Microsoft Corporation",
-    "license_expression": "ms-net-library",
-    "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
+    "declared_license_expression": "ms-net-library",
+    "declared_license_expression_spdx": "LicenseRef-scancode-ms-net-library",
+    "license_detections": [
+      {
+        "license_expression": "ms-net-library",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "ms-net-library",
+            "licensedb_identifier": "ms-net-library_1.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 12,
+            "rule_relevance": 100,
+            "matched_text": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
+            "licenses": [
+              {
+                "key": "ms-net-library",
+                "name": "Microsoft .NET Library License",
+                "short_name": "MS .NET Library License",
+                "category": "Proprietary Free",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Microsoft",
+                "homepage_url": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/ms-net-library",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.yml",
+                "spdx_license_key": "LicenseRef-scancode-ms-net-library",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

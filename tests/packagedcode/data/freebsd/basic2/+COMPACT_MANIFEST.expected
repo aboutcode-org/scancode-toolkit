@@ -35,13 +35,56 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/security/0d1n",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-3.0",
-    "declared_license": {
-      "licenses": [
-        "GPLv3"
-      ],
-      "licenselogic": "single"
-    },
+    "declared_license_expression": "gpl-3.0",
+    "declared_license_expression_spdx": "GPL-3.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-3.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-3.0",
+            "licensedb_identifier": "gpl-3.0_32.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "GPLv3",
+            "licenses": [
+              {
+                "key": "gpl-3.0",
+                "name": "GNU General Public License 3.0",
+                "short_name": "GPL 3.0",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
+                "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml",
+                "spdx_license_key": "GPL-3.0-only",
+                "spdx_url": "https://spdx.org/licenses/GPL-3.0-only"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'licenses': ['GPLv3'], 'licenselogic': 'single'}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

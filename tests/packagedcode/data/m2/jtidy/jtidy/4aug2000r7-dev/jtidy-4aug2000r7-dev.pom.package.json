@@ -29,15 +29,56 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/jtidy/trunk/jtidy/",
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/",
   "copyright": null,
-  "license_expression": "tidy AND unknown",
-  "declared_license": [
+  "declared_license_expression": "tidy",
+  "declared_license_expression_spdx": "HTMLTIDY",
+  "license_detections": [
     {
-      "name": "Java HTML Tidy License",
-      "url": "http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95",
-      "comments": null,
-      "distribution": "repo"
+      "license_expression": "tidy",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "tidy",
+          "licensedb_identifier": "tidy_2.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 100,
+          "matched_text": "Java HTML Tidy License",
+          "licenses": [
+            {
+              "key": "tidy",
+              "name": "Tidy License",
+              "short_name": "Tidy License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "W3C - World Wide Web Consortium",
+              "homepage_url": "https://github.com/htacg/tidy-html5/blob/next/README/LICENSE.md",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/tidy",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.yml",
+              "spdx_license_key": "HTMLTIDY",
+              "spdx_url": "https://spdx.org/licenses/HTMLTIDY"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'Java HTML Tidy License', 'url': 'http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/jtidy/jtidy@4aug2000r7-dev?classifier=sources"

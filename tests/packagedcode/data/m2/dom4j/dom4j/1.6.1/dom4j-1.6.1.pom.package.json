@@ -134,8 +134,10 @@
   "code_view_url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/dom4j/dom4j/",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/dom4j:dom4j",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/dom4j/dom4j@1.6.1?classifier=sources"

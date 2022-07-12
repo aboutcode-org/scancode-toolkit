@@ -30,10 +30,56 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "bsd-simplified",
-    "declared_license": {
-      "license": "Simplified BSD"
-    },
+    "declared_license_expression": "bsd-simplified",
+    "declared_license_expression_spdx": "BSD-2-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-simplified",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "bsd-simplified",
+            "licensedb_identifier": "bsd-simplified_150.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 2,
+            "rule_relevance": 100,
+            "matched_text": "Simplified BSD",
+            "licenses": [
+              {
+                "key": "bsd-simplified",
+                "name": "BSD-2-Clause",
+                "short_name": "BSD-2-Clause",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Regents of the University of California",
+                "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                "text_url": "http://opensource.org/licenses/bsd-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                "spdx_license_key": "BSD-2-Clause",
+                "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'license': 'Simplified BSD'}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

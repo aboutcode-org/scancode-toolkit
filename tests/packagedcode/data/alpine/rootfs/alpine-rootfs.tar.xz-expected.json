@@ -100,8 +100,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "MIT",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "licensedb_identifier": "spdx-license-identifier: mit",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "mit",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
@@ -164,8 +212,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "GPL-2.0-only",
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "gpl-2.0-only",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
@@ -228,8 +324,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "GPL-2.0-only",
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "gpl-2.0-only",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/alpine-baselayout@3.2.0-r18"
@@ -319,8 +463,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "MIT",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "licensedb_identifier": "spdx-license-identifier: mit",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "mit",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/alpine-keys@2.4-r1"
@@ -545,8 +737,72 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "MPL-2.0 AND MIT",
+      "declared_license_expression": "mpl-2.0 AND mit",
+      "declared_license_expression_spdx": "MPL-2.0 AND MIT",
+      "license_detections": [
+        {
+          "license_expression": "mpl-2.0 AND mit",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mpl-2.0 AND mit",
+              "licensedb_identifier": "spdx-license-identifier: mpl-2.0 AND mit",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "mpl-2.0 AND mit",
+              "licenses": [
+                {
+                  "key": "mpl-2.0",
+                  "name": "Mozilla Public License 2.0",
+                  "short_name": "MPL 2.0",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Mozilla",
+                  "homepage_url": "http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/",
+                  "text_url": "http://www.mozilla.com/MPL/2.0/",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.yml",
+                  "spdx_license_key": "MPL-2.0",
+                  "spdx_url": "https://spdx.org/licenses/MPL-2.0"
+                },
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "MPL-2.0 AND MIT",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/ca-certificates@20211220-r0"
@@ -609,8 +865,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "OpenSSL",
+      "declared_license_expression": "openssl-ssleay",
+      "declared_license_expression_spdx": "OpenSSL",
+      "license_detections": [
+        {
+          "license_expression": "openssl-ssleay",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "openssl-ssleay",
+              "licensedb_identifier": "spdx-license-identifier: openssl-ssleay",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "openssl",
+              "licenses": [
+                {
+                  "key": "openssl-ssleay",
+                  "name": "OpenSSL/SSLeay License",
+                  "short_name": "OpenSSL/SSLeay License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "OpenSSL",
+                  "homepage_url": "http://www.openssl.org/source/license.html",
+                  "text_url": "http://www.openssl.org/source/license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.yml",
+                  "spdx_license_key": "OpenSSL",
+                  "spdx_url": "https://spdx.org/licenses/OpenSSL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "OpenSSL",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
@@ -700,8 +1004,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "OpenSSL",
+      "declared_license_expression": "openssl-ssleay",
+      "declared_license_expression_spdx": "OpenSSL",
+      "license_detections": [
+        {
+          "license_expression": "openssl-ssleay",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "openssl-ssleay",
+              "licensedb_identifier": "spdx-license-identifier: openssl-ssleay",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "openssl",
+              "licenses": [
+                {
+                  "key": "openssl-ssleay",
+                  "name": "OpenSSL/SSLeay License",
+                  "short_name": "OpenSSL/SSLeay License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "OpenSSL",
+                  "homepage_url": "http://www.openssl.org/source/license.html",
+                  "text_url": "http://www.openssl.org/source/license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.yml",
+                  "spdx_license_key": "OpenSSL",
+                  "spdx_url": "https://spdx.org/licenses/OpenSSL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "OpenSSL",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
@@ -764,8 +1116,88 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "ISC AND (BSD-3-Clause OR MIT)",
+      "declared_license_expression": "isc AND (bsd-new OR mit)",
+      "declared_license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
+      "license_detections": [
+        {
+          "license_expression": "isc AND (bsd-new OR mit)",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "isc AND (bsd-new OR mit)",
+              "licensedb_identifier": "spdx-license-identifier: isc AND (bsd-new OR mit)",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "isc AND (bsd-3-clause OR mit)",
+              "licenses": [
+                {
+                  "key": "isc",
+                  "name": "ISC License",
+                  "short_name": "ISC License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "ISC - Internet Systems Consortium",
+                  "homepage_url": "https://www.isc.org/licenses/",
+                  "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/isc",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml",
+                  "spdx_license_key": "ISC",
+                  "spdx_url": "https://spdx.org/licenses/ISC"
+                },
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                },
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "ISC AND (BSD-3-Clause OR MIT)",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/libretls@3.3.4-r3"
@@ -828,8 +1260,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "GPL-2.0-only",
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "gpl-2.0-only",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
@@ -880,8 +1360,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "Zlib",
+      "declared_license_expression": "zlib",
+      "declared_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "zlib",
+              "licensedb_identifier": "spdx-license-identifier: zlib",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "zlib",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "Zlib",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/zlib@1.2.12-r0"
@@ -944,8 +1472,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "GPL-2.0-only",
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "gpl-2.0-only",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/apk-tools@2.12.7-r3"
@@ -996,8 +1572,56 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "GPL-2.0-only",
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "gpl-2.0-only",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/pax-utils@1.3.3-r0"
@@ -1048,8 +1672,88 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "MIT BSD GPL2+",
+      "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+      "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 11,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+              "licensedb_identifier": "spdx-license-identifier: mit AND bsd-new AND gpl-2.0-plus",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 11,
+              "rule_relevance": 100,
+              "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                },
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                },
+                {
+                  "key": "gpl-2.0-plus",
+                  "name": "GNU General Public License 2.0 or later",
+                  "short_name": "GPL 2.0 or later",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
+                  "spdx_license_key": "GPL-2.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "MIT BSD GPL2+",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
@@ -1100,8 +1804,72 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": "BSD-2-Clause AND BSD-3-Clause",
+      "declared_license_expression": "bsd-simplified AND bsd-new",
+      "declared_license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-simplified AND bsd-new",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "bsd-simplified AND bsd-new",
+              "licensedb_identifier": "spdx-license-identifier: bsd-simplified AND bsd-new",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "bsd-2-clause AND bsd-3-clause",
+              "licenses": [
+                {
+                  "key": "bsd-simplified",
+                  "name": "BSD-2-Clause",
+                  "short_name": "BSD-2-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                  "text_url": "http://opensource.org/licenses/bsd-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                  "spdx_license_key": "BSD-2-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                },
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": "BSD-2-Clause AND BSD-3-Clause",
       "notice_text": null,
       "source_packages": [
         "pkg:alpine/libc-dev@0.7.2-r3"
@@ -1783,8 +2551,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": "MIT",
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "licensedb_identifier": "spdx-license-identifier: mit",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "mit",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "MIT",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/musl@1.2.2-r7"
@@ -1850,8 +2666,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": "GPL-2.0-only",
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 4,
+                  "rule_relevance": 100,
+                  "matched_text": "gpl-2.0-only",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "GPL-2.0-only",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/busybox@1.34.1-r5"
@@ -1962,8 +2826,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": "GPL-2.0-only",
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 4,
+                  "rule_relevance": 100,
+                  "matched_text": "gpl-2.0-only",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "GPL-2.0-only",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/alpine-baselayout@3.2.0-r18"
@@ -2263,8 +3175,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": "MIT",
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "licensedb_identifier": "spdx-license-identifier: mit",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "mit",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "MIT",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/alpine-keys@2.4-r1"
@@ -2681,8 +3641,72 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
           "copyright": null,
-          "license_expression": "mpl-2.0 AND mit",
-          "declared_license": "MPL-2.0 AND MIT",
+          "declared_license_expression": "mpl-2.0 AND mit",
+          "declared_license_expression_spdx": "MPL-2.0 AND MIT",
+          "license_detections": [
+            {
+              "license_expression": "mpl-2.0 AND mit",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mpl-2.0 AND mit",
+                  "licensedb_identifier": "spdx-license-identifier: mpl-2.0 AND mit",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "mpl-2.0 AND mit",
+                  "licenses": [
+                    {
+                      "key": "mpl-2.0",
+                      "name": "Mozilla Public License 2.0",
+                      "short_name": "MPL 2.0",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Mozilla",
+                      "homepage_url": "http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/",
+                      "text_url": "http://www.mozilla.com/MPL/2.0/",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.yml",
+                      "spdx_license_key": "MPL-2.0",
+                      "spdx_url": "https://spdx.org/licenses/MPL-2.0"
+                    },
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "MPL-2.0 AND MIT",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/ca-certificates@20211220-r0"
@@ -2748,8 +3772,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
           "copyright": null,
-          "license_expression": "openssl-ssleay",
-          "declared_license": "OpenSSL",
+          "declared_license_expression": "openssl-ssleay",
+          "declared_license_expression_spdx": "OpenSSL",
+          "license_detections": [
+            {
+              "license_expression": "openssl-ssleay",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "openssl-ssleay",
+                  "licensedb_identifier": "spdx-license-identifier: openssl-ssleay",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "openssl",
+                  "licenses": [
+                    {
+                      "key": "openssl-ssleay",
+                      "name": "OpenSSL/SSLeay License",
+                      "short_name": "OpenSSL/SSLeay License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "OpenSSL",
+                      "homepage_url": "http://www.openssl.org/source/license.html",
+                      "text_url": "http://www.openssl.org/source/license.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.yml",
+                      "spdx_license_key": "OpenSSL",
+                      "spdx_url": "https://spdx.org/licenses/OpenSSL"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "OpenSSL",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/openssl@1.1.1n-r0"
@@ -2896,8 +3968,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
           "copyright": null,
-          "license_expression": "openssl-ssleay",
-          "declared_license": "OpenSSL",
+          "declared_license_expression": "openssl-ssleay",
+          "declared_license_expression_spdx": "OpenSSL",
+          "license_detections": [
+            {
+              "license_expression": "openssl-ssleay",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "openssl-ssleay",
+                  "licensedb_identifier": "spdx-license-identifier: openssl-ssleay",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "openssl",
+                  "licenses": [
+                    {
+                      "key": "openssl-ssleay",
+                      "name": "OpenSSL/SSLeay License",
+                      "short_name": "OpenSSL/SSLeay License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "OpenSSL",
+                      "homepage_url": "http://www.openssl.org/source/license.html",
+                      "text_url": "http://www.openssl.org/source/license.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.yml",
+                      "spdx_license_key": "OpenSSL",
+                      "spdx_url": "https://spdx.org/licenses/OpenSSL"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "OpenSSL",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/openssl@1.1.1n-r0"
@@ -2963,8 +4083,88 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
           "copyright": null,
-          "license_expression": "isc AND (bsd-new OR mit)",
-          "declared_license": "ISC AND (BSD-3-Clause OR MIT)",
+          "declared_license_expression": "isc AND (bsd-new OR mit)",
+          "declared_license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
+          "license_detections": [
+            {
+              "license_expression": "isc AND (bsd-new OR mit)",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "isc AND (bsd-new OR mit)",
+                  "licensedb_identifier": "spdx-license-identifier: isc AND (bsd-new OR mit)",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "isc AND (bsd-3-clause OR mit)",
+                  "licenses": [
+                    {
+                      "key": "isc",
+                      "name": "ISC License",
+                      "short_name": "ISC License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "ISC - Internet Systems Consortium",
+                      "homepage_url": "https://www.isc.org/licenses/",
+                      "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/isc",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml",
+                      "spdx_license_key": "ISC",
+                      "spdx_url": "https://spdx.org/licenses/ISC"
+                    },
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    },
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "ISC AND (BSD-3-Clause OR MIT)",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/libretls@3.3.4-r3"
@@ -3040,8 +4240,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": "GPL-2.0-only",
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 4,
+                  "rule_relevance": 100,
+                  "matched_text": "gpl-2.0-only",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "GPL-2.0-only",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/busybox@1.34.1-r5"
@@ -3098,8 +4346,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
           "copyright": null,
-          "license_expression": "zlib",
-          "declared_license": "Zlib",
+          "declared_license_expression": "zlib",
+          "declared_license_expression_spdx": "Zlib",
+          "license_detections": [
+            {
+              "license_expression": "zlib",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "zlib",
+                  "licensedb_identifier": "spdx-license-identifier: zlib",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "zlib",
+                  "licenses": [
+                    {
+                      "key": "zlib",
+                      "name": "ZLIB License",
+                      "short_name": "ZLIB License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "zlib",
+                      "homepage_url": "http://www.zlib.net/",
+                      "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                      "spdx_license_key": "Zlib",
+                      "spdx_url": "https://spdx.org/licenses/Zlib"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "Zlib",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/zlib@1.2.12-r0"
@@ -3165,8 +4461,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": "GPL-2.0-only",
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 4,
+                  "rule_relevance": 100,
+                  "matched_text": "gpl-2.0-only",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "GPL-2.0-only",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/apk-tools@2.12.7-r3"
@@ -3251,8 +4595,56 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": "GPL-2.0-only",
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "licensedb_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 4,
+                  "rule_relevance": 100,
+                  "matched_text": "gpl-2.0-only",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "GPL-2.0-only",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/pax-utils@1.3.3-r0"
@@ -3309,8 +4701,88 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
           "copyright": null,
-          "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-          "declared_license": "MIT BSD GPL2+",
+          "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+          "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+          "license_detections": [
+            {
+              "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 11,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+                  "licensedb_identifier": "spdx-license-identifier: mit AND bsd-new AND gpl-2.0-plus",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 11,
+                  "rule_relevance": 100,
+                  "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    },
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    },
+                    {
+                      "key": "gpl-2.0-plus",
+                      "name": "GNU General Public License 2.0 or later",
+                      "short_name": "GPL 2.0 or later",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
+                      "spdx_license_key": "GPL-2.0-or-later",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "MIT BSD GPL2+",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/musl@1.2.2-r7"
@@ -3413,8 +4885,72 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
           "copyright": null,
-          "license_expression": "bsd-simplified AND bsd-new",
-          "declared_license": "BSD-2-Clause AND BSD-3-Clause",
+          "declared_license_expression": "bsd-simplified AND bsd-new",
+          "declared_license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-simplified AND bsd-new",
+              "detection_rules": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "bsd-simplified AND bsd-new",
+                  "licensedb_identifier": "spdx-license-identifier: bsd-simplified AND bsd-new",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "bsd-2-clause AND bsd-3-clause",
+                  "licenses": [
+                    {
+                      "key": "bsd-simplified",
+                      "name": "BSD-2-Clause",
+                      "short_name": "BSD-2-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                      "text_url": "http://opensource.org/licenses/bsd-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                      "spdx_license_key": "BSD-2-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                    },
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": "BSD-2-Clause AND BSD-3-Clause",
           "notice_text": null,
           "source_packages": [
             "pkg:alpine/libc-dev@0.7.2-r3"

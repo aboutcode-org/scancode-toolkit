@@ -1,28 +1,49 @@
 primary_license:
 declared_license:
 license_expression: lgpl-2.0
+declared_license_expression_spdx: LGPL-2.0-only
 copyright: |
   Copyright (c) 1999, 2001 by Andries Brouwer
   Copyright (c) 1999, 2000, 2003 by Theodore Ts'o
-matches:
-  - score: '100.0'
-    start_line: 15
-    end_line: '19'
-    matcher: 2-aho
-    rule_length: 42
-    matched_length: 42
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0_24.RULE
-    license_expression: lgpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You are free to distribute this software under the terms of the GNU
-      Lesser (Library) General Public License.
+license_detections:
+  - license_expression: lgpl-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 15
+        end_line: '19'
+        matched_length: 42
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.0
+        licensedb_identifier: lgpl-2.0_24.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 42
+        rule_relevance: 100
+        matched_text: |
+          You are free to distribute this software under the terms of the GNU
+          Lesser (Library) General Public License.
 
-      On Debian systems, the complete text of the GNU Lesser (Library)
-      General Public License can be found in /usr/share/common-licenses/LGPL-2.
+          On Debian systems, the complete text of the GNU Lesser (Library)
+          General Public License can be found in /usr/share/common-licenses/LGPL-2.
+        licenses:
+          - key: lgpl-2.0
+            name: GNU Library General Public License 2.0
+            short_name: LGPL 2.0
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            text_url: http://www.gnu.org/licenses/lgpl-2.0.html
+            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml
+            spdx_license_key: LGPL-2.0-only
+            spdx_url: https://spdx.org/licenses/LGPL-2.0-only

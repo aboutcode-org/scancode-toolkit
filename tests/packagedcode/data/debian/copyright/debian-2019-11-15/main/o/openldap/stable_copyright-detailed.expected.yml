@@ -4,6 +4,11 @@ license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlimited-no-w
   hs-regexp AND ibm-dhcp AND ietf AND isc AND other-permissive AND other-permissive AND mit-old-style-no-advert
   AND other-permissive AND hs-regexp AND openldap-2.8 AND bsla AND bsd-original-uc AND bsd-original-uc
   AND bsd-original-uc AND bsd-original-uc-1986
+declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND LicenseRef-scancode-fsf-unlimited-no-warranty
+  AND Spencer-94 AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
+  AND LicenseRef-scancode-other-permissive AND NTP AND LicenseRef-scancode-other-permissive
+  AND Spencer-94 AND OLDAP-2.8 AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-4-Clause-UC
+  AND BSD-4-Clause-UC AND LicenseRef-scancode-bsd-original-uc-1986
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation
   Copyright 1999 Computing Research Labs, New Mexico State University
@@ -15,549 +20,919 @@ copyright: |
   Copyright 1991 by the Massachusetts Institute of Technology
   Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA.
   Copyright (c) 2000 Pierangelo Masarati, <ando@sys-net.it>
-matches:
-  - score: '100.0'
-    start_line: 17
-    end_line: 37
-    matcher: 2-aho
-    rule_length: 124
-    matched_length: 124
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: openldap-2.8_21.RULE
-    license_expression: openldap-2.8
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted only as authorized by the OpenLDAP
-      Public License.
+license_detections:
+  - license_expression: openldap-2.8
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 17
+        end_line: 37
+        matched_length: 124
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: openldap-2.8
+        licensedb_identifier: openldap-2.8_21.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 124
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted only as authorized by the OpenLDAP
+          Public License.
 
-      A copy of this license is available in the file LICENSE in the
-      top-level directory of the distribution or, alternatively, at
-      <http://www.OpenLDAP.org/license.html>.
+          A copy of this license is available in the file LICENSE in the
+          top-level directory of the distribution or, alternatively, at
+          <http://www.OpenLDAP.org/license.html>.
 
-      OpenLDAP is a registered trademark of the OpenLDAP Foundation.
+          OpenLDAP is a registered trademark of the OpenLDAP Foundation.
 
-      Individual files and/or contributed packages may be copyright by
-      other parties and/or subject to additional restrictions.
+          Individual files and/or contributed packages may be copyright by
+          other parties and/or subject to additional restrictions.
 
-      This work is derived from the University of Michigan LDAP v3.3
-      distribution.  Information concerning this software is available
-      at <http://www.umich.edu/~dirsvcs/ldap/ldap.html>.
+          This work is derived from the University of Michigan LDAP v3.3
+          distribution.  Information concerning this software is available
+          at <http://www.umich.edu/~dirsvcs/ldap/ldap.html>.
 
-      This work also contains materials derived from public sources.
+          This work also contains materials derived from public sources.
 
-      Additional information about OpenLDAP can be obtained at
-      <http://www.openldap.org/>.
-  - score: '100.0'
-    start_line: 41
-    end_line: 81
-    matcher: 2-aho
-    rule_length: 297
-    matched_length: 297
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: openldap-2.8_16.RULE
-    license_expression: openldap-2.8
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The OpenLDAP Public License
-        Version 2.8, 17 August 2003
+          Additional information about OpenLDAP can be obtained at
+          <http://www.openldap.org/>.
+        licenses:
+          - key: openldap-2.8
+            name: OpenLDAP Public License 2.8
+            short_name: OpenLDAP Public License 2.8
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: OpenLDAP Foundation
+            homepage_url: http://www.openldap.org/software/release/license.html
+            text_url: http://www.openldap.org/software/release/license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            spdx_license_key: OLDAP-2.8
+            spdx_url: https://spdx.org/licenses/OLDAP-2.8
+      - score: '100.0'
+        start_line: 41
+        end_line: 81
+        matched_length: 297
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: openldap-2.8
+        licensedb_identifier: openldap-2.8_16.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 297
+        rule_relevance: 100
+        matched_text: |
+          The OpenLDAP Public License
+            Version 2.8, 17 August 2003
 
-      Redistribution and use of this software and associated documentation
-      ("Software"), with or without modification, are permitted provided
-      that the following conditions are met:
+          Redistribution and use of this software and associated documentation
+          ("Software"), with or without modification, are permitted provided
+          that the following conditions are met:
 
-      1. Redistributions in source form must retain copyright statements
-         and notices,
+          1. Redistributions in source form must retain copyright statements
+             and notices,
 
-      2. Redistributions in binary form must reproduce applicable copyright
-         statements and notices, this list of conditions, and the following
-         disclaimer in the documentation and/or other materials provided
-         with the distribution, and
+          2. Redistributions in binary form must reproduce applicable copyright
+             statements and notices, this list of conditions, and the following
+             disclaimer in the documentation and/or other materials provided
+             with the distribution, and
 
-      3. Redistributions must contain a verbatim copy of this document.
+          3. Redistributions must contain a verbatim copy of this document.
 
-      The OpenLDAP Foundation may revise this license from time to time.
-      Each revision is distinguished by a version number.  You may use
-      this Software under terms of this license revision or under the
-      terms of any subsequent revision of the license.
+          The OpenLDAP Foundation may revise this license from time to time.
+          Each revision is distinguished by a version number.  You may use
+          this Software under terms of this license revision or under the
+          terms of any subsequent revision of the license.
 
-      THIS SOFTWARE IS PROVIDED BY THE OPENLDAP FOUNDATION AND ITS
-      CONTRIBUTORS ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
-      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT
-      SHALL THE OPENLDAP FOUNDATION, ITS CONTRIBUTORS, OR THE AUTHOR(S)
-      OR OWNER(S) OF THE SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-      LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-      ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
+          THIS SOFTWARE IS PROVIDED BY THE OPENLDAP FOUNDATION AND ITS
+          CONTRIBUTORS ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+          INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT
+          SHALL THE OPENLDAP FOUNDATION, ITS CONTRIBUTORS, OR THE AUTHOR(S)
+          OR OWNER(S) OF THE SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+          CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+          ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
 
-      The names of the authors and copyright holders must not be used in
-      advertising or otherwise to promote the sale, use or other dealing
-      in this Software without specific, written prior permission.  Title
-      to copyright in this Software shall at all times remain with copyright
-      holders.
-  - score: '100.0'
-    start_line: 91
-    end_line: 107
-    matcher: 2-aho
-    rule_length: 165
-    matched_length: 165
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit_483.RULE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      # copy of this software and associated documentation files (the "Software"),
-      # to deal in the Software without restriction, including without limitation
-      # the rights to use, copy, modify, merge, publish, distribute, sublicense,
-      # and/or sell copies of the Software, and to permit persons to whom the
-      # Software is furnished to do so, subject to the following conditions:
-      #
-      # The above copyright notice and this permission notice shall be included in
-      # all copies or substantial portions of the Software.
-      #
-      # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-      # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-      # THE COMPUTING RESEARCH LAB OR NEW MEXICO STATE UNIVERSITY BE LIABLE FOR ANY
-      # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
-      # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
-      # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 115
-    end_line: 122
-    matcher: 2-aho
-    rule_length: 64
-    matched_length: 64
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-unlimited-no-warranty_2.RULE
-    license_expression: fsf-unlimited-no-warranty
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This Makefile.in is free software; the Free Software Foundation
-      # gives unlimited permission to copy and/or distribute it,
-      # with or without modifications, as long as this notice is preserved.
+          The names of the authors and copyright holders must not be used in
+          advertising or otherwise to promote the sale, use or other dealing
+          in this Software without specific, written prior permission.  Title
+          to copyright in this Software shall at all times remain with copyright
+          holders.
+        licenses:
+          - key: openldap-2.8
+            name: OpenLDAP Public License 2.8
+            short_name: OpenLDAP Public License 2.8
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: OpenLDAP Foundation
+            homepage_url: http://www.openldap.org/software/release/license.html
+            text_url: http://www.openldap.org/software/release/license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            spdx_license_key: OLDAP-2.8
+            spdx_url: https://spdx.org/licenses/OLDAP-2.8
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 91
+        end_line: 107
+        matched_length: 165
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        licensedb_identifier: mit_483.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 165
+        rule_relevance: 100
+        matched_text: |
+          # Permission is hereby granted, free of charge, to any person obtaining a
+          # copy of this software and associated documentation files (the "Software"),
+          # to deal in the Software without restriction, including without limitation
+          # the rights to use, copy, modify, merge, publish, distribute, sublicense,
+          # and/or sell copies of the Software, and to permit persons to whom the
+          # Software is furnished to do so, subject to the following conditions:
+          #
+          # The above copyright notice and this permission notice shall be included in
+          # all copies or substantial portions of the Software.
+          #
+          # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+          # THE COMPUTING RESEARCH LAB OR NEW MEXICO STATE UNIVERSITY BE LIABLE FOR ANY
+          # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+          # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+          # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT
+  - license_expression: fsf-unlimited-no-warranty
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 115
+        end_line: 122
+        matched_length: 64
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-unlimited-no-warranty
+        licensedb_identifier: fsf-unlimited-no-warranty_2.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 64
+        rule_relevance: 100
+        matched_text: |
+          # This Makefile.in is free software; the Free Software Foundation
+          # gives unlimited permission to copy and/or distribute it,
+          # with or without modifications, as long as this notice is preserved.
 
-      # This program is distributed in the hope that it will be useful,
-      # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
-      # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-      # PARTICULAR PURPOSE.
-  - score: '95.0'
-    start_line: 129
-    end_line: 145
-    matcher: 2-aho
-    rule_length: 123
-    matched_length: 123
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: hs-regexp_5.RULE
-    license_expression: hs-regexp
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to anyone to use this software for any purpose
-       * on any computer system, and to alter it and redistribute it, subject
-       * to the following restrictions:
-       *
-       * 1. The author is not responsible for the consequences of use of this
-       *    software, no matter how awful, even if they arise from flaws in it.
-       *
-       * 2. The origin of this software must not be misrepresented, either by
-       *    explicit claim or by omission.  Since few users ever read sources,
-       *    credits should appear in the documentation.
-       *
-       * 3. Altered versions must be plainly marked as such, and must not be
-       *    misrepresented as being the original software.  Since few users
-       *    ever read sources, credits should appear in the
-       *    documentation.
-       *
-       * 4. This notice may not be removed or altered.
-  - score: '100.0'
-    start_line: 154
-    end_line: 173
-    matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: ibm-dhcp.LICENSE
-    license_expression: ibm-dhcp
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      International Business Machines, Inc. (hereinafter called IBM) grants
-       * permission under its copyrights to use, copy, modify, and distribute this
-       * Software with or without fee, provided that the above copyright notice and
-       * all paragraphs of this notice appear in all copies, and that the name of IBM
-       * not be used in connection with the marketing of any product incorporating
-       * the Software or modifications thereof, without specific, written prior
-       * permission.
-       *
-       * To the extent it has a right to do so, IBM grants an immunity from suit
-       * under its patents, if any, for the use, sale or manufacture of products to
-       * the extent that such products are used for performing Domain Name System
-       * dynamic updates in TCP/IP networks by means of the Software.  No immunity is
-       * granted for any product per se or for any other function of any product.
-       *
-       * THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
-       * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-       * PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
-       * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
-       * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
-       * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
-  - score: '100.0'
-    start_line: 180
-    end_line: 206
-    matcher: 2-aho
-    rule_length: 221
-    matched_length: 221
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: ietf_5.RULE
-    license_expression: ietf
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society (1999).\
-      \  All Rights Reserved.\n# \n#    This document and translations of it may be copied and\
-      \ furnished to\n#    others, and derivative works that comment on or otherwise explain\
-      \ it\n#    or assist in its implementation may be prepared, copied, published\n#    and\
-      \ distributed, in whole or in part, without restriction of any\n#    kind, provided that\
-      \ the above copyright notice and this paragraph are\n#    included on all such copies\
-      \ and derivative works.  However, this\n#    document itself may not be modified in any\
-      \ way, such as by removing\n#    the copyright notice or references to the Internet Society\
-      \ or other\n#    Internet organizations, except as needed for the purpose of\n#    developing\
-      \ Internet standards in which case the procedures for\n#    copyrights defined in the\
-      \ Internet Standards process must be\n#    followed, or as required to translate it into\
-      \ languages other than\n#    English.\n# \n#    The limited permissions granted above\
-      \ are perpetual and will not be\n#    revoked by the Internet Society or its successors\
-      \ or assigns.\n# \n#    This document and the information contained herein is provided\
-      \ on an\n#    \"AS IS\" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING\n\
-      #    TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT\
-      \ LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE\
-      \ ANY RIGHTS OR ANY IMPLIED WARRANTIES OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR\
-      \ PURPOSE."
-  - score: '100.0'
-    start_line: 227
-    end_line: 238
-    matcher: 2-aho
-    rule_length: 113
-    matched_length: 113
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: isc_9.RULE
-    license_expression: isc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this software for any
-       * purpose with or without fee is hereby granted, provided that the above
-       * copyright notice and this permission notice appear in all copies.
-       *
-       * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
-       * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
-       * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
-       * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
-       * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
-       * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
-       * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-       * SOFTWARE.
-  - score: '100.0'
-    start_line: 245
-    end_line: 250
-    matcher: 2-aho
-    rule_length: 39
-    matched_length: 39
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_203.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This software is not subject to any license of Silicon Graphics \n * Inc.\
-      \ or Purdue University.\n *\n * Redistribution and use in source and binary forms are\
-      \ permitted\n * without restriction or fee of any kind as long as this notice\n * is preserved."
-  - score: '100.0'
-    start_line: 277
-    end_line: 283
-    matcher: 2-aho
-    rule_length: 57
-    matched_length: 57
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_200.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
-      \ *\n * Redistribution and use in source and binary forms are permitted without \n * restriction\
-      \ or fee of any kind as long as this notice is preserved.\n *\n * The name \"Carnegie\
-      \ Mellon\" must not be used to endorse or promote\n * products derived from this software\
-      \ without prior written permission."
-  - score: '100.0'
-    start_line: 311
-    end_line: 319
-    matcher: 2-aho
-    rule_length: 96
-    matched_length: 96
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit-old-style-no-advert_3.RULE
-    license_expression: mit-old-style-no-advert
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, distribute, and sell this software and its
-      # documentation for any purpose is hereby granted without fee, provided that
-      # the above copyright notice appear in all copies and that both that
-      # copyright notice and this permission notice appear in supporting
-      # documentation, and that the name of M.I.T. not be used in advertising or
-      # publicity pertaining to distribution of the software without specific,
-      # written prior permission.  M.I.T. makes no representations about the
-      # suitability of this software for any purpose.  It is provided "as is"
-      # without express or implied warranty.
-  - score: '100.0'
-    start_line: 327
-    end_line: 328
-    matcher: 2-aho
-    rule_length: 12
-    matched_length: 12
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: other-permissive_199.RULE
-    license_expression: other-permissive
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to copy and
-      distribute verbatim copies of this document is granted.
-  - score: '95.0'
-    start_line: 337
-    end_line: 352
-    matcher: 2-aho
-    rule_length: 123
-    matched_length: 123
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: hs-regexp_5.RULE
-    license_expression: hs-regexp
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to anyone to use this software for any purpose
-       * on any computer system, and to alter it and redistribute it, subject
-       * to the following restrictions:
-       *
-       * 1. The author is not responsible for the consequences of use of this
-       * software, no matter how awful, even if they arise from flaws in it.
-       *
-       * 2. The origin of this software must not be misrepresented, either by
-       * explicit claim or by omission.  Since few users ever read sources,
-       * credits should appear in the documentation.
-       *
-       * 3. Altered versions must be plainly marked as such, and must not be
-       * misrepresented as being the original software.  Since few users
-       * ever read sources, credits should appear in the documentation.
-       *
-       * 4. This notice may not be removed or altered.
-  - score: '100.0'
-    start_line: 359
-    end_line: 362
-    matcher: 2-aho
-    rule_length: 43
-    matched_length: 43
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: openldap-2.8_15.RULE
-    license_expression: openldap-2.8
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted only
-       * as authorized by the OpenLDAP Public License.  A copy of this
-       * license is available at http://www.OpenLDAP.org/license.html or
-       * in file LICENSE in the top-level directory of the distribution.
-  - score: '100.0'
-    start_line: 368
-    end_line: 378
-    matcher: 2-aho
-    rule_length: 101
-    matched_length: 101
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsla_3.RULE
-    license_expression: bsla
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted
-       * provided that the above copyright notice and this paragraph are
-       * duplicated in all such forms and that any documentation,
-       * advertising materials, and other materials related to such
-       * distribution and use acknowledge that the software was developed
-       * by the University of California, Berkeley.  The name of the
-       * University may not be used to endorse or promote products derived
-       * from this software without specific prior written permission.
-       * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
-       * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-       * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-  - score: '100.0'
-    start_line: 380
-    end_line: 381
-    matcher: 2-aho
-    rule_length: 12
-    matched_length: 12
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-original-uc_25.RULE
-    license_expression: bsd-original-uc
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      NOTE: The Regents have since retroactively removed the advertising
-      clause from above.
-  - score: '100.0'
-    start_line: 388
-    end_line: 414
-    matcher: 2-aho
-    rule_length: 243
-    matched_length: 243
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-original-uc_3.RULE
-    license_expression: bsd-original-uc
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       * modification, are permitted provided that the following conditions
-       * are met:
-       * 1. Redistributions of source code must retain the above copyright
-       *    notice, this list of conditions and the following disclaimer.
-       * 2. Redistributions in binary form must reproduce the above copyright
-       *    notice, this list of conditions and the following disclaimer in the
-       *    documentation and/or other materials provided with the distribution.
-       * 3. All advertising materials mentioning features or use of this software
-       *    must display the following acknowledgement:
-       *      This product includes software developed by the University of
-       *      California, Berkeley and its contributors.
-       * 4. Neither the name of the University nor the names of its contributors
-       *    may be used to endorse or promote products derived from this software
-       *    without specific prior written permission.
-       *
-       * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-       * SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 416
-    end_line: 419
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-original-uc_24.RULE
-    license_expression: bsd-original-uc
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      NOTE: The Regents have since retroactively removed the advertising
-      clause from above.
-      See:
-      ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-  - score: '99.0'
-    start_line: 426
-    end_line: 431
-    matcher: 2-aho
-    rule_length: 64
-    matched_length: 64
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: bsd-original-uc-1986_3.RULE
-    license_expression: bsd-original-uc-1986
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms are permitted
-       * provided that this notice is preserved and that due credit is given
-       * to the University of Michigan at Ann Arbor. The name of the University
-       * may not be used to endorse or promote products derived from this
-       * software without specific prior written permission. This software
-       * is provided ``as is'' without express or implied warranty.
+          # This program is distributed in the hope that it will be useful,
+          # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+          # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+          # PARTICULAR PURPOSE.
+        licenses:
+          - key: fsf-unlimited-no-warranty
+            name: FSF Unlimited License No Warranty
+            short_name: FSF Unlimited License No Warranty
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.fsf.org/licensing/licenses/
+            text_url: http://www.fsf.org/licensing/licenses/
+            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+  - license_expression: hs-regexp
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 129
+        end_line: 145
+        matched_length: 123
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: hs-regexp
+        licensedb_identifier: hs-regexp_5.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 123
+        rule_relevance: 95
+        matched_text: |
+           * Permission is granted to anyone to use this software for any purpose
+           * on any computer system, and to alter it and redistribute it, subject
+           * to the following restrictions:
+           *
+           * 1. The author is not responsible for the consequences of use of this
+           *    software, no matter how awful, even if they arise from flaws in it.
+           *
+           * 2. The origin of this software must not be misrepresented, either by
+           *    explicit claim or by omission.  Since few users ever read sources,
+           *    credits should appear in the documentation.
+           *
+           * 3. Altered versions must be plainly marked as such, and must not be
+           *    misrepresented as being the original software.  Since few users
+           *    ever read sources, credits should appear in the
+           *    documentation.
+           *
+           * 4. This notice may not be removed or altered.
+        licenses:
+          - key: hs-regexp
+            name: Henry Spencer Regexp License
+            short_name: Henry Spencer Regexp License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Henry Spencer
+            homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
+            text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
+            reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            spdx_license_key: Spencer-94
+            spdx_url: https://spdx.org/licenses/Spencer-94
+  - license_expression: ibm-dhcp
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 154
+        end_line: 173
+        matched_length: 203
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: ibm-dhcp
+        licensedb_identifier: ibm-dhcp.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 203
+        rule_relevance: 100
+        matched_text: |
+           * International Business Machines, Inc. (hereinafter called IBM) grants
+           * permission under its copyrights to use, copy, modify, and distribute this
+           * Software with or without fee, provided that the above copyright notice and
+           * all paragraphs of this notice appear in all copies, and that the name of IBM
+           * not be used in connection with the marketing of any product incorporating
+           * the Software or modifications thereof, without specific, written prior
+           * permission.
+           *
+           * To the extent it has a right to do so, IBM grants an immunity from suit
+           * under its patents, if any, for the use, sale or manufacture of products to
+           * the extent that such products are used for performing Domain Name System
+           * dynamic updates in TCP/IP networks by means of the Software.  No immunity is
+           * granted for any product per se or for any other function of any product.
+           *
+           * THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
+           * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+           * PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
+           * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
+           * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
+           * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+        licenses:
+          - key: ibm-dhcp
+            name: IBM DHCP License
+            short_name: IBM DHCP License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: IBM
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/ibm-dhcp
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.yml
+            spdx_license_key: LicenseRef-scancode-ibm-dhcp
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+  - license_expression: ietf
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 180
+        end_line: 206
+        matched_length: 221
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: ietf
+        licensedb_identifier: ietf_5.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 221
+        rule_relevance: 100
+        matched_text: "# Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
+          \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
+          \ be copied and furnished to\n#    others, and derivative works that comment on or\
+          \ otherwise explain it\n#    or assist in its implementation may be prepared, copied,\
+          \ published\n#    and distributed, in whole or in part, without restriction of any\n\
+          #    kind, provided that the above copyright notice and this paragraph are\n#    included\
+          \ on all such copies and derivative works.  However, this\n#    document itself may\
+          \ not be modified in any way, such as by removing\n#    the copyright notice or references\
+          \ to the Internet Society or other\n#    Internet organizations, except as needed\
+          \ for the purpose of\n#    developing Internet standards in which case the procedures\
+          \ for\n#    copyrights defined in the Internet Standards process must be\n#    followed,\
+          \ or as required to translate it into languages other than\n#    English.\n# \n# \
+          \   The limited permissions granted above are perpetual and will not be\n#    revoked\
+          \ by the Internet Society or its successors or assigns.\n# \n#    This document and\
+          \ the information contained herein is provided on an\n#    \"AS IS\" basis and THE\
+          \ INTERNET SOCIETY AND THE INTERNET ENGINEERING\n#    TASK FORCE DISCLAIMS ALL WARRANTIES,\
+          \ EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE\
+          \ OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES\
+          \ OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
+        licenses:
+          - key: ietf
+            name: Internet Engineering Task Force License
+            short_name: IETF License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: IETF - Internet Engineering Task Force
+            homepage_url: http://www.ietf.org/
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/ietf
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.yml
+            spdx_license_key: LicenseRef-scancode-ietf
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
+  - license_expression: isc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 227
+        end_line: 238
+        matched_length: 113
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: isc
+        licensedb_identifier: isc_9.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 113
+        rule_relevance: 100
+        matched_text: |
+           * Permission to use, copy, modify, and distribute this software for any
+           * purpose with or without fee is hereby granted, provided that the above
+           * copyright notice and this permission notice appear in all copies.
+           *
+           * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+           * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+           * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+           * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+           * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+           * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+           * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+           * SOFTWARE.
+        licenses:
+          - key: isc
+            name: ISC License
+            short_name: ISC License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: ISC - Internet Systems Consortium
+            homepage_url: https://www.isc.org/licenses/
+            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
+            reference_url: https://scancode-licensedb.aboutcode.org/isc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            spdx_license_key: ISC
+            spdx_url: https://spdx.org/licenses/ISC
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 245
+        end_line: 250
+        matched_length: 39
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_203.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 39
+        rule_relevance: 100
+        matched_text: " * This software is not subject to any license of Silicon Graphics \n\
+          \ * Inc. or Purdue University.\n *\n * Redistribution and use in source and binary\
+          \ forms are permitted\n * without restriction or fee of any kind as long as this notice\n\
+          \ * is preserved."
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 277
+        end_line: 283
+        matched_length: 57
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_200.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 57
+        rule_relevance: 100
+        matched_text: " * This software is not subject to any license of Carnegie Mellon University.\n\
+          \ *\n * Redistribution and use in source and binary forms are permitted without \n\
+          \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
+          \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
+          \ from this software without prior written permission."
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+  - license_expression: mit-old-style-no-advert
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 311
+        end_line: 319
+        matched_length: 96
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit-old-style-no-advert
+        licensedb_identifier: mit-old-style-no-advert_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 96
+        rule_relevance: 100
+        matched_text: |
+          # Permission to use, copy, modify, distribute, and sell this software and its
+          # documentation for any purpose is hereby granted without fee, provided that
+          # the above copyright notice appear in all copies and that both that
+          # copyright notice and this permission notice appear in supporting
+          # documentation, and that the name of M.I.T. not be used in advertising or
+          # publicity pertaining to distribution of the software without specific,
+          # written prior permission.  M.I.T. makes no representations about the
+          # suitability of this software for any purpose.  It is provided "as is"
+          # without express or implied warranty.
+        licenses:
+          - key: mit-old-style-no-advert
+            name: MIT Old Style no advertising
+            short_name: MIT Old Style no advertising
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.yml
+            spdx_license_key: NTP
+            spdx_url: https://spdx.org/licenses/NTP
+  - license_expression: other-permissive
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 327
+        end_line: 328
+        matched_length: 12
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        licensedb_identifier: other-permissive_199.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 12
+        rule_relevance: 100
+        matched_text: |
+          California, USA.  All Rights Reserved.  Permission to copy and
+          distribute verbatim copies of this document is granted.
+        licenses:
+          - key: other-permissive
+            name: Other Permissive Licenses
+            short_name: Other Permissive Licenses
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: nexB
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            spdx_license_key: LicenseRef-scancode-other-permissive
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+  - license_expression: hs-regexp
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '95.0'
+        start_line: 337
+        end_line: 352
+        matched_length: 123
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: hs-regexp
+        licensedb_identifier: hs-regexp_5.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 123
+        rule_relevance: 95
+        matched_text: |
+           * Permission is granted to anyone to use this software for any purpose
+           * on any computer system, and to alter it and redistribute it, subject
+           * to the following restrictions:
+           *
+           * 1. The author is not responsible for the consequences of use of this
+           * software, no matter how awful, even if they arise from flaws in it.
+           *
+           * 2. The origin of this software must not be misrepresented, either by
+           * explicit claim or by omission.  Since few users ever read sources,
+           * credits should appear in the documentation.
+           *
+           * 3. Altered versions must be plainly marked as such, and must not be
+           * misrepresented as being the original software.  Since few users
+           * ever read sources, credits should appear in the documentation.
+           *
+           * 4. This notice may not be removed or altered.
+        licenses:
+          - key: hs-regexp
+            name: Henry Spencer Regexp License
+            short_name: Henry Spencer Regexp License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Henry Spencer
+            homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
+            text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
+            reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            spdx_license_key: Spencer-94
+            spdx_url: https://spdx.org/licenses/Spencer-94
+  - license_expression: openldap-2.8
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 359
+        end_line: 362
+        matched_length: 43
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: openldap-2.8
+        licensedb_identifier: openldap-2.8_15.RULE
+        referenced_filenames:
+          - LICENSE
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 43
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms are permitted only
+           * as authorized by the OpenLDAP Public License.  A copy of this
+           * license is available at http://www.OpenLDAP.org/license.html or
+           * in file LICENSE in the top-level directory of the distribution.
+        licenses:
+          - key: openldap-2.8
+            name: OpenLDAP Public License 2.8
+            short_name: OpenLDAP Public License 2.8
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: OpenLDAP Foundation
+            homepage_url: http://www.openldap.org/software/release/license.html
+            text_url: http://www.openldap.org/software/release/license.html
+            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            spdx_license_key: OLDAP-2.8
+            spdx_url: https://spdx.org/licenses/OLDAP-2.8
+  - license_expression: bsla AND bsd-original-uc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 368
+        end_line: 378
+        matched_length: 101
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsla
+        licensedb_identifier: bsla_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 101
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms are permitted
+           * provided that the above copyright notice and this paragraph are
+           * duplicated in all such forms and that any documentation,
+           * advertising materials, and other materials related to such
+           * distribution and use acknowledge that the software was developed
+           * by the University of California, Berkeley.  The name of the
+           * University may not be used to endorse or promote products derived
+           * from this software without specific prior written permission.
+           * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+           * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+           * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: bsla
+            name: Berkeley Software License Agreement
+            short_name: BSLA
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsla
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.yml
+            spdx_license_key: LicenseRef-scancode-bsla
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
+      - score: '100.0'
+        start_line: 380
+        end_line: 381
+        matched_length: 12
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-original-uc
+        licensedb_identifier: bsd-original-uc_25.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 12
+        rule_relevance: 100
+        matched_text: |
+          NOTE: The Regents have since retroactively removed the advertising
+          clause from above.
+        licenses:
+          - key: bsd-original-uc
+            name: BSD-Original-UC
+            short_name: BSD-Original-UC
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            spdx_license_key: BSD-4-Clause-UC
+            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
+  - license_expression: bsd-original-uc
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 388
+        end_line: 414
+        matched_length: 243
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-original-uc
+        licensedb_identifier: bsd-original-uc_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 243
+        rule_relevance: 100
+        matched_text: |
+           * Redistribution and use in source and binary forms, with or without
+           * modification, are permitted provided that the following conditions
+           * are met:
+           * 1. Redistributions of source code must retain the above copyright
+           *    notice, this list of conditions and the following disclaimer.
+           * 2. Redistributions in binary form must reproduce the above copyright
+           *    notice, this list of conditions and the following disclaimer in the
+           *    documentation and/or other materials provided with the distribution.
+           * 3. All advertising materials mentioning features or use of this software
+           *    must display the following acknowledgement:
+           *      This product includes software developed by the University of
+           *      California, Berkeley and its contributors.
+           * 4. Neither the name of the University nor the names of its contributors
+           *    may be used to endorse or promote products derived from this software
+           *    without specific prior written permission.
+           *
+           * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+           * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+           * SUCH DAMAGE.
+        licenses:
+          - key: bsd-original-uc
+            name: BSD-Original-UC
+            short_name: BSD-Original-UC
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            spdx_license_key: BSD-4-Clause-UC
+            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
+      - score: '100.0'
+        start_line: 416
+        end_line: 419
+        matched_length: 24
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-original-uc
+        licensedb_identifier: bsd-original-uc_24.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: yes
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 24
+        rule_relevance: 100
+        matched_text: |
+          NOTE: The Regents have since retroactively removed the advertising
+          clause from above.
+          See:
+          ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+        licenses:
+          - key: bsd-original-uc
+            name: BSD-Original-UC
+            short_name: BSD-Original-UC
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            spdx_license_key: BSD-4-Clause-UC
+            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
+  - license_expression: bsd-original-uc-1986
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '99.0'
+        start_line: 426
+        end_line: 431
+        matched_length: 64
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-original-uc-1986
+        licensedb_identifier: bsd-original-uc-1986_3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 64
+        rule_relevance: 99
+        matched_text: |
+           * Redistribution and use in source and binary forms are permitted
+           * provided that this notice is preserved and that due credit is given
+           * to the University of Michigan at Ann Arbor. The name of the University
+           * may not be used to endorse or promote products derived from this
+           * software without specific prior written permission. This software
+           * is provided ``as is'' without express or implied warranty.
+        licenses:
+          - key: bsd-original-uc-1986
+            name: BSD-Original-UC-1986
+            short_name: BSD-Original-UC-1986
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc-1986
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.yml
+            spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE

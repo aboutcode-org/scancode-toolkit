@@ -1,29 +1,50 @@
 primary_license:
 declared_license:
 license_expression: proprietary-license
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license
 copyright: Copyright 2011-2014 Samsung Electronics Co.
-matches:
-  - score: '100.0'
-    start_line: 6
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 77
-    matched_length: 77
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: proprietary-license_307.RULE
-    license_expression: proprietary-license
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Samsung grants permission to use and redistribute aforementioned firmware
-      files for the use with Exynos series devices, but not as part of the Linux
-      kernel, or in any other form which would require these files themselves
-      to be covered by the terms of the GNU General Public License.
+license_detections:
+  - license_expression: proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 6
+        end_line: 13
+        matched_length: 77
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_307.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 77
+        rule_relevance: 100
+        matched_text: |
+          Samsung grants permission to use and redistribute aforementioned firmware
+          files for the use with Exynos series devices, but not as part of the Linux
+          kernel, or in any other form which would require these files themselves
+          to be covered by the terms of the GNU General Public License.
 
-      These firmware files are distributed in the hope that they will be
-      useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-      of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+          These firmware files are distributed in the hope that they will be
+          useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+          of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE

@@ -41,14 +41,226 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND cc0-1.0)",
-    "declared_license": {
-      "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
-      "classifiers": [
-        "License :: OSI Approved :: Apache Software License",
-        "License :: OSI Approved :: CC0"
-      ]
-    },
+    "declared_license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0 AND apache-2.0 AND free-unknown",
+    "declared_license_expression_spdx": "(Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0 AND Apache-2.0 AND LicenseRef-scancode-free-unknown",
+    "license_detections": [
+      {
+        "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
+        "detection_rules": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "apache-2.0 AND scancode-acknowledgment",
+            "licensedb_identifier": "apache-2.0_and_scancode-acknowledgment_5.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 6,
+            "rule_relevance": 100,
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "licenses": [
+              {
+                "key": "apache-2.0",
+                "name": "Apache License 2.0",
+                "short_name": "Apache 2.0",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Apache Software Foundation",
+                "homepage_url": "http://www.apache.org/licenses/",
+                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                "spdx_license_key": "Apache-2.0",
+                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+              },
+              {
+                "key": "scancode-acknowledgment",
+                "name": "ScanCode generated data acknowledgment",
+                "short_name": "ScanCode acknowledgment",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "nexB",
+                "homepage_url": "https://github.com/nexB/scancode-toolkit/",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/scancode-acknowledgment",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
+                "spdx_license_key": "LicenseRef-scancode-scancode-acknowledgment",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE"
+              }
+            ]
+          },
+          {
+            "score": 95.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "cc0-1.0",
+            "licensedb_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 95,
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "licenses": [
+              {
+                "key": "cc0-1.0",
+                "name": "Creative Commons CC0 1.0 Universal",
+                "short_name": "CC0-1.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Creative Commons",
+                "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+                "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
+                "spdx_license_key": "CC0-1.0",
+                "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": null,
+        "detection_rules": [],
+        "matches": [
+          {
+            "score": 95.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "apache-2.0",
+            "licensedb_identifier": "pypi_apache_no-version.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 6,
+            "rule_relevance": 95,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "apache-2.0",
+                "name": "Apache License 2.0",
+                "short_name": "Apache 2.0",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Apache Software Foundation",
+                "homepage_url": "http://www.apache.org/licenses/",
+                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                "spdx_license_key": "Apache-2.0",
+                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+              }
+            ]
+          },
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "free-unknown",
+            "licensedb_identifier": "pypi_osi_approved.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 100,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "free-unknown",
+                "name": "Free unknown license detected but not recognized",
+                "short_name": "Free unknown",
+                "category": "Unstated License",
+                "is_exception": false,
+                "is_unknown": true,
+                "owner": "Unspecified",
+                "homepage_url": null,
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml",
+                "spdx_license_key": "LicenseRef-scancode-free-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+              }
+            ]
+          },
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "cc0-1.0",
+            "licensedb_identifier": "cc0-1.0_176.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "cc0-1.0",
+                "name": "Creative Commons CC0 1.0 Universal",
+                "short_name": "CC0-1.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Creative Commons",
+                "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+                "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
+                "spdx_license_key": "CC0-1.0",
+                "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'license': 'Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others', 'classifiers': ['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

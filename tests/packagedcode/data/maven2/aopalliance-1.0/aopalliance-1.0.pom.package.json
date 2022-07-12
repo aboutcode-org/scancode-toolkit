@@ -21,21 +21,101 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "public-domain AND gpl-1.0-plus",
-  "declared_license": [
+  "declared_license_expression": "public-domain AND gpl-1.0-plus",
+  "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
+  "license_detections": [
     {
-      "name": "Public Domain",
-      "url": null,
-      "comments": null,
-      "distribution": null
+      "license_expression": "public-domain",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 70.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "public-domain",
+          "licensedb_identifier": "public-domain_bare_words.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 70,
+          "matched_text": "Public Domain",
+          "licenses": [
+            {
+              "key": "public-domain",
+              "name": "Public Domain",
+              "short_name": "Public Domain",
+              "category": "Public Domain",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Unspecified",
+              "homepage_url": "http://www.linfo.org/publicdomain.html",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml",
+              "spdx_license_key": "LicenseRef-scancode-public-domain",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "GPL",
-      "url": "http://nexb.com",
-      "comments": null,
-      "distribution": null
+      "license_expression": "gpl-1.0-plus",
+      "detection_rules": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 50.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "gpl-1.0-plus",
+          "licensedb_identifier": "gpl_bare_word_only.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 1,
+          "rule_relevance": 50,
+          "matched_text": "GPL",
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        }
+      ]
     }
   ],
+  "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"

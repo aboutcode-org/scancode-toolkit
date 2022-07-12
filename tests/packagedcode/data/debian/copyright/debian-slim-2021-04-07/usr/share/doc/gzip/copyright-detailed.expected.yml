@@ -9,6 +9,8 @@ declared_license:
   - FSF-manpages
 license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
   gfdl-1.3-plus AND latex2e
+declared_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later) AND GFDL-1.3-or-later AND Latex2e
 copyright: |
   1999-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly and Mark Adler
@@ -17,109 +19,187 @@ copyright: |
   1992-1993 Jean-loup Gailly
   1998-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly
-matches:
-  - score: '100.0'
-    start_line: 25
-    end_line: 25
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 26
-    end_line: 40
-    matcher: 1-hash
-    rule_length: 123
-    matched_length: 123
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_482.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 3, or (at your option)
-      any later version.
+license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 25
+        end_line: 25
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_92.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-3+'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '100.0'
+        start_line: 26
+        end_line: 40
+        matched_length: 123
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_482.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 123
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 3, or (at your option)
+          any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-      On Debian GNU/Linux systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 43
-    end_line: 50
-    matcher: 1-hash
-    rule_length: 72
-    matched_length: 72
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus_24.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this document
-      under the terms of the GNU Free Documentation License, Version 1.3 or
-      any later version published by the Free Software Foundation; with no
-      Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
-      Texts.
+          On Debian GNU/Linux systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gfdl-1.3-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 43
+        end_line: 50
+        matched_length: 72
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gfdl-1.3-plus
+        licensedb_identifier: gfdl-1.3-plus_24.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GFDL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 72
+        rule_relevance: 100
+        matched_text: |
+          Permission is granted to copy, distribute and/or modify this document
+          under the terms of the GNU Free Documentation License, Version 1.3 or
+          any later version published by the Free Software Foundation; with no
+          Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+          Texts.
 
-      On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
-      License can be found in `/usr/share/common-licenses/GFDL-3'.
-  - score: '85.0'
-    start_line: 53
-    end_line: 70
-    matcher: 1-hash
-    rule_length: 138
-    matched_length: 138
-    match_coverage: '100.0'
-    rule_relevance: 85
-    identifier: latex2e_8.RULE
-    license_expression: latex2e
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to make and distribute verbatim copies of
-      this manual provided the copyright notice and this permission notice
-      are preserved on all copies.
+          On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
+          License can be found in `/usr/share/common-licenses/GFDL-3'.
+        licenses:
+          - key: gfdl-1.3-plus
+            name: GNU Free Documentation License v1.3 or later
+            short_name: GFDL 1.3 or later
+            category: Copyleft Limited
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            text_url: http://www.gnu.org/licenses/fdl-1.3.txt
+            reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            spdx_license_key: GFDL-1.3-or-later
+            spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
+  - license_expression: latex2e
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '85.0'
+        start_line: 53
+        end_line: 70
+        matched_length: 138
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: latex2e
+        licensedb_identifier: latex2e_8.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 138
+        rule_relevance: 85
+        matched_text: |
+          Permission is granted to make and distribute verbatim copies of
+          this manual provided the copyright notice and this permission notice
+          are preserved on all copies.
 
-      Permission is granted to process this file through troff and print the
-      results, provided the printed document carries copying permission
-      notice identical to this one except for the removal of this paragraph
-      (this paragraph not being relevant to the printed manual).
+          Permission is granted to process this file through troff and print the
+          results, provided the printed document carries copying permission
+          notice identical to this one except for the removal of this paragraph
+          (this paragraph not being relevant to the printed manual).
 
-      Permission is granted to copy and distribute modified versions of this
-      manual under the conditions for verbatim copying, provided that the entire
-      resulting derived work is distributed under the terms of a permission
-      notice identical to this one.
+          Permission is granted to copy and distribute modified versions of this
+          manual under the conditions for verbatim copying, provided that the entire
+          resulting derived work is distributed under the terms of a permission
+          notice identical to this one.
 
-      Permission is granted to copy and distribute translations of this manual
-      into another language, under the above conditions for modified versions,
-      except that this permission notice may be stated in a translation approved
-      by the Foundation.
+          Permission is granted to copy and distribute translations of this manual
+          into another language, under the above conditions for modified versions,
+          except that this permission notice may be stated in a translation approved
+          by the Foundation.
+        licenses:
+          - key: latex2e
+            name: Latex2e License
+            short_name: Latex2e License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: LaTeX
+            homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/latex2e
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            spdx_license_key: Latex2e
+            spdx_url: https://spdx.org/licenses/Latex2e

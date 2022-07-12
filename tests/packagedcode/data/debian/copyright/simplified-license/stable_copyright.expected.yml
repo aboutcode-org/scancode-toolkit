@@ -24,6 +24,11 @@ license_expression: apache-2.0 AND (apache-2.0 AND bsd-new) AND bsd-new AND (gpl
   bison-exception-2.2) AND bsd-unchanged AND (apache-2.0 AND (apache-2.0 AND hs-regexp)) AND
   bsd-simplified-darwin AND (apache-2.0 AND public-domain) AND (apache-2.0 AND (x11-keith-packard
   AND historical)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR gpl-2.0-plus) AND mit
+declared_license_expression_spdx: Apache-2.0 AND (Apache-2.0 AND BSD-3-Clause) AND BSD-3-Clause
+  AND (GPL-3.0-or-later OR Bison-exception-2.2) AND LicenseRef-scancode-bsd-unchanged AND (Apache-2.0
+  AND (Apache-2.0 AND Spencer-94)) AND LicenseRef-scancode-bsd-simplified-darwin AND (Apache-2.0
+  AND LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (HPND-sell-variant AND HPND)) AND
+  (Apache-2.0 AND LicenseRef-scancode-zeusbench) AND (Apache-2.0 OR GPL-2.0-or-later) AND MIT
 copyright: |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation
@@ -43,555 +48,897 @@ copyright: |
   1996 by Zeus Technology Ltd. http://www.zeustech.net/
   2012 Arno Töll
   2008 Stefan Fritsch
-matches:
-  - score: '100.0'
-    start_line: 71
-    end_line: 71
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_65.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: apache-2.0'
-  - score: '100.0'
-    start_line: 72
-    end_line: 88
-    matcher: 1-hash
-    rule_length: 145
-    matched_length: 145
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_971.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Licensed to the Apache Software Foundation (ASF) under one or more
-      contributor license agreements.  See the NOTICE file distributed with
-      this work for additional information regarding copyright ownership.
-      The ASF licenses this file to You under the Apache License, Version 2.0
-      (the "License"); you may not use this file except in compliance with
-      the License.  You may obtain a copy of the License at
+license_detections:
+  - license_expression: apache-2.0
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 71
+        end_line: 71
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_65.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 4
+        rule_relevance: 100
+        matched_text: 'License: apache-2.0'
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+      - score: '100.0'
+        start_line: 72
+        end_line: 88
+        matched_length: 145
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_971.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/Apache-2.0
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 145
+        rule_relevance: 100
+        matched_text: |
+          Licensed to the Apache Software Foundation (ASF) under one or more
+          contributor license agreements.  See the NOTICE file distributed with
+          this work for additional information regarding copyright ownership.
+          The ASF licenses this file to You under the Apache License, Version 2.0
+          (the "License"); you may not use this file except in compliance with
+          the License.  You may obtain a copy of the License at
 
-           https://www.apache.org/licenses/LICENSE-2.0
+               https://www.apache.org/licenses/LICENSE-2.0
 
-      Unless required by applicable law or agreed to in writing, software
-      distributed under the License is distributed on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-      See the License for the specific language governing permissions and
-      limitations under the License.
+          Unless required by applicable law or agreed to in writing, software
+          distributed under the License is distributed on an "AS IS" BASIS,
+          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+          See the License for the specific language governing permissions and
+          limitations under the License.
 
-      On Debian systems, the full text of the Apache Software License version 2 can
-      be found in the file `/usr/share/common-licenses/Apache-2.0'.
-  - score: '100.0'
-    start_line: 94
-    end_line: 103
-    matcher: 2-aho
-    rule_length: 106
-    matched_length: 106
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zeusbench_1.RULE
-    license_expression: zeusbench
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is provided "as is" and any express or implied warranties,
-        including but not limited to, the implied warranties of merchantability and
-        fitness for a particular purpose are disclaimed.  In no event shall
-        Zeus Technology Ltd. be liable for any direct, indirect, incidental, special,
-        exemplary, or consequential damaged (including, but not limited to,
-        procurement of substitute good or services; loss of use, data, or profits;
-        or business interruption) however caused and on theory of liability.  Whether
-        in contract, strict liability or tort (including negligence or otherwise)
-        arising in any way out of the use of this software, even if advised of the
-        possibility of such damage
-  - score: '100.0'
-    start_line: 118
-    end_line: 142
-    matcher: 2-aho
-    rule_length: 214
-    matched_length: 214
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_879.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:
+          On Debian systems, the full text of the Apache Software License version 2 can
+          be found in the file `/usr/share/common-licenses/Apache-2.0'.
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+  - license_expression: zeusbench
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 94
+        end_line: 103
+        matched_length: 106
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: zeusbench
+        licensedb_identifier: zeusbench_1.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 106
+        rule_relevance: 100
+        matched_text: |
+            This software is provided "as is" and any express or implied warranties,
+            including but not limited to, the implied warranties of merchantability and
+            fitness for a particular purpose are disclaimed.  In no event shall
+            Zeus Technology Ltd. be liable for any direct, indirect, incidental, special,
+            exemplary, or consequential damaged (including, but not limited to,
+            procurement of substitute good or services; loss of use, data, or profits;
+            or business interruption) however caused and on theory of liability.  Whether
+            in contract, strict liability or tort (including negligence or otherwise)
+            arising in any way out of the use of this software, even if advised of the
+            possibility of such damage
+        licenses:
+          - key: zeusbench
+            name: ZeusBench notice
+            short_name: ZeusBench notice
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/zeusbench
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zeusbench.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zeusbench.yml
+            spdx_license_key: LicenseRef-scancode-zeusbench
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zeusbench.LICENSE
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 118
+        end_line: 142
+        matched_length: 214
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_879.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 214
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
 
-         * Redistributions of source code must retain the above copyright notice,
-           this list of conditions and the following disclaimer.
+             * Redistributions of source code must retain the above copyright notice,
+               this list of conditions and the following disclaimer.
 
-         * Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+             * Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
 
-         * Neither the name of the University of Cambridge nor the names of its
-           contributors may be used to endorse or promote products derived from
-           this software without specific prior written permission.
+             * Neither the name of the University of Cambridge nor the names of its
+               contributors may be used to endorse or promote products derived from
+               this software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 172
-    end_line: '191'
-    matcher: 2-aho
-    rule_length: 168
-    matched_length: 168
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: x11-keith-packard3.RULE
-    license_expression: x11-keith-packard
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, distribute, and sell this software
-      and its documentation for any purpose is hereby granted without
-      fee, provided that the above copyright notice appear in all copies
-      and that both that copyright notice and this permission notice
-      appear in supporting documentation, and that the name of Carnegie
-      Mellon University not be used in advertising or publicity
-      pertaining to distribution of the software without specific,
-      written prior permission.  Carnegie Mellon University makes no
-      representations about the suitability of this software for any
-      purpose.  It is provided "as is" without express or implied
-      warranty.
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: x11-keith-packard AND historical
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 172
+        end_line: '191'
+        matched_length: 168
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: x11-keith-packard
+        licensedb_identifier: x11-keith-packard3.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 168
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, distribute, and sell this software
+          and its documentation for any purpose is hereby granted without
+          fee, provided that the above copyright notice appear in all copies
+          and that both that copyright notice and this permission notice
+          appear in supporting documentation, and that the name of Carnegie
+          Mellon University not be used in advertising or publicity
+          pertaining to distribution of the software without specific,
+          written prior permission.  Carnegie Mellon University makes no
+          representations about the suitability of this software for any
+          purpose.  It is provided "as is" without express or implied
+          warranty.
 
-      CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO
-      THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE
-      FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-      WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
-      AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
-      OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
-      SOFTWARE.
-  - score: '100.0'
-    start_line: '197'
-    end_line: 206
-    matcher: 2-aho
-    rule_length: 87
-    matched_length: 87
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: historical_9.RULE
-    license_expression: historical
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission to use, copy, modify, and distribute this material
-      for any purpose and without fee is hereby granted, provided
-      that the above copyright notice and this permission notice
-      appear in all copies, and that the name of Bellcore not be
-      used in advertising or publicity pertaining to this
-      material without the specific, prior written permission
-      of an authorized representative of Bellcore.  BELLCORE
-      MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
-      OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
-      WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
-  - score: '100.0'
-    start_line: 209
-    end_line: 209
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '99.0'
-    start_line: 210
-    end_line: 222
-    matcher: 1-hash
-    rule_length: 105
-    matched_length: 105
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-3.0-plus_483.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
+          CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO
+          THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE
+          FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+          WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+          AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+          OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          SOFTWARE.
+        licenses:
+          - key: x11-keith-packard
+            name: X11-Style (Keith Packard)
+            short_name: X11-Style (Keith Packard)
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/x11-keith-packard
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-keith-packard.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-keith-packard.yml
+            spdx_license_key: HPND-sell-variant
+            spdx_url: https://spdx.org/licenses/HPND-sell-variant
+      - score: '100.0'
+        start_line: '197'
+        end_line: 206
+        matched_length: 87
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: historical
+        licensedb_identifier: historical_9.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 87
+        rule_relevance: 100
+        matched_text: |
+          Permission to use, copy, modify, and distribute this material
+          for any purpose and without fee is hereby granted, provided
+          that the above copyright notice and this permission notice
+          appear in all copies, and that the name of Bellcore not be
+          used in advertising or publicity pertaining to this
+          material without the specific, prior written permission
+          of an authorized representative of Bellcore.  BELLCORE
+          MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
+          OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
+          WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+        licenses:
+          - key: historical
+            name: Historical Permission Notice and Disclaimer
+            short_name: Historical Permission Notice and Disclaimer
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: OSI - Open Source Initiative
+            homepage_url: http://www.opensource.org/licenses/historical.php
+            text_url: http://www.opensource.org/licenses/historical.php
+            reference_url: https://scancode-licensedb.aboutcode.org/historical
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.yml
+            spdx_license_key: HPND
+            spdx_url: https://spdx.org/licenses/HPND
+  - license_expression: gpl-3.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 209
+        end_line: 209
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_92.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-3+'
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+      - score: '99.0'
+        start_line: 210
+        end_line: 222
+        matched_length: 105
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        licensedb_identifier: gpl-3.0-plus_483.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/GPL-3
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 105
+        rule_relevance: 99
+        matched_text: |
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation, either version 3 of the License, or
+          (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      On Debian systems, the full text of the GNU General Public
-      License version 2 can be found in the file
-      `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 224
-    end_line: 224
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 225
-    end_line: 237
-    matcher: 1-hash
-    rule_length: 105
-    matched_length: 105
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_986.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or
-      modify it under the terms of the GNU General Public License
-      as published by the Free Software Foundation; either version 2
-      of the License, or (at your option) any later version.
+          On Debian systems, the full text of the GNU General Public
+          License version 2 can be found in the file
+          `/usr/share/common-licenses/GPL-3'.
+        licenses:
+          - key: gpl-3.0-plus
+            name: GNU General Public License 3.0 or later
+            short_name: GPL 3.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            spdx_license_key: GPL-3.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+  - license_expression: gpl-2.0-plus
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 224
+        end_line: 224
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_22.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: yes
+        is_license_intro: no
+        rule_length: 3
+        rule_relevance: 100
+        matched_text: 'License: gpl-2+'
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+      - score: '100.0'
+        start_line: 225
+        end_line: 237
+        matched_length: 105
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        licensedb_identifier: gpl-2.0-plus_986.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 105
+        rule_relevance: 100
+        matched_text: |
+          This program is free software; you can redistribute it and/or
+          modify it under the terms of the GNU General Public License
+          as published by the Free Software Foundation; either version 2
+          of the License, or (at your option) any later version.
 
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
 
-      On Debian systems, the full text of the GNU General Public
-      License version 2 can be found in the file
-      `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 240
-    end_line: 272
-    matcher: 1-hash
-    rule_length: 211
-    matched_length: 211
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_361.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This imagemap module started as a port of the original imagemap.c
-      written by Rob McCool (11/13/93 robm@ncsa.uiuc.edu).
-      This version includes the mapping algorithms found in version 1.3
-      of imagemap.c.
+          On Debian systems, the full text of the GNU General Public
+          License version 2 can be found in the file
+          `/usr/share/common-licenses/GPL-2'.
+        licenses:
+          - key: gpl-2.0-plus
+            name: GNU General Public License 2.0 or later
+            short_name: GPL 2.0 or later
+            category: Copyleft
+            is_exception: no
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            spdx_license_key: GPL-2.0-or-later
+            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+  - license_expression: public-domain
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 240
+        end_line: 272
+        matched_length: 211
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: public-domain
+        licensedb_identifier: public-domain_361.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 211
+        rule_relevance: 100
+        matched_text: |
+          This imagemap module started as a port of the original imagemap.c
+          written by Rob McCool (11/13/93 robm@ncsa.uiuc.edu).
+          This version includes the mapping algorithms found in version 1.3
+          of imagemap.c.
 
-      Contributors to this code include:
+          Contributors to this code include:
 
-      Kevin Hughes, kevinh@pulua.hcc.hawaii.edu
+          Kevin Hughes, kevinh@pulua.hcc.hawaii.edu
 
-      Eric Haines, erich@eye.com
-      "macmartinized" polygon code copyright 1992 by Eric Haines, erich@eye.com
+          Eric Haines, erich@eye.com
+          "macmartinized" polygon code copyright 1992 by Eric Haines, erich@eye.com
 
-      Randy Terbush, randy@zyzzyva.com
-      port to Apache module format, "base_uri" and support for relative URLs
+          Randy Terbush, randy@zyzzyva.com
+          port to Apache module format, "base_uri" and support for relative URLs
 
-      James H. Cloos, Jr., cloos@jhcloos.com
-      Added point datatype, using code in NCSA's version 1.8 imagemap.c
-      program, as distributed with version 1.4.1 of their server.
-      The point code is originally added by Craig Milo Rogers, Rogers@ISI.Edu
+          James H. Cloos, Jr., cloos@jhcloos.com
+          Added point datatype, using code in NCSA's version 1.8 imagemap.c
+          program, as distributed with version 1.4.1 of their server.
+          The point code is originally added by Craig Milo Rogers, Rogers@ISI.Edu
 
-      Nathan Kurz, nate@tripod.com
-      Rewrite/reorganization.  New handling of default, base and relative URLs.
-      New Configuration directives:
-         ImapMenu {none, formatted, semiformatted, unformatted}
-         ImapDefault {error, nocontent, referer, menu, URL}
-         ImapBase {map, referer, URL}
-      Support for creating non-graphical menu added.  (backwards compatible):
-         Old:  directive URL [x,y ...]
-         New:  directive URL "Menu text" [x,y ...]
-          or:  directive URL x,y ... "Menu text"
-      Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
+          Nathan Kurz, nate@tripod.com
+          Rewrite/reorganization.  New handling of default, base and relative URLs.
+          New Configuration directives:
+             ImapMenu {none, formatted, semiformatted, unformatted}
+             ImapDefault {error, nocontent, referer, menu, URL}
+             ImapBase {map, referer, URL}
+          Support for creating non-graphical menu added.  (backwards compatible):
+             Old:  directive URL [x,y ...]
+             New:  directive URL "Menu text" [x,y ...]
+              or:  directive URL x,y ... "Menu text"
+          Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
 
-      Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
-  - score: '100.0'
-    start_line: 279
-    end_line: 302
-    matcher: 2-aho
-    rule_length: 217
-    matched_length: 217
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified-darwin.LICENSE
-    license_expression: bsd-simplified-darwin
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is not subject to any export provision of the United States
-      Department of Commerce, and may be exported to any country or planet.
+          Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
+        licenses:
+          - key: public-domain
+            name: Public Domain
+            short_name: Public Domain
+            category: Public Domain
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url: http://www.linfo.org/publicdomain.html
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            spdx_license_key: LicenseRef-scancode-public-domain
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+  - license_expression: bsd-simplified-darwin
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 279
+        end_line: 302
+        matched_length: 217
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified-darwin
+        licensedb_identifier: bsd-simplified-darwin.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 217
+        rule_relevance: 100
+        matched_text: |
+          This software is not subject to any export provision of the United States
+          Department of Commerce, and may be exported to any country or planet.
 
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice immediately at the beginning of the file, without modification,
-         this list of conditions, and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice immediately at the beginning of the file, without modification,
+             this list of conditions, and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
-      ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 306
-    end_line: 309
-    matcher: 2-aho
-    rule_length: 47
-    matched_length: 47
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_1021.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software was submitted by Cisco Systems to the Apache Software Foundation in July
-      1997.  Future revisions and derivatives of this source code must
-      acknowledge Cisco Systems as the original contributor of this module.
-      All other licensing and usage conditions are those of the Apache Software Foundation.
-  - score: '100.0'
-    start_line: 317
-    end_line: 335
-    matcher: 2-aho
-    rule_length: 148
-    matched_length: 148
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: hs-regexp_1.RULE
-    license_expression: hs-regexp
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This software is not subject to any license of the American Telephone and
-      Telegraph Company or of the Regents of the University of California.
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
+          ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+        licenses:
+          - key: bsd-simplified-darwin
+            name: BSD Simplified Darwin
+            short_name: BSD Simplified Darwin
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Ian Darwin
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified-darwin
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.yml
+            spdx_license_key: LicenseRef-scancode-bsd-simplified-darwin
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE
+  - license_expression: apache-2.0 AND hs-regexp
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 306
+        end_line: 309
+        matched_length: 47
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: apache-2.0
+        licensedb_identifier: apache-2.0_1021.RULE
+        referenced_filenames: []
+        is_license_text: no
+        is_license_notice: yes
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 47
+        rule_relevance: 100
+        matched_text: |
+          This software was submitted by Cisco Systems to the Apache Software Foundation in July
+          1997.  Future revisions and derivatives of this source code must
+          acknowledge Cisco Systems as the original contributor of this module.
+          All other licensing and usage conditions are those of the Apache Software Foundation.
+        licenses:
+          - key: apache-2.0
+            name: Apache License 2.0
+            short_name: Apache 2.0
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Apache Software Foundation
+            homepage_url: http://www.apache.org/licenses/
+            text_url: http://www.apache.org/licenses/LICENSE-2.0
+            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            spdx_license_key: Apache-2.0
+            spdx_url: https://spdx.org/licenses/Apache-2.0
+      - score: '100.0'
+        start_line: 317
+        end_line: 335
+        matched_length: 148
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: hs-regexp
+        licensedb_identifier: hs-regexp_1.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 148
+        rule_relevance: 100
+        matched_text: |
+          This software is not subject to any license of the American Telephone and
+          Telegraph Company or of the Regents of the University of California.
 
-      Permission is granted to anyone to use this software for any purpose on any
-      computer system, and to alter it and redistribute it freely, subject to
-      the following restrictions:
+          Permission is granted to anyone to use this software for any purpose on any
+          computer system, and to alter it and redistribute it freely, subject to
+          the following restrictions:
 
-      1. The author is not responsible for the consequences of use of this
-      software, no matter how awful, even if they arise from flaws in it.
+          1. The author is not responsible for the consequences of use of this
+          software, no matter how awful, even if they arise from flaws in it.
 
-      2. The origin of this software must not be misrepresented, either by
-      explicit claim or by omission.  Since few users ever read sources, credits
-      must appear in the documentation.
+          2. The origin of this software must not be misrepresented, either by
+          explicit claim or by omission.  Since few users ever read sources, credits
+          must appear in the documentation.
 
-      3. Altered versions must be plainly marked as such, and must not be
-      misrepresented as being the original software.  Since few users ever read
-      sources, credits must appear in the documentation.
+          3. Altered versions must be plainly marked as such, and must not be
+          misrepresented as being the original software.  Since few users ever read
+          sources, credits must appear in the documentation.
 
-      4. This notice may not be removed or altered.
-  - score: '100.0'
-    start_line: 370
-    end_line: 391
-    matcher: 1-hash
-    rule_length: 208
-    matched_length: 208
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-unchanged_4.RULE
-    license_expression: bsd-unchanged
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer
-         in this position and unchanged.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. The name of the author may not be used to endorse or promote products
-         derived from this software withough specific prior written permission
+          4. This notice may not be removed or altered.
+        licenses:
+          - key: hs-regexp
+            name: Henry Spencer Regexp License
+            short_name: Henry Spencer Regexp License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Henry Spencer
+            homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
+            text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
+            reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            spdx_license_key: Spencer-94
+            spdx_url: https://spdx.org/licenses/Spencer-94
+  - license_expression: bsd-unchanged
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 370
+        end_line: 391
+        matched_length: 208
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-unchanged
+        licensedb_identifier: bsd-unchanged_4.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 208
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer
+             in this position and unchanged.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. The name of the author may not be used to endorse or promote products
+             derived from this software withough specific prior written permission
 
-      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-      IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-      IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-      NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-      THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 395
-    end_line: 419
-    matcher: 1-hash
-    rule_length: 214
-    matched_length: 214
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_879.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:
+          THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+          IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+          NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+          THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+          THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-unchanged
+            name: BSD Simplified with Unchanged requirement
+            short_name: BSD Unchanged
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-unchanged
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unchanged.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unchanged.yml
+            spdx_license_key: LicenseRef-scancode-bsd-unchanged
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unchanged.LICENSE
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 395
+        end_line: 419
+        matched_length: 214
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-new
+        licensedb_identifier: bsd-new_879.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 214
+        rule_relevance: 100
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are met:
 
-         * Redistributions of source code must retain the above copyright notice,
-           this list of conditions and the following disclaimer.
+             * Redistributions of source code must retain the above copyright notice,
+               this list of conditions and the following disclaimer.
 
-         * Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+             * Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
 
-         * Neither the name of the University of Cambridge nor the names of its
-           contributors may be used to endorse or promote products derived from
-           this software without specific prior written permission.
+             * Neither the name of the University of Cambridge nor the names of its
+               contributors may be used to endorse or promote products derived from
+               this software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-      POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 422
-    end_line: 433
-    matcher: 2-aho
-    rule_length: 106
-    matched_length: 106
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bison-exception-2.2.LICENSE
-    license_expression: bison-exception-2.2
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      As a special exception, you may create a larger work that contains
-        part or all of the Bison parser skeleton and distribute that work
-        under terms of your choice, so long as that work isn't itself a
-        parser generator using the skeleton or a modified version thereof
-        as a parser skeleton.  Alternatively, if you modify or redistribute
-        the parser skeleton itself, you may (at your option) remove this
-        special exception, which will cause the skeleton and the resulting
-        Bison output files to be licensed under the GNU General Public
-        License without this special exception.
-        .
-        This special exception was added by the Free Software Foundation in
-        version 2.2 of Bison.  */
-  - score: '100.0'
-    start_line: 439
-    end_line: 454
-    matcher: 1-hash
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a copy of
-      this software and associated documentation files (the "Software"), to deal in
-      the Software without restriction, including without limitation the rights to
-      use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-      the Software, and to permit persons to whom the Software is furnished to do so,
-      subject to the following conditions:
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+        licenses:
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
+  - license_expression: bison-exception-2.2
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 422
+        end_line: 433
+        matched_length: 106
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bison-exception-2.2
+        licensedb_identifier: bison-exception-2.2.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 106
+        rule_relevance: 100
+        matched_text: |
+          As a special exception, you may create a larger work that contains
+            part or all of the Bison parser skeleton and distribute that work
+            under terms of your choice, so long as that work isn't itself a
+            parser generator using the skeleton or a modified version thereof
+            as a parser skeleton.  Alternatively, if you modify or redistribute
+            the parser skeleton itself, you may (at your option) remove this
+            special exception, which will cause the skeleton and the resulting
+            Bison output files to be licensed under the GNU General Public
+            License without this special exception.
+            .
+            This special exception was added by the Free Software Foundation in
+            version 2.2 of Bison.  */
+        licenses:
+          - key: bison-exception-2.2
+            name: Bison 2.2 exception to GPL 2.0 or later
+            short_name: Bison 2.2 exception to GPL 2.0 or later
+            category: Copyleft Limited
+            is_exception: yes
+            is_unknown: no
+            owner: Free Software Foundation (FSF)
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/bison-exception-2.2
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bison-exception-2.2.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bison-exception-2.2.yml
+            spdx_license_key: Bison-exception-2.2
+            spdx_url: https://spdx.org/licenses/Bison-exception-2.2
+  - license_expression: mit
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 439
+        end_line: 454
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit
+        licensedb_identifier: mit.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 161
+        rule_relevance: 100
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a copy of
+          this software and associated documentation files (the "Software"), to deal in
+          the Software without restriction, including without limitation the rights to
+          use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+          the Software, and to permit persons to whom the Software is furnished to do so,
+          subject to the following conditions:
 
-      The above copyright notice and this permission notice shall be included in all
-      copies or substantial portions of the Software.
+          The above copyright notice and this permission notice shall be included in all
+          copies or substantial portions of the Software.
 
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-      FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-      COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-      IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-      CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+          FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+          COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+          IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+          CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        licenses:
+          - key: mit
+            name: MIT License
+            short_name: MIT License
+            category: Permissive
+            is_exception: no
+            is_unknown: no
+            owner: MIT
+            homepage_url: http://opensource.org/licenses/mit-license.php
+            text_url: http://opensource.org/licenses/mit-license.php
+            reference_url: https://scancode-licensedb.aboutcode.org/mit
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            spdx_license_key: MIT
+            spdx_url: https://spdx.org/licenses/MIT

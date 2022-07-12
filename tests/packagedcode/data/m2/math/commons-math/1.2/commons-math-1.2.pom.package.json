@@ -190,8 +190,10 @@
   "code_view_url": "http://svn.apache.org/viewvc/commons/proper/math/trunk",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/commons/proper/math/trunk",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/commons-math/commons-math@1.2?classifier=sources"

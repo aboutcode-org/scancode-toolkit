@@ -3,107 +3,148 @@ declared_license:
   - Binary redistribution (Marvell 1)
   - Binary redistribution (Marvell 2)
 license_expression: proprietary-license AND marvell-firmware
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-marvell-firmware
 copyright: |
   Marvell International Ltd.
   2006, One Laptop per Child and Marvell Corporation.
-matches:
-  - score: '96.37'
-    start_line: 11
-    end_line: 48
-    matcher: 3-seq
-    rule_length: 303
-    matched_length: 292
-    match_coverage: '96.37'
-    rule_relevance: 100
-    identifier: proprietary-license_319.RULE
-    license_expression: proprietary-license
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution. Redistribution and use in binary form, without
-      modification, are permitted provided that the following conditions are
-      met:
+license_detections:
+  - license_expression: proprietary-license
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '96.37'
+        start_line: 11
+        end_line: 48
+        matched_length: 292
+        match_coverage: '96.37'
+        matcher: 3-seq
+        license_expression: proprietary-license
+        licensedb_identifier: proprietary-license_319.RULE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 303
+        rule_relevance: 100
+        matched_text: |
+          Redistribution. Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      * Redistributions must reproduce the above copyright notice and the
-        following disclaimer in the documentation and/or other materials
-        provided with the distribution.
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
 
-      * Neither the name of [Marvell] [International] [Ltd]. nor the names of its
-        suppliers may be used to endorse or promote products derived from
-        this software without specific prior written permission.
+          * Neither the name of Marvell International Ltd. nor the names of its
+            suppliers may be used to endorse or promote products derived from
+            this software without specific prior written permission.
 
-      * No reverse engineering, decompilation, or disassembly of this
-        software is permitted.
+          * No reverse engineering, decompilation, or disassembly of this
+            software is permitted.
 
-      Limited patent license. [Marvell] [International] Ltd. grants a
-      world-wide, royalty-free, non-exclusive license under patents it now
-      or hereafter owns or controls to make, have made, use, import, offer
-      to sell and sell ("Utilize") this software, but solely to the extent
-      that any such patent is necessary to Utilize the software alone, or in
-      combination with an operating system licensed under an approved Open
-      Source license as listed by the Open Source Initiative at
-      http://opensource.org/licenses. The patent license shall not apply to
-      any other combinations which include this software. No hardware per se
-      is licensed hereunder.
+          Limited patent license. Marvell International Ltd. grants a
+          world-wide, royalty-free, non-exclusive license under patents it now
+          or hereafter owns or controls to make, have made, use, import, offer
+          to sell and sell ("Utilize") this software, but solely to the extent
+          that any such patent is necessary to Utilize the software alone, or in
+          combination with an operating system licensed under an approved Open
+          Source license as listed by the Open Source Initiative at
+          http://opensource.org/licenses. The patent license shall not apply to
+          any other combinations which include this software. No hardware per se
+          is licensed hereunder.
 
-      DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-      COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-      DAMAGE.
-  - score: '100.0'
-    start_line: 55
-    end_line: 84
-    matcher: 2-aho
-    rule_length: 242
-    matched_length: 242
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: marvell-firmware.LICENSE
-    license_expression: marvell-firmware
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution.  Redistribution and use in binary form, without
-      modification, are permitted provided that the following conditions are
-      met:
+          DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+          DAMAGE.
+        licenses:
+          - key: proprietary-license
+            name: Proprietary License
+            short_name: Proprietary License
+            category: Commercial
+            is_exception: no
+            is_unknown: no
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
+            spdx_license_key: LicenseRef-scancode-proprietary-license
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+  - license_expression: marvell-firmware
+    detection_rules:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 55
+        end_line: 84
+        matched_length: 242
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: marvell-firmware
+        licensedb_identifier: marvell-firmware.LICENSE
+        referenced_filenames: []
+        is_license_text: yes
+        is_license_notice: no
+        is_license_reference: no
+        is_license_tag: no
+        is_license_intro: no
+        rule_length: 242
+        rule_relevance: 100
+        matched_text: |
+          Redistribution.  Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
 
-      * Redistributions must reproduce the above copyright notice and the
-        following disclaimer in the documentation and/or other materials
-        provided with the distribution.
-      * Neither the name of Marvell Corporation nor the names of its suppliers
-        may be used to endorse or promote products derived from this software
-        without specific prior written permission.
-      * No reverse engineering, decompilation, or disassembly of this software
-        is permitted.
-      * You may not use or attempt to use this software in conjunction with
-        any product that is offered by a third party as a replacement,
-        substitute or alternative to a Marvell Product where a Marvell Product
-        is defined as a proprietary wireless LAN embedded client solution of
-        Marvell or a Marvell Affiliate.
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
+          * Neither the name of Marvell Corporation nor the names of its suppliers
+            may be used to endorse or promote products derived from this software
+            without specific prior written permission.
+          * No reverse engineering, decompilation, or disassembly of this software
+            is permitted.
+          * You may not use or attempt to use this software in conjunction with
+            any product that is offered by a third party as a replacement,
+            substitute or alternative to a Marvell Product where a Marvell Product
+            is defined as a proprietary wireless LAN embedded client solution of
+            Marvell or a Marvell Affiliate.
 
-      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
-      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-      COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-      DAMAGE.
+          DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+          DAMAGE.
+        licenses:
+          - key: marvell-firmware
+            name: Marvell Firmware License
+            short_name: Marvell Firmware License
+            category: Proprietary Free
+            is_exception: no
+            is_unknown: no
+            owner: Marvell
+            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.OLPC
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/marvell-firmware
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.yml
+            spdx_license_key: LicenseRef-scancode-marvell-firmware
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE

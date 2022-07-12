@@ -43,8 +43,10 @@
   "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
   "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "declared_license_expression": null,
+  "declared_license_expression_spdx": null,
+  "license_detections": [],
+  "extracted_license_statement": null,
   "notice_text": null,
   "source_packages": [
     "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
