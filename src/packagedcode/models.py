@@ -11,6 +11,7 @@ import os
 import uuid
 from fnmatch import fnmatchcase
 import logging
+import sys
 
 import attr
 from packageurl import normalize_qualifiers
@@ -26,6 +27,8 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from typecode import contenttype
+
+from packagedcode.licensing import get_declared_license_expression_spdx
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -105,10 +108,10 @@ Beyond these we have a few secondary models:
 - IdentifiablePackageData: a base class for a Package-like class with a Package URL.
 """
 
-SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
+SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
-TRACE = SCANCODE_DEBUG_PACKAGE_API
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_API
+TRACE = SCANCODE_DEBUG_PACKAGE
+TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE
 
 
 def logger_debug(*args):
@@ -593,16 +596,29 @@ class PackageData(IdentifiablePackageData):
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
 
-    license_expression = String(
+    declared_license_expression = String(
         label='license expression',
         help='The license expression for this package typically derived '
-             'from its declared license or from some other type-specific '
+             'from its extracted_license_statement or from some other type-specific '
              'routine or convention.')
 
-    declared_license = String(
-        label='declared license',
-        help='The declared license mention, tag or text as found in a '
-             'package manifest. This can be a string, a list or dict of '
+    declared_license_expression_spdx = String(
+        label='SPDX license expression',
+        help='The SPDX license expression for this package converted '
+             'from its declared_license_Expression.')
+
+    license_detections = List(
+        item_type=dict,
+        label='List of LicenseDetections',
+        help='A list of LicenseDetection mappings typically derived '
+             'from its extracted_license_statement or from some other type-specific '
+             'routine or convention.'
+    )
+
+    extracted_license_statement = String(
+        label='extracted license statement',
+        help='The license statement mention, tag or text as found in a '
+             'package manifest and extracted. This can be a string, a list or dict of '
              'strings possibly nested, as found originally in the manifest.')
 
     notice_text = String(
@@ -661,6 +677,35 @@ class PackageData(IdentifiablePackageData):
         help='Datasource identifier for the source of these package data.',
         repr=True,
     )
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.populate_license_fields()
+
+    def populate_license_fields(self):
+        """
+        Run license detection on extracted_license_statement for a PackageData
+        object, and add the declared_license_expression (and the spdx expression)
+        and corresponding LicenseDetection data.
+        """
+        if not self.declared_license_expression and self.extracted_license_statement:
+
+            self.license_detections, self.declared_license_expression = \
+                self.get_license_detections_and_expression()
+
+            self.declared_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.declared_license_expression
+            )
+
+            if TRACE:
+                logger_debug(
+                    f"PackageData: populate_license_fields:"
+                    f"extracted_license_statement: {self.extracted_license_statement}"
+                    f"declared_license_expression: {self.declared_license_expression}"
+                    f"license_detections: {self.license_detections}"
+                )
+
+        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
+            self.extracted_license_statement = repr(self.extracted_license_statement)
 
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
@@ -736,6 +781,21 @@ class PackageData(IdentifiablePackageData):
 
         return super().from_dict(package_data)
 
+    def get_license_detections_and_expression(self):
+        """
+        Return a list of LicenseDetection and a license expression string
+        given a ``extracted_license_statement``.
+
+        Called only when using the default assemble() implementation.
+        Subclass can override as needed.
+        """
+        from packagedcode.licensing import get_license_detections_and_expression
+
+        if not self.extracted_license_statement:
+            return [], None
+
+        return get_license_detections_and_expression(self.extracted_license_statement)
+
 
 def _rehydrate_list(cls, values):
     """
@@ -752,36 +812,6 @@ def _rehydrate_list(cls, values):
 
     for val in values:
         yield cls.from_dict(val)
-
-
-def compute_normalized_license(declared_license, expression_symbols=None):
-    """
-    Return a normalized license_expression string from the ``declared_license``.
-    Return 'unknown' if there is a declared license but it cannot be detected
-    (including on errors) and return None if there is no declared license.
-
-    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
-    if provided. Otherwise use the standard SPDX license symbols.
-    """
-    # Ensure declared license is always a string
-    if not isinstance(declared_license, str):
-        declared_license = repr(declared_license)
-
-    if not declared_license:
-        return
-
-    from packagedcode import licensing
-    try:
-        return licensing.get_normalized_expression(
-            query_string=declared_license,
-            expression_symbols=expression_symbols
-        )
-    except Exception as e:
-        # we never fail just for this
-        if TRACE:
-            logger_debug(f'Failed to compute license for {declared_license!r}: {e!r}')
-        # FIXME: add logging
-        return 'unknown'
 
 
 class DatafileHandler:
@@ -904,8 +934,7 @@ class DatafileHandler:
             )
             package_uid = package.package_uid
 
-            if not package.license_expression:
-                package.license_expression = cls.compute_normalized_license(package)
+            package.populate_license_fields()
 
             cls.assign_package_to_resources(
                 package=package,
@@ -929,28 +958,6 @@ class DatafileHandler:
             )
         # we yield this as we do not want this further processed
         yield resource
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        """
-        Return a computed license expression string or None given a ``package``
-        Package object.
-
-        Called only when using the default assemble() implementation.
-        Subclass can override as needed.
-        """
-        if package.declared_license and not package.license_expression:
-            try:
-                license_expression = compute_normalized_license(package.declared_license)
-            except Exception:
-                if SCANCODE_DEBUG_PACKAGE_API:
-                    raise
-                license_expression = 'unknown'
-
-            if TRACE:
-                logger_debug(f' compute_normalized_license: license_expression: {license_expression}')
-
-            return license_expression
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -1061,8 +1068,7 @@ class DatafileHandler:
             res.save(codebase)
 
         if package:
-            if not package.license_expression:
-                package.license_expression = cls.compute_normalized_license(package)
+            package.populate_license_fields()
             yield package
 
     @classmethod
@@ -1125,6 +1131,33 @@ class DatafileHandler:
             primary_language=cls.default_primary_language,
             **kwargs,
         )
+
+    @classmethod
+    def populate_license_fields(cls, package_data):
+        """
+        Run license detection on extracted_license_statement for a PackageData
+        object, and add the declared_license_expression (and the spdx expression)
+        and corresponding LicenseDetection data.
+        """
+        if not package_data.declared_license_expression and package_data.extracted_license_statement:
+
+            package_data.license_detections, package_data.declared_license_expression = \
+                cls.get_license_detections_and_expression(package_data)
+
+            package_data.declared_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=package_data.declared_license_expression
+            )
+
+            if TRACE:
+                logger_debug(
+                    f"DatafileHandler: populate_license_fields:"
+                    f"extracted_license_statement: {package_data.extracted_license_statement}"
+                    f"declared_license_expression: {package_data.declared_license_expression}"
+                    f"license_detections: {package_data.license_detections}"
+                )
+
+        if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
+            package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
 
 
 class NonAssemblableDatafileHandler(DatafileHandler):
@@ -1199,6 +1232,8 @@ class Package(PackageData):
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
+
+        self.populate_license_fields()
 
     def to_dict(self):
         return  super().to_dict(with_details=False)
