@@ -1,0 +1,12 @@
+key: undetected-license
+short_name: Undetected License
+name: Undetected License
+category: Unstated License
+owner: Unspecified
+is_unknown: yes
+notes: This is for a license not detected by scancode.
+  This is typically for a license detection in a package manifest
+  as that is where even if we do not have a license detection we
+  can conclude that a license is present if the extracted license
+  statement is non null.
+spdx_license_key: LicenseRef-scancode-undetected-license
