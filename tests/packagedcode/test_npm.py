@@ -398,7 +398,9 @@ test_data = [
 
 @pytest.mark.parametrize('declared_license,expected_expression', test_data)
 def test_compute_normalized_license_from_declared(declared_license, expected_expression):
-    result = npm.compute_normalized_license(declared_license)
+    from packagedcode.licensing import get_license_detections_and_expression
+
+    _detections, result = get_license_detections_and_expression(declared_license)
     assert result == expected_expression
 
 

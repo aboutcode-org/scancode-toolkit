@@ -19,6 +19,7 @@ from commoncode import testcase
 
 from packagedcode import maven
 from packagedcode import models
+from packagedcode.licensing import get_license_detections_and_expression
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -109,7 +110,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
             results = {}
         else:
             package_data = packages_data.pop()
-            package_data.license_expression = maven.MavenPomXmlHandler.compute_normalized_license(package_data)
+            package_data.populate_license_fields()
             results = package_data.to_dict()
         compare_results(results, test_pom_loc, expected_json_loc, regen)
 
@@ -351,7 +352,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -360,7 +361,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -369,7 +370,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0', 'url': 'unknown'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -378,7 +379,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -387,7 +388,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -396,8 +397,8 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'unknown', 'url': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
-        expected = '(unknown AND apache-2.0) AND mit'
+        _detections, result = get_license_detections_and_expression(declared_license)
+        expected = 'apache-2.0 AND mit'
         assert result == expected
 
     def test_compute_normalized_license_same_name_and_url(self):
@@ -405,7 +406,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0', 'url': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -414,7 +415,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'},
             {'name': 'mit'}
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'apache-2.0 AND mit'
         assert result == expected
 
@@ -422,7 +423,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         declared_license = [
             {'name': 'MIT', 'url': 'LICENSE.txt'},
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'mit'
         assert result == expected
 
@@ -431,7 +432,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'LGPL'},
             {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
         ]
-        result = maven.compute_normalized_license(declared_license)
+        _detections, result = get_license_detections_and_expression(declared_license)
         expected = 'lgpl-2.0-plus'
         assert result == expected
 

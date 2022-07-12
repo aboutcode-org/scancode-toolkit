@@ -55,12 +55,12 @@ class PackageTester(testcase.FileBasedTesting):
 
 
 def compute_and_set_license_expression(package_data):
-    if package_data.declared_license and not package_data.license_expression:
+    if package_data.extracted_license_statement and not package_data.declared_license_expression:
         from packagedcode import HANDLER_BY_DATASOURCE_ID
         handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
         computed = handler.compute_normalized_license(package_data)
         if computed:
-            package_data.license_expression = computed
+            package_data.declared_license_expression = computed
     return package_data
 
 

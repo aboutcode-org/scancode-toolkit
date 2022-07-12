@@ -568,7 +568,7 @@ class License:
                 error(f'Unknown language: {lic.language}')
 
             if lic.is_unknown:
-                if not 'unknown' in lic.key:
+                if not 'unknown' in lic.key and not 'undetected' in lic.key:
                     error(
                         'is_unknown can be true only for licenses with '
                         '"unknown " in their key string.'

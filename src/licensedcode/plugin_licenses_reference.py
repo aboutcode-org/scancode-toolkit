@@ -69,6 +69,16 @@ class LicensesReference(PostScanPlugin):
         licexps = []
         license_db_data = []
 
+        if hasattr(codebase.attributes, 'packages'):
+            codebase_packages = codebase.attributes.packages
+            for pkg in codebase_packages:
+                license_db_data.extend(
+                    get_license_db_reference_data(
+                        license_detections=pkg['license_detections']
+                    )
+                )
+                licexps.append(pkg['declared_license_expression'])
+
         for resource in codebase.walk():
 
             # Get license_expressions from both package and license detections
@@ -77,14 +87,14 @@ class LicensesReference(PostScanPlugin):
                 licexps.append(license_licexp)
             package_data = getattr(resource, 'package_data', []) or []
             # TODO: license_expression attribute name is changing soon
-            package_licexps = [pkg['license_expression'] for pkg in package_data]
+            package_licexps = [pkg['declared_license_expression'] for pkg in package_data]
             licexps.extend(package_licexps)
 
             # Get license matches from both package and license detections
-            licence_detections = getattr(resource, 'license_detections', []) or []
+            license_detections = getattr(resource, 'license_detections', []) or []
             #TODO: report license detections (with license matches) for packages
             license_db_data.extend(
-                get_license_db_reference_data(licence_detections=licence_detections)
+                get_license_db_reference_data(license_detections=license_detections)
             )
 
             codebase.save_resource(resource)
@@ -121,26 +131,26 @@ def get_license_references(license_expressions, licensing=Licensing()):
 def get_licensedb_references(license_db_data):
     """
     """
-    licence_db_ids = set()
+    license_db_ids = set()
     licensedb_references = []
 
     for licdb_ref in license_db_data:
 
         licdb_id = licdb_ref['licensedb_identifier']
-        if licdb_id not in licence_db_ids:
-            licence_db_ids.update(licdb_id)
+        if licdb_id not in license_db_ids:
+            license_db_ids.update(licdb_id)
             licensedb_references.append(licdb_ref)
 
     return licensedb_references
 
 
-def get_license_db_reference_data(licence_detections):
+def get_license_db_reference_data(license_detections):
     """
     """
-    licence_db_ids = set()
+    license_db_ids = set()
     license_db_reference_data = []
 
-    for detection in licence_detections:
+    for detection in license_detections:
         matches = detection['matches']
 
         for match in matches:
@@ -164,8 +174,8 @@ def get_license_db_reference_data(licence_detections):
 
             _ = match.pop('licenses')
 
-            if licdb_id not in licence_db_ids:
-                licence_db_ids.update(licdb_id)
+            if licdb_id not in license_db_ids:
+                license_db_ids.update(licdb_id)
                 license_db_reference_data.append(ref_data)
 
     return license_db_reference_data

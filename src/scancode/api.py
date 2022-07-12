@@ -17,13 +17,25 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-TRACE = False
+
+TRACE = os.environ.get('SCANCODE_DEBUG_API', False)
+
+
+def logger_debug(*args):
+    pass
+
 
 logger = logging.getLogger(__name__)
 
 if TRACE:
+    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 """
 Main scanning functions.
@@ -183,26 +195,33 @@ def get_licenses(
     all_qspans = []
     detection = None
     for detection in detections:
-        if detection.license_expression == None:
-            license_clues.extend(detection.matches)
-
         all_qspans.extend(detection.qspans)
 
-        detected_expressions.append(detection.license_expression)
-        license_detections.append(
-            detection.to_dict(
+        if detection.license_expression == None:
+            detection_mapping = detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
             )
+            license_clues.extend(detection_mapping["matches"])
+        else:
+            detected_expressions.append(detection.license_expression)
+            license_detections.append(
+                detection.to_dict(
+                    include_text=include_text,
+                    license_text_diagnostics=license_text_diagnostics,
+                )
+            )
+
+    if TRACE:
+        logger_debug(f"api: get_licenses: license_detections: {license_detections}")
+        logger_debug(f"api: get_licenses: license_clues: {license_clues}")
+
+    if detected_expressions:
+        detected_license_expression = combine_expressions(
+            expressions=detected_expressions,
+            relation='AND',
+            unique=True,
         )
-
-    detected_license_expression = combine_expressions(
-        expressions=detected_expressions,
-        relation='AND',
-        unique=True,
-    )
-
-    if detected_license_expression:
         detected_license_expression_spdx = str(build_spdx_license_expression(
             detected_license_expression,
             licensing=get_cache().licensing

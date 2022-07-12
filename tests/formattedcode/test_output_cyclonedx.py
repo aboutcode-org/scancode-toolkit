@@ -148,7 +148,7 @@ def test_get_author_from_parties_default_none():
 
 
 def test_get_licenses_from_package():
-    package = {'license_expression': 'mit or gpl-2.0'}
+    package = {'declared_license_expression': 'mit or gpl-2.0'}
     licenses = [l.to_dict() for l in CycloneDxLicenseExpression.from_package(package)]
     expected = [{'expression': 'MIT OR GPL-2.0-only'}]
     assert licenses == expected

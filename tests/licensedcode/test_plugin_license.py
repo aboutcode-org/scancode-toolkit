@@ -12,9 +12,7 @@ import os
 import pytest
 from commoncode.testcase import FileDrivenTesting
 
-from licensedcode.plugin_license import add_referenced_filenames_license_matches
-from licensedcode.plugin_license import find_referenced_resource
-from licensedcode.plugin_license import get_referenced_filenames
+from scancode.api import get_licenses
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -25,6 +23,27 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 """
 These tests spawn new process as if launched from the command line.
 """
+
+
+def test_license_detection_api_works():
+    test_loc = test_env.get_test_loc('plugin_license/scan/e2fsprogs/e2fsprogs-copyright')
+    detections = list(get_licenses(location=test_loc))
+    assert detections
+
+
+def test_license_detection_plugin_works():
+    test_dir = test_env.get_test_loc('plugin_license/scan/e2fsprogs/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/scan/e2fsprogs-expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_license_option_reports_license_expressions():

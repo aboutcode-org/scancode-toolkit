@@ -45,7 +45,7 @@ class CycloneDxLicenseExpression(ToDictMixin):
         Yield CycloneDxLicenseExpression built from a mapping of ``package``
         data.
         """
-        license_expression = package.get('license_expression')
+        license_expression = package.get('declared_license_expression')
         if license_expression:
             spdx = build_spdx_license_expression(license_expression)
             yield CycloneDxLicenseExpression(expression=spdx)

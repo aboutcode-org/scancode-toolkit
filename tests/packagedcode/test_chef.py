@@ -57,7 +57,7 @@ class TestChef(PackageTester):
             license='public-domain',
         )
         expected_file = self.get_test_loc('chef/basic/test_package.json.expected')
-        self.check_packages_data(
+        self.check_package_data(
             chef.build_package(package_data, datasource_id='chef_cookbook_metadata_rb'),
             expected_file,
             regen=REGEN_TEST_FIXTURES,
@@ -72,7 +72,7 @@ class TestChef(PackageTester):
             license='public-domain',
         )
         expected_file = self.get_test_loc('chef/basic/test_package.json.expected')
-        self.check_packages_data(
+        self.check_package_data(
             chef.build_package(package_data, datasource_id='chef_cookbook_metadata_rb'),
             expected_file,
             regen=REGEN_TEST_FIXTURES,
@@ -88,7 +88,7 @@ class TestChef(PackageTester):
             dependencies={'test dependency': '0.01'},
         )
         expected_file = self.get_test_loc('chef/basic/test_package_dependencies.json.expected')
-        self.check_packages_data(
+        self.check_package_data(
             chef.build_package(package_data, datasource_id='chef_cookbook_metadata_rb'),
             expected_file,
             regen=REGEN_TEST_FIXTURES,
@@ -105,7 +105,7 @@ class TestChef(PackageTester):
             maintainer_email='test_maintainer@example.com',
         )
         expected_file = self.get_test_loc('chef/basic/test_package_parties.json.expected')
-        self.check_packages_data(
+        self.check_package_data(
             chef.build_package(package_data, datasource_id='chef_cookbook_metadata_rb'),
             expected_file,
             regen=REGEN_TEST_FIXTURES,
@@ -124,7 +124,7 @@ class TestChef(PackageTester):
         expected_file = self.get_test_loc(
             'chef/basic/test_package_code_view_url_and_bug_tracking_url.json.expected'
         )
-        self.check_packages_data(
+        self.check_package_data(
             chef.build_package(package_data, datasource_id='chef_cookbook_metadata_rb'),
             expected_file,
             regen=REGEN_TEST_FIXTURES,

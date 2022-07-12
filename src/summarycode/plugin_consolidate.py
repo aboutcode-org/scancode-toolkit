@@ -245,7 +245,7 @@ def get_consolidated_packages(codebase):
             package_root.save(codebase)
             is_build_file = isinstance(package,     )
             package_resources = list(package.get_package_resources(package_root, codebase))
-            package_license_expression = package.license_expression
+            package_license_expression = package.declared_license_expression
             package_copyright = package.copyright
 
             package_holders = []

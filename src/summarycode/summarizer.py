@@ -231,7 +231,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
         if not is_key_package(package, codebase):
             continue
 
-        license_expression = package.license_expression
+        license_expression = package.declared_license_expression
         if license_expression:
             license_expressions.append(license_expression)
 

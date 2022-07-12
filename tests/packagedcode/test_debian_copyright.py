@@ -20,6 +20,7 @@ from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import CopyrightFilesParagraph
 from license_expression import Licensing
 
+from packagedcode.licensing import get_declared_license_expression_spdx
 from packagedcode import debian_copyright
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -62,6 +63,12 @@ def check_expected_parse_copyright_file(
             simplify_licenses=simplify_licenses,
         )
 
+        license_detections = dc.get_license_detections_mapping()
+
+        declared_license_expression_spdx = get_declared_license_expression_spdx(
+            declared_license_expression=license_expression
+        )
+
         license_expression_keys = set(_licensing.license_keys(license_expression))
 
         copyrght = dc.get_copyright(
@@ -71,14 +78,13 @@ def check_expected_parse_copyright_file(
 
         primary_license = dc.primary_license
 
-        match_details = list(map(get_match_details, dc.license_matches))
-
         results = {
             'primary_license': primary_license,
             'declared_license': declared_license,
             'license_expression': license_expression,
+            'declared_license_expression_spdx': declared_license_expression_spdx,
             'copyright': copyrght,
-            'matches': match_details,
+            'license_detections': license_detections,
         }
 
         if regen:
@@ -112,30 +118,6 @@ def check_expected_parse_copyright_file(
             'unknown-license-reference should not be detected',
         )
         assert results == saneyaml.dump(expected)
-
-
-def get_match_details(match):
-    '''
-    Return a mapping of match details for LicenseMatch ``match``.
-    '''
-    details = {}
-    details['score'] = str(match.score())
-    details['start_line'] = str(match.start_line)
-    details['end_line'] = str(match.end_line)
-    details['matcher'] = match.matcher
-    details['rule_length'] = str(match.rule.length)
-    details['matched_length'] = str(match.len())
-    details['match_coverage'] = str(match.coverage())
-    details['rule_relevance'] = str(match.rule.relevance)
-    details['identifier'] = match.rule.identifier
-    details['license_expression'] = match.rule.license_expression
-    details['is_license_text'] = match.rule.is_license_text
-    details['is_license_notice'] = match.rule.is_license_notice
-    details['is_license_reference'] = match.rule.is_license_reference
-    details['is_license_tag'] = match.rule.is_license_tag
-    details['is_license_intro'] = match.rule.is_license_intro
-    details['matched_text'] = match.matched_text(whole_lines=False, highlight=True).strip()
-    return details
 
 
 def relative_walk(dir_path):
@@ -246,7 +228,7 @@ class TestDebianDetector(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
 
     def test_add_unknown_matches(self):
-        matches = debian_copyright.add_unknown_matches(name='foo', text='bar')
+        matches = debian_copyright.add_undetected_debian_matches(name='foo', text='bar')
         assert len(matches) == 1
         match = matches[0]
         assert match.matched_text() == 'foo\nbar'
