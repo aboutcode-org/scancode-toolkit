@@ -56,7 +56,7 @@ class BaseDartPubspecHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
+        return compute_normalized_license(package.extracted_license_statement)
 
 
 class DartPubspecYamlHandler(BaseDartPubspecHandler):
@@ -277,7 +277,7 @@ def build_package(pubspec_data):
     version = pubspec_data.get('version')
     description = pubspec_data.get('description')
     homepage_url = pubspec_data.get('homepage')
-    declared_license = pubspec_data.get('license')
+    extracted_license_statement = pubspec_data.get('license')
     vcs_url = pubspec_data.get('repository')
     download_url = pubspec_data.get('archive_url')
 
@@ -346,7 +346,7 @@ def build_package(pubspec_data):
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
 
-    package = models.PackageData(
+    return models.PackageData(
         datasource_id=DartPubspecYamlHandler.datasource_id,
         type=DartPubspecYamlHandler.default_primary_language,
         primary_language=DartPubspecYamlHandler.default_primary_language,
@@ -355,7 +355,7 @@ def build_package(pubspec_data):
         download_url=download_url,
         vcs_url=vcs_url,
         description=description,
-        declared_license=declared_license,
+        extracted_license_statement=extracted_license_statement,
         parties=parties,
         homepage_url=homepage_url,
         dependencies=package_dependencies,
@@ -364,8 +364,3 @@ def build_package(pubspec_data):
         api_data_url=api_data_url,
         repository_download_url=repository_download_url,
     )
-
-    if not package.license_expression and package.declared_license:
-        package.license_expression = models.compute_normalized_license(package.declared_license)
-
-    return package

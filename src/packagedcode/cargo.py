@@ -42,7 +42,7 @@ class CargoTomlHandler(models.DatafileHandler):
         authors = core_package_data.get('authors') or []
         parties = list(get_parties(person_names=authors, party_role='author'))
 
-        declared_license = core_package_data.get('license')
+        extracted_license_statement = core_package_data.get('license')
         # TODO: load as a notice_text
         license_file = core_package_data.get('license-file')
 
@@ -75,7 +75,7 @@ class CargoTomlHandler(models.DatafileHandler):
             primary_language=cls.default_primary_language,
             description=description,
             parties=parties,
-            declared_license=declared_license,
+            extracted_license_statement=extracted_license_statement,
             vcs_url=vcs_url,
             homepage_url=homepage_url,
             repository_homepage_url=repository_homepage_url,

@@ -33,7 +33,7 @@ class BaseGemHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
+        return compute_normalized_license(package.extracted_license_statement)
 
 
 class GemArchiveHandler(BaseGemHandler):
@@ -151,35 +151,27 @@ class GemspecHandler(BaseGemHandler):
         )
         vcs_url = gemspec.get('source')
 
-        declared_license = gemspec.get('license')
-        if declared_license:
-            # FIXME: why splitting here? this is a job for the license detection
-            declared_license = declared_license.split(',')
+        extracted_license_statement = gemspec.get('license')
 
         parties = get_parties(gemspec)
         dependencies = gemspec.get('dependencies') or []
 
         urls = get_urls(name=name, version=version)
 
-        package_data = models.PackageData(
+        yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
             version=version,
             parties=parties,
             homepage_url=homepage_url,
+            vcs_url=vcs_url,
             description=description,
-            declared_license=declared_license,
+            extracted_license_statement=extracted_license_statement,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
             **urls
         )
-
-        if not package_data.license_expression and package_data.declared_license:
-            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
-
-        yield package_data
-
 
 class GemspecInExtractedGemHandler(GemspecHandler):
     datasource_id = 'gemspec_extracted'
@@ -481,7 +473,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
     # See https://guides.rubygems.org/specification-reference/#licenseo
     lic = gem_data.get('license')
     licenses = gem_data.get('licenses')
-    declared_license = licenses_mapper(lic, licenses)
+    extracted_license_statement = licenses_mapper(lic, licenses)
 
     # we may have tow homepages and one may be wrong.
     # we prefer the one from the metadata
@@ -502,7 +494,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
         qualifiers=qualifiers,
         description=description,
         homepage_url=homepage_url,
-        declared_license=declared_license,
+        extracted_license_statement=extracted_license_statement,
         bug_tracking_url=metadata.get('bug_tracking_uri'),
         code_view_url=metadata.get('source_code_uri'),
         file_references=file_references,
@@ -539,9 +531,6 @@ def build_rubygem_package_data(gem_data, datasource_id):
 
     if not package_data.homepage_url:
         package_data.homepage_url = rubygems_homepage_url(name, version)
-
-    if not package_data.license_expression and package_data.declared_license:
-        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
     return package_data
 

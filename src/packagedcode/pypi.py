@@ -72,7 +72,7 @@ class BasePypiHandler(models.DatafileHandler):
 
     @classmethod
     def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
+        return compute_normalized_license(package.extracted_license_statement)
 
 
 class PythonEggPkgInfoFile(BasePypiHandler):
@@ -204,8 +204,8 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                         )
 
         if package:
-            if not package.license_expression:
-                package.license_expression = compute_normalized_license(package.declared_license)
+            if not package.declared_license_expression:
+                package.declared_license_expression = compute_normalized_license(package.extracted_license_statement)
             package_uid = package.package_uid
 
             root = package_resource.parent(codebase)
@@ -445,25 +445,20 @@ def parse_metadata(location, datasource_id, package_type):
 
     file_references = list(get_file_references(dist))
 
-    package_data = models.PackageData(
+    return models.PackageData(
         datasource_id=datasource_id,
         type=package_type,
         primary_language='Python',
         name=name,
         version=version,
         description=get_description(meta, location),
-        declared_license=get_declared_license(meta),
+        extracted_license_statement=get_declared_license(meta),
         keywords=get_keywords(meta),
         parties=get_parties(meta),
         dependencies=dependencies,
         file_references=file_references,
         **urls,
     )
-
-    if not package_data.license_expression and package_data.declared_license:
-        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
-
-    return package_data
 
 
 def urlsafe_b64decode(data):
@@ -591,7 +586,7 @@ class PypiSdistArchiveHandler(BasePypiHandler):
             name=name,
             version=version,
             description=get_description(sdist, location=location),
-            declared_license=get_declared_license(sdist),
+            extracted_license_statement=get_declared_license(sdist),
             keywords=get_keywords(sdist),
             parties=get_parties(sdist),
             **urls,
@@ -628,7 +623,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             version=version,
             description=get_description(setup_args),
             parties=get_parties(setup_args),
-            declared_license=get_declared_license(setup_args),
+            extracted_license_statement=get_declared_license(setup_args),
             dependencies=get_setup_py_dependencies(setup_args),
             keywords=get_keywords(setup_args),
             **urls,

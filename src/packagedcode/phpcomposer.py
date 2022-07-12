@@ -52,7 +52,7 @@ class BasePhpComposerHandler(models.DatafileHandler):
         """
         Per https://getcomposer.org/doc/04-schema.md#license this is an expression
         """
-        return compute_normalized_license(package.declared_license)
+        return compute_normalized_license(package.extracted_license_statement)
 
 
 class PhpComposerJsonHandler(BasePhpComposerHandler):
@@ -162,9 +162,7 @@ def build_package_data(package_data):
     # Parse vendor from name value
     vendor_mapper(package)
 
-    if not package.license_expression and package.declared_license:
-        package.license_expression = models.compute_normalized_license(package.declared_license)
-
+    package.populate_license_fields()
     return package
 
 
@@ -256,10 +254,10 @@ def licensing_mapper(licenses, package, is_private=False):
     license.
     """
     if not licenses and is_private:
-        package.declared_license = 'proprietary-license'
+        package.extracted_license_statement = 'proprietary-license'
         return package
 
-    package.declared_license = licenses
+    package.extracted_license_statement = licenses
     return package
 
 

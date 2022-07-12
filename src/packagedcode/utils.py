@@ -137,7 +137,6 @@ def combine_expressions(
     return expressions and str(le_combine_expressions(expressions, relation, unique, licensing)) or None
 
 
-
 def get_ancestor(levels_up, resource, codebase):
     """
     Return the nth-``levels_up`` ancestor Resource of ``resource`` in

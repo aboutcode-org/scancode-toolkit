@@ -55,7 +55,7 @@ class OpamFileHandler(models.DatafileHandler):
         download_url = opams.get('src')
         vcs_url = opams.get('dev-repo')
         bug_tracking_url = opams.get('bug-reports')
-        declared_license = opams.get('license')
+        extracted_license_statement = opams.get('license')
         sha1 = opams.get('sha1')
         md5 = opams.get('md5')
         sha256 = opams.get('sha256')
@@ -90,7 +90,7 @@ class OpamFileHandler(models.DatafileHandler):
                 )
             )
 
-        package_data = models.PackageData(
+        yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -103,7 +103,7 @@ class OpamFileHandler(models.DatafileHandler):
             sha256=sha256,
             sha512=sha512,
             bug_tracking_url=bug_tracking_url,
-            declared_license=declared_license,
+            extracted_license_statement=extracted_license_statement,
             description=description,
             parties=parties,
             dependencies=package_dependencies,
@@ -111,11 +111,6 @@ class OpamFileHandler(models.DatafileHandler):
             repository_homepage_url=repository_homepage_url,
             primary_language=cls.default_primary_language
         )
-
-        if not package_data.license_expression and package_data.declared_license:
-            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
-
-        yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):

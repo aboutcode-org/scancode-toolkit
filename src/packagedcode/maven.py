@@ -96,13 +96,15 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, base_url='https://repo1.maven.org/maven2'):
-        return parse(
+        package_data = parse(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             base_url=base_url,
         )
+        if package_data:
+            yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase):
@@ -141,9 +143,6 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
         return models.DatafileHandler.assign_package_to_resources(package, resource=root, codebase=codebase)
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(declared_license=package.declared_license)
 
 # TODO: assemble with its pom!!
 class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
@@ -1092,7 +1091,7 @@ def parse(
     base_url='https://repo1.maven.org/maven2',
 ):
     """
-    Yield Packagedata objects from parsing a Maven pom file at `location` or
+    Return Packagedata objects from parsing a Maven pom file at `location` or
     using the provided `text` (one or the other but not both).
     """
     pom = get_maven_pom(location=location)
@@ -1122,7 +1121,7 @@ def parse(
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
-    declared_license = pom.licenses
+    extracted_license_statement = pom.licenses
 
     group_id = pom.group_id
     artifact_id = pom.artifact_id
@@ -1161,7 +1160,7 @@ def parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    package_data = models.PackageData(
+    return models.PackageData(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1171,18 +1170,13 @@ def parse(
         qualifiers=qualifiers or None,
         description=description or None,
         homepage_url=pom.url or None,
-        declared_license=declared_license or None,
+        extracted_license_statement=extracted_license_statement or None,
         parties=get_parties(pom),
         dependencies=get_dependencies(pom),
         source_packages=source_packages,
         bug_tracking_url=bug_tracking_url,
         **urls,
     )
-
-    if not package_data.license_expression and package_data.declared_license:
-        package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
-
-    yield package_data
 
 def build_vcs_and_code_view_urls(scm):
     """

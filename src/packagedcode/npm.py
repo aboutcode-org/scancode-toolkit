@@ -8,6 +8,8 @@
 #
 import base64
 import io
+import os
+import logging
 import json
 import re
 import urllib.parse
@@ -31,6 +33,27 @@ per https://docs.npmjs.com/files/package.json
 """
 To check https://github.com/npm/normalize-package-data
 """
+
+
+SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+
+TRACE = SCANCODE_DEBUG_PACKAGE
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 # TODO: add os and engines from package.json??
 # TODO: add new yarn v2 lock file format
@@ -86,8 +109,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 )
                 package_uid = package.package_uid
 
-                if not package.license_expression:
-                    package.license_expression = compute_normalized_license(package.declared_license)
+                package.populate_license_fields()
 
                 root = package_resource.parent(codebase)
                 if root:
@@ -233,15 +255,12 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         lics = package_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
 
-        if not package.license_expression and package.declared_license:
-            package.license_expression = compute_normalized_license(package.declared_license)
+        package.populate_license_fields()
+
+        if TRACE:
+            logger_debug(f'NpmPackageJsonHandler: parse: package: {package.to_dict()}')
 
         yield package
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
-
 
 class BaseNpmLockHandler(BaseNpmHandler):
 
@@ -329,7 +348,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             )
 
             # only seen in v2 for the top level package... but good to keep
-            declared_license = dep_data.get('license')
+            extracted_license_statement = dep_data.get('license')
 
             # URLs and checksums
             misc = get_urls(ns, name, version)
@@ -345,7 +364,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 namespace=ns,
                 name=name,
                 version=version,
-                declared_license=declared_license,
+                extracted_license_statement=extracted_license_statement,
                 **misc,
             )
             # these are paths t the root of the installed package in v2
@@ -958,7 +977,8 @@ def licenses_mapper(license, licenses, package):  # NOQA
     """
     declared_license = get_declared_licenses(license) or []
     declared_license.extend(get_declared_licenses(licenses)  or [])
-    package.declared_license = declared_license
+    if declared_license:
+        package.extracted_license_statement = declared_license
     return package
 
 
