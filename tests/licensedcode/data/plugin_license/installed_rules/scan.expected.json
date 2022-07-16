@@ -34,7 +34,7 @@
       "licenses": [
         {
           "key": "example-installed-1",
-          "score": 100.0,
+          "score": 61.0,
           "name": "Example Installed License 1",
           "short_name": "Example Installed License 1",
           "category": "Permissive",
@@ -46,12 +46,12 @@
           "reference_url": "https://scancode-licensedb.aboutcode.org/example-installed-1",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.yml",
-          "spdx_license_key": "scancode-example-installed1",
-          "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
+          "spdx_license_key": "",
+          "spdx_url": "",
           "start_line": 1,
           "end_line": 1,
           "matched_rule": {
-            "identifier": "example-installed-1.LICENSE",
+            "identifier": "example-installed-1.RULE",
             "license_expression": "example-installed-1",
             "licenses": [
               "example-installed-1"
@@ -67,7 +67,7 @@
             "rule_length": 11,
             "matched_length": 11,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 61
           }
         }
       ],

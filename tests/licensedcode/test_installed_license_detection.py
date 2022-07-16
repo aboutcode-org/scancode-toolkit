@@ -38,3 +38,19 @@ def test_detection_with_single_installed_external_license():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('plugin_license/installed_licenses/scan.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+@pytest.mark.scanslow
+def test_detection_with_single_installed_external_rule():
+    test_dir = test_env.get_test_loc('plugin_license/installed_rules/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/installed_rules/scan.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
