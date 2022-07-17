@@ -14,14 +14,14 @@
         "type": "person",
         "role": "author",
         "name": "Mark Pilgrim",
-        "email": null,
+        "email": "mark@diveintomark.org",
         "url": null
       },
       {
         "type": "person",
         "role": "maintainer",
         "name": "Daniel Blanchard",
-        "email": null,
+        "email": "dan.blanchard@gmail.com",
         "url": null
       }
     ],

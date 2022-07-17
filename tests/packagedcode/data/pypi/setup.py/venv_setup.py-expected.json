@@ -14,14 +14,14 @@
         "type": "person",
         "role": "author",
         "name": "Ian Bicking",
-        "email": null,
+        "email": "ianb@colorstudy.com",
         "url": null
       },
       {
         "type": "person",
         "role": "maintainer",
         "name": "Jannis Leidel, Carl Meyer and Brian Rosner",
-        "email": null,
+        "email": "python-virtualenv@groups.google.com",
         "url": null
       }
     ],

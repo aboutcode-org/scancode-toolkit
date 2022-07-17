@@ -611,7 +611,7 @@
               "type": "person",
               "role": "author",
               "name": "The pip developers",
-              "email": null,
+              "email": "distutils-sig@python.org",
               "url": null
             }
           ],

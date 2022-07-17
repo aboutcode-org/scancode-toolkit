@@ -16,7 +16,9 @@
         "name": [
           "Thrift Developers"
         ],
-        "email": null,
+        "email": [
+          "dev@thrift.apache.org"
+        ],
         "url": null
       }
     ],

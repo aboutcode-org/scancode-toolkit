@@ -14,14 +14,14 @@
         "type": "person",
         "role": "author",
         "name": "Armin Ronacher",
-        "email": null,
+        "email": "armin.ronacher@active-4.com",
         "url": null
       },
       {
         "type": "person",
         "role": "maintainer",
         "name": "Pallets team",
-        "email": null,
+        "email": "contact@palletsprojects.com",
         "url": null
       }
     ],

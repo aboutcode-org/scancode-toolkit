@@ -631,7 +631,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             name=name,
             version=version,
             description=get_description(setup_args),
-            parties=get_parties(setup_args),
+            parties=get_setup_parties(setup_args),
             extracted_license_statement=get_declared_license(setup_args),
             dependencies=get_setup_py_dependencies(setup_args),
             keywords=get_keywords(setup_args),

@@ -14,14 +14,14 @@
         "type": "person",
         "role": "author",
         "name": "David Goodger",
-        "email": null,
+        "email": "goodger@python.org",
         "url": null
       },
       {
         "type": "person",
         "role": "maintainer",
         "name": "docutils-develop list",
-        "email": null,
+        "email": "docutils-develop@lists.sourceforge.net",
         "url": null
       }
     ],
