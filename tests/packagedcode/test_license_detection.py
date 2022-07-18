@@ -71,3 +71,21 @@ def test_license_reference_detection_in_manifest_licence_comment():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_siblings():
+    test_dir = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection-expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)

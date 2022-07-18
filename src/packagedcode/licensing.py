@@ -23,10 +23,15 @@ from licensedcode.detection import get_matches_from_detection_objects
 from licensedcode.detection import get_unknown_license_detection
 from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import find_referenced_resource
+from licensedcode.detection import detect_licenses
 from licensedcode.spans import Span
 from licensedcode import query
 
 from packagedcode.utils import combine_expressions
+from summarycode.classify import check_resource_name_start_and_end
+from summarycode.classify import LEGAL_STARTS_ENDS
+from summarycode.classify import README_STARTS_ENDS
+
 
 """
 Detect and normalize licenses as found in package manifests data.
@@ -57,7 +62,6 @@ def add_referenced_license_matches_for_package(resource, codebase):
     ``referenced_filenames`` if any. Return None if ``resource`` is not a file
     Resource or was not updated.
     """
-    # raise Exception
     if TRACE:
         logger_debug(f'packagedcode.licensing: add_referenced_license_matches_for_package: resource: {resource.path}')
 
@@ -129,6 +133,69 @@ def add_referenced_license_matches_for_package(resource, codebase):
 
             codebase.save_resource(resource)
             yield resource
+
+
+def add_license_from_sibling_file(resource, codebase):
+    
+    if TRACE:
+        logger_debug(f'packagedcode.licensing: add_license_from_sibling_file: resource: {resource.path}')
+
+    if not resource.is_file:
+        return
+
+    package_data = resource.package_data
+    if not package_data:
+        return
+
+    for pkg in package_data:
+        pkg_license_detections = pkg["license_detections"]
+        if pkg_license_detections:
+            return
+
+    license_detections, license_expression = get_license_detections_from_sibling_file(resource, codebase)
+    if not license_detections:
+        return
+
+    package = resource.package_data[0]
+    package["license_detections"] = license_detections
+    package["declared_license_expression"] = license_expression
+    package["declared_license_expression_spdx"] = str(build_spdx_license_expression(
+        license_expression=pkg["declared_license_expression"],
+        licensing=get_cache().licensing,
+    ))
+
+    codebase.save_resource(resource)
+    return package
+
+
+def get_license_detections_from_sibling_file(resource, codebase):
+
+    locations = []
+
+    if resource.has_parent():
+        for sibling in resource.siblings(codebase):
+            is_legal = check_resource_name_start_and_end(resource=sibling, STARTS_ENDS=LEGAL_STARTS_ENDS)
+            is_readme = check_resource_name_start_and_end(resource=sibling, STARTS_ENDS=README_STARTS_ENDS)
+            if is_legal or is_readme:
+                locations.append(sibling.location)
+
+    if not locations:
+        return
+
+    license_detections = []
+    for location in locations:
+        detections = detect_licenses(
+            location=location,
+            analysis=DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value,
+            post_scan=True
+        )
+        for detection in detections:
+            license_detections.append(detection)
+
+    if not license_detections:
+        return
+
+    return get_mapping_and_expression_from_detections(license_detections)
 
 
 def get_declared_license_expression_spdx(declared_license_expression):

@@ -82,6 +82,9 @@ class DetectionCategory(Enum):
     PERFECT_DETECTION = 'perfect-detection'
     UNKNOWN_INTRO_BEFORE_DETECTION = 'unknown-intro-before-detection'
     UNKNOWN_FILE_REFERENCE_LOCAL = 'unknown-file-reference-local'
+    PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL = 'package-unknown-file-reference-local'
+    PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
+    PACKAGE_ADD_FROM_FILE = 'from-package-file'
     EXTRA_WORDS = 'extra-words'
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
@@ -105,6 +108,9 @@ class DetectionRule(Enum):
     UNKNOWN_FOLLOWED_BY_MATCH = 'unknown-ref-followed-by-match'
     UNVERSIONED_FOLLOWED_BY_VERSIONED = 'un-versioned-followed-by-versioned'
     UNDETECTED_LICENSE = 'undetected-license'
+    PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'package-unknown-reference-to-local-file'
+    PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
+    PACKAGE_ADD_FROM_FILE = 'from-package-file'
 
 
 @attr.s
@@ -160,16 +166,20 @@ class LicenseDetection:
     )
 
     @classmethod
-    def from_matches(cls, matches):
+    def from_matches(cls, matches, analysis=None, post_scan=False):
         """
         Return a LicenseDetection created out of `matches` list of LicenseMatch.
         """
         if not matches:
             return
+        
+        if analysis is None:
+            analysis=analyze_detection(matches)
 
         reasons, license_expression = get_detected_license_expression(
             matches=matches,
-            analysis=analyze_detection(matches),
+            analysis=analysis,
+            post_scan=post_scan,
         )
 
         if license_expression == None:
@@ -717,17 +727,33 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
     if analysis == DetectionCategory.UNDETECTED_LICENSE.value:
         matches_for_expression = matches
         reasons.append(DetectionRule.UNDETECTED_LICENSE.value)
+
     elif analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
         matches_for_expression = filter_license_intros(matches)
         reasons.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
+
     elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value and post_scan:
         matches_for_expression = filter_license_references(matches)
         reasons.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
+
+    elif analysis == DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value and post_scan:
+        matches_for_expression = filter_license_references(matches)
+        reasons.append(DetectionRule.PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
+
+    elif analysis == DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE and post_scan:
+        matches_for_expression = filter_license_references(matches)
+        reasons.append(DetectionRule.PACKAGE_ADD_FROM_SIBLING_FILE.value)
+
+    elif analysis == DetectionCategory.PACKAGE_ADD_FROM_FILE.value and post_scan:
+        matches_for_expression = filter_license_references(matches)
+        reasons.append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
+
     elif (
         analysis == DetectionCategory.UNKNOWN_MATCH.value or
         analysis == DetectionCategory.LICENSE_CLUES.value
     ):
         return reasons, combined_expression
+
     else:
         matches_for_expression = matches
         reasons.append(DetectionRule.NOT_COMBINED.value)
@@ -1067,7 +1093,16 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
         return resource
 
 
-def detect_licenses(location=None, query_string=None, min_score=0, deadline=sys.maxsize, as_expression=False, **kwargs):
+def detect_licenses(
+    location=None,
+    query_string=None,
+    analysis=None,
+    post_scan=False,
+    min_score=0,
+    deadline=sys.maxsize,
+    as_expression=False,
+    **kwargs
+):
     """
     Yield LicenseDetection objects for licenses detected in the file at
     `location`.
@@ -1104,4 +1139,8 @@ def detect_licenses(location=None, query_string=None, min_score=0, deadline=sys.
         logger_debug(f"detection: detect_licenses: location: {location}: query_string: {query_string}")
 
     for group_of_matches in group_matches(matches):
-        yield LicenseDetection.from_matches(matches=group_of_matches)
+        yield LicenseDetection.from_matches(
+            matches=group_of_matches,
+            analysis=analysis,
+            post_scan=post_scan
+        )
