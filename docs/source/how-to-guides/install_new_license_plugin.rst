@@ -20,11 +20,11 @@ This is the basic structure of the example plugin::
     ├── src/
     │   └── licenses_to_install1/
     │       ├── licenses/
-    │       │   ├── example_installed_1.LICENSE
-    │       │   └── example_installed_1.yaml
+    │       │   ├── example-installed-1.LICENSE
+    │       │   └── example-installed-1.yaml
     |       ├── rules/
-    │       │   ├── example_installed_1.RULE
-    │       │   └── example_installed_1.yaml
+    │       │   ├── example-installed-1.RULE
+    │       │   └── example-installed-1.yaml
     │       └── __init__.py
     ├── gpl-1.0.LICENSE
     ├── MANIFEST.in
@@ -79,3 +79,61 @@ Installing and using the plugin
 To use the plugin in license detection, all you need to do is install it using ``pip``.
 Once it is installed, the contained licenses and rules will automatically be used in
 license detection assuming the plugin follows the correct directory structure conventions.
+
+Writing tests for new installed licenses
+----------------------------------------
+
+Look at ``tests/licensedcode/data/example_external_licenses/licenses_to_install1`` to see
+an example of a plugin with tests. The tests are contained in the ``tests`` directory::
+
+   licenses_to_install1/
+    ├── src/
+    │   └── licenses_to_install1/
+    │       ├── licenses/
+    │       │   ├── example-installed-1.LICENSE
+    │       │   └── example-installed-1.yaml
+    │       ├── rules/
+    │       │   ├── example-installed-1.RULE
+    │       │   └── example-installed-1.yaml
+    │       └── __init__.py/
+    ├── tests/
+    │    ├── data/
+    │    │   ├── example-installed-1.txt
+    │    │   └── example-installed-1.txt.yml
+    │    └── test_detection_datadriven.py
+    ├── gpl-1.0.LICENSE
+    ├── MANIFEST.in
+    ├── setup.cfg
+    └── setup.py
+
+To write your own tests, first make sure ``setup.py`` includes ``scancode-toolkit``
+as a dependency::
+
+    ...
+    install_requires=[
+        'scancode-toolkit',
+    ],
+    ...
+
+Then you can define a test class and call the ``build_tests`` method defined in
+``licensedcode_test_utils``, passing in the test directory and the test class as parameters::
+
+    TEST_DIR = abspath(join(dirname(__file__), 'data'))
+
+
+    class TestLicenseDataDriven1(unittest.TestCase):
+        pass
+
+
+    licensedcode_test_utils.build_tests(
+        TEST_DIR,
+        clazz=TestLicenseDataDriven1, regen=scancode_config.REGEN_TEST_FIXTURES)
+
+The ``tests/data`` directory contains a pair of files for each license:
+a license text file and a YAML file specifying the expected license expressions from the test.
+
+Finally, to run the test, do the following:
+
+1. Create a virtual environment to install the package into.
+2. Install the package using ``pip``, e.g. ``pip install ./licenses_to_install1``.
+3. Run the tests, e.g. ``py.test tests/test_detection_datadriven.py``.

@@ -3,7 +3,6 @@
 
 from glob import glob
 from os.path import basename
-from os.path import join
 from os.path import splitext
 
 from setuptools import find_packages
@@ -37,6 +36,11 @@ setup(
     ],
     keywords=[
         'open source', 'scancode_licenses',
+    ],
+    install_requires=[
+        'scancode-toolkit',
+        'wheel',
+        'pytest',
     ],
     entry_points={
         'scancode_location_provider': [
