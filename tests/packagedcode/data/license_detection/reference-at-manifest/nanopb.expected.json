@@ -1,0 +1,431 @@
+{
+  "dependencies": [],
+  "packages": [
+    {
+      "type": "pods",
+      "namespace": null,
+      "name": "nanopb",
+      "version": "1.30905.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Protocol buffers with small code size.\nNanopb is a small code-size Protocol Buffers implementation\n                    in ansi C. It is especially suitable for use in\n                    microcontrollers, but fits any memory restricted system.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Petteri Aimonen ",
+          "email": "jpa@nanopb.mail.kapsi.fi",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/nanopb/nanopb",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/nanopb/nanopb/issues/",
+      "code_view_url": "https://github.com/nanopb/nanopb/tree/1.30905.0",
+      "vcs_url": "https://github.com/nanopb/nanopb.git",
+      "copyright": null,
+      "declared_license_expression": "zlib",
+      "declared_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "detection_rules": [
+            "unknown-reference-to-local-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "zlib",
+              "licensedb_identifier": "zlib_in_manifest.RULE",
+              "referenced_filenames": [
+                "LICENSE.txt"
+              ],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": ":type = zlib, :file = LICENSE.txt",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 20,
+              "matched_length": 132,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "licensedb_identifier": "zlib.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 132,
+              "rule_relevance": 100,
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extracted_license_statement": ":type = zlib, :file = LICENSE.txt",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
+      "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/1/e/nanopb/1.30905.0/nanopb.podspec.json",
+      "package_uid": "pkg:pods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "nanopb.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:pods/nanopb@1.30905.0"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "type": "file",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 20,
+              "matched_length": 132,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "licensedb_identifier": "zlib.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 132,
+              "rule_relevance": 100,
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "percentage_of_license_text": 92.31,
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "nanopb.podspec",
+      "type": "file",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "detection_rules": [
+            "unknown-reference-to-local-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 14,
+              "end_line": 14,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "licensedb_identifier": "zlib_in_manifest.RULE",
+              "referenced_filenames": [
+                "LICENSE.txt"
+              ],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "type => 'zlib', :file => 'LICENSE.txt' }",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 20,
+              "matched_length": 132,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "licensedb_identifier": "zlib.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 132,
+              "rule_relevance": 100,
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
+              "licenses": [
+                {
+                  "key": "zlib",
+                  "name": "ZLIB License",
+                  "short_name": "ZLIB License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "zlib",
+                  "homepage_url": "http://www.zlib.net/",
+                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                  "spdx_license_key": "Zlib",
+                  "spdx_url": "https://spdx.org/licenses/Zlib"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "percentage_of_license_text": 2.49,
+      "package_data": [
+        {
+          "type": "pods",
+          "namespace": null,
+          "name": "nanopb",
+          "version": "1.30905.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Protocol buffers with small code size.\nNanopb is a small code-size Protocol Buffers implementation\n                    in ansi C. It is especially suitable for use in\n                    microcontrollers, but fits any memory restricted system.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Petteri Aimonen ",
+              "email": "jpa@nanopb.mail.kapsi.fi",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/nanopb/nanopb",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/nanopb/nanopb/issues/",
+          "code_view_url": "https://github.com/nanopb/nanopb/tree/1.30905.0",
+          "vcs_url": "https://github.com/nanopb/nanopb.git",
+          "copyright": null,
+          "declared_license_expression": "zlib",
+          "declared_license_expression_spdx": "Zlib",
+          "license_detections": [
+            {
+              "license_expression": "zlib",
+              "detection_rules": [
+                "unknown-reference-to-local-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "zlib",
+                  "licensedb_identifier": "zlib_in_manifest.RULE",
+                  "referenced_filenames": [
+                    "LICENSE.txt"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": ":type = zlib, :file = LICENSE.txt",
+                  "licenses": [
+                    {
+                      "key": "zlib",
+                      "name": "ZLIB License",
+                      "short_name": "ZLIB License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "zlib",
+                      "homepage_url": "http://www.zlib.net/",
+                      "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                      "spdx_license_key": "Zlib",
+                      "spdx_url": "https://spdx.org/licenses/Zlib"
+                    }
+                  ]
+                },
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 20,
+                  "matched_length": 132,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "zlib",
+                  "licensedb_identifier": "zlib.LICENSE",
+                  "referenced_filenames": [],
+                  "is_license_text": true,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 132,
+                  "rule_relevance": 100,
+                  "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
+                  "licenses": [
+                    {
+                      "key": "zlib",
+                      "name": "ZLIB License",
+                      "short_name": "ZLIB License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "zlib",
+                      "homepage_url": "http://www.zlib.net/",
+                      "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                      "spdx_license_key": "Zlib",
+                      "spdx_url": "https://spdx.org/licenses/Zlib"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extracted_license_statement": ":type = zlib, :file = LICENSE.txt",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
+          "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/1/e/nanopb/1.30905.0/nanopb.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:pods/nanopb@1.30905.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:pods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

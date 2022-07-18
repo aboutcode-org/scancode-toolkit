@@ -15,9 +15,14 @@ from license_expression import Licensing
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import LicenseDetection
+from licensedcode.detection import DetectionCategory
 from licensedcode.detection import group_matches
+from licensedcode.detection import get_detected_license_expression
+from licensedcode.detection import get_matches_from_detections
 from licensedcode.detection import get_matches_from_detection_objects
 from licensedcode.detection import get_unknown_license_detection
+from licensedcode.detection import get_referenced_filenames
+from licensedcode.detection import find_referenced_resource
 from licensedcode.spans import Span
 from licensedcode import query
 
@@ -42,9 +47,89 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(
-            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
-        )
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+
+def add_referenced_license_matches_for_package(resource, codebase):
+    """
+    Return an updated ``resource`` saving it in place, after adding new license
+    matches (licenses and license_expressions) following their Rule
+    ``referenced_filenames`` if any. Return None if ``resource`` is not a file
+    Resource or was not updated.
+    """
+    # raise Exception
+    if TRACE:
+        logger_debug(f'packagedcode.licensing: add_referenced_license_matches_for_package: resource: {resource.path}')
+
+    if not resource.is_file:
+        return
+
+    package_data = resource.package_data
+    if not package_data:
+        return
+
+    for pkg in package_data:
+    
+        license_detections = pkg["license_detections"]
+        if not license_detections:
+            continue
+
+        modified = False
+
+        for detection in license_detections:
+            detection_modified = False
+            matches = detection["matches"]
+            referenced_filenames = get_referenced_filenames(matches)
+            if not referenced_filenames:
+                continue 
+            
+            for referenced_filename in referenced_filenames:
+                referenced_resource = find_referenced_resource(
+                    referenced_filename=referenced_filename,
+                    resource=resource,
+                    codebase=codebase,
+                )
+
+                if referenced_resource and referenced_resource.license_detections:
+                    modified = True
+                    detection_modified = True
+                    matches.extend(
+                        get_matches_from_detections(
+                            license_detections=referenced_resource.license_detections
+                        )
+                    )
+
+            if not detection_modified:
+                continue
+
+            reasons, license_expression = get_detected_license_expression(
+                matches=matches,
+                analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
+                post_scan=True,
+            )
+            detection["license_expression"] = str(license_expression)
+            detection["detection_rules"] = reasons
+
+        if modified:
+            license_expressions = [
+                detection["license_expression"]
+                for detection in resource.license_detections
+            ]
+
+            pkg["declared_license_expression"] = combine_expressions(
+                expressions=license_expressions,
+                relation='AND',
+                unique=True,
+            )
+
+            pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
+                license_expression=pkg["declared_license_expression"],
+                licensing=get_cache().licensing,
+            ))
+
+            codebase.save_resource(resource)
+            yield resource
+
 
 def get_declared_license_expression_spdx(declared_license_expression):
 

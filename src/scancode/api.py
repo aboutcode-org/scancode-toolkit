@@ -197,7 +197,7 @@ def get_licenses(
     for detection in detections:
         all_qspans.extend(detection.qspans)
 
-        if detection.license_expression == None:
+        if detection.license_expression is None:
             detection_mapping = detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,

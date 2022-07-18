@@ -1,5 +1,5 @@
 // Copyright 2015, 2017 Simon Lydell
-// License: MIT. (See LICENSE.)
+// (See LICENSE.)
 
 var fs           = require("fs")
 var esprima      = require("esprima")

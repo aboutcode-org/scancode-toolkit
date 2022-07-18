@@ -7,101 +7,27 @@
         {
           "license_expression": "epl-2.0",
           "detection_rules": [
-            "unknown-intro-followed-by-match"
+            "not-combined"
           ],
           "matches": [
             {
               "score": 100.0,
               "start_line": 4,
-              "end_line": 5,
-              "matched_length": 14,
+              "end_line": 6,
+              "matched_length": 31,
               "match_coverage": 100.0,
               "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "licensedb_identifier": "license-intro_29.RULE",
+              "license_expression": "epl-2.0",
+              "licensedb_identifier": "epl-2.0_56.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
-              "is_license_notice": false,
+              "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
-              "is_license_intro": true,
-              "rule_length": 14,
-              "rule_relevance": 100,
-              "matched_text": "This program and the accompanying materials are made\n * available under the terms of the",
-              "licenses": [
-                {
-                  "key": "unknown-license-reference",
-                  "name": "Unknown License file reference",
-                  "short_name": "Unknown License reference",
-                  "category": "Unstated License",
-                  "is_exception": false,
-                  "is_unknown": true,
-                  "owner": "Unspecified",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-                  "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                }
-              ]
-            },
-            {
-              "score": 100.0,
-              "start_line": 5,
-              "end_line": 5,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "epl-2.0",
-              "licensedb_identifier": "epl-2.0_30.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 5,
+              "rule_length": 31,
               "rule_relevance": 100,
-              "matched_text": "Eclipse Public License 2.0",
-              "licenses": [
-                {
-                  "key": "epl-2.0",
-                  "name": "Eclipse Public License 2.0",
-                  "short_name": "EPL 2.0",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Eclipse Foundation",
-                  "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
-                  "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.yml",
-                  "spdx_license_key": "EPL-2.0",
-                  "spdx_url": "https://spdx.org/licenses/EPL-2.0"
-                }
-              ]
-            },
-            {
-              "score": 100.0,
-              "start_line": 6,
-              "end_line": 6,
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "epl-2.0",
-              "licensedb_identifier": "epl-2.0_2.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 8,
-              "rule_relevance": 100,
-              "matched_text": "https://www.eclipse.org/legal/epl-2.0/",
+              "matched_text": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/",
               "licenses": [
                 {
                   "key": "epl-2.0",
@@ -164,7 +90,7 @@
       "license_clues": [],
       "detected_license_expression": "epl-2.0",
       "detected_license_expression_spdx": "EPL-2.0",
-      "percentage_of_license_text": 76.74,
+      "percentage_of_license_text": 86.05,
       "scan_errors": []
     }
   ]

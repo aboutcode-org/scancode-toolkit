@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import posixpath
 import sys
 import os
 import logging
@@ -15,6 +16,8 @@ from enum import Enum
 import attr
 from license_expression import combine_expressions
 
+from commoncode.fileutils import file_name
+from commoncode.resource import clean_path
 from licensedcode.cache import get_index
 from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
@@ -457,6 +460,7 @@ def licenses_data_from_match(
 
     # LicenseDB Level Information (Rule that was matched)
     result['license_expression'] = match.rule.license_expression
+    # TODO: change this to `rule_identifier`
     result['licensedb_identifier'] = match.rule.identifier
     result['referenced_filenames'] = match.rule.referenced_filenames
     result['is_license_text'] = match.rule.is_license_text
@@ -1012,6 +1016,55 @@ def combine_matches_in_detections(matches):
         i += 1
 
     return detections
+
+
+def get_referenced_filenames(license_matches):
+    """
+    Return a list of unique referenced filenames found in the rules of a list of
+    ``license_matches``
+    """
+    unique_filenames = []
+    for license_match in license_matches:
+        for filename in license_match['referenced_filenames']:
+            if filename not in unique_filenames:
+                unique_filenames.append(filename)
+
+    return unique_filenames
+
+
+def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
+    """
+    Return a Resource matching the ``referenced_filename`` path or filename
+    given a ``resource`` in ``codebase``.
+    
+    Return None if the ``referenced_filename`` cannot be found in the same
+    directory as the base ``resource``, or at the codebase ``root``.
+    
+    ``referenced_filename`` is the path or filename referenced in a
+    LicenseMatch detected at ``resource``,
+    """
+    if not resource:
+        return
+
+    parent_path = resource.parent_path()
+    if not parent_path:
+        return
+
+    # this can be a path or a plain name
+    referenced_filename = clean_path(referenced_filename)
+    path = posixpath.join(parent_path, referenced_filename)
+    resource = codebase.get_resource(path=path)
+    if resource:
+        return resource
+
+    # Also look at codebase root for referenced file
+    # TODO: look at project root identified by key-files
+    # instead of codebase scan root
+    root_path = codebase.root.path
+    path = posixpath.join(root_path, referenced_filename)
+    resource = codebase.get_resource(path=path)
+    if resource:
+        return resource
 
 
 def detect_licenses(location=None, query_string=None, min_score=0, deadline=sys.maxsize, as_expression=False, **kwargs):

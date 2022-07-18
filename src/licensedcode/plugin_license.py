@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import posixpath
+
 from functools import partial
 
 import attr
@@ -20,7 +20,6 @@ from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-from commoncode.fileutils import file_name
 
 from licensedcode.cache import get_cache
 from licensedcode.cache import build_spdx_license_expression
@@ -28,7 +27,8 @@ from licensedcode.detection import SCANCODE_LICENSEDB_URL
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detections
 from licensedcode.detection import DetectionCategory
-from commoncode.resource import clean_path
+from licensedcode.detection import get_referenced_filenames
+from licensedcode.detection import find_referenced_resource
 from packagedcode.utils import combine_expressions
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
@@ -98,6 +98,7 @@ class LicenseScanner(ScanPlugin):
     resource_attributes = dict([
         ('license_detections', attr.ib(default=attr.Factory(list))),
         ('license_clues', attr.ib(default=attr.Factory(list))),
+        # TODO: Move these two up
         ('detected_license_expression', attr.ib(default=None)),
         ('detected_license_expression_spdx', attr.ib(default=None)),
         ('percentage_of_license_text', attr.ib(default=0)),
@@ -206,7 +207,7 @@ class LicenseScanner(ScanPlugin):
             if TRACE:
                 license_expressions_before = list(resource.license_expressions)
 
-            modified = add_referenced_filenames_license_matches(resource, codebase)
+            modified = add_referenced_license_matches_for_detections(resource, codebase)
 
             if TRACE and modified:
                 license_expressions_after = list(resource.license_expressions)
@@ -218,7 +219,7 @@ class LicenseScanner(ScanPlugin):
                 )
 
 
-def add_referenced_filenames_license_matches(resource, codebase):
+def add_referenced_license_matches_for_detections(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license
     matches (licenses and license_expressions) following their Rule
@@ -285,53 +286,4 @@ def add_referenced_filenames_license_matches(resource, codebase):
         ))
 
         codebase.save_resource(resource)
-        return resource
-
-
-def get_referenced_filenames(license_matches):
-    """
-    Return a list of unique referenced filenames found in the rules of a list of
-    ``license_matches``
-    """
-    unique_filenames = []
-    for license_match in license_matches:
-        for filename in license_match['referenced_filenames']:
-            if filename not in unique_filenames:
-                unique_filenames.append(filename)
-
-    return unique_filenames
-
-
-def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
-    """
-    Return a Resource matching the ``referenced_filename`` path or filename
-    given a ``resource`` in ``codebase``.
-    
-    Return None if the ``referenced_filename`` cannot be found in the same
-    directory as the base ``resource``, or at the codebase ``root``.
-    
-    ``referenced_filename`` is the path or filename referenced in a
-    LicenseMatch detected at ``resource``,
-    """
-    if not resource:
-        return
-
-    parent_path = resource.parent_path()
-    if not parent_path:
-        return
-
-    # this can be a path or a plain name
-    referenced_filename = clean_path(referenced_filename)
-    path = posixpath.join(parent_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
-        return resource
-
-    # Also look at codebase root for referenced file
-    # TODO: look at project root identified by key-files
-    # instead of codebase scan root
-    root_path = codebase.root.path
-    path = posixpath.join(root_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
         return resource

@@ -9,10 +9,8 @@
 
 import os
 
-import pytest
 from commoncode.testcase import FileDrivenTesting
 
-from licensedcode.plugin_license import add_referenced_filenames_license_matches
 from licensedcode.plugin_license import find_referenced_resource
 from licensedcode.plugin_license import get_referenced_filenames
 from scancode.cli_test_utils import check_json_scan

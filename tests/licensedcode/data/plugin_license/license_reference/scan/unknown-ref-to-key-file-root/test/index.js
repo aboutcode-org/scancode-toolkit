@@ -1,5 +1,5 @@
 // Copyright 2014, 2015, 2016, 2017 Simon Lydell
-// License: MIT. (See LICENSE.)
+// (See LICENSE.)
 
 var fs           = require("fs")
 var util         = require("util")

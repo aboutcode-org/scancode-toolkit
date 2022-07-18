@@ -22,6 +22,7 @@ from plugincode.scan import scan_impl
 from plugincode.scan import ScanPlugin
 
 from packagedcode import get_package_handler
+from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
@@ -151,6 +152,13 @@ class PackageScanner(ScanPlugin):
         with package and dependency instances, assembling parsed package data
         from one or more datafiles as needed.
         """
+        for resource in codebase.walk(topdown=False):
+            modified = list(add_referenced_license_matches_for_package(resource, codebase))
+            if TRACE:
+                logger_debug(f'packagedcode: process_codebase: {modified}')
+
+            #raise Exception
+
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
 
