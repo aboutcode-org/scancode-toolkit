@@ -153,13 +153,49 @@ class PackageScanner(ScanPlugin):
         from one or more datafiles as needed.
         """
         for resource in codebase.walk(topdown=False):
+            # If there is referenced files in a extracted license statement, we follow
+            # the references, look for license detections and add them back
             modified = list(add_referenced_license_matches_for_package(resource, codebase))
             if TRACE:
-                logger_debug(f'packagedcode: process_codebase: {modified}')
+                logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_for_package: modified: {modified}')
 
-            #raise Exception
+            # If we don't detect license in package_data but there is license detected in file
+            # we add the license expression from the file to a package
+            modified = add_license_from_file(resource)
+            if TRACE:
+                logger_debug(f'packagedcode: process_codebase: add_license_from_file: modified: {modified}')
 
+        # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+
+
+def add_license_from_file(resource):
+    """
+    Given a Resource, check if the detected package_data doesn't have license detections
+    and the file has license detections, and if so, populate the package_data license
+    expression and detection fields from the file license.
+    """
+    if TRACE:
+        logger_debug(f'packagedcode.plugin_package: add_license_from_file: resource: {resource.path}')
+
+    if not resource.is_file:
+        return
+    
+    license_detections_file = resource.license_detections
+    if not license_detections_file:
+        return
+
+    package_data = resource.package_data
+    if not package_data:
+        return
+
+    for pkg in package_data:
+        license_detections_pkg = pkg["license_detections"]
+        if not license_detections_pkg:
+            pkg["license_detections"] = resource.license_detections
+            pkg["declared_license_expression"] = resource.detected_license_expression
+            pkg["declared_license_expression_spdx"] = resource.detected_license_expression_spdx
+            return pkg
 
 
 def get_installed_packages(root_dir, processes=2, **kwargs):

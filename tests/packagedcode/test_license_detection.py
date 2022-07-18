@@ -36,6 +36,7 @@ def test_license_reference_detection_in_manifest_unknown():
     test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/flutter_playtabs_bridge.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
+
 def test_license_reference_detection_in_manifest_known():
     test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/nanopb/', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -51,4 +52,22 @@ def test_license_reference_detection_in_manifest_known():
     ]
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/nanopb.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_licence_comment():
+    test_dir = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
