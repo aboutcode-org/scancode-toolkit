@@ -16,7 +16,6 @@ from enum import Enum
 import attr
 from license_expression import combine_expressions
 
-from commoncode.fileutils import file_name
 from commoncode.resource import clean_path
 from licensedcode.cache import get_index
 from licensedcode.cache import get_cache
@@ -189,18 +188,6 @@ class LicenseDetection:
             matches=matches,
             license_expression=str(license_expression),
             detection_rules=reasons,
-        )
-    
-    @classmethod
-    def from_mapping(cls, detection):
-        """
-        Return a LicenseDetection created out of `detection` dict with
-        the same attributes.
-        """
-        return cls(
-            matches=detection['matches'],
-            license_expression=detection['license_expression'],
-            detection_rules=detection['detection_rules'],
         )
 
     def __eq__(self, other):
@@ -433,6 +420,16 @@ class LicenseDetection:
         _file_region = detection.pop('file_region')
 
         return detection
+
+
+def get_detections_from_mappings(detection_mappings):
+
+    license_detections = []
+
+    for mapping in detection_mappings:
+        license_detections.append(LicenseDetection(**mapping))
+
+    return license_detections
 
 
 def licenses_data_from_match(
@@ -853,7 +850,7 @@ class UnDetectedRule(Rule):
         raise NotImplementedError
 
 
-def get_matches_from_detection_objects(license_detections):
+def get_matches_from_detections(license_detections):
     """
     Return a `license_matches` list of LicenseMatch objects from a
     `license_detections` list of LicenseDetection objects.
@@ -868,7 +865,7 @@ def get_matches_from_detection_objects(license_detections):
     return license_matches
 
 
-def get_matches_from_detections(license_detections):
+def get_matches_from_detection_mappings(license_detections):
     """
     Return a `license_matches` list of LicenseMatch dicts from a
     `license_detections` list of LicenseDetection dicts.
@@ -889,7 +886,7 @@ def get_license_keys_from_detections(license_detections):
     """
     license_keys = set()
 
-    matches = get_matches_from_detections(license_detections)
+    matches = get_matches_from_detection_mappings(license_detections)
     for match in matches:
         licenses = match.get('licenses')
         license_keys.update([entry.get('key') for entry in licenses])

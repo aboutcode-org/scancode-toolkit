@@ -16,7 +16,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 from packagedcode.utils import combine_expressions
-from licensedcode.detection import get_matches_from_detections
+from licensedcode.detection import get_matches_from_detection_mappings
 
 # Tracing flags
 TRACE = False
@@ -130,7 +130,7 @@ def compute_license_score(codebase):
         field_name='license_detections',
         key_files_only=True,
     )
-    declared_licenses = get_matches_from_detections(license_detections)
+    declared_licenses = get_matches_from_detection_mappings(license_detections)
     declared_license_expressions = get_field_values_from_codebase_resources(
         codebase=codebase,
         field_name='detected_license_expression',
@@ -148,7 +148,7 @@ def compute_license_score(codebase):
     other_license_detections = get_field_values_from_codebase_resources(
         codebase=codebase, field_name='license_detections', key_files_only=False
     )
-    other_licenses = get_matches_from_detections(other_license_detections)
+    other_licenses = get_matches_from_detection_mappings(other_license_detections)
 
     scoring_elements.declared_license = bool(declared_licenses)
     if scoring_elements.declared_license:

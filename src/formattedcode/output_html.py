@@ -29,7 +29,7 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from licensedcode.detection import get_matches_from_detections
+from licensedcode.detection import get_matches_from_detection_mappings
 
 """
 Output plugins to write scan results using templates such as HTML.
@@ -172,7 +172,7 @@ def generate_output(results, version, template):
                     'value': entry['copyright'],
                 })
         if LICENSES in scanned_file:
-            for match in get_matches_from_detections(scanned_file[LICENSES]):
+            for match in get_matches_from_detection_mappings(scanned_file[LICENSES]):
                 # make copy
                 match = dict(match)
                 license_expression = match['license_expression']

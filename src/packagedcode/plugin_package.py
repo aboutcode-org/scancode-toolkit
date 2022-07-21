@@ -13,6 +13,7 @@ import os
 
 import attr
 import click
+
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
@@ -21,10 +22,14 @@ from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
 from plugincode.scan import ScanPlugin
 
+from licensedcode.cache import build_spdx_license_expression
+from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_license_from_sibling_file
+from packagedcode.licensing import get_license_detection_mappings
+from packagedcode.licensing import get_license_expression_from_detection_mappings
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
@@ -154,31 +159,38 @@ class PackageScanner(ScanPlugin):
         with package and dependency instances, assembling parsed package data
         from one or more datafiles as needed.
         """
-        if not codebase.has_single_resource:
-            for resource in codebase.walk(topdown=False):
-                # If there is referenced files in a extracted license statement, we follow
-                # the references, look for license detections and add them back
-                modified = list(add_referenced_license_matches_for_package(resource, codebase))
-                if TRACE:
-                    logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_for_package: modified: {modified}')
+        no_licenses = False
 
-                # If we don't detect license in package_data but there is license detected in file
-                # we add the license expression from the file to a package
-                modified = add_license_from_file(resource)
-                if TRACE:
-                    logger_debug(f'packagedcode: process_codebase: add_license_from_file: modified: {modified}')
-                
-                # If there is a LICENSE file on the same level as the manifest, and no license
-                # is detected in the package_data, we add the license from the file
-                modified = add_license_from_sibling_file(resource, codebase)
-                if TRACE:
-                    logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
+        for resource in codebase.walk(topdown=False):
+            if not hasattr(resource, 'license_detections'):
+                no_licenses=True
+
+            # If we don't detect license in package_data but there is license detected in file
+            # we add the license expression from the file to a package
+            modified = add_license_from_file(resource, codebase, no_licenses)
+            if TRACE and modified:
+                logger_debug(f'packagedcode: process_codebase: add_license_from_file: modified: {modified}')
+
+            if codebase.has_single_resource:
+                continue
+
+            # If there is referenced files in a extracted license statement, we follow
+            # the references, look for license detections and add them back
+            modified = list(add_referenced_license_matches_for_package(resource, codebase, no_licenses))
+            if TRACE and modified:
+                logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_for_package: modified: {modified}')
+
+            # If there is a LICENSE file on the same level as the manifest, and no license
+            # is detected in the package_data, we add the license from the file
+            modified = add_license_from_sibling_file(resource, codebase, no_licenses)
+            if TRACE and modified:
+                logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
 
-def add_license_from_file(resource):
+def add_license_from_file(resource, codebase, no_licenses):
     """
     Given a Resource, check if the detected package_data doesn't have license detections
     and the file has license detections, and if so, populate the package_data license
@@ -189,8 +201,14 @@ def add_license_from_file(resource):
 
     if not resource.is_file:
         return
-    
-    license_detections_file = resource.license_detections
+
+    if no_licenses:
+        license_detections_file = get_license_detection_mappings(location=resource.location)
+    else:
+        license_detections_file = resource.license_detections
+
+    if TRACE:
+        logger_debug(f'add_license_from_file: license_detections_file: {license_detections_file}')
     if not license_detections_file:
         return
 
@@ -200,10 +218,27 @@ def add_license_from_file(resource):
 
     for pkg in package_data:
         license_detections_pkg = pkg["license_detections"]
+        if TRACE:
+            logger_debug(f'add_license_from_file: license_detections_pkg: {license_detections_pkg}')
+
         if not license_detections_pkg:
-            pkg["license_detections"] = resource.license_detections
-            pkg["declared_license_expression"] = resource.detected_license_expression
-            pkg["declared_license_expression_spdx"] = resource.detected_license_expression_spdx
+            pkg["license_detections"] = license_detections_file.copy()
+            for detection in pkg["license_detections"]:
+
+                if detection["detection_rules"] == [DetectionRule.NOT_COMBINED.value]:
+                    detection["detection_rules"] = [DetectionRule.PACKAGE_ADD_FROM_FILE.value]
+                else:
+                    detection["detection_rules"].append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
+
+            license_expression = get_license_expression_from_detection_mappings(license_detections_file) 
+            pkg["declared_license_expression"] = license_expression
+            pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
+                license_expression=license_expression,
+                licensing=get_cache().licensing,
+            ))
+
+
+            codebase.save_resource(resource)
             return pkg
 
 

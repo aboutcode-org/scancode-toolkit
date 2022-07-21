@@ -25,7 +25,7 @@ from licensedcode.cache import get_cache
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.detection import SCANCODE_LICENSEDB_URL
 from licensedcode.detection import get_detected_license_expression
-from licensedcode.detection import get_matches_from_detections
+from licensedcode.detection import get_matches_from_detection_mappings
 from licensedcode.detection import DetectionCategory
 from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import find_referenced_resource
@@ -253,7 +253,7 @@ def add_referenced_license_matches_for_detections(resource, codebase):
                 modified = True
                 detection_modified = True
                 matches.extend(
-                    get_matches_from_detections(
+                    get_matches_from_detection_mappings(
                         license_detections=referenced_resource.license_detections
                     )
                 )

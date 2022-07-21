@@ -87,5 +87,65 @@ def test_license_reference_detection_in_manifest_siblings():
         test_dir,
     ]
     run_scan_click(args)
-    test_loc = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection-expected.json')
+    test_loc = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_unknown_without_license():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/flutter_playtabs_bridge/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/flutter_playtabs_bridge_without_license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_known_without_license():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/nanopb/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/nanopb_without_license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_licence_comment_without_license():
+    test_dir = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel_without_license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_manifest_siblings_without_license():
+    test_dir = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection_without_license.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)

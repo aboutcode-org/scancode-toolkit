@@ -29,7 +29,7 @@ from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.text import python_safe_name
 from formattedcode import FileOptionType
-from licensedcode.detection import get_matches_from_detections
+from licensedcode.detection import get_matches_from_detection_mappings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import scancode_config
@@ -278,7 +278,7 @@ def write_spdx(
         )
 
         file_license_detections = file_data.get('license_detections')
-        license_matches = get_matches_from_detections(file_license_detections)
+        license_matches = get_matches_from_detection_mappings(file_license_detections)
         if license_matches:
             all_files_have_no_license = False
             for match in license_matches:

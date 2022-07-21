@@ -189,7 +189,7 @@ def get_license_detection_references(license_detections_by_path):
     for path, detections in license_detections_by_path.items():
 
         for detection in detections:
-            detection_obj = LicenseDetection.from_mapping(detection=detection)
+            detection_obj = LicenseDetection(**detection)
             _matches = detection.pop('matches')
             _reasons = detection.pop('detection_rules')
             detection_obj.file_region = detection_obj.get_file_region(path=path)
