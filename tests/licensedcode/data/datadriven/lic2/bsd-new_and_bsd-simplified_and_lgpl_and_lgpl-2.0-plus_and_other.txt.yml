@@ -7,5 +7,6 @@ license_expressions:
   - vcalendar
   - bsd-new
   - bsd-simplified
+  - unknown-license-reference
   - bsd-new
   - public-domain
