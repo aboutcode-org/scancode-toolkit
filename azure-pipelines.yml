@@ -169,10 +169,22 @@ jobs:
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
-    - template: etc/ci/azure-installed-external-license.yml
+    - template: etc/ci/azure-posix-installed-external-license.yml
       parameters:
-          job_name: installed_external_license
+          job_name: installed_external_license_ubuntu
           image_name: ubuntu-20.04
+          python_versions: ['3.8']
+
+    - template: etc/ci/azure-win-installed-external-license.yml
+      parameters:
+          job_name: installed_external_license_windows
+          image_name: windows-2022
+          python_versions: ['3.8']
+
+    - template: etc/ci/azure-posix-installed-external-license.yml
+      parameters:
+          job_name: installed_external_license_macos11
+          image_name: macos-11
           python_versions: ['3.8']
 
 ################################################################################
