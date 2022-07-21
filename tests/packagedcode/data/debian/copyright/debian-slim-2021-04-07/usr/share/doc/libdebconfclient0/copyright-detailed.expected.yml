@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_282.RULE
+        rule_identifier: public-domain_282.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -54,7 +54,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-unmodified
-        licensedb_identifier: bsd-unmodified_4.RULE
+        rule_identifier: bsd-unmodified_4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

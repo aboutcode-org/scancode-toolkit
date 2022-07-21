@@ -49,7 +49,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "zlib",
-              "licensedb_identifier": "zlib_in_manifest.RULE",
+              "rule_identifier": "zlib_in_manifest.RULE",
               "referenced_filenames": [
                 "LICENSE.txt"
               ],
@@ -88,7 +88,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "zlib",
-              "licensedb_identifier": "zlib.LICENSE",
+              "rule_identifier": "zlib.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -197,7 +197,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "zlib",
-                  "licensedb_identifier": "zlib_in_manifest.RULE",
+                  "rule_identifier": "zlib_in_manifest.RULE",
                   "referenced_filenames": [
                     "LICENSE.txt"
                   ],
@@ -236,7 +236,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "zlib",
-                  "licensedb_identifier": "zlib.LICENSE",
+                  "rule_identifier": "zlib.LICENSE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,

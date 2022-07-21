@@ -62,7 +62,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_65.RULE
+        rule_identifier: apache-2.0_65.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -94,7 +94,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_7.RULE
+        rule_identifier: apache-2.0_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -137,7 +137,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_865.RULE
+        rule_identifier: apache-2.0_865.RULE
         referenced_filenames:
           - /usr/share/common-licenses/Apache-2.0
         is_license_text: no
@@ -176,7 +176,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -230,7 +230,7 @@ license_detections:
         match_coverage: '89.1'
         matcher: 3-seq
         license_expression: psf-2.0
-        licensedb_identifier: psf-2.0.LICENSE
+        rule_identifier: psf-2.0.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -315,7 +315,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_16.RULE
+        rule_identifier: bsd-simplified_16.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -371,7 +371,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_1072.RULE
+        rule_identifier: bsd-new_1072.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -431,7 +431,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_509.RULE
+        rule_identifier: bsd-new_509.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no

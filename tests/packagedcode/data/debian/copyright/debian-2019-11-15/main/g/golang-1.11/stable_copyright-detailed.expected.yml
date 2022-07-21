@@ -79,7 +79,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_292.RULE
+        rule_identifier: other-permissive_292.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -117,7 +117,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_166.RULE
+        rule_identifier: bsd-new_166.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -178,7 +178,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_166.RULE
+        rule_identifier: bsd-new_166.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -235,7 +235,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: google-patent-license-golang
-        licensedb_identifier: google-patent-license-golang_1.RULE
+        rule_identifier: google-patent-license-golang_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -285,7 +285,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_65.RULE
+        rule_identifier: apache-2.0_65.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -317,7 +317,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_1019.RULE
+        rule_identifier: apache-2.0_1019.RULE
         referenced_filenames:
           - /usr/share/common-licenses/Apache-2.0
         is_license_text: no
@@ -368,7 +368,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -421,7 +421,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_27.RULE
+        rule_identifier: bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -477,7 +477,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mpeg-ssg
-        licensedb_identifier: mpeg-ssg_1.RULE
+        rule_identifier: mpeg-ssg_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -532,7 +532,7 @@ license_detections:
         match_coverage: '97.85'
         matcher: 3-seq
         license_expression: cc-by-3.0
-        licensedb_identifier: cc-by-3.0_102.RULE
+        rule_identifier: cc-by-3.0_102.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -895,7 +895,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-2-clause-views
-        licensedb_identifier: bsd-2-clause-views_11.RULE
+        rule_identifier: bsd-2-clause-views_11.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -955,7 +955,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: sunpro
-        licensedb_identifier: sunpro.LICENSE
+        rule_identifier: sunpro.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -995,7 +995,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: cc-by-3.0
-        licensedb_identifier: cc-by-3.0_111.RULE
+        rule_identifier: cc-by-3.0_111.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "ruby AND bsd-simplified AND mit",
-          "licensedb_identifier": "spdx-license-identifier: ruby AND bsd-simplified AND mit",
+          "rule_identifier": "spdx-license-identifier: ruby AND bsd-simplified AND mit",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,

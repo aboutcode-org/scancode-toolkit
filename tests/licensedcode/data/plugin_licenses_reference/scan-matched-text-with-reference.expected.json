@@ -54,7 +54,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
-              "licensedb_identifier": "spdx-license-identifier: artistic-2.0 OR mit"
+              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit"
             }
           ]
         }
@@ -176,7 +176,7 @@
   "licensedb_references": [
     {
       "license_expression": "artistic-2.0 OR mit",
-      "licensedb_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+      "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
       "referenced_filenames": [],
       "is_license_text": false,
       "is_license_notice": false,
@@ -189,7 +189,7 @@
     },
     {
       "license_expression": "apache-2.0",
-      "licensedb_identifier": "apache-2.0_2.RULE",
+      "rule_identifier": "apache-2.0_2.RULE",
       "referenced_filenames": [
         "NOTICE"
       ],
@@ -204,7 +204,7 @@
     },
     {
       "license_expression": "mit OR bsd-simplified",
-      "licensedb_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+      "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
       "referenced_filenames": [],
       "is_license_text": false,
       "is_license_notice": false,
@@ -217,7 +217,7 @@
     },
     {
       "license_expression": "artistic-2.0",
-      "licensedb_identifier": "artistic-2.0_46.RULE",
+      "rule_identifier": "artistic-2.0_46.RULE",
       "referenced_filenames": [],
       "is_license_text": false,
       "is_license_notice": false,
@@ -260,7 +260,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "licensedb_identifier": "apache-2.0_2.RULE"
+              "rule_identifier": "apache-2.0_2.RULE"
             },
             {
               "score": 100.0,
@@ -270,7 +270,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
-              "licensedb_identifier": "spdx-license-identifier: mit OR bsd-simplified"
+              "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified"
             }
           ]
         }
@@ -303,7 +303,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
-              "licensedb_identifier": "artistic-2.0_46.RULE"
+              "rule_identifier": "artistic-2.0_46.RULE"
             }
           ]
         }
@@ -366,7 +366,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
-                  "licensedb_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+                  "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,

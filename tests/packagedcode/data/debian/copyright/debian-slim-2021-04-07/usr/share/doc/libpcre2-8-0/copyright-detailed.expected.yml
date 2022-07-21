@@ -19,7 +19,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: pcre
-        licensedb_identifier: pcre_7.RULE
+        rule_identifier: pcre_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -58,7 +58,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_398.RULE
+        rule_identifier: bsd-new_398.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -91,7 +91,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_328.RULE
+        rule_identifier: public-domain_328.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -127,7 +127,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_898.RULE
+        rule_identifier: bsd-new_898.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -159,7 +159,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_1064.RULE
+        rule_identifier: bsd-new_1064.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

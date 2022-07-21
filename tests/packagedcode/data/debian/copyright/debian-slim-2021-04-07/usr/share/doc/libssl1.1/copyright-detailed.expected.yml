@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '99.89'
         matcher: 3-seq
         license_expression: openssl-ssleay
-        licensedb_identifier: openssl-ssleay_37.RULE
+        rule_identifier: openssl-ssleay_37.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

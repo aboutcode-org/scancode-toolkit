@@ -30,7 +30,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_314.RULE
+        rule_identifier: bsd-new_314.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -86,7 +86,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -142,7 +142,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -174,7 +174,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_846.RULE
+        rule_identifier: gpl-2.0-plus_846.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -226,7 +226,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: warranty-disclaimer
-        licensedb_identifier: warranty-disclaimer_78.RULE
+        rule_identifier: warranty-disclaimer_78.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

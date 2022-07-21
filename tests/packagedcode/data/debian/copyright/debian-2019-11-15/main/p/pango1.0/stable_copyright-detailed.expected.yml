@@ -81,7 +81,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_324.RULE
+        rule_identifier: other-permissive_324.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -120,7 +120,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11
-        licensedb_identifier: x11_2.RULE
+        rule_identifier: x11_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -183,7 +183,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        rule_identifier: lgpl-2.0-plus_61.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -215,7 +215,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_529.RULE
+        rule_identifier: lgpl-2.0-plus_529.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2
         is_license_text: no
@@ -264,7 +264,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: tcl
-        licensedb_identifier: tcl_14.RULE
+        rule_identifier: tcl_14.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -339,7 +339,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: unicode
-        licensedb_identifier: unicode_57.RULE
+        rule_identifier: unicode_57.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

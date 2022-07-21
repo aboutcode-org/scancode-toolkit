@@ -167,7 +167,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -199,7 +199,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_1038.RULE
+        rule_identifier: gpl-2.0-plus_1038.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -252,7 +252,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -284,7 +284,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_512.RULE
+        rule_identifier: gpl-3.0-plus_512.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -337,7 +337,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_108.RULE
+        rule_identifier: lgpl-2.1-plus_108.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -369,7 +369,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_418.RULE
+        rule_identifier: lgpl-2.1-plus_418.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2.1
         is_license_text: no
@@ -424,7 +424,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -477,7 +477,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_577.RULE
+        rule_identifier: bsd-new_577.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -536,7 +536,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-original
-        licensedb_identifier: bsd-original_71.RULE
+        rule_identifier: bsd-original_71.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -598,7 +598,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_166.RULE
+        rule_identifier: lgpl-3.0-plus_166.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -630,7 +630,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_189.RULE
+        rule_identifier: lgpl-3.0-plus_189.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-3
         is_license_text: no
@@ -679,7 +679,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_325.RULE
+        rule_identifier: other-permissive_325.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -718,7 +718,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: free-unknown
-        licensedb_identifier: free-unknown_80.RULE
+        rule_identifier: free-unknown_80.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -754,7 +754,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: free-unknown
-        licensedb_identifier: free-unknown_79.RULE
+        rule_identifier: free-unknown_79.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -791,7 +791,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_67.RULE
+        rule_identifier: gpl-2.0-plus_67.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no

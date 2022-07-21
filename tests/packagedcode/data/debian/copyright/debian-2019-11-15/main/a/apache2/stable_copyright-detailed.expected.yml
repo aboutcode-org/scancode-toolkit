@@ -79,7 +79,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_65.RULE
+        rule_identifier: apache-2.0_65.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -111,7 +111,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_971.RULE
+        rule_identifier: apache-2.0_971.RULE
         referenced_filenames:
           - /usr/share/common-licenses/Apache-2.0
         is_license_text: no
@@ -165,7 +165,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zeusbench
-        licensedb_identifier: zeusbench_1.RULE
+        rule_identifier: zeusbench_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -211,7 +211,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_879.RULE
+        rule_identifier: bsd-new_879.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -272,7 +272,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-keith-packard
-        licensedb_identifier: x11-keith-packard3.RULE
+        rule_identifier: x11-keith-packard3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -324,7 +324,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: historical
-        licensedb_identifier: historical_9.RULE
+        rule_identifier: historical_9.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -370,7 +370,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -402,7 +402,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_483.RULE
+        rule_identifier: gpl-3.0-plus_483.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -452,7 +452,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -484,7 +484,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_986.RULE
+        rule_identifier: gpl-2.0-plus_986.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -533,7 +533,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: public-domain
-        licensedb_identifier: public-domain_361.RULE
+        rule_identifier: public-domain_361.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -602,7 +602,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified-darwin
-        licensedb_identifier: bsd-simplified-darwin.LICENSE
+        rule_identifier: bsd-simplified-darwin.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -662,7 +662,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_1021.RULE
+        rule_identifier: apache-2.0_1021.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -698,7 +698,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hs-regexp
-        licensedb_identifier: hs-regexp_1.RULE
+        rule_identifier: hs-regexp_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -753,7 +753,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-unchanged
-        licensedb_identifier: bsd-unchanged_4.RULE
+        rule_identifier: bsd-unchanged_4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -811,7 +811,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_879.RULE
+        rule_identifier: bsd-new_879.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -872,7 +872,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bison-exception-2.2
-        licensedb_identifier: bison-exception-2.2.LICENSE
+        rule_identifier: bison-exception-2.2.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -920,7 +920,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

@@ -57,7 +57,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_297.RULE
+        rule_identifier: lgpl-2.1-plus_297.RULE
         referenced_filenames:
           - COPYING.LIB
         is_license_text: no
@@ -97,7 +97,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_392.RULE
+        rule_identifier: lgpl-2.1-plus_392.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -130,7 +130,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_392.RULE
+        rule_identifier: lgpl-2.1-plus_392.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -162,7 +162,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_308.RULE
+        rule_identifier: bsd-new_308.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -194,7 +194,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_426.RULE
+        rule_identifier: public-domain_426.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -226,7 +226,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_426.RULE
+        rule_identifier: public-domain_426.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -258,7 +258,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -290,7 +290,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -322,7 +322,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -354,7 +354,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -390,7 +390,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -426,7 +426,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -458,7 +458,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -490,7 +490,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -522,7 +522,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -554,7 +554,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -586,7 +586,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_426.RULE
+        rule_identifier: public-domain_426.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -618,7 +618,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_308.RULE
+        rule_identifier: bsd-new_308.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -650,7 +650,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_156.RULE
+        rule_identifier: bsd-simplified_156.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -682,7 +682,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_426.RULE
+        rule_identifier: public-domain_426.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -717,7 +717,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-        licensedb_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        rule_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -763,7 +763,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-zero
-        licensedb_identifier: bsd-zero_6.RULE
+        rule_identifier: bsd-zero_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -795,7 +795,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -827,7 +827,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -859,7 +859,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -891,7 +891,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -923,7 +923,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-        licensedb_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
+        rule_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -969,7 +969,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1001,7 +1001,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1033,7 +1033,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-        licensedb_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        rule_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1079,7 +1079,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1111,7 +1111,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_6.RULE
+        rule_identifier: fsf-ap_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1143,7 +1143,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: free-unknown
-        licensedb_identifier: free-unknown_120.RULE
+        rule_identifier: free-unknown_120.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

@@ -31,7 +31,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_70.RULE
+        rule_identifier: bsd-simplified_70.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -90,7 +90,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cups
-        licensedb_identifier: cups_6.RULE
+        rule_identifier: cups_6.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -184,7 +184,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cups
-        licensedb_identifier: cups_4.RULE
+        rule_identifier: cups_4.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2
         is_license_text: no
@@ -278,7 +278,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
-        licensedb_identifier: zlib_7.RULE
+        rule_identifier: zlib_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -310,7 +310,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
-        licensedb_identifier: zlib.LICENSE
+        rule_identifier: zlib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

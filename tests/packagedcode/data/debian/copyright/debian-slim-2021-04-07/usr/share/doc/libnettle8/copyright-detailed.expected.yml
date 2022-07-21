@@ -333,7 +333,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        rule_identifier: lgpl-2.0-plus_61.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -365,7 +365,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_460.RULE
+        rule_identifier: lgpl-2.0-plus_460.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2
         is_license_text: no
@@ -419,7 +419,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -451,7 +451,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus WITH tex-exception
-        licensedb_identifier: gpl-3.0-plus_with_tex-exception_5.RULE
+        rule_identifier: gpl-3.0-plus_with_tex-exception_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -517,7 +517,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: autoconf-simple-exception-2.0
-        licensedb_identifier: autoconf-simple-exception-2.0.LICENSE
+        rule_identifier: autoconf-simple-exception-2.0.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -557,7 +557,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: public-domain
-        licensedb_identifier: public-domain_354.RULE
+        rule_identifier: public-domain_354.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -595,7 +595,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_561.RULE
+        rule_identifier: gpl-2.0_561.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -627,7 +627,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1155.RULE
+        rule_identifier: gpl-2.0_1155.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -681,7 +681,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap_3.RULE
+        rule_identifier: fsf-ap_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -720,7 +720,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_166.RULE
+        rule_identifier: lgpl-3.0-plus_166.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -752,7 +752,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_196.RULE
+        rule_identifier: lgpl-3.0-plus_196.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL
         is_license_text: no
@@ -805,7 +805,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -837,7 +837,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_857.RULE
+        rule_identifier: gpl-2.0-plus_857.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL
         is_license_text: no
@@ -892,7 +892,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -947,7 +947,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: (gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain
-        licensedb_identifier: gpl-2.0-plus_or_gpl-3.0-plus_and_other-permissive_and_public-domain_1.RULE
+        rule_identifier: gpl-2.0-plus_or_gpl-3.0-plus_and_other-permissive_and_public-domain_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1028,7 +1028,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_15.RULE
+        rule_identifier: public-domain_15.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1060,7 +1060,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_515.RULE
+        rule_identifier: lgpl-2.0-plus_515.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1092,7 +1092,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit_1090.RULE
+        rule_identifier: mit_1090.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1124,7 +1124,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: pycrypto
-        licensedb_identifier: pycrypto_1.RULE
+        rule_identifier: pycrypto_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1158,7 +1158,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_15.RULE
+        rule_identifier: public-domain_15.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1190,7 +1190,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_15.RULE
+        rule_identifier: public-domain_15.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1222,7 +1222,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_389.RULE
+        rule_identifier: lgpl-2.1-plus_389.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1256,7 +1256,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_425.RULE
+        rule_identifier: public-domain_425.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1288,7 +1288,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_389.RULE
+        rule_identifier: lgpl-2.1-plus_389.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1322,7 +1322,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_15.RULE
+        rule_identifier: public-domain_15.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1354,7 +1354,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_465.RULE
+        rule_identifier: lgpl-2.0-plus_465.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-2.0",
-          "licensedb_identifier": "gpl-2.0_660.RULE",
+          "rule_identifier": "gpl-2.0_660.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -83,7 +83,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-1.0-plus",
-          "licensedb_identifier": "gpl-1.0-plus_48.RULE",
+          "rule_identifier": "gpl-1.0-plus_48.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -128,7 +128,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
-          "licensedb_identifier": "gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
+          "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
           "referenced_filenames": [
             "EXCEPTIONS-CONNECTOR-J"
           ],

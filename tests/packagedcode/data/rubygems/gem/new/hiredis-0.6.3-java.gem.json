@@ -49,7 +49,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "bsd-new",
-            "licensedb_identifier": "bsd-new_10.RULE",
+            "rule_identifier": "bsd-new_10.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,

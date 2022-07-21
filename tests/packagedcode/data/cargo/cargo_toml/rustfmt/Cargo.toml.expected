@@ -54,7 +54,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "apache-2.0 OR mit",
-            "licensedb_identifier": "apache-2.0_or_mit_48.RULE",
+            "rule_identifier": "apache-2.0_or_mit_48.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,

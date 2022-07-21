@@ -31,7 +31,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -63,7 +63,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_482.RULE
+        rule_identifier: gpl-3.0-plus_482.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -115,7 +115,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gfdl-1.3-plus
-        licensedb_identifier: gfdl-1.3-plus_24.RULE
+        rule_identifier: gfdl-1.3-plus_24.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GFDL-3
         is_license_text: no
@@ -160,7 +160,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: latex2e
-        licensedb_identifier: latex2e_8.RULE
+        rule_identifier: latex2e_8.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

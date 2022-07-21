@@ -34,7 +34,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: unlicense
-        licensedb_identifier: unlicense_6.RULE
+        rule_identifier: unlicense_6.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -92,7 +92,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: zlib
-        licensedb_identifier: zlib.LICENSE
+        rule_identifier: zlib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -143,7 +143,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
-        licensedb_identifier: lgpl-2.0-plus_61.RULE
+        rule_identifier: lgpl-2.0-plus_61.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -175,7 +175,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_419.RULE
+        rule_identifier: lgpl-2.1-plus_419.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2
         is_license_text: no

@@ -13,3 +13,4 @@ package.json,,,,,,,,,,,,,,,,,,,,,,,,,,,12,12,,tj@learnboost.com,,,,,,,,,,,,,,,,,
 package.json,,,,,,,,,,,,,,,,,,,,,,,,,,,16,16,,,https://github.com/visionmedia/node-cookie-signature.git,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 package.json,,,,,,,,,,,,,,,,,,,,,,,,,,,27,27,,,https://github.com/visionmedia/node-cookie-signature/issues,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 package.json,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,npm,,cookie-signature,v 1.0.3,,,JavaScript,Sign and unsign cookies,,,https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz,,,,,,https://github.com/visionmedia/node-cookie-signature/issues,,git+https://github.com/visionmedia/node-cookie-signature.git,,,,,,,https://www.npmjs.com/package/cookie-signature,https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz,https://registry.npmjs.org/cookie-signature/1.0.3,npm_package_json,pkg:npm/cookie-signature@1.0.3
+rule_identifierrule_identifier

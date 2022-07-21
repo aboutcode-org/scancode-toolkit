@@ -67,7 +67,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: markus-kuhn-license
-        licensedb_identifier: markus-kuhn-license.LICENSE
+        rule_identifier: markus-kuhn-license.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -106,7 +106,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_323.RULE
+        rule_identifier: other-permissive_323.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -144,7 +144,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -176,7 +176,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1325.RULE
+        rule_identifier: gpl-2.0_1325.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -215,7 +215,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -247,7 +247,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0
-        licensedb_identifier: gpl-3.0_480.RULE
+        rule_identifier: gpl-3.0_480.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -286,7 +286,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_65.RULE
+        rule_identifier: apache-2.0_65.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -318,7 +318,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
-        licensedb_identifier: apache-2.0_2.RULE
+        rule_identifier: apache-2.0_2.RULE
         referenced_filenames:
           - NOTICE
         is_license_text: no
@@ -371,7 +371,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_970.RULE
+        rule_identifier: bsd-new_970.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -432,7 +432,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified.LICENSE
+        rule_identifier: bsd-simplified.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -488,7 +488,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -541,7 +541,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: unicode
-        licensedb_identifier: unicode_56.RULE
+        rule_identifier: unicode_56.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -609,7 +609,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: afl-3.0
-        licensedb_identifier: afl-3.0.LICENSE
+        rule_identifier: afl-3.0.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

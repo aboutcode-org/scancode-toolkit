@@ -17,7 +17,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_388.RULE
+        rule_identifier: lgpl-2.1-plus_388.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2.1
         is_license_text: no
@@ -59,7 +59,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_209.RULE
+        rule_identifier: gpl-2.0-plus_209.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -98,7 +98,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-3.0
-        licensedb_identifier: gpl-3.0_468.RULE
+        rule_identifier: gpl-3.0_468.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no

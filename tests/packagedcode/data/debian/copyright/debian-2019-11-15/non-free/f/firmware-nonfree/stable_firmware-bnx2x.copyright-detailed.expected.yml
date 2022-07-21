@@ -17,7 +17,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_599.RULE
+        rule_identifier: proprietary-license_599.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

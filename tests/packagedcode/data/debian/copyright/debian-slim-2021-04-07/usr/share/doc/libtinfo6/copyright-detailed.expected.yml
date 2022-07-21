@@ -26,7 +26,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-fsf
-        licensedb_identifier: x11-fsf.LICENSE
+        rule_identifier: x11-fsf.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -85,7 +85,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-xconsortium
-        licensedb_identifier: x11-xconsortium_2.RULE
+        rule_identifier: x11-xconsortium_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -142,7 +142,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_19.RULE
+        rule_identifier: bsd-new_19.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

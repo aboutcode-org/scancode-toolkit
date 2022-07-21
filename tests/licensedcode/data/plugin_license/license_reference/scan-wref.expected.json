@@ -18,7 +18,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "licensedb_identifier": "unknown-license-reference_25.RULE",
+              "rule_identifier": "unknown-license-reference_25.RULE",
               "referenced_filenames": [
                 "LICENSE"
               ],

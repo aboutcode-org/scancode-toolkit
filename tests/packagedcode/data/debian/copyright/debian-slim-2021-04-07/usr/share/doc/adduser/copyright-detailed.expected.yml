@@ -19,7 +19,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_811.RULE
+        rule_identifier: gpl-2.0-plus_811.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no

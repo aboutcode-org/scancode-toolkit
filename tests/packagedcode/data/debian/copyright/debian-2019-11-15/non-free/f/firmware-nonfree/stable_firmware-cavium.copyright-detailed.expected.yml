@@ -15,7 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: cavium-linux-firmware
-        licensedb_identifier: cavium-linux-firmware.LICENSE
+        rule_identifier: cavium-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

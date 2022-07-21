@@ -21,7 +21,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_67.RULE
+        rule_identifier: bsd-new_67.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -80,7 +80,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: tcp-wrappers
-        licensedb_identifier: tcp-wrappers_3.RULE
+        rule_identifier: tcp-wrappers_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -124,7 +124,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_749.RULE
+        rule_identifier: gpl-2.0-plus_749.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no

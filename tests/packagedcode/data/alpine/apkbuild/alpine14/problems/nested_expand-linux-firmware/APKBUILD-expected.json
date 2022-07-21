@@ -36,7 +36,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference",
-          "licensedb_identifier": "spdx-license-identifier: unknown-license-reference",
+          "rule_identifier": "spdx-license-identifier: unknown-license-reference",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,

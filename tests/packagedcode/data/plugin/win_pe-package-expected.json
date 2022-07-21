@@ -54,7 +54,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "bsd-simplified-darwin",
-                  "licensedb_identifier": "bsd-simplified-darwin.LICENSE",
+                  "rule_identifier": "bsd-simplified-darwin.LICENSE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,

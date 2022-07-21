@@ -299,7 +299,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-original-uc",
-              "licensedb_identifier": "bsd-original-uc_3.RULE",
+              "rule_identifier": "bsd-original-uc_3.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -428,7 +428,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-2.0 OR bsd-new",
-              "licensedb_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
+              "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
               "referenced_filenames": [
                 "COPYING",
                 "README"

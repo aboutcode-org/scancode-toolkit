@@ -15,7 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
-        licensedb_identifier: zlib_17.RULE
+        rule_identifier: zlib_17.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

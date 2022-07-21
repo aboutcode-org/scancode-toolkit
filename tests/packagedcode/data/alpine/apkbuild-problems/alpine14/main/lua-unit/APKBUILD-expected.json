@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "bsd-simplified",
-          "licensedb_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
+          "rule_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,

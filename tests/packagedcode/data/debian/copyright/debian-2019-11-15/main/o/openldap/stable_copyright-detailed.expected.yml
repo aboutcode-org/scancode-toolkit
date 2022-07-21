@@ -32,7 +32,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: openldap-2.8
-        licensedb_identifier: openldap-2.8_21.RULE
+        rule_identifier: openldap-2.8_21.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -85,7 +85,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: openldap-2.8
-        licensedb_identifier: openldap-2.8_16.RULE
+        rule_identifier: openldap-2.8_16.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -162,7 +162,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit_483.RULE
+        rule_identifier: mit_483.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -215,7 +215,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-unlimited-no-warranty
-        licensedb_identifier: fsf-unlimited-no-warranty_2.RULE
+        rule_identifier: fsf-unlimited-no-warranty_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -259,7 +259,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hs-regexp
-        licensedb_identifier: hs-regexp_5.RULE
+        rule_identifier: hs-regexp_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -312,7 +312,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ibm-dhcp
-        licensedb_identifier: ibm-dhcp.LICENSE
+        rule_identifier: ibm-dhcp.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -368,7 +368,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ietf
-        licensedb_identifier: ietf_5.RULE
+        rule_identifier: ietf_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -422,7 +422,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: isc
-        licensedb_identifier: isc_9.RULE
+        rule_identifier: isc_9.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -470,7 +470,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_203.RULE
+        rule_identifier: other-permissive_203.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -509,7 +509,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_200.RULE
+        rule_identifier: other-permissive_200.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -549,7 +549,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-old-style-no-advert
-        licensedb_identifier: mit-old-style-no-advert_3.RULE
+        rule_identifier: mit-old-style-no-advert_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -594,7 +594,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_199.RULE
+        rule_identifier: other-permissive_199.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -632,7 +632,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hs-regexp
-        licensedb_identifier: hs-regexp_5.RULE
+        rule_identifier: hs-regexp_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -684,7 +684,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: openldap-2.8
-        licensedb_identifier: openldap-2.8_15.RULE
+        rule_identifier: openldap-2.8_15.RULE
         referenced_filenames:
           - LICENSE
         is_license_text: no
@@ -725,7 +725,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsla
-        licensedb_identifier: bsla_3.RULE
+        rule_identifier: bsla_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -768,7 +768,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc
-        licensedb_identifier: bsd-original-uc_25.RULE
+        rule_identifier: bsd-original-uc_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -806,7 +806,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc
-        licensedb_identifier: bsd-original-uc_3.RULE
+        rule_identifier: bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -865,7 +865,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc
-        licensedb_identifier: bsd-original-uc_24.RULE
+        rule_identifier: bsd-original-uc_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -905,7 +905,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc-1986
-        licensedb_identifier: bsd-original-uc-1986_3.RULE
+        rule_identifier: bsd-original-uc-1986_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

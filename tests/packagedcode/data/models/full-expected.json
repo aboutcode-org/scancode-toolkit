@@ -53,7 +53,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
-          "licensedb_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,

@@ -185,7 +185,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "licensedb_identifier": "apache-2.0_2.RULE",
+              "rule_identifier": "apache-2.0_2.RULE",
               "referenced_filenames": [
                 "NOTICE"
               ],
@@ -257,7 +257,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "licensedb_identifier": "apache-2.0_2.RULE",
+              "rule_identifier": "apache-2.0_2.RULE",
               "referenced_filenames": [
                 "NOTICE"
               ],
@@ -336,7 +336,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
-                  "licensedb_identifier": "apache-2.0_2.RULE",
+                  "rule_identifier": "apache-2.0_2.RULE",
                   "referenced_filenames": [
                     "NOTICE"
                   ],

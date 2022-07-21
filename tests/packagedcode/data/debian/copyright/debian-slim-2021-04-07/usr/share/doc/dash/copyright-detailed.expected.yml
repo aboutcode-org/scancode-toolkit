@@ -109,7 +109,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_19.RULE
+        rule_identifier: bsd-new_19.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -168,7 +168,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-free
-        licensedb_identifier: fsf-free.LICENSE
+        rule_identifier: fsf-free.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -206,7 +206,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-unlimited-no-warranty
-        licensedb_identifier: fsf-unlimited-no-warranty.LICENSE
+        rule_identifier: fsf-unlimited-no-warranty.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -250,7 +250,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-xconsortium
-        licensedb_identifier: x11-xconsortium_2.RULE
+        rule_identifier: x11-xconsortium_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -303,7 +303,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_58.RULE
+        rule_identifier: public-domain_58.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -339,7 +339,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -371,7 +371,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_737.RULE
+        rule_identifier: gpl-2.0-plus_737.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -424,7 +424,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: public-domain
-        licensedb_identifier: pypi_public_domain.RULE
+        rule_identifier: pypi_public_domain.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no

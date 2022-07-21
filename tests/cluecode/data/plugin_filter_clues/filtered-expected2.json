@@ -34,7 +34,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "pygres-2.2",
-              "licensedb_identifier": "pygres-2.2_2.RULE",
+              "rule_identifier": "pygres-2.2_2.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,

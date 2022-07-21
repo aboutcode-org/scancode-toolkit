@@ -83,7 +83,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified.LICENSE
+        rule_identifier: bsd-simplified.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -137,7 +137,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: generic-export-compliance
-        licensedb_identifier: generic-export-compliance_3.RULE
+        rule_identifier: generic-export-compliance_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -181,7 +181,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: cc-by-sa-3.0
-        licensedb_identifier: cc-by-sa-3.0_22.RULE
+        rule_identifier: cc-by-sa-3.0_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -220,7 +220,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_136.RULE
+        rule_identifier: proprietary-license_136.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -263,7 +263,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_80.RULE
+        rule_identifier: other-permissive_80.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -329,7 +329,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
-        licensedb_identifier: mit-no-advert-export-control_1.RULE
+        rule_identifier: mit-no-advert-export-control_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -384,7 +384,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: brian-gladman-3-clause
-        licensedb_identifier: brian-gladman-3-clause_2.RULE
+        rule_identifier: brian-gladman-3-clause_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -440,7 +440,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_587.RULE
+        rule_identifier: bsd-new_587.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -504,7 +504,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -559,7 +559,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_20.RULE
+        rule_identifier: bsd-simplified_20.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -620,7 +620,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -675,7 +675,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_19.RULE
+        rule_identifier: bsd-new_19.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -739,7 +739,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_588.RULE
+        rule_identifier: bsd-new_588.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -803,7 +803,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: michigan-disclaimer
-        licensedb_identifier: michigan-disclaimer.LICENSE
+        rule_identifier: michigan-disclaimer.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -859,7 +859,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: fsf-unlimited-no-warranty
-        licensedb_identifier: fsf-unlimited-no-warranty.RULE
+        rule_identifier: fsf-unlimited-no-warranty.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -903,7 +903,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
-        licensedb_identifier: mit-no-advert-export-control_2.RULE
+        rule_identifier: mit-no-advert-export-control_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -958,7 +958,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: openldap-2.8
-        licensedb_identifier: openldap-2.8.LICENSE
+        rule_identifier: openldap-2.8.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1042,7 +1042,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_933.RULE
+        rule_identifier: bsd-new_933.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1106,7 +1106,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_151.RULE
+        rule_identifier: bsd-new_151.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1171,7 +1171,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_589.RULE
+        rule_identifier: bsd-new_589.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1236,7 +1236,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: freebsd-doc
-        licensedb_identifier: freebsd-doc_5.RULE
+        rule_identifier: freebsd-doc_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1296,7 +1296,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: cmu-uc
-        licensedb_identifier: cmu-uc_12.RULE
+        rule_identifier: cmu-uc_12.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1349,7 +1349,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: nrl-permission
-        licensedb_identifier: nrl-permission_1.RULE
+        rule_identifier: nrl-permission_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1394,7 +1394,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ietf-trust
-        licensedb_identifier: ietf-trust_10.RULE
+        rule_identifier: ietf-trust_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1442,7 +1442,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-old-style
-        licensedb_identifier: mit-old-style_11.RULE
+        rule_identifier: mit-old-style_11.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1486,7 +1486,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1541,7 +1541,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_27.RULE
+        rule_identifier: bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1597,7 +1597,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-no-advert-export-control AND proprietary-license
-        licensedb_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
+        rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1667,7 +1667,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc
-        licensedb_identifier: bsd-original-uc_3.RULE
+        rule_identifier: bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1737,7 +1737,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
-        licensedb_identifier: mit-no-advert-export-control_4.RULE
+        rule_identifier: mit-no-advert-export-control_4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1789,7 +1789,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original
-        licensedb_identifier: bsd-original_32.RULE
+        rule_identifier: bsd-original_32.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1860,7 +1860,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit_483.RULE
+        rule_identifier: mit_483.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1915,7 +1915,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: isc
-        licensedb_identifier: isc_14.RULE
+        rule_identifier: isc_14.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1964,7 +1964,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: isc
-        licensedb_identifier: isc_16.RULE
+        rule_identifier: isc_16.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -2013,7 +2013,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_22.RULE
+        rule_identifier: other-permissive_22.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2051,7 +2051,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_134.RULE
+        rule_identifier: bsd-new_134.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2115,7 +2115,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: rsa-md4
-        licensedb_identifier: rsa-md4.LICENSE
+        rule_identifier: rsa-md4.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2168,7 +2168,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: rsa-md5
-        licensedb_identifier: rsa-md5.LICENSE
+        rule_identifier: rsa-md5.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2221,7 +2221,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: rsa-1990
-        licensedb_identifier: rsa-1990.LICENSE
+        rule_identifier: rsa-1990.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2264,7 +2264,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-with-modification-obligations
-        licensedb_identifier: mit-with-modification-obligations_2.RULE
+        rule_identifier: mit-with-modification-obligations_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2319,7 +2319,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_590.RULE
+        rule_identifier: bsd-new_590.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2383,7 +2383,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified OR gpl-2.0-plus
-        licensedb_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
+        rule_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: yes
@@ -2473,7 +2473,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-intel_4.RULE
+        rule_identifier: bsd-intel_4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2538,7 +2538,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified.LICENSE
+        rule_identifier: bsd-simplified.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

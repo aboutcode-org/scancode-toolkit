@@ -19,7 +19,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus AND public-domain
-        licensedb_identifier: gpl-2.0-plus_and_public-domain_810.RULE
+        rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -74,7 +74,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: smail-gpl
-        licensedb_identifier: smail-gpl.LICENSE
+        rule_identifier: smail-gpl.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

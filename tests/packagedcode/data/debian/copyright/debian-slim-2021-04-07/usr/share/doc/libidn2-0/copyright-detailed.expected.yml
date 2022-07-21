@@ -36,7 +36,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -68,7 +68,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_288.RULE
+        rule_identifier: gpl-3.0-plus_288.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -120,7 +120,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -152,7 +152,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_740.RULE
+        rule_identifier: gpl-2.0-plus_740.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -204,7 +204,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_166.RULE
+        rule_identifier: lgpl-3.0-plus_166.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -236,7 +236,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_242.RULE
+        rule_identifier: lgpl-3.0-plus_242.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-3
         is_license_text: no
@@ -288,7 +288,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: unicode
-        licensedb_identifier: unicode_14.RULE
+        rule_identifier: unicode_14.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -320,7 +320,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: unicode
-        licensedb_identifier: unicode_17.RULE
+        rule_identifier: unicode_17.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

@@ -24,7 +24,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bzip2-libbzip-2010
-        licensedb_identifier: bzip2-libbzip-2010.LICENSE
+        rule_identifier: bzip2-libbzip-2010.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -90,7 +90,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_561.RULE
+        rule_identifier: gpl-2.0_561.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -122,7 +122,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1294.RULE
+        rule_identifier: gpl-2.0_1294.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no

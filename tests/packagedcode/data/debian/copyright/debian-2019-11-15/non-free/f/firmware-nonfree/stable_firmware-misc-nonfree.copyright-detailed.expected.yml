@@ -102,7 +102,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: 3com-microcode
-        licensedb_identifier: 3com-microcode3.RULE
+        rule_identifier: 3com-microcode3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -166,7 +166,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified-source
-        licensedb_identifier: bsd-simplified-source.LICENSE
+        rule_identifier: bsd-simplified-source.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -206,7 +206,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: agere-bsd
-        licensedb_identifier: agere-bsd_1.RULE
+        rule_identifier: agere-bsd_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -279,7 +279,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-acer
-        licensedb_identifier: x11-acer.LICENSE
+        rule_identifier: x11-acer.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -328,7 +328,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ctl-linux-firmware
-        licensedb_identifier: ctl-linux-firmware.LICENSE
+        rule_identifier: ctl-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -408,7 +408,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_66.RULE
+        rule_identifier: other-permissive_66.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -447,7 +447,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: linux-openib
-        licensedb_identifier: linux-openib.LICENSE
+        rule_identifier: linux-openib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -504,7 +504,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_334.RULE
+        rule_identifier: proprietary-license_334.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -564,7 +564,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified-source
-        licensedb_identifier: bsd-simplified-source.LICENSE
+        rule_identifier: bsd-simplified-source.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -604,7 +604,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_332.RULE
+        rule_identifier: proprietary-license_332.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -652,7 +652,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
-        licensedb_identifier: isc.LICENSE
+        rule_identifier: isc.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -701,7 +701,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
-        licensedb_identifier: isc.LICENSE
+        rule_identifier: isc.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -750,7 +750,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_331.RULE
+        rule_identifier: proprietary-license_331.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -794,7 +794,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_786.RULE
+        rule_identifier: bsd-new_786.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -854,7 +854,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
-        licensedb_identifier: isc.LICENSE
+        rule_identifier: isc.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -902,7 +902,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_330.RULE
+        rule_identifier: proprietary-license_330.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -945,7 +945,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_328.RULE
+        rule_identifier: proprietary-license_328.RULE
         referenced_filenames:
           - LICENCE.go7007
         is_license_text: yes
@@ -991,7 +991,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
-        licensedb_identifier: intel_2.RULE
+        rule_identifier: intel_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1061,7 +1061,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: nxp-firmware-patent
-        licensedb_identifier: nxp-firmware-patent.LICENSE
+        rule_identifier: nxp-firmware-patent.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1141,7 +1141,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-original
-        licensedb_identifier: bsd-original_44.RULE
+        rule_identifier: bsd-original_44.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1203,7 +1203,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: mit
-        licensedb_identifier: mit_712.RULE
+        rule_identifier: mit_712.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1256,7 +1256,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: moxa-linux-firmware
-        licensedb_identifier: moxa-linux-firmware.LICENSE
+        rule_identifier: moxa-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1308,7 +1308,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ralink-firmware
-        licensedb_identifier: ralink-firmware.LICENSE
+        rule_identifier: ralink-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1380,7 +1380,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_324.RULE
+        rule_identifier: proprietary-license_324.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1416,7 +1416,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_325.RULE
+        rule_identifier: proprietary-license_325.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1579,7 +1579,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_319.RULE
+        rule_identifier: proprietary-license_319.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1653,7 +1653,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_311.RULE
+        rule_identifier: proprietary-license_311.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1697,7 +1697,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ralink-firmware
-        licensedb_identifier: ralink-firmware.LICENSE
+        rule_identifier: ralink-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1769,7 +1769,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_66.RULE
+        rule_identifier: other-permissive_66.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1808,7 +1808,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_66.RULE
+        rule_identifier: other-permissive_66.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1847,7 +1847,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new AND proprietary-license
-        licensedb_identifier: bsd-new_and_proprietary-license_1.RULE
+        rule_identifier: bsd-new_and_proprietary-license_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1930,7 +1930,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_308.RULE
+        rule_identifier: proprietary-license_308.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1973,7 +1973,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
-        licensedb_identifier: intel.LICENSE
+        rule_identifier: intel.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

@@ -136,7 +136,7 @@ def get_licensedb_references(license_db_data):
 
     for licdb_ref in license_db_data:
 
-        licdb_id = licdb_ref['licensedb_identifier']
+        licdb_id = licdb_ref['rule_identifier']
         if licdb_id not in license_db_ids:
             license_db_ids.update(licdb_id)
             licensedb_references.append(licdb_ref)
@@ -155,11 +155,11 @@ def get_license_db_reference_data(license_detections):
 
         for match in matches:
 
-            licdb_id = match['licensedb_identifier']
+            licdb_id = match['rule_identifier']
 
             ref_data = {}
             ref_data['license_expression'] = match['license_expression']
-            ref_data['licensedb_identifier'] = licdb_id
+            ref_data['rule_identifier'] = licdb_id
             ref_data['referenced_filenames'] = match.pop('referenced_filenames')
             ref_data['is_license_text'] = match.pop('is_license_text')
             ref_data['is_license_notice'] = match.pop('is_license_notice')

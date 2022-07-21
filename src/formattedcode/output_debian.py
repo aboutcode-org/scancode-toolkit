@@ -179,7 +179,7 @@ def get_texts(detected_licenses):
     # set of (start line, end line, matched_rule identifier)
     seen = set()
     for lic in get_matches_from_detection_mappings(detected_licenses):
-        key = lic['start_line'], lic['end_line'], lic['licensedb_identifier']
+        key = lic['start_line'], lic['end_line'], lic['rule_identifier']
         if key not in seen:
             yield lic['matched_text']
             seen.add(key)

@@ -21,7 +21,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -53,7 +53,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_754.RULE
+        rule_identifier: gpl-2.0-plus_754.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -95,7 +95,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: afl-2.1
-        licensedb_identifier: afl-2.1_12.RULE
+        rule_identifier: afl-2.1_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -127,7 +127,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: afl-2.1
-        licensedb_identifier: afl-2.1_6.RULE
+        rule_identifier: afl-2.1_6.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

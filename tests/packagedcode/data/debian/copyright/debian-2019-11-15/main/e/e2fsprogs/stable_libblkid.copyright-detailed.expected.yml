@@ -17,7 +17,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.0
-        licensedb_identifier: lgpl-2.0_24.RULE
+        rule_identifier: lgpl-2.0_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

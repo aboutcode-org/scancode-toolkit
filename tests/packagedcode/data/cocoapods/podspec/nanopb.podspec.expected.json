@@ -47,7 +47,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "zlib",
-            "licensedb_identifier": "zlib_in_manifest.RULE",
+            "rule_identifier": "zlib_in_manifest.RULE",
             "referenced_filenames": [
               "LICENSE.txt"
             ],

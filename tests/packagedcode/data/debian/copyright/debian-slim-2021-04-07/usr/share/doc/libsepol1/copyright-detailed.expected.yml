@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '89.63'
         matcher: 3-seq
         license_expression: lgpl-2.1-plus
-        licensedb_identifier: lgpl-2.1-plus_312.RULE
+        rule_identifier: lgpl-2.1-plus_312.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL
           - /usr/share/common-licenses/LGPL-2.1
@@ -80,7 +80,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1123.RULE
+        rule_identifier: gpl-2.0_1123.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL
         is_license_text: no

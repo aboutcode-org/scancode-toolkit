@@ -49,7 +49,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
-              "licensedb_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+              "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
               "referenced_filenames": [
                 "LICENSE"
               ],
@@ -88,7 +88,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "mit",
-              "licensedb_identifier": "mit_14.RULE",
+              "rule_identifier": "mit_14.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -125,7 +125,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "mit",
-              "licensedb_identifier": "mit.LICENSE",
+              "rule_identifier": "mit.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -234,7 +234,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
-                  "licensedb_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+                  "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
                   "referenced_filenames": [
                     "LICENSE"
                   ],
@@ -273,7 +273,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "mit",
-                  "licensedb_identifier": "mit_14.RULE",
+                  "rule_identifier": "mit_14.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -310,7 +310,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "mit",
-                  "licensedb_identifier": "mit.LICENSE",
+                  "rule_identifier": "mit.LICENSE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,

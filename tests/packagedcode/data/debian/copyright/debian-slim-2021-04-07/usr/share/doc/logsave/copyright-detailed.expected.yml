@@ -24,7 +24,7 @@ license_detections:
         match_coverage: '99.02'
         matcher: 3-seq
         license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
-        licensedb_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
+        rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
           - /usr/share/common-licenses/LGPL-2
@@ -112,7 +112,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ntp-0
-        licensedb_identifier: ntp-0.LICENSE
+        rule_identifier: ntp-0.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -152,7 +152,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_117.RULE
+        rule_identifier: bsd-new_117.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

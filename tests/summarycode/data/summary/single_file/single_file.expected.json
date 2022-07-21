@@ -97,7 +97,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "jetty",
-              "licensedb_identifier": "jetty.LICENSE",
+              "rule_identifier": "jetty.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,

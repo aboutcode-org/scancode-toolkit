@@ -29,7 +29,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_1070.RULE
+        rule_identifier: bsd-new_1070.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -85,7 +85,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: linux-openib
-        licensedb_identifier: linux-openib.LICENSE
+        rule_identifier: linux-openib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -142,7 +142,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: qlogic-microcode
-        licensedb_identifier: qlogic-microcode.LICENSE
+        rule_identifier: qlogic-microcode.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -214,7 +214,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_66.RULE
+        rule_identifier: other-permissive_66.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -249,7 +249,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_310.RULE
+        rule_identifier: proprietary-license_310.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -292,7 +292,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_66.RULE
+        rule_identifier: other-permissive_66.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

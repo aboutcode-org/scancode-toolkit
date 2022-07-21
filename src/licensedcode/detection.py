@@ -232,7 +232,7 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            identifier = (match['licensedb_identifier'], match['match_coverage'],)
+            identifier = (match['rule_identifier'], match['match_coverage'],)
             data.append(identifier)
 
         # Return a positive hash value for the tuple
@@ -250,7 +250,7 @@ class LicenseDetection:
         for match in self.matches:
             tokenized_matched_text = tuple(query_tokenizer(match['matched_text']))
             identifier = (
-                match['licensedb_identifier'],
+                match['rule_identifier'],
                 match['match_coverage'],
                 tokenized_matched_text,
             )
@@ -467,8 +467,7 @@ def licenses_data_from_match(
 
     # LicenseDB Level Information (Rule that was matched)
     result['license_expression'] = match.rule.license_expression
-    # TODO: change this to `rule_identifier`
-    result['licensedb_identifier'] = match.rule.identifier
+    result['rule_identifier'] = match.rule.identifier
     result['referenced_filenames'] = match.rule.referenced_filenames
     result['is_license_text'] = match.rule.is_license_text
     result['is_license_notice'] = match.rule.is_license_notice

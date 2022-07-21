@@ -21,7 +21,7 @@ license_detections:
         match_coverage: '98.8'
         matcher: 3-seq
         license_expression: tcl
-        licensedb_identifier: tcl_3.RULE
+        rule_identifier: tcl_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -98,7 +98,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: pngsuite
-        licensedb_identifier: pngsuite.LICENSE
+        rule_identifier: pngsuite.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

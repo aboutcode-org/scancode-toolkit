@@ -69,7 +69,7 @@ class TestRpmBasics(FileBasedTesting):
                               'is_license_tag': False,
                               'is_license_text': False,
                               'license_expression': 'lgpl-2.0-plus',
-                              'licensedb_identifier': 'lgpl-2.0-plus_68.RULE',
+                              'rule_identifier': 'lgpl-2.0-plus_68.RULE',
                               'licenses': [{'category': 'Copyleft Limited',
                                             'homepage_url': 'http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html',
                                             'is_exception': False,

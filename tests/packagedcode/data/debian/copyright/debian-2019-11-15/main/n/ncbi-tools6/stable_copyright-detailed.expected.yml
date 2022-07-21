@@ -67,7 +67,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_128.RULE
+        rule_identifier: public-domain_128.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -99,7 +99,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: us-govt-public-domain
-        licensedb_identifier: us-govt-public-domain_24.RULE
+        rule_identifier: us-govt-public-domain_24.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -154,7 +154,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: boost-1.0
-        licensedb_identifier: boost-1.0_9.RULE
+        rule_identifier: boost-1.0_9.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -211,7 +211,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -264,7 +264,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-with-modification-obligations
-        licensedb_identifier: mit-with-modification-obligations_4.RULE
+        rule_identifier: mit-with-modification-obligations_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -312,7 +312,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
-        licensedb_identifier: proprietary-license_136.RULE
+        rule_identifier: proprietary-license_136.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -355,7 +355,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: public-domain
-        licensedb_identifier: public-domain_359.RULE
+        rule_identifier: public-domain_359.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -398,7 +398,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: flex-2.5
-        licensedb_identifier: flex-2.5_6.RULE
+        rule_identifier: flex-2.5_6.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -447,7 +447,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -479,7 +479,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_845.RULE
+        rule_identifier: gpl-2.0-plus_845.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no

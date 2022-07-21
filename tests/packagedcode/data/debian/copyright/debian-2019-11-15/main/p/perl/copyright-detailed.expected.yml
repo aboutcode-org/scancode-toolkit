@@ -1106,7 +1106,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1
-        licensedb_identifier: lgpl-2.1_38.RULE
+        rule_identifier: lgpl-2.1_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1138,7 +1138,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1
-        licensedb_identifier: lgpl-2.1_249.RULE
+        rule_identifier: lgpl-2.1_249.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1176,7 +1176,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus
-        licensedb_identifier: gpl-1.0-plus_395.RULE
+        rule_identifier: gpl-1.0-plus_395.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1208,7 +1208,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0
-        licensedb_identifier: gpl-1.0_38.RULE
+        rule_identifier: gpl-1.0_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1246,7 +1246,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1278,7 +1278,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1040.RULE
+        rule_identifier: gpl-2.0_1040.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1317,7 +1317,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0
-        licensedb_identifier: artistic-perl-1.0_26.RULE
+        rule_identifier: artistic-perl-1.0_26.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1349,7 +1349,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0
-        licensedb_identifier: artistic-perl-1.0_2.RULE
+        rule_identifier: artistic-perl-1.0_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1387,7 +1387,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-2.0
-        licensedb_identifier: artistic-2.0_36.RULE
+        rule_identifier: artistic-2.0_36.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1605,7 +1605,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bzip2-libbzip-2010
-        licensedb_identifier: bzip2-libbzip-2010.LICENSE
+        rule_identifier: bzip2-libbzip-2010.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1671,7 +1671,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: zlib
-        licensedb_identifier: zlib.LICENSE
+        rule_identifier: zlib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1722,7 +1722,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
-        licensedb_identifier: mit.LICENSE
+        rule_identifier: mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1775,7 +1775,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_42.RULE
+        rule_identifier: bsd-new_42.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1834,7 +1834,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-original
-        licensedb_identifier: bsd-original_80.RULE
+        rule_identifier: bsd-original_80.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1897,7 +1897,7 @@ license_detections:
         match_coverage: '99.57'
         matcher: 3-seq
         license_expression: unicode-dfs-2015
-        licensedb_identifier: unicode-dfs-2015_9.RULE
+        rule_identifier: unicode-dfs-2015_9.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1988,7 +1988,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_313.RULE
+        rule_identifier: bsd-new_313.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2047,7 +2047,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_19.RULE
+        rule_identifier: bsd-new_19.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2106,7 +2106,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: regexp
-        licensedb_identifier: regexp.LICENSE
+        rule_identifier: regexp.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2155,7 +2155,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
-        licensedb_identifier: other-permissive_212.RULE
+        rule_identifier: other-permissive_212.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2196,7 +2196,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-copyleft
-        licensedb_identifier: other-copyleft_20.RULE
+        rule_identifier: other-copyleft_20.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2235,7 +2235,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-copyleft
-        licensedb_identifier: other-copyleft_4.RULE
+        rule_identifier: other-copyleft_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -2273,7 +2273,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_45.RULE
+        rule_identifier: public-domain_45.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2305,7 +2305,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_285.RULE
+        rule_identifier: public-domain_285.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2337,7 +2337,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_bare_words.RULE
+        rule_identifier: public-domain_bare_words.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -2369,7 +2369,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_bare_words.RULE
+        rule_identifier: public-domain_bare_words.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -2405,7 +2405,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus WITH bison-exception-2.2
-        licensedb_identifier: gpl-3.0-plus_with_bison-exception-3.0_1.RULE
+        rule_identifier: gpl-3.0-plus_with_bison-exception-3.0_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -2480,7 +2480,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: paul-hsieh-derivative
-        licensedb_identifier: paul-hsieh-derivative_1.RULE
+        rule_identifier: paul-hsieh-derivative_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2532,7 +2532,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-x11
-        licensedb_identifier: bsd-x11_10.RULE
+        rule_identifier: bsd-x11_10.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2594,7 +2594,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cc0-1.0
-        licensedb_identifier: cc0-1.0_12.RULE
+        rule_identifier: cc0-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -2626,7 +2626,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cc0-1.0
-        licensedb_identifier: cc0-1.0_155.RULE
+        rule_identifier: cc0-1.0_155.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2782,7 +2782,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-ap
-        licensedb_identifier: fsf-ap.LICENSE
+        rule_identifier: fsf-ap.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2822,7 +2822,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-dist-1.0
-        licensedb_identifier: artistic-dist-1.0.LICENSE
+        rule_identifier: artistic-dist-1.0.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2983,7 +2983,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3041,7 +3041,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3091,7 +3091,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3141,7 +3141,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3191,7 +3191,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3241,7 +3241,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3291,7 +3291,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -3344,7 +3344,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3396,7 +3396,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: unicode
-        licensedb_identifier: unicode_14.RULE
+        rule_identifier: unicode_14.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -3432,7 +3432,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_26.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_26.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3485,7 +3485,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3537,7 +3537,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3589,7 +3589,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3639,7 +3639,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3689,7 +3689,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3739,7 +3739,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3791,7 +3791,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -3844,7 +3844,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3896,7 +3896,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -3949,7 +3949,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4001,7 +4001,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -4054,7 +4054,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -4107,7 +4107,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4157,7 +4157,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4209,7 +4209,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4259,7 +4259,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4311,7 +4311,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4364,7 +4364,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4416,7 +4416,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_13.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_13.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4474,7 +4474,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4526,7 +4526,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4578,7 +4578,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4630,7 +4630,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4682,7 +4682,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4732,7 +4732,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4784,7 +4784,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4836,7 +4836,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4888,7 +4888,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4940,7 +4940,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -4992,7 +4992,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5044,7 +5044,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5096,7 +5096,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5148,7 +5148,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5200,7 +5200,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5252,7 +5252,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5304,7 +5304,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-2.0
-        licensedb_identifier: artistic-2.0_38.RULE
+        rule_identifier: artistic-2.0_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5342,7 +5342,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5394,7 +5394,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5446,7 +5446,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5506,7 +5506,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5558,7 +5558,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5610,7 +5610,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5662,7 +5662,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5714,7 +5714,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5766,7 +5766,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5818,7 +5818,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-2.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-2.0-plus_3.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-2.0-plus_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5873,7 +5873,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5925,7 +5925,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -5977,7 +5977,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6029,7 +6029,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6081,7 +6081,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6133,7 +6133,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6185,7 +6185,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_15.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_15.RULE
         referenced_filenames:
           - LICENCE
         is_license_text: no
@@ -6238,7 +6238,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6290,7 +6290,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6342,7 +6342,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6394,7 +6394,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6446,7 +6446,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit OR gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: mit_or_gpl-1.0-plus_or_artistic-perl-1.0_1.RULE
+        rule_identifier: mit_or_gpl-1.0-plus_or_artistic-perl-1.0_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6513,7 +6513,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit OR artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
+        rule_identifier: mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6579,7 +6579,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6631,7 +6631,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_8.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_8.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6686,7 +6686,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6738,7 +6738,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6786,7 +6786,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: historical
-        licensedb_identifier: historical_9.RULE
+        rule_identifier: historical_9.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6832,7 +6832,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6884,7 +6884,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6936,7 +6936,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -6986,7 +6986,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7038,7 +7038,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7090,7 +7090,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7142,7 +7142,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7195,7 +7195,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7247,7 +7247,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7299,7 +7299,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7351,7 +7351,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7403,7 +7403,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7455,7 +7455,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7507,7 +7507,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7559,7 +7559,7 @@ license_detections:
         match_coverage: '59.09'
         matcher: 3-seq
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7611,7 +7611,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7663,7 +7663,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7715,7 +7715,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0
-        licensedb_identifier: artistic-perl-1.0_12.RULE
+        rule_identifier: artistic-perl-1.0_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7752,7 +7752,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_286.RULE
+        rule_identifier: public-domain_286.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -7789,7 +7789,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-2.0 AND public-domain-disclaimer
-        licensedb_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
+        rule_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7842,7 +7842,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7895,7 +7895,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7947,7 +7947,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -7999,7 +7999,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8051,7 +8051,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8103,7 +8103,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8155,7 +8155,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8207,7 +8207,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8259,7 +8259,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8311,7 +8311,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8363,7 +8363,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8415,7 +8415,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8467,7 +8467,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8515,7 +8515,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_287.RULE
+        rule_identifier: public-domain_287.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -8556,7 +8556,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8608,7 +8608,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8660,7 +8660,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cc0-1.0
-        licensedb_identifier: cc0-1.0_154.RULE
+        rule_identifier: cc0-1.0_154.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8699,7 +8699,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8751,7 +8751,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8805,7 +8805,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-2.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-2.0-plus_2.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-2.0-plus_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8862,7 +8862,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8917,7 +8917,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -8969,7 +8969,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9021,7 +9021,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_1065.RULE
+        rule_identifier: bsd-new_1065.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9053,7 +9053,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9105,7 +9105,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9157,7 +9157,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: unicode
-        licensedb_identifier: unicode_14.RULE
+        rule_identifier: unicode_14.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -9193,7 +9193,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9245,7 +9245,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9300,7 +9300,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9352,7 +9352,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9404,7 +9404,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9456,7 +9456,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9508,7 +9508,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9560,7 +9560,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9612,7 +9612,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9660,7 +9660,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9712,7 +9712,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9764,7 +9764,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9816,7 +9816,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9868,7 +9868,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9920,7 +9920,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -9972,7 +9972,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10020,7 +10020,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10073,7 +10073,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10123,7 +10123,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10175,7 +10175,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10225,7 +10225,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10277,7 +10277,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10327,7 +10327,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10379,7 +10379,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10431,7 +10431,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10483,7 +10483,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10554,7 +10554,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10606,7 +10606,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10658,7 +10658,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10710,7 +10710,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10762,7 +10762,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10814,7 +10814,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -10867,7 +10867,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10920,7 +10920,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -10972,7 +10972,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11024,7 +11024,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -11077,7 +11077,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11129,7 +11129,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -11182,7 +11182,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11234,7 +11234,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11286,7 +11286,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11339,7 +11339,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11390,7 +11390,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -11443,7 +11443,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11496,7 +11496,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11548,7 +11548,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-1.0
-        licensedb_identifier: artistic-1.0_11.RULE
+        rule_identifier: artistic-1.0_11.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -11584,7 +11584,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11636,7 +11636,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11684,7 +11684,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11736,7 +11736,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11789,7 +11789,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11841,7 +11841,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -11894,7 +11894,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0
-        licensedb_identifier: artistic-perl-1.0_7.RULE
+        rule_identifier: artistic-perl-1.0_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11930,7 +11930,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_37.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_37.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -11982,7 +11982,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         referenced_filenames:
           - README
         is_license_text: no
@@ -12035,7 +12035,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12087,7 +12087,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12139,7 +12139,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12189,7 +12189,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12241,7 +12241,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12289,7 +12289,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_286.RULE
+        rule_identifier: public-domain_286.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -12330,7 +12330,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-2.0 AND public-domain-disclaimer
-        licensedb_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
+        rule_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12383,7 +12383,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12433,7 +12433,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12483,7 +12483,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12533,7 +12533,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12581,7 +12581,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_287.RULE
+        rule_identifier: public-domain_287.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -12622,7 +12622,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12674,7 +12674,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12722,7 +12722,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        licensedb_identifier: public-domain_287.RULE
+        rule_identifier: public-domain_287.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -12763,7 +12763,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12813,7 +12813,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12863,7 +12863,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12913,7 +12913,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -12965,7 +12965,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
+        rule_identifier: artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -13045,7 +13045,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-dist-1.0
-        licensedb_identifier: artistic-dist-1.0_3.RULE
+        rule_identifier: artistic-dist-1.0_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -13084,7 +13084,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-dist-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
+        rule_identifier: artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -13159,7 +13159,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus OR artistic-perl-1.0
-        licensedb_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
+        rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -13213,7 +13213,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
-        licensedb_identifier: mit_577.RULE
+        rule_identifier: mit_577.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -13249,7 +13249,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-        licensedb_identifier: artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes

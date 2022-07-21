@@ -23,7 +23,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
-        licensedb_identifier: bsd-new_1069.RULE
+        rule_identifier: bsd-new_1069.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -82,7 +82,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_561.RULE
+        rule_identifier: gpl-2.0_561.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -114,7 +114,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
-        licensedb_identifier: gpl-2.0_1301.RULE
+        rule_identifier: gpl-2.0_1301.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no

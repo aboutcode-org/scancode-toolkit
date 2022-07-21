@@ -49,7 +49,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-unlimited
-        licensedb_identifier: fsf-unlimited.LICENSE
+        rule_identifier: fsf-unlimited.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -88,7 +88,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-1.0-plus WITH autoconf-simple-exception-2.0
-        licensedb_identifier: gpl-1.0-plus_with_autoconf-simple-exception-2.0_2.RULE
+        rule_identifier: gpl-1.0-plus_with_autoconf-simple-exception-2.0_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -143,7 +143,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_166.RULE
+        rule_identifier: lgpl-3.0-plus_166.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -175,7 +175,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
-        licensedb_identifier: lgpl-3.0-plus_244.RULE
+        rule_identifier: lgpl-3.0-plus_244.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-3
         is_license_text: no
@@ -228,7 +228,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -260,7 +260,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_484.RULE
+        rule_identifier: gpl-3.0-plus_484.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -313,7 +313,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -345,7 +345,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_990.RULE
+        rule_identifier: gpl-2.0-plus_990.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -400,7 +400,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gfdl-1.2-plus
-        licensedb_identifier: debian_common_gfdl-1.2-plus.RULE
+        rule_identifier: debian_common_gfdl-1.2-plus.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -432,7 +432,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gfdl-1.2-plus
-        licensedb_identifier: gfdl-1.2-plus_21.RULE
+        rule_identifier: gfdl-1.2-plus_21.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GFDL-1.2
         is_license_text: no
@@ -479,7 +479,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-xconsortium
-        licensedb_identifier: x11-xconsortium_2.RULE
+        rule_identifier: x11-xconsortium_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

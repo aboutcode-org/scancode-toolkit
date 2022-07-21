@@ -40,7 +40,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-unlimited
-        licensedb_identifier: fsf-unlimited.LICENSE
+        rule_identifier: fsf-unlimited.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -79,7 +79,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-        licensedb_identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
+        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -142,7 +142,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_22.RULE
+        rule_identifier: gpl-2.0-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -174,7 +174,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
-        licensedb_identifier: gpl-2.0-plus_842.RULE
+        rule_identifier: gpl-2.0-plus_842.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -218,7 +218,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_92.RULE
+        rule_identifier: gpl-3.0-plus_92.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -250,7 +250,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
-        licensedb_identifier: gpl-3.0-plus_387.RULE
+        rule_identifier: gpl-3.0-plus_387.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -294,7 +294,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified
-        licensedb_identifier: bsd-simplified_5.RULE
+        rule_identifier: bsd-simplified_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no

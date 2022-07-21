@@ -47,7 +47,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "unknown-license-reference",
-            "licensedb_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+            "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
             "referenced_filenames": [
               "LICENSE"
             ],
