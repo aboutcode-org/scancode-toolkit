@@ -30,8 +30,8 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
-    "declared_license_expression": "gpl-2.0-plus AND lgpl-2.1-plus AND undetected-license",
-    "declared_license_expression_spdx": "GPL-2.0-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-undetected-license",
+    "declared_license_expression": "gpl-2.0-plus AND lgpl-2.1-plus AND unknown",
+    "declared_license_expression_spdx": "GPL-2.0-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-unknown",
     "license_detections": [
       {
         "license_expression": null,
@@ -114,9 +114,9 @@
         ]
       },
       {
-        "license_expression": "undetected-license",
+        "license_expression": "unknown",
         "detection_rules": [
-          "undetected-license"
+          "unknown"
         ],
         "matches": [
           {
@@ -126,8 +126,8 @@
             "matched_length": 30,
             "match_coverage": 100.0,
             "matcher": "5-undetected",
-            "license_expression": "undetected-license",
-            "rule_identifier": "package-manifest-undetected-license",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -139,7 +139,7 @@
             "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
             "licenses": [
               {
-                "key": "undetected-license",
+                "key": "unknown",
                 "name": "Undetected License",
                 "short_name": "Undetected License",
                 "category": "Unstated License",
@@ -148,11 +148,11 @@
                 "owner": "Unspecified",
                 "homepage_url": null,
                 "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/undetected-license",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.yml",
-                "spdx_license_key": "LicenseRef-scancode-undetected-license",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.LICENSE"
+                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
+                "spdx_license_key": "LicenseRef-scancode-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
               }
             ]
           }

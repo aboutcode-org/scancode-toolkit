@@ -783,7 +783,7 @@ def get_undetected_matches(query_string):
         return []
 
     # FIXME: track lines
-    expression_str = 'undetected-license'
+    expression_str = 'unknown'
 
     idx = get_index()
     query = Query(query_string=query_string, idx=idx)

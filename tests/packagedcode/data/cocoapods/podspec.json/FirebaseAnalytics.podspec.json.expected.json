@@ -30,13 +30,13 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "declared_license_expression": "undetected-license",
-    "declared_license_expression_spdx": "LicenseRef-scancode-undetected-license",
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
     "license_detections": [
       {
-        "license_expression": "undetected-license",
+        "license_expression": "unknown",
         "detection_rules": [
-          "undetected-license"
+          "unknown"
         ],
         "matches": [
           {
@@ -46,8 +46,8 @@
             "matched_length": 4,
             "match_coverage": 100.0,
             "matcher": "5-undetected",
-            "license_expression": "undetected-license",
-            "rule_identifier": "package-manifest-undetected-license",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -59,7 +59,7 @@
             "matched_text": "Copyright 2021 Google Copyright",
             "licenses": [
               {
-                "key": "undetected-license",
+                "key": "unknown",
                 "name": "Undetected License",
                 "short_name": "Undetected License",
                 "category": "Unstated License",
@@ -68,11 +68,11 @@
                 "owner": "Unspecified",
                 "homepage_url": null,
                 "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/undetected-license",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.yml",
-                "spdx_license_key": "LicenseRef-scancode-undetected-license",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/undetected-license.LICENSE"
+                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
+                "spdx_license_key": "LicenseRef-scancode-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
               }
             ]
           }

@@ -67,7 +67,7 @@
       "vcs_url": null,
       "copyright": null,
       "declared_license_expression": "apache-2.0",
-      "declared_license_expression_spdx": "LicenseRef-scancode-undetected-license",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
