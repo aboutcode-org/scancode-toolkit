@@ -3,6 +3,8 @@
     {
       "path": "COPYING",
       "type": "file",
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -51,14 +53,14 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     },
     {
       "path": "ref",
       "type": "file",
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -146,8 +148,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     }

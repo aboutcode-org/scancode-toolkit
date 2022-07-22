@@ -19,6 +19,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-1.1",
+      "detected_license_expression_spdx": "Apache-1.1",
       "license_detections": [
         {
           "license_expression": "apache-1.1",
@@ -66,8 +68,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-1.1",
-      "detected_license_expression_spdx": "Apache-1.1",
       "percentage_of_license_text": 92.44,
       "copyrights": [
         {

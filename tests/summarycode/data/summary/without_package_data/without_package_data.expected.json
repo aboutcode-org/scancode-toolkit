@@ -56,10 +56,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -95,6 +95,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
+      "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
@@ -194,8 +196,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-      "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "percentage_of_license_text": 57.14,
       "copyrights": [
         {
@@ -243,6 +243,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -290,8 +292,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
@@ -327,6 +327,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -374,8 +376,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],

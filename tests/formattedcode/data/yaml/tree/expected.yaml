@@ -23,10 +23,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.14.0-1038-oem-x86_64-with-glibc2.29
-        platform_version: '#42-Ubuntu SMP Thu May 19 05:03:08 UTC 2022'
-        python_version: "3.8.10 (default, Mar 15 2022, 12:22:08) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.16'
+        platform: Linux-5.14.0-1045-oem-x86_64-with-glibc2.29
+        platform_version: '#51-Ubuntu SMP Mon Jul 4 06:41:22 UTC 2022'
+        python_version: "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
+      spdx_license_list_version: '3.17'
       files_count: 7
 dependencies: []
 packages: []
@@ -49,10 +49,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -87,10 +87,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -125,10 +125,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -163,10 +163,10 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights: []
     holders: []
@@ -195,10 +195,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -233,10 +233,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -271,10 +271,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
@@ -309,10 +309,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    license_detections: []
-    license_clues: []
     detected_license_expression:
     detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.

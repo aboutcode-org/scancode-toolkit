@@ -123,10 +123,10 @@
     {
       "path": "scan",
       "type": "directory",
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "package_data": [],
       "for_packages": [],
@@ -135,6 +135,8 @@
     {
       "path": "scan/copyr.java",
       "type": "file",
+      "detected_license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
+      "detected_license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
@@ -236,8 +238,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-      "detected_license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
       "percentage_of_license_text": 100.0,
       "package_data": [],
       "for_packages": [
@@ -248,6 +248,8 @@
     {
       "path": "scan/package.json",
       "type": "file",
+      "detected_license_expression": "artistic-2.0",
+      "detected_license_expression_spdx": "Artistic-2.0",
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
@@ -295,8 +297,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "artistic-2.0",
-      "detected_license_expression_spdx": "Artistic-2.0",
       "percentage_of_license_text": 5.0,
       "package_data": [
         {

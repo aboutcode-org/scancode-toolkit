@@ -19,6 +19,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "pygres-2.2",
+      "detected_license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
       "license_detections": [
         {
           "license_expression": "pygres-2.2",
@@ -66,8 +68,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "pygres-2.2",
-      "detected_license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
       "percentage_of_license_text": 69.38,
       "copyrights": [
         {

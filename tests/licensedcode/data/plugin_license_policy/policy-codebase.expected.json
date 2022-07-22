@@ -20,10 +20,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "license_policy": {},
       "files_count": 5,
@@ -51,10 +51,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "license_policy": {},
       "files_count": 5,
@@ -82,6 +82,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "broadcom-commercial",
+      "detected_license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
       "license_detections": [
         {
           "license_expression": "broadcom-commercial",
@@ -129,8 +131,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "broadcom-commercial",
-      "detected_license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
       "percentage_of_license_text": 84.0,
       "license_policy": {
         "license_key": "broadcom-commercial",
@@ -163,6 +163,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "bsd-1988",
+      "detected_license_expression_spdx": "LicenseRef-scancode-bsd-1988",
       "license_detections": [
         {
           "license_expression": "bsd-1988",
@@ -210,8 +212,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "bsd-1988",
-      "detected_license_expression_spdx": "LicenseRef-scancode-bsd-1988",
       "percentage_of_license_text": 93.75,
       "license_policy": {
         "license_key": "bsd-1988",
@@ -244,6 +244,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "esri-devkit",
+      "detected_license_expression_spdx": "LicenseRef-scancode-esri-devkit",
       "license_detections": [
         {
           "license_expression": "esri-devkit",
@@ -291,8 +293,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "esri-devkit",
-      "detected_license_expression_spdx": "LicenseRef-scancode-esri-devkit",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "esri-devkit",
@@ -325,6 +325,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "oracle-java-ee-sdk-2010",
+      "detected_license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
       "license_detections": [
         {
           "license_expression": "oracle-java-ee-sdk-2010",
@@ -372,8 +374,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "oracle-java-ee-sdk-2010",
-      "detected_license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "oracle-java-ee-sdk-2010",
@@ -406,6 +406,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "rh-eula",
+      "detected_license_expression_spdx": "LicenseRef-scancode-rh-eula",
       "license_detections": [
         {
           "license_expression": "rh-eula",
@@ -453,8 +455,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "rh-eula",
-      "detected_license_expression_spdx": "LicenseRef-scancode-rh-eula",
       "percentage_of_license_text": 100.0,
       "license_policy": {
         "license_key": "rh-eula",

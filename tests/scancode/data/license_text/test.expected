@@ -3,6 +3,8 @@
     {
       "path": "test.txt",
       "type": "file",
+      "detected_license_expression": "lgpl-2.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only",
       "license_detections": [
         {
           "license_expression": "lgpl-2.1",
@@ -51,8 +53,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "lgpl-2.1",
-      "detected_license_expression_spdx": "LGPL-2.1-only",
       "percentage_of_license_text": 44.44,
       "scan_errors": []
     }

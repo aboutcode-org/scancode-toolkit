@@ -31,10 +31,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -68,6 +68,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -115,8 +117,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 79.31,
       "copyrights": [
         {
@@ -162,6 +162,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -209,8 +211,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 64.4,
       "copyrights": [
         {
@@ -256,6 +256,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -303,8 +305,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 1.83,
       "copyrights": [],
       "holders": [],
@@ -344,6 +344,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "detected_license_expression": "gpl-2.0-plus",
+      "detected_license_expression_spdx": "GPL-2.0-or-later",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -391,8 +393,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "gpl-2.0-plus",
-      "detected_license_expression_spdx": "GPL-2.0-or-later",
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],

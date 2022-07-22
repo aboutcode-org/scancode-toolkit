@@ -43,10 +43,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -82,6 +82,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "jetty",
+      "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
       "license_detections": [
         {
           "license_expression": "jetty",
@@ -129,8 +131,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "jetty",
-      "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
       "percentage_of_license_text": 100.0,
       "copyrights": [
         {

@@ -3,6 +3,8 @@
     {
       "path": "README.md",
       "type": "file",
+      "detected_license_expression": "epl-2.0",
+      "detected_license_expression_spdx": "EPL-2.0",
       "license_detections": [
         {
           "license_expression": "epl-2.0",
@@ -88,8 +90,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "epl-2.0",
-      "detected_license_expression_spdx": "EPL-2.0",
       "percentage_of_license_text": 86.05,
       "scan_errors": []
     }

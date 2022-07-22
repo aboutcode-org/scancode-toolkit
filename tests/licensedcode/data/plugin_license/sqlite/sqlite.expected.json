@@ -3,16 +3,18 @@
     {
       "path": "sqlite.tgz",
       "type": "directory",
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
       "path": "sqlite.tgz/sqlite3-binding2.c",
       "type": "file",
+      "detected_license_expression": "blessing",
+      "detected_license_expression_spdx": "blessing",
       "license_detections": [
         {
           "license_expression": "blessing",
@@ -6136,8 +6138,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "blessing",
-      "detected_license_expression_spdx": "blessing",
       "percentage_of_license_text": 36.67,
       "scan_errors": []
     }

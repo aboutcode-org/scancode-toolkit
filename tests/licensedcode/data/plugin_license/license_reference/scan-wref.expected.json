@@ -3,6 +3,8 @@
     {
       "path": "license-notice.txt",
       "type": "file",
+      "detected_license_expression": "unknown-license-reference",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "license_detections": [
         {
           "license_expression": "unknown-license-reference",
@@ -53,8 +55,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "unknown-license-reference",
-      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "percentage_of_license_text": 0.2,
       "scan_errors": []
     }

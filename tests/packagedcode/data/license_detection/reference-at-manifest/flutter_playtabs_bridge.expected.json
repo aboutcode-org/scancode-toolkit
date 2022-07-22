@@ -178,6 +178,8 @@
     {
       "path": "LICENSE",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -263,8 +265,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 97.6,
       "package_data": [],
       "for_packages": [],
@@ -273,6 +273,8 @@
     {
       "path": "flutter_paytabs_bridge.podspec",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -397,8 +399,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 1.67,
       "package_data": [
         {

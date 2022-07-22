@@ -141,6 +141,8 @@
     {
       "path": "LICENSE.txt",
       "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
       "license_detections": [
         {
           "license_expression": "zlib",
@@ -189,8 +191,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "zlib",
-      "detected_license_expression_spdx": "Zlib",
       "percentage_of_license_text": 92.31,
       "package_data": [],
       "for_packages": [],
@@ -199,6 +199,8 @@
     {
       "path": "nanopb.podspec",
       "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
       "license_detections": [
         {
           "license_expression": "zlib",
@@ -286,8 +288,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "zlib",
-      "detected_license_expression_spdx": "Zlib",
       "percentage_of_license_text": 2.49,
       "package_data": [
         {

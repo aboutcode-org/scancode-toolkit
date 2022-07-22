@@ -19,10 +19,11 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "pcre",
+      "detected_license_expression_spdx": "LicenseRef-scancode-pcre",
+      "license_detections": [
         {
           "license_expression": "pcre",
-          "spdx_license_expression": "LicenseRef-scancode-pcre",
           "detection_rules": [
             "not-combined"
           ],
@@ -67,12 +68,6 @@
         }
       ],
       "license_clues": [],
-      "license_expressions": [
-        "pcre"
-      ],
-      "spdx_license_expressions": [
-        "LicenseRef-scancode-pcre"
-      ],
       "percentage_of_license_text": 100.0,
       "copyrights": [
         {

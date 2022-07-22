@@ -134,6 +134,8 @@
     {
       "path": "package.json",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -181,8 +183,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 4.05,
       "package_data": [
         {

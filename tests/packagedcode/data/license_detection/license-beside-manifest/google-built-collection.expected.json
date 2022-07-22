@@ -134,6 +134,8 @@
     {
       "path": "LICENSE",
       "type": "file",
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
         {
           "license_expression": "bsd-new",
@@ -182,8 +184,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "bsd-new",
-      "detected_license_expression_spdx": "BSD-3-Clause",
       "percentage_of_license_text": 96.8,
       "package_data": [],
       "for_packages": [],
@@ -192,10 +192,10 @@
     {
       "path": "pubspec.yaml",
       "type": "file",
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "package_data": [
         {

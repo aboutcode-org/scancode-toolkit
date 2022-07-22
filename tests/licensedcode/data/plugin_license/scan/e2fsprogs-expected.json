@@ -3,6 +3,8 @@
     {
       "path": "e2fsprogs-copyright",
       "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [
         {
@@ -42,14 +44,14 @@
           ]
         }
       ],
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
       "percentage_of_license_text": 22.73,
       "scan_errors": []
     },
     {
       "path": "e2fsprogs-fsstress",
       "type": "file",
+      "detected_license_expression": "gpl-2.0 AND patent-disclaimer",
+      "detected_license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
       "license_detections": [
         {
           "license_expression": "gpl-2.0 AND patent-disclaimer",
@@ -113,8 +115,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "gpl-2.0 AND patent-disclaimer",
-      "detected_license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
       "percentage_of_license_text": 80.93,
       "scan_errors": []
     }

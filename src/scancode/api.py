@@ -232,10 +232,10 @@ def get_licenses(
         percentage_of_license_text = detection.percentage_license_text_of_file(all_qspans)
 
     return dict([
-        ('license_detections', license_detections),
-        ('license_clues', license_clues),
         ('detected_license_expression', detected_license_expression),
         ('detected_license_expression_spdx', detected_license_expression_spdx),
+        ('license_detections', license_detections),
+        ('license_clues', license_clues),
         ('percentage_of_license_text', percentage_of_license_text),
     ])
 

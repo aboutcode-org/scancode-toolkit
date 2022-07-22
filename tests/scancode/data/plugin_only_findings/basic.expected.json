@@ -21,6 +21,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "detected_license_expression": "bsd-original-uc",
+      "detected_license_expression_spdx": "BSD-4-Clause-UC",
       "license_detections": [
         {
           "license_expression": "bsd-original-uc",
@@ -68,8 +70,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "bsd-original-uc",
-      "detected_license_expression_spdx": "BSD-4-Clause-UC",
       "percentage_of_license_text": 4.82,
       "copyrights": [
         {
@@ -118,6 +118,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "detected_license_expression": "gpl-2.0 OR bsd-new",
+      "detected_license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
       "license_detections": [
         {
           "license_expression": "gpl-2.0 OR bsd-new",
@@ -184,8 +186,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "gpl-2.0 OR bsd-new",
-      "detected_license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
       "percentage_of_license_text": 19.01,
       "copyrights": [
         {

@@ -3,6 +3,8 @@
     {
       "path": "README.md",
       "type": "file",
+      "detected_license_expression": "wtfpl-2.0 AND mit",
+      "detected_license_expression_spdx": "WTFPL AND MIT",
       "license_detections": [
         {
           "license_expression": "wtfpl-2.0 AND mit",
@@ -162,8 +164,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "wtfpl-2.0 AND mit",
-      "detected_license_expression_spdx": "WTFPL AND MIT",
       "percentage_of_license_text": 8.18,
       "scan_errors": []
     }

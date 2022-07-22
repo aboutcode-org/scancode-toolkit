@@ -3,6 +3,8 @@
     {
       "path": "LICENSE",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -51,14 +53,14 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     },
     {
       "path": "license-notice.txt",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -146,8 +148,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 0.2,
       "scan_errors": []
     }

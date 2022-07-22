@@ -219,10 +219,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -254,10 +254,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -289,10 +289,10 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -365,10 +365,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -403,6 +403,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -450,8 +452,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
@@ -497,6 +497,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -544,8 +546,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
@@ -591,6 +591,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -638,8 +640,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
@@ -685,6 +685,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "lgpl-2.0",
+      "detected_license_expression_spdx": "LGPL-2.0-only",
       "license_detections": [
         {
           "license_expression": "lgpl-2.0",
@@ -732,8 +734,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "lgpl-2.0",
-      "detected_license_expression_spdx": "LGPL-2.0-only",
       "percentage_of_license_text": 42.86,
       "copyrights": [
         {
@@ -779,10 +779,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "license_detections": [],
-      "license_clues": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -817,6 +817,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -864,8 +866,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 22.22,
       "copyrights": [
         {
@@ -998,6 +998,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
         {
           "license_expression": "apache-2.0",
@@ -1045,8 +1047,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
@@ -1092,6 +1092,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "detected_license_expression": "gpl-2.0",
+      "detected_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
@@ -1139,8 +1141,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "gpl-2.0",
-      "detected_license_expression_spdx": "GPL-2.0-only",
       "percentage_of_license_text": 64.29,
       "copyrights": [
         {

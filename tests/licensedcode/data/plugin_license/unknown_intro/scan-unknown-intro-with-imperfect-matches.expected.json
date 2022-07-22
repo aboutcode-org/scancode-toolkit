@@ -3,6 +3,8 @@
     {
       "path": "LICENSE.md",
       "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -125,8 +127,6 @@
         }
       ],
       "license_clues": [],
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
       "percentage_of_license_text": 88.02,
       "scan_errors": []
     }

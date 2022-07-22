@@ -96,11 +96,10 @@ class LicenseScanner(ScanPlugin):
     """
 
     resource_attributes = dict([
-        ('license_detections', attr.ib(default=attr.Factory(list))),
-        ('license_clues', attr.ib(default=attr.Factory(list))),
-        # TODO: Move these two up
         ('detected_license_expression', attr.ib(default=None)),
         ('detected_license_expression_spdx', attr.ib(default=None)),
+        ('license_detections', attr.ib(default=attr.Factory(list))),
+        ('license_clues', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
