@@ -33,23 +33,22 @@ license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND gpl-2
   public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus) AND
   public-domain AND public-domain AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
   AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0) AND public-domain AND public-domain) AND public-domain
-  AND public-domain AND (public-domain AND public-domain) AND public-domain AND (gpl-2.0-plus
-  AND gpl-2.0-plus) AND public-domain AND public-domain AND (lgpl-2.1-plus AND lgpl-2.1-plus)
-  AND fsf-unlimited AND gpl-3.0-plus WITH autoconf-macro-exception AND fsf-ap AND (gpl-2.0 AND
-  gpl-2.0) AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
-  AND public-domain AND fsf-ap AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0
-  AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND other-copyleft AND public-domain
+  AND public-domain AND public-domain AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND public-domain AND public-domain AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND fsf-unlimited
+  AND gpl-3.0-plus WITH autoconf-macro-exception AND fsf-ap AND (gpl-2.0 AND gpl-2.0) AND public-domain
+  AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
+  AND fsf-ap AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND
+  (lgpl-2.1-plus AND lgpl-2.1-plus) AND other-copyleft AND public-domain
 declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND (LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND GPL-3.0-or-later) AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft)
   AND LicenseRef-scancode-public-domain-disclaimer AND (LGPL-2.1-only AND GPL-2.0-only AND GPL-3.0-only)
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain) AND LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-public-domain AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain)
-  AND LicenseRef-scancode-public-domain AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-public-domain AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND FSFULLR
-  AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-macro-exception AND FSFAP AND (GPL-2.0-only
-  AND GPL-2.0-only) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND FSFULLR AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-macro-exception
+  AND FSFAP AND (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND FSFAP AND (LicenseRef-scancode-public-domain AND
   FSFULLR AND Autoconf-exception-2.0 AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)

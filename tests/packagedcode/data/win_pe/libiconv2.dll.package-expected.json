@@ -116,7 +116,7 @@
       {
         "license_expression": "unknown",
         "detection_rules": [
-          "unknown"
+          "undetected-license"
         ],
         "matches": [
           {
@@ -140,8 +140,8 @@
             "licenses": [
               {
                 "key": "unknown",
-                "name": "Undetected License",
-                "short_name": "Undetected License",
+                "name": "Unknown license detected but not recognized",
+                "short_name": "unknown",
                 "category": "Unstated License",
                 "is_exception": false,
                 "is_unknown": true,

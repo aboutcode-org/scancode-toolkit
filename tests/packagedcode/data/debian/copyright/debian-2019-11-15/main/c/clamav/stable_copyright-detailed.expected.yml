@@ -48,9 +48,9 @@ license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0 AND (gpl-2.0 AND openssl-e
   ((lgpl-2.1 AND lgpl-2.1) AND bsd-new) AND mit AND (x11-xconsortium AND public-domain) AND
   mit AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND zlib AND
   zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty AND fsf-ap AND fsf-ap
-  AND bzip2-libbzip-2010 AND (public-domain AND public-domain) AND public-domain AND public-domain
-  AND x11-tiff AND (public-domain AND public-domain) AND (apache-2.0 AND (free-unknown AND apache-2.0
-  WITH generic-exception)) AND (free-unknown AND apache-2.0 WITH generic-exception) AND (gpl-3.0-plus
+  AND bzip2-libbzip-2010 AND public-domain AND public-domain AND public-domain AND x11-tiff
+  AND (public-domain AND public-domain) AND (apache-2.0 AND (free-unknown AND apache-2.0 WITH
+  generic-exception)) AND (free-unknown AND apache-2.0 WITH generic-exception) AND (gpl-3.0-plus
   WITH bison-exception-2.2 AND gpl-3.0) AND gpl-3.0
 declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only AND (GPL-2.0-only
   AND LicenseRef-scancode-openssl-exception-gpl-3.0-plus AND GPL-2.0-only) AND GPL-2.0-only
@@ -63,12 +63,12 @@ declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-on
   AND BSD-3-Clause) AND MIT AND (X11 AND LicenseRef-scancode-public-domain) AND MIT AND BSD-2-Clause
   AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND Zlib AND Zlib AND
   ISC AND FSFULLR AND FSFUL AND LicenseRef-scancode-fsf-unlimited-no-warranty AND FSFAP AND
-  FSFAP AND bzip2-1.0.6 AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain)
-  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND libtiff AND
-  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain) AND (Apache-2.0
-  AND (LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception))
-  AND (LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception)
-  AND (GPL-3.0-or-later WITH Bison-exception-2.2 AND GPL-3.0-only) AND GPL-3.0-only
+  FSFAP AND bzip2-1.0.6 AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-public-domain AND libtiff AND (LicenseRef-scancode-public-domain AND
+  LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (LicenseRef-scancode-free-unknown AND
+  Apache-2.0 WITH LicenseRef-scancode-generic-exception)) AND (LicenseRef-scancode-free-unknown
+  AND Apache-2.0 WITH LicenseRef-scancode-generic-exception) AND (GPL-3.0-or-later WITH Bison-exception-2.2
+  AND GPL-3.0-only) AND GPL-3.0-only
 copyright: |
   1998-2015, Sourcefire, Inc.
   2002-2007, Tomasz Kojm <tkojm@clamav.net>

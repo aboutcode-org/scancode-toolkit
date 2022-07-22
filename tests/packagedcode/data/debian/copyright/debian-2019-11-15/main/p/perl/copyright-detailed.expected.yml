@@ -395,56 +395,55 @@ license_expression: ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artist
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND ((artistic-perl-1.0
-  OR gpl-1.0-plus) AND (artistic-perl-1.0 OR gpl-1.0-plus)) AND ((gpl-1.0-plus AND gpl-1.0)
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
   ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND bsd-new) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new) AND ((gpl-1.0-plus AND
+  gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
   OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
   ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
   OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND bsd-new) AND ((artistic-perl-1.0 OR gpl-1.0-plus)
-  AND bsd-new) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND (artistic-perl-1.0 AND artistic-perl-1.0) AND artistic-1.0 AND bsd-new
   AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
   OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
   ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 AND artistic-perl-1.0) AND
-  artistic-1.0 AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 OR
-  gpl-1.0-plus)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
-  (artistic-perl-1.0 AND artistic-perl-1.0) AND artistic-perl-1.0 AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
-  (public-domain AND public-domain AND public-domain AND public-domain) AND ((gpl-1.0-plus AND
-  gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  OR gpl-1.0-plus) AND (artistic-perl-1.0 AND artistic-perl-1.0) AND artistic-perl-1.0 AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND (public-domain AND public-domain AND public-domain AND public-domain) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
   AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
   OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
@@ -651,31 +650,31 @@ declared_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artis
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
   GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
   AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND ((Artistic-1.0-Perl OR GPL-1.0-or-later) AND (Artistic-1.0-Perl
-  OR GPL-1.0-or-later)) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
+  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
+  (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
+  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
+  (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
+  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
+  (Artistic-1.0-Perl OR GPL-1.0-or-later) AND (((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND BSD-3-Clause) AND ((Artistic-1.0-Perl OR GPL-1.0-or-later) AND
+  BSD-3-Clause) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
   (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
-  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND (((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND BSD-3-Clause) AND ((Artistic-1.0-Perl
-  OR GPL-1.0-or-later) AND BSD-3-Clause) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
-  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later AND
+  GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later AND GPL-1.0-only)
+  OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
-  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
   GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
@@ -694,43 +693,43 @@ declared_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artis
   (Artistic-1.0-Perl OR GPL-1.0-or-later) AND (Artistic-1.0-Perl AND Artistic-1.0-Perl) AND
   Artistic-1.0 AND BSD-3-Clause AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((Artistic-1.0-Perl OR
-  GPL-1.0-or-later) AND (Artistic-1.0-Perl OR GPL-1.0-or-later)) AND ((GPL-1.0-or-later AND
-  GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
-  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl) AND Artistic-1.0-Perl AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND (LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain)
-  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
   GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
+  GPL-1.0-or-later) AND (Artistic-1.0-Perl AND Artistic-1.0-Perl) AND Artistic-1.0-Perl AND
+  ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl
+  OR GPL-1.0-or-later) AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
+  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later AND
+  GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
+  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
+  (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain)
+  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
+  (Artistic-2.0 AND LicenseRef-scancode-public-domain-disclaimer) AND ((GPL-1.0-or-later AND
+  GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
   (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later OR
-  Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain) AND ((GPL-1.0-or-later AND GPL-1.0-only)
-  OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-2.0 AND LicenseRef-scancode-public-domain-disclaimer)
-  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
+  Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain) AND FSFAP AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
+  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND ((GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  ((GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain) AND FSFAP
+  (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-other-copyleft
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
   (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-public-domain)
-  AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
-  (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
-  AND LicenseRef-scancode-other-copyleft AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
-  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl) OR LicenseRef-scancode-artistic-1988-1.0)
-  AND (Artistic-1.0-Perl OR LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later) AND LicenseRef-scancode-artistic-1988-1.0
+  AND Artistic-1.0-Perl) OR LicenseRef-scancode-artistic-1988-1.0) AND (Artistic-1.0-Perl OR
+  LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later) AND LicenseRef-scancode-artistic-1988-1.0
   AND LicenseRef-scancode-artistic-1988-1.0 AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR
   (GPL-1.0-or-later AND GPL-1.0-only) OR LicenseRef-scancode-artistic-1988-1.0) AND (LicenseRef-scancode-artistic-1988-1.0
   OR GPL-1.0-or-later) AND (((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))

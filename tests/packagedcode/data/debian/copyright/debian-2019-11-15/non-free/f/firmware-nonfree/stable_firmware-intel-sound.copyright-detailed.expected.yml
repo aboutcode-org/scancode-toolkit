@@ -4,24 +4,15 @@ declared_license:
   - Binary redistribution (Intel 2)
   - Binary redistribution (Intel 3)
 license_expression: intel AND intel AND (intel AND (bsd-new AND other-permissive AND other-copyleft)
-  AND bsd-new AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND
-  osf-1990 AND nilsson-historical AND newlib-historical AND bsd-new AND amd-historical AND bsd-new
-  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND x11-hanson AND bsd-simplified
-  AND bsd-new AND delorie-historical AND intel-osl-1993 AND osf-1990 AND bsd-simplified AND
-  bsd-simplified AND bsd-simplified AND bsd-new AND bsd-simplified AND bsd-simplified AND bsd-simplified
-  AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND newlib-historical
-  AND bsd-new AND bsd-new AND bsd-simplified)
+  AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND
+  nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical
+  AND intel-osl-1993)
 declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
   (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
-  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-x11-lucent
-  AND SMLNJ AND LicenseRef-scancode-amd-historical AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-osf-1990
-  AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause
-  AND LicenseRef-scancode-amd-historical AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause
-  AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND BSD-2-Clause AND BSD-3-Clause AND
-  LicenseRef-scancode-delorie-historical AND LicenseRef-scancode-intel-osl-1993 AND LicenseRef-scancode-osf-1990
-  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause
-  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
-  AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND BSD-3-Clause AND BSD-2-Clause)
+  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND LicenseRef-scancode-x11-lucent AND
+  SMLNJ AND LicenseRef-scancode-amd-historical AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-osf-1990
+  AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical AND BSD-2-Clause
+  AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical AND LicenseRef-scancode-intel-osl-1993)
 copyright: |
   2014, Intel Corporation.
   2014, Intel Corporation
