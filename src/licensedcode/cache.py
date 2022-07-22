@@ -102,6 +102,7 @@ class LicenseCache:
         from licensedcode.models import load_licenses
         from licensedcode.models import load_licenses_from_multiple_dirs
         from licensedcode.models import get_license_dirs
+        from licensedcode.models import validate_additional_license_data
         from scancode import lockfile
 
         licenses_data_dir = licenses_data_dir or ldd
@@ -118,6 +119,7 @@ class LicenseCache:
 
                 if additional_directories:
                     additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
+                    validate_additional_license_data(additional_license_dirs)
                     combined_directories = [licenses_data_dir] + additional_license_dirs
                     licenses_db = load_licenses_from_multiple_dirs(license_directories=combined_directories)
                 else:
@@ -187,6 +189,7 @@ def build_index(
     from licensedcode.models import rules_data_dir as rdd
     from licensedcode.models import load_licenses
     from licensedcode.models import load_licenses_from_multiple_dirs
+    from licensedcode.models import validate_ignorable_clues
     from licensedcode.legalese import common_license_words
 
     licenses_data_dir = licenses_data_dir or ldd
@@ -205,6 +208,7 @@ def build_index(
     if additional_directories:
         # if we have additional directories, extract the rules from them
         additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
+        validate_ignorable_clues(additional_rule_dirs)
         # then combine the rules in these additional directories with the rules in the original rules directory
         combined_rule_directories = [rules_data_dir] + additional_rule_dirs
         rules = get_rules_from_multiple_dirs(licenses_db=licenses_db, rule_directories=combined_rule_directories)

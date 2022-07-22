@@ -854,6 +854,79 @@ def get_rules_from_multiple_dirs(
         return get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
 
 
+class InvalidLicense(Exception):
+    pass
+
+
+def validate_additional_license_data(additional_directories):
+    """
+    Takes in directories of additional licenses and determines whether they are valid.
+    If there are any invalid licenses, raises an exception.
+    """
+    licenses = load_licenses_from_multiple_dirs(additional_directories)
+    errors, _, _ = License.validate(
+        licenses,
+        verbose=False,
+    )
+    if errors:
+        message = ['Errors while validating licenses:']
+        for key, msgs in errors.items():
+            message.append('')
+            message.append(f'License: {key}')
+            for msg in msgs:
+                message.append(f'  {msg!r}')
+        raise InvalidLicense('\n'.join(message))
+
+
+def _ignorable_clue_error(rule):
+    """
+    Helper method to validate a single rule's ignorable clues.
+    Returns a pair of the result and expected ignorable clues if
+    there is an error. Otherwise, returns None.
+    """
+    result = get_ignorables(rule.text_file)
+    expected = get_normalized_ignorables(rule)
+    if result != expected:
+        data_file = rule.data_file
+        if not data_file:
+            data_file = rule.text_file.replace('.LICENSE', '.yml')
+
+        result['files'] = [
+            f'file://{data_file}',
+            f'file://{rule.text_file}',
+        ]
+        return result, expected
+
+
+def validate_ignorable_clues(rule_directories):
+    """
+    Validates that all expected ignorable clues declared in a Rule
+    are properly detected in the rule text file.
+    """
+    combined_rules = []
+    for rules_dir in rule_directories:
+        r = list(load_rules(
+            rules_data_dir=rules_dir,
+        ))
+        combined_rules.append(r)
+    # flatten lists of rules into a single iterable
+    rules = list(chain.from_iterable(combined_rules))
+    messages = ['Errors while validating ignorable rules:']
+    error_present = False
+    for rule in rules:
+        if _ignorable_clue_error(rule):
+            error_present = True
+            result, expected = _ignorable_clue_error(rule)
+            message.append('')
+            message.append(f'{rule!r}')
+            message.append('Result:')
+            message.append(result)
+            message.append('Expected:')
+            message.append(expected)
+    if error_present:
+        raise InvalidRule('\n'.join(message))
+
+
 class InvalidRule(Exception):
     pass
 

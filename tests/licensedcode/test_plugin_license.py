@@ -313,3 +313,23 @@ def test_detection_is_correct_in_legacy_npm_package_json():
     expected_file = test_env.get_test_loc('plugin_license/package/package.expected.json')
     run_scan_click(['-lp', '--json-pp', result_file, test_dir])
     check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+
+def test_validate_license_library_returns_errors():
+    test_dir = test_env.get_test_loc('plugin_license/license-expression/scan', copy=True)
+    licenses_dir = test_env.get_test_loc('plugin_license/validate_licenses')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        '-dir', licenses_dir,
+        test_dir,
+    ]
+    # the actual error is an InvalidLicense, but run_scan_click has an assert so it
+    # raises an AssertionError when the code itself throws an InvalidLicense error.
+    # This is why we assert the test raises an AssertionError but check that the
+    # error text is an InvalidLicense.
+    with pytest.raises(AssertionError, match=r"InvalidLicense"):
+        run_scan_click(args)
