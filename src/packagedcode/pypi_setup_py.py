@@ -1,6 +1,6 @@
 #
 # Copyright (c) Gram and others.
-# This code is copied and modified from dephell_setuptools https://github.com/pypa/setuptools
+# This code is copied and modified from dephell_setuptools https://github.com/dephell/dephell_setuptools
 # SPDX-License-Identifier: MIT
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
