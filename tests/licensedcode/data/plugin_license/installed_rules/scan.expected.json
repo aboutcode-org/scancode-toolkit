@@ -46,8 +46,8 @@
           "reference_url": "https://scancode-licensedb.aboutcode.org/example-installed-1",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.yml",
-          "spdx_license_key": "",
-          "spdx_url": "",
+          "spdx_license_key": "scancode-example-installed1",
+          "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
           "start_line": 1,
           "end_line": 1,
           "matched_rule": {
