@@ -59,6 +59,7 @@ TRACE_FILTER_INVALID_UNKNOWN = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
+TRACE_HIGHLIGHTED_TEXT = False
 
 # these control the details in a LicenseMatch representation
 TRACE_REPR_MATCHED_RULE = False
@@ -84,6 +85,7 @@ if (TRACE
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS
+    or TRACE_HIGHLIGHTED_TEXT
     or TRACE_FILTER_SINGLE_WORD_GIBBERISH
     or TRACE_KEY_PHRASES
     or TRACE_REGIONS
@@ -749,6 +751,21 @@ class LicenseMatch(object):
             highlight_not_matched=highlight_not_matched,
             _usecache=_usecache
         )).rstrip()
+
+    def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
+        """
+        Return HTML representing the full text of the original scanned file
+        where the matched text portions and the non-matched text portions are
+        highlighted using HTML tags.
+        """
+        if trace:
+            logger_debug(f'LicenseMatch.get_highlighted_text: self.query: {self.query}')
+
+        query = self.query
+        if not query:
+            return u''
+
+        return ''.join(get_highlighted_lines(match=self, query=query, trace=trace))
 
 
 def set_matched_lines(matches, line_by_pos):
@@ -3085,3 +3102,67 @@ def get_full_qspan_matched_text(
             else:
                 # we do not highlight punctuation and stopwords.
                 yield val
+
+
+def get_highlighted_lines(
+    match,
+    query,
+    stopwords=STOPWORDS,
+    trace=TRACE_HIGHLIGHTED_TEXT,
+):
+    """
+    Yield highlighted text lines (with line returns) for the whole of the matched and unmatched text of a ``query``.
+    """
+    tokens = tokenize_matched_text(
+        location=query.location,
+        query_string=query.query_string,
+        dictionary=query.idx.dictionary,
+        start_line=match.query.start_line,
+        _cache={},
+    )
+    tokens = tag_matched_tokens(tokens=tokens, match_qspan=match.qspan)
+
+    if trace:
+        tokens = list(tokens)
+        print()
+        logger_debug('get_highlighted_lines:  tokens:')
+        for t in tokens:
+            print('    ', t)
+        print()
+    header = '''<style>
+      pre.log {color: #f1f1f1; background-color: #222; font-family: monospace;}
+      pre.wrap {white-space: pre-wrap;}
+      span.not-matched {color:#f5bf3c;}
+      span.matched {color:#000000;}
+</style>
+
+<div class="license-match"><pre>'''
+    footer = '''</pre></div>'''
+
+    yield header
+    highlight_matched = '<span class="matched">{}</span>'
+    highlight_not_matched = '<span class="not-matched">{}</span>'
+    for token in tokens:
+        val = token.value
+        if token.is_text and val.lower() not in stopwords:
+            if token.is_matched:
+                yield highlight_matched.format(val)
+            else:
+                yield highlight_not_matched.format(val)
+        else:
+            # we do not highlight punctuation and stopwords.
+            yield highlight_not_matched.format(val)
+
+    yield footer
+
+
+def tag_matched_tokens(tokens, match_qspan):
+    """
+    Yield Tokens from a ``tokens`` iterable of Token objects.
+    Known matched tokens are tagged as "is_matched=True" if they are matched.
+    """
+    for tok in tokens:
+        # tagged known matched tokens (useful for highlighting)
+        if tok.pos != -1 and tok.is_known and tok.pos in match_qspan:
+            tok = attr.evolve(tok, is_matched=True)
+        yield tok
