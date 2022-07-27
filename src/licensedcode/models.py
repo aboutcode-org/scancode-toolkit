@@ -218,18 +218,21 @@ class License:
         metadata=dict(
             help='Text URL for this license')
     )
+
     osi_url = attr.ib(
         default=None,
         repr=False,
         metadata=dict(
             help='OpenSource.org URL for this license')
     )
+
     faq_url = attr.ib(
         default=None,
         repr=False,
         metadata=dict(
             help='Frequently Asked Questions page URL for this license')
     )
+
     other_urls = attr.ib(
         default=attr.Factory(list),
         repr=False,
@@ -245,19 +248,19 @@ class License:
     )
 
     minimum_coverage = attr.ib(
-    default=0,
-    repr=False,
-    metadata=dict(
-        help='Can this license text be matched only with a minimum coverage e.g., '
-        'when a minimum proportion of tokens have been matched? This is as a '
-        'float between 0 and 100 where 100 means that all tokens must be '
-        'matched and a smaller value means a smaller proportion of matched '
-        'tokens is acceptable. This is mormally computed at indexing time based on '
-        'the length of a license. Providing a stored value in the license data '
-        'file overrides this default computed value. For example, a short '
-        'license notice such as "MIT license" must be matched with all its words, '
-        'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
-        '"license" is not a strong enough licensing clue.')
+        default=0,
+        repr=False,
+        metadata=dict(
+            help='Can this license text be matched only with a minimum coverage e.g., '
+            'when a minimum proportion of tokens have been matched? This is as a '
+            'float between 0 and 100 where 100 means that all tokens must be '
+            'matched and a smaller value means a smaller proportion of matched '
+            'tokens is acceptable. This is mormally computed at indexing time based on '
+            'the length of a license. Providing a stored value in the license data '
+            'file overrides this default computed value. For example, a short '
+            'license notice such as "MIT license" must be matched with all its words, '
+            'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
+            '"license" is not a strong enough licensing clue.')
     )
 
     standard_notice = attr.ib(
