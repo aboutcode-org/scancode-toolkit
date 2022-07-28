@@ -7,4 +7,5 @@ homepage_url: https://github.com/cncf/cla/blob/master/individual-cla.pdf
 spdx_license_key: LicenseRef-scancode-cncf-individual-cla-1.0
 faq_url: https://github.com/kubernetes/community/blob/master/CLA.md
 ignorable_emails:
-    - la@cncf.io
+  - cla@cncf.io
+
