@@ -82,7 +82,7 @@ jobs:
       parameters:
           job_name: ubuntu18_cpython
           image_name: ubuntu-18.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -91,7 +91,7 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -100,7 +100,7 @@ jobs:
       parameters:
           job_name: macos1015_cpython_1
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8']
+          python_versions: ['3.7', '3.8']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -127,7 +127,7 @@ jobs:
       parameters:
           job_name: win2019_cpython_1
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8']
+          python_versions: ['3.7', '3.8']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
@@ -169,7 +169,7 @@ jobs:
       parameters:
           job_name: ubuntu20_test_all_supported_click_versions
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               click_versions: |
@@ -182,128 +182,6 @@ jobs:
 
 
 ################################################################################
-# These jobs are using containers and their own Python 3.6
-################################################################################
-
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: ubuntu18c
-#          container: ubuntu:bionic
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 3 -vvs tests/scancode
-
-
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: ubuntu20c
-#          container: ubuntu:focal
-#          python_path: python3.8
-#          python_version: '3.8'
-#          install_python: sudo apt-get install -y python3.8 python3.8-venv python3.8-dev
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 3 -vvs tests/scancode
-
-
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: centos7c
-#          container: centos:7
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: |
-#              set -e -x
-#              sudo yum install -y epel-release
-#              sudo yum install -y python36 python36-devel python36-virtualenv
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 2 -vvs
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux1_py36
-#          container: quay.io/pypa/manylinux1_x86_64:latest
-#          python_path: /opt/python/cp36-cp36m/bin/python
-#          python_version: '3.6'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 2 -vvs
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux2010_py36
-#          container: quay.io/pypa/manylinux2010_x86_64:latest
-#          python_path: /opt/python/cp36-cp36m/bin/python
-#          python_version: '3.6'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 2 -vvs
-
-
-################################################################################
-# These jobs are using containers and their own Python 3.7
-################################################################################
-
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: fedora30c
-#          container: fedora:30
-#          package_manager: dnf
-#          python_path: python3.7
-#          python_version: '3.7'
-#          install_python: |
-#              set -e -x
-#              sudo dnf install -y python3 python3-devel python3-virtualenv
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 2 -vvs
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux2010_py37
-#          container: quay.io/pypa/manylinux2010_x86_64:latest
-#          python_path: /opt/python/cp37-cp37m/bin/python
-#          python_version: '3.7'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: all
-#          test_suite: venv/bin/pytest -n 2 -vvs
-
-
-################################################################################
-# These jobs are using containers and their own Python 3.6: FAILING FOR NOW
-################################################################################
-
-# here we build from sources
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: debian9c
-#          container: debian:stretch
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: |
-#            set -e -x
-#            sudo apt-get install -y \
-#                libncurses5-dev libncursesw5-dev libreadline6-dev \
-#                libdb-dev libgdbm-dev libsqlite3-dev libssl-dev \
-#                libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev \
-#                libcurl4-openssl-dev libpam0g-dev \
-#                libsqlite3-dev tk-dev libffi-dev \
-#                curl
-#            export PYVER=3.6.8
-#            curl -o Python-$PYVER.tgz https://www.python.org/ftp/python/$PYVER/Python-$PYVER.tgz
-#            tar -xvf Python-$PYVER.tgz
-#            cd Python-$PYVER
-#            ./configure --enable-optimizations
-#            make -j8
-#            sudo make altinstall
-#          test_suite_label: basic tests
-#          test_suite: venv/bin/pytest -n 2 -vvs
-
-
-################################################################################
 # Tests using a plain pip install to get the latest of all wheels
 ################################################################################
 
@@ -312,7 +190,7 @@ jobs:
       parameters:
           job_name: ubuntu18_cpython_latest_from_pip
           image_name: ubuntu-18.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -320,71 +198,39 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython_latest_from_pip
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython_latest_from_pip1
+          job_name: macos1015_cpython_latest_from_pip
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython_latest_from_pip2
-          image_name: macos-10.15
-          python_versions: ['3.8', '3.9', '3.10']
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos11_cpython_latest_from_pip1
+          job_name: macos11_cpython_latest_from_pip
           image_name: macos-11
-          python_versions: ['3.7', '3.8', ]
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos11_cpython_latest_from_pip2
-          image_name: macos-11
-          python_versions: ['3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_cpython_latest_from_pip1
+          job_name: win2019_cpython_latest_from_pip
           image_name: windows-2019
-          python_versions: ['3.6', '3.7']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_cpython_latest_from_pip2
-          image_name: windows-2019
-          python_versions: ['3.8', '3.9', '3.10']
-          test_suites:
-              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: win2022_cpython_latest_from_pip1
+          job_name: win2022_cpython_latest_from_pip
           image_name: windows-2022
-          python_versions: ['3.7', '3.8']
-          test_suites:
-              all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: win2022_cpython_latest_from_pip2
-          image_name: windows-2022
-          python_versions: ['3.9', '3.10']
+          python_versions: ['3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 

@@ -31,7 +31,7 @@ There are four main ways to install ScanCode.
 Before Installing
 -----------------
 
-- ScanCode requires a Python version 3.6, 3.7, 3.8. or 3.9 and is
+- ScanCode requires a Python version 3.7, 3.8, 3.9  or 3.10 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 
@@ -55,8 +55,8 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
-3.6 to 3.9.
+ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
+3.7 to 3.10.
 
 - **On Linux**:
 
@@ -74,11 +74,11 @@ ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
 
     - On RPM-based distros run::
 
-          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
+          sudo yum install python3.8-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
 
     - On Fedora 22 and later run::
 
-          sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
+          sudo dnf install python3.8-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
 
 
     If these packages are not available from your package manager, you must
@@ -86,11 +86,11 @@ ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
 
 - **On Mac**:
 
-    Download and install Python 3.6 or higher from https://www.python.org/
+    Download and install Python 3.7 or higher from https://www.python.org/
 
 - **On Windows**:
 
-    Download and install Python 3.6 or higher from https://www.python.org/
+    Download and install Python 3.7 or higher from https://www.python.org/
 
     .. Note::
 

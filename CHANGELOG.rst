@@ -8,6 +8,8 @@ Changelog
 This is a major release with important bug and security fixes, new and improved
 features and API changes.
 
+Note that we no longer support Python 3.6. Use Python 3.7+ instead.
+
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~

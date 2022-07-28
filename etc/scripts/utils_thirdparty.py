@@ -115,10 +115,9 @@ TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
-PYTHON_VERSIONS = "36", "37", "38", "39", "310"
+PYTHON_VERSIONS = "37", "38", "39", "310"
 
 PYTHON_DOT_VERSIONS_BY_VER = {
-    "36": "3.6",
     "37": "3.7",
     "38": "3.8",
     "39": "3.9",
@@ -134,7 +133,6 @@ def get_python_dot_version(version):
 
 
 ABIS_BY_PYTHON_VERSION = {
-    "36": ["cp36", "cp36m", "abi3"],
     "37": ["cp37", "cp37m", "abi3"],
     "38": ["cp38", "cp38m", "abi3"],
     "39": ["cp39", "cp39m", "abi3"],
@@ -1337,10 +1335,10 @@ class PypiPackage(NameVer):
 
         For example:
         >>> w1 = Wheel(name='bitarray', version='0.8.1', build='',
-        ...    python_versions=['cp36'], abis=['cp36m'],
+        ...    python_versions=['cp38'], abis=['cp38m'],
         ...    platforms=['linux_x86_64'])
         >>> w2 = Wheel(name='bitarray', version='0.8.1', build='',
-        ...    python_versions=['cp36'], abis=['cp36m'],
+        ...    python_versions=['cp38'], abis=['cp38m'],
         ...    platforms=['macosx_10_9_x86_64', 'macosx_10_10_x86_64'])
         >>> sd = Sdist(name='bitarray', version='0.8.1')
         >>> package = PypiPackage.package_from_dists(dists=[w1, w2, sd])
