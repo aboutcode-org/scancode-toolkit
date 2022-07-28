@@ -188,20 +188,8 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         _declared, detected = detect_declared_license(package.declared_license)
         package.license_expression = detected
 
-        # yield deps
-        dependent_packages = package_data.dependencies
-        if dependent_packages:
-            for dep in models.Dependency.from_dependent_packages(
-                dependent_packages=dependent_packages,
-                datafile_path=resource.path,
-                datasource_id=package_data.datasource_id,
-                package_uid=package_uid,
-            ):
-                if not dep.namespace:
-                    dep.namespace = namespace
-                yield dep
-
         # tag files from refs
+        resources = []
         missing_file_references = []
         # a file ref extends from the root of the filesystem
         for ref in package.file_references:
@@ -215,6 +203,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                     # found all of them
                     res.for_packages.append(package_uid)
                     res.save(codebase)
+                    resources.append(res)
 
         # if we have left over file references, add these to extra data
         if missing_file_references:
@@ -222,6 +211,21 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             package.extra_data['missing_file_references'] = missing
 
         yield package
+
+        # yield deps
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            for dep in models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            ):
+                if not dep.namespace:
+                    dep.namespace = namespace
+                yield dep
+
+        yield from resources
 
 
 # TODO: add dependencies!!!

@@ -92,6 +92,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             for ref in package.file_references
         }
 
+        resources = []
         for res in root_resource.walk(codebase):
             ref = file_references_by_path.get(res.path)
             if not ref:
@@ -102,8 +103,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             del file_references_by_path[res.path]
             res.for_packages.append(package_uid)
             res.save(codebase)
-
-            yield res
+            resources.append(res)
 
         # if we have left over file references, add these to extra data
         if file_references_by_path:
@@ -111,6 +111,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             package.extra_data['missing_file_references'] = missing
 
         yield package
+        yield from resources
 
 
 class AlpineApkbuildHandler(models.DatafileHandler):
