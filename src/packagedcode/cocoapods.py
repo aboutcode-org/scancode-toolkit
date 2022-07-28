@@ -164,7 +164,6 @@ class BasePodHandler(models.DatafileHandler):
 
                 for resource in sibling_podspecs:
                     datafile_path = resource.path
-                    yield resource
                     for package_data in resource.package_data:
                         package_data = models.PackageData.from_dict(package_data)
                         package = models.Package.from_package_data(
@@ -173,6 +172,7 @@ class BasePodHandler(models.DatafileHandler):
                         )
                         cls.assign_package_to_resources(package, resource, codebase)
                         yield package
+                    yield resource
 
             else:
                 # has_no_podspec:

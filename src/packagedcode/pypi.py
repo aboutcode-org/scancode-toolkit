@@ -120,6 +120,16 @@ class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
 
 
+def create_package_from_package_data(package_data, datafile_path):
+    package = models.Package.from_package_data(
+        package_data=package_data,
+        datafile_path=datafile_path,
+    )
+    if not package.license_expression:
+        package.license_expression = compute_normalized_license(package.declared_license)
+    return package
+
+
 class BaseExtractedPythonLayout(BasePypiHandler):
     """
     Base class for development repos, sdist tarballs and other related extracted
@@ -152,10 +162,12 @@ class BaseExtractedPythonLayout(BasePypiHandler):
             pkg_data = package_resource.package_data[0]
             pkg_data = models.PackageData.from_dict(pkg_data)
             if pkg_data.purl:
-                package = models.Package.from_package_data(
+                package = create_package_from_package_data(
                     package_data=pkg_data,
-                    datafile_path=package_resource.path,
+                    datafile_path=package_resource.path
                 )
+                yield package
+
                 package_resource.for_packages.append(package.package_uid)
                 package_resource.save(codebase)
                 yield package_resource
@@ -183,10 +195,11 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                 for setup_resource, setup_pkg_data in setup_package_data:
                     if setup_pkg_data.purl:
                         if not package:
-                            package = models.Package.from_package_data(
+                            package = create_package_from_package_data(
                                 package_data=setup_pkg_data,
-                                datafile_path=setup_resource.path,
+                                datafile_path=setup_resource.path
                             )
+                            yield package
                             package_resource = setup_resource
                         else:
                             package.update(setup_pkg_data, setup_resource.path)
@@ -203,8 +216,6 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                         )
 
         if package:
-            if not package.license_expression:
-                package.license_expression = compute_normalized_license(package.declared_license)
             package_uid = package.package_uid
 
             root = package_resource.parent(codebase)
@@ -220,8 +231,6 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                 if package_uid and package_uid not in package_resource.for_packages:
                     package_resource.for_packages.append(package_uid)
                     package_resource.save(codebase)
-
-            yield package
 
         else:
             package_uid = None

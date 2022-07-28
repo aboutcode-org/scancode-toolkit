@@ -279,6 +279,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
             f'usr/share/doc/{package_name}/copyright',
         ]))
+        resources = []
         # TODO: keep track of missing files
         for res in root_resource.walk(codebase):
             if not res.path.endswith(assemblable_paths):
@@ -305,8 +306,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                     package_uid=package_uid,
                 )
 
-            # we yield this as we do not want this further processed
-            yield res
+            resources.append(res)
 
         root_path = Path(root_resource.path)
 
@@ -332,7 +332,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             res.for_packages.append(package_uid)
             res.save(codebase)
 
-            yield res
+            resources.append(res)
 
         # if we have left over file references, add these to extra data
         if file_references_by_path:
@@ -340,6 +340,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             package.extra_data['missing_file_references'] = missing
 
         yield package
+        yield from resources
 
 
 class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
@@ -383,6 +384,30 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
+        # collect copyright file for this package
+        # and merge in package data
+        assemblable_paths = (
+            f'usr/share/doc/{package_name}/copyright',
+        )
+        resources = []
+        if package_uid:
+            for res in root_resource.walk(codebase):
+                if not res.path.endswith(assemblable_paths):
+                    continue
+
+                for pkgdt in res.package_data:
+                    package.update(
+                        package_data=pkgdt,
+                        datafile_path=res.path,
+                    )
+
+                res.for_packages.append(package_uid)
+                res.save(codebase)
+
+                resources.append(res)
+
+        yield package
+
         dependent_packages = package_data.dependencies
         if dependent_packages:
             yield from models.Dependency.from_dependent_packages(
@@ -392,28 +417,7 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
                 package_uid=package_uid,
             )
 
-        # collect copyright file for this package
-        # and merge in package data
-        assemblable_paths = (
-            f'usr/share/doc/{package_name}/copyright',
-        )
-        if package_uid:
-            for res in root_resource.walk(codebase):
-                if not res.path.endswith(assemblable_paths):
-                    continue
-    
-                for pkgdt in res.package_data:
-                    package.update(
-                        package_data=pkgdt,
-                        datafile_path=res.path,
-                    )
-    
-                res.for_packages.append(package_uid)
-                res.save(codebase)
-    
-                yield res
-
-        yield package
+        yield from resources
 
 
 class DebianInstalledFilelistHandler(models.DatafileHandler):
