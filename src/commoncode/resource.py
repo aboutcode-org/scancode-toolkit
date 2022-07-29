@@ -267,6 +267,10 @@ class Codebase:
 
         ``max_depth`` is the maximum depth of subdirectories to descend below and
         including `location`.
+
+        ``paths`` is an optional list of of path strings that extend from the
+        root ``location``. If provided, the codebase will contain only these
+        paths.
         """
         self.max_depth = max_depth
 
