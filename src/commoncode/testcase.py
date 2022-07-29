@@ -7,26 +7,28 @@
 #
 
 import filecmp
+import json
 import os
 import shutil
 import stat
 import sys
-
 from os import path
 from collections import defaultdict
 from itertools import chain
 from unittest import TestCase as TestCaseClass
 
+import saneyaml
+
 from commoncode import fileutils
 from commoncode import filetype
-from commoncode.system import on_posix
-from commoncode.system import on_windows
 from commoncode.archive import extract_tar
 from commoncode.archive import extract_tar_raw
 from commoncode.archive import extract_tar_uni
 from commoncode.archive import extract_zip
 from commoncode.archive import extract_zip_raw
 from commoncode.archive import tar_can_extract  # NOQA
+from commoncode.system import on_posix
+from commoncode.system import on_windows
 
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
@@ -376,3 +378,27 @@ def get_test_file_pairs(test_dir):
 
     for test_file in test_files:
         yield test_file + '.yml', test_file
+
+
+def check_against_expected_json_file(results, expected_file, regen=False):
+    """
+    Check that the ``results`` data are the same as the data in the
+    ``expected_file`` expected JSON data file.
+
+    If `regen` is True the expected_file will overwritten with the ``results``.
+    This is convenient for updating tests expectations. But use with caution.
+    """
+    if regen:
+        with open(expected_file, 'w') as reg:
+            json.dump(results, reg, indent=2, separators=(',', ': '))
+        expected = results
+    else:
+        with open(expected_file) as exp:
+            expected = json.load(exp)
+
+    # NOTE we redump the JSON as a YAML string for easier display of
+    # the failures comparison/diff
+    if results != expected:
+        expected = saneyaml.dump(expected)
+        results = saneyaml.dump(results)
+        assert results == expected
