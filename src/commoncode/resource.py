@@ -310,7 +310,7 @@ class Codebase:
 
     def _setup_essentials(self, temp_dir=temp_dir, max_in_memory=10000):
         """
-        Set the remaining Code=base attributes
+        Set the remaining Codebase attributes
 
         `temp_dir` is the base temporary directory to use to cache resources on
         disk and other temporary files.
@@ -1390,7 +1390,7 @@ class Resource(object):
 
     def has_parent(self):
         """
-        Return True is this Resource has children.
+        Return True is this Resource has a parent.
         """
         return not self.is_root
 
