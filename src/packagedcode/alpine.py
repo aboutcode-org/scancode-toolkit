@@ -64,7 +64,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         return detected
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         levels_up = len('lib/apk/db/installed'.split('/'))
         root_resource = get_ancestor(
@@ -107,8 +107,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             # path is found and processed: remove it, so we can check if we
             # found all of them
             del file_references_by_path[res.path]
-            res.for_packages.append(package_uid)
-            res.save(codebase)
+            package_adder(package_uid, res, codebase)
             resources.append(res)
 
         # if we have left over file references, add these to extra data
@@ -139,11 +138,12 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         return detected
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 

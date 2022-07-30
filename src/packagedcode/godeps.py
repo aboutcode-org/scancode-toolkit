@@ -74,8 +74,8 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
          )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
 @attr.s

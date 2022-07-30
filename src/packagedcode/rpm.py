@@ -146,7 +146,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         return detected
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         # take the 1st pattern as a reference
         # for instance: '*usr/lib/sysimage/rpm/Packages.db'
@@ -201,8 +201,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                 if package_uid:
                     # path is found and processed: remove it, so we can check if we
                     # found all of them
-                    res.for_packages.append(package_uid)
-                    res.save(codebase)
+                    package_adder(package_uid, res, codebase)
                     resources.append(res)
 
         # if we have left over file references, add these to extra data

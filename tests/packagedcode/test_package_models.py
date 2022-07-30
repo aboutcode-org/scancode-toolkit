@@ -14,8 +14,11 @@ from packagedcode import models
 from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode.models import PackageData
 from packagedcode.models import Party
+from packagedcode.plugin_package import PackageScanner
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
+
+from commoncode.resource import Codebase
 
 
 class TestModels(PackageTester):
@@ -140,7 +143,7 @@ class TestModels(PackageTester):
                 pdh.datasource_id not in seen
             ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
             seen[pdh.datasource_id] = pdh
-    
+
     def test_package_data_file_patterns_are_tuples(self):
         """
         Check that all file patterns are tuples, as if they are
@@ -152,3 +155,25 @@ class TestModels(PackageTester):
                 assert type(pdh.path_patterns) == tuple, pdh
             if pdh.filetypes:
                 assert type(pdh.filetypes) == tuple, pdh
+
+    def test_add_to_package(self):
+        test_loc = self.get_test_loc('npm/electron')
+        test_package = models.Package(
+            type='npm',
+            name='electron',
+            version='3.1.11',
+        )
+        test_package_uid = test_package.package_uid
+        test_codebase = Codebase(
+            location=test_loc,
+            codebase_attributes=PackageScanner.codebase_attributes,
+            resource_attributes=PackageScanner.resource_attributes
+        )
+        test_resource = test_codebase.get_resource('electron/package/package.json')
+        assert test_package_uid not in test_resource.for_packages
+        models.add_to_package(
+            test_package.package_uid,
+            test_resource,
+            test_codebase
+        )
+        assert test_package.package_uid in test_resource.for_packages

@@ -142,7 +142,7 @@ class ChefMetadataFormatter(Formatter):
 class BaseChefMetadataHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Assemble Package from Chef metadata.rb, then from metadata.json files.
         """
@@ -150,6 +150,7 @@ class BaseChefMetadataHandler(models.DatafileHandler):
             datafile_name_patterns=('metadata.rb', 'metadata.json',),
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 

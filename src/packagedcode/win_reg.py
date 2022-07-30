@@ -378,11 +378,10 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
             return resource
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         package_uid = package.package_uid
         if package_uid:
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+            package_adder(package_uid, resource, codebase)
 
         refs = package.file_references
         if not refs:
@@ -411,8 +410,7 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
                 # path is found and processed: remove it, so we can check if we
                 # found all of them
                 del refs_by_path[res.path]
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                package_adder(package_uid, res, codebase)
 
         # if we have left over file references, add these to extra data
         if refs_by_path:

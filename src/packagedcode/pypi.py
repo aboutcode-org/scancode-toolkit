@@ -94,11 +94,11 @@ class PythonEggPkgInfoFile(BasePypiHandler):
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return models.DatafileHandler.assign_package_to_resources(package, root, codebase)
+            return models.DatafileHandler.assign_package_to_resources(package, root, codebase, package_adder)
 
 
 class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
@@ -118,9 +118,9 @@ class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         # only the parent for now... though it can be more complex
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
 def create_package_from_package_data(package_data, datafile_path):
@@ -140,7 +140,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
     """
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # a source distribution can have many manifests
         datafile_name_patterns = (
             'Pipfile.lock',
@@ -171,8 +171,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                 )
                 yield package
 
-                package_resource.for_packages.append(package.package_uid)
-                package_resource.save(codebase)
+                package_adder(package.package_uid, package_resource, codebase)
                 yield package_resource
 
                 yield from yield_dependencies_from_package_data(
@@ -208,8 +207,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                             package.update(setup_pkg_data, setup_resource.path)
                 if package:
                     for setup_resource, setup_pkg_data in setup_package_data:
-                        setup_resource.for_packages.append(package.package_uid)
-                        setup_resource.save(codebase)
+                        package_adder(package.package_uid, setup_resource, codebase)
                         yield setup_resource
 
                         yield from yield_dependencies_from_package_data(
@@ -229,13 +227,11 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                     if py_res.is_dir:
                         continue
                     if package_uid and package_uid not in py_res.for_packages:
-                        py_res.for_packages.append(package_uid)
-                        py_res.save(codebase)
+                        package_adder(package_uid, py_res, codebase)
                     yield py_res
             elif codebase.has_single_resource:
                 if package_uid and package_uid not in package_resource.for_packages:
-                    package_resource.for_packages.append(package_uid)
-                    package_resource.save(codebase)
+                    package_adder(package_uid, package_resource, codebase)
 
         else:
             package_uid = None
@@ -249,8 +245,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                     )
 
                     if package_uid and package_uid not in sibling.for_packages:
-                        sibling.for_packages.append(package_uid)
-                        sibling.save(codebase)
+                        package_adder(package_uid, sibling, codebase)
                     yield sibling
 
     @classmethod
@@ -316,7 +311,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         """
         Assign files to package for an installed wheel. This requires a bit
         of navigation around as the files can be in multiple places.
@@ -336,8 +331,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
 
         if package_uid:
             # save thyself!
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+            package_adder(package_uid, resource, codebase)
 
         # collect actual paths based on the file references
         for file_ref in package_data.file_references:
@@ -358,8 +352,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
                     continue
                 else:
                     if package_uid:
-                        ref_resource.for_packages.append(package_uid)
-                        ref_resource.save(codebase)
+                        package_adder(package_uid, ref_resource, codebase)
             else:
                 ref_resource = get_resource_for_path(
                     path=path_ref,
@@ -367,8 +360,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
                     codebase=codebase,
                 )
                 if ref_resource and package_uid:
-                    ref_resource.for_packages.append(package_uid)
-                    ref_resource.save(codebase)
+                    package_adder(package_uid, ref_resource, codebase)
 
 
 def get_resource_for_path(path, root, codebase):
