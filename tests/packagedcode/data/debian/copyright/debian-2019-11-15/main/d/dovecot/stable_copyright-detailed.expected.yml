@@ -100,7 +100,7 @@ license_detections:
         rule_length: 52
         rule_relevance: 100
         matched_text: |
-          "THE BEER-WARE LICENSE" (Revision 42):
+          THE BEER-WARE LICENSE" (Revision 42):
           <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you
           can do whatever you want with this stuff. If we meet some day, and you think
           this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
@@ -140,8 +140,8 @@ license_detections:
         rule_length: 5
         rule_relevance: 100
         matched_text: |
-          Written by Solar Designer <solar@openwall.com> in 2001, and placed in the
-          public domain. There's absolutely no warrant.
+          placed in the
+          public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -307,8 +307,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: On Debian systems, the full text of the GNU Lesser General Public License
-          can
+        matched_text: the GNU Lesser General Public License
         licenses:
           - key: lgpl-2.1-plus
             name: GNU Lesser General Public License 2.1 or later
@@ -341,7 +340,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: be found at /usr/share/common-licenses/LGPL-2.1.
+        matched_text: usr/share/common-licenses/LGPL-2.1.
         licenses:
           - key: lgpl-2.1
             name: GNU Lesser General Public License 2.1
@@ -652,8 +651,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: On Debian systems, the full text of the GNU General Public License version
-          2
+        matched_text: the GNU General Public License version 2
         licenses:
           - key: gpl-2.0
             name: GNU General Public License 2.0
@@ -686,7 +684,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: can be found at /usr/share/common-licenses/GPL-2.
+        matched_text: usr/share/common-licenses/GPL-2.
         licenses:
           - key: gpl-2.0
             name: GNU General Public License 2.0
@@ -723,7 +721,7 @@ license_detections:
         rule_length: 300
         rule_relevance: 100
         matched_text: |
-          Copyright © 1991-2015 Unicode, Inc. All rights reserved. Distributed under the
+          Distributed under the
           Terms of Use in http://www.unicode.org/copyright.html.
 
           Permission is hereby granted, free of charge, to any person obtaining a copy

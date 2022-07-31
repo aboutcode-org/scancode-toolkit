@@ -656,8 +656,8 @@ license_detections:
         rule_length: 5
         rule_relevance: 100
         matched_text: |
-          On Debian systems, the complete text of version 1 of the GNU General
-          Public License can be found in `/usr/share/common-licenses/GPL-1'
+          the GNU General
+          Public License
         licenses:
           - key: gpl-1.0-plus
             name: GNU General Public License 1.0 or later
@@ -690,7 +690,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: Public License can be found in `/usr/share/common-licenses/GPL-1'
+        matched_text: usr/share/common-licenses/GPL-
         licenses:
           - key: gpl-1.0-plus
             name: GNU General Public License 1.0 or later
@@ -722,7 +722,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 60
-        matched_text: Public License can be found in `/usr/share/common-licenses/GPL-1'
+        matched_text: GPL-1'
         licenses:
           - key: gpl-1.0
             name: GNU General Public License 1.0
@@ -1006,7 +1006,7 @@ license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
-          the Free Software Foundation; version 3.
+          the Free Software Foundation;
         licenses:
           - key: gpl-1.0-plus
             name: GNU General Public License 1.0 or later
@@ -1039,8 +1039,8 @@ license_detections:
         rule_length: 8
         rule_relevance: 100
         matched_text: |
-          On Debian systems, the complete text of version 3 of the GNU General
-          Public License can be found in `/usr/share/common-licenses/GPL-3'
+          version 3 of the GNU General
+          Public License
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0
@@ -1073,7 +1073,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: Public License can be found in `/usr/share/common-licenses/GPL-3'
+        matched_text: usr/share/common-licenses/GPL-3'
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0
@@ -1178,8 +1178,8 @@ license_detections:
         rule_length: 8
         rule_relevance: 100
         matched_text: |
-          On Debian systems, the complete text of version 3 of the GNU General
-          Public License can be found in `/usr/share/common-licenses/GPL-3'
+          version 3 of the GNU General
+          Public License
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0
@@ -1212,7 +1212,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: Public License can be found in `/usr/share/common-licenses/GPL-3'
+        matched_text: usr/share/common-licenses/GPL-3'
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0

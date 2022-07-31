@@ -64,7 +64,7 @@ license_detections:
         rule_length: 8
         rule_relevance: 100
         matched_text: |
-          The implementation of the Camellia cipher has been taken from the
+          taken from the
           original NTT provided GPL source.
         licenses:
           - key: gpl-1.0-plus
@@ -97,7 +97,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: It has a permissive license and is copyrighted by atsec information
+        matched_text: It has a permissive license
         licenses:
           - key: other-permissive
             name: Other Permissive Licenses
@@ -129,7 +129,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: The file salsa20.c is based on D.J. Bernstein's public domain code and
+        matched_text: public domain code
         licenses:
           - key: public-domain
             name: Public Domain
@@ -162,7 +162,7 @@ license_detections:
         rule_length: 64
         rule_relevance: 100
         matched_text: |
-           This file is free software; as a special exception the author gives
+          This file is free software; as a special exception the author gives
            unlimited permission to copy and/or distribute it, with or without
            modifications, as long as this notice is preserved.
 
@@ -255,7 +255,7 @@ license_detections:
         rule_length: '194'
         rule_relevance: 100
         matched_text: |
-              The library is distributed under the terms of the GNU Lesser
+          The library is distributed under the terms of the GNU Lesser
               General Public License (LGPL); see the file COPYING.LIB for the
               actual terms.  The helper programs (e.g. gcryptrnd and getrandom)
               as well as the documentation are distributed under the terms of
@@ -321,7 +321,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: An example of the license headers of the LGPL is
+        matched_text: the license headers of the LGPL
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -359,7 +359,7 @@ license_detections:
         rule_length: 128
         rule_relevance: 100
         matched_text: |
-             Libgcrypt is free software; you can redistribute it and/or modify
+          Libgcrypt is free software; you can redistribute it and/or modify
              it under the terms of the GNU Lesser General Public License as
              published by the Free Software Foundation; either version 2.1 of
              the License, or (at your option) any later version.
@@ -485,7 +485,7 @@ license_detections:
         rule_length: 20
         rule_relevance: 100
         matched_text: |
-          the Libgcrypt distribution which are not covered by the GNU Lesser
+          distribution which are not covered by the GNU Lesser
           General Public License (LGPL) or the GNU General Public License (GPL).
         licenses:
           - key: other-permissive
@@ -536,7 +536,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: '* BSD_3Clause'
+        matched_text: BSD_3Clause
         licenses:
           - key: bsd-new
             name: BSD-3-Clause
@@ -573,7 +573,7 @@ license_detections:
         rule_length: 209
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions are
             met:
 
@@ -637,7 +637,7 @@ license_detections:
         rule_length: 260
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -718,7 +718,7 @@ license_detections:
         rule_length: 201
         rule_relevance: 100
         matched_text: |
-            Permission is hereby granted, free of charge, to any person obtaining a copy
+          Permission is hereby granted, free of charge, to any person obtaining a copy
             of this software and associated documentation files (the "Software"), to
             deal in the Software without restriction, including without limitation the
             rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
@@ -770,7 +770,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: '* Public domain'
+        matched_text: Public domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -807,7 +807,7 @@ license_detections:
         rule_length: 16
         rule_relevance: 100
         matched_text: |
-           Licence: I hereby disclaim the copyright on this code and place it
+          Licence: I hereby disclaim the copyright on this code and place it
            in the public domain.
         licenses:
           - key: public-domain
@@ -840,7 +840,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 99
-        matched_text: '* OCB license 1'
+        matched_text: OCB license 1
         licenses:
           - key: ocb-open-source-2013
             name: License for OpenSource Software Implementations of OCB 2013
@@ -877,11 +877,11 @@ license_detections:
         rule_length: 47
         rule_relevance: 100
         matched_text: |
-            OCB is covered by several patents but may be used freely by most
+          OCB is covered by several patents but may be used freely by most
             software.  See http://web.cs.ucdavis.edu/~rogaway/ocb/license.htm .
             In particular license 1 is suitable for Libgcrypt: See
             http://web.cs.ucdavis.edu/~rogaway/ocb/license1.pdf for the full
-            license document; it basically says:
+            license document;
         licenses:
           - key: ocb-open-source-2013
             name: License for OpenSource Software Implementations of OCB 2013
@@ -914,7 +914,7 @@ license_detections:
         rule_length: 55
         rule_relevance: 100
         matched_text: |
-              License 1 — License for Open-Source Software Implementations of OCB
+          License 1 — License for Open-Source Software Implementations of OCB
                           (Jan 9, 2013)
 
               Under this license, you are authorized to make, use, and
@@ -954,7 +954,7 @@ license_detections:
         rule_length: 602
         rule_relevance: 100
         matched_text: |
-           License for Open Source Software Implementations of OCB
+          License for Open Source Software Implementations of OCB
            January 9, 2013
 
            1 Definitions

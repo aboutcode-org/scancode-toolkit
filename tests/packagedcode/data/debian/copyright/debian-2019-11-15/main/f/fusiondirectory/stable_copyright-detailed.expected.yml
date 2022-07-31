@@ -800,7 +800,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: ' FusionDirectory (i.e. GPL-2+).'
+        matched_text: GPL-2+).
         licenses:
           - key: gpl-2.0-plus
             name: GNU General Public License 2.0 or later

@@ -928,7 +928,7 @@ license_detections:
 
           The views and conclusions contained in the software and documentation are those
           of the authors and should not be interpreted as representing official policies,
-          either expressed or implied, of Andrea Leofreddi.
+          either expressed or implied, of
         licenses:
           - key: bsd-2-clause-views
             name: BSD 2-Clause with views sentence
@@ -1005,7 +1005,7 @@ license_detections:
         rule_length: 17
         rule_relevance: 100
         matched_text: |
-          The logo and mascot are covered by the
+          are covered by the
           Creative Commons Attribution 3.0 <http://creativecommons.org/licenses/by/3.0>
           license.
         licenses:

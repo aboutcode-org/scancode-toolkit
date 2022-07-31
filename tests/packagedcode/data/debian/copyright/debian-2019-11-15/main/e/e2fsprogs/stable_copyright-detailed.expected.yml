@@ -122,7 +122,7 @@ license_detections:
         rule_length: 85
         rule_relevance: 100
         matched_text: |
-             Permission to use, copy, modify, and distribute this software and
+          Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose is hereby granted, provided that
              the names of M.I.T. and the M.I.T. S.I.P.B. not be used in
              advertising or publicity pertaining to distribution of the software
@@ -162,7 +162,7 @@ license_detections:
         rule_length: 210
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
              1. Redistributions of source code must retain the above copyright

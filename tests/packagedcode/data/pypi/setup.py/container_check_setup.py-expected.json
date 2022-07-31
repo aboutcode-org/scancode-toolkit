@@ -115,7 +115,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 95,
-            "matched_text": "['License :: OSI Approved :: Apache Software License']",
+            "matched_text": "License :: OSI Approved :: Apache Software License']",
             "licenses": [
               {
                 "key": "apache-2.0",

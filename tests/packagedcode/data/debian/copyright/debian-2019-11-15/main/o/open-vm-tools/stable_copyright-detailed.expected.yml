@@ -344,7 +344,7 @@ license_detections:
           along with this program. If not, see <http://www.gnu.org/licenses/>.
 
           The complete text of the GNU Lesser General Public License
-          can be found in /usr/share/common-licenses/GPL-2.1 file.
+          can be found in /usr/share/common-licenses/
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later

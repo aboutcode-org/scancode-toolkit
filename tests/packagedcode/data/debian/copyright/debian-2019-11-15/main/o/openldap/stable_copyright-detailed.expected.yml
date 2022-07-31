@@ -172,7 +172,7 @@ license_detections:
         rule_length: 165
         rule_relevance: 100
         matched_text: |
-          # Permission is hereby granted, free of charge, to any person obtaining a
+          Permission is hereby granted, free of charge, to any person obtaining a
           # copy of this software and associated documentation files (the "Software"),
           # to deal in the Software without restriction, including without limitation
           # the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -225,7 +225,7 @@ license_detections:
         rule_length: 64
         rule_relevance: 100
         matched_text: |
-          # This Makefile.in is free software; the Free Software Foundation
+          This Makefile.in is free software; the Free Software Foundation
           # gives unlimited permission to copy and/or distribute it,
           # with or without modifications, as long as this notice is preserved.
 
@@ -269,7 +269,7 @@ license_detections:
         rule_length: 123
         rule_relevance: 95
         matched_text: |
-           * Permission is granted to anyone to use this software for any purpose
+          Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
            * to the following restrictions:
            *
@@ -322,7 +322,7 @@ license_detections:
         rule_length: 203
         rule_relevance: 100
         matched_text: |
-           * International Business Machines, Inc. (hereinafter called IBM) grants
+          International Business Machines, Inc. (hereinafter called IBM) grants
            * permission under its copyrights to use, copy, modify, and distribute this
            * Software with or without fee, provided that the above copyright notice and
            * all paragraphs of this notice appear in all copies, and that the name of IBM
@@ -377,7 +377,7 @@ license_detections:
         is_license_intro: no
         rule_length: 221
         rule_relevance: 100
-        matched_text: "# Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
+        matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
           \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
           \ be copied and furnished to\n#    others, and derivative works that comment on or\
           \ otherwise explain it\n#    or assist in its implementation may be prepared, copied,\
@@ -432,7 +432,7 @@ license_detections:
         rule_length: 113
         rule_relevance: 100
         matched_text: |
-           * Permission to use, copy, modify, and distribute this software for any
+          Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
            * copyright notice and this permission notice appear in all copies.
            *
@@ -479,9 +479,9 @@ license_detections:
         is_license_intro: no
         rule_length: 39
         rule_relevance: 100
-        matched_text: " * This software is not subject to any license of Silicon Graphics \n\
-          \ * Inc. or Purdue University.\n *\n * Redistribution and use in source and binary\
-          \ forms are permitted\n * without restriction or fee of any kind as long as this notice\n\
+        matched_text: "This software is not subject to any license of Silicon Graphics \n *\
+          \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
+          \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
           \ * is preserved."
         licenses:
           - key: other-permissive
@@ -518,7 +518,7 @@ license_detections:
         is_license_intro: no
         rule_length: 57
         rule_relevance: 100
-        matched_text: " * This software is not subject to any license of Carnegie Mellon University.\n\
+        matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
           \ *\n * Redistribution and use in source and binary forms are permitted without \n\
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
           \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
@@ -559,7 +559,7 @@ license_detections:
         rule_length: 96
         rule_relevance: 100
         matched_text: |
-          # Permission to use, copy, modify, distribute, and sell this software and its
+          Permission to use, copy, modify, distribute, and sell this software and its
           # documentation for any purpose is hereby granted without fee, provided that
           # the above copyright notice appear in all copies and that both that
           # copyright notice and this permission notice appear in supporting
@@ -604,7 +604,7 @@ license_detections:
         rule_length: 12
         rule_relevance: 100
         matched_text: |
-          California, USA.  All Rights Reserved.  Permission to copy and
+          Permission to copy and
           distribute verbatim copies of this document is granted.
         licenses:
           - key: other-permissive
@@ -642,7 +642,7 @@ license_detections:
         rule_length: 123
         rule_relevance: 95
         matched_text: |
-           * Permission is granted to anyone to use this software for any purpose
+          Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
            * to the following restrictions:
            *
@@ -695,7 +695,7 @@ license_detections:
         rule_length: 43
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms are permitted only
+          Redistribution and use in source and binary forms are permitted only
            * as authorized by the OpenLDAP Public License.  A copy of this
            * license is available at http://www.OpenLDAP.org/license.html or
            * in file LICENSE in the top-level directory of the distribution.
@@ -735,7 +735,7 @@ license_detections:
         rule_length: 101
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms are permitted
+          Redistribution and use in source and binary forms are permitted
            * provided that the above copyright notice and this paragraph are
            * duplicated in all such forms and that any documentation,
            * advertising materials, and other materials related to such
@@ -816,7 +816,7 @@ license_detections:
         rule_length: 243
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -915,7 +915,7 @@ license_detections:
         rule_length: 64
         rule_relevance: 99
         matched_text: |
-           * Redistribution and use in source and binary forms are permitted
+          Redistribution and use in source and binary forms are permitted
            * provided that this notice is preserved and that due credit is given
            * to the University of Michigan at Ann Arbor. The name of the University
            * may not be used to endorse or promote products derived from this

@@ -216,7 +216,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: The complete text of the GNU Library General Public License
+        matched_text: the GNU Library General Public License
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -249,7 +249,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+        matched_text: usr/share/common-licenses/LGPL-2.1'.
         licenses:
           - key: lgpl-2.1
             name: GNU Lesser General Public License 2.1
@@ -1064,7 +1064,7 @@ license_detections:
         rule_length: 9
         rule_relevance: 100
         matched_text: |
-          determine their in-game functionality. Game content scripts are also licensed
+          licensed
           under the GNU General Public License, Version 2.
         licenses:
           - key: gpl-2.0

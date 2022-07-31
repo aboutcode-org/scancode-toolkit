@@ -55,7 +55,7 @@
           "is_license_intro": false,
           "rule_length": 3,
           "rule_relevance": 100,
-          "matched_text": "Java HTML Tidy License",
+          "matched_text": "HTML Tidy License",
           "licenses": [
             {
               "key": "tidy",

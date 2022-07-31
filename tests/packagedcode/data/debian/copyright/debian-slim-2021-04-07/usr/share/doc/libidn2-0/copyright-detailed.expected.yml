@@ -330,7 +330,7 @@ license_detections:
         rule_length: 309
         rule_relevance: 100
         matched_text: |
-          Copyright © 1991-2011 Unicode, Inc. All rights reserved. Distributed
+          Distributed
           under the Terms of Use in http://www.unicode.org/copyright.html.
 
           Permission is hereby granted, free of charge, to any person obtaining

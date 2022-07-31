@@ -261,7 +261,7 @@ license_detections:
         is_license_intro: no
         rule_length: 11
         rule_relevance: 100
-        matched_text: This file is in the public domain, so clarified as of 1996-06-05 by
+        matched_text: This file is in the public domain, so clarified as of
         licenses:
           - key: public-domain
             name: Public Domain
@@ -372,7 +372,7 @@ license_detections:
         rule_length: 9
         rule_relevance: 100
         matched_text: |
-          app_curl.c is distributed with no restrictions on usage or
+          is distributed with no restrictions on usage or
           redistribution.
         licenses:
           - key: other-permissive
@@ -493,7 +493,7 @@ license_detections:
         rule_length: 356
         rule_relevance: 100
         matched_text: |
-          Asterisk is distributed under the GNU General Public License version 2
+          is distributed under the GNU General Public License version 2
           and is also available under alternative licenses negotiated directly
           with Digium, Inc. If you obtained Asterisk under the GPL, then the GPL
           applies to all loadable Asterisk modules used on your system as well,
@@ -538,7 +538,7 @@ license_detections:
           wish to use these trademarks for purposes other than simple
           redistribution of Asterisk source code obtained from Digium, you
           should contact our licensing department to determine the necessary
-          steps you must take. For more information on this policy, please read:
+          steps you must take.
         licenses:
           - key: gpl-2.0
             name: GNU General Public License 2.0
@@ -1173,7 +1173,7 @@ license_detections:
           its documentation for any purpose is hereby granted without fee,
           provided that the above copyright notice and this license appear in all
           source copies. THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT EXPRESS OR
-          IMPLIED WARRANTY OF ANY KIND. See http://www.dspguru.com/wol.htm for
+          IMPLIED WARRANTY OF ANY KIND. See http://www.dspguru.com/
         licenses:
           - key: wol
             name: Wide Open License
@@ -1247,7 +1247,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'Informally: GPL-2 with exceptions for linking with OpenSSL, OpenH323'
+        matched_text: GPL-2
         licenses:
           - key: gpl-2.0
             name: GNU General Public License 2.0
@@ -1400,7 +1400,7 @@ license_detections:
         rule_length: 10
         rule_relevance: 100
         matched_text: |
-          This program is free software, distributed under the terms of the GNU
+          distributed under the terms of the GNU
            General Public License
         licenses:
           - key: gpl-1.0-plus
@@ -1676,7 +1676,7 @@ license_detections:
         rule_length: 69
         rule_relevance: 100
         matched_text: |
-          > Have you intended for that package to be released under a Free
+          Have you intended for that package to be released under a Free
            > Software license (basically: one that allows distribution and
            > modification)? If so, could you please provide a version of that
            > source package licensed under some standard free software license
@@ -2043,7 +2043,7 @@ license_detections:
         is_license_intro: no
         rule_length: 10
         rule_relevance: 80
-        matched_text: Version of license not mentioned.  Assumed to be version 2.1.
+        matched_text: Version of license not mentioned.  Assumed to be version 2.
         licenses:
           - key: gpl-2.0
             name: GNU General Public License 2.0

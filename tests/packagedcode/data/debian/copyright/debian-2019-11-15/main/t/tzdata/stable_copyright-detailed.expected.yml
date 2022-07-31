@@ -24,7 +24,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: 'Copyright: This database is in the public domain.'
+        matched_text: is in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain

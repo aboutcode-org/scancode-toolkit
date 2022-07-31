@@ -175,7 +175,7 @@ license_detections:
         rule_length: 106
         rule_relevance: 100
         matched_text: |
-            This software is provided "as is" and any express or implied warranties,
+          This software is provided "as is" and any express or implied warranties,
             including but not limited to, the implied warranties of merchantability and
             fitness for a particular purpose are disclaimed.  In no event shall
             Zeus Technology Ltd. be liable for any direct, indirect, incidental, special,

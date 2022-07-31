@@ -1853,7 +1853,7 @@ license_detections:
         rule_length: 470
         rule_relevance: 100
         matched_text: |
-           UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+          UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
             Unicode Data Files include all data files under the directories
             http://www.unicode.org/Public/, http://www.unicode.org/reports/,
@@ -2189,7 +2189,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: ' is  hereby placed in the public domain. As such, the author is not'
+        matched_text: placed in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -2221,7 +2221,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: ' Since the sdbm library package is in the public domain, this   original'
+        matched_text: is in the public domain,
         licenses:
           - key: public-domain
             name: Public Domain
@@ -2253,7 +2253,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: ' release  or  any  additional  public-domain releases of the modified'
+        matched_text: public-domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -2285,7 +2285,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: ' and its  current  public  domain  status against any possible claims'
+        matched_text: public  domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -3159,7 +3159,7 @@ license_detections:
         rule_length: 23
         rule_relevance: 100
         matched_text: |
-           You may distribute under the terms of either the GNU General Public
+          You may distribute under the terms of either the GNU General Public
            License or the Artistic License, as specified in the README file.
         licenses:
           - key: artistic-perl-1.0
@@ -3262,7 +3262,7 @@ license_detections:
         is_license_intro: no
         rule_length: 13
         rule_relevance: 100
-        matched_text: ' For terms of use, see http://www.unicode.org/terms_of_use.html'
+        matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
         licenses:
           - key: unicode
             name: Unicode Inc License Agreement
@@ -6553,7 +6553,7 @@ license_detections:
           it under the same terms as Perl itself.
 
           You may copy and distribute this program under the same terms as
-          Perl itself.  If in doubt, write to mjd-perl-memoize+@plover.com for
+          Perl itself.
         licenses:
           - key: gpl-1.0-plus
             name: GNU General Public License 1.0 or later
@@ -6704,7 +6704,7 @@ license_detections:
         rule_length: 87
         rule_relevance: 100
         matched_text: |
-           Permission to use, copy, modify, and distribute this material
+          Permission to use, copy, modify, and distribute this material
            for any purpose and without fee is hereby granted, provided
            that the above copyright notice and this permission notice
            appear in all copies, and that the name of Bellcore not be
@@ -7008,7 +7008,7 @@ license_detections:
         rule_length: 18
         rule_relevance: 100
         matched_text: |
-          This file is part of "PodParser". PodParser is free software;
+          is free software;
           you can redistribute it and/or modify it under the same terms
           as Perl itself.
         licenses:
@@ -7377,7 +7377,7 @@ license_detections:
 
            When included as an integrated part of the Standard Distribution
            of Perl or of its documentation (printed or otherwise), this works is
-           covered under Perl's Artistic License.  For separate distributions of
+           covered under Perl's Artistic License.
         licenses:
           - key: artistic-perl-1.0
             name: Artistic License (Perl) 1.0
@@ -7410,7 +7410,7 @@ license_detections:
         rule_length: 56
         rule_relevance: 100
         matched_text: |
-           Irrespective of its distribution, all code examples here are in the public
+          Irrespective of its distribution, all code examples here are in the public
            domain.  You are permitted and encouraged to use this code and any
            derivatives thereof in your own programs for fun or for profit as you
            see fit.  A simple comment in the code giving credit to the FAQ would
@@ -7447,7 +7447,7 @@ license_detections:
         rule_length: 39
         rule_relevance: 100
         matched_text: |
-           This document is available under the same terms as Perl itself. Code
+          This document is available under the same terms as Perl itself. Code
            examples in all the perlfaq documents are in the public domain. Use
            them as you see fit (and at your own risk with no warranty from anyone).
         licenses:
@@ -7500,7 +7500,7 @@ license_detections:
         rule_length: 18
         rule_relevance: 100
         matched_text: |
-          This file is part of "Pod-Usage". Pod-Usage is free software;
+          is free software;
           you can redistribute it and/or modify it under the same terms
           as Perl itself.
         licenses:
@@ -8621,7 +8621,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 99
-        matched_text: The strptime function is licensed under the BSD-like license included
+        matched_text: is licensed under the BSD-like license
         licenses:
           - key: bsd-new
             name: BSD-3-Clause
@@ -8654,7 +8654,7 @@ license_detections:
         rule_length: '19'
         rule_relevance: 70
         matched_text: |
-          below. It is assumed that the other parts are licensed under the same
+          It is assumed that the other parts are licensed under the same
           terms as the rest of the distribution.
         licenses:
           - key: gpl-1.0-plus
@@ -9157,7 +9157,7 @@ license_detections:
         rule_length: 11
         rule_relevance: 100
         matched_text: |
-          Based on the ExtUtils::xsubpp code by Larry Wall and the Perl 5
+          Perl 5
           Porters, which was released under the same license terms.
         licenses:
           - key: gpl-1.0-plus
@@ -10104,7 +10104,7 @@ license_detections:
         rule_relevance: 100
         matched_text: |
           This program is free software; you can redistribute it and/or modify
-          it under the same terms as Perl 5 itself.
+          it under the same terms as Perl
         licenses:
           - key: artistic-perl-1.0
             name: Artistic License (Perl) 1.0
@@ -11044,7 +11044,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 90
-        matched_text: and is released under the artistic license.  Further modifications
+        matched_text: the artistic license.
         licenses:
           - key: artistic-1.0
             name: Artistic License 1.0
@@ -11181,7 +11181,7 @@ license_detections:
         rule_length: 20
         rule_relevance: 100
         matched_text: |
-           This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
            modify it under the same terms as Perl itself.
         licenses:
           - key: artistic-perl-1.0
@@ -12403,7 +12403,7 @@ license_detections:
         matched_text: |
           This subdirectory contains unmodified 'dist' code that is
           licensed under the modified Artistic license detailed below
-          under the "Artistic-dist" tag. The different files have
+          under the "Artistic-dist" tag.
         licenses:
           - key: artistic-dist-1.0
             name: Artistic License for dist 1.0
@@ -12440,7 +12440,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-           dist is distributed under a modified version of the Perl Artistic License.
+          dist is distributed under a modified version of the Perl Artistic License.
            Clause 7 of this modified license as contained in dist-3.0-pl60 provides:
 
              7. You may reuse parts of this Package in your own programs, provided
@@ -12573,7 +12573,7 @@ license_detections:
         rule_length: 26
         rule_relevance: 95
         matched_text: |
-          The portions by Niko Tyni and Dominic Hargreaves may be redistributed
+          may be redistributed
           and/or modified under the same terms as Perl itself. It is assumed that
           other contributors have placed their contributions under a compatible
           license.

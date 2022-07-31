@@ -106,8 +106,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: ' * Copyright Thorsten Kukuk, Björn Esser, Zack Weinberg; LGPL (v2.1 or
-          later):'
+        matched_text: 'LGPL (v2.1 or later):'
         licenses:
           - key: lgpl-2.1-plus
             name: GNU Lesser General Public License 2.1 or later
@@ -139,7 +138,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: ' * Copyright Free Software Foundation, Inc.; LGPL (v2.1 or later):'
+        matched_text: 'LGPL (v2.1 or later):'
         licenses:
           - key: lgpl-2.1-plus
             name: GNU Lesser General Public License 2.1 or later
@@ -171,7 +170,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright David Burren et al.; 3-clause BSD:'
+        matched_text: '3-clause BSD:'
         licenses:
           - key: bsd-new
             name: BSD-3-Clause
@@ -203,7 +202,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Public domain, written by Ulrich Drepper et al.:'
+        matched_text: Public domain, written by
         licenses:
           - key: public-domain
             name: Public Domain
@@ -235,7 +234,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Public domain, written by Solar Designer et al.:'
+        matched_text: Public domain, written by
         licenses:
           - key: public-domain
             name: Public Domain
@@ -267,7 +266,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Solar Designer, Colin Percival; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -299,7 +298,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Solar Designer, Colin Percival; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -331,7 +330,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Colin Percival; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -363,7 +362,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Alexey Degtyarev; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -399,7 +398,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Vitaly Chikunov, Björn Esser; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -435,7 +434,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Alexander Peslyak; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -467,7 +466,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Alexander Peslyak, Björn Esser; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -499,7 +498,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Björn Esser; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -531,7 +530,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Michael Bretterklieber, Björn Esser et al.; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -563,7 +562,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Zack Weinberg; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -595,7 +594,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Public domain, written by Steve Reid et al.:'
+        matched_text: Public domain, written by
         licenses:
           - key: public-domain
             name: Public Domain
@@ -627,7 +626,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Juniper Networks, Inc.; 3-clause BSD:'
+        matched_text: '3-clause BSD:'
         licenses:
           - key: bsd-new
             name: BSD-3-Clause
@@ -659,7 +658,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright Björn Esser; 2-clause BSD:'
+        matched_text: '2-clause BSD:'
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause
@@ -691,7 +690,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Public domain, written by Zack Weinberg et al.:'
+        matched_text: Public domain, written by
         licenses:
           - key: public-domain
             name: Public Domain
@@ -726,7 +725,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 99
-        matched_text: '   GPL (v3 or later), with Autoconf exception:'
+        matched_text: 'GPL (v3 or later), with Autoconf exception:'
         licenses:
           - key: gpl-3.0-plus
             name: GNU General Public License 3.0 or later
@@ -772,7 +771,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: ' * Copyright <vt at altlinux.org>; 0-clause BSD:'
+        matched_text: '0-clause BSD:'
         licenses:
           - key: bsd-zero
             name: BSD Zero Clause License
@@ -804,7 +803,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Kevin Cernekee; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -836,7 +835,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Maarten Bosmans; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -868,7 +867,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: '   FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -900,7 +899,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Mike Frysinger; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -932,7 +931,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 99
-        matched_text: '   GPL (v2 or later), with Autoconf exception:'
+        matched_text: 'GPL (v2 or later), with Autoconf exception:'
         licenses:
           - key: gpl-2.0-plus
             name: GNU General Public License 2.0 or later
@@ -978,7 +977,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Tim Toolan; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -1010,7 +1009,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Philip Withnall; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -1042,7 +1041,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 99
-        matched_text: '   GPL (v3 or later), with Autoconf exception:'
+        matched_text: 'GPL (v3 or later), with Autoconf exception:'
         licenses:
           - key: gpl-3.0-plus
             name: GNU General Public License 3.0 or later
@@ -1088,7 +1087,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Francesco Salvestrini; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -1120,7 +1119,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: ' * Copyright Andrew Collier; FSF All Permissive License:'
+        matched_text: 'FSF All Permissive License:'
         licenses:
           - key: fsf-ap
             name: FSF All Permissive License
@@ -1153,7 +1152,7 @@ license_detections:
         rule_length: 27
         rule_relevance: 100
         matched_text: |
-           * Copyright holders unknown, no statement of license (all of these
+          Copyright holders unknown, no statement of license (all of these
              files are part of the testsuite and do not contribute to the
              installed library or its headers):
         licenses:

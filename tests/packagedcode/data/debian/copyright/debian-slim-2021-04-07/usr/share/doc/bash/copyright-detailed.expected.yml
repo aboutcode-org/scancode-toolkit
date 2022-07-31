@@ -126,7 +126,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'Files with other copyright statement than: Copyright FSF, License GPL'
+        matched_text: License GPL
         licenses:
           - key: gpl-1.0-plus
             name: GNU General Public License 1.0 or later
@@ -163,7 +163,7 @@ license_detections:
         rule_length: 45
         rule_relevance: 100
         matched_text: |
-           Permission is hereby granted, without written agreement and
+          Permission is hereby granted, without written agreement and
            without license or royalty fees, to use, copy, and distribute
            this document for any purpose, provided that the above copyright
            notice appears in all copies of this document and that the
@@ -204,7 +204,7 @@ license_detections:
         rule_length: 85
         rule_relevance: 100
         matched_text: |
-           Permission is granted to make and distribute verbatim copies of
+          Permission is granted to make and distribute verbatim copies of
            this manual provided the copyright notice and this permission notice
            are preserved on all copies.
 
@@ -250,7 +250,7 @@ license_detections:
         rule_length: 60
         rule_relevance: 100
         matched_text: |
-           Permission is granted to copy, distribute and/or modify this document
+          Permission is granted to copy, distribute and/or modify this document
            under the terms of the GNU Free Documentation License, Version 1.3 or
            any later version published by the Free Software Foundation; with no
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
@@ -292,7 +292,7 @@ license_detections:
         rule_length: 25
         rule_relevance: 100
         matched_text: |
-           Permission is granted to make and distribute verbatim copies of
+          Permission is granted to make and distribute verbatim copies of
            this manual provided the copyright notice and this permission notice
            pare preserved on all copies.
         licenses:
@@ -327,7 +327,7 @@ license_detections:
         rule_length: 113
         rule_relevance: 99
         matched_text: |
-           Permission is granted to process this file through TeX and print the
+          Permission is granted to process this file through TeX and print the
            results, provided the printed document carries copying permission
            notice identical to this one except for the removal of this paragraph
            (this paragraph not being relevant to the printed manual).
@@ -377,7 +377,7 @@ license_detections:
         rule_length: 137
         rule_relevance: 99
         matched_text: |
-           Permission is granted to process this file through Tex and print the
+          Permission is granted to process this file through Tex and print the
            results, provided the printed document carries copying permission notice
            identical to this one except for the removal of this paragraph (this
            paragraph not being relevant to the printed manual).
@@ -430,7 +430,7 @@ license_detections:
         rule_length: 60
         rule_relevance: 100
         matched_text: |
-           Permission is granted to copy, distribute and/or modify this document
+          Permission is granted to copy, distribute and/or modify this document
            under the terms of the GNU Free Documentation License, Version 1.3 or
            any later version published by the Free Software Foundation; with no
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
@@ -472,7 +472,7 @@ license_detections:
         rule_length: 137
         rule_relevance: 99
         matched_text: |
-           Permission is granted to make and distribute verbatim copies of this manual
+          Permission is granted to make and distribute verbatim copies of this manual
            provided the copyright notice and this permission notice are preserved on
            all copies.
 
@@ -525,7 +525,7 @@ license_detections:
         rule_length: 243
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -584,7 +584,7 @@ license_detections:
         rule_length: 141
         rule_relevance: 100
         matched_text: |
-           * Permission to use, copy, modify, and distribute this software for any
+          Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
            * copyright notice and this permission notice appear in all copies, and that
            * the name of Digital Equipment Corporation not be used in advertising or
@@ -635,10 +635,10 @@ license_detections:
         rule_length: 28
         rule_relevance: 100
         matched_text: |
-           * Permission is granted to distribute, modify and use this program as long
+          Permission is granted to distribute, modify and use this program as long
            * as this comment is not removed or changed.
            *
-           * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY chet@po.cwru.edu FOR
+           * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY
         licenses:
           - key: other-permissive
             name: Other Permissive Licenses

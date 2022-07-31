@@ -56,7 +56,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "{'license': 'LICENSE.txt'}",
+            "matched_text": "license': 'LICENSE.txt'}",
             "licenses": [
               {
                 "key": "unknown",

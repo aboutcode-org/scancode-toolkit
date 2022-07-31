@@ -113,7 +113,7 @@
             "is_license_intro": false,
             "rule_length": 11,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']",
+            "matched_text": "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']",
             "licenses": [
               {
                 "key": "mpl-2.0",

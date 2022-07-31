@@ -58,7 +58,7 @@
             "is_license_intro": false,
             "rule_length": 4,
             "rule_relevance": 100,
-            "matched_text": ":type = MIT, :file = LICENSE",
+            "matched_text": "type = MIT, :file = LICENSE",
             "licenses": [
               {
                 "key": "mit",

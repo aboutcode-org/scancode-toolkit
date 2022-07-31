@@ -24,16 +24,16 @@ license_detections:
         is_license_intro: no
         rule_length: 2975
         rule_relevance: 100
-        matched_text: "                             TERMS AND CONDITIONS\n    IMPORTANT - PLEASE\
-          \ READ BEFORE INSTALLING OR USING THIS INTEL(C) SOFTWARE\n\nDo not use or load this\
-          \ firmware (the \"Software\") until you have carefully read\nthe following terms and\
-          \ conditions. By loading or using the Software, you agree\nto the terms of this Agreement.\
-          \ If you do not wish to so agree, do not install\nor use the Software.\n\nLICENSEES:\n\
-          \nPlease note: \n\n* If you are an End-User, only Exhibit A, the SOFTWARE LICENSE\
-          \ AGREEMENT,\n  applies.\n* If you are an Original Equipment Manufacturer (OEM), Independent\
-          \ Hardware\n  Vendor (IHV), or Independent Software Vendor (ISV), this complete Agreement\n\
-          \  applies \n  - A part of the license is for ipw 2100 firmware\n  - Another part\
-          \ of the license is for ipw 2200/2915 firmware\n\n\nipw2100 firmware license For OEMs,\
+        matched_text: "TERMS AND CONDITIONS\n    IMPORTANT - PLEASE READ BEFORE INSTALLING OR\
+          \ USING THIS INTEL(C) SOFTWARE\n\nDo not use or load this firmware (the \"Software\"\
+          ) until you have carefully read\nthe following terms and conditions. By loading or\
+          \ using the Software, you agree\nto the terms of this Agreement. If you do not wish\
+          \ to so agree, do not install\nor use the Software.\n\nLICENSEES:\n\nPlease note:\
+          \ \n\n* If you are an End-User, only Exhibit A, the SOFTWARE LICENSE AGREEMENT,\n\
+          \  applies.\n* If you are an Original Equipment Manufacturer (OEM), Independent Hardware\n\
+          \  Vendor (IHV), or Independent Software Vendor (ISV), this complete Agreement\n \
+          \ applies \n  - A part of the license is for ipw 2100 firmware\n  - Another part of\
+          \ the license is for ipw 2200/2915 firmware\n\n\nipw2100 firmware license For OEMs,\
           \ IHVs, and ISVs:\n=================================================\n\nLICENSE. This\
           \ Software is licensed for use only in conjunction with Intel\ncomponent products.\
           \ Use of the Software in conjunction with non-Intel component\nproducts is not licensed\

@@ -56,7 +56,7 @@
             "is_license_intro": false,
             "rule_length": 22,
             "rule_relevance": 100,
-            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html.",
+            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;",
             "licenses": [
               {
                 "key": "gpl-1.0-plus",
@@ -93,7 +93,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 100,
-            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html.",
+            "matched_text": "www.gnu.org/copyleft/gpl.html.",
             "licenses": [
               {
                 "key": "gpl-1.0-plus",

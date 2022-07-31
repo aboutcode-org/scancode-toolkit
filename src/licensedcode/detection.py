@@ -427,7 +427,7 @@ def licenses_data_from_match(
         if license_text_diagnostics:
             matched_text = match.matched_text(whole_lines=False, highlight=True)
         else:
-            matched_text = match.matched_text(whole_lines=True, highlight=False)
+            matched_text = match.matched_text(whole_lines=False, highlight=False)
 
     SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
     SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'

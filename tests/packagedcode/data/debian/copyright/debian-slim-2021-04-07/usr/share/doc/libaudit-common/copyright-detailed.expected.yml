@@ -71,7 +71,7 @@ license_detections:
         rule_length: 38
         rule_relevance: 100
         matched_text: |
-          The audit daemon's library libaudit.* is released under LGPL
+          library libaudit.* is released under LGPL
            so that it may be linked with 3rd party software.
            .
            On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1

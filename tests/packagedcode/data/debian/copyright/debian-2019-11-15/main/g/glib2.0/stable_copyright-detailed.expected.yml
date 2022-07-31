@@ -36,7 +36,7 @@ license_detections:
         rule_length: 138
         rule_relevance: 100
         matched_text: |
-              This package is free software; you can redistribute it and/or
+          This package is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2 of the License, or (at your option) any later version.
@@ -272,7 +272,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-           Permission is hereby granted, free of charge, to any person obtaining a copy
+          Permission is hereby granted, free of charge, to any person obtaining a copy
            of this software and associated documentation files (the "Software"), to deal
            in the Software without restriction, including without limitation the rights
            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -353,7 +353,7 @@ license_detections:
         rule_length: 99
         rule_relevance: 100
         matched_text: |
-           This program is free software; you can redistribute it and/or modify
+          This program is free software; you can redistribute it and/or modify
            it under the terms of the GNU General Public License as published by
            the Free Software Foundation; either version 2, or (at your option)
            any later version.

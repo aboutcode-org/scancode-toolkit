@@ -63,7 +63,7 @@ license_detections:
         rule_length: 32
         rule_relevance: 100
         matched_text: |
-          Release 7 of PCRE is distributed under the terms of the "BSD" licence, as
+          PCRE is distributed under the terms of the "BSD" licence, as
           specified below. The documentation for PCRE, supplied in the "doc"
           directory, is distributed under the same terms as the software itself.
         licenses:

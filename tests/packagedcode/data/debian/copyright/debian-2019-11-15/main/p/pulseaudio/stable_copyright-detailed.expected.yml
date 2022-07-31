@@ -205,7 +205,7 @@ license_detections:
         rule_length: 127
         rule_relevance: 100
         matched_text: |
-           The upstream license clarifies pretty well that the sources of pulseaudio are
+          The upstream license clarifies pretty well that the sources of pulseaudio are
            LGPL (please see LGPL license grant below), but that some parts will be
            effectively GPL since they rely on GPL libraries, quoting the upstream
            LICENSE:
@@ -254,7 +254,7 @@ license_detections:
         rule_length: 22
         rule_relevance: 100
         matched_text: |
-           On Debian systems, the complete text of the LGPL-2.1 can be found in
+          On Debian systems, the complete text of the LGPL-2.1 can be found in
             /usr/share/common-licenses/LGPL-2.1.
         licenses:
           - key: lgpl-2.1-plus
@@ -292,7 +292,7 @@ license_detections:
         rule_length: 147
         rule_relevance: 100
         matched_text: |
-           This source code is a product of Sun Microsystems, Inc. and is provided
+          This source code is a product of Sun Microsystems, Inc. and is provided
            for unrestricted use.  Users may copy or modify this source code without
            charge.
 
@@ -347,7 +347,7 @@ license_detections:
         rule_length: 56
         rule_relevance: 100
         matched_text: |
-           Permission to use, copy, modify, and distribute this software and its
+          Permission to use, copy, modify, and distribute this software and its
            documentation for any purpose and without fee is hereby granted, provided
            that the above copyright notice appear in all copies and that both that
            copyright notice and this permission notice appear in supporting
@@ -748,7 +748,7 @@ license_detections:
         rule_length: 88
         rule_relevance: 100
         matched_text: |
-           You are allowed to use this source code in any open source or closed
+          You are allowed to use this source code in any open source or closed
            source software you want. You are allowed to use the algorithms for a
            hardware solution. You are allowed to modify the source code.
            You are not allowed to remove the name of the author from this memo or
@@ -1472,7 +1472,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-            Permission is hereby granted, free of charge, to any person
+          Permission is hereby granted, free of charge, to any person
             obtaining a copy of this software and associated documentation files
             (the "Software"), to deal in the Software without restriction,
             including without limitation the rights to use, copy, modify, merge,

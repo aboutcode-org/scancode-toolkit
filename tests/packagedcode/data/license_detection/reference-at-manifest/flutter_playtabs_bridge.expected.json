@@ -45,7 +45,7 @@
               "score": 100.0,
               "start_line": 1,
               "end_line": 1,
-              "matched_length": 2,
+              "matched_length": 3,
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
@@ -58,9 +58,9 @@
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 2,
+              "rule_length": 3,
               "rule_relevance": 100,
-              "matched_text": ":file = ../LICENSE",
+              "matched_text": "license :file = ../LICENSE",
               "licenses": [
                 {
                   "key": "unknown-license-reference",
@@ -286,7 +286,7 @@
               "score": 100.0,
               "start_line": 13,
               "end_line": 13,
-              "matched_length": 2,
+              "matched_length": 3,
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
@@ -299,9 +299,9 @@
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 2,
+              "rule_length": 3,
               "rule_relevance": 100,
-              "matched_text": "file => '../LICENSE' }",
+              "matched_text": "license          = { :file => '../LICENSE' }",
               "licenses": [
                 {
                   "key": "unknown-license-reference",
@@ -399,7 +399,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 1.67,
+      "percentage_of_license_text": 2.5,
       "package_data": [
         {
           "type": "pods",
@@ -445,7 +445,7 @@
                   "score": 100.0,
                   "start_line": 1,
                   "end_line": 1,
-                  "matched_length": 2,
+                  "matched_length": 3,
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
@@ -458,9 +458,9 @@
                   "is_license_reference": true,
                   "is_license_tag": false,
                   "is_license_intro": false,
-                  "rule_length": 2,
+                  "rule_length": 3,
                   "rule_relevance": 100,
-                  "matched_text": ":file = ../LICENSE",
+                  "matched_text": "license :file = ../LICENSE",
                   "licenses": [
                     {
                       "key": "unknown-license-reference",

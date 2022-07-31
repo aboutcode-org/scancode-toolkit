@@ -29,7 +29,7 @@ license_detections:
         rule_length: 140
         rule_relevance: 100
         matched_text: |
-              This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -82,7 +82,7 @@ license_detections:
         rule_length: 77
         rule_relevance: 100
         matched_text: |
-          <srivasta@debian.org>, and distributed under the terms of the GNU
+          distributed under the terms of the GNU
           General Public License, version 2.
 
           On Debian GNU/Linux systems, the complete text of the GNU General

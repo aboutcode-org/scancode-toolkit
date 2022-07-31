@@ -111,7 +111,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: GPLv3 License']",
+            "matched_text": "License :: OSI Approved ::",
             "licenses": [
               {
                 "key": "free-unknown",
@@ -148,7 +148,7 @@
             "is_license_intro": false,
             "rule_length": 2,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: GPLv3 License']",
+            "matched_text": "GPLv3 License']",
             "licenses": [
               {
                 "key": "gpl-3.0",

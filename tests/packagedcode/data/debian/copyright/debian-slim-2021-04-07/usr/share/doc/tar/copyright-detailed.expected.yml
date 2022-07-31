@@ -27,7 +27,7 @@ license_detections:
         is_license_intro: no
         rule_length: 65
         rule_relevance: 100
-        matched_text: "   This program is free software; you can redistribute it and/or modify\
+        matched_text: "This program is free software; you can redistribute it and/or modify\
           \ it\n   under the terms of the GNU General Public License as published by the\n \
           \  Free Software Foundation; either version 3, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
@@ -68,7 +68,7 @@ license_detections:
         is_license_intro: no
         rule_length: 65
         rule_relevance: 100
-        matched_text: "   This program is free software; you can redistribute it and/or modify\
+        matched_text: "This program is free software; you can redistribute it and/or modify\
           \ it\n   under the terms of the GNU General Public License as published by the\n \
           \  Free Software Foundation; either version 2, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\

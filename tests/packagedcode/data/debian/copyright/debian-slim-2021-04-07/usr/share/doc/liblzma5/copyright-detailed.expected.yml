@@ -120,7 +120,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '  - liblzma is in the public domain.'
+        matched_text: is in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -153,8 +153,8 @@ license_detections:
         rule_length: 8
         rule_relevance: 100
         matched_text: |
-            - xz, xzdec, and lzmadec command line tools are in the public
-              domain unless GNU getopt_long had to be compiled and linked
+          command line tools are in the public
+              domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -187,7 +187,7 @@ license_detections:
         rule_length: 9
         rule_relevance: 100
         matched_text: |
-              in from the lib directory. The getopt_long code is under
+          The getopt_long code is under
               GNU LGPLv2.1+.
         licenses:
           - key: lgpl-2.1-plus
@@ -221,7 +221,7 @@ license_detections:
         rule_length: 9
         rule_relevance: 100
         matched_text: |
-              adapted from gzip. These scripts and their documentation are
+          These scripts and their documentation are
               under GNU GPLv2+.
         licenses:
           - key: gpl-2.0-plus
@@ -255,7 +255,7 @@ license_detections:
         rule_length: 10
         rule_relevance: 100
         matched_text: |
-              XZ Utils specific documentation files in other directories
+          documentation files in other directories
               are in the public domain.
         licenses:
           - key: public-domain
@@ -288,7 +288,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: '  - Translated messages are in the public domain.'
+        matched_text: Translated messages are in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -321,8 +321,8 @@ license_detections:
         rule_length: 17
         rule_relevance: 100
         matched_text: |
-            - The build system contains public domain files, and files that
-              are under GNU GPLv2+ or GNU GPLv3+. None of these files end up
+          The build system contains public domain files, and files that
+              are under GNU GPLv2+ or GNU GPLv3+.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -382,7 +382,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '    utilities in the debug directory are in the public domain.'
+        matched_text: are in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -414,7 +414,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: '  - The extra directory may contain public domain files, and files'
+        matched_text: public domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -447,7 +447,7 @@ license_detections:
         rule_length: 8
         rule_relevance: 100
         matched_text: |
-            - The extra directory may contain public domain files, and files
+          files
               that are under various free software licenses.
         licenses:
           - key: other-permissive
@@ -640,7 +640,7 @@ license_detections:
         is_license_intro: no
         rule_length: 11
         rule_relevance: 100
-        matched_text: Most of the source has been put into the public domain, but some files
+        matched_text: Most of the source has been put into the public domain,
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1007,7 +1007,7 @@ license_detections:
         rule_length: 18
         rule_relevance: 100
         matched_text: |
-           # This file has been put into the public domain.
+          This file has been put into the public domain.
            # You can do whatever you want with this file.
         licenses:
           - key: public-domain
@@ -1041,7 +1041,7 @@ license_detections:
         rule_length: 29
         rule_relevance: 100
         matched_text: |
-           dnl This file is free software; the Free Software Foundation
+          This file is free software; the Free Software Foundation
            dnl gives unlimited permission to copy and/or distribute it,
            dnl with or without modifications, as long as this notice is preserved.
         licenses:
@@ -1076,7 +1076,7 @@ license_detections:
         rule_length: 72
         rule_relevance: 100
         matched_text: |
-           # As a special exception, the Free Software Foundation gives unlimited
+          As a special exception, the Free Software Foundation gives unlimited
            # permission to copy, distribute and modify the configure scripts that
            # are the output of Autoconf.  You need not follow the terms of the GNU
            # General Public License when using or distributing such scripts, even
@@ -1731,7 +1731,7 @@ license_detections:
         is_license_intro: no
         rule_length: 11
         rule_relevance: 100
-        matched_text: Most of the source has been put into the public domain, but some files
+        matched_text: Most of the source has been put into the public domain,
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1767,8 +1767,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: ' COPYING says that most docs are in the public domain. Maybe that''s
-          not'
+        matched_text: are in the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1801,8 +1800,8 @@ license_detections:
         rule_length: 5
         rule_relevance: 100
         matched_text: |
-           I don't dare to say that _all_ XZ Utils specific docs are in the public
-           domain unless otherwise mentioned in the file. I'm including PDF files
+          are in the public
+           domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1838,7 +1837,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: old test files were not in the public domain as a whole. They
+        matched_text: in the public domain
         licenses:
           - key: public-domain
             name: Public Domain

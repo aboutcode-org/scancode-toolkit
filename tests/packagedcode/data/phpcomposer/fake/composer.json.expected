@@ -63,7 +63,7 @@
             "is_license_intro": false,
             "rule_length": 10,
             "rule_relevance": 100,
-            "matched_text": "(LGPL-2.1-only or GPL-3.0-or-later)",
+            "matched_text": "LGPL-2.1-only or GPL-3.0-or-later)",
             "licenses": [
               {
                 "key": "lgpl-2.1",

@@ -157,7 +157,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: The file is 100% Public Domain, by Steve Reid <steve@edmweb.com>,
+        matched_text: 100% Public Domain,
         licenses:
           - key: public-domain
             name: Public Domain
@@ -639,7 +639,7 @@ license_detections:
         rule_length: 12
         rule_relevance: 100
         matched_text: |
-          monitor library, but was written by Peter Deutsch and released under
+          released under
           the GNU GPL." and then shows the zlib license text.
         licenses:
           - key: gpl-1.0-plus

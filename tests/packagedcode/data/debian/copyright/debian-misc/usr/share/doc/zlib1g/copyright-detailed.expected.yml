@@ -25,7 +25,7 @@ license_detections:
         rule_length: 144
         rule_relevance: 100
         matched_text: |
-            This software is provided 'as-is', without any express or implied
+          This software is provided 'as-is', without any express or implied
             warranty.  In no event will the authors be held liable for any damages
             arising from the use of this software.
 

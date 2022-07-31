@@ -64,7 +64,7 @@ license_detections:
         rule_length: 147
         rule_relevance: 100
         matched_text: |
-              The GNU C Library is free software; you can redistribute it and/or
+          The GNU C Library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -117,7 +117,7 @@ license_detections:
         rule_length: 135
         rule_relevance: 95
         matched_text: |
-              This program is free software; you can redistribute it and/or modify
+          This program is free software; you can redistribute it and/or modify
               it under the terms of the GNU General Public License as published
               by the Free Software Foundation; version 2 of the License, or
               (at your option) any later version.
@@ -165,7 +165,7 @@ license_detections:
         rule_length: 13
         rule_relevance: 100
         matched_text: |
-          * All code incorporated from 4.4 BSD is distributed under the following
+          All code incorporated from 4.4 BSD is distributed under the following
             license:
         licenses:
           - key: bsd-new
@@ -203,7 +203,7 @@ license_detections:
         rule_length: 218
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -264,7 +264,7 @@ license_detections:
         rule_length: 141
         rule_relevance: 100
         matched_text: |
-              Permission to use, copy, modify, and distribute this software for any
+          Permission to use, copy, modify, and distribute this software for any
               purpose with or without fee is hereby granted, provided that the above
               copyright notice and this permission notice appear in all copies, and
               that the name of Digital Equipment Corporation not be used in
@@ -315,7 +315,7 @@ license_detections:
         rule_length: 113
         rule_relevance: 100
         matched_text: |
-              Permission to use, copy, modify, and distribute this software for any
+          Permission to use, copy, modify, and distribute this software for any
               purpose with or without fee is hereby granted, provided that the above
               copyright notice and this permission notice appear in all copies.
 
@@ -363,7 +363,7 @@ license_detections:
         rule_length: 214
         rule_relevance: 100
         matched_text: |
-              Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
               modification, are permitted provided that the following conditions are
               met:
 
@@ -421,7 +421,7 @@ license_detections:
         rule_length: 159
         rule_relevance: 100
         matched_text: |
-          * The following CMU license covers some of the support code for Mach,
+          The following CMU license covers some of the support code for Mach,
             derived from Mach 3.0:
 
               Mach Operating System
@@ -480,7 +480,7 @@ license_detections:
         rule_length: 219
         rule_relevance: 100
         matched_text: |
-          * The file if_ppp.h is under the following CMU license:
+          under the following CMU license:
 
                Redistribution and use in source and binary forms, with or without
                modification, are permitted provided that the following conditions
@@ -538,7 +538,7 @@ license_detections:
         rule_length: '19'
         rule_relevance: 100
         matched_text: |
-          * The following license covers the files from Intel's "Highly Optimized
+          The following license covers the files from Intel's "Highly Optimized
             Mathematical Functions for Itanium" collection:
 
               Intel License Agreement
@@ -578,7 +578,7 @@ license_detections:
         rule_length: 204
         rule_relevance: 100
         matched_text: |
-              Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
               modification, are permitted provided that the following conditions are
               met:
 
@@ -636,7 +636,7 @@ license_detections:
         rule_length: 314
         rule_relevance: 100
         matched_text: |
-            (C) by Craig Metz and are distributed under the following license:
+          distributed under the following license:
 
               /* The Inner Net License, Version 2.00
 
@@ -709,7 +709,7 @@ license_detections:
         rule_length: 48
         rule_relevance: 100
         matched_text: |
-              This file is distributed under the terms of the GNU Lesser General
+          This file is distributed under the terms of the GNU Lesser General
               Public License, version 2.1 or later - see the file COPYING.LIB for details.
               If you did not receive a copy of the license with this program, please
               see <http://www.gnu.org/licenses/> to obtain a copy.
@@ -749,7 +749,7 @@ license_detections:
         rule_length: 103
         rule_relevance: 100
         matched_text: |
-              GNU Libidn is free software; you can redistribute it and/or
+          GNU Libidn is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -796,7 +796,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: '    gunidecomp.c, all licensed under LGPL and copyright hold by:'
+        matched_text: all licensed under LGPL
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -833,7 +833,7 @@ license_detections:
         rule_length: 87
         rule_relevance: 100
         matched_text: |
-              Disclaimer and license: Regarding this entire document or any
+          Disclaimer and license: Regarding this entire document or any
               portion of it (including the pseudocode and C code), the author
               makes no guarantees and is not responsible for any damage resulting
               from its use.  The author grants irrevocable permission to anyone
@@ -874,7 +874,7 @@ license_detections:
         rule_length: 209
         rule_relevance: 100
         matched_text: |
-              This document and translations of it may be copied and furnished to
+          This document and translations of it may be copied and furnished to
               others, and derivative works that comment on or otherwise explain it
               or assist in its implementation may be prepared, copied, published
               and distributed, in whole or in part, without restriction of any
@@ -933,7 +933,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-              Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
               modification, are permitted provided that the following conditions
               are met:
               1. Redistributions of source code must retain the above copyright
@@ -992,7 +992,7 @@ license_detections:
         rule_length: 141
         rule_relevance: 100
         matched_text: |
-              Permission to use, copy, modify, and distribute this software and its
+          Permission to use, copy, modify, and distribute this software and its
               documentation for any purpose and without fee is hereby granted,
               provided that the above copyright notice appear in all copies and that
               both that copyright notice and this permission notice appear in
@@ -1043,7 +1043,7 @@ license_detections:
         rule_length: 147
         rule_relevance: 100
         matched_text: |
-              This software is not subject to any license of the American Telephone
+          This software is not subject to any license of the American Telephone
               and Telegraph Company or of the Regents of the University of California.
 
               Permission is granted to anyone to use this software for any purpose on
@@ -1098,7 +1098,7 @@ license_detections:
         rule_length: 271
         rule_relevance: 95
         matched_text: |
-              Permission is granted to anyone to use this software for any purpose on any
+          Permission is granted to anyone to use this software for any purpose on any
               computer system, and to redistribute it freely, subject to the following
               restrictions:
 
@@ -1170,7 +1170,7 @@ license_detections:
         rule_length: 25
         rule_relevance: 100
         matched_text: |
-              Developed at SunPro, a Sun Microsystems, Inc. business.
+          Developed at SunPro, a Sun Microsystems, Inc. business.
               Permission to use, copy, modify, and distribute this
               software is freely granted, provided that this notice
               is preserved.
@@ -1210,7 +1210,7 @@ license_detections:
         rule_length: 26
         rule_relevance: 100
         matched_text: |
-              Feel free to copy, use and distribute this software provided:
+          Feel free to copy, use and distribute this software provided:
 
                    1. you do not pretend that you wrote it
                    2. you leave this copyright notice intact.
@@ -1250,7 +1250,7 @@ license_detections:
         rule_length: 106
         rule_relevance: 100
         matched_text: |
-               This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
                modify it under the terms of the GNU Lesser General Public
                License as published by the Free Software Foundation; either
                version 2.1 of the License, or (at your option) any later version.

@@ -111,7 +111,7 @@
             "is_license_intro": false,
             "rule_length": 10,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)']",
+            "matched_text": "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)']",
             "licenses": [
               {
                 "key": "lgpl-3.0",

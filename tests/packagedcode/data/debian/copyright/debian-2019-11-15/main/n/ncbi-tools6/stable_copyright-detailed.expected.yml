@@ -76,7 +76,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: 'The NCBI toolkit has been put into the public domain, completely unfettered:'
+        matched_text: put into the public domain,
         licenses:
           - key: public-domain
             name: Public Domain
@@ -109,7 +109,7 @@ license_detections:
         rule_length: 158
         rule_relevance: 100
         matched_text: |
-                                    PUBLIC DOMAIN NOTICE
+          PUBLIC DOMAIN NOTICE
                        National Center for Biotechnology Information
 
           This software/database is a "United States Government Work" under the
@@ -322,7 +322,7 @@ license_detections:
         rule_length: 57
         rule_relevance: 100
         matched_text: |
-          (MIT).  No commercial use of these trademarks may be made without prior
+          No commercial use of these trademarks may be made without prior
           written permission of MIT.
 
           "Commercial use" means use of a name in a product or other for-profit

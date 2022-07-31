@@ -1418,7 +1418,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: The work is public domain (no license).
+        matched_text: is public domain (
         licenses:
           - key: public-domain
             name: Public Domain

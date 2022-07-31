@@ -142,7 +142,7 @@ license_detections:
         rule_length: 18
         rule_relevance: 100
         matched_text: |
-          The demo code in the -doc package is covered either by the LGPL, or
+          is covered either by the LGPL, or
           under the GNU General Public License /usr/share/common-licenses/GPL.
         licenses:
           - key: lgpl-2.0-plus

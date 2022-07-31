@@ -259,7 +259,7 @@ license_detections:
         rule_length: 73
         rule_relevance: 100
         matched_text: |
-          QLogic grants permission to use and redistribute these firmware files
+          grants permission to use and redistribute these firmware files
           for use with QLogic BR-series devices, but not as a part of the Linux
           kernel or in any other form which would require these files themselves
           to be covered by the terms of the GNU General Public License.

@@ -89,15 +89,14 @@ license_detections:
         is_license_intro: no
         rule_length: 88
         rule_relevance: 100
-        matched_text: "* Copyright 1995 by Wietse Venema.  All rights reserved. Individual files\n\
-          * may be covered by other copyrights (as noted in the file itself.)\n*\n* This material\
-          \ was originally written and compiled by Wietse Venema at\n* Eindhoven University\
-          \ of Technology, The Netherlands, in 1990, 1991,\n* 1992, 1993, 1994 and 1995.\n*\n\
-          * Redistribution and use in source and binary forms are permitted\n* provided that\
-          \ this entire copyright notice is duplicated in all such\n* copies.  \n*\n* This software\
-          \ is provided \"as is\" and without any expressed or implied\n* warranties, including,\
-          \ without limitation, the implied warranties of\n* merchantibility and fitness for\
-          \ any particular purpose."
+        matched_text: "Individual files\n* may be covered by other copyrights (as noted in the\
+          \ file itself.)\n*\n* This material was originally written and compiled by Wietse\
+          \ Venema at\n* Eindhoven University of Technology, The Netherlands, in 1990, 1991,\n\
+          * 1992, 1993, 1994 and 1995.\n*\n* Redistribution and use in source and binary forms\
+          \ are permitted\n* provided that this entire copyright notice is duplicated in all\
+          \ such\n* copies.  \n*\n* This software is provided \"as is\" and without any expressed\
+          \ or implied\n* warranties, including, without limitation, the implied warranties\
+          \ of\n* merchantibility and fitness for any particular purpose."
         licenses:
           - key: tcp-wrappers
             name: TCP Wrappers License
@@ -135,7 +134,7 @@ license_detections:
         rule_length: 100
         rule_relevance: 100
         matched_text: |
-             This program is free software; you can redistribute it and/or modify
+          This program is free software; you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
              the Free Software Foundation; either version 2, or (at your option)
              any later version.

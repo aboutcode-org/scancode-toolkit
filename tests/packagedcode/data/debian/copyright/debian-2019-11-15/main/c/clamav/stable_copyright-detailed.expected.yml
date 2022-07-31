@@ -1098,8 +1098,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: 'Stolen (by the author of the file utility!) from the public domain tar
-          program:'
+        matched_text: public domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1131,7 +1130,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: Public Domain version written 26 Aug 1985 John Gilmore (ihnp4!hoptoad!gnu).
+        matched_text: Public Domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1167,7 +1166,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: This project is public domain and free for all purposes.
+        matched_text: is public domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1203,7 +1202,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: LZMA SDK is written and placed in the public domain by Igor Pavlov.
+        matched_text: placed in the public domain
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1293,7 +1292,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: TomsFastMath is public domain.
+        matched_text: is public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1325,7 +1324,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: are both public domain.
+        matched_text: public domain.
         licenses:
           - key: public-domain
             name: Public Domain

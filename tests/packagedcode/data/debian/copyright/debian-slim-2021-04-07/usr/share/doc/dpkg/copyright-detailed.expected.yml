@@ -110,7 +110,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: public domain.  Based conceptually on start-stop-daemon.pl, by Ian
+        matched_text: public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -143,8 +143,8 @@ license_detections:
         rule_length: 9
         rule_relevance: 100
         matched_text: |
-          Jackson <ijackson@gnu.ai.mit.edu>.  May be used and distributed
-          freely for any purpose.  Changes by Christian Schwarz
+          May be used and distributed
+          freely for any purpose.
         licenses:
           - key: other-permissive
             name: Other Permissive Licenses
@@ -176,7 +176,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: Console Message Standard, also placed in public domain.  Minor
+        matched_text: also placed in public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -209,7 +209,7 @@ license_detections:
         rule_length: 6
         rule_relevance: 100
         matched_text: |
-          changes by Klee Dienes <klee@debian.org>, also placed in the Public
+          also placed in the Public
           Domain.
         licenses:
           - key: public-domain
@@ -242,7 +242,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: and --make-pidfile options, placed in public domain as well.
+        matched_text: placed in public domain as well.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -279,7 +279,7 @@ license_detections:
         rule_length: 26
         rule_relevance: 100
         matched_text: |
-          The algorithm is due to Ron Rivest.  This code was
+          This code was
           written by Colin Plumb in 1993, no copyright is claimed.
           This code is in the public domain; do with it what you wish.
         licenses:

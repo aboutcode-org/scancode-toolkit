@@ -48,7 +48,7 @@
             "is_license_intro": false,
             "rule_length": 4,
             "rule_relevance": 100,
-            "matched_text": "{'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}",
+            "matched_text": "LegalCopyright': None, 'LegalTrademarks': '', 'License': None}",
             "licenses": [
               {
                 "key": "unknown",

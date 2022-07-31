@@ -406,7 +406,7 @@ license_detections:
         rule_length: 158
         rule_relevance: 100
         matched_text: |
-              Permission is hereby granted, free of charge, to any person obtaining
+          Permission is hereby granted, free of charge, to any person obtaining
               a copy of this software and associated documentation files (the
               ``Software''), to deal in the Software without restriction, including
               without limitation the rights to use, copy, modify, merge, publish,
@@ -645,7 +645,7 @@ license_detections:
         rule_length: 82
         rule_relevance: 100
         matched_text: |
-              This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -690,7 +690,7 @@ license_detections:
         rule_length: 82
         rule_relevance: 100
         matched_text: |
-              This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -735,7 +735,7 @@ license_detections:
         rule_length: 86
         rule_relevance: 100
         matched_text: |
-             The GNU C Library is free software; you can redistribute it and/or
+          The GNU C Library is free software; you can redistribute it and/or
              modify it under the terms of the GNU Lesser General Public
              License as published by the Free Software Foundation; either
              version 2.1 of the License, or (at your option) any later version.
@@ -779,7 +779,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 70
-        matched_text: ' * Public domain.'
+        matched_text: Public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -816,7 +816,7 @@ license_detections:
         rule_length: 86
         rule_relevance: 100
         matched_text: |
-             The GNU C Library is free software; you can redistribute it and/or
+          The GNU C Library is free software; you can redistribute it and/or
              modify it under the terms of the GNU Lesser General Public
              License as published by the Free Software Foundation; either
              version 2.1 of the License, or (at your option) any later version.
@@ -861,7 +861,7 @@ license_detections:
         rule_length: 82
         rule_relevance: 100
         matched_text: |
-              This library is free software; you can redistribute it and/or
+          This library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -906,7 +906,7 @@ license_detections:
         rule_length: 25
         rule_relevance: 100
         matched_text: |
-           * Developed at SunPro, a Sun Microsystems, Inc. business.
+          Developed at SunPro, a Sun Microsystems, Inc. business.
            * Permission to use, copy, modify, and distribute this
            * software is freely granted, provided that this notice
            * is preserved.
@@ -1110,7 +1110,7 @@ license_detections:
         rule_length: 132
         rule_relevance: 100
         matched_text: |
-            This software is provided 'as-is', without any express or implied
+          This software is provided 'as-is', without any express or implied
             warranty.  In no event will the authors be held liable for any damages
             arising from the use of this software.
 
@@ -1214,7 +1214,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-             Permission is hereby granted, free of charge, to any person obtaining a
+          Permission is hereby granted, free of charge, to any person obtaining a
              copy of this software and associated documentation files
              (the "Software"), to deal in the Software without restriction, including
              without limitation the rights to use, copy, modify, merge, publish,
@@ -1270,7 +1270,7 @@ license_detections:
         rule_length: 144
         rule_relevance: 100
         matched_text: |
-             This file is free software; you can redistribute it and/or modify it
+          This file is free software; you can redistribute it and/or modify it
              under the terms of the GNU General Public License as published by the
              Free Software Foundation; either version 3, or (at your option) any
              later version.
@@ -1733,7 +1733,7 @@ license_detections:
         rule_length: 70
         rule_relevance: 100
         matched_text: |
-          ;; Everyone is granted permission to copy, modify and redistribute
+          Everyone is granted permission to copy, modify and redistribute
           ;; GNU Emacs, but only under the conditions described in the
           ;; GNU Emacs General Public License.   A copy of this license is
           ;; supposed to have been given to you along with GNU Emacs so you
@@ -2314,7 +2314,7 @@ license_detections:
         is_license_intro: no
         rule_length: 11
         rule_relevance: 100
-        matched_text: '  ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change'
+        matched_text: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
         licenses:
           - key: bsd-original-uc
             name: BSD-Original-UC
@@ -2520,7 +2520,7 @@ license_detections:
           USE OF THIS SOFTWARE.
 
           So that all may benefit from your experience, please report  any  problems
-          or  suggestions about this software to the 29K Technical Support Center at
+          or  suggestions about this software
         licenses:
           - key: amd-historical
             name: AMD Historical License
@@ -2793,7 +2793,7 @@ license_detections:
           \  IN NO EVENT SHALL SUPERH BE LIABLE FOR INDIRECT, SPECIAL, \nINCIDENTAL OR CONSEQUENTIAL\
           \ DAMAGES IN CONNECTION WITH OR ARISING FROM\nTHE FURNISHING, PERFORMANCE, OR USE\
           \ OF THIS SOFTWARE.\n\nSo that all may benefit from your experience, please report\
-          \ any problems\nor suggestions about this software to the SuperH Support Center via"
+          \ any problems\nor suggestions about this software to the"
         licenses:
           - key: amd-historical
             name: AMD Historical License
@@ -3218,7 +3218,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: (21) Free Software Foundation LGPL License (*-linux* targets only)
+        matched_text: Free Software Foundation LGPL License (*-
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -3255,7 +3255,7 @@ license_detections:
         rule_length: 123
         rule_relevance: 100
         matched_text: |
-             The GNU C Library is free software; you can redistribute it and/or
+          The GNU C Library is free software; you can redistribute it and/or
              modify it under the terms of the GNU Lesser General Public
              License as published by the Free Software Foundation; either
              version 2.1 of the License, or (at your option) any later version.
@@ -3300,7 +3300,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 99
-        matched_text: (22) Xavier Leroy LGPL License (i[3456]86-*-linux* targets only)
+        matched_text: LGPL License (
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -3755,18 +3755,25 @@ license_detections:
         is_license_intro: no
         rule_length: 151
         rule_relevance: 100
-        matched_text: "\uFEFFUNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE\n\n \
-          \   Unicode Data Files include all data files under the directories\nhttp://www.unicode.org/Public/,\
-          \ http://www.unicode.org/reports/, and\nhttp://www.unicode.org/cldr/data/. Unicode\
-          \ Data Files do not include PDF\nonline code charts under the directory http://www.unicode.org/Public/.\n\
-          Software includes any source code published in the Unicode Standard or under\nthe\
-          \ directories http://www.unicode.org/Public/,\nhttp://www.unicode.org/reports/, and\
-          \ http://www.unicode.org/cldr/data/.\n\n    NOTICE TO USER: Carefully read the following\
-          \ legal agreement. BY\nDOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE\
-          \ INC.'S DATA FILES\n(\"DATA FILES\"), AND/OR SOFTWARE (\"SOFTWARE\"), YOU UNEQUIVOCALLY\
-          \ ACCEPT, AND\nAGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.\
-          \ IF\nYOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA\n\
-          FILES OR SOFTWARE.\n\n    COPYRIGHT AND PERMISSION NOTICE"
+        matched_text: |
+          UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+
+              Unicode Data Files include all data files under the directories
+          http://www.unicode.org/Public/, http://www.unicode.org/reports/, and
+          http://www.unicode.org/cldr/data/. Unicode Data Files do not include PDF
+          online code charts under the directory http://www.unicode.org/Public/.
+          Software includes any source code published in the Unicode Standard or under
+          the directories http://www.unicode.org/Public/,
+          http://www.unicode.org/reports/, and http://www.unicode.org/cldr/data/.
+
+              NOTICE TO USER: Carefully read the following legal agreement. BY
+          DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES
+          ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND
+          AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF
+          YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA
+          FILES OR SOFTWARE.
+
+              COPYRIGHT AND PERMISSION NOTICE
         licenses:
           - key: unicode
             name: Unicode Inc License Agreement
@@ -3799,7 +3806,7 @@ license_detections:
         rule_length: 309
         rule_relevance: 100
         matched_text: |
-              Copyright © 1991-2013 Unicode, Inc. All rights reserved. Distributed under
+          Distributed under
           the Terms of Use in http://www.unicode.org/copyright.html.
 
               Permission is hereby granted, free of charge, to any person obtaining a
@@ -3866,7 +3873,7 @@ license_detections:
         rule_length: 112
         rule_relevance: 100
         matched_text: |
-          # The GNU C Library is free software; you can redistribute it and/or
+          The GNU C Library is free software; you can redistribute it and/or
           # modify it under the terms of the GNU Lesser General Public
           # License as published by the Free Software Foundation; either
           # version 2.1 of the License, or (at your option) any later version.

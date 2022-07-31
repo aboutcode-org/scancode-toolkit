@@ -126,7 +126,7 @@
             "is_license_intro": false,
             "rule_length": 11,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']",
+            "matched_text": "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']",
             "licenses": [
               {
                 "key": "lgpl-2.0-plus",

@@ -27,7 +27,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: "\t\t(derived portions are public domain)"
+        matched_text: derived portions are public domain)
         licenses:
           - key: public-domain
             name: Public Domain

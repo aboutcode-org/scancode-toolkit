@@ -1034,7 +1034,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '    Released into the public domain.'
+        matched_text: Released into the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1066,7 +1066,7 @@ license_detections:
         is_license_intro: no
         rule_length: 8
         rule_relevance: 100
-        matched_text: '    released under the LGPL, version 2 or later.'
+        matched_text: released under the LGPL, version 2 or later.
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later
@@ -1098,7 +1098,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: '    Mavrogiannopoulos.  It is released under the MIT license.'
+        matched_text: It is released under the MIT license.
         licenses:
           - key: mit
             name: MIT License
@@ -1131,7 +1131,7 @@ license_detections:
         rule_length: 7
         rule_relevance: 100
         matched_text: |
-              some by Andreas Sigfridsson and Niels Möller.  Python Cryptography
+          Python Cryptography
               Toolkit license (essentially public domain).
         licenses:
           - key: pycrypto
@@ -1164,7 +1164,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '    by Marcus Comstedt.  Released into the public domain.'
+        matched_text: Released into the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1196,7 +1196,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '    Möller.  Released into the public domain.'
+        matched_text: Released into the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1229,7 +1229,7 @@ license_detections:
         rule_length: 13
         rule_relevance: 100
         matched_text: |
-              The implementation of RIPEMD160 message digest is based on the code
+          based on the code
               in libgcrypt, copyright owned by the Free Software Foundation.
         licenses:
           - key: lgpl-2.1-plus
@@ -1262,7 +1262,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: '    reference implementation (in the public domain), adapted to Nettle'
+        matched_text: reference implementation (in the public domain),
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1295,7 +1295,7 @@ license_detections:
         rule_length: 13
         rule_relevance: 100
         matched_text: |
-              The implementation of the SERPENT cipher is based on the code in
+          based on the code in
               libgcrypt, copyright owned by the Free Software Foundation.
         licenses:
           - key: lgpl-2.1-plus
@@ -1328,7 +1328,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: '    Released into the public domain.  Assembler for x86, x86_64 and ARM'
+        matched_text: Released into the public domain.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -1360,7 +1360,7 @@ license_detections:
         is_license_intro: no
         rule_length: 4
         rule_relevance: 100
-        matched_text: '    by Niels Möller, released under the LGPL.'
+        matched_text: released under the LGPL.
         licenses:
           - key: lgpl-2.0-plus
             name: GNU Library General Public License 2.0 or later

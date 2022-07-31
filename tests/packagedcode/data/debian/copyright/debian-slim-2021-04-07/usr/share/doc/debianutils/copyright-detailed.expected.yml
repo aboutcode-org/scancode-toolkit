@@ -83,8 +83,8 @@ license_detections:
         is_license_intro: no
         rule_length: 1227
         rule_relevance: 100
-        matched_text: "\t\t     SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\
-          \n Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
+        matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n\
+          \ Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
           \ S. Karr\n Copyleft (GNU) 1988 Landon Curt Noll & Ronald S. Karr\n\n Everyone is\
           \ permitted to copy and distribute verbatim copies\n of this license, but changing\
           \ it is not allowed.  You can also\n use this wording to make the terms for other\

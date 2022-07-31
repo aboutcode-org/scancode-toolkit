@@ -293,7 +293,7 @@ license_detections:
         rule_length: 32
         rule_relevance: 50
         matched_text: |
-          Qualcomm is a trademark of Qualcomm Incorporated, registered in the
+          is a trademark of Qualcomm Incorporated, registered in the
           United States and other countries. All Qualcomm Incorporated trademarks are used
           with permission. Other products and brand names may be trademarks or registered
           trademarks of their respective owners.
@@ -333,7 +333,7 @@ license_detections:
         rule_length: 56
         rule_relevance: 100
         matched_text: |
-            The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
+          The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
             the OpenSSL License and the original SSLeay license apply to the toolkit.
             See below for the actual license texts. Actually both licenses are BSD-style
             Open Source licenses. In case of any license issues related to OpenSSL
@@ -369,7 +369,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: '  OpenSSL License'
+        matched_text: OpenSSL License
         licenses:
           - key: openssl-ssleay
             name: OpenSSL/SSLeay License
@@ -406,7 +406,7 @@ license_detections:
         rule_length: 332
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            *
@@ -490,7 +490,7 @@ license_detections:
         rule_length: 453
         rule_relevance: 100
         matched_text: |
-           * This package is an SSL implementation written
+          This package is an SSL implementation written
            * by Eric Young (eay@cryptsoft.com).
            * The implementation was written so as to conform with Netscapes SSL.
            *
@@ -578,7 +578,7 @@ license_detections:
         is_license_intro: no
         rule_length: 12
         rule_relevance: 100
-        matched_text: ' * For conditions of distribution and use, see copyright notice in zlib.h'
+        matched_text: For conditions of distribution and use, see copyright notice in zlib.h
         licenses:
           - key: zlib
             name: ZLIB License
@@ -615,7 +615,7 @@ license_detections:
         rule_length: 144
         rule_relevance: 100
         matched_text: |
-            This software is provided 'as-is', without any express or implied
+          This software is provided 'as-is', without any express or implied
             warranty.  In no event will the authors be held liable for any damages
             arising from the use of this software.
 
@@ -667,9 +667,10 @@ license_detections:
         is_license_intro: no
         rule_length: 26
         rule_relevance: 100
-        matched_text: " * The algorithm is due to Ron Rivest.\tThis code was\n * written by\
-          \ Colin Plumb in 1993, no copyright is claimed.\n * This code is in the public domain;\
-          \ do with it what you wish."
+        matched_text: |
+          This code was
+           * written by Colin Plumb in 1993, no copyright is claimed.
+           * This code is in the public domain; do with it what you wish.
         licenses:
           - key: public-domain
             name: Public Domain
@@ -706,7 +707,7 @@ license_detections:
         rule_length: 217
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -765,7 +766,7 @@ license_detections:
         rule_length: 16
         rule_relevance: 100
         matched_text: |
-           *  COPYRIGHT (C) 1986 Gary S. Brown.  You may use this program, or
+          You may use this program, or
            *  code or tables extracted from it, as desired without restriction.
         licenses:
           - key: gary-s-brown
@@ -803,12 +804,12 @@ license_detections:
         rule_length: 74
         rule_relevance: 100
         matched_text: |
-             I retain copyright in this code but I encourage its free use provided
+          I retain copyright in this code but I encourage its free use provided
              that I don't carry any responsibility for the results. I am especially
              happy to see it used in free and open source software. If you do use
              it I would appreciate an acknowledgement of its origin in the code or
              the product that results and I would also appreciate knowing a liitle
-             about the use to which it is being put. I am grateful to Frank Yellin
+             about the use to which it is being put.
         licenses:
           - key: other-permissive
             name: Other Permissive Licenses
@@ -845,7 +846,7 @@ license_detections:
         rule_length: 85
         rule_relevance: 100
         matched_text: |
-           * Please do not copyright this code.  This code is in the public domain.
+          Please do not copyright this code.  This code is in the public domain.
            *
            * LANDON CURT NOLL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
            * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO
@@ -890,7 +891,7 @@ license_detections:
         rule_length: 141
         rule_relevance: 100
         matched_text: |
-           * NO COPYRIGHT - THIS IS 100% IN THE PUBLIC DOMAIN
+          NO COPYRIGHT - THIS IS 100% IN THE PUBLIC DOMAIN
            *
            * The original unmodified version is available at:
            *    ftp://ftp.funet.fi/pub/crypt/hash/sha/sha1.c
@@ -944,7 +945,7 @@ license_detections:
         rule_length: 50
         rule_relevance: 100
         matched_text: |
-           * This program is free software; you can redistribute it and/or modify
+          This program is free software; you can redistribute it and/or modify
            * it under the terms of the GNU General Public License version 2 as
            * published by the Free Software Foundation.
            *
@@ -1004,7 +1005,7 @@ license_detections:
         rule_length: 50
         rule_relevance: 100
         matched_text: |
-           * This program is free software; you can redistribute it and/or modify
+          This program is free software; you can redistribute it and/or modify
            * it under the terms of the GNU General Public License version 2 as
            * published by the Free Software Foundation.
            *
@@ -1062,7 +1063,7 @@ license_detections:
         rule_length: 215
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -1120,7 +1121,7 @@ license_detections:
         rule_length: 176
         rule_relevance: 100
         matched_text: |
-          * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
           * modification, are permitted provided that the following conditions
           * are met:
           * 1. Redistributions of source code must retain the above copyright
@@ -1171,7 +1172,7 @@ license_detections:
         rule_length: 207
         rule_relevance: 100
         matched_text: |
-          * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
@@ -1213,7 +1214,7 @@ license_detections:
         rule_length: 200
         rule_relevance: 100
         matched_text: |
-           * Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
            * are met:
            * 1. Redistributions of source code must retain the above copyright
@@ -1270,7 +1271,7 @@ license_detections:
         rule_length: 111
         rule_relevance: 100
         matched_text: |
-           * Permission to use, copy, modify, and distribute this software for any
+          Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
            * copyright notice and this permission notice appear in all copies.
            *

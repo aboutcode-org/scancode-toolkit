@@ -29,7 +29,7 @@ license_detections:
         is_license_intro: no
         rule_length: 870
         rule_relevance: 100
-        matched_text: "  LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under\
+        matched_text: "LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under\
           \ a dual license, i.e. both the conditions of\n  the OpenSSL License and the original\
           \ SSLeay license apply to the toolkit.\n  See below for the actual license texts.\
           \ Actually both licenses are BSD-style\n  Open Source licenses. In case of any license\

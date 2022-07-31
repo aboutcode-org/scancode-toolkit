@@ -106,7 +106,7 @@ license_detections:
         is_license_intro: no
         rule_length: 7
         rule_relevance: 100
-        matched_text: The full text of the GNU General Public License version 3
+        matched_text: the GNU General Public License version 3
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0
@@ -139,7 +139,7 @@ license_detections:
         is_license_intro: no
         rule_length: 6
         rule_relevance: 100
-        matched_text: can be found in the file /usr/share/common-licenses/GPL-3.
+        matched_text: usr/share/common-licenses/GPL-3.
         licenses:
           - key: gpl-3.0
             name: GNU General Public License 3.0

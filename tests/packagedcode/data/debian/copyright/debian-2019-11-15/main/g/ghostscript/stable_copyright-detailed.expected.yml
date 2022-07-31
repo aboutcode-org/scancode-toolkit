@@ -58,27 +58,24 @@ declared_license:
   - FTL
   - ZLIB
   - ISC
-license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND (unknown-license-reference
-  AND agpl-3.0-plus) AND bsd-new AND (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND lgpl-2.1
-  AND lgpl-2.1 AND freetype AND unknown-license-reference AND freetype AND gpl-1.0-plus AND
-  gpl-1.0-plus AND gpl-1.0-plus AND ghostscript-1988 AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817
-  AND agpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND
-  fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference
-  AND (gpl-1.0-plus OR cups) AND gpl-2.0-plus AND gpl-2.0-plus AND zlib AND bsd-new AND bsd-new
-  AND sunsoft AND mit AND public-domain AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0
-  AND (agpl-3.0 AND agpl-3.0-plus) AND afpl-9.0 AND isc AND gpl-2.0-plus AND gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive AND
-  x11-opengroup AND other-permissive AND gpl-1.0-plus AND gpl-1.0-plus AND x11-lucent-variant
+license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND agpl-3.0-plus AND bsd-new
+  AND (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND lgpl-2.1 AND lgpl-2.1 AND freetype
+  AND freetype AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND ghostscript-1988 AND agpl-3.0
+  WITH ps-or-pdf-font-exception-20170817 AND agpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND (gpl-1.0-plus OR cups) AND gpl-2.0-plus AND gpl-2.0-plus AND zlib AND
+  bsd-new AND bsd-new AND sunsoft AND mit AND public-domain AND apache-2.0 AND apache-2.0 AND
+  apache-2.0 AND apache-2.0 AND (agpl-3.0 AND agpl-3.0-plus) AND afpl-9.0 AND isc AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive
+  AND x11-opengroup AND other-permissive AND gpl-1.0-plus AND gpl-1.0-plus AND x11-lucent-variant
   AND ghostpdl-permissive AND zlib AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus
 declared_license_expression_spdx: (AGPL-3.0-only AND AGPL-3.0-or-later) AND AGPL-3.0-or-later
-  AND (LicenseRef-scancode-unknown-license-reference AND AGPL-3.0-or-later) AND BSD-3-Clause
-  AND (AGPL-3.0-only AND AGPL-3.0-or-later) AND AGPL-3.0-or-later AND LGPL-2.1-only AND LGPL-2.1-only
-  AND FTL AND LicenseRef-scancode-unknown-license-reference AND FTL AND GPL-1.0-or-later AND
-  GPL-1.0-or-later AND GPL-1.0-or-later AND LicenseRef-scancode-ghostscript-1988 AND AGPL-3.0-only
-  WITH PS-or-PDF-font-exception-20170817 AND AGPL-3.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later
-  AND GPL-1.0-or-later AND GPL-1.0-or-later AND FSFUL AND GPL-2.0-or-later AND GPL-1.0-or-later
-  AND GPL-1.0-or-later AND GPL-1.0-or-later AND LicenseRef-scancode-unknown-license-reference
+  AND AGPL-3.0-or-later AND BSD-3-Clause AND (AGPL-3.0-only AND AGPL-3.0-or-later) AND AGPL-3.0-or-later
+  AND LGPL-2.1-only AND LGPL-2.1-only AND FTL AND FTL AND GPL-1.0-or-later AND GPL-1.0-or-later
+  AND GPL-1.0-or-later AND LicenseRef-scancode-ghostscript-1988 AND AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817
+  AND AGPL-3.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later
+  AND FSFUL AND GPL-2.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later
   AND (GPL-1.0-or-later OR LicenseRef-scancode-cups) AND GPL-2.0-or-later AND GPL-2.0-or-later
   AND Zlib AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-sunsoft AND MIT AND LicenseRef-scancode-public-domain
   AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND (AGPL-3.0-only AND AGPL-3.0-or-later)
@@ -2093,7 +2090,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: 'License: agpl-'
         licenses:
           - key: agpl-3.0
             name: GNU Affero General Public License 3.0
@@ -2125,7 +2122,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: agpl-3+
         licenses:
           - key: agpl-3.0-plus
             name: GNU Affero General Public License 3.0 or later
@@ -2182,43 +2179,10 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.yml
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
-  - license_expression: unknown-license-reference AND agpl-3.0-plus
+  - license_expression: agpl-3.0-plus
     detection_rules:
       - not-combined
     matches:
-      - score: '100.0'
-        start_line: 75
-        end_line: 75
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_see_license_at_manifest_1.RULE
-        referenced_filenames:
-          - LICENSE
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 2
-        rule_relevance: 100
-        matched_text: The file LICENSE in topmost directory of upstream source covers
-        licenses:
-          - key: unknown-license-reference
-            name: Unknown License file reference
-            short_name: Unknown License reference
-            category: Unstated License
-            is_exception: no
-            is_unknown: yes
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/unknown-license-reference
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml
-            spdx_license_key: LicenseRef-scancode-unknown-license-reference
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
       - score: '90.0'
         start_line: 76
         end_line: 76
@@ -2235,7 +2199,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 90
-        matched_text: ' only GPL Ghostscript,'
+        matched_text: GPL Ghostscript,
         licenses:
           - key: agpl-3.0-plus
             name: GNU Affero General Public License 3.0 or later
@@ -2271,7 +2235,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: 'License: agpl-'
         licenses:
           - key: agpl-3.0
             name: GNU Affero General Public License 3.0
@@ -2303,7 +2267,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: agpl-3+
         licenses:
           - key: agpl-3.0-plus
             name: GNU Affero General Public License 3.0 or later
@@ -2381,7 +2345,7 @@ license_detections:
         rule_length: 23
         rule_relevance: 100
         matched_text: |
-          pcl3 is free software and can be used
+          is free software and can be used
            under the terms of the GNU Lesser General Public License (LGPL),
            Version 2.1 (February 1999).
         licenses:
@@ -2399,43 +2363,6 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
-  - license_expression: unknown-license-reference
-    detection_rules:
-      - not-combined
-    matches:
-      - score: '100.0'
-        start_line: 129
-        end_line: 129
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_see_license_at_manifest_2.RULE
-        referenced_filenames:
-          - LICENSE.txt
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
-        matched_text: The referenced file LICENSE.TXT does not exist
-        licenses:
-          - key: unknown-license-reference
-            name: Unknown License file reference
-            short_name: Unknown License reference
-            category: Unstated License
-            is_exception: no
-            is_unknown: yes
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/unknown-license-reference
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml
-            spdx_license_key: LicenseRef-scancode-unknown-license-reference
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
   - license_expression: freetype
     detection_rules:
       - not-combined
@@ -2723,7 +2650,7 @@ license_detections:
         rule_length: 69
         rule_relevance: 100
         matched_text: |
-           Everyone is granted permission
+          Everyone is granted permission
            to copy, modify and redistribute Ghostscript,
            but only under the conditions
            described in the GNU General Public License.
@@ -2784,43 +2711,6 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
-  - license_expression: unknown-license-reference
-    detection_rules:
-      - not-combined
-    matches:
-      - score: '100.0'
-        start_line: 254
-        end_line: 254
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_see_license_at_manifest_2.RULE
-        referenced_filenames:
-          - LICENSE.txt
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
-        matched_text: The referenced file LICENSE.txt does not exist
-        licenses:
-          - key: unknown-license-reference
-            name: Unknown License file reference
-            short_name: Unknown License reference
-            category: Unstated License
-            is_exception: no
-            is_unknown: yes
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/unknown-license-reference
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml
-            spdx_license_key: LicenseRef-scancode-unknown-license-reference
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
   - license_expression: gpl-1.0-plus OR cups
     detection_rules:
       - not-combined
@@ -3028,7 +2918,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: 'License: agpl-'
         licenses:
           - key: agpl-3.0
             name: GNU Affero General Public License 3.0
@@ -3060,7 +2950,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: 'License: agpl-3+'
+        matched_text: agpl-3+
         licenses:
           - key: agpl-3.0-plus
             name: GNU Affero General Public License 3.0 or later
@@ -3096,7 +2986,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 90
-        matched_text: ' as part of GNU Ghostscript and/or AFPL Ghostscript,'
+        matched_text: AFPL Ghostscript,
         licenses:
           - key: afpl-9.0
             name: Aladdin Free Public License v9

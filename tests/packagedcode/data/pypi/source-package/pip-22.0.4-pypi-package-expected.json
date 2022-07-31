@@ -116,7 +116,7 @@
               "is_license_intro": false,
               "rule_length": 5,
               "rule_relevance": 100,
-              "matched_text": "['License :: OSI Approved :: MIT License']",
+              "matched_text": "License :: OSI Approved :: MIT License']",
               "licenses": [
                 {
                   "key": "mit",
@@ -315,7 +315,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "['License :: OSI Approved :: MIT License']",
+                  "matched_text": "License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",
@@ -630,7 +630,7 @@
                   "score": 100.0,
                   "start_line": 87,
                   "end_line": 87,
-                  "matched_length": 3,
+                  "matched_length": 4,
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "unknown-license-reference",
@@ -643,7 +643,7 @@
                   "is_license_reference": true,
                   "is_license_tag": false,
                   "is_license_intro": false,
-                  "rule_length": 3,
+                  "rule_length": 4,
                   "rule_relevance": 100,
                   "matched_text": "license_file = LICENSE.txt",
                   "licenses": [
@@ -842,7 +842,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "['License :: OSI Approved :: MIT License']",
+                  "matched_text": "License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",
@@ -1027,7 +1027,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "['License :: OSI Approved :: MIT License']",
+                  "matched_text": "License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",

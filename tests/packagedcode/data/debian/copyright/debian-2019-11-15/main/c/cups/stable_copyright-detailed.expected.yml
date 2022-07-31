@@ -287,7 +287,7 @@ license_detections:
         is_license_intro: no
         rule_length: 2
         rule_relevance: 100
-        matched_text: The zlib License
+        matched_text: zlib License
         licenses:
           - key: zlib
             name: ZLIB License

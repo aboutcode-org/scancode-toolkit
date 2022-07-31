@@ -1547,7 +1547,7 @@ license_detections:
         is_license_intro: no
         rule_length: 3
         rule_relevance: 100
-        matched_text: The default license of WebKit is BSD 2-clause, available in
+        matched_text: BSD 2-clause,
         licenses:
           - key: bsd-simplified
             name: BSD-2-Clause

@@ -230,7 +230,7 @@ license_detections:
         rule_length: 57
         rule_relevance: 100
         matched_text: |
-          (MIT).  No commercial use of these trademarks may be made without
+          No commercial use of these trademarks may be made without
           prior written permission of MIT.
 
           "Commercial use" means use of a name in a product or other for-profit
@@ -273,7 +273,7 @@ license_detections:
         rule_length: 244
         rule_relevance: 100
         matched_text: |
-             WARNING:  Retrieving the OpenVision Kerberos Administration system
+          WARNING:  Retrieving the OpenVision Kerberos Administration system
              source code, as described below, indicates your acceptance of the
              following terms.  If you do not agree to the following terms, do
              not retrieve the OpenVision Kerberos administration system.
@@ -339,7 +339,7 @@ license_detections:
         rule_length: 155
         rule_relevance: 100
         matched_text: |
-                Export of this software from the United States of America may
+          Export of this software from the United States of America may
                 require a specific license from the United States Government.
                 It is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -394,7 +394,7 @@ license_detections:
         rule_length: 117
         rule_relevance: 100
         matched_text: |
-             LICENSE TERMS
+          LICENSE TERMS
 
              The free distribution and use of this software in both source and
              binary form is allowed (with or without changes) provided that:
@@ -450,7 +450,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -514,7 +514,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-             Permission is hereby granted, free of charge, to any person
+          Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
              files (the "Software"), to deal in the Software without
              restriction, including without limitation the rights to use, copy,
@@ -569,7 +569,7 @@ license_detections:
         rule_length: 185
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -630,7 +630,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-             Permission is hereby granted, free of charge, to any person
+          Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
              files (the "Software"), to deal in the Software without
              restriction, including without limitation the rights to use, copy,
@@ -685,7 +685,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -749,7 +749,7 @@ license_detections:
         rule_length: 205
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -813,7 +813,7 @@ license_detections:
         rule_length: 186
         rule_relevance: 100
         matched_text: |
-             Permission is granted to use, copy, create derivative works and
+          Permission is granted to use, copy, create derivative works and
              redistribute this software and such derivative works for any
              purpose, so long as the name of The University of Michigan is not
              used in any advertising or publicity pertaining to the use of
@@ -869,7 +869,7 @@ license_detections:
         rule_length: 64
         rule_relevance: 100
         matched_text: |
-             This file is free software; as a special exception the author gives
+          This file is free software; as a special exception the author gives
              unlimited permission to copy and/or distribute it, with or without
              modifications, as long as this notice is preserved.
 
@@ -913,7 +913,7 @@ license_detections:
         rule_length: 159
         rule_relevance: 100
         matched_text: |
-                Export of this software from the United States of America may
+          Export of this software from the United States of America may
                 require a specific license from the United States Government.
                 It is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -968,7 +968,7 @@ license_detections:
         rule_length: 330
         rule_relevance: 100
         matched_text: |
-             The OpenLDAP Public License
+          The OpenLDAP Public License
              Version 2.8, 17 August 2003
 
              Redistribution and use of this software and associated
@@ -1052,7 +1052,7 @@ license_detections:
         rule_length: 212
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1116,7 +1116,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1181,7 +1181,7 @@ license_detections:
         rule_length: 217
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1246,7 +1246,7 @@ license_detections:
         rule_length: 185
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1306,7 +1306,7 @@ license_detections:
         rule_length: 143
         rule_relevance: 99
         matched_text: |
-             Permission to use, copy, modify, and distribute this software and
+          Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose and without fee is hereby
              granted, provided that the above copyright notice appear in all
              copies and that both that copyright notice and this permission
@@ -1359,7 +1359,7 @@ license_detections:
         rule_length: 71
         rule_relevance: 95
         matched_text: |
-             Permission to use, copy, modify and distribute this software and
+          Permission to use, copy, modify and distribute this software and
              its documentation is hereby granted, provided that both the
              copyright notice and this permission notice appear in all copies of
              the software, derivative works or modified versions, and any
@@ -1404,7 +1404,7 @@ license_detections:
         rule_length: 99
         rule_relevance: 100
         matched_text: |
-             This document is subject to the rights, licenses and restrictions
+          This document is subject to the rights, licenses and restrictions
              contained in BCP 78, and except as set forth therein, the authors
              retain all their rights.
 
@@ -1452,7 +1452,7 @@ license_detections:
         rule_length: 69
         rule_relevance: 100
         matched_text: |
-             Permission to use, copy, modify, and distribute this software and
+          Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose and without fee is hereby
              granted, provided that the above copyright notice appear in all
              copies and that both that copyright notice and this permission
@@ -1496,7 +1496,7 @@ license_detections:
         rule_length: 161
         rule_relevance: 100
         matched_text: |
-             Permission is hereby granted, free of charge, to any person
+          Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
              files (the "Software"), to deal in the Software without
              restriction, including without limitation the rights to use, copy,
@@ -1551,7 +1551,7 @@ license_detections:
         rule_length: 183
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1607,7 +1607,7 @@ license_detections:
         rule_length: 165
         rule_relevance: 100
         matched_text: |
-                EXPORT OF THIS SOFTWARE from the United States of America may
+          EXPORT OF THIS SOFTWARE from the United States of America may
                 require a specific license from the United States Government. It
                 is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -1677,7 +1677,7 @@ license_detections:
         rule_length: 243
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1747,7 +1747,7 @@ license_detections:
         rule_length: 145
         rule_relevance: 99
         matched_text: |
-                Export of this software from the United States of America may
+          Export of this software from the United States of America may
                 require a specific license from the United States Government. It
                 is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -1799,7 +1799,7 @@ license_detections:
         rule_length: 245
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -1870,7 +1870,7 @@ license_detections:
         rule_length: 165
         rule_relevance: 100
         matched_text: |
-             Permission is hereby granted, free of charge, to any person
+          Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
              files (the "Software"), to deal in the Software without
              restriction, including without limitation the rights to use, copy,
@@ -1925,7 +1925,7 @@ license_detections:
         rule_length: 111
         rule_relevance: 100
         matched_text: |
-             Permission to use, copy, modify, and distribute this software for
+          Permission to use, copy, modify, and distribute this software for
              any purpose with or without fee is hereby granted, provided that
              the above copyright notice and this permission notice appear in all
              copies.
@@ -1974,7 +1974,7 @@ license_detections:
         rule_length: 132
         rule_relevance: 95
         matched_text: |
-             Permission to use, copy, modify, and distribute this software for
+          Permission to use, copy, modify, and distribute this software for
              any purpose with or without fee is hereby granted, provided that
              the above copyright notice and this permission notice appear in all
              copies.  THE SOFTWARE IS PROVIDED "AS IS" AND THEODORE TS'O (THE
@@ -2023,7 +2023,7 @@ license_detections:
         rule_length: 16
         rule_relevance: 100
         matched_text: |
-             This file may be freely redistributed without license or fee
+          This file may be freely redistributed without license or fee
              provided this copyright message remains intact.
         licenses:
           - key: other-permissive
@@ -2061,7 +2061,7 @@ license_detections:
         rule_length: 208
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -2125,7 +2125,7 @@ license_detections:
         rule_length: 126
         rule_relevance: 100
         matched_text: |
-             License to copy and use this software is granted provided that it
+          License to copy and use this software is granted provided that it
              is identified as the "RSA Data Security, Inc. MD4 Message Digest
              Algorithm" in all material mentioning or referencing this software
              or this function.
@@ -2178,7 +2178,7 @@ license_detections:
         rule_length: 126
         rule_relevance: 100
         matched_text: |
-             License to copy and use this software is granted provided that it
+          License to copy and use this software is granted provided that it
              is identified as the "RSA Data Security, Inc. MD5 Message- Digest
              Algorithm" in all material mentioning or referencing this software
              or this function.
@@ -2231,7 +2231,7 @@ license_detections:
         rule_length: 54
         rule_relevance: 100
         matched_text: |
-             RSA Data Security, Inc. makes no representations concerning either
+          RSA Data Security, Inc. makes no representations concerning either
              the merchantability of this software or the suitability of this
              software for any particular purpose. It is provided "as is" without
              express or implied warranty of any kind.
@@ -2274,7 +2274,7 @@ license_detections:
         rule_length: 177
         rule_relevance: 100
         matched_text: |
-                Export of this software from the United States of America may
+          Export of this software from the United States of America may
                 require a specific license from the United States Government. It
                 is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -2329,7 +2329,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -2394,7 +2394,7 @@ license_detections:
         rule_length: 335
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -2483,7 +2483,7 @@ license_detections:
         rule_length: 212
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -2548,7 +2548,7 @@ license_detections:
         rule_length: 183
         rule_relevance: 100
         matched_text: |
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 

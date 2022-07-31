@@ -3433,7 +3433,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -3569,7 +3569,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -3661,7 +3661,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -4888,7 +4888,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -5647,7 +5647,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -5849,7 +5849,7 @@
               "is_license_intro": false,
               "rule_length": 119,
               "rule_relevance": 100,
-              "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -6552,7 +6552,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 100,
-              "matched_text": "    <license.licenseName>apache_v2</license.licenseName>",
+              "matched_text": "license.licenseName>apache_v2</",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -6659,7 +6659,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -6961,7 +6961,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -7114,7 +7114,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -9267,7 +9267,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -10479,7 +10479,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -11206,7 +11206,7 @@
                   "is_license_intro": false,
                   "rule_length": 119,
                   "rule_relevance": 100,
-                  "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
+                  "matched_text": "Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -13169,7 +13169,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 100,
-                  "matched_text": "    <license.licenseName>apache_v2</license.licenseName>",
+                  "matched_text": "license.licenseName>apache_v2</",
                   "licenses": [
                     {
                       "key": "apache-2.0",

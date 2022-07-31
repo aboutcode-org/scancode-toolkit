@@ -462,7 +462,7 @@ license_detections:
         is_license_intro: no
         rule_length: 1
         rule_relevance: 100
-        matched_text: associating CC0 with a Work (the "Affirmer"), to the extent that he or
+        matched_text: CC0
         licenses:
           - key: cc0-1.0
             name: Creative Commons CC0 1.0 Universal
@@ -494,7 +494,7 @@ license_detections:
         is_license_intro: no
         rule_length: 1
         rule_relevance: 100
-        matched_text: elects to apply CC0 to the Work and publicly distribute the Work under
+        matched_text: CC0
         licenses:
           - key: cc0-1.0
             name: Creative Commons CC0 1.0 Universal
@@ -526,7 +526,7 @@ license_detections:
         is_license_intro: no
         rule_length: 1
         rule_relevance: 100
-        matched_text: the Work and the meaning and intended legal effect of CC0 on those
+        matched_text: CC0
         licenses:
           - key: cc0-1.0
             name: Creative Commons CC0 1.0 Universal

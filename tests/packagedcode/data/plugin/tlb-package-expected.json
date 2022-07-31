@@ -63,7 +63,7 @@
                   "is_license_intro": false,
                   "rule_length": 8,
                   "rule_relevance": 100,
-                  "matched_text": "{'LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}",
+                  "matched_text": "LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}",
                   "licenses": [
                     {
                       "key": "unknown",

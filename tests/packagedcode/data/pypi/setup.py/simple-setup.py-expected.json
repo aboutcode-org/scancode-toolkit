@@ -67,7 +67,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 100,
-            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment",
             "licenses": [
               {
                 "key": "apache-2.0",
@@ -120,7 +120,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 95,
-            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "matched_text": "CC0-1.0",
             "licenses": [
               {
                 "key": "cc0-1.0",
@@ -163,7 +163,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 95,
-            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "matched_text": "License :: OSI Approved :: Apache Software License', '",
             "licenses": [
               {
                 "key": "apache-2.0",
@@ -200,7 +200,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "matched_text": "License :: OSI Approved ::",
             "licenses": [
               {
                 "key": "free-unknown",
@@ -237,7 +237,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "matched_text": "CC0']",
             "licenses": [
               {
                 "key": "cc0-1.0",

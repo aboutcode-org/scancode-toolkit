@@ -30,7 +30,7 @@ license_detections:
         rule_length: 143
         rule_relevance: 100
         matched_text: |
-          The examples directory has been contributed by John Zaitseff, and is
+          and is
           GPL V2 as well.
 
               This program is free software; you can redistribute it and/or modify

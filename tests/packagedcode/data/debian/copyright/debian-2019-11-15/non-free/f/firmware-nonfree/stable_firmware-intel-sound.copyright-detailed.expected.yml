@@ -522,7 +522,7 @@ license_detections:
           USE OF THIS SOFTWARE.
 
           So that all may benefit from your experience, please report  any  problems
-          or  suggestions about this software to the 29K Technical Support Center at
+          or  suggestions about this software
         licenses:
           - key: amd-historical
             name: AMD Historical License
@@ -777,7 +777,7 @@ license_detections:
           THE FURNISHING, PERFORMANCE, OR USE OF THIS SOFTWARE.
 
           So that all may benefit from your experience, please report any problems
-          or suggestions about this software to the SuperH Support Center via
+          or suggestions about this software to the
         licenses:
           - key: amd-historical
             name: AMD Historical License
@@ -1462,7 +1462,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions are met:
 
               * Redistributions of source code must retain the above copyright notice,
@@ -1517,7 +1517,7 @@ license_detections:
         rule_length: 179
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions
             are met:
             1. Redistributions of source code must retain the above copyright
@@ -1569,7 +1569,7 @@ license_detections:
         rule_length: 183
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions
             are met:
             1. Redistributions of source code must retain the above copyright
@@ -1621,7 +1621,7 @@ license_detections:
         rule_length: 181
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions
             are met:
             1. Redistributions of source code must retain the above copyright
@@ -1673,7 +1673,7 @@ license_detections:
         rule_length: 183
         rule_relevance: 100
         matched_text: |
-            Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions
             are met:
             1. Redistributions of source code must retain the above copyright
@@ -1725,7 +1725,7 @@ license_detections:
         rule_length: 183
         rule_relevance: 100
         matched_text: |
-           Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            modification, are permitted provided that the following conditions
            are met:
            1. Redistributions of source code must retain the above copyright
@@ -1777,7 +1777,7 @@ license_detections:
         rule_length: 203
         rule_relevance: 100
         matched_text: |
-           Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
            modification, are permitted provided that the following conditions
            are met:
            1. Redistributions of source code must retain the above copyright
@@ -1889,7 +1889,7 @@ license_detections:
         rule_length: 213
         rule_relevance: 100
         matched_text: |
-           Redistribution and  use in source  and binary forms, with  or without
+          Redistribution and  use in source  and binary forms, with  or without
            modification,  are permitted provided  that the  following conditions
            are met:
 

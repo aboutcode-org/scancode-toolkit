@@ -681,7 +681,7 @@ license_detections:
         is_license_intro: no
         rule_length: 5
         rule_relevance: 100
-        matched_text: This file is licensed permissively for the sake of AppStream
+        matched_text: This file is licensed permissively
         licenses:
           - key: other-permissive
             name: Other Permissive Licenses

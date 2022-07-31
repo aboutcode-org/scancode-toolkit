@@ -117,7 +117,7 @@
               "is_license_intro": false,
               "rule_length": 35,
               "rule_relevance": 100,
-              "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties.",
+              "matched_text": "and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any",
               "licenses": [
                 {
                   "key": "fsf-ap",
