@@ -138,40 +138,6 @@ class LicenseCache:
             raise
 
 
-class MockCacheFromTestRules(LicenseCache):
-
-    @staticmethod
-    def build_from_test_rules(test_rules_dir):
-
-        from licensedcode.models import licenses_data_dir as ldd
-        from licensedcode.models import load_licenses
-
-        licenses_data_dir = licenses_data_dir or ldd
-        rules_data_dir = test_rules_dir
-
-        licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
-
-        index = build_index(
-            licenses_db=licenses_db,
-            licenses_data_dir=licenses_data_dir,
-            rules_data_dir=rules_data_dir,
-        )
-
-        spdx_symbols = build_spdx_symbols(licenses_db=licenses_db)
-        unknown_spdx_symbol = build_unknown_spdx_symbol(licenses_db=licenses_db)
-        licensing = build_licensing(licenses_db=licenses_db)
-
-        license_cache = LicenseCache(
-            db=licenses_db,
-            index=index,
-            licensing=licensing,
-            spdx_symbols=spdx_symbols,
-            unknown_spdx_symbol=unknown_spdx_symbol,
-        )
-
-        return license_cache
-
-
 def build_index(
     licenses_db=None,
     licenses_data_dir=None,
@@ -385,14 +351,6 @@ def get_index(force=False, index_all_languages=False):
     Return and eventually build and cache a LicenseIndex.
     """
     return get_cache(force=force, index_all_languages=index_all_languages).index
-
-
-def get_index_with_test_rules(test_rules_dir):
-    """
-    Return and eventually build and cache a LicenseIndex from a directory with
-    a few test rules for a specific test.
-    """
-    return MockCacheFromTestRules.build_from_test_rules(test_rules_dir).index
 
 
 get_cached_index = get_index

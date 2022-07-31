@@ -367,28 +367,6 @@ class LicenseDetection:
             license_expression = licensing.parse(match.license_expression)
             self.license_expression = str(license_expression)
 
-    def matched_text(
-        self,
-        whole_lines=False,
-        highlight=True,
-        highlight_matched='{}',
-        highlight_not_matched='[{}]',
-    ):
-        """
-        Return the matched text for this detection, combining texts from all
-        matches (that can possibly for different files.)
-        """
-        return '\n'.join(
-            m.matched_text(
-                whole_lines=whole_lines,
-                highlight=highlight,
-                highlight_matched=highlight_matched,
-                highlight_not_matched=highlight_not_matched,
-                _usecache=True
-            )
-            for m in self.matches
-        )
-
     def percentage_license_text_of_file(self, qspans):
         from licensedcode.spans import Span
 
@@ -1090,6 +1068,7 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
 
 
 def detect_licenses(
+    index=None,
     location=None,
     query_string=None,
     analysis=None,
@@ -1106,11 +1085,12 @@ def detect_licenses(
     if location and query_string:
         raise Exception("Either location or query_string should be provided")
 
-    from licensedcode import cache
-    idx = cache.get_index()
+    if not index:
+        from licensedcode import cache
+        index = cache.get_index()
 
     if location:
-        matches = idx.match(
+        matches = index.match(
             location=location,
             min_score=min_score,
             deadline=deadline,
@@ -1118,7 +1098,7 @@ def detect_licenses(
             **kwargs,
         )
     elif query_string:
-        matches = idx.match(
+        matches = index.match(
             query_string=query_string,
             min_score=min_score,
             deadline=deadline,

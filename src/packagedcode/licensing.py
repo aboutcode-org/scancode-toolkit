@@ -212,11 +212,17 @@ def get_license_detections_from_sibling_file(resource, codebase, no_licenses):
 
 def get_license_detection_mappings(
     location,
+    index=None,
     analysis=None,
     post_scan=False,
 ):
     license_detections = []
-    detections = detect_licenses(location=location, analysis=analysis, post_scan=post_scan)
+    detections = detect_licenses(
+        index=index,
+        location=location,
+        analysis=analysis,
+        post_scan=post_scan
+    )
 
     for detection in detections:
         if detection.license_expression is None:

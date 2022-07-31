@@ -215,6 +215,20 @@ def check_json_scan(
         assert results == expected
 
 
+def check_json(expected, results, regen):
+    if regen:
+        mode = 'w'
+        with open(expected, mode) as ex:
+            json.dump(results, ex, indent=2, separators=(',', ': '))
+    with open(expected) as ex:
+        expected = json.load(ex)
+
+    if results != expected:
+        expected = saneyaml.dump(expected)
+        results = saneyaml.dump(results)
+        assert results == expected
+
+
 def remove_uuid_from_scan(results):
     """
     Remove Package and Dependency UUIDs from a ``results` mapping of scan data .
