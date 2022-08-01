@@ -167,8 +167,12 @@ Package detection:
     of the new format where there is no root conceptually, just a list of files for each
     package.
 
-  - There is a new resource-level attribute `for_packages` which refers to packages
-    through package_uuids (pURL + uuid string).
+  - There is a new resource-level attribute `for_packages` which refers to
+    packages through package_uids (pURL + uuid string). A `package_adder`
+    function is now used to associate a Package to a Resource that is part of
+    it. This gives us the flexibility to use the packagedcode Package handlers
+    in other contexts where `for_packages` on Resource is not implemented in the
+    same way as scancode-toolkit.
 
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` with a package data mapping.
@@ -336,8 +340,8 @@ Miscellaneous
 
 - Added support for usage of shortcut flags
   - `-A` or `--about`
-  - `-q` or `--quiet` 
-  - `-v` or `--verbose` 
+  - `-q` or `--quiet`
+  - `-v` or `--verbose`
   - `-V` or `--version` can be used.
 
 
