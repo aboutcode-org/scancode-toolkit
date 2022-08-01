@@ -156,7 +156,8 @@ class PackageScanner(ScanPlugin):
 
 def get_installed_packages(root_dir, processes=2, **kwargs):
     """
-    Yield Package and their Resources as they are found in `root_dir`
+    Detect and yield Package mappings with their assigned Resource in a ``resources``
+    attribute as they are found in `root_dir`.
     """
     from scancode import cli
 
