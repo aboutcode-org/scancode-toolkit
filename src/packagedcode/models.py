@@ -7,10 +7,10 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
 from fnmatch import fnmatchcase
-import logging
 
 import attr
 from packageurl import normalize_qualifiers
@@ -26,7 +26,15 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from typecode import contenttype
+try:
+    from typecode import contenttype
+except ImportError:
+    contenttype = None
+
+try:
+    from packagedcode import licensing
+except ImportError:
+    licensing = None
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -365,6 +373,11 @@ class DependentPackage(ModelMixin):
              'either from the datafile or collected from another source. Some '
              'lockfiles for Composer or Cargo contain extra dependency data.'
          )
+
+    extra_data = Mapping(
+        label='extra data',
+        help='A mapping of arbitrary extra data.',
+    )
 
 
 @attr.attributes(slots=True)
@@ -771,7 +784,13 @@ def compute_normalized_license(declared_license, expression_symbols=None):
     if not declared_license:
         return
 
-    from packagedcode import licensing
+    if not licensing:
+        if TRACE:
+            logger_debug(
+                f'Failed to compute license for {declared_license!r}: '
+                'cannot import packagedcode.licensing')
+        return 'unknown'
+
     try:
         return licensing.get_normalized_expression(
             query_string=declared_license,
@@ -781,7 +800,6 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         # we never fail just for this
         if TRACE:
             logger_debug(f'Failed to compute license for {declared_license!r}: {e!r}')
-        # FIXME: add logging
         return 'unknown'
 
 
@@ -852,7 +870,8 @@ class DatafileHandler:
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
-                else:
+                # we check for contenttype IFF this is available
+                if contenttype:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
@@ -1207,6 +1226,13 @@ class Package(PackageData):
     def to_dict(self):
         return super().to_dict(with_details=False)
 
+    def to_package_data(self):
+        mapping = super().to_dict(with_details=True)
+        mapping.pop('package_uid', None)
+        mapping.pop('datafile_paths', None)
+        mapping.pop('datasource_ids', None)
+        return PackageData.from_dict(mapping)
+
     @classmethod
     def from_package_data(cls, package_data, datafile_path):
         """
@@ -1255,7 +1281,15 @@ class Package(PackageData):
             and self.primary_language == package_data.primary_language
         )
 
-    def update(self, package_data, datafile_path, replace=False):
+    def update(
+        self,
+        package_data,
+        datafile_path,
+        replace=False,
+        include_version=True,
+        include_qualifiers=False,
+        include_subpath=False,
+    ):
         """
         Update this Package with data from the ``package_data`` PackageData.
 
@@ -1281,9 +1315,15 @@ class Package(PackageData):
         if isinstance(package_data, dict):
             package_data = PackageData.from_dict(package_data)
 
-        if not self.is_compatible(package_data, include_qualifiers=False):
+        if not is_compatible(
+            purl1=self,
+            purl2=package_data,
+            include_version=include_version,
+            include_qualifiers=include_qualifiers,
+            include_subpath=include_subpath,
+        ):
             if TRACE_UPDATE:
-                logger_debug(f'update: {self.purl} not compatible with: {package_data.purl}')
+                logger_debug(f'update: skipping: {self.purl} is not compatible with: {package_data.purl}')
             return False
 
         # always append these new items
@@ -1345,6 +1385,56 @@ class Package(PackageData):
                     yield resource
 
 
+def is_compatible(
+    purl1,
+    purl2,
+    include_version=True,
+    include_qualifiers=True,
+    include_subpath=True,
+):
+    """
+    Return True if the ``purl1`` PackageURL-like object is compatible with
+    the ``purl2`` PackageURL-like object, e.g. it is about the same package.
+    PackageData objectys are PackageURL-like.
+
+    For example::
+    >>> p1 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04?arch=arm64')
+    >>> p2 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04')
+    >>> p3 = PackageURL.from_string('pkg:deb/libssl')
+    >>> p4 = PackageURL.from_string('pkg:deb/libncurses5')
+    >>> p5 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04?arch=arm64#/sbin')
+    >>> is_compatible(p1, p2)
+    False
+    >>> is_compatible(p1, p2, include_qualifiers=False)
+    True
+    >>> is_compatible(p1, p4)
+    False
+    >>> is_compatible(p1, p4, include_version=False, include_qualifiers=False)
+    True
+    >>> is_compatible(p3, p4)
+    False
+    >>> is_compatible(p1, p5)
+    False
+    >>> is_compatible(p1, p5, include_subpath=False)
+    True
+    """
+    is_compatible = (
+        purl1.type == purl2.type
+        and purl1.namespace == purl2.namespace
+        and purl1.name == purl2.name
+    )
+    if include_version:
+        is_compatible = is_compatible and (purl1.version == purl2.version)
+
+    if include_qualifiers:
+        is_compatible = is_compatible and (purl1.qualifiers == purl2.qualifiers)
+
+    if include_subpath:
+        is_compatible = is_compatible and (purl1.subpath == purl2.subpath)
+
+    return is_compatible
+
+
 @attr.attributes(slots=True)
 class PackageWithResources(Package):
     """
@@ -1384,7 +1474,15 @@ def merge_sequences(list1, list2, **kwargs):
     merged = []
     existing = set()
     for item in list1 + list2:
-        key = item.to_tuple(**kwargs)
+        try:
+            if hasattr(item, 'to_tuple'):
+                key = item.to_tuple(**kwargs)
+            else:
+                key = to_tuple(kwargs)
+
+        except Exception as e:
+            raise Exception(f'Failed to merge sequences: {item}', f'kwargs: {kwargs}') from e
+
         if not key in existing:
             merged.append(item)
             existing.add(key)

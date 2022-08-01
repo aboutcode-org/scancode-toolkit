@@ -1,30 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 9
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:pods/AWSCore@2.27.0",
@@ -34,6 +8,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -47,6 +22,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -60,6 +36,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -73,6 +50,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -86,6 +64,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -99,6 +78,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -112,6 +92,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -125,6 +106,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
@@ -840,7 +822,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/CwlCatchException@2.1.1",
@@ -849,7 +832,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/CwlCatchExceptionSupport@2.1.1",
@@ -858,7 +842,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/CwlMachBadInstructionHandler@2.1.0",
@@ -867,7 +852,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/CwlPosixPreconditionTesting@2.1.0",
@@ -876,7 +862,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/CwlPreconditionTesting@2.1.0",
@@ -885,7 +872,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/SwiftFormat/CLI@0.44.17",
@@ -894,7 +882,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/SwiftLint@0.46.2",
@@ -903,7 +892,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

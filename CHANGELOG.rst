@@ -34,6 +34,7 @@ Important API changes:
 
   - There is a a new top-level "dependencies" attribute that contains each
     dependency instance, these can be standalone or releated to a package.
+    These contain a new "extra_data" object.
 
   - There is a new resource-level attribute "for_packages" which refers to
     packages through package_uuids (pURL + uuid string).
@@ -172,6 +173,10 @@ Package detection:
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` with a package data mapping.
     Also the `requirement` attribute is renamed to `extracted_requirement`.
+    There is a new `extra_data` to collect extra data as needed.
+
+- For Pypi packages, python_requires is treated as a package dependency.
+
 
 
 License Clarity Scoring Update

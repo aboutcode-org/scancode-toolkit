@@ -59,6 +59,11 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
 
     @classmethod
+    def compute_normalized_license(cls, package):
+        _declared, detected = detect_declared_license(package.declared_license)
+        return detected
+
+    @classmethod
     def assemble(cls, package_data, resource, codebase):
         # get the root resource of the rootfs
         levels_up = len('lib/apk/db/installed'.split('/'))
@@ -75,6 +80,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         package_uid = package.package_uid
 
         package.license_expression = cls.compute_normalized_license(package)
+
 
         dependent_packages = package_data.dependencies
         if dependent_packages:

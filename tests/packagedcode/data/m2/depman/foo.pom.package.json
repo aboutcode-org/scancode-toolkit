@@ -52,7 +52,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-api@3.0.1",
@@ -61,7 +62,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-spi@3.0.1",
@@ -70,7 +72,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-api-maven@3.0.1",
@@ -79,7 +82,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-spi-maven@3.0.1",
@@ -88,7 +92,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-impl-maven@3.0.1",
@@ -97,7 +102,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-api-maven-archive@3.0.1",
@@ -106,7 +112,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-impl-maven-archive@3.0.1",
@@ -115,7 +122,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-depchain@3.0.1",
@@ -124,7 +132,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-gradle-depchain@3.0.1",
@@ -133,7 +142,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-maven-plugin@3.0.1",
@@ -142,7 +152,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-api-gradle-embedded-archive@3.0.1",
@@ -151,7 +162,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-impl-gradle-embedded-archive@3.0.1",
@@ -160,7 +172,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-api-maven-embedded@3.0.1",
@@ -169,7 +182,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.shrinkwrap.resolver/shrinkwrap-resolver-impl-maven-embedded@3.0.1",
@@ -178,7 +192,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven@3.3.9",
@@ -187,7 +202,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/3.0.1/",

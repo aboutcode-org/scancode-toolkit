@@ -85,7 +85,8 @@
           "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/abbrev@1.0.9"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/accepts@1.3.3",
@@ -141,7 +142,8 @@
           "api_data_url": "https://registry.npmjs.org/accepts/1.3.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/accepts@1.3.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/acorn@3.2.0",
@@ -197,7 +199,8 @@
           "api_data_url": "https://registry.npmjs.org/acorn/3.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/acorn@3.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/acorn-globals@3.0.0",
@@ -253,7 +256,8 @@
           "api_data_url": "https://registry.npmjs.org/acorn-globals/3.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/acorn-globals@3.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/agent-base@2.0.1",
@@ -309,7 +313,8 @@
           "api_data_url": "https://registry.npmjs.org/agent-base/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/agent-base@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/align-text@0.1.4",
@@ -365,7 +370,8 @@
           "api_data_url": "https://registry.npmjs.org/align-text/0.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/align-text@0.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/amdefine@1.0.0",
@@ -421,7 +427,8 @@
           "api_data_url": "https://registry.npmjs.org/amdefine/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/amdefine@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ansi-regex@2.0.0",
@@ -477,7 +484,8 @@
           "api_data_url": "https://registry.npmjs.org/ansi-regex/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ansi-regex@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ansi-styles@2.2.1",
@@ -533,7 +541,8 @@
           "api_data_url": "https://registry.npmjs.org/ansi-styles/2.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ansi-styles@2.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/archiver@1.0.0",
@@ -589,7 +598,8 @@
           "api_data_url": "https://registry.npmjs.org/archiver/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/archiver@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/archiver-utils@1.2.0",
@@ -645,7 +655,8 @@
           "api_data_url": "https://registry.npmjs.org/archiver-utils/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/archiver-utils@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/argparse@1.0.7",
@@ -701,7 +712,8 @@
           "api_data_url": "https://registry.npmjs.org/argparse/1.0.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/argparse@1.0.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/array-differ@1.0.0",
@@ -757,7 +769,8 @@
           "api_data_url": "https://registry.npmjs.org/array-differ/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/array-differ@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/array-find-index@1.0.1",
@@ -813,7 +826,8 @@
           "api_data_url": "https://registry.npmjs.org/array-find-index/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/array-find-index@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/array-union@1.0.2",
@@ -869,7 +883,8 @@
           "api_data_url": "https://registry.npmjs.org/array-union/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/array-union@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/array-uniq@1.0.3",
@@ -925,7 +940,8 @@
           "api_data_url": "https://registry.npmjs.org/array-uniq/1.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/array-uniq@1.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/arrify@1.0.1",
@@ -981,7 +997,8 @@
           "api_data_url": "https://registry.npmjs.org/arrify/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/arrify@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/asap@2.0.4",
@@ -1037,7 +1054,8 @@
           "api_data_url": "https://registry.npmjs.org/asap/2.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/asap@2.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/asn1@0.2.3",
@@ -1093,7 +1111,8 @@
           "api_data_url": "https://registry.npmjs.org/asn1/0.2.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/asn1@0.2.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/assert-plus@0.2.0",
@@ -1149,7 +1168,8 @@
           "api_data_url": "https://registry.npmjs.org/assert-plus/0.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/assert-plus@0.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/async@1.5.2",
@@ -1205,7 +1225,8 @@
           "api_data_url": "https://registry.npmjs.org/async/1.5.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/async@1.5.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/autoprefixer-core@5.2.1",
@@ -1261,7 +1282,8 @@
           "api_data_url": "https://registry.npmjs.org/autoprefixer-core/5.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/autoprefixer-core@5.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/aws-sign2@0.6.0",
@@ -1317,7 +1339,8 @@
           "api_data_url": "https://registry.npmjs.org/aws-sign2/0.6.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/aws-sign2@0.6.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/aws4@1.4.1",
@@ -1373,7 +1396,8 @@
           "api_data_url": "https://registry.npmjs.org/aws4/1.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/aws4@1.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/babel-runtime@6.9.2",
@@ -1429,7 +1453,8 @@
           "api_data_url": "https://registry.npmjs.org/babel-runtime/6.9.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/babel-runtime@6.9.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/babylon@6.8.4",
@@ -1485,7 +1510,8 @@
           "api_data_url": "https://registry.npmjs.org/babylon/6.8.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/babylon@6.8.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/balanced-match@0.4.1",
@@ -1541,7 +1567,8 @@
           "api_data_url": "https://registry.npmjs.org/balanced-match/0.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/balanced-match@0.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/basic-auth@1.0.4",
@@ -1597,7 +1624,8 @@
           "api_data_url": "https://registry.npmjs.org/basic-auth/1.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/basic-auth@1.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/batch@0.5.3",
@@ -1653,7 +1681,8 @@
           "api_data_url": "https://registry.npmjs.org/batch/0.5.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/batch@0.5.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/bl@1.1.2",
@@ -1709,7 +1738,8 @@
           "api_data_url": "https://registry.npmjs.org/bl/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/bl@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/body-parser@1.14.2",
@@ -1765,7 +1795,8 @@
           "api_data_url": "https://registry.npmjs.org/body-parser/1.14.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/body-parser@1.14.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/boom@2.10.1",
@@ -1821,7 +1852,8 @@
           "api_data_url": "https://registry.npmjs.org/boom/2.10.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/boom@2.10.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/brace-expansion@1.1.5",
@@ -1877,7 +1909,8 @@
           "api_data_url": "https://registry.npmjs.org/brace-expansion/1.1.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/brace-expansion@1.1.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/browserify-zlib@0.1.4",
@@ -1933,7 +1966,8 @@
           "api_data_url": "https://registry.npmjs.org/browserify-zlib/0.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/browserify-zlib@0.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/browserslist@0.4.0",
@@ -1989,7 +2023,8 @@
           "api_data_url": "https://registry.npmjs.org/browserslist/0.4.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/browserslist@0.4.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/btoa@1.1.2",
@@ -2045,7 +2080,8 @@
           "api_data_url": "https://registry.npmjs.org/btoa/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/btoa@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/buffer-crc32@0.2.5",
@@ -2101,7 +2137,8 @@
           "api_data_url": "https://registry.npmjs.org/buffer-crc32/0.2.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/buffer-crc32@0.2.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/buffer-shims@1.0.0",
@@ -2157,7 +2194,8 @@
           "api_data_url": "https://registry.npmjs.org/buffer-shims/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/buffer-shims@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/builtin-modules@1.1.1",
@@ -2213,7 +2251,8 @@
           "api_data_url": "https://registry.npmjs.org/builtin-modules/1.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/builtin-modules@1.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/bytes@2.2.0",
@@ -2269,7 +2308,8 @@
           "api_data_url": "https://registry.npmjs.org/bytes/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/bytes@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/camel-case@3.0.0",
@@ -2325,7 +2365,8 @@
           "api_data_url": "https://registry.npmjs.org/camel-case/3.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/camel-case@3.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/camelcase@2.1.1",
@@ -2381,7 +2422,8 @@
           "api_data_url": "https://registry.npmjs.org/camelcase/2.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/camelcase@2.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/camelcase-keys@2.1.0",
@@ -2437,7 +2479,8 @@
           "api_data_url": "https://registry.npmjs.org/camelcase-keys/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/camelcase-keys@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/caniuse-db@1.0.30000506",
@@ -2493,7 +2536,8 @@
           "api_data_url": "https://registry.npmjs.org/caniuse-db/1.0.30000506",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/caniuse-db@1.0.30000506"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/caseless@0.11.0",
@@ -2549,7 +2593,8 @@
           "api_data_url": "https://registry.npmjs.org/caseless/0.11.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/caseless@0.11.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/center-align@0.1.3",
@@ -2605,7 +2650,8 @@
           "api_data_url": "https://registry.npmjs.org/center-align/0.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/center-align@0.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/chalk@1.1.3",
@@ -2661,7 +2707,8 @@
           "api_data_url": "https://registry.npmjs.org/chalk/1.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/chalk@1.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/change-case@3.0.0",
@@ -2717,7 +2764,8 @@
           "api_data_url": "https://registry.npmjs.org/change-case/3.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/change-case@3.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/character-parser@2.2.0",
@@ -2773,7 +2821,8 @@
           "api_data_url": "https://registry.npmjs.org/character-parser/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/character-parser@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/clean-css@3.4.18",
@@ -2829,7 +2878,8 @@
           "api_data_url": "https://registry.npmjs.org/clean-css/3.4.18",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/clean-css@3.4.18"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cli@0.6.6",
@@ -2885,7 +2935,8 @@
           "api_data_url": "https://registry.npmjs.org/cli/0.6.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cli@0.6.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cli-table@0.3.1",
@@ -2941,7 +2992,8 @@
           "api_data_url": "https://registry.npmjs.org/cli-table/0.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cli-table@0.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cliui@2.1.0",
@@ -2997,7 +3049,8 @@
           "api_data_url": "https://registry.npmjs.org/cliui/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cliui@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/coffee-script@1.10.0",
@@ -3053,7 +3106,8 @@
           "api_data_url": "https://registry.npmjs.org/coffee-script/1.10.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/coffee-script@1.10.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/colors@1.1.2",
@@ -3109,7 +3163,8 @@
           "api_data_url": "https://registry.npmjs.org/colors/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/colors@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/combined-stream@1.0.5",
@@ -3165,7 +3220,8 @@
           "api_data_url": "https://registry.npmjs.org/combined-stream/1.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/combined-stream@1.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/commander@2.8.1",
@@ -3221,7 +3277,8 @@
           "api_data_url": "https://registry.npmjs.org/commander/2.8.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/commander@2.8.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/comment-parser@0.3.1",
@@ -3277,7 +3334,8 @@
           "api_data_url": "https://registry.npmjs.org/comment-parser/0.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/comment-parser@0.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/compress-commons@1.0.0",
@@ -3333,7 +3391,8 @@
           "api_data_url": "https://registry.npmjs.org/compress-commons/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/compress-commons@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/concat-map@0.0.1",
@@ -3389,7 +3448,8 @@
           "api_data_url": "https://registry.npmjs.org/concat-map/0.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/concat-map@0.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/concat-stream@1.5.1",
@@ -3445,7 +3505,8 @@
           "api_data_url": "https://registry.npmjs.org/concat-stream/1.5.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/concat-stream@1.5.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/connect@3.4.1",
@@ -3501,7 +3562,8 @@
           "api_data_url": "https://registry.npmjs.org/connect/3.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/connect@3.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/connect-livereload@0.5.4",
@@ -3557,7 +3619,8 @@
           "api_data_url": "https://registry.npmjs.org/connect-livereload/0.5.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/connect-livereload@0.5.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/console-browserify@1.1.0",
@@ -3613,7 +3676,8 @@
           "api_data_url": "https://registry.npmjs.org/console-browserify/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/console-browserify@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/constant-case@2.0.0",
@@ -3669,7 +3733,8 @@
           "api_data_url": "https://registry.npmjs.org/constant-case/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/constant-case@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/constantinople@3.1.0",
@@ -3725,7 +3790,8 @@
           "api_data_url": "https://registry.npmjs.org/constantinople/3.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/constantinople@3.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/content-type@1.0.2",
@@ -3781,7 +3847,8 @@
           "api_data_url": "https://registry.npmjs.org/content-type/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/content-type@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/core-js@2.4.0",
@@ -3837,7 +3904,8 @@
           "api_data_url": "https://registry.npmjs.org/core-js/2.4.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/core-js@2.4.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/core-util-is@1.0.2",
@@ -3893,7 +3961,8 @@
           "api_data_url": "https://registry.npmjs.org/core-util-is/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/core-util-is@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/crc32-stream@1.0.0",
@@ -3949,7 +4018,8 @@
           "api_data_url": "https://registry.npmjs.org/crc32-stream/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/crc32-stream@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cryptiles@2.0.5",
@@ -4005,7 +4075,8 @@
           "api_data_url": "https://registry.npmjs.org/cryptiles/2.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cryptiles@2.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/csscomb@3.1.8",
@@ -4061,7 +4132,8 @@
           "api_data_url": "https://registry.npmjs.org/csscomb/3.1.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/csscomb@3.1.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/csscomb-core@3.0.0-3.1",
@@ -4117,7 +4189,8 @@
           "api_data_url": "https://registry.npmjs.org/csscomb-core/3.0.0-3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/csscomb-core@3.0.0-3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/csslint@0.10.0",
@@ -4173,7 +4246,8 @@
           "api_data_url": "https://registry.npmjs.org/csslint/0.10.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/csslint@0.10.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cst@0.4.4",
@@ -4229,7 +4303,8 @@
           "api_data_url": "https://registry.npmjs.org/cst/0.4.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cst@0.4.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/currently-unhandled@0.4.1",
@@ -4285,7 +4360,8 @@
           "api_data_url": "https://registry.npmjs.org/currently-unhandled/0.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/currently-unhandled@0.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/cycle@1.0.3",
@@ -4341,7 +4417,8 @@
           "api_data_url": "https://registry.npmjs.org/cycle/1.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/cycle@1.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/dashdash@1.14.0",
@@ -4397,7 +4474,8 @@
           "api_data_url": "https://registry.npmjs.org/dashdash/1.14.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/dashdash@1.14.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/date-now@0.1.4",
@@ -4453,7 +4531,8 @@
           "api_data_url": "https://registry.npmjs.org/date-now/0.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/date-now@0.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/date-time@1.0.0",
@@ -4509,7 +4588,8 @@
           "api_data_url": "https://registry.npmjs.org/date-time/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/date-time@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/dateformat@1.0.12",
@@ -4565,7 +4645,8 @@
           "api_data_url": "https://registry.npmjs.org/dateformat/1.0.12",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/dateformat@1.0.12"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/debug@2.2.0",
@@ -4621,7 +4702,8 @@
           "api_data_url": "https://registry.npmjs.org/debug/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/debug@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/decamelize@1.2.0",
@@ -4677,7 +4759,8 @@
           "api_data_url": "https://registry.npmjs.org/decamelize/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/decamelize@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/deep-equal@1.0.1",
@@ -4733,7 +4816,8 @@
           "api_data_url": "https://registry.npmjs.org/deep-equal/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/deep-equal@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/delayed-stream@1.0.0",
@@ -4789,7 +4873,8 @@
           "api_data_url": "https://registry.npmjs.org/delayed-stream/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/delayed-stream@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/depd@1.1.0",
@@ -4845,7 +4930,8 @@
           "api_data_url": "https://registry.npmjs.org/depd/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/depd@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/destroy@1.0.4",
@@ -4901,7 +4987,8 @@
           "api_data_url": "https://registry.npmjs.org/destroy/1.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/destroy@1.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/diff@1.3.2",
@@ -4957,7 +5044,8 @@
           "api_data_url": "https://registry.npmjs.org/diff/1.3.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/diff@1.3.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/doctypes@1.0.0",
@@ -5013,7 +5101,8 @@
           "api_data_url": "https://registry.npmjs.org/doctypes/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/doctypes@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/dom-serializer@0.1.0",
@@ -5069,7 +5158,8 @@
           "api_data_url": "https://registry.npmjs.org/dom-serializer/0.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/dom-serializer@0.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/domelementtype@1.3.0",
@@ -5125,7 +5215,8 @@
           "api_data_url": "https://registry.npmjs.org/domelementtype/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/domelementtype@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/domhandler@2.3.0",
@@ -5181,7 +5272,8 @@
           "api_data_url": "https://registry.npmjs.org/domhandler/2.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/domhandler@2.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/domutils@1.5.1",
@@ -5237,7 +5329,8 @@
           "api_data_url": "https://registry.npmjs.org/domutils/1.5.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/domutils@1.5.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/dot-case@2.1.0",
@@ -5293,7 +5386,8 @@
           "api_data_url": "https://registry.npmjs.org/dot-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/dot-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ecc-jsbn@0.1.1",
@@ -5349,7 +5443,8 @@
           "api_data_url": "https://registry.npmjs.org/ecc-jsbn/0.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ecc-jsbn@0.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ee-first@1.1.1",
@@ -5405,7 +5500,8 @@
           "api_data_url": "https://registry.npmjs.org/ee-first/1.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ee-first@1.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/encodeurl@1.0.1",
@@ -5461,7 +5557,8 @@
           "api_data_url": "https://registry.npmjs.org/encodeurl/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/encodeurl@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/end-of-stream@1.1.0",
@@ -5517,7 +5614,8 @@
           "api_data_url": "https://registry.npmjs.org/end-of-stream/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/end-of-stream@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/entities@1.0.0",
@@ -5573,7 +5671,8 @@
           "api_data_url": "https://registry.npmjs.org/entities/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/entities@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/errno@0.1.4",
@@ -5629,7 +5728,8 @@
           "api_data_url": "https://registry.npmjs.org/errno/0.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/errno@0.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/error-ex@1.3.0",
@@ -5685,7 +5785,8 @@
           "api_data_url": "https://registry.npmjs.org/error-ex/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/error-ex@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/es6-promise@2.3.0",
@@ -5741,7 +5842,8 @@
           "api_data_url": "https://registry.npmjs.org/es6-promise/2.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/es6-promise@2.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/escape-html@1.0.3",
@@ -5797,7 +5899,8 @@
           "api_data_url": "https://registry.npmjs.org/escape-html/1.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/escape-html@1.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/escape-string-regexp@1.0.5",
@@ -5853,7 +5956,8 @@
           "api_data_url": "https://registry.npmjs.org/escape-string-regexp/1.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/escape-string-regexp@1.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/esprima@2.7.2",
@@ -5909,7 +6013,8 @@
           "api_data_url": "https://registry.npmjs.org/esprima/2.7.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/esprima@2.7.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/estraverse@4.2.0",
@@ -5965,7 +6070,8 @@
           "api_data_url": "https://registry.npmjs.org/estraverse/4.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/estraverse@4.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/etag@1.7.0",
@@ -6021,7 +6127,8 @@
           "api_data_url": "https://registry.npmjs.org/etag/1.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/etag@1.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/eventemitter2@0.4.14",
@@ -6077,7 +6184,8 @@
           "api_data_url": "https://registry.npmjs.org/eventemitter2/0.4.14",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/eventemitter2@0.4.14"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/exit@0.1.2",
@@ -6133,7 +6241,8 @@
           "api_data_url": "https://registry.npmjs.org/exit/0.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/exit@0.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/extend@3.0.0",
@@ -6189,7 +6298,8 @@
           "api_data_url": "https://registry.npmjs.org/extend/3.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/extend@3.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/extract-zip@1.5.0",
@@ -6245,7 +6355,8 @@
           "api_data_url": "https://registry.npmjs.org/extract-zip/1.5.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/extract-zip@1.5.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/extsprintf@1.0.2",
@@ -6301,7 +6412,8 @@
           "api_data_url": "https://registry.npmjs.org/extsprintf/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/extsprintf@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/eyes@0.1.8",
@@ -6357,7 +6469,8 @@
           "api_data_url": "https://registry.npmjs.org/eyes/0.1.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/eyes@0.1.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/faye-websocket@0.10.0",
@@ -6413,7 +6526,8 @@
           "api_data_url": "https://registry.npmjs.org/faye-websocket/0.10.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/faye-websocket@0.10.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/fd-slicer@1.0.1",
@@ -6469,7 +6583,8 @@
           "api_data_url": "https://registry.npmjs.org/fd-slicer/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/fd-slicer@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/fg-lodash@0.0.2",
@@ -6525,7 +6640,8 @@
           "api_data_url": "https://registry.npmjs.org/fg-lodash/0.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/fg-lodash@0.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/figures@1.7.0",
@@ -6581,7 +6697,8 @@
           "api_data_url": "https://registry.npmjs.org/figures/1.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/figures@1.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/file-sync-cmp@0.1.1",
@@ -6637,7 +6754,8 @@
           "api_data_url": "https://registry.npmjs.org/file-sync-cmp/0.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/file-sync-cmp@0.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/finalhandler@0.4.1",
@@ -6693,7 +6811,8 @@
           "api_data_url": "https://registry.npmjs.org/finalhandler/0.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/finalhandler@0.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/find-up@1.1.2",
@@ -6749,7 +6868,8 @@
           "api_data_url": "https://registry.npmjs.org/find-up/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/find-up@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/findup-sync@0.3.0",
@@ -6805,7 +6925,8 @@
           "api_data_url": "https://registry.npmjs.org/findup-sync/0.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/findup-sync@0.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/forever-agent@0.6.1",
@@ -6861,7 +6982,8 @@
           "api_data_url": "https://registry.npmjs.org/forever-agent/0.6.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/forever-agent@0.6.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/form-data@1.0.0-rc4",
@@ -6917,7 +7039,8 @@
           "api_data_url": "https://registry.npmjs.org/form-data/1.0.0-rc4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/form-data@1.0.0-rc4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/fresh@0.3.0",
@@ -6973,7 +7096,8 @@
           "api_data_url": "https://registry.npmjs.org/fresh/0.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/fresh@0.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/fs-extra@0.26.7",
@@ -7029,7 +7153,8 @@
           "api_data_url": "https://registry.npmjs.org/fs-extra/0.26.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/fs-extra@0.26.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/fs.realpath@1.0.0",
@@ -7085,7 +7210,8 @@
           "api_data_url": "https://registry.npmjs.org/fs.realpath/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/fs.realpath@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/gaze@1.1.0",
@@ -7141,7 +7267,8 @@
           "api_data_url": "https://registry.npmjs.org/gaze/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/gaze@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/generate-function@2.0.0",
@@ -7197,7 +7324,8 @@
           "api_data_url": "https://registry.npmjs.org/generate-function/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/generate-function@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/generate-object-property@1.2.0",
@@ -7253,7 +7381,8 @@
           "api_data_url": "https://registry.npmjs.org/generate-object-property/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/generate-object-property@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/get-stdin@4.0.1",
@@ -7309,7 +7438,8 @@
           "api_data_url": "https://registry.npmjs.org/get-stdin/4.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/get-stdin@4.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/getobject@0.1.0",
@@ -7365,7 +7495,8 @@
           "api_data_url": "https://registry.npmjs.org/getobject/0.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/getobject@0.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/getpass@0.1.6",
@@ -7421,7 +7552,8 @@
           "api_data_url": "https://registry.npmjs.org/getpass/0.1.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/getpass@0.1.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/glob@7.0.5",
@@ -7477,7 +7609,8 @@
           "api_data_url": "https://registry.npmjs.org/glob/7.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/glob@7.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/globule@1.0.0",
@@ -7533,7 +7666,8 @@
           "api_data_url": "https://registry.npmjs.org/globule/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/globule@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/gonzales-pe@3.0.0-28",
@@ -7589,7 +7723,8 @@
           "api_data_url": "https://registry.npmjs.org/gonzales-pe/3.0.0-28",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/gonzales-pe@3.0.0-28"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/graceful-fs@4.1.4",
@@ -7645,7 +7780,8 @@
           "api_data_url": "https://registry.npmjs.org/graceful-fs/4.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/graceful-fs@4.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/graceful-readlink@1.0.1",
@@ -7701,7 +7837,8 @@
           "api_data_url": "https://registry.npmjs.org/graceful-readlink/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/graceful-readlink@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt@1.0.1",
@@ -7757,7 +7894,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-autoprefixer@3.0.4",
@@ -7813,7 +7951,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-autoprefixer/3.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-autoprefixer@3.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-clean@1.0.0",
@@ -7869,7 +8008,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-clean/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-clean@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-compress@1.3.0",
@@ -7925,7 +8065,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-compress/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-compress@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-concat@1.0.1",
@@ -7981,7 +8122,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-concat/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-concat@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-connect@1.0.2",
@@ -8037,7 +8179,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-connect/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-connect@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-copy@1.0.0",
@@ -8093,7 +8236,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-copy/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-copy@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-csslint@1.0.0",
@@ -8149,7 +8293,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-csslint/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-csslint@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-cssmin@1.0.1",
@@ -8205,7 +8350,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-cssmin/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-cssmin@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-htmlmin@1.5.0",
@@ -8261,7 +8407,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-htmlmin/1.5.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-htmlmin@1.5.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-jshint@1.0.0",
@@ -8317,7 +8464,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-jshint/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-jshint@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-less@1.3.0",
@@ -8373,7 +8521,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-less/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-less@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-pug@1.0.0",
@@ -8429,7 +8578,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-pug/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-pug@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-qunit@0.7.0",
@@ -8485,7 +8635,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-qunit/0.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-qunit@0.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-uglify@1.0.1",
@@ -8541,7 +8692,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-uglify/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-uglify@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-watch@1.0.0",
@@ -8597,7 +8749,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-contrib-watch/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-contrib-watch@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-csscomb@3.1.1",
@@ -8653,7 +8806,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-csscomb/3.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-csscomb@3.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-exec@1.0.0",
@@ -8709,7 +8863,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-exec/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-exec@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-html@8.0.2",
@@ -8765,7 +8920,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-html/8.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-html@8.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-jekyll@0.4.4",
@@ -8821,7 +8977,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-jekyll/0.4.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-jekyll@0.4.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-jscs@3.0.1",
@@ -8877,7 +9034,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-jscs/3.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-jscs@3.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-known-options@1.1.0",
@@ -8933,7 +9091,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-known-options/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-known-options@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-legacy-log@1.0.0",
@@ -8989,7 +9148,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-legacy-log/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-legacy-log@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-legacy-log-utils@1.0.0",
@@ -9045,7 +9205,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-legacy-log-utils/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-legacy-log-utils@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-legacy-util@1.0.0",
@@ -9101,7 +9262,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-legacy-util/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-legacy-util@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-lib-phantomjs@0.6.0",
@@ -9157,7 +9319,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-lib-phantomjs/0.6.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-lib-phantomjs@0.6.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-saucelabs@9.0.0",
@@ -9213,7 +9376,8 @@
           "api_data_url": "https://registry.npmjs.org/grunt-saucelabs/9.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/grunt-saucelabs@9.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/gzip-size@1.0.0",
@@ -9269,7 +9433,8 @@
           "api_data_url": "https://registry.npmjs.org/gzip-size/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/gzip-size@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/har-validator@2.0.6",
@@ -9325,7 +9490,8 @@
           "api_data_url": "https://registry.npmjs.org/har-validator/2.0.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/har-validator@2.0.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/has-ansi@2.0.0",
@@ -9381,7 +9547,8 @@
           "api_data_url": "https://registry.npmjs.org/has-ansi/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/has-ansi@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/has-color@0.1.7",
@@ -9437,7 +9604,8 @@
           "api_data_url": "https://registry.npmjs.org/has-color/0.1.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/has-color@0.1.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/hasha@2.2.0",
@@ -9493,7 +9661,8 @@
           "api_data_url": "https://registry.npmjs.org/hasha/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/hasha@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/hawk@3.1.3",
@@ -9549,7 +9718,8 @@
           "api_data_url": "https://registry.npmjs.org/hawk/3.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/hawk@3.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/he@1.1.0",
@@ -9605,7 +9775,8 @@
           "api_data_url": "https://registry.npmjs.org/he/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/he@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/header-case@1.0.0",
@@ -9661,7 +9832,8 @@
           "api_data_url": "https://registry.npmjs.org/header-case/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/header-case@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/hoek@2.16.3",
@@ -9717,7 +9889,8 @@
           "api_data_url": "https://registry.npmjs.org/hoek/2.16.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/hoek@2.16.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/hooker@0.2.3",
@@ -9773,7 +9946,8 @@
           "api_data_url": "https://registry.npmjs.org/hooker/0.2.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/hooker@0.2.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/hosted-git-info@2.1.5",
@@ -9829,7 +10003,8 @@
           "api_data_url": "https://registry.npmjs.org/hosted-git-info/2.1.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/hosted-git-info@2.1.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/html-minifier@2.1.7",
@@ -9885,7 +10060,8 @@
           "api_data_url": "https://registry.npmjs.org/html-minifier/2.1.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/html-minifier@2.1.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/htmlparser2@3.8.3",
@@ -9941,7 +10117,8 @@
           "api_data_url": "https://registry.npmjs.org/htmlparser2/3.8.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/htmlparser2@3.8.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/http-errors@1.5.0",
@@ -9997,7 +10174,8 @@
           "api_data_url": "https://registry.npmjs.org/http-errors/1.5.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/http-errors@1.5.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/http-signature@1.1.1",
@@ -10053,7 +10231,8 @@
           "api_data_url": "https://registry.npmjs.org/http-signature/1.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/http-signature@1.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/http2@3.3.4",
@@ -10109,7 +10288,8 @@
           "api_data_url": "https://registry.npmjs.org/http2/3.3.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/http2@3.3.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/https-proxy-agent@1.0.0",
@@ -10165,7 +10345,8 @@
           "api_data_url": "https://registry.npmjs.org/https-proxy-agent/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/https-proxy-agent@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/i@0.3.5",
@@ -10221,7 +10402,8 @@
           "api_data_url": "https://registry.npmjs.org/i/0.3.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/i@0.3.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/iconv-lite@0.4.13",
@@ -10277,7 +10459,8 @@
           "api_data_url": "https://registry.npmjs.org/iconv-lite/0.4.13",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/iconv-lite@0.4.13"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/image-size@0.4.0",
@@ -10333,7 +10516,8 @@
           "api_data_url": "https://registry.npmjs.org/image-size/0.4.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/image-size@0.4.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/indent-string@2.1.0",
@@ -10389,7 +10573,8 @@
           "api_data_url": "https://registry.npmjs.org/indent-string/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/indent-string@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/inflight@1.0.5",
@@ -10445,7 +10630,8 @@
           "api_data_url": "https://registry.npmjs.org/inflight/1.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/inflight@1.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/inherit@2.2.4",
@@ -10501,7 +10687,8 @@
           "api_data_url": "https://registry.npmjs.org/inherit/2.2.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/inherit@2.2.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/inherits@2.0.1",
@@ -10557,7 +10744,8 @@
           "api_data_url": "https://registry.npmjs.org/inherits/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/inherits@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/interpret@1.0.1",
@@ -10613,7 +10801,8 @@
           "api_data_url": "https://registry.npmjs.org/interpret/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/interpret@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-arrayish@0.2.1",
@@ -10669,7 +10858,8 @@
           "api_data_url": "https://registry.npmjs.org/is-arrayish/0.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-arrayish@0.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-buffer@1.1.3",
@@ -10725,7 +10915,8 @@
           "api_data_url": "https://registry.npmjs.org/is-buffer/1.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-buffer@1.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-builtin-module@1.0.0",
@@ -10781,7 +10972,8 @@
           "api_data_url": "https://registry.npmjs.org/is-builtin-module/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-builtin-module@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-expression@2.0.1",
@@ -10837,7 +11029,8 @@
           "api_data_url": "https://registry.npmjs.org/is-expression/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-expression@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-finite@1.0.1",
@@ -10893,7 +11086,8 @@
           "api_data_url": "https://registry.npmjs.org/is-finite/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-finite@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-lower-case@1.1.3",
@@ -10949,7 +11143,8 @@
           "api_data_url": "https://registry.npmjs.org/is-lower-case/1.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-lower-case@1.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-my-json-valid@2.13.1",
@@ -11005,7 +11200,8 @@
           "api_data_url": "https://registry.npmjs.org/is-my-json-valid/2.13.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-my-json-valid@2.13.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-promise@2.1.0",
@@ -11061,7 +11257,8 @@
           "api_data_url": "https://registry.npmjs.org/is-promise/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-promise@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-property@1.0.2",
@@ -11117,7 +11314,8 @@
           "api_data_url": "https://registry.npmjs.org/is-property/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-property@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-regex@1.0.3",
@@ -11173,7 +11371,8 @@
           "api_data_url": "https://registry.npmjs.org/is-regex/1.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-regex@1.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-stream@1.1.0",
@@ -11229,7 +11428,8 @@
           "api_data_url": "https://registry.npmjs.org/is-stream/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-stream@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-typedarray@1.0.0",
@@ -11285,7 +11485,8 @@
           "api_data_url": "https://registry.npmjs.org/is-typedarray/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-typedarray@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-upper-case@1.1.2",
@@ -11341,7 +11542,8 @@
           "api_data_url": "https://registry.npmjs.org/is-upper-case/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-upper-case@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/is-utf8@0.2.1",
@@ -11397,7 +11599,8 @@
           "api_data_url": "https://registry.npmjs.org/is-utf8/0.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/is-utf8@0.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/isarray@1.0.0",
@@ -11453,7 +11656,8 @@
           "api_data_url": "https://registry.npmjs.org/isarray/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/isarray@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/isexe@1.1.2",
@@ -11509,7 +11713,8 @@
           "api_data_url": "https://registry.npmjs.org/isexe/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/isexe@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/isstream@0.1.2",
@@ -11565,7 +11770,8 @@
           "api_data_url": "https://registry.npmjs.org/isstream/0.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/isstream@0.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jodid25519@1.0.2",
@@ -11621,7 +11827,8 @@
           "api_data_url": "https://registry.npmjs.org/jodid25519/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jodid25519@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/js-base64@2.1.9",
@@ -11677,7 +11884,8 @@
           "api_data_url": "https://registry.npmjs.org/js-base64/2.1.9",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/js-base64@2.1.9"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/js-stringify@1.0.2",
@@ -11733,7 +11941,8 @@
           "api_data_url": "https://registry.npmjs.org/js-stringify/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/js-stringify@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/js-yaml@3.5.5",
@@ -11789,7 +11998,8 @@
           "api_data_url": "https://registry.npmjs.org/js-yaml/3.5.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/js-yaml@3.5.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsbn@0.1.0",
@@ -11845,7 +12055,8 @@
           "api_data_url": "https://registry.npmjs.org/jsbn/0.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsbn@0.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jscs@3.0.7",
@@ -11901,7 +12112,8 @@
           "api_data_url": "https://registry.npmjs.org/jscs/3.0.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jscs@3.0.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jscs-jsdoc@2.0.0",
@@ -11957,7 +12169,8 @@
           "api_data_url": "https://registry.npmjs.org/jscs-jsdoc/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jscs-jsdoc@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jscs-preset-wikimedia@1.0.0",
@@ -12013,7 +12226,8 @@
           "api_data_url": "https://registry.npmjs.org/jscs-preset-wikimedia/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jscs-preset-wikimedia@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsdoctypeparser@1.2.0",
@@ -12069,7 +12283,8 @@
           "api_data_url": "https://registry.npmjs.org/jsdoctypeparser/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsdoctypeparser@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jshint@2.9.2",
@@ -12125,7 +12340,8 @@
           "api_data_url": "https://registry.npmjs.org/jshint/2.9.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jshint@2.9.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/json-schema@0.2.2",
@@ -12181,7 +12397,8 @@
           "api_data_url": "https://registry.npmjs.org/json-schema/0.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/json-schema@0.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/json-stringify-safe@5.0.1",
@@ -12237,7 +12454,8 @@
           "api_data_url": "https://registry.npmjs.org/json-stringify-safe/5.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/json-stringify-safe@5.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsonfile@2.3.1",
@@ -12293,7 +12511,8 @@
           "api_data_url": "https://registry.npmjs.org/jsonfile/2.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsonfile@2.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsonlint@1.6.2",
@@ -12349,7 +12568,8 @@
           "api_data_url": "https://registry.npmjs.org/jsonlint/1.6.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsonlint@1.6.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsonpointer@2.0.0",
@@ -12405,7 +12625,8 @@
           "api_data_url": "https://registry.npmjs.org/jsonpointer/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsonpointer@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jsprim@1.3.0",
@@ -12461,7 +12682,8 @@
           "api_data_url": "https://registry.npmjs.org/jsprim/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jsprim@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jstransformer@1.0.0",
@@ -12517,7 +12739,8 @@
           "api_data_url": "https://registry.npmjs.org/jstransformer/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/jstransformer@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/JSV@4.0.2",
@@ -12573,7 +12796,8 @@
           "api_data_url": "https://registry.npmjs.org/JSV/4.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/JSV@4.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/kew@0.7.0",
@@ -12629,7 +12853,8 @@
           "api_data_url": "https://registry.npmjs.org/kew/0.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/kew@0.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/kind-of@3.0.3",
@@ -12685,7 +12910,8 @@
           "api_data_url": "https://registry.npmjs.org/kind-of/3.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/kind-of@3.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/klaw@1.3.0",
@@ -12741,7 +12967,8 @@
           "api_data_url": "https://registry.npmjs.org/klaw/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/klaw@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lazy-cache@1.0.4",
@@ -12797,7 +13024,8 @@
           "api_data_url": "https://registry.npmjs.org/lazy-cache/1.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lazy-cache@1.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lazystream@1.0.0",
@@ -12853,7 +13081,8 @@
           "api_data_url": "https://registry.npmjs.org/lazystream/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lazystream@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/less@2.6.1",
@@ -12909,7 +13138,8 @@
           "api_data_url": "https://registry.npmjs.org/less/2.6.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/less@2.6.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/linkify-it@2.0.0",
@@ -12965,7 +13195,8 @@
           "api_data_url": "https://registry.npmjs.org/linkify-it/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/linkify-it@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/livereload-js@2.2.2",
@@ -13021,7 +13252,8 @@
           "api_data_url": "https://registry.npmjs.org/livereload-js/2.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/livereload-js@2.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/load-grunt-tasks@3.5.0",
@@ -13077,7 +13309,8 @@
           "api_data_url": "https://registry.npmjs.org/load-grunt-tasks/3.5.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/load-grunt-tasks@3.5.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/load-json-file@1.1.0",
@@ -13133,7 +13366,8 @@
           "api_data_url": "https://registry.npmjs.org/load-json-file/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/load-json-file@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lodash@3.10.1",
@@ -13189,7 +13423,8 @@
           "api_data_url": "https://registry.npmjs.org/lodash/3.10.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lodash@3.10.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/longest@1.0.1",
@@ -13245,7 +13480,8 @@
           "api_data_url": "https://registry.npmjs.org/longest/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/longest@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/loud-rejection@1.6.0",
@@ -13301,7 +13537,8 @@
           "api_data_url": "https://registry.npmjs.org/loud-rejection/1.6.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/loud-rejection@1.6.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lower-case@1.1.3",
@@ -13357,7 +13594,8 @@
           "api_data_url": "https://registry.npmjs.org/lower-case/1.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lower-case@1.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lower-case-first@1.0.2",
@@ -13413,7 +13651,8 @@
           "api_data_url": "https://registry.npmjs.org/lower-case-first/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lower-case-first@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lru-cache@2.7.3",
@@ -13469,7 +13708,8 @@
           "api_data_url": "https://registry.npmjs.org/lru-cache/2.7.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/lru-cache@2.7.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/map-obj@1.0.1",
@@ -13525,7 +13765,8 @@
           "api_data_url": "https://registry.npmjs.org/map-obj/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/map-obj@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/markdown-it@7.0.0",
@@ -13581,7 +13822,8 @@
           "api_data_url": "https://registry.npmjs.org/markdown-it/7.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/markdown-it@7.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/maxmin@1.1.0",
@@ -13637,7 +13879,8 @@
           "api_data_url": "https://registry.npmjs.org/maxmin/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/maxmin@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mdurl@1.0.1",
@@ -13693,7 +13936,8 @@
           "api_data_url": "https://registry.npmjs.org/mdurl/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mdurl@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/media-typer@0.3.0",
@@ -13749,7 +13993,8 @@
           "api_data_url": "https://registry.npmjs.org/media-typer/0.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/media-typer@0.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/meow@3.7.0",
@@ -13805,7 +14050,8 @@
           "api_data_url": "https://registry.npmjs.org/meow/3.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/meow@3.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mime@1.3.4",
@@ -13861,7 +14107,8 @@
           "api_data_url": "https://registry.npmjs.org/mime/1.3.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mime@1.3.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mime-db@1.23.0",
@@ -13917,7 +14164,8 @@
           "api_data_url": "https://registry.npmjs.org/mime-db/1.23.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mime-db@1.23.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mime-types@2.1.11",
@@ -13973,7 +14221,8 @@
           "api_data_url": "https://registry.npmjs.org/mime-types/2.1.11",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mime-types@2.1.11"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/minimatch@3.0.2",
@@ -14029,7 +14278,8 @@
           "api_data_url": "https://registry.npmjs.org/minimatch/3.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/minimatch@3.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/minimist@1.2.0",
@@ -14085,7 +14335,8 @@
           "api_data_url": "https://registry.npmjs.org/minimist/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/minimist@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mkdirp@0.5.1",
@@ -14141,7 +14392,8 @@
           "api_data_url": "https://registry.npmjs.org/mkdirp/0.5.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mkdirp@0.5.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/morgan@1.7.0",
@@ -14197,7 +14449,8 @@
           "api_data_url": "https://registry.npmjs.org/morgan/1.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/morgan@1.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ms@0.7.1",
@@ -14253,7 +14506,8 @@
           "api_data_url": "https://registry.npmjs.org/ms/0.7.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ms@0.7.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/multimatch@2.1.0",
@@ -14309,7 +14563,8 @@
           "api_data_url": "https://registry.npmjs.org/multimatch/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/multimatch@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/mute-stream@0.0.6",
@@ -14365,7 +14620,8 @@
           "api_data_url": "https://registry.npmjs.org/mute-stream/0.0.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/mute-stream@0.0.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/natural-compare@1.2.2",
@@ -14421,7 +14677,8 @@
           "api_data_url": "https://registry.npmjs.org/natural-compare/1.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/natural-compare@1.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ncname@1.0.0",
@@ -14477,7 +14734,8 @@
           "api_data_url": "https://registry.npmjs.org/ncname/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ncname@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ncp@0.4.2",
@@ -14533,7 +14791,8 @@
           "api_data_url": "https://registry.npmjs.org/ncp/0.4.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/ncp@0.4.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/negotiator@0.6.1",
@@ -14589,7 +14848,8 @@
           "api_data_url": "https://registry.npmjs.org/negotiator/0.6.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/negotiator@0.6.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/no-case@2.3.0",
@@ -14645,7 +14905,8 @@
           "api_data_url": "https://registry.npmjs.org/no-case/2.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/no-case@2.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/node-int64@0.4.0",
@@ -14701,7 +14962,8 @@
           "api_data_url": "https://registry.npmjs.org/node-int64/0.4.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/node-int64@0.4.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/node-uuid@1.4.7",
@@ -14757,7 +15019,8 @@
           "api_data_url": "https://registry.npmjs.org/node-uuid/1.4.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/node-uuid@1.4.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/nomnom@1.8.1",
@@ -14813,7 +15076,8 @@
           "api_data_url": "https://registry.npmjs.org/nomnom/1.8.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/nomnom@1.8.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/nopt@3.0.6",
@@ -14869,7 +15133,8 @@
           "api_data_url": "https://registry.npmjs.org/nopt/3.0.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/nopt@3.0.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/normalize-package-data@2.3.5",
@@ -14925,7 +15190,8 @@
           "api_data_url": "https://registry.npmjs.org/normalize-package-data/2.3.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/normalize-package-data@2.3.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/normalize-path@2.0.1",
@@ -14981,7 +15247,8 @@
           "api_data_url": "https://registry.npmjs.org/normalize-path/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/normalize-path@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/num2fraction@1.2.2",
@@ -15037,7 +15304,8 @@
           "api_data_url": "https://registry.npmjs.org/num2fraction/1.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/num2fraction@1.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/number-is-nan@1.0.0",
@@ -15093,7 +15361,8 @@
           "api_data_url": "https://registry.npmjs.org/number-is-nan/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/number-is-nan@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/oauth-sign@0.8.2",
@@ -15149,7 +15418,8 @@
           "api_data_url": "https://registry.npmjs.org/oauth-sign/0.8.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/oauth-sign@0.8.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/object-assign@4.1.0",
@@ -15205,7 +15475,8 @@
           "api_data_url": "https://registry.npmjs.org/object-assign/4.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/object-assign@4.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/on-finished@2.3.0",
@@ -15261,7 +15532,8 @@
           "api_data_url": "https://registry.npmjs.org/on-finished/2.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/on-finished@2.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/on-headers@1.0.1",
@@ -15317,7 +15589,8 @@
           "api_data_url": "https://registry.npmjs.org/on-headers/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/on-headers@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/once@1.3.3",
@@ -15373,7 +15646,8 @@
           "api_data_url": "https://registry.npmjs.org/once/1.3.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/once@1.3.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/opn@4.0.2",
@@ -15429,7 +15703,8 @@
           "api_data_url": "https://registry.npmjs.org/opn/4.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/opn@4.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/os-tmpdir@1.0.1",
@@ -15485,7 +15760,8 @@
           "api_data_url": "https://registry.npmjs.org/os-tmpdir/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/os-tmpdir@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/package@1.0.1",
@@ -15541,7 +15817,8 @@
           "api_data_url": "https://registry.npmjs.org/package/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/package@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pako@0.2.8",
@@ -15597,7 +15874,8 @@
           "api_data_url": "https://registry.npmjs.org/pako/0.2.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pako@0.2.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/param-case@2.1.0",
@@ -15653,7 +15931,8 @@
           "api_data_url": "https://registry.npmjs.org/param-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/param-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/parse-json@2.2.0",
@@ -15709,7 +15988,8 @@
           "api_data_url": "https://registry.npmjs.org/parse-json/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/parse-json@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/parse-ms@1.0.1",
@@ -15765,7 +16045,8 @@
           "api_data_url": "https://registry.npmjs.org/parse-ms/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/parse-ms@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/parserlib@0.2.5",
@@ -15821,7 +16102,8 @@
           "api_data_url": "https://registry.npmjs.org/parserlib/0.2.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/parserlib@0.2.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/parseurl@1.3.1",
@@ -15877,7 +16159,8 @@
           "api_data_url": "https://registry.npmjs.org/parseurl/1.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/parseurl@1.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pascal-case@2.0.0",
@@ -15933,7 +16216,8 @@
           "api_data_url": "https://registry.npmjs.org/pascal-case/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pascal-case@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/path-case@2.1.0",
@@ -15989,7 +16273,8 @@
           "api_data_url": "https://registry.npmjs.org/path-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/path-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/path-exists@2.1.0",
@@ -16045,7 +16330,8 @@
           "api_data_url": "https://registry.npmjs.org/path-exists/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/path-exists@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/path-is-absolute@1.0.0",
@@ -16101,7 +16387,8 @@
           "api_data_url": "https://registry.npmjs.org/path-is-absolute/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/path-is-absolute@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/path-type@1.1.0",
@@ -16157,7 +16444,8 @@
           "api_data_url": "https://registry.npmjs.org/path-type/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/path-type@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pathval@0.1.1",
@@ -16213,7 +16501,8 @@
           "api_data_url": "https://registry.npmjs.org/pathval/0.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pathval@0.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pend@1.2.0",
@@ -16269,7 +16558,8 @@
           "api_data_url": "https://registry.npmjs.org/pend/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pend@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/phantomjs@1.9.20",
@@ -16325,7 +16615,8 @@
           "api_data_url": "https://registry.npmjs.org/phantomjs/1.9.20",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/phantomjs@1.9.20"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pify@2.3.0",
@@ -16381,7 +16672,8 @@
           "api_data_url": "https://registry.npmjs.org/pify/2.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pify@2.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pinkie@2.0.4",
@@ -16437,7 +16729,8 @@
           "api_data_url": "https://registry.npmjs.org/pinkie/2.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pinkie@2.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pinkie-promise@2.0.1",
@@ -16493,7 +16786,8 @@
           "api_data_url": "https://registry.npmjs.org/pinkie-promise/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pinkie-promise@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pkg-up@1.0.0",
@@ -16549,7 +16843,8 @@
           "api_data_url": "https://registry.npmjs.org/pkg-up/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pkg-up@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pkginfo@0.4.0",
@@ -16605,7 +16900,8 @@
           "api_data_url": "https://registry.npmjs.org/pkginfo/0.4.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pkginfo@0.4.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/plur@1.0.0",
@@ -16661,7 +16957,8 @@
           "api_data_url": "https://registry.npmjs.org/plur/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/plur@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/portscanner@1.0.0",
@@ -16717,7 +17014,8 @@
           "api_data_url": "https://registry.npmjs.org/portscanner/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/portscanner@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/postcss@4.1.16",
@@ -16773,7 +17071,8 @@
           "api_data_url": "https://registry.npmjs.org/postcss/4.1.16",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/postcss@4.1.16"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pretty-bytes@3.0.1",
@@ -16829,7 +17128,8 @@
           "api_data_url": "https://registry.npmjs.org/pretty-bytes/3.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pretty-bytes@3.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pretty-ms@2.1.0",
@@ -16885,7 +17185,8 @@
           "api_data_url": "https://registry.npmjs.org/pretty-ms/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pretty-ms@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/process-nextick-args@1.0.7",
@@ -16941,7 +17242,8 @@
           "api_data_url": "https://registry.npmjs.org/process-nextick-args/1.0.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/process-nextick-args@1.0.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/progress@1.1.8",
@@ -16997,7 +17299,8 @@
           "api_data_url": "https://registry.npmjs.org/progress/1.1.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/progress@1.1.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/promise@7.1.1",
@@ -17053,7 +17356,8 @@
           "api_data_url": "https://registry.npmjs.org/promise/7.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/promise@7.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/prompt@0.2.14",
@@ -17109,7 +17413,8 @@
           "api_data_url": "https://registry.npmjs.org/prompt/0.2.14",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/prompt@0.2.14"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/prr@0.0.0",
@@ -17165,7 +17470,8 @@
           "api_data_url": "https://registry.npmjs.org/prr/0.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/prr@0.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug@2.0.0-beta3",
@@ -17221,7 +17527,8 @@
           "api_data_url": "https://registry.npmjs.org/pug/2.0.0-beta3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug@2.0.0-beta3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-attrs@2.0.1",
@@ -17277,7 +17584,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-attrs/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-attrs@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-code-gen@0.0.7",
@@ -17333,7 +17641,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-code-gen/0.0.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-code-gen@0.0.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-error@1.3.1",
@@ -17389,7 +17698,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-error/1.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-error@1.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-filters@1.2.2",
@@ -17445,7 +17755,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-filters/1.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-filters@1.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-lexer@2.0.2",
@@ -17501,7 +17812,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-lexer/2.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-lexer@2.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-linker@1.0.0",
@@ -17557,7 +17869,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-linker/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-linker@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-load@2.0.0",
@@ -17613,7 +17926,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-load/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-load@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-parser@2.0.1",
@@ -17669,7 +17983,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-parser/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-parser@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-runtime@2.0.1",
@@ -17725,7 +18040,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-runtime/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-runtime@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-strip-comments@0.0.1",
@@ -17781,7 +18097,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-strip-comments/0.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-strip-comments@0.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/pug-walk@0.0.3",
@@ -17837,7 +18154,8 @@
           "api_data_url": "https://registry.npmjs.org/pug-walk/0.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/pug-walk@0.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/q@1.4.1",
@@ -17893,7 +18211,8 @@
           "api_data_url": "https://registry.npmjs.org/q/1.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/q@1.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/qs@6.2.0",
@@ -17949,7 +18268,8 @@
           "api_data_url": "https://registry.npmjs.org/qs/6.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/qs@6.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/range-parser@1.2.0",
@@ -18005,7 +18325,8 @@
           "api_data_url": "https://registry.npmjs.org/range-parser/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/range-parser@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/raw-body@2.1.7",
@@ -18061,7 +18382,8 @@
           "api_data_url": "https://registry.npmjs.org/raw-body/2.1.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/raw-body@2.1.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/read@1.0.7",
@@ -18117,7 +18439,8 @@
           "api_data_url": "https://registry.npmjs.org/read/1.0.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/read@1.0.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/read-pkg@1.1.0",
@@ -18173,7 +18496,8 @@
           "api_data_url": "https://registry.npmjs.org/read-pkg/1.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/read-pkg@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/read-pkg-up@1.0.1",
@@ -18229,7 +18553,8 @@
           "api_data_url": "https://registry.npmjs.org/read-pkg-up/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/read-pkg-up@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/readable-stream@2.1.4",
@@ -18285,7 +18610,8 @@
           "api_data_url": "https://registry.npmjs.org/readable-stream/2.1.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/readable-stream@2.1.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/rechoir@0.6.2",
@@ -18341,7 +18667,8 @@
           "api_data_url": "https://registry.npmjs.org/rechoir/0.6.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/rechoir@0.6.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/redent@1.0.0",
@@ -18397,7 +18724,8 @@
           "api_data_url": "https://registry.npmjs.org/redent/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/redent@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/regenerator-runtime@0.9.5",
@@ -18453,7 +18781,8 @@
           "api_data_url": "https://registry.npmjs.org/regenerator-runtime/0.9.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/regenerator-runtime@0.9.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/relateurl@0.2.6",
@@ -18509,7 +18838,8 @@
           "api_data_url": "https://registry.npmjs.org/relateurl/0.2.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/relateurl@0.2.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/repeat-string@1.5.4",
@@ -18565,7 +18895,8 @@
           "api_data_url": "https://registry.npmjs.org/repeat-string/1.5.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/repeat-string@1.5.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/repeating@2.0.1",
@@ -18621,7 +18952,8 @@
           "api_data_url": "https://registry.npmjs.org/repeating/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/repeating@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/request@2.73.0",
@@ -18677,7 +19009,8 @@
           "api_data_url": "https://registry.npmjs.org/request/2.73.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/request@2.73.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/request-progress@2.0.1",
@@ -18733,7 +19066,8 @@
           "api_data_url": "https://registry.npmjs.org/request-progress/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/request-progress@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/requestretry@1.9.0",
@@ -18789,7 +19123,8 @@
           "api_data_url": "https://registry.npmjs.org/requestretry/1.9.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/requestretry@1.9.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/reserved-words@0.1.1",
@@ -18845,7 +19180,8 @@
           "api_data_url": "https://registry.npmjs.org/reserved-words/0.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/reserved-words@0.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/resolve@1.1.7",
@@ -18901,7 +19237,8 @@
           "api_data_url": "https://registry.npmjs.org/resolve/1.1.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/resolve@1.1.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/resolve-from@2.0.0",
@@ -18957,7 +19294,8 @@
           "api_data_url": "https://registry.npmjs.org/resolve-from/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/resolve-from@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/resolve-pkg@0.1.0",
@@ -19013,7 +19351,8 @@
           "api_data_url": "https://registry.npmjs.org/resolve-pkg/0.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/resolve-pkg@0.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/revalidator@0.1.8",
@@ -19069,7 +19408,8 @@
           "api_data_url": "https://registry.npmjs.org/revalidator/0.1.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/revalidator@0.1.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/right-align@0.1.3",
@@ -19125,7 +19465,8 @@
           "api_data_url": "https://registry.npmjs.org/right-align/0.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/right-align@0.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/rimraf@2.2.8",
@@ -19181,7 +19522,8 @@
           "api_data_url": "https://registry.npmjs.org/rimraf/2.2.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/rimraf@2.2.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sauce-tunnel@2.5.0",
@@ -19237,7 +19579,8 @@
           "api_data_url": "https://registry.npmjs.org/sauce-tunnel/2.5.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sauce-tunnel@2.5.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/saucelabs@1.2.0",
@@ -19293,7 +19636,8 @@
           "api_data_url": "https://registry.npmjs.org/saucelabs/1.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/saucelabs@1.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/semver@5.2.0",
@@ -19349,7 +19693,8 @@
           "api_data_url": "https://registry.npmjs.org/semver/5.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/semver@5.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/send@0.14.1",
@@ -19405,7 +19750,8 @@
           "api_data_url": "https://registry.npmjs.org/send/0.14.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/send@0.14.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sentence-case@2.1.0",
@@ -19461,7 +19807,8 @@
           "api_data_url": "https://registry.npmjs.org/sentence-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sentence-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/serve-index@1.8.0",
@@ -19517,7 +19864,8 @@
           "api_data_url": "https://registry.npmjs.org/serve-index/1.8.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/serve-index@1.8.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/serve-static@1.11.1",
@@ -19573,7 +19921,8 @@
           "api_data_url": "https://registry.npmjs.org/serve-static/1.11.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/serve-static@1.11.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/setprototypeof@1.0.1",
@@ -19629,7 +19978,8 @@
           "api_data_url": "https://registry.npmjs.org/setprototypeof/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/setprototypeof@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/shelljs@0.7.0",
@@ -19685,7 +20035,8 @@
           "api_data_url": "https://registry.npmjs.org/shelljs/0.7.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/shelljs@0.7.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/shx@0.1.2",
@@ -19741,7 +20092,8 @@
           "api_data_url": "https://registry.npmjs.org/shx/0.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/shx@0.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sigmund@1.0.1",
@@ -19797,7 +20149,8 @@
           "api_data_url": "https://registry.npmjs.org/sigmund/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sigmund@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/signal-exit@3.0.0",
@@ -19853,7 +20206,8 @@
           "api_data_url": "https://registry.npmjs.org/signal-exit/3.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/signal-exit@3.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/snake-case@2.1.0",
@@ -19909,7 +20263,8 @@
           "api_data_url": "https://registry.npmjs.org/snake-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/snake-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sntp@1.0.9",
@@ -19965,7 +20320,8 @@
           "api_data_url": "https://registry.npmjs.org/sntp/1.0.9",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sntp@1.0.9"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/source-map@0.4.4",
@@ -20021,7 +20377,8 @@
           "api_data_url": "https://registry.npmjs.org/source-map/0.4.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/source-map@0.4.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/source-map-support@0.4.1",
@@ -20077,7 +20434,8 @@
           "api_data_url": "https://registry.npmjs.org/source-map-support/0.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/source-map-support@0.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/spdx-correct@1.0.2",
@@ -20133,7 +20491,8 @@
           "api_data_url": "https://registry.npmjs.org/spdx-correct/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/spdx-correct@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/spdx-exceptions@1.0.5",
@@ -20189,7 +20548,8 @@
           "api_data_url": "https://registry.npmjs.org/spdx-exceptions/1.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/spdx-exceptions@1.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/spdx-expression-parse@1.0.2",
@@ -20245,7 +20605,8 @@
           "api_data_url": "https://registry.npmjs.org/spdx-expression-parse/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/spdx-expression-parse@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/spdx-license-ids@1.2.1",
@@ -20301,7 +20662,8 @@
           "api_data_url": "https://registry.npmjs.org/spdx-license-ids/1.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/spdx-license-ids@1.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/split@1.0.0",
@@ -20357,7 +20719,8 @@
           "api_data_url": "https://registry.npmjs.org/split/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/split@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sprintf-js@1.0.3",
@@ -20413,7 +20776,8 @@
           "api_data_url": "https://registry.npmjs.org/sprintf-js/1.0.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sprintf-js@1.0.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/sshpk@1.8.3",
@@ -20469,7 +20833,8 @@
           "api_data_url": "https://registry.npmjs.org/sshpk/1.8.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/sshpk@1.8.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/stack-trace@0.0.9",
@@ -20525,7 +20890,8 @@
           "api_data_url": "https://registry.npmjs.org/stack-trace/0.0.9",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/stack-trace@0.0.9"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/statuses@1.3.0",
@@ -20581,7 +20947,8 @@
           "api_data_url": "https://registry.npmjs.org/statuses/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/statuses@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/stream-buffers@2.2.0",
@@ -20637,7 +21004,8 @@
           "api_data_url": "https://registry.npmjs.org/stream-buffers/2.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/stream-buffers@2.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/string_decoder@0.10.31",
@@ -20693,7 +21061,8 @@
           "api_data_url": "https://registry.npmjs.org/string_decoder/0.10.31",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/string_decoder@0.10.31"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/stringstream@0.0.5",
@@ -20749,7 +21118,8 @@
           "api_data_url": "https://registry.npmjs.org/stringstream/0.0.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/stringstream@0.0.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/strip-ansi@3.0.1",
@@ -20805,7 +21175,8 @@
           "api_data_url": "https://registry.npmjs.org/strip-ansi/3.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/strip-ansi@3.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/strip-bom@2.0.0",
@@ -20861,7 +21232,8 @@
           "api_data_url": "https://registry.npmjs.org/strip-bom/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/strip-bom@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/strip-indent@1.0.1",
@@ -20917,7 +21289,8 @@
           "api_data_url": "https://registry.npmjs.org/strip-indent/1.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/strip-indent@1.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/strip-json-comments@1.0.4",
@@ -20973,7 +21346,8 @@
           "api_data_url": "https://registry.npmjs.org/strip-json-comments/1.0.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/strip-json-comments@1.0.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/supports-color@2.0.0",
@@ -21029,7 +21403,8 @@
           "api_data_url": "https://registry.npmjs.org/supports-color/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/supports-color@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/swap-case@1.1.2",
@@ -21085,7 +21460,8 @@
           "api_data_url": "https://registry.npmjs.org/swap-case/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/swap-case@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tar-stream@1.5.2",
@@ -21141,7 +21517,8 @@
           "api_data_url": "https://registry.npmjs.org/tar-stream/1.5.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tar-stream@1.5.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/temporary@0.0.8",
@@ -21197,7 +21574,8 @@
           "api_data_url": "https://registry.npmjs.org/temporary/0.0.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/temporary@0.0.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/text-table@0.2.0",
@@ -21253,7 +21631,8 @@
           "api_data_url": "https://registry.npmjs.org/text-table/0.2.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/text-table@0.2.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/throttleit@1.0.0",
@@ -21309,7 +21688,8 @@
           "api_data_url": "https://registry.npmjs.org/throttleit/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/throttleit@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/through@2.3.8",
@@ -21365,7 +21745,8 @@
           "api_data_url": "https://registry.npmjs.org/through/2.3.8",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/through@2.3.8"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/time-grunt@1.3.0",
@@ -21421,7 +21802,8 @@
           "api_data_url": "https://registry.npmjs.org/time-grunt/1.3.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/time-grunt@1.3.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tiny-lr@0.2.1",
@@ -21477,7 +21859,8 @@
           "api_data_url": "https://registry.npmjs.org/tiny-lr/0.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tiny-lr@0.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/title-case@2.1.0",
@@ -21533,7 +21916,8 @@
           "api_data_url": "https://registry.npmjs.org/title-case/2.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/title-case@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tmp@0.0.28",
@@ -21589,7 +21973,8 @@
           "api_data_url": "https://registry.npmjs.org/tmp/0.0.28",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tmp@0.0.28"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/to-double-quotes@2.0.0",
@@ -21645,7 +22030,8 @@
           "api_data_url": "https://registry.npmjs.org/to-double-quotes/2.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/to-double-quotes@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/to-single-quotes@2.0.1",
@@ -21701,7 +22087,8 @@
           "api_data_url": "https://registry.npmjs.org/to-single-quotes/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/to-single-quotes@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/token-stream@0.0.1",
@@ -21757,7 +22144,8 @@
           "api_data_url": "https://registry.npmjs.org/token-stream/0.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/token-stream@0.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tough-cookie@2.2.2",
@@ -21813,7 +22201,8 @@
           "api_data_url": "https://registry.npmjs.org/tough-cookie/2.2.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tough-cookie@2.2.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/trim-newlines@1.0.0",
@@ -21869,7 +22258,8 @@
           "api_data_url": "https://registry.npmjs.org/trim-newlines/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/trim-newlines@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tunnel-agent@0.4.3",
@@ -21925,7 +22315,8 @@
           "api_data_url": "https://registry.npmjs.org/tunnel-agent/0.4.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tunnel-agent@0.4.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/tweetnacl@0.13.3",
@@ -21981,7 +22372,8 @@
           "api_data_url": "https://registry.npmjs.org/tweetnacl/0.13.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/tweetnacl@0.13.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/type-is@1.6.13",
@@ -22037,7 +22429,8 @@
           "api_data_url": "https://registry.npmjs.org/type-is/1.6.13",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/type-is@1.6.13"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/typedarray@0.0.6",
@@ -22093,7 +22486,8 @@
           "api_data_url": "https://registry.npmjs.org/typedarray/0.0.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/typedarray@0.0.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/uc.micro@1.0.2",
@@ -22149,7 +22543,8 @@
           "api_data_url": "https://registry.npmjs.org/uc.micro/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/uc.micro@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/uglify-js@2.6.4",
@@ -22205,7 +22600,8 @@
           "api_data_url": "https://registry.npmjs.org/uglify-js/2.6.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/uglify-js@2.6.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/uglify-to-browserify@1.0.2",
@@ -22261,7 +22657,8 @@
           "api_data_url": "https://registry.npmjs.org/uglify-to-browserify/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/uglify-to-browserify@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/underscore@1.6.0",
@@ -22317,7 +22714,8 @@
           "api_data_url": "https://registry.npmjs.org/underscore/1.6.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/underscore@1.6.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/underscore.string@3.2.3",
@@ -22373,7 +22771,8 @@
           "api_data_url": "https://registry.npmjs.org/underscore.string/3.2.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/underscore.string@3.2.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/unpipe@1.0.0",
@@ -22429,7 +22828,8 @@
           "api_data_url": "https://registry.npmjs.org/unpipe/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/unpipe@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/upper-case@1.1.3",
@@ -22485,7 +22885,8 @@
           "api_data_url": "https://registry.npmjs.org/upper-case/1.1.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/upper-case@1.1.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/upper-case-first@1.1.2",
@@ -22541,7 +22942,8 @@
           "api_data_url": "https://registry.npmjs.org/upper-case-first/1.1.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/upper-case-first@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/uri-path@1.0.0",
@@ -22597,7 +22999,8 @@
           "api_data_url": "https://registry.npmjs.org/uri-path/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/uri-path@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/util-deprecate@1.0.2",
@@ -22653,7 +23056,8 @@
           "api_data_url": "https://registry.npmjs.org/util-deprecate/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/util-deprecate@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/utile@0.2.1",
@@ -22709,7 +23113,8 @@
           "api_data_url": "https://registry.npmjs.org/utile/0.2.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/utile@0.2.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/utils-merge@1.0.0",
@@ -22765,7 +23170,8 @@
           "api_data_url": "https://registry.npmjs.org/utils-merge/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/utils-merge@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/uuid@2.0.2",
@@ -22821,7 +23227,8 @@
           "api_data_url": "https://registry.npmjs.org/uuid/2.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/uuid@2.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/validate-npm-package-license@3.0.1",
@@ -22877,7 +23284,8 @@
           "api_data_url": "https://registry.npmjs.org/validate-npm-package-license/3.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/validate-npm-package-license@3.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/verror@1.3.6",
@@ -22933,7 +23341,8 @@
           "api_data_url": "https://registry.npmjs.org/verror/1.3.6",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/verror@1.3.6"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/void-elements@2.0.1",
@@ -22989,7 +23398,8 @@
           "api_data_url": "https://registry.npmjs.org/void-elements/2.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/void-elements@2.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/vow@0.4.4",
@@ -23045,7 +23455,8 @@
           "api_data_url": "https://registry.npmjs.org/vow/0.4.4",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/vow@0.4.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/vow-fs@0.3.2",
@@ -23101,7 +23512,8 @@
           "api_data_url": "https://registry.npmjs.org/vow-fs/0.3.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/vow-fs@0.3.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/vow-queue@0.3.1",
@@ -23157,7 +23569,8 @@
           "api_data_url": "https://registry.npmjs.org/vow-queue/0.3.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/vow-queue@0.3.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/websocket-driver@0.6.5",
@@ -23213,7 +23626,8 @@
           "api_data_url": "https://registry.npmjs.org/websocket-driver/0.6.5",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/websocket-driver@0.6.5"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/websocket-extensions@0.1.1",
@@ -23269,7 +23683,8 @@
           "api_data_url": "https://registry.npmjs.org/websocket-extensions/0.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/websocket-extensions@0.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/when@3.7.7",
@@ -23325,7 +23740,8 @@
           "api_data_url": "https://registry.npmjs.org/when/3.7.7",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/when@3.7.7"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/which@1.2.10",
@@ -23381,7 +23797,8 @@
           "api_data_url": "https://registry.npmjs.org/which/1.2.10",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/which@1.2.10"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/window-size@0.1.0",
@@ -23437,7 +23854,8 @@
           "api_data_url": "https://registry.npmjs.org/window-size/0.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/window-size@0.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/winston@0.8.3",
@@ -23493,7 +23911,8 @@
           "api_data_url": "https://registry.npmjs.org/winston/0.8.3",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/winston@0.8.3"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/with@5.1.1",
@@ -23549,7 +23968,8 @@
           "api_data_url": "https://registry.npmjs.org/with/5.1.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/with@5.1.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/wordwrap@0.0.2",
@@ -23605,7 +24025,8 @@
           "api_data_url": "https://registry.npmjs.org/wordwrap/0.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/wordwrap@0.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/wrappy@1.0.2",
@@ -23661,7 +24082,8 @@
           "api_data_url": "https://registry.npmjs.org/wrappy/1.0.2",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/wrappy@1.0.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/xml-char-classes@1.0.0",
@@ -23717,7 +24139,8 @@
           "api_data_url": "https://registry.npmjs.org/xml-char-classes/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/xml-char-classes@1.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/xmlbuilder@3.1.0",
@@ -23773,7 +24196,8 @@
           "api_data_url": "https://registry.npmjs.org/xmlbuilder/3.1.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/xmlbuilder@3.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/xtend@4.0.1",
@@ -23829,7 +24253,8 @@
           "api_data_url": "https://registry.npmjs.org/xtend/4.0.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/xtend@4.0.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/yargs@3.10.0",
@@ -23885,7 +24310,8 @@
           "api_data_url": "https://registry.npmjs.org/yargs/3.10.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/yargs@3.10.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/yauzl@2.4.1",
@@ -23941,7 +24367,8 @@
           "api_data_url": "https://registry.npmjs.org/yauzl/2.4.1",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/yauzl@2.4.1"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/zip-stream@1.0.0",
@@ -23997,7 +24424,8 @@
           "api_data_url": "https://registry.npmjs.org/zip-stream/1.0.0",
           "datasource_id": "npm_shrinkwrap_json",
           "purl": "pkg:npm/zip-stream@1.0.0"
-        }
+        },
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://www.npmjs.com/package/bootstrap",
