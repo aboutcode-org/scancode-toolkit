@@ -237,7 +237,6 @@ def add_license_from_file(resource, codebase, no_licenses):
                 licensing=get_cache().licensing,
             ))
 
-
             codebase.save_resource(resource)
             return pkg
 

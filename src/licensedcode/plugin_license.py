@@ -8,33 +8,26 @@
 #
 
 
+import logging
+import os
 from functools import partial
 
 import attr
-import os
-import logging
-
-from plugincode.scan import ScanPlugin
-from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-
-from licensedcode.cache import get_cache
-from licensedcode.cache import build_spdx_license_expression
-from licensedcode.detection import SCANCODE_LICENSEDB_URL
-from licensedcode.detection import get_detected_license_expression
-from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.detection import DetectionCategory
-from licensedcode.detection import get_referenced_filenames
-from licensedcode.detection import find_referenced_resource
-from packagedcode.utils import combine_expressions
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-
+from licensedcode.cache import build_spdx_license_expression, get_cache
+from licensedcode.detection import DetectionCategory
+from licensedcode.detection import find_referenced_resource
+from licensedcode.detection import get_detected_license_expression
+from licensedcode.detection import get_matches_from_detection_mappings
+from licensedcode.detection import get_referenced_filenames
+from licensedcode.detection import SCANCODE_LICENSEDB_URL
+from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
-
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
 
@@ -64,8 +57,9 @@ def reindex_licenses(ctx, param, value):
         return
 
     # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
     import click
+
+    from licensedcode.cache import get_index
     click.echo('Rebuilding the license index...')
     get_index(force=True)
     click.echo('Done.')
@@ -81,8 +75,9 @@ def reindex_licenses_all_languages(ctx, param, value):
         return
 
     # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
     import click
+
+    from licensedcode.cache import get_index
     click.echo('Rebuilding the license index for all languages...')
     get_index(force=True, index_all_languages=True)
     click.echo('Done.')
