@@ -1,6 +1,20 @@
 {
   "dependencies": [
     {
+      "purl": "pkg:generic/python",
+      "extracted_requirement": "python_requires>= 3.7",
+      "scope": "python",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:generic/python?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.cfg",
+      "datasource_id": "pypi_setup_cfg"
+    },
+    {
       "purl": "pkg:pypi/colorama",
       "extracted_requirement": "colorama; platform_system == \"Windows\"",
       "scope": "install",
@@ -8,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/colorama?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "setup.py",
@@ -21,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "setup.py",
@@ -128,7 +144,18 @@
           "source_packages": [],
           "file_references": [],
           "extra_data": {},
-          "dependencies": [],
+          "dependencies": [
+            {
+              "purl": "pkg:generic/python",
+              "extracted_requirement": "python_requires>= 3.7",
+              "scope": "python",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
@@ -182,7 +209,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
@@ -191,7 +219,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://pypi.org/project/click",

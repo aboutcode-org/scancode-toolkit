@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/alpine-baselayout-data@3.2.0-r22?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-container-layer.tar.xz/lib/apk/db/installed",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/musl?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-container-layer.tar.xz/lib/apk/db/installed",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-container-layer.tar.xz/lib/apk/db/installed",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/scanelf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-container-layer.tar.xz/lib/apk/db/installed",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/musl-utils?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-container-layer.tar.xz/lib/apk/db/installed",
@@ -2294,7 +2299,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3205,7 +3211,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:alpine/ca-certificates-bundle",
@@ -3214,7 +3221,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3376,7 +3384,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3434,7 +3443,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

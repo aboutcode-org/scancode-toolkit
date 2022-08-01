@@ -36,7 +36,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "http://pypi.python.org/packages/source/p/pytz/pytz-2016.4.tar.gz#md5=a3316cf3842ed0375ba5931914239d97",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": null,
+          "is_url": true,
+          "is_vcs_url": false,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/flask",
@@ -45,7 +57,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "http://pypi.python.org/packages/source/f/flask/Flask-0.11.1.tar.gz#sha256=1212aaf123911123babc024abaa&egg=Flask",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": false,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       }
     ],
     "repository_homepage_url": null,

@@ -36,7 +36,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+http://bzr.myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -45,7 +57,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+sftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -54,7 +78,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+ssh://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -63,7 +99,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+ftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -72,7 +120,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+https://bzr.myproject.org/MyProject/trunk@2019#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -81,7 +141,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "bzr+http://bzr.myproject.org/MyProject/trunk@v1.0#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -90,7 +162,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+http://bzr.myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -99,7 +183,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+sftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -108,7 +204,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+ssh://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -117,7 +225,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+ftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -126,7 +246,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+https://bzr.myproject.org/MyProject/trunk@2019#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/myproject",
@@ -135,7 +267,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "bzr+http://bzr.myproject.org/MyProject/trunk@v1.0#egg=MyProject",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       }
     ],
     "repository_homepage_url": null,

@@ -7,10 +7,10 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
 from fnmatch import fnmatchcase
-import logging
 
 import attr
 from packageurl import normalize_qualifiers
@@ -26,7 +26,15 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from typecode import contenttype
+try:
+    from typecode import contenttype
+except ImportError:
+    contenttype = None
+
+try:
+    from packagedcode import licensing
+except ImportError:
+    licensing = None
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -365,6 +373,11 @@ class DependentPackage(ModelMixin):
              'either from the datafile or collected from another source. Some '
              'lockfiles for Composer or Cargo contain extra dependency data.'
          )
+
+    extra_data = Mapping(
+        label='extra data',
+        help='A mapping of arbitrary extra data.',
+    )
 
 
 @attr.attributes(slots=True)
@@ -771,7 +784,13 @@ def compute_normalized_license(declared_license, expression_symbols=None):
     if not declared_license:
         return
 
-    from packagedcode import licensing
+    if not licensing:
+        if TRACE:
+            logger_debug(
+                f'Failed to compute license for {declared_license!r}: '
+                'cannot import packagedcode.licensing')
+        return 'unknown'
+
     try:
         return licensing.get_normalized_expression(
             query_string=declared_license,
@@ -781,7 +800,6 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         # we never fail just for this
         if TRACE:
             logger_debug(f'Failed to compute license for {declared_license!r}: {e!r}')
-        # FIXME: add logging
         return 'unknown'
 
 
@@ -852,7 +870,8 @@ class DatafileHandler:
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
-                else:
+                # we check for contenttype IFF this is available
+                if contenttype:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)

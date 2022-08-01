@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/metadata.rb",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/metadata.json",
@@ -136,7 +138,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
@@ -200,7 +203,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",

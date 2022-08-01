@@ -36,7 +36,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "git+https://git.myproject.org/MyProject.git@v0.1#egg=MyProject[security]",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       }
     ],
     "repository_homepage_url": null,

@@ -1,4 +1,3 @@
-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
@@ -9,19 +8,28 @@
 #
 
 import ast
+import base64
+import copy
 import json
 import logging
 import os
 import re
 import sys
+import tempfile
 import zipfile
 from configparser import ConfigParser
 from pathlib import Path
+from typing import NamedTuple
 
 import dparse2
+# NOTE: we always want to use the external library rather than the built-in for now
+import importlib_metadata
+import packaging
 import pip_requirements_parser
 import pkginfo2
 from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
+from packaging.specifiers import SpecifierSet
 from packageurl import PackageURL
 from packaging import markers
 from packaging.requirements import Requirement
@@ -32,11 +40,6 @@ from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
-
-# FIXME: we always want to use the external library rather than the built-in for now
-import importlib_metadata
-import base64
-from commoncode.fileutils import as_posixpath
 
 try:
     from zipfile import Path as ZipPath
@@ -197,7 +200,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                         if not package:
                             package = create_package_from_package_data(
                                 package_data=setup_pkg_data,
-                                datafile_path=setup_resource.path
+                                datafile_path=setup_resource.path,
                             )
                             yield package
                             package_resource = setup_resource
@@ -216,6 +219,8 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                         )
 
         if package:
+            if not package.license_expression:
+                package.license_expression = compute_normalized_license(package.declared_license)
             package_uid = package.package_uid
 
             root = package_resource.parent(codebase)
@@ -462,7 +467,8 @@ def parse_metadata(location, datasource_id, package_type):
         primary_language='Python',
         name=name,
         version=version,
-        description=get_description(meta, location),
+        description=get_description(metainfo=meta, location=str(location)),
+        # TODO: https://github.com/nexB/scancode-toolkit/issues/3014
         declared_license=get_declared_license(meta),
         keywords=get_keywords(meta),
         parties=get_parties(meta),
@@ -654,6 +660,14 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         )
 
 
+class ResolvedPurl(NamedTuple):
+    """
+    A resolved PURL
+    """
+    purl: PackageURL
+    is_resolved: bool
+
+
 class BaseDependencyFileHandler(BasePypiHandler):
     """
     Base class for a dependency files parsed with the same library
@@ -693,10 +707,44 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
 
         metadata = {}
         parser = ConfigParser()
+        dependent_packages = []
         with open(location) as f:
             parser.read_file(f)
 
         for section in parser.values():
+            if section.name == 'options':
+                scope_by_sub_section = {
+                    "install_requires": "install",
+                    "tests_require": "test",
+                    "setup_requires": "setup",
+                    "python_requires": "python",
+                }
+                for sub_section, scope in scope_by_sub_section.items():
+                    if sub_section not in section:
+                        continue
+                    if scope != "python":
+                        reqs = list(get_requirement_from_section(section=section, sub_section=sub_section))
+                        dependent_packages.extend(cls.parse_reqs(reqs, scope))
+                        continue
+                    python_requires_specifier = section[sub_section]
+                    purl = PackageURL(
+                        type="generic",
+                        name="python",
+                    )
+                    resolved_purl = get_resolved_purl(purl=purl, specifiers=SpecifierSet(python_requires_specifier))
+                    dependent_packages.append(models.DependentPackage(
+                    purl=str(resolved_purl.purl),
+                    scope=scope,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=resolved_purl.is_resolved,
+                    extracted_requirement=f"python_requires{python_requires_specifier}",
+                    ))
+
+            if section.name == "options.extras_require":
+                for sub_section in section:
+                    reqs = list(get_requirement_from_section(section=section, sub_section=sub_section))
+                    dependent_packages.extend(cls.parse_reqs(reqs, sub_section))
             if section.name == 'metadata':
                 options = (
                     'name',
@@ -724,14 +772,6 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                 )
             ]
 
-        dependency_type = get_dparse2_supported_file_name(file_name)
-        if not dependency_type:
-            return
-
-        dependencies = parse_with_dparse2(
-            location=location,
-            file_name=dependency_type,
-        )
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -740,8 +780,49 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             parties=parties,
             homepage_url=metadata.get('url'),
             primary_language=cls.default_primary_language,
-            dependencies=dependencies,
+            dependencies=dependent_packages,
         )
+
+    @classmethod
+    def parse_reqs(cls, reqs, scope):
+        """
+        Parse a list of requirements and return a list of dependencies
+        """
+        dependent_packages = []
+        for req in reqs:
+            req_parsed = packaging.requirements.Requirement(str(req))
+            name = canonicalize_name(req_parsed.name)
+            purl = PackageURL(type="pypi", name=name)
+            specifiers = req_parsed.specifier._specs
+            resolved_purl = get_resolved_purl(purl=purl, specifiers=specifiers)
+            dependent_packages.append(
+                        models.DependentPackage(
+                        purl=str(resolved_purl.purl),
+                        scope=scope,
+                        is_runtime=True,
+                        is_optional=False,
+                        is_resolved=resolved_purl.is_resolved,
+                        extracted_requirement=req
+                    )
+                )
+        return dependent_packages
+
+
+def get_resolved_purl(purl: PackageURL, specifiers: SpecifierSet):
+    """
+    Check if the purl is resolved and return a ResolvedPurl.
+    If the purl is resolved, update its version to the pinned version
+    """
+    is_resolved = False
+    if len(specifiers) == 1:
+        specifier = list(specifiers)[0]
+        if specifier.operator in ('==', '==='):
+            is_resolved = True
+            purl = purl._replace(version=specifier.version)
+    return ResolvedPurl(
+        purl=purl,
+        is_resolved=is_resolved,
+    )
 
 
 class PipfileHandler(BaseDependencyFileHandler):
@@ -832,20 +913,26 @@ def get_requirements_txt_dependencies(location, include_nested=False):
         include_nested=include_nested,
     )
     if not req_file or not req_file.requirements:
-        return []
+        return [], {}
 
     # for now we ignore errors
     extra_data = {}
     for opt in req_file.options:
-        extra_data.update(opt.options)
-
+        for name, value in opt.options.items():
+            if name not in extra_data:
+                extra_data[name] = value
+            else:
+                if isinstance(value, list):
+                    extra_data[name].extend(value)
+                else:
+                    extra_data[name] = value
     dependent_packages = []
     for req in req_file.requirements:
 
         if req.name:
             # will be None if not pinned
             version = req.get_pinned_version
-            purl = PackageURL(type='pypi', name=req.name, version=version)
+            purl = PackageURL(type='pypi', name=canonicalize_name(req.name), version=version)
 
         else:
             # this is odd, but this can be null
@@ -858,7 +945,13 @@ def get_requirements_txt_dependencies(location, include_nested=False):
         else:
             requirement = req.dumps(with_name=False)
 
-        if location.endswith(('dev.txt', 'test.txt', 'tests.txt',)):
+        if location.endswith(
+            (
+                'dev.txt',
+                'test.txt',
+                'tests.txt',
+            )
+        ):
             scope = 'development'
             is_runtime = False
             is_optional = True
@@ -874,11 +967,40 @@ def get_requirements_txt_dependencies(location, include_nested=False):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=req.is_pinned or False,
-                extracted_requirement=requirement
+                extracted_requirement=requirement,
+                extra_data=dict(
+                    is_editable=req.is_editable,
+                    link=req.link and req.link.url or None,
+                    hash_options=req.hash_options or [],
+                    is_constraint=req.is_constraint,
+                    is_archive=req.is_archive,
+                    is_wheel=req.is_wheel,
+                    is_url=req.is_url,
+                    is_vcs_url=req.is_vcs_url,
+                    is_name_at_url=req.is_name_at_url,
+                    is_local_path=req.is_local_path,
+                ),
             )
         )
 
     return dependent_packages, extra_data
+
+
+def can_process_dependent_package(dep: models.DependentPackage):
+    """
+    Return True if we can process the dependent package
+    typically anything that's not a plain standard specifier
+    can not be processed such as an editable requirement
+    """
+    # copying dep.extra_data to avoid mutating the original
+    requirement_flags = copy.copy(dep.extra_data or {})
+    requirement_flags.pop("hash_options", None)
+    if not requirement_flags:
+        return True
+    # we can not process the requirement if it has any flag set
+    # because this means it is not a standard specifier
+    # but rather some pip specific option of sorts
+    return not any(requirement_flags.values())
 
 
 def get_attribute(metainfo, name, multiple=False):
@@ -1017,10 +1139,11 @@ def get_classifiers(metainfo):
     license_classifiers = []
     other_classifiers = []
     for classifier in classifiers:
-        if classifier.startswith('License'):
-            license_classifiers.append(classifier)
-        else:
-            other_classifiers.append(classifier)
+        if classifier:
+            if classifier.startswith('License'):
+                license_classifiers.append(classifier)
+            else:
+                other_classifiers.append(classifier)
     return license_classifiers, other_classifiers
 
 
@@ -1248,7 +1371,6 @@ def get_dparse2_supported_file_name(file_name):
         'Pipfile.lock',
         'Pipfile',
         'conda.yml',
-        'setup.cfg',
     )
 
     for dfile_name in dfile_names:
@@ -1897,3 +2019,18 @@ def compute_normalized_license(declared_license):
 
     if detected_licenses:
         return combine_expressions(detected_licenses)
+
+
+def get_requirement_from_section(section, sub_section):
+    """
+    Yield extracted requirement from the ``sub_section`` key of of a ``section``
+    mapping (from a setup.cfg)
+    """
+    content = section.get(sub_section, "")
+    temp = tempfile.NamedTemporaryFile(delete=False)
+    location = temp.name
+    with open(location, "w") as f:
+        f.write(content)
+    packages, _ = get_requirements_txt_dependencies(location=location)
+    for req in packages:
+        yield req.extracted_requirement
