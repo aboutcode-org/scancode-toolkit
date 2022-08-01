@@ -69,10 +69,12 @@
       "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
       "package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "metadata.rb"
+        "metadata.rb",
+        "metadata.json"
       ],
       "datasource_ids": [
-        "chef_cookbook_metadata_rb"
+        "chef_cookbook_metadata_rb",
+        "chef_cookbook_metadata_json"
       ],
       "purl": "pkg:chef/301@0.1.0"
     }

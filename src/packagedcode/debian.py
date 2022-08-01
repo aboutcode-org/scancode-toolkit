@@ -28,8 +28,10 @@ SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE_API
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +44,6 @@ if TRACE:
         return logger.debug(
             ' '.join(isinstance(a, str) and a or repr(a) for a in args)
         )
-
 
 # TODO: add dependencies
 
@@ -282,14 +283,27 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
         resources = []
         # TODO: keep track of missing files
         for res in root_resource.walk(codebase):
+            if TRACE:
+                logger_debug(f'   debian: assemble: root_walk: res: {res}')
             if not res.path.endswith(assemblable_paths):
                 continue
 
             for pkgdt in res.package_data:
                 package_data = models.PackageData.from_dict(pkgdt)
+                if TRACE:
+                    # logger_debug(f'     debian: assemble: root_walk: package_data: {package_data}')
+                    logger_debug(f'     debian: assemble: root_walk: package_data: {package_data.license_expression}')
+
+                # Most debian secondary files are only specific to a name. We
+                # have a few cases where the arch is included in the lists and
+                # md5sums.
                 package.update(
                     package_data=package_data,
                     datafile_path=res.path,
+                    replace=False,
+                    include_version=False,
+                    include_qualifiers=False,
+                    include_subpath=False,
                 )
                 package_file_references.extend(package_data.file_references)
 

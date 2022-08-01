@@ -86,9 +86,9 @@
     "api_data_url": null,
     "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
-      "basic-rootfs.tar.gz/var/lib/dpkg/status",
-      "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
-      "basic-rootfs.tar.gz/var/lib/dpkg/info/libncurses5:amd64.md5sums"
+      "debian-container-layer.tar.xz/var/lib/dpkg/status",
+      "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
+      "debian-container-layer.tar.xz/var/lib/dpkg/info/libncurses5:amd64.md5sums"
     ],
     "datasource_ids": [
       "debian_installed_status_db",
@@ -97,7 +97,7 @@
     ],
     "resources": [
       {
-        "path": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
+        "path": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
         "type": "file",
         "package_data": [
           {
@@ -143,7 +143,7 @@
         "scan_errors": []
       },
       {
-        "path": "basic-rootfs.tar.gz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
+        "path": "debian-container-layer.tar.xz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
         "type": "file",
         "package_data": [
           {
@@ -303,9 +303,9 @@
     "api_data_url": null,
     "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
-      "basic-rootfs.tar.gz/var/lib/dpkg/status",
-      "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
-      "basic-rootfs.tar.gz/var/lib/dpkg/info/libndp0:amd64.md5sums"
+      "debian-container-layer.tar.xz/var/lib/dpkg/status",
+      "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
+      "debian-container-layer.tar.xz/var/lib/dpkg/info/libndp0:amd64.md5sums"
     ],
     "datasource_ids": [
       "debian_installed_status_db",
@@ -314,7 +314,7 @@
     ],
     "resources": [
       {
-        "path": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
+        "path": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
         "type": "file",
         "package_data": [
           {
@@ -365,7 +365,7 @@
         "scan_errors": []
       },
       {
-        "path": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
+        "path": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
         "type": "file",
         "package_data": [
           {
@@ -416,7 +416,7 @@
         "scan_errors": []
       },
       {
-        "path": "basic-rootfs.tar.gz/var/lib/dpkg/info/libndp0:amd64.md5sums",
+        "path": "debian-container-layer.tar.xz/var/lib/dpkg/info/libndp0:amd64.md5sums",
         "type": "file",
         "package_data": [
           {

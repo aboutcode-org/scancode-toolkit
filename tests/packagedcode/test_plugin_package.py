@@ -213,9 +213,8 @@ class TestPlugins(PackageTester):
                 ef.write(result.output)
         assert result.output == open(expected_file).read()
 
-    def test_package_get_installed_packages(self):
+    def test_system_package_get_installed_packages(self):
         test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         expected_file = self.get_test_loc('plugin/get_installed_packages-expected.json')
-        result_file = self.get_temp_file('results.json')
         results = list(get_installed_packages(test_dir))
         self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
