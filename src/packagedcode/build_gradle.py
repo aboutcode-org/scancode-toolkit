@@ -65,11 +65,12 @@ class BuildGradleHandler(models.DatafileHandler):
 
     # TODO: handle complex cases of nested builds with many packages
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 

@@ -28,7 +28,7 @@ Handle Go packages including go.mod and go.sum files.
 class BaseGoModuleHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Always use go.mod first then go.sum
         """
@@ -36,6 +36,7 @@ class BaseGoModuleHandler(models.DatafileHandler):
             datafile_name_patterns=('go.mod', 'go.sum',),
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 

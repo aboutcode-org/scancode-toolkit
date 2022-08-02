@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from cgi import test
 import os.path
 
 from packagedcode import misc
@@ -14,8 +15,14 @@ from packagedcode import models
 from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode.models import PackageData
 from packagedcode.models import Party
+from packagedcode.plugin_package import get_package_and_deps
+from packagedcode.plugin_package import PackageScanner
 from packages_test_utils import PackageTester
+from scancode.cli_test_utils import purl_with_fake_uuid
 from scancode_config import REGEN_TEST_FIXTURES
+
+from commoncode.resource import Codebase
+from commoncode.resource import VirtualCodebase
 
 
 class TestModels(PackageTester):
@@ -140,7 +147,7 @@ class TestModels(PackageTester):
                 pdh.datasource_id not in seen
             ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
             seen[pdh.datasource_id] = pdh
-    
+
     def test_package_data_file_patterns_are_tuples(self):
         """
         Check that all file patterns are tuples, as if they are
@@ -152,3 +159,55 @@ class TestModels(PackageTester):
                 assert type(pdh.path_patterns) == tuple, pdh
             if pdh.filetypes:
                 assert type(pdh.filetypes) == tuple, pdh
+
+    def test_add_to_package(self):
+        test_loc = self.get_test_loc('npm/electron')
+        test_package = models.Package(
+            type='npm',
+            name='electron',
+            version='3.1.11',
+        )
+        test_package_uid = test_package.package_uid
+        test_codebase = Codebase(
+            location=test_loc,
+            codebase_attributes=PackageScanner.codebase_attributes,
+            resource_attributes=PackageScanner.resource_attributes
+        )
+        test_resource = test_codebase.get_resource('electron/package/package.json')
+        assert test_package_uid not in test_resource.for_packages
+        models.add_to_package(
+            test_package.package_uid,
+            test_resource,
+            test_codebase
+        )
+        assert test_package.package_uid in test_resource.for_packages
+
+    def test_assembly_custom_package_adder(self):
+        def test_package_adder(package_uid, resource, codebase):
+            """
+            Add `package_uid` to `resource.extra_data`
+            """
+            if 'for_packages' in resource.extra_data:
+                resource.extra_data['for_packages'].append(package_uid)
+            else:
+                resource.extra_data['for_packages'] = [package_uid]
+            resource.save(codebase)
+
+        # This scan does not contain top-level Packages or Dependencies since we
+        # want to run `get_packages_and_deps` to create them
+        test_loc = self.get_test_loc('models/get_package_resources.scan.json')
+        test_codebase = VirtualCodebase(location=test_loc)
+        packages, dependencies = get_package_and_deps(test_codebase, test_package_adder)
+
+        assert len(packages) == 1
+        assert not dependencies
+
+        package = packages[0]
+        package_uid = package.package_uid
+        test_package_uid = purl_with_fake_uuid(package_uid)
+
+        for resource in test_codebase.walk():
+            for_packages = resource.extra_data.get('for_packages', [])
+            for package_uid in for_packages:
+                normalized_package_uid = purl_with_fake_uuid(package_uid)
+                assert normalized_package_uid == test_package_uid

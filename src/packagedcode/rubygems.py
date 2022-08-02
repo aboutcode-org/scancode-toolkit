@@ -58,7 +58,7 @@ class GemArchiveHandler(BaseGemHandler):
         )
 
 
-def assemble_extracted_gem(cls, package_data, resource, codebase):
+def assemble_extracted_gem(cls, package_data, resource, codebase, package_adder):
     """
     An assemble implementation shared by handlers for manifests found in an
     extracted gem using extractcode.
@@ -76,6 +76,7 @@ def assemble_extracted_gem(cls, package_data, resource, codebase):
         datafile_name_patterns=datafile_name_patterns,
         directory=gemroot,
         codebase=codebase,
+        package_adder=package_adder,
     )
 
 
@@ -101,14 +102,14 @@ class GemMetadataArchiveExtractedHandler(BaseGemHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         yield from assemble_extracted_gem(cls, package_data, resource, codebase)
 
 
 class BaseGemProjectHandler(BaseGemHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         datafile_name_patterns = (
             '*.gemspec',
             'Gemfile',
@@ -119,11 +120,12 @@ class BaseGemProjectHandler(BaseGemHandler):
             datafile_name_patterns=datafile_name_patterns,
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
 class GemspecHandler(BaseGemHandler):
@@ -187,8 +189,8 @@ class GemspecInExtractedGemHandler(GemspecHandler):
     description = 'RubyGems gemspec manifest - extracted data layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
@@ -213,9 +215,9 @@ class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
     description = 'RubyGems gemspec manifest - installed vendor/bundle/specifications layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # TODO: consider assembling datafiles across vendor/ subdirs
-        yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+        yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
 
 
 # Note: we subclass GemspecHandler as the parsing code can handle both Ruby files
@@ -235,8 +237,8 @@ class GemfileInExtractedGemHandler(GemfileHandler):
     description = 'RubyGems Bundler Gemfile - extracted layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        return assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        return assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class GemfileLockHandler(BaseGemProjectHandler):
@@ -311,8 +313,8 @@ class GemfileLockInExtractedGemHandler(GemfileLockHandler):
     description = 'RubyGems Bundler Gemfile.lock - extracted layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 def compute_normalized_license(declared_license):

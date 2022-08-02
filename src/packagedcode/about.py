@@ -107,7 +107,7 @@ class AboutFileHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Yield a Package. Note that ABOUT files do not carry dependencies.
         """
@@ -122,8 +122,7 @@ class AboutFileHandler(models.DatafileHandler):
 
             # NOTE: we do not attach files to the Package level. Instead we
             # update `for_package` in the file
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+            package_adder(package_uid, resource, codebase)
 
             if not package.license_expression:
                 package.license_expression = cls.compute_normalized_license(package)
@@ -151,8 +150,7 @@ class AboutFileHandler(models.DatafileHandler):
                         # path is found and processed: remove it, so we can
                         # check if we found all of them
                         del file_references_by_path[res.path]
-                        res.for_packages.append(package_uid)
-                        res.save(codebase)
+                        package_adder(package_uid, res, codebase)
 
                         yield res
 

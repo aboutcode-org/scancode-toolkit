@@ -26,7 +26,7 @@ similar.
 class BasePhpComposerHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         datafile_name_patterns = (
             'composer.json',
             'composer.lock',
@@ -41,11 +41,12 @@ class BasePhpComposerHandler(models.DatafileHandler):
             datafile_name_patterns=datafile_name_patterns,
             directory=dir_resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
     @classmethod
     def compute_normalized_license(cls, package):

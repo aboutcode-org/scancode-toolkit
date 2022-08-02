@@ -803,6 +803,15 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         return 'unknown'
 
 
+def add_to_package(package_uid, resource, codebase):
+    """
+    Append `package_uid` to `resource.for_packages`, if the attribute exists.
+    """
+    if hasattr(resource, 'for_packages') and isinstance(resource.for_packages, list):
+        resource.for_packages.append(package_uid)
+        resource.save(codebase)
+
+
 class DatafileHandler:
     """
     A base handler class to handle any package manifests, lockfiles and data
@@ -888,13 +897,15 @@ class DatafileHandler:
         raise NotImplementedError
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder=add_to_package):
         """
         Given a ``package_data`` PackageData found in the ``resource`` datafile
         of the ``codebase``, assemble package their files and dependencies
         from one or more datafiles.
 
-        Update ``codebase`` Resources with the package they are for.
+        Update ``codebase`` Resources with the package they are for, using the
+        function ``package_adder`` to associate Resources to the Package they
+        are part of.
 
         Yield items that can be of these types:
 
@@ -931,6 +942,7 @@ class DatafileHandler:
                 package=package,
                 resource=resource,
                 codebase=codebase,
+                package_adder=package_adder,
             )
 
             yield package
@@ -973,7 +985,7 @@ class DatafileHandler:
             return license_expression
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder=add_to_package):
         """
         Set the "for_packages" attributes to ``package`` given a
         starting ``resource`` in the ``codebase``.
@@ -990,14 +1002,12 @@ class DatafileHandler:
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
         if resource and package_uid:
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+            package_adder(package_uid, resource, codebase)
             for res in resource.walk(codebase):
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                package_adder(package_uid, res, codebase)
 
     @classmethod
-    def assign_package_to_parent_tree(cls, package, resource, codebase):
+    def assign_package_to_parent_tree(cls, package, resource, codebase, package_adder=add_to_package):
         """
         Set the "for_packages" attributes to ``package``  for the whole
         resource tree of the parent of a ``resource`` object in the
@@ -1009,12 +1019,12 @@ class DatafileHandler:
         """
         if resource.has_parent():
             parent = resource.parent(codebase)
-            cls.assign_package_to_resources(package, parent, codebase)
+            cls.assign_package_to_resources(package, parent, codebase, package_adder)
         else:
-            cls.assign_package_to_resources(package, resource, codebase)
+            cls.assign_package_to_resources(package, resource, codebase, package_adder)
 
     @classmethod
-    def assemble_from_many(cls, pkgdata_resources, codebase,):
+    def assemble_from_many(cls, pkgdata_resources, codebase, package_adder=add_to_package):
         """
         Yield Package, Resources or Dependency given a ``pkgdata_resources``
         list of tuple (PackageData, Resource) in ``codebase``.
@@ -1050,8 +1060,7 @@ class DatafileHandler:
                     )
                     package_uid = package.package_uid
                     if package_uid:
-                        resource.for_packages.append(package_uid)
-                        resource.save(codebase)
+                        package_adder(package_uid, resource, codebase)
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
@@ -1061,8 +1070,7 @@ class DatafileHandler:
                     datafile_path=resource.path,
                 )
                 if package_uid:
-                    resource.for_packages.append(package_uid)
-                    resource.save(codebase)
+                    package_adder(package_uid, resource, codebase)
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1080,8 +1088,7 @@ class DatafileHandler:
         # the whole parent subtree of the base_resource is for this package
         if package_uid:
             for res in base_resource.walk(codebase):
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                package_adder(package_uid, res, codebase)
 
         if package:
             if not package.license_expression:
@@ -1089,7 +1096,13 @@ class DatafileHandler:
             yield package
 
     @classmethod
-    def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
+    def assemble_from_many_datafiles(
+        cls,
+        datafile_name_patterns,
+        directory,
+        codebase,
+        package_adder=add_to_package,
+    ):
         """
         Assemble Package and Dependency from package data of the datafiles found
         in multiple ``datafile_name_patterns`` name patterns (case- sensitive)
@@ -1135,6 +1148,7 @@ class DatafileHandler:
             yield from cls.assemble_from_many(
                 pkgdata_resources=pkgdata_resources,
                 codebase=codebase,
+                package_adder=package_adder,
             )
 
     @classmethod
@@ -1157,7 +1171,7 @@ class NonAssemblableDatafileHandler(DatafileHandler):
     """
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         return []
 
 
