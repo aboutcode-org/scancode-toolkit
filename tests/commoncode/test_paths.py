@@ -93,6 +93,14 @@ class TestPortablePath(TestCase):
         expected = 'dotdot/dotdot/dotdot/webform.components.inc'
         assert test == expected
 
+    def test_safe_path_posix_only(self):
+        test_path = 'var/lib/dpkg/info/libgsm1:amd64.list'
+        test = paths.safe_path(test_path)
+        expected = 'var/lib/dpkg/info/libgsm1_amd64.list'
+        assert test == expected
+        test = paths.safe_path(test_path, posix_only=True)
+        assert test == test_path
+
     def test_resolve_mixed_slash(self):
         test = paths.resolve('C:\\..\\./drupal.js')
         expected = 'C/drupal.js'
@@ -139,6 +147,24 @@ class TestPortablePath(TestCase):
         # Unicode name are transliterated:
         expected = 'This_contain_UMLAUT_umlauts.txt'
         assert paths.portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt') == expected
+
+        # Check to see if illegal Windows filenames are properly handled
+        for illegal_window_name in paths.ILLEGAL_WINDOWS_NAMES:
+            # Rename files with names that are illegal on Windows
+            expected = f'{illegal_window_name}_'
+            assert paths.portable_filename(illegal_window_name) == expected
+
+            # Allow files with names that are illegal on Windows
+            assert paths.portable_filename(illegal_window_name, posix_only=True) == illegal_window_name
+
+        # Check to see if the posix_only option does and does not replace
+        # punctuation characters that are illegal in Windows filenames
+        for valid_posix_path_char in paths.posix_legal_punctuation:
+            test_name = f'test{valid_posix_path_char}'
+            assert paths.portable_filename(test_name, posix_only=True) == test_name
+            if valid_posix_path_char not in paths.legal_punctuation:
+                expected = f'test_'
+                assert paths.portable_filename(test_name) == expected
 
 
 class TestCommonPath(TestCase):
