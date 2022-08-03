@@ -798,15 +798,15 @@ def analyze_detection(license_matches):
     if is_undetected_license_matches(license_matches):
         return DetectionCategory.UNDETECTED_LICENSE.value
 
+    elif has_unknown_intro_before_detection(license_matches):
+        return DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value
+
     elif has_unknown_references_to_local_files(license_matches):
         return DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value
 
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
     elif is_correct_detection(license_matches):
         return DetectionCategory.PERFECT_DETECTION.value
-
-    elif has_unknown_intro_before_detection(license_matches):
-        return DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value
 
     elif is_match_coverage_less_than_threshold(
         license_matches, CLUES_MATCH_COVERAGE_THR
