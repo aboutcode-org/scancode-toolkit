@@ -5,4 +5,5 @@ category: Unstated License
 owner: Unspecified
 is_unknown: yes
 spdx_license_key: LicenseRef-scancode-free-unknown
-
+notes: This case applies to software with a notice that refers in a non-specific manner to a
+  free or open-source license, but where it is not possible to determine that specific license.

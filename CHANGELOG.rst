@@ -8,6 +8,8 @@ Changelog
 This is a major release with important bug and security fixes, new and improved
 features and API changes.
 
+Note that we no longer support Python 3.6. Use Python 3.7+ instead.
+
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,6 +34,7 @@ Important API changes:
 
   - There is a a new top-level "dependencies" attribute that contains each
     dependency instance, these can be standalone or releated to a package.
+    These contain a new "extra_data" object.
 
   - There is a new resource-level attribute "for_packages" which refers to
     packages through package_uuids (pURL + uuid string).
@@ -164,12 +167,20 @@ Package detection:
     of the new format where there is no root conceptually, just a list of files for each
     package.
 
-  - There is a new resource-level attribute `for_packages` which refers to packages
-    through package_uuids (pURL + uuid string).
+  - There is a new resource-level attribute `for_packages` which refers to
+    packages through package_uids (pURL + uuid string). A `package_adder`
+    function is now used to associate a Package to a Resource that is part of
+    it. This gives us the flexibility to use the packagedcode Package handlers
+    in other contexts where `for_packages` on Resource is not implemented in the
+    same way as scancode-toolkit.
 
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` with a package data mapping.
     Also the `requirement` attribute is renamed to `extracted_requirement`.
+    There is a new `extra_data` to collect extra data as needed.
+
+- For Pypi packages, python_requires is treated as a package dependency.
+
 
 
 License Clarity Scoring Update
@@ -329,8 +340,8 @@ Miscellaneous
 
 - Added support for usage of shortcut flags
   - `-A` or `--about`
-  - `-q` or `--quiet` 
-  - `-v` or `--verbose` 
+  - `-q` or `--quiet`
+  - `-v` or `--verbose`
   - `-V` or `--version` can be used.
 
 

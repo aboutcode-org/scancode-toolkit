@@ -64,7 +64,7 @@ if TRACE:
 class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         If ``resource``, or one of its siblings, is a package.json file, use it
         to create and yield the package, the package dependencies, and the
@@ -118,13 +118,11 @@ class BaseNpmHandler(models.DatafileHandler):
                 if root:
                     for npm_res in cls.walk_npm(resource=root, codebase=codebase):
                         if package_uid and package_uid not in npm_res.for_packages:
-                            npm_res.for_packages.append(package_uid)
-                            npm_res.save(codebase)
+                            package_adder(package_uid, npm_res, codebase)
                         yield npm_res
                 elif codebase.has_single_resource:
                     if package_uid and package_uid not in package_resource.for_packages:
-                        package_resource.for_packages.append(package_uid)
-                        package_resource.save(codebase)
+                        package_adder(package_uid, package_resource, codebase)
                 yield package_resource
 
             else:
@@ -142,8 +140,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     yield from yield_dependencies_from_package_resource(lock_file, package_uid)
 
                     if package_uid and package_uid not in lock_file.for_packages:
-                        lock_file.for_packages.append(package_uid)
-                        lock_file.save(codebase)
+                        package_adder(package_uid, lock_file, codebase)
                     yield lock_file
         else:
             # we do not have a package.json

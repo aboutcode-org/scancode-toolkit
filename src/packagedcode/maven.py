@@ -107,7 +107,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
             yield package_data
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         """
         Set the "for_packages" attributes to ``package``  for the whole
         resource tree of a ``resource`` object in the ``codebase``.
@@ -117,7 +117,12 @@ class MavenPomXmlHandler(models.DatafileHandler):
 
         if resource.path.endswith('.pom'):
             # we only treat the parent as the root
-            return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+            return models.DatafileHandler.assign_package_to_parent_tree(
+                package,
+                resource,
+                codebase,
+                package_adder
+            )
 
         # the root is either the parent or further up for poms stored under
         # a META-INF dir
@@ -141,7 +146,12 @@ class MavenPomXmlHandler(models.DatafileHandler):
         if not root:
             root = resource.parent(codebase)
 
-        return models.DatafileHandler.assign_package_to_resources(package, resource=root, codebase=codebase)
+        return models.DatafileHandler.assign_package_to_resources(
+            package,
+            resource=root,
+            codebase=codebase,
+            package_adder=package_adder
+        )
 
 
 # TODO: assemble with its pom!!

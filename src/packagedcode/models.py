@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
 from fnmatch import fnmatchcase
@@ -27,7 +28,15 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from typecode import contenttype
+try:
+    from typecode import contenttype
+except ImportError:
+    contenttype = None
+
+try:
+    from packagedcode import licensing
+except ImportError:
+    licensing = None
 
 from packagedcode.licensing import get_declared_license_expression_spdx
 
@@ -368,6 +377,11 @@ class DependentPackage(ModelMixin):
              'either from the datafile or collected from another source. Some '
              'lockfiles for Composer or Cargo contain extra dependency data.'
          )
+
+    extra_data = Mapping(
+        label='extra data',
+        help='A mapping of arbitrary extra data.',
+    )
 
 
 @attr.attributes(slots=True)
@@ -814,6 +828,14 @@ def _rehydrate_list(cls, values):
     for val in values:
         yield cls.from_dict(val)
 
+def add_to_package(package_uid, resource, codebase):
+    """
+    Append `package_uid` to `resource.for_packages`, if the attribute exists.
+    """
+    if hasattr(resource, 'for_packages') and isinstance(resource.for_packages, list):
+        resource.for_packages.append(package_uid)
+        resource.save(codebase)
+
 
 class DatafileHandler:
     """
@@ -882,7 +904,8 @@ class DatafileHandler:
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
-                else:
+                # we check for contenttype IFF this is available
+                if contenttype:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
@@ -899,13 +922,15 @@ class DatafileHandler:
         raise NotImplementedError
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder=add_to_package):
         """
         Given a ``package_data`` PackageData found in the ``resource`` datafile
         of the ``codebase``, assemble package their files and dependencies
         from one or more datafiles.
 
-        Update ``codebase`` Resources with the package they are for.
+        Update ``codebase`` Resources with the package they are for, using the
+        function ``package_adder`` to associate Resources to the Package they
+        are part of.
 
         Yield items that can be of these types:
 
@@ -941,6 +966,7 @@ class DatafileHandler:
                 package=package,
                 resource=resource,
                 codebase=codebase,
+                package_adder=package_adder,
             )
 
             yield package
@@ -961,7 +987,7 @@ class DatafileHandler:
         yield resource
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder=add_to_package):
         """
         Set the "for_packages" attributes to ``package`` given a
         starting ``resource`` in the ``codebase``.
@@ -978,14 +1004,12 @@ class DatafileHandler:
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
         if resource and package_uid:
-            resource.for_packages.append(package_uid)
-            resource.save(codebase)
+            package_adder(package_uid, resource, codebase)
             for res in resource.walk(codebase):
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                package_adder(package_uid, res, codebase)
 
     @classmethod
-    def assign_package_to_parent_tree(cls, package, resource, codebase):
+    def assign_package_to_parent_tree(cls, package, resource, codebase, package_adder=add_to_package):
         """
         Set the "for_packages" attributes to ``package``  for the whole
         resource tree of the parent of a ``resource`` object in the
@@ -997,12 +1021,12 @@ class DatafileHandler:
         """
         if resource.has_parent():
             parent = resource.parent(codebase)
-            cls.assign_package_to_resources(package, parent, codebase)
+            cls.assign_package_to_resources(package, parent, codebase, package_adder)
         else:
-            cls.assign_package_to_resources(package, resource, codebase)
+            cls.assign_package_to_resources(package, resource, codebase, package_adder)
 
     @classmethod
-    def assemble_from_many(cls, pkgdata_resources, codebase,):
+    def assemble_from_many(cls, pkgdata_resources, codebase, package_adder=add_to_package):
         """
         Yield Package, Resources or Dependency given a ``pkgdata_resources``
         list of tuple (PackageData, Resource) in ``codebase``.
@@ -1038,8 +1062,7 @@ class DatafileHandler:
                     )
                     package_uid = package.package_uid
                     if package_uid:
-                        resource.for_packages.append(package_uid)
-                        resource.save(codebase)
+                        package_adder(package_uid, resource, codebase)
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
@@ -1049,8 +1072,7 @@ class DatafileHandler:
                     datafile_path=resource.path,
                 )
                 if package_uid:
-                    resource.for_packages.append(package_uid)
-                    resource.save(codebase)
+                    package_adder(package_uid, resource, codebase)
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
@@ -1068,15 +1090,20 @@ class DatafileHandler:
         # the whole parent subtree of the base_resource is for this package
         if package_uid:
             for res in base_resource.walk(codebase):
-                res.for_packages.append(package_uid)
-                res.save(codebase)
+                package_adder(package_uid, res, codebase)
 
         if package:
             package.populate_license_fields()
             yield package
 
     @classmethod
-    def assemble_from_many_datafiles(cls, datafile_name_patterns, directory, codebase):
+    def assemble_from_many_datafiles(
+        cls,
+        datafile_name_patterns,
+        directory,
+        codebase,
+        package_adder=add_to_package,
+    ):
         """
         Assemble Package and Dependency from package data of the datafiles found
         in multiple ``datafile_name_patterns`` name patterns (case- sensitive)
@@ -1122,6 +1149,7 @@ class DatafileHandler:
             yield from cls.assemble_from_many(
                 pkgdata_resources=pkgdata_resources,
                 codebase=codebase,
+                package_adder=package_adder,
             )
 
     @classmethod
@@ -1171,7 +1199,7 @@ class NonAssemblableDatafileHandler(DatafileHandler):
     """
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         return []
 
 
@@ -1242,6 +1270,13 @@ class Package(PackageData):
     def to_dict(self):
         return super().to_dict(with_details=False)
 
+    def to_package_data(self):
+        mapping = super().to_dict(with_details=True)
+        mapping.pop('package_uid', None)
+        mapping.pop('datafile_paths', None)
+        mapping.pop('datasource_ids', None)
+        return PackageData.from_dict(mapping)
+
     @classmethod
     def from_package_data(cls, package_data, datafile_path):
         """
@@ -1290,7 +1325,15 @@ class Package(PackageData):
             and self.primary_language == package_data.primary_language
         )
 
-    def update(self, package_data, datafile_path, replace=False):
+    def update(
+        self,
+        package_data,
+        datafile_path,
+        replace=False,
+        include_version=True,
+        include_qualifiers=False,
+        include_subpath=False,
+    ):
         """
         Update this Package with data from the ``package_data`` PackageData.
 
@@ -1316,9 +1359,15 @@ class Package(PackageData):
         if isinstance(package_data, dict):
             package_data = PackageData.from_dict(package_data)
 
-        if not self.is_compatible(package_data, include_qualifiers=False):
+        if not is_compatible(
+            purl1=self,
+            purl2=package_data,
+            include_version=include_version,
+            include_qualifiers=include_qualifiers,
+            include_subpath=include_subpath,
+        ):
             if TRACE_UPDATE:
-                logger_debug(f'update: {self.purl} not compatible with: {package_data.purl}')
+                logger_debug(f'update: skipping: {self.purl} is not compatible with: {package_data.purl}')
             return False
 
         # always append these new items
@@ -1380,6 +1429,56 @@ class Package(PackageData):
                     yield resource
 
 
+def is_compatible(
+    purl1,
+    purl2,
+    include_version=True,
+    include_qualifiers=True,
+    include_subpath=True,
+):
+    """
+    Return True if the ``purl1`` PackageURL-like object is compatible with
+    the ``purl2`` PackageURL-like object, e.g. it is about the same package.
+    PackageData objectys are PackageURL-like.
+
+    For example::
+    >>> p1 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04?arch=arm64')
+    >>> p2 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04')
+    >>> p3 = PackageURL.from_string('pkg:deb/libssl')
+    >>> p4 = PackageURL.from_string('pkg:deb/libncurses5')
+    >>> p5 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04?arch=arm64#/sbin')
+    >>> is_compatible(p1, p2)
+    False
+    >>> is_compatible(p1, p2, include_qualifiers=False)
+    True
+    >>> is_compatible(p1, p4)
+    False
+    >>> is_compatible(p1, p4, include_version=False, include_qualifiers=False)
+    True
+    >>> is_compatible(p3, p4)
+    False
+    >>> is_compatible(p1, p5)
+    False
+    >>> is_compatible(p1, p5, include_subpath=False)
+    True
+    """
+    is_compatible = (
+        purl1.type == purl2.type
+        and purl1.namespace == purl2.namespace
+        and purl1.name == purl2.name
+    )
+    if include_version:
+        is_compatible = is_compatible and (purl1.version == purl2.version)
+
+    if include_qualifiers:
+        is_compatible = is_compatible and (purl1.qualifiers == purl2.qualifiers)
+
+    if include_subpath:
+        is_compatible = is_compatible and (purl1.subpath == purl2.subpath)
+
+    return is_compatible
+
+
 @attr.attributes(slots=True)
 class PackageWithResources(Package):
     """
@@ -1419,7 +1518,15 @@ def merge_sequences(list1, list2, **kwargs):
     merged = []
     existing = set()
     for item in list1 + list2:
-        key = item.to_tuple(**kwargs)
+        try:
+            if hasattr(item, 'to_tuple'):
+                key = item.to_tuple(**kwargs)
+            else:
+                key = to_tuple(kwargs)
+
+        except Exception as e:
+            raise Exception(f'Failed to merge sequences: {item}', f'kwargs: {kwargs}') from e
+
         if not key in existing:
             merged.append(item)
             existing.add(key)

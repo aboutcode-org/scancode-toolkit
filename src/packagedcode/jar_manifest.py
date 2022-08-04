@@ -41,14 +41,19 @@ class JavaJarManifestHandler(models.DatafileHandler):
                 yield models.PackageData(**manifest,)
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         # we want to root of the jar, two levels up
         parent = resource.parent(codebase)
         if parent:
             parent = resource.parent(codebase)
 
         if parent:
-            models.DatafileHandler.assign_package_to_resources(package, resource=parent, codebase=codebase)
+            models.DatafileHandler.assign_package_to_resources(
+                package,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
 
 
 

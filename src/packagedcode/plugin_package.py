@@ -30,6 +30,7 @@ from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_license_from_sibling_file
 from packagedcode.licensing import get_license_detection_mappings
 from packagedcode.licensing import get_license_expression_from_detection_mappings
+from packagedcode.models import add_to_package
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
@@ -243,7 +244,8 @@ def add_license_from_file(resource, codebase, no_licenses):
 
 def get_installed_packages(root_dir, processes=2, **kwargs):
     """
-    Yield Package and their Resources as they are found in `root_dir`
+    Detect and yield Package mappings with their assigned Resource in a ``resources``
+    attribute as they are found in `root_dir`.
     """
     from scancode import cli
 
@@ -271,17 +273,22 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, strip_root=False, **kwargs):
+def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
     """
-    packages, dependencies = get_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+    packages, dependencies = get_package_and_deps(
+        codebase,
+        package_adder=package_adder,
+        strip_root=strip_root,
+        **kwargs
+    )
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 
-def get_package_and_deps(codebase, strip_root=False, **kwargs):
+def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Return a tuple of (Packages list, Dependency list) from the parsed package
     data present in the codebase files.package_data attributes.
@@ -320,6 +327,7 @@ def get_package_and_deps(codebase, strip_root=False, **kwargs):
                     package_data=package_data,
                     resource=resource,
                     codebase=codebase,
+                    package_adder=package_adder,
                 )
 
                 for item in items:

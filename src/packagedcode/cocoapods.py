@@ -114,7 +114,7 @@ def get_first_three_md5_hash_characters(podname):
 class BasePodHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Assemble pod packages and dependencies and handle the specific cases where
         there are more than one podspec in the same directory.
@@ -147,6 +147,7 @@ class BasePodHandler(models.DatafileHandler):
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,
                     codebase=codebase,
+                    package_adder=package_adder,
                 )
 
             elif has_multiple_podspec:
@@ -160,19 +161,25 @@ class BasePodHandler(models.DatafileHandler):
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,
                     codebase=codebase,
+                    package_adder=package_adder,
                 )
 
                 for resource in sibling_podspecs:
                     datafile_path = resource.path
-                    yield resource
                     for package_data in resource.package_data:
                         package_data = models.PackageData.from_dict(package_data)
                         package = models.Package.from_package_data(
                             package_data=package_data,
                             datafile_path=datafile_path,
                         )
-                        cls.assign_package_to_resources(package, resource, codebase)
+                        cls.assign_package_to_resources(
+                            package=package,
+                            resource=resource,
+                            codebase=codebase,
+                            package_adder=package_adder,
+                        )
                         yield package
+                    yield resource
 
             else:
                 # has_no_podspec:
@@ -180,6 +187,7 @@ class BasePodHandler(models.DatafileHandler):
                     datafile_name_patterns=datafile_name_patterns,
                     directory=parent,
                     codebase=codebase,
+                    package_adder=package_adder,
                 )
 
 

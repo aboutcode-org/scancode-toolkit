@@ -70,11 +70,12 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         return resource.parent(codebase)
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         return models.DatafileHandler.assign_package_to_resources(
             package=package,
             resource=cls.get_conda_root(resource, codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
     @classmethod

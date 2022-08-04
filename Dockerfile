@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM python:3.6-slim-buster 
+FROM python:3.8-slim-buster 
 
 # Requirements as per https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
 RUN apt-get update \

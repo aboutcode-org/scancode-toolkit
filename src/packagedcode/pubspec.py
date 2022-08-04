@@ -39,7 +39,7 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 class BaseDartPubspecHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         datafile_name_patterns = \
             DartPubspecYamlHandler.path_patterns + DartPubspecLockHandler.path_patterns
 
@@ -52,6 +52,7 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             datafile_name_patterns=datafile_name_patterns,
             directory=dir_resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
     @classmethod

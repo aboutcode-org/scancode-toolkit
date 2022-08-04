@@ -7,8 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from license_expression import Licensing
-from license_expression import combine_expressions as le_combine_expressions
+try:
+    from license_expression import Licensing
+    from license_expression import combine_expressions as le_combine_expressions
+except:
+    Licensing = None
+    le_combine_expressions = None
 
 PLAIN_URLS = (
     'https://',
@@ -124,16 +128,21 @@ def build_description(summary, description):
     return description
 
 
+_LICENSING = Licensing and Licensing() or None
+
+
 def combine_expressions(
     expressions,
     relation='AND',
     unique=True,
-    licensing=Licensing(),
+    licensing=_LICENSING,
 ):
     """
     Return a combined license expression string with relation, given a sequence of
     license ``expressions`` strings or LicenseExpression objects.
     """
+    if not licensing:
+        raise Exception('combine_expressions: cannot combine combine_expressions without license_expression package.')
     return expressions and str(le_combine_expressions(expressions, relation, unique, licensing)) or None
 
 
@@ -143,7 +152,7 @@ def get_ancestor(levels_up, resource, codebase):
     ``codebase`` or None.
 
     For example, with levels_up=2 and starting  with a resource path of
-    `gem-extract/metadata.gz-extract/metadata.gz-extract`, 
+    `gem-extract/metadata.gz-extract/metadata.gz-extract`,
     then `gem-extract/` should be returned.
     """
     rounds = 0
