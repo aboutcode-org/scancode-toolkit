@@ -39,7 +39,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/opensymphony/oscache@2.3",
@@ -48,7 +49,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/com.sun.facelets/jsf-facelets@1.1.11",
@@ -57,7 +59,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/nekohtml/nekohtml@0.9.5",
@@ -66,7 +69,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/net.sf.json-lib/json-lib@0.9",
@@ -75,7 +79,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
@@ -84,7 +89,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/log4j/log4j@1.2.14",
@@ -93,7 +99,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
@@ -102,7 +109,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@1.8",
@@ -111,7 +119,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.2",
@@ -120,7 +129,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.faces/jsf-api@1.1_02",
@@ -129,7 +139,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/jstl@1.0",
@@ -138,7 +149,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.el/el-api@1.0",
@@ -147,7 +159,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
@@ -156,7 +169,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
@@ -165,7 +179,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.faces/jsf-impl@1.1_02",
@@ -174,7 +189,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/",

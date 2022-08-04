@@ -295,7 +295,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt",
@@ -304,7 +305,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-assemble",
@@ -313,7 +315,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-concurrent",
@@ -322,7 +325,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-clean",
@@ -331,7 +335,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-concat",
@@ -340,7 +345,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-connect",
@@ -349,7 +355,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-copy",
@@ -358,7 +365,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-cssmin",
@@ -367,7 +375,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-htmlmin",
@@ -376,7 +385,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-imagemin",
@@ -385,7 +395,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-jasmine",
@@ -394,7 +405,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-jshint",
@@ -403,7 +415,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-uglify",
@@ -412,7 +425,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-contrib-watch",
@@ -421,7 +435,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-critical",
@@ -430,7 +445,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-newer",
@@ -439,7 +455,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-sass",
@@ -448,7 +465,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-svgmin",
@@ -457,7 +475,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-template",
@@ -466,7 +485,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-umd",
@@ -475,7 +495,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/grunt-usemin",
@@ -484,7 +505,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/handlebars-helpers",
@@ -493,7 +515,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jasmine-jquery",
@@ -502,7 +525,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jquery",
@@ -511,7 +535,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/jshint-stylish",
@@ -520,7 +545,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/load-grunt-config",
@@ -529,7 +555,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/lodash",
@@ -538,7 +565,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/seed-random",
@@ -547,7 +575,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/time-grunt",
@@ -556,7 +585,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://www.npmjs.com/package/chartist",

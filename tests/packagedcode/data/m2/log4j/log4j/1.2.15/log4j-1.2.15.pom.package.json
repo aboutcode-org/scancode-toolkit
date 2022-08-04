@@ -138,7 +138,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.jms/jms@1.1",
@@ -147,7 +148,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
@@ -156,7 +158,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
@@ -165,7 +168,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/oro/oro@2.0.8",
@@ -174,7 +178,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -183,7 +188,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",

@@ -38,7 +38,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/code.google.com/p/go.crypto/ssh",
@@ -47,7 +48,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/code.google.com/p/go.crypto/twofish",
@@ -56,7 +58,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/code.google.com/p/go.net/proxy",
@@ -65,7 +68,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/github.com/calmh/ini",
@@ -74,7 +78,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/github.com/calmh/randomart",
@@ -83,7 +88,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/github.com/mavricknz/asn1-ber",
@@ -92,7 +98,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/github.com/mavricknz/ldap",
@@ -101,7 +108,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:golang/github.com/sbinet/liner",
@@ -110,7 +118,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,

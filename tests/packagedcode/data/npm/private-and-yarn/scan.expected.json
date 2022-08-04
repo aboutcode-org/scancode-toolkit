@@ -8,6 +8,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/lerna?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/package.json",
@@ -59,7 +60,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@babel/runtime",
@@ -68,6 +70,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40babel/runtime@7.2.0"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40babel/runtime@7.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -119,7 +122,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/js-yaml",
@@ -128,7 +132,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/react-markdown",
@@ -137,7 +142,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/semantic-ui-css",
@@ -146,7 +152,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/semantic-ui-react",
@@ -155,7 +162,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/swagger-parser",
@@ -164,7 +172,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/swagger-schema-official",
@@ -173,7 +182,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/api-designer",
@@ -182,6 +192,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -233,7 +244,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/glob",
@@ -242,7 +254,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/lodash",
@@ -251,7 +264,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/prettier",
@@ -260,7 +274,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/prettier-tslint",
@@ -269,7 +284,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/vscode-uri",
@@ -278,7 +294,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ast-model",
@@ -287,6 +304,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -338,7 +356,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ballerina-by-examples",
@@ -347,6 +366,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -398,7 +418,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/font%22",
@@ -407,7 +428,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/lang-service%22",
@@ -416,7 +438,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/theme%22",
@@ -425,7 +448,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/lodash",
@@ -434,7 +458,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/lodash.debounce",
@@ -443,7 +468,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/log4javascript",
@@ -452,7 +478,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/diagram",
@@ -461,6 +488,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/diagram@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -512,7 +540,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/ballerina-by-examples%22",
@@ -521,7 +550,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/diagram%22",
@@ -530,7 +560,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/documentation%22",
@@ -539,7 +570,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/theme%22",
@@ -548,7 +580,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/%22%40ballerina/tracing%22",
@@ -557,7 +590,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/distribution",
@@ -566,6 +600,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/distribution@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -617,7 +652,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/diff",
@@ -626,7 +662,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/escape-html",
@@ -635,7 +672,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/react-markdown",
@@ -644,7 +682,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/documentation",
@@ -653,6 +692,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/documentation@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -703,6 +743,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40ballerina/font@0.99.0-RC3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -754,7 +795,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           },
           {
             "purl": "pkg:npm/jszip",
@@ -763,7 +805,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/zip-dir",
@@ -772,6 +815,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/zip-dir@1.0.2"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/zip-dir@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "theia/yarn.lock",
@@ -830,7 +874,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -925,7 +970,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@babel/runtime",
@@ -933,7 +979,8 @@
                 "api_data_url": "https://registry.npmjs.org/@babel%2fruntime",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40babel/runtime@7.2.0"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3",
@@ -981,7 +1028,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/js-yaml",
@@ -990,7 +1038,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/react-markdown",
@@ -999,7 +1048,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/semantic-ui-css",
@@ -1008,7 +1058,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/semantic-ui-react",
@@ -1017,7 +1068,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/swagger-parser",
@@ -1026,7 +1078,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/swagger-schema-official",
@@ -1035,7 +1088,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/api-designer",
@@ -1043,7 +1097,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3",
@@ -1091,7 +1146,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/glob",
@@ -1100,7 +1156,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/lodash",
@@ -1109,7 +1166,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/prettier",
@@ -1118,7 +1176,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/prettier-tslint",
@@ -1127,7 +1186,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/vscode-uri",
@@ -1136,7 +1196,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ast-model",
@@ -1144,7 +1205,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3",
@@ -1192,7 +1254,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ballerina-by-examples",
@@ -1200,7 +1263,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3",
@@ -1248,7 +1312,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/font%22",
@@ -1257,7 +1322,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/lang-service%22",
@@ -1266,7 +1332,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/theme%22",
@@ -1275,7 +1342,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/lodash",
@@ -1284,7 +1352,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/lodash.debounce",
@@ -1293,7 +1362,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/log4javascript",
@@ -1302,7 +1372,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/diagram",
@@ -1310,7 +1381,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3",
@@ -1358,7 +1430,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/ballerina-by-examples%22",
@@ -1367,7 +1440,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/diagram%22",
@@ -1376,7 +1450,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/documentation%22",
@@ -1385,7 +1460,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/theme%22",
@@ -1394,7 +1470,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/%22%40ballerina/tracing%22",
@@ -1403,7 +1480,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/distribution",
@@ -1411,7 +1489,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3",
@@ -1459,7 +1538,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/diff",
@@ -1468,7 +1548,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/escape-html",
@@ -1477,7 +1558,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/react-markdown",
@@ -1486,7 +1568,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/documentation",
@@ -1494,7 +1577,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3",
@@ -1540,7 +1624,8 @@
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/zip-dir@1.0.2",
@@ -1588,7 +1673,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   },
                   {
                     "purl": "pkg:npm/jszip",
@@ -1597,7 +1683,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/zip-dir",
@@ -1605,7 +1692,8 @@
                 "api_data_url": "https://registry.npmjs.org/zip-dir/1.0.2",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/zip-dir@1.0.2"
-              }
+              },
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

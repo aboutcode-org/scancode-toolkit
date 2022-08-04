@@ -8,6 +8,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging-api?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -21,6 +22,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-jms?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -34,6 +36,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -47,6 +50,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-pool?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -60,6 +64,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -73,6 +78,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -86,6 +92,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-core?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -99,6 +106,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-spring?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -112,6 +120,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-test?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -125,6 +134,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -138,6 +148,7 @@
       "is_optional": true,
       "is_resolved": null,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:maven/org.hamcrest/hamcrest-all?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "activemq-camel-pom.xml",
@@ -332,7 +343,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.camel/camel-jms",
@@ -341,7 +353,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.activemq/activemq-core",
@@ -350,7 +363,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.activemq/activemq-pool",
@@ -359,7 +373,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
@@ -368,7 +383,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.activemq/activemq-core",
@@ -377,7 +393,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.camel/camel-core",
@@ -386,7 +403,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.apache.camel/camel-spring",
@@ -395,7 +413,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.springframework/spring-test",
@@ -404,7 +423,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/junit/junit",
@@ -413,7 +433,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:maven/org.hamcrest/hamcrest-all",
@@ -422,7 +443,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": null,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",

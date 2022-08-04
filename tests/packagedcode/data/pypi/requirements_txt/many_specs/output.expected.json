@@ -38,7 +38,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       }
     ],
     "repository_homepage_url": null,

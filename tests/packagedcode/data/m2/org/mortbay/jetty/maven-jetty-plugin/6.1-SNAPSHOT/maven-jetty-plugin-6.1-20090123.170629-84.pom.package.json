@@ -47,7 +47,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project@2.0.3",
@@ -56,7 +57,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.3",
@@ -65,7 +67,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.3",
@@ -74,7 +77,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-tools-api",
@@ -83,7 +87,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty-plus@6.1-SNAPSHOT",
@@ -92,7 +97,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty-naming@6.1-SNAPSHOT",
@@ -101,7 +107,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty-management@6.1-SNAPSHOT",
@@ -110,7 +117,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jsp-2.1-jetty@6.1-SNAPSHOT",
@@ -119,7 +127,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty-annotations@6.1-SNAPSHOT",
@@ -128,7 +137,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/start@6.1-SNAPSHOT",
@@ -137,7 +147,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/maven-jetty-plugin/6.1-SNAPSHOT/",

@@ -163,7 +163,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/jinja2",
@@ -172,7 +173,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/itsdangerous",
@@ -181,7 +183,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/click",
@@ -190,7 +193,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/python-dotenv",
@@ -199,7 +203,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest",
@@ -208,7 +213,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/coverage",
@@ -217,7 +223,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/tox",
@@ -226,7 +233,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx",
@@ -235,7 +243,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pallets-sphinx-themes",
@@ -244,7 +253,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinxcontrib-log-cabinet",
@@ -253,7 +263,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx",
@@ -262,7 +273,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pallets-sphinx-themes",
@@ -271,7 +283,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinxcontrib-log-cabinet",
@@ -280,7 +293,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/Flask",

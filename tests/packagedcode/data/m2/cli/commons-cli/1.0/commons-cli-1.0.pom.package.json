@@ -75,7 +75,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@1.0",
@@ -84,7 +85,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.7",
@@ -93,7 +95,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-cli/commons-cli/1.0/",

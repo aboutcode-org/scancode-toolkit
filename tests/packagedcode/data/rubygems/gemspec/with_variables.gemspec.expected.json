@@ -53,7 +53,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rubocop",
@@ -62,7 +63,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rspec",
@@ -71,7 +73,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rspec-mocks",
@@ -80,7 +83,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/ipaddress",
@@ -89,7 +93,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/gandi",
@@ -98,7 +103,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/gcloud",
@@ -107,7 +113,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/google-cloud-error_reporting",
@@ -116,7 +123,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/map",
@@ -125,7 +133,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION",

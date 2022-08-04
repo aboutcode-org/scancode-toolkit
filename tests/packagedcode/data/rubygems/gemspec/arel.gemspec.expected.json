@@ -95,7 +95,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/hoe",
@@ -104,7 +105,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/minitest",
@@ -113,7 +115,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/hoe",
@@ -122,7 +125,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/minitest",
@@ -131,7 +135,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/hoe",
@@ -140,7 +145,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/arel/versions/2.0.7.beta.20110429111451",

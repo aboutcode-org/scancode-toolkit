@@ -194,7 +194,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
@@ -203,7 +204,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.5",
@@ -212,7 +214,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api@1.0-alpha-5",
@@ -221,7 +224,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh@1.0-alpha-5",
@@ -230,7 +234,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5",
@@ -239,7 +244,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight@1.0-alpha-5",
@@ -248,7 +254,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/",

@@ -128,7 +128,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/jspapi/jsp-api@2.0-20040521",
@@ -137,7 +138,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.3",
@@ -146,7 +148,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-el/commons-el/1.0/",

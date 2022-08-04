@@ -39,7 +39,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-core",
@@ -48,7 +49,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-core",
@@ -57,7 +59,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
@@ -66,7 +69,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
@@ -75,7 +79,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
@@ -84,7 +89,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.dom4j/dom4j@2.0.1",
@@ -93,7 +99,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/",

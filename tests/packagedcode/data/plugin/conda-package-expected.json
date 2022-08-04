@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/zlib?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/setuptools?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/sqlite?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/openssl?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/xz?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -73,6 +78,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/krb5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -86,6 +92,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/pykerberos?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -99,6 +106,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/python?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -112,6 +120,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/requests?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -125,6 +134,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/python?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -138,6 +148,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/requests?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -151,6 +162,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:conda/pykerberos?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "info/recipe.tar-extract/recipe/meta.yaml",
@@ -360,7 +372,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/setuptools",
@@ -369,7 +382,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/sqlite",
@@ -378,7 +392,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/openssl",
@@ -387,7 +402,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/xz",
@@ -396,7 +412,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/krb5",
@@ -405,7 +422,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/pykerberos",
@@ -414,7 +432,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/python",
@@ -423,7 +442,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/requests",
@@ -432,7 +452,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/python",
@@ -441,7 +462,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/requests",
@@ -450,7 +472,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:conda/pykerberos",
@@ -459,7 +482,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

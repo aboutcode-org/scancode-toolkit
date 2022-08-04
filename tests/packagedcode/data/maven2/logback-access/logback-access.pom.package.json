@@ -130,7 +130,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/tomcat/catalina",
@@ -139,7 +140,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/jetty",
@@ -148,7 +150,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/com.caucho/resin",
@@ -157,7 +160,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
@@ -166,7 +170,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/",

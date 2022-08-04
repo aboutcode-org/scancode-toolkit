@@ -38,7 +38,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionpack@5.0.6",
@@ -47,7 +48,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/nio4r@2.1.0",
@@ -56,7 +58,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/websocket-driver@0.6.5",
@@ -65,7 +68,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionmailer@5.0.6",
@@ -74,7 +78,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionview@5.0.6",
@@ -83,7 +88,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activejob@5.0.6",
@@ -92,7 +98,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/mail@2.6.6",
@@ -101,7 +108,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-dom-testing@2.0.3",
@@ -110,7 +118,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -119,7 +128,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rack@2.0.3",
@@ -128,7 +138,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rack-test@0.6.3",
@@ -137,7 +148,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-html-sanitizer@1.0.3",
@@ -146,7 +158,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/builder@3.2.3",
@@ -155,7 +168,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/erubis@2.7.0",
@@ -164,7 +178,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/globalid@0.4.0",
@@ -173,7 +188,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activemodel@5.0.6",
@@ -182,7 +198,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activerecord@5.0.6",
@@ -191,7 +208,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/arel@7.1.4",
@@ -200,7 +218,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/concurrent-ruby@1.0.5",
@@ -209,7 +228,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/i18n@0.8.6",
@@ -218,7 +238,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/minitest@5.10.3",
@@ -227,7 +248,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/tzinfo@1.2.3",
@@ -236,7 +258,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/bindex@0.5.0",
@@ -245,7 +268,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/byebug@9.1.0",
@@ -254,7 +278,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/coffee-rails@4.2.2",
@@ -263,7 +288,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/coffee-script@2.4.1",
@@ -272,7 +298,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/railties@5.0.6",
@@ -281,7 +308,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/coffee-script-source@1.12.2",
@@ -290,7 +318,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/execjs@2.7.0",
@@ -299,7 +328,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/crass@1.0.2",
@@ -308,7 +338,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/ffi@1.9.18",
@@ -317,7 +348,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/jbuilder@2.7.0",
@@ -326,7 +358,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/multi_json@1.12.2",
@@ -335,7 +368,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/jquery-rails@4.3.1",
@@ -344,7 +378,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/thor@0.20.0",
@@ -353,7 +388,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/listen@3.0.8",
@@ -362,7 +398,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rb-fsevent@0.10.2",
@@ -371,7 +408,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rb-inotify@0.9.10",
@@ -380,7 +418,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/loofah@2.1.1",
@@ -389,7 +428,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/nokogiri@1.8.1",
@@ -398,7 +438,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/mime-types@3.1",
@@ -407,7 +448,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/method_source@0.9.0",
@@ -416,7 +458,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/mime-types-data@3.2016.0521",
@@ -425,7 +468,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/mini_portile2@2.3.0",
@@ -434,7 +478,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/puma@3.10.0",
@@ -443,7 +488,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails@5.0.6",
@@ -452,7 +498,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets-rails@3.2.1",
@@ -461,7 +508,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rake@12.1.0",
@@ -470,7 +518,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sass@3.5.2",
@@ -479,7 +528,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sass-listen@4.0.0",
@@ -488,7 +538,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sass-rails@5.0.6",
@@ -497,7 +548,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets@3.7.1",
@@ -506,7 +558,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/tilt@2.0.8",
@@ -515,7 +568,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/spring@2.0.2",
@@ -524,7 +578,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/spring-watcher-listen@2.0.1",
@@ -533,7 +588,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sqlite3@1.3.13",
@@ -542,7 +598,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/thread_safe@0.3.6",
@@ -551,7 +608,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/turbolinks@5.0.1",
@@ -560,7 +618,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/turbolinks-source@5.0.3",
@@ -569,7 +628,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/uglifier@3.2.0",
@@ -578,7 +638,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/web-console@3.5.1",
@@ -587,7 +648,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/websocket-extensions@0.1.2",
@@ -596,7 +658,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/tzinfo-data",
@@ -605,7 +668,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,
@@ -653,7 +717,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/nio4r@2.1.0",
@@ -662,7 +727,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/websocket-driver@0.6.5",
@@ -671,7 +737,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/actioncable/versions/5.0.6",
@@ -719,7 +786,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -728,7 +796,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rack@2.0.3",
@@ -737,7 +806,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rack-test@0.6.3",
@@ -746,7 +816,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-dom-testing@2.0.3",
@@ -755,7 +826,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-html-sanitizer@1.0.3",
@@ -764,7 +836,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/actionpack/versions/5.0.6",
@@ -850,7 +923,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/websocket-driver/versions/0.6.5",
@@ -898,7 +972,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionview@5.0.6",
@@ -907,7 +982,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activejob@5.0.6",
@@ -916,7 +992,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/mail@2.6.6",
@@ -925,7 +1002,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-dom-testing@2.0.3",
@@ -934,7 +1012,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/actionmailer/versions/5.0.6",
@@ -982,7 +1061,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/builder@3.2.3",
@@ -991,7 +1071,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/erubis@2.7.0",
@@ -1000,7 +1081,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-dom-testing@2.0.3",
@@ -1009,7 +1091,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rails-html-sanitizer@1.0.3",
@@ -1018,7 +1101,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/actionview/versions/5.0.6",
@@ -1066,7 +1150,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/globalid@0.4.0",
@@ -1075,7 +1160,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/activejob/versions/5.0.6",
@@ -1123,7 +1209,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/mail/versions/2.6.6",
@@ -1171,7 +1258,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/nokogiri@1.8.1",
@@ -1180,7 +1268,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/rails-dom-testing/versions/2.0.3",
@@ -1228,7 +1317,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/i18n@0.8.6",
@@ -1237,7 +1327,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/minitest@5.10.3",
@@ -1246,7 +1337,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/tzinfo@1.2.3",
@@ -1255,7 +1347,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/activesupport/versions/5.0.6",
@@ -1341,7 +1434,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/rack-test/versions/0.6.3",
@@ -1389,7 +1483,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/rails-html-sanitizer/versions/1.0.3",
@@ -1513,7 +1608,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/globalid/versions/0.4.0",
@@ -1561,7 +1657,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/activemodel/versions/5.0.6",
@@ -1609,7 +1706,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -1618,7 +1716,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/arel@7.1.4",
@@ -1627,7 +1726,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/activerecord/versions/5.0.6",
@@ -1827,7 +1927,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/tzinfo/versions/1.2.3",
@@ -1951,7 +2052,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/railties@5.0.6",
@@ -1960,7 +2062,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/coffee-rails/versions/4.2.2",
@@ -2008,7 +2111,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/execjs@2.7.0",
@@ -2017,7 +2121,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/coffee-script/versions/2.4.1",
@@ -2065,7 +2170,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -2074,7 +2180,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/method_source@0.9.0",
@@ -2083,7 +2190,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rake@12.1.0",
@@ -2092,7 +2200,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/thor@0.20.0",
@@ -2101,7 +2210,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/railties/versions/5.0.6",
@@ -2301,7 +2411,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/multi_json@1.12.2",
@@ -2310,7 +2421,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/jbuilder/versions/2.7.0",
@@ -2396,7 +2508,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/railties@5.0.6",
@@ -2405,7 +2518,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/thor@0.20.0",
@@ -2414,7 +2528,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/jquery-rails/versions/4.3.1",
@@ -2500,7 +2615,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rb-inotify@0.9.10",
@@ -2509,7 +2625,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/listen/versions/3.0.8",
@@ -2595,7 +2712,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/rb-inotify/versions/0.9.10",
@@ -2643,7 +2761,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/nokogiri@1.8.1",
@@ -2652,7 +2771,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/loofah/versions/2.1.1",
@@ -2700,7 +2820,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/nokogiri/versions/1.8.1",
@@ -2748,7 +2869,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/mime-types/versions/3.1",
@@ -2948,7 +3070,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionmailer@5.0.6",
@@ -2957,7 +3080,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionpack@5.0.6",
@@ -2966,7 +3090,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/actionview@5.0.6",
@@ -2975,7 +3100,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activejob@5.0.6",
@@ -2984,7 +3110,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activemodel@5.0.6",
@@ -2993,7 +3120,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activerecord@5.0.6",
@@ -3002,7 +3130,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -3011,7 +3140,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/railties@5.0.6",
@@ -3020,7 +3150,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets-rails@3.2.1",
@@ -3029,7 +3160,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/rails/versions/5.0.6",
@@ -3077,7 +3209,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activesupport@5.0.6",
@@ -3086,7 +3219,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets@3.7.1",
@@ -3095,7 +3229,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/sprockets-rails/versions/3.2.1",
@@ -3181,7 +3316,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/sass/versions/3.5.2",
@@ -3229,7 +3365,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rb-inotify@0.9.10",
@@ -3238,7 +3375,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/sass-listen/versions/4.0.0",
@@ -3286,7 +3424,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sass@3.5.2",
@@ -3295,7 +3434,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets@3.7.1",
@@ -3304,7 +3444,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/sprockets-rails@3.2.1",
@@ -3313,7 +3454,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/tilt@2.0.8",
@@ -3322,7 +3464,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/sass-rails/versions/5.0.6",
@@ -3370,7 +3513,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/rack@2.0.3",
@@ -3379,7 +3523,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/sprockets/versions/3.7.1",
@@ -3465,7 +3610,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/spring/versions/2.0.2",
@@ -3513,7 +3659,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/spring@2.0.2",
@@ -3522,7 +3669,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/spring-watcher-listen/versions/2.0.1",
@@ -3646,7 +3794,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/turbolinks/versions/5.0.1",
@@ -3732,7 +3881,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/uglifier/versions/3.2.0",
@@ -3780,7 +3930,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/activemodel@5.0.6",
@@ -3789,7 +3940,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/bindex@0.5.0",
@@ -3798,7 +3950,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:gem/railties@5.0.6",
@@ -3807,7 +3960,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://rubygems.org/gems/web-console/versions/3.5.1",

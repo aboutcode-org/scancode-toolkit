@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:opam/ocaml?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "ocaml-variants.opam",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:opam/base-unix?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "ocaml-variants.opam",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:opam/base-bigarray?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "ocaml-variants.opam",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:opam/base-threads?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "ocaml-variants.opam",
@@ -148,7 +152,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:opam/base-unix",
@@ -157,7 +162,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:opam/base-bigarray",
@@ -166,7 +172,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:opam/base-threads",
@@ -175,7 +182,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

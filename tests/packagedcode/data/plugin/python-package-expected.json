@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/atomicwrites@1.1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/attrs@18.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/contextlib2@0.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/coverage@4.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/funcsigs@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -73,6 +78,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/mock@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -86,6 +92,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/more-itertools@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -99,6 +106,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pbr@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -112,6 +120,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pluggy@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -125,6 +134,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/py@1.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -138,6 +148,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest@3.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -151,6 +162,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest-cov@2.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -164,6 +176,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest-vcr@0.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -177,6 +190,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pyyaml@3.13?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -190,6 +204,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/six@1.11.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -203,6 +218,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/vcrpy@1.13.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -216,6 +232,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/wrapt@1.10.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -229,6 +246,18 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/setuptools?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -242,6 +271,18 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/nose?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -255,6 +296,18 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/chardet?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -262,102 +315,6 @@
     }
   ],
   "packages": [
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "arpy",
-      "version": "0.1.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "Library for accessing \"ar\" files",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Stanis\u0142aw Pitucha",
-          "email": "viraptor@gmail.com",
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "http://bitbucket.org/viraptor/arpy",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "bsd-simplified",
-      "declared_license_expression_spdx": "BSD-2-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-simplified",
-          "detection_rules": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "bsd-simplified",
-              "rule_identifier": "bsd-simplified_150.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 2,
-              "rule_relevance": 100,
-              "matched_text": "Simplified BSD",
-              "licenses": [
-                {
-                  "key": "bsd-simplified",
-                  "name": "BSD-2-Clause",
-                  "short_name": "BSD-2-Clause",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Regents of the University of California",
-                  "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
-                  "text_url": "http://opensource.org/licenses/bsd-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
-                  "spdx_license_key": "BSD-2-Clause",
-                  "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "extracted_license_statement": "{'license': 'Simplified BSD'}",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://pypi.org/project/arpy",
-      "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
-      "package_uid": "pkg:pypi/arpy@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "arpy/setup.py"
-      ],
-      "datasource_ids": [
-        "pypi_setup_py"
-      ],
-      "purl": "pkg:pypi/arpy@0.1.1"
-    },
     {
       "type": "pypi",
       "namespace": null,
@@ -741,102 +698,6 @@
         "pypi_wheel_metadata"
       ],
       "purl": "pkg:pypi/six@1.10.0"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "TicketImport",
-      "version": "0.7a",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "Import CSV and Excel files\nUNKNOWN",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Francois Granade",
-          "email": "fg@nexb.com",
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "http://nexb.com",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "bsd-new",
-      "declared_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_rules": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "bsd-new",
-              "rule_identifier": "bsd-new_89.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 2,
-              "rule_relevance": 99,
-              "matched_text": "license BSD",
-              "licenses": [
-                {
-                  "key": "bsd-new",
-                  "name": "BSD-3-Clause",
-                  "short_name": "BSD-3-Clause",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Regents of the University of California",
-                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
-                  "spdx_license_key": "BSD-3-Clause",
-                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "extracted_license_statement": "{'license': 'BSD'}",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://pypi.org/project/TicketImport",
-      "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json",
-      "package_uid": "pkg:pypi/ticketimport@0.7a?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "TicketImport/PKG-INFO"
-      ],
-      "datasource_ids": [
-        "pypi_sdist_pkginfo"
-      ],
-      "purl": "pkg:pypi/ticketimport@0.7a"
     }
   ],
   "files": [
@@ -1212,10 +1073,10 @@
           "purl": "pkg:pypi/ticketimport@0.7a"
         }
       ],
-      "for_packages": [
-        "pkg:pypi/ticketimport@0.7a?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name='TicketImport', version='0.7a', datasource_id='pypi_sdist_pkginfo'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
+      ]
     },
     {
       "path": "arpy",
@@ -1321,10 +1182,10 @@
           "purl": "pkg:pypi/arpy@0.1.1"
         }
       ],
-      "for_packages": [
-        "pkg:pypi/arpy@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name='arpy', version='0.1.1', datasource_id='pypi_setup_py'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
+      ]
     },
     {
       "path": "atomicwrites",
@@ -1376,7 +1237,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/attrs@18.1.0",
@@ -1385,7 +1247,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/contextlib2@0.5.5",
@@ -1394,7 +1257,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/coverage@4.5.1",
@@ -1403,7 +1267,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/funcsigs@1.0.2",
@@ -1412,7 +1277,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/mock@2.0.0",
@@ -1421,7 +1287,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/more-itertools@4.2.0",
@@ -1430,7 +1297,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pbr@4.2.0",
@@ -1439,7 +1307,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pluggy@0.6.0",
@@ -1448,7 +1317,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/py@1.5.4",
@@ -1457,7 +1327,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest@3.6.3",
@@ -1466,7 +1337,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest-cov@2.5.1",
@@ -1475,7 +1347,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest-vcr@0.3.0",
@@ -1484,7 +1357,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pyyaml@3.13",
@@ -1493,7 +1367,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/six@1.11.0",
@@ -1502,7 +1377,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/vcrpy@1.13.0",
@@ -1511,7 +1387,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/wrapt@1.10.11",
@@ -1520,7 +1397,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -1784,7 +1662,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/nose",
@@ -1793,7 +1683,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/chardet",
@@ -1802,7 +1704,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             }
           ],
           "repository_homepage_url": null,

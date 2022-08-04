@@ -38,7 +38,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
@@ -47,7 +48,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/analyzer@1.7.1",
@@ -56,7 +58,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/args@2.1.1",
@@ -65,7 +68,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/async@2.6.1",
@@ -74,7 +78,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/boolean_selector@2.1.0",
@@ -83,7 +88,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build@2.0.2",
@@ -92,7 +98,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build_config@1.0.0",
@@ -101,7 +108,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build_daemon@3.0.0",
@@ -110,7 +118,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build_resolvers@2.0.3",
@@ -119,7 +128,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build_runner@2.0.5",
@@ -128,7 +138,8 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/build_runner_core@7.0.0",
@@ -137,7 +148,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/built_collection@5.1.0",
@@ -146,7 +158,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/built_value@8.1.0",
@@ -155,7 +168,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/built_value_generator@8.1.0",
@@ -164,7 +178,8 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/characters@1.1.0",
@@ -173,7 +188,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/charcode@1.2.0",
@@ -182,7 +198,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/checked_yaml@2.0.1",
@@ -191,7 +208,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/cli_util@0.3.2",
@@ -200,7 +218,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/clock@1.1.0",
@@ -209,7 +228,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/code_builder@4.0.0",
@@ -218,7 +238,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/collection@1.15.0",
@@ -227,7 +248,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/convert@3.0.1",
@@ -236,7 +258,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/crypto@3.0.1",
@@ -245,7 +268,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/cupertino_icons@1.0.3",
@@ -254,7 +278,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/dart_style@2.0.1",
@@ -263,7 +288,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/fake_async@1.2.0",
@@ -272,7 +298,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/file@6.1.2",
@@ -281,7 +308,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/fixnum@1.0.0",
@@ -290,7 +318,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/flutter@0.0.0",
@@ -299,7 +328,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/flutter_redux@0.8.2",
@@ -308,7 +338,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/flutter_test@0.0.0",
@@ -317,7 +348,8 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/frontend_server_client@2.1.0",
@@ -326,7 +358,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/glob@2.0.1",
@@ -335,7 +368,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/graphs@2.0.0",
@@ -344,7 +378,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/http@0.13.3",
@@ -353,7 +388,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/http_multi_server@3.0.1",
@@ -362,7 +398,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/http_parser@4.0.0",
@@ -371,7 +408,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/io@1.0.2",
@@ -380,7 +418,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/js@0.6.3",
@@ -389,7 +428,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/json_annotation@4.0.1",
@@ -398,7 +438,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/logging@1.0.1",
@@ -407,7 +448,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/matcher@0.12.10",
@@ -416,7 +458,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/meta@1.3.0",
@@ -425,7 +468,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/mime@1.0.0",
@@ -434,7 +478,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/package_config@2.0.0",
@@ -443,7 +488,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/path@1.8.0",
@@ -452,7 +498,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/pedantic@1.11.1",
@@ -461,7 +508,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/pool@1.5.0",
@@ -470,7 +518,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/pub_semver@2.0.0",
@@ -479,7 +528,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/pubspec_parse@1.0.0",
@@ -488,7 +538,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/quiver@3.0.1",
@@ -497,7 +548,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/redux@5.0.0",
@@ -506,7 +558,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/shelf@1.1.4",
@@ -515,7 +568,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/shelf_web_socket@1.0.1",
@@ -524,7 +578,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/sky_engine@0.0.99",
@@ -533,7 +588,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/source_gen@1.0.2",
@@ -542,7 +598,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/source_span@1.8.1",
@@ -551,7 +608,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/stack_trace@1.10.0",
@@ -560,7 +618,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/stream_channel@2.1.0",
@@ -569,7 +628,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/stream_transform@2.0.0",
@@ -578,7 +638,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/string_scanner@1.1.0",
@@ -587,7 +648,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/term_glyph@1.2.0",
@@ -596,7 +658,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/test_api@0.3.0",
@@ -605,7 +668,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/timing@1.0.0",
@@ -614,7 +678,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/typed_data@1.3.0",
@@ -623,7 +688,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/vector_math@2.1.0",
@@ -632,7 +698,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/watcher@1.0.0",
@@ -641,7 +708,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/web_socket_channel@2.1.0",
@@ -650,7 +718,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pubspec/yaml@3.1.0",
@@ -659,7 +728,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,

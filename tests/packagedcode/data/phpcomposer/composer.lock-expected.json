@@ -38,7 +38,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/cache-subscriber@0.2.0",
@@ -47,7 +48,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/guzzle@5.3.3",
@@ -56,7 +58,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/ringphp@1.1.1",
@@ -65,7 +68,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/streams@3.0.0",
@@ -74,7 +78,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/prestashop/circuit-breaker@v3.0.0",
@@ -83,7 +88,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/react/promise@v2.7.1",
@@ -92,7 +98,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/css-selector@v3.4.31",
@@ -101,7 +108,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/composer/semver@1.5.0",
@@ -110,7 +118,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/composer/xdebug-handler@1.3.3",
@@ -119,7 +128,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/annotations@v1.4.0",
@@ -128,7 +138,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/lexer@1.0.2",
@@ -137,7 +148,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/friendsofphp/php-cs-fixer@v2.15.3",
@@ -146,7 +158,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/paragonie/random_compat@v2.0.18",
@@ -155,7 +168,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/diff@v1.3.0",
@@ -164,7 +178,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/prestashop/php-coding-standards@dev-master",
@@ -173,7 +188,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log@1.1.0",
@@ -182,7 +198,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer@3.4.2",
@@ -191,7 +208,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/console@v3.4.31",
@@ -200,7 +218,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/debug@v3.4.31",
@@ -209,7 +228,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher@v3.4.31",
@@ -218,7 +238,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/filesystem@v3.4.31",
@@ -227,7 +248,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/finder@v3.4.31",
@@ -236,7 +258,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/options-resolver@v3.4.31",
@@ -245,7 +268,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-ctype@v1.12.0",
@@ -254,7 +278,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring@v1.12.0",
@@ -263,7 +288,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php70@v1.12.0",
@@ -272,7 +298,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php72@v1.12.0",
@@ -281,7 +308,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process@v3.4.31",
@@ -290,7 +318,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/stopwatch@v3.4.31",
@@ -299,7 +328,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,
@@ -436,7 +466,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -445,7 +476,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/predis/predis",
@@ -454,7 +486,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/satooshi/php-coveralls",
@@ -463,7 +496,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/common",
@@ -472,7 +506,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/doctrine/cache",
@@ -581,7 +616,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/guzzle",
@@ -590,7 +626,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -599,7 +636,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -608,7 +646,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/cache-subscriber",
@@ -717,7 +756,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -726,7 +766,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/react/promise",
@@ -735,7 +776,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-curl",
@@ -744,7 +786,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -753,7 +796,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/guzzle",
@@ -862,7 +906,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -871,7 +916,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/react/promise",
@@ -880,7 +926,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-curl",
@@ -889,7 +936,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -898,7 +946,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-curl",
@@ -907,7 +956,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/ringphp",
@@ -1016,7 +1066,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1025,7 +1076,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/guzzlehttp/streams",
@@ -1141,7 +1193,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -1150,7 +1203,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/cache",
@@ -1159,7 +1213,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/friendsofphp/php-cs-fixer",
@@ -1168,7 +1223,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1177,7 +1233,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -1186,7 +1243,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/cache",
@@ -1195,7 +1253,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
@@ -1204,7 +1263,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/vimeo/psalm",
@@ -1213,7 +1273,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/cache",
@@ -1222,7 +1283,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-apcu",
@@ -1231,7 +1293,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/guzzlehttp/cache-subscriber",
@@ -1240,7 +1303,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/cache",
@@ -1249,7 +1313,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/prestashop/circuit-breaker",
@@ -1358,7 +1423,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1367,7 +1433,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/react/promise",
@@ -1490,7 +1557,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/css-selector",
@@ -1613,7 +1681,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1622,7 +1691,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit-mock-objects",
@@ -1631,7 +1701,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/composer/semver",
@@ -1740,7 +1811,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -1749,7 +1821,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1758,7 +1831,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/composer/xdebug-handler",
@@ -1895,7 +1969,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -1904,7 +1979,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/cache",
@@ -1913,7 +1989,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1922,7 +1999,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/doctrine/annotations",
@@ -2045,7 +2123,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -2054,7 +2133,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/doctrine/lexer",
@@ -2170,7 +2250,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/composer/xdebug-handler",
@@ -2179,7 +2260,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/doctrine/annotations",
@@ -2188,7 +2270,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-json",
@@ -2197,7 +2280,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
@@ -2206,7 +2290,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -2215,7 +2300,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/diff",
@@ -2224,7 +2310,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/console",
@@ -2233,7 +2320,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
@@ -2242,7 +2330,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
@@ -2251,7 +2340,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/finder",
@@ -2260,7 +2350,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/options-resolver",
@@ -2269,7 +2360,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php70",
@@ -2278,7 +2370,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php72",
@@ -2287,7 +2380,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -2296,7 +2390,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/stopwatch",
@@ -2305,7 +2400,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/johnkary/phpunit-speedtrap",
@@ -2314,7 +2410,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/justinrainbow/json-schema",
@@ -2323,7 +2420,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/keradus/cli-executor",
@@ -2332,7 +2430,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/mikey179/vfsstream",
@@ -2341,7 +2440,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-coveralls/php-coveralls",
@@ -2350,7 +2450,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/accessible-object",
@@ -2359,7 +2460,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-isidenticalstring",
@@ -2368,7 +2470,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-xmlmatchesxsd",
@@ -2377,7 +2480,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -2386,7 +2490,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunitgoodpractices/traits",
@@ -2395,7 +2500,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/phpunit-bridge",
@@ -2404,7 +2510,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/yaml",
@@ -2413,7 +2520,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-mbstring",
@@ -2422,7 +2530,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-isidenticalstring",
@@ -2431,7 +2540,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-xmlmatchesxsd",
@@ -2440,7 +2550,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring",
@@ -2449,7 +2560,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/friendsofphp/php-cs-fixer",
@@ -2558,7 +2670,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -2567,7 +2680,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-libsodium",
@@ -2576,7 +2690,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/paragonie/random_compat",
@@ -2699,7 +2814,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -2708,7 +2824,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -2717,7 +2834,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/php-cs-fixer/diff",
@@ -2819,7 +2937,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -2828,7 +2947,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -2837,7 +2957,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/console",
@@ -2846,7 +2967,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
@@ -2855,7 +2977,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/prestashop/php-coding-standards",
@@ -2964,7 +3087,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/psr/log",
@@ -3073,7 +3197,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
@@ -3082,7 +3207,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-xmlwriter",
@@ -3091,7 +3217,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -3100,7 +3227,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -3109,7 +3237,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/squizlabs/php_codesniffer",
@@ -3225,7 +3354,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/debug",
@@ -3234,7 +3364,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring",
@@ -3243,7 +3374,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -3252,7 +3384,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/config",
@@ -3261,7 +3394,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
@@ -3270,7 +3404,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
@@ -3279,7 +3414,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/lock",
@@ -3288,7 +3424,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -3297,7 +3434,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log-implementation",
@@ -3306,7 +3444,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
@@ -3315,7 +3454,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -3324,7 +3464,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -3333,7 +3474,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
@@ -3342,7 +3484,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/lock",
@@ -3351,7 +3494,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -3360,7 +3504,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/console",
@@ -3476,7 +3621,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -3485,7 +3631,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
@@ -3494,7 +3641,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
@@ -3503,7 +3651,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/debug",
@@ -3619,7 +3768,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -3628,7 +3778,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/config",
@@ -3637,7 +3788,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
@@ -3646,7 +3798,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/expression-language",
@@ -3655,7 +3808,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/stopwatch",
@@ -3664,7 +3818,8 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
@@ -3673,7 +3828,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
@@ -3682,7 +3838,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
@@ -3691,7 +3848,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/event-dispatcher",
@@ -3807,7 +3965,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/symfony/polyfill-ctype",
@@ -3816,7 +3975,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/filesystem",
@@ -3932,7 +4092,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/finder",
@@ -4048,7 +4209,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/options-resolver",
@@ -4164,7 +4326,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-ctype",
@@ -4173,7 +4336,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-ctype",
@@ -4289,7 +4453,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/ext-mbstring",
@@ -4298,7 +4463,8 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-mbstring",
@@ -4414,7 +4580,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:composer/php",
@@ -4423,7 +4590,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-php70",
@@ -4539,7 +4707,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/polyfill-php72",
@@ -4655,7 +4824,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/process",
@@ -4771,7 +4941,8 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://packagist.org/packages/symfony/stopwatch",

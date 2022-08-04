@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/%40types/node?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/electron-download?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/extract-zip?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -47,6 +50,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/home-path?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -60,6 +64,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/path-exists?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -73,6 +78,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/standard?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package/package.json",
@@ -295,7 +301,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/electron-download",
@@ -304,7 +311,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/extract-zip",
@@ -313,7 +321,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/home-path",
@@ -322,7 +331,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/path-exists",
@@ -331,7 +341,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/standard",
@@ -340,7 +351,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/electron",

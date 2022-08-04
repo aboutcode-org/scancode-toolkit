@@ -77,7 +77,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/code-frame",
@@ -85,7 +86,8 @@
           "api_data_url": "https://registry.npmjs.org/@babel%2fcode-frame",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/code-frame@7.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/%40babel/core@7.3.4",
@@ -133,7 +135,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%22%40babel/generator%22",
@@ -142,7 +145,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/%22%40babel/types%22",
@@ -151,7 +155,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/source-map",
@@ -160,7 +165,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/core",
@@ -168,7 +174,8 @@
           "api_data_url": "https://registry.npmjs.org/@babel%2fcore",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/core@7.3.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/%40babel/helper-annotate-as-pure@7.0.0",
@@ -216,7 +223,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/helper-annotate-as-pure",
@@ -224,7 +232,8 @@
           "api_data_url": "https://registry.npmjs.org/@babel%2fhelper-annotate-as-pure",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/helper-annotate-as-pure@7.0.0"
-        }
+        },
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,

@@ -39,7 +39,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.openqa.selenium.server/selenium-server@0.9.1",
@@ -48,7 +49,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.openqa.selenium.core/selenium-core@0.8.3-SNAPSHOT",
@@ -57,7 +59,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.openqa.selenium.ide/selenium-ide@0.8.1-SNAPSHOT",
@@ -66,7 +69,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/ant/ant@1.6.5",
@@ -75,7 +79,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/jetty/org.mortbay.jetty@5.1.10",
@@ -84,7 +89,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
@@ -93,7 +99,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
@@ -102,7 +109,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/rhino/js@1.6R2",
@@ -111,7 +119,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.1",
@@ -120,7 +129,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/",

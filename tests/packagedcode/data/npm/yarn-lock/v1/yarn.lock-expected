@@ -75,7 +75,8 @@
           "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/abbrev@1.0.9"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/ansi-align@1.1.0",
@@ -123,7 +124,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/ansi-align",
@@ -131,7 +133,8 @@
           "api_data_url": "https://registry.npmjs.org/ansi-align/1.1.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/ansi-align@1.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/are-we-there-yet@1.1.2",
@@ -179,7 +182,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/readable-stream",
@@ -188,7 +192,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/are-we-there-yet",
@@ -196,7 +201,8 @@
           "api_data_url": "https://registry.npmjs.org/are-we-there-yet/1.1.2",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/are-we-there-yet@1.1.2"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/arr-diff@2.0.0",
@@ -244,7 +250,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/arr-diff",
@@ -252,7 +259,8 @@
           "api_data_url": "https://registry.npmjs.org/arr-diff/2.0.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/arr-diff@2.0.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/babel-helper-function-name@6.18.0",
@@ -300,7 +308,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/babel-traverse",
@@ -309,7 +318,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/babel-types",
@@ -318,7 +328,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/babel-helper-function-name",
@@ -326,7 +337,8 @@
           "api_data_url": "https://registry.npmjs.org/babel-helper-function-name/6.18.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/babel-helper-function-name@6.18.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/rimraf@2.5.4",
@@ -374,7 +386,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/rimraf",
@@ -382,7 +395,8 @@
           "api_data_url": "https://registry.npmjs.org/rimraf/2.5.4",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/rimraf@2.5.4"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/semver-diff@2.1.0",
@@ -430,7 +444,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/semver-diff",
@@ -438,7 +453,8 @@
           "api_data_url": "https://registry.npmjs.org/semver-diff/2.1.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/semver-diff@2.1.0"
-        }
+        },
+        "extra_data": {}
       },
       {
         "purl": "pkg:npm/semver@5.3.0",
@@ -484,7 +500,8 @@
           "api_data_url": "https://registry.npmjs.org/semver/5.3.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/semver@5.3.0"
-        }
+        },
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": null,

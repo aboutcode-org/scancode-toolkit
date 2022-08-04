@@ -61,7 +61,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/asm/asm-tree@3.0",
@@ -70,7 +71,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/asm/asm-analysis@3.0",
@@ -79,7 +81,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/asm/asm-commons@3.0",
@@ -88,7 +91,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/asm/asm-util@3.0",
@@ -97,7 +101,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/asm/asm-xml@3.0",
@@ -106,7 +111,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm-parent/3.0/",

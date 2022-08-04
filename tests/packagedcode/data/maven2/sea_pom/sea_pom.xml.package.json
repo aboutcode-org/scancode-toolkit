@@ -61,7 +61,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
@@ -70,7 +71,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
@@ -79,7 +81,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
@@ -88,7 +91,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
@@ -97,7 +101,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
@@ -106,7 +111,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
@@ -115,7 +121,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
@@ -124,7 +131,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
@@ -133,7 +141,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
@@ -142,7 +151,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
@@ -151,7 +161,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
@@ -160,7 +171,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
@@ -169,7 +181,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
@@ -178,7 +191,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
@@ -187,7 +201,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
@@ -196,7 +211,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
@@ -205,7 +221,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
@@ -214,7 +231,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
@@ -223,7 +241,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.transaction/jta@1.1",
@@ -232,7 +251,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
@@ -241,7 +261,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.drools/drools-core@5.0.1",
@@ -250,7 +271,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
@@ -259,7 +281,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
@@ -268,7 +291,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
@@ -277,7 +301,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
@@ -286,7 +311,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.drools/drools-api@5.0.1",
@@ -295,7 +321,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
@@ -304,7 +331,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.antlr/antlr@3.2",
@@ -313,7 +341,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.antlr/antlr-runtime@3.2",
@@ -322,7 +351,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester@1.8.1",
@@ -331,7 +361,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang@2.3",
@@ -340,7 +371,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/com.h2database/h2@1.1.118",
@@ -349,7 +381,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/mysql/mysql-connector-java@5.1.10",
@@ -358,7 +391,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
@@ -367,7 +401,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/junit/junit@4.7",
@@ -376,7 +411,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.testng/testng@5.9",
@@ -385,7 +421,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",

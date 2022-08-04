@@ -194,7 +194,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/junit/junit@3.8.2",
@@ -203,7 +204,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/jcl104-over-slf4j@1.3.1",
@@ -212,7 +214,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-simple@1.3.1",
@@ -221,7 +224,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/mx4j/mx4j@3.0.1",
@@ -230,7 +234,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/mx4j/mx4j-tools@3.0.1",
@@ -239,7 +244,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/xerces/xercesImpl",
@@ -248,7 +254,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-el/commons-el@1.0",
@@ -257,7 +264,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/ant/ant@1.6.5",
@@ -266,7 +274,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
@@ -275,7 +284,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/javax.activation/activation@1.1",
@@ -284,7 +294,8 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/",

@@ -52,10 +52,12 @@
       "api_data_url": null,
       "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "end-to-end.tgz/var/lib/dpkg/status"
+        "end-to-end.tgz/var/lib/dpkg/status",
+        "end-to-end.tgz/var/lib/dpkg/info/libncurses5:amd64.md5sums"
       ],
       "datasource_ids": [
-        "debian_installed_status_db"
+        "debian_installed_status_db",
+        "debian_installed_md5sums"
       ],
       "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
     }

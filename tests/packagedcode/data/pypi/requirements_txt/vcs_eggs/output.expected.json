@@ -38,7 +38,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "novcs+http://example.com#egg=a",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": false,
+          "is_vcs_url": false,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": null,
@@ -47,7 +59,19 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": "svn+http://example.com#egg",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": null,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       }
     ],
     "repository_homepage_url": null,

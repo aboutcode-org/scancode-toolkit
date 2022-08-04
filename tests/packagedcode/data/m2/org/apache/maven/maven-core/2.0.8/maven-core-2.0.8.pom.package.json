@@ -39,7 +39,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-parameter-documenter",
@@ -48,7 +49,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api",
@@ -57,7 +59,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-profile",
@@ -66,7 +69,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-model",
@@ -75,7 +79,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact",
@@ -84,7 +89,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api",
@@ -93,7 +99,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
@@ -102,7 +109,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-repository-metadata",
@@ -111,7 +119,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-error-diagnostics",
@@ -120,7 +129,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-project",
@@ -129,7 +139,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-cli/commons-cli@1.0",
@@ -138,7 +149,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
@@ -147,7 +159,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-descriptor",
@@ -156,7 +169,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4",
@@ -165,7 +179,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact-manager",
@@ -174,7 +189,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-monitor",
@@ -183,7 +199,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
@@ -192,7 +209,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/classworlds/classworlds",
@@ -201,7 +219,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-file",
@@ -210,7 +229,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight",
@@ -219,7 +239,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh-external",
@@ -228,7 +249,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh",
@@ -237,7 +259,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.8/",

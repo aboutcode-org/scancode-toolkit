@@ -8,6 +8,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
@@ -21,6 +22,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
@@ -34,6 +36,7 @@
       "is_optional": true,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
@@ -435,7 +438,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/Yoga@1.14.0",
@@ -444,7 +448,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pods/YogaKit@1.18.1",
@@ -453,7 +458,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

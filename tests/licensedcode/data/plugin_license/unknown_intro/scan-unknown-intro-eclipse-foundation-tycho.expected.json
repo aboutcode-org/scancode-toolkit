@@ -214,26 +214,23 @@
               ]
             },
             {
-              "score": 23.08,
+              "score": 39.47,
               "start_line": 45,
               "end_line": 45,
               "matched_length": 15,
-              "match_coverage": 23.08,
+              "match_coverage": 39.47,
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_689.RULE",
-              "referenced_filenames": [
-                "LICENSE-2.0.txt",
-                "NOTICE.TXT"
-              ],
+              "rule_identifier": "apache-2.0_1112.RULE",
+              "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 65,
+              "rule_length": 38,
               "rule_relevance": 100,
-              "matched_text": "and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">[http]://[www].[apache].[org]/[licenses]/LICENSE-",
+              "matched_text": "LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -334,7 +331,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 52.58,
+      "percentage_of_license_text": 52.82,
       "scan_errors": []
     },
     {
@@ -551,26 +548,23 @@
               ]
             },
             {
-              "score": 23.08,
+              "score": 39.47,
               "start_line": 45,
               "end_line": 45,
               "matched_length": 15,
-              "match_coverage": 23.08,
+              "match_coverage": 39.47,
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_689.RULE",
-              "referenced_filenames": [
-                "LICENSE-2.0.txt",
-                "NOTICE.TXT"
-              ],
+              "rule_identifier": "apache-2.0_1112.RULE",
+              "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 65,
+              "rule_length": 38,
               "rule_relevance": 100,
-              "matched_text": "and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">[http]://[www].[apache].[org]/[licenses]/LICENSE-",
+              "matched_text": "LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -747,253 +741,46 @@
               ]
             },
             {
-              "score": 40.0,
+              "score": 42.11,
+              "start_line": 53,
+              "end_line": 54,
+              "matched_length": 16,
+              "match_coverage": 42.11,
+              "matcher": "3-seq",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_1112.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 38,
+              "rule_relevance": 100,
+              "matched_text": "License [2].[0].  A [copy] [of] [the] [license] [is] [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            },
+            {
+              "score": 100.0,
               "start_line": 54,
               "end_line": 54,
-              "matched_length": 14,
-              "match_coverage": 40.0,
-              "matcher": "3-seq",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_842.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 35,
-              "rule_relevance": 100,
-              "matched_text": "www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0.",
-              "licenses": [
-                {
-                  "key": "apache-2.0",
-                  "name": "Apache License 2.0",
-                  "short_name": "Apache 2.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-                  "spdx_license_key": "Apache-2.0",
-                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "license_expression": "apache-2.0",
-          "detection_rules": [
-            "unknown-intro-followed-by-match"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 59,
-              "end_line": 59,
-              "matched_length": 6,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_35.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": true,
-              "rule_length": 6,
-              "rule_relevance": 100,
-              "matched_text": "subject to the terms and conditions",
-              "licenses": [
-                {
-                  "key": "unknown-license-reference",
-                  "name": "Unknown License file reference",
-                  "short_name": "Unknown License reference",
-                  "category": "Unstated License",
-                  "is_exception": false,
-                  "is_unknown": true,
-                  "owner": "Unspecified",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-                  "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                }
-              ]
-            },
-            {
-              "score": 43.08,
-              "start_line": 59,
-              "end_line": 60,
-              "matched_length": 28,
-              "match_coverage": 43.08,
-              "matcher": "3-seq",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_689.RULE",
-              "referenced_filenames": [
-                "LICENSE-2.0.txt",
-                "NOTICE.TXT"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 65,
-              "rule_relevance": 100,
-              "matched_text": "License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/LICENSE\">[LICENSE]</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">[http]://[www].[apache].[org]/[licenses]/LICENSE-",
-              "licenses": [
-                {
-                  "key": "apache-2.0",
-                  "name": "Apache License 2.0",
-                  "short_name": "Apache 2.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-                  "spdx_license_key": "Apache-2.0",
-                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-                }
-              ]
-            },
-            {
-              "score": 100.0,
-              "start_line": 60,
-              "end_line": 60,
-              "matched_length": 9,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_20.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 9,
-              "rule_relevance": 100,
-              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.html</",
-              "licenses": [
-                {
-                  "key": "apache-2.0",
-                  "name": "Apache License 2.0",
-                  "short_name": "Apache 2.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-                  "spdx_license_key": "Apache-2.0",
-                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "license_expression": "apache-2.0",
-          "detection_rules": [
-            "unknown-intro-followed-by-match"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 65,
-              "end_line": 65,
-              "matched_length": 6,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_35.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": true,
-              "rule_length": 6,
-              "rule_relevance": 100,
-              "matched_text": "subject to the terms and conditions",
-              "licenses": [
-                {
-                  "key": "unknown-license-reference",
-                  "name": "Unknown License file reference",
-                  "short_name": "Unknown License reference",
-                  "category": "Unstated License",
-                  "is_exception": false,
-                  "is_unknown": true,
-                  "owner": "Unspecified",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-                  "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                }
-              ]
-            },
-            {
-              "score": 43.08,
-              "start_line": 65,
-              "end_line": 66,
-              "matched_length": 28,
-              "match_coverage": 43.08,
-              "matcher": "3-seq",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_689.RULE",
-              "referenced_filenames": [
-                "LICENSE-2.0.txt",
-                "NOTICE.TXT"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 65,
-              "rule_relevance": 100,
-              "matched_text": "License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/LICENSE\">[LICENSE]</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">[http]://[www].[apache].[org]/[licenses]/LICENSE-",
-              "licenses": [
-                {
-                  "key": "apache-2.0",
-                  "name": "Apache License 2.0",
-                  "short_name": "Apache 2.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-                  "spdx_license_key": "Apache-2.0",
-                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-                }
-              ]
-            },
-            {
-              "score": 100.0,
-              "start_line": 66,
-              "end_line": 66,
               "matched_length": 9,
               "match_coverage": 100.0,
               "matcher": "2-aho",
@@ -1126,23 +913,21 @@
               ]
             },
             {
-              "score": 33.33,
+              "score": 36.84,
               "start_line": 71,
               "end_line": 72,
               "matched_length": 14,
-              "match_coverage": 33.33,
+              "match_coverage": 36.84,
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_869.RULE",
-              "referenced_filenames": [
-                "LICENSE-2.0.txt"
-              ],
+              "rule_identifier": "apache-2.0_1112.RULE",
+              "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 42,
+              "rule_length": 38,
               "rule_relevance": 100,
               "matched_text": "License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/LICENSE.[md]\">LICENSE.",
               "licenses": [
@@ -1204,8 +989,157 @@
           ]
         }
       ],
-      "license_clues": [],
-      "percentage_of_license_text": 40.99,
+      "license_clues": [
+        {
+          "score": 92.68,
+          "start_line": 59,
+          "end_line": 60,
+          "matched_length": 38,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "matched_text": "is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 48.57,
+          "start_line": 59,
+          "end_line": 60,
+          "matched_length": 17,
+          "match_coverage": 48.57,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_842.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0.",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 92.68,
+          "start_line": 65,
+          "end_line": 66,
+          "matched_length": 38,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "matched_text": "is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 48.57,
+          "start_line": 65,
+          "end_line": 66,
+          "matched_length": 17,
+          "match_coverage": 48.57,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_842.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0.",
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ],
+      "percentage_of_license_text": 42.91,
       "scan_errors": []
     },
     {

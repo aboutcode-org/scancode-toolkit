@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/php?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/fideloper/proxy?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/laravel/framework?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/laravel/tinker?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -60,6 +64,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/filp/whoops?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -73,6 +78,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/fzaninotto/faker?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -86,6 +92,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/mockery/mockery?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -99,6 +106,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/phpunit/phpunit?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -301,7 +309,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/fideloper/proxy",
@@ -310,7 +319,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/laravel/framework",
@@ -319,7 +329,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/laravel/tinker",
@@ -328,7 +339,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/filp/whoops",
@@ -337,7 +349,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/fzaninotto/faker",
@@ -346,7 +359,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/mockery/mockery",
@@ -355,7 +369,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/phpunit/phpunit",
@@ -364,7 +379,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",

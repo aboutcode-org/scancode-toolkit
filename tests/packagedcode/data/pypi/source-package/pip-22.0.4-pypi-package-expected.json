@@ -1,5 +1,181 @@
 {
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/sphinx",
+      "extracted_requirement": "~=4.2,!=4.4.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/sphinx?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/towncrier",
+      "extracted_requirement": "",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/towncrier?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/furo",
+      "extracted_requirement": "",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/furo?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/myst-parser",
+      "extracted_requirement": "",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/myst-parser?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/sphinx-copybutton",
+      "extracted_requirement": "",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/sphinx-copybutton?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/sphinx-inline-tabs",
+      "extracted_requirement": "",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/sphinx-inline-tabs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    },
+    {
+      "purl": "pkg:pypi/sphinxcontrib-towncrier",
+      "extracted_requirement": ">=0.2.0a0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
+      "dependency_uid": "pkg:pypi/sphinxcontrib-towncrier?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "docs/requirements.txt",
+      "datasource_id": "pip_requirements"
+    }
+  ],
   "packages": [
     {
       "type": "pypi",
@@ -151,10 +327,10 @@
       "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
       "package_uid": "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "PKG-INFO"
+        "src/pip.egg-info/PKG-INFO"
       ],
       "datasource_ids": [
-        "pypi_sdist_pkginfo"
+        "pypi_editable_egg_pkginfo"
       ],
       "purl": "pkg:pypi/pip@22.0.4"
     }
@@ -164,36 +340,28 @@
       "path": "AUTHORS.txt",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "LICENSE.txt",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "MANIFEST.in",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "NEWS.rst",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -354,18 +522,16 @@
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name='pip', version='22.0.4', datasource_id='pypi_sdist_pkginfo'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
+      ]
     },
     {
       "path": "README.rst",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -418,7 +584,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/towncrier",
@@ -427,7 +605,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/furo",
@@ -436,7 +626,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/myst-parser",
@@ -445,7 +647,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/sphinx-copybutton",
@@ -454,7 +668,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/sphinx-inline-tabs",
@@ -463,7 +689,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/sphinxcontrib-towncrier",
@@ -472,7 +710,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": null,
@@ -481,7 +731,19 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": ".",
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": false,
+                "is_wheel": null,
+                "is_url": false,
+                "is_vcs_url": false,
+                "is_name_at_url": false,
+                "is_local_path": true
+              }
             }
           ],
           "repository_homepage_url": null,
@@ -491,9 +753,7 @@
           "purl": null
         }
       ],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -585,9 +845,7 @@
           "purl": null
         }
       ],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -718,10 +976,10 @@
           "purl": null
         }
       ],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name=None, version=None, datasource_id='pypi_setup_cfg'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
+      ]
     },
     {
       "path": "setup.py",
@@ -882,10 +1140,10 @@
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name='pip', version='22.0.4', datasource_id='pypi_setup_py'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
+      ]
     },
     {
       "path": "src",
@@ -905,7 +1163,9 @@
       "path": "src/pip.egg-info",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -1274,27 +1534,21 @@
       "path": "src/pip/__init__.py",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "src/pip/__main__.py",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "src/pip/py.typed",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]
