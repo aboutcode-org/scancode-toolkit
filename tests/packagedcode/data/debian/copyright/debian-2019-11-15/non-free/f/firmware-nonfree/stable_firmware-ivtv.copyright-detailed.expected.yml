@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: hauppauge-firmware-oem
+declared_license_expression: hauppauge-firmware-oem
 declared_license_expression_spdx: LicenseRef-scancode-hauppauge-firmware-oem
-copyright: Copyright 2003-2006 Hauppauge
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: hauppauge-firmware-oem
     detection_rules:
@@ -189,3 +189,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.yml
             spdx_license_key: LicenseRef-scancode-hauppauge-firmware-oem
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.LICENSE
+other_license_detections: []
+copyright: Copyright 2003-2006 Hauppauge

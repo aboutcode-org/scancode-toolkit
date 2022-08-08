@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: public-domain
+declared_license_expression: public-domain
 declared_license_expression_spdx: LicenseRef-scancode-public-domain
-copyright:
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: public-domain
     detection_rules:
@@ -40,3 +40,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+other_license_detections: []
+copyright:

@@ -1,9 +1,8 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-new AND public-domain
-  AND public-domain AND bsd-zero AND bsd-simplified AND bsd-simplified AND bsd-simplified AND
-  bsd-zero AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-simplified AND bsd-simplified AND
-  public-domain AND bsd-new AND bsd-simplified AND public-domain AND gpl-3.0-plus WITH autoconf-exception-3.0
+declared_license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-new AND
+  public-domain AND public-domain AND bsd-zero AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-simplified AND bsd-simplified
+  AND public-domain AND bsd-new AND bsd-simplified AND public-domain AND gpl-3.0-plus WITH autoconf-exception-3.0
   AND bsd-zero AND fsf-ap AND fsf-ap AND fsf-ap AND fsf-ap AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
   AND fsf-ap AND fsf-ap AND gpl-3.0-plus WITH autoconf-exception-3.0 AND fsf-ap AND fsf-ap AND
   free-unknown
@@ -15,36 +14,8 @@ declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LG
   AND 0BSD AND FSFAP AND FSFAP AND FSFAP AND FSFAP AND GPL-2.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
   AND FSFAP AND FSFAP AND GPL-3.0-or-later WITH Autoconf-exception-3.0 AND FSFAP AND FSFAP AND
   LicenseRef-scancode-free-unknown
-copyright: |
-  Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL
-  Copyright Free Software Foundation, Inc.
-  Copyright David Burren
-  Copyright Solar Designer, Colin Percival
-  Copyright Solar Designer, Colin Percival
-  Copyright Colin Percival
-  Copyright Alexey Degtyarev
-  Copyright Vitaly Chikunov, Bjorn Esser
-  Copyright Alexander Peslyak
-  Copyright Alexander Peslyak, Bjorn Esser
-  Copyright Bjorn Esser
-  Copyright Michael Bretterklieber, Bjorn Esser
-  Copyright Zack Weinberg
-  Copyright Juniper Networks, Inc.
-  Copyright Bjorn Esser
-  Copyright Zack Weinberg and Free Software Foundation, Inc
-  Copyright Kevin Cernekee FSF
-  Copyright Maarten Bosmans FSF
-  Copyright Guido U. Draheim, Maarten Bosmans FSF
-  Copyright Mike Frysinger FSF
-  Copyright Scott James Remnant, Dan Nicholson GPL
-  Copyright Tim Toolan FSF
-  Copyright Philip Withnall FSF
-  Copyright Steven G. Johnson, Daniel Richard G. GPL
-  Copyright Francesco Salvestrini FSF
-  Copyright Andrew Collier FSF
-  Copyright 2002, 2003, 2004 SuSE Linux AG
-  Germany Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH
-  Copyright 2015 Bjorn Esser
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus
     detection_rules:
@@ -1170,3 +1141,34 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
             spdx_license_key: LicenseRef-scancode-free-unknown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+other_license_detections: []
+copyright: |
+  Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL
+  Copyright Free Software Foundation, Inc.
+  Copyright David Burren
+  Copyright Solar Designer, Colin Percival
+  Copyright Solar Designer, Colin Percival
+  Copyright Colin Percival
+  Copyright Alexey Degtyarev
+  Copyright Vitaly Chikunov, Bjorn Esser
+  Copyright Alexander Peslyak
+  Copyright Alexander Peslyak, Bjorn Esser
+  Copyright Bjorn Esser
+  Copyright Michael Bretterklieber, Bjorn Esser
+  Copyright Zack Weinberg
+  Copyright Juniper Networks, Inc.
+  Copyright Bjorn Esser
+  Copyright Zack Weinberg and Free Software Foundation, Inc
+  Copyright Kevin Cernekee FSF
+  Copyright Maarten Bosmans FSF
+  Copyright Guido U. Draheim, Maarten Bosmans FSF
+  Copyright Mike Frysinger FSF
+  Copyright Scott James Remnant, Dan Nicholson GPL
+  Copyright Tim Toolan FSF
+  Copyright Philip Withnall FSF
+  Copyright Steven G. Johnson, Daniel Richard G. GPL
+  Copyright Francesco Salvestrini FSF
+  Copyright Andrew Collier FSF
+  Copyright 2002, 2003, 2004 SuSE Linux AG
+  Germany Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH
+  Copyright 2015 Bjorn Esser

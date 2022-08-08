@@ -1,22 +1,16 @@
-primary_license: None
 declared_license:
   - Binary redistribution (QLogic 1)
   - The OpenIB.org BSD license
   - Binary redistribution (QLogic 2)
   - Binary redistribution (QLogic BR-series)
   - Binary redistribution (QLogic 3)
-license_expression: bsd-new AND linux-openib AND qlogic-microcode AND (other-permissive AND
-  proprietary-license) AND other-permissive
+declared_license_expression: bsd-new AND linux-openib AND qlogic-microcode AND (other-permissive
+  AND proprietary-license) AND other-permissive
 declared_license_expression_spdx: BSD-3-Clause AND Linux-OpenIB AND LicenseRef-scancode-qlogic-microcode
   AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license) AND
   LicenseRef-scancode-other-permissive
-copyright: |
-  1995, 1996, 1997, 1998, 1999, 2000, QLogic, Inc.
-  2007, 2008. QLogic Corporation
-  2003-2006, QLogic Corporation
-  2013-2014, Brocade Communications Systems, Inc.
-  2014-2015, QLogic Corporation.
-  2015-2016, QLogic Corporation
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
     detection_rules:
@@ -320,3 +314,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+other_license_detections: []
+copyright: |
+  1995, 1996, 1997, 1998, 1999, 2000, QLogic, Inc.
+  2007, 2008. QLogic Corporation
+  2003-2006, QLogic Corporation
+  2013-2014, Brocade Communications Systems, Inc.
+  2014-2015, QLogic Corporation.
+  2015-2016, QLogic Corporation

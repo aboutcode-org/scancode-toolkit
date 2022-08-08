@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: zlib
+declared_license_expression: zlib
 declared_license_expression_spdx: Zlib
-copyright: Copyright (c) 1995-1998 Jean-loup Gailly and Mark Adler
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: zlib
     detection_rules:
@@ -58,3 +58,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
+other_license_detections: []
+copyright: Copyright (c) 1995-1998 Jean-loup Gailly and Mark Adler

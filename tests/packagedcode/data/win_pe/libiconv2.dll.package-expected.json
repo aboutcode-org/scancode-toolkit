@@ -159,6 +159,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "{'LegalCopyright': '\u00a9 2004 Free Software Foundation <www.fsf.org>', 'LegalTrademarks': 'GNU\u00ae, LibIconv\u00ae, libiconv2\u00ae', 'License': 'This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.'}",
     "notice_text": null,
     "source_packages": [],

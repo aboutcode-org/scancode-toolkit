@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: gpl-2.0-plus AND gpl-2.0
+declared_license_expression: gpl-2.0-plus AND gpl-2.0
 declared_license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
-copyright: |
-  Copyright 2006-2009 Bastian Blank <waldi@debian.org>
-  Copyright 2009 Ben Hutchings <ben@decadent.org.uk>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus AND gpl-2.0
     detection_rules:
@@ -92,3 +90,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+other_license_detections: []
+copyright: |
+  Copyright 2006-2009 Bastian Blank <waldi@debian.org>
+  Copyright 2009 Ben Hutchings <ben@decadent.org.uk>

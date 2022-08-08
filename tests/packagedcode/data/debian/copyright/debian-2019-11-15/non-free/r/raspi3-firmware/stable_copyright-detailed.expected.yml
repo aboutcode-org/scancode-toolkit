@@ -1,16 +1,13 @@
-primary_license: None
 declared_license:
   - Proprietary_1
   - Proprietary_2
   - GPL-2+
-license_expression: proprietary-license AND broadcom-proprietary AND (gpl-2.0-plus AND gpl-2.0-plus)
+declared_license_expression: proprietary-license AND broadcom-proprietary AND (gpl-2.0-plus
+  AND gpl-2.0-plus)
 declared_license_expression_spdx: LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-broadcom-proprietary
   AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-copyright: |
-  2006, Broadcom Corporation
-  2015, Raspberry Pi (Trading) Ltd
-  2015 Broadcom Corporation
-  2015 Paolo Pisati <paolo.pisati@canonical.com>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
     detection_rules:
@@ -332,3 +329,9 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+other_license_detections: []
+copyright: |
+  2006, Broadcom Corporation
+  2015, Raspberry Pi (Trading) Ltd
+  2015 Broadcom Corporation
+  2015 Paolo Pisati <paolo.pisati@canonical.com>

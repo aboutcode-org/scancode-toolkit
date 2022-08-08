@@ -100,6 +100,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-3.0-only",
     "notice_text": null,
     "source_packages": [],

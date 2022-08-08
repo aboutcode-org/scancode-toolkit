@@ -1,15 +1,11 @@
-primary_license: gpl-2.0
 declared_license:
   - GPL-2
-license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0
-declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only
-copyright: |
-  1998-2015, Sourcefire, Inc.
-  2002-2007, Tomasz Kojm <tkojm@clamav.net>
-  2006, Sensory Networks, Inc
-  2007-2015, Cisco Systems, Inc
-  2014-2018, Cisco and/or its affiliates
-license_detections:
+declared_license_expression: gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only
+other_license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0
+other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0
     detection_rules:
       - not-combined
@@ -130,3 +126,9 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+copyright: |
+  1998-2015, Sourcefire, Inc.
+  2002-2007, Tomasz Kojm <tkojm@clamav.net>
+  2006, Sensory Networks, Inc
+  2007-2015, Cisco Systems, Inc
+  2014-2018, Cisco and/or its affiliates

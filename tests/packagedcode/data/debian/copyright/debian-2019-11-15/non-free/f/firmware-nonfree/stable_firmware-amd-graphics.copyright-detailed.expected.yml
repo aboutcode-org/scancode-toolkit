@@ -1,12 +1,10 @@
-primary_license: None
 declared_license:
   - Binary redistribution (AMD permissive)
   - Binary redistribution (AMD restrictive)
-license_expression: mit AND amd-linux-firmware
+declared_license_expression: mit AND amd-linux-firmware
 declared_license_expression_spdx: MIT AND LicenseRef-scancode-amd-linux-firmware
-copyright: |
-  2000-2009, Advanced Micro Devices, Inc.
-  2009-2016, Advanced Micro Devices, Inc.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: mit
     detection_rules:
@@ -147,3 +145,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.yml
             spdx_license_key: LicenseRef-scancode-amd-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
+other_license_detections: []
+copyright: |
+  2000-2009, Advanced Micro Devices, Inc.
+  2009-2016, Advanced Micro Devices, Inc.

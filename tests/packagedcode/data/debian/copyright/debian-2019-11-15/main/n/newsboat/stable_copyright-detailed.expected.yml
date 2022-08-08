@@ -1,4 +1,3 @@
-primary_license: mit
 declared_license:
   - MIT/Expat
   - MIT/Expat
@@ -9,19 +8,14 @@ declared_license:
   - Boost-1.0
   - GPL-2
   - GPL-2+
-license_expression: mit AND mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0
-  AND gpl-2.0)
-declared_license_expression_spdx: MIT AND MIT AND BSL-1.0 AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+declared_license_expression: mit
+declared_license_expression_spdx: MIT
+other_license_expression: mit AND mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0 AND gpl-2.0)
+other_license_expression_spdx: MIT AND MIT AND BSL-1.0 AND (GPL-2.0-or-later AND GPL-2.0-or-later)
   AND (GPL-2.0-only AND GPL-2.0-only)
-copyright: |
-  2015-2018, Alexander Batischev <eual.jp@gmail.com>
-  2006-2010, Andreas Krennmair <ak@synflood.at>
-  2013-2018, Niels Lohmann <http://nlohmann.me>
-  2018, Two Blue Cubes Ltd
-  1990-2004, Hanspeter Moessenboeck, University of Linz
-  2016-2018, Nikos Tsipinakis <nikos@tsipinakis.com>,
-  2007-2014, Nico Golde <nion@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: mit
     detection_rules:
       - not-combined
@@ -284,3 +278,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+copyright: |
+  2015-2018, Alexander Batischev <eual.jp@gmail.com>
+  2006-2010, Andreas Krennmair <ak@synflood.at>
+  2013-2018, Niels Lohmann <http://nlohmann.me>
+  2018, Two Blue Cubes Ltd
+  1990-2004, Hanspeter Moessenboeck, University of Linz
+  2016-2018, Nikos Tsipinakis <nikos@tsipinakis.com>,
+  2007-2014, Nico Golde <nion@debian.org>

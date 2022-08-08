@@ -1,14 +1,12 @@
-primary_license: mit
 declared_license:
   - Expat
   - GPL-2+
-license_expression: mit AND (gpl-2.0-plus AND gpl-2.0-plus)
-declared_license_expression_spdx: MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-copyright: |
-  Microsoft Corporation
-  2016 Fabian Wolff <fabi.wolff@arcor.de>
-  2011 Michael Tautschnig <mt@debian.org>
-license_detections:
+declared_license_expression: mit
+declared_license_expression_spdx: MIT
+other_license_expression: mit AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+license_detections: []
+other_license_detections:
   - license_expression: mit
     detection_rules:
       - not-combined
@@ -146,3 +144,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+copyright: |
+  Microsoft Corporation
+  2016 Fabian Wolff <fabi.wolff@arcor.de>
+  2011 Michael Tautschnig <mt@debian.org>

@@ -81,6 +81,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [
@@ -196,6 +199,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
@@ -356,6 +362,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
@@ -696,6 +705,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [
@@ -973,6 +985,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "OpenSSL",
     "notice_text": null,
     "source_packages": [
@@ -1178,6 +1193,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "OpenSSL",
     "notice_text": null,
     "source_packages": [
@@ -1309,6 +1327,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "MPL-2.0 GPL-2.0-or-later",
     "notice_text": null,
     "source_packages": [
@@ -1416,6 +1437,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "ISC",
     "notice_text": null,
     "source_packages": [
@@ -1542,6 +1566,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
@@ -1648,6 +1675,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "Zlib",
     "notice_text": null,
     "source_packages": [
@@ -1763,6 +1793,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
@@ -1869,6 +1902,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
@@ -2007,6 +2043,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "MIT BSD GPL2+",
     "notice_text": null,
     "source_packages": [
@@ -2176,6 +2215,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "BSD-2-Clause AND BSD-3-Clause",
     "notice_text": null,
     "source_packages": [

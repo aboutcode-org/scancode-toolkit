@@ -141,6 +141,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [

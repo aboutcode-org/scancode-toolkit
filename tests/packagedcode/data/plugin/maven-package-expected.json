@@ -3716,6 +3716,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -3760,6 +3763,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -3852,6 +3858,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -3944,6 +3953,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4079,6 +4091,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
@@ -4123,6 +4138,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4196,6 +4214,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4290,6 +4311,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4605,6 +4629,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
@@ -4649,6 +4676,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4729,6 +4759,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4848,6 +4881,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -4892,6 +4928,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -4936,6 +4975,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5079,6 +5121,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
@@ -5171,6 +5216,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5244,6 +5292,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5387,6 +5438,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -5530,6 +5584,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -5665,6 +5722,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
@@ -5794,6 +5854,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5838,6 +5901,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5930,6 +5996,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -5974,6 +6043,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6040,6 +6112,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6132,6 +6207,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6275,6 +6353,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -6418,6 +6499,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -6561,6 +6645,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
@@ -6613,6 +6700,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6657,6 +6747,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6701,6 +6794,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6745,6 +6841,9 @@
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6835,6 +6934,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
@@ -6942,6 +7044,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7130,6 +7235,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7255,6 +7363,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7411,6 +7522,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7600,6 +7714,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
@@ -7677,6 +7794,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7783,6 +7903,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -7910,6 +8033,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -8279,6 +8405,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
@@ -8417,6 +8546,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -8530,6 +8662,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -8863,6 +8998,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -8991,6 +9129,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -9169,6 +9310,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -9416,6 +9560,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
@@ -9622,6 +9769,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -9739,6 +9889,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -9956,6 +10109,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -10173,6 +10329,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -10402,6 +10561,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
@@ -10615,6 +10777,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -10733,6 +10898,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -10858,6 +11026,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -10946,6 +11117,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -11136,6 +11310,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -11632,6 +11809,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -11819,6 +11999,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -12646,6 +12829,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -12983,6 +13169,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
@@ -13289,6 +13478,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -13377,6 +13569,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -13505,6 +13700,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -13582,6 +13780,9 @@
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
@@ -13705,6 +13906,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [

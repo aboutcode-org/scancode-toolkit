@@ -1,18 +1,12 @@
-primary_license: bzip2-libbzip-2010
 declared_license:
   - BSD-variant
   - GPL-2
-license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0)
-declared_license_expression_spdx: bzip2-1.0.6 AND (GPL-2.0-only AND GPL-2.0-only)
-copyright: |
-  1996-2010 Julian R Seward <jseward@bzip.org>
-  2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
-  2012-2015 Santiago Ruano Rincón <santiago@debian.org>
-  2014 Canonical Ltd.
-  2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
-  1999-2002 Philippe Troin <phil@fifi.org>
-  1997-1999 Anthony Fok <foka@debian.org>
-license_detections:
+declared_license_expression: bzip2-libbzip-2010
+declared_license_expression_spdx: bzip2-1.0.6
+other_license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0)
+other_license_expression_spdx: bzip2-1.0.6 AND (GPL-2.0-only AND GPL-2.0-only)
+license_detections: []
+other_license_detections:
   - license_expression: bzip2-libbzip-2010
     detection_rules:
       - not-combined
@@ -150,3 +144,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+copyright: |
+  1996-2010 Julian R Seward <jseward@bzip.org>
+  2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+  2012-2015 Santiago Ruano Rincón <santiago@debian.org>
+  2014 Canonical Ltd.
+  2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
+  1999-2002 Philippe Troin <phil@fifi.org>
+  1997-1999 Anthony Fok <foka@debian.org>

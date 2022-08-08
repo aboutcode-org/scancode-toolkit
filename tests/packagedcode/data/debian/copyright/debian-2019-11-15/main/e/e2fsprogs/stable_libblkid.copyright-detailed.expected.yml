@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.0
+declared_license_expression: lgpl-2.0
 declared_license_expression_spdx: LGPL-2.0-only
-copyright: |
-  Copyright (c) 1999, 2001 by Andries Brouwer
-  Copyright (c) 1999, 2000, 2003 by Theodore Ts'o
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.0
     detection_rules:
@@ -47,3 +45,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml
             spdx_license_key: LGPL-2.0-only
             spdx_url: https://spdx.org/licenses/LGPL-2.0-only
+other_license_detections: []
+copyright: |
+  Copyright (c) 1999, 2001 by Andries Brouwer
+  Copyright (c) 1999, 2000, 2003 by Theodore Ts'o

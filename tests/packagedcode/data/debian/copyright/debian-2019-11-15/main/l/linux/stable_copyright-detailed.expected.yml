@@ -1,4 +1,3 @@
-primary_license: gpl-2.0
 declared_license:
   - GPL-2
   - GPL-2
@@ -11,35 +10,17 @@ declared_license:
   - GPL-2
   - LGPL-2.1
   - GPL-2+ or X11
-license_expression: (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus
-  AND lgpl-2.1) AND (gpl-2.0-plus OR mit) AND (bsd-new OR gpl-1.0-plus) AND unicode AND mit
-  AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
-declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
+declared_license_expression: gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only
+other_license_expression: (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND
+  lgpl-2.1-plus AND lgpl-2.1) AND (gpl-2.0-plus OR mit) AND (bsd-new OR gpl-1.0-plus) AND unicode
+  AND mit AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
+other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (LGPL-2.1-only AND LGPL-2.1-or-later AND LGPL-2.1-only) AND (GPL-2.0-or-later OR MIT)
   AND (BSD-3-Clause OR GPL-1.0-or-later) AND LicenseRef-scancode-unicode AND MIT AND (LGPL-2.1-only
   AND LGPL-2.1-or-later AND LGPL-2.1-only)
-copyright: |
-  1991-2012 Linus Torvalds and many others
-  1996-2006 Manoj Srivastava
-  2005-2012 Debian kernel team
-  2011 Lennart Poettering
-  2012-2018 Linus Torvalds and many others
-  2006,2014 Andy Polyakov <appro@openssl.org>
-  1991-2012 Unicode, Inc.
-  2002-2006 Keir Fraser
-  2004 Tim Deegan
-  2004 Andrew Warfield
-  2005 Nguyen Anh Quynh
-  2005-2006 IBM Corporation
-  2005 Anthony Liguori
-  2005 Rusty Russell
-  2005-2006 XenSource Ltd.
-  2006 Ian Campbell
-  2006 Red Hat, Inc.
-  2010 Ryan Wilson
-  2014-2015 Red Hat, Inc.
-  2015 Intel Corporation
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: bsd-new OR gpl-1.0-plus
     detection_rules:
       - not-combined
@@ -527,3 +508,24 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
+copyright: |
+  1991-2012 Linus Torvalds and many others
+  1996-2006 Manoj Srivastava
+  2005-2012 Debian kernel team
+  2011 Lennart Poettering
+  2012-2018 Linus Torvalds and many others
+  2006,2014 Andy Polyakov <appro@openssl.org>
+  1991-2012 Unicode, Inc.
+  2002-2006 Keir Fraser
+  2004 Tim Deegan
+  2004 Andrew Warfield
+  2005 Nguyen Anh Quynh
+  2005-2006 IBM Corporation
+  2005 Anthony Liguori
+  2005 Rusty Russell
+  2005-2006 XenSource Ltd.
+  2006 Ian Campbell
+  2006 Red Hat, Inc.
+  2010 Ryan Wilson
+  2014-2015 Red Hat, Inc.
+  2015 Intel Corporation

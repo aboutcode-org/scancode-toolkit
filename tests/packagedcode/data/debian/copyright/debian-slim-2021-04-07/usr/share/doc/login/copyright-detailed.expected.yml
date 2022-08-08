@@ -1,14 +1,8 @@
-primary_license:
 declared_license:
-license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
+declared_license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
 declared_license_expression_spdx: BSD-3-Clause AND TCP-wrappers AND GPL-2.0-or-later
-copyright: |
-  copyright 1988 - 1994, Julianne Frances Haugh
-  copyright 1997 - 2001, Marek Michalkiewicz
-  copyright 2001 - 2004, Andrzej Krzysztofowicz
-  copyright 2000 - 2007, Tomasz Kloczko
-  Copyright 1995 by Wietse Venema
-  Copyright (c) 1992-2003 Free Software Foundation, Inc.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
     detection_rules:
@@ -161,3 +155,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+other_license_detections: []
+copyright: |
+  copyright 1988 - 1994, Julianne Frances Haugh
+  copyright 1997 - 2001, Marek Michalkiewicz
+  copyright 2001 - 2004, Andrzej Krzysztofowicz
+  copyright 2000 - 2007, Tomasz Kloczko
+  Copyright 1995 by Wietse Venema
+  Copyright (c) 1992-2003 Free Software Foundation, Inc.

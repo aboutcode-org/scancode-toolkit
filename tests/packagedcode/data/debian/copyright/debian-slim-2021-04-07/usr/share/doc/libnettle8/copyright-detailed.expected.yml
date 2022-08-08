@@ -1,4 +1,3 @@
-primary_license: lgpl-3.0-plus OR gpl-2.0-plus
 declared_license:
   - LGPL-3+ or GPL-2+
   - LGPL-3+ or GPL-2+
@@ -71,8 +70,10 @@ declared_license:
   - LGPL-3+
   - GPL-2+
   - Expat
-license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND
-  (((gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain) AND public-domain
+declared_license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+declared_license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
+other_license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND (((gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain) AND public-domain
   AND lgpl-2.0-plus AND mit AND pycrypto AND lgpl-2.1-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
   OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
   AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
@@ -124,7 +125,7 @@ license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-
   AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-2.0-plus
   AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND public-domain AND (gpl-2.0 AND gpl-2.0)
   AND fsf-ap
-declared_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
   AND GPL-2.0-or-later)) AND (((GPL-2.0-or-later OR GPL-3.0-or-later) AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-public-domain) AND LicenseRef-scancode-public-domain AND LGPL-2.0-or-later
   AND MIT AND LicenseRef-scancode-pycrypto AND LGPL-2.1-or-later) AND ((LGPL-3.0-or-later AND
@@ -190,135 +191,8 @@ declared_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR 
   AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later))
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-autoconf-simple-exception-2.0
   AND LicenseRef-scancode-public-domain AND (GPL-2.0-only AND GPL-2.0-only) AND FSFAP
-copyright: |
-  © 2001-2020 Niels Möller
-  Some parts are Copyright © the Free Software Foundation and various
-  people. See below and source code comments for details.
-  2001-2020 Niels Möller
-  2013, Niels Möller
-  2000-2002, Rafael R. Sevilla, Niels Möller
-  2001, 2002, 2005 Rafael R. Sevilla, Niels Möller
-  2008, 2013 Niels Möller
-  2003 Nikos Mavroyanopoulos
-  2004 Simon Josefsson
-  2004 Free Software Foundation, Inc.
-  2002, 2004, 2014 Niels Möller
-  2012-2014 Niels Möller
-  2004, 2012 Simon Josefsson
-  2004, 2012 Simon Josefsson
-  2001, 2002, 2004, 2014 Niels Möller
-  2002 Dan Egnor, Niels Möller
-  2015 Amos Jeffries, Niels Möller
-  2019 Dmitry Eremin-Solenikov
-  2018 Red Hat, Inc.
-  2011 Katholieke Universiteit Leuven
-  2011, 2013, 2018 Niels Möller
-  1998, 2001, 2002, 2003 Free Software Foundation, Inc.
-  2010 Simon Josefsson
-  1998, 2001 Free Software Foundation, Inc.
-  1998, 2001 Ray Dassen
-  1998, 2001 Niels Möller
-  2006, 2007 NTT (Nippon Telegraph and Telephone Corporation)
-  2010, 2013 Niels Möller
-  2014 Owen Kirby
-  2014 Exegin Technologies Limited
-  2015, 2017 Dmitry Eremin-Solenikov
-  2001, 2011, 2013, 2014 Niels Möller
-  2012 Simon Josefsson
-  2013 Joachim Strömbergson
-  2012, 2014 Niels Möller
-  2017, 2018 Red Hat, Inc.
-  2020 Dmitry Baryshkov
-  2016-2020 Dmitry Eremin-Solenikov
-  2012 Stefan Metzmacher, Michael Adam, Jeremy Allison
-  2017 Red Hat Inc.
-  2019 Dmitry Eremin-Solenikov
-  2015, 2017, 2018 Red Hat, Inc.
-  2001, 2002, 2005-2018 Niels Möller
-  2017 Red Hat, Inc.
-  2017 Daiki Ueno
-  2005, 2009, 2014 Niels Möller
-  2009 Magnus Holmgren
-  © 2002 Dana L. How
-  1992 Dana L. How
-  1997, 2001 Niels Möller
-  2002, 2009, 2014 Niels Möller
-  2009 Magnus Holmgren
-  2017 Red Hat, Inc.
-  2017 Daiki Ueno
-  2013, 2014, 2017, 2019 Niels Möller
-  2006, 2012, Jeronimo Pellegrini, Niels Möller
-  2015, 2017, 2018, Red Hat, Inc.
-  2001, 2002, 2005-2018, Niels Möller
-  2011 Katholieke Universiteit Leuven
-  2011, 2013, 2018 Niels Möller
-  2018 Red Hat, Inc.
-  2013 Red Hat, Niels Möller
-  2019 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-  2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
-  2015, Dmity Eremin-Solenikov
-  2013, Niels Möller
-  2012, Nikos Mavrogiannopoulos, Niels Möller
-  2012, Nikos Mavrogiannopoulos, Niels Möller
-  2017, 2020 Daiki Ueno
-  ? Andrew Kuchling
-  2003 Andreas Sigfridsson
-  2003 Niels Möller
-  2003 Marcus Comstedt
-  2003 Niels Möller
-  Colin Plumb, Andrew Kuchling
-  2001 Niels Möller
-  1991,1993, 1995 Free Software Foundation, Inc.
-  2010 Niels Möller
-  2011 Daniel Kahn Gillmor
-  2012, Simon Josefsson
-  2014 Niels Möller
-  2013 Nikos Mavrogiannopoulos
-  2013, Nikos Mavrogiannopoulos
-  2013 Niels Möller
-  2012, 2013 Andrew M. (floodyberry)
-  2013, Nikos Mavrogiannopoulos
-  2013, 2014, Niels Möller
-  1998, 2001, 2002, 2003 Free Software Foundation, Inc.
-  2011 Andres Mejia
-  2001, 2012, Niels Möller, Nikos Mavrogiannopoulos
-  2012, 2013, 2017, 2018, Nikos Mavrogiannopoulos
-  2018 Red Hat, Inc
-  2018 Niels Möller
-  2018, Red Hat, Inc.
-  2001, 2012, Niels Möller, Nikos Mavrogiannopoulos
-  2018, Red Hat Inc.
-  2012, Nikos Mavrogiannopoulos
-  2001, 2015, Niels Möller
-  1998 Ross Anderson, Eli Biham, Lars Knudsen
-  2003, 2004, 2005 Free Software Foundation, Inc.
-  2010, 2011 Simon Josefsson
-  2011, 2014 Niels Möller
-  2001, 2004 Peter Gutmann, Andrew Kuchling, Niels Möller
-  2013, 2014 Joachim Strömbergson
-  2001, 2010, 2012, 2014 Niels Möller
-  2004, 2012 Simon Josefsson
-  2001, 2002, 2004, 2014 Niels Möller
-  2014 Owen Kirby
-  2014 Exegin Technologies Limited
-  2013, 2014 Joachim Strömbergson
-  2001, 2010, 2012, 2014 Niels Möller
-  2017, Red Hat, Inc.
-  2017, Daiki Ueno
-  2012, 2013, 2017, 2018 Nikos Mavrogiannopoulos
-  1985, 1986, 1988, 1990-2009, Free Software Foundation, Inc.
-  1999 Ruud de Rooij <ruud@debian.org>
-  1999 J.H.M. Dassen (Ray) <jdassen@wi.LeidenUniv.nl>
-  2001 Niels Möller
-  2005, 2009, 2014 Niels Möller
-  2009 Magnus Holmgren
-  1987-2001 Free Software Foundation, Inc.
-  © 1992-2020 Free Software Foundation, Inc.
-  none
-  2002 Timshel Knoll <timshel@debian.org>
-  2007 Magnus Holmgren
-  2007 Magnus Holmgren
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: lgpl-2.0-plus
     detection_rules:
       - not-combined
@@ -1376,3 +1250,131 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+copyright: |
+  © 2001-2020 Niels Möller
+  Some parts are Copyright © the Free Software Foundation and various
+  people. See below and source code comments for details.
+  2001-2020 Niels Möller
+  2013, Niels Möller
+  2000-2002, Rafael R. Sevilla, Niels Möller
+  2001, 2002, 2005 Rafael R. Sevilla, Niels Möller
+  2008, 2013 Niels Möller
+  2003 Nikos Mavroyanopoulos
+  2004 Simon Josefsson
+  2004 Free Software Foundation, Inc.
+  2002, 2004, 2014 Niels Möller
+  2012-2014 Niels Möller
+  2004, 2012 Simon Josefsson
+  2004, 2012 Simon Josefsson
+  2001, 2002, 2004, 2014 Niels Möller
+  2002 Dan Egnor, Niels Möller
+  2015 Amos Jeffries, Niels Möller
+  2019 Dmitry Eremin-Solenikov
+  2018 Red Hat, Inc.
+  2011 Katholieke Universiteit Leuven
+  2011, 2013, 2018 Niels Möller
+  1998, 2001, 2002, 2003 Free Software Foundation, Inc.
+  2010 Simon Josefsson
+  1998, 2001 Free Software Foundation, Inc.
+  1998, 2001 Ray Dassen
+  1998, 2001 Niels Möller
+  2006, 2007 NTT (Nippon Telegraph and Telephone Corporation)
+  2010, 2013 Niels Möller
+  2014 Owen Kirby
+  2014 Exegin Technologies Limited
+  2015, 2017 Dmitry Eremin-Solenikov
+  2001, 2011, 2013, 2014 Niels Möller
+  2012 Simon Josefsson
+  2013 Joachim Strömbergson
+  2012, 2014 Niels Möller
+  2017, 2018 Red Hat, Inc.
+  2020 Dmitry Baryshkov
+  2016-2020 Dmitry Eremin-Solenikov
+  2012 Stefan Metzmacher, Michael Adam, Jeremy Allison
+  2017 Red Hat Inc.
+  2019 Dmitry Eremin-Solenikov
+  2015, 2017, 2018 Red Hat, Inc.
+  2001, 2002, 2005-2018 Niels Möller
+  2017 Red Hat, Inc.
+  2017 Daiki Ueno
+  2005, 2009, 2014 Niels Möller
+  2009 Magnus Holmgren
+  © 2002 Dana L. How
+  1992 Dana L. How
+  1997, 2001 Niels Möller
+  2002, 2009, 2014 Niels Möller
+  2009 Magnus Holmgren
+  2017 Red Hat, Inc.
+  2017 Daiki Ueno
+  2013, 2014, 2017, 2019 Niels Möller
+  2006, 2012, Jeronimo Pellegrini, Niels Möller
+  2015, 2017, 2018, Red Hat, Inc.
+  2001, 2002, 2005-2018, Niels Möller
+  2011 Katholieke Universiteit Leuven
+  2011, 2013, 2018 Niels Möller
+  2018 Red Hat, Inc.
+  2013 Red Hat, Niels Möller
+  2019 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
+  2015, Dmity Eremin-Solenikov
+  2013, Niels Möller
+  2012, Nikos Mavrogiannopoulos, Niels Möller
+  2012, Nikos Mavrogiannopoulos, Niels Möller
+  2017, 2020 Daiki Ueno
+  ? Andrew Kuchling
+  2003 Andreas Sigfridsson
+  2003 Niels Möller
+  2003 Marcus Comstedt
+  2003 Niels Möller
+  Colin Plumb, Andrew Kuchling
+  2001 Niels Möller
+  1991,1993, 1995 Free Software Foundation, Inc.
+  2010 Niels Möller
+  2011 Daniel Kahn Gillmor
+  2012, Simon Josefsson
+  2014 Niels Möller
+  2013 Nikos Mavrogiannopoulos
+  2013, Nikos Mavrogiannopoulos
+  2013 Niels Möller
+  2012, 2013 Andrew M. (floodyberry)
+  2013, Nikos Mavrogiannopoulos
+  2013, 2014, Niels Möller
+  1998, 2001, 2002, 2003 Free Software Foundation, Inc.
+  2011 Andres Mejia
+  2001, 2012, Niels Möller, Nikos Mavrogiannopoulos
+  2012, 2013, 2017, 2018, Nikos Mavrogiannopoulos
+  2018 Red Hat, Inc
+  2018 Niels Möller
+  2018, Red Hat, Inc.
+  2001, 2012, Niels Möller, Nikos Mavrogiannopoulos
+  2018, Red Hat Inc.
+  2012, Nikos Mavrogiannopoulos
+  2001, 2015, Niels Möller
+  1998 Ross Anderson, Eli Biham, Lars Knudsen
+  2003, 2004, 2005 Free Software Foundation, Inc.
+  2010, 2011 Simon Josefsson
+  2011, 2014 Niels Möller
+  2001, 2004 Peter Gutmann, Andrew Kuchling, Niels Möller
+  2013, 2014 Joachim Strömbergson
+  2001, 2010, 2012, 2014 Niels Möller
+  2004, 2012 Simon Josefsson
+  2001, 2002, 2004, 2014 Niels Möller
+  2014 Owen Kirby
+  2014 Exegin Technologies Limited
+  2013, 2014 Joachim Strömbergson
+  2001, 2010, 2012, 2014 Niels Möller
+  2017, Red Hat, Inc.
+  2017, Daiki Ueno
+  2012, 2013, 2017, 2018 Nikos Mavrogiannopoulos
+  1985, 1986, 1988, 1990-2009, Free Software Foundation, Inc.
+  1999 Ruud de Rooij <ruud@debian.org>
+  1999 J.H.M. Dassen (Ray) <jdassen@wi.LeidenUniv.nl>
+  2001 Niels Möller
+  2005, 2009, 2014 Niels Möller
+  2009 Magnus Holmgren
+  1987-2001 Free Software Foundation, Inc.
+  © 1992-2020 Free Software Foundation, Inc.
+  none
+  2002 Timshel Knoll <timshel@debian.org>
+  2007 Magnus Holmgren
+  2007 Magnus Holmgren

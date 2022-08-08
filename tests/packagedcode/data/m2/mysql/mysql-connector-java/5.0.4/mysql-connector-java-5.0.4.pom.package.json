@@ -178,6 +178,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'The GNU General Public License, Version 2', 'url': 'http://www.gnu.org/licenses/gpl.txt', 'comments': 'MySQL Connector/J contains exceptions to GPL requirements when linking with other components\\n      \\t\\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\\n      \\t\\tin this distribution for more details.', 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [

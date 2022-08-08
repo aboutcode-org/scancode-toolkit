@@ -928,6 +928,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
@@ -1031,6 +1034,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
       "notice_text": null,
       "source_packages": [],
@@ -1127,6 +1133,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "['MIT']",
       "notice_text": null,
       "source_packages": [],
@@ -1252,6 +1261,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
@@ -1375,6 +1387,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
           "notice_text": null,
           "source_packages": [],
@@ -1484,6 +1499,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "['MIT']",
           "notice_text": null,
           "source_packages": [],

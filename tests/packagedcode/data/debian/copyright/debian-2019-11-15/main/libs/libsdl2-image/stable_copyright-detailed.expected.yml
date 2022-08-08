@@ -1,4 +1,3 @@
-primary_license: zlib
 declared_license:
   - zlib/libpng
   - zlib/libpng
@@ -7,22 +6,14 @@ declared_license:
   - LGPL-2+
   - zlib/libpng
   - LGPL-2+
-license_expression: zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND unlicense AND (lgpl-2.0-plus
-  AND lgpl-2.1-plus)
-declared_license_expression_spdx: Zlib AND Zlib AND (LGPL-2.0-or-later AND LGPL-2.1-or-later)
-  AND Unlicense AND (LGPL-2.0-or-later AND LGPL-2.1-or-later)
-copyright: |
-  1997-2016 Sam Lantinga <slouken@libsdl.org>
-  1997-2016 Sam Lantinga <slouken@libsdl.org>
-  1990, 1991, 1993 David Koblas
-  1996 Torsten Martinsen
-  1997-2016 Sam Lantinga <slouken@libsdl.org>
-  1998 Philippe Lavoie
-  in public domain
-  2013, Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>
-  2013, Felix Geyer <fgeyer@debian.org>
-  2016, Gianfranco Costamagna <locutusofborg@debian.org>
-license_detections:
+declared_license_expression: zlib
+declared_license_expression_spdx: Zlib
+other_license_expression: zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND unlicense
+  AND (lgpl-2.0-plus AND lgpl-2.1-plus)
+other_license_expression_spdx: Zlib AND Zlib AND (LGPL-2.0-or-later AND LGPL-2.1-or-later) AND
+  Unlicense AND (LGPL-2.0-or-later AND LGPL-2.1-or-later)
+license_detections: []
+other_license_detections:
   - license_expression: unlicense
     detection_rules:
       - not-combined
@@ -208,3 +199,14 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+copyright: |
+  1997-2016 Sam Lantinga <slouken@libsdl.org>
+  1997-2016 Sam Lantinga <slouken@libsdl.org>
+  1990, 1991, 1993 David Koblas
+  1996 Torsten Martinsen
+  1997-2016 Sam Lantinga <slouken@libsdl.org>
+  1998 Philippe Lavoie
+  in public domain
+  2013, Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>
+  2013, Felix Geyer <fgeyer@debian.org>
+  2016, Gianfranco Costamagna <locutusofborg@debian.org>

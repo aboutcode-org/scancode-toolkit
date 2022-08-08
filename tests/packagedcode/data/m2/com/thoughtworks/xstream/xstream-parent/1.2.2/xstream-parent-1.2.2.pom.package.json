@@ -123,6 +123,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'BSD style', 'url': 'http://xstream.codehaus.com/license.html', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [

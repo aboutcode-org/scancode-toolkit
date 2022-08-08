@@ -1,34 +1,17 @@
-primary_license:
 declared_license:
-license_expression: qti-linux-firmware AND proprietary-license AND openssl-ssleay AND openssl-ssleay
-  AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND bsd-new AND gary-s-brown
-  AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer AND (gpl-2.0
-  OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND isc
+declared_license_expression: qti-linux-firmware AND proprietary-license AND openssl-ssleay AND
+  openssl-ssleay AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND bsd-new
+  AND gary-s-brown AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer
+  AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
+  bsd-new AND isc
 declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-proprietary-license
   AND OpenSSL AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows
   AND Zlib AND Zlib AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown
   AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer
   AND LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
   OR BSD-3-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND ISC
-copyright: |
-  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
-  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
-  Copyright (c) 1998-2011 The OpenSSL Project
-  Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
-  holder is Tim Hudson (tjh@cryptsoft.com)
-  Copyright (c) 1995-2005 Jean-loup Gailly
-  Copyright (c) 1995-2009 Mark Adler
-  Copyright (c) 1995-2003, 2010 Mark Adler
-  Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler
-  Copyright (c) 2004-2006 Qualphone, Inc.
-  Copyright 2000 Aaron D. Gifford
-  COPYRIGHT (c) 1986 Gary S. Brown
-  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
-  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
-  Copyright 1998, 2000 Aaron D. Gifford
-  Copyright (c) 2000-2001, Aaron D. Gifford
-  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
-  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: qti-linux-firmware
     detection_rules:
@@ -1297,3 +1280,23 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
+other_license_detections: []
+copyright: |
+  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
+  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
+  Copyright (c) 1998-2011 The OpenSSL Project
+  Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  holder is Tim Hudson (tjh@cryptsoft.com)
+  Copyright (c) 1995-2005 Jean-loup Gailly
+  Copyright (c) 1995-2009 Mark Adler
+  Copyright (c) 1995-2003, 2010 Mark Adler
+  Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler
+  Copyright (c) 2004-2006 Qualphone, Inc.
+  Copyright 2000 Aaron D. Gifford
+  COPYRIGHT (c) 1986 Gary S. Brown
+  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
+  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
+  Copyright 1998, 2000 Aaron D. Gifford
+  Copyright (c) 2000-2001, Aaron D. Gifford
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>

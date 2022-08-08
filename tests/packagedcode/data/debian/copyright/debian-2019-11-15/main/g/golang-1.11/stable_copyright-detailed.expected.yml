@@ -1,4 +1,3 @@
-primary_license: bsd-new AND google-patent-license-golang
 declared_license:
   - Go
   - X11
@@ -23,12 +22,15 @@ declared_license:
   - MPEG
   - CC-BY-3.0
   - BSD-2-clause-svgpan
-license_expression: (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND google-patent-license-golang)
-  AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
-  AND bsd-simplified AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
-  AND sunpro AND mpeg-ssg AND other-permissive AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views
-  AND cc-by-3.0 AND cc-by-3.0 AND bsd-new AND (bsd-new AND google-patent-license-golang)
-declared_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
+declared_license_expression: bsd-new AND google-patent-license-golang
+declared_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang
+other_license_expression: (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND
+  google-patent-license-golang) AND (bsd-new AND google-patent-license-golang) AND (bsd-new
+  AND google-patent-license-golang) AND bsd-simplified AND (bsd-new AND google-patent-license-golang)
+  AND (bsd-new AND google-patent-license-golang) AND sunpro AND mpeg-ssg AND other-permissive
+  AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND cc-by-3.0 AND cc-by-3.0 AND bsd-new
+  AND (bsd-new AND google-patent-license-golang)
+other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
   AND MIT AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause
   AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
   AND BSD-2-Clause AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND
@@ -36,38 +38,8 @@ declared_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-p
   AND LicenseRef-scancode-mpeg-ssg AND LicenseRef-scancode-other-permissive AND (Apache-2.0
   AND Apache-2.0) AND BSD-2-Clause-Views AND CC-BY-3.0 AND CC-BY-3.0 AND BSD-3-Clause AND (BSD-3-Clause
   AND LicenseRef-scancode-google-patent-license-golang)
-copyright: |
-  © 2009, 2010, The Go Authors. All rights reserved.
-  © 1994-1999 Lucent Technologies Inc. All rights reserved.
-  Portions © 1997-1999 Vita Nuova Limited
-  Portions © 2000-2007 Vita Nuova Holdings Limited (www.vitanuova.com)
-  Portions © 2001-2007 Russ Cox. All rights reserved.
-  Portions © 2004,2006 Bruce Ellis
-  Portions © 1995-2007 C H Forsyth (forsyth@terzarima.net)
-  Revisions © 2000-2007 Lucent Technologies Inc. and others
-  Portions © 2009 The Go Authors. All rights reserved.
-  © 2009, The Go Authors. All rights reserved.
-  © 2009, 2010, The Go Authors. All rights reserved.
-  © 2009, 2010, The Go Authors. All rights reserved.
-  © 1996-1998 John D. Polstra. All rights reserved.
-  © 2001 David E. O'Brien
-  Portions © 2009 The Go Authors. All rights reserved.
-  © 2009, 2011 The Go Authors. All rights reserved.
-  Based on code © 1984, 1987, 1989, 1992, 2000 by Stephen L. Moshier
-  © 2010 The Go Authors. All rights reserved.
-  Based on code © 1993 by Sun Microsystems, Inc. All rights reserved.
-  © 1996, MPEG Software Simulation Group. All Rights Reserved.
-  © Willem van Schaik, 1999
-  2014, 2016 Google Inc.
-  2009-2017 Andrea Leofreddi <a.leofreddi@itcharm.com>
-  Renée French
-  2012 The Chromium Authors
-  2010 Ivan Wong <ivanwyc@gmail.com>
-  2010 Ondřej Surý <ondrej@debian.org>
-  2012 Michael Stapelberg <stapelberg@debian.org>
-  2014 Canonical Ltd
-  2014 Tianon Gravi <tianon@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: other-permissive
     detection_rules:
       - not-combined
@@ -1023,3 +995,34 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.yml
             spdx_license_key: CC-BY-3.0
             spdx_url: https://spdx.org/licenses/CC-BY-3.0
+copyright: |
+  © 2009, 2010, The Go Authors. All rights reserved.
+  © 1994-1999 Lucent Technologies Inc. All rights reserved.
+  Portions © 1997-1999 Vita Nuova Limited
+  Portions © 2000-2007 Vita Nuova Holdings Limited (www.vitanuova.com)
+  Portions © 2001-2007 Russ Cox. All rights reserved.
+  Portions © 2004,2006 Bruce Ellis
+  Portions © 1995-2007 C H Forsyth (forsyth@terzarima.net)
+  Revisions © 2000-2007 Lucent Technologies Inc. and others
+  Portions © 2009 The Go Authors. All rights reserved.
+  © 2009, The Go Authors. All rights reserved.
+  © 2009, 2010, The Go Authors. All rights reserved.
+  © 2009, 2010, The Go Authors. All rights reserved.
+  © 1996-1998 John D. Polstra. All rights reserved.
+  © 2001 David E. O'Brien
+  Portions © 2009 The Go Authors. All rights reserved.
+  © 2009, 2011 The Go Authors. All rights reserved.
+  Based on code © 1984, 1987, 1989, 1992, 2000 by Stephen L. Moshier
+  © 2010 The Go Authors. All rights reserved.
+  Based on code © 1993 by Sun Microsystems, Inc. All rights reserved.
+  © 1996, MPEG Software Simulation Group. All Rights Reserved.
+  © Willem van Schaik, 1999
+  2014, 2016 Google Inc.
+  2009-2017 Andrea Leofreddi <a.leofreddi@itcharm.com>
+  Renée French
+  2012 The Chromium Authors
+  2010 Ivan Wong <ivanwyc@gmail.com>
+  2010 Ondřej Surý <ondrej@debian.org>
+  2012 Michael Stapelberg <stapelberg@debian.org>
+  2014 Canonical Ltd
+  2014 Tianon Gravi <tianon@debian.org>

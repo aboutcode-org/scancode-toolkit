@@ -175,6 +175,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "{'licenses': ['GPLv3', 'RUBY', 'GPLv2'], 'licenselogic': 'or'}",
     "notice_text": null,
     "source_packages": [],

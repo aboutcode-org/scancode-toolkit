@@ -1,4 +1,3 @@
-primary_license: apache-2.0
 declared_license:
   - Apache-2.0
   - Apache-2.0 and BSD-3-clause-Cambridge
@@ -27,14 +26,16 @@ declared_license:
   - BSD-3-clause-Cambridge
   - Custom
   - Expat
-license_expression: (apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0) AND bsd-new)
+declared_license_expression: apache-2.0
+declared_license_expression_spdx: Apache-2.0
+other_license_expression: (apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0) AND bsd-new)
   AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus) OR bison-exception-2.2) AND bsd-unchanged
   AND ((apache-2.0 AND apache-2.0) AND (apache-2.0 AND hs-regexp)) AND (apache-2.0 AND apache-2.0)
   AND bsd-simplified-darwin AND ((apache-2.0 AND apache-2.0) AND public-domain) AND ((apache-2.0
   AND apache-2.0) AND (x11-keith-packard AND historical)) AND ((apache-2.0 AND apache-2.0) AND
   zeusbench) AND ((apache-2.0 AND apache-2.0) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND mit AND
   (apache-2.0 AND apache-2.0)
-declared_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 AND Apache-2.0)
+other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 AND Apache-2.0)
   AND BSD-3-Clause) AND BSD-3-Clause AND ((GPL-3.0-or-later AND GPL-3.0-or-later) OR Bison-exception-2.2)
   AND LicenseRef-scancode-bsd-unchanged AND ((Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND
   Spencer-94)) AND (Apache-2.0 AND Apache-2.0) AND LicenseRef-scancode-bsd-simplified-darwin
@@ -42,32 +43,8 @@ declared_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 A
   Apache-2.0) AND (HPND-sell-variant AND HPND)) AND ((Apache-2.0 AND Apache-2.0) AND LicenseRef-scancode-zeusbench)
   AND ((Apache-2.0 AND Apache-2.0) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND MIT AND (Apache-2.0
   AND Apache-2.0)
-copyright: |
-  Copyright 2019 The Apache Software Foundation
-  2019 The Apache Software Foundation
-  Copyright: 1997-2004 University of Cambridge
-  1997-2004 University of Cambridge
-  1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
-  1998 Dag-Erling Codan Smrgrav
-  2019 The Apache Software Foundation
-  1996-1997 Cisco Systems, Inc.
-  1987 Ian F. Darwin.
-  2019 The Apache Software Foundation
-  2009-2017 Unbit S.a.s. <info@unbit.it>
-  Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
-  2019 The Apache Software Foundation
-  1992 by Eric Haines, erich@eye.com
-  2019 The Apache Software Foundation
-  1995, Board of Trustees of the University of Illinois
-  1994, Jeff Hostetler, Spyglass, Inc.
-  1993,1994 by Carnegie Mellon University
-  1991 Bell Communications Research, Inc. (Bellcore)
-  2019 The Apache Software Foundation
-  1996 by Zeus Technology Ltd. http://www.zeustech.net/
-  2012 Arno Töll
-  2012 Arno Töll
-  2008 Stefan Fritsch
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: apache-2.0
     detection_rules:
       - not-combined
@@ -961,3 +938,28 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
+copyright: |
+  Copyright 2019 The Apache Software Foundation
+  2019 The Apache Software Foundation
+  Copyright: 1997-2004 University of Cambridge
+  1997-2004 University of Cambridge
+  1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
+  1998 Dag-Erling Codan Smrgrav
+  2019 The Apache Software Foundation
+  1996-1997 Cisco Systems, Inc.
+  1987 Ian F. Darwin.
+  2019 The Apache Software Foundation
+  2009-2017 Unbit S.a.s. <info@unbit.it>
+  Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
+  2019 The Apache Software Foundation
+  1992 by Eric Haines, erich@eye.com
+  2019 The Apache Software Foundation
+  1995, Board of Trustees of the University of Illinois
+  1994, Jeff Hostetler, Spyglass, Inc.
+  1993,1994 by Carnegie Mellon University
+  1991 Bell Communications Research, Inc. (Bellcore)
+  2019 The Apache Software Foundation
+  1996 by Zeus Technology Ltd. http://www.zeustech.net/
+  2012 Arno Töll
+  2012 Arno Töll
+  2008 Stefan Fritsch

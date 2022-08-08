@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: bsd-source-code
+declared_license_expression: bsd-source-code
 declared_license_expression_spdx: BSD-Source-Code
-copyright: Copyright (c) 2006-2010, Myricom Inc.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-source-code
     detection_rules:
@@ -61,3 +61,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-source-code.yml
             spdx_license_key: BSD-Source-Code
             spdx_url: https://spdx.org/licenses/BSD-Source-Code
+other_license_detections: []
+copyright: Copyright (c) 2006-2010, Myricom Inc.

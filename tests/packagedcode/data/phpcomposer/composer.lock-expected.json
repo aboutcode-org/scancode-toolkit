@@ -25,6 +25,9 @@
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [],
@@ -453,6 +456,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -603,6 +609,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -743,6 +752,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -893,6 +905,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1053,6 +1068,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1180,6 +1198,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1410,6 +1431,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1544,6 +1568,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1668,6 +1695,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1798,6 +1828,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -1956,6 +1989,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -2110,6 +2146,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -2237,6 +2276,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -2657,6 +2699,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -2801,6 +2846,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['BSD-3-Clause']",
     "notice_text": null,
     "source_packages": [],
@@ -2924,6 +2972,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -3074,6 +3125,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -3184,6 +3238,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['BSD-3-Clause']",
     "notice_text": null,
     "source_packages": [],
@@ -3341,6 +3398,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -3608,6 +3668,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -3755,6 +3818,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -3952,6 +4018,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4079,6 +4148,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4196,6 +4268,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4313,6 +4388,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4440,6 +4518,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4567,6 +4648,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4694,6 +4778,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4811,6 +4898,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
@@ -4928,6 +5018,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],

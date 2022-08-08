@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: x11-xconsortium-veillard AND x11-xconsortium
+declared_license_expression: x11-xconsortium-veillard AND x11-xconsortium
 declared_license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard AND X11
-copyright: |
-  Copyright (c) 2001-2002 Daniel Veillard
-  Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: x11-xconsortium-veillard
     detection_rules:
@@ -118,3 +116,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
+other_license_detections: []
+copyright: |
+  Copyright (c) 2001-2002 Daniel Veillard
+  Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard

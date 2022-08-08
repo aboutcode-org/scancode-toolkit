@@ -1,4 +1,3 @@
-primary_license: lgpl-2.1 AND lgpl-2.0-plus
 declared_license:
   - LGPL-2.1
   - GPL-2
@@ -12,20 +11,15 @@ declared_license:
   - LGPL-2.1
   - MIT(*)
   - MIT(**)
-license_expression: (lgpl-2.1 AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new
-  AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
-declared_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.0-only AND
-  GPL-2.0-only AND GPL-2.0-only) AND BSD-3-Clause AND (ISC AND LicenseRef-scancode-ibm-dhcp)
-  AND LicenseRef-scancode-xfree86-1.0 AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-copyright: |
-  VMware, Inc. <http://www.vmware.com/>
-  VMware, Inc. <http://www.vmware.com/>
-  1990, 1993 The Regents of the University of California.
-  1996, 1998 Internet Software Consortium
-  2006 VMware, Inc. <http://www.vmware.com/>
-  2007-2013 Daniel Baumann <mail@daniel-baumann.ch>
-  2014 Bernd Zeimetz <bzed@debian.org>
-license_detections:
+declared_license_expression: lgpl-2.1 AND lgpl-2.0-plus
+declared_license_expression_spdx: LGPL-2.1-only AND LGPL-2.0-or-later
+other_license_expression: (lgpl-2.1 AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+  AND bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.0-only AND GPL-2.0-only
+  AND GPL-2.0-only) AND BSD-3-Clause AND (ISC AND LicenseRef-scancode-ibm-dhcp) AND LicenseRef-scancode-xfree86-1.0
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+license_detections: []
+other_license_detections:
   - license_expression: bsd-new
     detection_rules:
       - not-combined
@@ -516,3 +510,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/xfree86-1.0.yml
             spdx_license_key: LicenseRef-scancode-xfree86-1.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/xfree86-1.0.LICENSE
+copyright: |
+  VMware, Inc. <http://www.vmware.com/>
+  VMware, Inc. <http://www.vmware.com/>
+  1990, 1993 The Regents of the University of California.
+  1996, 1998 Internet Software Consortium
+  2006 VMware, Inc. <http://www.vmware.com/>
+  2007-2013 Daniel Baumann <mail@daniel-baumann.ch>
+  2014 Bernd Zeimetz <bzed@debian.org>

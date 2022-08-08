@@ -1,12 +1,10 @@
-primary_license: None
 declared_license:
   - Binary redistribution (Realtek permissive)
   - Binary redistribution (Realtek restrictive)
-license_expression: other-permissive AND intel
+declared_license_expression: other-permissive AND intel
 declared_license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-intel
-copyright: |
-  2010-2013, Realtek Semiconductor Corporation
-  2009-2010, Realtek Semiconductor Corporation
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: other-permissive
     detection_rules:
@@ -119,3 +117,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.yml
             spdx_license_key: LicenseRef-scancode-intel
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+other_license_detections: []
+copyright: |
+  2010-2013, Realtek Semiconductor Corporation
+  2009-2010, Realtek Semiconductor Corporation

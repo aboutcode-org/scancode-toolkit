@@ -86,6 +86,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "http://go.microsoft.com/fwlink/?LinkId=329770",
     "notice_text": null,
     "source_packages": [],

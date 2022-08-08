@@ -1,6 +1,3 @@
-primary_license: (public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain AND gpl-2.0-plus
-  AND gpl-3.0-plus) AND (other-permissive AND other-copyleft) AND public-domain-disclaimer AND
-  (lgpl-2.1 AND gpl-2.0 AND gpl-3.0)) AND public-domain
 declared_license:
   - Different licenses apply to different files in this package. Here
   - PD
@@ -29,9 +26,16 @@ declared_license:
   - Autoconf
   - permissive-fsf
   - permissive-nowarranty
-license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND
-  public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus) AND
-  public-domain AND public-domain AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
+declared_license_expression: (public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
+  AND gpl-2.0-plus AND gpl-3.0-plus) AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
+  AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0)) AND public-domain
+declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND LGPL-2.1-or-later AND
+  GPL-2.0-or-later AND (LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND GPL-3.0-or-later)
+  AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft) AND LicenseRef-scancode-public-domain-disclaimer
+  AND (LGPL-2.1-only AND GPL-2.0-only AND GPL-3.0-only)) AND LicenseRef-scancode-public-domain
+other_license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND gpl-2.0-plus
+  AND public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus)
+  AND public-domain AND public-domain AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
   AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0) AND public-domain AND public-domain) AND public-domain
   AND public-domain AND public-domain AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND public-domain AND public-domain AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND fsf-unlimited
@@ -39,7 +43,7 @@ license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND gpl-2
   AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
   AND fsf-ap AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND
   (lgpl-2.1-plus AND lgpl-2.1-plus) AND other-copyleft AND public-domain
-declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND (LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND GPL-3.0-or-later) AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft)
@@ -53,51 +57,8 @@ declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND License
   AND LicenseRef-scancode-public-domain AND FSFAP AND (LicenseRef-scancode-public-domain AND
   FSFULLR AND Autoconf-exception-2.0 AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)
   AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-public-domain
-copyright: |
-  2006-2018, Lasse Collin
-  1999-2008, Igor Pavlov
-  2006, Ville Koskinen
-  1998, Steve Reid
-  2000, Wei Dai
-  2003, Kevin Springle
-  2009, Jonathan Nieder
-  2010, Anders F Björklund
-  2009-2010, Lasse Collin
-  © 1993, Jean-loup Gailly
-  © 1989-1994, 1996-1999, 2001-2007, Free Software Foundation, Inc.
-  © 2006 Timo Lindfors
-  2005, Charles Levert
-  2005, 2009, Lasse Collin
-  2009, Andrew Dudman
-  2009, Andrew Dudman
-  2009, Lasse Collin
-  2010, Daniel Mealha Cabrita
-  © 1987-2007 Free Software Foundation, Inc.
-  © 2002-2006, 2008 Free Software Foundation, Inc.
-  © 2007-2008 Free Software Foundation, Inc.
-  © 2008, Steven G. Johnson <stevenj@alum.mit.edu>
-  © 2014, Google Inc.
-  © 2015, Lasse Collin <lasse.collin@tukaani.org>
-  © 1997-2007 by Dimitri van Heesch
-  none, automatically generated data
-  none; these are just short lists.
-  2008-2009, Lasse Collin
-  2010, Marek Černocký
-  2010, Andre Noll
-  2011, Adrien Nader
-  2009, 2010, Gruppo traduzione italiano di Ubuntu-it
-  2010, Lorenzo De Liso
-  2009, 2010, 2011, Milo Casagrande
-  2011, Jakub Bogusz
-  © 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005,
-  2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-  © 1992, 1993, 1994, 1999, 2000, 2001, 2002, 2005
-  Free Software Foundation, Inc.
-  2007-2010, Lasse Collin
-  © 2003 Free Software Foundation, Inc.
-  © 1989, 1991, 1999, 2007 Free Software Foundation, Inc.
-  2009-2012, Jonathan Nieder
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
       AND gpl-2.0-plus AND gpl-3.0-plus) AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
       AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0)
@@ -1853,3 +1814,47 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+copyright: |
+  2006-2018, Lasse Collin
+  1999-2008, Igor Pavlov
+  2006, Ville Koskinen
+  1998, Steve Reid
+  2000, Wei Dai
+  2003, Kevin Springle
+  2009, Jonathan Nieder
+  2010, Anders F Björklund
+  2009-2010, Lasse Collin
+  © 1993, Jean-loup Gailly
+  © 1989-1994, 1996-1999, 2001-2007, Free Software Foundation, Inc.
+  © 2006 Timo Lindfors
+  2005, Charles Levert
+  2005, 2009, Lasse Collin
+  2009, Andrew Dudman
+  2009, Andrew Dudman
+  2009, Lasse Collin
+  2010, Daniel Mealha Cabrita
+  © 1987-2007 Free Software Foundation, Inc.
+  © 2002-2006, 2008 Free Software Foundation, Inc.
+  © 2007-2008 Free Software Foundation, Inc.
+  © 2008, Steven G. Johnson <stevenj@alum.mit.edu>
+  © 2014, Google Inc.
+  © 2015, Lasse Collin <lasse.collin@tukaani.org>
+  © 1997-2007 by Dimitri van Heesch
+  none, automatically generated data
+  none; these are just short lists.
+  2008-2009, Lasse Collin
+  2010, Marek Černocký
+  2010, Andre Noll
+  2011, Adrien Nader
+  2009, 2010, Gruppo traduzione italiano di Ubuntu-it
+  2010, Lorenzo De Liso
+  2009, 2010, 2011, Milo Casagrande
+  2011, Jakub Bogusz
+  © 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005,
+  2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  © 1992, 1993, 1994, 1999, 2000, 2001, 2002, 2005
+  Free Software Foundation, Inc.
+  2007-2010, Lasse Collin
+  © 2003 Free Software Foundation, Inc.
+  © 1989, 1991, 1999, 2007 Free Software Foundation, Inc.
+  2009-2012, Jonathan Nieder

@@ -1,24 +1,17 @@
-primary_license: lgpl-2.1
 declared_license:
   - LGPL-2.1
   - LGPL-2.1
   - LGPL-2.1
   - LGPL-2.1
   - LGPL-2.1
-license_expression: (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1)
-  AND (lgpl-2.1 AND lgpl-2.1)
-declared_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-only) AND (LGPL-2.1-only AND LGPL-2.1-only)
+declared_license_expression: lgpl-2.1
+declared_license_expression_spdx: LGPL-2.1-only
+other_license_expression: (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1
+  AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1)
+other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-only) AND (LGPL-2.1-only AND LGPL-2.1-only)
   AND (LGPL-2.1-only AND LGPL-2.1-only) AND (LGPL-2.1-only AND LGPL-2.1-only)
-copyright: |
-  2012 Paul Moore <pmoore@redhat.com>
-  2012 Ashley Lai <adlai@us.ibm.com>
-  2012 Corey Bryant <coreyb@linux.vnet.ibm.com>
-  2012 Eduardo Otubo <otubo@linux.vnet.ibm.com>
-  2012 Eric Paris <eparis@redhat.com>
-  2013 Vitaly Shukela <vi0oss@gmail.com>
-  2006 Bob Jenkins <bob_jenkins@burtleburtle.net>
-  2012 Kees Cook <kees@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: lgpl-2.1
     detection_rules:
       - not-combined
@@ -102,3 +95,12 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
+copyright: |
+  2012 Paul Moore <pmoore@redhat.com>
+  2012 Ashley Lai <adlai@us.ibm.com>
+  2012 Corey Bryant <coreyb@linux.vnet.ibm.com>
+  2012 Eduardo Otubo <otubo@linux.vnet.ibm.com>
+  2012 Eric Paris <eparis@redhat.com>
+  2013 Vitaly Shukela <vi0oss@gmail.com>
+  2006 Bob Jenkins <bob_jenkins@burtleburtle.net>
+  2012 Kees Cook <kees@debian.org>

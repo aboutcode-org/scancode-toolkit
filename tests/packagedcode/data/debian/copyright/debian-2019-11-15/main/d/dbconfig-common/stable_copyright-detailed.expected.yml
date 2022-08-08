@@ -1,15 +1,12 @@
-primary_license: gpl-2.0-plus
 declared_license:
   - GPL-2+
   - AFL-2.1
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (afl-2.1 AND afl-2.1)
-declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (AFL-2.1 AND AFL-2.1)
-copyright: |
-  2000-2004 Ola Lundqvist <opal@debian.org>
-  2004-2011 sean finney <seanius@debian.org>
-  2013-2015 Paul Gevers <elbrus@debian.org>
-  2005 sean finney <seanius@debian.org>
-license_detections:
+declared_license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
+other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (afl-2.1 AND afl-2.1)
+other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (AFL-2.1 AND AFL-2.1)
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0-plus
     detection_rules:
       - not-combined
@@ -308,3 +305,8 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-2.1.yml
             spdx_license_key: AFL-2.1
             spdx_url: https://spdx.org/licenses/AFL-2.1
+copyright: |
+  2000-2004 Ola Lundqvist <opal@debian.org>
+  2004-2011 sean finney <seanius@debian.org>
+  2013-2015 Paul Gevers <elbrus@debian.org>
+  2005 sean finney <seanius@debian.org>

@@ -1,4 +1,3 @@
-primary_license: cups
 declared_license:
   - GPL-2.0 with AOSDL exception
   - LGPL-2.0 with AOSDL exception
@@ -7,19 +6,13 @@ declared_license:
   - GPL-2.0 with AOSDL exception
   - LGPL-2.0 with AOSDL exception
   - Zlib
-license_expression: cups AND cups AND (zlib AND zlib) AND bsd-simplified
-declared_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-cups AND
-  (Zlib AND Zlib) AND BSD-2-Clause
-copyright: |
-  2007-2015, Apple Inc.
-  2007-2013, Apple Inc.
-  2007-2014, Apple Inc
-  2005, Easy Software Products
-  1999, Aladdin Enterprises.
-  2011, Red Hat, Inc
-  2007-2014, Apple Inc
-  1997-2007, Easy Software Products
-license_detections:
+declared_license_expression: cups
+declared_license_expression_spdx: LicenseRef-scancode-cups
+other_license_expression: cups AND cups AND (zlib AND zlib) AND bsd-simplified
+other_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-cups AND (Zlib
+  AND Zlib) AND BSD-2-Clause
+license_detections: []
+other_license_detections:
   - license_expression: bsd-simplified
     detection_rules:
       - not-combined
@@ -353,3 +346,12 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
+copyright: |
+  2007-2015, Apple Inc.
+  2007-2013, Apple Inc.
+  2007-2014, Apple Inc
+  2005, Easy Software Products
+  1999, Aladdin Enterprises.
+  2011, Red Hat, Inc
+  2007-2014, Apple Inc
+  1997-2007, Easy Software Products

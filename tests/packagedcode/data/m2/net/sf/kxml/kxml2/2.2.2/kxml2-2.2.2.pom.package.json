@@ -130,6 +130,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'The BSD License', 'url': 'http://www.opensource.org/licenses/bsd-license.html', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [

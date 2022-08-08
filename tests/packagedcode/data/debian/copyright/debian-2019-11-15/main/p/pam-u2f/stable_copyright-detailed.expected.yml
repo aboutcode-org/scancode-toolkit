@@ -1,4 +1,3 @@
-primary_license: bsd-simplified
 declared_license:
   - BSD-2-clause
   - BSD-2-clause
@@ -10,25 +9,16 @@ declared_license:
   - GPL-2+
   - GPL-3+
   - BSD-2-clause
-license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus) AND
-  (gpl-2.0-plus AND gpl-2.0-plus) AND fsf-unlimited AND (gpl-3.0-plus AND gpl-3.0-plus) AND
-  gpl-2.0-plus WITH libtool-exception-2.0
-declared_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+declared_license_expression: bsd-simplified
+declared_license_expression_spdx: BSD-2-Clause
+other_license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND fsf-unlimited AND (gpl-3.0-plus AND gpl-3.0-plus)
+  AND gpl-2.0-plus WITH libtool-exception-2.0
+other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND (GPL-2.0-or-later AND GPL-2.0-or-later)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND FSFULLR AND (GPL-3.0-or-later AND GPL-3.0-or-later)
   AND GPL-2.0-or-later WITH Libtool-exception
-copyright: |
-  Copyright (c) 2006-2018 Yubico AB
-  2014-2016 Yubico AB
-  2016-2018 Nicolas Braud-Santoni
-  1996-2017, Free Software Foundation, Inc.
-  1996-2017, Free Software Foundation, Inc.
-  2004 Scott James Remnant <scott@netsplit.com>.
-  2012-2015 Dan Nicholson <dbn.lists@gmail.com>
-  2004, 2005, 2007-2009, 2011-2015, Free Software
-  2011, Maarten Bosmans <mkbosmans@gmail.com>
-  2008, Guido U. Draheim <guidod@gmx.de>
-  1996-2017, Free Software Foundation, Inc.
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: fsf-unlimited
     detection_rules:
       - not-combined
@@ -342,3 +332,15 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
+copyright: |
+  Copyright (c) 2006-2018 Yubico AB
+  2014-2016 Yubico AB
+  2016-2018 Nicolas Braud-Santoni
+  1996-2017, Free Software Foundation, Inc.
+  1996-2017, Free Software Foundation, Inc.
+  2004 Scott James Remnant <scott@netsplit.com>.
+  2012-2015 Dan Nicholson <dbn.lists@gmail.com>
+  2004, 2005, 2007-2009, 2011-2015, Free Software
+  2011, Maarten Bosmans <mkbosmans@gmail.com>
+  2008, Guido U. Draheim <guidod@gmx.de>
+  1996-2017, Free Software Foundation, Inc.

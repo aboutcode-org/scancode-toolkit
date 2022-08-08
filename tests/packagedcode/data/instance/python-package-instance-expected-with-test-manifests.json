@@ -110,6 +110,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: MIT License']}",
           "notice_text": null,
           "source_packages": [],
@@ -248,6 +251,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
@@ -347,6 +353,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": {},
           "notice_text": null,
           "source_packages": [],

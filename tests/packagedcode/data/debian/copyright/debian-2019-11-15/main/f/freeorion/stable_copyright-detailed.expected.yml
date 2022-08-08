@@ -1,4 +1,3 @@
-primary_license: gpl-2.0
 declared_license:
   - GPL-2
   - CC-BY-SA-3.0
@@ -16,30 +15,20 @@ declared_license:
   - Apache-2.0
   - CC-BY-SA-3.0
   - DejaVu-License
-license_expression: (gpl-2.0 AND gpl-2.0) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0) AND
-  (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
+declared_license_expression: gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only
+other_license_expression: (gpl-2.0 AND gpl-2.0) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND bsd-new AND (bitstream AND bitstream)
   AND (apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND
   lgpl-2.1)
-declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND CC-BY-SA-3.0 AND (CC-BY-SA-3.0
+other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND CC-BY-SA-3.0 AND (CC-BY-SA-3.0
   AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
   AND BSL-1.0 AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
   AND BSD-3-Clause AND (Bitstream-Vera AND Bitstream-Vera) AND (Apache-2.0 AND Apache-2.0) AND
   (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
-copyright: |
-  The FreeOrion project
-  The FreeOrion project
-  2003-2008, T. Zachary Laine
-  2006, Nemanja Trifunovic
-  2001, Daniel C. Nuffer
-  2006, T. Zachary Laine
-  2000-2011, Kitware, Inc
-  2003, Bitstream Inc
-  2006, Tavmjong Bah
-  2015, Google Inc.
-  2013-2014, Dmitry Smirnov <onlyjob@debian.org>
-  2013-2018, Markus Koschany <apo@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0
     detection_rules:
       - not-combined
@@ -1081,3 +1070,16 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+copyright: |
+  The FreeOrion project
+  The FreeOrion project
+  2003-2008, T. Zachary Laine
+  2006, Nemanja Trifunovic
+  2001, Daniel C. Nuffer
+  2006, T. Zachary Laine
+  2000-2011, Kitware, Inc
+  2003, Bitstream Inc
+  2006, Tavmjong Bah
+  2015, Google Inc.
+  2013-2014, Dmitry Smirnov <onlyjob@debian.org>
+  2013-2018, Markus Koschany <apo@debian.org>

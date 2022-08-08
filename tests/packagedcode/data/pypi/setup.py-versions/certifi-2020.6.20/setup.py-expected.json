@@ -136,6 +136,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "{'license': 'MPL-2.0', 'classifiers': ['License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']}",
     "notice_text": null,
     "source_packages": [],

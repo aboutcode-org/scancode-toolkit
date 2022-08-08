@@ -1,14 +1,8 @@
-primary_license:
 declared_license:
-license_expression: gpl-2.0 AND gpl-2.0
+declared_license_expression: gpl-2.0 AND gpl-2.0
 declared_license_expression_spdx: GPL-2.0-only AND GPL-2.0-only
-copyright: |
-  Copyright (c) 2003-2006 Theodore Ts'o <tytso@mit.edu>
-  Copyright (c) 1997-2003 Yann Dirson <dirson@debian.org>
-  Copyright (c) 2001 Alcove <http://www.alcove.com/>
-  Copyright (c) 1997 Klee Dienes
-  Copyright (c) 1995-1996 Michael Nonweiler <mrn20@cam.ac.uk>
-  Copyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0
     detection_rules:
@@ -86,3 +80,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+other_license_detections: []
+copyright: |
+  Copyright (c) 2003-2006 Theodore Ts'o <tytso@mit.edu>
+  Copyright (c) 1997-2003 Yann Dirson <dirson@debian.org>
+  Copyright (c) 2001 Alcove <http://www.alcove.com/>
+  Copyright (c) 1997 Klee Dienes
+  Copyright (c) 1995-1996 Michael Nonweiler <mrn20@cam.ac.uk>
+  Copyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o

@@ -1,11 +1,12 @@
-primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
-license_expression: gpl-3.0-plus AND gpl-3.0-plus
-declared_license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-or-later
-copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>
-license_detections:
+declared_license_expression: gpl-3.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later
+other_license_expression: gpl-3.0-plus AND gpl-3.0-plus
+other_license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-or-later
+license_detections: []
+other_license_detections:
   - license_expression: gpl-3.0-plus
     detection_rules:
       - not-combined
@@ -82,3 +83,4 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>

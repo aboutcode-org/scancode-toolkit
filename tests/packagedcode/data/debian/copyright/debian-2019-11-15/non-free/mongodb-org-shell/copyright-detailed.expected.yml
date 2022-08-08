@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: mongodb-sspl-1.0
+declared_license_expression: mongodb-sspl-1.0
 declared_license_expression_spdx: SSPL-1.0
-copyright: |
-  Copyright 2009 10gen
-  (c) 2009, Kristina Chodorow <kristina@10gen.com>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: mongodb-sspl-1.0
     detection_rules:
@@ -48,3 +46,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.yml
             spdx_license_key: SSPL-1.0
             spdx_url: https://spdx.org/licenses/SSPL-1.0
+other_license_detections: []
+copyright: |
+  Copyright 2009 10gen
+  (c) 2009, Kristina Chodorow <kristina@10gen.com>

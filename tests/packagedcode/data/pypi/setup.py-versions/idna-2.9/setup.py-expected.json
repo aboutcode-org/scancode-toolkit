@@ -143,6 +143,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "{'license': 'BSD-like', 'classifiers': ['License :: OSI Approved :: BSD License']}",
     "notice_text": null,
     "source_packages": [],

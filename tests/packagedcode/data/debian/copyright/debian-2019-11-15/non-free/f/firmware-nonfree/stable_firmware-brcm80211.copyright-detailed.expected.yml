@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: broadcom-proprietary
+declared_license_expression: broadcom-proprietary
 declared_license_expression_spdx: LicenseRef-scancode-broadcom-proprietary
-copyright:
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: broadcom-proprietary
     detection_rules:
@@ -179,3 +179,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.yml
             spdx_license_key: LicenseRef-scancode-broadcom-proprietary
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.LICENSE
+other_license_detections: []
+copyright:

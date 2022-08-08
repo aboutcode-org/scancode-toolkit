@@ -1,15 +1,14 @@
-primary_license: tcl
 declared_license:
   - Tcl
   - Public-domain
   - Tcl
   - Public-domain
-license_expression: tcl AND pngsuite
-declared_license_expression_spdx: TCL AND LicenseRef-scancode-pngsuite
-copyright: |
-  1997-2004 Jan Nijtmans
-  1999, 2011 Willem van Schaik
-license_detections:
+declared_license_expression: tcl
+declared_license_expression_spdx: TCL
+other_license_expression: tcl AND pngsuite
+other_license_expression_spdx: TCL AND LicenseRef-scancode-pngsuite
+license_detections: []
+other_license_detections:
   - license_expression: tcl
     detection_rules:
       - not-combined
@@ -125,3 +124,6 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.yml
             spdx_license_key: LicenseRef-scancode-pngsuite
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
+copyright: |
+  1997-2004 Jan Nijtmans
+  1999, 2011 Willem van Schaik

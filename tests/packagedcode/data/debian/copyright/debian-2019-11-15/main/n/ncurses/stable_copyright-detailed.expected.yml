@@ -1,14 +1,9 @@
-primary_license:
 declared_license:
-license_expression: x11-fsf AND x11-xconsortium AND bsd-new AND x11-fsf
+declared_license_expression: x11-fsf AND x11-xconsortium AND bsd-new AND x11-fsf
 declared_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND BSD-3-Clause
   AND X11-distribute-modifications-variant
-copyright: |
-  Copyright (c) 1998-2018 Free Software Foundation, Inc.
-  Copyright (c) 2001 by Pradeep Padala
-  Copyright (c) 1994 X Consortium
-  Copyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California
-  Copyright 1996-2018 by Thomas E. Dickey
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: x11-fsf
     detection_rules:
@@ -244,3 +239,10 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml
             spdx_license_key: X11-distribute-modifications-variant
             spdx_url: https://spdx.org/licenses/X11-distribute-modifications-variant
+other_license_detections: []
+copyright: |
+  Copyright (c) 1998-2018 Free Software Foundation, Inc.
+  Copyright (c) 2001 by Pradeep Padala
+  Copyright (c) 1994 X Consortium
+  Copyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California
+  Copyright 1996-2018 by Thomas E. Dickey

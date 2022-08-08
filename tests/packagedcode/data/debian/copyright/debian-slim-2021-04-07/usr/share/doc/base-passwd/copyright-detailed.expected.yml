@@ -1,21 +1,15 @@
-primary_license: gpl-2.0
 declared_license:
   - GPL-2
   - public-domain
   - GPL-2
   - GPL-2
-license_expression: (gpl-2.0 AND gpl-2.0) AND public-domain AND (gpl-2.0 AND gpl-2.0)
-declared_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-scancode-public-domain
+declared_license_expression: gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only
+other_license_expression: (gpl-2.0 AND gpl-2.0) AND public-domain AND (gpl-2.0 AND gpl-2.0)
+other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-scancode-public-domain
   AND (GPL-2.0-only AND GPL-2.0-only)
-copyright: |
-  Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
-  Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>
-  PD; Originally written by Ian Murdock <imurdock@debian.org> and
-  Bruce Perens <bruce@pixar.com>.
-  Copyright 2001, 2002 Joey Hess
-  Copyright 2002, 2003, 2004, 2005, 2007 Colin Watson
-  Copyright 2007 David Mandelberg
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0
     detection_rules:
       - not-combined
@@ -123,3 +117,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+copyright: |
+  Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
+  Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>
+  PD; Originally written by Ian Murdock <imurdock@debian.org> and
+  Bruce Perens <bruce@pixar.com>.
+  Copyright 2001, 2002 Joey Hess
+  Copyright 2002, 2003, 2004, 2005, 2007 Colin Watson
+  Copyright 2007 David Mandelberg

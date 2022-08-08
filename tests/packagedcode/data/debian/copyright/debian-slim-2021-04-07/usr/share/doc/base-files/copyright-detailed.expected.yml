@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: gpl-2.0-plus
+declared_license_expression: gpl-2.0-plus
 declared_license_expression_spdx: GPL-2.0-or-later
-copyright: |
-  copyrighted by the Free Software Foundation, Inc.
-  Copyright (c) 1995-2011 Software in the Public Interest
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus
     detection_rules:
@@ -55,3 +53,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+other_license_detections: []
+copyright: |
+  copyrighted by the Free Software Foundation, Inc.
+  Copyright (c) 1995-2011 Software in the Public Interest

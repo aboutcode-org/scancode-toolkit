@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/dicer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package.json",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/readable-stream?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "package.json",
@@ -113,6 +115,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "[{'type': 'MIT', 'url': 'http://github.com/mscdex/busboy/raw/master/LICENSE'}]",
       "notice_text": null,
       "source_packages": [],
@@ -270,6 +275,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "[{'type': 'MIT', 'url': 'http://github.com/mscdex/busboy/raw/master/LICENSE'}]",
           "notice_text": null,
           "source_packages": [],
@@ -283,7 +291,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/readable-stream",
@@ -292,7 +301,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/busboy",

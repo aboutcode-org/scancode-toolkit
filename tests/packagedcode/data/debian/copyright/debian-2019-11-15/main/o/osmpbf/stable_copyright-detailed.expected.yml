@@ -1,17 +1,15 @@
-primary_license: lgpl-3.0-plus
 declared_license:
   - LGPL-3+
   - GPL-3+
   - LGPL-3+
   - GPL-3+
-license_expression: (lgpl-3.0-plus AND lgpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
-declared_license_expression_spdx: (LGPL-3.0-or-later AND LGPL-3.0-or-later) AND (GPL-3.0-or-later
+declared_license_expression: lgpl-3.0-plus
+declared_license_expression_spdx: LGPL-3.0-or-later
+other_license_expression: (lgpl-3.0-plus AND lgpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
+other_license_expression_spdx: (LGPL-3.0-or-later AND LGPL-3.0-or-later) AND (GPL-3.0-or-later
   AND GPL-3.0-or-later)
-copyright: |
-  2010, Scott A. Crosby <scott@sacrosby.com>
-  2010-2012, Giovanni Mascellani <gio@debian.org>
-  2011-2013, David Paleino <dapal@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: lgpl-3.0-plus
     detection_rules:
       - not-combined
@@ -180,3 +178,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
+copyright: |
+  2010, Scott A. Crosby <scott@sacrosby.com>
+  2010-2012, Giovanni Mascellani <gio@debian.org>
+  2011-2013, David Paleino <dapal@debian.org>

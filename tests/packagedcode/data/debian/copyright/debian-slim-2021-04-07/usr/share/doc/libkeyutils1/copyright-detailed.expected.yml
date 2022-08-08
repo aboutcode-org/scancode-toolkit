@@ -1,21 +1,17 @@
-primary_license: gpl-2.0-plus
 declared_license:
   - GPL-2+
   - LGPL-2+
   - LGPL-2+
   - GPL-2+
   - LGPL-2+
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND
-  (lgpl-2.0-plus AND lgpl-2.0-plus)
-declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGPL-2.0-or-later
+declared_license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
+other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGPL-2.0-or-later
   AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
-copyright: |
-  2005-2018, Red Hat <http://www.redhat.com/>
-  2005-2018, Red Hat <http://www.redhat.com/>
-  2006-2013, Daniel Baumann <mail@daniel-baumann.ch>
-  2013, Luk Claes <luk@debian.org>
-  2014-2019, Christian Kastner <ckk@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0-plus
     detection_rules:
       - not-combined
@@ -184,3 +180,9 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
+copyright: |
+  2005-2018, Red Hat <http://www.redhat.com/>
+  2005-2018, Red Hat <http://www.redhat.com/>
+  2006-2013, Daniel Baumann <mail@daniel-baumann.ch>
+  2013, Luk Claes <luk@debian.org>
+  2014-2019, Christian Kastner <ckk@debian.org>

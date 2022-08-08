@@ -84,6 +84,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "[{'type': 'MIT', 'url': 'https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE'}]",
     "notice_text": null,
     "source_packages": [],

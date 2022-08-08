@@ -73,6 +73,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "BSL-1.0",
     "notice_text": null,
     "source_packages": [],
@@ -178,6 +181,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "LGPL-2.1",
     "notice_text": null,
     "source_packages": [],

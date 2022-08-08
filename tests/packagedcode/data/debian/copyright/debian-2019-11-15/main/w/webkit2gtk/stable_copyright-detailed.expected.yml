@@ -1,4 +1,3 @@
-primary_license: bsd-simplified
 declared_license:
   - BSD-2-clause
   - BSD-3-clause
@@ -29,39 +28,21 @@ declared_license:
   - MPL-1.1
   - Apache-2.0
   - ISC
-license_expression: bsd-simplified AND bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus
+declared_license_expression: bsd-simplified
+declared_license_expression_spdx: BSD-2-Clause
+other_license_expression: bsd-simplified AND bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus
   AND gpl-3.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus
   AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus AND gpl-2.0-plus) OR
   (lgpl-2.1-plus AND lgpl-2.1-plus)) AND public-domain AND (apache-2.0 AND apache-2.0) AND (bsd-new
   AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
-declared_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND MIT AND
-  (GPL-3.0-or-later AND GPL-3.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND
-  (LGPL-2.1-only AND LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND ICU AND
-  ((MPL-1.1 AND MPL-1.1) OR (GPL-2.0-or-later AND GPL-2.0-or-later) OR (LGPL-2.1-or-later AND
-  LGPL-2.1-or-later)) AND LicenseRef-scancode-public-domain AND (Apache-2.0 AND Apache-2.0)
-  AND (BSD-3-Clause AND BSL-1.0) AND ISC AND (LGPL-2.0-only AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later
-  AND LGPL-2.0-or-later)
-copyright: |
-  © 2002-2019 Apple Inc. and others
-  © 2002-2014 Apple Inc. and others
-  © 2007-2009 The Khronos Group Inc.
-  © 2013 Dave St.Germain
-  © 2002-2014 Apple Inc. and others
-  © 2002-2014 Apple Inc. and others
-  © 2002-2014 Apple Inc. and others
-  © 2002-2014 Apple Inc. and others
-  © 1995-2006 International Business Machines Corporation and others
-  © 2002-2014 Apple Inc. and others
-  No copyright holders
-  © 2007 Google Inc.
-  © 2002-2014 Apple Inc. and others
-  © 1996 David Mazieres <dm@uun.org>
-  © 2008 Damien Miller <djm@openbsd.org>
-  © 2002-2014 Apple Inc. and others
-  © 2007-2009 Mike Hommey <glandium@debian.org>
-  © 2009 Gustavo Noronha Silva <kov@debian.org>
-  © 2014-2019 Alberto Garcia <berto@igalia.com>
-license_detections:
+other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND MIT AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.1-only AND
+  LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND ICU AND ((MPL-1.1 AND MPL-1.1)
+  OR (GPL-2.0-or-later AND GPL-2.0-or-later) OR (LGPL-2.1-or-later AND LGPL-2.1-or-later)) AND
+  LicenseRef-scancode-public-domain AND (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause AND BSL-1.0)
+  AND ISC AND (LGPL-2.0-only AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+license_detections: []
+other_license_detections:
   - license_expression: public-domain
     detection_rules:
       - not-combined
@@ -1563,3 +1544,23 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
+copyright: |
+  © 2002-2019 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2007-2009 The Khronos Group Inc.
+  © 2013 Dave St.Germain
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 1995-2006 International Business Machines Corporation and others
+  © 2002-2014 Apple Inc. and others
+  No copyright holders
+  © 2007 Google Inc.
+  © 2002-2014 Apple Inc. and others
+  © 1996 David Mazieres <dm@uun.org>
+  © 2008 Damien Miller <djm@openbsd.org>
+  © 2002-2014 Apple Inc. and others
+  © 2007-2009 Mike Hommey <glandium@debian.org>
+  © 2009 Gustavo Noronha Silva <kov@debian.org>
+  © 2014-2019 Alberto Garcia <berto@igalia.com>

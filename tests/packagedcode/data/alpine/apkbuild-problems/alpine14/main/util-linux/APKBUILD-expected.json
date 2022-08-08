@@ -166,6 +166,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND\n\tLGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND Public-Domain",
   "notice_text": null,
   "source_packages": [],

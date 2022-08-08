@@ -1,25 +1,15 @@
-primary_license:
 declared_license:
-license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlimited-no-warranty AND
-  hs-regexp AND ibm-dhcp AND ietf AND isc AND other-permissive AND other-permissive AND mit-old-style-no-advert
-  AND other-permissive AND hs-regexp AND openldap-2.8 AND bsla AND bsd-original-uc AND bsd-original-uc
-  AND bsd-original-uc AND bsd-original-uc-1986
+declared_license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlimited-no-warranty
+  AND hs-regexp AND ibm-dhcp AND ietf AND isc AND other-permissive AND other-permissive AND
+  mit-old-style-no-advert AND other-permissive AND hs-regexp AND openldap-2.8 AND bsla AND bsd-original-uc
+  AND bsd-original-uc AND bsd-original-uc AND bsd-original-uc-1986
 declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND LicenseRef-scancode-fsf-unlimited-no-warranty
   AND Spencer-94 AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-other-permissive AND NTP AND LicenseRef-scancode-other-permissive
   AND Spencer-94 AND OLDAP-2.8 AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-4-Clause-UC
   AND BSD-4-Clause-UC AND LicenseRef-scancode-bsd-original-uc-1986
-copyright: |
-  Copyright 1998-2016 The OpenLDAP Foundation
-  Copyright 1999 Computing Research Labs, New Mexico State University
-  Copyright (c) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
-  Portions Copyright (c) 1995 by International Business Machines, Inc.
-  Copyright (c) The Internet Society (1999)
-  Copyright (c) 1996, 1998 by Internet Software Consortium
-  Copyright (c) 2000, Mark Adamson, Carnegie Mellon
-  Copyright 1991 by the Massachusetts Institute of Technology
-  Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA.
-  Copyright (c) 2000 Pierangelo Masarati, <ando@sys-net.it>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: openldap-2.8
     detection_rules:
@@ -936,3 +926,15 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.yml
             spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
+other_license_detections: []
+copyright: |
+  Copyright 1998-2016 The OpenLDAP Foundation
+  Copyright 1999 Computing Research Labs, New Mexico State University
+  Copyright (c) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+  Portions Copyright (c) 1995 by International Business Machines, Inc.
+  Copyright (c) The Internet Society (1999)
+  Copyright (c) 1996, 1998 by Internet Software Consortium
+  Copyright (c) 2000, Mark Adamson, Carnegie Mellon
+  Copyright 1991 by the Massachusetts Institute of Technology
+  Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA.
+  Copyright (c) 2000 Pierangelo Masarati, <ando@sys-net.it>

@@ -1,4 +1,3 @@
-primary_license: bsd-new
 declared_license:
   - BSD-3-Clause
   - FSFULLR
@@ -31,73 +30,23 @@ declared_license:
   - FSFULLR
   - Expat
   - GPL-2+
-license_expression: bsd-new AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND
-  fsf-free AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
+declared_license_expression: bsd-new
+declared_license_expression_spdx: BSD-3-Clause
+other_license_expression: bsd-new AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty
+  AND fsf-free AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
   AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
   AND bsd-new AND (x11-xconsortium AND public-domain) AND ((gpl-2.0-plus AND gpl-2.0-plus) OR
   bsd-new) AND public-domain AND bsd-new AND fsf-unlimited-no-warranty AND (gpl-2.0-plus AND
   gpl-2.0-plus)
-declared_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-fsf-unlimited-no-warranty
+other_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-fsf-unlimited-no-warranty
   AND LicenseRef-scancode-fsf-unlimited-no-warranty AND FSFUL AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND (X11 AND LicenseRef-scancode-public-domain) AND ((GPL-2.0-or-later
   AND GPL-2.0-or-later) OR BSD-3-Clause) AND LicenseRef-scancode-public-domain AND BSD-3-Clause
   AND LicenseRef-scancode-fsf-unlimited-no-warranty AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-copyright: |
-  1989-1994 The Regents of the University of California. All rights reserved.
-  1997 Christos Zoulas. All rights reserved.
-  1997-2018 Herbert Xu <herbert@gondor.apana.org.au>. All rights reserved.
-  1994-2011, Free Software Foundation, Inc.
-  1996-2011, Free Software Foundation, Inc.
-  1992-1996, 1998-2012, Free Software Foundation, Inc.
-  1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, Herbert Xu <herbert@debian.org>
-  2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2014, Gerrit Pape <pape@smarden.org>
-  2009, Luk Claes <luk@debian.org>
-  2010, 2011, Jonathan Nieder <jrnieder@gmail.com>
-  2010, Adam D. Barratt <adam@adam-barratt.org.uk>
-  2010, Christian Perrier <bubulle@debian.org>
-  2013, Michael Gilbert <mgilbert@debian.org>
-  2016, Helmut Grohne <helmut@subdivi.de>
-  2016, Mattia Rizzolo <mattia@debian.org>
-  2016, Niels Thykier <niels@thykier.net>
-  2017, Adam Borowski <kilobyte@angband.pl>
-  2017, Ximin Luo <infinity0@debian.org>
-  2018, 2019, Andrej Shadura <andrewsh@debian.org>
-  2008, 2009, Damyan Ivanov <dmn@debian.org>
-  2008, Xabier Bilbao <xabidu@gmail.com>
-  2008, 2010, Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
-  2008, 2011, Mert Dirik <mertdirik@gmail.com>
-  2004, Claus Hindsgaul <claus_h@image.dk>
-  2006, Claus Hindsgaul <claus.hindsgaul@gmail.com>
-  2010, Joe Hansen <joedalton2@yahoo.dk>
-  2006-2009, Helge Kreutzmann <debian@helgefjell.de>
-  2008, 2009, Software in the Public Interest
-  2008, Fernando Cerezal López <kryptos21@gmail.com>
-  2009, Francisco Javier Cuadrado <fcocuadrado@gmail.com>
-  2009, Julien Patriarca <patriarcaj@gmail.com>
-  2008, Thijs Kinkhorst <thijs@debian.org>
-  2010, Eric Spreen <erispre@gmail.com>
-  2008, André Luís Lopes <andrelop@debian.org>
-  2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
-  2008, André Luís Lopes <andrelop@debian.org>
-  2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
-  2011, Slavko <linux@slavino.sk>
-  2008, Eddy Petrișor <eddy.petrisor@gmail.com>
-  2012, Andrei Popescu <andreimpopescu@gmail.com
-  2011, Zlatan Todorić <zlatan.todoric@gmail.com>
-  2008, Martin Ågren <martin.agren@gmail.com>
-  2009, Martin Bagge <brother@bsnet.se>
-  2005-2010, Clytie Siddall <clytie@riverland.net.au>
-  2010, Free Software Foundation, Inc.
-  1994, X Consortium
-  1999, 2000, 2003—2012, Free Software Foundation, Inc.
-  Erik Baalbergen, Eric Gisin, Arnold Robbins, J.T. Conklin
-  1997-2005, 2007, Herbert Xu <herbert@gondor.apana.org.au>.
-  1989, 1991, 1993, 1995, The Regents of the University of California.
-  1994-2011, Free Software
-  1992, 1996, 1997, 1999, 2000, 2002-2012, Free Software Foundation, Inc.
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: bsd-new
     detection_rules:
       - not-combined
@@ -449,3 +398,56 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
+copyright: |
+  1989-1994 The Regents of the University of California. All rights reserved.
+  1997 Christos Zoulas. All rights reserved.
+  1997-2018 Herbert Xu <herbert@gondor.apana.org.au>. All rights reserved.
+  1994-2011, Free Software Foundation, Inc.
+  1996-2011, Free Software Foundation, Inc.
+  1992-1996, 1998-2012, Free Software Foundation, Inc.
+  1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, Herbert Xu <herbert@debian.org>
+  2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2014, Gerrit Pape <pape@smarden.org>
+  2009, Luk Claes <luk@debian.org>
+  2010, 2011, Jonathan Nieder <jrnieder@gmail.com>
+  2010, Adam D. Barratt <adam@adam-barratt.org.uk>
+  2010, Christian Perrier <bubulle@debian.org>
+  2013, Michael Gilbert <mgilbert@debian.org>
+  2016, Helmut Grohne <helmut@subdivi.de>
+  2016, Mattia Rizzolo <mattia@debian.org>
+  2016, Niels Thykier <niels@thykier.net>
+  2017, Adam Borowski <kilobyte@angband.pl>
+  2017, Ximin Luo <infinity0@debian.org>
+  2018, 2019, Andrej Shadura <andrewsh@debian.org>
+  2008, 2009, Damyan Ivanov <dmn@debian.org>
+  2008, Xabier Bilbao <xabidu@gmail.com>
+  2008, 2010, Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+  2008, 2011, Mert Dirik <mertdirik@gmail.com>
+  2004, Claus Hindsgaul <claus_h@image.dk>
+  2006, Claus Hindsgaul <claus.hindsgaul@gmail.com>
+  2010, Joe Hansen <joedalton2@yahoo.dk>
+  2006-2009, Helge Kreutzmann <debian@helgefjell.de>
+  2008, 2009, Software in the Public Interest
+  2008, Fernando Cerezal López <kryptos21@gmail.com>
+  2009, Francisco Javier Cuadrado <fcocuadrado@gmail.com>
+  2009, Julien Patriarca <patriarcaj@gmail.com>
+  2008, Thijs Kinkhorst <thijs@debian.org>
+  2010, Eric Spreen <erispre@gmail.com>
+  2008, André Luís Lopes <andrelop@debian.org>
+  2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
+  2008, André Luís Lopes <andrelop@debian.org>
+  2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
+  2011, Slavko <linux@slavino.sk>
+  2008, Eddy Petrișor <eddy.petrisor@gmail.com>
+  2012, Andrei Popescu <andreimpopescu@gmail.com
+  2011, Zlatan Todorić <zlatan.todoric@gmail.com>
+  2008, Martin Ågren <martin.agren@gmail.com>
+  2009, Martin Bagge <brother@bsnet.se>
+  2005-2010, Clytie Siddall <clytie@riverland.net.au>
+  2010, Free Software Foundation, Inc.
+  1994, X Consortium
+  1999, 2000, 2003—2012, Free Software Foundation, Inc.
+  Erik Baalbergen, Eric Gisin, Arnold Robbins, J.T. Conklin
+  1997-2005, 2007, Herbert Xu <herbert@gondor.apana.org.au>.
+  1989, 1991, 1993, 1995, The Regents of the University of California.
+  1994-2011, Free Software
+  1992, 1996, 1997, 1999, 2000, 2002-2012, Free Software Foundation, Inc.

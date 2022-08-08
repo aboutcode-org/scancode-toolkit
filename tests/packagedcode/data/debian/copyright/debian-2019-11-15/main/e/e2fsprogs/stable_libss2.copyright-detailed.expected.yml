@@ -1,9 +1,8 @@
-primary_license:
 declared_license:
-license_expression: mit-old-style-no-advert
+declared_license_expression: mit-old-style-no-advert
 declared_license_expression_spdx: NTP
-copyright: Copyright 1987, 1988 by the Student Information Processing Board of the Massachusetts
-  Institute of Technology
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: mit-old-style-no-advert
     detection_rules:
@@ -52,3 +51,6 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.yml
             spdx_license_key: NTP
             spdx_url: https://spdx.org/licenses/NTP
+other_license_detections: []
+copyright: Copyright 1987, 1988 by the Student Information Processing Board of the Massachusetts
+  Institute of Technology

@@ -1,4 +1,3 @@
-primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - LGPL-3+ or GPL-2+
@@ -9,22 +8,17 @@ declared_license:
   - GPL-2+
   - LGPL-3+
   - Unicode
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR
-  (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND
-  gpl-3.0-plus) AND (unicode AND unicode)
-declared_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND ((LGPL-3.0-or-later
+declared_license_expression: gpl-3.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later
+other_license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus
+  AND gpl-3.0-plus) AND (unicode AND unicode)
+other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND ((LGPL-3.0-or-later
   AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND (GPL-3.0-or-later AND
   GPL-3.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (LicenseRef-scancode-unicode
   AND LicenseRef-scancode-unicode)
-copyright: |
-  Copyright (C) 2011-2014 Simon Josefsson
-  Copyright (C) 2011-2014 Simon Josefsson
-  Copyright (C) 2001-2011 Free Software Foundation, Inc.
-  Copyright (c) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Simon Josefsson
-  Copyright (c) 2001, 2002 Nikos Mavrogiannopoulos
-  Copyright (c) 1998 Michael Zucchi
-  Copyright (c) 1991-2010 Unicode, Inc.
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-3.0-plus
     detection_rules:
       - not-combined
@@ -378,3 +372,11 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.yml
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
+copyright: |
+  Copyright (C) 2011-2014 Simon Josefsson
+  Copyright (C) 2011-2014 Simon Josefsson
+  Copyright (C) 2001-2011 Free Software Foundation, Inc.
+  Copyright (c) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Simon Josefsson
+  Copyright (c) 2001, 2002 Nikos Mavrogiannopoulos
+  Copyright (c) 1998 Michael Zucchi
+  Copyright (c) 1991-2010 Unicode, Inc.

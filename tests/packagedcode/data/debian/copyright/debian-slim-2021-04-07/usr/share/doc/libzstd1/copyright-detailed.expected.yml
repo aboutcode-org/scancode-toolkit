@@ -1,4 +1,3 @@
-primary_license: bsd-new AND gpl-2.0
 declared_license:
   - BSD-3-clause and GPL-2
   - zlib
@@ -10,20 +9,14 @@ declared_license:
   - Expat
   - GPL-2
   - BSD-3-clause
-license_expression: (bsd-new AND (gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit AND (bsd-new
-  AND (gpl-2.0 AND gpl-2.0)) AND mit
-declared_license_expression_spdx: (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)) AND Zlib
-  AND Zlib AND MIT AND (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)) AND MIT
-copyright: |
-  2013-2018, Yann Collet
-  2016, Przemyslaw Skibinski
-  2016-2018, Facebook, Inc.
-  1995-2006, 2011 Jean-loup Gailly
-  (C) 2004, 2005, 2010, 2011, 2012, 2013 Mark Adler
-  2003-2008, Yuta Mori
-  2016-present, Yann Collet, Facebook, Inc.
-  2015-2016 Kevin Murray <spam@kdmurray.id.au>
-license_detections:
+declared_license_expression: bsd-new AND gpl-2.0
+declared_license_expression_spdx: BSD-3-Clause AND GPL-2.0-only
+other_license_expression: (bsd-new AND (gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit AND
+  (bsd-new AND (gpl-2.0 AND gpl-2.0)) AND mit
+other_license_expression_spdx: (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)) AND Zlib AND
+  Zlib AND MIT AND (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)) AND MIT
+license_detections: []
+other_license_detections:
   - license_expression: zlib
     detection_rules:
       - not-combined
@@ -271,3 +264,12 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
+copyright: |
+  2013-2018, Yann Collet
+  2016, Przemyslaw Skibinski
+  2016-2018, Facebook, Inc.
+  1995-2006, 2011 Jean-loup Gailly
+  (C) 2004, 2005, 2010, 2011, 2012, 2013 Mark Adler
+  2003-2008, Yuta Mori
+  2016-present, Yann Collet, Facebook, Inc.
+  2015-2016 Kevin Murray <spam@kdmurray.id.au>

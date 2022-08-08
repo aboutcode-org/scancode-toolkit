@@ -115,6 +115,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'lgpl', 'url': 'http://repository.jboss.com/licenses/lgpl.txt', 'comments': None, 'distribution': None}]",
   "notice_text": null,
   "source_packages": [

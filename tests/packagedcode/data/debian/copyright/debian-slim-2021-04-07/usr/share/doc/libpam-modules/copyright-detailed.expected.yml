@@ -1,25 +1,8 @@
-primary_license:
 declared_license:
-license_expression: (bsd-new OR lgpl-2.0-plus) AND gpl-1.0-plus
+declared_license_expression: (bsd-new OR lgpl-2.0-plus) AND gpl-1.0-plus
 declared_license_expression_spdx: (BSD-3-Clause OR LGPL-2.0-or-later) AND GPL-1.0-or-later
-copyright: |
-  Copyright (c) 1994, 1995, 1996 Olaf Kirch, <okir@monad.swb.de>
-  Copyright (c) 1995 Wietse Venema
-  Copyright (c) 1995, 2001-2008 Red Hat, Inc.
-  Copyright (c) 1996-1999, 2000-2003, 2005 Andrew G. Morgan <morgan@kernel.org>
-  Copyright (c) 1996, 1997, 1999 Cristian Gafton <gafton@redhat.com>
-  Copyright (c) 1996, 1999 Theodore Ts'o
-  Copyright (c) 1996 Alexander O. Yuriev
-  Copyright (c) 1996 Elliot Lee
-  Copyright (c) 1997 Philip W. Dalrymple <pwd@mdtsoft.com>
-  Copyright (c) 1999 Jan Rekorajski
-  Copyright (c) 1999 Ben Collins <bcollins@debian.org>
-  Copyright (c) 2000-2001, 2003, 2005, 2007 Steve Langasek
-  Copyright (c) 2003, 2005 IBM Corporation
-  Copyright (c) 2003, 2006 SuSE Linux AG.
-  Copyright (c) 2003 Nalin Dahyabhai <nalin@redhat.com>
-  Copyright (c) 2005-2008 Thorsten Kukuk <kukuk@thkukuk.de>
-  Copyright (c) 2005 Darren Tucker
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: (bsd-new OR lgpl-2.0-plus) AND gpl-1.0-plus
     detection_rules:
@@ -144,3 +127,22 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
+other_license_detections: []
+copyright: |
+  Copyright (c) 1994, 1995, 1996 Olaf Kirch, <okir@monad.swb.de>
+  Copyright (c) 1995 Wietse Venema
+  Copyright (c) 1995, 2001-2008 Red Hat, Inc.
+  Copyright (c) 1996-1999, 2000-2003, 2005 Andrew G. Morgan <morgan@kernel.org>
+  Copyright (c) 1996, 1997, 1999 Cristian Gafton <gafton@redhat.com>
+  Copyright (c) 1996, 1999 Theodore Ts'o
+  Copyright (c) 1996 Alexander O. Yuriev
+  Copyright (c) 1996 Elliot Lee
+  Copyright (c) 1997 Philip W. Dalrymple <pwd@mdtsoft.com>
+  Copyright (c) 1999 Jan Rekorajski
+  Copyright (c) 1999 Ben Collins <bcollins@debian.org>
+  Copyright (c) 2000-2001, 2003, 2005, 2007 Steve Langasek
+  Copyright (c) 2003, 2005 IBM Corporation
+  Copyright (c) 2003, 2006 SuSE Linux AG.
+  Copyright (c) 2003 Nalin Dahyabhai <nalin@redhat.com>
+  Copyright (c) 2005-2008 Thorsten Kukuk <kukuk@thkukuk.de>
+  Copyright (c) 2005 Darren Tucker

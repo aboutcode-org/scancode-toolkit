@@ -240,6 +240,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Other",
       "notice_text": null,
       "source_packages": [],
@@ -359,6 +362,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Other",
           "notice_text": null,
           "source_packages": [],

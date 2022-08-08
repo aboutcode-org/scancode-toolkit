@@ -1,14 +1,13 @@
-primary_license: mit
 declared_license:
   - Expat
   - Expat
   - Expat
-license_expression: mit AND mit
-declared_license_expression_spdx: MIT AND MIT
-copyright: |
-  2015-2016 Matt Brictson <airbrussh@mattbrictson.com>
-  2017 Samuel Henrique <samueloph@debian.org>
-license_detections:
+declared_license_expression: mit
+declared_license_expression_spdx: MIT
+other_license_expression: mit AND mit
+other_license_expression_spdx: MIT AND MIT
+license_detections: []
+other_license_detections:
   - license_expression: mit
     detection_rules:
       - not-combined
@@ -63,3 +62,6 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
+copyright: |
+  2015-2016 Matt Brictson <airbrussh@mattbrictson.com>
+  2017 Samuel Henrique <samueloph@debian.org>

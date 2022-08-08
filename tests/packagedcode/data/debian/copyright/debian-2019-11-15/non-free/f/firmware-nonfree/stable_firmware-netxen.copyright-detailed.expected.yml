@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: qlogic-firmware
+declared_license_expression: qlogic-firmware
 declared_license_expression_spdx: LicenseRef-scancode-qlogic-firmware
-copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: qlogic-firmware
     detection_rules:
@@ -58,3 +58,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.yml
             spdx_license_key: LicenseRef-scancode-qlogic-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
+other_license_detections: []
+copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet

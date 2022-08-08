@@ -1,17 +1,14 @@
-primary_license: gpl-2.0-plus AND gpl-2.0
 declared_license:
   - GPL-2+
   - LGPL-2+
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND gpl-2.0 AND (lgpl-2.0-plus
+declared_license_expression: gpl-2.0-plus AND gpl-2.0
+declared_license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
+other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND gpl-2.0 AND (lgpl-2.0-plus
   AND lgpl-2.1-plus) AND lgpl-2.1-plus
-declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
+other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
   GPL-2.0-only AND (LGPL-2.0-or-later AND LGPL-2.1-or-later) AND LGPL-2.1-or-later
-copyright: |
-  Copyright © 2000-2008 Silicon Graphics, Inc.
-  Copyright © 1999-2001,2007-2009 Andreas Gruenbacher
-  Copyright © 2001-2002 Silicon Graphics, Inc.
-  Copyright © 1999-2003,2007,2009,2011 Andreas Gruenbacher
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0-plus AND gpl-2.0
     detection_rules:
       - not-combined
@@ -285,3 +282,8 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
+copyright: |
+  Copyright © 2000-2008 Silicon Graphics, Inc.
+  Copyright © 1999-2001,2007-2009 Andreas Gruenbacher
+  Copyright © 2001-2002 Silicon Graphics, Inc.
+  Copyright © 1999-2003,2007,2009,2011 Andreas Gruenbacher

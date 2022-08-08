@@ -1,9 +1,8 @@
-primary_license:
 declared_license:
-license_expression: (lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)) AND
-  lgpl-2.1-plus AND gpl-3.0-plus AND gfdl-1.1-plus AND gfdl-1.3-plus AND (lgpl-2.0-plus AND
-  lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND lgpl-2.1-plus AND (lgpl-3.0-plus OR
-  gpl-2.0-plus) AND lgpl-2.0-plus AND gpl-3.0 AND (bsd-new OR gpl-1.0-plus) AND bsd-simplified
+declared_license_expression: (lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus))
+  AND lgpl-2.1-plus AND gpl-3.0-plus AND gfdl-1.1-plus AND gfdl-1.3-plus AND (lgpl-2.0-plus
+  AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND lgpl-2.1-plus AND (lgpl-3.0-plus
+  OR gpl-2.0-plus) AND lgpl-2.0-plus AND gpl-3.0 AND (bsd-new OR gpl-1.0-plus) AND bsd-simplified
   AND public-domain AND isc AND cc0-1.0 AND mit AND mit AND apache-2.0 AND apache-2.0 AND (lgpl-3.0-plus
   AND gpl-2.0-plus) AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0
   AND mit AND mit AND mit AND mit AND mit AND mit AND lgpl-2.1-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
@@ -48,84 +47,8 @@ declared_license_expression_spdx: (LGPL-2.1-or-later AND GPL-3.0-or-later AND (L
   AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later
   AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
   AND GPL-3.0-or-later AND BSD-3-Clause AND BSD-3-Clause
-copyright: |
-  Copyright (c) 2000-2019 Free Software Foundation, Inc.
-  Copyright (c) 2004-2015 Free Software Foundation, Inc.
-  Copyright (c) 2002 Andrew McDonald <andrew@mcdonald.org.uk>
-  Copyright (c) 2001-2021 Free Software Foundation, Inc.
-  Copyright (c) 2001-2021 Nikos Mavrogiannopoulos
-  Copyright (c) 2011-2016, Andy Polyakov
-  Copyright (c) 2000, 2001 Markus Friedl
-  Copyright (c) 2008 Alexander von Gernler
-  Copyright Mike Hamburg
-  Copyright/License Copyright (c) 1996,1999 by Internet Software Consortium
-  Copyright (c) 2016 Wrymouth Innovation Ltd
-  Copyright 2011-2016 The Pkcs11Interop Project
-  Copyright (c) 2009-2020 Free Software Foundation, Inc. Comment Debian
-  Copyright 2017 Red Hat, Inc.
-  Copyright 2016 Nikos Mavrogiannopoulos Comment On Debian
-  Copyright 2016 Google Inc. Comment On Debian
-  Copyright 2016 Google Inc. 2017 Red Hat, Inc. Comment On Debian
-  Copyright 2017 Tim Ruehsen
-  Copyright 2017 Nikos Mavrogiannopoulos
-  Copyright 2017 Nikos Mavrogiannopoulos 2019 Tom Vrancken (dev@tomvrancken.nl)
-  Copyright 2020 Dmitry Baryshkov
-  Copyright 2011 Katholieke Universiteit Leuven 2011, 2013, 2018 Niels Moller 2018 Red Hat, Inc. 2019 Dmitry Eremin-Solenikov
-  Copyright 2018 Dmitry Eremin-Solenikov
-  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-  Copyright 2013 Red Hat
-  Copyright 2013, 2014 Red Hat
-  Copyright 2013 2017 Red Hat 2008 Free Software Foundation, Inc.
-  Copyright 2002 Niels Moller 2014 Red Hat
-  Copyright 2001 Niels Moller
-  Copyright 2001, 2011 Niels Moller
-  Copyright 2005, 2014 Niels Moller
-  Copyright 2013 Niels Moller 2013 Red Hat
-  Copyright 2015 Dmitry Eremin-Solenikov 2012 Nikos Mavrogiannopoulos, Niels Moller
-  Copyright 2012 Nikos Mavrogiannopoulos, Niels Moller
-  Copyright 2001, 2002 Niels Moller
-  Copyright 2016 Dmitry Eremin-Solenikov
-  Copyright 2010 Niels Moller
-  Copyright 2013-2015 Dmitry Eremin-Solenikov Comment
-  Copyright 2015 Dmitry Eremin-Solenikov
-  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-  Copyright 2015 Dmity Eremin-Solenikov 2013 Niels Moller
-  Copyright 2018 Dmitry Eremin-Solenikov
-  Copyright 2015, 2016 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com> 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
-  Copyright 2015-2015 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-  Copyright 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
-  Copyright 2017 Red Hat
-  Copyright 1995-2017 Free Software Foundation, Inc.
-  Copyright 2011-2019 Free Software Foundation, Inc. 2019 Red Hat, Inc
-  Copyright 2014-2020 Red Hat, Inc
-  Copyright 2014-2018 Nikos Mavrogiannopoulos
-  Copyright 2019 Nikos Mavrogiannopoulos
-  Copyright 2016-2019 Tim Kosse 2019 Nikos Mavrogiannopoulos
-  Copyright 2016 Tim Kosse
-  Copyright 2016-2017 Red Hat, Inc.
-  Copyright 2020 Red Hat, Inc.
-  Copyright 2008-2014 Free Software Foundation, Inc.
-  Copyright 2004-2016 Free Software Foundation, Inc. 2016 2017 Red Hat, Inc.
-  Copyright 2020 Red Hat, Inc.
-  Copyright 2014-2018 Nikos Mavrogiannopoulos 2018 2020 Red Hat, Inc.
-  Copyright 2004-2016 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2016-2019 Red Hat, Inc.
-  Copyright 2004-2015 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2015 Red Hat, Inc
-  Copyright 2015 Red Hat, Inc. 2019 Nikos Mavrogiannopoulos
-  Copyright 2017-2019 Red Hat, Inc.
-  Copyright 2017-2020 Red Hat, Inc.
-  Copyright 2004-2012 Free Software Foundation, Inc. 2017-2019 Red Hat, Inc.
-  Copyright 2019 Tim Ruhsen
-  Copyright 2019 Tom Vrancken (dev@tomvrancken.nl)
-  Copyright 2019 Canonical, Ltd.
-  Copyright 2020 Pierre Ossman for Cendio AB
-  Copyright 2019 Red Hat, Inc.
-  Copyright 2004-2012 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2019 Free Software Foundation, Inc.
-  Copyright 2018 Dmitry Eremin-Solenikov 2016 Red Hat, Inc.
-  Copyright 2017 Karl Tarbe
-  Copyright 2018 Dmitry Eremin-Solenikov 2004-2006, 2010, 2012 Free Software Foundation, Inc.
-  Copyright 2021 Steffen Jaeckel
-  Copyright 2016 Thomas Klute
-  Copyright 2009-2019, Ben Hoyt
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
     detection_rules:
@@ -4072,3 +3995,82 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
+other_license_detections: []
+copyright: |
+  Copyright (c) 2000-2019 Free Software Foundation, Inc.
+  Copyright (c) 2004-2015 Free Software Foundation, Inc.
+  Copyright (c) 2002 Andrew McDonald <andrew@mcdonald.org.uk>
+  Copyright (c) 2001-2021 Free Software Foundation, Inc.
+  Copyright (c) 2001-2021 Nikos Mavrogiannopoulos
+  Copyright (c) 2011-2016, Andy Polyakov
+  Copyright (c) 2000, 2001 Markus Friedl
+  Copyright (c) 2008 Alexander von Gernler
+  Copyright Mike Hamburg
+  Copyright/License Copyright (c) 1996,1999 by Internet Software Consortium
+  Copyright (c) 2016 Wrymouth Innovation Ltd
+  Copyright 2011-2016 The Pkcs11Interop Project
+  Copyright (c) 2009-2020 Free Software Foundation, Inc. Comment Debian
+  Copyright 2017 Red Hat, Inc.
+  Copyright 2016 Nikos Mavrogiannopoulos Comment On Debian
+  Copyright 2016 Google Inc. Comment On Debian
+  Copyright 2016 Google Inc. 2017 Red Hat, Inc. Comment On Debian
+  Copyright 2017 Tim Ruehsen
+  Copyright 2017 Nikos Mavrogiannopoulos
+  Copyright 2017 Nikos Mavrogiannopoulos 2019 Tom Vrancken (dev@tomvrancken.nl)
+  Copyright 2020 Dmitry Baryshkov
+  Copyright 2011 Katholieke Universiteit Leuven 2011, 2013, 2018 Niels Moller 2018 Red Hat, Inc. 2019 Dmitry Eremin-Solenikov
+  Copyright 2018 Dmitry Eremin-Solenikov
+  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2013 Red Hat
+  Copyright 2013, 2014 Red Hat
+  Copyright 2013 2017 Red Hat 2008 Free Software Foundation, Inc.
+  Copyright 2002 Niels Moller 2014 Red Hat
+  Copyright 2001 Niels Moller
+  Copyright 2001, 2011 Niels Moller
+  Copyright 2005, 2014 Niels Moller
+  Copyright 2013 Niels Moller 2013 Red Hat
+  Copyright 2015 Dmitry Eremin-Solenikov 2012 Nikos Mavrogiannopoulos, Niels Moller
+  Copyright 2012 Nikos Mavrogiannopoulos, Niels Moller
+  Copyright 2001, 2002 Niels Moller
+  Copyright 2016 Dmitry Eremin-Solenikov
+  Copyright 2010 Niels Moller
+  Copyright 2013-2015 Dmitry Eremin-Solenikov Comment
+  Copyright 2015 Dmitry Eremin-Solenikov
+  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2015 Dmity Eremin-Solenikov 2013 Niels Moller
+  Copyright 2018 Dmitry Eremin-Solenikov
+  Copyright 2015, 2016 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com> 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
+  Copyright 2015-2015 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
+  Copyright 2017 Red Hat
+  Copyright 1995-2017 Free Software Foundation, Inc.
+  Copyright 2011-2019 Free Software Foundation, Inc. 2019 Red Hat, Inc
+  Copyright 2014-2020 Red Hat, Inc
+  Copyright 2014-2018 Nikos Mavrogiannopoulos
+  Copyright 2019 Nikos Mavrogiannopoulos
+  Copyright 2016-2019 Tim Kosse 2019 Nikos Mavrogiannopoulos
+  Copyright 2016 Tim Kosse
+  Copyright 2016-2017 Red Hat, Inc.
+  Copyright 2020 Red Hat, Inc.
+  Copyright 2008-2014 Free Software Foundation, Inc.
+  Copyright 2004-2016 Free Software Foundation, Inc. 2016 2017 Red Hat, Inc.
+  Copyright 2020 Red Hat, Inc.
+  Copyright 2014-2018 Nikos Mavrogiannopoulos 2018 2020 Red Hat, Inc.
+  Copyright 2004-2016 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2016-2019 Red Hat, Inc.
+  Copyright 2004-2015 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2015 Red Hat, Inc
+  Copyright 2015 Red Hat, Inc. 2019 Nikos Mavrogiannopoulos
+  Copyright 2017-2019 Red Hat, Inc.
+  Copyright 2017-2020 Red Hat, Inc.
+  Copyright 2004-2012 Free Software Foundation, Inc. 2017-2019 Red Hat, Inc.
+  Copyright 2019 Tim Ruhsen
+  Copyright 2019 Tom Vrancken (dev@tomvrancken.nl)
+  Copyright 2019 Canonical, Ltd.
+  Copyright 2020 Pierre Ossman for Cendio AB
+  Copyright 2019 Red Hat, Inc.
+  Copyright 2004-2012 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2019 Free Software Foundation, Inc.
+  Copyright 2018 Dmitry Eremin-Solenikov 2016 Red Hat, Inc.
+  Copyright 2017 Karl Tarbe
+  Copyright 2018 Dmitry Eremin-Solenikov 2004-2006, 2010, 2012 Free Software Foundation, Inc.
+  Copyright 2021 Steffen Jaeckel
+  Copyright 2016 Thomas Klute
+  Copyright 2009-2019, Ben Hoyt

@@ -1,34 +1,14 @@
-primary_license: gpl-2.0-plus
 declared_license:
   - GPL-2+
   - GPL-2+
   - GPL-2+
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
-declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+declared_license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
+other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
   AND GPL-2.0-or-later)
-copyright: |
-  1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
-  2015 Adam Conrad <adconrad@debian.org>
-  2018 Dmitry Bogatov <KAction@gnu.org>
-  2018 Vincenzo (KatolaZ) Nicosia <katolaz@freaknet.org>
-  2006 Henrique de Moraes Holschuh <hmh@debian.org>
-  2017 Ian Jackson <ijackson@chiark.greenend.org.uk>
-  2014 Petter Reinholdtsen <pere@debian.org>
-  2014 Robert Millan <rmh@debian.org>
-  2014 Thomas Goirand <zigo@debian.org>
-  2006 Thomas Hood <jdthood@yahoo.co.uk>
-  2015-2016 Andreas Henriksson <andreas@fatal.se>
-  2011,2016 Ben Hutchings <ben@decadent.org.uk>
-  2010-2012 Christian Perrier <bubulle@debian.org>
-  2015-2016 Martin Pitt <mpitt@debian.org>
-  2014-2018 Michael Biebl <biebl@debian.org>
-  1996-2004 Miquel van Smoorenburg <miquels@cistron.nl>
-  2005-2006 Petter Reinholdtsen <pere@debian.org>
-  2006-2010 Petter Reinholdtsen <pere@debian.org>
-  2011-2013 Roger Leigh <rleigh@debian.org>
-  2006-2007 Steinar H. Gunderson <sesse@debian.org>
-  2012-2013 Steve Langasek <vorlon@debian.org>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: gpl-2.0-plus
     detection_rules:
       - not-combined
@@ -113,3 +93,25 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+copyright: |
+  1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
+  2015 Adam Conrad <adconrad@debian.org>
+  2018 Dmitry Bogatov <KAction@gnu.org>
+  2018 Vincenzo (KatolaZ) Nicosia <katolaz@freaknet.org>
+  2006 Henrique de Moraes Holschuh <hmh@debian.org>
+  2017 Ian Jackson <ijackson@chiark.greenend.org.uk>
+  2014 Petter Reinholdtsen <pere@debian.org>
+  2014 Robert Millan <rmh@debian.org>
+  2014 Thomas Goirand <zigo@debian.org>
+  2006 Thomas Hood <jdthood@yahoo.co.uk>
+  2015-2016 Andreas Henriksson <andreas@fatal.se>
+  2011,2016 Ben Hutchings <ben@decadent.org.uk>
+  2010-2012 Christian Perrier <bubulle@debian.org>
+  2015-2016 Martin Pitt <mpitt@debian.org>
+  2014-2018 Michael Biebl <biebl@debian.org>
+  1996-2004 Miquel van Smoorenburg <miquels@cistron.nl>
+  2005-2006 Petter Reinholdtsen <pere@debian.org>
+  2006-2010 Petter Reinholdtsen <pere@debian.org>
+  2011-2013 Roger Leigh <rleigh@debian.org>
+  2006-2007 Steinar H. Gunderson <sesse@debian.org>
+  2012-2013 Steve Langasek <vorlon@debian.org>

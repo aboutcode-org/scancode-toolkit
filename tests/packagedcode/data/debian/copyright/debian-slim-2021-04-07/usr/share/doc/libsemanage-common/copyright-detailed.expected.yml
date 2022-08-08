@@ -1,11 +1,8 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.1-plus AND gpl-2.0
+declared_license_expression: lgpl-2.1-plus AND gpl-2.0
 declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-only
-copyright: |
-  Copyright (c) 2004-2007 Tresys Technology, LLC
-  Copyright (c) 2005 Red Hat, Inc.
-  (c) 2005-2009, Manoj Srivastava <srivasta@debian.org>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus
     detection_rules:
@@ -107,3 +104,8 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
+other_license_detections: []
+copyright: |
+  Copyright (c) 2004-2007 Tresys Technology, LLC
+  Copyright (c) 2005 Red Hat, Inc.
+  (c) 2005-2009, Manoj Srivastava <srivasta@debian.org>

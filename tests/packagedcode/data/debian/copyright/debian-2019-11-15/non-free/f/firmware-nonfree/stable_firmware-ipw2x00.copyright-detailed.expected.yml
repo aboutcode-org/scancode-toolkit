@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: proprietary-license
+declared_license_expression: proprietary-license
 declared_license_expression_spdx: LicenseRef-scancode-proprietary-license
-copyright: Copyright 2003-2009 Intel Corporation
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
     detection_rules:
@@ -277,3 +277,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.yml
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
+other_license_detections: []
+copyright: Copyright 2003-2009 Intel Corporation

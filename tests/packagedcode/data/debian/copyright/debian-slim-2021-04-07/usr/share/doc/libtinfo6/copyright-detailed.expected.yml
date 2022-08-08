@@ -1,4 +1,3 @@
-primary_license: x11-fsf
 declared_license:
   - MIT/X11
   - X11
@@ -6,15 +5,12 @@ declared_license:
   - MIT/X11
   - X11
   - BSD-3-clause
-license_expression: x11-fsf AND x11-xconsortium AND bsd-new
-declared_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND BSD-3-Clause
-copyright: |
-  1998-2017,2018 Free Software Foundation, Inc.
-  1996-2019,2020 Thomas E. Dickey
-  2001 Pradeep Padala
-  1994 X Consortium
-  1980,1991,1992,1993 The Regents of the University of California
-license_detections:
+declared_license_expression: x11-fsf
+declared_license_expression_spdx: X11-distribute-modifications-variant
+other_license_expression: x11-fsf AND x11-xconsortium AND bsd-new
+other_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND BSD-3-Clause
+license_detections: []
+other_license_detections:
   - license_expression: x11-fsf
     detection_rules:
       - not-combined
@@ -190,3 +186,9 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
+copyright: |
+  1998-2017,2018 Free Software Foundation, Inc.
+  1996-2019,2020 Thomas E. Dickey
+  2001 Pradeep Padala
+  1994 X Consortium
+  1980,1991,1992,1993 The Regents of the University of California

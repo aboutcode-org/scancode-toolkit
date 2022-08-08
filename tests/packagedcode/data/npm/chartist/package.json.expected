@@ -282,6 +282,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "['MIT OR WTFPL', {'type': 'WTFPL', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL'}, {'type': 'MIT', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT'}]",
     "notice_text": null,
     "source_packages": [],

@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: info-zip-2009-01
+declared_license_expression: info-zip-2009-01
 declared_license_expression_spdx: LicenseRef-scancode-info-zip-2009-01
-copyright: Copyright (c) 1990-2009 Info-ZIP.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: info-zip-2009-01
     detection_rules:
@@ -102,3 +102,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.yml
             spdx_license_key: LicenseRef-scancode-info-zip-2009-01
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.LICENSE
+other_license_detections: []
+copyright: Copyright (c) 1990-2009 Info-ZIP.

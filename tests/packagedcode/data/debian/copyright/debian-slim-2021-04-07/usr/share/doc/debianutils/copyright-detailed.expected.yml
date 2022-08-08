@@ -1,12 +1,9 @@
-primary_license:
 declared_license:
-license_expression: (gpl-2.0-plus AND public-domain) AND smail-gpl
+declared_license_expression: (gpl-2.0-plus AND public-domain) AND smail-gpl
 declared_license_expression_spdx: (GPL-2.0-or-later AND LicenseRef-scancode-public-domain) AND
   LicenseRef-scancode-smail-gpl
-copyright: |
-  Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
-  Copyright (c) 1992 Ronald S. Karr
-  Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus AND public-domain
     detection_rules:
@@ -190,3 +187,8 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.yml
             spdx_license_key: LicenseRef-scancode-smail-gpl
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
+other_license_detections: []
+copyright: |
+  Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+  Copyright (c) 1992 Ronald S. Karr
+  Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr

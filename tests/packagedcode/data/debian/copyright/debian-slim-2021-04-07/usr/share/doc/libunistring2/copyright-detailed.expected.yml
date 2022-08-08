@@ -1,4 +1,3 @@
-primary_license: lgpl-3.0-plus OR gpl-2.0-plus
 declared_license:
   - LGPL-3+ or GPL-2+
   - FreeSoftware
@@ -14,30 +13,20 @@ declared_license:
   - GPL-2+
   - GFDL-1.2+
   - MIT
-license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND
-  fsf-unlimited AND gpl-1.0-plus WITH autoconf-simple-exception-2.0 AND ((gpl-3.0-plus AND gpl-3.0-plus)
-  OR (gfdl-1.2-plus AND gfdl-1.2-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus
-  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND x11-xconsortium AND (gpl-3.0-plus
-  AND gpl-3.0-plus)
-declared_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+declared_license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+declared_license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
+other_license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND fsf-unlimited AND gpl-1.0-plus WITH autoconf-simple-exception-2.0 AND ((gpl-3.0-plus AND
+  gpl-3.0-plus) OR (gfdl-1.2-plus AND gfdl-1.2-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND x11-xconsortium AND
+  (gpl-3.0-plus AND gpl-3.0-plus)
+other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
   AND GPL-2.0-or-later)) AND FSFULLR AND GPL-1.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
   AND ((GPL-3.0-or-later AND GPL-3.0-or-later) OR (GFDL-1.2-or-later AND GFDL-1.2-or-later))
   AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
   (GPL-2.0-or-later AND GPL-2.0-or-later) AND X11 AND (GPL-3.0-or-later AND GPL-3.0-or-later)
-copyright: |
-  1995-2017 Free Software Foundation, Inc.
-  1995-2017 Free Software Foundation, Inc.
-  1992-2009, Free Software Foundation, Inc.
-  2001-2017 Free Software Foundation, Inc.
-  1990-2017 Free Software Foundation, Inc.
-  1995-2017 Free Software Foundation, Inc.
-  1999-2005 Patrice Dumas <dumas@centre-cired.fr>,
-  1999-2005 Derek Price <derek@ximbiot.com>,
-  1999-2005 Adrian Aichner <adrian@xemacs.org>
-  1994, X Consortium
-  2009-2011 Andreas Rottmann <rotty@debian.org>
-  2017-2020 Jörg Frings-Fürst <debian@jff.email>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: fsf-unlimited
     detection_rules:
       - not-combined
@@ -525,3 +514,16 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
+copyright: |
+  1995-2017 Free Software Foundation, Inc.
+  1995-2017 Free Software Foundation, Inc.
+  1992-2009, Free Software Foundation, Inc.
+  2001-2017 Free Software Foundation, Inc.
+  1990-2017 Free Software Foundation, Inc.
+  1995-2017 Free Software Foundation, Inc.
+  1999-2005 Patrice Dumas <dumas@centre-cired.fr>,
+  1999-2005 Derek Price <derek@ximbiot.com>,
+  1999-2005 Adrian Aichner <adrian@xemacs.org>
+  1994, X Consortium
+  2009-2011 Andreas Rottmann <rotty@debian.org>
+  2017-2020 Jörg Frings-Fürst <debian@jff.email>

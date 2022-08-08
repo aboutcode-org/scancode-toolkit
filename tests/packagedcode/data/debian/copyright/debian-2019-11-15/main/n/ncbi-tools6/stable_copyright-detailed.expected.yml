@@ -1,4 +1,3 @@
-primary_license: public-domain AND us-govt-public-domain
 declared_license:
   - public_domain
   - BSL-1.0
@@ -22,12 +21,14 @@ declared_license:
   - NCSA
   - BSD-3-Clause
   - GPL-2+
-license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-with-modification-obligations
+declared_license_expression: public-domain AND us-govt-public-domain
+declared_license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
+other_license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-with-modification-obligations
   AND proprietary-license) AND public-domain AND flex-2.5 AND flex-2.5 AND flex-2.5 AND flex-2.5
   AND flex-2.5 AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
   AND (public-domain AND us-govt-public-domain)
-declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
+other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
   AND BSL-1.0 AND (LicenseRef-scancode-mit-modification-obligations AND LicenseRef-scancode-proprietary-license)
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
   AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
@@ -35,27 +36,8 @@ declared_license_expression_spdx: (LicenseRef-scancode-public-domain AND License
   AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND
   (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND (LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-us-govt-public-domain)
-copyright: |
-  1996-2017 NCBI
-  2006 John Maddock
-  1998-1999 The Massachusetts Institute of Technology
-  ???? National Center for Supercomputing Applications
-  1983 Regents of the University of California
-  1980, 1983, 1988 Regents of the University of California
-  1982, 1986, 1989 Regents of the University of California
-  1982, 1986, 1990 Regents of the University of California
-  1982 Regents of the University of California
-  2012-2016 Krzysztof Gabis
-  1993 Free Software Foundation, Inc.
-  1985, 1989, 1990, 1991, 1992, 1993 Free Software Foundation, Inc.
-  1998-1999 Stephane Bortzmeyer <bortzmeyer@pasteur.fr>
-  2001 Dr. Guenter Bechly <gbechly@debian.org>
-  2001-2019 Aaron M. Ucko <ucko@debian.org>
-  2012-2019 Andreas Tille <tille@debian.org
-  2019 Steffen Möller <moeller@debian.org>
-  1996-2018 NCBI
-  2018 Liubov Chuprikova <chuprikovalv@gmail.com>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: public-domain AND us-govt-public-domain
     detection_rules:
       - not-combined
@@ -525,3 +507,23 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+copyright: |
+  1996-2017 NCBI
+  2006 John Maddock
+  1998-1999 The Massachusetts Institute of Technology
+  ???? National Center for Supercomputing Applications
+  1983 Regents of the University of California
+  1980, 1983, 1988 Regents of the University of California
+  1982, 1986, 1989 Regents of the University of California
+  1982, 1986, 1990 Regents of the University of California
+  1982 Regents of the University of California
+  2012-2016 Krzysztof Gabis
+  1993 Free Software Foundation, Inc.
+  1985, 1989, 1990, 1991, 1992, 1993 Free Software Foundation, Inc.
+  1998-1999 Stephane Bortzmeyer <bortzmeyer@pasteur.fr>
+  2001 Dr. Guenter Bechly <gbechly@debian.org>
+  2001-2019 Aaron M. Ucko <ucko@debian.org>
+  2012-2019 Andreas Tille <tille@debian.org
+  2019 Steffen Möller <moeller@debian.org>
+  1996-2018 NCBI
+  2018 Liubov Chuprikova <chuprikovalv@gmail.com>

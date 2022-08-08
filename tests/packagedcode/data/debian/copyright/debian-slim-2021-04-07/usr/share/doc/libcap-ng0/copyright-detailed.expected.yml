@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.1-plus AND gpl-2.0-plus AND gpl-3.0
+declared_license_expression: lgpl-2.1-plus AND gpl-2.0-plus AND gpl-3.0
 declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-or-later AND GPL-3.0-only
-copyright: |
-  Copyright 2009 Red Hat Inc.
-  Copyright (c) 2009 Pierre Chifflier <pollux@debian.org>
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus AND gpl-2.0-plus
     detection_rules:
@@ -124,3 +122,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
+other_license_detections: []
+copyright: |
+  Copyright 2009 Red Hat Inc.
+  Copyright (c) 2009 Pierre Chifflier <pollux@debian.org>

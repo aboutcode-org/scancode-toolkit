@@ -102,6 +102,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "LGPL-2.1-only OR LGPL-3.0-only AND GPL-2.0-only",
   "notice_text": null,
   "source_packages": [],

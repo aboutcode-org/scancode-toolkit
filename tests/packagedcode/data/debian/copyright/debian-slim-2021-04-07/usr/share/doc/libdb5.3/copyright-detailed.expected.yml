@@ -1,13 +1,9 @@
-primary_license:
 declared_license:
-license_expression: sleepycat AND sleepycat AND bsd-new AND bsd-new AND bsd-new
+declared_license_expression: sleepycat AND sleepycat AND bsd-new AND bsd-new AND bsd-new
 declared_license_expression_spdx: Sleepycat AND Sleepycat AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause
-copyright: |
-  Copyright (c) 1990, 2010 Oracle and/or its affiliates
-  Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
-  Copyright (c) 1995, 1996 The President and Fellows of Harvard University
-  Copyright (c) 2000-2005 INRIA, France Telecom
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: sleepycat
     detection_rules:
@@ -296,3 +292,9 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
+other_license_detections: []
+copyright: |
+  Copyright (c) 1990, 2010 Oracle and/or its affiliates
+  Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
+  Copyright (c) 1995, 1996 The President and Fellows of Harvard University
+  Copyright (c) 2000-2005 INRIA, France Telecom

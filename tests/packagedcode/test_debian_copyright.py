@@ -18,9 +18,7 @@ from debian_inspector.copyright import CatchAllParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import CopyrightFilesParagraph
-from license_expression import Licensing
 
-from packagedcode.licensing import get_declared_license_expression_spdx
 from packagedcode import debian_copyright
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -30,7 +28,6 @@ def check_expected_parse_copyright_file(
     expected_loc,
     regen=REGEN_TEST_FIXTURES,
     simplified=False,
-    _licensing=Licensing(),
 ):
     '''
     Check copyright parsing of `test_loc` location against an expected JSON file
@@ -42,11 +39,11 @@ def check_expected_parse_copyright_file(
         simplify_licenses = True
         unique_copyrights = True
     else:
-
         filter_duplicates = False
         skip_debian_packaging = False
         simplify_licenses = False
         unique_copyrights = False
+
     try:
         dc = debian_copyright.parse_copyright_file(
             location=test_loc,
@@ -58,33 +55,27 @@ def check_expected_parse_copyright_file(
             skip_debian_packaging=skip_debian_packaging,
         )
 
-        license_expression = dc.get_license_expression(
-            skip_debian_packaging=skip_debian_packaging,
-            simplify_licenses=simplify_licenses,
-        )
-
-        license_detections = dc.get_license_detections_mapping()
-
-        declared_license_expression_spdx = get_declared_license_expression_spdx(
-            declared_license_expression=license_expression
-        )
-
-        license_expression_keys = set(_licensing.license_keys(license_expression))
-
         copyrght = dc.get_copyright(
             skip_debian_packaging=skip_debian_packaging,
             unique_copyrights=unique_copyrights,
         ).strip()
 
-        primary_license = dc.primary_license
+        license_fields = debian_copyright.DebianLicenseFields.get_license_fields(
+            debian_copyright=dc,
+            simplify_licenses=simplify_licenses,
+            skip_debian_packaging=skip_debian_packaging,
+            filter_duplicates=filter_duplicates,
+        )
 
         results = {
-            'primary_license': primary_license,
             'declared_license': declared_license,
-            'license_expression': license_expression,
-            'declared_license_expression_spdx': declared_license_expression_spdx,
+            'declared_license_expression': license_fields.declared_license_expression,
+            'declared_license_expression_spdx': license_fields.declared_license_expression_spdx,
+            'other_license_expression': license_fields.other_license_expression,
+            'other_license_expression_spdx': license_fields.other_license_expression_spdx,
+            'license_detections': license_fields.license_detections,
+            'other_license_detections': license_fields.other_license_detections,
             'copyright': copyrght,
-            'license_detections': license_detections,
         }
 
         if regen:
@@ -105,7 +96,7 @@ def check_expected_parse_copyright_file(
     if (
         not regen
         and (saneyaml.dump(results) != saneyaml.dump(expected)
-        or 'unknown-license-reference' in license_expression_keys)
+        or 'unknown-license-reference' in license_fields.license_expression_keys)
     ) :
         res = {
             'test_loc': f'file://{test_loc}',

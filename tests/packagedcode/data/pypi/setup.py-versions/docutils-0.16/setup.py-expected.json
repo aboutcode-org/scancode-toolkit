@@ -335,6 +335,9 @@
         ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
     "extracted_license_statement": "{'license': 'public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)', 'classifiers': ['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']}",
     "notice_text": null,
     "source_packages": [],

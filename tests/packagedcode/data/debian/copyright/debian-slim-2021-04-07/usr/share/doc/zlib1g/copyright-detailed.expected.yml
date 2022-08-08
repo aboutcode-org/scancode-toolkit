@@ -1,20 +1,15 @@
-primary_license: zlib
 declared_license:
   - Zlib
   - Zlib
   - Zlib
   - Zlib
   - Zlib
-license_expression: zlib AND zlib AND zlib AND zlib
-declared_license_expression_spdx: Zlib AND Zlib AND Zlib AND Zlib
-copyright: |
-  1995-2013 Jean-loup Gailly and Mark Adler
-  1998 by Andreas R. Kleinert
-  1998-2010 Gilles Vollant
-  2007-2008 Even Rouault
-  2009-2010 Mathias Svensson
-  2000-2017 Mark Brown
-license_detections:
+declared_license_expression: zlib
+declared_license_expression_spdx: Zlib
+other_license_expression: zlib AND zlib AND zlib AND zlib
+other_license_expression_spdx: Zlib AND Zlib AND Zlib AND Zlib
+license_detections: []
+other_license_detections:
   - license_expression: zlib
     detection_rules:
       - not-combined
@@ -69,3 +64,10 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
+copyright: |
+  1995-2013 Jean-loup Gailly and Mark Adler
+  1998 by Andreas R. Kleinert
+  1998-2010 Gilles Vollant
+  2007-2008 Even Rouault
+  2009-2010 Mathias Svensson
+  2000-2017 Mark Brown

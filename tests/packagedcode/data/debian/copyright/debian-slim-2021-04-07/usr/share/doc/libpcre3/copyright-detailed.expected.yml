@@ -1,10 +1,8 @@
-primary_license:
 declared_license:
-license_expression: pcre AND bsd-new AND bsd-new
+declared_license_expression: pcre AND bsd-new AND bsd-new
 declared_license_expression_spdx: LicenseRef-scancode-pcre AND BSD-3-Clause AND BSD-3-Clause
-copyright: |
-  Copyright (c) 1997-2007 University of Cambridge
-  Copyright (c) 2007, Google Inc.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: pcre
     detection_rules:
@@ -146,3 +144,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
+other_license_detections: []
+copyright: |
+  Copyright (c) 1997-2007 University of Cambridge
+  Copyright (c) 2007, Google Inc.

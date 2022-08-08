@@ -78,6 +78,9 @@
       ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
   "extracted_license_statement": "[{'name': 'Java HTML Tidy License', 'url': 'http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [

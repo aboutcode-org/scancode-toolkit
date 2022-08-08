@@ -1,4 +1,3 @@
-primary_license: apache-2.0
 declared_license:
   - Apache-2.0
   - BSD-3-clause or Apache-2.0
@@ -20,42 +19,18 @@ declared_license:
   - Expat
   - Unicode
   - AFL-3
-license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.0 AND apache-2.0))
+declared_license_expression: apache-2.0
+declared_license_expression_spdx: Apache-2.0
+other_license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.0 AND apache-2.0))
   AND markus-kuhn-license AND bsd-new AND other-permissive AND (gpl-2.0-plus AND gpl-2.0) AND
   (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new
   AND bsd-simplified
-declared_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR (Apache-2.0
+other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR (Apache-2.0
   AND Apache-2.0)) AND LicenseRef-scancode-markus-kuhn-license AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
   AND (GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-only) AND AFL-3.0
   AND (MIT AND LicenseRef-scancode-unicode) AND BSD-2-Clause AND BSD-3-Clause AND BSD-2-Clause
-copyright: |
-  Apache Software Foundation
-  2007 Max Bowsher
-  2005 Greg Stein
-  2007 David Glasser
-  2003, 2004, 2005 Edgewall Software
-  2003, 2004, 2005 Jonas Borgström <jonas@edgewall.com>
-  2005 Christopher Lenz <cmlenz@gmx.de>
-  2007 Markus Kuhn
-  2008-2014 Vinay Sajip
-  2006 Peter Samuelson
-  2004, 2005, 2006 Simon Perreault
-  2005,2006 Blair Zajac <blair@orcaware.com>
-  2002-2009 Stefan Reichoer
-  2006-2010 Virtutech AB
-  2010 Intel
-  2008,2009 by Robert Millan
-  2009 by Peter Samuelson
-  2002,2003,2004,2005,2006,2007,2009 Dolby. All rights reserved.
-  2014-2015 Steven G. Johnson, Jiahao Chen, Tony Kelman, Jonas Fonseca, and other contributors listed in the git history
-  2009, 2013 Public Software Group e. V., Berlin, Germany
-  1991-2007 Unicode, Inc.
-  2011-2016, Yann Collet
-  2006-2008 Christophe Devine
-  2009 Paul Bakker <polarssl_maintainer at polarssl dot org>
-  2010-2013, Peter Noordhuis <pcnoordhuis at gmail dot com>
-  2010-2014, Salvatore Sanfilippo <anitrez at gmail dot com>
-license_detections:
+license_detections: []
+other_license_detections:
   - license_expression: markus-kuhn-license
     detection_rules:
       - not-combined
@@ -820,3 +795,30 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-3.0.yml
             spdx_license_key: AFL-3.0
             spdx_url: https://spdx.org/licenses/AFL-3.0
+copyright: |
+  Apache Software Foundation
+  2007 Max Bowsher
+  2005 Greg Stein
+  2007 David Glasser
+  2003, 2004, 2005 Edgewall Software
+  2003, 2004, 2005 Jonas Borgström <jonas@edgewall.com>
+  2005 Christopher Lenz <cmlenz@gmx.de>
+  2007 Markus Kuhn
+  2008-2014 Vinay Sajip
+  2006 Peter Samuelson
+  2004, 2005, 2006 Simon Perreault
+  2005,2006 Blair Zajac <blair@orcaware.com>
+  2002-2009 Stefan Reichoer
+  2006-2010 Virtutech AB
+  2010 Intel
+  2008,2009 by Robert Millan
+  2009 by Peter Samuelson
+  2002,2003,2004,2005,2006,2007,2009 Dolby. All rights reserved.
+  2014-2015 Steven G. Johnson, Jiahao Chen, Tony Kelman, Jonas Fonseca, and other contributors listed in the git history
+  2009, 2013 Public Software Group e. V., Berlin, Germany
+  1991-2007 Unicode, Inc.
+  2011-2016, Yann Collet
+  2006-2008 Christophe Devine
+  2009 Paul Bakker <polarssl_maintainer at polarssl dot org>
+  2010-2013, Peter Noordhuis <pcnoordhuis at gmail dot com>
+  2010-2014, Salvatore Sanfilippo <anitrez at gmail dot com>

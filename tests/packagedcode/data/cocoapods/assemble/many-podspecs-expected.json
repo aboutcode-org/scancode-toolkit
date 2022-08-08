@@ -194,6 +194,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -290,6 +293,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -386,6 +392,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -482,6 +491,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -578,6 +590,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -674,6 +689,9 @@
           ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
       "extracted_license_statement": "Apache License, Version 2.0",
       "notice_text": null,
       "source_packages": [],
@@ -783,6 +801,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -885,6 +906,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -987,6 +1011,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -1089,6 +1116,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -1191,6 +1221,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -1293,6 +1326,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": "Apache License, Version 2.0",
           "notice_text": null,
           "source_packages": [],
@@ -1387,6 +1423,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
@@ -1481,6 +1520,9 @@
               ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],

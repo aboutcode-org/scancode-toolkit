@@ -1,15 +1,13 @@
-primary_license: apache-2.0
 declared_license:
   - Apache-2.0
   - Apache-2.0
   - Apache-2.0
-license_expression: (apache-2.0 AND apache-2.0) AND (apache-2.0 AND apache-2.0)
-declared_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND Apache-2.0)
-copyright: |
-  2002-2019 ProcessOne
-  2018-2019 Evgeny Khramtsov <ekhramtsov@process-one.net>
-  2018-2019 Philipp Huebner <debalance@debian.org>
-license_detections:
+declared_license_expression: apache-2.0
+declared_license_expression_spdx: Apache-2.0
+other_license_expression: (apache-2.0 AND apache-2.0) AND (apache-2.0 AND apache-2.0)
+other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND Apache-2.0)
+license_detections: []
+other_license_detections:
   - license_expression: apache-2.0
     detection_rules:
       - not-combined
@@ -93,3 +91,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
+copyright: |
+  2002-2019 ProcessOne
+  2018-2019 Evgeny Khramtsov <ekhramtsov@process-one.net>
+  2018-2019 Philipp Huebner <debalance@debian.org>

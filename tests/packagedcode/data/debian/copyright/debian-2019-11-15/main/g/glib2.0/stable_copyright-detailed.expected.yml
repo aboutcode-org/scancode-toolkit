@@ -1,19 +1,10 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.0-plus AND mit AND gpl-2.0-plus AND apache-2.0 AND apache-2.0 AND
-  mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
+declared_license_expression: lgpl-2.0-plus AND mit AND gpl-2.0-plus AND apache-2.0 AND apache-2.0
+  AND mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
 declared_license_expression_spdx: LGPL-2.0-or-later AND MIT AND GPL-2.0-or-later AND Apache-2.0
   AND Apache-2.0 AND MIT AND MIT AND GPL-2.0-or-later AND GPL-2.0-or-later
-copyright: |
-  Copyright (c) 1995-2018 Red Hat, Inc.
-  Copyright (c) 2008-2010 Novell, Inc.
-  Copyright (c) 2008-2010 Codethink Limited
-  Copyright (c) 2008-2018 Collabora, Ltd.
-  Copyright (c) 2018 Endless Mobile, Inc.
-  Copyright (c) 2018 Emmanuele Bassi
-  Copyright 2015 Remko Troncon
-  Copyright 1998-1999 Tom Tromey 2001 Red Hat Software
-  Copyright 2017 Jussi Pakkanen
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.0-plus
     detection_rules:
@@ -380,3 +371,14 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+other_license_detections: []
+copyright: |
+  Copyright (c) 1995-2018 Red Hat, Inc.
+  Copyright (c) 2008-2010 Novell, Inc.
+  Copyright (c) 2008-2010 Codethink Limited
+  Copyright (c) 2008-2018 Collabora, Ltd.
+  Copyright (c) 2018 Endless Mobile, Inc.
+  Copyright (c) 2018 Emmanuele Bassi
+  Copyright 2015 Remko Troncon
+  Copyright 1998-1999 Tom Tromey 2001 Red Hat Software
+  Copyright 2017 Jussi Pakkanen

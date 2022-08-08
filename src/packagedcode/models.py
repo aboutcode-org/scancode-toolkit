@@ -620,7 +620,7 @@ class PackageData(IdentifiablePackageData):
     declared_license_expression_spdx = String(
         label='SPDX license expression',
         help='The SPDX license expression for this package converted '
-             'from its declared_license_Expression.')
+             'from its declared_license_expression.')
 
     license_detections = List(
         item_type=dict,
@@ -628,6 +628,26 @@ class PackageData(IdentifiablePackageData):
         help='A list of LicenseDetection mappings typically derived '
              'from its extracted_license_statement or from some other type-specific '
              'routine or convention.'
+    )
+
+    other_license_expression = String(
+        label='other license expression',
+        help='The license expression for this package which is different from the '
+             'declared_license_expression, (i.e. not the primary license) '
+             'routine or convention.')
+
+    other_license_expression_spdx = String(
+        label='other SPDX license expression',
+        help='The other SPDX license expression for this package converted '
+             'from its other_license_expression.')
+
+    other_license_detections = List(
+        item_type=dict,
+        label='List of other LicenseDetections',
+        help='A list of LicenseDetection mappings which is different from the '
+             'declared_license_expression, (i.e. not the primary license) '
+             'These are detections for the detection for the license expressions '
+             'in other_license_expression. '
     )
 
     extracted_license_statement = String(

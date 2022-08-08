@@ -1,8 +1,8 @@
-primary_license:
 declared_license:
-license_expression: netronome-firmware
+declared_license_expression: netronome-firmware
 declared_license_expression_spdx: LicenseRef-scancode-netronome-firmware
-copyright: Copyright (c) 2017, NETRONOME Systems, Inc.
+other_license_expression:
+other_license_expression_spdx:
 license_detections:
   - license_expression: netronome-firmware
     detection_rules:
@@ -103,3 +103,5 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.yml
             spdx_license_key: LicenseRef-scancode-netronome-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
+other_license_detections: []
+copyright: Copyright (c) 2017, NETRONOME Systems, Inc.
