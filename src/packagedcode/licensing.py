@@ -534,6 +534,7 @@ def get_normalized_license_detections(
 
 def get_license_detections_and_expression(
     extracted_license_statement,
+    default_relation_license=None,
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
@@ -571,7 +572,15 @@ def get_license_detections_and_expression(
         license_detection = get_unknown_license_detection(extracted_license_statement)
         license_detections = [license_detection]
 
-    return get_mapping_and_expression_from_detections(license_detections)
+    if default_relation_license:
+        relation = default_relation_license
+    else:
+        relation = 'AND'
+
+    return get_mapping_and_expression_from_detections(
+        license_detections=license_detections,
+        relation=relation,
+    )
 
 
 def get_license_detections_for_extracted_license_statement(
@@ -673,86 +682,9 @@ def get_license_matches_for_extracted_license_statement(
     return matches, matched_as_expression
 
 
-def get_normalized_expression(
-    query_string,
-    try_as_expression=True,
-    approximate=True,
-    expression_symbols=None,
-    licensing=Licensing(),
-):
-    """
-    Given a text `query_string` return a single detected license expression.
-    `query_string` is typically the value of a license field as found in package
-    manifests.
+def get_only_expression_from_extracted_license(extracted_license_statement):
 
-    If `try_as_expression` is True try first to parse this as a license
-    expression using the ``expression_symbols`` mapping of {lowered key:
-    LicenseSymbol} if provided. Otherwise use the standard SPDX license symbols.
-
-    If `approximate` is True, also include approximate license detection as
-    part of the matching procedure.
-
-    Return None if the `query_string` is empty. Return "unknown" as a license
-    expression if there is a `query_string` but nothing was detected.
-    """
-    if not query_string or not query_string.strip():
-        return
-
-    if TRACE:
-        logger_debug(f'get_normalized_expression: query_string: "{query_string}"')
-
-    matches, matched_as_expression = get_license_matches_for_extracted_license_statement(
-        query_string, try_as_expression, approximate, expression_symbols,
+    _detections, license_expression = get_license_detections_and_expression(
+        extracted_license_statement=extracted_license_statement
     )
-
-    if not matches:
-        # we have a query_string text but there was no match: return an unknown
-        # key
-        return 'unknown'
-
-    if TRACE:
-        logger_debug('get_normalized_expression: matches:', matches)
-
-    # join the possible multiple detected license expression with an AND
-    expression_objects = [m.rule.license_expression_object for m in matches]
-    if len(expression_objects) == 1:
-        combined_expression_object = expression_objects[0]
-    else:
-        combined_expression_object = licensing.AND(*expression_objects)
-
-    if matched_as_expression:
-        # then just return the expression(s)
-        return str(combined_expression_object)
-
-    # Otherwise, verify that we consumed 100% of the query string e.g. that we
-    # have no unknown leftover.
-
-    # 1. have all matches 100% coverage?
-    all_matches_have_full_coverage = all(m.coverage() == 100 for m in matches)
-
-    # TODO: have all matches a high enough score?
-
-    # 2. are all declared license tokens consumed?
-    query = matches[0].query
-    # the query object should be the same for all matches. Is this always true??
-    for mt in matches:
-        if mt.query != query:
-            # FIXME: the expception may be swallowed in callers!!!
-            raise Exception(
-                'Inconsistent package.declared_license: text with multiple "queries".'
-                'Please report this issue to the scancode-toolkit team.\n'
-                f'{query_string}'
-            )
-
-    query_len = len(query.tokens)
-    matched_qspans = [m.qspan for m in matches]
-    matched_qpositions = Span.union(*matched_qspans)
-    len_all_matches = len(matched_qpositions)
-    declared_license_is_fully_matched = query_len == len_all_matches
-
-    if not all_matches_have_full_coverage or not declared_license_is_fully_matched:
-        # We inject an 'unknown' symbol in the expression
-        unknown = licensing.parse('unknown', simple=True)
-        combined_expression_object = licensing.AND(combined_expression_object, unknown)
-
-    return str(combined_expression_object)
+    return license_expression

@@ -54,6 +54,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
     path_patterns = ('*composer.json',)
     default_package_type = 'composer'
     default_primary_language = 'PHP'
+    default_relation_license = 'OR'
     description = 'PHP composer manifest'
     documentation_url = 'https://getcomposer.org/doc/04-schema.md'
 
@@ -156,6 +157,7 @@ def build_package_data(package_data):
     # Parse vendor from name value
     vendor_mapper(package)
 
+    # Per https://getcomposer.org/doc/04-schema.md#license this is an expression
     package.populate_license_fields()
     return package
 

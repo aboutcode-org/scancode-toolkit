@@ -829,7 +829,18 @@ class PackageData(IdentifiablePackageData):
         if not self.extracted_license_statement:
             return [], None
 
-        return get_license_detections_and_expression(self.extracted_license_statement)
+        return get_license_detections_and_expression(
+            extracted_license_statement=self.extracted_license_statement,
+            default_relation_license=get_default_relation_license(
+                datasource_id=self.datasource_id,
+            ),
+        )
+
+
+def get_default_relation_license(datasource_id):
+    from packagedcode import HANDLER_BY_DATASOURCE_ID
+    handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
+    return handler.default_relation_license
 
 
 def _rehydrate_list(cls, values):
@@ -900,6 +911,9 @@ class DatafileHandler:
 
     # Informational: URL that documents this file format
     documentation_url = None
+
+    # Default Relation between license elements detected in an `extracted_license_statement`
+    default_relation_license = None
 
     @classmethod
     def is_datafile(cls, location, filetypes=tuple(), _bare_filename=False):
