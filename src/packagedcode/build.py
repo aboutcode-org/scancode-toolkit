@@ -117,7 +117,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 logger_debug(f"build: assemble: package_data: {package_data.to_dict()}")
 
             package.license_detections, package.declared_license_expression = \
-                compute_normalized_license_detections_and_expression(
+                get_license_detections_and_expression(
                     package=package_data,
                     resource=resource,
                     codebase=codebase,
@@ -233,7 +233,7 @@ def walk_build(resource, codebase, skip_name):
                 yield subchild
 
 
-def compute_normalized_license_detections_and_expression(package, resource, codebase):
+def get_license_detections_and_expression(package, resource, codebase):
     """
     Return a normalized license expression string detected from a list of
     declared license items.
@@ -252,11 +252,11 @@ def compute_normalized_license_detections_and_expression(package, resource, code
 
     if TRACE:
         logger_debug(
-            f"build: compute_normalized_license_detections_and_expression:"
+            f"build: get_license_detections_and_expression:"
             f"declared_licenses: {declared_licenses}"
         )
         logger_debug(
-            f"build: compute_normalized_license_detections_and_expression:"
+            f"build: get_license_detections_and_expression:"
             f"type(declared_licenses): {type(declared_licenses)}"
         )
 
@@ -267,7 +267,7 @@ def compute_normalized_license_detections_and_expression(package, resource, code
             detections = detect_licenses(location=child.location)
             if TRACE:
                 logger_debug(
-                    f"build: compute_normalized_license_detections_and_expression:"
+                    f"build: get_license_detections_and_expression:"
                     f"detections: {detections}"
                 )
 

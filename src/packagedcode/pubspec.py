@@ -18,10 +18,6 @@ from packagedcode.utils import combine_expressions
 Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
 
-TODO:
-- license is only in a LICENSE file
-  https://dart.dev/tools/pub/publishing#preparing-to-publish
-See https://dart.dev/tools/pub/publishing#important-files
 
 API has theses URLs:
 is limited and only returns all versions of a package
@@ -55,10 +51,6 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             package_adder=package_adder,
         )
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.extracted_license_statement)
-
 
 class DartPubspecYamlHandler(BaseDartPubspecHandler):
     datasource_id = 'pubspec_yaml'
@@ -76,29 +68,6 @@ class DartPubspecYamlHandler(BaseDartPubspecHandler):
         package_data = build_package(pubspec_data)
         if package_data:
             yield package_data
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items.
-
-    The specification for pub demands to have a LICENSE file side-by-side and
-    nothing else. See https://dart.dev/tools/pub/publishing#preparing-to-publish
-    """
-    # FIXME: we need a location to find the FILE file
-    # Approach:
-    # Find the LICENSE file
-    # detect on the text
-    # combine all expressions
-
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
 
 
 class DartPubspecLockHandler(BaseDartPubspecHandler):

@@ -728,54 +728,6 @@ def get_algo_hexsum(checksum):
     return {algo: checksum}
 
 
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items.
-    """
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    for declared in declared_license:
-        if isinstance(declared, str):
-            detected_license = models.compute_normalized_license(declared)
-            if detected_license:
-                detected_licenses.append(detected_license)
-
-        elif isinstance(declared, dict):
-            # 1. try detection on the value of type if not empty and keep this
-            ltype = declared.get('type')
-            via_type = models.compute_normalized_license(ltype)
-
-            # 2. try detection on the value of url  if not empty and keep this
-            url = declared.get('url')
-            via_url = models.compute_normalized_license(url)
-
-            if via_type:
-                # The type should have precedence and any unknowns
-                # in url should be ignored.
-                # TODO: find a better way to detect unknown licenses
-                if via_url in ('unknown', 'unknown-license-reference',):
-                    via_url = None
-
-            if via_type:
-                if via_type == via_url:
-                    detected_licenses.append(via_type)
-                else:
-                    if not via_url:
-                        detected_licenses.append(via_type)
-                    else:
-                        combined_expression = combine_expressions([via_type, via_url])
-                        detected_licenses.append(combined_expression)
-            elif via_url:
-                detected_licenses.append(via_url)
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
-
-
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """
     Return an npm package registry homepage URL given a namespace, name,

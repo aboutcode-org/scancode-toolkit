@@ -110,6 +110,7 @@ class TestModels(PackageTester):
     def test_Package_full(self):
         package = PackageData(
             type='rpm',
+            datasource_id = 'rpm_archive',
             namespace='fedora',
             name='Sample',
             version='12.2.3',

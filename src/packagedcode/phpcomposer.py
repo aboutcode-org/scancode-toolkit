@@ -48,13 +48,6 @@ class BasePhpComposerHandler(models.DatafileHandler):
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        """
-        Per https://getcomposer.org/doc/04-schema.md#license this is an expression
-        """
-        return compute_normalized_license(package.extracted_license_statement)
-
 
 class PhpComposerJsonHandler(BasePhpComposerHandler):
     datasource_id = 'php_composer_json'
@@ -207,38 +200,6 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
 
         for package in packages + packages_dev:
             yield package
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items or string type.
-    """
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    if isinstance(declared_license, str):
-        if declared_license == 'proprietary':
-            return declared_license
-        if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
-            declared_license = declared_license.strip().rstrip(')').lstrip('(')
-            declared_license = declared_license.split(' or ')
-        else:
-            return models.compute_normalized_license(declared_license)
-
-    if isinstance(declared_license, list):
-        for declared in declared_license:
-            detected_license = models.compute_normalized_license(declared)
-            detected_licenses.append(detected_license)
-    else:
-        declared_license = repr(declared_license)
-        detected_license = models.compute_normalized_license(declared_license)
-
-    if detected_licenses:
-        # build a proper license expression: the defaultfor composer is OR
-        return combine_expressions(detected_licenses, 'OR')
 
 
 def licensing_mapper(licenses, package, is_private=False):

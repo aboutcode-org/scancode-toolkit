@@ -94,10 +94,6 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
                 return True
 
     @classmethod
-    def compute_normalized_license(cls, package):
-        return
-
-    @classmethod
     def parse(cls, location):
         debian_copyright = parse_copyright_file(location)
         license_fields = DebianLicenseFields.get_license_fields(

@@ -78,7 +78,7 @@ class TestBuild(PackageTester):
         result_package = list(build.BuckPackageHandler.parse(test_file))[0]
         codebase = Codebase(test_loc)
         resource = codebase.get_resource('license/BUCK')
-        _detections, license_expression = build.compute_normalized_license_detections_and_expression(
+        _detections, license_expression = build.get_license_detections_and_expression(
             result_package, resource, codebase
         )
         assert license_expression == 'apache-2.0'

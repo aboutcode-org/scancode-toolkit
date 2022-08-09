@@ -70,14 +70,7 @@ if TRACE:
         return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-class BasePypiHandler(models.DatafileHandler):
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.extracted_license_statement)
-
-
-class PythonEggPkgInfoFile(BasePypiHandler):
+class PythonEggPkgInfoFile(models.DatafileHandler):
     datasource_id = 'pypi_egg_pkginfo'
     default_package_type = 'pypi'
     default_primary_language = 'Python'
@@ -101,7 +94,7 @@ class PythonEggPkgInfoFile(BasePypiHandler):
             return models.DatafileHandler.assign_package_to_resources(package, root, codebase, package_adder)
 
 
-class PythonEditableInstallationPkgInfoFile(BasePypiHandler):
+class PythonEditableInstallationPkgInfoFile(models.DatafileHandler):
     datasource_id = 'pypi_editable_egg_pkginfo'
     default_package_type = 'pypi'
     default_primary_language = 'Python'
@@ -128,12 +121,11 @@ def create_package_from_package_data(package_data, datafile_path):
         package_data=package_data,
         datafile_path=datafile_path,
     )
-    if not package.license_expression:
-        package.license_expression = compute_normalized_license(package.declared_license)
+    package.populate_license_fields()
     return package
 
 
-class BaseExtractedPythonLayout(BasePypiHandler):
+class BaseExtractedPythonLayout(models.DatafileHandler):
     """
     Base class for development repos, sdist tarballs and other related extracted
     layourt for Python packages that can use and mix multiple datafiles.
@@ -217,8 +209,7 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                         )
 
         if package:
-            if not package.declared_license_expression:
-                package.declared_license_expression = compute_normalized_license(package.extracted_license_statement)
+            package.populate_license_fields()
             package_uid = package.package_uid
 
             root = package_resource.parent(codebase)
@@ -294,7 +285,7 @@ class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
         )
 
 
-class PythonInstalledWheelMetadataFile(BasePypiHandler):
+class PythonInstalledWheelMetadataFile(models.DatafileHandler):
     datasource_id = 'pypi_wheel_metadata'
     path_patterns = ('*.dist-info/METADATA',)
     default_package_type = 'pypi'
@@ -507,7 +498,7 @@ def get_file_references(dist):
         yield ref
 
 
-class PypiWheelHandler(BasePypiHandler):
+class PypiWheelHandler(models.DatafileHandler):
     datasource_id = 'pypi_wheel'
     path_patterns = ('*.whl',)
     filetypes = ('zip archive',)
@@ -533,7 +524,7 @@ class PypiWheelHandler(BasePypiHandler):
                     )
 
 
-class PypiEggHandler(BasePypiHandler):
+class PypiEggHandler(models.DatafileHandler):
     datasource_id = 'pypi_egg'
     path_patterns = ('*.egg',)
     filetypes = ('zip archive',)
@@ -560,7 +551,7 @@ class PypiEggHandler(BasePypiHandler):
                     )
 
 
-class PypiSdistArchiveHandler(BasePypiHandler):
+class PypiSdistArchiveHandler(models.DatafileHandler):
     datasource_id = 'pypi_sdist'
     path_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
     default_package_type = 'pypi'
@@ -654,7 +645,7 @@ class ResolvedPurl(NamedTuple):
     is_resolved: bool
 
 
-class BaseDependencyFileHandler(BasePypiHandler):
+class BaseDependencyFileHandler(models.DatafileHandler):
     """
     Base class for a dependency files parsed with the same library
     """
@@ -1967,44 +1958,6 @@ def compute_path_depth(base, path):
             'base:', base, 'path:', path, 'subpath:', subpath,
             'segments:', segments, 'depth:', depth,)
     return depth
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a mapping or
-    list of declared license items.
-    """
-    if not declared_license:
-        return
-
-    if isinstance(declared_license, dict):
-        values = list(declared_license.values())
-    elif isinstance(declared_license, list):
-        values = list(declared_license)
-    elif isinstance(declared_license, str):
-        values = [declared_license]
-    else:
-        return
-
-    detected_licenses = []
-
-    for value in values:
-        if not value:
-            continue
-        # The value could be a string or a list
-        if isinstance(value, str):
-            detected_license = models.compute_normalized_license(value)
-            if detected_license:
-                detected_licenses.append(detected_license)
-        else:
-            # this is a list
-            for declared in value:
-                detected_license = models.compute_normalized_license(declared)
-                if detected_license:
-                    detected_licenses.append(detected_license)
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
 
 
 def get_requirement_from_section(section, sub_section):

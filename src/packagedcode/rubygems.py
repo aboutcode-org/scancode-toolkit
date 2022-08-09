@@ -29,14 +29,7 @@ from packagedcode.utils import get_ancestor
 # see https://github.com/brotandgames/ciao and logstash (jRuby) are good examples
 
 
-class BaseGemHandler(models.DatafileHandler):
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.extracted_license_statement)
-
-
-class GemArchiveHandler(BaseGemHandler):
+class GemArchiveHandler(models.DatafileHandler):
     path_patterns = ('*.gem',)
     filetypes = ('posix tar archive',)
     datasource_id = 'gem_archive'
@@ -80,7 +73,7 @@ def assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
     )
 
 
-class GemMetadataArchiveExtractedHandler(BaseGemHandler):
+class GemMetadataArchiveExtractedHandler(models.DatafileHandler):
     datasource_id = 'gem_archive_extracted'
     path_patterns = ('*/metadata.gz-extract',)
     default_package_type = 'gem'
@@ -106,7 +99,7 @@ class GemMetadataArchiveExtractedHandler(BaseGemHandler):
         yield from assemble_extracted_gem(cls, package_data, resource, codebase)
 
 
-class BaseGemProjectHandler(BaseGemHandler):
+class BaseGemProjectHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -128,7 +121,7 @@ class BaseGemProjectHandler(BaseGemHandler):
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
-class GemspecHandler(BaseGemHandler):
+class GemspecHandler(models.DatafileHandler):
     datasource_id = 'gemspec'
     path_patterns = ('*.gemspec',)
     default_package_type = 'gem'
@@ -307,25 +300,6 @@ class GemfileLockInExtractedGemHandler(GemfileLockHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items.
-    """
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    for declared in declared_license:
-        detected_license = models.compute_normalized_license(declared)
-        if detected_license:
-            detected_licenses.append(detected_license)
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
 
 
 def get_urls(name, version=None, platform=None):
