@@ -54,6 +54,11 @@ def run_app_smoke_tests(app_archive):
 
     os.chdir(extract_loc)
 
+    print(f"Configuring scancode for release: {app_archive}")
+    run_command([
+        os.path.join(extract_loc, "configure"),
+    ])
+
     # minimal tests: update when new scans are available
     args = [
         os.path.join(extract_loc, "scancode"),
