@@ -251,7 +251,7 @@ def test_detection_with_single_external_license_directory():
         '--license',
         '--strip-root',
         '--verbose',
-        '-dir', example1_dir,
+        '--external-license-directory', example1_dir,
         '--json', result_file,
         test_dir,
     ]
@@ -270,8 +270,8 @@ def test_detection_with_multiple_external_license_directories():
         '--license',
         '--strip-root',
         '--verbose',
-        '-dir', example1_dir,
-        '-dir', example2_dir,
+        '--external-license-directory', example1_dir,
+        '--external-license-directory', example2_dir,
         '--json', result_file,
         test_dir,
     ]
@@ -324,7 +324,7 @@ def test_validate_license_library_returns_errors():
         '--strip-root',
         '--verbose',
         '--json', result_file,
-        '-dir', licenses_dir,
+        '--external-license-directory', licenses_dir,
         test_dir,
     ]
     # the actual error is an InvalidLicense, but run_scan_click has an assert so it

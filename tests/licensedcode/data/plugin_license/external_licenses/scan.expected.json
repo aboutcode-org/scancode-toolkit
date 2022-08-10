@@ -4,7 +4,7 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
-        "-dir": "<path>",
+        "--external-license-directory": "<path>",
         "--json": "<file>",
         "--license": true,
         "--strip-root": true

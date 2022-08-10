@@ -141,7 +141,7 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(
-            ('-dir', '--additional_directories'),
+            ('--external-license-directory',),
             required_options=['license'],
             multiple=True,
             type=click.Path(exists=True, readable=True, path_type=str),
@@ -177,7 +177,7 @@ class LicenseScanner(ScanPlugin):
         loaded index.
         """
         from licensedcode.cache import populate_cache
-        additional_directories = kwargs.get('additional_directories')
+        additional_directories = kwargs.get('external_license_directory')
         populate_cache(additional_directories=additional_directories)
 
     def get_scanner(

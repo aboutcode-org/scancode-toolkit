@@ -55,7 +55,7 @@ documenting a program's options. For example:
 
 .. include::  /rst_snippets/note_snippets/basic_clpieu.rst
 
--dir, --additional_directories PATH
+--external-license-directory PATH
 
           Include paths to directories containing additional licenses and rules to use
           in license detection. This can be used multiple times for multiple directories.
