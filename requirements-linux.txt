@@ -1,0 +1,4 @@
+libfwsi-python==20220123
+packagedcode-msitools==0.101.210706
+regipy==3.0.2
+rpm-inspector-rpm==4.16.1.3.210404
