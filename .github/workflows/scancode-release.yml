@@ -367,8 +367,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macos-10.15, macos-11, macos-12]
-        pyver: ["3.7", "3.8", "3.9", "3.10"]
+        os: [ubuntu-22.04, macos-12]
+        pyver: ["3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -388,18 +388,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: main_sdist
-          path: dist
-
-      - name: Download a single artifact miniw
-        uses: actions/download-artifact@v3
-        with:
-          name: mini_wheel
-          path: dist
-
-      - name: Download a single artifact minis
-        uses: actions/download-artifact@v3
-        with:
-          name: mini_sdist
           path: dist
 
       - name: test install wheels and sdist
@@ -427,8 +415,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2019, windows-2022]
-        pyver: ["3.7", "3.8", "3.9", "3.10"]
+        os: [windows-2022]
+        pyver: ["3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -448,18 +436,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: main_sdist
-          path: dist
-
-      - name: Download a single artifact miniw
-        uses: actions/download-artifact@v3
-        with:
-          name: mini_wheel
-          path: dist
-
-      - name: Download a single artifact minis
-        uses: actions/download-artifact@v3
-        with:
-          name: mini_sdist
           path: dist
 
       - name: test install wheels and sdist
@@ -488,7 +464,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
+        os: [ubuntu-20.04]
         pyver: [3.8]
 
     steps:
@@ -526,7 +502,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-11, macos-12]
+        os: [macos-12]
         pyver: [3.8]
 
     steps:
@@ -564,7 +540,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2019, windows-2022]
+        os: [windows-2022]
         pyver: [3.8]
 
     steps:
