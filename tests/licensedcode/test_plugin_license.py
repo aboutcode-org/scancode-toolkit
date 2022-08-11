@@ -61,6 +61,23 @@ def test_license_option_reports_license_expressions():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_option_reports_license_expressions_spdx_nuget():
+    test_dir = test_env.get_test_loc('plugin_license/license-expression/spdx-expressions.txt', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license-expression/spdx-expressions.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+
 def test_license_option_reports_license_texts():
     test_dir = test_env.get_test_loc('plugin_license/text/scan', copy=True)
     result_file = test_env.get_temp_file('json')

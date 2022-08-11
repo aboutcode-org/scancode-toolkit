@@ -256,12 +256,19 @@ class Query(object):
         _spdx_id = dic_get(u'identifier')
         spdxid1 = [_spdx, dic_get(u'license'), _spdx_id]
 
-        # Even though it is invalid, this Enlish seplling happens in the wild
+        # Even though it is invalid, this Enlish spelling happens in the wild
         spdxid2 = [_spdx, dic_get(u'licence'), _spdx_id]
+
+        # There's also other spdx license identifiers like NuGet license URLs
+        # Like: `https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+)`
+        _licenses = dic_get(u'licenses')
+        _nuget = dic_get(u'nuget')
+        _org = dic_get(u'org')
+        nuget_spdx_id = [_licenses, _nuget, _org]
 
         # None, None None: this is mostly a possible issue in test mode
         self.spdx_lid_token_ids = [
-            x for x in [spdxid1, spdxid2, ] if x != [None, None, None]
+            x for x in [spdxid1, spdxid2, nuget_spdx_id, ] if x != [None, None, None]
         ]
 
         # list of tuple (original line text, start known pos, end known pos) for
