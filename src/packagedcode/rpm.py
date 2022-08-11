@@ -13,8 +13,6 @@ import sys
 from collections import namedtuple
 from pathlib import Path
 
-from license_expression import Licensing
-
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm import RPM

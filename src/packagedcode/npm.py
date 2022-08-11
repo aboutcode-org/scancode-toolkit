@@ -19,7 +19,6 @@ from itertools import islice
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource

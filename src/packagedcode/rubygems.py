@@ -19,7 +19,6 @@ from packageurl import PackageURL
 from packagedcode import models
 from packagedcode import spec
 from packagedcode.gemfile_lock import GemfileLockParser
-from packagedcode.utils import combine_expressions
 from packagedcode.utils import build_description
 from packagedcode.utils import get_ancestor
 

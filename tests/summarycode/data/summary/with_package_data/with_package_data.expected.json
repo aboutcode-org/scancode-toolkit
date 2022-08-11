@@ -1,8 +1,108 @@
 {
   "dependencies": [],
-  "packages": [],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "codebase",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Example Corp.",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 3,
+              "rule_relevance": 100,
+              "matched_text": "apache-2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'apache-2.0'}",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://pypi.org/project/codebase",
+      "repository_download_url": null,
+      "api_data_url": "https://pypi.org/pypi/codebase/json",
+      "package_uid": "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "codebase/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/codebase"
+    }
+  ],
   "summary": {
-    "declared_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
+    "declared_license_expression": "apache-2.0",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -16,11 +116,11 @@
     "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": "apache-2.0",
-        "count": 2
+        "value": null,
+        "count": 1
       },
       {
-        "value": null,
+        "value": "apache-2.0 AND (apache-2.0 OR mit)",
         "count": 1
       },
       {
@@ -213,7 +313,9 @@
       ],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -297,7 +399,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -381,7 +485,9 @@
       "holders": [],
       "authors": [],
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -561,7 +667,9 @@
           "purl": "pkg:pypi/codebase"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "is_legal": false,
       "is_manifest": true,
       "is_readme": false,
@@ -570,9 +678,7 @@
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
-      "scan_errors": [
-        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='pypi', namespace=None, name='codebase', version=None, datasource_id='pypi_setup_py'):\nAttributeError: 'Package' object has no attribute 'license_expression'\n"
-      ]
+      "scan_errors": []
     }
   ]
 }

@@ -12,7 +12,6 @@ import json
 from functools import partial
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 
 """
 Parse PHP composer package manifests, see https://getcomposer.org/ and

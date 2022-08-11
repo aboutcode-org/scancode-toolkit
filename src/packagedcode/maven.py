@@ -21,7 +21,6 @@ from pymaven.pom import strip_namespace
 
 from commoncode import fileutils
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis

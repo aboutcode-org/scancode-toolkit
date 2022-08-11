@@ -36,7 +36,7 @@ LicenseID: LicenseRef-scancode-agere-bsd
 LicenseName: Agere Systems BSD Software license
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml
 </text>
-ExtractedText: <text> * SOFTWARE LICENSE
+ExtractedText: <text>SOFTWARE LICENSE
 *
 * This software is provided subject to the following terms and conditions,
 * which you should read carefully before using the software.  Using this

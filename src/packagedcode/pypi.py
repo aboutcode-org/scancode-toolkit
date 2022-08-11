@@ -37,7 +37,6 @@ from packaging.utils import canonicalize_name
 
 from packagedcode import models
 from packagedcode.utils import build_description
-from packagedcode.utils import combine_expressions
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 
@@ -53,7 +52,7 @@ Detect and collect Python packages information.
 # TODO: add support for pex, pyz, etc.
 # TODO: Add missing ABOUT file for Pyserial code
 
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
 
 def logger_debug(*args):
@@ -63,11 +62,12 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
+    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class PythonEggPkgInfoFile(models.DatafileHandler):

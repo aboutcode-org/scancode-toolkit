@@ -34,7 +34,6 @@ from packagedcode.licensing import get_license_matches_from_query_string
 from packagedcode.licensing import get_mapping_and_expression_from_detections
 from licensedcode.detection import LicenseDetection
 
-
 from packagedcode.utils import combine_expressions
 from textcode.analysis import unicode_text
 
@@ -371,7 +370,7 @@ class DebianDetector:
     def get_license_expression(self, *args, **kwargs):
         """
         Return a license expression string suitable to use as a
-        PackageData.license_expression.
+        PackageData.declared_license_expression.
         """
         raise NotImplementedError
 

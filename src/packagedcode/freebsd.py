@@ -14,7 +14,6 @@ import logging
 import saneyaml
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 
 """
 Handle FreeBSD ports

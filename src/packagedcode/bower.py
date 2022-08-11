@@ -13,7 +13,6 @@ import json
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 
 
 # TODO: handle complex cases of npms and bower combined

@@ -16,8 +16,6 @@ import saneyaml
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.licensing import get_license_matches
-from packagedcode.licensing import get_license_expression_from_matches
 from packagedcode import spec
 from packagedcode import utils
 
