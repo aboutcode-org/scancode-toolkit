@@ -914,6 +914,12 @@ class DatafileHandler:
           not be further processed,
         - a Dependency to add to top-level dependencies
 
+        Package items must be yielded before Dependency or Resource items. This
+        is to ensure that a Package is created before we associate a Resource or
+        Dependency to a Package. This is particulary important in the case where
+        we are calling the `assemble()` method outside of the scancode-toolkit
+        context.
+
         The approach is to find and process all the neighboring related datafiles
          to this datafile at once.
 
@@ -1037,6 +1043,13 @@ class DatafileHandler:
 
         This is a convenience method that subclasses can reuse when overriding
         `assemble()`
+
+        Like in ``DatafileHandler.assemble()``, Package items must be yielded
+        before Dependency or Resource items. This is to ensure that a Package is
+        created before we associate a Resource or Dependency to a Package. This
+        is particulary important in the case where we are calling the
+        ``assemble()`` method outside of the scancode-toolkit context, as
+        ``assemble()`` can call ``assemble_from_many()``.
 
         NOTE: ATTENTION!: this may not work well for datafile that yield
         multiple PackageData for unrelated Packages
