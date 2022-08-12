@@ -148,7 +148,7 @@ jobs:
           operating_system=linux
           python_dot_version=3.8
           python_version=38
-          echo -n "python3" > PYTHON_EXECUTABLE
+          echo -n "$python_version" > PYTHON_EXECUTABLE
           rm -rf thirdparty build dist
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
@@ -157,8 +157,8 @@ jobs:
             --requirements=requirements.txt \
             --dest=thirdparty \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
-            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --requirements=requirements-linux.txt \
@@ -217,8 +217,8 @@ jobs:
             --requirements=requirements.txt \
             --dest=thirdparty \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
-            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --wheel-only extractcode \
@@ -277,8 +277,8 @@ jobs:
             --requirements=requirements.txt \
             --dest=thirdparty \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
-            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --wheel-only extractcode \
