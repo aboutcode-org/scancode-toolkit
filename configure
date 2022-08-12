@@ -141,15 +141,16 @@ CLI_ARGS=$1
 # Defaults. Change these variables to customize this script
 ################################
 
-EXTRAS="packages"
-
+BASE=".[packages]"
+BASE_DEV=".[packages,testing]"
 if [[ $OSTYPE == 'darwin'* ]]; then
-    EXTRAS=""
+    BASE="."
+    BASE_DEV=".[testing]"
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable .[$EXTRAS] --constraint requirements.txt --constraint requirements-linux.txt"
-DEV_REQUIREMENTS="--editable .[$EXTRAS,testing] --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
+REQUIREMENTS="--editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
+DEV_REQUIREMENTS="--editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
 DOCS_REQUIREMENTS="--editable .[docs] --constraint requirements.txt"
 
 # where we create a virtualenv
