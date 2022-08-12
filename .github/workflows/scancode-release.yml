@@ -148,18 +148,17 @@ jobs:
           operating_system=linux
           python_dot_version=3.8
           python_version=38
-          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
+          echo -n "python3" > PYTHON_EXECUTABLE
           rm -rf thirdparty build dist
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-linux.txt \
             --requirements=requirements.txt \
-            --sdist-only libfwsi-python \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --requirements=requirements-linux.txt \
@@ -171,7 +170,7 @@ jobs:
             --dest=thirdparty \
             --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
-          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py3-$operating_system
 
       - name: Collect built linux app
         uses: actions/upload-artifact@v3
@@ -203,7 +202,6 @@ jobs:
           ./configure --dev
           ./scancode --reindex-licenses
 
-
       - name: Build mac app archive
         run: |
           source venv/bin/activate
@@ -211,17 +209,16 @@ jobs:
           operating_system=macos
           python_dot_version=3.8
           python_version=38
-          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
+          echo -n "python3" > PYTHON_EXECUTABLE
           rm -rf thirdparty build dist
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
-            --sdist-only libfwsi-python \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --wheel-only extractcode \
@@ -233,7 +230,7 @@ jobs:
             --dest=thirdparty \
             --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
-          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py3-$operating_system
 
       - name: Collect built mac app
         uses: actions/upload-artifact@v3
@@ -278,11 +275,10 @@ jobs:
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
-            --sdist-only libfwsi-python \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
             --wheels
+            # --python-version=$python_version \
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements-native.txt \
             --wheel-only extractcode \
@@ -464,7 +460,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
         pyver: [3.8]
 
     steps:
@@ -502,7 +498,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-12]
+        os: [macos-10.15, macos-11, macos-12]
         pyver: [3.8]
 
     steps:
@@ -540,7 +536,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2022]
+        os: [windows-2019, windows-2022]
         pyver: [3.8]
 
     steps:
