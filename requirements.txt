@@ -68,6 +68,7 @@ text-unidecode==1.3
 toml==0.10.2
 typecode==30.0.0
 typecode-libmagic==5.39.210531
+typing-extensions==4.3.0
 urllib3==1.26.11
 urlpy==0.5
 wcwidth==0.2.5
