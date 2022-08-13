@@ -148,7 +148,7 @@ jobs:
           operating_system=linux
           python_dot_version=3.8
           python_version=38
-          echo -n "$python_version" > PYTHON_EXECUTABLE
+          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
           rm -rf thirdparty build dist
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
@@ -363,8 +363,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macos-10.15, macos-11, macos-12]
-        pyver: ["3.7", "3.8", "3.9", "3.10"]
+        os: [ubuntu-22.04, macos-12]
+        pyver: ["3.9", "3.10"]
+        # os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macos-10.15, macos-11, macos-12]
+        # pyver: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -411,8 +413,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       os: [windows-2019, windows-2022]
-       pyver: ["3.7", "3.8", "3.9", "3.10"]
+       os: [windows-2022]
+       pyver: ["3.9", "3.10"]
+       #os: [windows-2019, windows-2022]
+       #pyver: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -460,8 +464,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
-        # , ubuntu-22.04]
+        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
         pyver: [3.8]
 
     steps:
