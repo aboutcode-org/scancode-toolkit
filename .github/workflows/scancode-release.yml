@@ -170,7 +170,7 @@ jobs:
             --dest=thirdparty \
             --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
-          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py3-$operating_system
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
 
       - name: Collect built linux app
         uses: actions/upload-artifact@v3
@@ -230,7 +230,7 @@ jobs:
             --dest=thirdparty \
             --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
-          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py3-$operating_system
+          venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
 
       - name: Collect built mac app
         uses: actions/upload-artifact@v3
