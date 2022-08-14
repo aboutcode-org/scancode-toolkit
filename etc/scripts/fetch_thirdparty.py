@@ -12,6 +12,7 @@
 import itertools
 import os
 import sys
+from collections import defaultdict
 
 import click
 
@@ -110,6 +111,39 @@ TRACE_DEEP = False
     is_flag=True,
     help="Use on disk cached PyPI indexes list of packages and versions and do not refetch if present.",
 )
+@click.option(
+    "--sdist-only",
+    "sdist_only",
+    type=str,
+    metavar="SDIST",
+    default=tuple(),
+    show_default=False,
+    multiple=True,
+    help="Package name(s) that come only in sdist format (no wheels). "
+         "The command will not fail and exit if no wheel exists for these names",
+)
+@click.option(
+    "--wheel-only",
+    "wheel_only",
+    type=str,
+    metavar="WHEEL",
+    default=tuple(),
+    show_default=False,
+    multiple=True,
+    help="Package name(s) that come only in wheel format (no sdist). "
+         "The command will not fail and exit if no sdist exists for these names",
+)
+@click.option(
+    "--no-dist",
+    "no_dist",
+    type=str,
+    metavar="DIST",
+    default=tuple(),
+    show_default=False,
+    multiple=True,
+    help="Package name(s) that do not come either in wheel or sdist format. "
+         "The command will not fail and exit if no distribution exists for these names",
+)
 @click.help_option("-h", "--help")
 def fetch_thirdparty(
     requirements_files,
@@ -122,6 +156,9 @@ def fetch_thirdparty(
     sdists,
     index_urls,
     use_cached_index,
+    sdist_only,
+    wheel_only,
+    no_dist,
 ):
     """
     Download to --dest THIRDPARTY_DIR the PyPI wheels, source distributions,
@@ -204,58 +241,62 @@ def fetch_thirdparty(
             )
             repos.append(repo)
 
-    wheels_fetched = []
-    wheels_not_found = []
-
-    sdists_fetched = []
-    sdists_not_found = []
+    wheels_or_sdist_not_found = defaultdict(list)
 
     for name, version in sorted(required_name_versions):
         nv = name, version
         print(f"Processing: {name} @ {version}")
         if wheels:
             for environment in environments:
+
                 if TRACE:
                     print(f"  ==> Fetching wheel for envt: {environment}")
-                fwfns = utils_thirdparty.download_wheel(
+
+                fetched = utils_thirdparty.download_wheel(
                     name=name,
                     version=version,
                     environment=environment,
                     dest_dir=dest_dir,
                     repos=repos,
                 )
-                if fwfns:
-                    wheels_fetched.extend(fwfns)
-                else:
-                    wheels_not_found.append(f"{name}=={version} for: {environment}")
+                if not fetched:
+                    wheels_or_sdist_not_found[f"{name}=={version}"].append(environment)
                     if TRACE:
                         print(f"      NOT FOUND")
 
-        if sdists:
+        if (sdists or
+            (f"{name}=={version}" in wheels_or_sdist_not_found and name in sdist_only)
+         ):
             if TRACE:
                 print(f"  ==> Fetching sdist: {name}=={version}")
+
             fetched = utils_thirdparty.download_sdist(
                 name=name,
                 version=version,
                 dest_dir=dest_dir,
                 repos=repos,
             )
-            if fetched:
-                sdists_fetched.append(fetched)
-            else:
-                sdists_not_found.append(f"{name}=={version}")
+            if not fetched:
+                wheels_or_sdist_not_found[f"{name}=={version}"].append("sdist")
                 if TRACE:
                     print(f"      NOT FOUND")
 
-    if wheels and wheels_not_found:
-        print(f"==> MISSING WHEELS")
-        for wh in wheels_not_found:
-            print(f"  {wh}")
+    mia = []
+    for nv, dists in wheels_or_sdist_not_found.items():
+        name, _, version = nv.partition("==")
+        if name in no_dist:
+            continue
+        sdist_missing = sdists and "sdist" in dists and not name in wheel_only
+        if sdist_missing:
+            mia.append(f"SDist missing: {nv} {dists}")
+        wheels_missing = wheels and any(d for d in dists if d != "sdist") and not name in sdist_only
+        if wheels_missing:
+            mia.append(f"Wheels missing: {nv} {dists}")
 
-    if sdists and sdists_not_found:
-        print(f"==> MISSING SDISTS")
-        for sd in sdists_not_found:
-            print(f"  {sd}")
+    if mia:
+        for m in mia:
+            print(m)
+        raise Exception(mia)
 
     print(f"==> FETCHING OR CREATING ABOUT AND LICENSE FILES")
     utils_thirdparty.fetch_abouts_and_licenses(dest_dir=dest_dir, use_cached_index=use_cached_index)
