@@ -241,14 +241,18 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
         package_file_references.extend(package_data.file_references)
         package_uid = package.package_uid
 
+        dependencies = []
         dependent_packages = package_data.dependencies
         if dependent_packages:
-            yield from models.Dependency.from_dependent_packages(
-                dependent_packages=dependent_packages,
-                datafile_path=resource.path,
-                datasource_id=package_data.datasource_id,
-                package_uid=package_uid,
+            deps = list(
+                models.Dependency.from_dependent_packages(
+                    dependent_packages=dependent_packages,
+                    datafile_path=resource.path,
+                    datasource_id=package_data.datasource_id,
+                    package_uid=package_uid,
+                )
             )
+            dependencies.extend(deps)
 
         # Multi-Arch can be: "foreign", "same", "allowed", "all", "optional" or
         # empty/non-present. See https://wiki.debian.org/Multiarch/HOWTO
@@ -312,12 +316,15 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             # yield possible dependencies
             dependent_packages = package_data.dependencies
             if dependent_packages:
-                yield from models.Dependency.from_dependent_packages(
-                    dependent_packages=dependent_packages,
-                    datafile_path=res.path,
-                    datasource_id=package_data.datasource_id,
-                    package_uid=package_uid,
+                deps = list(
+                    models.Dependency.from_dependent_packages(
+                        dependent_packages=dependent_packages,
+                        datafile_path=res.path,
+                        datasource_id=package_data.datasource_id,
+                        package_uid=package_uid,
+                    )
                 )
+                dependencies.extend(deps)
 
             resources.append(res)
 
@@ -353,6 +360,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
         yield package
         yield from resources
+        yield from dependencies
 
 
 class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
