@@ -384,8 +384,12 @@ jobs:
 
       - name: Build source archive with deps
         run: |
-          git describe --tags > SCANCODE_VERSION
-          mkdir -p thirdparty
+          release_dir=scancode-toolkit-$(git describe --tags)
+          rm -rf $release_dir
+          mkdir -p $release_dir
+          git describe --tags > $release_dir/SCANCODE_VERSION
+          thirdparty_dir=$release_dir/thirdparty
+          mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
             --requirements=requirements-native.txt \
