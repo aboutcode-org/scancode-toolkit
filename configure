@@ -153,6 +153,7 @@ REQUIREMENTS="--editable $BASE --constraint requirements.txt --constraint requir
 DEV_REQUIREMENTS="--editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
 DOCS_REQUIREMENTS="--editable .[docs] --constraint requirements.txt"
 REL_REQUIREMENTS="--requirement etc/scripts/requirements.txt"
+PROD_REQUIREMENTS="scancode_toolkit*.whl"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -175,17 +176,14 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 
 ################################
-# Install with or without and index. With "--no-index" this is using only local wheels
-# This is an offline mode with no index and no network operations
-NO_INDEX="--no-index "
-
-
-################################
 # Thirdparty package locations and index handling
 # Find packages from the local thirdparty directory if present
 thirddir=$CFG_ROOT_DIR/thirdparty
 if [[ "$(echo $thirddir/*.whl)x" != "$thirddir/*.whlx" ]]; then
-    PIP_EXTRA_ARGS="$NO_INDEX --find-links $CFG_ROOT_DIR/thirdparty"
+    PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
+    CFG_REQUIREMENTS=$PROD_REQUIREMENTS
+else
+    CFG_REQUIREMENTS=$REQUIREMENTS
 fi
 
 
@@ -295,7 +293,6 @@ clean() {
 
 ################################
 # Main command line entry point
-CFG_REQUIREMENTS=$REQUIREMENTS
 
 # We are using getopts to parse option arguments that start with "-"
 while getopts :-: optchar; do

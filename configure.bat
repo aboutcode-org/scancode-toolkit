@@ -29,6 +29,8 @@
 set "REQUIREMENTS=--editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 set "DOCS_REQUIREMENTS=--editable .[docs] --constraint requirements.txt"
+set "REL_REQUIREMENTS=--requirement etc/scripts/requirements.txt"
+set "PROD_REQUIREMENTS=scancode_toolkit*.whl"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
@@ -56,6 +58,9 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 @rem # offline mode for scancode installation with no index at all
 if exist "%CFG_ROOT_DIR%\thirdparty" (
     set PIP_EXTRA_ARGS=--no-index --find-links "%CFG_ROOT_DIR%\thirdparty"
+    set "CFG_REQUIREMENTS=%PROD_REQUIREMENTS%"
+) else (
+    set "CFG_REQUIREMENTS=%REQUIREMENTS%"
 )
 
 
@@ -68,7 +73,6 @@ if not defined CFG_QUIET (
 
 @rem ################################
 @rem # Main command line entry point
-set "CFG_REQUIREMENTS=%REQUIREMENTS%"
 
 :again
 if not "%1" == "" (
@@ -79,6 +83,9 @@ if not "%1" == "" (
     )
     if "%1" EQU "--docs"    (
         set "CFG_REQUIREMENTS=%DOCS_REQUIREMENTS%"
+    )
+    if "%1" EQU "--rel"    (
+        set "CFG_REQUIREMENTS=%REL_REQUIREMENTS%"
     )
     shift
     goto again
