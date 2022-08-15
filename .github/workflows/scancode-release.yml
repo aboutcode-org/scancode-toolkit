@@ -154,12 +154,12 @@ jobs:
           operating_system=linux
           python_dot_version=3.8
           python_version=38
-          release_dir=scancode-toolkit-$(git describe)
+          release_dir=scancode-toolkit-$(git describe --tags)
           python_exe="python$python_dot_version"
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe > $release_dir/SCANCODE_VERSION
+          git describe --tags > $release_dir/SCANCODE_VERSION
           thirdparty_dir=$release_dir/thirdparty
           mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
@@ -187,7 +187,7 @@ jobs:
             *NOTICE *LICENSE *ABOUT \
             etc/thirdparty \
             $release_dir
-          tarball=scancode-toolkit-$(git describe)_py$python_dot_version-$operating_system.tar.gz
+          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
           tar -cvzf dist/$tarball $release_dir
   
       - name: Collect built linux app
@@ -237,7 +237,7 @@ jobs:
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe > $release_dir/SCANCODE_VERSION
+          git describe --tags > $release_dir/SCANCODE_VERSION
           thirdparty_dir=$release_dir/thirdparty
           mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
@@ -264,7 +264,7 @@ jobs:
             *NOTICE *LICENSE *ABOUT \
             etc/thirdparty \
             $release_dir
-          tarball=scancode-toolkit-$(git describe)_py$python_dot_version-$operating_system.tar.gz
+          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
           tar -cvzf dist/$tarball $release_dir
 
       - name: Collect built mac app
@@ -309,12 +309,12 @@ jobs:
           operating_system=windows
           python_dot_version=3.8
           python_version=38
-          release_dir=scancode-toolkit-$(git describe)
+          release_dir=scancode-toolkit-$(git describe --tags)
           python_exe="py -$python_dot_version"
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe > $release_dir/SCANCODE_VERSION
+          git describe --tags > $release_dir/SCANCODE_VERSION
           thirdparty_dir=$release_dir/thirdparty
           mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
@@ -341,7 +341,7 @@ jobs:
             *NOTICE *LICENSE *ABOUT \
             etc/thirdparty \
             $release_dir
-          zipball=scancode-toolkit-$(git describe)_py$python_dot_version-$operating_system.zip
+          zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
           zip  dist/$zipball $release_dir
 
       - name: Collect built windows app
@@ -383,7 +383,7 @@ jobs:
 
       - name: Build source archive with deps
         run: |
-          git describe > SCANCODE_VERSION
+          git describe --tags > SCANCODE_VERSION
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
