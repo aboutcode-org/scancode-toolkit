@@ -20,7 +20,7 @@ on:
 jobs:
 
   build_scancode_for_pypi:
-    name: Build ScanCode PyPI archives
+    name: Build PyPI archives
     runs-on: ubuntu-20.04
 
     defaults:
@@ -67,7 +67,7 @@ jobs:
 
 
   build_scancode_for_pypi_mini:
-    name: Build ScanCode PyPI archives mini
+    name: Build PyPI archives mini
     runs-on: ubuntu-20.04
 
     defaults:
@@ -119,7 +119,7 @@ jobs:
 
 
   build_scancode_for_release_linux:
-    name: Build ScanCode Release archives for linux
+    name: Build Release for linux
     runs-on: ubuntu-20.04
     needs:
       - build_scancode_for_pypi
@@ -198,7 +198,7 @@ jobs:
 
 
   build_scancode_for_release_macos:
-    name: Build ScanCode Release archives for mac
+    name: Build Release for mac
     runs-on: ubuntu-20.04
     needs:
       - build_scancode_for_pypi
@@ -276,7 +276,7 @@ jobs:
 
 
   build_scancode_for_release_windows:
-    name: Build ScanCode Release archives for windows
+    name: Build Release for windows
     runs-on: ubuntu-20.04
     needs:
       - build_scancode_for_pypi
@@ -353,7 +353,7 @@ jobs:
 
 
   build_scancode_for_release_source:
-    name: Build ScanCode Release archives source
+    name: Build source
     runs-on: ubuntu-20.04
     needs:
       - build_scancode_for_pypi
@@ -423,7 +423,7 @@ jobs:
 
 
   smoke_test_install_and_run_pypi_dists_posix:
-    name: Test install and run each PyPI wheels and sdist
+    name: Test POSIX PyPI wheels and sdist
     needs:
       - build_scancode_for_pypi
       - build_scancode_for_pypi_mini
@@ -473,7 +473,7 @@ jobs:
 
 
   smoke_test_install_and_run_pypi_dists_windows:
-    name: Test install and run each PyPI wheels and sdist
+    name: Test Windows PyPI wheels and sdist
     needs:
       - build_scancode_for_pypi
       - build_scancode_for_pypi_mini
@@ -525,7 +525,7 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_linux:
-    name: Test app archive installation and run on ${{ matrix.os }}
+    name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_linux
     runs-on: ${{ matrix.os }}
@@ -563,7 +563,7 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_macos:
-    name: Test app archive installation and run on ${{ matrix.os }}
+    name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_macos
     runs-on: ${{ matrix.os }}
@@ -601,7 +601,7 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_windows:
-    name: Test app archive installation and run on ${{ matrix.os }}
+    name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_windows
     runs-on: ${{ matrix.os }}
