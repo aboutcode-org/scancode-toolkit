@@ -154,8 +154,8 @@ jobs:
           operating_system=linux
           python_dot_version=3.8
           python_version=38
-          release_dir=scancode-toolkit-$(git describe --tags)
           python_exe="python$python_dot_version"
+          release_dir=scancode-toolkit-$(git describe --tags)
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
@@ -234,6 +234,7 @@ jobs:
           python_dot_version=3.8
           python_version=38
           python_exe="python3"
+          release_dir=scancode-toolkit-$(git describe --tags)
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
@@ -242,7 +243,7 @@ jobs:
           mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
-            --dest=$thirdparty_dir \
+            --dest $thirdparty_dir \
             --operating-system=$operating_system \
             --python-version=$python_version \
             --wheels --use-cached-index
@@ -254,7 +255,7 @@ jobs:
             --wheel-only typecode-libmagic \
             --wheel-only packagedcode-msitools \
             --wheel-only rpm-inspector-rpm \
-            --dest=$thirdparty_dir \
+            --dest $thirdparty_dir \
             --sdists --use-cached-index
           cp -r \
             dist/scancode_*.whl \
@@ -309,8 +310,8 @@ jobs:
           operating_system=windows
           python_dot_version=3.8
           python_version=38
-          release_dir=scancode-toolkit-$(git describe --tags)
           python_exe="py -$python_dot_version"
+          release_dir=scancode-toolkit-$(git describe --tags)
           rm -rf $release_dir
           mkdir -p $release_dir
           echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
@@ -319,7 +320,7 @@ jobs:
           mkdir -p $thirdparty_dir
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
-            --dest=$thirdparty_dir \
+            --dest $thirdparty_dir \
             --operating-system=$operating_system \
             --python-version=$python_version \
             --wheels --use-cached-index
@@ -331,7 +332,7 @@ jobs:
             --wheel-only typecode-libmagic \
             --wheel-only packagedcode-msitools \
             --wheel-only rpm-inspector-rpm \
-            --dest=$thirdparty_dir \
+            --dest $thirdparty_dir \
             --sdists --use-cached-index
           cp -r \
             dist/scancode_*.whl \
@@ -395,21 +396,20 @@ jobs:
             --wheel-only typecode-libmagic \
             --wheel-only packagedcode-msitools \
             --wheel-only rpm-inspector-rpm \
-            --dest=$thirdparty_dir \
+            --dest $thirdparty_dir \
             --sdists --use-cached-index
-          mv dist/scancode* .
-          tar -cvzf dist/scancode-toolkit_sources.tar.gz \
-            $(ls -d \
-              scancode*toolkit* \
-              scancode* extractcode* configure* \
-              *.rst \
-              samples \
-              *NOTICE *LICENSE *ABOUT \
-              etc/thirdparty \
-              SCANCODE_VERSION \
-              PYTHON_EXECUTABLE \
-              thirdparty \
-            )
+          cp -r \
+            dist/* \
+            scancode* extractcode* configure* \
+            *.rst \
+            docs \
+            samples \
+            *NOTICE *LICENSE *ABOUT \
+            etc/thirdparty \
+            $release_dir
+
+          tarball=scancode-toolkit-$(git describe --tags)_sources.tar.gz
+          tar -cvzf dist/$tarball $release_dir
 
       - name: Collect built source app tarball
         uses: actions/upload-artifact@v3
@@ -552,7 +552,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f`; \
+          for f in `find dist -type f -name "*.tar.gz"`; \
             do \
                 python etc/release/scancode_release_tests.py app $f; \
             done
@@ -590,7 +590,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f`; \
+          for f in `find dist -type f -name "*.tar.gz"`; \
             do \
                 python etc/release/scancode_release_tests.py app $f; \
             done
@@ -628,7 +628,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f`; \
+          for f in `find dist -type f -name "*.zip"`; \
             do \
                 python etc/release/scancode_release_tests.py app $f; \
             done
