@@ -14,6 +14,8 @@ import shutil
 import subprocess
 import sys
 
+on_windows = "win32" in str(sys.platform).lower()
+
 
 def run_pypi_smoke_tests(pypi_archive, venv_prefix="venv/bin/"):
     """
@@ -55,13 +57,19 @@ def run_app_smoke_tests(app_archive):
     os.chdir(extract_loc)
 
     print(f"Configuring scancode for release: {app_archive}")
-    run_command([
-        os.path.join(extract_loc, "configure"),
-    ])
+    cpath = os.path.join(extract_loc, "configure")
+    if on_windows:
+        cpath += ".bat"
+
+    run_command([cpath])
 
     # minimal tests: update when new scans are available
+    scpath = os.path.join(extract_loc, "scancode")
+    if on_windows:
+        scpath += ".bat"
+
     args = [
-        os.path.join(extract_loc, "scancode"),
+        scpath,
         "--license",
         "--license-text",
         "--license-clarity-score",
@@ -109,7 +117,6 @@ def run_command(args):
     print()
     print(f"Running command: {cmd}")
     try:
-        on_windows = "win32" in str(sys.platform).lower()
         output = subprocess.check_output(args, encoding="utf-8", shell=on_windows)
         print(f"Success to run command: {cmd}")
         print(output)
