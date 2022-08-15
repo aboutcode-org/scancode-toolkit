@@ -404,7 +404,7 @@ jobs:
             --sdists --use-cached-index
           cp -r \
             dist/* \
-            scancode* extractcode* configure* \
+            scancode.bat scancode extractcode extractcode.bat configure configure.bat \
             *.rst \
             docs \
             samples \
@@ -606,9 +606,9 @@ jobs:
       - build_scancode_for_release_windows
     runs-on: ${{ matrix.os }}
 
-    defaults:
-      run:
-        shell: bash
+    #defaults:
+    #  run:
+    #    shell: bash
 
     strategy:
       fail-fast: true
@@ -632,10 +632,9 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f -name "*.zip"`; \
-            do \
-                python etc/release/scancode_release_tests.py app $f; \
-            done
+          for %%F in (dist/*.zip) do (
+            python etc/release/scancode_release_tests.py app "%%F"
+          )
 
 
   publish_to_gh_release:
