@@ -334,8 +334,8 @@ jobs:
             --wheel-only rpm-inspector-rpm \
             --dest $thirdparty_dir \
             --sdists --use-cached-index
+          cp dist/scancode_*.whl $release_dir
           cp -r \
-            dist/scancode_*.whl \
             scancode extractcode configure \
             *.rst \
             samples \
@@ -343,7 +343,7 @@ jobs:
             etc/thirdparty \
             $release_dir
           zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
-          zip dist/$zipball $release_dir
+          zip -r dist/$zipball $release_dir
 
       - name: Collect built windows app
         uses: actions/upload-artifact@v3
@@ -621,7 +621,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
+          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py %%F
 
 
 #  publish_to_gh_release:
