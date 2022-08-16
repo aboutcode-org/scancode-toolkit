@@ -412,7 +412,6 @@ jobs:
           cp -r etc/thirdparty $release_dir/etc
           mv dist/*.tar.gz $release_dir
           cp -r \
-            dist/*.tar.gz \
             scancode.bat scancode extractcode extractcode.bat configure configure.bat \
             *.rst \
             docs \
