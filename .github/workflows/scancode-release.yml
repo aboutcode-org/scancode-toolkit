@@ -1,14 +1,14 @@
 name: Create ScanCode release archives, then test and publish to GH and PyPI
 
- This is executed automatically on a tag
-
- Summary of the steps:
- - Build wheel and sdist for the "main" scancode, then build these for the "mini" flavor
-  - test each wheel and sdist on every possible OS x Python version combinations
- - Build release app archives, one for each of linux, windows, macos on Python 3.8
-  - test each on its target OS and Python version
- - Create gh-release and upload app archives to release
- - Upload all wheels and sdist to PyPI
+# This is executed automatically on a tag
+#
+# Summary of the steps:
+# - Build wheel and sdist for the "main" scancode, then build these for the "mini" flavor
+#  - test each wheel and sdist on every possible OS x Python version combinations
+# - Build release app archives, one for each of linux, windows, macos on Python 3.8
+#  - test each on its target OS and Python version
+# - Create gh-release and upload app archives to release
+# - Upload all wheels and sdist to PyPI
 
 
 on:
