@@ -179,17 +179,19 @@ jobs:
 #            --wheel-only typecode-libmagic \
 #            --dest=$thirdparty_dir \
 #            --sdists --use-cached-index
+#          mkdir -p $release_dir/etc
+#          cp -r etc/thirdparty $release_dir/etc
 #          cp -r \
 #            dist/scancode_*.whl \
 #            scancode extractcode configure \
 #            *.rst \
 #            samples \
 #            *NOTICE *LICENSE *ABOUT \
-#            etc/thirdparty \
 #            $release_dir
 #          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
 #          tar -cvzf dist/$tarball $release_dir
-#  
+#          rm dist/scancode_*.whl
+#
 #      - name: Collect built linux app
 #        uses: actions/upload-artifact@v3
 #        with:
@@ -257,16 +259,18 @@ jobs:
 #            --wheel-only rpm-inspector-rpm \
 #            --dest $thirdparty_dir \
 #            --sdists --use-cached-index
+#          mkdir -p $release_dir/etc
+#          cp -r etc/thirdparty $release_dir/etc
 #          cp -r \
 #            dist/scancode_*.whl \
 #            scancode extractcode configure \
 #            *.rst \
 #            samples \
 #            *NOTICE *LICENSE *ABOUT \
-#            etc/thirdparty \
 #            $release_dir
 #          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
 #          tar -cvzf dist/$tarball $release_dir
+#          rm dist/scancode_*.whl
 #
 #      - name: Collect built mac app
 #        uses: actions/upload-artifact@v3
@@ -335,8 +339,8 @@ jobs:
             --dest $thirdparty_dir \
             --sdists --use-cached-index
           cp dist/scancode_*.whl $release_dir
-          mkdir -p $release_dir/etc/thirdparty
-          cp -r etc/thirdparty $release_dir/etc/thirdparty
+          mkdir -p $release_dir/etc
+          cp -r etc/thirdparty $release_dir/etc
           cp -r \
             scancode.bat extractcode.bat configure.bat \
             *.rst \
@@ -345,6 +349,7 @@ jobs:
             $release_dir
           zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
           zip -r dist/$zipball $release_dir
+          rm dist/scancode_*.whl
 
       - name: Collect built windows app
         uses: actions/upload-artifact@v3
@@ -403,14 +408,16 @@ jobs:
 #            --wheel-only rpm-inspector-rpm \
 #            --dest $thirdparty_dir \
 #            --sdists --use-cached-index
+#          mkdir -p $release_dir/etc
+#          cp -r etc/thirdparty $release_dir/etc
+#          mv dist/*.tar.gz $release_dir
 #          cp -r \
-#            dist/* \
+#            dist/*.tar.gz \
 #            scancode.bat scancode extractcode extractcode.bat configure configure.bat \
 #            *.rst \
 #            docs \
 #            samples \
 #            *NOTICE *LICENSE *ABOUT \
-#            etc/thirdparty \
 #            $release_dir
 #
 #          tarball=scancode-toolkit-$(git describe --tags)_sources.tar.gz
@@ -622,7 +629,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for /f %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
+          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
 
 #  publish_to_gh_release:
 #    name: Publish to GH Release
