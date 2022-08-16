@@ -463,12 +463,15 @@ jobs:
 
       - name: test install wheels and sdist
         run: |
+          echo "license: gpl-2.0" > some.file
+          rm -rf venv;  \
+          python -m venv venv
+          venv/bin/python.exe -m pip install --upgrade pip
           for f in `find dist -type f`; \
             do \
-              rm -rf tvenv;  \
-              python -m venv tvenv;  \
-              tvenv/bin/python etc/release/scancode_release_tests.py pypi $f tvenv/bin/ ;  \
-              tvenv/bin/pip uninstall --yes scancode-toolkit ;  \
+              venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
+              venv/bin/python -clipeu --json-pp - some.file ; \
+              venv/bin/python -m pip uninstall --yes scancode-toolkit ; \
             done
 
 
@@ -558,7 +561,7 @@ jobs:
         run: |
           for f in `find dist -type f -name "*.tar.gz"`; \
             do \
-                python etc/release/scancode_release_tests.py app $f; \
+                python etc/release/scancode_release_tests.py $f; \
             done
 
 
@@ -596,7 +599,7 @@ jobs:
         run: |
           for f in `find dist -type f -name "*.tar.gz"`; \
             do \
-                python etc/release/scancode_release_tests.py app $f; \
+                python etc/release/scancode_release_tests.py $f; \
             done
 
 
@@ -606,9 +609,9 @@ jobs:
       - build_scancode_for_release_windows
     runs-on: ${{ matrix.os }}
 
-    #defaults:
-    #  run:
-    #    shell: bash
+    defaults:
+      run:
+        shell: cmd
 
     strategy:
       fail-fast: true
@@ -632,9 +635,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for %%F in (dist/*.zip) do (
-            python etc/release/scancode_release_tests.py app "%%F"
-          )
+          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py %%F
 
 
   publish_to_gh_release:
