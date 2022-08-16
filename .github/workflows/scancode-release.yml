@@ -467,7 +467,7 @@ jobs:
           echo "license: gpl-2.0" > some.file
           rm -rf venv;  \
           python -m venv venv
-          venv/bin/python.exe -m pip install --upgrade pip
+          venv/bin/python -m pip install --upgrade pip
           for f in `find dist -type f`; \
             do \
               venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
