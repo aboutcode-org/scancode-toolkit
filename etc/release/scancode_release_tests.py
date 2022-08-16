@@ -17,7 +17,6 @@ import sys
 on_windows = "win32" in str(sys.platform).lower()
 
 
-
 def run_app_smoke_tests(app_archive):
     """
     Run basic "smoke" scancode tests for the app release archive `app_archive`
@@ -46,18 +45,13 @@ def run_app_smoke_tests(app_archive):
     with open("some.file", "w") as sf:
         sf.write("license: gpl-2.0")
 
-
     print(f"Configuring scancode for release: {app_archive}")
     cpath = os.path.join(extract_loc, "configure")
-    if on_windows:
-        cpath += ".bat"
 
     run_command([cpath])
 
     # minimal tests: update when new scans are available
     scpath = os.path.join(extract_loc, "scancode")
-    if on_windows:
-        scpath += ".bat"
 
     args = [
         scpath,

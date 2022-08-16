@@ -335,12 +335,13 @@ jobs:
             --dest $thirdparty_dir \
             --sdists --use-cached-index
           cp dist/scancode_*.whl $release_dir
+          mkdir -p $release_dir/etc/thirdparty
+          cp -r etc/thirdparty $release_dir/etc/thirdparty
           cp -r \
-            scancode extractcode configure \
+            scancode.bat extractcode.bat configure.bat \
             *.rst \
             samples \
             *NOTICE *LICENSE *ABOUT \
-            etc/thirdparty \
             $release_dir
           zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
           zip -r dist/$zipball $release_dir
@@ -621,8 +622,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py %%F
-
+          for /f %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
 
 #  publish_to_gh_release:
 #    name: Publish to GH Release
