@@ -54,7 +54,7 @@ System Requirements
     #. Mac: on recent x86 64-bit macOS (10.15 and up, including 11 and 12),
        Use the X86 emulation mode on Apple ARM M1 CPUs.
     #. Windows: on Windows 10 and up,
-    #. FreeBSD,
+    #. FreeBSD.
 
 
 .. _install_prerequisites:
@@ -96,7 +96,6 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 
     The default Python 3 provided with macOS is 3.8.
     Alternativelu you can download and install Python 3.8 from https://www.python.org/
-
 
 
 - **On Windows**:
@@ -230,20 +229,17 @@ The prerequisite is a working `docker installation <https://docs.docker.com/engi
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Either download the Source Code for one of the releases ( :ref:`app_install` )
-  and unzip it.
-- Or ``git clone https://github.com/nexB/scancode-toolkit`` to get the latest
-  ( :ref:`source_code_install` ) Source Code.
+- ``git clone https://github.com/nexB/scancode-toolkit`` to get the latest
+  ( :ref:`source_code_install` ) source code.
 
 
 Build the Docker image
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The ``docker build`` command needs to run in the directory of the source code,
-make sure to ``cd`` into the correct directory.::
+Run the ``docker build`` source code checkout directory.::
 
     cd scancode-toolkit
-    docker build -t scancode-toolkit .
+    docker build --tag scancode-toolkit --tag scancode-toolkit:$(git describe --tags) .
 
 
 Run using Docker
@@ -255,9 +251,10 @@ Display help::
 
     docker run scancode-toolkit --help
 
-Mount current working directory and run scan on this mounted folder::
+Mount current working directory as "/project" and run a scan on a file name apache-2.0.LICENSE directory.
+The JSON results will be in scan-result.json::
 
-    docker run -v $PWD/:/project scancode-toolkit -clipeu --json-pp /project/result.json /project
+    docker run -v $PWD/:/project scancode-toolkit -clipeu --json-pp /project/scan-result.json /project/apache-2.0.LICENSE
 
 This will mount your current working from the host into ``/project`` in the container
 and then scan the contents. The output ``result.json`` will be written back to your
