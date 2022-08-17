@@ -251,8 +251,8 @@ Display help::
 
     docker run scancode-toolkit --help
 
-Mount current working directory as "/project" and run a scan on a file name apache-2.0.LICENSE directory.
-The JSON results will be in scan-result.json::
+Mount current working directory as "/project" and run a scan on a file name
+apache-2.0.LICENSE directory. The JSON results will be in scan-result.json::
 
     docker run -v $PWD/:/project scancode-toolkit -clipeu --json-pp /project/scan-result.json /project/apache-2.0.LICENSE
 
