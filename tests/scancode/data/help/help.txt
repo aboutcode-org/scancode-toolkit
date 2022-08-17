@@ -49,7 +49,7 @@ Options:
                             --csv option is deprecated and will be replaced by new
                             CSV and tabular output formats in the next ScanCode
                             release. Visit https://github.com/nexB/scancode-
-                            toolkit/issues/3047 to provide inputs and feedback.
+                            toolkit/issues/3043 to provide inputs and feedback.
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.

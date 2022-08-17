@@ -42,7 +42,7 @@ if TRACE:
 DEPRECATED_MSG = (
     'The --csv option is deprecated and will be replaced by new CSV and '
     'tabular output formats in the next ScanCode release. '
-    'Visit https://github.com/nexB/scancode-toolkit/issues/3047 to provide inputs and feedback.'
+    'Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs and feedback.'
 )
 
 
