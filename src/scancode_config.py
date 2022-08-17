@@ -77,10 +77,10 @@ def _create_dir(location):
 
 # in case package is not installed or we do not have setutools/pkg_resources
 # on hand fall back to this version
-__version__ = '31.0.0rc6'
+__version__ = '31.0.0'
 
 # used to warn user when the version is out of date
-__release_date__ = datetime.datetime(2022, 8, 15)
+__release_date__ = datetime.datetime(2022, 8, 17)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version

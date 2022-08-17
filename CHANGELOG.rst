@@ -3,19 +3,28 @@ Changelog
 
 
 
-32.0.0 (next next, roadmap)
----------------------------
+v32.0.0 (next next, roadmap)
+----------------------------------
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
 - We now support new package manifest formats:
+
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
 
-31.0.0 (next)
+- There is a major update to license detection where we now combine one or
+  matches in a larger license detecion. This remove a larger number of false
+  positive or ambiguous license detections.
+
+
+
+v31.0.0 - 2022-08-17
 -----------------------
 
 This is a major release with important bug and security fixes, new and improved
@@ -96,12 +105,10 @@ License detection:
 
 - There have been significant license detection rules and licenses updates:
 
-  - XX new licenses have been added,
-  - XX existing license metadata have been updated,
-  - XXXX new license detection rules have been added, and
-  - XXXX existing license rules have been updated.
-  - XXXX existing false positive license rules have been removed (see below).
-  - The SPDX license list has been updated to the latest v3.16
+  - 107 new licenses have been added (total is now 1954)
+  - 6780 new license detection rules have been added (total is now 32259)
+  - 6753 existing false positive license rules have been removed (see below).
+  - The SPDX license list has been updated to the latest v3.17
 
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
@@ -358,8 +365,9 @@ Development environment and Code API changes:
   environment variable. There is no need to replace the regen=False with
   regen=True in the code.
 
+
 Miscellaneous
---------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Added support for usage of shortcut flags
   - `-A` or `--about`
@@ -368,7 +376,8 @@ Miscellaneous
   - `-V` or `--version` can be used.
 
 
-30.1.0 - 2021-09-25
+
+v30.1.0 - 2021-09-25
 --------------------
 
 This is a bug fix release for these bugs:
@@ -386,7 +395,7 @@ Thank you to:
 
 
 
-30.0.1 - 2021-09-24
+v30.0.1 - 2021-09-24
 --------------------
 
 This is a minor bug fix release for these bugs:
@@ -402,7 +411,7 @@ Thank you to:
 
 
 
-30.0.0 - 2021-09-23
+v30.0.0 - 2021-09-23
 --------------------
 
 This is a major release with new features, and several bug fixes and
