@@ -26,6 +26,7 @@ jobs:
     defaults:
       run:
         shell: bash
+
     strategy:
       fail-fast: true
 
@@ -37,85 +38,32 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Install requirements and prepare index
-        run: |
-          ./configure --dev
-          ./scancode --reindex-licenses
-
-      - name: Build main wheel
-        run: |
-          venv/bin/python setup.py --quiet bdist_wheel
-          venv/bin/twine check dist/*
+      - name: Install requirements then build main and mini wheel and sdist
+        run: etc/release/scancode-create-pypi-dist.sh
 
       - name: Collect built main wheel
         uses: actions/upload-artifact@v3
         with:
           name: main_wheel
-          path: dist/*
-
-      - name: Build main sdist
-        run: |
-          rm -rf dist
-          venv/bin/python setup.py --quiet sdist
-          venv/bin/twine check dist/*
+          path: dist/scancode_toolkit-3*.whl
 
       - name: Collect built main sdist
         uses: actions/upload-artifact@v3
         with:
           name: main_sdist
-          path: dist/*
-
-
-  build_scancode_for_pypi_mini:
-    name: Build PyPI archives mini
-    runs-on: ubuntu-20.04
-
-    defaults:
-      run:
-        shell: bash
-    strategy:
-      fail-fast: true
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-
-      - name: Install requirements and prepare index
-        run: |
-          ./configure --dev
-          ./scancode --reindex-licenses
-
-      - name: Build mini wheel
-        run: |
-          rm -rf build dist
-          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
-          cp setup-mini.cfg setup.cfg
-          venv/bin/python setup.py --quiet bdist_wheel
-          venv/bin/twine check dist/*
+          path: dist/scancode-toolkit-3*.tar.gz
 
       - name: Collect built mini wheel
         uses: actions/upload-artifact@v3
         with:
           name: mini_wheel
-          path: dist/*
-
-      - name: Build mini sdist
-        run: |
-          rm -rf build dist
-          rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
-          cp setup-mini.cfg setup.cfg
-          venv/bin/python setup.py --quiet sdist
-          venv/bin/twine check dist/*
+          path: dist/scancode_toolkit_mini-3*.whl
 
       - name: Collect built mini sdist
         uses: actions/upload-artifact@v3
         with:
           name: mini_sdist
-          path: dist/*
+          path: dist/scancode-toolkit-mini*.tar.gz
 
 
   build_scancode_for_release_linux:
@@ -145,58 +93,16 @@ jobs:
           name: main_wheel
           path: dist
 
-      - name: Install release requirements
-        run: |
-          ./configure --rel
-
       - name: Build linux app archive
         run: |
-          operating_system=linux
-          python_dot_version=3.8
-          python_version=38
-          python_exe="python$python_dot_version"
-          release_dir=scancode-toolkit-$(git describe --tags)
-          rm -rf $release_dir
-          mkdir -p $release_dir
-          echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe --tags > $release_dir/SCANCODE_VERSION
-          thirdparty_dir=$release_dir/thirdparty
-          mkdir -p $thirdparty_dir
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-linux.txt \
-            --requirements=requirements.txt \
-            --dest=$thirdparty_dir \
-            --operating-system=$operating_system \
-            --python-version=$python_version \
-            --wheels --use-cached-index
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --requirements=requirements-linux.txt \
-            --wheel-only packagedcode-msitools \
-            --wheel-only rpm-inspector-rpm \
-            --wheel-only extractcode-7z \
-            --wheel-only extractcode-libarchive \
-            --wheel-only typecode-libmagic \
-            --dest=$thirdparty_dir \
-            --sdists --use-cached-index
-          mkdir -p $release_dir/etc
-          cp -r etc/thirdparty $release_dir/etc
-          cp -r \
-            dist/scancode_*.whl \
-            scancode extractcode configure \
-            *.rst \
-            samples \
-            *NOTICE *LICENSE *ABOUT \
-            $release_dir
-          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
-          tar -cvzf dist/$tarball $release_dir
-          rm dist/scancode_*.whl
+          ./configure --rel
+          etc/release/scancode-create-release-app-linux.sh
 
       - name: Collect built linux app
         uses: actions/upload-artifact@v3
         with:
           name: linux_app
-          path: dist/*
+          path: release/*
 
 
   build_scancode_for_release_macos:
@@ -226,57 +132,16 @@ jobs:
           name: main_wheel
           path: dist
 
-      - name: Install release requirements
-        run: |
-          ./configure --rel
-
       - name: Build mac app archive
         run: |
-          operating_system=macos
-          python_dot_version=3.8
-          python_version=38
-          python_exe="python3"
-          release_dir=scancode-toolkit-$(git describe --tags)
-          rm -rf $release_dir
-          mkdir -p $release_dir
-          echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe --tags > $release_dir/SCANCODE_VERSION
-          thirdparty_dir=$release_dir/thirdparty
-          mkdir -p $thirdparty_dir
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements.txt \
-            --dest $thirdparty_dir \
-            --operating-system=$operating_system \
-            --python-version=$python_version \
-            --wheels --use-cached-index
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --wheel-only extractcode \
-            --wheel-only extractcode-7z \
-            --wheel-only extractcode-libarchive \
-            --wheel-only typecode-libmagic \
-            --wheel-only packagedcode-msitools \
-            --wheel-only rpm-inspector-rpm \
-            --dest $thirdparty_dir \
-            --sdists --use-cached-index
-          mkdir -p $release_dir/etc
-          cp -r etc/thirdparty $release_dir/etc
-          cp -r \
-            dist/scancode_*.whl \
-            scancode extractcode configure \
-            *.rst \
-            samples \
-            *NOTICE *LICENSE *ABOUT \
-            $release_dir
-          tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
-          tar -cvzf dist/$tarball $release_dir
-          rm dist/scancode_*.whl
+          ./configure --rel
+          etc/release/scancode-create-release-app-macos.sh
 
       - name: Collect built mac app
         uses: actions/upload-artifact@v3
         with:
           name: macos_app
-          path: dist/*
+          path: release/*
 
 
   build_scancode_for_release_windows:
@@ -305,57 +170,16 @@ jobs:
           name: main_wheel
           path: dist
 
-      - name: Install release requirements
-        run: |
-          ./configure --rel
-
       - name: Build windows app archive
         run: |
-          operating_system=windows
-          python_dot_version=3.8
-          python_version=38
-          python_exe="py -$python_dot_version"
-          release_dir=scancode-toolkit-$(git describe --tags)
-          rm -rf $release_dir
-          mkdir -p $release_dir
-          echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
-          git describe --tags > $release_dir/SCANCODE_VERSION
-          thirdparty_dir=$release_dir/thirdparty
-          mkdir -p $thirdparty_dir
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements.txt \
-            --dest $thirdparty_dir \
-            --operating-system=$operating_system \
-            --python-version=$python_version \
-            --wheels --use-cached-index
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --wheel-only extractcode \
-            --wheel-only extractcode-7z \
-            --wheel-only extractcode-libarchive \
-            --wheel-only typecode-libmagic \
-            --wheel-only packagedcode-msitools \
-            --wheel-only rpm-inspector-rpm \
-            --dest $thirdparty_dir \
-            --sdists --use-cached-index
-          cp dist/scancode_*.whl $release_dir
-          mkdir -p $release_dir/etc
-          cp -r etc/thirdparty $release_dir/etc
-          cp -r \
-            scancode.bat extractcode.bat configure.bat \
-            *.rst \
-            samples \
-            *NOTICE *LICENSE *ABOUT \
-            $release_dir
-          zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
-          zip -r dist/$zipball $release_dir
-          rm dist/scancode_*.whl
+          ./configure --rel
+          etc/release/scancode-create-release-app-windows.sh
 
       - name: Collect built windows app
         uses: actions/upload-artifact@v3
         with:
           name: windows_app
-          path: dist/*
+          path: release/*
 
 
   build_scancode_for_release_source:
@@ -384,49 +208,16 @@ jobs:
           name: main_sdist
           path: dist
 
-      - name: Install release requirements
-        run: |
-          ./configure --rel
-
       - name: Build source archive with deps
         run: |
-          release_dir=scancode-toolkit-$(git describe --tags)
-          rm -rf $release_dir
-          mkdir -p $release_dir
-          git describe --tags > $release_dir/SCANCODE_VERSION
-          thirdparty_dir=$release_dir/thirdparty
-          mkdir -p $thirdparty_dir
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements.txt \
-            --requirements=requirements-native.txt \
-            --requirements=requirements-linux.txt \
-            --wheel-only extractcode \
-            --wheel-only extractcode-7z \
-            --wheel-only extractcode-libarchive \
-            --wheel-only typecode-libmagic \
-            --wheel-only packagedcode-msitools \
-            --wheel-only rpm-inspector-rpm \
-            --dest $thirdparty_dir \
-            --sdists --use-cached-index
-          mkdir -p $release_dir/etc
-          cp -r etc/thirdparty $release_dir/etc
-          mv dist/*.tar.gz $release_dir
-          cp -r \
-            scancode.bat scancode extractcode extractcode.bat configure configure.bat \
-            *.rst \
-            docs \
-            samples \
-            *NOTICE *LICENSE *ABOUT \
-            $release_dir
-
-          tarball=scancode-toolkit-$(git describe --tags)_sources.tar.gz
-          tar -cvzf dist/$tarball $release_dir
+          ./configure --rel
+          etc/release/scancode-create-release-app-sources.sh
 
       - name: Collect built source app tarball
         uses: actions/upload-artifact@v3
         with:
           name: source_app
-          path: dist/*
+          path: release/*
 
 
   smoke_test_install_and_run_pypi_dists_posix:
@@ -684,7 +475,7 @@ jobs:
   publish_to_pypi:
     name: Publish to PyPI
     needs:
-      - build_scancode_for_pypi_mini
+      - build_scancode_for_pypi
       - smoke_test_install_and_run_pypi_dists_windows
       - smoke_test_install_and_run_pypi_dists_posix
       - publish_to_gh_release
