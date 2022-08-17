@@ -466,11 +466,11 @@ jobs:
           echo "license: gpl-2.0" > some.file
           rm -rf venv;  \
           python -m venv venv
-          venv/bin/python -m pip install --upgrade pip
+          venv/bin/python -m pip install --upgrade pip wheel setuptools
           for f in `find dist -type f`; \
             do \
               venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
-              venv/bin/python -clipeu --json-pp - some.file ; \
+              venv/bin/scancode -clipeu --json-pp - some.file ; \
               venv/bin/python -m pip uninstall --yes scancode-toolkit ; \
             done
 
