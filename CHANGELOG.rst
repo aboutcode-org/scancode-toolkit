@@ -2,7 +2,20 @@ Changelog
 =========
 
 
-31.0.0 (next, roadmap)
+
+32.0.0 (next next, roadmap)
+---------------------------
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- We now support new package manifest formats:
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
+
+
+
+31.0.0 (next)
 -----------------------
 
 This is a major release with important bug and security fixes, new and improved
@@ -151,10 +164,6 @@ License detection:
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
-- We now support new package manifest formats:
-  - OpenWRT packages.
-  - Yocto/BitBake .bb recipes.
-
 - Major changes in package detection and reporting, codebase-level attribute `packages`
   with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
@@ -189,9 +198,8 @@ Package detection:
 - For Pypi packages, python_requires is treated as a package dependency.
 
 
-
-License Clarity Scoring Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+License Clarity Scoring Update:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - We are moving away from the original license clarity scoring designed for
   ClearlyDefined in the license clarity score plugin. The previous license
@@ -251,8 +259,8 @@ License Clarity Scoring Update
     - Scoring Weight = -20
 
 
-Summary Plugin Update
-~~~~~~~~~~~~~~~~~~~~~
+Summary Plugin Update:
+~~~~~~~~~~~~~~~~~~~~~~
 
 - The summary plugin's behavior has been changed. Previously, it provided a
   count of the detected license expressions, copyrights, holders, authors, and
@@ -276,11 +284,16 @@ All summary information is provided at the codebase-level attribute named ``summ
 Outputs:
 ~~~~~~~~
 
- - Added new outputs for the CycloneDx format.
-   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+- Added new outputs for the CycloneDx format.
+  The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
- - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
-   that contains any warning messages that occur during a scan.
+- A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+  that contains any warning messages that occur during a scan.
+
+- The CSV output format --csv option is now deprecated. It will be replaced by
+  new CSV and tabular output formats in the next ScanCode release.
+  Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs
+  and feedback.
 
 
 Output version
@@ -299,6 +312,7 @@ Changes:
 - The fields of the license clarity scoring plugin have been replaced with the
   following fields. An overview of the new fields can be found in the "License
   Clarity Scoring Update" section above.
+
     - `score`
     - `declared_license`
     - `identification_precision`
@@ -306,9 +320,11 @@ Changes:
     - `declared_copyrights`
     - `conflicting_license_categories`
     - `ambigious_compound_licensing`
+
 - The fields of the summary plugin have been replaced with the following fields.
   An overview of the new fields can be found in the "Summary Plugin Update"
   section above.
+
     - `declared_license_expression`
     - `license_clarity_score`
     - `declared_holder`

@@ -14,19 +14,7 @@ import shutil
 import subprocess
 import sys
 
-
-def run_pypi_smoke_tests(pypi_archive, venv_prefix="venv/bin/"):
-    """
-    Run basic install and "smoke" scancode tests for a PyPI archive.
-    """
-    # archive is either a wheel or an sdist as in
-    # scancode_toolkit-21.1.21-py3-none-any.whl or scancode-toolkit-21.1.21.tar.gz
-    run_command([venv_prefix + "pip", "install", pypi_archive + "[full]"])
-
-    with open("some.file", "w") as sf:
-        sf.write("license: gpl-2.0")
-
-    run_command([venv_prefix + "scancode", "-clipeu", "--json-pp", "-", "some.file"])
+on_windows = "win32" in str(sys.platform).lower()
 
 
 def run_app_smoke_tests(app_archive):
@@ -47,21 +35,26 @@ def run_app_smoke_tests(app_archive):
     shutil.unpack_archive(app_archive)
 
     extract_loc = os.path.normpath(os.path.abspath(os.path.expanduser(extract_dir)))
-    print("run_app_smoke_tests: extract_loc:", extract_loc)
-    for f in os.listdir(extract_loc):
-        print("  ", f)
-    print()
+#     print("run_app_smoke_tests: extract_loc:", extract_loc)
+#     for f in os.listdir(extract_loc):
+#         print("  ", f)
+#     print()
 
     os.chdir(extract_loc)
 
+    with open("some.file", "w") as sf:
+        sf.write("license: gpl-2.0")
+
     print(f"Configuring scancode for release: {app_archive}")
-    run_command([
-        os.path.join(extract_loc, "configure"),
-    ])
+    cpath = os.path.join(extract_loc, "configure")
+
+    run_command([cpath])
 
     # minimal tests: update when new scans are available
+    scpath = os.path.join(extract_loc, "scancode")
+
     args = [
-        os.path.join(extract_loc, "scancode"),
+        scpath,
         "--license",
         "--license-text",
         "--license-clarity-score",
@@ -90,10 +83,11 @@ def run_app_smoke_tests(app_archive):
         "--cyclonedx", "test_scan.cdx",
         "--cyclonedx-xml", "test_scan.cdx.xml",
         "--spdx-tv", "test_scan.spdx",
+        "--spdx-rdf", "test_scan.rdf.spdx",
 
         "--debian", "test_scan.debian.copyright",
         "--json-pp", "-",
-        "apache-2.0.LICENSE"
+        "some.file"
     ]
 
     print(f"Testing scancode release: {app_archive}")
@@ -109,7 +103,6 @@ def run_command(args):
     print()
     print(f"Running command: {cmd}")
     try:
-        on_windows = "win32" in str(sys.platform).lower()
         output = subprocess.check_output(args, encoding="utf-8", shell=on_windows)
         print(f"Success to run command: {cmd}")
         print(output)
@@ -122,14 +115,5 @@ def run_command(args):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    action = args[0]
-    archive = args[1]
-
-    if action == "pypi":
-        venv_prefix = args[2]
-        run_pypi_smoke_tests(archive, venv_prefix)
-    elif action == 'app':
-        run_app_smoke_tests(archive)
-    else:
-        raise Exception("Usage: scancode_release_tests.py <pypi or app> <archive-to-test>")
-
+    archive = args[0]
+    run_app_smoke_tests(archive)

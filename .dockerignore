@@ -12,3 +12,15 @@ Dockerfile
 tests/
 docs/
 samples/
+venv/
+tmp/
+.cache/
+.pytest_cache/
+.settings/
+docs/
+build/
+dist/
+
+# generated files
+**/*.pyc
+src/licensedcode/data/cache/license_index/index_cache
