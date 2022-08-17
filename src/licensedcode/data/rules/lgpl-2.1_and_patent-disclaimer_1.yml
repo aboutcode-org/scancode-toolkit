@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1 AND patent-disclaimer
+is_license_notice: yes
+notes: Seen in libdwarf
+ignorable_urls:
+    - http://oss.sgi.com/projects/GenInfo/NoticeExplan
+    - http://www.sgi.com/
