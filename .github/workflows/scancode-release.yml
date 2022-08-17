@@ -3,12 +3,12 @@ name: Create ScanCode release archives, then test and publish to GH and PyPI
 # This is executed automatically on a tag
 
 # Summary of the steps:
-# - build wheel and sdist for main and same for mini flavor
-#   - then upload all wheels and sdist to PyPI
-# - build release app archives, one for each of linux, windows, macos on Python 3.8
-#   - then create gh-release and upload app archives to release
-# TODO: for each of linux, windows, macos: smoke test wheel, sdist and release archives
-# TODO: add changelog to release text body
+# - Build wheel and sdist for the "main" scancode, then build these for the "mini" flavor
+#  - test each wheel and sdist on every possible OS x Python version combinations
+# - Build release app archives, one for each of linux, windows, macos on Python 3.8
+#  - test each on its target OS and Python version
+# - Create gh-release and upload app archives to release
+# - Upload all wheels and sdist to PyPI
 
 
 on:
@@ -27,7 +27,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -41,7 +41,6 @@ jobs:
         run: |
           ./configure --dev
           ./scancode --reindex-licenses
-
 
       - name: Build main wheel
         run: |
@@ -75,7 +74,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -127,7 +126,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -154,15 +153,22 @@ jobs:
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --dest=thirdparty \
-            --sdists
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-linux.txt \
             --requirements=requirements.txt \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --requirements=requirements-linux.txt \
+            --wheel-only packagedcode-msitools \
+            --wheel-only rpm-inspector-rpm \
+            --wheel-only extractcode-7z \
+            --wheel-only extractcode-libarchive \
+            --wheel-only typecode-libmagic \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
 
@@ -173,7 +179,7 @@ jobs:
           path: dist/*
 
 
-  build_scancode_for_release_mac:
+  build_scancode_for_release_macos:
     name: Build ScanCode Release archives for mac
     runs-on: ubuntu-20.04
 
@@ -181,7 +187,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -195,7 +201,6 @@ jobs:
         run: |
           ./configure --dev
           ./scancode --reindex-licenses
-
 
       - name: Build mac app archive
         run: |
@@ -204,23 +209,29 @@ jobs:
           operating_system=macos
           python_dot_version=3.8
           python_version=38
-          echo -n "python$python_dot_version" > PYTHON_EXECUTABLE
+          echo -n "python3" > PYTHON_EXECUTABLE
           rm -rf thirdparty build dist
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --dest=thirdparty \
-            --sdists
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --wheel-only extractcode \
+            --wheel-only extractcode-7z \
+            --wheel-only extractcode-libarchive \
+            --wheel-only typecode-libmagic \
+            --wheel-only packagedcode-msitools \
+            --wheel-only rpm-inspector-rpm \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
- 
+
       - name: Collect built mac app
         uses: actions/upload-artifact@v3
         with:
@@ -228,7 +239,7 @@ jobs:
           path: dist/*
 
 
-  build_scancode_for_release_win:
+  build_scancode_for_release_windows:
     name: Build ScanCode Release archives for windows
     runs-on: ubuntu-20.04
 
@@ -236,7 +247,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -250,7 +261,7 @@ jobs:
         run: |
           ./configure --dev
           ./scancode --reindex-licenses
- 
+
       - name: Build windows app archive
         run: |
           source venv/bin/activate
@@ -263,18 +274,24 @@ jobs:
           rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
-            --requirements=requirements-native.txt \
-            --dest=thirdparty \
-            --sdists
-          venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
             --dest=thirdparty \
-            --python-version=$python_version \
             --operating-system=$operating_system \
+            --python-version=$python_version \
             --wheels
+          venv/bin/python etc/scripts/fetch_thirdparty.py \
+            --requirements=requirements-native.txt \
+            --wheel-only extractcode \
+            --wheel-only extractcode-7z \
+            --wheel-only extractcode-libarchive \
+            --wheel-only typecode-libmagic \
+            --wheel-only packagedcode-msitools \
+            --wheel-only rpm-inspector-rpm \
+            --dest=thirdparty \
+            --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/ _py$python_version-$operating_system
- 
+
       - name: Collect built windows app
         uses: actions/upload-artifact@v3
         with:
@@ -289,7 +306,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
@@ -299,7 +316,7 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Install requirements and prepare index
+      - name: Install requirements
         run: |
           ./configure --dev
 
@@ -312,11 +329,19 @@ jobs:
           mkdir -p thirdparty
           venv/bin/python etc/scripts/fetch_thirdparty.py \
             --requirements=requirements.txt \
+            --requirements=requirements-native.txt \
+            --requirements=requirements-linux.txt \
+            --wheel-only extractcode \
+            --wheel-only extractcode-7z \
+            --wheel-only extractcode-libarchive \
+            --wheel-only typecode-libmagic \
+            --wheel-only packagedcode-msitools \
+            --wheel-only rpm-inspector-rpm \
             --dest=thirdparty \
             --sdists
           venv/bin/python setup.py --quiet sdist --formats=$formats 
           venv/bin/python etc/release/scancode_rename_archives.py dist/  _sources
- 
+
       - name: Collect built source app tarball
         uses: actions/upload-artifact@v3
         with:
@@ -324,49 +349,236 @@ jobs:
           path: dist/*
 
 
-  publish_to_pypi:
-    name: Publish to PyPI
-    needs: [build_scancode_for_pypi, build_scancode_for_pypi_mini]
-    runs-on: ubuntu-20.04
+  smoke_test_install_and_run_pypi_dists_posix:
+    name: Test install and run each PyPI wheels and sdist
+    needs:
+      - build_scancode_for_pypi
+      - build_scancode_for_pypi_mini
+    runs-on: ${{ matrix.os }}
+
     defaults:
       run:
         shell: bash
+
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        dist_names: [main_wheel, main_sdist, mini_wheel, mini_sdist]
+        os: [ubuntu-22.04, macos-12]
+        pyver: ["3.9", "3.10"]
+        # os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macos-10.15, macos-11, macos-12]
+        # pyver: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
-      - name: Set up Python
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact
+      - name: Download a single artifact mainw
         uses: actions/download-artifact@v3
         with:
-          name: ${{ matrix.dist_names }}
+          name: main_wheel
           path: dist
 
-      - name: Publish distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+      - name: Download a single artifact mains
+        uses: actions/download-artifact@v3
         with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          name: main_sdist
+          path: dist
+
+      - name: test install wheels and sdist
+        run: |
+          for f in `find dist -type f`; \
+            do \
+              rm -rf tvenv;  \
+              python -m venv tvenv;  \
+              tvenv/bin/python etc/release/scancode_release_tests.py pypi $f tvenv/bin/ ;  \
+              tvenv/bin/pip uninstall --yes scancode-toolkit ;  \
+            done
+
+
+  smoke_test_install_and_run_pypi_dists_windows:
+    name: Test install and run each PyPI wheels and sdist
+    needs:
+      - build_scancode_for_pypi
+      - build_scancode_for_pypi_mini
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+       os: [windows-2022]
+       pyver: ["3.9", "3.10"]
+       #os: [windows-2019, windows-2022]
+       #pyver: ["3.7", "3.8", "3.9", "3.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Download a single artifact mainw
+        uses: actions/download-artifact@v3
+        with:
+          name: main_wheel
+          path: dist
+
+      - name: Download a single artifact mains
+        uses: actions/download-artifact@v3
+        with:
+          name: main_sdist
+          path: dist
+
+      - name: test install wheels and sdist
+        run: |
+          echo "license: gpl-2.0" > some.file
+          python -m venv venv
+          venv/Scripts/python.exe -m pip install --upgrade pip
+          for f in `find dist -type f`; \
+            do \
+              venv/Scripts/python.exe -m pip install --force-reinstall "$f[full]" ; \
+              venv/Scripts/scancode -clipeu --json-pp - some.file ; \
+              venv/Scripts/python.exe -m pip uninstall --yes scancode-toolkit ; \
+            done
+
+
+  smoke_test_install_and_run_app_archives_on_linux:
+    name: Test app archive installation and run on ${{ matrix.os }}
+    needs:
+      - build_scancode_for_release_linux
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
+        pyver: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Download a single artifact linux_app
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app
+          path: dist
+
+      - name: test install app archive
+        run: |
+          for f in `find dist -type f`; \
+            do \
+                python etc/release/scancode_release_tests.py app $f; \
+            done
+
+
+  smoke_test_install_and_run_app_archives_on_macos:
+    name: Test app archive installation and run on ${{ matrix.os }}
+    needs:
+      - build_scancode_for_release_macos
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [macos-10.15, macos-11, macos-12]
+        pyver: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Download a single artifact macos_app
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app
+          path: dist
+
+      - name: test install app archive
+        run: |
+          for f in `find dist -type f`; \
+            do \
+                python etc/release/scancode_release_tests.py app $f; \
+            done
+
+
+  smoke_test_install_and_run_app_archives_on_windows:
+    name: Test app archive installation and run on ${{ matrix.os }}
+    needs:
+      - build_scancode_for_release_windows
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [windows-2019, windows-2022]
+        pyver: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Download a single artifact windows_app
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app
+          path: dist
+
+      - name: test install app archive
+        run: |
+          for f in `find dist -type f`; \
+            do \
+                python etc/release/scancode_release_tests.py app $f; \
+            done
 
 
   publish_to_gh_release:
     name: Publish to GH Release
     needs:
-      - build_scancode_for_release_linux
-      - build_scancode_for_release_win
-      - build_scancode_for_release_mac
+      - smoke_test_install_and_run_app_archives_on_linux
+      - smoke_test_install_and_run_app_archives_on_windows
+      - smoke_test_install_and_run_app_archives_on_macos
       - build_scancode_for_release_source
+
     runs-on: ubuntu-20.04
     defaults:
       run:
         shell: bash
     strategy:
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - name: Download a single artifact source_app
@@ -393,8 +605,49 @@ jobs:
           name: windows_app
           path: dist
 
-      - name: Create release and publish archives
-        uses: softprops/action-gh-release@v1
+      - name: Mock GH release
+        run: |
+          ls -al dist
+
+      #- name: Create release and publish archives
+      #  uses: softprops/action-gh-release@v1
+      #  with:
+      #    draft: true
+      #    files: dist/*
+
+
+  publish_to_pypi:
+    name: Publish to PyPI
+    needs:
+      - smoke_test_install_and_run_pypi_dists_windows
+      - smoke_test_install_and_run_pypi_dists_posix
+      - publish_to_gh_release
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: true
+      matrix:
+        dist_names: [main_wheel, main_sdist, mini_wheel, mini_sdist]
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v1
         with:
-          draft: true
-          files: dist/*
+          python-version: 3.8
+
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ matrix.dist_names }}
+          path: dist
+
+      - name: Mock PyPI upload
+        run: |
+          ls -al dist
+
+      #- name: Publish distributions to PyPI
+      #  uses: pypa/gh-action-pypi-publish@master
+      #  with:
+      #    password: ${{ secrets.PYPI_API_TOKEN }}

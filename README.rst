@@ -133,14 +133,15 @@ Installation
 ============
 
 Before installing ScanCode make sure that you have installed the prerequisites
-properly. This means installing Python 3.98 for x86/64 architectures. (Python 3.7+ is supported).
+properly. This means installing Python 3.8 for x86/64 architectures.
+We support Python 3.7, 3.8, 3.9 and 3.10.
 
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.
 
 There are a few common ways to `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
-- **Installation as an application: Install Python 3.9, download a release archive, extract and run**. `This is the recommended installation method.
+- **Installation as an application: Install Python 3.8, download a release archive, extract and run**. `This is the recommended installation method.
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-as-an-application-downloading-releases>`_
 
 - `Development installation from source code using a git clone

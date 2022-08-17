@@ -81,16 +81,6 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
         package.license_expression = cls.compute_normalized_license(package)
 
-
-        dependent_packages = package_data.dependencies
-        if dependent_packages:
-            yield from models.Dependency.from_dependent_packages(
-                dependent_packages=dependent_packages,
-                datafile_path=resource.path,
-                datasource_id=package_data.datasource_id,
-                package_uid=package_uid,
-            )
-
         root_path = Path(root_resource.path)
         # a file ref extends from the root of the filesystem
         file_references_by_path = {
@@ -117,6 +107,15 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
         yield package
         yield from resources
+
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            )
 
 
 class AlpineApkbuildHandler(models.DatafileHandler):
