@@ -465,11 +465,11 @@ jobs:
         run: |
           ls -al dist
 
-      #- name: Create release and publish archives
-      #  uses: softprops/action-gh-release@v1
-      #  with:
-      #    draft: true
-      #    files: dist/*
+      - name: Create release and publish archives
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: dist/*
 
 
   publish_to_pypi:
@@ -504,7 +504,7 @@ jobs:
         run: |
           ls -al dist
 
-      #- name: Publish distributions to PyPI
-      #  uses: pypa/gh-action-pypi-publish@master
-      #  with:
-      #    password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Publish distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
