@@ -77,7 +77,7 @@ def _create_dir(location):
 
 # in case package is not installed or we do not have setutools/pkg_resources
 # on hand fall back to this version
-__version__ = '31.0.1'
+__version__ = '31.1.0'
 
 # used to warn user when the version is out of date
 __release_date__ = datetime.datetime(2022, 8, 17)
