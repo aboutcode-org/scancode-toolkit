@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1-plus AND patent-disclaimer
+is_license_notice: yes
+notes: Seen in Athena
+ignorable_urls:
+    - http://oss.sgi.com/projects/GenInfo/NoticeExplan/
+    - http://www.sgi.com/

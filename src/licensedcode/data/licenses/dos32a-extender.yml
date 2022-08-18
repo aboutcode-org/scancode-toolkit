@@ -1,0 +1,11 @@
+key: dos32a-extender
+short_name: DOS32A Extender License
+name: DOS32 Advanced DOS Extender Software License
+category: Permissive
+owner: NarechK
+homepage_url: https://dos32a.narechk.net/content/license.html
+spdx_license_key: LicenseRef-scancode-dos32a-extender
+text_urls:
+    - https://github.com/open-watcom/open-watcom-v2/blob/master/bld/redist/dos32a/license.d32
+other_urls:
+    - https://sourceforge.net/projects/dos32a/

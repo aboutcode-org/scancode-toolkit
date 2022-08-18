@@ -1,0 +1,16 @@
+key: pybench
+short_name: pybench License
+name: pybench License
+category: Permissive
+owner: eGenix
+homepage_url: https://android.googlesource.com/platform/external/python/cpython2/+/965ad62600f69230e546a846414be6de9d8471df/Tools/pybench/LICENSE
+spdx_license_key: LicenseRef-scancode-pybench
+ignorable_copyrights:
+    - Copyright (c), 1997-2006, Marc-Andre Lemburg (mal@lemburg.com)
+    - Copyright (c), 2000-2006, eGenix.com Software GmbH (info@egenix.com)
+ignorable_holders:
+    - Marc-Andre Lemburg
+    - eGenix.com Software GmbH
+ignorable_emails:
+    - info@egenix.com
+    - mal@lemburg.com

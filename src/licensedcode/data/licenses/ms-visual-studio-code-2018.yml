@@ -1,0 +1,11 @@
+key: ms-visual-studio-code-2018
+short_name: MS Visual Studio Code License 2018
+name: Microsoft Visual Studio Code License 2018
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://code.visualstudio.com/license
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-code-2018
+ignorable_urls:
+    - http://go.microsoft.com/?linkid=9840733
+    - http://www.microsoft.com/exporting
+    - https://go.microsoft.com/fwlink/?LinkID=824704

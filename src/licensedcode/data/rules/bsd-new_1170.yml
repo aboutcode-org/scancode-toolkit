@@ -1,0 +1,6 @@
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 98
+referenced_filenames:
+    - LICENSE.BSD
+notes: sometimes a bsd-new, sometimes a bsd-simplified. bsd-new is safer
