@@ -530,6 +530,7 @@ class DejaSource(ExternalLicensesSource):
         "is_deprecated",
         "is_exception",
         # not yet
+        # "notes",
         # "standard_notice",
     )
     non_updatable_attributes = ("notes",)
@@ -601,6 +602,8 @@ class DejaSource(ExternalLicensesSource):
         key = mapping["key"]
         standard_notice = mapping.get("standard_notice") or ""
         standard_notice = clean_text(standard_notice)
+        # notes = mapping.get("reference_notes") or ""
+        # notes = clean_text(notes)
 
         deprecated = not mapping.get("is_active")
         spdx_license_key = mapping.get("spdx_license_key") or None
@@ -629,6 +632,7 @@ class DejaSource(ExternalLicensesSource):
             is_exception=mapping.get("is_exception", False),
             is_deprecated=deprecated,
             standard_notice=standard_notice,
+            # notes=notes,
         )
         text = mapping["full_text"] or ""
         # normalize EOL to POSIX
@@ -994,6 +998,7 @@ def merge_licenses(
                 update_scancode(attrib, scancode_value, external_value)
             continue
 
+        # We merge sequences
         if isinstance(scancode_value, (list, tuple)) and isinstance(external_value, (list, tuple)):
             normalized_scancode_value = set(s for s in scancode_value if s and s.strip())
             normalize_external_value = set(s for s in external_value if s and s.strip())
@@ -1034,8 +1039,7 @@ def merge_licenses(
             continue
 
         if isinstance(scancode_value, str) and isinstance(external_value, str):
-            # keep the stripped and normalized spaces value
-            # normalized spaces
+            # make value stripped and with normalized spaces
             normalized_scancode_value = " ".join(scancode_value.split())
             normalize_external_value = " ".join(external_value.split())
 
@@ -1165,9 +1169,9 @@ def synchronize_licenses(
 
         # the matching key exists on both sides: merge/update both licenses
         scancode_updated, external_updated = merge_licenses(
-            scancode_license,
-            external_license,
-            external_source.updatable_attributes,
+            scancode_license=scancode_license,
+            external_license=external_license,
+            updatable_attributes=external_source.updatable_attributes,
             from_spdx=use_spdx_key,
         )
 

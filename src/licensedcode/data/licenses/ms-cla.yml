@@ -1,0 +1,12 @@
+key: ms-cla
+short_name: MS Contribution License Agreement (CLA)
+name: Microsoft Contribution License Agreement (CLA)
+category: Patent License
+owner: Microsoft
+homepage_url: https://cla.microsoft.com
+spdx_license_key: LicenseRef-scancode-ms-cla
+text_urls:
+    - https://opensource.microsoft.com/pdf/microsoft-contribution-license-agreement.pdf
+ignorable_urls:
+    - http://www.opensource.org/
+    - https://creativecommons.org/licenses

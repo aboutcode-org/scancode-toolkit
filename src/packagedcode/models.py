@@ -973,6 +973,12 @@ class DatafileHandler:
           not be further processed,
         - a Dependency to add to top-level dependencies
 
+        Package items must be yielded before Dependency or Resource items. This
+        is to ensure that a Package is created before we associate a Resource or
+        Dependency to a Package. This is particulary important in the case where
+        we are calling the `assemble()` method outside of the scancode-toolkit
+        context.
+
         The approach is to find and process all the neighboring related datafiles
          to this datafile at once.
 
@@ -996,14 +1002,14 @@ class DatafileHandler:
 
             package.populate_license_fields()
 
+            yield package
+
             cls.assign_package_to_resources(
                 package=package,
                 resource=resource,
                 codebase=codebase,
                 package_adder=package_adder,
             )
-
-            yield package
         else:
             # we have no package, so deps are not for a specific package uid
             package_uid = None
@@ -1074,6 +1080,13 @@ class DatafileHandler:
         This is a convenience method that subclasses can reuse when overriding
         `assemble()`
 
+        Like in ``DatafileHandler.assemble()``, Package items must be yielded
+        before Dependency or Resource items. This is to ensure that a Package is
+        created before we associate a Resource or Dependency to a Package. This
+        is particulary important in the case where we are calling the
+        ``assemble()`` method outside of the scancode-toolkit context, as
+        ``assemble()`` can call ``assemble_from_many()``.
+
         NOTE: ATTENTION!: this may not work well for datafile that yield
         multiple PackageData for unrelated Packages
         """
@@ -1083,6 +1096,12 @@ class DatafileHandler:
 
         # process each package in sequence. The first item creates a package and
         # the other only update
+        # We are saving the Packages, Dependencies, and Resources in lists until
+        # after we go through `pkgdata_resources` for all Package data, then we
+        # yield Packages, then Dependencies, then Resources.
+        dependencies = []
+        resources = []
+        resources_from_package = []
         for package_data, resource in pkgdata_resources:
             if not base_resource:
                 base_resource = resource
@@ -1095,8 +1114,6 @@ class DatafileHandler:
                         datafile_path=resource.path,
                     )
                     package_uid = package.package_uid
-                    if package_uid:
-                        package_adder(package_uid, resource, codebase)
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
@@ -1105,21 +1122,35 @@ class DatafileHandler:
                     package_data=package_data,
                     datafile_path=resource.path,
                 )
-                if package_uid:
-                    package_adder(package_uid, resource, codebase)
+
+            if package_uid:
+                resources_from_package.append((package_uid, resource,))
 
             # in all cases yield possible dependencies
             dependent_packages = package_data.dependencies
             if dependent_packages:
-                yield from Dependency.from_dependent_packages(
+                p_deps = Dependency.from_dependent_packages(
                     dependent_packages=dependent_packages,
                     datafile_path=resource.path,
                     datasource_id=package_data.datasource_id,
                     package_uid=package_uid,
                 )
+                dependencies.extend(list(p_deps))
 
             # we yield this as we do not want this further processed
-            yield resource
+            resources.append(resource)
+
+        # Yield Packages, Dependencies, and Resources
+        if package:
+            if not package.license_expression:
+                package.license_expression = cls.compute_normalized_license(package)
+            yield package
+        yield from dependencies
+        yield from resources
+
+        # Associate Package to Resources once they have been yielded
+        for package_uid, resource in resources_from_package:
+            package_adder(package_uid, resource, codebase)
 
         # the whole parent subtree of the base_resource is for this package
         if package_uid:

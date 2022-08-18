@@ -9,6 +9,7 @@
 
 import attr
 
+from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
 from packagedcode import bower
@@ -29,7 +30,6 @@ from packagedcode import haxe
 from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import misc
-from packagedcode import msi
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
@@ -41,7 +41,10 @@ from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
 from packagedcode import windows
-from packagedcode import win_reg
+
+if on_linux:
+    from packagedcode import msi
+    from packagedcode import win_reg
 
 # Note: the order matters: from the most to the least specific parser.
 # a handler classes MUST be added to this list to be active
@@ -137,9 +140,6 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     misc.NsisInstallerHandler,
     misc.SharArchiveHandler,
     misc.SquashfsImageHandler,
-
-    msi.MsiInstallerHandler,
-
     npm.NpmPackageJsonHandler,
     npm.NpmPackageLockJsonHandler,
     npm.NpmShrinkwrapJsonHandler,
@@ -197,6 +197,10 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     win_pe.WindowsExecutableHandler,
 ]
 
+if on_linux:
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS += [
+        msi.MsiInstallerHandler,
+    ]
 
 SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     alpine.AlpineInstalledDatabaseHandler,
@@ -211,15 +215,18 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
-
-    rpm.RpmInstalledBdbDatabaseHandler,
-    rpm.RpmInstalledSqliteDatabaseHandler,
-    rpm.RpmInstalledNdbDatabaseHandler,
-
-    win_reg.InstalledProgramFromDockerSoftwareDeltaHandler,
-    win_reg.InstalledProgramFromDockerFilesSoftwareHandler,
-    win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
 ]
+
+if on_linux:
+    SYSTEM_PACKAGE_DATAFILE_HANDLERS += [
+        rpm.RpmInstalledBdbDatabaseHandler,
+        rpm.RpmInstalledSqliteDatabaseHandler,
+        rpm.RpmInstalledNdbDatabaseHandler,
+
+        win_reg.InstalledProgramFromDockerSoftwareDeltaHandler,
+        win_reg.InstalledProgramFromDockerFilesSoftwareHandler,
+        win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
+    ]
 
 ALL_DATAFILE_HANDLERS= (
     APPLICATION_PACKAGE_DATAFILE_HANDLERS + [

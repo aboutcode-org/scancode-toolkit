@@ -124,6 +124,15 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         yield package
         yield from resources
 
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            )
+
 
 class AlpineApkbuildHandler(models.DatafileHandler):
     datasource_id = 'alpine_apkbuild'

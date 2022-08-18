@@ -2,7 +2,29 @@ Changelog
 =========
 
 
-31.0.0 (next, roadmap)
+
+v32.0.0 (next next, roadmap)
+----------------------------------
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- We now support new package manifest formats:
+
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
+
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- There is a major update to license detection where we now combine one or
+  matches in a larger license detecion. This remove a larger number of false
+  positive or ambiguous license detections.
+
+
+
+v31.0.0 - 2022-08-17
 -----------------------
 
 This is a major release with important bug and security fixes, new and improved
@@ -60,6 +82,13 @@ Important API changes:
   under the ``venv`` subdirectory. You mus be aware of this if you use ScanCode
   from a git clone
 
+- ``DatafileHandler.assemble()``, ``DatafileHandler.assemble_from_many()``, and
+  the other ``.assemble()``` methods from the other Package handlers from
+  packagedcode, have been updated to yield Package items before Dependency or
+  Resource items. This is particulary important in the case where we are calling
+  the ``assemble()`` method outside of the scancode-toolkit context, where we
+  need to ensure that a Package exists before we assocate a Resource or
+  Dependency to it.
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
@@ -76,12 +105,10 @@ License detection:
 
 - There have been significant license detection rules and licenses updates:
 
-  - XX new licenses have been added,
-  - XX existing license metadata have been updated,
-  - XXXX new license detection rules have been added, and
-  - XXXX existing license rules have been updated.
-  - XXXX existing false positive license rules have been removed (see below).
-  - The SPDX license list has been updated to the latest v3.16
+  - 107 new licenses have been added (total is now 1954)
+  - 6780 new license detection rules have been added (total is now 32259)
+  - 6753 existing false positive license rules have been removed (see below).
+  - The SPDX license list has been updated to the latest v3.17
 
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
@@ -144,10 +171,6 @@ License detection:
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
-- We now support new package manifest formats:
-  - OpenWRT packages.
-  - Yocto/BitBake .bb recipes.
-
 - Major changes in package detection and reporting, codebase-level attribute `packages`
   with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
@@ -182,9 +205,8 @@ Package detection:
 - For Pypi packages, python_requires is treated as a package dependency.
 
 
-
-License Clarity Scoring Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+License Clarity Scoring Update:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - We are moving away from the original license clarity scoring designed for
   ClearlyDefined in the license clarity score plugin. The previous license
@@ -244,8 +266,8 @@ License Clarity Scoring Update
     - Scoring Weight = -20
 
 
-Summary Plugin Update
-~~~~~~~~~~~~~~~~~~~~~
+Summary Plugin Update:
+~~~~~~~~~~~~~~~~~~~~~~
 
 - The summary plugin's behavior has been changed. Previously, it provided a
   count of the detected license expressions, copyrights, holders, authors, and
@@ -269,11 +291,16 @@ All summary information is provided at the codebase-level attribute named ``summ
 Outputs:
 ~~~~~~~~
 
- - Added new outputs for the CycloneDx format.
-   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+- Added new outputs for the CycloneDx format.
+  The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
- - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
-   that contains any warning messages that occur during a scan.
+- A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+  that contains any warning messages that occur during a scan.
+
+- The CSV output format --csv option is now deprecated. It will be replaced by
+  new CSV and tabular output formats in the next ScanCode release.
+  Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs
+  and feedback.
 
 
 Output version
@@ -292,6 +319,7 @@ Changes:
 - The fields of the license clarity scoring plugin have been replaced with the
   following fields. An overview of the new fields can be found in the "License
   Clarity Scoring Update" section above.
+
     - `score`
     - `declared_license`
     - `identification_precision`
@@ -299,9 +327,11 @@ Changes:
     - `declared_copyrights`
     - `conflicting_license_categories`
     - `ambigious_compound_licensing`
+
 - The fields of the summary plugin have been replaced with the following fields.
   An overview of the new fields can be found in the "Summary Plugin Update"
   section above.
+
     - `declared_license_expression`
     - `license_clarity_score`
     - `declared_holder`
@@ -335,8 +365,9 @@ Development environment and Code API changes:
   environment variable. There is no need to replace the regen=False with
   regen=True in the code.
 
+
 Miscellaneous
---------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Added support for usage of shortcut flags
   - `-A` or `--about`
@@ -345,7 +376,8 @@ Miscellaneous
   - `-V` or `--version` can be used.
 
 
-30.1.0 - 2021-09-25
+
+v30.1.0 - 2021-09-25
 --------------------
 
 This is a bug fix release for these bugs:
@@ -363,7 +395,7 @@ Thank you to:
 
 
 
-30.0.1 - 2021-09-24
+v30.0.1 - 2021-09-24
 --------------------
 
 This is a minor bug fix release for these bugs:
@@ -379,7 +411,7 @@ Thank you to:
 
 
 
-30.0.0 - 2021-09-23
+v30.0.0 - 2021-09-23
 --------------------
 
 This is a major release with new features, and several bug fixes and
