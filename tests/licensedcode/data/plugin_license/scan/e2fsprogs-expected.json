@@ -60,21 +60,21 @@
           ],
           "matches": [
             {
-              "score": 93.45,
+              "score": 100.0,
               "start_line": 4,
               "end_line": 30,
-              "matched_length": 157,
-              "match_coverage": 93.45,
-              "matcher": "3-seq",
+              "matched_length": 185,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
               "license_expression": "gpl-2.0 AND patent-disclaimer",
-              "rule_identifier": "gpl-2.0_and_patent-disclaimer.RULE",
+              "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 168,
+              "rule_length": 185,
               "rule_relevance": 100,
               "licenses": [
                 {
@@ -115,7 +115,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 80.93,
+      "percentage_of_license_text": 95.36,
       "scan_errors": []
     }
   ]

@@ -45,7 +45,7 @@
               "score": 100.0,
               "start_line": 1,
               "end_line": 1,
-              "matched_length": 1,
+              "matched_length": 2,
               "match_coverage": 100.0,
               "matcher": "5-undetected",
               "license_expression": "unknown",
@@ -56,9 +56,9 @@
               "is_license_reference": false,
               "is_license_tag": true,
               "is_license_intro": false,
-              "rule_length": 1,
+              "rule_length": 2,
               "rule_relevance": 100,
-              "matched_text": "distributable",
+              "matched_text": "license distributable",
               "licenses": [
                 {
                   "key": "unknown",
@@ -152,7 +152,7 @@
                   "score": 100.0,
                   "start_line": 1,
                   "end_line": 1,
-                  "matched_length": 1,
+                  "matched_length": 2,
                   "match_coverage": 100.0,
                   "matcher": "5-undetected",
                   "license_expression": "unknown",
@@ -163,9 +163,9 @@
                   "is_license_reference": false,
                   "is_license_tag": true,
                   "is_license_intro": false,
-                  "rule_length": 1,
+                  "rule_length": 2,
                   "rule_relevance": 100,
-                  "matched_text": "distributable",
+                  "matched_text": "license distributable",
                   "licenses": [
                     {
                       "key": "unknown",

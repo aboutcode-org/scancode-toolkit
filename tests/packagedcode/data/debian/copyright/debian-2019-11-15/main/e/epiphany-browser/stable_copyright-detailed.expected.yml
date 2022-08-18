@@ -899,7 +899,7 @@ other_license_detections:
           - key: cc-by-sa-4.0
             name: Creative Commons Attribution-ShareAlike 4.0 International Public License
             short_name: CC-BY-SA-4.0
-            category: Copyleft
+            category: Copyleft Limited
             is_exception: no
             is_unknown: no
             owner: Creative Commons
@@ -1353,7 +1353,7 @@ other_license_detections:
           - key: cc-by-sa-4.0
             name: Creative Commons Attribution-ShareAlike 4.0 International Public License
             short_name: CC-BY-SA-4.0
-            category: Copyleft
+            category: Copyleft Limited
             is_exception: no
             is_unknown: no
             owner: Creative Commons

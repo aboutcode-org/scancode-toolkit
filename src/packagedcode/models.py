@@ -1142,8 +1142,7 @@ class DatafileHandler:
 
         # Yield Packages, Dependencies, and Resources
         if package:
-            if not package.license_expression:
-                package.license_expression = cls.compute_normalized_license(package)
+            package.populate_license_fields()
             yield package
         yield from dependencies
         yield from resources
@@ -1156,10 +1155,6 @@ class DatafileHandler:
         if package_uid:
             for res in base_resource.walk(codebase):
                 package_adder(package_uid, res, codebase)
-
-        if package:
-            package.populate_license_fields()
-            yield package
 
     @classmethod
     def assemble_from_many_datafiles(

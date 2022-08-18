@@ -47,10 +47,10 @@
               ],
               "matches": [
                 {
-                  "score": 88.89,
+                  "score": 90.0,
                   "start_line": 1,
                   "end_line": 1,
-                  "matched_length": 8,
+                  "matched_length": 9,
                   "match_coverage": 100.0,
                   "matcher": "5-undetected",
                   "license_expression": "unknown",
@@ -61,9 +61,9 @@
                   "is_license_reference": false,
                   "is_license_tag": true,
                   "is_license_intro": false,
-                  "rule_length": 8,
+                  "rule_length": 9,
                   "rule_relevance": 100,
-                  "matched_text": "LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}",
+                  "matched_text": "license {'LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}",
                   "licenses": [
                     {
                       "key": "unknown",

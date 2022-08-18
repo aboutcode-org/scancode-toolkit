@@ -222,7 +222,7 @@ class TestDebianDetector(FileBasedTesting):
         matches = debian_copyright.add_undetected_debian_matches(name='foo', text='bar')
         assert len(matches) == 1
         match = matches[0]
-        assert match.matched_text() == 'foo\nbar'
+        assert match.matched_text() == 'license foo\nbar'
 
 
 class TestEnhancedDebianCopyright(FileBasedTesting):
