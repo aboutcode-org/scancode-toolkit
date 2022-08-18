@@ -342,7 +342,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
                 cannot_resolve = False
                 ref_resource = None
                 while path_ref.startswith('..'):
-                    _, _, path_ref.partition('../')
+                    _, _, path_ref = path_ref.partition('../')
                     ref_resource = site_packages.parent(codebase)
                     if not ref_resource:
                         cannot_resolve = True
