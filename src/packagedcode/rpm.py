@@ -344,7 +344,7 @@ class RpmArchiveHandler(models.DatafileHandler):
                 description=description or None,
                 homepage_url=rpm_tags.url or None,
                 parties=parties,
-                declared_license=rpm_tags.license or None,
+                extracted_license_statement=rpm_tags.license or None,
                 source_packages=source_packages,
             )
             logger_debug('recognize: data to create a package:\n', data)

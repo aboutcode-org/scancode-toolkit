@@ -569,7 +569,7 @@ def get_license_detections_and_expression(
     if not license_detections:
         if not isinstance(extracted_license_statement, str):
             extracted_license_statement = repr(extracted_license_statement)
-        license_detection = get_unknown_license_detection(extracted_license_statement)
+        license_detection = get_unknown_license_detection(query_string=extracted_license_statement)
         license_detections = [license_detection]
 
     if default_relation_license:
@@ -603,7 +603,7 @@ def get_license_detections_for_extracted_license_statement(
     )
 
     if not matches:
-        extracted_license_statement = 'license ' + extracted_license_statement
+        extracted_license_statement = f'license {extracted_license_statement}'
         matches, matched_as_expression = get_license_matches_for_extracted_license_statement(
             query_string=extracted_license_statement,
             try_as_expression=False,

@@ -382,7 +382,7 @@ class LicenseDetection:
         spdx_license_url=SPDX_LICENSE_URL,
     ):
         def dict_fields(attr, value):
-            if attr.name is 'file_region':
+            if attr.name == 'file_region':
                 return False
 
             return True
@@ -672,13 +672,14 @@ def get_unknown_license_detection(query_string):
 def get_undetected_matches(query_string):
     """
     Return a list of LicenseMatch (with a single match) created for an unknown
-    license match with the ``name`` license and license ``text``.
+    license match with the ``query_string``.
 
     Return an empty list if both name and text are empty.
     """
     if not query_string:
         return []
 
+    query_string = f'license {query_string}'
     # FIXME: track lines
     expression_str = 'unknown'
 
