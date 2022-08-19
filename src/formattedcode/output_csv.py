@@ -6,8 +6,11 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
 import attr
 import csv
+import logging
+import os
 import warnings
 
 import saneyaml
@@ -20,24 +23,23 @@ from plugincode.output import OutputPlugin
 from formattedcode import FileOptionType
 
 # Tracing flags
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_OUTPUT_CSV', False)
 
 
 def logger_debug(*args):
     pass
 
 
+logger = logging.getLogger(__name__)
+
 if TRACE:
     import sys
-    import logging
-
-    logger = logging.getLogger(__name__)
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str)
-                                     and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
 
 DEPRECATED_MSG = (
     'The --csv option is deprecated and will be replaced by new CSV and '
@@ -75,12 +77,11 @@ class CsvOutput(OutputPlugin):
 
 
 def write_csv(results, output_file):
-    # FIXMe: this is reading all in memory
+    # FIXME: this is reading all in memory
     results = list(results)
 
     headers = dict([
         ('info', []),
-        ('license_expression', []),
         ('license', []),
         ('copyright', []),
         ('email', []),
@@ -129,49 +130,55 @@ def flatten_scan(scan, headers):
 
         errors = scanned_file.pop('scan_errors', [])
 
-        file_info = dict(path=path)
-        file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
-                          if not isinstance(v, (list, dict))))
+        file_info = dict(path=path)
+        file_info.update(
+            (
+                (k, v) for k, v in scanned_file.items()
+                if not isinstance(v, (list, dict))
+            )
+        )
         # Scan errors are joined in a single multi-line value
         file_info['scan_errors'] = '\n'.join(errors)
 
         collect_keys(file_info, 'info')
         yield file_info
 
-        for lic_exp in scanned_file.get('license_expressions', []):
-            inf = dict(path=path, license_expression=lic_exp)
-            collect_keys(inf, 'license_expression')
-            yield inf
+        for detection in scanned_file.get('license_detections', []):
+            license_expression = detection["license_expression"]
+            detection_rules = detection["detection_rules"]
+            detection_rules = '\n'.join(detection_rules)
+            license_matches = detection["matches"]
+            for match in license_matches:
+                lic = dict(path=path)
+                lic["license_expression"] = license_expression
+                lic["detection_rules"] = detection_rules
 
-        for licensing in scanned_file.get('licenses', []):
-            lic = dict(path=path)
-            for k, val in licensing.items():
-                # do not include matched text for now.
-                if k == 'matched_text':
-                    continue
+                for k, val in match.items():
+                    # do not include matched text for now.
+                    if k == 'matched_text':
+                        continue
 
-                if k == 'matched_rule':
-                    for mrk, mrv in val.items():
-                        if mrk in ('match_coverage', 'rule_relevance'):
-                            # normalize the string representation of this number
-                            mrv = with_two_decimals(mrv)
-                        else:
-                            mrv = pretty(mrv)
-                        mrk = 'matched_rule__' + mrk
-                        lic[mrk] = mrv
-                    continue
+                    if k == 'licenses':
+                        license_keys = []
+                        for license_item in val:
+                            license_keys.append(license_item["key"])
+                        k = 'license_match__' + k
+                        lic[k] = '\n'.join(license_keys)
+                        continue
 
-                if k == 'score':
-                    val = with_two_decimals(val)
+                    if k in ('score', 'match_coverage', 'rule_relevance'):
+                        val = with_two_decimals(val)
 
-                # lines are present in multiple scans: keep their column name as
-                # not scan-specific. Prefix othe columns with license__
-                if k not in ('start_line', 'end_line',):
-                    k = 'license__' + k
-                lic[k] = val
-            collect_keys(lic, 'license')
-            yield lic
+                    # lines are present in multiple scans: keep their column name as
+                    # not scan-specific. Prefix othe columns with license__
+                    if k not in ('start_line', 'end_line',):
+                        k = 'license_match__' + k
+
+                    lic[k] = val
+
+                collect_keys(lic, 'license')
+                yield lic
 
         for copyr in scanned_file.get('copyrights', []):
             inf = dict(path=path)
@@ -348,6 +355,6 @@ def flatten_package(_package, path, prefix='package__'):
         else:
             # Use repr if not a string
             if val:
-                pack[nk] = pretty(val)
+                pack[nk] = repr(val)
 
     return pack
