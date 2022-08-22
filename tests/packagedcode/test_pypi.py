@@ -57,6 +57,13 @@ class TestPyPiEndtoEnd(PackageTester):
         result = pypi.detect_version_attribute(test_loc)
         assert result == '22.0.4'
 
+    def test_package_scan_pypi_end_to_end_extracted_wheel(self):
+        test_dir = self.get_test_loc('pypi/unpacked_wheel/daglib_wheel_extracted/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/unpacked_wheel/daglib_wheel_extracted-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
