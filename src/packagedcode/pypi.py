@@ -316,7 +316,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
         Assign files to package for an installed wheel. This requires a bit
         of navigation around as the files can be in multiple places.
         """
-        site_packages = resource.parent(codebase).parent(codebase).parent(codebase)
+        site_packages = resource.parent(codebase).parent(codebase)
         if not site_packages:
             return
         package_data = resource.package_data
