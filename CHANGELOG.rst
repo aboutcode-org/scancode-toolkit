@@ -4,13 +4,8 @@ Release notes
 Version (next)
 ------------------------------
 
-- Add ``posix_only`` option to ``commoncode.paths.portable_filename`` and
-  ``commoncode.paths.safe_path``. This option prevents
-  ``commoncode.paths.portable_filename`` and ``commoncode.paths.safe_path`` from
-  replacing filenames and punctuation in filenames that are valid on POSIX
-  operating systems, but not Windows.
 
-Version 31.0.0 - (2022-05-16)
+Version 31.0.0 - (2022-08-24)
 ------------------------------
 
 This is a major version with API-breaking changes in the resource module.
@@ -87,6 +82,14 @@ Other changes:
 - fileutils.parent_directory() now accepts a "with_trail" argument.
   The returned directory has a trailing path separator unless with_trail is False.
   The default is True and the default behaviour is unchanged.
+
+- Add ``posix_only`` option to ``commoncode.paths.portable_filename`` and
+  ``commoncode.paths.safe_path``. This option prevents
+  ``commoncode.paths.portable_filename`` and ``commoncode.paths.safe_path`` from
+  replacing filenames and punctuation in filenames that are valid on POSIX
+  operating systems, but not Windows.
+
+- Remove unused intbitset dependency.
 
 
 Version 30.2.0 - (2022-05-02)
