@@ -9,11 +9,11 @@ chardet==5.0.0
 charset-normalizer==2.1.0
 click==8.1.3
 colorama==0.4.5
-commoncode==31.0.0b4
+commoncode==31.0.0
 construct==2.10.68
 container-inspector==31.1.0
 cryptography==37.0.4
-debian-inspector==31.0.0b1
+debian-inspector==31.0.0
 dockerfile-parse==1.2.0
 dparse2==0.6.1
 extractcode==31.0.0
@@ -47,7 +47,7 @@ pefile==2022.5.30
 pip-requirements-parser==31.2.0
 pkginfo2==30.0.0
 pluggy==1.0.0
-plugincode==31.0.0b1
+plugincode==31.0.0
 ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==2.0.0b1

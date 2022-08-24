@@ -1,0 +1,149 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "thefuck",
+    "version": "3.32",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Magnificent app which corrects your previous console command",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Vladimir Iakovlev",
+        "email": "nvbn.rm@gmail.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/nvbn/thefuck",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT"
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/psutil",
+        "extracted_requirement": "psutil",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/colorama",
+        "extracted_requirement": "colorama",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/six",
+        "extracted_requirement": "six",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pathlib2",
+        "extracted_requirement": "pathlib2",
+        "scope": ":python_version<\"3.4\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/backports-shutil-get-terminal-size",
+        "extracted_requirement": "backports.shutil_get_terminal_size",
+        "scope": ":python_version<\"3.3\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/decorator",
+        "extracted_requirement": "decorator<5",
+        "scope": ":python_version<=\"2.7\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyte",
+        "extracted_requirement": "pyte<0.8.1",
+        "scope": ":python_version<=\"2.7\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/decorator",
+        "extracted_requirement": "decorator",
+        "scope": ":python_version>\"2.7\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyte",
+        "extracted_requirement": "pyte",
+        "scope": ":python_version>\"2.7\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/win-unicode-console",
+        "extracted_requirement": "win_unicode_console",
+        "scope": ":sys_platform=='win32'",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/thefuck",
+    "repository_download_url": "https://pypi.org/packages/source/t/thefuck/thefuck-3.32.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/thefuck/3.32/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/thefuck@3.32"
+  }
+]
