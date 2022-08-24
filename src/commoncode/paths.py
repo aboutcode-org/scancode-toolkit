@@ -26,7 +26,7 @@ to OS-safe paths and to POSIX paths.
 # Build OS-portable and safer paths
 
 
-def safe_path(path, posix=False, preserve_spaces=False):
+def safe_path(path, posix=False, preserve_spaces=False, posix_only=False):
     """
     Convert `path` to a safe and portable POSIX path usable on multiple OSes.
     The returned path is an ASCII-only byte string, resolved for relative
@@ -52,7 +52,13 @@ def safe_path(path, posix=False, preserve_spaces=False):
     _pathmod, path_sep = path_handlers(path, posix)
 
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
-    segments = [portable_filename(s, preserve_spaces=preserve_spaces) for s in segments]
+    segments = [
+        portable_filename(
+            s,
+            preserve_spaces=preserve_spaces,
+            posix_only=posix_only
+        ) for s in segments
+    ]
 
     if not segments:
         return '_'
@@ -134,9 +140,10 @@ def resolve(path, posix=True):
     return path
 
 
-legal_punctuation = r"!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
-legal_spaces = r" "
-legal_chars = r'A-Za-z0-9' + legal_punctuation
+legal_punctuation = r'!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~'
+legal_spaces = r' '
+legal_alphanumeric = r'A-Za-z0-9'
+legal_chars = legal_alphanumeric + legal_punctuation
 legal_chars_inc_spaces = legal_chars + legal_spaces
 illegal_chars_re = r'[^' + legal_chars + r']'
 illegal_chars_exc_spaces_re = r'[^' + legal_chars_inc_spaces + r']'
@@ -144,7 +151,23 @@ replace_illegal_chars = re.compile(illegal_chars_re).sub
 replace_illegal_chars_exc_spaces = re.compile(illegal_chars_exc_spaces_re).sub
 
 
-def portable_filename(filename, preserve_spaces=False):
+posix_legal_punctuation = r'<:"/>\|\*\^\\\'`\?' + legal_punctuation
+posix_legal_chars = legal_alphanumeric + posix_legal_punctuation
+posix_legal_chars_inc_spaces = posix_legal_chars + legal_spaces
+posix_illegal_chars_re = r'[^' + posix_legal_chars + r']'
+posix_illegal_chars_exc_spaces_re = r'[^' + posix_legal_chars_inc_spaces + r']'
+replace_illegal_posix_chars = re.compile(posix_illegal_chars_re).sub
+replace_illegal_posix_chars_exc_spaces = re.compile(posix_illegal_chars_exc_spaces_re).sub
+
+
+ILLEGAL_WINDOWS_NAMES = set([
+    'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
+    'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
+    'aux', 'con', 'nul', 'prn'
+])
+
+
+def portable_filename(filename, preserve_spaces=False, posix_only=False):
     """
     Return a new name for `filename` that is portable across operating systems.
 
@@ -170,22 +193,21 @@ def portable_filename(filename, preserve_spaces=False):
     if not filename:
         return '_'
 
-    if preserve_spaces:
-        filename = replace_illegal_chars_exc_spaces('_', filename)
+    if posix_only:
+        if preserve_spaces:
+            filename = replace_illegal_posix_chars_exc_spaces('_', filename)
+        else:
+            filename = replace_illegal_posix_chars('_', filename)
     else:
-        filename = replace_illegal_chars('_', filename)
+        if preserve_spaces:
+            filename = replace_illegal_chars_exc_spaces('_', filename)
+        else:
+            filename = replace_illegal_chars('_', filename)
 
-    # these are illegal both upper and lowercase and with or without an extension
-    # we insert an underscore after the base name.
-    windows_illegal_names = set([
-        'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
-        'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
-        'aux', 'con', 'nul', 'prn'
-    ])
-
-    basename, dot, extension = filename.partition('.')
-    if basename.lower() in windows_illegal_names:
-        filename = ''.join([basename, '_', dot, extension])
+    if not posix_only:
+        basename, dot, extension = filename.partition('.')
+        if basename.lower() in ILLEGAL_WINDOWS_NAMES:
+            filename = ''.join([basename, '_', dot, extension])
 
     # no name made only of dots.
     if set(filename) == set(['.']):
@@ -197,6 +219,7 @@ def portable_filename(filename, preserve_spaces=False):
             filename = filename.replace('..', '__', 1)
 
     return filename
+
 
 #
 # paths comparisons, common prefix and suffix extraction
