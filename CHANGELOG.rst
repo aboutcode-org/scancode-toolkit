@@ -23,6 +23,23 @@ License detection:
   positive or ambiguous license detections.
 
 
+- The data structure of the JSON output has changed for licenses. We now
+  return match details once for each matched license expression rather than
+  once for each license in a matched expression. There is a new top-level
+  "license_references" attribute that contains the data details for each
+  detected license only once. This data can contain the reference license text
+  as an option.
+
+
+v31.0.2 - 2022-08-24
+----------------------------------
+
+This is a minor release with small bug fixes and minor updates.
+
+- Fix minor bug in PyPI package assembly
+- Add a few new licenses and license detection rules
+- Update commoncode
+
 
 v31.0.0 - 2022-08-17
 -----------------------
@@ -38,13 +55,6 @@ Important API changes:
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders. We now use a proper name for attributes and not a generic "value".
-
-- The data structure of the JSON output has changed for licenses. We now
-  return match details once for each matched license expression rather than
-  once for each license in a matched expression. There is a new top-level
-  "license_references" attribute that contains the data details for each
-  detected license only once. This data can contain the reference license text
-  as an option.
 
 - The data structure of the JSON output has changed for packages. We now
   return "package_data" package information at the manifest file-level
