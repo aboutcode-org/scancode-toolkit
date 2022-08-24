@@ -1,0 +1,15 @@
+key: ms-windows-sdk-win10
+short_name: MS Enterprise Windows Driver Kit 2021
+name: Microsoft Enterprise Windows Driver Kit License 2021
+category: Commercial
+owner: Microsoft
+homepage_url: https://docs.microsoft.com/en-us/legal/windows-sdk/license-terms-ewdk
+spdx_license_key: LicenseRef-scancode-ms-windows-sdk-win10
+ignorable_urls:
+    - http://www.mpegla.com/
+    - https://go.microsoft.com/fwlink/?LinkID=21969
+    - https://go.microsoft.com/fwlink/?LinkId=294840
+    - https://go.microsoft.com/fwlink/?LinkId=521839
+    - https://go.microsoft.com/fwlink/?LinkId=524838
+    - https://go.microsoft.com/fwlink/?LinkId=524839
+    - https://www.microsoft.com/en-us/legal/arbitration/default.aspx
