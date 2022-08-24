@@ -83,7 +83,7 @@ Important API changes:
   from a git clone
 
 - ``DatafileHandler.assemble()``, ``DatafileHandler.assemble_from_many()``, and
-  the other ``.assemble()``` methods from the other Package handlers from
+  the other ``.assemble()`` methods from the other Package handlers from
   packagedcode, have been updated to yield Package items before Dependency or
   Resource items. This is particulary important in the case where we are calling
   the ``assemble()`` method outside of the scancode-toolkit context, where we
