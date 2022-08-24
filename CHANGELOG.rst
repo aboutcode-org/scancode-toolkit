@@ -10,6 +10,8 @@ Version 31.0.0 - (2022-08-24)
 
 This is a major version with API-breaking changes in the resource module.
 
+- Drop support for Python 3.6
+
 - The Resource has no rid (resource id) and no pid (parent id). Instead
   we now use internally a simpler mapping of {path: Resource} object.
   As a result the iteration on a Codebase is faster but this requires more
