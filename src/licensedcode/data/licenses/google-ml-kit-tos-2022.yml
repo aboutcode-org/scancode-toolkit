@@ -1,0 +1,11 @@
+key: google-ml-kit-tos-2022
+short_name: Google ML Kit TOS 2022
+name: Google ML Kit Terms of Service 2022
+category: Proprietary Free
+owner: Google
+homepage_url: https://developers.google.com/ml-kit/terms
+spdx_license_key: LicenseRef-scancode-google-ml-kit-tos-2022
+other_urls:
+    - https://developers.google.com/terms
+    - https://developers.google.com/ml-kit/android-data-disclosure
+    - https://developers.google.com/ml-kit/ios-data-disclosure

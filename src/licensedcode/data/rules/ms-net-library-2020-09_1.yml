@@ -1,0 +1,6 @@
+license_expression: ms-net-library-2020-09
+is_license_reference: yes
+relevance: 99
+notes: exact license text at this URL has changed over time
+ignorable_urls:
+    - https://dotnet.microsoft.com/en-us/dotnet_library_license.htm

@@ -1,0 +1,12 @@
+key: google-playcore-sdk-tos-2020
+short_name: Google Play Core SDK TOS 2020
+name: Google
+category: Proprietary Free
+owner: Google
+homepage_url: https://developer.android.com/guide/playcore#license
+spdx_license_key: LicenseRef-scancode-google-playcore-sdk-tos-2020
+other_urls:
+    - https://developers.google.com/terms
+    - https://developer.android.com/guide/playcore/license
+ignorable_urls:
+    - https://developer.android.com/guide/playcore/license

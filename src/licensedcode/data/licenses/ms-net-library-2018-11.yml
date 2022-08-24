@@ -9,3 +9,7 @@ ignorable_urls:
     - http://go.microsoft.com/?linkid=9840733
     - http://www.microsoft.com/exporting
     - https://go.microsoft.com/fwlink/?LinkID=824704
+notes: this is the version that existed at http://www.microsoft.com/net/dotnet_library_license.htm
+ from November 2018 and then at https://dotnet.microsoft.com/dotnet_library_license.htm
+ It also existed as this URL in NuGet http://go.microsoft.com/fwlink/?LinkId=329770
+ 

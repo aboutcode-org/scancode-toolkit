@@ -1,0 +1,10 @@
+key: ms-data-tier-af-2022
+short_name: MS Data-Tier Application Framework License
+name: Microsoft Data-Tier Application Framework License Terms
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://docs.microsoft.com/en-us/Legal/sql/data-tier-application-framework-license-terms
+spdx_license_key: LicenseRef-scancode-ms-data-tier-af-2022
+ignorable_urls:
+    - https://www.asp.net/ajaxlibrary/CDN.ashx
+    - https://www.microsoft.com/exporting

@@ -1,0 +1,12 @@
+Play Core Software Development Kit Terms of Service
+Last modified: September 24, 2020
+
+By using the Play Core Software Development Kit, you agree to these terms in addition to the Google APIs Terms of Service ("API ToS"). If these terms are ever in conflict, these terms will take precedence over the API ToS. Please read these terms and the API ToS carefully.
+
+For purposes of these terms, "APIs" means Google's APIs, other developer services, and associated software, including any Redistributable Code.
+
+“Redistributable Code” means Google-provided object code or header files that call the APIs.
+
+Subject to these terms and the terms of the API ToS, you may copy and distribute Redistributable Code solely for inclusion as part of your API Client. Google and its licensors own all right, title and interest, including any and all intellectual property and other proprietary rights, in and to Redistributable Code. You will not modify, translate, or create derivative works of Redistributable Code.
+
+Google may make changes to these terms at any time with notice and the opportunity to decline further use of the Play Core Software Development Kit. Google will post notice of modifications to the terms at https://developer.android.com/guide/playcore/license. Changes will not be retroactive.
