@@ -1,0 +1,13 @@
+key: google-apis-tos-2021
+short_name: Google APIs TOS 2021
+name: Google APIs Terms of Service 2021
+category: Proprietary Free
+owner: Google
+homepage_url: https://developers.google.com/terms
+spdx_license_key: LicenseRef-scancode-google-apis-tos-2021
+ignorable_copyrights:
+    - Copyright Protection a. Google
+ignorable_holders:
+    - Protection a. Google
+ignorable_authors:
+    - the U.S. Department of State. Remove

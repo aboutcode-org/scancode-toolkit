@@ -1,0 +1,157 @@
+MICROSOFT SOFTWARE LICENSE TERMS
+03/26/2021
+
+Microsoft Enterprise Windows Driver Kit
+Windows Software Developer Kit for Windows 10
+Windows Driver Kit for Windows 10
+Build Tools for Visual Studio 2017
+
+IF YOU LIVE IN, OR YOUR PRINCIPAL PLACE OF BUSINESS IS IN, THE UNITED STATES, PLEASE READ THE BINDING ARBITRATION AGREEMENT AND CLASS ACTION WAIVER (SECTION 20). IT AFFECTS HOW DISPUTES ARE RESOLVED.
+
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+
+updates,
+supplements,
+Internet-based services, and
+support services,
+for this software, unless other terms accompany those items. If so, those terms apply.
+
+By using the software, you accept these terms. If you do not accept them, do not use the software. *******************************************************************
+
+If you comply with these license terms, you have the perpetual rights below.
+
+1. INSTALLATION AND USE RIGHTS.
+
+a. Installation and use. One user may install and use any number of copies of the software on your devices to design, develop and test your device drivers and supporting components, as defined by DCHU. Further, you may install, use and/or deploy via a network management system or as part of a desktop image, any number of copies of the software on computer devices within your internal corporate network to design, develop and test your device drivers and supporting components, as defined by DCHU, that run on a Microsoft operating system. Each copy must be complete, including all copyright and trademark notices. You must require end users to agree to terms that protect the software as much as these license terms.
+
+b. Included Microsoft Programs. The software contains other Microsoft programs. These license terms govern your use of included Microsoft programs.
+
+c. Utilities. The software contains certain components that are identified in the Utilities List located https://go.microsoft.com/fwlink/?LinkId=524839. Depending on the specific edition of the software, the number of Utility files you receive with the software may not be equal to the number of Utilities listed in the Utilities List. Except as otherwise provided on the Utilities List for specific files, you may copy and install the Utilities you receive with the software on to other third party machines. These Utilities may only be used to debug and deploy your programs and databases you have developed with the software. You must delete all the Utilities installed onto a third party machine within the earlier of (i) when you have finished debugging or deploying your programs; or (ii) thirty (30) days after installation of the Utilities onto that machine. We may add additional files to this list from time to time.
+
+d. Build Server List. The software includes the Visual Studio 2017 Build Tools. It also contains certain components that are identified in the Build Server List located at https://go.microsoft.com/fwlink/?LinkId=524838. You may install copies of the Visual Studio 2017 Build Tools and copies of the files listed in the Build Server list, onto your build machines, solely for the purpose of compiling, building, verifying and archiving your device drivers. These components may only be used in order to create and configure build systems internal to your organization to support your internal build environment. These components do not provide external distribution rights to any of the software or enable you to provide a build environment as a service to third parties. We may add additional files to this list from time to time.
+
+e. Third Party Programs. The software may include third party code that Microsoft, not the third party, licenses to you under this agreement. Notices, if any, for the third party code are included for your information only and may be found in the credits.rtf or ThirdPartyNotices.txt file associated with the software.
+
+2. ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
+a. Distributable Code. The software contains code that you are permitted to distribute in programs you develop if you comply with the terms below.
+
+i. Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+
+REDIST.TXT Files. You may copy and distribute the object code form of code listed in REDIST.TXT files plus any of the files listed on the REDIST list located at https://go.microsoft.com/fwlink/?LinkId=294840.
+
+Third party distribution. You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
+
+ii. Distribution Requirements. For any Distributable Code you distribute, you must
+
+add significant primary functionality to it in your programs;
+for any Distributable Code having a filename extension of .lib, distribute only the results of running such Distributable Code through a linker with your program;
+distribute Distributable Code included in a setup program only as part of that setup program without modification;
+require distributors and external end users to agree to terms that protect it at least as much as this agreement;
+display your valid copyright notice on your programs; and
+indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
+
+iii. Distribution Restrictions. You may not
+
+alter any copyright, trademark or patent notice in the Distributable Code;
+use Microsoft’s trademarks in your programs’ names or in a way that suggests your programs come from or are endorsed by Microsoft;
+distribute Distributable Code to run on a platform other than the Windows platform;
+include Distributable Code in malicious, deceptive or unlawful programs; or
+modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of use, modification or distribution, that
+the code be disclosed or distributed in source code form; or
+others have the right to modify it.
+
+iv. Distribution Rights for Features made Available with the Software.
+
+Windows App Requirements. If you intend to make your program available in the Microsoft Store, the program must comply with the Certification as defined and described in the App Developer Agreement, currently available at: msdn.microsoft.com/en-us/library/windows/apps/hh694058.aspx.
+
+Bing Maps. The software may include features that retrieve content such as maps, images, and other data through the Bing Maps (or successor branded) application programming interface (the “Bing Maps API”) to create reports displaying data on top of maps, aerial and hybrid imagery. If these features are included, you may use these features to create and view dynamic or static documents only in conjunction with and through methods and means of access integrated in the software. You may not otherwise copy, store, archive, or create a database of the entity information including business names, addresses and geocodes available through the Bing Maps API. You may not use the Bing Maps API to provide sensor based guidance/routing, nor use any Road Traffic Data or Bird’s Eye Maps API and associated content is also subject to the additional terms and conditions at https://go.microsoft.com/fwlink/?LinkID=21969.
+
+Additional Mapping APIs. The software may include application programming interfaces that provide maps and other related mapping features and services that are not provided by Bing (the “Additional Mapping APIs”). These Additional Mapping APIs are subject to additional terms and conditions and may require payment of fees to Microsoft and/or third party providers based on the use or volume of use of such Additional Mapping APIs. These terms and conditions will be provided when you obtain any necessary license keys to use such Additional Mapping APIs or when you review or receive documentation related to the use of such Additional Mapping APIs.
+
+Push Notifications. The Microsoft Push Notification Service may not be used to send notifications that are mission critical or otherwise could affect matters of life or death, including without limitation critical notifications related to a medical device or condition. MICROSOFT EXPRESSLY DISCLAIMS ANY WARRANTIES THAT THE USE OF THE MICROSOFT PUSH NOTIFICATION SERVICE OR DELIVERY OF MICROSOFT PUSH NOTIFICATION SERVICE NOTIFICATIONS WILL BE UNINTERRUPTED, ERROR FREE, OR OTHERWISE GUARANTEED TO OCCUR ON A REAL-TIME BASIS.
+
+Speech namespace API. Using speech recognition functionality via the Speech namespace APIs in a program requires the support of a speech recognition service. The service may require network connectivity at the time of recognition (e.g., when using a predefined grammar). In addition, the service may also collect speech-related data in order to provide and improve the service. The speech-related data may include, for example, information related to grammar size and string phrases in a grammar.
+
+Also, in order for a user to use speech recognition on the phone they must first accept certain terms of use. The terms of use notify the user that data related to their use of the speech recognition service will be collected and used to provide and improve the service. If a user does not accept the terms of use and speech recognition is attempted by the application, the operation will not work and an error will be returned to the application.
+
+API Use. We may monitor and collect data related to a program’s use of APIs in order to provide, improve and personalize Microsoft products and services. End user information collected by Microsoft’s monitoring and data collection related to your program’s use of APIs is subject to the Microsoft Consumer Privacy Statement.
+
+Location Framework. The software may contain a location framework component that enables support of location services in programs. In addition to the other limitations in this agreement, you must comply with all applicable local laws and regulations when using the location framework component or the rest of the software.
+
+Device ID Access. The software may contain a component that enables programs to access the device ID of the device that is running the program. In addition to the other limitations in this agreement, you must comply with all applicable local laws and regulations when using the device ID access component or the rest of the software.
+
+PlayReady Support. The software may include the Windows Emulator, which contains Microsoft’s PlayReady content access technology. Content owners use Microsoft PlayReady content access technology to protect their intellectual property, including copyrighted content. This software uses PlayReady technology to access PlayReady-protected content and/or WMDRM-protected content. Microsoft may decide to revoke the software’s ability to consume PlayReady-protected content for reasons including but not limited to (i) if a breach or potential breach of PlayReady technology occurs, (ii) proactive robustness enhancement, and (iii) if Content owners require the revocation because the software fails to properly enforce restrictions on content usage. Revocation should not affect unprotected content or content protected by other content access technologies. Content owners may require you to upgrade PlayReady to access their content. If you decline an upgrade, you will not be able to access content that requires the upgrade and may not be able to install other operating system updates or upgrades.
+
+Package Managers. The software may include package managers, like NuGet, that give you the option to download other Microsoft and third party software packages to use with your application. Those packages are under their own licenses, and not this agreement. Microsoft does not distribute, license or provide any warranties for any of the third party packages.
+
+Font Components. While the software is running, you may use its fonts to display and print content. You may only embed fonts in content as permitted by the embedding restrictions in the fonts; and temporarily download them to a printer or other output device to help print content.
+
+Notice about the H.264/AVD Visual Standard, and the VC-1 Video Standard. This software may include H.264/MPEG-4 AVC and/or VD-1 decoding technology. MPEG LA, L.L.C. requires this notice: THIS PRODUCT IS LICENSED UNDER THE AVC AND THE VC-1 PATENT PORTFOLIO LICENSES FOR THE PERSONAL AND NON-COMMERCIAL USE OF A CONSUMER TO (i) ENCODE VIDEO IN COMPLIANCE WITH THE ABOVE STANDARDS (“VIDEO STANDARDS”) AND/OR (ii) DECODE AVC, AND VC-1 VIDEO THAT WAS ENCODED BY A CONSUMER ENGAGED IN A PERSONAL AND NON-COMMERCIAL ACTIVITY AND/OR WAS OBTAINED FROM A VIDEO PROVIDER LICENSED TO PROVIDE SUCH VIDEO. NONE OF THE LICENSES EXTEND TO ANY OTHER PRODUCT REGARDLESS OF WHETHER SUCH PRODUCT IS INCLUDED WITH THIS SOFTWARE IN A SINGLE ARTICLE. NO LICENSE IS GRANTED OR SHALL BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY BE OBTAINED FROM MPEG LA, L.L.C. SEE WWW.MPEGLA.COM.
+
+For clarification purposes, this notice does not limit or inhibit the use of the software for normal business uses that are personal to that business which do not include (i) redistribution of the software to third parties, or (ii) creation of content with the VIDEO STANDARDS compliant technologies for distribution to third parties.
+
+DATA. The software may collect information about you and your use of the software and send that to Microsoft. Microsoft may use this information to provide services and improve our products and services. Your opt-out rights, if any, are described in the product documentation. Some features in the software may enable collection of data from users of your applications that access or use the software. If you use these features to enable data collection in your applications, you must comply with applicable law, including getting any required user consent, and maintain a prominent privacy policy that accurately informs users about how you use, collect, and share their data. You can learn more about Microsoft’s data collection and use in the help documentation and the Microsoft Privacy Statement at https://go.microsoft.com/fwlink/?LinkId=521839. You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
+
+SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+a. work around any technical limitations in the software;
+b. reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+c. make more copies of the software than specified in this agreement or allowed by applicable law, despite this limitation;
+d. publish the software for others to copy;
+e. rent, lease or lend the software;
+f. transfer the software or this agreement to any third party; or
+g. use the software for commercial software hosting services.
+
+.NET FRAMEWORK SOFTWARE. The software contains Microsoft .NET Framework software. This software is part of Windows. The license terms for Windows apply to your use of the .NET Framework software.
+
+BACKUP COPY. You may make one backup copy of the software. You may use it only to reinstall the software.
+
+DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+
+EXPORT RESTRICTIONS. You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. For further information on export restrictions, visit (aka.ms/exporting).
+
+SUPPORT SERVICES. We are not obligated under this agreement to provide any support services for the software. If we elect to do so, any such support is “as is”, “with all faults”, and without warranty of any kind.
+
+BINDING ARBITRATION AND CLASS ACTION WAIVER IF YOU LIVE (OR, IF A BUSINESS, YOUR PRINCIPAL PLACE OF BUSINESS IS) IN THE UNITED STATES. If we have a dispute, you and we agree to try for 60 days to resolve it informally. If we can’t, you and we agree to binding individual arbitration before the American Arbitration Association under the Federal Arbitration Act, and not to sue in court in front of a judge or jury. Instead, a neutral arbitrator will decide. Class action lawsuits, class-wide arbitrations, private attorney-general actions, and any other proceeding where someone acts in a representative capacity are not allowed; nor is combining individual proceedings without the consent of all parties. The complete Arbitration Agreement and Class Action Waiver contains more terms and is at https://www.microsoft.com/en-us/legal/arbitration/default.aspx. You and we agree to these terms.
+
+ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+
+CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state or country. Separate and apart from your relationship with Microsoft, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or mandatory country law applies, then the following provisions apply to you:
+
+a. Australia. You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
+
+b. Canada. If you acquired this software in Canada, you may stop receiving updates by turning off the automatic update feature, disconnecting your device from the Internet (if and when you re-connect to the Internet, however, the software will resume checking for and installing updates), or uninstalling the software. The product documentation, if any, may also specify how to turn off updates for your specific device or software.
+
+c. Germany and Austria.
+
+i. Warranty. The properly licensed software will perform substantially as described in any Microsoft materials that accompany the software. However, Microsoft gives no contractual guarantee in relation to the licensed software.
+
+ii. Limitation of Liability. In case of intentional conduct, gross negligence, claims based on the Product Liability Act, as well as, in case of death or personal or physical injury, Microsoft is liable according to the statutory law.
+
+Subject to the foregoing clause (ii), Microsoft will only be liable for slight negligence if Microsoft is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called "cardinal obligations"). In other cases of slight negligence, Microsoft will not be liable for slight negligence.
+
+DISCLAIMER OF WARRANTY. The software is licensed “as-is.” You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+
+a. This limitation applies to
+i. anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
+ii. claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+Please note: As this software is distributed in Quebec, Canada, these license terms are provided below in French.
+
+Remarque : Ce logiciel étant distribué au Québec, Canada, certaines des clauses dans ce contrat sont fournies ci-dessous en français.
+
+EXONÉRATION DE GARANTIE. Le logiciel visé par une licence est offert « tel quel ». Toute utilisation de ce logiciel est à votre seule risque et péril. Microsoft n’accorde aucune autre garantie expresse. Vous pouvez bénéficier de droits additionnels en vertu du droit local sur la protection des consommateurs, que ce contrat ne peut modifier. La ou elles sont permises par le droit locale, les garanties implicites de qualité marchande, d’adéquation à un usage particulier et d’absence de contrefaçon sont exclues.
+
+LIMITATION DES DOMMAGES-INTÉRÊTS ET EXCLUSION DE RESPONSABILITÉ POUR LES DOMMAGES. Vous pouvez obtenir de Microsoft et de ses fournisseurs une indemnisation en cas de dommages directs uniquement à hauteur de 5,00 $ US. Vous ne pouvez prétendre à aucune indemnisation pour les autres dommages, y compris les dommages spéciaux, indirects ou accessoires et pertes de bénéfices. Cette limitation concerne :
+
+tout ce qui est relié au logiciel, aux services ou au contenu (y compris le code) figurant sur des sites Internet tiers ou dans des programmes tiers ; et
+
+les réclamations au titre de violation de contrat ou de garantie, ou au titre de responsabilité stricte, de négligence ou d’une autre faute dans la limite autorisée par la loi en vigueur.
+
+Elle s’applique également, même si Microsoft connaissait ou devrait connaître l’éventualité d’un tel dommage. Si votre pays n’autorise pas l’exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit, il se peut que la limitation ou l’exclusion ci-dessus ne s’appliquera pas à votre égard.
+
+EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d’autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.

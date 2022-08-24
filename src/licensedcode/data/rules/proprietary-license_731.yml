@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://indiecc.com/free/2.0.0
+ignorable_urls:
+    - https://creditstxt.com/
+    - https://indiecc.com/free/2.0.0

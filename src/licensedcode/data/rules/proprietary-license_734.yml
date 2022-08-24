@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://indiecc.com/service/1.0.1
+ignorable_urls:
+    - https://github.com/indiecc/indiecc.com/blob/main/terms/service

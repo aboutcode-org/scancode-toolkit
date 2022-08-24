@@ -1,0 +1,5 @@
+license_expression: prosperity-3.0 AND proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - https://licensezero.com/licenses/private
+    - https://licensezero.com/licenses/prosperity

@@ -1,0 +1,22 @@
+Terms & Privacy 
+ML KIT Terms of Service
+The following terms apply to your use of ML Kit APIs. These terms incorporate and are subject to the Google APIs Terms of Service.
+
+General Terms
+For purposes of these terms, machine learning models will be considered related software.
+
+ML Kit APIs run on-device. When using the ML Kit APIs, you may not reverse engineer or attempt to extract the source code or any related software, except to the extent that this restriction is expressly prohibited by applicable law.
+
+Privacy
+When you use ML Kit APIs, processing of the input data (e.g. images, video, text) fully happens on-device, and ML Kit does not send that data to Google servers. As a result, you can use our APIs for processing data that should not leave the device.
+
+The ML Kit APIs may contact Google servers from time to time in order to receive things like bug fixes, updated models and hardware accelerator compatibility information. The ML Kit APIs also send metrics about the performance and utilization of the APIs in your app to Google. Google uses this metrics data to measure performance, debug, maintain and improve the APIs, and detect misuse or abuse, as further described in our Privacy Policy.
+
+You are responsible for informing users of your app about Google’s processing of ML Kit metrics data as required by applicable law.
+
+For additional details to help support your Google Play and Apple App Store disclosures requirements, please refer to:
+
+Google Play’s data disclosure requirements
+Apple’s App Store data disclosure requirements
+
+Last updated 2022-02-22 UTC
