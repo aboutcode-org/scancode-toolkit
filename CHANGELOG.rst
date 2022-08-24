@@ -1,10 +1,14 @@
 Release notes
 =============
 
-Version (next) 
+Version (next)
 ------------------------------
 
-TBD.
+- Add ``posix_only`` option to ``commoncode.paths.portable_filename`` and
+  ``commoncode.paths.safe_path``. This option prevents
+  ``commoncode.paths.portable_filename`` and ``commoncode.paths.safe_path`` from
+  replacing filenames and punctuation in filenames that are valid on POSIX
+  operating systems, but not Windows.
 
 Version 31.0.0 - (2022-05-16)
 ------------------------------
@@ -50,7 +54,7 @@ This is a major version with API-breaking changes in the resource module.
   otherwise missing from files path list.
   In particular this behaviour changed when you create a VirtualCodebase from
   a previous Codebase created with a "full_root" argument. Previously, the
-  missing paths of a "full_root" Codebase were kept unchanged. 
+  missing paths of a "full_root" Codebase were kept unchanged.
   Note that the VirtualCodebase has always ignored the "full_root" argument.
 
 - The Codebase and VirtualCodebase are now iterable. Iterating on a codebase
@@ -80,7 +84,7 @@ Other changes:
 
 - Remove Python upper version limit.
 - Merge latest skeleton
-- fileutils.parent_directory() now accepts a "with_trail" argument. 
+- fileutils.parent_directory() now accepts a "with_trail" argument.
   The returned directory has a trailing path separator unless with_trail is False.
   The default is True and the default behaviour is unchanged.
 
