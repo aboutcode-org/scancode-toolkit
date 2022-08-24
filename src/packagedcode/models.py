@@ -805,9 +805,12 @@ def compute_normalized_license(declared_license, expression_symbols=None):
 
 def add_to_package(package_uid, resource, codebase):
     """
-    Append `package_uid` to `resource.for_packages`, if the attribute exists.
+    Append `package_uid` to `resource.for_packages`, if the attribute exists and
+    `package_uid` is not already in `resource.for_packages`.
     """
     if hasattr(resource, 'for_packages') and isinstance(resource.for_packages, list):
+        if package_uid in resource.for_packages:
+            return
         resource.for_packages.append(package_uid)
         resource.save(codebase)
 

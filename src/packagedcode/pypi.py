@@ -316,7 +316,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
         Assign files to package for an installed wheel. This requires a bit
         of navigation around as the files can be in multiple places.
         """
-        site_packages = resource.parent(codebase).parent(codebase).parent(codebase)
+        site_packages = resource.parent(codebase).parent(codebase)
         if not site_packages:
             return
         package_data = resource.package_data
@@ -342,7 +342,7 @@ class PythonInstalledWheelMetadataFile(BasePypiHandler):
                 cannot_resolve = False
                 ref_resource = None
                 while path_ref.startswith('..'):
-                    _, _, path_ref.partition('../')
+                    _, _, path_ref = path_ref.partition('../')
                     ref_resource = site_packages.parent(codebase)
                     if not ref_resource:
                         cannot_resolve = True

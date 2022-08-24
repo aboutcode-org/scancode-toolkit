@@ -359,58 +359,6 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
-        ],
-        "scan_errors": []
-      },
-      {
-        "path": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
-        "type": "file",
-        "package_data": [
-          {
-            "type": "deb",
-            "namespace": null,
-            "name": "libndp0",
-            "version": null,
-            "qualifiers": {},
-            "subpath": null,
-            "primary_language": null,
-            "description": null,
-            "release_date": null,
-            "parties": [],
-            "keywords": [],
-            "homepage_url": null,
-            "download_url": null,
-            "size": null,
-            "sha1": null,
-            "md5": null,
-            "sha256": null,
-            "sha512": null,
-            "bug_tracking_url": null,
-            "code_view_url": null,
-            "vcs_url": null,
-            "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
-            "license_expression": "(lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)",
-            "declared_license": [
-              "LGPL-2.1+",
-              "LGPL-2.1+",
-              "LGPL-2.1+"
-            ],
-            "notice_text": null,
-            "source_packages": [],
-            "file_references": [],
-            "extra_data": {},
-            "dependencies": [],
-            "repository_homepage_url": null,
-            "repository_download_url": null,
-            "api_data_url": null,
-            "datasource_id": "debian_copyright_in_package",
-            "purl": "pkg:deb/libndp0"
-          }
-        ],
-        "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
           "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
