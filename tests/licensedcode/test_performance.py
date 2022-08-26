@@ -81,7 +81,7 @@ class TestMatchingPerf(FileBasedTesting):
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
-        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
+        rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
         idx = index.LicenseIndex([rule])
 
         stats_file = 'license_approx_match_limited_index_profile_log.txt'

@@ -58,7 +58,7 @@ class IndexTesting(FileBasedTesting):
         if subset:
             test_files = [t for t in test_files if t in subset]
 
-        return [Rule(text_file=os.path.join(base, license_key), license_expression=license_key)
+        return [Rule._from_text_file_and_expression(text_file=os.path.join(base, license_key), license_expression=license_key)
                 for license_key in test_files]
 
 
@@ -66,7 +66,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_Query_tokens_by_line_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        rule = Rule(stored_text=rule_text, license_expression='bsd')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='bsd')
         legalese = set(['redistribution', 'form', ])
         idx = index.LicenseIndex([rule], _legalese=legalese)
         querys = '''
@@ -109,7 +109,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
         assert qry.line_by_pos == [3, 3, 3, 3, 3, 3, 3, 3, 3, 6]
 
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
@@ -119,7 +119,7 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_Query_known_and_unknown_positions(self):
 
         rule_text = 'Redistribution and use in source and binary forms'
-        rule = Rule(stored_text=rule_text, license_expression='bsd')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='bsd')
         legalese = set(['redistribution', 'form', ])
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
@@ -155,7 +155,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary are permitted.
@@ -190,7 +190,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_QueryRuns_tokens_with_unknowns(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary are permitted.
@@ -216,7 +216,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_QueryRun_does_not_end_with_None(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
 
         querys = '''
             The
@@ -296,7 +296,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_query_run_tokens_with_junk(self):
         legalese = set(['binary'])
-        idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text='a is the binary')],
                                  _legalese=legalese,
                                  _spdx_tokens=set())
         assert idx.len_legalese == 1
@@ -377,7 +377,7 @@ class TestQueryWithSingleRun(IndexTesting):
         ]]
 
         rule_file = self.get_test_loc('queryformat/license1.txt')
-        idx = index.LicenseIndex([Rule(text_file=rule_file, license_expression='mit')])
+        idx = index.LicenseIndex([Rule._from_text_file_and_expression(text_file=rule_file, license_expression='mit')])
 
         q = Query(location=rule_file, idx=idx)
         assert len(q.query_runs) == 1
@@ -389,7 +389,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_query_run_unknowns(self):
         legalese = set(['binary'])
-        idx = index.LicenseIndex([Rule(stored_text='a is the binary')], _legalese=legalese)
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text='a is the binary')], _legalese=legalese)
 
         assert idx.dictionary == {'binary': 0, 'is': 1, 'the': 2}
         assert idx.len_legalese == 1
@@ -403,7 +403,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_query_unknowns_by_pos_and_stopwords_are_not_defaultdic_and_not_changed_on_query(self):
         idx = index.LicenseIndex(
-            [Rule(stored_text='a is the binary')],
+            [Rule._from_text_and_expression(text='a is the binary')],
             _legalese=set(['binary']),
             _spdx_tokens=set()
         )
@@ -429,7 +429,7 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_query_unknowns_by_pos_and_stopwords_are_not_set_on_last_query_position(self):
         print('\nINDEX')
         idx = index.LicenseIndex(
-            [Rule(stored_text='is the binary a')],
+            [Rule._from_text_and_expression(text='is the binary a')],
             _legalese=set(['binary']),
             _spdx_tokens=set()
         )
@@ -484,7 +484,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert result == expected
 
     def test_QueryRun(self):
-        idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text='redistributions in binary form must redistributions in')])
         qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
         qruns = qry.query_runs
         assert len(qruns) == 1
@@ -495,7 +495,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert result == expected
 
     def test_QueryRun_repr(self):
-        idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
+        idx = index.LicenseIndex([Rule._from_text_and_expression(text='redistributions in binary form must redistributions in')])
         qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
         qruns = qry.query_runs
         qr = qruns[0]
@@ -570,7 +570,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
             authorization from the X Consortium. X Window System is a trademark
             of X Consortium, Inc.
         '''
-        rule = Rule(stored_text=rule_text, license_expression='x-consortium')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='x-consortium')
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -666,7 +666,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert irt == qrt
 
     def test_QueryRun_with_all_digit_lines(self):
-        rule = Rule(stored_text='''
+        rule = Rule._from_text_and_expression(text='''
             redistributions 0 1 2 3 4 1568 5 6 7 368 8 9 10 80 12213 232312 in
             binary 345 in 256
             free 1953

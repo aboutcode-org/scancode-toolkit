@@ -1783,7 +1783,7 @@ def filter_invalid_matches_to_single_word_gibberish(
                 highlight=False,
             ).strip()
 
-            rule_text = rule.text().strip()
+            rule_text = rule.prepare_text()
 
             if trace:
                 logger_debug(

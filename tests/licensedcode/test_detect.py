@@ -38,7 +38,7 @@ class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_does_not_return_matches_for_empty_query(self):
-        idx = MiniLicenseIndex([Rule(stored_text='A one. A two. license A three.')])
+        idx = MiniLicenseIndex([Rule._from_text_and_expression(text='A one. A two. license A three.')])
 
         matches = idx.match(query_string='')
         assert matches == []
@@ -46,14 +46,14 @@ class TestIndexMatch(FileBasedTesting):
         assert matches == []
 
     def test_match_does_not_return_matches_for_junk_queries(self):
-        idx = MiniLicenseIndex([Rule(stored_text='A one. a license two. license A three.')])
+        idx = MiniLicenseIndex([Rule._from_text_and_expression(text='A one. a license two. license A three.')])
 
         assert idx.match(query_string=u'some other junk') == []
         assert idx.match(query_string=u'some junk') == []
 
     def test_match_return_one_match_with_correct_offsets(self):
         idx = MiniLicenseIndex([
-            Rule(stored_text='A one. a license two. A three.',
+            Rule._from_text_and_expression(text='A one. a license two. A three.',
                  license_expression='abc')]
         )
 
@@ -72,7 +72,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_can_match_exactly_rule_text_used_as_query(self):
         test_file = self.get_test_loc('detect/mit/mit.c')
-        rule = Rule(text_file=test_file, license_expression='mit')
+        rule = Rule._from_text_file_and_expression(text_file=test_file, license_expression='mit')
         idx = MiniLicenseIndex([rule])
 
         matches = idx.match(test_file)
@@ -86,7 +86,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, license_expression='mit')
+        ftr = Rule._from_text_file_and_expression(text_file=tf1, license_expression='mit')
         idx = MiniLicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/mit2.c')
@@ -99,7 +99,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_matches_correctly_simple_exact_query_across_query_runs(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, license_expression='mit')
+        ftr = Rule._from_text_file_and_expression(text_file=tf1, license_expression='mit')
         idx = MiniLicenseIndex([ftr])
         query_doc = self.get_test_loc('detect/mit/mit3.c')
         matches = idx.match(query_doc)
@@ -146,7 +146,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_with_surrounding_junk_should_return_an_exact_match(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, license_expression='mit')
+        ftr = Rule._from_text_file_and_expression(text_file=tf1, license_expression='mit')
         idx = MiniLicenseIndex([ftr])
 
         query_loc = self.get_test_loc('detect/mit/mit4.c')
@@ -185,7 +185,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_to_single_word_does_not_have_zero_score(self):
         idx = MiniLicenseIndex(
-            [Rule(stored_text='LGPL', license_expression='lgpl-2.0')]
+            [Rule._from_text_and_expression(text='LGPL', license_expression='lgpl-2.0')]
         )
         matches = idx.match(query_string='LGPL')
         assert len(matches) == 1
@@ -194,7 +194,7 @@ of the Software, and to permit persons to whom the Software is
     def test_match_to_threshold_words_has_hundred_score(self):
         threshold = 18
         idx = MiniLicenseIndex(
-            [Rule(stored_text=' LGPL ' * threshold, license_expression='lgpl-2.0')]
+            [Rule._from_text_and_expression(text=' LGPL ' * threshold, license_expression='lgpl-2.0')]
         )
         matches = idx.match(query_string=' LGPL ' * threshold)
         assert len(matches) == 1
@@ -202,7 +202,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
-        rule = Rule(text_file=rule_file, license_expression='mit')
+        rule = Rule._from_text_file_and_expression(text_file=rule_file, license_expression='mit')
         idx = MiniLicenseIndex([rule])
 
         query_doc = self.get_test_loc('approx/mit/mit4.c')
@@ -219,7 +219,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
         idx = MiniLicenseIndex(
-            [Rule(stored_text='MIT License', license_expression='mit')]
+            [Rule._from_text_and_expression(text='MIT License', license_expression='mit')]
         )
 
         matches = idx.match(query_string='MIT License')
@@ -277,7 +277,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_simple_rule(self):
         tf1 = self.get_test_loc('detect/mit/t1.txt')
-        ftr = Rule(text_file=tf1, license_expression='bsd-original')
+        ftr = Rule._from_text_file_and_expression(text_file=tf1, license_expression='bsd-original')
         idx = MiniLicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/t2.txt')
@@ -292,24 +292,24 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
-        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule._from_text_file_and_expression(text_file=test_file, license_expression='kerberos')])
         assert len(idx.match(test_file)) == 1
 
     def test_match_works_with_special_characters_2(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos1.txt')
-        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule._from_text_file_and_expression(text_file=test_file, license_expression='kerberos')])
         assert len(idx.match(test_file)) == 1
 
     def test_match_works_with_special_characters_3(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos2.txt')
         idx = MiniLicenseIndex(
-            [Rule(text_file=test_file, license_expression='kerberos')]
+            [Rule._from_text_file_and_expression(text_file=test_file, license_expression='kerberos')]
         )
         assert len(idx.match(test_file)) == 1
 
     def test_match_works_with_special_characters_4(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos3.txt')
-        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule._from_text_file_and_expression(text_file=test_file, license_expression='kerberos')])
         assert len(idx.match(test_file)) == 1
 
     def test_overlap_detection1(self):
@@ -348,10 +348,10 @@ of the Software, and to permit persons to whom the Software is
         Redistribution and use permitted.
         Use is permitted too.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
-        rule3 = Rule(stored_text=license3, license_expression='overlap')
-        rule4 = Rule(stored_text=license4, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
+        rule3 = Rule._from_text_and_expression(text=license3, license_expression='overlap')
+        rule4 = Rule._from_text_and_expression(text=license4, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2, rule3, rule4])
 
         querys = 'Redistribution and use bla permitted.'
@@ -378,8 +378,8 @@ of the Software, and to permit persons to whom the Software is
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -406,8 +406,8 @@ of the Software, and to permit persons to whom the Software is
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -441,8 +441,8 @@ of the Software, and to permit persons to whom the Software is
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -481,8 +481,8 @@ of the Software, and to permit persons to whom the Software is
             Redistribution and use permitted.
             Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -515,8 +515,8 @@ of the Software, and to permit persons to whom the Software is
         Redistribution and use permitted for MIT license.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, license_expression='overlap')
-        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule1 = Rule._from_text_and_expression(text=license1, license_expression='overlap')
+        rule2 = Rule._from_text_and_expression(text=license2, license_expression='overlap')
         idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -534,7 +534,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_fulltext_detection_works_with_partial_overlap_from_location(self):
         test_doc = self.get_test_loc('detect/templates/license3.txt')
-        idx = MiniLicenseIndex([Rule(text_file=test_doc, license_expression='mylicense')])
+        idx = MiniLicenseIndex([Rule._from_text_file_and_expression(text_file=test_doc, license_expression='mylicense')])
 
         query_loc = self.get_test_loc('detect/templates/license4.txt')
         matches = idx.match(query_loc)
@@ -579,7 +579,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(stored_text=tf1_text, license_expression='x-consortium')
+        rule = Rule._from_text_and_expression(text=tf1_text, license_expression='x-consortium')
         idx = MiniLicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -611,7 +611,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(stored_text=rule_text, license_expression='x-consortium')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='x-consortium')
         idx = MiniLicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -651,7 +651,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         '''
-        rule = Rule(stored_text=rule_text, license_expression='x-consortium')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='x-consortium')
         idx = MiniLicenseIndex([rule])
 
         query_string = u'''
@@ -684,7 +684,7 @@ class TestIndexPartialMatch(FileBasedTesting):
     def test_match_can_match_discontinuous_rule_text_1(self):
         test_text = u'''Redistributions in binary form must
          reproduce the above copyright notice'''
-        rule = Rule(stored_text=test_text, license_expression='mylicense')
+        rule = Rule._from_text_and_expression(text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -701,7 +701,7 @@ class TestIndexPartialMatch(FileBasedTesting):
     def test_match_can_match_discontinuous_rule_text_2(self):
         test_text = u'''Redistributions in binary form must
         reproduce the stipulated above copyright notice'''
-        rule = Rule(stored_text=test_text, license_expression='mylicense')
+        rule = Rule._from_text_and_expression(text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -719,7 +719,7 @@ class TestIndexPartialMatch(FileBasedTesting):
     def test_match_can_match_discontinuous_rule_text_3(self):
         test_text = u'''Redistributions in binary form must
         reproduce as is stipulated above copyright notice'''
-        rule = Rule(stored_text=test_text, license_expression='mylicense')
+        rule = Rule._from_text_and_expression(text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -738,7 +738,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         code, compiled code, and documentation contained in this distribution
         into the Public Domain.
         '''
-        rule = Rule(stored_text=test_text, license_expression='public-domain')
+        rule = Rule._from_text_and_expression(text=test_text, license_expression='public-domain')
 
         legalese = (
             mini_legalese
@@ -784,7 +784,7 @@ class TestIndexPartialMatch(FileBasedTesting):
     def test_match_can_match_with_rule_template_with_gap_near_start_with_few_tokens_before(self):
         # failed when a gapped token starts at a beginning of rule with few tokens before
         test_file = self.get_test_loc('detect/templates/license7.txt')
-        rule = Rule(text_file=test_file, license_expression='lic')
+        rule = Rule._from_text_file_and_expression(text_file=test_file, license_expression='lic')
 
         legalese = (
             mini_legalese

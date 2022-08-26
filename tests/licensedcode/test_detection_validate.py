@@ -57,14 +57,14 @@ def make_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
 
 def check_special_rule_cannot_be_detected(rule):
     idx = cache.get_index()
-    results = idx.match(location=rule.text_file)
+
+    results = idx.match(query_string=rule.text)
+
     if results:
-        data_file = rule.data_file
-        if not data_file:
-            data_file = rule.text_file.replace('.LICENSE', '.yml')
+        data_file = rule.data_file()
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path
-        results = (results, f'file://{data_file}', f'file://{rule.text_file}')
+        results = (results, f'file://{data_file}', f'file://{rule.text_file()}')
         # this assert will always fail and provide a more detailed failure trace
         assert  results == []
 
@@ -72,7 +72,7 @@ def check_special_rule_cannot_be_detected(rule):
 def check_rule_or_license_can_be_self_detected_exactly(rule):
     idx = cache.get_index()
     matches = idx.match(
-        location=rule.text_file,
+        query_string=rule.text,
         _skip_hash_match=True,
         deadline=10,
     )
@@ -84,11 +84,9 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     except:
 
         from licensedcode.tracing import get_texts
-        data_file = rule.data_file
-        if not data_file:
-            data_file = rule.text_file.replace('.LICENSE', '.yml')
-        text_file = rule.text_file
-        # On failure, we compare againto get additional failure details such as
+        data_file = rule.data_file()
+        text_file = rule.text_file()
+        # On failure, we compare again to get additional failure details such as
         # a clickable text_file path
         failure_trace = ['======= TEST ====']
         failure_trace.extend(results)
@@ -100,12 +98,8 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
 
         for i, match in enumerate(matches):
             qtext, itext = get_texts(match)
-            m_text_file = match.rule.text_file
-
-            if match.rule.is_from_license:
-                m_data_file = m_text_file.replace('LICENSE', '.yml')
-            else:
-                m_data_file = match.rule.data_file
+            m_text_file = match.rule.text_file()
+            m_data_file = match.rule.data_file()
 
             failure_trace.extend(['',
                 f'======= MATCH {i} ====',
@@ -126,7 +120,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
     or Rule object are properly detected in that rule text file. Optionally
     ``regen`` the ignorables to update the License or Rule .yml data file.
     """
-    result = models.get_ignorables(text_file=licensish.text_file)
+    result = models.get_ignorables(text=licensish.text)
 
     if verbose:
         print()
@@ -140,7 +134,9 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
             licish = db[licensish.license_expression]
         else:
             licish = licensish
+
         models.set_ignorables(licish, result , verbose=verbose)
+
         licish.dump()
         if is_from_license:
             licensish = models.build_rule_from_license(licish)
@@ -158,12 +154,9 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         # a clickable text_file path.
 
         data_file = licensish.data_file
-        if not data_file:
-            data_file = licensish.text_file.replace('.LICENSE', '.yml')
-
         result['files'] = [
             f'file://{data_file}',
-            f'file://{licensish.text_file}',
+            f'file://{licensish.text_file()}',
         ]
 
         # This assert will always fail and provide a more detailed failure trace
@@ -196,44 +189,48 @@ def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
             # as they are not included in the standard indexing
             if rule.language != 'en':
                 continue
-            if rule.text_file and os.path.exists(rule.text_file):
-                test_name = (
-                    'test_validate_detect_' +
-                    text.python_safe_name(rule.identifier)
-                )
-                test_method = make_validation_test(
-                    rule=rule,
-                    test_name=test_name,
-                    regen=regen,
-                )
-                setattr(cls, test_name, test_method)
+            test_name = (
+                'test_validate_detect_' +
+                text.python_safe_name(rule.identifier)
+            )
+            test_method = make_validation_test(
+                rule=rule,
+                test_name=test_name,
+                regen=regen,
+            )
+            setattr(cls, test_name, test_method)
 
 
+@pytest.mark.scanvalidate
 class TestValidateLicenseBasic(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanslow
 
 
+@pytest.mark.scanvalidate
 class TestValidateLicenseExtended1(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
+@pytest.mark.scanvalidate
 class TestValidateLicenseExtended2(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
+@pytest.mark.scanvalidate
 class TestValidateLicenseExtended3(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
-
+@pytest.mark.scanvalidate
 class TestValidateLicenseExtended4(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
+@pytest.mark.scanvalidate
 class TestValidateLicenseExtended5(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate

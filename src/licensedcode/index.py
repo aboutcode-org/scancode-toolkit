@@ -49,6 +49,7 @@ TRACE = False or os.environ.get('SCANCODE_DEBUG_LICENSE', False)
 TRACE_APPROX = False
 TRACE_APPROX_CANDIDATES = False
 TRACE_APPROX_MATCHES = False
+TRACE_INDEXING = False or os.environ.get('SCANCODE_DEBUG_LICENSE_INDEX', False)
 TRACE_INDEXING_PERF = False
 TRACE_TOKEN_DOC_FREQ = False
 TRACE_SPDX_LID = False
@@ -63,6 +64,7 @@ if (
     or TRACE_APPROX
     or TRACE_APPROX_CANDIDATES
     or TRACE_APPROX_MATCHES
+    or TRACE_INDEXING
     or TRACE_INDEXING_PERF
     or TRACE_SPDX_LID
 ):
@@ -304,6 +306,10 @@ class LicenseIndex(object):
                 dictionary[sts] = stid
 
         self.rules_by_rid = rules_by_rid = list(rules)
+        if TRACE_INDEXING:
+            for _rid, _rule in enumerate(rules_by_rid):
+                logger_debug('rules_by_rid:', _rid, _rule)
+
         # ensure that rules are sorted
         rules_by_rid.sort()
         len_rules = len(rules_by_rid)
@@ -560,16 +566,12 @@ class LicenseIndex(object):
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
-            dupe_rule_paths = [
-                '\n'.join(
-                    sorted([
-                        ('file://' + rule.text_file)
-                        if rule.text_file
-                        else ('text: ' + rule.stored_text)
-                            for rule in rules])
-                    )
-                for rules in dupe_rules
-            ]
+            dupe_rule_paths = []
+            for rules in dupe_rules:
+                drp = [rule.identifier for rule in rules]
+                drp.sort()
+                dupe_rule_paths.append('\n'.join(drp))
+
             msg = ('Duplicate rules: \n' + '\n\n'.join(dupe_rule_paths))
             raise DuplicateRuleError(msg)
 

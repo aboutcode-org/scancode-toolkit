@@ -24,8 +24,12 @@ class TestMatchExact(FileBasedTesting):
 
     def test_match_freertos(self):
         rule_dir = self.get_test_loc('mach_aho/rtos_exact/')
-        idx = index.LicenseIndex(models.load_rules(rule_dir))
-
+        rules = list(models.load_rules(rules_data_dir=rule_dir))
+        print(rules)
+        idx = index.LicenseIndex(rules=rules)
+        print('###########3')
+        print(idx.dictionary)
+        print('###########3')
         query_loc = self.get_test_loc('mach_aho/rtos_exact/gpl-2.0-freertos.RULE')
 
         qry = query.build_query(location=query_loc, idx=idx)

@@ -35,7 +35,7 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE [[POSSIBILITY OF NEW SUCH]] DAMAGE
         '''
 
-        rule = Rule(stored_text=rule_text, license_expression='test')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='test')
 
         legalese = (
             mini_legalese

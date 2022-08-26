@@ -147,9 +147,7 @@ class ExternalLicensesSource:
                 start = time.time()
 
             try:
-                with io.open(lic.text_file, "w", encoding="utf-8") as tf:
-                    tf.write(text)
-                lic.dump()
+                lic.dump(licenses_data_dir=self.original_dir)
                 licenses.append(lic)
             except:
                 if TRACE:

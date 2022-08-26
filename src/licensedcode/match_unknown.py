@@ -198,7 +198,7 @@ def match_unknowns(
         print('match_unknowns: text', text)
 
     # ... and use this in a synthetic UnknownRule
-    rule = UnknownRule(stored_text=text, length=match_len)
+    rule = UnknownRule(text=text, length=match_len)
 
     # finally craft a LicenseMatch and return
     len_legalese = idx.len_legalese
