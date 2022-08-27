@@ -35,7 +35,6 @@ LICENSE_INDEX_DIR = 'license_index'
 LICENSE_INDEX_FILENAME = 'index_cache'
 LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
 LICENSE_CHECKSUM_FILE = 'scancode_license_index_tree_checksums'
-CACHED_DIRECTORIES_FILENAME = 'cached_directories'
 
 
 @attr.s(slots=True)
@@ -78,7 +77,6 @@ class LicenseCache:
         idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
         create_dir(idx_cache_dir)
         cache_file = os.path.join(idx_cache_dir, LICENSE_INDEX_FILENAME)
-        cached_directories_file = os.path.join(idx_cache_dir, CACHED_DIRECTORIES_FILENAME)
 
         has_cache = os.path.exists(cache_file) and os.path.getsize(cache_file)
 
@@ -87,8 +85,6 @@ class LicenseCache:
             try:
                 # save the list of additional directories included in the cache, or None if the cache does not
                 # include any additional directories
-                with open(cached_directories_file, 'wb') as file:
-                    pickle.dump(additional_directories, file, protocol=PICKLE_PROTOCOL)
                 return load_cache_file(cache_file)
             except Exception as e:
                 # work around some rare Windows quirks
@@ -150,11 +146,6 @@ class LicenseCache:
                 # save the cache as pickle new tree checksum
                 with open(cache_file, 'wb') as fn:
                     pickle.dump(license_cache, fn, protocol=PICKLE_PROTOCOL)
-
-                # save the list of additional directories included in the cache, or None if the cache does not
-                # include any additional directories
-                with open(cached_directories_file, 'wb') as file:
-                    pickle.dump(additional_directories, file, protocol=PICKLE_PROTOCOL)
 
                 return license_cache
 
@@ -376,8 +367,6 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
         # additional_directories is originally a tuple
         additional_directories = list(additional_directories) + get_paths_to_installed_licenses_and_rules()
 
-    if need_cache_rebuild(additional_directories):
-        force = True
     if force or not _LICENSE_CACHE:
         _LICENSE_CACHE = LicenseCache.load_or_build(
             licensedcode_cache_dir=licensedcode_cache_dir,
@@ -388,56 +377,6 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
             timeout=LICENSE_INDEX_LOCK_TIMEOUT,
             additional_directories=additional_directories,
         )
-
-
-def need_cache_rebuild(additional_directories):
-    """
-    Return true if we need to rebuild the index cache.
-    """
-    idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
-    cached_directories_file = os.path.join(idx_cache_dir, CACHED_DIRECTORIES_FILENAME)
-
-    has_cached_directories = os.path.exists(cached_directories_file)
-    should_rebuild_cache = False
-
-    if has_cached_directories:
-        # if we have cached additional directories of licenses, check if those licenses are equal to the additional
-        # directories passed in
-        with open(cached_directories_file, 'rb') as file:
-            # it's possible that pickle.load(file) results in None
-            try:
-                cached_additional_directories = pickle.load(file)
-            except EOFError:
-                cached_additional_directories = set()
-
-        # we need to rebuild the cache if the list of additional directories we passed in is not a subset of
-        # the set of additional directories currently included in the index cache
-        should_rebuild_cache = additional_directories is not None \
-                               and not set(additional_directories).issubset(cached_additional_directories)
-    else:
-        # otherwise, we don't have a file of cached directories. If there are additional directories passed in,
-        # we know we need to make a new cache file.
-        if additional_directories:
-            should_rebuild_cache = True
-    return should_rebuild_cache
-
-
-def load_cache_file(cache_file):
-    """
-    Return a LicenseCache loaded from ``cache_file``.
-    """
-    with open(cache_file, 'rb') as lfc:
-        # Note: weird but read() + loads() is much (twice++???) faster than load()
-        try:
-            return pickle.load(lfc)
-        except Exception as e:
-            msg = (
-                'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
-                f'Please delete "{cache_file}" and retry.\n'
-                'If the problem persists, copy this error message '
-                'and submit a bug report at https://github.com/nexB/scancode-toolkit/issues/'
-            )
-            raise Exception(msg) from e
 
 
 def get_index(force=False, index_all_languages=False, additional_directories=None):

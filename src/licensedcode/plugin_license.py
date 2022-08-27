@@ -11,6 +11,7 @@ import posixpath
 from functools import partial
 
 import attr
+import click
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
@@ -18,7 +19,6 @@ from commoncode.cliutils import SCAN_GROUP
 from commoncode.resource import clean_path
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-import click
 
 from scancode.api import SCANCODE_LICENSEDB_URL
 
@@ -56,7 +56,7 @@ def reindex_licenses(ctx, param, value):
     from licensedcode.cache import get_index
     import click
     click.echo('Rebuilding the license index...')
-    get_index(force=True)
+    get_index(force=True, additional_directories=ctx.params.get("additional_license_directory"))
     click.echo('Done.')
     ctx.exit(0)
 
@@ -141,15 +141,6 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(
-            ('--external-license-directory',),
-            required_options=['license'],
-            multiple=True,
-            type=click.Path(exists=True, readable=True, path_type=str),
-            help='Include additional directories for license detection.',
-            help_group=SCAN_OPTIONS_GROUP,
-        ),
-
-        PluggableCommandLineOption(
             ('--reindex-licenses',),
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
@@ -164,8 +155,18 @@ class LicenseScanner(ScanPlugin):
             help='[EXPERIMENTAL] Rebuild the license index including texts all '
                  'languages (and not only English) and exit.',
             help_group=MISC_GROUP,
-        )
+        ),
 
+        PluggableCommandLineOption(
+            ('--additional-license-directory',),
+            required_options=['reindex_licenses'],
+            multiple=True,
+            type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
+            metavar='DIR',
+            help='Include this directory with additional custom licenses and license rules '
+                 'in the license detection index.',
+            help_group=MISC_GROUP,
+        ),
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -177,8 +178,7 @@ class LicenseScanner(ScanPlugin):
         loaded index.
         """
         from licensedcode.cache import populate_cache
-        additional_directories = kwargs.get('external_license_directory')
-        populate_cache(additional_directories=additional_directories)
+        populate_cache()
 
     def get_scanner(
         self,
@@ -187,7 +187,6 @@ class LicenseScanner(ScanPlugin):
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
         unknown_licenses=False,
-        additional_directories=None,
         **kwargs
     ):
 
@@ -198,7 +197,6 @@ class LicenseScanner(ScanPlugin):
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template,
             unknown_licenses=unknown_licenses,
-            additional_directories=additional_directories,
         )
 
     def process_codebase(self, codebase, unknown_licenses, **kwargs):

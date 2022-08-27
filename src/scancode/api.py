@@ -142,7 +142,6 @@ def get_licenses(
     license_url_template=SCANCODE_LICENSEDB_URL,
     unknown_licenses=False,
     deadline=sys.maxsize,
-    additional_directories=None,
     **kwargs,
 ):
     """
