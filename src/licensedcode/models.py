@@ -822,10 +822,20 @@ def load_licenses_from_multiple_dirs(
     These directory paths do not need to be absolute paths.
     """
     combined_licenses = {}
+    combined_licenses_keys = set()
     for license_dir in license_directories:
         licenses = load_licenses(licenses_data_dir=license_dir, with_deprecated=False)
-        # this syntax for merging is described here: https://stackoverflow.com/a/26853961
-        combined_licenses = {**combined_licenses, **licenses}
+        # check if two dictionaries have duplicate keys
+        licenses_keys = set(licenses.keys())
+        duplicate_keys = combined_licenses_keys.intersection(licenses_keys)
+        if duplicate_keys:
+            message = ['Duplicate licenses found when loading additional licenses.']
+            message.append(', '.join(duplicate_keys))
+            raise ValueError('\n'.join(message))
+        combined_licenses.update(licenses)
+        # we keep combined_licenses_keys and licenses_keys as separate variables so we can avoid calling set()
+        # on the dictionary keys every single iteration
+        combined_licenses_keys.update(licenses_keys)
     return combined_licenses
 
 
