@@ -95,7 +95,6 @@ class LicenseCache:
 
         from licensedcode.models import licenses_data_dir as ldd
         from licensedcode.models import rules_data_dir as rdd
-        from licensedcode.models import load_licenses
         from licensedcode.models import load_licenses_from_multiple_dirs
         from licensedcode.models import get_license_dirs
         from licensedcode.models import validate_additional_license_data
@@ -113,13 +112,10 @@ class LicenseCache:
                 # Here, the cache is either stale or non-existing: we need to
                 # rebuild all cached data (e.g. mostly the index) and cache it
 
-                if additional_directories:
-                    additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
-                    validate_additional_license_data(additional_license_dirs)
-                    combined_directories = [licenses_data_dir] + additional_license_dirs
-                    licenses_db = load_licenses_from_multiple_dirs(license_directories=combined_directories)
-                else:
-                    licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
+                additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
+                validate_additional_license_data(additional_license_dirs)
+                combined_directories = [licenses_data_dir] + additional_license_dirs
+                licenses_db = load_licenses_from_multiple_dirs(license_directories=combined_directories)
 
                 # create a single merged index containing license data from licenses_data_dir
                 # and data from additional directories
@@ -187,24 +183,18 @@ def build_index(
     rules_data_dir = rules_data_dir or rdd
 
     if not licenses_db:
-        if additional_directories:
-            # combine the licenses in these additional directories with the licenses in the original DB
-            additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
-            combined_license_directories = [licenses_data_dir] + additional_license_dirs
-            # generate a single combined license db with all licenses
-            licenses_db = load_licenses_from_multiple_dirs(license_dirs=combined_license_directories)
-        else:
-            licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
+        # combine the licenses in these additional directories with the licenses in the original DB
+        additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
+        combined_license_directories = [licenses_data_dir] + additional_license_dirs
+        # generate a single combined license db with all licenses
+        licenses_db = load_licenses_from_multiple_dirs(license_dirs=combined_license_directories)
 
-    if additional_directories:
-        # if we have additional directories, extract the rules from them
-        additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
-        validate_ignorable_clues(additional_rule_dirs)
-        # then combine the rules in these additional directories with the rules in the original rules directory
-        combined_rule_directories = [rules_data_dir] + additional_rule_dirs
-        rules = get_rules_from_multiple_dirs(licenses_db=licenses_db, rule_directories=combined_rule_directories)
-    else:
-        rules = get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
+    # if we have additional directories, extract the rules from them
+    additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
+    validate_ignorable_clues(additional_rule_dirs)
+    # then combine the rules in these additional directories with the rules in the original rules directory
+    combined_rule_directories = [rules_data_dir] + additional_rule_dirs
+    rules = get_rules_from_multiple_dirs(licenses_db=licenses_db, rule_directories=combined_rule_directories)
 
     legalese = common_license_words
     spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
