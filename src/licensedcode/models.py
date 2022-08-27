@@ -777,8 +777,8 @@ def get_license_dirs(
     additional_dirs,
 ):
     """
-    Takes in a list of additional directories specified during license detection
-    and produces a list of all the subdirectories containing license files.
+    Returns a list of all subdirectories containing license files within the
+    input list of additional directories. These directories do not have to be absolute paths.
     """
     # convert to absolute path in case user passes in a relative path, which messes up building rules from licenses
     return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
@@ -788,8 +788,8 @@ def get_rule_dirs(
     additional_dirs,
 ):
     """
-    Takes in a list of additional directories specified during license detection
-    and produces a list of all the subdirectories containing rule files.
+    Returns a list of all subdirectories containing rule files within the
+    input list of additional directories. These directories do not have to be absolute paths.
     """
     return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
 
@@ -818,8 +818,8 @@ def load_licenses_from_multiple_dirs(
     with_deprecated=False,
 ):
     """
-    Takes in a list of directories containing additional licenses to use in
-    license detection and combines all the licenses into the same mapping.
+    Combines a list of directories containing additional licenses into the same mapping.
+    These directory paths do not need to be absolute paths.
     """
     combined_licenses = {}
     for license_dir in license_directories:
@@ -834,9 +834,9 @@ def get_rules_from_multiple_dirs(
     rule_directories,
 ):
     """
-    Takes in a license database, which is a mapping from key->License objects,
-    and a list of all directories containing rules to use in license detection.
+    Return a mapping of {key: License} built from a list of ``license_directories``.
     Combines all rules together into the same data structure and validates them.
+    These license directories do not need to be absolute paths.
     """
     if rule_directories:
         combined_rules = []
@@ -860,8 +860,8 @@ class InvalidLicense(Exception):
 
 def validate_additional_license_data(additional_directories):
     """
-    Takes in directories of additional licenses and determines whether they are valid.
-    If there are any invalid licenses, raises an exception.
+    Raises an exception if there are any invalid licenses in the directories of
+    additional licenses.
     """
     licenses = load_licenses_from_multiple_dirs(additional_directories)
     errors, _, _ = License.validate(
@@ -880,9 +880,8 @@ def validate_additional_license_data(additional_directories):
 
 def _ignorable_clue_error(rule):
     """
-    Helper method to validate a single rule's ignorable clues.
-    Returns a pair of the result and expected ignorable clues if
-    there is an error. Otherwise, returns None.
+    Return a pair of the result of validating a rule's ignorable clues and expected ignorable clues
+    if there is an error. Otherwise, returns None.
     """
     result = get_ignorables(rule.text_file)
     expected = get_normalized_ignorables(rule)
@@ -900,8 +899,8 @@ def _ignorable_clue_error(rule):
 
 def validate_ignorable_clues(rule_directories):
     """
-    Validates that all expected ignorable clues declared in a Rule
-    are properly detected in the rule text file.
+    Raises an exception if any ignorable clues declared in a Rule are improperly detected
+    in the rule text file.
     """
     combined_rules = []
     for rules_dir in rule_directories:
