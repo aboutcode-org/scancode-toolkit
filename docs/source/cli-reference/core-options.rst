@@ -83,6 +83,57 @@ Comparing Progress Message Options
     ..
         [ToDo] Research and Write Better
 
+``--additional-license-directory`` Options
+----------------------------------------
+
+    .. admonition:: Dependency
+
+        The option ``--additional-license-directory`` requires the option ``-reindex--licenses``.
+
+    The ``--additional-license-directory`` option allows the user to include additional directories
+    of licenses to use in license detection.
+
+    This command only needs to be run once for each set of additional directories; in all subsequent
+    runs of Scancode with the same directories all the licenses in the directories will be cached.
+
+    The directory structure should look something like this::
+
+        licenses/
+        ├── privateLicense1/
+        │   ├── license/
+        │   │   ├── privateLicense1.LICENSE
+        │   │   └── privateLicense1.yml
+        │   └── rule/
+        │       ├── privateLicense1.RULE
+        │       └── privateLicense1.yml
+        └── privateLicense2/
+            ├── license/
+            │   ├── privateLicense2.LICENSE
+            │   └── privateLicense2.yml
+            └── rule/
+                ├── privateLicense2.RULE
+                └── privateLicense2.yml
+
+    Here is an example of reindexing the license cache using the ``--additional-license-directory PATH`` option with a single directory::
+
+        scancode --reindex-licenses --additional-license-directory /home/user/external_licenses/license1
+
+    You can also include multiple directories like so::
+
+        scancode --reindex-licenses --additional-license-directory /home/user/external_licenses/external1 --external-license-directory /home/user/external_licenses/external2
+
+    If you want to continue running scans with ``/home/user/external_licenses/external1`` and ``/home/user/external_licenses/external2``,
+    you can simply run scans after reindexing with those directories and they will be included. ::
+
+        scancode -clpieu --json-pp output.json samples
+
+    However, if you wanted to run a scan with a new set of directories, such as ``home/user/external_licenses/external1``
+    and ``home/user/external_licenses/external3``, you would need to reindex the license index with those directories as parameters. ::
+
+        scancode --additional-license-directory /home/user/external_licenses/external1 --external-license-directory /home/user/external_licenses/external3
+
+    ..
+
 ----
 
 ``--from-json`` Option

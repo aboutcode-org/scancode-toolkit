@@ -14,6 +14,11 @@ All "Core" Scan Options
 --reindex-licenses       Force a check and possible reindexing of the
                          cached license index.
 
+--additional-license-directory PATH
+
+          Include paths to directories containing additional licenses and rules to use
+          in license detection. This can be used multiple times for multiple directories.
+
 --from-json              Load codebase from an existing JSON scan
 
 --max-in-memory INTEGER  Maximum number of files and directories scan
