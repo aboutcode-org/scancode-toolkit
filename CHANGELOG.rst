@@ -31,6 +31,26 @@ License detection:
   as an option.
 
 
+
+v31.1.0 - 2022-08-29
+----------------------------------
+
+This is a minor release with critical bug fixes and minor updates.
+
+- Fix a critical bug in license detection
+- Add a few new licenses and license detection rules
+
+
+v31.0.2 - 2022-08-24
+----------------------------------
+
+This is a minor release with small bug fixes and minor updates.
+
+- Fix minor bug in PyPI package assembly
+- Add a few new licenses and license detection rules
+- Update commoncode
+
+
 v31.0.2 - 2022-08-24
 ----------------------------------
 
