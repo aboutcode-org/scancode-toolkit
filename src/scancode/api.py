@@ -168,7 +168,7 @@ def get_licenses(
     from licensedcode import cache
     from licensedcode.spans import Span
 
-    idx = cache.get_index(additional_directories=additional_directories)
+    idx = cache.get_index()
 
     detected_licenses = []
     detected_expressions = []

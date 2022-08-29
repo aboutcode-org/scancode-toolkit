@@ -56,10 +56,26 @@ def reindex_licenses(ctx, param, value):
     from licensedcode.cache import get_index
     import click
     click.echo('Rebuilding the license index...')
-    get_index(force=True, additional_directories=ctx.params.get("additional_license_directory"))
+    get_index(force=True)
     click.echo('Done.')
     ctx.exit(0)
 
+
+def reindex_licenses_additional(ctx, param, value):
+    """
+    Rebuild and cache the license index using additional directories passed in
+    from command line.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+
+    # TODO: check for temp file configuration and use that for the cache!!!
+    from licensedcode.cache import get_index
+    import click
+    click.echo('Rebuilding the license index with additional directories...')
+    get_index(force=True, additional_directories=value)
+    click.echo('Done.')
+    ctx.exit(0)
 
 def reindex_licenses_all_languages(ctx, param, value):
     """
@@ -163,9 +179,11 @@ class LicenseScanner(ScanPlugin):
             multiple=True,
             type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
             metavar='DIR',
+            callback=reindex_licenses_additional,
             help='Include this directory with additional custom licenses and license rules '
                  'in the license detection index.',
             help_group=MISC_GROUP,
+            is_eager=True,
         ),
     ]
 

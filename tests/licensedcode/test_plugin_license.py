@@ -247,11 +247,17 @@ def test_detection_with_single_external_license_directory():
     test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
     example1_dir = test_env.get_test_loc('example_external_licenses/example1')
     result_file = test_env.get_temp_file('json')
+
+    # first reindex with the example directory
+    run_scan_click([
+        '--additional-license-directory', example1_dir,
+        '--reindex-licenses',
+    ])
+
     args = [
         '--license',
         '--strip-root',
         '--verbose',
-        '--external-license-directory', example1_dir,
         '--json', result_file,
         test_dir,
     ]
@@ -266,12 +272,18 @@ def test_detection_with_multiple_external_license_directories():
     example1_dir = test_env.get_test_loc('example_external_licenses/example1')
     example2_dir = test_env.get_test_loc('example_external_licenses/example2')
     result_file = test_env.get_temp_file('json')
+
+    # first reindex with the example directories
+    run_scan_click([
+        '--additional-license-directory', example1_dir,
+        '--additional-license-directory', example2_dir,
+        '--reindex-licenses',
+    ])
+
     args = [
         '--license',
         '--strip-root',
         '--verbose',
-        '--external-license-directory', example1_dir,
-        '--external-license-directory', example2_dir,
         '--json', result_file,
         test_dir,
     ]

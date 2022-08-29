@@ -35,6 +35,7 @@ LICENSE_INDEX_DIR = 'license_index'
 LICENSE_INDEX_FILENAME = 'index_cache'
 LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
 LICENSE_CHECKSUM_FILE = 'scancode_license_index_tree_checksums'
+CACHED_DIRECTORIES_FILENAME = 'cached_directories'
 
 
 @attr.s(slots=True)
@@ -98,6 +99,7 @@ class LicenseCache:
         from licensedcode.models import load_licenses_from_multiple_dirs
         from licensedcode.models import get_license_dirs
         from licensedcode.models import validate_additional_license_data
+        from licensedcode.models import get_paths_to_installed_licenses_and_rules
         from scancode import lockfile
 
         licenses_data_dir = licenses_data_dir or ldd
@@ -111,6 +113,20 @@ class LicenseCache:
             with lockfile.FileLock(lock_file).locked(timeout=timeout):
                 # Here, the cache is either stale or non-existing: we need to
                 # rebuild all cached data (e.g. mostly the index) and cache it
+
+                # include installed licenses
+                if not additional_directories:
+                    additional_directories = get_paths_to_installed_licenses_and_rules()
+                else:
+                    # additional_directories is originally a tuple
+                    additional_directories = list(additional_directories) + get_paths_to_installed_licenses_and_rules()
+
+                    # persist additional directories as a file so that we can include it in the scancode output as extra info
+                    # only persist when we're generating a new license cache
+                    idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
+                    cached_directories_file = os.path.join(idx_cache_dir, CACHED_DIRECTORIES_FILENAME)
+                    with open(cached_directories_file, 'wb') as file:
+                        pickle.dump(additional_directories, file, protocol=PICKLE_PROTOCOL)
 
                 additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
                 validate_additional_license_data(additional_license_dirs)
@@ -347,15 +363,7 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
     """
     Load or build and cache a LicenseCache. Return None.
     """
-    from licensedcode.models import get_paths_to_installed_licenses_and_rules
     global _LICENSE_CACHE
-
-    # include installed licenses
-    if not additional_directories:
-        additional_directories = get_paths_to_installed_licenses_and_rules()
-    else:
-        # additional_directories is originally a tuple
-        additional_directories = list(additional_directories) + get_paths_to_installed_licenses_and_rules()
 
     if force or not _LICENSE_CACHE:
         _LICENSE_CACHE = LicenseCache.load_or_build(
@@ -367,6 +375,24 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
             timeout=LICENSE_INDEX_LOCK_TIMEOUT,
             additional_directories=additional_directories,
         )
+
+
+def load_cache_file(cache_file):
+    """
+    Return a LicenseCache loaded from ``cache_file``.
+    """
+    with open(cache_file, 'rb') as lfc:
+        # Note: weird but read() + loads() is much (twice++???) faster than load()
+        try:
+            return pickle.load(lfc)
+        except Exception as e:
+            msg = (
+                'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
+                f'Please delete "{cache_file}" and retry.\n'
+                'If the problem persists, copy this error message '
+                'and submit a bug report at https://github.com/nexB/scancode-toolkit/issues/'
+            )
+            raise Exception(msg) from e
 
 
 def get_index(force=False, index_all_languages=False, additional_directories=None):

@@ -114,13 +114,14 @@ Comparing Progress Message Options
                 ├── privateLicense2.RULE
                 └── privateLicense2.yml
 
-    Here is an example of reindexing the license cache using the ``--additional-license-directory PATH`` option with a single directory::
+    Here is an example of reindexing the license cache using the ``--additional-license-directory PATH`` option with a single directory.
+    Note that ``--reindex-licenses`` **must** come after ``--additional-license-directory``::
 
-        scancode --reindex-licenses --additional-license-directory /home/user/external_licenses/license1
+        scancode --additional-license-directory /home/user/external_licenses/license1 --reindex-licenses
 
     You can also include multiple directories like so::
 
-        scancode --reindex-licenses --additional-license-directory /home/user/external_licenses/external1 --external-license-directory /home/user/external_licenses/external2
+        scancode --additional-license-directory /home/user/external_licenses/external1 --additional-license-directory /home/user/external_licenses/external2 --reindex-licenses
 
     If you want to continue running scans with ``/home/user/external_licenses/external1`` and ``/home/user/external_licenses/external2``,
     you can simply run scans after reindexing with those directories and they will be included. ::
@@ -130,7 +131,7 @@ Comparing Progress Message Options
     However, if you wanted to run a scan with a new set of directories, such as ``home/user/external_licenses/external1``
     and ``home/user/external_licenses/external3``, you would need to reindex the license index with those directories as parameters. ::
 
-        scancode --additional-license-directory /home/user/external_licenses/external1 --external-license-directory /home/user/external_licenses/external3
+        scancode --additional-license-directory /home/user/external_licenses/external1 --additional-license-directory /home/user/external_licenses/external3 --reindex-licenses
 
     ..
 

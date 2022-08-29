@@ -861,6 +861,15 @@ def run_scan(
         cle.options = pretty_params or {}
         # useful for debugging
         cle.extra_data['system_environment'] = system_environment = {}
+
+        from licensedcode.cache import CACHED_DIRECTORIES_FILENAME, LICENSE_INDEX_DIR
+        import pickle
+        idx_cache_dir = os.path.join(scancode_config.licensedcode_cache_dir, LICENSE_INDEX_DIR)
+        cached_directories_file = os.path.join(idx_cache_dir, CACHED_DIRECTORIES_FILENAME)
+        with open(cached_directories_file, 'rb') as file:
+            cached_additional_directories = pickle.load(file)
+        cle.extra_data['additional_directories'] = cached_additional_directories
+
         system_environment['operating_system'] = commoncode.system.current_os
         system_environment['cpu_architecture'] = commoncode.system.current_arch
         system_environment['platform'] = platform.platform()

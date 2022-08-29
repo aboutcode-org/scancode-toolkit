@@ -2,15 +2,19 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
+      "tool_version": "31.0.0rc1",
       "options": {
-        "input": "<path>",
-        "--external-license-directory": "<path>",
-        "--json": "<file>",
-        "--license": true,
-        "--strip-root": true
+        "input": [
+          "/home/kevin/code/scancode-toolkit/tests/licensedcode/data/plugin_license/external_licenses/scan"
+        ],
+        "--json-pp": "../temp.json",
+        "--license": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2022-08-29T004949.561867",
+      "end_timestamp": "2022-08-29T004951.423696",
       "output_format_version": "2.0.0",
+      "duration": 1.861854076385498,
       "message": null,
       "errors": [],
       "warnings": [],
@@ -18,18 +22,31 @@
         "system_environment": {
           "operating_system": "linux",
           "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
+          "platform": "Linux-5.15.0-46-generic-x86_64-with-glibc2.29",
+          "platform_version": "#49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 UTC 2022",
+          "python_version": "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
         },
-        "spdx_license_list_version": "3.16",
-        "files_count": 2
+        "additional_directories": [
+          "/home/kevin/code/scancode-toolkit/tests/licensedcode/data/example_external_licenses/example1",
+          "/home/kevin/code/scancode-toolkit/tests/licensedcode/data/example_external_licenses/example2",
+          "/home/kevin/code/scancode-toolkit/venv/lib/python3.8/site-packages/licenses_to_install1"
+        ],
+        "spdx_license_list_version": "3.17",
+        "files_count": 1
       }
     }
   ],
   "files": [
     {
-      "path": "license.txt",
+      "path": "scan",
+      "type": "directory",
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "scan/license.txt",
       "type": "file",
       "licenses": [
         {
@@ -41,7 +58,7 @@
           "is_exception": false,
           "is_unknown": false,
           "owner": "NexB",
-          "homepage_url": "",
+          "homepage_url": null,
           "text_url": "",
           "reference_url": "https://scancode-licensedb.aboutcode.org/example1",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
@@ -79,7 +96,7 @@
           "is_exception": false,
           "is_unknown": false,
           "owner": "NexB",
-          "homepage_url": "",
+          "homepage_url": null,
           "text_url": "",
           "reference_url": "https://scancode-licensedb.aboutcode.org/example2",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.LICENSE",
