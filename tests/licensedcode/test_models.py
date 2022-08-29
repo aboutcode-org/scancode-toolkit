@@ -100,8 +100,8 @@ class TestLicense(FileBasedTesting):
         expected_errors = {
             'GLOBAL': [
                 'Duplicate texts in multiple licenses: apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
-                'Duplicate short name (ignoring case): gpl 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
-                'Duplicate name (ignoring case): gnu general public license 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
+                'Duplicate short name (ignoring case): gpl 1.0 in licenses: gpl-1.0, gpl-1.0-plus',
+                'Duplicate name (ignoring case): gnu general public license 1.0 in licenses: gpl-1.0, gpl-1.0-plus'],
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',

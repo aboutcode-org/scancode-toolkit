@@ -642,7 +642,7 @@ class License:
                 continue
             errors['GLOBAL'].append(
                 f'Duplicate short name (ignoring case): {short_name} in licenses: ' +
-                ', '.join(l.key for l in licenses)
+                ', '.join(sorted(l.key for l in licenses))
             )
 
         # global name dedupe
@@ -651,7 +651,7 @@ class License:
                 continue
             errors['GLOBAL'].append(
                 f'Duplicate name (ignoring case): {name} in licenses: ' +
-                ', '.join(l.key for l in licenses)
+                ', '.join(sorted(l.key for l in licenses))
             )
 
         errors = {k: v for k, v in errors.items() if v}
