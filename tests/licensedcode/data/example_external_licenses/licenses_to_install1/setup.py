@@ -39,8 +39,6 @@ setup(
     ],
     install_requires=[
         'scancode-toolkit',
-        'wheel',
-        'pytest',
     ],
     entry_points={
         'scancode_location_provider': [
