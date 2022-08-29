@@ -55,8 +55,6 @@ documenting a program's options. For example:
 
 .. include::  /rst_snippets/note_snippets/basic_clpieu.rst
 
-`
-
 --generated                  Classify automatically generated code files with a flag.
 
 --max-email INT              Report only up to INT emails found in a
