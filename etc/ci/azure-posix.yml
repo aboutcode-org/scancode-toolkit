@@ -4,6 +4,9 @@ parameters:
     python_versions: []
     test_suites: {}
     python_architecture: x64
+    install_packages: |
+        venv/bin/python3 -m pip install --upgrade pip
+        venv/bin/python3 -m pip install tests/licensedcode/data/example_external_licenses/licenses_to_install1
 
 jobs:
     - job: ${{ parameters.job_name }}
@@ -34,6 +37,9 @@ jobs:
                     echo "python${{ pyver }}" > PYTHON_EXECUTABLE
                     ./configure --clean && ./configure --dev
                 displayName: '${{ pyver }} - Configure'
+
+              - script: ${{ parameters.install_packages }}
+                displayName: '${{ pyver }} - Install license'
 
               - script: $(test_suite)
                 displayName: '${{ pyver }} - $(test_suite_label) on ${{ parameters.job_name }}'
