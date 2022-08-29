@@ -1570,7 +1570,7 @@ def add_unknown_matches(name, text):
 
     unknown_rule = UnknownRule(
         license_expression=expression_str,
-        stored_text=license_text,
+        text=license_text,
         length=match_len,
     )
 

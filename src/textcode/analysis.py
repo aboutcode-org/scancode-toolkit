@@ -14,12 +14,12 @@ import re
 import unicodedata
 
 import chardet
+import typecode
 
 from textcode import pdf
 from textcode import markup
 from textcode import sfdb
 from textcode import strings
-import typecode
 
 """
 Utilities to analyze text. Files are the input.
@@ -66,7 +66,7 @@ def numbered_text_lines(
     markup and cleanup this markup.
 
     If `plain_text` is True treat the file as a plain text file and do not
-    attempt to detect its type and extract it's content with special procedures.
+    attempt to detect its type and extract its content with special procedures.
     This is used mostly when loading license texts and rules.
 
     Note: For testing or building from strings, location can be a is a list of
@@ -115,34 +115,42 @@ def numbered_text_lines(
     # lightweight markup stripping support
     if demarkup and markup.is_markup(location):
         try:
-            lines = list(enumerate(markup.demarkup(location), start_line))
+            numbered_lines = list(enumerate(markup.demarkup(location), start_line))
             if TRACE:
                 logger_debug('numbered_text_lines:', 'demarkup')
-            return lines
+            return numbered_lines
         except:
             # try again later with as plain text
             pass
 
     if T.is_js_map:
         try:
-            lines = list(enumerate(js_map_sources_lines(location), start_line))
+            numbered_lines = list(enumerate(js_map_sources_lines(location), start_line))
             if TRACE:
                 logger_debug('numbered_text_lines:', 'js_map')
-            return lines
+            return numbered_lines
         except:
             # try again later with as plain text otherwise
             pass
 
     if T.is_text:
-        numbered_lines = enumerate(unicode_text_lines(location), start_line)
+        lines = unicode_text_lines(location=location, decrlf=is_source(location))
+        numbered_lines = enumerate(lines, start_line)
+
         # text with very long lines such minified JS, JS map files or large JSON
-        if (not location.endswith('package.json')
-            and (T.is_text_with_long_lines or T.is_compact_js
-              or T.filetype_file == 'data' or 'locale' in location)):
+        if (
+            not location.endswith('package.json')
+            and (
+                T.is_text_with_long_lines or T.is_compact_js
+                or T.filetype_file == 'data' or 'locale' in location
+            )
+        ):
 
             numbered_lines = break_numbered_unicode_text_lines(numbered_lines)
+
             if TRACE:
                 logger_debug('numbered_text_lines:', 'break_numbered_unicode_text_lines')
+
         return numbered_lines
 
     # TODO: handle Office-like documents, RTF, etc
@@ -171,7 +179,7 @@ def unicode_text_lines_from_binary(location):
     T = typecode.get_type(location)
     if T.contains_text:
         for line in strings.strings_from_file(location):
-            yield line
+            yield remove_verbatim_cr_lf_tab_chars(line)
 
 
 def unicode_text_lines_from_pdf(location):
@@ -228,8 +236,11 @@ def js_map_sources_lines(location):
         content = json.load(jsm)
         sources = content.get('sourcesContent', [])
         for entry in sources:
+            entry = replace_verbatim_cr_lf_chars(entry)
             for line in entry.splitlines():
-                yield line
+                l = remove_verbatim_cr_lf_tab_chars(line)
+                print(repr(l), l)
+                yield l
 
 
 def as_unicode(line):
@@ -285,26 +296,124 @@ def remove_verbatim_cr_lf_tab_chars(s):
     Return a string replacing by a space any verbatim but escaped line endings
     and tabs (such as a literal \n or \r \t).
     """
-    if not s:
-        return s
     return s.replace('\\r', ' ').replace('\\n', ' ').replace('\\t', ' ')
 
 
-def unicode_text_lines(location):
+def replace_verbatim_cr_lf_chars(s):
     """
-    Return an iterable over unicode text lines from a file at `location` if it
-    contains text. Open the file as binary with universal new lines then try to
-    decode each line as Unicode.
+    Return a string replacing by a LF any verbatim but escaped line endings
+    and tabs (such as a literal \n or \r.
     """
+    return (s
+        .replace('\\\\r\\\\n', '\n')
+        .replace('\\r\\n', '\n')
+        .replace('\\\\r', '\n')
+        .replace('\\\\n', '\n')
+        .replace('\\r', '\n')
+        .replace('\\n', '\n')
+    )
+
+
+def unicode_text_lines(location, decrlf=False):
+    """
+    Yield unicode text lines from a file at ``location`` if it
+    contains text.
+
+    Open the file as binary then try to decode each line as Unicode.
+    Remove verbatim, escaped CR, LF and tabs if ``decrlf`` is True.
+    """
+    lines = _unicode_text_lines(location)
+    if decrlf:
+        return map(remove_verbatim_cr_lf_tab_chars, lines)
+    else:
+        return lines
+
+
+def _unicode_text_lines(location):
     with open(location, 'rb') as f:
         for line in f.read().splitlines(True):
-            yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
+            yield as_unicode(line)
 
 
-def unicode_text(location):
+def unicode_text(location, decrlf=False):
     """
     Return a string guaranteed to be unicode from the content of the file at
     location. The whole file content is returned at once, which may be a
     problem for very large files.
     """
-    return u' '.join(unicode_text_lines(location))
+    return u' '.join(unicode_text_lines(location, decrlf=decrlf))
+
+
+def is_source(location):
+    """
+    Return True if the file at location is source code, based on its file
+    extension
+    """
+    return location.endswith((
+        '.ada',
+        '.adb',
+        '.asm',
+        '.asp',
+        '.aj',
+        '.bas',
+        '.bat',
+        '.c',
+        '.c++',
+        '.cc',
+        '.clj',
+        '.cob',
+        '.cpp',
+        '.cs',
+        '.csh',
+        '.csx',
+        '.cxx',
+        '.d',
+        '.e',
+        '.el',
+        '.f',
+        '.fs',
+        '.f77',
+        '.f90',
+        '.for',
+        '.fth',
+        '.ftn',
+        '.go',
+        '.h',
+        '.hh',
+        '.hpp',
+        '.hs',
+        '.html',
+        '.htm',
+        '.hxx',
+        '.java',
+        '.js',
+        '.jsx',
+        '.jsp',
+        '.ksh',
+        '.kt',
+        '.lisp',
+        '.lua',
+        '.m',
+        '.m4',
+        '.nim',
+        '.pas',
+        '.php',
+        '.pl',
+        '.pp',
+        '.ps1',
+        '.py',
+        '.r',
+        '.rb',
+        '.ruby',
+        '.rs',
+        '.s',
+        '.scala',
+        '.sh',
+        '.swift',
+        '.ts',
+        '.vhdl',
+        '.verilog',
+        '.vb',
+        '.groovy',
+        '.po',
+    ))

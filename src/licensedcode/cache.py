@@ -169,7 +169,7 @@ def build_index(
     spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
     license_tokens = set(get_license_tokens())
 
-    # only skip licenses to be indexed 
+    # only skip licenses to be indexed
     if not index_all_languages:
         rules = (r for r in rules if r.language == 'en')
 

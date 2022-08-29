@@ -11,10 +11,12 @@ import os
 
 import pytest
 
+from commoncode import fileutils
 from commoncode.testcase import FileBasedTesting
 from licensedcode import index
 from licensedcode import match_seq
 from licensedcode import models
+from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
@@ -31,12 +33,21 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 class IndexTesting(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def get_test_rules(self, base, subset=None):
-        base = self.get_test_loc(base)
-        test_files = sorted(os.listdir(base))
-        if subset:
-            test_files = [t for t in test_files if t in subset]
-        return [models.Rule(text_file=os.path.join(base, license_key), license_expression=license_key) for license_key in test_files]
+    def get_test_rules(self, rule_data_dir):
+        """
+        Return a list of simple Rules built from plain text files.
+        """
+        rule_data_dir = self.get_test_loc(rule_data_dir)
+        text_files = sorted(os.listdir(rule_data_dir))
+        rules = []
+        for text_file in text_files:
+            expr = fileutils.file_base_name(text_file)
+            rule = models.Rule._from_text_file_and_expression(
+                text_file=os.path.join(rule_data_dir, text_file),
+                license_expression=expr,
+            )
+            rules.append(rule)
+        return rules
 
 
 class TestIndexing(IndexTesting):
@@ -57,7 +68,7 @@ class TestIndexing(IndexTesting):
             (u'the lgpl', (2, 0, 2, 0)),
         ]
         idx = MiniLicenseIndex()
-        rules = [models.Rule(stored_text=t[0]) for t in test_rules]
+        rules = [models.Rule._from_text_and_expression(text=t[0]) for t in test_rules]
         idx._add_rules(rules, _legalese=mini_legalese,)
 
         assert idx.len_legalese == 40
@@ -111,8 +122,10 @@ class TestIndexing(IndexTesting):
         idx = MiniLicenseIndex()
         rules = []
         for key in keys:
-            rules.append(models.Rule(
-                text_file=os.path.join(base, key), license_expression='gpl-2.0'))
+            rules.append(models.Rule._from_text_file_and_expression(
+                text_file=os.path.join(base, key),
+                license_expression='gpl-2.0',
+            ))
 
         idx._add_rules(rules, _legalese=mini_legalese)
 
@@ -175,7 +188,8 @@ class TestIndexing(IndexTesting):
 
         htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in idx.msets_by_rid]
-        assert htmset == expected_msets_by_rid
+
+        assert sorted([sorted(kv.items()) for kv in htmset]) == sorted([sorted(kv.items()) for kv in expected_msets_by_rid])
 
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
@@ -198,9 +212,7 @@ class TestIndexing(IndexTesting):
         lics_dir = self.get_test_loc('index/duplicate-key-phrases/licenses')
         rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
         try:
-            idx = index.LicenseIndex(rules)
-            for rid, tids in enumerate(idx.tids_by_rid):
-                print(idx.rules_by_rid[rid].rid, repr(" ".join(idx.tokens_by_tid[t] for t in tids)))
+            index.LicenseIndex(rules)
             raise Exception("Exception not raised for duplicated rules")
         except index.DuplicateRuleError as e:
             assert str(e).startswith('Duplicate rules')
@@ -211,7 +223,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = MiniLicenseIndex([models.Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = MiniLicenseIndex([models.Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
@@ -229,10 +241,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert match.ispan == Span(0, 13)
 
     def test_match_exact_from_string_twice_with_repeated_text(self):
-        _stored_text = u'licensed under the GPL, licensed under the GPL'
+        _text = u'licensed under the GPL, licensed under the GPL'
         #                0    1   2   3         4      5   6   7
         license_expression = 'tst'
-        rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
+        rule = models.Rule(license_expression=license_expression, text=_text)
 
         idx = MiniLicenseIndex([rule])
         querys = u'Hi licensed under the GPL, licensed under the GPL yes.'
@@ -260,9 +272,9 @@ class TestMatchNoTemplates(IndexTesting):
         assert itext == u'licensed under the gpl licensed under the gpl'
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
-        _stored_text = u'licensed under the GPL, licensed under the GPL'
+        _text = u'licensed under the GPL, licensed under the GPL'
         license_expression = 'tst'
-        rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
+        rule = models.Rule(license_expression=license_expression, text=_text)
 
         idx = MiniLicenseIndex([rule])
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
@@ -302,11 +314,11 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_return_correct_offsets(self):
         # notes: A is a stopword. This and that are not
-        _stored_text = u'This GPL. A MIT. That LGPL.'
+        _text = u'This GPL. A MIT. That LGPL.'
         #                0    1    2 3    4    5
 
         license_expression = 'tst'
-        rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
+        rule = models.Rule(license_expression=license_expression, text=_text)
         idx = MiniLicenseIndex([rule])
         querys = u'some junk. this GPL. A MIT. that LGPL.'
         #          0    1     2    3    4 5    6    7
@@ -362,7 +374,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Goodbye
 No part of match        '''
         result = idx.match(query_string=querys)
-        print('here3')
         assert len(result) == 1
         match = result[0]
         assert match.matcher == match_seq.MATCH_SEQ
@@ -437,11 +448,12 @@ No part of match        '''
         # a rule tokens seq. We may still skip that, but we capture a large
         # match anyway.
 
-        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'),
+        rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'),
                            license_expression='test')
-        legalese = (
-            mini_legalese
-            | set(['permission', 'written', 'registered', 'derived', 'damage', 'due']))
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['permission', 'written', 'registered', 'derived', 'damage', 'due'])
+        )
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         query_loc = self.get_test_loc('index/templates/query.txt')
@@ -539,10 +551,10 @@ No part of match        '''
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
         from licensedcode_test_utils import query_tokens_with_unknowns  # NOQA
 
-        _stored_text = 'copyright reserved mit is license, copyright reserved mit is license'
+        _text = 'copyright reserved mit is license, copyright reserved mit is license'
         #               0         1        2   3  4        5         6        7   8  9
         license_expression = 'tst'
-        rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
+        rule = models.Rule(license_expression=license_expression, text=_text)
         idx = MiniLicenseIndex([rule])
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'
