@@ -83,8 +83,8 @@ Comparing Progress Message Options
     ..
         [ToDo] Research and Write Better
 
-``--additional-license-directory`` Options
-----------------------------------------
+``--additional-license-directory`` Option
+-----------------------------------------
 
     .. admonition:: Dependency
 
