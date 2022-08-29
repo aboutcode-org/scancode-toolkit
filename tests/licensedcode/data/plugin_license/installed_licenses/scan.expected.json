@@ -45,7 +45,7 @@
       "scan_errors": []
     },
     {
-      "path": "scan/license.txt",
+      "path": "license.txt",
       "type": "file",
       "licenses": [
         {
