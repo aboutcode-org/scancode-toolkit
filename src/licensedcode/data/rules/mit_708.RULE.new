@@ -1,5 +1,10 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+licensed under the terms of the MIT license.
+See the file COPYING in the top directory.

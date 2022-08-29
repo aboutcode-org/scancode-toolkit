@@ -1,3 +1,12 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 minimum_coverage: 90
+---
+
+License: GPL-any
+    # You may freely redistribute, use and modify this software under the terms
+    # of the GNU General Public License.
+    .
+    On Debian systems, the complete text of the GNU General Public License
+    can be found in file "/usr/share/common-licenses/GPL".

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in openzfs
+---
+
+a non-GPL symbol with the upstream community

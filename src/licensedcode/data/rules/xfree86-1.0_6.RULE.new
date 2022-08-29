@@ -1,3 +1,7 @@
+---
 license_expression: xfree86-1.0
 is_license_notice: yes
 relevance: 100
+---
+
+These fonts are redistributable under the standard X11/XFree86 license.

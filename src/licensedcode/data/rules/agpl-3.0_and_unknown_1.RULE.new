@@ -1,6 +1,10 @@
+---
 license_expression: agpl-3.0 AND unknown
 is_license_tag: yes
 relevance: 100
 notes: commercial use right are not clear
 ignorable_urls:
     - http://introjs.com/
+---
+
+GNU AGPL v3.0 : intro.js (if you commercial use, pay money / http://introjs.com/ )

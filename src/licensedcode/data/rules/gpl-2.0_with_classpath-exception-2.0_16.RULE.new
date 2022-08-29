@@ -1,4 +1,9 @@
+---
 license_expression: gpl-2.0 WITH classpath-exception-2.0
 is_license_notice: yes
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
+---
+
+is licensed under the GPL v2. See `/usr/share/common-licenses/GPL-2'.
+  The exception is: "CLASSPATH" EXCEPTION TO THE GPL.

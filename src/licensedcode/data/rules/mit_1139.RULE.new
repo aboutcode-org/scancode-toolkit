@@ -1,5 +1,12 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://opensource.org/licenses/MIT
+---
+
+<licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>

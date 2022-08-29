@@ -1,3 +1,9 @@
+---
 license_expression: openldap-2.8
 is_license_notice: yes
 relevance: 99
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted only as authorized by the OpenLDAP
+Public License.

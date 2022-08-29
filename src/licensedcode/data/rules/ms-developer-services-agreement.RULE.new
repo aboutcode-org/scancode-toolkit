@@ -1,6 +1,12 @@
+---
 license_expression: ms-developer-services-agreement
 is_license_notice: yes
 relevance: 80
 minimum_coverage: 70
 ignorable_urls:
     - http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL
+---
+
+likely to be covered by the MLPL as found at:
+   <http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL>.
+For use only on Windows operating systems.

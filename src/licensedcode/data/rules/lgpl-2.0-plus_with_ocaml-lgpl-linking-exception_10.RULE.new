@@ -1,4 +1,13 @@
+---
 license_expression: lgpl-2.0-plus WITH ocaml-lgpl-linking-exception
 is_license_notice: yes
 referenced_filenames:
     - COPYING
+---
+
+This library is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as      
+published by the Free Software Foundation, either version 3 of the  
+License, or (at your option) any later version.  A special linking  
+exception to the GNU Lesser General Public License applies to this  
+library, see the COPYING file for more information.

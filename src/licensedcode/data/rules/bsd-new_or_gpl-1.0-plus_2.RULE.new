@@ -1,3 +1,7 @@
+---
 license_expression: bsd-new OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 90
+---
+
+may safely be consumed by a BSD or GPL license.

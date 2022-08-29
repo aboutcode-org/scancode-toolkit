@@ -1,4 +1,11 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 ignorable_urls:
     - https://www.apache.org/licenses/
+---
+
+Currently it has  been re-released under the Apache License, Version 2.0.
+
+Details of the Apache License, Version 2.0 can be found at:
+https://www.apache.org/licenses/

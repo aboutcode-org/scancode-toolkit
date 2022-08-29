@@ -1,3 +1,7 @@
+---
 license_expression: agpl-3.0 AND other-permissive
 is_license_notice: yes
 relevance: 100
+---
+
+Linking to the official server matching engine falls under copyleft AGPL, this library provides minimal matching capability with permissive license

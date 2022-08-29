@@ -1,4 +1,11 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 referenced_filenames:
     - LICENSE
+---
+
+License
+-------
+
+The  package is licensed under the Apache License 2.0. Please see the LICENSE file for details.

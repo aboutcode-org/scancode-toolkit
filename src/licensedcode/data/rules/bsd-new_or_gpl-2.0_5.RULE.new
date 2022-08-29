@@ -1,3 +1,12 @@
+---
 license_expression: bsd-new OR gpl-2.0
 is_license_notice: yes
 minimum_coverage: 90
+---
+
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+
+Alternatively, this software may be distributed under the terms of the
+GNU General Public License ("GPL") version 2 as published by the Free
+Software Foundation.

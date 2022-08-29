@@ -1,3 +1,4 @@
+---
 license_expression: bsd-simplified
 is_license_tag: yes
 relevance: 100
@@ -5,3 +6,9 @@ referenced_filenames:
     - BSDL
     - COPYING
     - LEGAL
+---
+
+license "BSD-2-Clause"
+license_file "BSDL"
+license_file "COPYING"
+license_file "LEGAL"

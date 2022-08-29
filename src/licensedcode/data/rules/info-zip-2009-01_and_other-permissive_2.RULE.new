@@ -1,6 +1,17 @@
+---
 license_expression: info-zip-2009-01 AND other-permissive
 is_license_text: yes
 relevance: 100
 minimum_coverage: 99
 notes: Seen in Info-Zip with a notice Copyright (c) 1994 Greg Roelofs. Relicensed to Info-Zip
     terms per Info-Zip documentation
+---
+
+Permission is granted to any individual/institution/corporate
+entity to use, copy, redistribute or modify this software for
+any purpose whatsoever, subject to the conditions noted in the
+Frequently Asked Questions section below, plus one additional
+condition:  namely, that my name not be removed from the source
+code.  (Other names may, of course, be added as modifications
+are made.)  Corporate legal staff (like at IBM :-) ) who have
+problems understanding this can contact me through Zip-Bugs...

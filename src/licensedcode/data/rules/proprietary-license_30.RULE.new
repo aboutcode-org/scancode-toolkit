@@ -1,5 +1,9 @@
+---
 license_expression: proprietary-license
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://www.grapecity.com/en/licensing/grapecity/
+---
+
+https://www.grapecity.com/en/licensing/grapecity/

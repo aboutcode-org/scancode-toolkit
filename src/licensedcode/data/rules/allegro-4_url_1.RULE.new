@@ -1,5 +1,9 @@
+---
 license_expression: allegro-4
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/giftware
+---
+
+https://spdx.org/licenses/giftware

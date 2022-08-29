@@ -1,4 +1,8 @@
+---
 license_expression: artistic-2.0
 is_license_reference: yes
 relevance: 100
 notes: Short "Artistic License"
+---
+
+the "Artistic License" which comes with Perl.

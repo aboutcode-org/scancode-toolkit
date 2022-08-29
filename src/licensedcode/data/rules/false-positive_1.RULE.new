@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: A comment about licenses.
+---
+
+Allowed licenses: The use of licenses which do not allow derivatives or redistribution is not permitted

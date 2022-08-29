@@ -1,5 +1,9 @@
+---
 license_expression: boost-1.0 OR mit
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://rapidxml.sourceforge.net/license.txt
+---
+
+http://rapidxml.sourceforge.net/license.txt

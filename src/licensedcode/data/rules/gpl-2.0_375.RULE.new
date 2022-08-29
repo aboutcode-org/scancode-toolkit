@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0
 is_license_reference: yes
 relevance: 90
@@ -5,3 +6,6 @@ minimum_coverage: 100
 referenced_filenames:
     - reiserfs/README
 notes: the license filename is unique an in from the Linux kernel GPL-2.0
+---
+
+licensing governed by reiserfs/README

@@ -1,5 +1,9 @@
+---
 license_expression: dom4j
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://classworlds.codehaus.org/license.html
+---
+
+http://classworlds.codehaus.org/license.html

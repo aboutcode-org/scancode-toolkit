@@ -1,5 +1,11 @@
+---
 license_expression: ruby
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENCE
+---
+
+== Licence
+  This program is licensed under the same licence as Ruby.
+  (See the file 'LICENCE'.)

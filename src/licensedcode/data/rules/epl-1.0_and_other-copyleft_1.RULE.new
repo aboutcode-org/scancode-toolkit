@@ -1,3 +1,12 @@
+---
 license_expression: epl-1.0 AND other-copyleft
 is_license_notice: yes
 relevance: 99
+---
+
+To the extent any open source components are licensed under the EPL and/or
+other similar licenses that require the source code and/or modifications to
+source code to be made available (as would be noted above), you may obtain a
+copy of the source code corresponding to the binaries for such open source
+components and modifications thereto, if any, (the "Source Files"), by
+downloading the Source Files

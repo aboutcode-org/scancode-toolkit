@@ -1,5 +1,9 @@
+---
 license_expression: gpl-3.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+is available under the terms of the GPL-3.0. See `COPYING` for details.

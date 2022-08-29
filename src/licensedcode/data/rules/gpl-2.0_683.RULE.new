@@ -1,3 +1,10 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 90
+---
+
+This file is part of  drivers, and is distributed
+under the same license. Auto-loading of 
+Some of these names and comments originated from the Crynwr
+packet drivers, which are distributed under the GPL. */

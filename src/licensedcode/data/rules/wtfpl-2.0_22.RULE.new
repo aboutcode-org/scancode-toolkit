@@ -1,5 +1,9 @@
+---
 license_expression: wtfpl-2.0
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://www.wtfpl.net/about
+---
+
+`WTFPL` - [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/)

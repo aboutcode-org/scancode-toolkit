@@ -1,2 +1,8 @@
+---
 license_expression: uoi-ncsa
 is_license_notice: yes
+---
+
+GCC is licensed under the GPL license.   "features.html#license">
+clang uses a BSD license,  which allows it to be embedded in
+software that is not GPL-licensed.

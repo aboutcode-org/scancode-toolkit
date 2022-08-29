@@ -1,5 +1,10 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.md
+---
+
+The software in this package is published under the terms of the Commercial  Free Software license V.1, a copy of which has been included with this
+distribution in the LICENSE.md file.

@@ -1,3 +1,9 @@
+---
 license_expression: public-domain AND other-permissive AND other-copyleft AND proprietary-license
 is_license_notice: yes
 relevance: 100
+---
+
+ Each package in SLIB must either be in the public domain, or come
+with a statement of terms permitting users to copy, redistribute and
+modify it.

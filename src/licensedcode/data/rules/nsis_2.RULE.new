@@ -1,5 +1,13 @@
+---
 license_expression: zlib AND bzip2-libbzip-2010 AND cpl-1.0 AND lzma-cpl-exception
 is_license_notice: yes
 notes: complex NSIS notices, not a choice. Found in Tomcat
 ignorable_urls:
     - http://nsis.sourceforge.net/
+---
+
+The Windows Installer is built with the Nullsoft
+Scriptable Install System (NSIS), which is
+open source software.  The original software and
+related information is available at
+http://nsis.sourceforge.net/.

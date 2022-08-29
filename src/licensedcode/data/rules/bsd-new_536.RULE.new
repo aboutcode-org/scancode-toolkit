@@ -1,5 +1,11 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
-relevance: 100 
+relevance: 100
 ignorable_urls:
     - https://developers.google.com/open-source/licenses/bsd
+---
+
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file or at
+https://developers.google.com/open-source/licenses/bsd

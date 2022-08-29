@@ -1,3 +1,16 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 notes: https://github.com/bidorbuy/magento/blob/59f40b6ccda69cac2c103339ffd21d7dc32f5735/lib/Bidorbuy/vendor/com.extremeidea.bidorbuy/storeintegrator-core/core/http/Request.php#L10
+---
+
+* This software is the proprietary information of 
+     *
+     * All Rights Reserved.
+     * Modification, redistribution and use in source and binary forms, with or
+     * without modification are not permitted without prior written approval by the
+     * copyright holder.
+
+     * Modification, redistribution and use in source and binary forms, with or
+     * without modification are not permitted without prior written approval by the
+     * copyright holder.

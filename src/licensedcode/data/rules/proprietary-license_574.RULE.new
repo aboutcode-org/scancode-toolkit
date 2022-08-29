@@ -1,3 +1,4 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 relevance: 100
@@ -15,3 +16,9 @@ notes: |
     "He says that he thought that whoever contacted him understood that
      he has no objection to the Info-ZIP group's inclusion of his code.
      His primary concern is that it remain freely distributable, he said."
+---
+
+Do not distribute modified versions without my permission.
+Do not remove or alter this notice or any other copyright notice.
+If you use this in your own program you must distribute source code.
+Do not use any of this in a commercial product.

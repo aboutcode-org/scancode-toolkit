@@ -1,3 +1,4 @@
+---
 license_expression: boost-1.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,8 @@ referenced_filenames:
     - LICENSE_1_0.txt
 ignorable_urls:
     - https://www.boost.org/LICENSE_1_0.txt
+---
+
+Distributed under the Boost Software License, Version 1.0.
+  (See accompanying file LICENSE_1_0.txt or copy at
+  https://www.boost.org/LICENSE_1_0.txt)

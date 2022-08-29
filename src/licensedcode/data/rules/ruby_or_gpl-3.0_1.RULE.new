@@ -1,3 +1,8 @@
+---
 license_expression: ruby OR gpl-3.0
 is_license_notice: yes
 notes: from https://bogomips.org/unicorn.git/plain/lib/unicorn/app/old_rails/static.rb
+---
+
+# You can redistribute it and/or modify it under the same terms as Ruby 1.8 or
+# the GPLv3

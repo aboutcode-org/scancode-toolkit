@@ -1,6 +1,11 @@
+---
 license_expression: x11-bitstream
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 99
 ignorable_urls:
     - http://xorg.freedesktop.org/releases/individual/font/
+---
+
+This package contains the font-bitstream-type1 tarball downloaded from
+http://xorg.freedesktop.org/releases/individual/font/

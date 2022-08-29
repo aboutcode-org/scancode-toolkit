@@ -1,6 +1,10 @@
+---
 license_expression: ofl-1.1
 is_license_notice: yes
 relevance: 100
 notes: Seen in https://github.com/asciidoctor/asciidoctor-pdf/blob/main/NOTICE.adoc
 ignorable_urls:
     - http://scripts.sil.org/OFL
+---
+
+The font is licensed under the SIL Open Font 1.1 License (OFL). You may obtain a copy of the license at: http://scripts.sil.org/OFL

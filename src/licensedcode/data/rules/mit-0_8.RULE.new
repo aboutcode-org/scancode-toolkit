@@ -1,5 +1,10 @@
+---
 license_expression: mit-0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+License
+This library is licensed under the MIT-0 License. See the LICENSE file.

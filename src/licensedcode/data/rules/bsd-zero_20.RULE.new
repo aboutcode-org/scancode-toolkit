@@ -1,5 +1,9 @@
+---
 license_expression: bsd-zero
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/0BSD
+---
+
+LICENSE {{0BSD}} https://spdx.org/licenses/0BSD

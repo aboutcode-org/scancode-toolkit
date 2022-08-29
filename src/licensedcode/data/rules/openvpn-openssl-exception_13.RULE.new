@@ -1,5 +1,9 @@
+---
 license_expression: openvpn-openssl-exception
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/openvpn-openssl-exception
+---
+
+{{openvpn-openssl-exception}} https://spdx.org/licenses/openvpn-openssl-exception

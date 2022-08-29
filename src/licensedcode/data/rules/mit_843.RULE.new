@@ -1,5 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+License
+
+This program is made available under the MIT License, a copy of which can be
+found in the LICENSE file.

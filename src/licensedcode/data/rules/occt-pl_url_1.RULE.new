@@ -1,5 +1,9 @@
+---
 license_expression: occt-pl
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/occt-pl
+---
+
+https://spdx.org/licenses/occt-pl

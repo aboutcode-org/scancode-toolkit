@@ -1,2 +1,13 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+qr{
+   GPL|
+   GPL\ v2|
+   GPL\ and\ additional\ rights|
+   Dual\ BSD/GPL|
+   Dual\ MIT/GPL|
+   Dual\ MPL/GPL|
+   Proprietary

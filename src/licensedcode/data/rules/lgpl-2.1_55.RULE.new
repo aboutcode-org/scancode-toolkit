@@ -1,5 +1,14 @@
+---
 license_expression: lgpl-2.1
 is_license_notice: yes
 ignorable_urls:
     - http://www.gnu.org/copyleft/lgpl.html
     - http://www.opensource.org/licenses/lgpl-license.html
+---
+
+The code contained herein is licensed under the GNU Lesser General
+Public License.  You may obtain a copy of the GNU Lesser General
+Public License Version 2.1 or later at the following locations:
+
+http://www.opensource.org/licenses/lgpl-license.html
+http://www.gnu.org/copyleft/lgpl.html

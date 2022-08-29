@@ -1,6 +1,15 @@
+---
 license_expression: lgpl-2.1 WITH broadcom-linking-exception-2.0
 is_license_notice: yes
 minimum_coverage: 99
 referenced_filenames:
     - COPYING.FPC
 notes: found in the freepascal compiler
+---
+
+    See the file COPYING.FPC, included in this distribution,
+    for details about the copyright.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

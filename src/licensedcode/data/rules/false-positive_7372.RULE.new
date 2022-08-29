@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Note a license, but a comment about licenses.
+---
+
+For `AutoIt <http://www.autoitscript.com/site/autoit/>`_ files.

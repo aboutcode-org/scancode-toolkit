@@ -1,5 +1,15 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.html
+---
+
+<licenses>
+    <license>
+      <name>{{Berkeley Software Distribution}} (BSD) License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

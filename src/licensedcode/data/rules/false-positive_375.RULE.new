@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: notes about a dependency license
+---
+
+python-pyside which
+# provides LGPL-licensed Python bindings for Qt

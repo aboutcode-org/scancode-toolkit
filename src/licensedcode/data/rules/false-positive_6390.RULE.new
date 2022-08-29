@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: not a license
+---
+
+if (license === 'Apache-2.0')

@@ -1,5 +1,11 @@
+---
 license_expression: mit-modern AND other-permissive
 is_license_notice: yes
 referenced_filenames:
     - COPYING
 notes: Seen in https://github.com/harfbuzz/harfbuzz/blob/main/COPYING
+---
+
+licensed under the so-called "Old MIT" license.  Details follow.
+For parts of  that are licensed under different licenses see individual
+files names COPYING in subdirectories where applicable.

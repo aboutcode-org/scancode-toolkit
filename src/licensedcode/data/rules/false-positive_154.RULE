@@ -1,3 +1,0 @@
-If user builds ffmpeg/libav from source and wants OpenCV to stay BSD library, not GPL/LGPL,
-he/she should use --enabled-shared configure flag and make sure that no GPL components are
-enabled

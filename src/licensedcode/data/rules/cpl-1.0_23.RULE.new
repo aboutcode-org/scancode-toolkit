@@ -1,5 +1,14 @@
+---
 license_expression: cpl-1.0
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://www.opensource.org/licenses/cpl1.0.txt
+---
+
+<licenses>
+        <license>
+            <name>Common Public License Version 1.0</name>
+            <url>https://www.opensource.org/licenses/cpl1.0.txt</url>
+        </license>
+    </licenses>

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in openzfs
+---
+
+we determine if it is GPL-only.  If the GPL-only interface

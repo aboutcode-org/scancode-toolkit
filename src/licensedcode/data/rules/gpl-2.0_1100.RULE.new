@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 90
@@ -6,3 +7,14 @@ referenced_filenames:
     - COPYING
 notes: this project is using a gpl-2.0 COPYING. It is not clear if the v2 or v2 or later applies.
     See shared-mime-info
+---
+
+You may redistribute copies of
+update-mime-database under the terms of the GNU General Public License.
+
+update-mime-database comes with ABSOLUTELY NO WARRANTY,
+to the extent permitted by law
+You may redistribute copies of update-mime-database
+under the terms of the GNU General Public License.
+For more information about these matters, 
+see the file named COPYING.

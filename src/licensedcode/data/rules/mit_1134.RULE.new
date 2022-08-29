@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_reference: yes
 is_continuous: yes
@@ -7,3 +8,6 @@ ignorable_copyrights:
     - Copyright First Rally
 ignorable_holders:
     - First Rally
+---
+
+MIT License. Copyright First Rally. All rights reserved.: MIT

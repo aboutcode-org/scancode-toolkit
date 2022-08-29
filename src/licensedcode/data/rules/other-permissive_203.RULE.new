@@ -1,4 +1,13 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
 notes: similar to old bsd-original-uc-1986
+---
+
+* This software is not subject to any license of Silicon Graphics 
+ * Inc. or Purdue University.
+ *
+ * Redistribution and use in source and binary forms are permitted
+ * without restriction or fee of any kind as long as this notice
+ * is preserved.

@@ -1,3 +1,7 @@
+---
 license_expression: cnri-python-1.6
 is_license_notice: yes
 relevance: 100
+---
+
+library can be redistributed under CNRI's Python 1.6 license.

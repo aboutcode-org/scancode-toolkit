@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0 OR mit
 is_license_notice: yes
 relevance: 100
@@ -7,3 +8,9 @@ referenced_filenames:
 ignorable_urls:
     - http://opensource.org/licenses/MIT
     - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+Licensed under the {{Apache License}}, Version 2.0
+(see LICENSE-APACHE or https://www.apache.org/licenses/LICENSE-2.0) or
+the {{MIT license}} (see LICENSE-MIT or http://opensource.org/licenses/MIT),
+{{at your option}}.

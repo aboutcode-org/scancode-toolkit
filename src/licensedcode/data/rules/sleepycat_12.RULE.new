@@ -1,5 +1,12 @@
+---
 license_expression: sleepycat
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+Berkeley DB Product License
+
+The license that applies to this copy of the Berkeley DB software may be found
+in the "LICENSE" file included in each Berkeley DB distribution

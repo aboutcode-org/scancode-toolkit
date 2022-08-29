@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.0-plus AND gpl-1.0-plus AND bsd-new
 is_license_notice: yes
 relevance: 99
@@ -6,3 +7,14 @@ referenced_filenames:
     - COPYING
     - COPYING.BSD
 notes: the bsd-style license is not entirely clear
+---
+
+Licensing
+The libraries themselves have been covered (since Saturday, June 21st, 1997)
+by the GNU Library General Public License (LGPL). Any other programs (such
+as the examples) are covered by the GNU General Public License (GPL). All
+the gory details for the LGPL reside in COPYING.LIB, and for the GPL reside
+in COPYING.
+
+Various parts are also covered under a BSD style license, detailed in
+COPYING.BSD. Currently, code covered under such license is copyrighted by

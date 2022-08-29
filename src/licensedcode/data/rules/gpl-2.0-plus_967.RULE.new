@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/lisenses/gpl.txt
+---
+
+License: GNU/GPLv2 or higher (https://www.gnu.org/lisenses/gpl.txt)

@@ -1,5 +1,9 @@
+---
 license_expression: cnri-jython
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://licenses.nuget.org/CNRI-Jython
+---
+
+https://licenses.nuget.org/CNRI-Jython

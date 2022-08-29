@@ -1,5 +1,11 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+
+  It is distributed under the GNU General Public License - see the
+  accompanying COPYING file for more details.

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: comments about licensing
+---
+
+PD is the Motorola Public Domain Interface and ICD is the commercial interface by P&E.

@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0 OR apache-2.0
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,9 @@ referenced_filenames:
     - maven-plugin/LICENSE.txt
 notes: Comments about Maven's own license are ignored as they do not describe the license of
     the code here
+---
+
+The Maven plugin is dual-licensed (you may use whichever you prefer)
+   under GPL2 and the Apache License, version 2.0 (Apache2).  The text of
+   Apache2 appears in file maven-plugin/LICENSE.txt.  Maven itself uses
+   Apache2.

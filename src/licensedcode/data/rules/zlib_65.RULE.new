@@ -1,5 +1,9 @@
+---
 license_expression: zlib
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+The content of this repository is distributed under the terms of the zlib license, which you can find in the LICENSE file located in this directory.

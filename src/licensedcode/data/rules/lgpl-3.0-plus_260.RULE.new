@@ -1,6 +1,10 @@
+---
 license_expression: lgpl-3.0-plus
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license name and/or ID
+---
+
+GNU Lesser General Public License v3.0 or later LGPL-3.0+

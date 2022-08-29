@@ -1,4 +1,10 @@
+---
 license_expression: bsd-new
 is_license_reference: yes
 relevance: 100
 notes: bsdn notice variant, debian style
+---
+
+License:
+
+Software licensed under the BSD license, see /usr/share/common-licenses/BSD

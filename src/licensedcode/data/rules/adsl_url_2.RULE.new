@@ -1,5 +1,9 @@
+---
 license_expression: adsl
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/adsl.html
+---
+
+https://spdx.org/licenses/adsl.html

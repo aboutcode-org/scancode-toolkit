@@ -1,5 +1,10 @@
+---
 license_expression: sax-pd
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.saxproject.org/
+---
+
+/ http://www.saxproject.org
+/ NO WARRANTY!  This class is in the public domain.

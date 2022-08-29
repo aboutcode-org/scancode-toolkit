@@ -1,6 +1,22 @@
+---
 license_expression: lgpl-2.1 WITH linking-exception-lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LGPL.2.1.txt
 notes: https://github.com/tcs-ulli/laz-n-tier/blob/130ed758f044a04afb2cba3aafa9c5b3a52f47a0/License.txt
+---
+
+distributed under the GNU
+Lesser General Public License (see the file LGPL.2.1.txt) with the
+following modification:
+
+As a special exception, the copyright holders of this library give you permission to link 
+this library with independent modules to produce an executable, regardless of the
+ license terms of these independent modules,and to copy and distribute the resulting 
+executable under terms of your choice, provided that you also meet, for each linked 
+independent module, the terms and conditions of the license of that module. An 
+independent module is a module which is not derived from or based on this library.
+If you modify this library, you may extend this exception to your version of the library, 
+but you are not obligated to do so. If you do not wish to do so, delete this exception 
+statement from your version.

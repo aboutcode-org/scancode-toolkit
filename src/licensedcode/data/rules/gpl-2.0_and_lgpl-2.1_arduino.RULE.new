@@ -1,3 +1,14 @@
+---
 license_expression: gpl-2.0 AND lgpl-2.1
 is_license_notice: yes
 minimum_coverage: 90
+---
+
+this file includes licensing information for parts of 
+
+first, the gnu general public license, which covers the main body 
+of the processing code (in general, all the stuff inside the 'app'
+and 'core' subfolders).
+
+next, the gnu lesser general public license that covers the core
+and libraries.

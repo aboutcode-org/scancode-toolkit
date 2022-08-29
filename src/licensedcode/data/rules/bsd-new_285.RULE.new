@@ -1,4 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 referenced_filenames:
     - LICENSE.txt
+---
+
+License
+
+You may use  under the terms of the BSD-style license described in the enclosed LICENSE.txt file.

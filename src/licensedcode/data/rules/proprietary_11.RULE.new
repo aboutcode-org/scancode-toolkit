@@ -1,4 +1,11 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 notes: part of old RH distros notices. See https://github.com/nexB/scancode-toolkit/issues/676
     for a discussion
+---
+
+# Any Red Hat trademarks that are incorporated in the source
+# code or documentation are not subject to the GNU General Public
+# License and may only be used or replicated with the express permission
+# of Red Hat, Inc.

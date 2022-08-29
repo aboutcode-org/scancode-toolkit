@@ -1,5 +1,11 @@
+---
 license_expression: bsd-original-uc
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+---
+
+NOTE: The Regents have since retroactively removed the advertising
+clause from above.
+See ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

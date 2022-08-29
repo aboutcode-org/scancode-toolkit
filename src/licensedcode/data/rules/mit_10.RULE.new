@@ -1,6 +1,10 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://jquery.com/
     - http://jquery.org/license
+---
+
+jQuery v1    http://jquery.com/ | http://jquery.org/license

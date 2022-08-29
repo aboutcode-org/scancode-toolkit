@@ -1,4 +1,8 @@
+---
 license_expression: cc-by-nc-nd-3.0-igo
 is_license_reference: yes
 ignorable_urls:
     - https://spdx.org/licenses/CC-BY-NC-ND-3.0-IGO
+---
+
+LICENSE {{CC-BY-NC-ND-3.0-IGO}} https://spdx.org/licenses/CC-BY-NC-ND-3.0-IGO

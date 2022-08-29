@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: not a license, just a comment about licenses
+---
+
+FNV hash.  Respected public domain algorithm.

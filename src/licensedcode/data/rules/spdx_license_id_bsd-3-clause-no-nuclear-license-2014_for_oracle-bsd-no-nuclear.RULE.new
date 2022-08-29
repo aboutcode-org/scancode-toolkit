@@ -1,6 +1,10 @@
+---
 license_expression: oracle-bsd-no-nuclear
 is_license_reference: yes
 is_continuous: yes
 relevance: 50
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
+---
+
+bsd-3-clause-no-nuclear-license-2014

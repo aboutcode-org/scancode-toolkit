@@ -1,4 +1,10 @@
+---
 license_expression: lgpl-2.0-plus AND bsd-new AND mit
 is_license_notice: yes
 relevance: 99
 notes: this notice is ambiguous wrt. LGPL version and BSD variant.
+---
+
+This library is mostly governed by the Lesser GNU Public License (LGPL). If a
+module comes from another source then it may have another, more liberal,
+license. Parts here may be Other Peoples Code under the BSD or MIT license.

@@ -1,3 +1,4 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - LICENSE
 ignorable_urls:
     - http://opensource.org/licenses/BSD-3-Clause
+---
+
+Published under the terms of the BSD 3-Clause License
+(see LICENSE file or http://opensource.org/licenses/BSD-3-Clause)

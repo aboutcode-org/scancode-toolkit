@@ -1,3 +1,7 @@
+---
 license_expression: unicode
 is_license_notice: yes
 relevance: 100
+---
+
+The data in unicode_tables/ is licensed under the Unicode License Agreement (LICENSE-UNICODE).

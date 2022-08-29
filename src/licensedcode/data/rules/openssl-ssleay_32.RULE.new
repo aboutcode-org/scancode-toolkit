@@ -1,3 +1,7 @@
+---
 license_expression: openssl-ssleay
 is_license_reference: yes
 relevance: 100
+---
+
+openssl library : BSD style license + SSLeay license

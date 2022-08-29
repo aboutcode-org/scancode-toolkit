@@ -1,5 +1,10 @@
+---
 license_expression: npl-1.1 OR gpl-2.0
 is_license_reference: yes
 relevance: 99
 ignorable_urls:
     - http://website-archive.mozilla.org/www.mozilla.org/mpl/MPL/NPL/1.1
+---
+
+The text of the Netscape Public License
+is provided below (http://website-archive.mozilla.org/www.mozilla.org/mpl/MPL/NPL/1.1/):

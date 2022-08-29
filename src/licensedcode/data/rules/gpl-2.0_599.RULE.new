@@ -1,6 +1,10 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 notes: language:it
 ignorable_urls:
     - http://gnu.org/licenses/gpl.html
+---
+
+Licenza GPLv2: GNU GPL version 2 <http://gnu.org/licenses/gpl.html>

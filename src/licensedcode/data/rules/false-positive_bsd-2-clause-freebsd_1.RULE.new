@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: some GCC mention that conflicts with a rule.
+---
+
+FreeBSD using the ELF format Copyright

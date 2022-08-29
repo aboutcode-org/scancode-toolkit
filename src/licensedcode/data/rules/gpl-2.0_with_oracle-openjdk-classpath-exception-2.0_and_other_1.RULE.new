@@ -1,6 +1,16 @@
+---
 license_expression: gpl-2.0 WITH oracle-openjdk-classpath-exception-2.0 AND gpl-2.0 WITH openjdk-assembly-exception-1.0
     AND other-copyleft AND other-permissive
 is_license_notice: yes
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
     - THIRD_PARTY_README
+---
+
+  OpenJDK is licensed under the GPL v2 with exceptions,
+  see `/usr/share/common-licenses/GPL-2'.
+  The exceptions are:
+   - "CLASSPATH" EXCEPTION TO THE GPL
+   - OPENJDK ASSEMBLY EXCEPTION
+  Various third party code in OpenJDK is licensed under different licenses.
+  See below (THIRD_PARTY_README).

@@ -1,3 +1,4 @@
+---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 relevance: 90
@@ -5,3 +6,6 @@ notes: there is no specific GPL version attached to this URL hence the version t
     (meaning effectively any version)
 ignorable_urls:
     - https://opensource.org/licenses/gpl-license.php
+---
+
+https://opensource.org/licenses/gpl-license.php

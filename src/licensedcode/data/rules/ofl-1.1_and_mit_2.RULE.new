@@ -1,5 +1,9 @@
+---
 license_expression: ofl-1.1 AND mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://fontawesome.io/license
+---
+
+http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

@@ -1,6 +1,13 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 80
 referenced_filenames:
     - LCIENSE
+---
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+
+Based on the library, which is used under the MIT License below:

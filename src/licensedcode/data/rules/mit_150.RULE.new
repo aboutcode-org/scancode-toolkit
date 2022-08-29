@@ -1,5 +1,16 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.opensource.org/licenses/mit-license.php
+---
+
+## License
+
+This code is made available under the same license as Bootstrap.
+ It is available under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+
+--
+
+The MIT License (MIT)

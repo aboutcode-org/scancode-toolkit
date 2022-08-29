@@ -1,3 +1,7 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
+---
+
+All client-side JavaScript (when served directly or after being compiled, arranged, augmented, or combined), is licensed under the "MIT Expat" license.

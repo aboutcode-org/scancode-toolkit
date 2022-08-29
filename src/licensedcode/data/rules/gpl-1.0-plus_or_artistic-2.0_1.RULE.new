@@ -1,4 +1,13 @@
+---
 license_expression: gpl-1.0-plus OR artistic-2.0
 is_license_notice: yes
 ignorable_urls:
     - http://dev.perl.org/licenses/
+---
+
+COPYRIGHT & LICENSE
+
+
+This program is free software; you can redistribute it and/or modify it under the terms of either: the GNU General Public License as published by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.

@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.scala-lang.org/downloads/license.html
+---
+
+License: BSD-like  (http://www.scala-lang.org/downloads/license.html

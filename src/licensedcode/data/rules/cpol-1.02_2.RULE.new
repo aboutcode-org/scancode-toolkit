@@ -1,4 +1,9 @@
+---
 license_expression: cpol-1.02
 is_license_notice: yes
 ignorable_urls:
     - http://www.codeproject.com/info/cpol10.aspx
+---
+
+Originaly licensed under The Code Project Open License (CPOL) 1.02:
+ http://www.codeproject.com/info/cpol10.aspx

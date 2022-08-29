@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: not a license mention
+---
+
+configured at build time without GPL support

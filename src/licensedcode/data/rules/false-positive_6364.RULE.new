@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: license ids in license handling code  is not a license
+---
+
+replace bClear BSD License  i, BSD 3 Clause Clear

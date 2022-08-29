@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: comment about a license
+---
+
+While this is technically free (and GPL-compatible)

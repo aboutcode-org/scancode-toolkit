@@ -1,2 +1,8 @@
+---
 license_expression: artistic-dist-1.0
 is_license_notice: yes
+---
+
+This subdirectory contains unmodified 'dist' code that is
+ licensed under the modified Artistic license detailed below
+ under the "Artistic-dist" tag.

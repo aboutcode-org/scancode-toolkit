@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 90
 referenced_filenames:
     - LICENSE
+---
+
+:license: BSD, see LICENSE for more details.

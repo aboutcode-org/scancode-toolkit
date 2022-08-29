@@ -1,4 +1,9 @@
+---
 license_expression: generic-trademark
 is_license_notice: yes
 relevance: 100
 notes: See in https://github.com/PixarAnimationStudios/OpenTimelineIO
+---
+
+Nothing in the license file or this project grants any right to use or any other
+contributor’s trade names, trademarks, service marks, or product names.

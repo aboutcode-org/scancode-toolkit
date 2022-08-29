@@ -1,5 +1,9 @@
+---
 license_expression: jython
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://www.jython.org/license.txt
+---
+
+http://www.jython.org/license.txt

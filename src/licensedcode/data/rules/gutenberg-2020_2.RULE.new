@@ -1,4 +1,14 @@
+---
 license_expression: gutenberg-2020
 is_license_notice: yes
 ignorable_urls:
     - http://www.gutenberg.org/
+---
+
+This code bundles book text files used for testing purposes which contain
+the following header:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org

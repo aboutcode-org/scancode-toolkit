@@ -1,5 +1,9 @@
+---
 license_expression: oset-pl-2.1
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/OSET-PL-2.1
+---
+
+LICENSE {{OSET-PL-2.1}} https://spdx.org/licenses/OSET-PL-2.1

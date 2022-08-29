@@ -1,5 +1,9 @@
+---
 license_expression: sparky
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://www.cgl.ucsf.edu/home/sparky/
+---
+
+http://www.cgl.ucsf.edu/home/sparky/

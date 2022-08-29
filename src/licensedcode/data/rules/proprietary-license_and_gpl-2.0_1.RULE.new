@@ -1,6 +1,16 @@
+---
 license_expression: proprietary-license AND gpl-2.0
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 50
 ignorable_urls:
     - https://www.gnu.org/licenses/gpl.txt
+---
+
+SOFTWARE LICENSE AGREEMENT 
+
+IMPORTANT - READ BEFORE COPYING, INSTALLING OR USING.
+
+Do not use or load this software and any associated materials (collectively, the "Software") until you have carefully read the following terms and conditions.  By loading or using the Software, you agree to the terms of this Agreement.  If you do not wish to so agree, do not install or use the Software.
+
+* The Linux DRM kernel source code, when included with this Software, is not subject to the terms of this Agreement but is subject to the ?GNU General Public License Version 2?, which may be obtained at the following web site: https://www.gnu.org/licenses/gpl.txt

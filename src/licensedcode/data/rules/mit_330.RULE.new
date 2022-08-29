@@ -1,6 +1,11 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://appsattic.mit-license.org/2012
     - http://appsattic.mit-license.org/2012/
+---
+
+# License #
+MIT: [http://appsattic.mit-license.org/2012/](http://appsattic.mit-license.org/2012/)

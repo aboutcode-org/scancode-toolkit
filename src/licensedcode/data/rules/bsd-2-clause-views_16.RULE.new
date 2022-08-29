@@ -1,4 +1,8 @@
+---
 license_expression: bsd-2-clause-views
 is_license_notice: yes
 ignorable_urls:
     - http://www.freebsd.org/copyright/freebsd-license.html
+---
+
+This project may adopt snippets of FreeBSD under the simplified BSD license. (http://www.freebsd.org/copyright/freebsd-license.html)

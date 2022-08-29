@@ -1,3 +1,4 @@
+---
 license_expression: cecill-2.0
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,9 @@ referenced_filenames:
     - Licence_CeCILL_V2-en.txt
 ignorable_urls:
     - http://www.cecill.info/index.en.html
+---
+
+is released under the terms of the
+ *  CeCILL license version 2 (http://www.cecill.info/index.en.html).
+ *
+ *  See the Licence_CeCILL_V2-en.txt file for details.

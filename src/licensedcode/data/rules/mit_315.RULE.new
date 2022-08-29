@@ -1,5 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+Expat is free software.  You may copy, distribute, and modify it under
+the terms of the License contained in the file COPYING distributed
+with this package.  This license is the same as the MIT/X Consortium
+license.

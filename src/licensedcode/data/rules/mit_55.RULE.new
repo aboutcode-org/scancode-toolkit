@@ -1,6 +1,12 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 99
 ignorable_urls:
     - http://jsoup.com/license
+---
+
+licenses
+license
+The MIT License http://jsoup.com/license

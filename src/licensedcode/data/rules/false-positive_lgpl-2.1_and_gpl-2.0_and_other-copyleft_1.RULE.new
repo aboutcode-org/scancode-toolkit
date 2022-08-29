@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: this is a comment about licenses in FFmpeg
+---
+
+That license is incompatible with the LGPL v2.1 and the GPL v2, but not with
+version 3 of those licenses.

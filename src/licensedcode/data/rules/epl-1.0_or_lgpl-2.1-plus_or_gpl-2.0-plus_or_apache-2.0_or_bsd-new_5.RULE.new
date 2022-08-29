@@ -1,3 +1,4 @@
+---
 license_expression: epl-1.0 OR lgpl-2.1-plus OR gpl-2.0-plus OR apache-2.0 OR bsd-new
 is_license_notice: yes
 relevance: 100
@@ -8,3 +9,16 @@ ignorable_urls:
     - https://www.apache.org/licenses
     - https://www.gnu.org/licenses/gpl.html
     - https://www.gnu.org/licenses/lgpl.html
+---
+
+// This module is multi-licensed and may be used under the terms
+// of any of the following licenses:
+//
+// EPL, Eclipse Public License, V1.0 or later, http://www.eclipse.org/legal
+// LGPL, GNU Lesser General Public License, V2.1 or later, https://www.gnu.org/licenses/lgpl.html
+// GPL, GNU General Public License, V2 or later, https://www.gnu.org/licenses/gpl.html
+// AL, Apache License, V2.0 or later, https://www.apache.org/licenses
+// BSD, BSD License, http://www.opensource.org/licenses/bsd-license.php
+//
+// Please contact the author if you need another license.
+// This module is provided "as is", without warranties of any kind.

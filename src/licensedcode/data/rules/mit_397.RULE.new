@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - COPYING
 ignorable_urls:
     - http://www.opensource.org/licenses/mit-license.php
+---
+
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or shttp://www.opensource.org/licenses/mit-license.php.

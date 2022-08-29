@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 referenced_filenames:
     - googletest/LICENSE
+---
+
+Licensing: 3-clause BSD. See googletest/LICENSE file.

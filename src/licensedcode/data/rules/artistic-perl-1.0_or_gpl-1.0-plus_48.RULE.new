@@ -1,3 +1,8 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
+---
+
+You can redistribute and/or modify this document under the same terms
+ as Perl itself.

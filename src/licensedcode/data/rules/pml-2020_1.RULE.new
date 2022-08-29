@@ -1,4 +1,10 @@
+---
 license_expression: pml-2020
 is_license_notice: yes
 ignorable_urls:
     - https://developer.amazon.com/support/legal/pml
+---
+
+These materials are licensed to you as "Program Materials" under the Program
+Materials License Agreement, which is currently available at
+https://developer.amazon.com/support/legal/pml.

@@ -1,3 +1,7 @@
+---
 license_expression: bsd-simplified OR apache-2.0
 is_license_tag: yes
 relevance: 100
+---
+
+__license__ = "BSD-2-Clause or Apache-2.0"

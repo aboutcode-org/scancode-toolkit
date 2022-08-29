@@ -1,3 +1,11 @@
+---
 license_expression: public-domain AND lgpl-2.1 WITH libwebsockets-exception
 is_license_notice: yes
 relevance: 100
+---
+
+the license for the original code,
+ * he replied it is Public Domain.  Use the URL above to get the original
+ * Public Domain version if you want it.
+ *
+ * This version is LGPL2.1+SLE like the rest of libwebsockets

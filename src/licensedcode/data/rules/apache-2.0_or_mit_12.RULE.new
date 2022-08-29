@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0 OR mit
 is_license_notice: yes
 relevance: 100
@@ -8,3 +9,11 @@ notes: see https://github.com/prixa-ai/sqlx/blob/ac896e3af10317d80edfc4e8c91a12d
 ignorable_urls:
     - http://opensource.org/licenses/MIT
     - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+Licensed under either of
+
+    {{Apache License, Version 2.0}} (LICENSE-APACHE or http://www.apache.org/licenses/LICENSE-2.0)
+    {{MIT license}} (LICENSE-MIT or http://opensource.org/licenses/MIT)
+
+{{at your option}}.

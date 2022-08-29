@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.0 AND lgpl-2.1
 is_license_reference: yes
 relevance: 100
@@ -6,3 +7,9 @@ referenced_filenames:
     - /usr/share/common-licenses/LGPL-2
     - intl/COPYING.LIB-2.1
     - /usr/share/common-licenses/LGPL-2.1
+---
+
+On Debian GNU/Linux systems, the complete text of intl/COPYING.LIB-2.0 from
+ gettext-runtime  can be found in ‘/usr/share/common-licenses/LGPL-2’
+ and the text of intl/COPYING.LIB-2.1 can be found in
+ ‘/usr/share/common-licenses/LGPL-2.1’.

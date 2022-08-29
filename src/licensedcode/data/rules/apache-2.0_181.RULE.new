@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0
 is_license_tag: yes
 relevance: 100
@@ -5,3 +6,6 @@ referenced_filenames:
     - LICENSE
 ignorable_urls:
     - https://img.shields.io/badge/License-Apache%202.0-blue.svg
+---
+
+[![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)

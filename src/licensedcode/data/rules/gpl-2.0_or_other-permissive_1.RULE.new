@@ -1,4 +1,10 @@
+---
 license_expression: gpl-2.0 OR other-permissive
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 99
+---
+
+IBM is dual-licensing the IBM code contributions already present in U-Boot
+under either the terms of the GNU General Public License version 2, or the
+original code license already present.

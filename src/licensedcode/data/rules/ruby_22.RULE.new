@@ -1,3 +1,8 @@
+---
 license_expression: ruby
 is_license_notice: yes
 relevance: 100
+---
+
+# License::
+#  You can redistribute it and/or modify it under the same term as Ruby.

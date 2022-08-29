@@ -1,5 +1,15 @@
+---
 license_expression: fsf-unlimited-no-warranty AND other-copyleft
 is_license_notice: yes
 relevance: 95
 referenced_filenames:
     - COPYING
+---
+
+This file is Free Software; as a special exception the authors gives
+  unlimited permission to copy and/or distribute it, with or without
+  modifications, as long as this notice is preserved. For conditions
+  of the whole package, please see the file COPYING.  This file is
+  distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY, to the extent permitted by law; without even the implied
+  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

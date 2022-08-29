@@ -1,5 +1,9 @@
+---
 license_expression: ms-net-library
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://go.microsoft.com/fwlink/?LinkID=320539
+---
+
+http://go.microsoft.com/fwlink/?LinkID=320539

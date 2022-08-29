@@ -1,3 +1,9 @@
+---
 license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
 is_license_tag: yes
 relevance: 100
+---
+
+License: Perl / BSD
+ This module is free software; you may redistribute it and/or
+ modify it under the same terms as Perl itself.

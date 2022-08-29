@@ -1,5 +1,9 @@
+---
 license_expression: public-domain
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - http://www.sqlite.org/copyright.html
+---
+
+http://www.sqlite.org/copyright.html

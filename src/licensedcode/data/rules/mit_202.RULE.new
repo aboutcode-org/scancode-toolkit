@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - license.txt
+---
+
+Yes, it is free under MIT license. It can be used in commercial applications. Please check the details in [license.txt]

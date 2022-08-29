@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+is open source software. You can redistribute it and/or modify it under the terms of the BSD License. See the COPYING file included with this software package for more details regarding distribution.

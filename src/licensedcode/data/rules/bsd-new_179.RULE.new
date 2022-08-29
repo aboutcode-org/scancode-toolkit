@@ -1,3 +1,4 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
@@ -6,3 +7,7 @@ referenced_filenames:
 notes: Found in Chromium
 ignorable_urls:
     - https://cs.chromium.org/chromium/src/LICENSE
+---
+
+Use of this source code is governed by a BSD-style license that may
+be found in the LICENSE file https://cs.chromium.org/chromium/src/LICENSE

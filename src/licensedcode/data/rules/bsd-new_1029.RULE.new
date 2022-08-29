@@ -1,5 +1,11 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.Xiph
+---
+
+it may be distributed under the Xiph.Org license, which is the least
+restrictive of those mentioned above.  See the file COPYING.Xiph in this
+distribution.

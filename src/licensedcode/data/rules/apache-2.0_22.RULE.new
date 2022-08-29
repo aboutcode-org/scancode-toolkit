@@ -1,5 +1,13 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 notes: Educational Community License Variant
 ignorable_urls:
     - http://www.osgi.org/
+---
+
+-    OSGi Alliance Notice
+----------------------------------------------------------------------
+This product includes the OSGi Service Platform API code from the OSGi
+Alliance provided under an Apache 2 license.
+http://www.osgi.org

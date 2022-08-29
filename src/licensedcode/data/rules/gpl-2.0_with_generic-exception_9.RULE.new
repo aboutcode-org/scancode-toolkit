@@ -1,6 +1,16 @@
+---
 license_expression: gpl-2.0 WITH generic-exception
 is_license_notice: yes
 relevance: 99
 ignorable_urls:
     - http://openvpn.net/
     - http://www.openssl.org/
+---
+
+Special exception for linking OpenVPN with both OpenSSL and LZO:
+
+Hereby I grant a special exception to the OpenVPN project
+(http://openvpn.net/) to link the LZO library with
+the OpenSSL library (http://www.openssl.org).
+
+Markus F.X.J. Oberhumer

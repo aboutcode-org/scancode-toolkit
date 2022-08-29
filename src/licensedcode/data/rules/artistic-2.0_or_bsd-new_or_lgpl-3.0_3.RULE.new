@@ -1,6 +1,13 @@
+---
 license_expression: artistic-2.0 OR bsd-new OR lgpl-3.0
 is_license_notice: yes
 referenced_filenames:
     - COPYRIGHT
     - COPYING
     - COPYING.LESSER
+---
+
+Blitz++ is distributed under the Perl Artistic License version 2.0 (see below),
+the simplified BSD license (see COPYRIGHT), or the GNU Lesser General Public 
+License, version 3 (see COPYING and COPYING.LESSER) or any later version.  
+Please choose whichever license best suits your needs.

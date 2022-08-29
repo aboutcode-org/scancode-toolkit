@@ -1,4 +1,8 @@
+---
 license_expression: bsd-new AND mit AND public-domain
 is_license_reference: yes
 relevance: 99
 notes: Seen in MySQL notices
+---
+
+Various subpackages under licenses such as BSD, MIT, Public Domain

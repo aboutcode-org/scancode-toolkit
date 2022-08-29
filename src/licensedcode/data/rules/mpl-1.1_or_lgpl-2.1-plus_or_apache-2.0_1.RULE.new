@@ -1,3 +1,4 @@
+---
 license_expression: mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
 is_license_notice: yes
 notes: javassist license choice in a maven POM
@@ -5,3 +6,26 @@ ignorable_urls:
     - http://www.apache.org/licenses/
     - http://www.gnu.org/licenses/lgpl-2.1.html
     - http://www.mozilla.org/MPL/MPL-1.1.html
+---
+
+  <licenses>
+    <!-- this is the license under which javassist is usually distributed
+      -->
+    <license>
+      <name>MPL 1.1</name>
+      <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+    </license>
+    <!-- this is the license under which javassist is distributed when
+         it is bundled with JBoss
+      -->
+    <license>
+      <name>LGPL 2.1</name>
+      <url>http://www.gnu.org/licenses/lgpl-2.1.html</url>
+    </license>
+    <!-- this is the license under which javassist can be distributed.
+      -->
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/</url>
+    </license>
+  </licenses>

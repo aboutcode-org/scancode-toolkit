@@ -1,6 +1,11 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://greensock.com/licensing
     - http://greensock.com/standard-license
+---
+
+used per its ["No Charge" license](http://greensock.com/standard-license).  
+For some cases the extended ["Business Green" license](http://greensock.com/licensing/) will be necessary.

@@ -1,5 +1,9 @@
+---
 license_expression: ms-pl
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://opensource.org/licenses/ms-pl.html
+---
+
+<licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>

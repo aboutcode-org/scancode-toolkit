@@ -1,3 +1,7 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
+---
+
+open-source software project released under the {{MIT/X11 license}}.

@@ -1,6 +1,10 @@
+---
 license_expression: bsd-source-code
 is_license_text: yes
 relevance: 95
 minimum_coverage: 95
 referenced_filenames:
     - LICENSE
+---
+
+released under a modified version of the 3-clause BSD license. See the LICENSE file for more information.

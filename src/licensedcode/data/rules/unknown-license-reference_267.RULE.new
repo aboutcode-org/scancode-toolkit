@@ -1,3 +1,4 @@
+---
 license_expression: unknown-license-reference
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - LICENSE
     - README
 notes: often seen with the bzip2-libbzip-2010 license
+---
+
+Please read the WARNING, DISCLAIMER and PATENTS sections in the README file.
+This program is released under the terms of the license contained in the file LICENSE

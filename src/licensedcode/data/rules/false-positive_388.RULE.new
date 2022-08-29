@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in Linux kernel extensions to GCC
+---
+
+defined by gcc's library exception to the GPL v3

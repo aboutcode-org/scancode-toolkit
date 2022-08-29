@@ -1,3 +1,4 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,12 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
+---
+
+On Debian GNU/Linux systems, the complete {{text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'}}.
+
+    A copy of the {{GNU General Public License is also available}} at
+    <URL:https://www.gnu.org/copyleft/gpl.html>.  You may also obtain
+    it by writing to the Free Software Foundation, Inc., 51 Franklin
+    St, Fifth Floor, Boston, MA 02110-1301 USA

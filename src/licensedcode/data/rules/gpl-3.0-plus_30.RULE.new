@@ -1,5 +1,10 @@
+---
 license_expression: gpl-3.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - misc/LICENSE
+---
+
+Licenced under GNU General Public Licence Version 3 or higher
+ * See misc/LICENSE for details

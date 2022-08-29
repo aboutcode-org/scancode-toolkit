@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - COPYING
 ignorable_urls:
     - http://opensource.org/licenses/lgpl-license.php
+---
+
+See the enclosed file COPYING for license information (LGPL). If you did
+not receive this file, see http://opensource.org/licenses/lgpl-license.php.

@@ -1,2 +1,8 @@
+---
 license_expression: openssl-ssleay
 is_license_notice: yes
+---
+
+Rights for redistribution and usage in source and binary forms are
+granted according to the OpenSSL license. Warranty of any kind is
+disclaimed.

@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0-plus
 is_license_reference: yes
 relevance: 90
@@ -6,3 +7,7 @@ referenced_filenames:
     - COPYING
 notes: oprofile uses a GPL2 or later. its man file has this statment "OProfile is released under
     the GNU General Public License, Version 2, or (at your option) any later version."
+---
+
+OProfile authors
+ * @remark Read the file COPYING

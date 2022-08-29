@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in FreeBSD
+---
+
+WITHOUT_GPL_DTC if you require the BSDL

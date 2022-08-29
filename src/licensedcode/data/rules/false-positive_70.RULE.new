@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: not a license
+---
+
+wx>2.9 & mpl>1.1

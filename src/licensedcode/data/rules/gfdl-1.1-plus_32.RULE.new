@@ -1,3 +1,10 @@
+---
 license_expression: gfdl-1.1-plus
 is_license_notice: yes
 minimum_coverage: 90
+---
+
+The documentation is released under the GNU Free Documentation License
+(GFDL) and it has cover texts.  As such, it has been determined not to
+meet the Debian Free Software Guidelines, and is not shipped in the
+debian packages.

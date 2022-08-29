@@ -1,6 +1,10 @@
+---
 license_expression: cal-1.0-combined-work-exception
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
+---
+
+Cryptographic Autonomy License 1.0 (Combined Work Exception) CAL-1.0-Combined-Work-Exception

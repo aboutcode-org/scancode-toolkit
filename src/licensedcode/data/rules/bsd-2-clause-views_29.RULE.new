@@ -1,4 +1,9 @@
+---
 license_expression: bsd-2-clause-views
 is_license_notice: yes
 ignorable_urls:
     - https://www.freebsd.org/copyright/freebsd-license.html
+---
+
+# THIS SOFTWARE USES FREEBSD LICENSE (ALSO KNOWN AS 2-CLAUSE BSD LICENSE)
+# https://www.freebsd.org/copyright/freebsd-license.html

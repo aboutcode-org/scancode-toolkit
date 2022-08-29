@@ -1,5 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+  This file may be distributed separately from the Linux kernel, or
+  incorporated into other software packages, subject to the following license:
+
+  SPDX-License-Identifier: MIT

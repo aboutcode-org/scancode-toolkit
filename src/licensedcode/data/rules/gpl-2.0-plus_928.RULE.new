@@ -1,6 +1,14 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 30
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
+---
+
+This software is supplied under the terms of the GNU General Public
+License version 2 or later. The full text of the license can be found
+at:
+
+	https://www.gnu.org/copyleft/gpl.html

@@ -1,5 +1,14 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSEBSD
+---
+
+This file is free software; you can redistribute it and/or modify 
+    it under the terms of the BSD License.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the BSD license for more details (in file LICENSEBSD)

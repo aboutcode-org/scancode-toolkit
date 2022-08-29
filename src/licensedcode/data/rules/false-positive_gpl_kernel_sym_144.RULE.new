@@ -1,2 +1,11 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+ * This exists for several reasons
+ * 1.   So modinfo can show license info for users wanting to vet their setup
+ *      is free
+ * 2.   So the community can ignore bug reports including proprietary modules
+ * 3.   So vendors can do likewise based on their own policies
+ */

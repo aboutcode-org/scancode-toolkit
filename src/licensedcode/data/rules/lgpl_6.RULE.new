@@ -1,4 +1,8 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
 relevance: 100
 notes: LGPL, any version
+---
+
+This file can be redistributed under the terms of the GNU Library General Public License

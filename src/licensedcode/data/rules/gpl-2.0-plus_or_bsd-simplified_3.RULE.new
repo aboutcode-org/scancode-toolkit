@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0-plus OR bsd-simplified
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,13 @@ minimum_coverage: 80
 referenced_filenames:
     - COPYING
     - LICENSE
+---
+
+This program is free software.  You may redistribute it and/or
+modify it under the terms of either:
+
+1. The GNU General Public License, as published by the Free
+   Software Foundation; either version 2, or (at your option) any
+   later version.  A copy of this license is in the file COPYING.
+or
+2. The Less License, in the file LICENSE.

@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,8 @@ notes: https://github.com/akavel/goluago/blob/84681bf1471c0674cef056cef3b7636c3f
     There are other licenses historically for Lua, but we take the latest, current one
 ignorable_urls:
     - http://www.lua.org/
+---
+
+** Lua - An Extensible Extension Language
+** Lua.org, PUC-Rio, Brazil (http://www.lua.org)
+** See Copyright Notice at the end of this file

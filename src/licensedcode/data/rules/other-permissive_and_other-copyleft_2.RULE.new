@@ -1,3 +1,8 @@
+---
 license_expression: other-permissive AND other-copyleft
 is_license_notice: yes
 relevance: 99
+---
+
+Each annotated library uses the same license as
+the unannotated version of the library.

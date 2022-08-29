@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,9 @@ referenced_filenames:
     - /usr/share/common-licenses/LGPL-2.1
     - /usr/share/common-licenses/GPL-2
     - /usr/share/common-licenses/GPL-3
+---
+
+On Debian GNU/Linux systems, the complete text of the licenses can be found in:
+GNU Lesser General Public License - `/usr/share/common-licenses/LGPL-2.1',
+GNU General Public License v2 - `/usr/share/common-licenses/GPL-2',
+GNU General Public License v3 - `/usr/share/common-licenses/GPL-3'

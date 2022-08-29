@@ -1,5 +1,9 @@
+---
 license_expression: unknown-license-reference
 is_license_reference: yes
 relevance: 90
 referenced_filenames:
     - COPYING.txt
+---
+
+SEE LICENSE IN COPYING.txt

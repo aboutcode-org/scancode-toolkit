@@ -1,5 +1,9 @@
+---
 license_expression: cern-ohl-1.2
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/CERN-OHL-1.2
+---
+
+{{CERN-OHL-1.2}} https://spdx.org/licenses/CERN-OHL-1.2

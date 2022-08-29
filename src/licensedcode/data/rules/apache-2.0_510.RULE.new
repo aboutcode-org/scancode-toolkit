@@ -1,5 +1,9 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+This source code is licensed under the Apache Licence 2.0. For the full copyright and license information,please view the LICENSE file in the root directory of this source tree.

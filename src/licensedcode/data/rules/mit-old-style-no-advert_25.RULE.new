@@ -1,5 +1,9 @@
+---
 license_expression: mit-old-style-no-advert
 is_license_text: yes
 relevance: 95
 notes: this is a truncated notice without warranty disclaimer Seen in https://fastcrypto.org/
     umac
+---
+
+Permission to use, copy, modify, and distribute this software and its documentation for any purpose and with or without fee, is hereby granted provided that the above copyright notice appears in all copies and in supporting documentation, and that the name of the copyright holder not be used in advertising or publicity pertaining to distribution of the software without specific, written prior permission.

@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.TXT
+---
+
+licensed under the MIT License - see the LICENSE.txt file for details

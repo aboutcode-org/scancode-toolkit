@@ -1,4 +1,11 @@
+---
 license_expression: bsd-2-clause-views
 is_license_notice: yes
 ignorable_urls:
     - https://www.freebsd.org/copyright/freebsd-license.html
+---
+
+# This Source Code Form is subject to the terms of the Simplified BSD License.
+# If a copy of the Simplified BSD License was not distributed alongside this file, you can
+# obtain one at https://www.freebsd.org/copyright/freebsd-license.html . This software
+# project is not affiliated with the FreeBSD Project.

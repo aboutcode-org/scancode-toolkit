@@ -1,6 +1,11 @@
+---
 license_expression: gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 AND apache-1.1 AND apache-2.0
     AND bsd-new AND bsd-original AND gpl-1.0-plus AND ijg AND lgpl-2.0-plus AND mit AND mpl-2.0
     AND public-domain AND w3c AND zlib
 is_license_tag: yes
 is_continuous: yes
 relevance: 100
+---
+
+license   : 'ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with ' +
+        'exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib.',

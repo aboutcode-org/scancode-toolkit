@@ -1,4 +1,12 @@
+---
 license_expression: cc-pd
 is_license_notice: yes
 ignorable_urls:
     - http://creativecommons.org/licenses/publicdomain/
+---
+
+Public Domain code
+
+This software is Public Domain. To view a copy of the public domain dedication,
+visit http://creativecommons.org/licenses/publicdomain/ or send a letter to
+Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.

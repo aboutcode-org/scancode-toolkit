@@ -1,3 +1,4 @@
+---
 license_expression: hippocratic-1.2
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,7 @@ referenced_filenames:
     - LICENSE.txt
 ignorable_urls:
     - https://firstdonoharm.dev/version/1/2/license.html
+---
+
+distributed under the conditions of the [Hippocratic License](https://firstdonoharm.dev/version/1/2/license.html)
+  - See LICENSE.txt for further details.

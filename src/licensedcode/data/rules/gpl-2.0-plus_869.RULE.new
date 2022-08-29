@@ -1,4 +1,12 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 90
+---
+
+Debian packaging (debian/*) is:
+Copyright:    
+License: GNU General Public License, version 2 or later (GPL-2+)
+  On Debian GNU/Linux systems, the complete text of the GNU General Public License
+  version 2 can be found in /usr/share/common-licenses/GPL-2.

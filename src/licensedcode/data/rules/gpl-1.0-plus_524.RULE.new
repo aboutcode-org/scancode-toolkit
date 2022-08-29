@@ -1,3 +1,4 @@
+---
 license_expression: gpl-1.0-plus
 is_license_tag: yes
 relevance: 100
@@ -7,3 +8,6 @@ ignorable_holders:
     - GNU GENERAL PUBLIC LICENCE
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl
+---
+
+copyright: GNU GENERAL PUBLIC LICENCE | | <a href="https://www.gnu.org/copyleft/gpl.

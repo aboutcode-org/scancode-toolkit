@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 99
 ignorable_urls:
     - https://underscorejs.org/LICENSE
+---
+
+https://underscorejs.org/LICENSE

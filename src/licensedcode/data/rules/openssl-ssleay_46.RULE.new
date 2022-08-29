@@ -1,5 +1,9 @@
+---
 license_expression: openssl-ssleay
 is_license_reference: yes
 relevance: 90
 referenced_filenames:
     - COPYING.openssl
+---
+
+COPYING.openssl

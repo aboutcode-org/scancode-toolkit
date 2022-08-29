@@ -1,5 +1,16 @@
+---
 license_expression: gpl-2.0 WITH generic-exception
 is_license_text: yes
 relevance: 100
 notes: See https://github.com/Sebijk/vBulletin-Jabber-Integration/blob/3399e0824600e196d5981a4f63e801759fb015ea/vBulletin
     3.x/upload/includes/XMPPHP/LICENSE#L345
+---
+
+Exceptions:
+
+As a special exception to this license, the "Enhanced Jabber Integration"
+project, which is a plugin for vBulletin, may use and distribute XMPPHP
+without extending the GPL license to the parent package.
+
+If you would like an exception for your free software, please contact the
+copyright holder.

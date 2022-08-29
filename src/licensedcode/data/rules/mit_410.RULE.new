@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+This library is distributed under the [MIT License](httpss://opensource.org/licenses/MIT), see LICENSE for more information.

@@ -1,3 +1,9 @@
+---
 license_expression: apache-2.0 OR gpl-2.0
 is_license_notice: yes
 minimum_coverage: 15
+---
+
+Licensing
+
+All files contained with this distribution are licenced either under the Apache License v2.0 or the GNU General Public License v2.0. You must agree to the terms of these licenses and abide by them before viewing, utilizing, modifying, or distributing the source code contained within this distribution.

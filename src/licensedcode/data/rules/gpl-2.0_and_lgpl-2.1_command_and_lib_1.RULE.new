@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0 AND lgpl-2.1
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,8 @@ minimum_coverage: 60
 referenced_filenames:
     - COPYING
     - COPYING.LIB
+---
+
+The applications are licensed under the GNU General Public License 2.0
+(see COPYING) and the libraries are licensed under the GNU
+Lesser General Public License 2.1 (See COPYING.LIB).

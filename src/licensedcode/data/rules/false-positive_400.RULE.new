@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: this is not a license notice, just some comment
+---
+
+It is strongly recommended to use public domain and GPL utilities

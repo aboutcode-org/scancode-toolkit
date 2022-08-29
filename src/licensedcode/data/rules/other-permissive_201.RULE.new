@@ -1,4 +1,13 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
 notes: similar to old bsd-original-uc-1986
+---
+
+*
+ * Redistribution and use in source and binary forms are permitted without 
+ * restriction or fee of any kind as long as this notice is preserved.
+ *
+ * The name "Carnegie Mellon" must not be used to endorse or promote
+ * products derived from this software without prior written permission.

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: nothing about licenses
+---
+
+that is intended to be stored in an image

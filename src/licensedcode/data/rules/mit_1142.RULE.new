@@ -1,5 +1,13 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://httpunit.sourceforge.net/doc/license.html
+---
+
+<licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://httpunit.sourceforge.net/doc/license.html</url>
+    </license>

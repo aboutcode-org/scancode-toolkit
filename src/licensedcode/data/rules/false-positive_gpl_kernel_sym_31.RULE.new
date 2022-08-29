@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs) and docs
+---
+
+Note also that all of these calls are exported
+GPL-only, so they will not be available to non-GPL kernel modules.

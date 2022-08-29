@@ -1,6 +1,12 @@
+---
 license_expression: mit OR apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE-MIT
     - LICENSE
+---
+
+License
+
+This work is dual-licensed and distributed under the (1) MIT License and (2) Apache License, Version 2.0. Please see LICENSE-MIT and LICENSE.

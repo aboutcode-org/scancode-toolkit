@@ -1,5 +1,9 @@
+---
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
 notes: http://creativecommons.org/licenses/LGPL/2.1/
 ignorable_urls:
     - http://creativecommons.org/licenses/LGPL/2.1/
+---
+
+This software is licensed under the href="http://creativecommons.org/licenses/LGPL/2.1/">CC-GNU LGPL version 2.1 or later.

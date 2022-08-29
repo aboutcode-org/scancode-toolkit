@@ -1,5 +1,10 @@
+---
 license_expression: uoi-ncsa
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.TXT
+---
+
+// This file is distributed under the University of Illinois Open Source
+// License. See LICENSE.TXT for details.

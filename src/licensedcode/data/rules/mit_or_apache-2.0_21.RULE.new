@@ -1,3 +1,4 @@
+---
 license_expression: mit OR apache-2.0
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,7 @@ referenced_filenames:
     - LICENSE-APACHE
     - LICENSE-MIT
 notes: There is some ambiguity in the wording, but this is a choice.
+---
+
+distributed under the terms of both the MIT license and the Apache License (Version 2.0).
+See LICENSE-APACHE and LICENSE-MIT for details.

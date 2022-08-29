@@ -1,5 +1,9 @@
+---
 license_expression: bsd-simplified
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://github.com/SommerEngineering/OceanPDFSearchLib/blob/master/LICENSE
+---
+
+https://github.com/SommerEngineering/OceanPDFSearchLib/blob/master/LICENSE

@@ -1,5 +1,11 @@
+---
 license_expression: unlicense
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+License
+
+This library licensed under The Unlicense license. For further information, see LICENSE file.

@@ -1,3 +1,8 @@
+---
 license_expression: x11-tiff
 is_license_notice: yes
 relevance: 100
+---
+
+The licence agreement for this file is the same as the rest of the LibTiff
+library.

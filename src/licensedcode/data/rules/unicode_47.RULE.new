@@ -1,5 +1,10 @@
+---
 license_expression: unicode
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://unicode.org/copyright.html
+---
+
+See http://unicode.org/copyright.html for more
+details.

@@ -1,5 +1,9 @@
+---
 license_expression: zlib
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - License.txt
+---
+
+This code is distributed under the zlib/libpng license (see License.txt for details).

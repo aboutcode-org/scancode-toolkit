@@ -1,2 +1,9 @@
+---
 license_expression: mit AND proprietary-license
 is_license_notice: yes
+---
+
+License
+The code of  Python Library is released under the MIT License. There is no limitation for both academic and commercial usage.
+The pretrained models we provided with this library are available for non-commercial research purposes only, 
+including both auto-downloading models and manual-downloading models.

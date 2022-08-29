@@ -1,5 +1,14 @@
+---
 license_expression: lgpl-2.1 OR cddl-1.0
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 60
 notes: https://github.com/WinMerge/freeimage/blob/410c812544728b8e30c2a6b1da93312750908632/Source/LibRawLite/internal/demosaic_packs.cpp
+---
+
+LibRaw is free software; you can redistribute it and/or modify
+it under the terms of the one of two licenses as you choose:
+1. GNU LESSER GENERAL PUBLIC LICENSE version 2.1
+   (See file LICENSE.LGPL provided in LibRaw distribution archive for details).
+2. COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
+   (See file LICENSE.CDDL provided in LibRaw distribution archive for details).

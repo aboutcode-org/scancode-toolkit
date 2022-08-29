@@ -1,5 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 90
 referenced_filenames:
     - BSD_LICENSE
+---
+
+Use of this source code is governed by a BSD-style license that can be found in the
+BSD_LICENSE file.

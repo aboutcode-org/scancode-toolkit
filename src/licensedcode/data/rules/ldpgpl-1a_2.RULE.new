@@ -1,2 +1,8 @@
+---
 license_expression: ldpgpl-1a
 is_license_text: yes
+---
+
+.\" You may copy, distribute and modify under the terms of the LDP General
+.\" Public License as specified in the LICENSE file that comes with the
+.\" gnumaniak distribution

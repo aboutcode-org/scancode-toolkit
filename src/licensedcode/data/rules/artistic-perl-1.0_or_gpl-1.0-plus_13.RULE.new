@@ -1,2 +1,10 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_notice: yes
+---
+
+This library is free software; you may distribute under the terms
+of either the GNU General Public License or the Artistic License, as
+specified in the Perl README file.
+
+Check /usr/share/common-licenses/GPL and /usr/share/common-licenses/Artistic.

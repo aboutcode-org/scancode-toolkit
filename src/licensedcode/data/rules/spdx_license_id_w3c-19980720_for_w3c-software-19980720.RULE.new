@@ -1,6 +1,10 @@
+---
 license_expression: w3c-software-19980720
 is_license_reference: yes
 is_continuous: yes
 relevance: 50
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
+---
+
+w3c-19980720

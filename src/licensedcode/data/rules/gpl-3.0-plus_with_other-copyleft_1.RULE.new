@@ -1,6 +1,16 @@
+---
 license_expression: gpl-3.0-plus WITH other-copyleft
 is_license_notice: yes
 relevance: 100
 notes: https://lab.nexedi.com/nexedi/wendelin.core/blob/master/COPYING
 ignorable_urls:
     - https://www.nexedi.com/licensing
+---
+
+
+is free software licensed under GPLv3+ with additional permission
+to link, combine and redistribute it with other free or open source software.
+
+Please see https://www.nexedi.com/licensing for rationale and options.
+
+The exact licensing terms follow:

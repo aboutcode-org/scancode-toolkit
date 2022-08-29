@@ -1,3 +1,4 @@
+---
 license_expression: ruby OR gpl-2.0 OR gpl-3.0
 is_license_reference: yes
 relevance: 100
@@ -7,3 +8,7 @@ referenced_filenames:
     - GPLv2
     - GPLv3
     - COPYING
+---
+
+                ["prawn-table.gemspec", "Gemfile",
+"COPYING", "LICENSE", "GPLv2", "GPLv3"]

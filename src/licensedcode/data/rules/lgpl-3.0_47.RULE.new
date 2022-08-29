@@ -1,5 +1,12 @@
+---
 license_expression: lgpl-3.0
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/lgpl-3.0.txt
+---
+
+  <licenses>
+    <license>
+      <name>The GNU Lesser General Public License, Version 3.0</name>
+      <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>

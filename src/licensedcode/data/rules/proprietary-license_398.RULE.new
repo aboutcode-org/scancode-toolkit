@@ -1,5 +1,9 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 90
 notes: https://github.com/jcs/endless/
+---
+
+While this software is open source and you are free to modify it and use it on your own devices, redistribution of this software in binary form, with or without modification, is not permitted.

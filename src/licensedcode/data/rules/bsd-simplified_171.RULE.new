@@ -1,5 +1,10 @@
+---
 license_expression: bsd-simplified
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYRIGHT.txt
+---
+
+This software is available under the terms of a 2-clause BSD-style license,
+see the COPYRIGHT.txt file.

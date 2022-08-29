@@ -1,4 +1,15 @@
+---
 license_expression: public-domain-disclaimer
 is_license_text: yes
 notes: this has a warranty disclaimer. See https://github.com/Alexpux/mingw-w64/blob/d0d7f784833bbb0b2d279310ddc6afb52fe47a46/mingw-w64-crt/stdio/mingw_sprintf.c
     for example
+---
+
+ * This is free software.  You may redistribute and/or modify it as you
+ * see fit, without restriction of copyright.
+ *
+ * This software is provided "as is", in the hope that it may be useful,
+ * but WITHOUT WARRANTY OF ANY KIND, not even any implied warranty of
+ * MERCHANTABILITY, nor of FITNESS FOR ANY PARTICULAR PURPOSE.  At no
+ * time will the author accept any form of liability for any damages,
+ * however caused, resulting from the use of this software.

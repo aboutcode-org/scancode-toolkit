@@ -1,5 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+Licensing
+
+This project is released under the terms of the MIT Open Source License. View
+*LICENSE.txt* for more information.

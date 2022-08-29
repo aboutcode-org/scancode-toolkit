@@ -1,4 +1,9 @@
+---
 license_expression: gpl-2.0
 is_license_reference: yes
 relevance: 100
 notes: availible is a typo
+---
+
+ This code is licensed under the GPL 2.0 license, availible at the root
+ application directory.

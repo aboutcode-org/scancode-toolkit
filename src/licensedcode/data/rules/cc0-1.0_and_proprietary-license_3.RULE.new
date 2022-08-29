@@ -1,3 +1,4 @@
+---
 license_expression: cc0-1.0 AND proprietary-license
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,6 @@ notes: The site license  at http://www.iconsdb.com/ has these restrictions "You 
     icon site.""
 ignorable_urls:
     - http://www.iconsdb.com/
+---
+
+http://www.iconsdb.com

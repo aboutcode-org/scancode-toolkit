@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: Note a license, but a comment about licenses.
+---
+
+AutoIt is a freeware BASIC-like scripting language
+designed for automating the Windows GUI and general scripting

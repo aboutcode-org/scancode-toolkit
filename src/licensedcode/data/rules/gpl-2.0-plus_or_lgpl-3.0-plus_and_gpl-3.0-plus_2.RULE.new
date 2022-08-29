@@ -1,4 +1,12 @@
+---
 license_expression: (gpl-2.0-plus OR lgpl-3.0-plus) AND gpl-3.0-plus
 is_license_reference: yes
 referenced_filenames:
     - COPYING
+---
+
+# License
+
+The installed C library libidn2 is dual-licensed under LGPLv3+|GPLv2+,
+while the rest of the package is GPLv3+.  See the file
+[COPYING](COPYING) for detailed information.

@@ -1,4 +1,8 @@
+---
 license_expression: apache-2.0 WITH llvm-exception OR apache-2.0 OR mit
 is_license_notice: yes
 relevance: 100
 notes: Seen in https://github.com/bytecodealliance/wasi
+---
+
+license = "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"

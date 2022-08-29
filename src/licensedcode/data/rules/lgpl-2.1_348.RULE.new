@@ -1,6 +1,16 @@
+---
 license_expression: lgpl-2.1
 is_license_notice: yes
 relevance: 100
 notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x
 ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+---
+
+* GNU Lesser General Public License Usage
+** This file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.

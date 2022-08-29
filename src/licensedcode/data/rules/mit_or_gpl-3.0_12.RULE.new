@@ -1,6 +1,10 @@
+---
 license_expression: mit OR gpl-3.0
 is_license_notice: yes
 relevance: 100
 notes: https://raw.githubusercontent.com/janpaepke/ScrollMagic/master/LICENSE.md
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl-3.0.html
+---
+
+is dual licensed under the terms of the MIT license (below) and the [GPL](http://www.gnu.org/licenses/gpl-3.0.html).

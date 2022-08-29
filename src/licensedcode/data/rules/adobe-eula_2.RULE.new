@@ -1,5 +1,13 @@
+---
 license_expression: adobe-eula
 is_license_notice: yes
 minimum_coverage: 70
 ignorable_urls:
     - http://www.adobe.com/products/eulas/
+---
+
+Patents pending in the United States and 
+other countries. Adobe and Flash are either trademarks or registered 
+trademarks in the United States and/or other countries.
+Adobe Flash Player End User License Agreement
+http://www.adobe.com/products/eulas/

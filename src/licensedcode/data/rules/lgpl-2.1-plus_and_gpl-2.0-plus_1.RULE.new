@@ -1,6 +1,17 @@
+---
 license_expression: lgpl-2.1-plus AND gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.LIB
     - COPYING.UTILS
+---
+
+The first, the library (librarian and headers) is distributed under
+the LGPL version 2.1 (or at you're discretion any later version of
+this license).  Please see the file COPYING.LIB for full details.
+
+The second part are the utilities (files in util/).  These are
+distributed under the terms of the GPL, version 2.0 (or at you're
+discretion any later version of this license).  Please see the file
+COPYING.UTILS for full details.

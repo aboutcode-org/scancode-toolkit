@@ -1,4 +1,9 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 referenced_filenames:
     - org/apache/LICENSE
+---
+
+The command line interpreter is covered by the Apache Software
+License. See the org/apache/LICENSE file for details.

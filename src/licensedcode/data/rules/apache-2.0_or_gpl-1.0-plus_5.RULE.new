@@ -1,6 +1,11 @@
+---
 license_expression: apache-2.0 OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.fsf.org/licensing/licenses/lgpl.txt
     - https://www.apache.org/licenses/LICENSE-2.0.txt
+---
+
+<!-- Licensing: ASL or GPL -->
+<licenses><license><name>The {{Apache Software License}}, Version 2.0</name><url>https://www.apache.org/licenses/LICENSE-2.0.txt</url><distribution>repo</distribution></license><license><name>{{GNU Lesser General Public License}} (LGPL), Version 2.1</name><url>http://www.fsf.org/licensing/licenses/lgpl.txt</url><distribution>repo</distribution></license></licenses>

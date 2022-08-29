@@ -1,5 +1,10 @@
+---
 license_expression: agpl-3.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+License
+This project is licensed under the AGPL v3 license, see  LICENSE.txt (./LICENSE.txt).

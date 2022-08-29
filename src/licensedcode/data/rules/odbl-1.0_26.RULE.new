@@ -1,3 +1,4 @@
+---
 license_expression: odbl-1.0
 is_license_notice: yes
 relevance: 100
@@ -7,3 +8,6 @@ ignorable_holders:
     - OpenStreetMap contributors
 ignorable_urls:
     - https://www.openstreetmap.org/
+---
+
+@source [OpenStreetMap](https://www.openstreetmap.org), available under the Open Database License, © OpenStreetMap contributors.

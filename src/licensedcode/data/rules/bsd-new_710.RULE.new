@@ -1,5 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
 ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.php
+---
+
+BSD license without advertising clause. (see
+http://www.opensource.org/licenses/bsd-license.php for further details)

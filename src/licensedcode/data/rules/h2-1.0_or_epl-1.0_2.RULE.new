@@ -1,5 +1,11 @@
+---
 license_expression: h2-1.0 OR epl-1.0
 is_license_notice: yes
 minimum_coverage: 98
 ignorable_urls:
     - http://h2database.com/html/license.html
+---
+
+Multiple-Licensed under the H2 License, Version 1.0,
+and under the Eclipse Public License, Version 1.0
+(http://h2database.com/html/license.html).

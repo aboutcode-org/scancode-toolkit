@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.gpl
+---
+
+These are thus GPL2 (see COPYING.gpl), and are individually marked as such.

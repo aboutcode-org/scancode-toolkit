@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus WITH mif-exception
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://sources.redhat.com/jffs2/jffs2-licence.html
+---
+
+http://sources.redhat.com/jffs2/jffs2-licence.html

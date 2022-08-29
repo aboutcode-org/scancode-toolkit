@@ -1,6 +1,10 @@
+---
 license_expression: postgresql
 is_license_reference: yes
 relevance: 100
 notes: http://www.postgresql.org/about/licence
 ignorable_urls:
     - http://www.postgresql.org/about/licence
+---
+
+http://www.postgresql.org/about/licence

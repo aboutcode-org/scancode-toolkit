@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.1 OR apache-2.0
 is_license_tag: yes
 relevance: 100
@@ -5,3 +6,17 @@ notes: Seen in Java JNA
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.txt
     - https://www.gnu.org/licenses/licenses.html
+---
+
+<licenses>
+      <license>
+          <name>LGPL, version 2.1</name>
+          <url>https://www.gnu.org/licenses/licenses.html</url>
+          <distribution>repo</distribution>
+      </license>
+      <license>
+          <name>Apache License v2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+      </license>
+  </licenses>

@@ -1,3 +1,4 @@
+---
 license_expression: ofl-1.1 AND mit
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,12 @@ ignorable_urls:
     - http://fontawesome.io/
     - http://scripts.sil.org/OFL
     - https://github.com/encharm/Font-Awesome-SVG-PNG
+---
+
+All icons are taken from Font Awesome (http://fontawesome.io/) project.
+The Font Awesome font is licensed under the SIL OFL 1.1:
+- http://scripts.sil.org/OFL
+
+SVG icons source: https://github.com/encharm/Font-Awesome-SVG-PNG
+Font-Awesome-SVG-PNG is licensed under the MIT license (see file license
+in current folder).

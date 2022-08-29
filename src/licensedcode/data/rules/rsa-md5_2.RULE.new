@@ -1,4 +1,23 @@
+---
 license_expression: rsa-md5
 is_license_text: yes
 relevance: 100
 notes: typo in https://github.com/9fans/plan9port/blob/df2d9ec9d169626cdc2a23829bb2831738215722/src/libsec/port/md5.c
+---
+
+*    License to copy and use this software is granted provided that it
+ *    is identified as the "RSA Data Security, Inc. MD5 Message-Digest
+ *    Algorithm" in all material mentioning or referencing this software
+ *    or this function.
+ *
+ *    License is also granted to make and use derivative works provided
+ *    that such works are identified as "derived from the RSA Data
+ *    Security, Inc. MD5 Message-Digest Algorithm" in all material
+ *    mentioning or referencing the derived work.
+ *
+ *    RSA Data Security, Inc. makes no representations concerning either
+ *    the merchantability of this software or the suitability of this
+ *    software forany particular purpose. It is provided "as is"
+ *    without express or implied warranty of any kind.
+ *    These notices must be retained in any copies of any part of this
+ *    documentation and/or software.

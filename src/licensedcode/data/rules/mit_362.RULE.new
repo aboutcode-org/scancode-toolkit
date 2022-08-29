@@ -1,5 +1,10 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://jquery.org/license/
+---
+
+MIT license
+https://jquery.org/license/

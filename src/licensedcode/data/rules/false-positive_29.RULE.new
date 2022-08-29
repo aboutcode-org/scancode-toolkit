@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: commentary about a license.
+---
+
+GCC, discarded, based on GPL'ed HCF-light

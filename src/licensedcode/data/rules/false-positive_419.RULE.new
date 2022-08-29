@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Debian lintian rule names
+---
+
+copyright-should-refer-to-common-license-file-for-apache-2

@@ -1,5 +1,16 @@
+---
 license_expression: gpl-2.0 AND gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.GPLv2
+---
+
+The effective license of the modules as a whole
+is the GNU General Public License Version 2 (GNU GPL-2).
+
+Single files, however, are licensed either
+under GNU General Public License Version 2 (GNU GPL-2)
+or under "GNU GPLv2 or any later version" (GNU GPL-2+).
+
+GPL-2: See file COPYING.GPLv2

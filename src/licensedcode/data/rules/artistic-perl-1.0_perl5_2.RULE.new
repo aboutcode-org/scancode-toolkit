@@ -1,4 +1,10 @@
+---
 license_expression: artistic-perl-1.0
 is_license_notice: yes
 notes: Per http://opensource.org/licenses/artistic-license-1.0 The alternative 10-clause version
     is really the Artistic License (Perl) 1.0
+---
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.8 or,
+at your option, any later version of Perl 5 you may have available.

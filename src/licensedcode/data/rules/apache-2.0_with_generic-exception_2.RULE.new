@@ -1,3 +1,16 @@
+---
 license_expression: apache-2.0 WITH generic-exception
 is_license_notice: yes
 notes: https://github.com/michaelrsweet/lprint/commit/f2d706673a382eb83a3646b86984437450b39f87#diff-dfb14fbb9e7d095209ec4cfd621069437bf9c442ff9de9d4ce889781bd0fefcf
+---
+
+Exceptions to the Apache 2.0 License:
+
+In addition, if you combine or link compiled forms of this Software with
+software that is licensed under the GPLv2 or LGPLv2 (“Combined Software”) and if
+a court of competent jurisdiction determines that the patent provision (Section
+3), the indemnity provision (Section 9) or other Section of the License
+conflicts with the conditions of the GPLv2 or LGPLv2, you may retroactively and
+prospectively choose to deem waived or otherwise exclude such Section(s) of the
+License, but only in their entirety and only with respect to the Combined
+Software.

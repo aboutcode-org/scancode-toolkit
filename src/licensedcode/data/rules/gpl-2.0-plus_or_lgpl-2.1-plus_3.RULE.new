@@ -1,3 +1,10 @@
+---
 license_expression: gpl-2.0-plus OR lgpl-2.1-plus
 is_license_reference: yes
 relevance: 100
+---
+
+mpv can be built as LGPLv2.1+ with the --enable-lgpl configure option. To add
+a LGPL mode to mpv, MPlayer code had to be relicensed from GPLv2+ to LGPLv2.1+
+by asking the MPlayer authors for permission. Since permission could not be
+obtained from everyone, LGPL mode disables the following features,

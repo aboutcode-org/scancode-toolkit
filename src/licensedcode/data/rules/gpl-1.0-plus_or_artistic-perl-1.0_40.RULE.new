@@ -1,2 +1,7 @@
+---
 license_expression: gpl-1.0-plus OR artistic-perl-1.0
 is_license_notice: yes
+---
+
+This software is free software and can be modified and distributed under
+ the same terms as Perl itself.

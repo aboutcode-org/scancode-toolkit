@@ -1,4 +1,13 @@
+---
 license_expression: lgpl-2.1-plus AND gpl-1.0-plus
 is_license_notice: yes
 notes: since the text mentions a Lesser GPL with no version this is 2.1 or later as the 2.0
     would have been library and not lesser
+---
+
+is released under the GNU Lesser General Public 
+License, see the text of the GNU LGPL below.
+
+The executable programs in the bin, examples, and libtest directories
+are release under the GNU General Public License, see the text of the
+GNU GPL below.

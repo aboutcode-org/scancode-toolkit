@@ -1,5 +1,10 @@
+---
 license_expression: bsd-simplified AND warranty-disclaimer
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://www.clearsilver.net/license.hdf
+---
+
+ * This code is made available under the terms of the ClearSilver License.
+ * http://www.clearsilver.net/license.hdf

@@ -1,3 +1,4 @@
+---
 license_expression: mongodb-sspl-1.0
 is_license_notice: yes
 relevance: 100
@@ -10,3 +11,9 @@ ignorable_urls:
     - https://www.mongodb.com/licensing/server-side-public-license
 ignorable_emails:
     - kristina@10gen.com
+---
+
+License:
+    SSPL
+The Debian packaging is (C) 2009, Kristina Chodorow <kristina@10gen.com> and
+is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'.

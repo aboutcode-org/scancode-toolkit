@@ -1,4 +1,9 @@
+---
 license_expression: unknown AND gpl-2.0-plus
 is_license_reference: yes
 relevance: 100
 notes: Seen in the kernel
+---
+
+Found in alsa-firmware package in hex form with a comment claiming to
+be GPLv2+, but without source

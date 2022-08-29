@@ -1,5 +1,11 @@
+---
 license_expression: python
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.python.org/psf/license.html
+---
+
+License: This work is {{licensed under the PSF}}. A copy should be included
+with this source code, and is also available at
+http://www.python.org/psf/license.html

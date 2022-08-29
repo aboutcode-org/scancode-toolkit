@@ -1,3 +1,4 @@
+---
 license_expression: mpl-1.1 OR gpl-2.0 OR apache-2.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,14 @@ referenced_filenames:
     - LICENSE-GPL2
     - LICENSE-APACHE2
 notes: See https://github.com/rabbitmq/rabbitmq-java-client/blob/master/LICENSE
+---
+
+This package, the RabbitMQ Java client library, is triple-licensed under
+the Mozilla Public License 2.0 ("MPL"), the GNU General Public License
+version 2 ("GPL") and the Apache License version 2 ("ASL"). For the MPL,
+please see LICENSE-MPL-RabbitMQ. For the GPL, please see LICENSE-GPL2.
+For the ASL, please see LICENSE-APACHE2.
+
+The RabbitMQ Java client library includes third-party software under the
+ASL. For this license, please see LICENSE-APACHE2. For attribution of
+copyright and other details of provenance, please refer to the source code.

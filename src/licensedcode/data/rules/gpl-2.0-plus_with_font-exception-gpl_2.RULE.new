@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus WITH font-exception-gpl
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl-faq.html#FontException
+---
+
+GPL version 2 or any later version with font exception (http://www.gnu.org/licenses/gpl-faq.html#FontException)

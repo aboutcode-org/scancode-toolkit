@@ -1,4 +1,10 @@
+---
 license_expression: bsd-new AND ijg AND libpng
 is_license_notice: yes
 ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.php
+---
+
+is licensed under the http://www.opensource.org/licenses/bsd-license.php BSD license,
+with portions controlled by the IJG-README.TXT IJG license and 
+libpng-LICENSE.txt PNG Reference Library license

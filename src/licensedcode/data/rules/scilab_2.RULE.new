@@ -1,3 +1,4 @@
+---
 license_expression: cecill-1.1
 is_license_notice: yes
 minimum_coverage: 90
@@ -5,3 +6,13 @@ ignorable_urls:
     - http://www.cecill.info/
     - http://www.cecill.info/licences.en.html
     - http://www.scilab.org/products/scilab/license
+---
+
+Per http://www.scilab.org/products/scilab/license 
+
+Scilab 5 is governed by the CeCILL license (GPL compatible) abiding by the rules of distribution of free software.
+See the information delivered on the Free Software Foundation on CeCILL >>
+
+You can use, modify and/or redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS and INRIA at the following URL: http://www.cecill.info
+
+< The English version, CeCILL Free Software License Agreement  v1.1, is at http://www.cecill.info/licences.en.html >

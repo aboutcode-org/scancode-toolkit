@@ -1,5 +1,11 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+licensed under the Apache License, Version 2.0, January 2004,
+a copy of which can be found in the LICENSE file at the root of this
+repository.

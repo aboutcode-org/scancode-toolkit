@@ -1,6 +1,11 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
 referenced_filenames:
     - /usr/share/common-licenses/LGPL
+---
+
+Full text of LGPL can be found on Debian systems in file
+  /usr/share/common-licenses/LGPL.

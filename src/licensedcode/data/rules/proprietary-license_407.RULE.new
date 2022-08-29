@@ -1,4 +1,14 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 notes: Seen added to an MIT-like license https://github.com/newstar123/React-_-Dev/blob/73df75cea557ced648b4f2109ead9a2587656cfd/LICENSE.md#L13
+---
+
+The rights granted above may only be exercised to develop and distribute
+applications that integrate or interoperate with Shopify software or services,
+and in the case of external, stand-alone applications that do not embed directly
+inside Shopify, the rights granted above may only be exercised to develop and
+distribute applications that are dissimilar and visually distinct from Shopify
+products and services (including the internal administration page of a Shopify
+merchant store), as determined by Shopify in its sole discretion.

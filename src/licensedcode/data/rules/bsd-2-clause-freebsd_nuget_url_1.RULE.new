@@ -1,5 +1,9 @@
+---
 license_expression: bsd-2-clause-views
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://github.com/mntone/RtmpClient/blob/master/license.md
+---
+
+https://github.com/mntone/RtmpClient/blob/master/license.md

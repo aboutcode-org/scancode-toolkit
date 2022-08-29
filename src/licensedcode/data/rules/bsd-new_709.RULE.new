@@ -1,5 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
 referenced_filenames:
     - LICENSED.BSD
+---
+
+* This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information

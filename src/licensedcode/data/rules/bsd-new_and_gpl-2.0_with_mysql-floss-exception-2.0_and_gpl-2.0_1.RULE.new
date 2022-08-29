@@ -1,4 +1,14 @@
+---
 license_expression: bsd-new AND gpl-2.0 WITH mysql-floss-exception-2.0 AND gpl-2.0
 is_license_notice: yes
 ignorable_urls:
     - http://www.mysql.com/about/legal/licensing/foss-exception/
+---
+
+/Important licensing note/: This library is BSD-licensed under the terms of the
+MySQL FOSS License Exception
+<http://www.mysql.com/about/legal/licensing/foss-exception/>.
+
+Since this library links against the GPL-licensed 'mysqlclient' library, a
+non-open-source application that uses it /may/ be subject to the terms of the
+GPL.

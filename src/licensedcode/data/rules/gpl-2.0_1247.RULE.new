@@ -1,6 +1,16 @@
+---
 license_expression: gpl-2.0
 is_license_tag: yes
 relevance: 100
 minimum_coverage: 70
 ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+---
+
+<licenses>
+        <license>
+            <name>GNU General Public License Version 2</name>
+            <url>https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>

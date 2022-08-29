@@ -1,5 +1,9 @@
+---
 license_expression: qt-lgpl-exception-1.1
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/Qt-LGPL-exception-1.1
+---
+
+{{Qt-LGPL-exception-1.1}} https://spdx.org/licenses/Qt-LGPL-exception-1.1

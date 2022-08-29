@@ -1,4 +1,11 @@
+---
 license_expression: mpl-1.0
 is_license_reference: yes
 relevance: 95
 notes: This was seen in old cURL licenses. Note the extra uncommon location for dispute resolution
+---
+
+* The Initial Developer has the right, regardless of the citizenship
+   of any involved party, to choose the location for settling disputes
+   as refered to under section "11. Miscellaneous" of the Mozilla Public
+   License.

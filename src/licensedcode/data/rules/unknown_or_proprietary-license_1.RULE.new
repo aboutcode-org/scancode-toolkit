@@ -1,3 +1,9 @@
+---
 license_expression: unknown OR proprietary-license
 is_license_notice: yes
 notes: see http://www.skybuilders.com/Products/dual_license/
+---
+
+Code we have written is also available under a dual license agreement that
+allows a developer organization to make changes to the code without returning
+those changes to the community.

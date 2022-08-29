@@ -1,2 +1,7 @@
+---
 license_expression: unicode-tou AND unicode
 is_license_reference: yes
+---
+
+The license of the Unicode character data files (which are parsed into
+static storage in the library) are documented in COPYING.unicode.

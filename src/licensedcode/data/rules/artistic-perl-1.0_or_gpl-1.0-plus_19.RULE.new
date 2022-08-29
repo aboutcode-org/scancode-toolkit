@@ -1,2 +1,7 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_tag: yes
+---
+
+You may distribute under the terms of either the GNU General Public License
+or the Artistic License (the same terms as Perl itself)

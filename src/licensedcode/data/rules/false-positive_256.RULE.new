@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: ansi2knr in JPEG
+---
+
+including ansi2knr in a program does not bring the entire
+                program under the GPL

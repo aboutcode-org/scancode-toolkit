@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://jedwatson.github.io/classnames
+---
+
+Licensed under the MIT License (MIT), see   http://jedwatson.github.io/classnames

@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - License.txt
+---
+
+This project is subject to the MIT License. A copy of this license can be found in [License.txt](License.txt) at the root of this repo.

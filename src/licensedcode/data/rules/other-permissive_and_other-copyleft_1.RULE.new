@@ -1,3 +1,9 @@
+---
 license_expression: other-permissive AND other-copyleft
 is_license_notice: yes
 relevance: 100
+---
+
+includes works under other copyright notices and distributed
+according to the terms of the GNU General Public License or a compatible
+license

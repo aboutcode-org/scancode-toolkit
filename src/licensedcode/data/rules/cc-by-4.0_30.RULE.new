@@ -1,5 +1,9 @@
+---
 license_expression: cc-by-4.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - ccby40
+---
+
+* text is licensed as [CC BY 4.0][ccby40].

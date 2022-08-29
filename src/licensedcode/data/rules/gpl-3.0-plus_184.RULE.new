@@ -1,3 +1,4 @@
+---
 license_expression: gpl-3.0-plus
 is_license_tag: yes
 relevance: 100
@@ -7,3 +8,6 @@ ignorable_holders:
     - GNU General
 ignorable_urls:
     - https://www.gnu.org/licenses/gpl-3.0.txt
+---
+
+COPYRIGHT# GNU General Public Licence v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)

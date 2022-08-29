@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - doc/otp-base-license.txt
+---
+
+Please see {{doc/otp-base-license.txt}} for the full terms of this license.

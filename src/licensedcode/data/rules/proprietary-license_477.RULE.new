@@ -1,5 +1,11 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+This file is governed by the terms of the Professional license;
+redistribution is *not* permitted. Please see the file LICENSE.txt for
+full copyright information.

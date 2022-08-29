@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in openzfs
+---
+
+the new one is GPL-only.   Thus if the GPL-only

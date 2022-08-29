@@ -1,6 +1,11 @@
+---
 license_expression: bsd-simplified
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.md
 notes: Seen in FreeBSD
+---
+
+Free and Open Source Software (FOSS). It is offered under the BSD
+2-clause License. Full license text may be found in the [`LICENSE.md`]

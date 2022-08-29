@@ -1,6 +1,0 @@
-All source code located in this directory may fall under GPL or LGPL license.  
- OpenSIPStack  core library does not rely on any of the code/library found in 
-this directory.  If an application uses any of the library found here, the 
-application should be published under GPL or LGPL accordingly.
-
-List of GPL Libraries

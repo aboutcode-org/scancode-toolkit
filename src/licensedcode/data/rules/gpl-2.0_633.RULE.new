@@ -1,5 +1,14 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/
+---
+
+This copyrighted material is made available to anyone wishing to use,
+modify, copy, or redistribute it subject to the terms and conditions
+of the GNU General Public License v.2.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

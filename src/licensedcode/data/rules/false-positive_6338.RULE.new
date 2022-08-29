@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: license ids in license handling code  is not a license
+---
+
+satisfies GPL-2.0 GPL-2.0+ WITH Bison-exception-2.2

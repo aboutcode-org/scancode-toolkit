@@ -1,5 +1,9 @@
+---
 license_expression: cc-by-sa-3.0
 is_license_notice: yes
 notes: https://www.coresecurity.com/core-labs/advisories/ciphermail-multiple-vulnerabilities
 ignorable_urls:
     - http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+---
+
+licensed under a Creative Commons Attribution Non-Commercial Share-Alike 3.0 (United States) License: http://creativecommons.org/licenses/by-nc-sa/3.0/us/

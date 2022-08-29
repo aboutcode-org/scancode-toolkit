@@ -1,6 +1,16 @@
+---
 license_expression: bsd-new AND facebook-patent-rights-2 AND proprietary-license
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://github.com/facebook/LICENSE
     - https://github.com/facebook/PATENTS
+---
+
+## License
+
+ is [BSD Licensed](https://github.com/facebook//LICENSE).
+We also provide an additional [patent grant](https://github.com/facebook//PATENTS).
+
+Examples provided in this repository and in the documentation are separately
+licensed.

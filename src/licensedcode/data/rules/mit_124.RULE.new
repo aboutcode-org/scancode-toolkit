@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://codemirror.net/LICENSE
+---
+
+Distributed under an MIT license: http://codemirror.net/LICENSE

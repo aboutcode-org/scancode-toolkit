@@ -1,5 +1,10 @@
+---
 license_expression: zpl-2.1
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://www.zope.org/Resources/ZPL
+---
+
+user the ZPL license as
+published on the Zope web site, http://www.zope.org/Resources/ZPL.

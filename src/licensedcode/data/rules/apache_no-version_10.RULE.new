@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0
 is_license_reference: yes
 relevance: 99
@@ -7,3 +8,6 @@ ignorable_authors:
     - the Apache Software Foundation (https://apache.org/)
 ignorable_urls:
     - https://apache.org/
+---
+
+includes free software developed by the Apache Software Foundation (https://apache.org/) and other organizations

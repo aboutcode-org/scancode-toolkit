@@ -1,3 +1,10 @@
+---
 license_expression: hdparm
 is_license_text: yes
 relevance: 100
+---
+
+You may freely use, modify, and redistribute the hdparm program,
+ as either binary or source, or both.
+ The only condition is that my name and copyright notice
+ remain in the source code as-is.

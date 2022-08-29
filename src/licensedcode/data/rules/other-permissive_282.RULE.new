@@ -1,3 +1,4 @@
+---
 license_expression: other-permissive
 is_license_reference: yes
 relevance: 100
@@ -5,3 +6,7 @@ minimum_coverage: 100
 notes: in x11 legacy
 ignorable_authors:
     - FUJITSU LIMITED
+---
+
+This is source code modified by FUJITSU LIMITED under the Joint
+Development Agreement for the CDE/Motif PST.

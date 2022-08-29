@@ -1,3 +1,4 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - COPYING
 ignorable_urls:
     - http://opensource.org/licenses/gpl-license.php
+---
+
+Licensed under the GNU GPL. For full terms see the file COPYING.
+ @license http://opensource.org/licenses/gpl-license.php GNU Public License

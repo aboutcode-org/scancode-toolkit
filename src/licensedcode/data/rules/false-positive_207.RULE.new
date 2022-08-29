@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: comments about licensing
+---
+
+others have been contributed to the Linux kernel under GPL.
+There are now also LGPL implementations of user-level

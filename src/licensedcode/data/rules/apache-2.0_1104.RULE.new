@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 notes: |
@@ -5,3 +6,7 @@ notes: |
     giuseppe (Giuseppe Scrivano ) Software engineer at Red Hat Inc.commented on Oct 17, 2019 I am fine to relicense these two files under the Apache License 2.0 license
 ignorable_authors:
     - Giuseppe Scrivano
+---
+
+// Although ebpf.c is originally licensed under LGPL-3.0-or-later, the author (Giuseppe Scrivano)
+// agreed to relicense the file in Apache License 2.0

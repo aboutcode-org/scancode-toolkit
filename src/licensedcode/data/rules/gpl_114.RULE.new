@@ -1,4 +1,9 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 80
+---
+
+This software may be used and distributed according to the terms
+of the GNU General Public License, incorporated herein by reference.

@@ -1,5 +1,9 @@
+---
 license_expression: openldap-2.2.1
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
+---
+
+OLDAP-2.2.2  Open LDAP Public License v2.2.2

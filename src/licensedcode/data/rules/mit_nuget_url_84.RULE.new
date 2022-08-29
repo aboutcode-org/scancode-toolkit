@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://raw.githubusercontent.com/libexpat/libexpat/master/expat/COPYING
+---
+
+https://raw.githubusercontent.com/libexpat/libexpat/master/expat/COPYING

@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - MIT-LICENSE
+---
+
+uses the MIT license. Please check the MIT-LICENSE file for more details.

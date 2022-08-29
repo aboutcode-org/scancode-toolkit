@@ -1,6 +1,20 @@
+---
 license_expression: bsla-no-advert
 is_license_text: yes
 relevance: 100
 notes: See https://github.com/mirror/newlib-cygwin/commit/9042d0ce65533a26fc3264206db5828d5692332c#
 ignorable_authors:
     - the University of California, Berkeley
+---
+
+Redistribution and use in source and binary forms are permitted
+provided that the above copyright notice and this paragraph are
+duplicated in all such forms and that any documentation,
+and/or other materials related to such
+distribution and use acknowledge that the software was developed
+by the University of California, Berkeley. The name of the
+University may not be used to endorse or promote products derived
+from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.

@@ -1,4 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 referenced_filenames:
     - LICENSE
+---
+
+you can redistribute it and/or modify
+# it under the terms of the Revised BSD License; see LICENSE file for
+# more details.

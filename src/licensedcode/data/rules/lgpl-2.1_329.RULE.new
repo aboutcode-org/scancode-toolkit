@@ -1,6 +1,10 @@
+---
 license_expression: lgpl-2.1
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 70
 ignorable_urls:
     - https://www.gnu.org/licenses/lgpl-2.1.html
+---
+
+LGPL 2.1    https://www.gnu.org/licenses/lgpl-2.1.html

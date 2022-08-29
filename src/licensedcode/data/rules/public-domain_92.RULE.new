@@ -1,3 +1,10 @@
+---
 license_expression: public-domain
 is_license_text: yes
 relevance: 90
+---
+
+/*  The contents of this file are hereby released into the public domain.   */
+/*  This does not affect the rest of the program code in , which      */
+/*  remains under the GPL except where specific files state differently,    */
+/*  such as this one.                                                       */

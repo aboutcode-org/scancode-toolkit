@@ -1,4 +1,11 @@
+---
 license_expression: libtool-exception-2.0
 is_license_text: yes
 relevance: 99
 notes: this exception is usually for the GPL. But this is the LGPL that is referenced here.
+---
+
+As a special exception to the GNU Lesser General Public License, 
+if you distribute this file as part of a program or library that 
+is built using GNU Libtool, you may include this file under the 
+same distribution terms that you use for the rest of that program.

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: this is not a license statement
+---
+
+may not be modified on struct

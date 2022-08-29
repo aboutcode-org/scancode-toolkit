@@ -1,5 +1,10 @@
+---
 license_expression: mpl-1.1
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE-MPL-RabbitMQ
+---
+
+licensed under the MPL 1.1. For the
+MPL 1.1, please see LICENSE-MPL-RabbitMQ.

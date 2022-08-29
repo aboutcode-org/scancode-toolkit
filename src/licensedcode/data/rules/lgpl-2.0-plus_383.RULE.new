@@ -1,3 +1,7 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
 relevance: 100
+---
+
+All patches must be offered under the terms of the GNU LGPL license, so be sure you are authorized to give us the patch under those terms.

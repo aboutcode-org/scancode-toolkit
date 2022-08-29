@@ -1,3 +1,8 @@
+---
 license_expression: lgpl-2.1-plus AND gpl-3.0
 is_license_notice: yes
 relevance: 100
+---
+
+The license of  is LGPL v2.1 or later and the licence of programs in
+tests directory is GPL v3.

@@ -1,4 +1,10 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 ignorable_urls:
     - http://www.eclipse.org/org/documents/edl-v10.php
+---
+
+It is provided to
+you under the terms and conditions of the Eclipse Distribution License v1.0 which is available at
+http://www.eclipse.org/org/documents/edl-v10.php

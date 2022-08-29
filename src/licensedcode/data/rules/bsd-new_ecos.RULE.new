@@ -1,2 +1,16 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
+---
+
+//####BSDCOPYRIGHTBEGIN####
+//
+// -------------------------------------------
+//
+// Portions of this software may have been derived from OpenBSD, 
+// FreeBSD or other sources, and are covered by the appropriate
+// copyright disclaimers included herein.
+//
+// -------------------------------------------
+//
+//####BSDCOPYRIGHTEND####

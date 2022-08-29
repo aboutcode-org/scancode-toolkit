@@ -1,5 +1,11 @@
+---
 license_expression: cc-by-nc-sa-3.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
+---
+
+This book is licensed under a Creative Commons 
+http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US [Attribution-NonCommercial-ShareAlike 3.0 Unported] license. 
+For more information, please see the Creative Commons page.

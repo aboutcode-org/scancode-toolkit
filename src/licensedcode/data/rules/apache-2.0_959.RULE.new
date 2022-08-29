@@ -1,4 +1,10 @@
+---
 license_expression: apache-2.0
 is_license_reference: yes
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+Apache License, Version 2.0
+   You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0

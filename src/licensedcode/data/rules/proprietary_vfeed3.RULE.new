@@ -1,4 +1,10 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 ignorable_urls:
     - https://vfeed.io/
+---
+
+# This file is part of vFeed Correlated Vulnerability & Threat Database Python Wrapper  - https://vfeed.io
+# See the file 'LICENSE' for copying permission
+# DO NOT DELETE OR MODIFY.

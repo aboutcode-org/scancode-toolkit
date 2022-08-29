@@ -1,2 +1,8 @@
+---
 license_expression: rsa-md5 AND apache-2.0
 is_license_notice: yes
+---
+
+ * The RSA copyright statement and Licence for that original material is
+ * included below. This is followed by the Apache copyright statement and
+ * licence for the modifications made to that material.

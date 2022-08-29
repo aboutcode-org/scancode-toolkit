@@ -1,2 +1,8 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_notice: yes
+---
+
+You may distribute this module under the terms
+of either the Gnu GPL, or the Artistic License (the same terms
+as Perl itself).

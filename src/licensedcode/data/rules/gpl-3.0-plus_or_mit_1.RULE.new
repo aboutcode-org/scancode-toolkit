@@ -1,6 +1,12 @@
+---
 license_expression: gpl-3.0-plus OR mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.opensource.org/licenses/%7B%7Bgpl-3.0%7D%7D.php
     - http://www.opensource.org/licenses/%7B%7Bmit-license%7D%7D.php
+---
+
+@license {{dual GPL (3.0 or later) and MIT}}, at your choice.
+ * @license http://www.opensource.org/licenses/{{mit-license}}.php
+ * @license http://www.opensource.org/licenses/{{gpl-3.0}}.php

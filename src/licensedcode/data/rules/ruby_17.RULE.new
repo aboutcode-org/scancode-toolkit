@@ -1,5 +1,11 @@
+---
 license_expression: ruby
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.RUBY
+---
+
+distributed under the same license terms as the Ruby standard
+   library. This includes all files under lib/ruby/stdlib/racc.
+   See LICENSE.RUBY.

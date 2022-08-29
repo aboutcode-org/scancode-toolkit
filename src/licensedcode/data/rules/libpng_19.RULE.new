@@ -1,5 +1,12 @@
+---
 license_expression: libpng
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - png.h
+---
+
+This code is released under the libpng license.
+ For conditions of distribution and use, see the disclaimer
+ and license in png.h
+/

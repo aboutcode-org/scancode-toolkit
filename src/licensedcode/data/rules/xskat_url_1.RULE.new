@@ -1,5 +1,9 @@
+---
 license_expression: xskat
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/xskat
+---
+
+https://spdx.org/licenses/xskat

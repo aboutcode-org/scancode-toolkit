@@ -1,3 +1,7 @@
+---
 is_false_positive: yes
 notes: Seen in Apache and Apache-derived licenses and ad a few other. Taken alone, this is not
     enough of a license clue.
+---
+
+This software consists of voluntary contributions made by many individuals

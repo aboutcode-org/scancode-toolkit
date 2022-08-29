@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.1 WITH gplcc-1.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,9 @@ referenced_filenames:
 ignorable_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.html
     - https://gplcc.github.io/gplcc
+---
+
+License
+This software is distributed under the LGPL 2.1 license, along with the GPL Cooperation Commitment. Please read LICENSE for information on the software availability and distribution.
+## License
+This software is distributed under the [LGPL 2.1](http://www.gnu.org/licenses/lgpl-2.1.html) license, along with the [GPL Cooperation Commitment](https://gplcc.github.io/gplcc/). Please read LICENSE for information on the software availability and distribution.

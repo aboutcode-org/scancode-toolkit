@@ -1,5 +1,9 @@
+---
 license_expression: indiana-extreme-1.2
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/xpp
+---
+
+LICENSE {{xpp}} https://spdx.org/licenses/xpp

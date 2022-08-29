@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+in a source file the full "GPL v2.0 or later" header

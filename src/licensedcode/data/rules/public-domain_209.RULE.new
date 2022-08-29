@@ -1,4 +1,8 @@
+---
 license_expression: public-domain
 is_license_text: yes
 relevance: 100
 minimum_coverage: 80
+---
+
+I hereby place the qmail package (in particular, qmail-1.03.tar.gz, with MD5 checksum 622f65f982e380dbe86e6574f3abcb7c) into the public domain. You are free to modify the package, distribute modified versions, etc.

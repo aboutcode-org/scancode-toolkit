@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,7 @@ referenced_filenames:
 notes: https://github.com/nexB/scancode-toolkit/issues/2675
 ignorable_urls:
     - http://opensource.org/licenses/MIT
+---
+
+Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
+or copy at http://opensource.org/licenses/MIT)

@@ -1,4 +1,10 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 referenced_filenames:
     - COPYING
+---
+
+This program is licenced under terms of the
+// GNU General Public Licence version 2 or newer.
+// See COPYING for details.

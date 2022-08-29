@@ -1,3 +1,4 @@
+---
 license_expression: php-3.0
 is_license_notice: yes
 minimum_coverage: 70
@@ -6,3 +7,15 @@ ignorable_urls:
     - http://www.zend.com/
 ignorable_emails:
     - group@php.net
+---
+
+This software consists of voluntary contributions made by many
+individuals on behalf of the PHP Group.
+
+The PHP Group can be contacted via Email at group@php.net.
+
+For more information on the PHP Group and the PHP project, 
+please see <http://www.php.net>.
+
+This product includes the Zend Engine, freely available at
+<http://www.zend.com>.

@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://go.microsoft.com/fwlink/?linkid=865381
+---
+
+https://go.microsoft.com/fwlink/?linkid=865381

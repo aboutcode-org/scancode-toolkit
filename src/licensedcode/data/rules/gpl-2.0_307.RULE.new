@@ -1,5 +1,10 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - linux/COPYING
+---
+
+ May be copied or modified under the terms of the GNU General Public
+ License Version 2.  See linux/COPYING for more information.

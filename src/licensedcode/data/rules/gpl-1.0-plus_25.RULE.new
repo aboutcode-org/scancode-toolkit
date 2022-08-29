@@ -1,5 +1,11 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 minimum_coverage: 76
 referenced_filenames:
     - ../COPYING
+---
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License. See ../COPYING for
+the full agreement.

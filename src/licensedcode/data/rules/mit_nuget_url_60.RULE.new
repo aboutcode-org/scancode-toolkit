@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://github.com/wiltaylor/FluentTest/blob/master/LICENSE.md
+---
+
+https://github.com/wiltaylor/FluentTest/blob/master/LICENSE.md

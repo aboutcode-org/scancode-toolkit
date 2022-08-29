@@ -1,4 +1,11 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
 notes: this is very close to the fsf-ap without the disclaimer
+---
+
+Copying and distribution of this package, with or without
+ modification, are permitted in any medium without royalty
+ provided the copyright notice and this notice are
+ preserved.

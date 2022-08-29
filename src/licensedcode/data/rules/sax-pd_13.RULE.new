@@ -1,5 +1,9 @@
+---
 license_expression: sax-pd
 is_license_tag: yes
 relevance: 90
 ignorable_urls:
     - http://www.xmlpull.org/
+---
+
+License: Public Domain  (http://www.xmlpull.org/

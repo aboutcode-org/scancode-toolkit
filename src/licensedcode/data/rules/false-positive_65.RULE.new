@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in gitlab's proprietary license-finder changelog
+---
+
+Removes `BSD-4-Clause` from a list

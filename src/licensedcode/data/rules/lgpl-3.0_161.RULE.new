@@ -1,5 +1,10 @@
+---
 license_expression: lgpl-3.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+Licensed under the Lesser GNU Public License Version 3, LGPLv3. You should have recieved a copy of this with the source distribution as
+    LICENSE, otherwise it is available at https

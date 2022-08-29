@@ -1,5 +1,11 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+License
+
+This project is licensed under the terms of the Apache 2.0 open source license. Please refer to LICENSE for the full terms.

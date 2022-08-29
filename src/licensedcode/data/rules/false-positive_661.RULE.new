@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in heimdal
+---
+
+headerfile that is compatible with GPL (file taken

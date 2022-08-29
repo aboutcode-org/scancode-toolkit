@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+license: MIT License, see LICENSE for more details

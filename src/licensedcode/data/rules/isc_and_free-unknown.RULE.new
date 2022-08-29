@@ -1,2 +1,7 @@
+---
 license_expression: isc AND free-unknown
 is_license_notice: yes
+---
+
+files are licensed under the
+ISC license. All other files have a license and copyright notice at their start.

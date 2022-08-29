@@ -1,3 +1,12 @@
+---
 license_expression: epl-1.0 OR gpl-2.0 OR lgpl-2.1
 is_license_notice: yes
 minimum_coverage: 80
+---
+
+is released under a tri EPL/GPL/LGPL license. You can use it,
+redistribute it and/or modify it under the terms of the:
+
+  Eclipse Public License version 1.0
+  GNU General Public License version 2
+  GNU Lesser General Public License version 2.1

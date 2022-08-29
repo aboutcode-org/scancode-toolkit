@@ -1,4 +1,8 @@
+---
 license_expression: gpl-2.0 WITH liberation-font-exception
 is_license_notice: yes
 is_continuous: yes
 relevance: 99
+---
+
+{{released under the terms of the Liberation License}}.

@@ -1,3 +1,8 @@
+---
 license_expression: cc0-1.0 OR openssl-ssleay OR apache-2.0
 is_license_notice: yes
 relevance: 100
+---
+
+The following source files are triple-licensed with the ability to choose
+from CC0 1.0 Universal, OpenSSL or Apache 2.0 licenses:

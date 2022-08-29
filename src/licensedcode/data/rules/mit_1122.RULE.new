@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_reference: yes
 is_continuous: yes
@@ -5,3 +6,6 @@ relevance: 100
 minimum_coverage: 100
 ignorable_urls:
     - http://mootools.net/license.txt
+---
+
+MIT (http://mootools.net/license.txt): MIT

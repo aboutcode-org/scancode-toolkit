@@ -1,3 +1,4 @@
+---
 license_expression: cc0-1.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,8 @@ ignorable_authors:
     - Doug Lea and Josh Bloch
 ignorable_urls:
     - http://creativecommons.org/publicdomain/zero/1.0/
+---
+
+Written by Doug Lea and Josh Bloch with assistance from members of
+JCP JSR-166 Expert Group and released to the public domain, as explained
+at http://creativecommons.org/publicdomain/zero/1.0/

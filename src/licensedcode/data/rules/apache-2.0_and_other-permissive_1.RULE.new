@@ -1,5 +1,11 @@
+---
 license_expression: apache-2.0 AND other-permissive
 is_license_notice: yes
 relevance: 95
 ignorable_urls:
     - https://github.com/CindyJS/CindyJS/tree/$gitid
+---
+
+Mostly licensed under the Apache License 2.0, but subprojects may use different licensing.
+ See https://github.com/CindyJS/CindyJS/tree/$gitid$
+ for corresponding sources and their respective licensing conditions.

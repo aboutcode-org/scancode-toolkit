@@ -1,3 +1,0 @@
-which is nice if you have
- non-GPL code you'd like to run from initramfs, without conflating it with
- the GPL licensed Linux kernel binary

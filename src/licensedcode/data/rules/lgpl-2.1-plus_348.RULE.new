@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.1-plus
 is_license_tag: yes
 relevance: 100
@@ -5,3 +6,6 @@ referenced_filenames:
     - COPYING
 ignorable_urls:
     - https://www.gnu.org/copyleft/lesser.html
+---
+
+License:: GNU Lesser General Public License (COPYING, https://www.gnu.org/copyleft/lesser.html)

@@ -1,2 +1,11 @@
+---
 is_false_positive: yes
 notes: Python Celery commentary on the BSD and GPL, not a license statement
+---
+
+	A GPL-compatible license makes it possible to
+    combine Celery with other software that is released
+    under the GPL, it does not mean that we're distributing
+    Celery under the GPL license.  The BSD license, unlike the GPL,
+    let you distribute a modified version without making your
+    changes open source.

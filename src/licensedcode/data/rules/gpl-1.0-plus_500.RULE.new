@@ -1,3 +1,4 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,11 @@ referenced_filenames:
     - COPYING.txt
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
+---
+
+A copy of the GNU General Public License is available in the COPYING.txt file 
+included with all NAnt distributions.
+
+For more licensing information refer to the GNU General Public License on the 
+GNU Project web site.
+https://www.gnu.org/copyleft/gpl.html

@@ -1,2 +1,9 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+Do not include the paragraph about writing to the Free Software
+Foundation's mailing address from the sample GPL notice. The FSF has
+changed addresses in the past, and may do so again. Linux
+already includes a copy of the GPL.

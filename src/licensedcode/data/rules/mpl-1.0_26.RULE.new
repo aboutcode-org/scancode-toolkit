@@ -1,3 +1,4 @@
+---
 license_expression: mpl-1.0
 is_license_notice: yes
 referenced_filenames:
@@ -5,3 +6,10 @@ referenced_filenames:
 notes: This was seen in old cURL licenses.
 ignorable_urls:
     - http://www.mozilla.org/MPL/
+---
+
+Part of this software is distributed under the Mozilla Public License
+version 1.0, which is part of this distribution (MPL-1.0.txt) and
+available on-line at http://www.mozilla.org/MPL/
+
+The terminology used here is described in the Mozilla Public License.

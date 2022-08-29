@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0 OR lgpl-2.0
 is_license_notice: yes
 referenced_filenames:
@@ -7,3 +8,8 @@ ignorable_copyrights:
     - Copyright (c) by Red Hat Software, Inc.
 ignorable_holders:
     - Red Hat Software, Inc.
+---
+
+RPM is Copyright (c) by Red Hat Software, Inc.,
+and may be distributed under the terms of the GPL and LGPL (see  the
+file COPYING for details)

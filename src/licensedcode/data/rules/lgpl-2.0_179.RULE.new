@@ -1,5 +1,18 @@
+---
 license_expression: lgpl-2.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/licenses/
+---
+
+ * GLL is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License Version 2 (LGPL2)
+ * as published by the Free Software Foundation.
+ *
+ * GLL is distributed in the hope that it will be useful,  but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  Refer to the license for details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with GLL.  If not, please visit <https://www.gnu.org/licenses/>.

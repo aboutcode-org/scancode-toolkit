@@ -1,5 +1,12 @@
+---
 license_expression: cc-by-sa-4.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://creativecommons.org/licenses/by-sa/4.0/legalcode
+---
+
+* All the Product's GUI elements, including illustrations and icon sets, as
+ * well as technical writing content are licensed under the terms of the
+ * Creative Commons Attribution-ShareAlike 4.0 International. See the License
+ * terms at http://creativecommons.org/licenses/by-sa/4.0/legalcode

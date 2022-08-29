@@ -1,5 +1,9 @@
+---
 license_expression: intel-bsd-export-control
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/Intel
+---
+
+LICENSE {{Intel}} https://spdx.org/licenses/Intel

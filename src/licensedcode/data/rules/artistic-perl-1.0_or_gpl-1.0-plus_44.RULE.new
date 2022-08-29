@@ -1,2 +1,8 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_notice: yes
+---
+
+This package is free software and is provided "as is" without express
+ or implied warranty.  It may be used, redistributed and/or modified
+ under the same terms as Perl itself.

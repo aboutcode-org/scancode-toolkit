@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - LICENSE
 ignorable_urls:
     - https://opensource.org/licenses/MIT
+---
+
+Distributed under MIT license.
+See file LICENSE for detail or copy at https://opensource.org/licenses/MIT

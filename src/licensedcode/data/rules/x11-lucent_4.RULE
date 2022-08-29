@@ -1,3 +1,0 @@
-There are a few exceptions: libutf, libfmt, and libregexp are distributed
-under simpler BSD-like boilerplates.  See the LICENSE files in those
-directories.

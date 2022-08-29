@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - http://code.google.com/p/njupiter/source/browse/trunk/Development/License.txt
+---
+
+http://code.google.com/p/njupiter/source/browse/trunk/Development/License.txt

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: some vague license reference in a Makefile
+---
+
+Gaisler GRLIB template design (GPL SPARC/LEON3)

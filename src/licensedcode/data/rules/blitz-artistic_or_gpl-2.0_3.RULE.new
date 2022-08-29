@@ -1,5 +1,12 @@
+---
 license_expression: blitz-artistic OR gpl-2.0
 is_license_notice: yes
 referenced_filenames:
     - GPL
     - LICENSE
+---
+
+The Blitz++ library is licensed under both the GPL and the more permissive
+"Blitz++ Artistic License".  Take your pick.  They are detailed in GPL
+and LICENSE, respectively.  The artistic license is more appropriate for
+commercial use, since it lacks the "viral" properties of the GPL.

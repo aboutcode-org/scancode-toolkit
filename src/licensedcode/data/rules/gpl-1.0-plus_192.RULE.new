@@ -1,3 +1,9 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
+---
+
+Common-sense licensing statement: Using any portion of this program in
+your own program means that you must give credit to the original author
+and release the resulting code under the GPL.

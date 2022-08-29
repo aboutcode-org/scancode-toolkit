@@ -1,5 +1,9 @@
+---
 license_expression: gpl-3.0 OR apache-2.0
 is_license_tag: yes
 relevance: 100
 notes: found in https://github.com/nexB/scancode-toolkit/issues/508 cloudinit typo in the rpm
     spec file
+---
+
+LICENSE: Allow dual licensing GPL-3 or Apache 2.0

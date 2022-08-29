@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://gnu.org/licenses/gpl-2.0.html
+---
+
+Licensed under the the terms of the [GNU General Public License version 2 (GPLv2)](http://gnu.org/licenses/gpl-2.0.html).

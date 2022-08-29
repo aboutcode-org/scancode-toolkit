@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://github.com/jsforce/jsforce/blob/master/LICENSE
+---
+
+Code licensed under https://github.com/jsforce/jsforce/blob/master/LICENSE">the MIT License

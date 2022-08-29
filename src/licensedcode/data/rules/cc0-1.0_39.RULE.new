@@ -1,5 +1,11 @@
+---
 license_expression: cc0-1.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://creativecommons.org/publicdomain/zero/1.0/
+---
+
+ * To the extent possible under law, the implementer has waived all copyright
+ * and related or neighboring rights to the source code in this file.
+ * https://creativecommons.org/publicdomain/zero/1.0/

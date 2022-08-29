@@ -1,5 +1,10 @@
+---
 license_expression: unicode
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.unicode.org/copyright.html#Exhibit1
+---
+
+The following license applies to these materials:
+ http://www.unicode.org/copyright.html#Exhibit1

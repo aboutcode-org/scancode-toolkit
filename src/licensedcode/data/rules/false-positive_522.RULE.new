@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: not a license, just a comment about licenses
+---
+
+Note that this permission is granted by default only to remain
+backwards compatible.

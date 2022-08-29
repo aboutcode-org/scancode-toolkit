@@ -1,3 +1,7 @@
+---
 license_expression: artistic-perl-1.0
 is_license_notice: yes
 relevance: 100
+---
+
+this works is covered under Perl's Artistic License

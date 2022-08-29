@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: in PHP code
+---
+
+string  License shortname, e.g. PHP, BSD, LGPL

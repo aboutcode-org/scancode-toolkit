@@ -1,4 +1,10 @@
+---
 license_expression: unknown-license-reference
 is_license_reference: yes
 referenced_filenames:
     - LICENSE
+---
+
+This program is licensed under the same terms that 
+and  are licensed under.  See the file LICENSE accompanying
+this distribution.

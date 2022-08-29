@@ -1,3 +1,9 @@
+---
 license_expression: gpl-2.0 AND lgpl-2.1
 is_license_notice: yes
 minimum_coverage: 50
+---
+
+The tools for  are covered by GNU Public License version 2.
+Exceptionally, the following files are also covered by the GNU Lesser General
+Public License Version 2.1 as the dual licenses.

@@ -1,4 +1,14 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 ignorable_emails:
     - info@fsf.org
+---
+
+It is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2 as published
+by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License
+along with "ore". If not, write to the Free Software Foundation, Inc:
+     "Free Software Foundation <info@fsf.org>"

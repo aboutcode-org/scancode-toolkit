@@ -1,5 +1,12 @@
+---
 license_expression: unknown-license-reference
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - Copyright
+---
+
+This SOFTWARE is licensed under the LICENSE provided in the
+../Copyright file. By downloading, installing, copying, or
+using the SOFTWARE, you agree to be bound by the terms of that
+LICENSE.

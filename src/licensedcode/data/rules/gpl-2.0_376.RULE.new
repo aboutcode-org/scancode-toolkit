@@ -1,3 +1,10 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
+---
+
+[LICENSING]
+
+ReiserFS is hereby licensed under the GNU General
+Public License version 2.

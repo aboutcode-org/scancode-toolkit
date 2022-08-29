@@ -1,4 +1,9 @@
+---
 license_expression: gpl-2.0 WITH ecos-exception-2.0
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 99
+---
+
+GPL, GNU General Public License
+eCos, GNU General Public License with eCos Extension Version 2, June 1991

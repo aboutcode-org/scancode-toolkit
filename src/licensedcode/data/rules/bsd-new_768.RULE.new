@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://directory.fsf.org/wiki/License:BSD_3Clause
+---
+
+Licence: [BSD-3cl](http://directory.fsf.org/wiki/License:BSD_3Clause)

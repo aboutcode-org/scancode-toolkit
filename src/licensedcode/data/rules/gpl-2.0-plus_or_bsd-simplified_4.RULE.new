@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0-plus OR bsd-simplified
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,22 @@ referenced_filenames:
     - README
     - COPYING
     - LICENSE
+---
+
+less is part of the GNU project and is free software.
+You can redistribute it and/or modify it
+under the terms of either
+(1) the GNU General Public License as published by
+the Free Software Foundation; or (2) the Less License.
+See the file README in the less distribution for more details
+regarding redistribution.
+You should have received a copy of the GNU General Public License
+along with the source for less; see the file COPYING.
+If not, write to the Free Software Foundation, 59 Temple Place,
+Suite 330, Boston, MA  02111-1307, USA.
+You should also have received a copy of the Less License;
+see the file LICENSE.
+less is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.

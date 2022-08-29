@@ -1,5 +1,9 @@
+---
 license_expression: cddl-1.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://glassfish.java.net/public/CDDLv1.0.html
+---
+
+copyrighted software made available under Version 1.0 of the Common Development and Distribution License https://glassfish.java.net/public/CDDLv1.0.html

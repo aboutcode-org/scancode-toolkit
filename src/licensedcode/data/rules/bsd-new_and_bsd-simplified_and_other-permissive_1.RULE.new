@@ -1,3 +1,9 @@
+---
 license_expression: bsd-new AND bsd-simplified AND other-permissive
 is_license_notice: yes
 relevance: 100
+---
+
+The following files included from outside sources are protected by
+other people's Copyright and are distributed under various 2-clause
+and 3-clause BSD licenses; see these individual files for details.

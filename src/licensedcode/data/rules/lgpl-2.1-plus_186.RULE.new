@@ -1,5 +1,12 @@
+---
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.LGPLv2.1
+---
+
+# License
+
+Most files in FFmpeg are under the GNU Lesser General Public License version 2.1
+or later (LGPL v2.1+). Read the file `COPYING.LGPLv2.1` for details.

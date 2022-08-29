@@ -1,6 +1,12 @@
+---
 license_expression: gpl-1.0-plus OR lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.LIB
     - COPYING
+---
+
+They are licensed under the GPL or the LGPL. See the
+COPYING.LIB file in this directory and the COPYING file in the parent
+directory for licensing information.

@@ -1,5 +1,10 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+This library is licensed under the GPLv2+. Please refer to the COPYING file for
+more details.

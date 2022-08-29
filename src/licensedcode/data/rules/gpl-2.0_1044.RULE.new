@@ -1,5 +1,11 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+Licensed under the {{GNU General Public License v2}} (the "License");
+you may not use this file except in compliance with the License. The terms
+of the License are located in the COPYING file of this distribution.

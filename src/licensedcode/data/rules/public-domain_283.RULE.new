@@ -1,4 +1,10 @@
+---
 license_expression: public-domain
 is_license_notice: yes
 relevance: 100
 notes: Seen in json-cpp
+---
+
+Authors explicitly disclaim copyright in all
+jurisdictions which recognize such a disclaimer. In such jurisdictions,
+this software is released into the Public Domain.

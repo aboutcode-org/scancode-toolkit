@@ -1,2 +1,8 @@
+---
 is_false_positive: yes
 notes: a sequence of SPDX license ids and names is not a license
+---
+
+.replace('Attribution', 'BY')
+.replace('NonCommercial', 'NC')
+.replace('NoDerivatives', 'ND')

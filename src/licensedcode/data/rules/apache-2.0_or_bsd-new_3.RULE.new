@@ -1,2 +1,9 @@
+---
 license_expression: apache-2.0 OR bsd-new
 is_license_notice: yes
+---
+
+#  is provided for use under two licenses: Apache OR BSD.
+# Users may opt to use either license depending on the license
+# restictions of the systems with which they plan to integrate
+# the

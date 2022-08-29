@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.GPLv2
+---
+
+licensed under the GNU General Public License version 2 or later (GPL v2+). See the file `COPYING.GPLv2` for details.

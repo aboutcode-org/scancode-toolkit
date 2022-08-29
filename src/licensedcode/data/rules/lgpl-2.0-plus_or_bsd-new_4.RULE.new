@@ -1,3 +1,10 @@
+---
 license_expression: lgpl-2.0-plus OR bsd-new
 is_license_notice: yes
 relevance: 99
+---
+
+AutoOpts is
+ *  licensed under the terms of the LGPL.  The redistributable library
+ *  (``libopts'') is licensed under the terms of either the LGPL or, at the
+ *  users discretion, the BSD license.

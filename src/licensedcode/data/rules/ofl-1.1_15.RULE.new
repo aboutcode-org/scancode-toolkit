@@ -1,6 +1,12 @@
+---
 license_expression: ofl-1.1
 is_license_notice: yes
 referenced_filenames:
     - OFL.txt
 ignorable_urls:
     - http://scripts.sil.org/OFL
+---
+
+% This Font Software is licensed under the SIL Open Font License, Version 1.1.
+% This license is in the accompanying file OFL.txt, and is also
+% available with a FAQ at: http://scripts.sil.org/OFL.

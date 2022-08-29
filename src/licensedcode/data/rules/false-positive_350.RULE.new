@@ -1,3 +1,32 @@
+---
 is_false_positive: yes
 notes: See in https://github.com/jslicense/spdx-correct.js/tree/ae4124a26e862181d16d745b5b9ac6838e4a6109
     which is a license-related tool
+---
+
+var transpositions = [
+  ['APGL', 'AGPL'],
+  ['Gpl', 'GPL'],
+  ['GLP', 'GPL'],
+  ['APL', 'Apache'],
+  ['ISD', 'ISC'],
+  ['GLP', 'GPL'],
+  ['IST', 'ISC'],
+  ['Claude', 'Clause'],
+  [' or later', '+'],
+  [' International', ''],
+  ['GNU', 'GPL'],
+  ['GUN', 'GPL'],
+  ['+', ''],
+  ['GNU GPL', 'GPL'],
+  ['GNU/GPL', 'GPL'],
+  ['GNU GLP', 'GPL'],
+  ['GNU General Public License', 'GPL'],
+  ['Gnu public license', 'GPL'],
+  ['GNU Public License', 'GPL'],
+  ['GNU GENERAL PUBLIC LICENSE', 'GPL'],
+  ['MTI', 'MIT'],
+  ['Mozilla Public License', 'MPL'],
+  ['WTH', 'WTF'],
+  ['-License', '']
+]

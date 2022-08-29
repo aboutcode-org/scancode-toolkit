@@ -1,5 +1,9 @@
+---
 license_expression: apache-2.0 AND isc
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+licensed under Apache 2.0 and ISC. For more information, see the LICENSE file.

@@ -1,6 +1,14 @@
+---
 license_expression: 3com-microcode
 is_license_text: yes
 relevance: 100
 minimum_coverage: 80
 referenced_filenames:
     - COPYING
+---
+
+Permission is granted to use, distribute, or modify this source, 
+provided that this copyright notice remains intact.
+
+This message is included in accordance with David Bell's wishes. 
+These terms are compatible with the GNU GPL contained in COPYING.

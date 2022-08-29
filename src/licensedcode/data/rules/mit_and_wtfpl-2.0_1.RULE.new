@@ -1,5 +1,12 @@
+---
 license_expression: mit AND wtfpl-2.0
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.wtfpl.net/txt/copying/
+---
+
+license:
+license: MIT
+  type: WTFPL
+  url: http://www.wtfpl.net/txt/copying/

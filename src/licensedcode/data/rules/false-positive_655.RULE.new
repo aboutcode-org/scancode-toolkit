@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in openzfs
+---
+
+a lot of GPL-only code duplication

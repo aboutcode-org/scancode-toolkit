@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new OR gpl-2.0
 is_license_tag: yes
 relevance: 99
 minimum_coverage: 100
 notes: LKM with Dual BSD/GPL
+---
+
+CSIO_DRV_LICENSE        "Dual BSD/GPL"

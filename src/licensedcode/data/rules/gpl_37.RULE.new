@@ -1,3 +1,8 @@
+---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 notes: Debian GPL
+---
+
+GPL, on Debian systems you can find the full text of the GPL in
+/usr/share/common-licenses/GPL

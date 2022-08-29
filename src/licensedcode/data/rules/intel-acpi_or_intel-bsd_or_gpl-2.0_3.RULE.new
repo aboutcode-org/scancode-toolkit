@@ -1,4 +1,10 @@
+---
 license_expression: intel-acpi OR intel-bsd OR gpl-2.0
 is_license_notice: yes
 relevance: 99
 minimum_coverage: 100
+---
+
+The licensing information at the start of each source code module has 
+been updated. In addition to the Intel license, the dual GPLv2/BSD 
+license has been added for completeness.

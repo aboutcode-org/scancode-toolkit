@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://raw.githubusercontent.com/
+---
+
+License [MIT License](https://raw.githubusercontent.com/ /master/LICENSE)

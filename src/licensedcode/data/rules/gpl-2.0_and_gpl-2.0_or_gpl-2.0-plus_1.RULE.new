@@ -1,5 +1,14 @@
+---
 license_expression: gpl-2.0 AND (gpl-2.0 OR gpl-2.0-plus)
 is_license_notice: yes
 minimum_coverage: 90
 referenced_filenames:
     - COPYING
+---
+
+License
+
+This module is licensed under the GNU General Public License v2.0 only. 
+Single files, however, are licensed either the GNU General Public License v2.0 
+only or under GNU General Public License v2.0 or later, please see the COPYING 
+file for details.

@@ -1,3 +1,7 @@
+---
 license_expression: artistic-2.0
 is_license_notice: yes
 relevance: 90
+---
+
+    The distribution is licensed under the Artistic License, as specified by the Artistic file in the standard Perl distribution.

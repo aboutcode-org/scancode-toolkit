@@ -1,2 +1,8 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+---
+
+You may modify and redistribute the device driver code under the
+GNU General Public License as published by the Free Software
+Foundation (version 2 or a later version).

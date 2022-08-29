@@ -1,6 +1,14 @@
+---
 license_expression: gpl-3.0-plus OR bsd-simplified
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 95
 referenced_filenames:
     - README
+---
+
+* You may distribute under the terms of either the GNU General Public
+ * License or the Less License, as specified in the README file.
+ *
+ * For more information about less, or for information on how to 
+ * contact the author, see the README file.

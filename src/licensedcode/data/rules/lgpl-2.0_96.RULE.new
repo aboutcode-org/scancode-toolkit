@@ -1,5 +1,11 @@
+---
 license_expression: lgpl-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.LIB
+---
+
+has
+been donated to the Free Software Foundation, Inc. It is covered by the
+GNU library license version 2, see the file 'COPYING.LIB'.

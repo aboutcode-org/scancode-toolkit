@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: variable names that look like GPL but are not
+---
+
+gpl2_tb

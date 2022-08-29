@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: commentary about a license.
+---
+
+/*Linux, GPL'ed HCF based, full source code in Public Domain

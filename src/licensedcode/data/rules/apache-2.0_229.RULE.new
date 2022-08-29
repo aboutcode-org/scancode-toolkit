@@ -1,5 +1,10 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+code is licensed under the Apache Software License 2.0, which is
+in the LICENSE in the root directory of this distribution.

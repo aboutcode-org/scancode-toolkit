@@ -1,5 +1,9 @@
+---
 license_expression: eurosym
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/eurosym
+---
+
+https://spdx.org/licenses/eurosym

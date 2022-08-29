@@ -1,5 +1,9 @@
+---
 license_expression: adobe-scl
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/adobe-2006.html
+---
+
+https://spdx.org/licenses/adobe-2006.html

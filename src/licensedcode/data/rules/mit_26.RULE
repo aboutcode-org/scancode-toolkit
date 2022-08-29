@@ -1,1 +1,0 @@
-The MIT License (MIT)

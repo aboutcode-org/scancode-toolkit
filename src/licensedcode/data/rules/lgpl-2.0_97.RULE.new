@@ -1,5 +1,10 @@
+---
 license_expression: lgpl-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING.LIB
+---
+
+It is covered by the
+GNU library license version 2, see the file 'COPYING.LIB'.

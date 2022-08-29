@@ -1,4 +1,8 @@
+---
 license_expression: bsd-new
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
+---
+
+The copyright notice and license are embedded in regexp-pcre.js.

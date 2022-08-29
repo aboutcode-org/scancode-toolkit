@@ -1,5 +1,9 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+Items are licensed under the GNU General Public Licence. Please consult the file "COPYING" for further details.

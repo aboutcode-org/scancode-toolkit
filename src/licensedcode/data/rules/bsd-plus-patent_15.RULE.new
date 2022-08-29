@@ -1,5 +1,10 @@
+---
 license_expression: bsd-plus-patent
 is_license_notice: yes
 ignorable_urls:
     - https://spdx.org/licenses
     - https://spdx.org/licenses/BSD-2-Clause-Patent.html
+---
+
+This project uses BSD-2-Clause-Patent license.
+[SPDX-License-Identifier](https://spdx.org/licenses/): [BSD-2-Clause-Patent](https://spdx.org/licenses/BSD-2-Clause-Patent.html)

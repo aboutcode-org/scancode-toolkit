@@ -1,5 +1,9 @@
+---
 license_expression: colt
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://acs.lbl.gov/software/colt/license.html
+---
+
+http://acs.lbl.gov/software/colt/license.html

@@ -1,4 +1,9 @@
+---
 license_expression: generic-cla
 is_license_notice: yes
 ignorable_urls:
     - https://git.k8s.io/community/CLA.md
+---
+
+[Contributor License Agreement](https://git.k8s.io/community/CLA.md) Kubernetes projects require that you sign a Contributor License Agreement (CLA) before we can
+ accept your pull requests

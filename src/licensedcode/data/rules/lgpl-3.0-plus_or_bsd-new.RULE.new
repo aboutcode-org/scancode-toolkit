@@ -1,6 +1,18 @@
+---
 license_expression: lgpl-3.0-plus OR bsd-new
 is_license_notice: yes
 referenced_filenames:
     - COPYING.lgplv3
     - COPYING.gplv3
     - COPYING.mbsd
+---
+
+ *  is available under any one of two licenses.  The license
+ *  in use must be one of these two and the choice is under the control
+ *  of the user of the license.
+ *
+ *   The GNU Lesser General Public License, version 3 or later
+ *      See the files "COPYING.lgplv3" and "COPYING.gplv3"
+ *
+ *   The Modified Berkeley Software Distribution License
+ *      See the file "COPYING.mbsd"

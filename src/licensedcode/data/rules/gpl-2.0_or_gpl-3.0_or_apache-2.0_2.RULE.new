@@ -1,4 +1,11 @@
+---
 license_expression: gpl-2.0 OR gpl-3.0 OR apache-2.0
 is_license_notice: yes
 relevance: 100
 notes: seen in xpdf
+---
+
+licensed under the GNU General Public License (GPL), version 2 or
+3, or the Apache License 2.0.  This means that you can distribute
+derivates of those modules under any combination of one or more of the
+three licenses.

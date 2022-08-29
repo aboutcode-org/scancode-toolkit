@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: not a license, but a list of licenses in code
+---
+
+p('DocumentRef-spdx-tool-1.2 : LicenseRef-MIT-Style-2'),
+{ license: 'DocumentRef-spdx-tool-1.2:LicenseRef-MIT-Style-2' }

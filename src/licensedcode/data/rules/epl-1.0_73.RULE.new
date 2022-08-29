@@ -1,5 +1,9 @@
+---
 license_expression: epl-1.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.eclipse.org/legal/epl-v10.html
+---
+
+Licensed under the Eclipse Public License-v. 1.0:http://www.eclipse.org/legal/epl-v10.html

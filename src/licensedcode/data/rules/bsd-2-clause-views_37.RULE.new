@@ -1,4 +1,8 @@
+---
 license_expression: bsd-2-clause-views
 is_license_notice: yes
 ignorable_urls:
     - https://www.freebsd.org/copyright/freebsd-license.html
+---
+
+License Under the FreeBSD License, which allows maximum reuse, contribution and the freedom of commercialization for 3rd parties. Please check the specific terms and conditions linked to this open source license at https://www.freebsd.org/copyright/freebsd-license.html

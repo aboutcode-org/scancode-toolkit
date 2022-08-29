@@ -1,5 +1,12 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl.html
+---
+
+This emulator is normally available
+under a BSD license. It's available
+in this form only under GPL.
+The GPL license can be found at http://www.gnu.org/licenses/gpl.html

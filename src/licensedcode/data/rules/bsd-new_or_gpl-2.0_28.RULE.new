@@ -1,5 +1,10 @@
+---
 license_expression: bsd-new OR gpl-2.0
 is_license_notice: yes
 relevance: 99
 minimum_coverage: 100
 notes: Seen in ntb in FreeBSD either with bsd-new or bsd-simplified
+---
+
+Much of the code in this module is shared with Linux. Any patches may
+be picked up and redistributed in Linux with a dual GPL/BSD license.

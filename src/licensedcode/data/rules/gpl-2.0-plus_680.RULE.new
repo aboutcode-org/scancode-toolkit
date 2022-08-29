@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,9 @@ referenced_filenames:
     - LICENSE
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl-2.0.html
+---
+
+Licensing
+
+This plugin is licensed under the terms of the GNU General Public License, version 2 (GPLv2) or later.
+License conditions are included in LICENSE or can be found at the [GNU website](http://www.gnu.org/licenses/gpl-2.0.html).

@@ -1,4 +1,9 @@
+---
 license_expression: unknown
 is_license_reference: yes
 relevance: 100
 notes: some comment about a license
+---
+
+not covered by
+JRuby's licence

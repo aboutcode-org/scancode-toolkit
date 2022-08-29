@@ -1,5 +1,17 @@
+---
 license_expression: (gpl-2.0-plus OR lgpl-3.0-plus) AND gpl-3.0-plus
 is_license_notice: yes
 referenced_filenames:
     - COPYINGv2
     - COPYING.LESSERv3
+---
+
+The source code for the C library  are
+licensed under the terms of either the GNU General Public License
+version 2.0 or later (see the file COPYINGv2) or the GNU Lesser
+General Public License version 3.0 or later (see the file
+COPYING.LESSERv3), or both in parallel as here.
+
+The command line tool, self tests, examples, and other auxilliary
+files, are licensed under the GNU General Public License version 3.0
+or later.

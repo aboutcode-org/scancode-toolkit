@@ -1,2 +1,12 @@
+---
 is_false_positive: yes
 notes: not a license, just a comment about licenses
+---
+
+Added IETF BSD license for MIB files.
+
+MIBs included in Net-SNMP taken from IETF Documents are considered
+Code Components in accordance with the IETF Trust License Policy, as found
+here:
+
+http://trustee.ietf.org/license-info/

@@ -1,5 +1,9 @@
+---
 license_expression: bsd-simplified
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+under a BSD 2-Clause license, see LICENSE

@@ -1,5 +1,13 @@
+---
 license_expression: unknown-license-reference
 is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+
+License
+-------
+
+There are two licenses for the code and data.  See the [LICENSE]( file for details.

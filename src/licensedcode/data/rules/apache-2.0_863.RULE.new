@@ -1,6 +1,15 @@
+---
 license_expression: apache-2.0
 is_license_tag: yes
 relevance: 100
 minimum_coverage: 80
 ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+  <licenses>
+    <license>
+      <name>Apache License Version 2</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>

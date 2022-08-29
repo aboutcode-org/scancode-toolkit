@@ -1,3 +1,4 @@
+---
 license_expression: wordnet AND public-domain AND other-permissive
 is_license_notice: yes
 relevance: 100
@@ -7,3 +8,7 @@ ignorable_copyrights:
     - copyright of SCOWL.
 ignorable_holders:
     - SCOWL
+---
+
+The English dictionaries come directly from SCOWL 
+and is thus under the same copyright of SCOWL.

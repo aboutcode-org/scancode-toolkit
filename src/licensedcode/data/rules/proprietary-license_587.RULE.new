@@ -1,4 +1,8 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 ignorable_urls:
     - http://www.x12.org/
+---
+
+Accredited Standards Committee X12 (#transaction_set), [#transaction_version]. X12 Incorporated, [MM YY]. <http: //www.x12.org>. "X12 has granted express permission for use of X12 copyrighted materials within this document."

@@ -1,6 +1,11 @@
+---
 license_expression: ruby OR gpl-2.0 OR gpl-3.0
 is_license_notice: yes
 referenced_filenames:
     - LICENSE
     - GPLv2
     - GPLv3
+---
+
+ may be used under Matz's original licensing terms for Ruby, or GPLv2 or GPLv3. 
+See LICENSE for Matz's terms, or GPLv2 and GPLv3 files.

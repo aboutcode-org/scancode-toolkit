@@ -1,5 +1,10 @@
+---
 license_expression: artistic-perl-1.0
 is_license_reference: yes
 minimum_coverage: 90
 referenced_filenames:
     - /usr/share/common-licenses/Artistic
+---
+
+On Debian GNU/Linux systems, the complete text of the Artistic
+license is in `/usr/share/common-licenses/Artistic'

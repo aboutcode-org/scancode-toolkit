@@ -1,6 +1,11 @@
+---
 license_expression: bsd-simplified-darwin
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 90
 referenced_filenames:
     - COPYING
+---
+
+Covered by the standard Berkeley Software Distribution copyright; see the file
+COPYING in the source distribution.

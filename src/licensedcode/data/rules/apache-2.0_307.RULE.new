@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,7 @@ referenced_filenames:
     - LICENSE.TXT
 ignorable_urls:
     - http://nltk.org/
+---
+
+# URL: <http://nltk.org/>
+# For license information, see LICENSE.TXT

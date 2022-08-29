@@ -1,4 +1,8 @@
+---
 license_expression: unknown
 is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
+---
+
+`Other` - Non-standard license, usually unique to the project itself.

@@ -1,3 +1,4 @@
+---
 license_expression: info-zip-2009-01
 is_license_notice: yes
 relevance: 99
@@ -17,3 +18,7 @@ notes: |
 
      This copyright note does not contain any usage terms.  So, we assume
      that this code is freely reusable until we are proved wrong...
+---
+
+This copyright note does not contain any usage terms.  So, we assume
+  that this code is freely reusable until we are proved wrong...

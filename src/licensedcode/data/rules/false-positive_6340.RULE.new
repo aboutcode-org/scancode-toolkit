@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: license ids in license handling code  is not a license
+---
+
+satisfies MIT OR GPL-2.0 ISC OR MIT

@@ -1,4 +1,9 @@
+---
 license_expression: gpl-2.0 OR bsd-new
 is_license_notice: yes
 relevance: 100
 notes: Hostapd dual bsd/gpl
+---
+
+This program is dual-licensed under both the GPL version 2 and BSD
+license. Either license may be used at your option.

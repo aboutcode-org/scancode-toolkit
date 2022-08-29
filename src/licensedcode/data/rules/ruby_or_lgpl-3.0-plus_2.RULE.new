@@ -1,3 +1,7 @@
+---
 license_expression: ruby OR lgpl-3.0-plus
 is_license_notice: yes
 relevance: 100
+---
+
+license = "Ruby or LGPLv3+"

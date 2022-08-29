@@ -1,2 +1,14 @@
+---
 license_expression: gpl-1.0-plus WITH gcc-compiler-exception-2.0
 is_license_notice: yes
+---
+
+licensed under the terms of the {{GNU General
+Public License}}, with this special exception:
+
+  As a special exception, if you link this file with files compiled
+  with a GNU compiler to produce an executable, this does not cause
+  the resulting executable to be covered by the GNU General Public
+  License. This exception does not however invalidate any other
+  reasons why the executable file might be covered by the GNU
+  General Public License.

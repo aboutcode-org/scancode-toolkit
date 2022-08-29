@@ -1,5 +1,15 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 notes: Rarely seen in old Linux 2.6 kernel modules from now defunct www.systec-electronic.com
     See https://github.com/jameshilliard/WECB-VZ-GPL/blob/adfad80b3144c788efb636d5acfcdd6ed91b3d79/rtl819x/linux-2.6.30/drivers/staging/epl/user/EplNmtuCal.h#L13
     It is not clear if this is proprietary or not.
+---
+
+Severability Clause:
+If a provision of this License is or becomes illegal, invalid or
+unenforceable in any jurisdiction, that shall not affect:
+1. the validity or enforceability in that jurisdiction of any other
+   provision of this License; or
+2. the validity or enforceability in other jurisdictions of that or
+   any other provision of this License.

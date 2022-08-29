@@ -1,6 +1,17 @@
+---
 license_expression: lgpl-2.1 WITH occt-exception-1.0 OR commercial-license
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - OCCT_LGPL_EXCEPTION.txt
     - LICENSE_LGPL_21.txt
+---
+
+// This library is free software; you can redistribute it and/or modify it under
+// the terms of the GNU Lesser General Public License version 2.1 as published
+// by the Free Software Foundation, with special exception defined in the file
+// OCCT_LGPL_EXCEPTION.txt. Consult the file LICENSE_LGPL_21.txt included in OCCT
+// distribution for complete text of the license and disclaimer of any warranty.
+//
+// Alternatively, this file may be used under the terms of Open CASCADE
+// commercial license or contractual agreement.

@@ -1,5 +1,10 @@
+---
 license_expression: gpl-1.0-plus OR artistic-perl-1.0
 is_license_notice: yes
 relevance: 70
 minimum_coverage: 100
 notes: seen mostly in Perl
+---
+
+It is assumed that the other parts are licensed under the same
+ terms as the rest of the distribution.

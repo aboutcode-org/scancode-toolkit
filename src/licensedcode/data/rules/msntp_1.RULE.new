@@ -1,5 +1,9 @@
+---
 license_expression: msntp
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://fedoraproject.org/wiki/Licensing/MSNTP
+---
+
+http://fedoraproject.org/wiki/Licensing/MSNTP

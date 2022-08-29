@@ -1,4 +1,9 @@
+---
 license_expression: gpl-1.0-plus OR artistic-perl-1.0
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 100
+---
+
+Perl 5
+ Porters, which was released under the same license terms.

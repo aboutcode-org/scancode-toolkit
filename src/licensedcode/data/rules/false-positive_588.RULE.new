@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: in svn, a comment on AGPL
+---
+
+newer are under the AGPL, and we want use of AGPL dependencies to be opt-in

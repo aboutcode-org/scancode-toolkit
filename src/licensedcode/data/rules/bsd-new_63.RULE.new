@@ -1,3 +1,4 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,7 @@ minimum_coverage: 95
 referenced_filenames:
     - LICENSE
 notes: Found in Chromium Debian copyright files
+---
+
+Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.:
+License: global BSD-style

@@ -1,5 +1,9 @@
+---
 license_expression: cddl-1.1
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/CDDL-1.1
+---
+
+{{CDDL-1.1}} https://spdx.org/licenses/CDDL-1.1

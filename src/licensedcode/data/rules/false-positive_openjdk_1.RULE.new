@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: found in the openjdk
+---
+
+Some sources downloaded from openjdk.java.net do not display the GPL
+license header.

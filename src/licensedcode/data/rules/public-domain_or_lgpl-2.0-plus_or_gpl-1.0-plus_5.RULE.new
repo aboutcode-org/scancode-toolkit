@@ -1,6 +1,24 @@
+---
 license_expression: public-domain OR lgpl-2.0-plus OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
     - https://www.gnu.org/copyleft/lesser.html
+---
+
+released under two GNU GPL, GNU LGPL and as Public Domain
+
+ is released under GNU General Public License (GPL), GNU
+Lesser General Public License (LGPL) and as Public Domain.
+
+You can read the GNU General Public License at 
+https://www.gnu.org/copyleft/gpl.html
+
+You can read the GNU Lesser General Public License at 
+https://www.gnu.org/copyleft/lesser.html
+
+You have the freedom to choose which of the three ways you want to 
+use, change and distribute the code in - but if you want to 
+contribute to the  project then you should give it to me 
+and I will release it under all the three licenses.

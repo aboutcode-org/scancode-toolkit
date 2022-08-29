@@ -1,4 +1,8 @@
+---
 license_expression: lgpl-3.0
 is_license_notice: yes
 relevance: 99
 notes: typo in license id
+---
+
+this library was distributed under the GNU Lesser General Public License version 3.0 (GLPLv3)

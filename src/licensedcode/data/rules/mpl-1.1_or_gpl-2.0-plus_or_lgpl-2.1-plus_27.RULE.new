@@ -1,3 +1,4 @@
+---
 license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,8 @@ minimum_coverage: 95
 referenced_filenames:
     - linux/basicplugin.c
     - licenses
+---
+
+The code is licensed under the MPL 1.1/GPL 2.0/LGPL 2.1.
+For more information take a look at the license block in linux/basicplugin.c
+and the license-text-files located in licenses/.

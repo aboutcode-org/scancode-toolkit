@@ -1,5 +1,10 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://opensource.org/licenses/mit
+---
+
+the MIT licence.
+ * http://opensource.org/licenses/mit

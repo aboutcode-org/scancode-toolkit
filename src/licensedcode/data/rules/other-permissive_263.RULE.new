@@ -1,4 +1,10 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
 notes: seen in FreeBSD
+---
+
+Disclaimer:
+It is hoped that it is useful but there is no warranty. If it breaks
+you get to keep both pieces.

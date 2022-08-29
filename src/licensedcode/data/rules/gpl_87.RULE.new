@@ -1,5 +1,10 @@
+---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+This program can be distributed under the terms of the GNU GPL.
+See the file COPYING.

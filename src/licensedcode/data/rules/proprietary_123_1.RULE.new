@@ -1,5 +1,11 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.thisisant.com/swlicenses
+---
+
+ANT+ Shared Source License
+
+This software is subject to the ANT+ Shared Source License www.thisisant.com/swlicenses

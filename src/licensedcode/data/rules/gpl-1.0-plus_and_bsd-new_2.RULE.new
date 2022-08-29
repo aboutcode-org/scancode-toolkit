@@ -1,4 +1,10 @@
+---
 license_expression: gpl-1.0-plus AND bsd-new
 is_license_notice: yes
 relevance: 100
 notes: See https://www.agner.org/random/randomc.zip
+---
+
+* This C++ implementation of contains parts of the original C code
+* which was published under the following BSD license, which is therefore
+* in effect in addition to the GNU General Public License.

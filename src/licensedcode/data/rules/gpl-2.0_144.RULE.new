@@ -1,4 +1,13 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 relevance: 90
 notes: this is only ever seen in a GPL 2 context
+---
+
+Both of these 2 wonderful world
+are GPL, so this is, of course, GPL.
+/* This file is part of drivers, and is distributed
+   under the same license. 
+   Some of these names and comments originated from the 
+    drivers, which are distributed under the GPL. */

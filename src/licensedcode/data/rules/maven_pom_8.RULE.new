@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://asm.objectweb.org/license.html
+---
+
+License: BSD  (http://asm.objectweb.org/license.html)

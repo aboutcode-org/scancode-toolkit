@@ -1,6 +1,17 @@
+---
 license_expression: gpl-2.0 WITH mysql-linking-exception-2018
 is_license_notice: yes
 referenced_filenames:
     - EXCEPTIONS-CONNECTOR-J
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl.txt
+---
+
+<licenses>
+    <license>
+      <name>The GNU General Public License, Version 2</name>
+<url>http://www.gnu.org/licenses/gpl.txt
+
+MySQL Connector/J contains exceptions to GPL requirements when linking with other components
+that are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J
+in this distribution for more details.

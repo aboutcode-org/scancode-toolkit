@@ -1,5 +1,11 @@
+---
 license_expression: unlicense
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://github.com/ScottHamper/Cookies
+---
+
+Public Domain
+bundles portions of the following which are in the public domain:
+Cookies.js (https://github.com/ScottHamper/Cookies/)

@@ -1,4 +1,10 @@
+---
 license_expression: artistic-perl-1.0 OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 90
+---
+
+This library is free software; you can redistribute it and/or modify
+ it under the same terms as Perl itself, either Perl version 5 or,
+ at your option, any later version of Perl 5 you may have available.

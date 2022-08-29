@@ -1,6 +1,12 @@
+---
 license_expression: lgpl-2.0-plus AND gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
     - COPYING.LIB
+---
+
+The library is distributed under the LGPLv2+.  The programs are
+distributed under the GPLv2+.  Please see the files COPYING and
+COPYING.LIB for full license information.

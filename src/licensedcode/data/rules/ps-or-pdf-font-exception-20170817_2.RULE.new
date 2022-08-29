@@ -1,6 +1,10 @@
+---
 license_expression: ps-or-pdf-font-exception-20170817
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
+---
+
+name: PS/PDF font exception (2017-08-17)

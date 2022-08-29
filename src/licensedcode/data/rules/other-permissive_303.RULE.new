@@ -1,3 +1,14 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 notes: https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#BSD_Without_Notice_Requirement_.28variant_of_3_clause_BSD_without_advertising.29
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the original work is
+properly attributed to Greg Page and Caldera, Inc.
+Neither the name of Greg Page nor Caldera, Inc.  may be used to
+endorse or promote products derived from this software without
+specific prior written permission.
+This software is provided by Greg Page and Caldera, Inc. "AS IS"
+and without any express or implied warranties.

@@ -1,3 +1,7 @@
+---
 license_expression: vim
 is_license_notice: yes
 relevance: 100
+---
+
+License: Under the same license as Vim itself

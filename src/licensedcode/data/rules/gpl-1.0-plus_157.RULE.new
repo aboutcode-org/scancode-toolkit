@@ -1,5 +1,9 @@
+---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 relevance: 90
 referenced_filenames:
     - COPYING
+---
+
+* Licensed under the GNU/GPL. See COPYING for details.

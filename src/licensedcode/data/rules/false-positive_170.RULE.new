@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: comments about licensing
+---
+
+their distribution is a violation of the GNU General Public license

@@ -1,3 +1,4 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 notes: Based on the MIT with material and problematic changes. Seen in https://github.com/Armoured-Egg-Official/SkyblockCF/blob/a3b13448c878bfc7b2df005941c32e198191c0af/LICENSE#L7
@@ -5,3 +6,23 @@ notes: Based on the MIT with material and problematic changes. Seen in https://g
     instead of "without restriction including without limitation the rights" in a standard MIT.
     Since there is no way to know if this is a bona fide typo or some intentianal change this
     is reported as proprietary for now.
+---
+
+Permission is hereby granted, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software with restriction, including without limitation the rights
+to use, copy, modify and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions: They may not 
+merge, publish, distribute, sublicense, and/or sell
+copies of the Software without express permision from Armoured Egg Games
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

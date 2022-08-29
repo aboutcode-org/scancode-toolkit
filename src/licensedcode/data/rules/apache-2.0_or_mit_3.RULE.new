@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0 OR mit
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,18 @@ minimum_coverage: 80
 ignorable_urls:
     - http://opensource.org/licenses/MIT
     - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+## License
+
+ is dual licensed under both
+
+  * The {{Apache 2.0 License}}
+    http://www.apache.org/licenses/LICENSE-2.0
+
+and
+
+  * The {{MIT License}}
+    http://opensource.org/licenses/MIT
+
+{{ may be distributed under either license.}}

@@ -1,3 +1,13 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 notes: Based on the MIT with material and problematic changes. https://github.com/Andre-H/LaNoFraiAndroid/blob/4ab95760e0e8543d3e801ee79de1da5d7256ee9a/LICENSE.md#L5
+---
+
+Permission is hereby NOT granted, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+As I do not possess knowledge of copyright law, nor do I have access to an advisor I am simply stating in good faith that there is no pirated or unlicensed code in anything I commit, but I would rather nobody uses it for any porpose other than educational, at least until I can assess and implement a proper licensing scheme.
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

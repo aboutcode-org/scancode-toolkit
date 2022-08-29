@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Found in PHO code
+---
+
+Decompresses data encoded using the public-domain zlib/deflate compression method

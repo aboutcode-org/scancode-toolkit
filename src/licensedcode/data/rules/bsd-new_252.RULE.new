@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
 referenced_filenames:
     - License.txt
+---
+
+Licensed under the BSD 3-Clause License; see License.txt.

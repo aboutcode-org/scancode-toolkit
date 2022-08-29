@@ -1,3 +1,4 @@
+---
 license_expression: x11 AND other-permissive
 is_license_text: yes
 relevance: 95
@@ -7,3 +8,8 @@ notes: Per author "This is a modified version of the X11 Licence (commonly known
     any other part of the licence."
 ignorable_urls:
     - http://www.twilightuniverse.com/
+---
+
+www.twilightuniverse.com */
+ Software licenced under a modified X11 licence,
+ see documentation or authors website for more details */

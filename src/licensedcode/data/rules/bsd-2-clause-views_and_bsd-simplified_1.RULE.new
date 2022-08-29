@@ -1,5 +1,9 @@
+---
 license_expression: bsd-2-clause-views AND bsd-simplified
 is_license_tag: yes
 relevance: 100
 minimum_coverage: 100
 notes: typo in SPDX license key found in FreeBSD
+---
+
+SPDX-License-Identifier: BSD-2-Clause-FreeBSD AND BSD-2-Clause NetBSD

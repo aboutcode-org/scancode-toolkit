@@ -1,6 +1,10 @@
+---
 license_expression: eupl-1.0
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
+---
+
+European Union Public License 1.0 EUPL-1.0

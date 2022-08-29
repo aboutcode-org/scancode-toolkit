@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+ Knowing how MacOS is based on BSD and BSD is an Open Source

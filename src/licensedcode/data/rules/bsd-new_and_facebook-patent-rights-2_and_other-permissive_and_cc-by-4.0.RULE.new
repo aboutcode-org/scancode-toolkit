@@ -1,3 +1,7 @@
+---
 license_expression: bsd-new AND facebook-patent-rights-2 AND other-permissive AND cc-by-4.0
 is_license_notice: yes
 minimum_coverage: 99
+---
+
+is BSD-licensed.  We also provide an additional patent grant. The files in the `/examples` directory are licensed under a separate license as specified in each file; documentation is licensed CC-BY-4.0.

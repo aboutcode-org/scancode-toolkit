@@ -1,4 +1,9 @@
+---
 license_expression: lgpl-3.0-plus
 is_license_reference: yes
 referenced_filenames:
     - /usr/share/common-licenses/LGPL-3
+---
+
+On Debian GNU/Linux systems, the complete text of the GNU Lesser General
+ Public License version 3 can be found in /usr/share/common-licenses/LGPL-3.

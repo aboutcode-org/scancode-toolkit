@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://mths.be/mit
+---
+
+Available under MIT license <http://mths.be/mit

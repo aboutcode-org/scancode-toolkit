@@ -1,5 +1,9 @@
+---
 license_expression: amdplpa
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/amdplpa
+---
+
+https://spdx.org/licenses/amdplpa

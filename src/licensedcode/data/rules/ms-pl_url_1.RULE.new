@@ -1,5 +1,9 @@
+---
 license_expression: ms-pl
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/ms-pl
+---
+
+https://spdx.org/licenses/ms-pl

@@ -1,3 +1,4 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
@@ -8,3 +9,8 @@ ignorable_holders:
     - Koninklijke Philips N.V.
 ignorable_urls:
     - https://www.philips.com/
+---
+
+This software and associated documentation files are
+Copyright (c)Koninklijke Philips N.V., https://www.philips.com
+and is made available for use within Philips and/or within Philips products.

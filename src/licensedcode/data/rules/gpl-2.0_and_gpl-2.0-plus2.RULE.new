@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0 AND gpl-2.0-plus
 is_license_notice: yes
 minimum_coverage: 99
@@ -5,3 +6,12 @@ ignorable_copyrights:
     - copyrighted by Wolfgang Denk
 ignorable_holders:
     - Wolfgang Denk
+---
+
+  U-Boot is Free Software.  It is copyrighted by Wolfgang Denk and
+many others who contributed code (see the actual source code and the
+git commit messages for details).  You can redistribute U-Boot and/or
+modify it under the terms of version 2 of the GNU General Public
+License as published by the Free Software Foundation.  Most of it can
+also be distributed, at your option, under any later version of the
+GNU General Public License -- see individual files for exceptions.

@@ -1,6 +1,19 @@
+---
 license_expression: lgpl-2.1
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 80
 ignorable_urls:
     - http://wiki.netbeans.org/DevFaqLgpl3rdPartySources
+---
+
+========================= LGPL-2.1 =========================
+
+------------------------------------------------------------
+You are receiving a copy of the code in the source available at
+http://wiki.netbeans.org/DevFaqLgpl3rdPartySources
+
+The terms of the Oracle license do NOT apply to the component;
+it is licensed under the following license, separately from the Oracle
+programs you receive. If you do not wish to install this program,
+you may remove it from the installation location.

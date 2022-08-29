@@ -1,4 +1,16 @@
+---
 license_expression: gpl-1.0-plus AND lgpl-2.1-plus
 is_license_notice: yes
 minimum_coverage: 25
 notes: Double licenses gpl and lgpl. Lesser means lgpl 2.1
+---
+
+License:
+
+The binary utilities in this package are distributed under the terms 
+of the GNU General Public License. The text of the license is available
+on Debian systems in the /usr/share/common-licenses/GPL file.
+
+The shared library in this package is distributed under the terms
+of the GNU Lesser General Public License. The text of the license is
+available on Debian systems in the /usr/share/common-licenses/LGPL file.

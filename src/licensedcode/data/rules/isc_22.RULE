@@ -1,1 +1,0 @@
-ISC License

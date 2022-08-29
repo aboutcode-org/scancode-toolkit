@@ -1,5 +1,10 @@
+---
 license_expression: ofl-1.1
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://scripts.sil.org/OFL
+---
+
+*  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL

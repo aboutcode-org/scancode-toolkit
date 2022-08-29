@@ -1,5 +1,10 @@
+---
 license_expression: public-domain
 is_license_text: yes
 relevance: 100
 ignorable_urls:
     - http://en.wikipedia.org/wiki/public_domain
+---
+
+Some contributors additionally release their contributions to the public domain. 
+http://en.wikipedia.org/wiki/public_domain

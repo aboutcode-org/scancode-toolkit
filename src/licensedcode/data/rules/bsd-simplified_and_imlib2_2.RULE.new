@@ -1,4 +1,8 @@
+---
 license_expression: bsd-simplified AND imlib2
 is_license_tag: yes
 is_continuous: yes
 relevance: 100
+---
+
+LicenseId: BSD-2-Clause AND Imlib2

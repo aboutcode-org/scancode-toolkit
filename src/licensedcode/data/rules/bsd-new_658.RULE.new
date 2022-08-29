@@ -1,6 +1,10 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 100
 minimum_coverage: 100
 referenced_filenames:
     - third_party/dart_LICENSE.txt
+---
+
+[dart]: third_party/dart_LICENSE.txt

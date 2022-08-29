@@ -1,5 +1,14 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+LICENSE
+
+This program is licensed under the {{Apache License 2.0}}.
+This means you may use this program in any project.
+You are allowed to modify the program as you like.
+For further details take a look at {{LICENSE.txt}}.

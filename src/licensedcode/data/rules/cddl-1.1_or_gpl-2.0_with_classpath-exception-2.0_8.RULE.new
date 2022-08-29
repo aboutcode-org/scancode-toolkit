@@ -1,3 +1,4 @@
+---
 license_expression: cddl-1.1 OR gpl-2.0 WITH classpath-exception-2.0
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,18 @@ notes: https://github.com/androidannotations/androidannotations/blob/develop/LIC
 ignorable_urls:
     - http://codemodel.java.net/
     - http://www.opensource.org/licenses/cddl1.php
+---
+
+This project uses CodeModel (http://codemodel.java.net/), which is
+distributed under the GlassFish Dual License, which means CodeModel is
+subject to the terms of either the GNU General Public License Version 2 only
+("GPL") or the Common Development and Distribution License("CDDL").
+
+You may obtain a copy of the "CDDL" License at
+
+http://www.opensource.org/licenses/cddl1.php
+
+As per section 3.6 ("Larger Works") of the "CDDL" License, we may create a
+Larger Work by combining Covered Software with other code not governed by
+the terms of this License and distribute the Larger Work as a single
+product.

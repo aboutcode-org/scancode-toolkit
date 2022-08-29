@@ -1,3 +1,7 @@
+---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 relevance: 100
+---
+
+All code generated for the Debian adaptions is under the GNU General Public License.

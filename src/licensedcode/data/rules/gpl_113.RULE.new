@@ -1,4 +1,14 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 99
+---
+
+Use consistent with the GNU GPL is permitted,
+provided that this copyright notice is
+preserved in its entirety in all copies and derived works.
+
+HEWLETT-PACKARD COMPANY MAKES NO WARRANTIES, EXPRESSED OR IMPLIED,
+AS TO THE USEFULNESS OR CORRECTNESS OF THIS CODE OR ITS
+FITNESS FOR ANY PARTICULAR PURPOSE.

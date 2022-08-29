@@ -1,6 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 70
 referenced_filenames:
     - LICENSE
+---
+
+License
+
+This library is licensed under the MIT license. For further information see LICENSE file.

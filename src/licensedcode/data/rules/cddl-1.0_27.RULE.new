@@ -1,5 +1,15 @@
+---
 license_expression: cddl-1.0
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://opensource.org/licenses/CDDL-1.0
+---
+
+<licenses>
+<license>
+<name>{{CDDL 1}}</name>
+<url>http://opensource.org/licenses/CDDL-1.0</url>
+<distribution>repo</distribution>
+</license>
+</licenses>

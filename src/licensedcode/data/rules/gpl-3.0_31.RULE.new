@@ -1,4 +1,14 @@
+---
 license_expression: gpl-3.0
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 15
+---
+
+Licensing
+=========
+
+ is licensed under the GPLv3.  uses the interface file
+ from  which means that the resulting 
+binary is also GPLv3. This can still be used to link non-GPLv3 programs
+just as much as  could without the plugin.

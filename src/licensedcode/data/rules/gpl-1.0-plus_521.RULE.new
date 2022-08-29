@@ -1,5 +1,9 @@
+---
 license_expression: gpl-1.0-plus
 is_license_tag: yes
 relevance: 90
 ignorable_urls:
     - https://www.gnu.org/licenses/gpl.txt
+---
+
+License: GNU General Public Library  (https://www.gnu.org/licenses/gpl.txt

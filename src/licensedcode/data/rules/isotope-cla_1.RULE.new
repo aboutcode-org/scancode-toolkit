@@ -1,5 +1,9 @@
+---
 license_expression: isotope-cla
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://isotope.metafizzy.co/docs/license.html
+---
+
+The script licenses URI: http://isotope.metafizzy.co/docs/license.html .

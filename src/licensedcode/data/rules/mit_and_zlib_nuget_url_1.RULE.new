@@ -1,5 +1,9 @@
+---
 license_expression: mit AND zlib
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://raw.githubusercontent.com/TomCrypto/AntTweakBar.NET/master/LICENSE
+---
+
+https://raw.githubusercontent.com/TomCrypto/AntTweakBar.NET/master/LICENSE

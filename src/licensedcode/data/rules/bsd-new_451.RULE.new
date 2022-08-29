@@ -1,5 +1,9 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 90
 ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.php
+---
+
+    The distribution is licensed under the BSD License (http://www.opensource.org/licenses/bsd-license.php).

@@ -1,6 +1,17 @@
+---
 license_expression: epl-1.0 OR bsd-new
 is_license_notice: yes
 notes: this is a choice per a discussion with Eclipse. See https://github.com/nexB/scancode-toolkit/issues/1121
 ignorable_urls:
     - http://www.eclipse.org/legal/epl-v10.html
     - http://www.eclipse.org/org/documents/edl-v10.php
+---
+
+This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * and Eclipse Distribution License v1.0 which accompany this distribution.
+ *
+ * The Eclipse Public License is available at
+ *    http://www.eclipse.org/legal/epl-v10.html
+ * and the Eclipse Distribution License is available at
+ *   http://www.eclipse.org/org/documents/edl-v10.php.

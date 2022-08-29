@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Debian lintian rule names
+---
+
+copyright-file-contains-full-apache-2-license

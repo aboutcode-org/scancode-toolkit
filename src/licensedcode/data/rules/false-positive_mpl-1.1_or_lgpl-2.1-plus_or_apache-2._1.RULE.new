@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: a javassist changelog entry
+---
+
+The license was changed from MPL to MPL/LGPL dual.

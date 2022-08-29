@@ -1,3 +1,13 @@
+---
 license_expression: lgpl-2.0-plus AND gpl-1.0-plus
 is_license_notice: yes
 notes: No version l/gpl declaration
+---
+
+Copyright:
+
+The  libraries are released under the terms of the LGPL license,
+see /usr/share/common-licenses/LGPL for reference.
+
+The rest of the code is released under the terms of the GPL license,
+see /usr/share/common-licenses/GPL for the full license.

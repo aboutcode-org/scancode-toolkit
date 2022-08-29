@@ -1,5 +1,9 @@
+---
 license_expression: protobuf
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://github.com/google/protobuf/blob/master/LICENSE
+---
+
+https://github.com/google/protobuf/blob/master/LICENSE

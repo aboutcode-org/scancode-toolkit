@@ -1,3 +1,8 @@
+---
 license_expression: flex-2.5
 is_license_notice: yes
 minimum_coverage: 90
+---
+
+Note that flex is distributed under a copyright very similar to that of
+BSD Unix, and not under the GNU General Public License (GPL).

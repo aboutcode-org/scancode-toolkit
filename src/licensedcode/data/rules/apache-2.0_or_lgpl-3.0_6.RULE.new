@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0 OR lgpl-3.0
 is_license_tag: yes
 relevance: 95
@@ -8,3 +9,15 @@ referenced_filenames:
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.txt
     - https://www.gnu.org/licenses/lgpl-3.0.txt
+---
+
+<licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+    <license>
+      <name>GNU Lesser General Public License</name>
+      <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+    </license>
+  </licenses>

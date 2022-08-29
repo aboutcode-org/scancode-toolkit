@@ -1,3 +1,7 @@
+---
 license_expression: mit OR bsd-new OR gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
+---
+
+Released under MIT, BSD and GPL license. Comply with at least one.

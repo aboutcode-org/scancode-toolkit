@@ -1,3 +1,4 @@
+---
 license_expression: mit AND proprietary-license
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,6 @@ minimum_coverage: 90
 referenced_filenames:
     - MIT-COMPILED-LICENSE.md
 notes: Seen in mattermost, binary only
+---
+
+Note: This license does not cover source code; for information on source code licensing see LICENSE.txt in the source code from which this project was compiled.

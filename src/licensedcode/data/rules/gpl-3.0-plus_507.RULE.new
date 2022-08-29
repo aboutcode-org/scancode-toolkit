@@ -1,3 +1,4 @@
+---
 license_expression: gpl-3.0-plus
 is_license_notice: yes
 relevance: 99
@@ -5,3 +6,18 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL-3
 notes: the license is a mix of GPL 2 and GPL 3. We take GPL here as it was seen most commonly
     in this context See also https://salsa.debian.org/pombredanne-guest/apache2/-/commit/0711baed327514834751dff77ae37d6b2c6c03c4
+---
+
+This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.

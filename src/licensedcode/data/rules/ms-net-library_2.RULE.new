@@ -1,5 +1,9 @@
+---
 license_expression: ms-net-library
 is_license_reference: yes
 relevance: 99
 ignorable_urls:
     - https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm
+---
+
+https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm

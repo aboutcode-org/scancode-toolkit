@@ -1,1 +1,0 @@
-This project is MIT licensed.

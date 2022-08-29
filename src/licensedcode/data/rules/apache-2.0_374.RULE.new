@@ -1,3 +1,4 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ ignorable_copyrights:
     - copyright Regents of the University of Michigan
 ignorable_holders:
     - Regents of the University of Michigan
+---
+
+All other files are copyright Regents of the University of
+Michigan, and fall under the Apache 2.0 license.

@@ -1,3 +1,4 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,8 @@ minimum_coverage: 80
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
 notes: GPL 2.0 +  debian version
+---
+
+License: GNU General Public License, version 2 or later (GPL-2+)
+  On Debian systems, the text of the GNU General Public License
+  version 2 can be found in /usr/share/common-licenses/GPL-2.

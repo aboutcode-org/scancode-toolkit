@@ -1,5 +1,11 @@
+---
 license_expression: mit OR gpl-3.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl-3.0.html
+---
+
+License
+
+ is dual licensed under the terms of the MIT license (below) and the [GPL](http://www.gnu.org/licenses/gpl-3.0.html).

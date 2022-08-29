@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 70
 ignorable_urls:
     - https://raw.githubusercontent.com/ichenkaihua/EasyHttp4Net/master/License
+---
+
+https://raw.githubusercontent.com/ichenkaihua/EasyHttp4Net/master/License

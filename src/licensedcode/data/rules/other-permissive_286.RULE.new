@@ -1,3 +1,4 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
@@ -5,3 +6,11 @@ minimum_coverage: 90
 notes: |
     Seen in xkb/symbols/hu
     aka XKB layout for some widely used Hungarian keyboard layouts
+---
+
+Permission is granted to anyone to use, distribute and modify
+this file in any way, provided that the above copyright notice
+is left intact and the author of the modification summarizes
+the changes in this header.
+
+This file is distributed without any expressed or implied warranty.

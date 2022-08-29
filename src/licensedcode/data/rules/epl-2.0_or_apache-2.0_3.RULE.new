@@ -1,2 +1,8 @@
+---
 license_expression: epl-2.0 OR apache-2.0
 is_license_notice: yes
+---
+
+You may distribute this program and materials under either the
+{{Eclipse Public License 2 or the Apache V2.0 License}} as long as you pass through
+the exceptions noted above.

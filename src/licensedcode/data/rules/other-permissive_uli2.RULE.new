@@ -1,3 +1,11 @@
+---
 license_expression: other-permissive
 is_license_notice: yes
 notes: see https://github.com/uliwitness/ULICrashReporter/blob/5b0f655534ce2591b0b0e3f8bf65a67cab8432f0/docs/UKCrashReporter%20Readme.txt#L7
+---
+
+You may redistribute, modify, use in
+commercial products free of charge, however distributing modified copies
+requires that you clearly mark them as having been modified by you, while
+maintaining the original markings and copyrights. I don't like getting bug
+reports about code I wasn't involved in.

@@ -1,2 +1,7 @@
+---
 license_expression: gpl-1.0-plus OR artistic-perl-1.0
 is_license_notice: yes
+---
+
+You may redistribute only under the same terms as Perl 5, as specified
+ in the README file that comes with the distribution.

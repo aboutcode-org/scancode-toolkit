@@ -1,5 +1,11 @@
+---
 license_expression: mit AND ofl-1.1 AND cc-by-4.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://fontawesome.com/license/free
+---
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.

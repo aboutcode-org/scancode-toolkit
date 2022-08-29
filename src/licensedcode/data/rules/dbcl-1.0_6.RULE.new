@@ -1,5 +1,9 @@
+---
 license_expression: dbcl-1.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://opendatacommons.org/licenses/dbcl/
+---
+
+Any rights in individual contents of the database are licensed under the Database Contents License whose text can be found http://opendatacommons.org/licenses/dbcl/

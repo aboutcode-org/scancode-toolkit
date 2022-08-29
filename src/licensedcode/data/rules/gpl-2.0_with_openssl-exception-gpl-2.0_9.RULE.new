@@ -1,4 +1,14 @@
+---
 license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
 is_license_notice: yes
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
+---
+
+This program is released under the GNU General Public License (GPL),
+ version 2, with the explicit exemption that linking with the OpenSSL
+ libraries is permitted.
+
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License version 2 can be found in
+ `/usr/share/common-licenses/GPL-2'.

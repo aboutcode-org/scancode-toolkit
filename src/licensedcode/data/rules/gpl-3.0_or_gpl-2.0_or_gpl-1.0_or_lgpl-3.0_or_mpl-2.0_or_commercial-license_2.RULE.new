@@ -1,3 +1,4 @@
+---
 license_expression: gpl-3.0 OR gpl-2.0 OR gpl-1.0 OR lgpl-3.0 OR mpl-2.0 OR commercial-license
 is_license_notice: yes
 relevance: 100
@@ -8,3 +9,22 @@ ignorable_urls:
     - https://gnu.org/licenses/lgpl.html
     - https://gnu.org/licenses/old-licenses/gpl-1.0.html
     - https://gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
+getID3() is released under multiple licenses. You may choose
+   from the following licenses, and use getID3 according to the
+   terms of the license most suitable to your project.
+
+GNU GPL: https://gnu.org/licenses/gpl.html                   (v3)
+         https://gnu.org/licenses/old-licenses/gpl-2.0.html  (v2)
+         https://gnu.org/licenses/old-licenses/gpl-1.0.html  (v1)
+
+GNU LGPL: https://gnu.org/licenses/lgpl.html                 (v3)
+
+Mozilla MPL: http://www.mozilla.org/MPL/2.0/                 (v2)
+
+getID3 Commercial License: http://getid3.org/#gCL (payment required)
+*****************************************************************
+
+Copies of each of the above licenses are included in the 'licenses'
+directory of the getID3 distribution.

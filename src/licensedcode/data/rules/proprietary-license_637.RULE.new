@@ -1,5 +1,12 @@
+---
 license_expression: proprietary-license
 is_license_text: yes
 notes: https://github.com/menahishayan/HomeAssistant-Cupertino-Icons/blob/734b65202915e4d2a8a77072d909d8630e027b1c/LICENSE
 ignorable_authors:
     - Apple's SF Pro Symbols Viewer
+---
+
+Icons included here are only
+ones that are not explictly marked as 'cannot be modified' by Apple's SF Pro
+Symbols Viewer v2.0.0 and are provided on an AS IS basis. Usage rights subject
+to Apple Inc's SF Pro Symbols' usage rights for modifyable symbols.

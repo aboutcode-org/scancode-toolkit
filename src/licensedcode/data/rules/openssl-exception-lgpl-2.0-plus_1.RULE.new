@@ -1,6 +1,12 @@
+---
 license_expression: openssl-exception-lgpl-2.0-plus
 is_license_reference: yes
 relevance: 95
 minimum_coverage: 80
 referenced_filenames:
     - COPYING
+---
+
+As an additional exemption you are allowed to compile & link against the
+OpenSSL libraries as published by the OpenSSL project. See the file
+COPYING for details.

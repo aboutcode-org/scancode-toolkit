@@ -1,3 +1,9 @@
+---
 license_expression: mit OR gpl-1.0-plus OR artistic-perl-1.0
 is_license_notice: yes
 relevance: 100
+---
+
+This software is released under the MIT license cited below.  Additionally,
+ when this software is distributed with Perl Kit, Version 5, you may also
+ redistribute it and/or modify it under the same terms as Perl itself.

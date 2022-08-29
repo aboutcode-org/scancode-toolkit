@@ -1,4 +1,11 @@
+---
 license_expression: us-govt-public-domain
 is_license_notice: yes
 relevance: 100
 notes: https://nvd.nist.gov/vuln/data-feeds
+---
+
+The entire NVD database can be downloaded from this web page for public use. All
+NIST publications are available in the public domain according to Title 17 of
+the United States Code, however acknowledgement of the NVD when using our
+information is always appreciated.

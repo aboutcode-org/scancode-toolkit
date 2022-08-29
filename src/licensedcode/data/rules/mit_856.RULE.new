@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+This project is made available under the MIT license. See the file LICENSE in this distribution for license terms.

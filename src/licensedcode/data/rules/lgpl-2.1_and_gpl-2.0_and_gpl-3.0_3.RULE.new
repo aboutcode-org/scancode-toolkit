@@ -1,3 +1,4 @@
+---
 license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
 is_license_reference: yes
 minimum_coverage: 90
@@ -5,3 +6,9 @@ referenced_filenames:
     - COPYING.LGPLv2.1
     - COPYING.GPLv2
     - COPYING.GPLv3
+---
+
+The following license texts are included in the following files:
+   - COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1
+   - COPYING.GPLv2: GNU General Public License version 2
+   - COPYING.GPLv3: GNU General Public License version 3

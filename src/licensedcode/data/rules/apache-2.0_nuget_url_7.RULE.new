@@ -1,5 +1,9 @@
+---
 license_expression: apache-2.0
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://github.com/Esri/file-geodatabase-api/blob/master/FileGDB_API_1.5/License.txt
+---
+
+https://github.com/Esri/file-geodatabase-api/blob/master/FileGDB_API_1.5/License.txt

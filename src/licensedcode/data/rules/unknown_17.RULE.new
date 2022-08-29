@@ -1,5 +1,13 @@
+---
 license_expression: unknown-license-reference
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+This software is provided AS-IS with no warranty, either express or
+implied.
+This software is distributed under license and may not be copied,
+modified or distributed except as expressly authorized under the terms
+of the license contained in the file LICENSE in this distribution.

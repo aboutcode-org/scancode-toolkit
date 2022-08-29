@@ -1,2 +1,8 @@
+---
 is_false_positive: yes
 notes: this is a comment about licensing and not a license per se.
+---
+
+this approach may be used in non-GPL software, if desired.
+(In contrast, implementation of RCU is permitted only in software licensed
+under either GPL or LGPL.

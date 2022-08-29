@@ -1,5 +1,9 @@
+---
 license_expression: agpl-3.0-plus
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/licenses/agpl.html
+---
+
+license  https://www.gnu.org/licenses/agpl.html GNU AGPL v3.0 or later

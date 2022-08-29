@@ -1,3 +1,4 @@
+---
 license_expression: adobe-eula AND gpl-1.0-plus
 is_license_notice: yes
 minimum_coverage: 30
@@ -8,3 +9,15 @@ ignorable_holders:
     - Takuo KITAME, Bart Martens, and Canonical, LTD
 ignorable_urls:
     - http://www.adobe.com/products/eulas/
+---
+
+Patents pending in the United States and 
+    other countries. Adobe and Flash are either trademarks or registered 
+    trademarks in the United States and/or other countries.
+
+    Adobe Flash Player End User License Agreement
+
+    http://www.adobe.com/products/eulas/
+
+The Debian packaging is (C) 2001-2009,  Takuo KITAME, Bart Martens, and 
+Canonical, LTD  and is licensed under the GPL.

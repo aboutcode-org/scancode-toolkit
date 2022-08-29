@@ -1,5 +1,22 @@
+---
 license_expression: apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+---
+
+
+For license information, see [LICENSE.txt](LICENSE.txt).
+
+[AUTHORS.md](AUTHORS.md) have a list of everyone contributed to NLTK.
+
+
+### Redistributing
+
+- NLTK source code is distributed under the Apache 2.0 License.
+- NLTK documentation is distributed under the Creative Commons
+  Attribution-Noncommercial-No Derivative Works 3.0 United States license.
+- NLTK corpora are provided under the terms given in the README file for each
+  corpus; all are redistributable and available for non-commercial use.
+- NLTK may be freely redistributed, subject to the provisions of these licenses.

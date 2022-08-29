@@ -1,5 +1,11 @@
+---
 license_expression: bsd-new AND generic-cla
 is_license_notice: yes
 relevance: 95
 referenced_filenames:
     - LICENSE
+---
+
+provided under a BSD-style license that can be found in the
+``LICENSE`` file. By using, distributing, or contributing to this project, you
+agree to the terms and conditions of this license.

@@ -1,4 +1,9 @@
+---
 license_expression: boost-1.0
 is_license_notice: yes
 ignorable_urls:
     - http://www.boost.org/LICENSE_1_0.txt
+---
+
+Use modification and distribution are subject to the boost Software License,
+Version 1.0. (See http://www.boost.org/LICENSE_1_0.txt).

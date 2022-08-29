@@ -1,6 +1,12 @@
+---
 license_expression: eupl-1.2
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 70
 ignorable_urls:
     - https://joinup.ec.europa.eu/community/eupl/og_page/eupl
+---
+
+This software is licensed under the European Union Public License (EUPL)
+The license is available in the 22 official languages of the EU. The English version is included here.
+Please see https://joinup.ec.europa.eu/community/eupl/og_page/eupl for official translations of the other languages.

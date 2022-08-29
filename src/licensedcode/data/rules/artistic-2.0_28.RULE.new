@@ -1,4 +1,8 @@
+---
 license_expression: artistic-2.0
 is_license_tag: yes
 relevance: 90
 notes: tag as documented in the Module-Build pod
+---
+
+license artistic_2

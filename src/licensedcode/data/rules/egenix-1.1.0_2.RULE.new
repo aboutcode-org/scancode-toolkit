@@ -1,3 +1,4 @@
+---
 license_expression: egenix-1.1.0
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,7 @@ referenced_filenames:
     - LICENSE.mxSetup
 ignorable_urls:
     - http://www.egenix.com/products/python/mxBase/
+---
+
+    License: eGenix.com Public License. See LICENSE or LICENSE.mxSetup
+    or http://www.egenix.com/products/python/mxBase/ for details.

@@ -1,4 +1,16 @@
+---
 license_expression: lgpl-2.0-plus AND proprietary-license
 is_license_notice: yes
 relevance: 100
 notes: https://github.com/jirkamarsik/quex/tree/9e9846c87b3383fd24f3b240ba02089b3aaa2ede
+---
+
+LICENSE:
+
+The Software is distributed under LGPL, provided the following restriction:
+
+-- There is no license for products targeting military purpose.
+
+Note, that if any part of the LGPL contradicts with the former restrictions,
+the former restrictions have precedence. The 'no warranty clause' holds
+in any case.

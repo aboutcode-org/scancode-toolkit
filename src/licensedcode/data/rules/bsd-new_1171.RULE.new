@@ -1,3 +1,4 @@
+---
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 95
@@ -7,3 +8,8 @@ ignorable_copyrights:
     - Copyright (c) Yann Collet
 ignorable_holders:
     - Yann Collet
+---
+
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+Based on work Copyright (c) Yann Collet, released under BSD License.

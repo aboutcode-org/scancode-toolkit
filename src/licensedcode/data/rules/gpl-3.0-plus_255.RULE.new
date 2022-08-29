@@ -1,4 +1,9 @@
+---
 license_expression: gpl-3.0-plus
 is_license_tag: yes
 relevance: 100
 notes: configure option injected by FFmpeg in the built binaries
+---
+
+--enable-version3
+--enable-gpl

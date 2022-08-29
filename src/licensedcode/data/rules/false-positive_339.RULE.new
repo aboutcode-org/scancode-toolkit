@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Ghostscript tag in PDF
+---
+
+pdf Producer='GPL Ghostscript

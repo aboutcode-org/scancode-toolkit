@@ -1,3 +1,8 @@
+---
 license_expression: warranty-disclaimer
 is_license_notice: yes
 notes: typically for GPL but this can vary and be various versions
+---
+
+This project is free software.  There is no warranty; not even for
+merchantability or fitness for a particular purpose.

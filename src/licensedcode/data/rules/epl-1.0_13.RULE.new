@@ -1,6 +1,13 @@
+---
 license_expression: epl-1.0
 is_license_notice: yes
 relevance: 90
 notes: conflicted epl 1 and 2 reference
 ignorable_urls:
     - http://www.eclipse.org/legal/epl-v20.html
+---
+
+This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html

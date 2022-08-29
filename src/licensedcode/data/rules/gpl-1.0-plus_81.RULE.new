@@ -1,4 +1,11 @@
+---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 referenced_filenames:
     - COPYING
+---
+
+GNU Fortran comes with NO WARRANTY, to the extent permitted by law.
+You may redistribute copies of GNU Fortran
+under the terms of the GNU General Public License.
+For more information about these matters, see the file named COPYING

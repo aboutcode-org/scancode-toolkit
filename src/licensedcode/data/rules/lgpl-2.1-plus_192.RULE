@@ -1,1 +1,0 @@
-The intended use for LGPL mode is with libmpv, and currently it's not recommended to build mpv CLI in LGPL mode at all.

@@ -1,4 +1,10 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 notes: https://github.com/9fans/plan9port/blob/master/font/pelm/NOTICE
+---
+
+These fonts may be redistributed with the Plan 9 from User Space
+software.  No right is granted to create derivative works of these
+fonts or to redistribute them separately from Plan 9 from User Space.

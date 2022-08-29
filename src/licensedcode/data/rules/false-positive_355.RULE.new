@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: comments about licensing
+---
+
+along with some related utilities.  It is BSD licensed.

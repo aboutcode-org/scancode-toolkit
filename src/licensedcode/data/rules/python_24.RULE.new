@@ -1,4 +1,9 @@
+---
 license_expression: python
 is_license_notice: yes
 referenced_filenames:
     - Lib/LICENSE
+---
+
+The standard library is covered by the Python Software Foundation
+license as well. See the Lib/LICENSE file for details.

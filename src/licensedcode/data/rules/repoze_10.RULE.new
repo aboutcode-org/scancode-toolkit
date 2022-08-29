@@ -1,5 +1,9 @@
+---
 license_expression: repoze
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.repoze.org/LICENSE.txt
+---
+
+Repoze License": "http://www.repoze.org/LICENSE.txt"

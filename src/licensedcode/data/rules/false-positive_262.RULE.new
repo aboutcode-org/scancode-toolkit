@@ -1,2 +1,7 @@
+---
 is_false_positive: yes
 notes: commentary about a license.
+---
+
+migrated to use the HCF sources when Lucent Technologies
+brought the HCF module under GPL

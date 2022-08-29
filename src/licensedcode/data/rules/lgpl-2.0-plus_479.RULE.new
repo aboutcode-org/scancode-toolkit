@@ -1,6 +1,12 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 notes: lgpl 2 or later python
 ignorable_urls:
     - https://www.gnu.org/licenses/
+---
+
+# This file is part of a program licensed under the terms of the GNU Lesser
+# General Public License version 2 (or at your option any later version)
+# as published by the Free Software Foundation: https://www.gnu.org/licenses/

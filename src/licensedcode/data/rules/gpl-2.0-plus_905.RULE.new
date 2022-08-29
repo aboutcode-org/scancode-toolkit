@@ -1,4 +1,10 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
+---
+
+License: GPL-2+
+ On Debian and Debian-based systems, a copy of the GNU General Public
+ License version 2 is available in /usr/share/common-licenses/GPL-2.

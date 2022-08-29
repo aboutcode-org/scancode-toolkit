@@ -1,5 +1,9 @@
+---
 license_expression: bsd-plus-patent
 is_license_reference: yes
 relevance: 95
 ignorable_urls:
     - https://spdx.org/licenses/bsd-2-clause-patent.html
+---
+
+https://spdx.org/licenses/bsd-2-clause-patent.html

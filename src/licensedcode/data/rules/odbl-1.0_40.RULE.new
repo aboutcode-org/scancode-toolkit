@@ -1,5 +1,9 @@
+---
 license_expression: odbl-1.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://opendatacommons.org/licenses/odbl
+---
+
+Content of this folder is made available under Open Database License whose full text can be found at http://opendatacommons.org/licenses/odbl/.

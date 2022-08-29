@@ -1,2 +1,13 @@
+---
 license_expression: bsd-new OR afl-2.1
 is_license_notice: yes
+---
+
+ is available under *either* the terms of the modified BSD license *or* the
+Academic Free License version 2.1. As a recipient of , you may choose which
+license to receive this code under (except as noted in per-module LICENSE
+files). Some modules may not be the copyright of the  Foundation. These
+modules contain explicit declarations of copyright in both the LICENSE files in
+the directories in which they reside and in the code itself. No external
+contributions are allowed under licenses which are fundamentally incompatible
+with the AFL or BSD licenses that  is distributed under.

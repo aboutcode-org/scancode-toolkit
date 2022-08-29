@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in NEWS file
+---
+
+was GPLv2-or-later

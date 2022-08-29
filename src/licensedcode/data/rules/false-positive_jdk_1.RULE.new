@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Seen in the openjdk
+---
+
+ZIP public domain inflate/deflate compression technology.

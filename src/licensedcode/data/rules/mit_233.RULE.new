@@ -1,5 +1,9 @@
+---
 license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://github.com/hector/hector-client/wiki/License
+---
+
+License: MIT License  (https://github.com/hector/hector-client/wiki/License

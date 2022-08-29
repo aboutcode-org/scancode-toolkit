@@ -1,5 +1,9 @@
+---
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/lgpl.html
+---
+
+licence GNU Lesser General Public Licence see LICENCE file or http://www.gnu.org/licenses/lgpl.html

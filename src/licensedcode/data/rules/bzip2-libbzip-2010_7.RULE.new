@@ -1,4 +1,11 @@
+---
 license_expression: bzip2-libbzip-2010
 is_license_reference: yes
 relevance: 80
 notes: seen in Valgrind. This is bzip2-libbzip-2010 and not a bsd-new.
+---
+
+
+are
+distributed under a BSD-style license, so you may include them in your
+code without worrying about license conflicts.

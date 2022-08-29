@@ -1,5 +1,9 @@
+---
 license_expression: mongodb-sspl-1.0
 is_license_tag: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
+---
+
+license: Server Side Public License, v 1

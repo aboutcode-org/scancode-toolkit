@@ -1,5 +1,10 @@
+---
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/lgpl.html
+---
+
+## License
+All source code is licensed under the [GNU Lesser General Public License](http://www.gnu.org/licenses/lgpl.html)

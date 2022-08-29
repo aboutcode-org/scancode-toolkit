@@ -1,3 +1,4 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
@@ -6,3 +7,9 @@ ignorable_copyrights:
     - copyrighted by the authors and Carnegie Mellon University
 ignorable_holders:
     - the authors and Carnegie Mellon University
+---
+
+This code is copyrighted by the authors and Carnegie Mellon University,
+and is for non-commercial research purposes only. Please contact the authors and
+Carnegie Mellon University if you are interested in licensing for
+commercial purposes.

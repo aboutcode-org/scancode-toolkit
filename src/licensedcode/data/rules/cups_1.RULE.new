@@ -1,3 +1,4 @@
+---
 license_expression: cups
 is_license_notice: yes
 relevance: 100
@@ -7,3 +8,10 @@ referenced_filenames:
 notes: newer versions are Apache-licensed
 ignorable_urls:
     - http://www.cups.org/
+---
+
+These coded instructions, statements, and computer programs are the
+property of Apple Inc. and are protected by Federal copyright
+law.  Distribution and use rights are outlined in the file "LICENSE.txt"
+which should have been included with this file.  If this file is
+file is missing or damaged, see the license at "http://www.cups.org/".

@@ -1,3 +1,11 @@
+---
 license_expression: agpl-3.0
 is_license_notice: yes
 relevance: 100
+---
+
+LICENSE
+
+  Most MongoDB source files (src/mongo folder and below) are made available
+  under the terms of the GNU Affero General Public License (GNU AGPLv3). See
+  individual files for details.

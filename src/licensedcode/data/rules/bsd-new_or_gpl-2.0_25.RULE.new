@@ -1,3 +1,7 @@
+---
 license_expression: bsd-new OR gpl-2.0
 is_license_notice: yes
 relevance: 100
+---
+
+The project is provided as an open-source dual BSD and GPLv2 licensed C library

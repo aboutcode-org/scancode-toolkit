@@ -1,4 +1,9 @@
+---
 license_expression: apache-2.0
 is_license_notice: yes
 referenced_filenames:
     - LICENSE
+---
+
+The code is licensed under the {{Apache 2.0 license.}}
+See [the license file](LICENSE) for further details.

@@ -1,4 +1,9 @@
+---
 license_expression: libpng
 is_license_reference: yes
 relevance: 95
 minimum_coverage: 100
+---
+
+Some files in the "scripts" directory have other copyright owners
+but are released under this license. libpng

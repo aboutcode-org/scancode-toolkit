@@ -1,3 +1,4 @@
+---
 license_expression: mit OR gpl-2.0
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,7 @@ referenced_filenames:
     - MIT-LICENSE.txt
     - GPL-LICENSE.txt
 notes: always gpl2 with this wording
+---
+
+Dual licensed under the MIT (MIT-LICENSE.txt)
+and GPL (GPL-LICENSE.txt) licenses.

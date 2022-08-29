@@ -1,5 +1,9 @@
+---
 license_expression: agpl-3.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+---
+
+This software is supplied under the GNU AGPLv3 and comes with NO WARRANTY: see the file COPYING for details

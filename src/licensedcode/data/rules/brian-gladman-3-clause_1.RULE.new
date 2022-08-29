@@ -1,5 +1,11 @@
+---
 license_expression: brian-gladman-3-clause
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - http://gladman.plushost.co.uk/oldsite/cryptography_technology/index.php
+---
+
+Based on Dr Brian Gladman's (GPL'd) work published at
+http://gladman.plushost.co.uk/oldsite/cryptography_technology/index.php
+See the original copyright notice below.

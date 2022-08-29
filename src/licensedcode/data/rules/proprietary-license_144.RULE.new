@@ -1,4 +1,10 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
 notes: See https://github.com/pntailor/Work/blob/5312ee7b42c5b05dac8455acc735ba4a18d466f2ef2/install_acp_app.sh#L13
+---
+
+# This program is confidential and proprietary to ARRIS Enterprises, LLC. (ARRIS),
+# and may not be copied, reproduced, modified, disclosed to others, published or used,
+# in whole or in part, without the express prior written permission of ARRIS.

@@ -1,6 +1,12 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 80
 referenced_filenames:
     - LICENSE-MIT.txt
+---
+
+The files are licensed under the **MIT** license - see the [LICENSE-MIT](LICENSE-MIT.txt) file for details.
+
+These files contain the following tag instead of the full license text:

@@ -1,3 +1,7 @@
+---
 license_expression: bsd-new
 is_license_tag: yes
 relevance: 90
+---
+
+license = { :type => 'BSD-Like' }

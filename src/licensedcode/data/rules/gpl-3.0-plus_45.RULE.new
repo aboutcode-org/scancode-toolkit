@@ -1,6 +1,10 @@
+---
 license_expression: gpl-3.0-plus
 is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - copying.md
     - legal/GPLv3
+---
+
+GNU GPLv3 or later; see copying.md and legal/GPLv3.

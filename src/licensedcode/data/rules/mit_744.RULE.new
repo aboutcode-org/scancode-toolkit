@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_notice: yes
 relevance: 100
@@ -5,3 +6,6 @@ ignorable_authors:
     - Keith Rarick
 ignorable_urls:
     - https://github.com/kr/pty
+---
+
+This product contains software (https://github.com/kr/pty) developed by Keith Rarick, licensed under the MIT License.

@@ -1,2 +1,6 @@
+---
 is_false_positive: yes
 notes: Busybox license-related comment, but not a license per se.
+---
+
+libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier.

@@ -1,3 +1,4 @@
+---
 license_expression: mit
 is_license_reference: yes
 relevance: 100
@@ -6,3 +7,6 @@ referenced_filenames:
     - license.txt
 ignorable_urls:
     - https://github.com/Tencent/rapidjson/blob/master/license.txt
+---
+
+[license.txt](https://github.com/Tencent/rapidjson/blob/master/license.txt

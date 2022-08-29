@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
+---
+
+License: GPL v2 or later https://www.gnu.org/copyleft/gpl.html

@@ -1,2 +1,7 @@
+---
 license_expression: openjdk-assembly-exception-1.0
 is_license_notice: yes
+---
+
+NOTE: the combined work which includes the upstream components below
+carries forward the OpenJDK Assembly Exception (text included below).

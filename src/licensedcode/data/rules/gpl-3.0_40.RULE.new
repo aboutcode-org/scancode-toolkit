@@ -1,5 +1,9 @@
+---
 license_expression: gpl-3.0
 is_license_notice: yes
 relevance: 100
 ignorable_urls:
     - https://www.gnu.org/licenses/gpl-3.0.en.html
+---
+
+All source code writen by me falls under the terms of the GNU General Public Licence Version 3. See: https://www.gnu.org/licenses/gpl-3.0.en.html

@@ -1,3 +1,8 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
+---
+
+/* It is patented and use outside Plan 9 requires you get a license. */
+/* (All other EKE protocols are patented as well, by Lucent or others.) */

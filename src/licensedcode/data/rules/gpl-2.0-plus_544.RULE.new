@@ -1,5 +1,9 @@
+---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+---
+
+Licensed under GPLv2 or later, see file LICENSE in this source tree.

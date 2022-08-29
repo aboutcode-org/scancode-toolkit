@@ -1,3 +1,7 @@
+---
 license_expression: bsd-new AND gpl-2.0 WITH mysql-floss-exception-2.0 AND gpl-2.0
 is_license_notice: yes
 relevance: 100
+---
+
+This library is BSD-licensed under the terms of the MySQL FOSS License Exception

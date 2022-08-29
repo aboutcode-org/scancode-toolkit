@@ -1,3 +1,10 @@
+---
 license_expression: proprietary-license
 is_license_notice: yes
 notes: https://github.com/XENNOK/Insyde_BIOS_Source/blob/d2eebd01ad4a9cb5d68151e8d241491086e89ad0/SharkBayRcPkg/Include/Guid/NvidiaAcpiTablePchGuid.h#L4
+---
+
+// This file contains 'Framework Code' and is licensed as such 
+// under the terms of your license agreement with Intel or your
+// vendor.  This file may not be modified, except as allowed by
+// additional terms of your license agreement.

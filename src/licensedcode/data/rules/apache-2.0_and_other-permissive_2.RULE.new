@@ -1,3 +1,9 @@
+---
 license_expression: apache-2.0 AND other-permissive
 is_license_notice: yes
 relevance: 95
+---
+
+In addition, this product includes software dependencies. See
+the accompanying LICENSE.txt for a listing of dependencies
+that are NOT Apache licensed (with pointers to their licensing)

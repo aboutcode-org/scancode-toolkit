@@ -1,6 +1,11 @@
+---
 license_expression: gpl-2.0 AND proprietary-license
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
 notes: formerly at https://github.com/drwetter/testssl.sh/blob/3.0.1/Readme.md#license
+---
+
+License
+This software is free. You can use it under the terms of GPLv2, see LICENSE. In addition starting from version 3.0rc1 if you're offering a scanner based on testssl.sh as a public and / or paid service in the internet you need to mention to your audience that you're using this program and where to get this program from.

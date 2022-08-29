@@ -1,6 +1,14 @@
+---
 license_expression: gpl-2.0
 is_license_notice: yes
 ignorable_copyrights:
     - Copyright (c) 1997-2009 by Dimitri van Heesch
 ignorable_holders:
     - Dimitri van Heesch
+---
+
+Doxygen license
+
+Copyright © 1997-2009 by Dimitri van Heesch.
+
+Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the GNU General Public License for more details.

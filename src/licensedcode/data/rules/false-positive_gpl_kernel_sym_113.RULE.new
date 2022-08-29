@@ -1,2 +1,9 @@
+---
 is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+If you include additional firmware files into your binary
+kernel image that are not available under the terms of the GPL,
+then it may be a violation of the GPL to distribute the resulting
+image since it combines both GPL and non-GPL work.

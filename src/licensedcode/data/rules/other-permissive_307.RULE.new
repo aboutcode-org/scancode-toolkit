@@ -1,3 +1,9 @@
+---
 license_expression: other-permissive
 is_license_text: yes
 notes: https://fedoraproject.org/wiki/Licensing/Lhcyr
+---
+
+This package is free. You may modify and use it for whatever
+    purpose you want. But you are not allowed to redistribute modified
+    version under the same name.
