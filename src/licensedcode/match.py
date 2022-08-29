@@ -9,6 +9,7 @@
 
 from enum import IntEnum
 from itertools import groupby
+from typing import NamedTuple
 
 import attr
 from attr import validators
@@ -1783,7 +1784,7 @@ def filter_invalid_matches_to_single_word_gibberish(
                 highlight=False,
             ).strip()
 
-            rule_text = rule.prepare_text()
+            rule_text = rule.text
 
             if trace:
                 logger_debug(
@@ -2672,7 +2673,7 @@ def refine_matches(
 
 
 @attr.s(slots=True, frozen=True)
-class Token(object):
+class Token1:
     """
     Used to represent a token in collected query-side matched texts and SPDX
     identifiers.
@@ -2689,6 +2690,66 @@ class Token(object):
     is_matched = attr.ib(default=False)
     # True if this is a known token
     is_known = attr.ib(default=False)
+
+
+class Token2:
+    """
+    Used to represent a token in collected query-side matched texts and SPDX
+    identifiers.
+    """
+    __slots__ = (
+        'value',
+        'line_num',
+        'pos',
+        'is_text',
+        'is_matched',
+        'is_known',
+    )
+
+    def __init__(
+        self,
+        value,
+        line_num,
+        pos=-1,
+        is_text=False,
+        is_matched=False,
+        is_known=False
+    ):
+        # original text value for this token.
+        self.value = value
+        # line number, one-based
+        self.line_num = line_num
+        # absolute position for known tokens, zero-based. -1 for unknown tokens
+        self.pos = pos
+        # True if text/alpha False if this is punctuation or spaces
+        self.is_text = is_text
+        # True if part of a match
+        self.is_matched = is_matched
+        # True if this is a known token
+        self.is_known = is_known
+
+
+class Token3(NamedTuple):
+    """
+    Used to represent a token in collected query-side matched texts and SPDX
+    identifiers.
+    """
+    # original text value for this token.
+    value: str
+    # line number, one-based
+    line_num: int
+    # absolute position for known tokens, zero-based. -1 for unknown tokens
+    pos: int = -1
+    # True if text/alpha False if this is punctuation or spaces
+    is_text: bool = False
+    # True if part of a match
+    is_matched: bool = False
+    # True if this is a known token
+    is_known: bool = False
+
+
+# we try different variants of tokens to find the fastest one
+Token = Token1
 
 
 def tokenize_matched_text(

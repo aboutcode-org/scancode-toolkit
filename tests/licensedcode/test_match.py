@@ -14,6 +14,7 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.index import LicenseIndex
+from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.match import filter_contained_matches
 from licensedcode.match import filter_matches_missing_key_phrases
 from licensedcode.match import filter_overlapping_matches
@@ -405,7 +406,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         )
         r2 = Rule._from_text_and_expression(license_expression='plain', text=text_r2)
 
-        legalese = set(['licensed', 'license', 'attribution', ])
+        legalese = build_dictionary_from_iterable(['licensed', 'license', 'attribution', ])
         idx = index.LicenseIndex([r1, r2], _legalese=legalese)
 
         assert r1.key_phrase_spans == [Span(3, 8)]

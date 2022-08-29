@@ -16,6 +16,7 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import match_aho
 from licensedcode import match_seq
+from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.match import LicenseMatch
 from licensedcode.models import load_rules
 from licensedcode.models import Rule
@@ -740,10 +741,10 @@ class TestIndexPartialMatch(FileBasedTesting):
         '''
         rule = Rule._from_text_and_expression(text=test_text, license_expression='public-domain')
 
-        legalese = (
-            mini_legalese
-            | set(['property', 'abandon', 'rights', ]))
-
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['property', 'abandon', 'rights', ])
+        )
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         querys = '''
@@ -786,10 +787,10 @@ class TestIndexPartialMatch(FileBasedTesting):
         test_file = self.get_test_loc('detect/templates/license7.txt')
         rule = Rule._from_text_file_and_expression(text_file=test_file, license_expression='lic')
 
-        legalese = (
-            mini_legalese
-            | set(['permission', 'written', 'registered', 'derived', 'damage', 'due']))
-
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['permission', 'written', 'registered', 'derived', 'damage', 'due'])
+        )
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         qloc = self.get_test_loc('detect/templates/license8.txt')
@@ -896,7 +897,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert len(matches) == 1
         match = matches[0]
-        expected = Span(0, 949)|Span(951, 1739)
+        expected = Span(0, 949) | Span(951, 1739)
         assert match.qspan == expected
         assert match.matcher == match_seq.MATCH_SEQ
 

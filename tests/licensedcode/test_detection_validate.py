@@ -62,7 +62,7 @@ def check_special_rule_cannot_be_detected(rule):
 
     if results:
         data_file = rule.data_file()
-        # On failure, we compare againto get additional failure details such as
+        # On failure, we compare again to get additional failure details such as
         # a clickable text_file path
         results = (results, f'file://{data_file}', f'file://{rule.text_file()}')
         # this assert will always fail and provide a more detailed failure trace
@@ -201,36 +201,31 @@ def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
             setattr(cls, test_name, test_method)
 
 
-@pytest.mark.scanvalidate
 class TestValidateLicenseBasic(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanslow
 
 
-@pytest.mark.scanvalidate
 class TestValidateLicenseExtended1(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
-@pytest.mark.scanvalidate
 class TestValidateLicenseExtended2(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
-@pytest.mark.scanvalidate
 class TestValidateLicenseExtended3(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
-@pytest.mark.scanvalidate
+
 class TestValidateLicenseExtended4(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
-@pytest.mark.scanvalidate
 class TestValidateLicenseExtended5(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate

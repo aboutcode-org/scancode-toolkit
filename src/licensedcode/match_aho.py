@@ -20,9 +20,9 @@ Matching strategy for exact matching using Aho-Corasick automatons.
 """
 
 # Set to True to enable debug tracing
-TRACE = True
+TRACE = False
 TRACE_FRAG = False
-TRACE_DEEP = True
+TRACE_DEEP = False
 
 if TRACE or TRACE_FRAG:
     import logging

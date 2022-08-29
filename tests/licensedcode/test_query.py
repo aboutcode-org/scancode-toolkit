@@ -16,12 +16,13 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.models import Rule
 from licensedcode.query import Query
+
 from licensedcode_test_utils import query_tokens_with_unknowns  # NOQA
 from licensedcode_test_utils import query_run_tokens_with_unknowns  # NOQA
 from scancode_config import REGEN_TEST_FIXTURES
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -67,7 +68,7 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_Query_tokens_by_line_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
         rule = Rule._from_text_and_expression(text=rule_text, license_expression='bsd')
-        legalese = set(['redistribution', 'form', ])
+        legalese = build_dictionary_from_iterable(['redistribution', 'form', ])
         idx = index.LicenseIndex([rule], _legalese=legalese)
         querys = '''
             The
@@ -120,7 +121,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
         rule_text = 'Redistribution and use in source and binary forms'
         rule = Rule._from_text_and_expression(text=rule_text, license_expression='bsd')
-        legalese = set(['redistribution', 'form', ])
+        legalese = build_dictionary_from_iterable(['redistribution', 'form', ])
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         querys = 'The new Redistribution and use in other form always'
@@ -295,10 +296,12 @@ class TestQueryWithSingleRun(IndexTesting):
         assert ' '.join(index_text_tokens) == ' '.join(query_text_tokens)
 
     def test_query_run_tokens_with_junk(self):
-        legalese = set(['binary'])
-        idx = index.LicenseIndex([Rule._from_text_and_expression(text='a is the binary')],
-                                 _legalese=legalese,
-                                 _spdx_tokens=set())
+        legalese = build_dictionary_from_iterable(['binary'])
+        idx = index.LicenseIndex([
+            Rule._from_text_and_expression(text='a is the binary')],
+            _legalese=legalese,
+            _spdx_tokens=set(),
+        )
         assert idx.len_legalese == 1
         assert idx.dictionary == {'binary': 0, 'is': 1, 'the': 2}
 
@@ -388,8 +391,11 @@ class TestQueryWithSingleRun(IndexTesting):
             assert qr.tokens == expected.tokens
 
     def test_query_run_unknowns(self):
-        legalese = set(['binary'])
-        idx = index.LicenseIndex([Rule._from_text_and_expression(text='a is the binary')], _legalese=legalese)
+        legalese = build_dictionary_from_iterable(['binary'])
+        idx = index.LicenseIndex(
+            [Rule._from_text_and_expression(text='a is the binary')],
+            _legalese=legalese,
+        )
 
         assert idx.dictionary == {'binary': 0, 'is': 1, 'the': 2}
         assert idx.len_legalese == 1
@@ -404,7 +410,7 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_query_unknowns_by_pos_and_stopwords_are_not_defaultdic_and_not_changed_on_query(self):
         idx = index.LicenseIndex(
             [Rule._from_text_and_expression(text='a is the binary')],
-            _legalese=set(['binary']),
+            _legalese=build_dictionary_from_iterable(['binary']),
             _spdx_tokens=set()
         )
         q = Query(query_string='binary that was a binary', idx=idx)
@@ -430,7 +436,7 @@ class TestQueryWithSingleRun(IndexTesting):
         print('\nINDEX')
         idx = index.LicenseIndex(
             [Rule._from_text_and_expression(text='is the binary a')],
-            _legalese=set(['binary']),
+            _legalese=build_dictionary_from_iterable(['binary']),
             _spdx_tokens=set()
         )
         print('\nQUERY')
@@ -682,7 +688,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
              foundation 110
         ''')
 
-        legalese = set(['binary', 'redistributions', 'foundation'])
+        legalese = build_dictionary_from_iterable(['binary', 'redistributions', 'foundation'])
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         qs = '''

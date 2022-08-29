@@ -16,6 +16,7 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import index
 from licensedcode import match_seq
 from licensedcode import models
+from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
@@ -449,9 +450,10 @@ No part of match        '''
 
         rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'),
                            license_expression='test')
-        legalese = (
-            mini_legalese
-            | set(['permission', 'written', 'registered', 'derived', 'damage', 'due']))
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['permission', 'written', 'registered', 'derived', 'damage', 'due'])
+        )
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         query_loc = self.get_test_loc('index/templates/query.txt')

@@ -41,7 +41,7 @@ from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
-from textcode.analysis import numbered_text_lines
+from licensedcode.tokenize import query_lines
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -681,16 +681,17 @@ def ignore_editor_tmp_files(location):
 def load_licenses(
     licenses_data_dir=licenses_data_dir,
     with_deprecated=False,
+    check_dangling=True,
 ):
     """
     Return a mapping of {key: License} loaded from license data and text files
     found in ``licenses_data_dir``. Raise Exceptions if there are dangling or
     orphaned files.
-    Optionally include deprecated license if ``with_deprecated``
-    is True.
+    Optionally include deprecated license if ``with_deprecated`` is True.
+    Optionally check for dangling orphaned files if ``check_dangling`` is True.
     """
 
-    all_files = set(resource_iter(
+    all_files = list(resource_iter(
         location=licenses_data_dir,
         ignored=ignore_editor_tmp_files,
         with_dirs=False,
@@ -700,7 +701,7 @@ def load_licenses(
     licenses = {}
     used_files = set()
 
-    for data_file in sorted(all_files):
+    for data_file in all_files:
         if data_file.endswith('.yml'):
             if TRACE:
                 logger_debug('load_licenses: data_file:', data_file)
@@ -712,10 +713,11 @@ def load_licenses(
             except Exception as e:
                 raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
 
-            used_files.add(data_file)
+            if check_dangling:
+                used_files.add(data_file)
 
             text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
-            if exists(text_file):
+            if check_dangling and exists(text_file):
                 used_files.add(text_file)
 
             if not with_deprecated and lic.is_deprecated:
@@ -723,13 +725,14 @@ def load_licenses(
 
             licenses[key] = lic
 
-    dangling = all_files.difference(used_files)
-    if dangling:
-        msg = (
-            f'Some License files are orphaned in {licenses_data_dir!r}.\n' +
-            '\n'.join(f'file://{f}' for f in sorted(dangling))
-        )
-        raise Exception(msg)
+    if check_dangling:
+        dangling = set(all_files).difference(used_files)
+        if dangling:
+            msg = (
+                f'Some License files are orphaned in {licenses_data_dir!r}.\n' +
+                '\n'.join(f'file://{f}' for f in sorted(dangling))
+            )
+            raise Exception(msg)
 
     if not licenses:
         msg = (
@@ -745,7 +748,7 @@ def get_rules(
     licenses_db=None,
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
-    validate=True,
+    validate=False,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
@@ -835,7 +838,7 @@ def build_rule_from_license(license_obj):
         rule = Rule(
             license_expression=license_obj.key,
             identifier=f'{license_obj.key}.LICENSE',
-            text=license_obj.text,
+            text=get_rule_text(text=license_obj.text),
             # a license text is always 100% relevant
             has_stored_relevance=True,
             relevance=100,
@@ -895,9 +898,10 @@ def get_license_tokens():
     yield 'licensed'
 
 
-def load_rules(rules_data_dir=rules_data_dir):
+def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
+    Optionally check for consistency if ``with_checks`` is True.
     """
     # TODO: OPTIMIZE: create a graph of rules to account for containment and
     # similarity clusters?
@@ -912,7 +916,7 @@ def load_rules(rules_data_dir=rules_data_dir):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
 
-            if ' ' in base_name:
+            if with_checks and ' ' in base_name:
                 space_problems.append(data_file)
 
             text_file = join(rules_data_dir, f'{base_name}.RULE')
@@ -920,60 +924,63 @@ def load_rules(rules_data_dir=rules_data_dir):
             try:
                 yield Rule.from_files(data_file=data_file, text_file=text_file)
             except Exception as re:
-                model_errors.append(str(re))
+                if with_checks:
+                    model_errors.append(str(re))
 
-            # accumulate sets to ensures we do not have illegal names or extra
-            # orphaned files
-            data_file_lower = data_file.lower()
-            if data_file_lower in lower_case_files:
-                case_problems.add(data_file_lower)
-            else:
-                lower_case_files.add(data_file_lower)
+            if with_checks:
+                # accumulate sets to ensures we do not have illegal names or extra
+                # orphaned files
+                data_file_lower = data_file.lower()
+                if data_file_lower in lower_case_files:
+                    case_problems.add(data_file_lower)
+                else:
+                    lower_case_files.add(data_file_lower)
 
-            text_file_lower = text_file.lower()
-            if text_file_lower in lower_case_files:
-                case_problems.add(text_file_lower)
-            else:
-                lower_case_files.add(text_file_lower)
+                text_file_lower = text_file.lower()
+                if text_file_lower in lower_case_files:
+                    case_problems.add(text_file_lower)
+                else:
+                    lower_case_files.add(text_file_lower)
 
-            processed_files.update([data_file, text_file])
+                processed_files.update([data_file, text_file])
 
-        if not data_file.endswith('~'):
+        if with_checks and not data_file.endswith('~'):
             seen_files.add(data_file)
 
-    unknown_files = seen_files - processed_files
-    if unknown_files or case_problems or model_errors or space_problems:
-        msg = ''
+    if with_checks:
+        unknown_files = seen_files - processed_files
+        if unknown_files or case_problems or model_errors or space_problems:
+            msg = ''
 
-        if model_errors:
-            errors = '\n'.join(model_errors)
-            msg += (
-                '\nInvalid rule YAML file in directory: '
-                f'{rules_data_dir!r}\n{errors}'
-            )
+            if model_errors:
+                errors = '\n'.join(model_errors)
+                msg += (
+                    '\nInvalid rule YAML file in directory: '
+                    f'{rules_data_dir!r}\n{errors}'
+                )
 
-        if unknown_files:
-            files = '\n'.join(sorted(f'file://{f}"' for f in unknown_files))
-            msg += (
-                '\nOrphaned files in rule directory: '
-                f'{rules_data_dir!r}\n{files}'
-            )
+            if unknown_files:
+                files = '\n'.join(sorted(f'file://{f}"' for f in unknown_files))
+                msg += (
+                    '\nOrphaned files in rule directory: '
+                    f'{rules_data_dir!r}\n{files}'
+                )
 
-        if case_problems:
-            files = '\n'.join(sorted(f'"file://{f}"' for f in case_problems))
-            msg += (
-                '\nRule files with non-unique name in rule directory: '
-                f'{rules_data_dir!r}\n{files}'
-            )
+            if case_problems:
+                files = '\n'.join(sorted(f'"file://{f}"' for f in case_problems))
+                msg += (
+                    '\nRule files with non-unique name in rule directory: '
+                    f'{rules_data_dir!r}\n{files}'
+                )
 
-        if space_problems:
-            files = '\n'.join(sorted(f'"file://{f}"' for f in space_problems))
-            msg += (
-                '\nRule filename cannot contain spaces: '
-                f'{rules_data_dir!r}\n{files}'
-            )
+            if space_problems:
+                files = '\n'.join(sorted(f'"file://{f}"' for f in space_problems))
+                msg += (
+                    '\nRule filename cannot contain spaces: '
+                    f'{rules_data_dir!r}\n{files}'
+                )
 
-        raise InvalidRule(msg)
+            raise InvalidRule(msg)
 
 
 @attr.s(slots=True)
@@ -1647,19 +1654,16 @@ class BasicRule:
 
         return data
 
-    def prepare_text(self):
-        """
-        Return the rule text prepared for indexing.
-        """
-        return self.text
-        # IMPORTANT: use the same process as query text loading for symmetry
-        numbered_lines = numbered_text_lines(
-            self.text.splitlines(),
-            demarkup=False,
-            plain_text=True,
-        )
-        text = ''.join(l for _, l in numbered_lines)
-        return text.strip()
+
+def get_rule_text(location=None, text=None):
+    """
+    Return the rule ``text`` prepared for indexing.
+    ###############
+    # IMPORTANT: we use the same process as used to load query text for symmetry
+    ###############
+    """
+    numbered_lines = query_lines(location=location, query_string=text, plain_text=True)
+    return '\n'.join(l.strip() for _, l in numbered_lines)
 
 
 def has_only_lower_license_keys(license_expression, licensing=Licensing()):
@@ -1729,11 +1733,11 @@ class Rule(BasicRule):
         ``license_expression``. Used for testing only.
         """
         license_expression = license_expression or 'mit'
-        if os.path.exists(text_file):
-            with io.open(text_file, encoding='utf-8') as tf:
-                text = tf.read()
+        if exists(text_file):
+            text = get_rule_text(location=text_file)
         else:
             text = ''
+
         return cls._from_text_and_expression(
             text=text,
             license_expression=license_expression,
@@ -1817,7 +1821,7 @@ class Rule(BasicRule):
         recomputed as a side effect.
         """
 
-        text = self.prepare_text()
+        text = self.text
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
@@ -1860,7 +1864,7 @@ class Rule(BasicRule):
         """
         if self.is_from_license:
             return []
-        return list(get_key_phrase_spans(self.prepare_text()))
+        return list(get_key_phrase_spans(self.text))
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
@@ -1914,17 +1918,17 @@ class Rule(BasicRule):
         text_file = self.text_file(rules_data_dir=rules_data_dir)
         write(text_file, self.text.encode('utf-8'))
 
-    def load(self, data_file, text_file):
+    def load(self, data_file, text_file, with_checks=True):
         """
         Load self from a .RULE YAML file stored in data_file and text_file.
         Unknown fields are ignored and not bound to the Rule object.
+        Optionally check for consistency if ``with_checks`` is True.
         """
         try:
             with io.open(data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read(), allow_duplicate_keys=False)
 
-            with io.open(text_file, encoding='utf-8') as f:
-                self.text = f.read()
+            self.text = get_rule_text(location=text_file)
 
         except Exception as e:
             print('#############################')
@@ -1937,11 +1941,12 @@ class Rule(BasicRule):
 
         known_attributes = set(attr.fields_dict(self.__class__))
         data_file_attributes = set(data)
-        unknown_attributes = data_file_attributes.difference(known_attributes)
-        if unknown_attributes:
-            unknown_attributes = ', '.join(sorted(unknown_attributes))
-            msg = 'License rule {} data file has unknown attributes: {}'
-            raise InvalidRule(msg.format(self, unknown_attributes))
+        if with_checks:
+            unknown_attributes = data_file_attributes.difference(known_attributes)
+            if unknown_attributes:
+                unknown_attributes = ', '.join(sorted(unknown_attributes))
+                msg = 'License rule {} data file has unknown attributes: {}'
+                raise InvalidRule(msg.format(self, unknown_attributes))
 
         self.license_expression = data.get('license_expression')
 
@@ -2269,11 +2274,10 @@ def update_ignorables(licensish, verbose=False):
     if verbose:
         print(f'Processing:', licensish.identifier)
 
-    if licensish.text:
-        return licensish
-
-    ignorables = get_ignorables(text=licensish.text, verbose=verbose)
-    set_ignorables(licensish=licensish, ignorables=ignorables, verbose=verbose)
+    text = licensish.text
+    if text:
+        ignorables = get_ignorables(text=text, verbose=verbose)
+        set_ignorables(licensish=licensish, ignorables=ignorables, verbose=verbose)
     return licensish
 
 
@@ -2310,7 +2314,7 @@ def get_ignorables(text, verbose=False):
 
     # Redundant clues found in a license or rule text can be ignored.
     # Therefdore we collect and set ignorable copyrights, holders and authors
-    detections = detect_copyrights_from_lines(location=text_lines)
+    detections = detect_copyrights_from_lines(numbered_lines=enumerate(text.splitlines(), 1))
     copyrights, holders, authors = Detection.split_values(detections)
 
     if verbose:
