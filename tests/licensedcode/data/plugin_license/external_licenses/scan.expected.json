@@ -37,14 +37,6 @@
   ],
   "files": [
     {
-      "path": "scan",
-      "type": "directory",
-      "licenses": [],
-      "license_expressions": [],
-      "percentage_of_license_text": 0,
-      "scan_errors": []
-    },
-    {
       "path": "license.txt",
       "type": "file",
       "licenses": [
