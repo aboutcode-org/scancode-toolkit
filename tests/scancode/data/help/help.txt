@@ -158,6 +158,10 @@ Options:
                              scan depth limit.
 
   miscellaneous:
+    --additional-license-directory DIR
+                                    Include this directory with additional
+                                    custom licenses and license rules in the
+                                    license detection index.
     --reindex-licenses              Rebuild the license index and exit.
     --reindex-licenses-for-all-languages
                                     [EXPERIMENTAL] Rebuild the license index
