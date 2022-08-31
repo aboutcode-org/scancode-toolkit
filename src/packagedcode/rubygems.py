@@ -253,7 +253,8 @@ class GemfileLockHandler(BaseGemProjectHandler):
     def parse(cls, location):
         gemfile_lock = GemfileLockParser(location)
         dependencies = []
-        for _, gem in gemfile_lock.all_gems.items():
+        all_gems = list(gemfile_lock.all_gems.values())
+        for gem in all_gems:
             dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -277,34 +278,35 @@ class GemfileLockHandler(BaseGemProjectHandler):
             primary_language=cls.default_primary_language,
         )
 
-        for _, gem in gemfile_lock.all_gems.items():
-            deps = []
-            for _dep_name, dep in gem.dependencies.items():
-                deps.append(
-                    models.DependentPackage(
-                        purl=PackageURL(
-                            type='gem',
-                            name=dep.name,
-                            version=dep.version
-                        ).to_string(),
-                        extracted_requirement=', '.join(dep.requirements),
-                        scope='dependencies',
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
-                    )
-                )
-            urls = get_urls(gem.name, gem.version)
+        if not all_gems:
+            return
 
-            yield models.PackageData(
-                datasource_id=cls.datasource_id,
-                primary_language=cls.default_primary_language,
-                type=cls.default_package_type,
-                name=gem.name,
-                version=gem.version,
-                dependencies=deps,
-                **urls
-            )
+        main_gem = all_gems[0]
+        deps = [
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='gem',
+                    name=dep.name,
+                    version=dep.version
+                ).to_string(),
+                extracted_requirement=', '.join(dep.requirements),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            ) for dep in main_gem.dependencies.values()
+        ]
+        urls = get_urls(main_gem.name, main_gem.version)
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            primary_language=cls.default_primary_language,
+            type=cls.default_package_type,
+            name=main_gem.name,
+            version=main_gem.version,
+            dependencies=deps,
+            **urls
+        )
 
 
 class GemfileLockInExtractedGemHandler(GemfileLockHandler):
