@@ -252,32 +252,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
     @classmethod
     def parse(cls, location):
         gemfile_lock = GemfileLockParser(location)
-        dependencies = []
         all_gems = list(gemfile_lock.all_gems.values())
-        for gem in all_gems:
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='gem',
-                        name=gem.name,
-                        version=gem.version
-                    ).to_string(),
-                    extracted_requirement=', '.join(gem.requirements),
-                    # FIXME: get proper scope... This does not seem right
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            dependencies=dependencies,
-            primary_language=cls.default_primary_language,
-        )
-
         if not all_gems:
             return
 
@@ -294,7 +269,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=True,
-            ) for dep in main_gem.dependencies.values()
+            ) for dep in all_gems[1:]
         ]
         urls = get_urls(main_gem.name, main_gem.version)
 
