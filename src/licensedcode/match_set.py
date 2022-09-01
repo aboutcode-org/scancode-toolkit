@@ -149,7 +149,7 @@ def high_tids_set_subset(tids_set, len_legalese):
     """
     Return a subset of a set of token ids that are only legalese tokens.
     """
-    return intbitset([i for i in tids_set if i < len_legalese])
+    return intbitset(i for i in tids_set if i < len_legalese)
 
 
 def high_tids_multiset_subset(mset, len_legalese):
