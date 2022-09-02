@@ -239,7 +239,6 @@ def js_map_sources_lines(location):
             entry = replace_verbatim_cr_lf_chars(entry)
             for line in entry.splitlines():
                 l = remove_verbatim_cr_lf_tab_chars(line)
-                print(repr(l), l)
                 yield l
 
 
