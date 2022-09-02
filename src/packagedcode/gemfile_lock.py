@@ -417,13 +417,10 @@ class GemfileLockParser:
 
     def set_primary_gem(self):
         for gem in self.all_gems.values():
-            if gem.type == PATH:
-                self.primary_gem = Gem(
-                    gem.name,
-                    gem.version,
-                    gem.platform,
-                )
-                break
+            if not gem.type == PATH:
+                continue
+            self.primary_gem = gem
+            break
 
     def get_or_create(self, name, version=None, platform=None):
         """

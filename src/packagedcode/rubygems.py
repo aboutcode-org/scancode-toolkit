@@ -270,7 +270,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=True,
-                ) for dep in all_gems[1:]
+                ) for dep in all_gems if dep != primary_gem
             ]
             urls = get_urls(primary_gem.name, primary_gem.version)
 
