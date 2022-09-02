@@ -368,6 +368,9 @@ class GemfileLockParser:
         # the final tree of dependencies, keyed by name
         self.dependency_tree = {}
 
+        # the package that the gemfile.lock is for
+        self.primary_gem = None
+
         # a flat dict of all gems, keyed by name
         self.all_gems = {}
 
@@ -399,6 +402,9 @@ class GemfileLockParser:
         # finally refine the collected data
         self.refine()
 
+        # set primary gem
+        self.set_primary_gem()
+
     def reset_state (self):
         self.state = None
         self.current_options = {}
@@ -408,6 +414,16 @@ class GemfileLockParser:
     def refine(self):
         for gem in self.all_gems.values():
             gem.refine()
+
+    def set_primary_gem(self):
+        for gem in self.all_gems.values():
+            if gem.type == PATH:
+                self.primary_gem = Gem(
+                    gem.name,
+                    gem.version,
+                    gem.platform,
+                )
+                break
 
     def get_or_create(self, name, version=None, platform=None):
         """

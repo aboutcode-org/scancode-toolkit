@@ -256,32 +256,56 @@ class GemfileLockHandler(BaseGemProjectHandler):
         if not all_gems:
             return
 
-        main_gem = all_gems[0]
-        deps = [
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='gem',
-                    name=dep.name,
-                    version=dep.version
-                ).to_string(),
-                extracted_requirement=', '.join(dep.requirements),
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            ) for dep in all_gems[1:]
-        ]
-        urls = get_urls(main_gem.name, main_gem.version)
+        primary_gem = gemfile_lock.primary_gem
+        if primary_gem:
+            deps = [
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=dep.name,
+                        version=dep.version
+                    ).to_string(),
+                    extracted_requirement=', '.join(dep.requirements),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                ) for dep in all_gems[1:]
+            ]
+            urls = get_urls(primary_gem.name, primary_gem.version)
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            primary_language=cls.default_primary_language,
-            type=cls.default_package_type,
-            name=main_gem.name,
-            version=main_gem.version,
-            dependencies=deps,
-            **urls
-        )
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                primary_language=cls.default_primary_language,
+                type=cls.default_package_type,
+                name=primary_gem.name,
+                version=primary_gem.version,
+                dependencies=deps,
+                **urls
+            )
+        else:
+            deps = [
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=gem.name,
+                        version=gem.version
+                    ).to_string(),
+                    extracted_requirement=', '.join(gem.requirements),
+                    # FIXME: get proper scope... This does not seem right
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                ) for gem in all_gems
+            ]
+
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                dependencies=deps,
+                primary_language=cls.default_primary_language,
+            )
 
 
 class GemfileLockInExtractedGemHandler(GemfileLockHandler):
