@@ -28,7 +28,7 @@ from packagedcode import models
 # TODO: check for chocolatey
 # TODO: Windows appstore
 
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
