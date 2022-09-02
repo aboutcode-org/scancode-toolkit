@@ -32,6 +32,16 @@ License detection:
 
 
 
+
+v31.1.1 - 2022-09-02
+----------------------------------
+
+This is a minor release with a bug fix.
+
+- Do not display tracing/debug outputs at runtime
+
+
+
 v31.1.0 - 2022-08-29
 ----------------------------------
 
