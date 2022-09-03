@@ -39,6 +39,7 @@ lxml==4.9.1
 MarkupSafe==2.1.1
 more-itertools==8.13.0
 normality==2.3.3
+oelint_parser==2.6.0
 packageurl-python==0.10.0
 packaging==21.3
 parameter-expansion-patched==0.3.1
@@ -59,6 +60,7 @@ pyparsing==3.0.9
 pytz==2022.1
 PyYAML==6.0
 rdflib==6.2.0
+regex==2022.8.17
 requests==2.28.1
 saneyaml==0.5.2
 six==1.16.0
