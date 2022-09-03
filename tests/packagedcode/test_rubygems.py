@@ -167,6 +167,12 @@ class TestGemfileLock(PackageTester):
         packages = rubygems.GemfileLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_ruby_gemfile_lock_with_path_as_dict(self):
+        test_file = self.get_test_loc('rubygems/gemfile-lock/path/Gemfile.lock')
+        expected_loc = self.get_test_loc('rubygems/gemfile-lock/path/Gemfile.lock.expected')
+        packages = rubygems.GemfileLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 build_tests(
     test_dir='rubygems/gem',
