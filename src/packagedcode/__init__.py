@@ -57,7 +57,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     bower.BowerJsonHandler,
 
-    bitbake.BitbakePackage,
+    bitbake.BitbakeBbManifestHandler,
 
     build_gradle.BuildGradleHandler,
 
