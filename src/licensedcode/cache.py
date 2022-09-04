@@ -129,9 +129,12 @@ class LicenseCache:
                         pickle.dump(additional_directories, file, protocol=PICKLE_PROTOCOL)
 
                 additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
-                validate_additional_license_data(additional_license_dirs)
+                validate_additional_license_data(additional_directories=additional_license_dirs, scancode_license_dir=licenses_data_dir)
                 combined_directories = [licenses_data_dir] + additional_license_dirs
-                licenses_db = load_licenses_from_multiple_dirs(license_directories=combined_directories)
+                licenses_db = load_licenses_from_multiple_dirs(
+                    license_directories=combined_directories,
+                    scancode_license_dir=licenses_data_dir
+                )
 
                 # create a single merged index containing license data from licenses_data_dir
                 # and data from additional directories
@@ -207,10 +210,14 @@ def build_index(
 
     # if we have additional directories, extract the rules from them
     additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
-    validate_ignorable_clues(additional_rule_dirs)
+    validate_ignorable_clues(rule_directories=additional_rule_dirs, is_builtin=False)
     # then combine the rules in these additional directories with the rules in the original rules directory
     combined_rule_directories = [rules_data_dir] + additional_rule_dirs
-    rules = get_rules_from_multiple_dirs(licenses_db=licenses_db, rule_directories=combined_rule_directories)
+    rules = get_rules_from_multiple_dirs(
+        licenses_db=licenses_db,
+        rule_directories=combined_rule_directories,
+        scancode_rules_dir=rules_data_dir
+    )
 
     legalese = common_license_words
     spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))

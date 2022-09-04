@@ -249,13 +249,19 @@ def _licenses_data_from_match(
         result['is_exception'] = lic.is_exception
         result['is_unknown'] = lic.is_unknown
         result['owner'] = lic.owner
-        result['homepage_url'] = lic.homepage_url
-        result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-        result['reference_url'] = license_url_template.format(lic.key)
-        # TODO: change this in the case of a private license?
-        result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
-        result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
-
+        # if the license is not builtin these should all be empty
+        if lic.is_builtin:
+            result['homepage_url'] = lic.homepage_url
+            result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
+            result['reference_url'] = license_url_template.format(lic.key)
+            result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+            result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+        else:
+            result['homepage_url'] = ''
+            result['text_url'] = ''
+            result['reference_url'] = ''
+            result['scancode_text_url'] = ''
+            result['scancode_data_url'] = ''
         spdx_key = lic.spdx_license_key
         result['spdx_license_key'] = spdx_key
 

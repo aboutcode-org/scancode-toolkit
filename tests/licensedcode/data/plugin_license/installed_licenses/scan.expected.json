@@ -27,7 +27,6 @@
           "python_version": "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
         },
         "additional_directories": [
-          "/home/kevin/code/scancode-toolkit/tests/licensedcode/data/example_external_licenses/example1",
           "/home/kevin/code/scancode-toolkit/venv/lib/python3.8/site-packages/licenses_to_install1"
         ],
         "spdx_license_list_version": "3.17",
@@ -51,9 +50,9 @@
           "owner": "NexB",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/example-installed-1",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.yml",
+          "reference_url": "",
+          "scancode_text_url": "",
+          "scancode_data_url": "",
           "spdx_license_key": "scancode-example-installed1",
           "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
           "start_line": 1,
