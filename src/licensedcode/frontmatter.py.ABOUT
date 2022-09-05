@@ -16,4 +16,4 @@ checksum_sha1: 60914691e82016a206347e1eb8ddd20174a818d1
 licenses:
   - key: mit
     name: MIT License
-    file: mit.LICENSE
+    file: frontmatter.py.LICENSE
