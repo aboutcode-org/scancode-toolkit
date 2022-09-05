@@ -266,7 +266,7 @@ def test_detection_with_single_external_license_directory():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-@pytest.mark.scanslow
+# @pytest.mark.scanslow
 def test_detection_with_multiple_external_license_directories():
     test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
     example1_dir = test_env.get_test_loc('example_external_licenses/example1')

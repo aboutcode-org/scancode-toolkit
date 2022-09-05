@@ -903,21 +903,22 @@ def validate_additional_license_data(additional_directories, scancode_license_di
         raise InvalidLicense('\n'.join(message))
 
 
-def _ignorable_clue_error(rule):
+def _ignorable_clue_error(rule, rules_dir):
     """
     Return a pair of the result of validating a rule's ignorable clues and expected ignorable clues
     if there is an error. Otherwise, returns None.
     """
-    result = get_ignorables(rule.text_file)
+    result = get_ignorables(rule.text_file(rules_data_dir=rules_dir))
     expected = get_normalized_ignorables(rule)
     if result != expected:
-        data_file = rule.data_file
+        data_file = rule.data_file(rules_data_dir=rules_dir)
+        text_file = rule.text_file(rules_data_dir=rules_dir)
         if not data_file:
-            data_file = rule.text_file.replace('.LICENSE', '.yml')
+            data_file = text_file.replace('.LICENSE', '.yml')
 
         result['files'] = [
             f'file://{data_file}',
-            f'file://{rule.text_file}',
+            f'file://{text_file}',
         ]
         return result, expected
 
@@ -927,27 +928,23 @@ def validate_ignorable_clues(rule_directories, is_builtin):
     Raises an exception if any ignorable clues declared in a Rule are improperly detected
     in the rule text file.
     """
-    combined_rules = []
+    messages = ['Errors while validating ignorable rules:']
+    error_present = False
     for rules_dir in rule_directories:
         r = list(load_rules(
             rules_data_dir=rules_dir,
             is_builtin=is_builtin,
         ))
-        combined_rules.append(r)
-    # flatten lists of rules into a single iterable
-    rules = list(chain.from_iterable(combined_rules))
-    messages = ['Errors while validating ignorable rules:']
-    error_present = False
-    for rule in rules:
-        if _ignorable_clue_error(rule):
-            error_present = True
-            result, expected = _ignorable_clue_error(rule)
-            message.append('')
-            message.append(f'{rule!r}')
-            message.append('Result:')
-            message.append(result)
-            message.append('Expected:')
-            message.append(expected)
+        for rule in r:
+            if _ignorable_clue_error(rule, rules_dir):
+                error_present = True
+                result, expected = _ignorable_clue_error(rule, rules_dir)
+                message.append('')
+                message.append(f'{rule!r}')
+                message.append('Result:')
+                message.append(result)
+                message.append('Expected:')
+                message.append(expected)
     if error_present:
         raise InvalidRule('\n'.join(message))
 
@@ -1901,7 +1898,7 @@ class Rule(BasicRule):
         self.setup()
 
     @classmethod
-    def from_files(cls, data_file, text_file, is_builtin):
+    def from_files(cls, data_file, text_file, is_builtin=True):
         """
         Return a new Rule object loaded from a data file stored at
         ``data_file`` and a companion ``text_file``.
