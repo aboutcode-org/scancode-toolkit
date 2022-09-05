@@ -164,12 +164,7 @@ class TestLicense(FileBasedTesting):
         lic = licenses['gpl-1.0']
         rule = models.build_rule_from_license(license_obj=lic)
 
-        assert rule.text_file(
-            licenses_data_dir=licenses_data_dir,
-            rules_data_dir=None,
-        ).startswith(licenses_data_dir)
-
-        assert rule.data_file(
+        assert rule.rule_file(
             licenses_data_dir=licenses_data_dir,
             rules_data_dir=None,
         ).startswith(licenses_data_dir)
@@ -510,20 +505,19 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
-        data_file = self.get_test_loc('models/rule_no_text/mit.yml')
+        rule_file = self.get_test_loc('models/rule_no_text/mit.RULE')
         try:
-            Rule.from_files(data_file=data_file, text_file=None)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except InvalidRule as  e:
-            assert str(e).startswith('Cannot load rule without its corresponding text_file and data file')
+            assert 'Cannot load rule with empty text' in str(e)
 
     def test_rule_cannot_contain_extra_unknown_attributes(self):
-        data_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.yml')
-        text_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
+        rule_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
 
         expected = 'data file has unknown attributes: license_expressionnotuce'
         try:
-            Rule.from_files(data_file=data_file, text_file=text_file)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except Exception as  e:
             assert expected in str(e)
@@ -579,8 +573,7 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/data_text_files/rules')
         rules = list(models.load_rules(rule_dir))
         rule = rules[0]
-        assert rule.text_file(rules_data_dir=rule_dir).startswith(rule_dir)
-        assert rule.data_file(rules_data_dir=rule_dir).startswith(rule_dir)
+        assert rule.rule_file(rules_data_dir=rule_dir).startswith(rule_dir)
 
 
 class TestGetKeyPhrases(TestCaseClass):
