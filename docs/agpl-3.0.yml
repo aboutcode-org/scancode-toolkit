@@ -10,6 +10,7 @@ notes: |
 spdx_license_key: AGPL-3.0-only
 other_spdx_license_keys:
   - AGPL-3.0
+  - LicenseRef-AGPL-3.0
 osi_license_key: AGPL-3.0
 text_urls:
   - http://www.fsf.org/licensing/licenses/agpl-3.0.html

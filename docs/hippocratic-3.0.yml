@@ -1,0 +1,16 @@
+key: hippocratic-3.0
+short_name: Hippocratic License v3.0
+name: Hippocratic License v3.0
+category: Free Restricted
+owner: Ethical Source
+homepage_url: https://firstdonoharm.dev/
+spdx_license_key: LicenseRef-scancode-Hippocratic-3.0
+text_urls:
+  - https://firstdonoharm.dev/version/3/0/license/license.txt
+  - https://firstdonoharm.dev/version/3/0/license/license.md
+  - https://firstdonoharm.dev/version/3/0/license/
+faq_url: https://www.un.org/en/universal-declaration-human-rights/
+ignorable_urls:
+  - https://bdsmovement.net/
+  - https://bdsmovement.net/get-involved/what-to-boycott
+  - https://wsr-network.org/what-is-wsr/statement-of-principles

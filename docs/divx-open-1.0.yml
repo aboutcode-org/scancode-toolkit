@@ -7,7 +7,7 @@ spdx_license_key: LicenseRef-scancode-divx-open-1.0
 minimum_coverage: 30
 ignorable_copyrights:
   - Copyright (c) 2001 Project Mayo
-ignorable_authors:
-  - Project Mayo
 ignorable_holders:
+  - Project Mayo
+ignorable_authors:
   - Project Mayo

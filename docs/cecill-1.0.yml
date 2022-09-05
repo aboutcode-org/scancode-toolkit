@@ -7,6 +7,7 @@ owner: CeCILL
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL_V1-fr.html
 spdx_license_key: CECILL-1.0
 text_urls:
-  - http://www.cecill.info/licences/Licence_CeCILL_V1-fr.html
+  - http://www.cecill.info/licences/Licence_CeCILL_V1-fr.txt
 other_urls:
+  - http://www.cecill.info/licences/Licence_CeCILL_V1-US.html
   - http://www.cecill.info/licences/Licence_CeCILL_V1.1-US.html

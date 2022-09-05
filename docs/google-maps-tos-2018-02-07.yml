@@ -10,10 +10,10 @@ text_urls:
 minimum_coverage: 90
 ignorable_copyrights:
   - (c) Google Australia Pty Ltd.
-ignorable_authors:
-  - the U.S. Department of State. Remove
 ignorable_holders:
   - Google Australia Pty Ltd.
+ignorable_authors:
+  - the U.S. Department of State. Remove
 ignorable_urls:
   - http://developers.google.com/maps/maps-api-list
   - http://developers.google.com/maps/terms

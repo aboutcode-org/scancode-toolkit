@@ -8,6 +8,9 @@ notes: |
   Per SPDX.org, this version was released January 2004 This license is OSI
   certified
 spdx_license_key: Apache-2.0
+other_spdx_license_keys:
+  - LicenseRef-Apache
+  - LicenseRef-Apache-2.0
 osi_license_key: Apache-2.0
 text_urls:
   - http://www.apache.org/licenses/LICENSE-2.0

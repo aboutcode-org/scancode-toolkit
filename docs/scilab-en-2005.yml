@@ -11,7 +11,7 @@ text_urls:
   - https://directory.fsf.org/wiki/License:Scilab-old
 ignorable_copyrights:
   - Scilab (c) INRIA-ENPC.
-ignorable_authors:
-  - INRIA
 ignorable_holders:
   - Scilab INRIA-ENPC.
+ignorable_authors:
+  - INRIA

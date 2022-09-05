@@ -1,1 +1,1 @@
-{"key": "libzip", "short_name": "libzip License", "name": "NiH libzip License", "category": "Permissive", "owner": "NiH", "homepage_url": "https://www.nih.at/libzip/LICENSE.html", "spdx_license_key": "LicenseRef-scancode-libzip"}
+{"key": "libzip", "is_deprecated": true, "short_name": "libzip License", "name": "NiH libzip License", "category": "Permissive", "owner": "NiH", "homepage_url": "https://www.nih.at/libzip/LICENSE.html", "notes": "deprecated in favor of bsd-new See https://github.com/nexB/scancode-toolkit/issues/2995"}

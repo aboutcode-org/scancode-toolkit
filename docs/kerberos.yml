@@ -12,11 +12,11 @@ ignorable_copyrights:
   - Copyright 1985-2002 by the Massachusetts Institute of Technology
   - Copyright 2000 by Zero-Knowledge Systems, Inc.
   - Copyright, OpenVision Technologies, Inc., 1996
-ignorable_authors:
-  - the University of California, Berkeley and its contributors
 ignorable_holders:
   - Dr Brian Gladman
   - OpenVision Technologies, Inc.
   - Regents of the University of California
   - Zero-Knowledge Systems, Inc.
   - the Massachusetts Institute of Technology
+ignorable_authors:
+  - the University of California, Berkeley and its contributors

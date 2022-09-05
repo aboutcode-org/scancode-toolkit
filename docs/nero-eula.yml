@@ -25,9 +25,6 @@ ignorable_copyrights:
   - copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,
     Wez Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus
     Kuhn, and CORE SDI S.A.
-ignorable_authors:
-  - Coding Technologies
-  - the OpenSSL Project
 ignorable_holders:
   - DTS, Inc.
   - Dolby Laboratories
@@ -44,6 +41,9 @@ ignorable_holders:
     Kuhn, and CORE SDI S.A.
   - Simon Tatham
   - The OpenSSL Project
+ignorable_authors:
+  - Coding Technologies
+  - the OpenSSL Project
 ignorable_urls:
   - http://ffmpeg.mplayerhq.hu/
   - http://fp.gladman.plus.com/

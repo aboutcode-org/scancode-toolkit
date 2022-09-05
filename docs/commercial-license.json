@@ -1,1 +1,1 @@
-{"key": "commercial-license", "short_name": "Commercial License", "name": "Commercial License", "category": "Commercial", "owner": "Unspecified", "spdx_license_key": "LicenseRef-scancode-commercial-license"}
+{"key": "commercial-license", "short_name": "Commercial License", "name": "Commercial License", "category": "Commercial", "owner": "Unspecified", "notes": "this is a generic commercial license", "is_generic": true, "spdx_license_key": "LicenseRef-scancode-commercial-license"}

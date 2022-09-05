@@ -1,0 +1,12 @@
+key: liliq-p-1.1
+language: fr
+short_name: LiLiQ-P-1.1
+name: Licence Libre du Québec – Permissive version 1.1
+category: Copyleft Limited
+owner: Quebec
+homepage_url: https://opensource.org/licenses/LiLiQ-P-1.1
+spdx_license_key: LiLiQ-P-1.1
+osi_url: https://opensource.org/licenses/LiLiQ-P-1.1
+other_urls:
+  - http://opensource.org/licenses/LiLiQ-P-1.1
+  - https://forge.gouv.qc.ca/licence/fr/liliq-v1-1/

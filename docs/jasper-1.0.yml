@@ -6,11 +6,11 @@ owner: JasperSoft
 spdx_license_key: LicenseRef-scancode-jasper-1.0
 ignorable_copyrights:
   - Copyright (c) 2001-2003 Teodor Danciu (teodord@hotmail.com)
+ignorable_holders:
+  - Teodor Danciu
 ignorable_authors:
   - Teodor Danciu (http://jasperreports.sourceforge.net)
   - Teodor Danciu http://jasperreports.sourceforge.net
-ignorable_holders:
-  - Teodor Danciu
 ignorable_urls:
   - http://jasperreports.sourceforge.net/
 ignorable_emails:

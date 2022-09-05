@@ -3,17 +3,18 @@ short_name: TrueCrypt License 3.1
 name: TrueCrypt License 3.1
 category: Copyleft Limited
 owner: TrueCrypt
+notes: this license embeds a few permissive licenses that are included in its text.
 spdx_license_key: LicenseRef-scancode-truecrypt-3.1
 minimum_coverage: 60
 ignorable_copyrights:
   - Copyright (c) 1998-2000 Paul Le Roux
   - Copyright (c) 1998-2008, Brian Gladman, Worcester, UK.
   - Copyright (c) 2002-2004 Mark Adler
-ignorable_authors:
-  - Paul Le Roux <pleroux@swprofessionals.com>
 ignorable_holders:
   - Brian Gladman, Worcester, UK.
   - Mark Adler
   - Paul Le Roux
+ignorable_authors:
+  - Paul Le Roux <pleroux@swprofessionals.com>
 ignorable_emails:
   - pleroux@swprofessionals.com

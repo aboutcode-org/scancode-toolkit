@@ -1,6 +1,6 @@
 key: gcc-exception-3.1
-short_name: GCC exception to GPL 3.0 or later
-name: GCC exception to GPL 3.0 or later
+short_name: GCC Runtime Library Exception v3.1
+name: GCC Runtime Library Exception v3.1
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html

@@ -13,11 +13,11 @@ minimum_coverage: 80
 ignorable_copyrights:
   - Copyright (c) 2001 The Phorum Development Team
   - copyright (c) 2000 The Apache Software Foundation
-ignorable_authors:
-  - the Phorum Development Team (http://phorum.org/)
 ignorable_holders:
   - The Apache Software Foundation
   - The Phorum Development Team
+ignorable_authors:
+  - the Phorum Development Team (http://phorum.org/)
 ignorable_urls:
   - http://phorum.org/
   - http://www.apache.org/

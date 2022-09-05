@@ -31,12 +31,6 @@ ignorable_copyrights:
   - copyrighted by Apple Computer, Inc.
   - copyrighted by Sun Microsystems Inc.
   - copyrighted by the University of Cambridge and Google, Inc.
-ignorable_authors:
-  - Eric Young (eay@cryptsoft.com)
-  - Mathias Pettersson and Brian Hammond
-  - The Perl Foundation
-  - Tim Hudson (tjh@cryptsoft.com)
-  - the OpenSSL Project
 ignorable_holders:
   - Apple Computer, Inc.
   - Ben Noordhuis
@@ -55,6 +49,12 @@ ignorable_holders:
   - the Massachusetts Institute of Technology
   - the University of Cambridge and Google, Inc.
   - the V8 project authors
+ignorable_authors:
+  - Eric Young (eay@cryptsoft.com)
+  - Mathias Pettersson and Brian Hammond
+  - The Perl Foundation
+  - Tim Hudson (tjh@cryptsoft.com)
+  - the OpenSSL Project
 ignorable_urls:
   - http://jelloween.deviantart.com/
   - http://mathiasbynens.be/

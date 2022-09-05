@@ -17,10 +17,10 @@ other_urls:
 minimum_coverage: 90
 ignorable_copyrights:
   - Copyright (c) 2003 Entessa, LLC.
-ignorable_authors:
-  - openSEAL (http://www.openseal.org/)
 ignorable_holders:
   - Entessa, LLC.
+ignorable_authors:
+  - openSEAL (http://www.openseal.org/)
 ignorable_urls:
   - http://www.entessa.com/
   - http://www.openseal.org/

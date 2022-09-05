@@ -10,6 +10,7 @@ notes: |
 spdx_license_key: GPL-3.0-or-later
 other_spdx_license_keys:
   - GPL-3.0+
+  - LicenseRef-GPL-3.0-or-later
 text_urls:
   - http://www.gnu.org/licenses/gpl-3.0-standalone.html
 other_urls:

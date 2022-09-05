@@ -10,9 +10,9 @@ text_urls:
   - https://fedoraproject.org/wiki/Licensing/xpp
 ignorable_copyrights:
   - Copyright (c) 2004 The Trustees of Indiana University
-ignorable_authors:
-  - the Indiana University Extreme! Lab
 ignorable_holders:
   - The Trustees of Indiana University
+ignorable_authors:
+  - the Indiana University Extreme! Lab
 ignorable_urls:
   - http://www.extreme.indiana.edu/

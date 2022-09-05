@@ -12,14 +12,14 @@ ignorable_copyrights:
   - Portions copyright 1996, 1997, 1998, by Boutell.Com, Inc.
   - copyright 1990, 1991, 1993, by David Koblas (koblas@netcom.com)
   - copyright 1998, by Hutchison Avenue Software Corporation
-ignorable_authors:
-  - Daniel Morissette (danmo@videotron.ca)
 ignorable_holders:
   - Boutell.Com, Inc.
   - Cold Spring Harbor Laboratory
   - Daniel Morissette
   - David Koblas
   - Hutchison Avenue Software Corporation
+ignorable_authors:
+  - Daniel Morissette (danmo@videotron.ca)
 ignorable_emails:
   - brv@fred.net
   - danmo@videotron.ca

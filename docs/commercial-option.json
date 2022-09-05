@@ -1,1 +1,1 @@
-{"key": "commercial-option", "is_deprecated": true, "short_name": "Commercial Option", "name": "Commercial Option", "category": "Commercial", "owner": "Unspecified", "notes": "replaced by commercial-license"}
+{"key": "commercial-option", "is_deprecated": true, "short_name": "Commercial Option", "name": "Commercial Option", "category": "Commercial", "owner": "Unspecified", "notes": "replaced by commercial-license", "is_generic": true}

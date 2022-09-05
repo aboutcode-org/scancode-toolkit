@@ -1,0 +1,7 @@
+key: codesourcery-2004
+short_name: CodeSourcery 2004
+name: CodeSourcery 2004
+category: Permissive
+owner: CodeSourcery
+homepage_url: https://git.linaro.org/toolchain/newlib.git/tree/newlib/libc/misc/init.c
+spdx_license_key: LicenseRef-scancode-codesourcery-2004

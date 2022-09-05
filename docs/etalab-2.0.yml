@@ -1,11 +1,15 @@
 key: etalab-2.0
+language: fr
 short_name: Etalab Open License 2.0
 name: Etalab Open License 2.0
 category: Permissive
 owner: DINUM
 homepage_url: https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
-notes: there is also a French version
+notes: there is also an English version
 spdx_license_key: etalab-2.0
+other_spdx_license_keys:
+  - LicenseRef-scancode-etalab-2.0
+  - LicenseRef-scancode-etalab-2.0-fr
 text_urls:
   - https://github.com/etalab/licence-ouverte/blob/master/open-licence.md
 other_urls:

@@ -5,7 +5,9 @@ category: Copyleft Limited
 owner: psycopg
 homepage_url: http://initd.org/psycopg/license/
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-openssl-exception-lgpl-3.0-plus
+spdx_license_key: LicenseRef-scancode-openssl-exception-lgpl3.0plus
+other_spdx_license_keys:
+  - LicenseRef-scancode-openssl-exception-lgpl-3.0-plus
 other_urls:
   - http://www.gnu.org/licenses/lgpl-3.0.txt
 standard_notice: |

@@ -8,3 +8,4 @@ notes: found in Debian reportbug
 spdx_license_key: LicenseRef-scancode-reportbug
 text_urls:
   - https://tracker.debian.org/media/packages/r/reportbug/copyright-6.6.6
+minimum_coverage: 80

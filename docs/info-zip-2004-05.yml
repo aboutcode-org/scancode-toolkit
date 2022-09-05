@@ -10,6 +10,6 @@ text_urls:
 ignorable_copyrights:
   - Copyright (c) 1990-2004 Info-ZIP.
 ignorable_holders:
-  - Info-ZIP.
+  - Info-ZIP
 ignorable_urls:
   - ftp://ftp.info/

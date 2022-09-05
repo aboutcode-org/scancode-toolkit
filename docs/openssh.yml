@@ -16,17 +16,17 @@ ignorable_copyrights:
   - Copyright (c) 1998 CORE SDI
   - Copyright 1995, 1996 by David Mazieres <dm@lcs.mit.edu>
   - Copyright Patrick Powell 1995
-ignorable_authors:
-  - Antoon Bosselaers <antoon.bosselaers@esat.kuleuven.ac.be>
-  - Patrick Powell (papowell@astart.com)
-  - Paulo Barreto <paulo.barreto@terra.com.br>
-  - Vincent Rijmen <vincent.rijmen@esat.kuleuven.ac.be>
 ignorable_holders:
   - CORE SDI
   - David Mazieres
   - Patrick Powell
   - Tatu Ylonen , Espoo, Finland
   - The Regents of the University of California
+ignorable_authors:
+  - Antoon Bosselaers <antoon.bosselaers@esat.kuleuven.ac.be>
+  - Patrick Powell (papowell@astart.com)
+  - Paulo Barreto <paulo.barreto@terra.com.br>
+  - Vincent Rijmen <vincent.rijmen@esat.kuleuven.ac.be>
 ignorable_urls:
   - http://www.core-sdi.com/
   - http://www.cs.hut.fi/crypto

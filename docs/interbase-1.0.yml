@@ -11,11 +11,11 @@ other_urls:
   - http://info.borland.com/devsupport/interbase/opensource/IPL.html
 ignorable_copyrights:
   - Copyright (c) Borland/Inprise
+ignorable_holders:
+  - Borland/Inprise
 ignorable_authors:
   - Borland Software Corp.
   - InterBase Software Corp
-ignorable_holders:
-  - Borland/Inprise
 ignorable_urls:
   - http://info.borland.com/devsupport/interbase/opensource/IPL.html
   - http://www.interbase.com/IPL.html

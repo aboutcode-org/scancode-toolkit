@@ -5,4 +5,6 @@ category: Permissive
 owner: Rob Landley
 homepage_url: http://landley.net/toybox/license.html
 spdx_license_key: 0BSD
+other_urls:
+  - https://opensource.org/licenses/0BSD
 minimum_coverage: 70

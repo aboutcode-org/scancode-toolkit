@@ -4,7 +4,9 @@ name: Bitstream Vera Font License
 category: Permissive
 owner: Bitstream
 homepage_url: http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
-spdx_license_key: LicenseRef-scancode-bitstream
+spdx_license_key: Bitstream-Vera
+other_spdx_license_keys:
+  - LicenseRef-scancode-bitstream
 text_urls:
   - http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
 minimum_coverage: 50

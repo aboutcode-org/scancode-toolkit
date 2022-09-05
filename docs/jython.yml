@@ -13,12 +13,12 @@ ignorable_copyrights:
   - Copyright (c) 1996-1999 Corporation for National Research Initiatives
   - Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Jython Developers
   - Copyright (c) 2007 Python Software Foundation
-ignorable_authors:
-  - Brian Zimmer
 ignorable_holders:
   - Corporation for National Research Initiatives
   - Jython Developers
   - Python Software Foundation
+ignorable_authors:
+  - Brian Zimmer
 ignorable_urls:
   - http://hdl.handle.net/1895.22/1006
   - http://www.jython.org/license.txt

@@ -17,10 +17,6 @@ ignorable_copyrights:
   - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
     Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
   - copyright 1997-2003 Simon Tatham
-ignorable_authors:
-  - Daniel J. Bernstein <djb@cr.yp.to>
-  - Matt Johnston
-  - Tom St Denis
 ignorable_holders:
   - Google Inc.
   - Matt Johnston
@@ -30,6 +26,10 @@ ignorable_holders:
   - Simon Tatham
   - Tatu Ylonen , Espoo, Finland
   - Todd C. Miller
+ignorable_authors:
+  - Daniel J. Bernstein <djb@cr.yp.to>
+  - Matt Johnston
+  - Tom St Denis
 ignorable_urls:
   - http://code.google.com/p/curve25519-donna/
   - http://cr.yp.to/ecdh.html

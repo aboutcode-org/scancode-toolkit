@@ -2,7 +2,7 @@ key: bohl-0.2
 short_name: BOHL-0.2
 name: The Balloon Open Hardware License v0.2
 category: Permissive
-owner: The Balloon
+owner: iTechnic
 spdx_license_key: LicenseRef-scancode-bohl-0.2
 text_urls:
   - https://web.archive.org/web/20140426215620/http://www.balloonboard.org/docs/Balloon_License_0v2.pdf

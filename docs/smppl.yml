@@ -7,7 +7,7 @@ homepage_url: https://github.com/dcblake/SMP/blob/master/Documentation/License.t
 spdx_license_key: SMPPL
 ignorable_copyrights:
   - Copyright (c) 1997-2002 National Security Agency
-ignorable_authors:
-  - the U.S. Government. BAE Systems
 ignorable_holders:
   - National Security Agency
+ignorable_authors:
+  - the U.S. Government. BAE Systems

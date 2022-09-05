@@ -5,4 +5,6 @@ category: Copyleft
 owner: Tildeslash
 notes: Similar to openssl-exception-agpl-3.0 but cannot be removed.
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-openssl-exception-agpl-3.0-monit
+spdx_license_key: LicenseRef-scancode-openssl-exception-agpl3.0monit
+other_spdx_license_keys:
+  - LicenseRef-scancode-openssl-exception-agpl-3.0-monit

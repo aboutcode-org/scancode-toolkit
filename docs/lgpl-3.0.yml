@@ -20,6 +20,7 @@ other_urls:
   - http://www.gnu.org/licenses/why-not-lgpl.html
   - http://www.opensource.org/licenses/LGPL-3.0
   - https://opensource.org/licenses/LGPL-3.0
+  - https://www.gnu.org/licenses/lgpl+gpl-3.0.txt
   - https://www.gnu.org/licenses/lgpl-3.0-standalone.html
 ignorable_copyrights:
   - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>

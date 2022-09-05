@@ -8,12 +8,12 @@ spdx_license_key: LicenseRef-scancode-cosli
 ignorable_copyrights:
   - Copyright (c) 2017-2019 The Fieldtracks Project
   - Copyright (c) The OpenSSL Project
-ignorable_authors:
-  - the Fieldtracks Project (https://fieldtracks.org/)
-  - the fieldtracks Project (https://www.fieldtracks.org/)
 ignorable_holders:
   - The Fieldtracks Project
   - The OpenSSL Project
+ignorable_authors:
+  - the Fieldtracks Project (https://fieldtracks.org/)
+  - the fieldtracks Project (https://www.fieldtracks.org/)
 ignorable_urls:
   - https://fieldtracks.org/
   - https://www.fieldtracks.org/

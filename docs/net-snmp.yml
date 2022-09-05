@@ -18,8 +18,6 @@ ignorable_copyrights:
   - Copyright 1989, 1991, 1992 by Carnegie Mellon University
   - Copyright 1996, 1998-2000 The Regents of the University of California
   - copyright (c) 2001-2003, Cambridge Broadband Ltd.
-ignorable_authors:
-  - Bernhard Penz
 ignorable_holders:
   - Cambridge Broadband Ltd.
   - Carnegie Mellon University
@@ -29,6 +27,8 @@ ignorable_holders:
   - Sparta, Inc
   - Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.
   - The Regents of the University of California
+ignorable_authors:
+  - Bernhard Penz
 ignorable_urls:
   - http://net-snmp.sourceforge.net/about/license.html
 ignorable_emails:

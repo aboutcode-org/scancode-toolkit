@@ -3,4 +3,9 @@ short_name: Jam License
 name: Jam License
 category: Permissive
 owner: Perforce
-spdx_license_key: LicenseRef-scancode-jam
+spdx_license_key: Jam
+other_spdx_license_keys:
+  - LicenseRef-scancode-jam
+other_urls:
+  - https://www.boost.org/doc/libs/1_35_0/doc/html/jam.html
+  - https://web.archive.org/web/20160330173339/https://swarm.workshop.perforce.com/files/guest/perforce_software/jam/src/README

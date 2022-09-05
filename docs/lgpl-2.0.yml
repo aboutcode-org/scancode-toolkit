@@ -10,6 +10,8 @@ notes: |
 spdx_license_key: LGPL-2.0-only
 other_spdx_license_keys:
   - LGPL-2.0
+  - LicenseRef-LGPL-2
+  - LicenseRef-LGPL-2.0
 text_urls:
   - http://www.gnu.org/licenses/lgpl-2.0.html
   - http://www.gnu.org/licenses/lgpl-2.0.txt

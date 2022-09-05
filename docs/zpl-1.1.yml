@@ -12,9 +12,9 @@ other_urls:
   - http://www.zope.com/
 ignorable_copyrights:
   - Copyright (c) Zope Corporation
-ignorable_authors:
-  - Zope Corporation
 ignorable_holders:
+  - Zope Corporation
+ignorable_authors:
   - Zope Corporation
 ignorable_urls:
   - http://www.zope.com/

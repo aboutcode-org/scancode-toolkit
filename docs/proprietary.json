@@ -1,1 +1,1 @@
-{"key": "proprietary", "is_deprecated": true, "short_name": "Proprietary", "name": "Proprietary", "category": "Proprietary Free", "owner": "Unspecified", "notes": "see proprietary-license instead"}
+{"key": "proprietary", "is_deprecated": true, "short_name": "Proprietary", "name": "Proprietary", "category": "Proprietary Free", "owner": "Unspecified", "notes": "see proprietary-license instead", "is_generic": true}

@@ -17,10 +17,10 @@ other_urls:
   - https://opensource.org/licenses/Apache-1.1
 ignorable_copyrights:
   - Copyright (c) 2000 The Apache Software Foundation
-ignorable_authors:
-  - the Apache Software Foundation (http://www.apache.org/)
 ignorable_holders:
   - The Apache Software Foundation
+ignorable_authors:
+  - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
   - http://www.apache.org/
 ignorable_emails:

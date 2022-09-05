@@ -6,4 +6,5 @@ owner: Unspecified
 notes: this is a generic entry for rare one-off GPL extra license terms. These are typically
   additional terms under section 7 of the GPL-3.0
 is_exception: yes
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-gpl-generic-additional-terms

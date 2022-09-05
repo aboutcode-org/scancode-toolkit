@@ -4,7 +4,9 @@ name: Microsoft Developer Services Agreement 2018-06
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://docs.microsoft.com/en-us/legal/mdsa
-spdx_license_key: LicenseRef-scancode-ms-developer-services-agreement-2018-06
+spdx_license_key: LicenseRef-scancode-ms-dev-services-2018-06
+other_spdx_license_keys:
+  - LicenseRef-scancode-ms-developer-services-agreement-2018-06
 minimum_coverage: 80
 ignorable_urls:
   - http://developer.microsoft.com/

@@ -12,9 +12,9 @@ ignorable_copyrights:
   - (c) Copyright University of Cambridge
   - (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
   - (c) Copyright, University of Cambridge, 1996, 1997, 2000
-ignorable_authors:
-  - N.M. Maclaren
-  - the University of Cambridge
 ignorable_holders:
   - N.M. Maclaren
   - University of Cambridge
+ignorable_authors:
+  - N.M. Maclaren
+  - the University of Cambridge

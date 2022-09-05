@@ -8,6 +8,7 @@ is_exception: yes
 spdx_license_key: LicenseRef-scancode-kfqf-accepted-gpl
 other_spdx_license_keys:
   - LicenseRef-KFQF-Accepted-GPL
+minimum_coverage: 60
 ignorable_urls:
   - https://www.gnu.org/licenses/gpl-2.0.html
   - https://www.gnu.org/licenses/gpl-3.0.html

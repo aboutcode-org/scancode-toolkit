@@ -7,7 +7,7 @@ homepage_url: https://github.com/RWTH-OS/MP-MPICH/blob/f2ae296477bb9d812fda58722
 spdx_license_key: LicenseRef-scancode-notre-dame
 ignorable_copyrights:
   - Copyright 1997-2000, University of Notre Dame
-ignorable_authors:
-  - Jeremy G. Siek, Jeffery M. Squyres, Michael P. McNally, and Andrew Lumsdaine
 ignorable_holders:
   - University of Notre Dame
+ignorable_authors:
+  - Jeremy G. Siek, Jeffery M. Squyres, Michael P. McNally, and Andrew Lumsdaine

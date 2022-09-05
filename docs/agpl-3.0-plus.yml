@@ -10,6 +10,7 @@ notes: |
 spdx_license_key: AGPL-3.0-or-later
 other_spdx_license_keys:
   - AGPL-3.0+
+  - LicenseRef-AGPL
 text_urls:
   - http://www.gnu.org/licenses/agpl.txt
 osi_url: http://www.opensource.org/licenses/agpl-v3.html

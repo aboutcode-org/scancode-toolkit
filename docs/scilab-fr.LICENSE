@@ -1,0 +1,144 @@
+Licence SCILAB
+
+1- Préambule
+
+La présente licence a pour objet d'établir les conditions dans
+lesquelles vous pouvez utiliser, modifier et diffuser le
+LOGICIEL. Toutefois l'INRIA et l'ENPC demeurent les auteurs du
+LOGICIEL et conservent la jouissance et l'usage de tous les droits qui
+y sont attachés.
+
+2- Définitions
+
+Le LOGICIEL est constitué par toutes les versions successives du
+logiciel SCILAB, et de leur documentation, développées par l'INRIA et
+l'ENPC.
+
+Les LOGICIELS DERIVES de SCILAB sont constitués de tout ou partie du
+LOGICIEL que vous avez modifié et/ou traduit et/ou adapté.
+
+Les LOGICIELS COMPOSITES de SCILAB sont constitués de tout ou partie
+du LOGICIEL que vous avez mis en interface avec un logiciel, un
+progiciel ou une boîte à outils dont vous êtres propriétaire ou ayant
+droit.
+
+3- Objet et conditions de la licence portant sur le LOGICIEL
+
+   1. L'INRIA et l'ENPC vous autorisent, gratuittement, à reproduire
+      sur tout support présent et à venir le code source et/ou le code
+      objet du LOGICIEL, sans restriction, à condition de faire
+      figurer sur toutes les copies la mention du copyright suivante :
+      Scilab (c)INRIA-ENPC.
+
+   2. L'INRIA et l'ENPC vous autorisent gratuitement à corriger les
+      bogues éventuels, à effectuer les modifications nécessaires au
+      portage du LOGICIEL et à procéder à toute modification ou
+      correction fonctionnelle usuelle, à condition d'insérer un
+      fichier patch, ou d'indiquer par tout autre moyen équivalent la
+      nature et la date de la modification ou de la correction
+      apportée, sur le(s) fichier(s) concerné(s) du LOGICIEL.
+
+   3. L'INRIA et l'ENPC vous autorisent gratuitement, à utiliser le
+      code source et/ou le code objet du LOGICIEL, sans restriction, à
+      condition de faire figurer sur toutes les copies la mention du
+      copyright suivante : Scilab (c)INRIA-ENPC.
+
+   4. L'INRIA et l'ENPC vous autorisent gratuitement, à diffuser et
+      distribuer gratuitement ou à titre onéreux le code source et/ou
+      le code objet du LOGICIEL y compris du LOGICIEL modifié
+      conformément à l'article 3 b) ci-dessus, sur tout support
+      présent et à venir, à condition : * de faire figurer sur toutes
+      les copies la mention du copyright suivante : Scilab
+      (c)INRIA-ENPC.  * de diffuser ou de distribuer le LOGICIEL sous
+      la présente licence.  * de diffuser librement les fichiers patch
+      ou les fichiers contenant les moyens équivalents indiquant la
+      nature et la date de la modification ou de la correction
+      apportée sur le(s) fichier(s) concerné(s) du LOGICIEL.
+
+4- Objet et conditions de la licence portant sur les LOGICIELS DERIVES
+
+   1. L'INRIA et l'ENPC vous autorisent, gratuitement, à reproduire et
+      à modifier et/ou à traduire et/ou à adapter tout ou partie du
+      code source et/ou du code objet du LOGICIEL, à condition
+      d'insérer un fichier patch indiquant la date et la nature de la
+      modification et/ou de la traduction et/ou de l'adaptation et le
+      nom de leur auteur sur le(s) fichier(s) concerné(s) du
+      LOGICIEL. Le LOGICIEL ainsi modifié constitue des LOGICIELS
+      DERIVES. L'INRIA vous autorise gratuitement, à utiliser le code
+      source et/ou le code objet du LOGICIEL, sans restriction, à
+      condition de faire figurer sur toutes les copies la mention du
+      copyright suivante : Scilab (c)INRIA-ENPC.
+
+   2. L'INRIA et l'ENPC vous autorisent gratuitement, à utiliser le
+      code source et/ou le code objet du LOGICIEL modifié en vertu de
+      l'article 4-a) ci-dessus, sans restriction, à condition de faire
+      figurer sur toutes les copies la mention du copyright suivante :
+      " Scilab inside (c)INRIA-ENPC ".
+
+   3. L'INRIA et l'ENPC vous autorisent, gratuitement, à diffuser et à
+      distribuer à titre gratuit à des fins autres que commerciales,
+      le code source et/ou le code objet des LOGICIELS DERIVES sur
+      tout support présent et à venir, à condition : * d'indiquer
+      clairement la mention " Scilab inside (c)INRIA-ENPC " ; * de
+      distribuer le LOGICIEL DERIVE sous la présente licence ; * de
+      permettre aux destinataires de la distribution d'avoir accès au
+      code source du LOGICIEL ; * de distribuer le LOGICIEL DERIVE
+      sous une autre dénomination que SCILAB.
+
+   4. Toute utilisation ou diffusion commerciale du LOGICIEL DERIVE
+      doit être préalablement autorisée par l'INRIA et l'ENPC.
+
+5- Objet et conditions de la licence portant sur les LOGICIELS COMPOSITES
+
+   1. L'INRIA et l'ENPC vous autorisent à reproduire et à procéder à
+      l'interface de tout ou partie du LOGICIEL, avec tout ou partie
+      d'autres logiciels, progiciels ou boîtes à outils dont vous êtes
+      propriétaires ou titulaires des droits, afin d'obtenir des
+      LOGICIELS COMPOSITES.
+
+   2. L'INRIA et l'ENPC vous autorisent gratuitement, à utiliser le
+      code source et/ou le code objet du LOGICIEL inclus dans le
+      LOGICIEL COMPOSITE, sans restriction, à condition de faire
+      figurer sur toutes les copies la mention du copyright suivante :
+      " logiciel composite utilisant les fonctionnalités de Scilab
+      (c)INRIA-ENPC ".
+
+   3. L'INRIA et l'ENPC vous autorisent, gratuitement, à diffuser et à
+      distribuer à titre gratuit, à des fins autres que commerciales,
+      le code source et/ou le code objet des LOGICIELS COMPOSITES sur
+      tout support présent et à venir, à condition : * d'indiquer
+      clairement la mention " logiciel composite utilisant les
+      fonctionnalités de Scilab (c)INRIA-ENPC " ; * de distribuer le
+      LOGICIEL inclus dans les LOGICIELS COMPOSITES sous la présente
+      licence ; * de permettre aux destinataires de la distribution
+      d'avoir accès au code source du LOGICIEL ; * de distribuer le
+      LOGICIEL COMPOSITE sous une autre dénomination que SCILAB.
+
+   4. Toute utilisation ou diffusion commerciale du LOGICIEL COMPOSITE
+      doit être préalablement autorisée par l'INRIA et l'ENPC.
+
+6- Limitation de garantie
+
+Sauf mention écrite contraire, le LOGICIEL est fourni en l'état, sans
+aucune garantie explicite ou implicite, y compris les garanties de
+commercialisation ou d'adaptation. Vous assumez tous les risques quant
+à la qualité ou aux effets du LOGICIEL et de son utilisation. Si le
+LOGICIEL est défectueux, vous assumez le coût de tous les services,
+corrections ou réparations nécessaires.
+
+7- Consentement
+
+En accédant et en travaillant sur le LOGICIEL, vous êtes présumé
+connaître et avoir accepté tous les droits et toutes les obligations
+résultant de la présente licence.
+
+8- Effet Obligatoire
+
+Cette licence a la valeur obligatoire d'un contrat.
+
+Vous n'êtes pas responsable du respect de la licence par un tiers.
+
+9- Loi applicable
+
+La présente licence et ses effets sont soumis au droit français et aux
+tribunaux français compétents. 

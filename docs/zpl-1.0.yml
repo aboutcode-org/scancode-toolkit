@@ -8,9 +8,9 @@ text_urls:
   - http://old.zope.org/Members/ensane/PTK2CMF/copy_folders.py.1
 ignorable_copyrights:
   - Copyright (c) Digital Creations
-ignorable_authors:
-  - Digital Creations
 ignorable_holders:
+  - Digital Creations
+ignorable_authors:
   - Digital Creations
 ignorable_urls:
   - http://www.zope.org/

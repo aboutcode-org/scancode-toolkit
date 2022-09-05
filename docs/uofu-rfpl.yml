@@ -9,7 +9,7 @@ text_urls:
   - http://www.cs.utah.edu/~gk/teem/txt/LICENSE.txt
 ignorable_copyrights:
   - Copyright (c) 2001, 1998 University of Utah
-ignorable_authors:
-  - the University of Utah
 ignorable_holders:
   - University of Utah
+ignorable_authors:
+  - the University of Utah

@@ -10,6 +10,6 @@ other_urls:
 ignorable_copyrights:
   - copyright of CERN.
 ignorable_holders:
-  - CERN.
+  - CERN
 ignorable_urls:
   - http://www.ohwr.org/

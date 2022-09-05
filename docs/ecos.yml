@@ -5,7 +5,9 @@ name: GPL 2.0 or later with eCos Exception
 category: Copyleft Limited
 owner: eCos
 homepage_url: http://ecos.sourceware.org/ecos-license/
-notes: replaced by ecos-exception-2.0
+notes: |
+  Per SPDX.org, this is really GPL v2 or later + an exception.
+  Replaced by ecos-exception-2.0.
 is_exception: yes
 spdx_license_key: eCos-2.0
 text_urls:

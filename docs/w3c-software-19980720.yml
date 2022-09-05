@@ -5,6 +5,7 @@ category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/copyright-software-19980720.html
 spdx_license_key: W3C-19980720
+faq_url: https://cds.cern.ch/record/2126020/files/History%20of%20the%20CERN%20Web%20Software%20Public%20Releases.pdf
 ignorable_copyrights:
   - Copyright (c) 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology,
     Institut National de Recherche en Informatique et en Automatique, Keio University)

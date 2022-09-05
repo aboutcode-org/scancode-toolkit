@@ -14,9 +14,6 @@ ignorable_copyrights:
   - Copyright 1989 Samuel H. Smith
   - copyrighted 1997 by Steve P. Miller
   - copyrighted by Norbert Pueschel, <pueschel@imsdd.meb.uni-bonn.de>
-ignorable_authors:
-  - many people associated with the Info-ZIP group
-  - the Info-ZIP group
 ignorable_holders:
   - Greg Roelofs
   - Igor Mandrichenko
@@ -24,6 +21,9 @@ ignorable_holders:
   - Norbert Pueschel
   - Samuel H. Smith
   - Steve P. Miller
+ignorable_authors:
+  - many people associated with the Info-ZIP group
+  - the Info-ZIP group
 ignorable_urls:
   - ftp://ftp.cdrom.com/pub/infozip/
   - ftp://ftp.wustl.edu/pub/aminet/util/time/clockdaemon.lha

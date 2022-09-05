@@ -4,4 +4,6 @@ name: OpenSSL exception to AGPL 3.0 or later
 category: Copyleft
 owner: Unspecified
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-openssl-exception-agpl-3.0-plus
+spdx_license_key: LicenseRef-scancode-openssl-exception-agpl3.0plus
+other_spdx_license_keys:
+  - LicenseRef-scancode-openssl-exception-agpl-3.0-plus

@@ -9,6 +9,8 @@ notes: |
   terms and found only in the OpenJDK
 is_exception: yes
 spdx_license_key: LicenseRef-scancode-openjdk-exception
+other_spdx_license_keys:
+  - Assembly-exception
 text_urls:
   - http://openjdk.java.net/legal/gplv2+ce.html
   - http://openjdk.java.net/legal/assembly-exception.html

@@ -8,7 +8,7 @@ spdx_license_key: LicenseRef-scancode-array-input-method-pl
 faq_url: https://fedoraproject.org/wiki/Licensing/Array#License_Notes
 ignorable_copyrights:
   - copyright holder of Array Input Method
-ignorable_authors:
-  - Array Input
 ignorable_holders:
   - Array Input Method
+ignorable_authors:
+  - Array Input

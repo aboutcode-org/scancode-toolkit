@@ -13,6 +13,7 @@ other_urls:
   - http://doc.qt.nokia.com/3.3/license.html
   - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
   - http://www.opensource.org/licenses/QPL-1.0
+  - https://doc.qt.io/archives/3.3/license.html
   - https://opensource.org/licenses/QPL-1.0
 ignorable_copyrights:
   - Copyright (c) 1999 Trolltech AS, Norway

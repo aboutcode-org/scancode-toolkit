@@ -8,10 +8,10 @@ other_urls:
   - https://wiki.shibboleth.net/confluence/display/OpenSAML/Home
 ignorable_copyrights:
   - Copyright (c) 2002 University Corporation for Advanced Internet Development, Inc.
-ignorable_authors:
-  - the University Corporation
 ignorable_holders:
   - University Corporation for Advanced Internet Development, Inc.
+ignorable_authors:
+  - the University Corporation
 ignorable_urls:
   - http://www.ucaid.edu/
 ignorable_emails:

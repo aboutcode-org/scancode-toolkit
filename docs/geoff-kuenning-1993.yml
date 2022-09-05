@@ -7,7 +7,7 @@ homepage_url: https://www.hitachi.co.jp/Prod/comp/soft1/jp1/trial/trialv12/sla/l
 spdx_license_key: LicenseRef-scancode-geoff-kuenning-1993
 ignorable_copyrights:
   - Copyright 1993, Geoff Kuenning, Granada Hills, CA
-ignorable_authors:
-  - Geoff Kuenning
 ignorable_holders:
   - Geoff Kuenning, Granada Hills, CA
+ignorable_authors:
+  - Geoff Kuenning

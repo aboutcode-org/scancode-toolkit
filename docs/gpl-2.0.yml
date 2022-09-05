@@ -17,6 +17,7 @@ spdx_license_key: GPL-2.0-only
 other_spdx_license_keys:
   - GPL-2.0
   - GPL 2.0
+  - LicenseRef-GPL-2.0
 osi_license_key: GPL-2.0
 text_urls:
   - http://www.gnu.org/licenses/gpl-2.0.txt

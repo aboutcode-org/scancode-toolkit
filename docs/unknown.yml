@@ -3,6 +3,7 @@ short_name: unknown
 name: Unknown license detected but not recognized
 category: Unstated License
 owner: Unspecified
-notes: This is something that clearly ressembles a license but is not conclusive.
+notes: This applies to the case where there is text referring to a license, but it is not possible
+  to determine exactly which license.
 is_unknown: yes
 spdx_license_key: LicenseRef-scancode-unknown

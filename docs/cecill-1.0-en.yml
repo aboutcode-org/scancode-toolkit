@@ -1,0 +1,9 @@
+key: cecill-1.0-en
+short_name: CeCILL 1.0 English
+name: CeCILL Free Software License Agreement v1.0 English
+category: Copyleft
+owner: CeCILL
+homepage_url: http://www.cecill.info/licences/Licence_CeCILL_V1-US.html
+spdx_license_key: LicenseRef-scancode-cecill-1.0-en
+text_urls:
+  - http://www.cecill.info/licences/Licence_CeCILL_V1-US.txt
