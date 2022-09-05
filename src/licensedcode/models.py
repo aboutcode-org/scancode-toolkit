@@ -812,14 +812,12 @@ def get_paths_to_installed_licenses_and_rules():
     with a common prefix.
     """
     from importlib_metadata import entry_points
-    from plugincode.location_provider import get_location
-    installed_plugins = entry_points(group='scancode_location_provider')
+    from licensedcode.additional_license_location_provider import get_location
+    installed_plugins = entry_points(group='scancode_additional_license_location_provider')
     paths = []
     for plugin in installed_plugins:
-        if plugin.name.startswith(EXTERNAL_LICENSE_PLUGIN_PREFIX):
-            # get path to directory of licenses and/or rules
-            location_key = plugin.name
-            paths.append(get_location(location_key))
+        # get path to directory of licenses and/or rules
+        paths.append(get_location(plugin.name))
     return paths
 
 

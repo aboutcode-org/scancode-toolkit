@@ -41,7 +41,7 @@ setup(
         'scancode-toolkit',
     ],
     entry_points={
-        'scancode_location_provider': [
+        'scancode_additional_license_location_provider': [
             'licenses_to_install1 = licenses_to_install1:LicensesToInstall1Paths',
         ],
     },

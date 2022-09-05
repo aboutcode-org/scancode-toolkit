@@ -25,10 +25,10 @@
 from os.path import abspath
 from os.path import dirname
 
-from plugincode.location_provider import LocationProviderPlugin
+from licensedcode.additional_license_location_provider import AdditionalLicenseLocationProviderPlugin
 
 
-class LicensesToInstall1Paths(LocationProviderPlugin):
+class LicensesToInstall1Paths(AdditionalLicenseLocationProviderPlugin):
     def get_locations(self):
         curr_dir = dirname(abspath(__file__))
         locations = {
