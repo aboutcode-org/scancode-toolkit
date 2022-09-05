@@ -619,7 +619,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-  - license_expression:
+  - license_expression: free-unknown
     detection_rules: []
     matches:
       - score: '90.0'

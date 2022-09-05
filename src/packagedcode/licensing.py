@@ -358,11 +358,18 @@ def get_license_expression_from_detections(license_detections, relation='AND', u
     if not license_detections:
         return
 
-    return get_license_expression_from_matches(
-        license_matches=get_matches_from_detections(license_detections),
-        relation=relation,
-        unique=unique,
-    )
+    license_expressions = [
+        detection.license_expression for detection in license_detections
+    ]
+
+    if len(license_expressions) == 1:
+        license_expression = str(license_expressions[0])
+    else:
+        license_expression = str(
+            combine_expressions(license_expressions, relation=relation, unique=unique)
+        )
+
+    return license_expression
 
 
 def get_mapping_and_expression_from_detections(
@@ -377,19 +384,26 @@ def get_mapping_and_expression_from_detections(
     if not license_detections:
         return detection_data, None
 
-    license_expression = get_license_expression_from_detections(
-        license_detections=license_detections,
-        relation=relation,
-        unique=unique,
-    )
-
     for license_detection in license_detections:
+        if license_detection.license_expression is None:
+            license_detection.license_expression = get_license_expression_from_matches(
+                license_matches=license_detection.matches,
+                relation=relation,
+                unique=unique,
+            )
+
         detection_data.append(
             license_detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
             )
         )
+
+    license_expression = get_license_expression_from_detections(
+        license_detections=license_detections,
+        relation=relation,
+        unique=unique,
+    )
 
     return detection_data, license_expression
 

@@ -1084,7 +1084,7 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
-  - license_expression:
+  - license_expression: bsd-new
     detection_rules: []
     matches:
       - score: '100.0'

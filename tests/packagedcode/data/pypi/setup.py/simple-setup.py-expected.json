@@ -41,8 +41,8 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "declared_license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0 AND apache-2.0 AND free-unknown",
-    "declared_license_expression_spdx": "(Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0 AND Apache-2.0 AND LicenseRef-scancode-free-unknown",
+    "declared_license_expression": "((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND (apache-2.0 AND cc0-1.0)",
+    "declared_license_expression_spdx": "((Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0) AND (Apache-2.0 AND CC0-1.0)",
     "license_detections": [
       {
         "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
@@ -143,8 +143,10 @@
         ]
       },
       {
-        "license_expression": null,
-        "detection_rules": [],
+        "license_expression": "apache-2.0 AND cc0-1.0",
+        "detection_rules": [
+          "unknown-intro-followed-by-match"
+        ],
         "matches": [
           {
             "score": 95.0,
@@ -196,8 +198,8 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
+            "is_license_tag": false,
+            "is_license_intro": true,
             "rule_length": 3,
             "rule_relevance": 100,
             "matched_text": "License :: OSI Approved ::",

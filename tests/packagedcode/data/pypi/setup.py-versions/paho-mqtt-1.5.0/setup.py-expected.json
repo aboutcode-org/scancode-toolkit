@@ -47,8 +47,8 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "declared_license_expression": "epl-1.0 AND bsd-new AND free-unknown",
-    "declared_license_expression_spdx": "EPL-1.0 AND BSD-3-Clause AND LicenseRef-scancode-free-unknown",
+    "declared_license_expression": "(epl-1.0 AND bsd-new) AND free-unknown",
+    "declared_license_expression_spdx": "(EPL-1.0 AND BSD-3-Clause) AND LicenseRef-scancode-free-unknown",
     "license_detections": [
       {
         "license_expression": "epl-1.0 AND bsd-new",
@@ -133,7 +133,7 @@
         ]
       },
       {
-        "license_expression": null,
+        "license_expression": "free-unknown",
         "detection_rules": [],
         "matches": [
           {
@@ -149,8 +149,8 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
+            "is_license_tag": false,
+            "is_license_intro": true,
             "rule_length": 3,
             "rule_relevance": 100,
             "matched_text": "License :: OSI Approved']",

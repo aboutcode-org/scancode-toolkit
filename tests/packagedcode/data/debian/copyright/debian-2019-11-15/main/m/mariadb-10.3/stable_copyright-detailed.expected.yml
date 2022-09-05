@@ -901,7 +901,7 @@ other_license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml
             spdx_license_key: LGPL-2.0-only
             spdx_url: https://spdx.org/licenses/LGPL-2.0-only
-  - license_expression:
+  - license_expression: bsd-new
     detection_rules: []
     matches:
       - score: '53.47'

@@ -30,11 +30,11 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
-    "declared_license_expression": "gpl-2.0-plus AND lgpl-2.1-plus AND unknown",
-    "declared_license_expression_spdx": "GPL-2.0-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-unknown",
+    "declared_license_expression": "(gpl-2.0-plus AND lgpl-2.1-plus) AND unknown",
+    "declared_license_expression_spdx": "(GPL-2.0-or-later AND LGPL-2.1-or-later) AND LicenseRef-scancode-unknown",
     "license_detections": [
       {
-        "license_expression": null,
+        "license_expression": "gpl-2.0-plus AND lgpl-2.1-plus",
         "detection_rules": [],
         "matches": [
           {

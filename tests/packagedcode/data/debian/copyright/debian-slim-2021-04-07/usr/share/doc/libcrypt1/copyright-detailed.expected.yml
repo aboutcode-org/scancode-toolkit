@@ -677,7 +677,8 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
-  - license_expression:
+  - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0 AND bsd-zero AND fsf-ap AND
+      gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND free-unknown
     detection_rules: []
     matches:
       - score: '99.0'

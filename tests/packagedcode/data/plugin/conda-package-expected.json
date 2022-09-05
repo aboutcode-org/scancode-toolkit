@@ -197,7 +197,7 @@
       "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "license_detections": [
         {
-          "license_expression": null,
+          "license_expression": "unknown-license-reference",
           "detection_rules": [],
           "matches": [
             {
@@ -319,7 +319,7 @@
           "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "license_detections": [
             {
-              "license_expression": null,
+              "license_expression": "unknown-license-reference",
               "detection_rules": [],
               "matches": [
                 {

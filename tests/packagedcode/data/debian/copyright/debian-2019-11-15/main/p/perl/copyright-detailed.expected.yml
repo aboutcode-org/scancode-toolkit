@@ -7192,7 +7192,7 @@ other_license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-perl-1.0.yml
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
-  - license_expression:
+  - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     detection_rules: []
     matches:
       - score: '56.14'

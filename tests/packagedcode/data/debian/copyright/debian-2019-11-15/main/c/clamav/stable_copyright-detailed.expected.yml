@@ -2241,7 +2241,7 @@ other_license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
-  - license_expression:
+  - license_expression: x11-xconsortium AND public-domain
     detection_rules: []
     matches:
       - score: '20.2'
