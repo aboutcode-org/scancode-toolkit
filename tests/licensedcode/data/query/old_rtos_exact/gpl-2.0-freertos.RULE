@@ -1,7 +1,3 @@
----
-license_expression: gpl-2.0-freertos
----
-
 The FreeRTOS source code is licensed by a modified GNU General Public License - the
 modification taking the form of an exception.
 
