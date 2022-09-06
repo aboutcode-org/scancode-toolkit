@@ -235,7 +235,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/sphinx",
-              "extracted_requirement": "~=4.2,!=4.4.0",
+              "extracted_requirement": "sphinx~=4.2,!=4.4.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -256,7 +256,7 @@
             },
             {
               "purl": "pkg:pypi/towncrier",
-              "extracted_requirement": "",
+              "extracted_requirement": "towncrier",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -277,7 +277,7 @@
             },
             {
               "purl": "pkg:pypi/furo",
-              "extracted_requirement": "",
+              "extracted_requirement": "furo",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -298,7 +298,7 @@
             },
             {
               "purl": "pkg:pypi/myst-parser",
-              "extracted_requirement": "",
+              "extracted_requirement": "myst_parser",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -319,7 +319,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-copybutton",
-              "extracted_requirement": "",
+              "extracted_requirement": "sphinx-copybutton",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -340,7 +340,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-inline-tabs",
-              "extracted_requirement": "",
+              "extracted_requirement": "sphinx-inline-tabs",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -361,7 +361,7 @@
             },
             {
               "purl": "pkg:pypi/sphinxcontrib-towncrier",
-              "extracted_requirement": ">=0.2.0a0",
+              "extracted_requirement": "sphinxcontrib-towncrier>=0.2.0a0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,

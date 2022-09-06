@@ -768,14 +768,16 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                         name="python",
                     )
                     resolved_purl = get_resolved_purl(purl=purl, specifiers=SpecifierSet(python_requires_specifier))
-                    dependent_packages.append(models.DependentPackage(
-                    purl=str(resolved_purl.purl),
-                    scope=scope,
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=resolved_purl.is_resolved,
-                    extracted_requirement=f"python_requires{python_requires_specifier}",
-                    ))
+                    dependent_packages.append(
+                        models.DependentPackage(
+                            purl=str(resolved_purl.purl),
+                            scope=scope,
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=resolved_purl.is_resolved,
+                            extracted_requirement=f"python_requires{python_requires_specifier}",
+                        )
+                    )
 
             if section.name == "options.extras_require":
                 for sub_section in section:
@@ -975,11 +977,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
             purl = None
 
         purl = purl and purl.to_string() or None
-
-        if req.is_editable:
-            requirement = req.dumps()
-        else:
-            requirement = req.dumps(with_name=False)
+        requirement = req.dumps()
 
         if location.endswith(
             (
@@ -1355,15 +1353,16 @@ def get_requires_dependencies(requires, default_scope='install'):
                     is_resolved = True
                     purl = purl._replace(version=specifier.version)
 
-        # we use the extra as scope if avialble
-        scope = get_extra(req.marker) or default_scope
+        # we use the extra as scope if available
+        extra = get_extra(req.marker)
+        scope = extra or default_scope
 
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
                 scope=scope,
                 is_runtime=True,
-                is_optional=False,
+                is_optional=True if bool(extra) else False,
                 is_resolved=is_resolved,
                 extracted_requirement=str(req),
         ))
