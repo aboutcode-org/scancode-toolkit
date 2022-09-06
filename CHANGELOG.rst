@@ -14,6 +14,23 @@ Package detection:
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+- Update ``GemfileLockParser`` to track the gem which the Gemfile.lock is for,
+  which we assign to the new ``GemfileLockParser.primary_gem`` field. Update
+  ``GemfileLockHandler.parse()`` to handle the case where there is a primary gem
+  detected from a gemfile.lock. If there is a primary gem, a single ``Package``
+  is created and the detected gem data within the gemfile.lock are assigned as
+  dependencies. If there is no primary gem, then all of the dependencies are
+  collected into Package with no name and yielded.
+
+  https://github.com/nexB/scancode-toolkit/issues/3072
+
+- Fix issue where dependencies were not reported when scanning an extracted
+  Python project by modifying ``BaseExtractedPythonLayout.assemble()`` to favor
+  using package data from a PKG-INFO file from an egg-info directory. Package
+  data from a PKG-INFO file from an egg-info directory contains the dependency
+  information collected from the requirements.txt file along side PKG-INFO.
+
+  https://github.com/nexB/scancode-toolkit/issues/3083
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
