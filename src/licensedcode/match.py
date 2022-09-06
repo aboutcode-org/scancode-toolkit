@@ -2597,7 +2597,7 @@ def is_candidate_false_positive(
     """
     is_candidate = (
         # only tags or refs,
-        (match.rule.is_license_reference or match.rule.is_license_tag)
+        (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
         # but not tags that are SPDX license identifiers
         and not match.matcher == '1-spdx-id'
         # exact matches only
