@@ -843,17 +843,40 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     """
     Given a list of `matches` LicenseMatch objects, yield lists of grouped matches
     together where each group is less than `lines_threshold` apart.
+    This creates a new group if there is a license intro, and doesn't create a new
+    group if the last match was a license intro.
     """
     group_of_license_matches = []
+
     for license_match in license_matches:
+        # If this is the first match or the start of another group after yielding
+        # the contents of the previous group
         if not group_of_license_matches:
             group_of_license_matches.append(license_match)
             continue
+
         previous_match = group_of_license_matches[-1]
-        is_in_group = license_match.start_line <= previous_match.end_line + lines_threshold
-        if is_in_group:
+        is_in_group_by_threshold = license_match.start_line <= previous_match.end_line + lines_threshold
+
+        # If the previous match is an intro, we should keep this match in the group
+        # This is regardless of line number difference being more than threshold
+        if previous_match.rule.is_license_intro:
             group_of_license_matches.append(license_match)
             continue
+
+        # If the current match is an intro, we should create a new group
+        # This is regardless of line number difference being less than threshold
+        elif license_match.rule.is_license_intro:
+            yield group_of_license_matches
+            group_of_license_matches = [license_match]
+
+        # If none of previous or current match has license intro then we look at line numbers
+        # If line number difference is within threshold, we keep the current match in the group
+        elif is_in_group_by_threshold:
+            group_of_license_matches.append(license_match)
+            continue
+
+        # If line number difference is outside threshold, we make a new group
         else:
             yield group_of_license_matches
             group_of_license_matches = [license_match]
