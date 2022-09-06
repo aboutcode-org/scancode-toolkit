@@ -10,13 +10,15 @@
 import os
 
 from commoncode.testcase import FileBasedTesting
-from licensedcode import index
-from licensedcode.tracing import get_texts
-from licensedcode.models import Rule
-from licensedcode.models import load_rules
-from licensedcode import match_seq
-from licensedcode_test_utils import mini_legalese  # NOQA
 
+from licensedcode import index
+from licensedcode import match_seq
+from licensedcode.legalese import build_dictionary_from_iterable
+from licensedcode.models import load_rules
+from licensedcode.models import Rule
+from licensedcode.tracing import get_texts
+
+from licensedcode_test_utils import mini_legalese  # NOQA
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -35,12 +37,13 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE [[POSSIBILITY OF NEW SUCH]] DAMAGE
         '''
 
-        rule = Rule(stored_text=rule_text, license_expression='test')
+        rule = Rule._from_text_and_expression(text=rule_text, license_expression='test')
 
-        legalese = (
-            mini_legalese
-            | set(['copyright', 'reserved', 'advised', 'liable', 'damage', 'contributors', 'alternately', 'possibility']))
-
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['copyright', 'reserved', 'advised', 'liable', 'damage',
+                 'contributors', 'alternately', 'possibility'])
+        )
         idx = index.LicenseIndex([rule], _legalese=legalese)
 
         querys = u'''
@@ -76,10 +79,11 @@ class TestMatchSeq(FileBasedTesting):
     def test_match_seq_are_correct_on_apache(self):
         rule_dir = self.get_test_loc('match_seq/rules')
 
-        legalese = (
-            mini_legalese
-            | set(['redistributions', 'written', 'registered', 'derived', 'damage', 'due', 'alternately', 'nor']))
-
+        legalese = build_dictionary_from_iterable(
+            set(mini_legalese) |
+            set(['redistributions', 'written', 'registered', 'derived',
+                 'damage', 'due', 'alternately', 'nor'])
+        )
         idx = index.LicenseIndex(load_rules(rule_dir), _legalese=legalese)
 
         query_loc = self.get_test_loc('match_seq/query')

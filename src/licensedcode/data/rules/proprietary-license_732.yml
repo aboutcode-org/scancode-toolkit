@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://indiecc.com/paid/3.0.2
+ignorable_urls:
+    - https://indiecc.com/

@@ -236,9 +236,39 @@ class GemfileLockHandler(BaseGemProjectHandler):
     @classmethod
     def parse(cls, location):
         gemfile_lock = GemfileLockParser(location)
-        dependencies = []
-        for _, gem in gemfile_lock.all_gems.items():
-            dependencies.append(
+        all_gems = list(gemfile_lock.all_gems.values())
+        if not all_gems:
+            return
+
+        primary_gem = gemfile_lock.primary_gem
+        if primary_gem:
+            deps = [
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=dep.name,
+                        version=dep.version
+                    ).to_string(),
+                    extracted_requirement=', '.join(dep.requirements),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                ) for dep in all_gems if dep != primary_gem
+            ]
+            urls = get_urls(primary_gem.name, primary_gem.version)
+
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                primary_language=cls.default_primary_language,
+                type=cls.default_package_type,
+                name=primary_gem.name,
+                version=primary_gem.version,
+                dependencies=deps,
+                **urls
+            )
+        else:
+            deps = [
                 models.DependentPackage(
                     purl=PackageURL(
                         type='gem',
@@ -251,43 +281,14 @@ class GemfileLockHandler(BaseGemProjectHandler):
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=True,
-                )
-            )
-
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            dependencies=dependencies,
-            primary_language=cls.default_primary_language,
-        )
-
-        for _, gem in gemfile_lock.all_gems.items():
-            deps = []
-            for _dep_name, dep in gem.dependencies.items():
-                deps.append(
-                    models.DependentPackage(
-                        purl=PackageURL(
-                            type='gem',
-                            name=dep.name,
-                            version=dep.version
-                        ).to_string(),
-                        extracted_requirement=', '.join(dep.requirements),
-                        scope='dependencies',
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
-                    )
-                )
-            urls = get_urls(gem.name, gem.version)
+                ) for gem in all_gems
+            ]
 
             yield models.PackageData(
                 datasource_id=cls.datasource_id,
-                primary_language=cls.default_primary_language,
                 type=cls.default_package_type,
-                name=gem.name,
-                version=gem.version,
                 dependencies=deps,
-                **urls
+                primary_language=cls.default_primary_language,
             )
 
 

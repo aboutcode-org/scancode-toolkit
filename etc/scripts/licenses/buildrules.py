@@ -156,8 +156,8 @@ def all_rule_by_tokens():
         try:
             rule_tokens[tuple(rule.tokens())] = rule.identifier
         except Exception as e:
-            df = f"  file://{rule.data_file}"
-            tf = f"  file://{rule.text_file}"
+            df = f"  file://{rule.data_file()}"
+            tf = f"  file://{rule.text_file()}"
             raise Exception(
                 f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{df}\n{tf}"
             ) from e
@@ -211,7 +211,7 @@ def cli(licenses_file):
         rdata.data["has_stored_minimum_coverage"] = bool(minimum_coverage)
 
         rl = models.BasicRule(**rdata.data)
-        rl.stored_text = rdata.text
+        rl.text = rdata.text
         skinny_rules.append(rl)
 
     models.validate_rules(skinny_rules, licenses_by_key, with_text=True)
@@ -226,7 +226,7 @@ def cli(licenses_file):
         else:
             base_name = rule.license_expression
 
-        text = rule.text()
+        text = rule.text
 
         existing_rule = rule_exists(text)
         skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
@@ -244,7 +244,7 @@ def cli(licenses_file):
         base_loc = find_rule_base_loc(base_name)
 
         rd = rule.to_dict()
-        rd["stored_text"] = rule.stored_text
+        rd["text"] = rule.text
         rd["has_stored_relevance"] = rule.has_stored_relevance
         rd["has_stored_minimum_coverage"] = rule.has_stored_minimum_coverage
 
@@ -252,9 +252,6 @@ def cli(licenses_file):
 
         # force recomputing relevance to remove junk stored relevance for long rules
         rulerec.set_relevance()
-
-        rulerec.data_file = base_loc + ".yml"
-        rulerec.text_file = base_loc + ".RULE"
 
         rule_tokens = tuple(rulerec.tokens())
 
@@ -264,11 +261,6 @@ def cli(licenses_file):
             continue
         else:
             print(f"Adding new rule: {base_name}")
-            print("  file://" + rulerec.data_file)
-            print(
-                "  file://" + rulerec.text_file,
-            )
-            rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
             rulerec.dump()
 

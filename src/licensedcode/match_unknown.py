@@ -72,17 +72,18 @@ def add_ngrams(
                 automaton.add_word(tids_ngram)
 
 
-markers = set([
-    'copyright', 'c', 'copyrights', 
-    'rights', 
-    'reserved', 
-    'trademark', 
-    'foundation', 'government', 'institute', 'university', 
-    'inc', 'corp', 'co', 
-    'author', 
-    'com', 'org', 'net', 'uk', 'fr', 'be', 'de', 
+markers = frozenset([
+    'copyright', 'c', 'copyrights',
+    'rights',
+    'reserved',
+    'trademark',
+    'foundation', 'government', 'institute', 'university',
+    'inc', 'corp', 'co',
+    'author',
+    'com', 'org', 'net', 'uk', 'fr', 'be', 'de',
     'http', 'https', 'www',
 ])
+
 
 def is_good_tokens_ngram(
     tokens_ngram,
@@ -91,8 +92,8 @@ def is_good_tokens_ngram(
     markers=markers,
 ):
     """
-    Return True if the ``tokens_ngram`` ngram of token strings or ``tids_ngram`` ngram of
-    token ids is a "good" ngram.
+    Return True if the ``tokens_ngram`` ngram of token strings or ``tids_ngram``
+    ngram of token ids is a "good" ngram.
     """
     min_good = 3
 
@@ -198,7 +199,7 @@ def match_unknowns(
         print('match_unknowns: text', text)
 
     # ... and use this in a synthetic UnknownRule
-    rule = UnknownRule(stored_text=text, length=match_len)
+    rule = UnknownRule(text=text, length=match_len)
 
     # finally craft a LicenseMatch and return
     len_legalese = idx.len_legalese

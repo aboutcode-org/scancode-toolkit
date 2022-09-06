@@ -28,7 +28,7 @@ def get_texts(match, width=80, margin=0):
     qtokens = match.matched_text(whole_lines=False).split()
     mqt = format_text(tokens=qtokens, width=width, margin=margin)
     if match.matcher == '6-unknown':
-        itokens = match.rule.text().split()
+        itokens = match.rule.text.split()
     else:
         itokens = matched_rule_tokens_str(match)
     mit = format_text(tokens=itokens, width=width, margin=margin)

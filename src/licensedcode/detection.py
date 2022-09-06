@@ -699,7 +699,7 @@ def get_undetected_matches(query_string):
 
     undetected_rule = UnDetectedRule(
         license_expression=expression_str,
-        stored_text=query_string,
+        text=query_string,
         length=match_len,
     )
 

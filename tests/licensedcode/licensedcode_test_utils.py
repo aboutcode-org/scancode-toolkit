@@ -232,11 +232,8 @@ def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
 
             for match in matches:
                 qtext, itext = get_texts(match)
-                rule_text_file = match.rule.text_file
-                if match.rule.is_from_license:
-                    rule_data_file = rule_text_file.replace('LICENSE', 'yml')
-                else:
-                    rule_data_file = match.rule.data_file
+                rule_text_file = match.rule.text_file()
+                rule_data_file = match.rule.data_file()
                 results_failure_trace.extend(['',
                     '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
@@ -274,49 +271,53 @@ def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
     return closure_test_function
 
 
-# a small test set of legalese to use in tests
-mini_legalese = frozenset([
-    'accordance',
-    'alternatively',
-    'according',
-    'acknowledgement',
-    'enforcement',
-    'admission',
-    'alleged',
-    'accused',
-    'determines',
-    'exceeding',
-    'assessment',
-    'exceeds',
-    'literal',
-    'existed',
-    'ignored',
-    'complementary',
-    'responded',
-    'observed',
-    'assessments',
-    'volunteer',
-    'admitted',
-    'ultimately',
-    'choices',
-    'complications',
-    'allowance',
-    'fragments',
-    'plaintiff',
-    'license',
-    'agreement',
-    'gnu',
-    'general',
-    'warranty',
-    'distribute',
-    'distribution',
-    'licensed',
-    'covered',
-    'warranties',
-    'damages',
-    'liability',
-    'means',
-])
+# A small legalese to use in tests. This must be a sorted mapping of common
+# license-specific words aka. legalese as {token: id}
+# see legalese.py on how to re-create and update this mapping
+
+mini_legalese = {
+    'accordance': 0,
+    'according': 1,
+    'accused': 2,
+    'acknowledgement': 3,
+    'admission': 4,
+    'admitted': 5,
+    'agreement': 6,
+    'alleged': 7,
+    'allowance': 8,
+    'alternatively': 9,
+    'assessment': 10,
+    'assessments': 11,
+    'choices': 12,
+    'complementary': 13,
+    'complications': 14,
+    'covered': 15,
+    'damages': 16,
+    'determines': 17,
+    'distribute': 18,
+    'distribution': 19,
+    'enforcement': 20,
+    'exceeding': 21,
+    'exceeds': 22,
+    'existed': 23,
+    'fragments': 24,
+    'general': 25,
+    'gnu': 26,
+    'ignored': 27,
+    'liability': 28,
+    'license': 29,
+    'licensed': 30,
+    'literal': 31,
+    'means': 32,
+    'observed': 33,
+    'plaintiff': 34,
+    'responded': 35,
+    'ultimately': 36,
+    'volunteer': 37,
+    'warranties': 38,
+    'warranty': 39
+}
+
 
 
 def query_run_tokens_with_unknowns(query_run):

@@ -184,7 +184,7 @@ def cli(licenses, rules, category, license_key, with_text):
             if with_text:
                 license_data["text"] = lic.text[:200]
             license_data["is_unknown"] = lic.is_unknown
-            license_data["words_count"] = len(lic.text)
+            license_data["length"] = len(lic.text)
             license_data["reference_url"] = SCANCODE_LICENSEDB_URL.format(lic.key)
             licenses_output.append(license_data)
 
@@ -210,9 +210,9 @@ def cli(licenses, rules, category, license_key, with_text):
             rule_data["identifier"] = rule.identifier
             rule_data["referenced_filenames"] = rule.referenced_filenames
             if with_text:
-                rule_data["text"] = rule.text()[:200]
+                rule_data["text"] = rule.text[:200]
             rule_data["has_unknown"] = rule.has_unknown
-            rule_data["words_count"] = len(rule.text())
+            rule_data["length"] = len(rule.text)
             try:
                 rule_data["category"] = licenses_data[rule_data["license_expression"]].category
             except KeyError:

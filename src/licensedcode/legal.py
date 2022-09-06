@@ -38,7 +38,6 @@ special_names = (
     'COPYLEFT',
 )
 
-
 special_names_lower = tuple(x.lower() for x in special_names)
 
 

@@ -20,7 +20,7 @@ import sys
 
 import pytest
 
-TRACE = True
+TRACE = False
 
 """
 A pytest conftest.py for scancode-toolkit to control which tests to run and when.

@@ -187,6 +187,15 @@ class TestModels(PackageTester):
         )
         assert test_package.package_uid in test_resource.for_packages
 
+        # Test that we do not add a Package to a Resource if it is already there
+        assert len(test_resource.for_packages) == 1
+        models.add_to_package(
+            test_package.package_uid,
+            test_resource,
+            test_codebase
+        )
+        assert len(test_resource.for_packages) == 1
+
     def test_assembly_custom_package_adder(self):
         def test_package_adder(package_uid, resource, codebase):
             """
