@@ -1,3 +1,15 @@
+---
+key: alexisisaac-freeware
+short_name: Alexisisaac Freeware License
+name: Alexisisaac Freeware License
+category: Permissive
+owner: Alexis Isaac
+homepage_url: https://sourceforge.net/projects/soleditor/?source=typ_redirect
+spdx_license_key: LicenseRef-scancode-alexisisaac-freeware
+ignorable_urls:
+    - http://www.alexisisaac.net/products
+---
+
 FREEWARE LICENSE AGREEMENT
 Before loading this software on your computer, please carefully read the following terms and conditions.
 

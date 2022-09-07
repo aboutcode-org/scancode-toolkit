@@ -1,3 +1,13 @@
+---
+key: apple-attribution
+short_name: Apple Attribution License
+name: Apple Attribution License
+category: Permissive
+owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-attribution
+minimum_coverage: 80
+---
+
 Warranty Information
 Even though Apple has reviewed this software, Apple makes no warranty
 or representation, either express or implied, with respect to this

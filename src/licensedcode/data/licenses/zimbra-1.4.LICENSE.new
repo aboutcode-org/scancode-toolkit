@@ -1,3 +1,13 @@
+---
+key: zimbra-1.4
+short_name: Zimbra PL 1.4
+name: Zimbra Public License v1.4
+category: Copyleft Limited
+owner: Zimbra
+homepage_url: http://www.zimbra.com/legal/zimbra-public-license-1-4
+spdx_license_key: Zimbra-1.4
+---
+
 Zimbra Public License, Version 1.4 (ZPL)
 This Zimbra Public License (this "Agreement") is a legal agreement that describes the terms under which Zimbra, Inc., a Texas corporation ("Zimbra") will provide software to you via download or otherwise ("Software"). By using the Software, you, an individual or an entity ("You") agree to the terms of this Agreement.
 

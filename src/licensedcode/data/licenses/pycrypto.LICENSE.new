@@ -1,3 +1,13 @@
+---
+key: pycrypto
+short_name: PyCrypto License
+name: PyCrypto License
+category: Permissive
+owner: Andrew M. Kuchling
+homepage_url: http://dev.mysql.com/doc/workbench/en/license-pycrypto.html
+spdx_license_key: LicenseRef-scancode-pycrypto
+---
+
 PyCrypto License
 The following software may be included in this product:
 
@@ -13,4 +23,4 @@ or implied. Use at your own risk or not at all.
 
 Incorporating the code into commercial products is permitted; you do 
 not have to make source available or contribute your changes back 
-(though that would be nice). 
+(though that would be nice).

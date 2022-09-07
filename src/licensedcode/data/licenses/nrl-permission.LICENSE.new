@@ -1,3 +1,13 @@
+---
+key: nrl-permission
+short_name: NRL permission
+name: NRL permission
+category: Permissive
+owner: NRL
+homepage_url: https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html
+spdx_license_key: LicenseRef-scancode-nrl-permission
+---
+
 Permission to use, copy, modify and distribute this software and its
 documentation is hereby granted, provided that both the copyright
 notice and this permission notice appear in all copies of the software,

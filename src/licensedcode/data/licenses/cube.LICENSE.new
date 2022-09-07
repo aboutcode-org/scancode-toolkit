@@ -1,3 +1,17 @@
+---
+key: cube
+short_name: Cube License
+name: Cube License
+category: Permissive
+owner: Wouter van Oortmerssen
+homepage_url: https://fedoraproject.org/wiki/Licensing/Cube
+spdx_license_key: Cube
+ignorable_copyrights:
+    - Copyright (c) 2001-2003 Wouter van Oortmerssen
+ignorable_holders:
+    - Wouter van Oortmerssen
+---
+
 Cube game engine source code, 20 dec 2003 release.
 
 Copyright (C) 2001-2003 Wouter van Oortmerssen.

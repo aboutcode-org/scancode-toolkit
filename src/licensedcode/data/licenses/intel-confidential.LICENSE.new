@@ -1,3 +1,12 @@
+---
+key: intel-confidential
+short_name: Intel Confidential
+name: Intel Confidential
+category: Commercial
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-confidential
+---
+
 INTEL CONFIDENTIAL
 The source code contained or described herein and all documents related to the source
 code (""Material"") are owned by Intel Corporation or its suppliers or licensors. Title to

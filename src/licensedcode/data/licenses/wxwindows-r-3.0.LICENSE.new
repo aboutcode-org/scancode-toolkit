@@ -1,3 +1,20 @@
+---
+key: wxwindows-r-3.0
+short_name: wxWindows Restricted Licence 3.0
+name: wxWindows Restricted Licence 3.0
+category: Copyleft Limited
+owner: wxWidgets
+homepage_url: http://www.wxwidgets.org/about/licence.htm
+spdx_license_key: LicenseRef-scancode-wxwindows-r-3.0
+text_urls:
+    - http://www.wxwidgets.org/about/licence.htm
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 1998 Julian Smart, Robert Roebling
+ignorable_holders:
+    - Julian Smart, Robert Roebling
+---
+
 wxWindows Restricted Licence, Version 3
  =======================================
 

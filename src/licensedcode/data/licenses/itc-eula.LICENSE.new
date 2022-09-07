@@ -1,3 +1,15 @@
+---
+key: itc-eula
+short_name: ITC EULA
+name: ITC End User License Agreement
+category: Commercial
+owner: ITC
+homepage_url: https://web.archive.org/web/19980626184147/http://www.itcfonts.com/itc/license.html
+spdx_license_key: LicenseRef-scancode-itc-eula
+ignorable_emails:
+    - info@itcfonts.com
+---
+
 This Agreement constitutes the complete agreement between you and International Typeface Corporation (ITC) (except for multi-CPU licenses, where another document supplements this one and outlines and confirms the scope of the your upgraded license). If you do not agree to the terms stated in this Agreement, you may obtain a full refund by contacting ITC at the address below within 15 days with your proof of payment.
 
 International Typeface Corporation

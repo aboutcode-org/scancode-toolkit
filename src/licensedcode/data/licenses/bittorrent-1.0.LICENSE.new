@@ -1,3 +1,21 @@
+---
+key: bittorrent-1.0
+short_name: BitTorrent 1.0
+name: BitTorrent Open Source License 1.0
+category: Copyleft Limited
+owner: BitTorrent, Inc.
+homepage_url: http://www.bittorrent.com/license/
+spdx_license_key: BitTorrent-1.0
+text_urls:
+    - http://web.archive.org/web/20050209224501/http://www.bittorrent.com/license/
+    - http://www.bittorrent.com/license/
+    - https://spdx.org/licenses/BitTorrent-1.0.html
+other_urls:
+    - http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/BitTorrent?r1=1.1&r2=1.1.1.1&diff_format=s
+ignorable_urls:
+    - http://www.bittorrent.com/license
+---
+
 BitTorrent Open Source License
 
 Version 1.0
@@ -328,4 +346,3 @@ obtain a copy of the License at http://www.bittorrent.com/license/.
 
 Software distributed under the License is distributed on an AS IS basis, WITHOUT WARRANTY OF ANY KIND, either express
 or implied.  See the License for the specific language governing rights and limitations under the License.
-

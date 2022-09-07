@@ -1,3 +1,15 @@
+---
+key: helios-eula
+short_name: Helios
+name: Helios EULA
+category: Commercial
+owner: Helios Software Solutions
+homepage_url: http://www.textpad.com/copyright.html
+spdx_license_key: LicenseRef-scancode-helios-eula
+ignorable_urls:
+    - http://www.textpad.com/
+---
+
 END USER LICENSE AGREEMENT FOR HELIOS SOFTWARE SOLUTIONS SOFTWARE.
 
 IMPORTANT - READ CAREFULLY: This Helios Software Solutions End-User License Agreement ("EULA") is a legal agreement between you (either an individual person or a single legal entity, who will be referred to in this EULA as "You") and Helios Software Solutions ("Helios") for the Helios software product that accompanies this EULA, including any associated media, printed materials and electronic documentation (the "Software Product").  The Software Product also includes any software updates, add-on components, web services and/or supplements that Helios may provide to You or make available to You after the date You obtain Your initial copy of the Software Product to the extent that such items are not accompanied by a separate license agreement or terms of use.  By installing, copying, downloading, accessing or otherwise using the Software Product, You agree to be bound by the terms of this EULA. If You do not agree to the terms of this EULA, do not install, access or use the Software Product; instead, You should return it, with proof of purchase, to Your place of purchase for a full refund.

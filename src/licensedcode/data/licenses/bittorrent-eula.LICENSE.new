@@ -1,3 +1,18 @@
+---
+key: bittorrent-eula
+short_name: BitTorrent EULA
+name: BitTorrent End User License Agreement (EULA)
+category: Proprietary Free
+owner: BitTorrent, Inc.
+homepage_url: http://www.bittorrent.com/legal/eula
+spdx_license_key: LicenseRef-scancode-bittorrent-eula
+ignorable_urls:
+    - http://www.bittorrent.com/legal/eula
+    - http://www.bittorrent.com/legal/terms-of-use
+ignorable_emails:
+    - legal@bittorrent.com
+---
+
 End User License Agreement (EULA)
 
 By accepting this agreement or by installing BitTorrent or uTorrent or other software offered by or on behalf of BitTorrent, Inc. (the "Software") or by clicking "Install", you agree to the following terms, notwithstanding anything to the contrary in this agreement.

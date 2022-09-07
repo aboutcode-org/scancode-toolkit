@@ -1,3 +1,16 @@
+---
+key: riverbank-sip
+short_name: Riverbank SIP License
+name: Riverbank SIP License
+category: Free Restricted
+owner: Riverbank Computing
+spdx_license_key: LicenseRef-scancode-riverbank-sip
+ignorable_copyrights:
+    - Copyright (c) 2009 Riverbank Computing Limited
+ignorable_holders:
+    - Riverbank Computing Limited
+---
+
 RIVERBANK COMPUTING LIMITED LICENSE AGREEMENT FOR SIP 4.9.2
 
 1. This LICENSE AGREEMENT is between Riverbank Computing Limited

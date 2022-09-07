@@ -1,3 +1,15 @@
+---
+key: ms-web-developer-tools-1.0
+short_name: MS Web Developer Tools 1.0
+name: Microsoft Web Developer Tools 1.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/webdevelopertools_1_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-web-developer-tools-1.0
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT WEB DEVELOPER TOOLS 1.0
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft

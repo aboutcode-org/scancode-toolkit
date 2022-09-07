@@ -1,3 +1,21 @@
+---
+key: tapr-ohl-1.0
+short_name: TAPR Open Hardware License v1.0
+name: TAPR Open Hardware License v1.0
+category: Copyleft Limited
+owner: TAPR
+homepage_url: https://www.tapr.org/OHL
+spdx_license_key: TAPR-OHL-1.0
+other_urls:
+    - https://www.tapr.org/OHL
+ignorable_copyrights:
+    - Copyright 2007 TAPR - http://www.tapr.org/OHL
+ignorable_holders:
+    - TAPR
+ignorable_urls:
+    - http://www.tapr.org/OHL
+---
+
 The TAPR Open Hardware License Version 1.0 (May 25, 2007) Copyright 2007 TAPR - http://www.tapr.org/OHL
 
 PREAMBLE

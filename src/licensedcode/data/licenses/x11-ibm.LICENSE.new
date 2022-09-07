@@ -1,3 +1,16 @@
+---
+key: x11-ibm
+short_name: IBM Derivative Works License
+name: IBM Derivative Works License
+category: Copyleft
+owner: IBM
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: LicenseRef-scancode-x11-ibm
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+minimum_coverage: 80
+---
+
 License to use, copy, modify, and distribute this software and its documentation
 for any purpose and without fee is hereby granted, provided that licensee
 provides a license to IBM, Corp. to use, copy, modify, and distribute derivative

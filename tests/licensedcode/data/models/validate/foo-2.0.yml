@@ -1,3 +1,4 @@
+---
 key: foo-2.0
 language: foobar
 short_name: Foo
@@ -5,3 +6,4 @@ name: Foobar
 category: Permissive
 owner: Apache Software Foundation
 homepage_url: http://www.apache.org/licenses/
+---

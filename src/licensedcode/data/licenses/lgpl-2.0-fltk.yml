@@ -1,9 +1,0 @@
-key: lgpl-2.0-fltk
-is_deprecated: yes
-short_name: LGPL 2.0 with FLTK exception
-name: LGPL 2.0 with FLTK exception
-category: Copyleft Limited
-owner: FLTK
-homepage_url: http://www.fltk.org/COPYING.php
-is_exception: yes
-notes: replaced by fltk-exception-lgpl-2.0

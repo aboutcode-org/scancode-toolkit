@@ -1,3 +1,21 @@
+---
+key: dl-de-by-2-0-de
+language: de
+short_name: dl-de/by-2-0-de
+name: Datenlizenz Deutschland - Namensnennung - Version 2.0 - Deutsch
+category: Permissive
+owner: govdata.de
+homepage_url: http://www.govdata.de/dl-de/by-2-0
+spdx_license_key: DL-DE-BY-2.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-dl-de-by-2-0-de
+other_urls:
+    - https://www.dcat-ap.de/def/licenses/
+    - https://www.govdata.de/dl-de/by-2-0
+ignorable_urls:
+    - http://www.govdata.de/dl-de/by-2-0
+---
+
 DL-DE->BY-2.0
 
 Datenlizenz Deutschland – Namensnennung – Version 2.0

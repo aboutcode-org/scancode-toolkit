@@ -1,3 +1,13 @@
+---
+key: can-ogl-ontario-1.0
+short_name: OGL Ontario 1.0
+name: Open Government Licence Ontario 1.0
+category: Permissive
+owner: Ontario Government
+homepage_url: https://www.ontario.ca/page/open-government-licence-ontario
+spdx_license_key: LicenseRef-scancode-can-ogl-ontario-1.0
+---
+
 Open Government Licence – Ontario
 
 You are encouraged to use the Information that is available under this licence with only a few conditions.
@@ -66,5 +76,3 @@ Versioning
 
 Updated: September 6, 2018
 Published: June 18, 2013
-
-

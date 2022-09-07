@@ -1,3 +1,15 @@
+---
+key: gnuplot
+short_name: gnuplot License
+name: gnuplot License
+category: Copyleft Limited
+owner: GNU Project
+homepage_url: https://fedoraproject.org/wiki/Licensing:Gnuplot?rd=Licensing/Gnuplot
+spdx_license_key: gnuplot
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Gnuplot
+---
+
 Permission to use, copy, and distribute this software and its documentation for
 any purpose with or without fee is hereby granted, provided that the above
 copyright notice appear in all copies and that both that copyright notice and

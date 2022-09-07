@@ -1,3 +1,12 @@
+---
+key: nvidia-2002
+short_name: NVIDIA 2002 License
+name: NVIDIA 2002 License
+category: Permissive
+owner: NVIDIA
+spdx_license_key: LicenseRef-scancode-nvidia-2002
+---
+
 NVIDIA Corporation("NVIDIA") supplies this software to you in
 consideration of your agreement to the following terms, and your use,
 installation, modification or redistribution of this NVIDIA software

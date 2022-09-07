@@ -1,3 +1,27 @@
+---
+key: cern-ohl-s-2.0
+short_name: CERN-OHL-S-2.0
+name: CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+category: Copyleft
+owner: CERN
+homepage_url: https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+spdx_license_key: CERN-OHL-S-2.0
+text_urls:
+    - https://ohwr.org/cern_ohl_s_v2.txt
+    - https://ohwr.org/project/cernohl/wikis/uploads/002d0b7d5066e6b3829168730237bddb/cern_ohl_s_v2.txt
+    - https://ohwr.org/project/cernohl/wikis/uploads/ee7922912e58f8676e1d7ff841b391cb/cern_ohl_s_v2.pdf
+osi_url: https://opensource.org/CERN-OHL-S
+faq_url: https://ohwr.org/project/cernohl/wikis/faq
+other_urls:
+    - https://ohwr.org/project/cernohl
+    - https://cern-ohl.web.cern.ch/
+    - https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+ignorable_copyrights:
+    - copyright CERN 2020
+ignorable_holders:
+    - CERN
+---
+
 CERN Open Hardware Licence Version 2 - Strongly Reciprocal
 
 

@@ -1,3 +1,13 @@
+---
+key: vcalendar
+short_name: VCalendar License
+name: VCalendar License
+category: Permissive
+owner: VCalendar Project
+homepage_url: https://github.com/libical/libical/blob/master/src/libicalvcal/vcaltmp.h
+spdx_license_key: LicenseRef-scancode-vcalendar
+---
+
 For purposes of this license notice, the term Licensors shall mean,            
 collectively, Apple Computer, Inc., AT&T Corp., International                  
 Business Machines Corporation and Siemens Rolm Communications Inc.             
@@ -28,4 +38,4 @@ PURPOSE.
 
 The software is provided with RESTRICTED RIGHTS.  Use, duplication, or         
 disclosure by the government are subject to restrictions set forth in          
-DFARS 252.227-7013 or 48 CFR 52.227-19, as applicable.                         
+DFARS 252.227-7013 or 48 CFR 52.227-19, as applicable.

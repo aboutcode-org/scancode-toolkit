@@ -1,7 +1,0 @@
-key: ppp
-short_name: ppp License
-name: ppp License
-category: Permissive
-owner: globalban Project
-homepage_url: http://www.scs.stanford.edu/histar/src/pkg/lwip/netif/ppp/pppdebug.h
-spdx_license_key: LicenseRef-scancode-ppp

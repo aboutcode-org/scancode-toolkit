@@ -1,3 +1,19 @@
+---
+key: cockroach
+short_name: CCL
+name: Cockroach Community License
+category: Source-available
+owner: Cockroachlabs
+homepage_url: https://www.cockroachlabs.com/cockroachdb-community-license
+spdx_license_key: LicenseRef-scancode-cockroach
+text_urls:
+    - https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://cla-assistant.io/cockroachdb/cockroach
+    - https://github.com/cockroachdb/cockroach
+---
+
 CockroachDB Community License Agreement
 
 Please read this CockroachDB Community License Agreement (the "Agreement")

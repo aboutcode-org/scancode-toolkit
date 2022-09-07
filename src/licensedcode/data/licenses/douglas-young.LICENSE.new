@@ -1,3 +1,13 @@
+---
+key: douglas-young
+short_name: Douglas Young License
+name: Douglas Young License
+category: Permissive
+owner: Pearson (Prentice Hall)
+spdx_license_key: LicenseRef-scancode-douglas-young
+minimum_coverage: 60
+---
+
 Permission to use, copy, modify, and distribute this software for any purpose
 except publication and without fee is hereby granted, provided that the above
 copyright notice appear in all copies of the software.

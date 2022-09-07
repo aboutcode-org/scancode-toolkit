@@ -1,3 +1,26 @@
+---
+key: josl-1.0
+short_name: Jabber 1.0
+name: Jabber Open Source License 1.0
+category: Copyleft Limited
+owner: Jabber Technology
+homepage_url: http://www.opensource.org/licenses/jabberpl.php
+spdx_license_key: LicenseRef-scancode-josl-1.0
+text_urls:
+    - http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt
+osi_url: http://www.opensource.org/licenses/jabberpl.php
+ignorable_copyrights:
+    - Copyright (c) 1999-2000 Jabber.com, Inc.
+    - Portions Copyright (c) 1998-1999 Jeremie Miller
+ignorable_holders:
+    - Jabber.com, Inc.
+    - Jeremie Miller
+ignorable_urls:
+    - http://www.jabber.com/
+    - http://www.jabber.com/license/
+    - http://www.opensource.org/
+---
+
 Jabber Open Source License
 Version 1.0
 

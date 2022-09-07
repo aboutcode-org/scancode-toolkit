@@ -1,3 +1,16 @@
+---
+key: lil-1
+short_name: Lil License v1
+name: Lil License v1
+category: Permissive
+owner: Jeremy Ashkenas
+homepage_url: http://lillicense.org/v1.html
+notes: this license has MIT-like terms with extra non-obvious patent grants.
+spdx_license_key: LicenseRef-scancode-lil-1
+other_urls:
+    - https://github.com/jashkenas/lil-license
+---
+
 Permission is hereby granted by the authors of this software, to any
 person, to use the software for any purpose, free of charge, including
 the rights to run, read, copy, change, distribute and sell it, and

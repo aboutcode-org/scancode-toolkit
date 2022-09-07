@@ -1,3 +1,16 @@
+---
+key: independent-module-linking-exception
+short_name: Independent Module Linking Exception
+name: Independent Module Linking Exception
+category: Copyleft Limited
+owner: Unspecified
+notes: this is typically seen with the LGPL but is not L/GPL specific
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-indie-module-linking-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-independent-module-linking-exception
+---
+
 As a special exception, the copyright holders of this library give you
 permission to link this library with independent modules to produce an
 executable, regardless of the license terms of these independent modules, and to

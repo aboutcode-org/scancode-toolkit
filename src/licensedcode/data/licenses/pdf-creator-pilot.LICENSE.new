@@ -1,3 +1,19 @@
+---
+key: pdf-creator-pilot
+short_name: PDF Creator Pilot License Agreement
+name: PDF Creator Pilot License Agreement
+category: Commercial
+owner: Two Pilots
+homepage_url: http://www.colorpilot.com/pdflibrary_eula.html
+spdx_license_key: LicenseRef-scancode-pdf-creator-pilot
+ignorable_copyrights:
+    - Copyright (c) 1999-2012 Two Pilots and its licensors
+ignorable_holders:
+    - Two Pilots and its licensors
+ignorable_urls:
+    - http://www.colorpilot.com/
+---
+
 PDF Creator Pilot License Agreement
  
 This is a legal agreement ('Agreement') between you, the end user, and Two Pilots. This agreement defines the licensing terms for the PDF Creator Pilot which is software shipped as a Windows Installer Package and includes all related documentation, examples, web pages, and other materials which support the use of the PDF Creator Pilot (collectively, the 'Software').

@@ -1,3 +1,14 @@
+---
+key: bsla
+short_name: BSLA
+name: Berkeley Software License Agreement
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: LicenseRef-scancode-bsla
+ignorable_authors:
+    - the University of California, Berkeley
+---
+
 Redistribution and use in source and binary forms are permitted
 provided that the above copyright notice and this paragraph are
 duplicated in all such forms and that any documentation,

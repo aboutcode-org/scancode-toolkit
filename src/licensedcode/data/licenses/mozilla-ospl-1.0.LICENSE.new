@@ -1,3 +1,16 @@
+---
+key: mozilla-ospl-1.0
+short_name: Mozilla Open Software Patent License 1.0
+name: Mozilla Open Software Patent License Agreement v1
+category: Patent License
+owner: Mozilla
+homepage_url: https://www.mozilla.org/en-US/about/patents/license/
+spdx_license_key: LicenseRef-scancode-mozilla-ospl-1.0
+faq_url: https://www.mozilla.org/en-US/about/patents/
+other_urls:
+    - https://www.mozilla.org/en-US/about/patents/guide/
+---
+
 Mozilla Open Software Patent License Agreement v1
 This Open Software Patent License Agreement ("Agreement") is made between you and the Licensor identified below. For purposes of this Agreement, you means you and your Affiliates, and Licensor means the Mozilla Corporation, Mozilla Foundation and any of their Affiliates.
 

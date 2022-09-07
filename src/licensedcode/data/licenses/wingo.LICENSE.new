@@ -1,3 +1,22 @@
+---
+key: wingo
+short_name: wingo License
+name: wingo License
+category: Permissive
+owner: wingo
+homepage_url: http://www.wingo.com/jt_/license.html
+spdx_license_key: LicenseRef-scancode-wingo
+text_urls:
+    - http://www.wingo.com/jt_/jt_license.html
+ignorable_copyrights:
+    - Copyright (c) 2002-2010 Joseph.Oster, wingo.com
+ignorable_holders:
+    - Joseph.Oster, wingo.com
+ignorable_urls:
+    - http://www.wingo.com/jt_/
+    - http://www.wingo.com/jt_/jt_license.html
+---
+
 License for 'jt2_.js' (was 'jt_utils.js'), 'jt_DialogBox' and all
 related code: http://www.wingo.com/jt_/
 

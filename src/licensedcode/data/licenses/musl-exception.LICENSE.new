@@ -1,3 +1,14 @@
+---
+key: musl-exception
+short_name: musl attribution exception
+name: musl attribution exception
+category: Permissive
+owner: musl Project
+homepage_url: http://www.musl-libc.org/
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-musl-exception
+---
+
 In addition, permission is hereby granted for all public header files
 (include/* and arch/*/bits/*) and crt files intended to be linked into
 applications (crt/*, ldso/dlstart.c, and arch/*/crt_arch.h) to omit

@@ -1,3 +1,17 @@
+---
+key: cc-by-nd-3.0-de
+language: de
+short_name: CC-BY-ND-3.0-DE
+name: Creative Commons Attribution No Derivatives 3.0 Germany
+category: Free Restricted
+owner: Creative Commons
+spdx_license_key: CC-BY-ND-3.0-DE
+other_urls:
+    - https://creativecommons.org/licenses/by-nd/3.0/de/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Namensnennung - Keine Bearbeitungen 3.0 Deutschland
 
   CREATIVE COMMONS IST KEINE RECHTSANWALTSKANZLEI UND LEISTET KEINE RECHTSBERATUNG. DIE BEREITSTELLUNG DIESER LIZENZ FÜHRT ZU KEINEM MANDATSVERHÄLTNIS. CREATIVE COMMONS STELLT DIESE INFORMATIONEN OHNE GEWÄHR ZUR VERFÜGUNG. CREATIVE COMMONS ÜBERNIMMT KEINE GEWÄHRLEISTUNG FÜR DIE GELIEFERTEN INFORMATIONEN UND SCHLIEßT DIE HAFTUNG FÜR SCHÄDEN AUS, DIE SICH AUS DEREN GEBRAUCH ERGEBEN.

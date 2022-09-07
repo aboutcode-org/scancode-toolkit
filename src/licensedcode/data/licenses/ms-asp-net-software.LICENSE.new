@@ -1,3 +1,16 @@
+---
+key: ms-asp-net-software
+short_name: MS ASP.NET Software License
+name: Microsoft ASP.NET Software License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/aspnet_and_web_tools_2012_2_rtw_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-software
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/products/ceip/en-us/privacypolicy.mspx
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 Microsoft ASP.NET Model View Controller, Web API and Web Pages
@@ -233,5 +246,3 @@ Cette limitation concerne :
 Elle s’applique également, même si Microsoft connaissait ou devrait connaître l’éventualité d’un tel dommage. Si votre pays n’autorise pas l’exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit, il se peut que la limitation ou l’exclusion ci-dessus ne s’appliquera pas à votre égard.
 
 EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d’autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.
-
- 

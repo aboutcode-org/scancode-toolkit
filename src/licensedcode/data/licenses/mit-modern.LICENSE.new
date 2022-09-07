@@ -1,3 +1,21 @@
+---
+key: mit-modern
+short_name: MIT Modern Variant
+name: MIT Modern Variant
+category: Permissive
+owner: Fedora
+homepage_url: http://fedoraproject.org/wiki/Licensing/MIT
+spdx_license_key: MIT-Modern-Variant
+other_spdx_license_keys:
+    - LicenseRef-scancode-mit-modern
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/MIT
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing:MIT#Modern_Variants
+    - https://ptolemy.berkeley.edu/copyright.htm
+    - https://pirlwww.lpl.arizona.edu/resources/guide/software/PerlTk/Tixlic.html
+---
+
 Permission is hereby granted, without written agreement and without
 license or royalty fees, to use, copy, modify, and distribute this
 software and its documentation for any purpose, provided that the

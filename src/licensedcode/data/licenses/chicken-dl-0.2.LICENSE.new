@@ -1,3 +1,15 @@
+---
+key: chicken-dl-0.2
+short_name: Chicken Dance License v0.2
+name: Chicken Dance v0.2
+category: Permissive
+owner: Andrew "Tuna" Harris
+homepage_url: https://github.com/supertunaman/cdl/blob/master/COPYING
+spdx_license_key: LicenseRef-scancode-chicken-dl-0.2
+ignorable_urls:
+    - http://supertunaman.com/cdl/
+---
+
 Chicken Dance License v0.2
 http://supertunaman.com/cdl/
 

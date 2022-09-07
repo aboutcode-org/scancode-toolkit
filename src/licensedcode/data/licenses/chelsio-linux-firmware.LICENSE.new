@@ -1,3 +1,13 @@
+---
+key: chelsio-linux-firmware
+short_name: Chelsio Linux Firmware License
+name: Chelsio Linux Firmware License
+category: Proprietary Free
+owner: Chelsio
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.chelsio_firmware
+spdx_license_key: LicenseRef-scancode-chelsio-linux-firmware
+---
+
 Chelsio Communication Terminator 4/5 ethernet controller firmware
 
 Redistribution and use in binary form, without modification, are permitted provided

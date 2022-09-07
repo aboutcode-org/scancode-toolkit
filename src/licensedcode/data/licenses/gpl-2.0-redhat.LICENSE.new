@@ -1,3 +1,17 @@
+---
+key: gpl-2.0-redhat
+is_deprecated: yes
+short_name: GPL 2.0 with Fedora Red Hat Exception
+name: GPL 2.0 with Fedora Red Hat Exception
+category: Copyleft Limited
+owner: Fedora
+homepage_url: http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
+notes: replaced by 389-exception
+is_exception: yes
+text_urls:
+    - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
+---
+
 This library is free software; you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software Foundation;
 either version 2, or (at your option) any later version.

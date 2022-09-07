@@ -1,3 +1,17 @@
+---
+key: yahoo-messenger-eula
+short_name: Yahoo Messenger EULA
+name: Yahoo Messenger EULA
+category: Proprietary Free
+owner: Yahoo
+homepage_url: https://info.yahoo.com/legal/us/yahoo/messenger/messengertos/messengertos-279.html
+spdx_license_key: LicenseRef-scancode-yahoo-messenger-eula
+ignorable_urls:
+    - http://privacy.yahoo.com/privacy/us/mesg/index.htm
+    - https://info.yahoo.com/legal/us/yahoo/messenger/messengertos/messengertos-279.html
+    - https://info.yahoo.com/legal/us/yahoo/utos/utos-173.html
+---
+
 Yahoo Messenger Terms Of Service
 
 NO 911 OR EMERGENCY SERVICE. You acknowledge and understand that Yahoo does NOT currently allow you to access any 911 or similar emergency services (no traditional 911, E911, or similar access to emergency services). You should always have an alternative means of accessing 911 or similar emergency services. Please inform others who use your Yahoo Messenger and devices used to access Yahoo Messenger that they must access these numbers through a traditional landline or mobile phone. Yahoo Messenger is not intended to replace your primary phone service, such as traditional landline or mobile phone.

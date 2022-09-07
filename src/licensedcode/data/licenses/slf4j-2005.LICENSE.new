@@ -1,3 +1,14 @@
+---
+key: slf4j-2005
+is_deprecated: yes
+short_name: SLF4J License 2005
+name: SLF4J License 2005
+category: Permissive
+owner: QOS Project
+text_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+---
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to  deal in  the Software without  restriction, including

@@ -1,3 +1,22 @@
+---
+key: teamdev-services
+short_name: TeamDev Services License
+name: TeamDev Services License
+category: Commercial
+owner: TeamDev
+homepage_url: https://www.teamdev.com/services
+spdx_license_key: LicenseRef-scancode-teamdev-services
+minimum_coverage: 98
+ignorable_urls:
+    - http://google.com/+TeamDev
+    - http://twitter.com/TeamDev
+    - http://www.linkedin.com/company/teamdev-ltd
+    - https://www.facebook.com/TeamDev
+    - https://www.teamdev.com/services
+ignorable_emails:
+    - sales@teamdev.com
+---
+
 https://www.teamdev.com/services
 
 TeamDev

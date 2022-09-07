@@ -1,3 +1,19 @@
+---
+key: eclipse-sua-2003
+short_name: Eclipse Foundation Software User Agreement 2003
+name: Eclipse Foundation Software User Agreement 2003
+category: Copyleft Limited
+owner: Eclipse Foundation
+homepage_url: https://web.archive.org/web/20030210115256/http://www.eclipse.org/legal/notice.html
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2003
+ignorable_urls:
+    - http://oss.software.ibm.com/developerworks/opensource/license10.html
+    - http://www.apache.org/licenses/LICENSE
+    - http://www.eclipse.org/legal/cpl-v10.html
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.opengroup.org/openmotif/supporters/metrolink/license.html
+---
+
 Eclipse.org Software User Agreement
 
 14th August, 2003

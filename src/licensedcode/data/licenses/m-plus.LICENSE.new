@@ -1,4 +1,21 @@
+---
+key: m-plus
+short_name: M+ Fonts license
+name: M+ Fonts license
+category: Permissive
+owner: Coji Morishita
+homepage_url: https://mplusfonts.github.io
+spdx_license_key: mplus
+other_spdx_license_keys:
+    - LicenseRef-scancode-m-plus
+faq_url: https://en.wikipedia.org/wiki/M%2B_FONTS
+other_urls:
+    - http://mplus-fonts.osdn.jp
+    - https://github.com/coz-m/MPLUS_FONTS
+    - https://fedoraproject.org/wiki/Licensing:Mplus?rd=Licensing/mplus
+---
+
 These fonts are free software.
 Unlimited permission is granted to use, copy, and distribute them, with or
 without modification, either commercially or noncommercially.
-THESE FONTS ARE PROVIDED "AS IS" WITHOUT WARRANTY. 
+THESE FONTS ARE PROVIDED "AS IS" WITHOUT WARRANTY.

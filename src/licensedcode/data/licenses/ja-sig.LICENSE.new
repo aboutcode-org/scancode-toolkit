@@ -1,3 +1,21 @@
+---
+key: ja-sig
+short_name: JA-SiG License
+name: JA-SiG License
+category: Permissive
+owner: JA-SIG Collaborative
+homepage_url: http://web.archive.org/web/20040402030132/http://uportal.org/license.html
+notes: |
+    this is an old and rare license, replaced since by an Apache 2.0. This is a
+    BSD variant. See original at
+    http://web.archive.org/web/20040402030132/http://uportal.org/license.html
+spdx_license_key: LicenseRef-scancode-ja-sig
+ignorable_authors:
+    - the JA-SIG Collaborative (http://www.ja-sig.org/)
+ignorable_urls:
+    - http://www.ja-sig.org/
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
@@ -23,4 +41,3 @@ data, or profits; or business interruption) however caused and on any theory of
 liability, whether in contract, strict liability, or tort (including negligence
 or otherwise) arising in any way out of the use of this software, even if
 advised of the possibility of such damage.
-

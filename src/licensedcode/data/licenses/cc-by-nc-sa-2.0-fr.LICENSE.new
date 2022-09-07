@@ -1,3 +1,17 @@
+---
+key: cc-by-nc-sa-2.0-fr
+language: fr
+short_name: CC-BY-NC-SA-2.0-FR
+name: Creative Commons Attribution-NonCommercial-ShareAlike 2.0 France
+category: Source-available
+owner: Creative Commons
+spdx_license_key: CC-BY-NC-SA-2.0-FR
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/2.0/fr/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Paternité - Pas d'Utilisation Commerciale - Partage Des Conditions Initiales A l'Identique 2.0
 
  Creative Commons n'est pas un cabinet d'avocats et ne fournit pas de services de conseil juridique. La distribution de la présente version de ce contrat ne crée aucune relation juridique entre les parties au contrat présenté ci-après et Creative Commons. Creative Commons fournit cette offre de contrat-type en l'état, à seule fin d'information. Creative Commons ne saurait être tenu responsable des éventuels préjudices résultant du contenu ou de l'utilisation de ce contrat.

@@ -1,3 +1,14 @@
+---
+key: ibm-dhcp
+short_name: IBM DHCP License
+name: IBM DHCP License
+category: Permissive
+owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-dhcp
+other_urls:
+    - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c
+---
+
 International Business Machines, Inc. (hereinafter called IBM) grants
 permission under its copyrights to use, copy, modify, and distribute this
 Software with or without fee, provided that the above copyright notice and

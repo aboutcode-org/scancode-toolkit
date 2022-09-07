@@ -1,3 +1,17 @@
+---
+key: opennetcf-shared-source
+short_name: OpenNETCF Shared Source License
+name: OpenNETCF Shared Source License
+category: Proprietary Free
+owner: OpenNETCF Consulting
+homepage_url: http://www.opennetcf.com/products/licenses.aspx
+spdx_license_key: LicenseRef-scancode-opennetcf-shared-source
+ignorable_copyrights:
+    - (c) 2006-2012 OpenNETCF Consulting, LLC.
+ignorable_holders:
+    - OpenNETCF Consulting, LLC.
+---
+
 NOTICE
 This license governs use of the accompanying software ("Software"), and your use of the Software constitutes acceptance of this license.
 Subject to the restrictions below, you may use the Software for any commercial or noncommercial purpose, including distributing derivative works.

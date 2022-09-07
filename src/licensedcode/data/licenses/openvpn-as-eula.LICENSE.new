@@ -1,3 +1,21 @@
+---
+key: openvpn-as-eula
+short_name: OpenVPN-AS EULA
+name: OpenVPN Access Server EULA
+category: Proprietary Free
+owner: OpenVPN
+homepage_url: http://openvpn.net/index.php/license.html
+spdx_license_key: LicenseRef-scancode-openvpn-as-eula
+other_urls:
+    - http://openvpn.net/index.php/license.html
+ignorable_copyrights:
+    - Copyright (c) 2009-2013 OpenVPN Technologies, Inc.
+ignorable_holders:
+    - OpenVPN Technologies, Inc.
+ignorable_urls:
+    - http://openvpn.net/
+---
+
 OpenVPN Access Server End User License Agreement (OpenVPN-AS EULA)
 
 1.    Copyright Notice: OpenVPN Access Server License;

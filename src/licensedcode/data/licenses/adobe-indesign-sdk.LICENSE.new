@@ -1,3 +1,16 @@
+---
+key: adobe-indesign-sdk
+short_name: Adobe InDesign SDK License
+name: Adobe SDK License for INDESIGN, INDESIGN SERVER and INCOPY Software
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: http://www.adobe.com/devnet/indesign/sdk/eula_cs55.html
+spdx_license_key: LicenseRef-scancode-adobe-indesign-sdk
+ignorable_urls:
+    - http://support.adobe.com/devsup/devsup.nsf/docs/50093.htm
+    - http://www.adobe.com/go/thirdparty
+---
+
 ADOBE SOFTWARE DEVELOPMENT KIT LICENSE FOR INDESIGN, INDESIGN SERVER AND INCOPY SOFTWARE.
 
 NOTICE TO USER: THIS IS A LICENSE BETWEEN YOU AND ADOBE. BY INDICATING YOUR ACCEPTANCE BELOW, YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS LICENSE. THIS LICENSE ACCOMPANIES THE SOFTWARE DEVELOPMENT KIT(S) FOR ADOBE INDESIGN, INDESIGN SERVER AND/OR INCOPY SOFTWARE AND RELATED EXPLANATORY MATERIALS (COLLECTIVELY, THE "SDK") AND INCLUDES ANY UPGRADES, MODIFIED VERSIONS, UPDATES, ADDITIONS, AND COPIES OF THE SDK LICENSED TO YOU BY ADOBE.

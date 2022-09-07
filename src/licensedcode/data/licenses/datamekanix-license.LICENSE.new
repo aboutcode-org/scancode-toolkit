@@ -1,3 +1,13 @@
+---
+key: datamekanix-license
+short_name: DataMekanix License
+name: DataMekanix License
+category: Permissive
+owner: DataMekanix
+homepage_url: http://www.datamekanix.com/sizecbar/
+spdx_license_key: LicenseRef-scancode-datamekanix-license
+---
+
 This code is free for personal and commercial use, providing the copyright
 notice remains intact in the source files and all eventual changes are clearly
 marked with comments.

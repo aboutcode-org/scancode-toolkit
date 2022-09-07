@@ -1,3 +1,19 @@
+---
+key: cc-by-3.0-at
+language: de
+short_name: CC-BY-3.0-AT
+name: Creative Commons Attribution 3.0 Austria
+category: Permissive
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by/3.0/at/
+spdx_license_key: CC-BY-3.0-AT
+text_urls:
+    - https://creativecommons.org/licenses/by/3.0/at/legalcode
+faq_url: https://creativecommons.org/licenses/by/3.0/at/
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Namensnennung 3.0 Österreich
 
 CREATIVE COMMONS IST KEINE RECHTSANWALTSKANZLEI UND LEISTET KEINE RECHTSBERATUNG. DIE BEREITSTELLUNG DIESER LIZENZ FÜHRT ZU KEINEM MANDATSVERHÄLTNIS. CREATIVE COMMONS STELLT DIESE INFORMATIONEN OHNE GEWÄHR ZUR VERFÜGUNG. CREATIVE COMMONS ÜBERNIMMT KEINE GEWÄHRLEISTUNG FÜR DIE GELIEFERTEN INFORMATIONEN UND SCHLIEßT DIE HAFTUNG FÜR SCHÄDEN AUS, DIE SICH AUS DEREN GEBRAUCH ERGEBEN.

@@ -1,3 +1,13 @@
+---
+key: fsf-unlimited
+short_name: FSF-Unlimited
+name: Free Software Foundation - Unlimited License
+category: Permissive
+owner: Free Software Foundation (FSF)
+homepage_url: https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License#License_Retention_Variant
+spdx_license_key: FSFULLR
+---
+
 This file is free software; the Free Software Foundation gives
 unlimited permission to copy and/or distribute it, with or without
 modifications, as long as this notice is preserved.

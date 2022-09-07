@@ -1,3 +1,12 @@
+---
+key: linux-device-drivers
+short_name: Linux Device Drivers
+name: Linux Device Drivers License
+category: Permissive
+owner: O'Reilly Media, Inc.
+spdx_license_key: LicenseRef-scancode-linux-device-drivers
+---
+
 The source code in this file can be freely used, adapted,
 and redistributed in source or binary form, so long as an
 acknowledgment appears in derived source files.  The citation

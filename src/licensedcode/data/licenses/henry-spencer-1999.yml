@@ -1,9 +1,0 @@
-key: henry-spencer-1999
-short_name: Henry Spencer License 1999
-name: Henry Spencer License 1999
-category: Permissive
-owner: Henry Spencer
-homepage_url: http://www.opensource.apple.com/source/tcl/tcl-5/tcl/generic/regfronts.c
-spdx_license_key: Spencer-99
-text_urls:
-    - http://www.opensource.apple.com/source/tcl/tcl-5/tcl/generic/regfronts.c

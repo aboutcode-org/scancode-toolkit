@@ -1,3 +1,17 @@
+---
+key: lyubinskiy-popup-window
+short_name: Lyubinskiy popup-window License
+name: Lyubinskiy popup-window License
+category: Proprietary Free
+owner: Ilya S. Lyubinskiy
+homepage_url: http://www.php-development.ru/
+spdx_license_key: LicenseRef-scancode-lyubinskiy-popup-window
+other_urls:
+    - http://www.php-development.ru/javascripts/popup-window.php
+ignorable_urls:
+    - http://www.php-development.ru/javascripts/popup-window.php
+---
+
 YOU MAY NOT 
 (1) Remove or modify this copyright notice. 
 (2) Re-distribute this code or any part of it. 

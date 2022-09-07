@@ -1,3 +1,18 @@
+---
+key: classworlds
+is_deprecated: yes
+short_name: Classworlds License
+name: Classworlds License
+category: Permissive
+owner: Codehaus
+homepage_url: http://classworlds.codehaus.org/license.html
+notes: |
+    Per Fedora, this is an Apache 1.1 derived license. Unfortunately, clause 4
+    is too broad, making it Free but GPL-incompatible. replaced by dom4j
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Plexus_Classworlds_License
+---
+
 Redistribution and use of this software and associated documentation
 ("Software"), with or without modification, are permitted provided that the
 following conditions are met:

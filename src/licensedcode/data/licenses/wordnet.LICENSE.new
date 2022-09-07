@@ -1,3 +1,19 @@
+---
+key: wordnet
+short_name: Wordnet License
+name: Wordnet License
+category: Permissive
+owner: Princeton University
+homepage_url: http://wordnetcode.princeton.edu
+spdx_license_key: LicenseRef-scancode-wordnet
+text_urls:
+    - http://wordnetcode.princeton.edu/3.0/LICENSE
+ignorable_copyrights:
+    - Copyright by Princeton University
+ignorable_holders:
+    - Princeton University
+---
+
 This software and database is being provided to you, the LICENSEE, by  
 Princeton University under the following license.  By obtaining, using  
 and/or copying this software and database, you agree that you have  
@@ -26,4 +42,4 @@ The name of Princeton University or Princeton may not be used in
 advertising or publicity pertaining to distribution of the software  
 and/or database.  Title to copyright in this software, database and  
 any associated documentation shall at all times remain with  
-Princeton University and LICENSEE agrees to preserve same.  
+Princeton University and LICENSEE agrees to preserve same.

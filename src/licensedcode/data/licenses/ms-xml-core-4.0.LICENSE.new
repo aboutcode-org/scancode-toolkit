@@ -1,3 +1,14 @@
+---
+key: ms-xml-core-4.0
+short_name: MSXML 4.0 EULA
+name: Microsoft XML Core Services (MSXML) 4.0 EULA
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-xml-core-4.0
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 Microsoft XML Core Services (MSXML) 4.0 EULA
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE
 Microsoft xml CORE SERVICES (MSXML) 4.0 

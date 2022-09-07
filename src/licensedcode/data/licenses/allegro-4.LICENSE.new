@@ -1,3 +1,18 @@
+---
+key: allegro-4
+short_name: Allegro 4 License
+name: Allegro 4 License
+category: Permissive
+owner: Allegro Project
+homepage_url: http://alleg.sourceforge.net//license.html
+notes: |
+    Per SPDX.org, this license may also be known as Allegro 4. The Allegro 5
+    license shown at the alleg.sourceforge.net URL is the same as zlib.
+spdx_license_key: Giftware
+other_urls:
+    - http://liballeg.org/license.html#allegro-4-the-giftware-license
+---
+
 Allegro 4 (the giftware license)
 
 Allegro is gift-ware. It was created by a number of people working in cooperation, and is given to you freely as a gift. You may use, modify, redistribute, and generally hack it about in any way you like, and you do not have to give us anything in return.

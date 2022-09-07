@@ -1,3 +1,13 @@
+---
+key: can-ogl-british-columbia-2.0
+short_name: OGL British Columbia 2.0
+name: Open Government Licence British Columbia 2.0
+category: Permissive
+owner: Government of British Columbia
+homepage_url: https://www2.gov.bc.ca/gov/content/data/open-data/open-government-license-bc
+spdx_license_key: LicenseRef-scancode-can-ogl-british-columbia-2.0
+---
+
 Open Government Licence - British Columbia
 
 Note: as per B.C. Government Copyright, the following licence only applies to records in the B.C. Data Catalogue that specify it.

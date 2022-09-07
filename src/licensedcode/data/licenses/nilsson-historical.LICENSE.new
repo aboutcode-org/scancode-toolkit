@@ -1,3 +1,13 @@
+---
+key: nilsson-historical
+short_name: Nilsson Historical License
+name: Nilsson Historical License
+category: Permissive
+owner: Hans-Peter Nilsson
+notes: this is a short historical permissive license seen in the newlib C library
+spdx_license_key: LicenseRef-scancode-nilsson-historical
+---
+
 Permission to use, copy, modify, and distribute this software is
 freely granted, provided that the above copyright notice, this notice
 and the following disclaimer are preserved with no changes.

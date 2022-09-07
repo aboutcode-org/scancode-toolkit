@@ -1,3 +1,16 @@
+---
+key: ms-directx-sdk-eula
+short_name: MS DirectX SDK EULA
+name: Microsoft DirectX SDK EULA
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-directx-sdk-eula
+text_urls:
+    - ftp://ftp.physik.hu-berlin.de/pub/useful/dx7asdk/DXF/license/directx%20sdk%20eula.txt
+ignorable_authors:
+    - permission from Microsoft Corporation
+---
+
 DirectX Software Development Kit END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 
 IMPORTANT-READ CAREFULLY: This Microsoft End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and Microsoft Corporation ("Microsoft") for the Microsoft software product identified above, which includes computer software and may include associated media and printed materials, and "online" or electronic documentation ("SOFTWARE PRODUCT).  The SOFTWARE PRODUCT also includes any updates and supplements to the original SOFTWARE PRODUCT that is associated with a separate end-user license agreement is licensed to you under the terms of that license agreement. By installing, copying, downloading, accessing or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA.  If you do not agree to the terms of this EULA, do not install or use the SOFTWARE PRODUCT. 

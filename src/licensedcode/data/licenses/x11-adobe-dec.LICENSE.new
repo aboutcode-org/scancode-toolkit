@@ -1,3 +1,13 @@
+---
+key: x11-adobe-dec
+short_name: X11-Style (Adobe-DEC)
+name: X11-Style (Adobe-DEC)
+category: Permissive
+owner: Adobe Systems
+spdx_license_key: LicenseRef-scancode-x11-adobe-dec
+minimum_coverage: 85
+---
+
 Adobe is a trademark of Adobe Systems Incorporated which may be registered in
 certain jurisdictions. Permission to use these trademarks is hereby granted only
 in association with the images described in this file.

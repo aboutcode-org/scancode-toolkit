@@ -1,3 +1,12 @@
+---
+key: here-disclaimer
+short_name: HERE Disclaimer
+name: HERE Disclaimer
+category: Unstated License
+owner: HERE Global B.V.
+spdx_license_key: LicenseRef-scancode-here-disclaimer
+---
+
 This content is provided "as-is" and without warranties of any kind, either
 express or implied, including, but not limited to, the implied warranties of
 merchantability, fitness for a particular purpose, satisfactory quality and non-

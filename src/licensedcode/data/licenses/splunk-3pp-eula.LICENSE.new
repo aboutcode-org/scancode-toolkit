@@ -1,3 +1,15 @@
+---
+key: splunk-3pp-eula
+short_name: Splunk EULA for Third-Party Content
+name: Splunk EULA for Third-Party Content
+category: Proprietary Free
+owner: Splunk
+homepage_url: https://d38o4gzaohghws.cloudfront.net/static/misc/eula.html
+spdx_license_key: LicenseRef-scancode-splunk-3pp-eula
+other_urls:
+    - https://splunkbase.splunk.com/app/3173/
+---
+
 End User License Agreement for Third-Party Content
 READ CAREFULLY: LICENSOR LICENSES THIS PROGRAM, TOOL, PLUG-IN, ADD-ON, APPLICATION, LIBRARY, CONTENT, DATA, SOLUTION, SERVICE OR OTHER ITEM OR MATERIAL (THE "CONTENT") TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS END USER LICENSE AGREEMENT ("AGREEMENT").
 

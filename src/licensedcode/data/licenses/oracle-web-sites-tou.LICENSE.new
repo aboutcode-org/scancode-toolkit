@@ -1,3 +1,24 @@
+---
+key: oracle-web-sites-tou
+short_name: Oracle Web Sites TOU
+name: Oracle Web Sites Terms of Use
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: http://www.oracle.com/html/terms.html
+spdx_license_key: LicenseRef-scancode-oracle-web-sites-tou
+text_urls:
+    - http://www.oracle.com/html/terms.html
+ignorable_copyrights:
+    - Copyright (c) 1995, 2010, Oracle and/or its affiliates
+ignorable_holders:
+    - Oracle and/or its affiliates
+ignorable_urls:
+    - http://www.oracle.com/html/privacy.html
+    - http://www.oracle.com/html/terms.html
+ignorable_emails:
+    - trademar_us@oracle.com
+---
+
 Oracle Web Sites Terms of Use
 
 http://www.oracle.com/html/terms.html

@@ -1,3 +1,14 @@
+---
+key: sun-bcl-11-06
+short_name: Sun BCL 11 plus 6
+name: Sun BCL 11 plus 6
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-11-06
+ignorable_urls:
+    - http://www.sun.com/policies/trademarks
+---
+
 License Agreement for {ProductName}
 Sun Microsystems, Inc. Binary Code License Agreement
 

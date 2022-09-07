@@ -1,3 +1,20 @@
+---
+key: bsd-plus-patent
+short_name: BSD-2-Clause Plus Patent
+name: BSD-2-Clause Plus Patent
+category: Permissive
+owner: OSI - Open Source Initiative
+homepage_url: https://opensource.org/licenses/BSDplusPatent
+notes: |
+    Per the OSI, this license is designed to provide a) a simple permissive
+    license; b) that is compatible with the GNU General Public License (GPL),
+    version 2; and c) which also has an express patent grant included.
+spdx_license_key: BSD-2-Clause-Patent
+text_urls:
+    - https://opensource.org/licenses/BSDplusPatent
+osi_url: https://opensource.org/licenses/BSDplusPatent
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:

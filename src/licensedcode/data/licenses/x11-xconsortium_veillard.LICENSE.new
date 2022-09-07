@@ -1,3 +1,17 @@
+---
+key: x11-xconsortium_veillard
+is_deprecated: yes
+short_name: X11-Style (X Consortium Veillard) - Deprecated
+name: X11-Style (X Consortium Veillard) - Deprecated
+category: Permissive
+owner: Daniel Veillard
+standard_notice: |
+    Except where otherwise noted in the source code (e.g. the files hash.c,
+    list.c and the trio files, which are covered by a similar licence but
+    with different Copyright notices) all the files are:
+    Copyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to

@@ -1,3 +1,22 @@
+---
+key: rubyencoder-loader
+short_name: RubyEncoder Loader Licence
+name: RubyEncoder Loader Licence
+category: Proprietary Free
+owner: RubyEncoder
+homepage_url: https://www.rubyencoder.com/loaders.html
+spdx_license_key: LicenseRef-scancode-rubyencoder-loader
+other_urls:
+    - https://www.rubyencoder.com/terms.html
+ignorable_authors:
+    - assurances as SourceGuardian Ltd
+ignorable_urls:
+    - http://www.rubyencoder.com/
+    - http://www.rubyencoder.com/terms.html
+ignorable_emails:
+    - support@rubyencoder.com
+---
+
 RUBYENCODER LOADER LICENCE 
  
 This Licence applies to the use of the Loaders for RubyEncoder by End Users and is granted by SourceGuardian Ltd (registered number 05663267) which is referred to in this Licence as “RubyEncoder”.  The licence terms for the use of RubyEncoder software are set out at http://www.rubyencoder.com/terms.html. If you are a licensee of RubyEncoder your use of the Loaders is governed by that licence.

@@ -1,3 +1,20 @@
+---
+key: rute
+short_name: Rute Users Tutorial and Exposition License 0.8.0
+name: Rute Users Tutorial and Exposition License v0.8.0
+category: Permissive
+owner: Unspecified
+homepage_url: http://rute.sourceforge.net/
+spdx_license_key: LicenseRef-scancode-rute
+faq_url: http://rute.sourceforge.net/
+other_urls:
+    - http://rute.sourceforge.net/
+    - http://rute.sourceforge.net/rute-HTML.tar.gz
+    - http://rute.sourceforge.net/rute.dvi.gz
+    - http://rute.sourceforge.net/rute.pdf
+    - http://rute.sourceforge.net/rute.ps.gz
+---
+
 Copying
 
 This license dictates the conditions under which you may copy, modify and distribute this work.

@@ -1,3 +1,13 @@
+---
+key: microchip-linux-firmware
+short_name: Microchip Linux Firmware License
+name: Microchip Linux Firmware License
+category: Proprietary Free
+owner: Microchip
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.microchip
+spdx_license_key: LicenseRef-scancode-microchip-linux-firmware
+---
+
 REDISTRIBUTION: Permission is hereby granted by Microchip Technology
 Incorporated (Microchip), free of any license fees, to any person obtaining a
 copy of this firmware (the "Software"), to install, reproduce, copy and

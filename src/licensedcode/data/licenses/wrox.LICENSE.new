@@ -1,3 +1,22 @@
+---
+key: wrox
+short_name: Wrox Press License
+name: Wrox Press License
+category: Permissive
+owner: Wiley
+homepage_url: http://www.wrox.com/WileyCDA/Section/Wrox-Download-Code-FAQ.id-106010.html#terms
+spdx_license_key: LicenseRef-scancode-wrox
+text_urls:
+    - http://www.wrox.com/WileyCDA/Section/Wrox-Download-Code-FAQ.id-106010.html#terms
+minimum_coverage: 30
+ignorable_copyrights:
+    - copyright John Wiley & Sons, Inc.
+ignorable_holders:
+    - John Wiley & Sons, Inc.
+ignorable_urls:
+    - http://www.wrox.com/
+---
+
 Many Wrox readers ask us "Can I use code from Wrox books in my applications?"
 Here's our answer: Yes, you may use code from any Wrox book published by Wiley &
 Sons, Inc. in your application, software, or service under the following

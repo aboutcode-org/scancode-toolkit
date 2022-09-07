@@ -1,3 +1,19 @@
+---
+key: netcomponents
+short_name: NetComponents License
+name: NetComponents License
+category: Permissive
+owner: Savarese.Org
+homepage_url: http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
+spdx_license_key: LicenseRef-scancode-netcomponents
+text_urls:
+    - http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
+ignorable_copyrights:
+    - Copyright (c) 1996-1999 Daniel F. Savarese
+ignorable_holders:
+    - Daniel F. Savarese
+---
+
 Savarese.Org
 Copyright © 1996-1999 Daniel F. Savarese.
 Copyright in this document and the software accompanying this document is owned by Daniel F. Savarese. All rights reserved.

@@ -1,3 +1,13 @@
+---
+key: red-hat-logos
+short_name: Red Hat Logos License
+name: Red Hat Logos License
+category: Proprietary Free
+owner: Red Hat
+homepage_url: http://webcache.googleusercontent.com/search?q=cache:http://www.sslug.dk/~chlor/rpm3html/pack/redhat-logos.html
+spdx_license_key: LicenseRef-scancode-red-hat-logos
+---
+
 Red Hat, Inc. grants you the right to use the Package during the
 normal operation of other software programs that call upon the
 Package.  Red Hat, Inc. grants to you the right and license to copy

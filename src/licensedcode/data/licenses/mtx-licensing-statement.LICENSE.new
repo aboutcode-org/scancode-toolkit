@@ -1,3 +1,17 @@
+---
+key: mtx-licensing-statement
+short_name: MicroType Express (MTX) License
+name: MicroType Express (MTX) License
+category: Proprietary Free
+owner: Monotype
+homepage_url: https://www.monotype.com/legal/mtx-licensing-statement
+spdx_license_key: LicenseRef-scancode-mtx-licensing-statement
+other_urls:
+    - http://www.w3.org/Submission/MTX/
+ignorable_urls:
+    - http://www.w3.org/Submission/MTX
+---
+
 Patent License Grant. Monotype hereby grants to All a worldwide, non-exclusive, nocharge, royalty-free, irrevocable license under the Licensed Patents to make, use for any purpose, sell, and otherwise distribute and provide Licensed Products and Services, said license having a term until the last to expire of the Licensed Patents.
 
 Code and Format License. Monotype hereby grants to All a perpetual, worldwide, nonexclusive, no-charge, royalty-free, irrevocable license under its copyright rights to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, distribute, and otherwise use in Licensed Products and Services the Licensed Software and the Licensed Format, said license having a term until expiration of the foregoing copyright rights.
