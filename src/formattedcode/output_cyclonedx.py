@@ -8,12 +8,15 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
 import json
+import logging
 import uuid
 from collections import defaultdict
 from datetime import datetime
 from enum import Enum
 from typing import List
+import warnings
 
 import attr
 from lxml import etree
@@ -24,6 +27,25 @@ from formattedcode import FileOptionType
 from licensedcode.cache import build_spdx_license_expression
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
+
+
+TRACE = os.environ.get('SCANCODE_DEBUG_OUTPUTS', False)
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class ToDictMixin:
@@ -274,7 +296,7 @@ class CycloneDxComponent:
 
         purl = package.get('purl')
 
-        return CycloneDxComponent(
+        return cls(
             bom_ref=purl,
             purl=purl,
             name=name,
@@ -301,7 +323,7 @@ class CycloneDxComponent:
         """
         components_by_purl = defaultdict(list)
         for package in packages:
-            comp = CycloneDxComponent.from_package(package)
+            comp = cls.from_package(package)
             if not comp:
                 continue
             components_by_purl[comp.purl].append(comp)
@@ -497,7 +519,7 @@ class CycloneDxDependency(ToDictMixin):
                     warnings_by_dependent[purl].append(msg)
 
         for ref, dependsOn in dependencies_by_dependent.items():
-            yield CycloneDxDependency(
+            yield cls(
                 ref=ref,
                 dependsOn=dependsOn,
                 warnings=warnings_by_dependent.get(purl, [])
@@ -556,6 +578,11 @@ class CycloneDxMetadata:
         headers = [h for h in headers if h.get('tool_name') == 'scancode-toolkit']
         scancode_header = headers[0] if headers else {}
 
+        if TRACE:
+            logger_debug('CycloneDxMetadata: headers')
+            from pprint import pformat
+            logger_debug(pformat(headers))
+
         try:
             tool_header = {
                 'vendor': 'AboutCode.org',
@@ -568,10 +595,16 @@ class CycloneDxMetadata:
         props = dict(
             notice=scancode_header.get('notice'),
             errors=scancode_header.get('errors', []),
+            warnings=scancode_header.get('warnings', []),
             message=scancode_header.get('message'),
         )
         props.update(scancode_header.get('extra_data', {}))
         properties = [CycloneDxProperty(k, v) for k, v in props.items()]
+
+        if TRACE:
+            logger_debug('CycloneDxMetadata: properties')
+            from pprint import pformat
+            logger_debug(pformat(properties))
 
         return CycloneDxMetadata(
             tools=[tool_header],
@@ -594,6 +627,10 @@ class CycloneDxMetadata:
         tools = etree.SubElement(xmetadata, 'tools')
         tools.append(tool)
         return xmetadata
+
+
+class CycloneDxPluginNoPackagesWarning(DeprecationWarning):
+    pass
 
 
 @attr.s
@@ -629,10 +666,32 @@ class CycloneDxBom:
         """
         Return a CycloneDxBom built from a ScanCode ``codebase``.
         """
-        metadata = CycloneDxMetadata.from_headers(codebase.get_headers())
-        packages = codebase.attributes.packages
-        components = list(CycloneDxComponent.from_packages(packages))
-        dependencies = list(CycloneDxDependency.from_packages(packages, components))
+        components = []
+        dependencies = []
+
+        packages_not_found_message = (
+            "The --cyclonedx-xml option will not output any component/dependency data "
+            "as there are no package data in the present scan. To get package data "
+            "please rerun the scan with --package or --system-package CLI options enabled."
+        )
+        codebase.get_or_create_current_header()
+
+        if hasattr(codebase.attributes, 'packages'):
+            packages = codebase.attributes.packages
+            components = list(CycloneDxComponent.from_packages(packages))
+            dependencies = list(CycloneDxDependency.from_packages(packages, components))
+        else:
+            warnings.simplefilter('always', CycloneDxPluginNoPackagesWarning)
+            warnings.warn(
+                packages_not_found_message,
+                CycloneDxPluginNoPackagesWarning,
+                stacklevel=2,
+            )
+            headers = codebase.get_or_create_current_header()
+            headers.warnings.append(packages_not_found_message)
+
+        codebase_headers = codebase.get_headers()
+        metadata = CycloneDxMetadata.from_headers(codebase_headers)
 
         return CycloneDxBom(
             metadata=metadata,

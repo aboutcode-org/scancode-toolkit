@@ -14,12 +14,14 @@
         "type": "person",
         "role": "author",
         "name": "Marc Abramowitz",
-        "email": null,
+        "email": "msabramo@gmail.com",
         "url": null
       }
     ],
     "keywords": [
-      "setup.py pin dependencies"
+      "setup.py",
+      "pin",
+      "dependencies"
     ],
     "homepage_url": "https://github.com/msabramo/setuppycheck",
     "download_url": null,
@@ -43,12 +45,13 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/mock",
-        "extracted_requirement": null,
+        "extracted_requirement": "mock",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/setuppycheck",

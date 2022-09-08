@@ -2,21 +2,43 @@ Changelog
 =========
 
 
-The package repository_homepage_url, repository_download_url, api_data_url are
-now plain field and not always computed fields.
 
-31.0.0 (next, roadmap)
------------------------
+v32.0.0 (next next, roadmap)
+----------------------------------
 
-This is a major release with important bug and security fixes, new and improved
-features and API changes.
+Package detection:
+~~~~~~~~~~~~~~~~~~
 
+- We now support new package manifest formats:
 
-Important API changes:
-~~~~~~~~~~~~~~~~~~~~~~~~
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
 
-- The data structure of the JSON output has changed for copyrights, authors
-  and holders. We now use a proper name for attributes and not a generic "value".
+- Update ``GemfileLockParser`` to track the gem which the Gemfile.lock is for,
+  which we assign to the new ``GemfileLockParser.primary_gem`` field. Update
+  ``GemfileLockHandler.parse()`` to handle the case where there is a primary gem
+  detected from a gemfile.lock. If there is a primary gem, a single ``Package``
+  is created and the detected gem data within the gemfile.lock are assigned as
+  dependencies. If there is no primary gem, then all of the dependencies are
+  collected into Package with no name and yielded.
+
+  https://github.com/nexB/scancode-toolkit/issues/3072
+
+- Fix issue where dependencies were not reported when scanning an extracted
+  Python project by modifying ``BaseExtractedPythonLayout.assemble()`` to favor
+  using package data from a PKG-INFO file from an egg-info directory. Package
+  data from a PKG-INFO file from an egg-info directory contains the dependency
+  information collected from the requirements.txt file along side PKG-INFO.
+
+  https://github.com/nexB/scancode-toolkit/issues/3083
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- There is a major update to license detection where we now combine one or
+  matches in a larger license detecion. This remove a larger number of false
+  positive or ambiguous license detections.
+
 
 - The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
@@ -24,6 +46,62 @@ Important API changes:
   "license_references" attribute that contains the data details for each
   detected license only once. This data can contain the reference license text
   as an option.
+
+
+
+
+v31.1.1 - 2022-09-02
+----------------------------------
+
+This is a minor release with a bug fix.
+
+- Do not display tracing/debug outputs at runtime
+
+
+
+v31.1.0 - 2022-08-29
+----------------------------------
+
+This is a minor release with critical bug fixes and minor updates.
+
+- Fix a critical bug in license detection
+- Add a few new licenses and license detection rules
+
+
+v31.0.2 - 2022-08-24
+----------------------------------
+
+This is a minor release with small bug fixes and minor updates.
+
+- Fix minor bug in PyPI package assembly
+- Add a few new licenses and license detection rules
+- Update commoncode
+
+
+v31.0.2 - 2022-08-24
+----------------------------------
+
+This is a minor release with small bug fixes and minor updates.
+
+- Fix minor bug in PyPI package assembly
+- Add a few new licenses and license detection rules
+- Update commoncode
+
+
+v31.0.0 - 2022-08-17
+-----------------------
+
+This is a major release with important bug and security fixes, new and improved
+features and API changes.
+
+Note that we no longer support Python 3.6. Use Python 3.7+ instead.
+
+
+Important API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The data structure of the JSON output has changed for copyrights, authors
+  and holders. We now use a proper name for attributes and not a generic "value".
 
 - The data structure of the JSON output has changed for packages. We now
   return "package_data" package information at the manifest file-level
@@ -35,6 +113,7 @@ Important API changes:
 
   - There is a a new top-level "dependencies" attribute that contains each
     dependency instance, these can be standalone or releated to a package.
+    These contain a new "extra_data" object.
 
   - There is a new resource-level attribute "for_packages" which refers to
     packages through package_uuids (pURL + uuid string).
@@ -60,6 +139,13 @@ Important API changes:
   under the ``venv`` subdirectory. You mus be aware of this if you use ScanCode
   from a git clone
 
+- ``DatafileHandler.assemble()``, ``DatafileHandler.assemble_from_many()``, and
+  the other ``.assemble()`` methods from the other Package handlers from
+  packagedcode, have been updated to yield Package items before Dependency or
+  Resource items. This is particulary important in the case where we are calling
+  the ``assemble()`` method outside of the scancode-toolkit context, where we
+  need to ensure that a Package exists before we assocate a Resource or
+  Dependency to it.
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
@@ -76,12 +162,10 @@ License detection:
 
 - There have been significant license detection rules and licenses updates:
 
-  - XX new licenses have been added,
-  - XX existing license metadata have been updated,
-  - XXXX new license detection rules have been added, and
-  - XXXX existing license rules have been updated.
-  - XXXX existing false positive license rules have been removed (see below).
-  - The SPDX license list has been updated to the latest v3.16
+  - 107 new licenses have been added (total is now 1954)
+  - 6780 new license detection rules have been added (total is now 32259)
+  - 6753 existing false positive license rules have been removed (see below).
+  - The SPDX license list has been updated to the latest v3.17
 
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
@@ -144,10 +228,6 @@ License detection:
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
-- We now support new package manifest formats:
-  - OpenWRT packages.
-  - Yocto/BitBake .bb recipes.
-
 - Major changes in package detection and reporting, codebase-level attribute `packages`
   with one or more `package_data` and files for the packages are reported.
   The specific changes made are:
@@ -167,16 +247,23 @@ Package detection:
     of the new format where there is no root conceptually, just a list of files for each
     package.
 
-  - There is a new resource-level attribute `for_packages` which refers to packages
-    through package_uuids (pURL + uuid string).
+  - There is a new resource-level attribute `for_packages` which refers to
+    packages through package_uids (pURL + uuid string). A `package_adder`
+    function is now used to associate a Package to a Resource that is part of
+    it. This gives us the flexibility to use the packagedcode Package handlers
+    in other contexts where `for_packages` on Resource is not implemented in the
+    same way as scancode-toolkit.
 
   - The package_data attribute `dependencies` (which is a list of DependentPackages),
     now has a new attribute `resolved_package` with a package data mapping.
     Also the `requirement` attribute is renamed to `extracted_requirement`.
+    There is a new `extra_data` to collect extra data as needed.
+
+- For Pypi packages, python_requires is treated as a package dependency.
 
 
-License Clarity Scoring Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+License Clarity Scoring Update:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - We are moving away from the original license clarity scoring designed for
   ClearlyDefined in the license clarity score plugin. The previous license
@@ -236,12 +323,12 @@ License Clarity Scoring Update
     - Scoring Weight = -20
 
 
-Summary Plugin Update
-~~~~~~~~~~~~~~~~~~~~~
+Summary Plugin Update:
+~~~~~~~~~~~~~~~~~~~~~~
 
 - The summary plugin's behavior has been changed. Previously, it provided a
   count of the detected license expressions, copyrights, holders, authors, and
-  programming languages from a scan. 
+  programming languages from a scan.
 
   We have preserved this functionality by creating a new plugin called ``tallies``.
   All functionality of the previous summary plugin have been preserved in the
@@ -251,7 +338,7 @@ Summary Plugin Update
   declared holder, and the primary programming language from a scan. And the
   updated license clarity score provides context on the quality  of the license
   information provided in the codebase key files.
-  
+
 - The new summary plugin also returns lists of tallies for the other "secondary"
   detected license expressions, copyright holders, and programming languages.
 
@@ -261,11 +348,16 @@ All summary information is provided at the codebase-level attribute named ``summ
 Outputs:
 ~~~~~~~~
 
- - Added new outputs for the CycloneDx format.
-   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+- Added new outputs for the CycloneDx format.
+  The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
- - A new field ``warnings`` has been added to the headers of ScanCode toolkit output
-   that contains any warning messages that occur during a scan.
+- A new field ``warnings`` has been added to the headers of ScanCode toolkit output
+  that contains any warning messages that occur during a scan.
+
+- The CSV output format --csv option is now deprecated. It will be replaced by
+  new CSV and tabular output formats in the next ScanCode release.
+  Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs
+  and feedback.
 
 
 Output version
@@ -276,11 +368,34 @@ Scancode Data Output Version is now 2.0.0.
 
 Changes:
 
-- rename resource level attribute `packages` to `package_data`.
-- add top-level attribute `packages`.
-- add top-level attribute `dependencies`.
-- add resource-level attribute `for_packages`.
-- remove `package-data` attribute `root_path`.
+- Rename resource level attribute `packages` to `package_data`.
+- Add top-level attribute `packages`.
+- Add top-level attribute `dependencies`.
+- Add resource-level attribute `for_packages`.
+- Remove `package-data` attribute `root_path`.
+- The fields of the license clarity scoring plugin have been replaced with the
+  following fields. An overview of the new fields can be found in the "License
+  Clarity Scoring Update" section above.
+
+    - `score`
+    - `declared_license`
+    - `identification_precision`
+    - `has_license_text`
+    - `declared_copyrights`
+    - `conflicting_license_categories`
+    - `ambigious_compound_licensing`
+
+- The fields of the summary plugin have been replaced with the following fields.
+  An overview of the new fields can be found in the "Summary Plugin Update"
+  section above.
+
+    - `declared_license_expression`
+    - `license_clarity_score`
+    - `declared_holder`
+    - `primary_language`
+    - `other_license_expressions`
+    - `other_holders`
+    - `other_languages`
 
 
 Documentation Update
@@ -308,7 +423,18 @@ Development environment and Code API changes:
   regen=True in the code.
 
 
-30.1.0 - 2021-09-25
+Miscellaneous
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added support for usage of shortcut flags
+  - `-A` or `--about`
+  - `-q` or `--quiet`
+  - `-v` or `--verbose`
+  - `-V` or `--version` can be used.
+
+
+
+v30.1.0 - 2021-09-25
 --------------------
 
 This is a bug fix release for these bugs:
@@ -326,7 +452,7 @@ Thank you to:
 
 
 
-30.0.1 - 2021-09-24
+v30.0.1 - 2021-09-24
 --------------------
 
 This is a minor bug fix release for these bugs:
@@ -342,7 +468,7 @@ Thank you to:
 
 
 
-30.0.0 - 2021-09-23
+v30.0.0 - 2021-09-23
 --------------------
 
 This is a major release with new features, and several bug fixes and

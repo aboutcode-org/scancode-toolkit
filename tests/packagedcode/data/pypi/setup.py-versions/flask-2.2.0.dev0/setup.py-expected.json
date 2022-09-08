@@ -1,0 +1,109 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "Flask",
+    "version": "2.2.0.dev0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": {},
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/werkzeug",
+        "extracted_requirement": "Werkzeug>=2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "extracted_requirement": "Jinja2>=3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/itsdangerous",
+        "extracted_requirement": "itsdangerous>=2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/click",
+        "extracted_requirement": "click>=8.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": "importlib-metadata>=3.6.0; python_version < \"3.10\"",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/asgiref",
+        "extracted_requirement": "asgiref>=3.2",
+        "scope": "async",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-dotenv",
+        "extracted_requirement": "python-dotenv",
+        "scope": "dotenv",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/Flask",
+    "repository_download_url": "https://pypi.org/packages/source/F/Flask/Flask-2.2.0.dev0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/Flask/2.2.0.dev0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/flask@2.2.0.dev0"
+  }
+]

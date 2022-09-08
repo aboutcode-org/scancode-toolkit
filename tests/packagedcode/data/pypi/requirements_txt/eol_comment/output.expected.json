@@ -31,12 +31,24 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/req@1.0",
-        "extracted_requirement": "==1.0",
+        "extracted_requirement": "req==1.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       }
     ],
     "repository_homepage_url": null,

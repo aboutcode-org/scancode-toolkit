@@ -1,0 +1,49 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "extras_require_with_vars",
+    "version": "0.0.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "test setup_reader.py",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": {},
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": "pytest",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/extras_require_with_vars",
+    "repository_download_url": "https://pypi.org/packages/source/e/extras_require_with_vars/extras_require_with_vars-0.0.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/extras_require_with_vars/0.0.1/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/extras-require-with-vars@0.0.1"
+  }
+]

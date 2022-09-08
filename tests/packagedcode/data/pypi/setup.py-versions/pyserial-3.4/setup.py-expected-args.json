@@ -1,0 +1,33 @@
+{
+  "name": "pyserial",
+  "description": "Python Serial Port Extension",
+  "author": "Chris Liechti",
+  "author_email": "cliechti@gmx.net",
+  "url": "https://github.com/pyserial/pyserial",
+  "license": "BSD",
+  "long_description": "Python Serial Port Extension for Win32, OSX, Linux, BSD, Jython, IronPython\n\nStable:\n\n- Documentation: http://pythonhosted.org/pyserial/\n- Download Page: https://pypi.python.org/pypi/pyserial\n\nLatest:\n\n- Documentation: http://pyserial.readthedocs.io/en/latest/\n- Project Homepage: https://github.com/pyserial/pyserial\n",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.2",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Communications",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Terminals :: Serial"
+  ],
+  "platforms": "any"
+}

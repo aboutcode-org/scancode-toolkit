@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"ar-ER.js",
+"sourceRoot":"",
+"sources":["../../../../../packages/common/locales/extra/ar-ER.ts"],
+"names":[],
+"mappings":"CAAC",
+"sourcesContent":["line1\\nline2\\nline3 start \\\\n line3 end \\nline4"]
+}

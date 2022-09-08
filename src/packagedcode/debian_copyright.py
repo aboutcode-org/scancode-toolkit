@@ -132,11 +132,11 @@ class DebianCopyrightFileInSourceHandler(BaseDebianCopyrightFileHandler):
     )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         # two levels up
         root = resource.parent(codebase).parent(codebase)
         if root:
-            return cls.assign_package_to_resources(package, root, codebase)
+            return cls.assign_package_to_resources(package, root, codebase, package_adder)
 
 
 # TODO: distiguish the cased of an installed package vs. the case of an extracted .deb
@@ -152,7 +152,7 @@ class DebianCopyrightFileInPackageHandler(BaseDebianCopyrightFileHandler):
     )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # DO NOTHING: let other handler reuse this
         return []
 
@@ -169,9 +169,9 @@ class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):
     )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # assemble is the default
-        yield from super().assemble(package_data, resource, codebase)
+        yield from super().assemble(package_data, resource, codebase, package_adder)
 
 
 class NotReallyStructuredCopyrightFile(Exception):
@@ -1572,7 +1572,7 @@ def add_unknown_matches(name, text):
 
     unknown_rule = UnknownRule(
         license_expression=expression_str,
-        stored_text=license_text,
+        text=license_text,
         length=match_len,
     )
 

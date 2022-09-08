@@ -1,0 +1,5 @@
+license_expression: generic-cla
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://code.google.com/legal/corporate-cla-v1.0.html

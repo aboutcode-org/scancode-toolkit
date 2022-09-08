@@ -1,0 +1,29 @@
+{
+  "name": "boolean.py",
+  "version": "1.2",
+  "license": "revised BSD license",
+  "description": "Boolean Algreba",
+  "long_description": "\nThis library helps you deal with boolean expressions and algebra with variables\nand the boolean functions AND, OR, NOT.\n\nYou can parse expressions from strings and simplify and compare expressions.\nYou can also easily create custom tokenizers to handle custom expressions.  \n\nFor extensive documentation look either into the docs directory or view it online, at\nhttps://booleanpy.readthedocs.org/en/latest/\n\nhttps://github.com/bastikr/boolean.py\n\nCopyright (c) 2009-2016 Sebastian Kraemer, basti.kr@gmail.com and others\n\nReleased under revised BSD license.\n",
+  "author": "Sebastian Kraemer",
+  "author_email": "basti.kr@gmail.com",
+  "url": "https://github.com/bastikr/boolean.py",
+  "keywords": [
+    "boolean expression",
+    "boolean algebra",
+    "logic",
+    "expression parser"
+  ],
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities"
+  ]
+}

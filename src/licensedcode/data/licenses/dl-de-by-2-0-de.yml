@@ -10,5 +10,6 @@ other_spdx_license_keys:
     - LicenseRef-scancode-dl-de-by-2-0-de
 other_urls:
     - https://www.dcat-ap.de/def/licenses/
+    - https://www.govdata.de/dl-de/by-2-0
 ignorable_urls:
     - http://www.govdata.de/dl-de/by-2-0

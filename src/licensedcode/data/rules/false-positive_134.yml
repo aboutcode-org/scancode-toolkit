@@ -1,0 +1,2 @@
+is_false_positive: yes
+notes: Comment in ebpf in github.com/cilium/ebpf/prog.go

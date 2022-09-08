@@ -1,0 +1,3 @@
+license_expression: warranty-disclaimer
+is_license_notice: yes
+notes: See https://github.com/nerses73/epics/blob/3ba865e6af4ff914d15969b40f7b91b2496b22d5/qt/QtDM_3_4_2_orig_build/caQtDM_QtControls/src/caVisibPrivate.h#L4

@@ -1,0 +1,9 @@
+key: homebrewed
+short_name: Homebrewed License
+name: Homebrewed or Craft Beer License
+category: Permissive
+owner: Alexis Métaireau
+homepage_url: https://github.com/spiral-project/ihatemoney/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-homebrewed
+text_urls:
+    - https://github.com/laukiet78/Ihatemoney/blob/b89bd1e690847646a71920f1b7152675dd164a87/LICENSE

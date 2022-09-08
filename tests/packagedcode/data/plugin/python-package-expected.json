@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/atomicwrites@1.1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/attrs@18.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/contextlib2@0.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/coverage@4.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/funcsigs@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -73,6 +78,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/mock@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -86,6 +92,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/more-itertools@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -99,6 +106,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pbr@4.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -112,6 +120,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pluggy@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -125,6 +134,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/py@1.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -138,6 +148,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest@3.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -151,6 +162,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest-cov@2.5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -164,6 +176,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest-vcr@0.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -177,6 +190,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/pyyaml@3.13?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -190,6 +204,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/six@1.11.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -203,6 +218,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/vcrpy@1.13.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -216,6 +232,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pypi/wrapt@1.10.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "atomicwrites/Pipfile.lock",
@@ -223,12 +240,24 @@
     },
     {
       "purl": "pkg:pypi/setuptools",
-      "extracted_requirement": ">=32.0.0",
+      "extracted_requirement": "setuptools>=32.0.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/setuptools?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -236,12 +265,24 @@
     },
     {
       "purl": "pkg:pypi/nose",
-      "extracted_requirement": ">=1.3.7",
+      "extracted_requirement": "nose>=1.3.7",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/nose?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -249,12 +290,24 @@
     },
     {
       "purl": "pkg:pypi/chardet",
-      "extracted_requirement": ">=3.0.4",
+      "extracted_requirement": "chardet>=3.0.4",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {
+        "is_editable": false,
+        "link": null,
+        "hash_options": [],
+        "is_constraint": false,
+        "is_archive": null,
+        "is_wheel": false,
+        "is_url": null,
+        "is_vcs_url": null,
+        "is_name_at_url": false,
+        "is_local_path": null
+      },
       "dependency_uid": "pkg:pypi/chardet?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "requirements/requirements.txt",
@@ -277,7 +330,7 @@
           "type": "person",
           "role": "author",
           "name": "Stanis\u0142aw Pitucha",
-          "email": null,
+          "email": "viraptor@gmail.com",
           "url": null
         }
       ],
@@ -745,7 +798,7 @@
               "type": "person",
               "role": "author",
               "name": "Stanis\u0142aw Pitucha",
-              "email": null,
+              "email": "viraptor@gmail.com",
               "url": null
             }
           ],
@@ -830,7 +883,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/attrs@18.1.0",
@@ -839,7 +893,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/contextlib2@0.5.5",
@@ -848,7 +903,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/coverage@4.5.1",
@@ -857,7 +913,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/funcsigs@1.0.2",
@@ -866,7 +923,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/mock@2.0.0",
@@ -875,7 +933,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/more-itertools@4.2.0",
@@ -884,7 +943,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pbr@4.2.0",
@@ -893,7 +953,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pluggy@0.6.0",
@@ -902,7 +963,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/py@1.5.4",
@@ -911,7 +973,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest@3.6.3",
@@ -920,7 +983,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest-cov@2.5.1",
@@ -929,7 +993,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pytest-vcr@0.3.0",
@@ -938,7 +1003,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pyyaml@3.13",
@@ -947,7 +1013,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/six@1.11.0",
@@ -956,7 +1023,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/vcrpy@1.13.0",
@@ -965,7 +1033,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pypi/wrapt@1.10.11",
@@ -974,7 +1043,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -1143,30 +1213,66 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/setuptools",
-              "extracted_requirement": ">=32.0.0",
+              "extracted_requirement": "setuptools>=32.0.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/nose",
-              "extracted_requirement": ">=1.3.7",
+              "extracted_requirement": "nose>=1.3.7",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             },
             {
               "purl": "pkg:pypi/chardet",
-              "extracted_requirement": ">=3.0.4",
+              "extracted_requirement": "chardet>=3.0.4",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {
+                "is_editable": false,
+                "link": null,
+                "hash_options": [],
+                "is_constraint": false,
+                "is_archive": null,
+                "is_wheel": false,
+                "is_url": null,
+                "is_vcs_url": null,
+                "is_name_at_url": false,
+                "is_local_path": null
+              }
             }
           ],
           "repository_homepage_url": null,

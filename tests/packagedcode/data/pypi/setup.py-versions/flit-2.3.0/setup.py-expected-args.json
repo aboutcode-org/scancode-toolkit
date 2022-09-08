@@ -1,0 +1,34 @@
+{
+  "name": "flit",
+  "version": "2.3.0",
+  "description": "A simple packaging tool for simple packages.",
+  "author": "Thomas Kluyver",
+  "author_email": "thomas@kluyver.me.uk",
+  "url": "https://github.com/takluyver/flit",
+  "install_requires": [
+    "flit_core>=2.3.0",
+    "requests",
+    "docutils",
+    "pytoml"
+  ],
+  "extras_require": {
+    ":python_version in '3.3 3.4 3.5'": [
+      "zipfile36"
+    ],
+    "doc": [
+      "sphinx",
+      "sphinxcontrib_github_alt",
+      "pygments-github-lexers"
+    ],
+    "installfrom": [
+      "requests_download"
+    ],
+    "test": [
+      "testpath",
+      "responses",
+      "pytest>=2.7.3",
+      "pytest-cov"
+    ]
+  },
+  "python_requires": ">=3.5"
+}

@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cran/R?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "DESCRIPTION",
@@ -128,7 +129,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://cran.r-project.org/package=codetools",

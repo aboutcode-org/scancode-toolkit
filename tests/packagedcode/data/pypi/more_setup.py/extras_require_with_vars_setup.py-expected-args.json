@@ -1,0 +1,10 @@
+{
+  "name": "extras_require_with_vars",
+  "version": "0.0.1",
+  "description": "test setup_reader.py",
+  "extras_require": {
+    "test": [
+      "pytest"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+key: ms-visual-studio-code-2022
+short_name: MS Visual Studio Code License 2022
+name: Microsoft Visual Studio Code License 2022
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://code.visualstudio.com/license
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-code-2022
+ignorable_urls:
+    - https://aka.ms/vsmarketplace-ToU
+    - https://code.visualstudio.com/docs/supporting/faq#_how-to-disable
+    - https://docs.microsoft.com/legal/gdpr
+    - https://github.com/Microsoft/vscode
+    - https://go.microsoft.com/fwlink/?LinkID=616397
+    - https://go.microsoft.com/fwlink/?LinkID=824704
+    - https://www.microsoft.com/exporting

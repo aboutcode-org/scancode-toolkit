@@ -118,8 +118,8 @@ class OpamFileHandler(models.DatafileHandler):
         yield package_data
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
 def get_repository_homepage_url(name):

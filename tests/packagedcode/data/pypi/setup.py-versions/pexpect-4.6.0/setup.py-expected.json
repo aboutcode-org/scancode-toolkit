@@ -1,66 +1,82 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "pexpect",
-  "version": "4.6.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "Pexpect allows easy control of interactive console applications.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Noah Spurrier; Thomas Kluyver; Jeff Quast",
-      "email": "noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com",
-      "url": "https://pexpect.readthedocs.io/"
-    }
-  ],
-  "keywords": [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "Intended Audience :: System Administrators",
-    "Operating System :: POSIX",
-    "Operating System :: MacOS :: MacOS X",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Topic :: Software Development",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: Testing",
-    "Topic :: System",
-    "Topic :: System :: Archiving :: Packaging",
-    "Topic :: System :: Installation/Setup",
-    "Topic :: System :: Shells",
-    "Topic :: System :: Software Distribution",
-    "Topic :: Terminals"
-  ],
-  "homepage_url": "https://pexpect.readthedocs.io/",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": {
-    "license": "ISC license",
-    "classifiers": [
-      "License :: OSI Approved :: ISC License (ISCL)"
-    ]
-  },
-  "notice_text": null,
-  "dependencies": [],
-  "source_packages": [],
-  "purl": "pkg:pypi/pexpect@4.6.0",
-  "repository_homepage_url": "https://pypi.org/project/pexpect",
-  "repository_download_url": "https://pypi.io/packages/source/p/pexpect/pexpect-4.6.0.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/pexpect/4.6.0/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pexpect",
+    "version": "4.6.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Pexpect allows easy control of interactive console applications.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Noah Spurrier; Thomas Kluyver; Jeff Quast",
+        "email": "noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Console",
+      "Intended Audience :: Developers",
+      "Intended Audience :: System Administrators",
+      "Operating System :: POSIX",
+      "Operating System :: MacOS :: MacOS X",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Topic :: Software Development",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Topic :: Software Development :: Quality Assurance",
+      "Topic :: Software Development :: Testing",
+      "Topic :: System",
+      "Topic :: System :: Archiving :: Packaging",
+      "Topic :: System :: Installation/Setup",
+      "Topic :: System :: Shells",
+      "Topic :: System :: Software Distribution",
+      "Topic :: Terminals"
+    ],
+    "homepage_url": "https://pexpect.readthedocs.io/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "isc",
+    "declared_license": {
+      "license": "ISC license",
+      "classifiers": [
+        "License :: OSI Approved :: ISC License (ISCL)"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/ptyprocess",
+        "extracted_requirement": "ptyprocess>=0.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/pexpect",
+    "repository_download_url": "https://pypi.org/packages/source/p/pexpect/pexpect-4.6.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/pexpect/4.6.0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pexpect@4.6.0"
+  }
+]

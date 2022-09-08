@@ -1,0 +1,68 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pip",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "The PyPA recommended tool for installing Python packages.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "The pip developers",
+        "email": "distutils-sig@python.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Topic :: Software Development :: Build Tools",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy"
+    ],
+    "homepage_url": "https://pip.pypa.io/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://github.com/pypa/pip",
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "Documentation": "https://pip.pypa.io",
+      "Changelog": "https://pip.pypa.io/en/stable/news/",
+      "python_requires": ">=3.7"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/pip",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/pip/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pip"
+  }
+]

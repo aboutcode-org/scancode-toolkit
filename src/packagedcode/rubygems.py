@@ -58,7 +58,7 @@ class GemArchiveHandler(BaseGemHandler):
         )
 
 
-def assemble_extracted_gem(cls, package_data, resource, codebase):
+def assemble_extracted_gem(cls, package_data, resource, codebase, package_adder):
     """
     An assemble implementation shared by handlers for manifests found in an
     extracted gem using extractcode.
@@ -76,6 +76,7 @@ def assemble_extracted_gem(cls, package_data, resource, codebase):
         datafile_name_patterns=datafile_name_patterns,
         directory=gemroot,
         codebase=codebase,
+        package_adder=package_adder,
     )
 
 
@@ -101,14 +102,14 @@ class GemMetadataArchiveExtractedHandler(BaseGemHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         yield from assemble_extracted_gem(cls, package_data, resource, codebase)
 
 
 class BaseGemProjectHandler(BaseGemHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         datafile_name_patterns = (
             '*.gemspec',
             'Gemfile',
@@ -119,11 +120,12 @@ class BaseGemProjectHandler(BaseGemHandler):
             datafile_name_patterns=datafile_name_patterns,
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
-        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase)
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
 
 class GemspecHandler(BaseGemHandler):
@@ -187,8 +189,8 @@ class GemspecInExtractedGemHandler(GemspecHandler):
     description = 'RubyGems gemspec manifest - extracted data layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
@@ -213,9 +215,9 @@ class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
     description = 'RubyGems gemspec manifest - installed vendor/bundle/specifications layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # TODO: consider assembling datafiles across vendor/ subdirs
-        yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+        yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
 
 
 # Note: we subclass GemspecHandler as the parsing code can handle both Ruby files
@@ -235,8 +237,8 @@ class GemfileInExtractedGemHandler(GemfileHandler):
     description = 'RubyGems Bundler Gemfile - extracted layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        return assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        return assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class GemfileLockHandler(BaseGemProjectHandler):
@@ -250,9 +252,39 @@ class GemfileLockHandler(BaseGemProjectHandler):
     @classmethod
     def parse(cls, location):
         gemfile_lock = GemfileLockParser(location)
-        dependencies = []
-        for _, gem in gemfile_lock.all_gems.items():
-            dependencies.append(
+        all_gems = list(gemfile_lock.all_gems.values())
+        if not all_gems:
+            return
+
+        primary_gem = gemfile_lock.primary_gem
+        if primary_gem:
+            deps = [
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=dep.name,
+                        version=dep.version
+                    ).to_string(),
+                    extracted_requirement=', '.join(dep.requirements),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                ) for dep in all_gems if dep != primary_gem
+            ]
+            urls = get_urls(primary_gem.name, primary_gem.version)
+
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                primary_language=cls.default_primary_language,
+                type=cls.default_package_type,
+                name=primary_gem.name,
+                version=primary_gem.version,
+                dependencies=deps,
+                **urls
+            )
+        else:
+            deps = [
                 models.DependentPackage(
                     purl=PackageURL(
                         type='gem',
@@ -265,43 +297,14 @@ class GemfileLockHandler(BaseGemProjectHandler):
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=True,
-                )
-            )
-
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            dependencies=dependencies,
-            primary_language=cls.default_primary_language,
-        )
-
-        for _, gem in gemfile_lock.all_gems.items():
-            deps = []
-            for _dep_name, dep in gem.dependencies.items():
-                deps.append(
-                    models.DependentPackage(
-                        purl=PackageURL(
-                            type='gem',
-                            name=dep.name,
-                            version=dep.version
-                        ).to_string(),
-                        extracted_requirement=', '.join(dep.requirements),
-                        scope='dependencies',
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
-                    )
-                )
-            urls = get_urls(gem.name, gem.version)
+                ) for gem in all_gems
+            ]
 
             yield models.PackageData(
                 datasource_id=cls.datasource_id,
-                primary_language=cls.default_primary_language,
                 type=cls.default_package_type,
-                name=gem.name,
-                version=gem.version,
                 dependencies=deps,
-                **urls
+                primary_language=cls.default_primary_language,
             )
 
 
@@ -311,8 +314,8 @@ class GemfileLockInExtractedGemHandler(GemfileLockHandler):
     description = 'RubyGems Bundler Gemfile.lock - extracted layout'
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 def compute_normalized_license(declared_license):

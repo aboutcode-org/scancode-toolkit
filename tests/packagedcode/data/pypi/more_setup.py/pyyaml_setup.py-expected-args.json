@@ -1,0 +1,28 @@
+{
+  "name": "PyYAML",
+  "version": "3.13",
+  "description": "YAML parser and emitter for Python",
+  "long_description": "YAML is a data serialization format designed for human readability\nand interaction with scripting languages.  PyYAML is a YAML parser\nand emitter for Python.\n\nPyYAML features a complete YAML 1.1 parser, Unicode support, pickle\nsupport, capable extension API, and sensible error messages.  PyYAML\nsupports standard YAML tags and provides Python-specific tags that\nallow to represent an arbitrary Python object.\n\nPyYAML is applicable for a broad range of tasks from complex\nconfiguration files to object serialization and persistance.",
+  "author": "Kirill Simonov",
+  "author_email": "xi@resolvent.net",
+  "license": "MIT",
+  "platforms": "Any",
+  "url": "http://pyyaml.org/wiki/PyYAML",
+  "classifiers": [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup"
+  ],
+  "package_dir": {
+    "": null
+  }
+}

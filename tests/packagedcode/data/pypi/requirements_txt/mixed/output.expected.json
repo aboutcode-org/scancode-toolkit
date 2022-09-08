@@ -36,34 +36,82 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": true,
+          "link": "git+https://github.com/davidfischer/requirements-parser.git#egg=requirements",
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": false,
+          "is_wheel": false,
+          "is_url": true,
+          "is_vcs_url": true,
+          "is_name_at_url": false,
+          "is_local_path": true
+        }
       },
       {
         "purl": "pkg:pypi/django",
-        "extracted_requirement": ">=1.5,<1.6",
+        "extracted_requirement": "Django>=1.5,<1.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       },
       {
         "purl": "pkg:pypi/numpy",
-        "extracted_requirement": "",
+        "extracted_requirement": "numpy",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       },
       {
         "purl": "pkg:pypi/docparser",
-        "extracted_requirement": "[pdf]",
+        "extracted_requirement": "DocParser[pdf]",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       }
     ],
     "repository_homepage_url": null,

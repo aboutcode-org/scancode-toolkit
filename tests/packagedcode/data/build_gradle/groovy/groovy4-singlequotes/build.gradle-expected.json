@@ -1,0 +1,89 @@
+[
+  {
+    "type": "maven",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:maven/com.fasterxml.jackson/jackson-bom@2.12.2",
+        "extracted_requirement": "2.12.2",
+        "scope": "enforcedPlatform",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core",
+        "extracted_requirement": "",
+        "scope": "implementation",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/org.junit/junit-bom@5.7.2",
+        "extracted_requirement": "5.7.2",
+        "scope": "platform",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/org.junit.platform/junit-platform-commons",
+        "extracted_requirement": "",
+        "scope": "testImplementation",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core",
+        "extracted_requirement": "",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "build_gradle",
+    "purl": null
+  }
+]

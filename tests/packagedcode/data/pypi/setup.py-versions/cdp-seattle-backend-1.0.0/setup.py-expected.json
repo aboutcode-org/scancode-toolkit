@@ -1,0 +1,111 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "cdp-seattle-backend",
+    "version": "1.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Package containing the gather functions for Example.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Council Data Project Contributors",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "civic technology",
+      "open government",
+      "Development Status :: 2 - Pre-Alpha",
+      "Intended Audience :: Developers",
+      "Natural Language :: English",
+      "Programming Language :: Python :: 3.9"
+    ],
+    "homepage_url": "https://github.com/CouncilDataProject/seattle",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT license",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "python_requires": ">=3.9"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/cdp-backend@3.0.16",
+        "extracted_requirement": "cdp-backend[pipeline]==3.0.16",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/cdp-scrapers",
+        "extracted_requirement": "cdp-scrapers>=0.4.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/black",
+        "extracted_requirement": "black>=19.10b0",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/flake8",
+        "extracted_requirement": "flake8>=3.8.3",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/flake8-debugger",
+        "extracted_requirement": "flake8-debugger>=3.2.1",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/cdp-seattle-backend",
+    "repository_download_url": "https://pypi.org/packages/source/c/cdp-seattle-backend/cdp-seattle-backend-1.0.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/cdp-seattle-backend/1.0.0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/cdp-seattle-backend@1.0.0"
+  }
+]

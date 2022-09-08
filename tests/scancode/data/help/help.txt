@@ -45,7 +45,11 @@ Options:
     --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
     --json-lines FILE       Write scan output as JSON Lines to FILE.
     --yaml FILE             Write scan output as YAML to FILE.
-    --csv FILE              Write scan output as CSV to FILE.
+    --csv FILE              [DEPRECATED] Write scan output as CSV to FILE. The
+                            --csv option is deprecated and will be replaced by new
+                            CSV and tabular output formats in the next ScanCode
+                            release. Visit https://github.com/nexB/scancode-
+                            toolkit/issues/3043 to provide inputs and feedback.
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
@@ -137,8 +141,8 @@ Options:
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if
                              -1. [default: 1]
-    --quiet                  Do not print summary or progress.
-    --verbose                Print progress as file-by-file path instead of a
+    -q, --quiet              Do not print summary or progress.
+    -v, --verbose            Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from one or more <input> JSON scan
                              file(s).
@@ -162,8 +166,8 @@ Options:
 
   documentation:
     -h, --help       Show this message and exit.
-    --about          Show information about ScanCode and licensing and exit.
-    --version        Show the version and exit.
+    -A, --about      Show information about ScanCode and licensing and exit.
+    -V, --version    Show the version and exit.
     --examples       Show command examples and exit.
     --list-packages  Show the list of supported package manifest parsers and exit.
     --plugins        Show the list of available ScanCode plugins and exit.

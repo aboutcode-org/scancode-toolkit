@@ -88,7 +88,7 @@ def spdx_id_match(idx, query_run, text, expression_symbols=None):
         # Alternatively we could use the expression string, padded with
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
-        stored_text=text,
+        text=text,
         length=match_len,
     )
 

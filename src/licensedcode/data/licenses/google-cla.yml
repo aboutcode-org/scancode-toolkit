@@ -1,0 +1,7 @@
+key: google-cla
+short_name: Google CLA
+name: Google Individual Contributor License Agreement
+category: Patent License
+owner: Google
+homepage_url: https://cla.developers.google.com/about/google-individual
+spdx_license_key: LicenseRef-scancode-google-cla

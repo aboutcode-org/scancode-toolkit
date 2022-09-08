@@ -22,11 +22,21 @@ version for queries and rules texts.
 """
 
 
-def query_lines(location=None, query_string=None, strip=True, start_line=1):
+def query_lines(
+    location=None,
+    query_string=None,
+    strip=True,
+    start_line=1,
+    plain_text=False,
+):
     """
     Return an iterable of tuples (line number, text line) given a file at
     `location` or a `query string`. Include empty lines.
     Line numbers start at ``start_line`` which is 1-based by default.
+
+    If `plain_text` is True treat the file as a plain text file and do not
+    attempt to detect its type and extract its content with special procedures.
+    This is used mostly when loading license texts and rules.
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
@@ -36,6 +46,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
             location,
             demarkup=False,
             start_line=start_line,
+            plain_text=plain_text,
         )
 
     elif query_string:
@@ -55,11 +66,11 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
         else:
             yield line_number, line.rstrip('\n') + '\n'
 
-
 # Split on whitespace and punctuations: keep only characters and numbers and +
 # when in the middle or end of a word. Keeping the trailing + is important for
 # licenses name such as GPL2+. The use a double negation "not non word" meaning
 # "words" to define the character ranges
+
 
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall

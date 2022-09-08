@@ -41,7 +41,7 @@ To check https://github.com/npm/normalize-package-data
 class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         If ``resource``, or one of its siblings, is a package.json file, use it
         to create and yield the package, the package dependencies, and the
@@ -89,21 +89,20 @@ class BaseNpmHandler(models.DatafileHandler):
                 if not package.license_expression:
                     package.license_expression = compute_normalized_license(package.declared_license)
 
+                # Always yield the package resource in all cases and first!
+                yield package
+
                 root = package_resource.parent(codebase)
                 if root:
                     for npm_res in cls.walk_npm(resource=root, codebase=codebase):
-                        if package_uid not in npm_res.for_packages:
-                            npm_res.for_packages.append(package_uid)
-                            npm_res.save(codebase)
+                        if package_uid and package_uid not in npm_res.for_packages:
+                            package_adder(package_uid, npm_res, codebase)
                         yield npm_res
                 elif codebase.has_single_resource:
-                    if package_uid not in package_resource.for_packages:
-                        package_resource.for_packages.append(package_uid)
-                        package_resource.save(codebase)
-
-                # Always yield the package resource in all cases
+                    if package_uid and package_uid not in package_resource.for_packages:
+                        package_adder(package_uid, package_resource, codebase)
                 yield package_resource
-                yield package
+
             else:
                 # we have no package, so deps are not for a specific package uid
                 package_uid = None
@@ -118,9 +117,8 @@ class BaseNpmHandler(models.DatafileHandler):
                 if lock_file.name in lockfile_names:
                     yield from yield_dependencies_from_package_resource(lock_file, package_uid)
 
-                    if package_uid not in lock_file.for_packages:
-                        lock_file.for_packages.append(package_uid)
-                        lock_file.save(codebase)
+                    if package_uid and package_uid not in lock_file.for_packages:
+                        package_adder(package_uid, lock_file, codebase)
                     yield lock_file
         else:
             # we do not have a package.json
@@ -225,8 +223,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         if not package.download_url:
             # Only add a synthetic download URL if there is none from the dist mapping.
-            dnl_url = npm_download_url(package.namespace, package.name, package.version)
-            package.download_url = dnl_url.strip()
+            package.download_url = npm_download_url(package.namespace, package.name, package.version)
 
         # licenses are a tad special with many different data structures
         lic = package_data.get('license')
@@ -780,12 +777,15 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
 
     >>> expected = 'https://yarnpkg.com/en/package/@ang/angular'
     >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == expected
+
+    >>> assert not npm_homepage_url(None, None)
     """
-    if namespace:
-        ns_name = f'{namespace}/{name}'
-    else:
-        ns_name = name
-    return f'{registry}/{ns_name}'
+    if name:
+        if namespace:
+            ns_name = f'{namespace}/{name}'
+        else:
+            ns_name = name
+        return f'{registry}/{ns_name}'
 
 
 def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
@@ -802,13 +802,15 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
 
     >>> expected = 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
     >>> assert npm_download_url(None, 'angular', '1.6.6') == expected
-    """
-    if namespace:
-        ns_name = f'{namespace}/{name}'
 
-    else:
-        ns_name = name
-    return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
+    >>> assert not npm_download_url(None, None, None)
+    """
+    if name and version:
+        if namespace:
+            ns_name = f'{namespace}/{name}'
+        else:
+            ns_name = name
+        return f'{registry}/{ns_name}/-/{name}-{version}.tgz'
 
 
 def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
@@ -826,20 +828,25 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
 
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
-    """
-    version = version or ''
-    if namespace:
-        # this is a legacy wart: older registries used to always encode this /
-        # FIXME: do NOT encode and use plain / instead
-        ns_name = '%2f'.join([namespace, name])
-        # there is no version-specific URL for scoped packages
-        version = ''
-    else:
-        ns_name = name
 
-    if version:
-        version = f'/{version}'
-    return f'{registry}/{ns_name}{version}'
+    >>> assert not npm_api_url(None, None, None)
+    """
+    if name:
+        if namespace:
+            # this is a legacy wart: older registries used to always encode this /
+            # FIXME: do NOT encode and use plain / instead
+            ns_name = '%2f'.join([namespace, name])
+            # there is no version-specific URL for scoped packages
+            version = ''
+        else:
+            ns_name = name
+
+        if version:
+            version = f'/{version}'
+        else:
+            version = ''
+
+        return f'{registry}/{ns_name}{version}'
 
 
 def is_scoped_package(name):

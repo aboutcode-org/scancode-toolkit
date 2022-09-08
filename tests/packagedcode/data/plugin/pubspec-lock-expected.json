@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/dart?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/_fe_analyzer_shared@22.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/analyzer@1.7.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/args@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/async@2.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -73,6 +78,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/boolean_selector@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -86,6 +92,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/charcode@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -99,6 +106,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/cli_util@0.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -112,6 +120,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/collection@1.15.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -125,6 +134,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/convert@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -138,6 +148,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/coverage@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -151,6 +162,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/crypto@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -164,6 +176,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/csslib@0.17.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -177,6 +190,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/dartdoc@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -190,6 +204,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/file@6.1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -203,6 +218,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/frontend_server_client@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -216,6 +232,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/glob@2.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -229,6 +246,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/html@0.15.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -242,6 +260,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/http@0.13.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -255,6 +274,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/http_multi_server@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -268,6 +288,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/http_parser@4.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -281,6 +302,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/io@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -294,6 +316,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/js@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -307,6 +330,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/json_annotation@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -320,6 +344,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/logging@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -333,6 +358,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/markdown@4.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -346,6 +372,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/matcher@0.12.10?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -359,6 +386,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/meta@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -372,6 +400,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/mime@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -385,6 +414,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/node_preamble@2.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -398,6 +428,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/package_config@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -411,6 +442,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/path@1.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -424,6 +456,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/pedantic@1.11.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -437,6 +470,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/pool@1.5.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -450,6 +484,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/pub_dartdoc_data@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -463,6 +498,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/pub_semver@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -476,6 +512,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/shelf@1.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -489,6 +526,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/shelf_packages_handler@3.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -502,6 +540,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/shelf_static@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -515,6 +554,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/shelf_web_socket@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -528,6 +568,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/source_map_stack_trace@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -541,6 +582,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/source_maps@0.10.10?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -554,6 +596,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/source_span@1.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -567,6 +610,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/stack_trace@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -580,6 +624,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/stream_channel@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -593,6 +638,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/string_scanner@1.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -606,6 +652,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/tar@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -619,6 +666,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/term_glyph@1.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -632,6 +680,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/test@1.17.9?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -645,6 +694,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/test_api@0.4.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -658,6 +708,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/test_core@0.3.29?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -671,6 +722,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/typed_data@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -684,6 +736,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/vm_service@7.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -697,6 +750,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/watcher@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -710,6 +764,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/web_socket_channel@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -723,6 +778,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/webkit_inspection_protocol@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -736,6 +792,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:pubspec/yaml@3.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "dart-pubspec.lock",
@@ -785,7 +842,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
@@ -794,7 +852,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/analyzer@1.7.1",
@@ -803,7 +862,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/args@2.1.1",
@@ -812,7 +872,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/async@2.7.0",
@@ -821,7 +882,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/boolean_selector@2.1.0",
@@ -830,7 +892,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/charcode@1.3.1",
@@ -839,7 +902,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/cli_util@0.3.2",
@@ -848,7 +912,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/collection@1.15.0",
@@ -857,7 +922,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/convert@3.0.1",
@@ -866,7 +932,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/coverage@1.0.3",
@@ -875,7 +942,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/crypto@3.0.1",
@@ -884,7 +952,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/csslib@0.17.0",
@@ -893,7 +962,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/dartdoc@1.0.0",
@@ -902,7 +972,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/file@6.1.2",
@@ -911,7 +982,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/frontend_server_client@2.1.0",
@@ -920,7 +992,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/glob@2.0.1",
@@ -929,7 +1002,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/html@0.15.0",
@@ -938,7 +1012,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/http@0.13.3",
@@ -947,7 +1022,8 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/http_multi_server@3.0.1",
@@ -956,7 +1032,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/http_parser@4.0.0",
@@ -965,7 +1042,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/io@1.0.2",
@@ -974,7 +1052,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/js@0.6.3",
@@ -983,7 +1062,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/json_annotation@4.0.1",
@@ -992,7 +1072,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/logging@1.0.1",
@@ -1001,7 +1082,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/markdown@4.0.0",
@@ -1010,7 +1092,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/matcher@0.12.10",
@@ -1019,7 +1102,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/meta@1.3.0",
@@ -1028,7 +1112,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/mime@1.0.0",
@@ -1037,7 +1122,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/node_preamble@2.0.1",
@@ -1046,7 +1132,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/package_config@2.0.0",
@@ -1055,7 +1142,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/path@1.8.0",
@@ -1064,7 +1152,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/pedantic@1.11.1",
@@ -1073,7 +1162,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/pool@1.5.0",
@@ -1082,7 +1172,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/pub_dartdoc_data@0.0.0",
@@ -1091,7 +1182,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/pub_semver@2.0.0",
@@ -1100,7 +1192,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/shelf@1.1.4",
@@ -1109,7 +1202,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/shelf_packages_handler@3.0.0",
@@ -1118,7 +1212,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/shelf_static@1.0.0",
@@ -1127,7 +1222,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/shelf_web_socket@1.0.1",
@@ -1136,7 +1232,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/source_map_stack_trace@2.1.0",
@@ -1145,7 +1242,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/source_maps@0.10.10",
@@ -1154,7 +1252,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/source_span@1.8.1",
@@ -1163,7 +1262,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/stack_trace@1.10.0",
@@ -1172,7 +1272,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/stream_channel@2.1.0",
@@ -1181,7 +1282,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/string_scanner@1.1.0",
@@ -1190,7 +1292,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/tar@0.4.0",
@@ -1199,7 +1302,8 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/term_glyph@1.2.0",
@@ -1208,7 +1312,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/test@1.17.9",
@@ -1217,7 +1322,8 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/test_api@0.4.1",
@@ -1226,7 +1332,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/test_core@0.3.29",
@@ -1235,7 +1342,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/typed_data@1.3.0",
@@ -1244,7 +1352,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/vm_service@7.1.0",
@@ -1253,7 +1362,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/watcher@1.0.0",
@@ -1262,7 +1372,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/web_socket_channel@2.1.0",
@@ -1271,7 +1382,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/webkit_inspection_protocol@1.0.0",
@@ -1280,7 +1392,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:pubspec/yaml@3.1.0",
@@ -1289,7 +1402,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

@@ -1,0 +1,315 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "wplay",
+    "version": "8.0.7",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "command line software to play with your WhatsApp",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Rohit Potter, Alexandre Calil",
+        "email": "rohitpotter12@gmail.com, alexandrecalilmf@gmail.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "whatsapp",
+      "whatsapp cli",
+      "whatsapp api",
+      "whatsapp servicewhatsapp chat",
+      "message blast",
+      "message timer",
+      "whatsapp terminal",
+      "whatsapp news",
+      "whatsapp schedule",
+      "tracker",
+      "online tracking",
+      "save-chat",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3 :: Only",
+      "Operating System :: OS Independent"
+    ],
+    "homepage_url": "https://github.com/rpotter12/whatsapp-play/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "Download-URL": "https://pypi.org/project/wplay/",
+      "python_requires": ">=3.6"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/argparse",
+        "extracted_requirement": "argparse>=1.4.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/beautifulsoup4",
+        "extracted_requirement": "beautifulsoup4>=4.8.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/colorama",
+        "extracted_requirement": "colorama>=0.4.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/datetime",
+        "extracted_requirement": "dateTime>=4.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/decorator",
+        "extracted_requirement": "decorator>=4.4.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/flake8",
+        "extracted_requirement": "flake8>=3.7.9",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/google",
+        "extracted_requirement": "google>=2.0.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/gtts@2.1.1",
+        "extracted_requirement": "gTTS==2.1.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/newsapi-python",
+        "extracted_requirement": "newsapi-python>=0.2.6",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/phonenumbers@8.10.2",
+        "extracted_requirement": "phonenumbers==8.10.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/playsound",
+        "extracted_requirement": "playsound>=1.2.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/prompt-toolkit@1.0.14",
+        "extracted_requirement": "prompt_toolkit==1.0.14",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/psutil",
+        "extracted_requirement": "psutil>=5.7.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyfiglet",
+        "extracted_requirement": "pyfiglet>=0.8.post1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyflakes",
+        "extracted_requirement": "pyflakes>=2.2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pygments",
+        "extracted_requirement": "Pygments>=2.6.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyppeteer",
+        "extracted_requirement": "pyppeteer>=0.0.25",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-dotenv@0.12.0",
+        "extracted_requirement": "python-dotenv==0.12.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-telegram-bot",
+        "extracted_requirement": "python-telegram-bot>=11.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/requests",
+        "extracted_requirement": "requests>=2.22.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/transitions",
+        "extracted_requirement": "transitions>=0.7.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/urllib3",
+        "extracted_requirement": "urllib3>=1.25.8",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/websockets",
+        "extracted_requirement": "websockets>=8.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/whaaaaat",
+        "extracted_requirement": "whaaaaat>=0.5.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/wplay",
+    "repository_download_url": "https://pypi.org/packages/source/w/wplay/wplay-8.0.7.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/wplay/8.0.7/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/wplay@8.0.7"
+  }
+]

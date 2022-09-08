@@ -261,75 +261,83 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/click",
-        "extracted_requirement": ">=6",
+        "extracted_requirement": "click>=6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/commoncode",
-        "extracted_requirement": ">=21.1.21",
+        "extracted_requirement": "commoncode>=21.1.21",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pluggy",
-        "extracted_requirement": null,
+        "extracted_requirement": "pluggy",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": ">=3.3.1",
+        "extracted_requirement": "Sphinx>=3.3.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx-rtd-theme",
-        "extracted_requirement": ">=0.5.0",
+        "extracted_requirement": "sphinx-rtd-theme>=0.5.0; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/doc8",
-        "extracted_requirement": ">=0.8.1",
+        "extracted_requirement": "doc8>=0.8.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": ">=6",
+        "extracted_requirement": "pytest>=6; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest-xdist",
-        "extracted_requirement": ">=2",
+        "extracted_requirement": "pytest-xdist>=2; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/plugincode",

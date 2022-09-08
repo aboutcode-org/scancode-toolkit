@@ -9,6 +9,7 @@
 
 from enum import IntEnum
 from itertools import groupby
+from typing import NamedTuple
 
 import attr
 from attr import validators
@@ -59,6 +60,7 @@ TRACE_FILTER_INVALID_UNKNOWN = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
+TRACE_HIGHLIGHTED_TEXT = False
 
 # these control the details in a LicenseMatch representation
 TRACE_REPR_MATCHED_RULE = False
@@ -84,6 +86,7 @@ if (TRACE
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS
+    or TRACE_HIGHLIGHTED_TEXT
     or TRACE_FILTER_SINGLE_WORD_GIBBERISH
     or TRACE_KEY_PHRASES
     or TRACE_REGIONS
@@ -749,6 +752,21 @@ class LicenseMatch(object):
             highlight_not_matched=highlight_not_matched,
             _usecache=_usecache
         )).rstrip()
+
+    def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
+        """
+        Return HTML representing the full text of the original scanned file
+        where the matched text portions and the non-matched text portions are
+        highlighted using HTML tags.
+        """
+        if trace:
+            logger_debug(f'LicenseMatch.get_highlighted_text: self.query: {self.query}')
+
+        query = self.query
+        if not query:
+            return u''
+
+        return ''.join(get_highlighted_lines(match=self, query=query, trace=trace))
 
 
 def set_matched_lines(matches, line_by_pos):
@@ -1766,7 +1784,7 @@ def filter_invalid_matches_to_single_word_gibberish(
                 highlight=False,
             ).strip()
 
-            rule_text = rule.text().strip()
+            rule_text = rule.text
 
             if trace:
                 logger_debug(
@@ -2655,7 +2673,7 @@ def refine_matches(
 
 
 @attr.s(slots=True, frozen=True)
-class Token(object):
+class Token1:
     """
     Used to represent a token in collected query-side matched texts and SPDX
     identifiers.
@@ -2672,6 +2690,66 @@ class Token(object):
     is_matched = attr.ib(default=False)
     # True if this is a known token
     is_known = attr.ib(default=False)
+
+
+class Token2:
+    """
+    Used to represent a token in collected query-side matched texts and SPDX
+    identifiers.
+    """
+    __slots__ = (
+        'value',
+        'line_num',
+        'pos',
+        'is_text',
+        'is_matched',
+        'is_known',
+    )
+
+    def __init__(
+        self,
+        value,
+        line_num,
+        pos=-1,
+        is_text=False,
+        is_matched=False,
+        is_known=False
+    ):
+        # original text value for this token.
+        self.value = value
+        # line number, one-based
+        self.line_num = line_num
+        # absolute position for known tokens, zero-based. -1 for unknown tokens
+        self.pos = pos
+        # True if text/alpha False if this is punctuation or spaces
+        self.is_text = is_text
+        # True if part of a match
+        self.is_matched = is_matched
+        # True if this is a known token
+        self.is_known = is_known
+
+
+class Token3(NamedTuple):
+    """
+    Used to represent a token in collected query-side matched texts and SPDX
+    identifiers.
+    """
+    # original text value for this token.
+    value: str
+    # line number, one-based
+    line_num: int
+    # absolute position for known tokens, zero-based. -1 for unknown tokens
+    pos: int = -1
+    # True if text/alpha False if this is punctuation or spaces
+    is_text: bool = False
+    # True if part of a match
+    is_matched: bool = False
+    # True if this is a known token
+    is_known: bool = False
+
+
+# we try different variants of tokens to find the fastest one
+Token = Token1
 
 
 def tokenize_matched_text(
@@ -3085,3 +3163,67 @@ def get_full_qspan_matched_text(
             else:
                 # we do not highlight punctuation and stopwords.
                 yield val
+
+
+def get_highlighted_lines(
+    match,
+    query,
+    stopwords=STOPWORDS,
+    trace=TRACE_HIGHLIGHTED_TEXT,
+):
+    """
+    Yield highlighted text lines (with line returns) for the whole of the matched and unmatched text of a ``query``.
+    """
+    tokens = tokenize_matched_text(
+        location=query.location,
+        query_string=query.query_string,
+        dictionary=query.idx.dictionary,
+        start_line=match.query.start_line,
+        _cache={},
+    )
+    tokens = tag_matched_tokens(tokens=tokens, match_qspan=match.qspan)
+
+    if trace:
+        tokens = list(tokens)
+        print()
+        logger_debug('get_highlighted_lines:  tokens:')
+        for t in tokens:
+            print('    ', t)
+        print()
+    header = '''<style>
+      pre.log {color: #f1f1f1; background-color: #222; font-family: monospace;}
+      pre.wrap {white-space: pre-wrap;}
+      span.not-matched {color:#f5bf3c;}
+      span.matched {color:#000000;}
+</style>
+
+<div class="license-match"><pre>'''
+    footer = '''</pre></div>'''
+
+    yield header
+    highlight_matched = '<span class="matched">{}</span>'
+    highlight_not_matched = '<span class="not-matched">{}</span>'
+    for token in tokens:
+        val = token.value
+        if token.is_text and val.lower() not in stopwords:
+            if token.is_matched:
+                yield highlight_matched.format(val)
+            else:
+                yield highlight_not_matched.format(val)
+        else:
+            # we do not highlight punctuation and stopwords.
+            yield highlight_not_matched.format(val)
+
+    yield footer
+
+
+def tag_matched_tokens(tokens, match_qspan):
+    """
+    Yield Tokens from a ``tokens`` iterable of Token objects.
+    Known matched tokens are tagged as "is_matched=True" if they are matched.
+    """
+    for tok in tokens:
+        # tagged known matched tokens (useful for highlighting)
+        if tok.pos != -1 and tok.is_known and tok.pos in match_qspan:
+            tok = attr.evolve(tok, is_matched=True)
+        yield tok

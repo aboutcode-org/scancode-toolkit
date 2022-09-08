@@ -1,0 +1,9 @@
+key: ms-visual-cpp-2015-runtime
+short_name: MS Visual C++ 2015-2022 Runtime
+name: Microsoft Visual C++ 2015-2022 Runtime
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://visualstudio.microsoft.com/license-terms/vs2022-cruntime/
+spdx_license_key: LicenseRef-scancode-ms-visual-cpp-2015-runtime
+ignorable_urls:
+    - http://www.microsoft.com/exporting

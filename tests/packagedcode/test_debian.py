@@ -18,6 +18,7 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
+
 @skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
 class TestDebianPackageGetInstalledPackages(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -28,6 +29,20 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_can_scan_system_package_installed_debian_with_license_from_container_layer(self):
+        test_dir = self.extract_test_tar('debian/debian-container-layer.tar.xz')
+        expected_file = self.get_test_loc('debian/debian-container-layer.tar.xz.scan-expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_can_get_installed_system_packages_with_license_from_debian_container_layer(self):
+        from packagedcode.plugin_package import get_installed_packages
+        test_dir = self.extract_test_tar('debian/debian-container-layer.tar.xz')
+        expected_file = self.get_test_loc('debian/debian-container-layer.tar.xz.get-installed-expected.json', must_exist=False)
+        results = list(get_installed_packages(test_dir))
+        self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestDebian(PackageTester):
@@ -60,7 +75,7 @@ class TestDebian(PackageTester):
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
-    def test_test_scan_system_package_end_to_end_installed_debian(self):
+    def test_scan_system_package_end_to_end_installed_debian(self):
         test_dir = self.extract_test_tar('debian/end-to-end.tgz')
         expected_file = self.get_test_loc('debian/end-to-end.tgz.expected.json', must_exist=False)
         result_file = self.get_temp_file('results.json')
@@ -73,6 +88,7 @@ class TestDebian(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 class TestDebianGetListOfInstalledFiles(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

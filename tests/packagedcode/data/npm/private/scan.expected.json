@@ -1,0 +1,76 @@
+{
+  "dependencies": [
+    {
+      "purl": "pkg:npm/lerna",
+      "extracted_requirement": "3.13.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/lerna?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "packages": [],
+  "files": [
+    {
+      "path": "package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": [],
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/lerna",
+              "extracted_requirement": "3.13.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "npm_package_json",
+          "purl": null
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

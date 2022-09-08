@@ -65,30 +65,33 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pykerberos",
-        "extracted_requirement": null,
+        "extracted_requirement": "pykerberos; extra == \"gssapi\"",
         "scope": "gssapi",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/dnspython",
-        "extracted_requirement": "<2.0.0,>=1.8.0",
+        "extracted_requirement": "dnspython<2.0.0,>=1.8.0; extra == \"srv\"",
         "scope": "srv",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/ipaddress",
-        "extracted_requirement": null,
+        "extracted_requirement": "ipaddress; extra == \"tls\"",
         "scope": "tls",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/pymongo",

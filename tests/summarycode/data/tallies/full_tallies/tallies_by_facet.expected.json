@@ -1,45 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--copyright": true,
-        "--email": true,
-        "--facet": [
-          "dev=*.java",
-          "dev=*.cs",
-          "dev=*ada*",
-          "data=*.S",
-          "tests=*infback9*",
-          "docs=*README"
-        ],
-        "--info": true,
-        "--json-pp": "<file>",
-        "--license": true,
-        "--package": true,
-        "--tallies": true,
-        "--tallies-by-facet": true,
-        "--url": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 26
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:npm/abbrev",
@@ -49,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/abbrev?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -62,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ansi?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -75,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ansicolors?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -88,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ansistyles?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -101,6 +64,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/archy?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -114,6 +78,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/async-some?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -127,6 +92,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/block-stream?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -140,6 +106,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/char-spinner?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -153,6 +120,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/chmodr?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -166,6 +134,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/chownr?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -179,6 +148,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/cmd-shim?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -192,6 +162,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/columnify?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -205,6 +176,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/config-chain?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -218,6 +190,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/dezalgo?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -231,6 +204,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/editor?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -244,6 +218,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/fs-vacuum?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -257,6 +232,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/fs-write-stream-atomic?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -270,6 +246,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/fstream?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -283,6 +260,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/fstream-npm?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -296,6 +274,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/github-url-from-git?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -309,6 +288,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/github-url-from-username-repo?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -322,6 +302,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/glob?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -335,6 +316,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/graceful-fs?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -348,6 +330,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/hosted-git-info?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -361,6 +344,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/inflight?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -374,6 +358,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/inherits?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -387,6 +372,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ini?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -400,6 +386,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/init-package-json?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -413,6 +400,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/lockfile?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -426,6 +414,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/lru-cache?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -439,6 +428,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/minimatch?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -452,6 +442,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/mkdirp?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -465,6 +456,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/node-gyp?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -478,6 +470,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/nopt?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -491,6 +484,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/normalize-git-url?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -504,6 +498,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/normalize-package-data?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -517,6 +512,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-cache-filename?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -530,6 +526,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-install-checks?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -543,6 +540,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-package-arg?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -556,6 +554,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-registry-client?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -569,6 +568,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-user-validate?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -582,6 +582,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npmlog?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -595,6 +596,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/once?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -608,6 +610,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/opener?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -621,6 +624,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/osenv?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -634,6 +638,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/path-is-inside?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -647,6 +652,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/read?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -660,6 +666,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/read-installed?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -673,6 +680,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/read-package-json?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -686,6 +694,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/readable-stream?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -699,6 +708,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/realize-package-specifier?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -712,6 +722,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/request?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -725,6 +736,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/retry?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -738,6 +750,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/rimraf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -751,6 +764,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/semver?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -764,6 +778,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/sha?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -777,6 +792,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/slide?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -790,6 +806,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/sorted-object?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -803,6 +820,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/spdx?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -816,6 +834,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/tar?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -829,6 +848,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/text-table?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -842,6 +862,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/uid-number?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -855,6 +876,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/umask?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -868,6 +890,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/validate-npm-package-name?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -881,6 +904,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/which?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -894,6 +918,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/wrappy?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -907,6 +932,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/write-file-atomic?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -920,6 +946,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/validate-npm-package-license?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -933,6 +960,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/deep-equal?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -946,6 +974,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/marked?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -959,6 +988,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/marked-man?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -972,6 +1002,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/nock?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -985,6 +1016,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-registry-couchapp?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -998,6 +1030,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/npm-registry-mock?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -1011,6 +1044,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/require-inject?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -1024,6 +1058,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/sprintf-js?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -1037,6 +1072,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/tap?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -7106,7 +7142,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/ansi",
@@ -7115,7 +7152,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/ansicolors",
@@ -7124,7 +7162,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/ansistyles",
@@ -7133,7 +7172,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/archy",
@@ -7142,7 +7182,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/async-some",
@@ -7151,7 +7192,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/block-stream",
@@ -7160,7 +7202,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/char-spinner",
@@ -7169,7 +7212,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/chmodr",
@@ -7178,7 +7222,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/chownr",
@@ -7187,7 +7232,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/cmd-shim",
@@ -7196,7 +7242,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/columnify",
@@ -7205,7 +7252,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/config-chain",
@@ -7214,7 +7262,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/dezalgo",
@@ -7223,7 +7272,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/editor",
@@ -7232,7 +7282,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/fs-vacuum",
@@ -7241,7 +7292,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/fs-write-stream-atomic",
@@ -7250,7 +7302,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/fstream",
@@ -7259,7 +7312,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/fstream-npm",
@@ -7268,7 +7322,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/github-url-from-git",
@@ -7277,7 +7332,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/github-url-from-username-repo",
@@ -7286,7 +7342,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/glob",
@@ -7295,7 +7352,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/graceful-fs",
@@ -7304,7 +7362,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/hosted-git-info",
@@ -7313,7 +7372,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/inflight",
@@ -7322,7 +7382,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/inherits",
@@ -7331,7 +7392,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/ini",
@@ -7340,7 +7402,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/init-package-json",
@@ -7349,7 +7412,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/lockfile",
@@ -7358,7 +7422,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/lru-cache",
@@ -7367,7 +7432,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/minimatch",
@@ -7376,7 +7442,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/mkdirp",
@@ -7385,7 +7452,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/node-gyp",
@@ -7394,7 +7462,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/nopt",
@@ -7403,7 +7472,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/normalize-git-url",
@@ -7412,7 +7482,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/normalize-package-data",
@@ -7421,7 +7492,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-cache-filename",
@@ -7430,7 +7502,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-install-checks",
@@ -7439,7 +7512,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-package-arg",
@@ -7448,7 +7522,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-registry-client",
@@ -7457,7 +7532,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-user-validate",
@@ -7466,7 +7542,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npmlog",
@@ -7475,7 +7552,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/once",
@@ -7484,7 +7562,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/opener",
@@ -7493,7 +7572,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/osenv",
@@ -7502,7 +7582,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/path-is-inside",
@@ -7511,7 +7592,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/read",
@@ -7520,7 +7602,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/read-installed",
@@ -7529,7 +7612,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/read-package-json",
@@ -7538,7 +7622,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/readable-stream",
@@ -7547,7 +7632,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/realize-package-specifier",
@@ -7556,7 +7642,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/request",
@@ -7565,7 +7652,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/retry",
@@ -7574,7 +7662,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/rimraf",
@@ -7583,7 +7672,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/semver",
@@ -7592,7 +7682,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/sha",
@@ -7601,7 +7692,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/slide",
@@ -7610,7 +7702,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/sorted-object",
@@ -7619,7 +7712,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/spdx",
@@ -7628,7 +7722,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/tar",
@@ -7637,7 +7732,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/text-table",
@@ -7646,7 +7742,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/uid-number",
@@ -7655,7 +7752,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/umask",
@@ -7664,7 +7762,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/validate-npm-package-name",
@@ -7673,7 +7772,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/which",
@@ -7682,7 +7782,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/wrappy",
@@ -7691,7 +7792,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/write-file-atomic",
@@ -7700,7 +7802,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/validate-npm-package-license",
@@ -7709,7 +7812,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/deep-equal",
@@ -7718,7 +7822,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/marked",
@@ -7727,7 +7832,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/marked-man",
@@ -7736,7 +7842,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/nock",
@@ -7745,7 +7852,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-registry-couchapp",
@@ -7754,7 +7862,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/npm-registry-mock",
@@ -7763,7 +7872,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/require-inject",
@@ -7772,7 +7882,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/sprintf-js",
@@ -7781,7 +7892,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/tap",
@@ -7790,7 +7902,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/npm",

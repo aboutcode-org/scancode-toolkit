@@ -1,0 +1,3 @@
+Please see https://developercertificate.org/ for
+more info, as well as to make sure that you can attest to the rules listed. Our CI uses the [DCO Github app](https://github.com/apps/dco) to ensure
+that all commits in a given PR are signed-off.

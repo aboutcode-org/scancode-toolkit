@@ -45,7 +45,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
@@ -54,7 +55,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-i18n",
@@ -63,7 +65,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
@@ -72,7 +75,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.7",
@@ -81,7 +85,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.velocity/velocity@1.5",
@@ -90,7 +95,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-decoration-model",
@@ -99,7 +105,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections@3.2",
@@ -108,7 +115,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-apt",
@@ -117,7 +125,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-fml",
@@ -126,7 +135,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc",
@@ -135,7 +145,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml",
@@ -144,7 +155,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
@@ -153,7 +165,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": null,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     },
     {
       "purl": "pkg:maven/htmlunit/htmlunit@1.9",
@@ -162,7 +175,8 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
-      "resolved_package": {}
+      "resolved_package": {},
+      "extra_data": {}
     }
   ],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/",

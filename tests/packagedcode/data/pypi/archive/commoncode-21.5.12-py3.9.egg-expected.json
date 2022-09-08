@@ -69,120 +69,133 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/attrs",
-        "extracted_requirement": "!=20.1.0,>=18.1",
+        "extracted_requirement": "attrs!=20.1.0,>=18.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/click",
-        "extracted_requirement": ">=6.0.0",
+        "extracted_requirement": "click>=6.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/text-unidecode",
-        "extracted_requirement": ">=1.0",
+        "extracted_requirement": "text_unidecode>=1.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/beautifulsoup4",
-        "extracted_requirement": "<5.0.0,>=4.0.0",
+        "extracted_requirement": "Beautifulsoup4<5.0.0,>=4.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/requests",
-        "extracted_requirement": "<3.0.0,>=2.7.0",
+        "extracted_requirement": "requests<3.0.0,>=2.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/intbitset",
-        "extracted_requirement": "<3.0,>=2.3.0",
+        "extracted_requirement": "intbitset<3.0,>=2.3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/saneyaml",
-        "extracted_requirement": null,
+        "extracted_requirement": "saneyaml",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/typing",
-        "extracted_requirement": "<3.7,>=3.6",
+        "extracted_requirement": "typing<3.7,>=3.6; python_version < \"3.7\"",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": ">=3.3.1",
+        "extracted_requirement": "Sphinx>=3.3.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/sphinx-rtd-theme",
-        "extracted_requirement": ">=0.5.0",
+        "extracted_requirement": "sphinx-rtd-theme>=0.5.0; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/doc8",
-        "extracted_requirement": ">=0.8.1",
+        "extracted_requirement": "doc8>=0.8.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": ">=6",
+        "extracted_requirement": "pytest>=6; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest-xdist",
-        "extracted_requirement": ">=2",
+        "extracted_requirement": "pytest-xdist>=2; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/commoncode",

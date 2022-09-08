@@ -1,0 +1,172 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "bluepyopt",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Bluebrain Python Optimisation Library (bluepyopt)",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "BlueBrain Project, EPFL",
+        "email": "werner.vangeit@epfl.ch",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "optimisation",
+      "neuroscience",
+      "BlueBrainProject",
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Console",
+      "Programming Language :: Python :: 3 :: Only",
+      "Operating System :: POSIX",
+      "Topic :: Scientific/Engineering",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "https://github.com/BlueBrain/BluePyOpt",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "lgpl-3.0",
+    "declared_license": {
+      "license": "LGPLv3",
+      "classifiers": [
+        "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/numpy",
+        "extracted_requirement": "numpy>=1.6",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pandas",
+        "extracted_requirement": "pandas>=0.18",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/deap",
+        "extracted_requirement": "deap",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/efel",
+        "extracted_requirement": "efel>=2.13",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/ipyparallel",
+        "extracted_requirement": "ipyparallel",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pickleshare",
+        "extracted_requirement": "pickleshare>=0.7.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "extracted_requirement": "Jinja2>=2.8",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/future",
+        "extracted_requirement": "future",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pebble",
+        "extracted_requirement": "Pebble>=4.3.10",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scoop",
+        "extracted_requirement": "scoop>=0.7",
+        "scope": "all",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scoop",
+        "extracted_requirement": "scoop>=0.7",
+        "scope": "scoop",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/bluepyopt",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/bluepyopt/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/bluepyopt"
+  }
+]

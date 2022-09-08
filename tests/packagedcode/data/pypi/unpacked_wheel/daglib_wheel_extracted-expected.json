@@ -1,0 +1,368 @@
+{
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/dask",
+      "extracted_requirement": "dask[delayed]<2023.0.0,>=2022.7.1",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/dask?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    },
+    {
+      "purl": "pkg:pypi/graphviz",
+      "extracted_requirement": "graphviz<0.21,>=0.20; extra == \"graphviz\"",
+      "scope": "graphviz",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/graphviz?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    },
+    {
+      "purl": "pkg:pypi/ipycytoscape",
+      "extracted_requirement": "ipycytoscape<2.0.0,>=1.3.3; extra == \"ipycytoscape\"",
+      "scope": "ipycytoscape",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/ipycytoscape?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    },
+    {
+      "purl": "pkg:pypi/networkx",
+      "extracted_requirement": "networkx<3.0.0,>=2.8.5",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/networkx?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    }
+  ],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "daglib",
+      "version": "0.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "# \u2697\ufe0f Daglib - Lightweight DAG composition framework\n\n[![PyPI version](https://badge.fury.io/py/daglib.svg)](https://badge.fury.io/py/daglib)\n[![PyPI - Downloads](https://img.shields.io/pypi/dm/daglib)](https://pypi.org/project/daglib/)\n[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/daglib.svg)](https://pypi.org/project/daglib/)\n[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)\n[![Checked with mypy](https://img.shields.io/badge/mypy-checked-blue.svg)](https://mypy.readthedocs.io/en/stable/)\n[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)\n\nDaglib is a lightweight, embeddable parallel task execution library used for turning pure Python functions into executable task graphs.\n\n# Installation\n\nCore\n\n```shell\npip install daglib\n```\n\nWith visualizations enabled\n\n```shell\npip install 'daglib[graphviz]'  # static visualizations\n# or\npip install 'daglib[ipycytoscape]'  # interactive visulizations\n```\n\n# Create your first DAG\n\n\n```python\nimport daglib\n\ndag = daglib.Dag()\n\n\n@dag.task()\ndef task_1a():\n    return \"Hello\"\n\n\n@dag.task()\ndef task_1b():\n    return \"world!\"\n\n\n@dag.task()\ndef task_2(task_1a, task_1b):\n    return f\"{task_1a}, {task_1b}\"\n\n\ndag.run()\n```\n\n\n\n\n    'Hello, world!'\n\n\n\n# Beyond the \"Hello, world!\" example\n\nFor a more involved example, we will create a small pipeline that takes data from four source tables and creates a single reporting table. The data is driver-level information from the current 2022 Formula 1 season. The output will be a pivot table for team-level metrics.\n\n## Source Tables\n\n1. Team - Team of driver\n2. Points - Current total Driver's World Championship points for each driver for the season\n3. Wins - Current number of wins for each driver for the season\n4. Podiums - Current number of times the driver finished in the top 3 for the season\n\n\n```python\nimport pandas as pd\nimport daglib\n\n# Ignore. Used to render the DataFrame correctly in the README\npd.set_option(\"display.notebook_repr_html\", False)\n\ndag = daglib.Dag()\n\n\n@dag.task()\ndef team():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        team=[\"Red Bull\", \"Ferrari\", \"Mercedes\", \"Red Bull\", \"Ferrari\", \"Mercedes\"],\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef points():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        points=[258, 178, 146, 173, 156, 158]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef wins():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        wins=[8, 3, 0, 1, 1, 0]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef podiums():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        podiums=[10, 5, 6, 6, 6, 5]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef driver_metrics(team, points, wins, podiums):\n    return team.join(points).join(wins).join(podiums)\n\n\n@dag.task()\ndef team_metrics(driver_metrics):\n    return driver_metrics.groupby(\"team\").sum().sort_values(\"points\", ascending=False)\n\n\ndag.run()\n```\n\n\n\n\n              points  wins  podiums\n    team\n    Red Bull     431     9       16\n    Ferrari      334     4       11\n    Mercedes     304     0       11\n\n\n\n## Task Graph Visualization\n\nThe DAG we created above will create a task graph that looks like the following\n\n![task graph](https://storage.googleapis.com/daglib-image-assets/example-dag.png)",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Michael Harris",
+          "email": "mharris@luabase.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "Intended Audience :: Developers",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10"
+      ],
+      "homepage_url": "https://github.com/mharrisb1/daglib",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/mharrisb1/daglib",
+      "copyright": null,
+      "license_expression": "mit AND mit",
+      "declared_license": {
+        "license": "MIT",
+        "classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {
+        "Documentation": "https://mharrisb1.github.io/daglib/"
+      },
+      "repository_homepage_url": "https://pypi.org/project/daglib",
+      "repository_download_url": "https://pypi.org/packages/source/d/daglib/daglib-0.6.0.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/daglib/0.6.0/json",
+      "package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA"
+      ],
+      "datasource_ids": [
+        "pypi_wheel_metadata"
+      ],
+      "purl": "pkg:pypi/daglib@0.6.0"
+    }
+  ],
+  "files": [
+    {
+      "path": "daglib_wheel_extracted",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib-0.6.0.dist-info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "daglib",
+          "version": "0.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "# \u2697\ufe0f Daglib - Lightweight DAG composition framework\n\n[![PyPI version](https://badge.fury.io/py/daglib.svg)](https://badge.fury.io/py/daglib)\n[![PyPI - Downloads](https://img.shields.io/pypi/dm/daglib)](https://pypi.org/project/daglib/)\n[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/daglib.svg)](https://pypi.org/project/daglib/)\n[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)\n[![Checked with mypy](https://img.shields.io/badge/mypy-checked-blue.svg)](https://mypy.readthedocs.io/en/stable/)\n[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)\n\nDaglib is a lightweight, embeddable parallel task execution library used for turning pure Python functions into executable task graphs.\n\n# Installation\n\nCore\n\n```shell\npip install daglib\n```\n\nWith visualizations enabled\n\n```shell\npip install 'daglib[graphviz]'  # static visualizations\n# or\npip install 'daglib[ipycytoscape]'  # interactive visulizations\n```\n\n# Create your first DAG\n\n\n```python\nimport daglib\n\ndag = daglib.Dag()\n\n\n@dag.task()\ndef task_1a():\n    return \"Hello\"\n\n\n@dag.task()\ndef task_1b():\n    return \"world!\"\n\n\n@dag.task()\ndef task_2(task_1a, task_1b):\n    return f\"{task_1a}, {task_1b}\"\n\n\ndag.run()\n```\n\n\n\n\n    'Hello, world!'\n\n\n\n# Beyond the \"Hello, world!\" example\n\nFor a more involved example, we will create a small pipeline that takes data from four source tables and creates a single reporting table. The data is driver-level information from the current 2022 Formula 1 season. The output will be a pivot table for team-level metrics.\n\n## Source Tables\n\n1. Team - Team of driver\n2. Points - Current total Driver's World Championship points for each driver for the season\n3. Wins - Current number of wins for each driver for the season\n4. Podiums - Current number of times the driver finished in the top 3 for the season\n\n\n```python\nimport pandas as pd\nimport daglib\n\n# Ignore. Used to render the DataFrame correctly in the README\npd.set_option(\"display.notebook_repr_html\", False)\n\ndag = daglib.Dag()\n\n\n@dag.task()\ndef team():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        team=[\"Red Bull\", \"Ferrari\", \"Mercedes\", \"Red Bull\", \"Ferrari\", \"Mercedes\"],\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef points():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        points=[258, 178, 146, 173, 156, 158]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef wins():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        wins=[8, 3, 0, 1, 1, 0]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef podiums():\n    return pd.DataFrame(dict(\n        driver=[\"Max\", \"Charles\", \"Lewis\", \"Sergio\", \"Carlos\", \"George\"],\n        podiums=[10, 5, 6, 6, 6, 5]\n    )).set_index(\"driver\")\n\n\n@dag.task()\ndef driver_metrics(team, points, wins, podiums):\n    return team.join(points).join(wins).join(podiums)\n\n\n@dag.task()\ndef team_metrics(driver_metrics):\n    return driver_metrics.groupby(\"team\").sum().sort_values(\"points\", ascending=False)\n\n\ndag.run()\n```\n\n\n\n\n              points  wins  podiums\n    team\n    Red Bull     431     9       16\n    Ferrari      334     4       11\n    Mercedes     304     0       11\n\n\n\n## Task Graph Visualization\n\nThe DAG we created above will create a task graph that looks like the following\n\n![task graph](https://storage.googleapis.com/daglib-image-assets/example-dag.png)",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Michael Harris",
+              "email": "mharris@luabase.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "Intended Audience :: Developers",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.10"
+          ],
+          "homepage_url": "https://github.com/mharrisb1/daglib",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/mharrisb1/daglib",
+          "copyright": null,
+          "license_expression": "mit AND mit",
+          "declared_license": {
+            "license": "MIT",
+            "classifiers": [
+              "License :: OSI Approved :: MIT License"
+            ]
+          },
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [
+            {
+              "path": "daglib/__init__.py",
+              "size": 72,
+              "sha1": null,
+              "md5": null,
+              "sha256": "cd90a1522c161cf60c8981d6a5a9348c732dd3532b2da2a3b508dd1e3a8a6773",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib/dag.py",
+              "size": 2761,
+              "sha1": null,
+              "md5": null,
+              "sha256": "dbd566e03890a1c57ab5256ef696495193e6a9cf90ec4ba31d4ef10f8a8f25a6",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib/task.py",
+              "size": 4531,
+              "sha1": null,
+              "md5": null,
+              "sha256": "a2e59ff7bf4853a38a8298fa8f8df4d41db0a38eb09132a392416bd89a7ec63d",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib-0.6.0.dist-info/LICENSE",
+              "size": 1058,
+              "sha1": null,
+              "md5": null,
+              "sha256": "f9352835d15f73e2d01bae747b6ce3386a23be2fb73c06df799fba97a5bc98a2",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib-0.6.0.dist-info/WHEEL",
+              "size": 83,
+              "sha1": null,
+              "md5": null,
+              "sha256": "0c0f3afe1e10c30cc6791a33eb6a35b2f62de641845e9a144ee4edc33a136f7d",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib-0.6.0.dist-info/METADATA",
+              "size": 4493,
+              "sha1": null,
+              "md5": null,
+              "sha256": "f01ba45128006ed4748cef8bd1e7f66bd4b5f86f1a657e3f3e4fee3a4d328cf2",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "daglib-0.6.0.dist-info/RECORD",
+              "size": null,
+              "sha1": null,
+              "md5": null,
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            }
+          ],
+          "extra_data": {
+            "Documentation": "https://mharrisb1.github.io/daglib/"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/dask",
+              "extracted_requirement": "dask[delayed]<2023.0.0,>=2022.7.1",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/graphviz",
+              "extracted_requirement": "graphviz<0.21,>=0.20; extra == \"graphviz\"",
+              "scope": "graphviz",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/ipycytoscape",
+              "extracted_requirement": "ipycytoscape<2.0.0,>=1.3.3; extra == \"ipycytoscape\"",
+              "scope": "ipycytoscape",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/networkx",
+              "extracted_requirement": "networkx<3.0.0,>=2.8.5",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/daglib",
+          "repository_download_url": "https://pypi.org/packages/source/d/daglib/daglib-0.6.0.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/daglib/0.6.0/json",
+          "datasource_id": "pypi_wheel_metadata",
+          "purl": "pkg:pypi/daglib@0.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/RECORD",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib-0.6.0.dist-info/WHEEL",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib/__init__.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib/dag.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "daglib_wheel_extracted/daglib/task.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

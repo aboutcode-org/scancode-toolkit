@@ -1,0 +1,9 @@
+{
+  "name": "arpy",
+  "version": "0.1.1",
+  "description": "Library for accessing \"ar\" files",
+  "author": "Stanis\u0142aw Pitucha",
+  "author_email": "viraptor@gmail.com",
+  "url": "http://bitbucket.org/viraptor/arpy",
+  "license": "Simplified BSD"
+}

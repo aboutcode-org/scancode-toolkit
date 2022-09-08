@@ -22,11 +22,13 @@ from plugincode.scan import scan_impl
 from plugincode.scan import ScanPlugin
 
 from packagedcode import get_package_handler
+from packagedcode.models import add_to_package
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
+from packagedcode.models import PackageWithResources
 
-TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def logger_debug(*args):
@@ -153,17 +155,53 @@ class PackageScanner(ScanPlugin):
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
 
-def create_package_and_deps(codebase, strip_root=False, **kwargs):
+def get_installed_packages(root_dir, processes=2, **kwargs):
+    """
+    Detect and yield Package mappings with their assigned Resource in a ``resources``
+    attribute as they are found in `root_dir`.
+    """
+    from scancode import cli
+
+    _, codebase = cli.run_scan(
+        input=root_dir,
+        processes=processes,
+        quiet=True,
+        verbose=False,
+        max_in_memory=0,
+        return_results=False,
+        return_codebase=True,
+        system_package=True,
+    )
+
+    packages_by_uid = {}
+    for package in codebase.attributes.packages:
+        p = PackageWithResources.from_dict(package)
+        packages_by_uid[p.package_uid] = p
+
+    for resource in codebase.walk():
+        for package_uid in resource.for_packages:
+            p = packages_by_uid[package_uid]
+            p.resources.append(resource)
+
+    yield from packages_by_uid.values()
+
+
+def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
     """
-    packages, dependencies = get_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+    packages, dependencies = get_package_and_deps(
+        codebase,
+        package_adder=package_adder,
+        strip_root=strip_root,
+        **kwargs
+    )
     codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 
-def get_package_and_deps(codebase, strip_root=False, **kwargs):
+def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Return a tuple of (Packages list, Dependency list) from the parsed package
     data present in the codebase files.package_data attributes.
@@ -202,6 +240,7 @@ def get_package_and_deps(codebase, strip_root=False, **kwargs):
                     package_data=package_data,
                     resource=resource,
                     codebase=codebase,
+                    package_adder=package_adder,
                 )
 
                 for item in items:

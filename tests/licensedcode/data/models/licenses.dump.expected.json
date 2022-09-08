@@ -20,6 +20,7 @@
     "category": "Permissive",
     "owner": "Carrot2",
     "homepage_url": "http://www.carrot2.org/carrot2.LICENSE",
+    "spdx_license_key": "LicenseRef-scancode-bsd-ack-carrot2",
     "minimum_coverage": 80
   },
   {
@@ -78,6 +79,7 @@
     "category": "Copyleft Limited",
     "owner": "Grammatica",
     "is_exception": true,
+    "spdx_license_key": "LicenseRef-scancode-gpl-2.0-library",
     "other_urls": [
       "http://grammatica.percederberg.net/index.html"
     ]
@@ -125,8 +127,9 @@
     "key": "w3c-docs-19990405",
     "short_name": "W3C-DOCS-19990405",
     "name": "W3C Document Notice and License (1999-04-05)",
-    "category": "Permissive Restricted",
+    "category": "Free Restricted",
     "owner": "W3C - World Wide Web Consortium",
-    "homepage_url": "http://www.w3.org/Consortium/Legal/copyright-documents-19990405"
+    "homepage_url": "http://www.w3.org/Consortium/Legal/copyright-documents-19990405",
+    "spdx_license_key": "LicenseRef-scancode-w3c-docs-19990405"
   }
 ]

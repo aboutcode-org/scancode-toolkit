@@ -216,9 +216,9 @@ holders:
   - Jean-loup Gailly and Mark Adler
   - Sun Microsystems Inc.
 holders_summary:
-  - value: Google Inc.
+  - value: Google
     count: 11
-  - value: Free Software Foundation, Inc.
+  - value: Free Software Foundation
     count: 8
   - value: the Initial Developer
     count: 6
@@ -234,7 +234,7 @@ holders_summary:
     count: 2
   - value: Netscape Communications Corporation
     count: 2
-  - value: Sun Microsystems, Inc.
+  - value: Sun Microsystems
     count: 2
   - value: The Khronos Group Inc.
     count: 2
@@ -257,7 +257,7 @@ holders_summary:
     count: 1
   - value: Chih-Hao Tsai Beckman Institute, University of Illinois
     count: 1
-  - value: Cisco Systems, Inc.
+  - value: Cisco Systems
     count: 1
   - value: Colin Percival
     count: 1
@@ -330,7 +330,7 @@ holders_summary:
     count: 1
   - value: Peter Johnson and other Yasm developers
     count: 1
-  - value: Red Hat, Inc.
+  - value: Red Hat
     count: 1
   - value: Remco Treffkorn, and others
     count: 1

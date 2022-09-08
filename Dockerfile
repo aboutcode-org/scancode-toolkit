@@ -7,28 +7,43 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM python:3.6-slim-buster 
+FROM --platform=linux/amd64 python:3.8-slim-buster
 
-# Requirements as per https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
+# Python settings: Force unbuffered stdout and stderr (i.e. they are flushed to terminal immediately)
+ENV PYTHONUNBUFFERED 1
+# Python settings: do not write pyc files
+ENV PYTHONDONTWRITEBYTECODE 1
+
+# OS requirements as per
+# https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
 RUN apt-get update \
- && apt-get install -y bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libgomp1 libpopt0\
+ && apt-get install -y --no-install-recommends \
+       bzip2 \
+       xz-utils \
+       zlib1g \
+       libxml2-dev \
+       libxslt1-dev \
+       libgomp1 \
+       libsqlite3-0 \
+       libgcrypt20 \
+       libpopt0 \
+       libzstd1 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Create directory for scancode sources
-RUN mkdir scancode-toolkit
+WORKDIR /scancode-toolkit
 
 # Copy sources into docker container
-COPY . scancode-toolkit
+COPY . /scancode-toolkit
 
-# Set workdir
-WORKDIR scancode-toolkit
-
-# Run scancode once for initial configuration, with --reindex-licenses to create the base license index
+# Run scancode once for initial configuration, with 
+# --reindex-licenses to create the base license index
 RUN ./scancode --reindex-licenses
 
 # Add scancode to path
-ENV PATH=$HOME/scancode-toolkit:$PATH
+ENV PATH=/scancode-toolkit:$PATH
 
-# Set entrypoint to be the scancode command, allows to run the generated docker image directly with the scancode arguments: `docker run (...) <containername> <scancode arguments>`
+# Set entrypoint to be the scancode command, allows to run the generated docker
+# image directly with the scancode arguments: `docker run (...) <containername> <scancode arguments>`
 ENTRYPOINT ["./scancode"]

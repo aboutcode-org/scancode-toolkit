@@ -8,6 +8,7 @@
 #
 import attr
 import csv
+import warnings
 
 import saneyaml
 
@@ -38,6 +39,12 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
+DEPRECATED_MSG = (
+    'The --csv option is deprecated and will be replaced by new CSV and '
+    'tabular output formats in the next ScanCode release. '
+    'Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs and feedback.'
+)
+
 
 @output_impl
 class CsvOutput(OutputPlugin):
@@ -46,7 +53,7 @@ class CsvOutput(OutputPlugin):
         PluggableCommandLineOption(('--csv',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
-            help='Write scan output as CSV to FILE.',
+            help='[DEPRECATED] Write scan output as CSV to FILE. ' + DEPRECATED_MSG,
             help_group=OUTPUT_GROUP,
             sort_order=30),
     ]
@@ -55,6 +62,14 @@ class CsvOutput(OutputPlugin):
         return csv
 
     def process_codebase(self, codebase, csv, **kwargs):
+        warnings.warn(
+            DEPRECATED_MSG,
+            DeprecationWarning,
+            stacklevel=1
+        )
+        import click
+        click.secho('[DEPRECATION WARNING] ' + DEPRECATED_MSG, err=True)
+
         results = self.get_files(codebase, **kwargs)
         write_csv(results, csv)
 
@@ -140,7 +155,7 @@ def flatten_scan(scan, headers):
                     for mrk, mrv in val.items():
                         if mrk in ('match_coverage', 'rule_relevance'):
                             # normalize the string representation of this number
-                            mrv = '{:.2f}'.format(mrv)
+                            mrv = with_two_decimals(mrv)
                         else:
                             mrv = pretty(mrv)
                         mrk = 'matched_rule__' + mrk
@@ -148,8 +163,7 @@ def flatten_scan(scan, headers):
                     continue
 
                 if k == 'score':
-                    # normalize score with two decimal values
-                    val = '{:.2f}'.format(val)
+                    val = with_two_decimals(val)
 
                 # lines are present in multiple scans: keep their column name as
                 # not scan-specific. Prefix othe columns with license__
@@ -199,6 +213,17 @@ def flatten_scan(scan, headers):
             flat = flatten_package(package, path)
             collect_keys(flat, 'package')
             yield flat
+
+
+def with_two_decimals(val):
+    """
+    Return a normalized score string with two decimal values
+    """
+    if isinstance(val, (float, int)):
+        val = '{:.2f}'.format(val)
+    if not isinstance(val, str):
+        val = str(val)
+    return val
 
 
 def pretty(data):

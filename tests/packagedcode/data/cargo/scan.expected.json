@@ -1,30 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 3
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:cargo/ahash@0.7.4",
@@ -34,6 +8,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/ahash@0.7.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -47,6 +22,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/autocfg@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -60,6 +36,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/cfg-if@0.1.10?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -73,6 +50,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/cfg-if@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -86,6 +64,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/chrono@0.4.19?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -99,6 +78,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/getrandom@0.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -112,6 +92,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/hashbrown@0.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -125,6 +106,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/libc@0.2.97?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -138,6 +120,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/log@0.4.14?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -151,6 +134,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/memory_units@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -164,6 +148,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/num-integer@0.1.44?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -177,6 +162,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/num-traits@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -190,6 +176,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/once_cell@1.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -203,6 +190,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/proxy-wasm@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -216,6 +204,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/time@0.1.43?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -229,6 +218,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/version_check@0.9.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -242,6 +232,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/wasi@0.10.2%2Bwasi-snapshot-preview1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -255,6 +246,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/wee_alloc@0.4.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -268,6 +260,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi@0.3.9?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -281,6 +274,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -294,6 +288,7 @@
       "is_optional": false,
       "is_resolved": true,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/Cargo.lock",
@@ -454,7 +449,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/autocfg@1.0.1",
@@ -463,7 +459,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/cfg-if@0.1.10",
@@ -472,7 +469,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/cfg-if@1.0.0",
@@ -481,7 +479,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/chrono@0.4.19",
@@ -490,7 +489,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/getrandom@0.2.3",
@@ -499,7 +499,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/hashbrown@0.11.2",
@@ -508,7 +509,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/libc@0.2.97",
@@ -517,7 +519,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/log@0.4.14",
@@ -526,7 +529,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/memory_units@0.4.0",
@@ -535,7 +539,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/num-integer@0.1.44",
@@ -544,7 +549,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/num-traits@0.2.14",
@@ -553,7 +559,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/once_cell@1.8.0",
@@ -562,7 +569,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/proxy-wasm@0.1.4",
@@ -571,7 +579,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/time@0.1.43",
@@ -580,7 +589,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/version_check@0.9.3",
@@ -589,7 +599,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/wasi@0.10.2%2Bwasi-snapshot-preview1",
@@ -598,7 +609,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/wee_alloc@0.4.5",
@@ -607,7 +619,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/winapi@0.3.9",
@@ -616,7 +629,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0",
@@ -625,7 +639,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0",
@@ -634,7 +649,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

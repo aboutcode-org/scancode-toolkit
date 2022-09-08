@@ -104,7 +104,14 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/jsmap/broken.js.map')
         result = list(l for _, l in numbered_text_lines(test_file))
         expected_file = test_file + '.expected'
-        check_text_lines(result, expected_file)
+        check_text_lines(result, expected_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_numbered_text_lines_strips_verbatim_cr_lf_from_jsmap(self):
+        test_file = self.get_test_loc('analysis/jsmap/crlf.js.map')
+        result = list(numbered_text_lines(test_file))
+        result = [l for _, l in result]
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file, regen=REGEN_TEST_FIXTURES)
 
     def test_numbered_text_lines_return_correct_number_of_lines(self):
         test_file = self.get_test_loc('analysis/correct_lines')
@@ -147,3 +154,12 @@ class TestAnalysis(FileBasedTesting):
         result = as_unicode(test)
         expected = ' is designed to give them,  BEFORE the      '
         assert result == expected
+
+    def test_numbered_text_lines_returns_same_text_from_file_and_from_strings(self):
+        test_file = self.get_test_loc('analysis/gpl-2.0-freertos.RULE')
+        from_file = list(numbered_text_lines(location=test_file))
+        with io.open(test_file, encoding='utf-8') as tf:
+            text = tf.read()
+        from_string = list(numbered_text_lines(location=text.splitlines(True)))
+        assert from_string == from_file
+

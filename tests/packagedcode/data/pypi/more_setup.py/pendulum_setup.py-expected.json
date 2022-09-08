@@ -1,0 +1,79 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pendulum",
+    "version": "2.0.4",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Python datetimes made easy",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "S\u00e9bastien Eustace",
+        "email": "sebastien@eustace.io",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://pendulum.eustace.io",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": {},
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "python_requires": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/python-dateutil",
+        "extracted_requirement": "python-dateutil<3.0,>=2.6",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytzdata",
+        "extracted_requirement": "pytzdata>=2018.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/typing",
+        "extracted_requirement": "typing<4.0,>=3.6",
+        "scope": ":python_version < \"3.5\"",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/pendulum",
+    "repository_download_url": "https://pypi.org/packages/source/p/pendulum/pendulum-2.0.4.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/pendulum/2.0.4/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pendulum@2.0.4"
+  }
+]

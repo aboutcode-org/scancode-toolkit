@@ -1,0 +1,9 @@
+key: ms-xamarin-uitest3.2.0
+short_name: MS Xamarin.UITest 3.2.0
+name: Microsoft Xamarin.UITest 3.2.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Xamarin.UITest/3.2.0/License
+spdx_license_key: LicenseRef-scancode-ms-xamarin-uitest3.2.0
+ignorable_urls:
+    - http://www.microsoft.com/exporting

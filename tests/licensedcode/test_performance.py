@@ -48,7 +48,7 @@ class TestMatchingPerf(FileBasedTesting):
         rules = models.load_rules(rule_dir)
         idx = index.LicenseIndex(rules)
 
-        stats_file = 'license_match_limited_index_profile_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_limited_index.txt'
         locations = [self.get_test_loc('detect/rule_template/query.txt')]
         self.profile_match(idx, locations, stats_file)
 
@@ -69,7 +69,6 @@ class TestMatchingPerf(FileBasedTesting):
         def mini_seq_match(idx):
             list(idx.get_approximate_matches(qry, [], []))
 
-
         # qtokens_as_str = array('h', tokens).tostring()
         start = time()
         for _ in range(100):
@@ -81,10 +80,10 @@ class TestMatchingPerf(FileBasedTesting):
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
-        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
+        rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
         idx = index.LicenseIndex([rule])
 
-        stats_file = 'license_approx_match_limited_index_profile_log.txt'
+        stats_file = 'test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index.txt'
         locations = [self.get_test_loc('index/templates/query.txt')]
         self.profile_match(idx, locations, stats_file)
 
@@ -93,7 +92,7 @@ class TestMatchingPerf(FileBasedTesting):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
 
-        stats_file = 'license_match_chunk_full_index_profile_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_match_hash.txt'
         locations = [self.get_test_loc('perf/cc-by-nc-sa-3.0.SPDX')]
         self.profile_match(idx, locations, stats_file)
 
@@ -101,7 +100,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_mixed_matching_full_index_profile_log1.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_mixed_matching.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py']]
         self.profile_match(idx, locations, stats_file)
 
@@ -109,7 +108,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_mixed_matching_long(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_mixed_matching_full_index_profile_log2.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_mixed_matching_long.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']]
         self.profile_match(idx, locations, stats_file)
 
@@ -117,7 +116,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_with_spurious_filtered_seq_matches(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_mixed_matching_full_index_profile_filtered_seq_matches_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_with_spurious_filtered_seq_matches.txt'
         locations = [self.get_test_loc(f) for f in ['perf/bsd-new_37.txt']]
         self.profile_match(idx, locations, stats_file)
 
@@ -125,7 +124,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_with_seq_matches(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_mixed_matching_full_index_profile_seq_matches_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_with_seq_matches.txt'
         locations = [self.get_test_loc(f) for f in ['perf/seq_query.txt']]
         self.profile_match(idx, locations, stats_file)
 
@@ -133,7 +132,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_binary_lkm(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_full_index_profile_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_binary_lkm.txt'
         locations = [self.get_test_loc('perf/eeepc_acpi.ko')]
         self.profile_match(idx, locations, stats_file)
 
@@ -141,7 +140,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_small_binary_lkm2(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
-        stats_file = 'license_match_full_index_profile_log.txt'
+        stats_file = 'test_match_license_performance_profiling_on_full_index_small_binary_lkm2.txt'
         locations = [self.get_test_loc('perf/ath_pci.ko')]
         self.profile_match(idx, locations, stats_file)
 
@@ -153,8 +152,8 @@ class TestIndexingPerformance(FileBasedTesting):
     def test_build_index_performance_profiling(self):
         import cProfile as profile
         import pstats
-        stats = 'build_index_performance_profile_log.txt'
-        test_py = 'cache.populate_cache()'
+        stats = 'test_build_index_performance_profiling.txt'
+        test_py = 'from licensedcode import cache;cache.populate_cache(force=True)'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)
         p.sort_stats('time').print_stats(40)
@@ -175,7 +174,7 @@ class TestTokenizingPerformance(FileBasedTesting):
     def test_get_all_rules_performance_profiling(self):
         import cProfile as profile
         import pstats
-        stats = 'get_all_rules_performance_profile_log.txt'
+        stats = 'test_get_all_rules_performance_profiling.txt'
         test_py = 'list(models.get_rules())'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)

@@ -31,30 +31,66 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/prompt-toolkit",
-        "extracted_requirement": ">=1.0.14",
+        "extracted_requirement": "prompt_toolkit>=1.0.14",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       },
       {
         "purl": "pkg:pypi/pygments@2.2.0",
-        "extracted_requirement": "==2.2.0",
+        "extracted_requirement": "Pygments==2.2.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       },
       {
         "purl": "pkg:pypi/regex",
-        "extracted_requirement": "",
+        "extracted_requirement": "regex",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {
+          "is_editable": false,
+          "link": null,
+          "hash_options": [],
+          "is_constraint": false,
+          "is_archive": null,
+          "is_wheel": false,
+          "is_url": null,
+          "is_vcs_url": null,
+          "is_name_at_url": false,
+          "is_local_path": null
+        }
       }
     ],
     "repository_homepage_url": null,

@@ -1,0 +1,159 @@
+[
+  {
+    "type": "maven",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:maven/cassandra-commons",
+        "extracted_requirement": "",
+        "scope": "project",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.google.guava/guava@18.0",
+        "extracted_requirement": "18.0",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/org.apache.cassandra/cassandra-all@3.0.9",
+        "extracted_requirement": "3.0.9",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/org.apache.commons/commons-compress@1.5",
+        "extracted_requirement": "1.5",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.amazonaws/aws-java-sdk-core@%24%7BawsVer%7D",
+        "extracted_requirement": "${awsVer}",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.amazonaws/aws-java-sdk@%24%7BawsVer%7D",
+        "extracted_requirement": "${awsVer}",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.microsoft.azure/azure-storage@4.2.0",
+        "extracted_requirement": "4.2.0",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/commons-io/commons-io@2.5",
+        "extracted_requirement": "2.5",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/com.datastax.cassandra/cassandra-driver-core@%24%7BdatastaxVer%7D",
+        "extracted_requirement": "${datastaxVer}",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/org.xerial.snappy/snappy-java@1.1.2.1",
+        "extracted_requirement": "1.1.2.1",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/junit/junit@%24%7BjunitVer%7D",
+        "extracted_requirement": "${junitVer}",
+        "scope": "compile",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:maven/junit/junit@%24%7BjunitVer%7D",
+        "extracted_requirement": "${junitVer}",
+        "scope": "testCompile",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "build_gradle",
+    "purl": null
+  }
+]

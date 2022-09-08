@@ -171,39 +171,43 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/six",
-        "extracted_requirement": ">=1.10.0",
+        "extracted_requirement": "six>=1.10.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/zenhan",
-        "extracted_requirement": ">=0.5.2",
+        "extracted_requirement": "zenhan>=0.5.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/django",
-        "extracted_requirement": null,
+        "extracted_requirement": "django; extra == \"test\"",
         "scope": "test",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pytest@2.9.1",
-        "extracted_requirement": "==2.9.1",
+        "extracted_requirement": "pytest==2.9.1; extra == \"test\"",
         "scope": "test",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": true,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/PyJPString",

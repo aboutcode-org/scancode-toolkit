@@ -372,6 +372,24 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_scan_with_private_package_json(self):
+        test_file = self.get_test_loc('npm/private/package.json')
+        expected_file = self.get_test_loc('npm/private/scan.expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_npm_scan_with_private_package_json_and_yarn_lock(self):
+        test_file = self.get_test_loc('npm/private-and-yarn/theia/')
+        expected_file = self.get_test_loc('npm/private-and-yarn/scan.expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
 
 test_data = [
     (['MIT'], 'mit'),

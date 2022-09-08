@@ -1,0 +1,35 @@
+{
+  "name": "saneyaml",
+  "version": "0.2dev",
+  "license": "Apache-2.0",
+  "description": "Dump readable YAML and load safely any YAML preserving ordering and avoiding surprises of type conversions. This library is a PyYaml wrapper with sane behaviour to read and write readable YAML safely, typically when used for configuration.",
+  "author": "AboutCode authors and others.",
+  "author_email": "info@nexb.com",
+  "url": "http://aboutcode.org",
+  "package_dir": {
+    "": "src"
+  },
+  "platforms": "any",
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development",
+    "Topic :: Utilities"
+  ],
+  "keywords": [
+    "yaml",
+    "block",
+    "flow",
+    "readable"
+  ],
+  "install_requires": [
+    "PyYAML >= 3.11, <= 3.13"
+  ]
+}

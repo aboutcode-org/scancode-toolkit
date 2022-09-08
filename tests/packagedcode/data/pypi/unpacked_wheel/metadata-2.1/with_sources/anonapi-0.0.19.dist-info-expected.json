@@ -160,12 +160,13 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pyyaml",
-        "extracted_requirement": null,
+        "extracted_requirement": "pyyaml",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "resolved_package": {}
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pypi.org/project/anonapi",

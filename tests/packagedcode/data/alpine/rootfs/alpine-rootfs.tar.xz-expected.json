@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/libretls@3.3.4-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-rootfs/lib/apk/db/installed",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/musl?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/apk-tools@2.12.7-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-rootfs/lib/apk/db/installed",
@@ -34,6 +36,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/apk-tools@2.12.7-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-rootfs/lib/apk/db/installed",
@@ -47,6 +50,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/scanelf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/musl-utils@1.2.2-r7?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-rootfs/lib/apk/db/installed",
@@ -60,6 +64,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:alpine/musl-utils?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "alpine-rootfs/lib/apk/db/installed",
@@ -100,7 +105,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
       "source_packages": [
@@ -164,7 +169,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "gpl-2.0",
       "declared_license": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
@@ -228,7 +233,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "gpl-2.0",
       "declared_license": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
@@ -319,7 +324,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mit",
       "declared_license": "MIT",
       "notice_text": null,
       "source_packages": [
@@ -545,7 +550,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mpl-2.0 AND mit",
       "declared_license": "MPL-2.0 AND MIT",
       "notice_text": null,
       "source_packages": [
@@ -609,7 +614,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "openssl-ssleay",
       "declared_license": "OpenSSL",
       "notice_text": null,
       "source_packages": [
@@ -700,7 +705,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "openssl-ssleay",
       "declared_license": "OpenSSL",
       "notice_text": null,
       "source_packages": [
@@ -764,7 +769,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "isc AND (bsd-new OR mit)",
       "declared_license": "ISC AND (BSD-3-Clause OR MIT)",
       "notice_text": null,
       "source_packages": [
@@ -828,7 +833,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "gpl-2.0",
       "declared_license": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
@@ -880,7 +885,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "zlib",
       "declared_license": "Zlib",
       "notice_text": null,
       "source_packages": [
@@ -944,7 +949,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "gpl-2.0",
       "declared_license": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
@@ -996,7 +1001,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "gpl-2.0",
       "declared_license": "GPL-2.0-only",
       "notice_text": null,
       "source_packages": [
@@ -1048,7 +1053,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
       "declared_license": "MIT BSD GPL2+",
       "notice_text": null,
       "source_packages": [
@@ -1100,7 +1105,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
       "copyright": null,
-      "license_expression": null,
+      "license_expression": "bsd-simplified AND bsd-new",
       "declared_license": "BSD-2-Clause AND BSD-3-Clause",
       "notice_text": null,
       "source_packages": [
@@ -2998,7 +3003,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3200,7 +3206,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:alpine/ca-certificates-bundle",
@@ -3209,7 +3216,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3371,7 +3379,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -3429,7 +3438,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

@@ -1,62 +1,79 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "paho-mqtt",
-  "version": "1.5.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "MQTT version 3.1.1 client class",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Roger Light",
-      "email": "roger@atchoo.org",
-      "url": "http://eclipse.org/paho"
-    }
-  ],
-  "keywords": [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Operating System :: MacOS :: MacOS X",
-    "Operating System :: Microsoft :: Windows",
-    "Operating System :: POSIX",
-    "Natural Language :: English",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Topic :: Communications",
-    "Topic :: Internet"
-  ],
-  "homepage_url": "http://eclipse.org/paho",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": {
-    "license": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
-    "classifiers": [
-      "License :: OSI Approved"
-    ]
-  },
-  "notice_text": null,
-  "dependencies": [],
-  "source_packages": [],
-  "purl": "pkg:pypi/paho-mqtt@1.5.0",
-  "repository_homepage_url": "https://pypi.org/project/paho-mqtt",
-  "repository_download_url": "https://pypi.io/packages/source/p/paho-mqtt/paho-mqtt-1.5.0.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/paho-mqtt/1.5.0/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "paho-mqtt",
+    "version": "1.5.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "MQTT version 3.1.1 client class",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Roger Light",
+        "email": "roger@atchoo.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "paho",
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Operating System :: MacOS :: MacOS X",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: POSIX",
+      "Natural Language :: English",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Topic :: Communications",
+      "Topic :: Internet"
+    ],
+    "homepage_url": "http://eclipse.org/paho",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "((epl-1.0 AND bsd-new) AND unknown) AND free-unknown",
+    "declared_license": {
+      "license": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
+      "classifiers": [
+        "License :: OSI Approved"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pysocks",
+        "extracted_requirement": "PySocks",
+        "scope": "proxy",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/paho-mqtt",
+    "repository_download_url": "https://pypi.org/packages/source/p/paho-mqtt/paho-mqtt-1.5.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/paho-mqtt/1.5.0/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/paho-mqtt@1.5.0"
+  }
+]

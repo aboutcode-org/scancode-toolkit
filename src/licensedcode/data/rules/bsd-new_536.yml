@@ -1,5 +1,5 @@
 license_expression: bsd-new
 is_license_notice: yes
-relevance: 95
+relevance: 100 
 ignorable_urls:
     - https://developers.google.com/open-source/licenses/bsd

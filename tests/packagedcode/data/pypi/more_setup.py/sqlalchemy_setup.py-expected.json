@@ -1,0 +1,141 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "SQLAlchemy",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Database Abstraction Library",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Mike Bayer",
+        "email": "mike_mp@zzzcomputing.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Topic :: Database :: Front-Ends",
+      "Operating System :: OS Independent"
+    ],
+    "homepage_url": "http://www.sqlalchemy.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT License",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/mysqlclient",
+        "extracted_requirement": "mysqlclient",
+        "scope": "mysql",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pymysql",
+        "extracted_requirement": "pymysql",
+        "scope": "pymysql",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/psycopg2",
+        "extracted_requirement": "psycopg2",
+        "scope": "postgresql",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pg8000",
+        "extracted_requirement": "pg8000",
+        "scope": "postgresql_pg8000",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/psycopg2cffi",
+        "extracted_requirement": "psycopg2cffi",
+        "scope": "postgresql_psycopg2cffi",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/cx-oracle",
+        "extracted_requirement": "cx_oracle",
+        "scope": "oracle",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyodbc",
+        "extracted_requirement": "pyodbc",
+        "scope": "mssql_pyodbc",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pymssql",
+        "extracted_requirement": "pymssql",
+        "scope": "mssql_pymssql",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/SQLAlchemy",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/SQLAlchemy/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/sqlalchemy"
+  }
+]

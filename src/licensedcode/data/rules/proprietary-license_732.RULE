@@ -1,0 +1,77 @@
+Paid License
+
+Version 3.0.2
+
+Details
+
+    Date: date (ISO 8601)
+
+    Developer: developer name, developer location (ISO 3166-2), developer e-mail
+
+    Developer’s Agent: agent name, agent location (ISO 3166-2), agent website
+
+    Customer: customer name, customer location (ISO 3166-2), customer e-mail
+
+    Software: software name, the software category available at software URL
+
+Versions
+
+This license covers the current version of the software as well as any new versions the developer might publish, until they publish a new version with a requirement to buy a separate license. For example, if the current version of the software is 1.0.0, the developer publishes 1.1.0 in six months, and the developer publishes 1.2.0 six months after that, with a requirement to buy separate licenses for 1.2.0, this license covers versions 1.0.0 and 1.1.0, but not 1.2.0.
+Personnel
+
+If the customer is a corporation or other kind of legal entity, rather than an individual, this license covers up to users of the customer’s personnel in any rolling 90-day period.
+Eligibility
+
+To be covered by this license as customer personnel, you must be:
+
+    an employee of the customer or of its wholly owned subsidiary
+
+    an independent contractor providing services to the customer or to its wholly owned subsidiary
+
+    an employee or independent contractor of an independent contractor providing services to the customer or to its wholly owned subsidiary
+
+Work
+
+This license covers personnel only in work for the customer or for its wholly owned subsidiaries. This license does not cover personnel in work on personal projects or work for other organizations.
+Responsibility
+
+Personnel have to follow all the rules of this license. The customer agrees to stand legally responsible for any personnel that break those rules.
+Sublicensing
+
+If you combine some or all of the software with other work in a larger project, you can pass your license for the software on to, or "sublicense", users, developers, distributors, and others, under these rules:
+Value
+
+Each project has to offer significant content or functionality beyond that of the software, and users must be reasonably expected to use the project primarily for that additional content or functionality.
+Maintenance
+
+Maintaining the project is allowed, but not using the software to develop new functionality or other projects.
+Terms
+
+All the rules of this license continue to apply.
+Unlimited
+
+You can sublicense for as many projects as you like.
+Notices
+
+To make sure everyone who gets a copy of the software knows about the terms for its use, you must give everyone who gets a copy of some or all of the software from you, with or without changes, the text of this license and any free public license for the software, or hyperlinks to their specific versions on https://indiecc.com.
+Payment
+
+In order to keep this license, your payment of price (USD) to the developer’s agent has to go through and remain settled. Denial, chargeback, or cancellation of the payment immediately ends this license.
+Copyright
+
+The developer licenses the customer to do everything with the software that would otherwise infringe the developer’s copyright in it.
+Patent
+
+The developer licenses the customer to do everything with the software that would otherwise infringe patent claims the developer can license or becomes able to license.
+Agency
+
+The developer’s agent sold this license on behalf of the developer. The developer and the customer are legal “parties” to this license. The developer’s agent is not.
+Guarantees
+
+The developer guarantees that they own or have the rights to license copyrights in the software. If the software invokes specific software dependencies, the developer guarantees that they have either been published under permissive license terms that Blue Oak Council rates “bronze” or better, or that their license terms have been noted in documentation published with the software.
+Disclaimer
+
+With the sole exception of Guarantees, as far as the law allows, the software comes as is, without any warranty or condition.
+Exclusion
+
+With the sole exception of Guarantees, as far as the law allows, neither the developer nor their agent will be liable to anyone for any damages related to the software or this license, under any kind of legal claim.

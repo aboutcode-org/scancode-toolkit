@@ -1,0 +1,445 @@
+[
+  {
+    "type": "deb",
+    "namespace": null,
+    "name": "libncurses5",
+    "version": "6.1-1ubuntu1.18.04",
+    "qualifiers": {
+      "architecture": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "https://invisible-island.net/ncurses/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+    "license_expression": "x11-fsf AND x11-xconsortium AND bsd-new AND x11-fsf",
+    "declared_license": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ncurses"
+    ],
+    "extra_data": {
+      "multi_arch": "same",
+      "missing_file_references": [
+        {
+          "path": "lib/x86_64-linux-gnu/libncurses.so.5.9",
+          "size": 0,
+          "sha1": null,
+          "md5": "23c8a935fa4fc7290d55cc5df3ef56b1",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        },
+        {
+          "path": "usr/lib/x86_64-linux-gnu/libform.so.5.9",
+          "size": 0,
+          "sha1": null,
+          "md5": "98b70f283324e89db5787a018a54adf4",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        },
+        {
+          "path": "usr/lib/x86_64-linux-gnu/libmenu.so.5.9",
+          "size": 0,
+          "sha1": null,
+          "md5": "e3a0f5154928da2da234920343ac14b2",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        },
+        {
+          "path": "usr/lib/x86_64-linux-gnu/libpanel.so.5.9",
+          "size": 0,
+          "sha1": null,
+          "md5": "a927e7d76753bb85f5a784b653d337d2",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        }
+      ]
+    },
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "datafile_paths": [
+      "debian-container-layer.tar.xz/var/lib/dpkg/status",
+      "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
+      "debian-container-layer.tar.xz/var/lib/dpkg/info/libncurses5:amd64.md5sums"
+    ],
+    "datasource_ids": [
+      "debian_installed_status_db",
+      "debian_copyright_in_package",
+      "debian_installed_md5sums"
+    ],
+    "resources": [
+      {
+        "path": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
+        "type": "file",
+        "package_data": [
+          {
+            "type": "deb",
+            "namespace": null,
+            "name": "libncurses5",
+            "version": null,
+            "qualifiers": {},
+            "subpath": null,
+            "primary_language": null,
+            "description": null,
+            "release_date": null,
+            "parties": [],
+            "keywords": [],
+            "homepage_url": null,
+            "download_url": null,
+            "size": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "sha512": null,
+            "bug_tracking_url": null,
+            "code_view_url": null,
+            "vcs_url": null,
+            "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+            "license_expression": "x11-fsf AND x11-xconsortium AND bsd-new AND x11-fsf",
+            "declared_license": null,
+            "notice_text": null,
+            "source_packages": [],
+            "file_references": [],
+            "extra_data": {},
+            "dependencies": [],
+            "repository_homepage_url": null,
+            "repository_download_url": null,
+            "api_data_url": null,
+            "datasource_id": "debian_copyright_in_package",
+            "purl": "pkg:deb/libncurses5"
+          }
+        ],
+        "for_packages": [
+          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
+      },
+      {
+        "path": "debian-container-layer.tar.xz/var/lib/dpkg/info/libncurses5:amd64.md5sums",
+        "type": "file",
+        "package_data": [
+          {
+            "type": "deb",
+            "namespace": null,
+            "name": "libncurses5",
+            "version": null,
+            "qualifiers": {
+              "arch": "amd64"
+            },
+            "subpath": null,
+            "primary_language": null,
+            "description": null,
+            "release_date": null,
+            "parties": [],
+            "keywords": [],
+            "homepage_url": null,
+            "download_url": null,
+            "size": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "sha512": null,
+            "bug_tracking_url": null,
+            "code_view_url": null,
+            "vcs_url": null,
+            "copyright": null,
+            "license_expression": null,
+            "declared_license": null,
+            "notice_text": null,
+            "source_packages": [],
+            "file_references": [
+              {
+                "path": "lib/x86_64-linux-gnu/libncurses.so.5.9",
+                "size": 0,
+                "sha1": null,
+                "md5": "23c8a935fa4fc7290d55cc5df3ef56b1",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              },
+              {
+                "path": "usr/lib/x86_64-linux-gnu/libform.so.5.9",
+                "size": 0,
+                "sha1": null,
+                "md5": "98b70f283324e89db5787a018a54adf4",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              },
+              {
+                "path": "usr/lib/x86_64-linux-gnu/libmenu.so.5.9",
+                "size": 0,
+                "sha1": null,
+                "md5": "e3a0f5154928da2da234920343ac14b2",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              },
+              {
+                "path": "usr/lib/x86_64-linux-gnu/libpanel.so.5.9",
+                "size": 0,
+                "sha1": null,
+                "md5": "a927e7d76753bb85f5a784b653d337d2",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              }
+            ],
+            "extra_data": {},
+            "dependencies": [],
+            "repository_homepage_url": null,
+            "repository_download_url": null,
+            "api_data_url": null,
+            "datasource_id": "debian_installed_md5sums",
+            "purl": "pkg:deb/libncurses5?arch=amd64"
+          }
+        ],
+        "for_packages": [
+          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
+      }
+    ],
+    "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": null,
+    "name": "libndp0",
+    "version": "1.4-2ubuntu0.16.04.1",
+    "qualifiers": {
+      "architecture": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Library for Neighbor Discovery Protocol\n libndp is a library for the IPv6 Neighbor Discovery Protocol (NDP).  It\n contains functions for building and parsing NDP messages, and provides\n a high-level interface for sending and receiving NDP messages on a\n network interface.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "http://libndp.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+    "license_expression": "(lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)",
+    "declared_license": [
+      "LGPL-2.1+",
+      "LGPL-2.1+",
+      "LGPL-2.1+"
+    ],
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/libndp"
+    ],
+    "extra_data": {
+      "multi_arch": "same",
+      "missing_file_references": [
+        {
+          "path": "usr/lib/x86_64-linux-gnu/libndp.so.0.0.2",
+          "size": 0,
+          "sha1": null,
+          "md5": "5d26434efecc08048ab72357af804ef7",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        },
+        {
+          "path": "usr/share/doc/libndp0/changelog.Debian.gz",
+          "size": 0,
+          "sha1": null,
+          "md5": "60d977e0c9a9fb07c1f8ae3090ea6f48",
+          "sha256": null,
+          "sha512": null,
+          "extra_data": {}
+        }
+      ]
+    },
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "datafile_paths": [
+      "debian-container-layer.tar.xz/var/lib/dpkg/status",
+      "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
+      "debian-container-layer.tar.xz/var/lib/dpkg/info/libndp0:amd64.md5sums"
+    ],
+    "datasource_ids": [
+      "debian_installed_status_db",
+      "debian_copyright_in_package",
+      "debian_installed_md5sums"
+    ],
+    "resources": [
+      {
+        "path": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
+        "type": "file",
+        "package_data": [
+          {
+            "type": "deb",
+            "namespace": null,
+            "name": "libndp0",
+            "version": null,
+            "qualifiers": {},
+            "subpath": null,
+            "primary_language": null,
+            "description": null,
+            "release_date": null,
+            "parties": [],
+            "keywords": [],
+            "homepage_url": null,
+            "download_url": null,
+            "size": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "sha512": null,
+            "bug_tracking_url": null,
+            "code_view_url": null,
+            "vcs_url": null,
+            "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+            "license_expression": "(lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)",
+            "declared_license": [
+              "LGPL-2.1+",
+              "LGPL-2.1+",
+              "LGPL-2.1+"
+            ],
+            "notice_text": null,
+            "source_packages": [],
+            "file_references": [],
+            "extra_data": {},
+            "dependencies": [],
+            "repository_homepage_url": null,
+            "repository_download_url": null,
+            "api_data_url": null,
+            "datasource_id": "debian_copyright_in_package",
+            "purl": "pkg:deb/libndp0"
+          }
+        ],
+        "for_packages": [
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
+      },
+      {
+        "path": "debian-container-layer.tar.xz/var/lib/dpkg/info/libndp0:amd64.md5sums",
+        "type": "file",
+        "package_data": [
+          {
+            "type": "deb",
+            "namespace": null,
+            "name": "libndp0",
+            "version": null,
+            "qualifiers": {
+              "arch": "amd64"
+            },
+            "subpath": null,
+            "primary_language": null,
+            "description": null,
+            "release_date": null,
+            "parties": [],
+            "keywords": [],
+            "homepage_url": null,
+            "download_url": null,
+            "size": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "sha512": null,
+            "bug_tracking_url": null,
+            "code_view_url": null,
+            "vcs_url": null,
+            "copyright": null,
+            "license_expression": null,
+            "declared_license": null,
+            "notice_text": null,
+            "source_packages": [],
+            "file_references": [
+              {
+                "path": "usr/lib/x86_64-linux-gnu/libndp.so.0.0.2",
+                "size": 0,
+                "sha1": null,
+                "md5": "5d26434efecc08048ab72357af804ef7",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              },
+              {
+                "path": "usr/share/doc/libndp0/changelog.Debian.gz",
+                "size": 0,
+                "sha1": null,
+                "md5": "60d977e0c9a9fb07c1f8ae3090ea6f48",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              },
+              {
+                "path": "usr/share/doc/libndp0/copyright",
+                "size": 0,
+                "sha1": null,
+                "md5": "3f4ecdd67d5b9427cdc66847bdd11cf4",
+                "sha256": null,
+                "sha512": null,
+                "extra_data": {}
+              }
+            ],
+            "extra_data": {},
+            "dependencies": [],
+            "repository_homepage_url": null,
+            "repository_download_url": null,
+            "api_data_url": null,
+            "datasource_id": "debian_installed_md5sums",
+            "purl": "pkg:deb/libndp0?arch=amd64"
+          }
+        ],
+        "for_packages": [
+          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
+      }
+    ],
+    "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
+  }
+]

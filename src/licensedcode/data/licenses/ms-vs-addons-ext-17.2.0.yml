@@ -1,0 +1,13 @@
+key: ms-vs-addons-ext-17.2.0
+short_name: MS VS Add-Ons and Extensions 17.2.0
+name: Microsoft Visual Studio Add-Ons and Extensions 17.2.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.VisualStudio.Debugger.Contracts/17.2.0/License
+spdx_license_key: LicenseRef-scancode-ms-vs-addons-ext-17.2.0
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/issues/2955
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - https://docs.microsoft.com/en-us/legal/gdpr
+    - https://go.microsoft.com/fwlink/?LinkID=824704

@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 AND patent-disclaimer
+is_license_notice: yes
+ignorable_urls:
+  - http://oss.sgi.com/projects/GenInfo/SGIGPLNoticeExplan/
+  - http://www.sgi.com/
+

@@ -59,7 +59,12 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def compute_normalized_license(cls, package):
+        _declared, detected = detect_declared_license(package.declared_license)
+        return detected
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         levels_up = len('lib/apk/db/installed'.split('/'))
         root_resource = get_ancestor(
@@ -76,15 +81,6 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
         package.license_expression = cls.compute_normalized_license(package)
 
-        dependent_packages = package_data.dependencies
-        if dependent_packages:
-            yield from models.Dependency.from_dependent_packages(
-                dependent_packages=dependent_packages,
-                datafile_path=resource.path,
-                datasource_id=package_data.datasource_id,
-                package_uid=package_uid,
-            )
-
         root_path = Path(root_resource.path)
         # a file ref extends from the root of the filesystem
         file_references_by_path = {
@@ -92,6 +88,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             for ref in package.file_references
         }
 
+        resources = []
         for res in root_resource.walk(codebase):
             ref = file_references_by_path.get(res.path)
             if not ref:
@@ -100,10 +97,8 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             # path is found and processed: remove it, so we can check if we
             # found all of them
             del file_references_by_path[res.path]
-            res.for_packages.append(package_uid)
-            res.save(codebase)
-
-            yield res
+            package_adder(package_uid, res, codebase)
+            resources.append(res)
 
         # if we have left over file references, add these to extra data
         if file_references_by_path:
@@ -111,6 +106,16 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             package.extra_data['missing_file_references'] = missing
 
         yield package
+        yield from resources
+
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            )
 
 
 class AlpineApkbuildHandler(models.DatafileHandler):
@@ -132,11 +137,12 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         return detected
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 
@@ -1772,4 +1778,3 @@ if __name__ == '__main__':
     # get_apkindex_licenses(loc, 'alpine-licenses.csv')
     get_apkbuild_licenses(loc, 'alpine-licenses.csv')
     detect_licenses('alpine-licenses.csv', 'alpine-licenses-detection.csv')
-

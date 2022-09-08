@@ -85,7 +85,7 @@ class CargoTomlHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Assemble Cargo.toml and possible Cargo.lock datafiles
         """
@@ -93,6 +93,7 @@ class CargoTomlHandler(models.DatafileHandler):
             datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 
@@ -144,7 +145,7 @@ class CargoLockHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Assemble Cargo.toml and possible Cargo.lock datafiles
         """
@@ -152,6 +153,7 @@ class CargoLockHandler(models.DatafileHandler):
             datafile_name_patterns=('Cargo.toml', 'Cargo.lock',),
             directory=resource.parent(codebase),
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 

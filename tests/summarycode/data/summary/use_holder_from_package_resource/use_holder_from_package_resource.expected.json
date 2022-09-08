@@ -1,0 +1,338 @@
+{
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/pybind11",
+      "extracted_requirement": "pybind11>=2.5.0",
+      "scope": "setup",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/pybind11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "codebase/setup.py",
+      "datasource_id": "pypi_setup_py"
+    }
+  ],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "atheris",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "A coverage-guided fuzzer for Python and Python extensions.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Bitshift",
+          "email": "atheris@google.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/google/atheris/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://pypi.org/project/atheris",
+      "repository_download_url": null,
+      "api_data_url": "https://pypi.org/pypi/atheris/json",
+      "package_uid": "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "codebase/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/atheris"
+    }
+  ],
+  "summary": {
+    "declared_license_expression": "apache-2.0",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Google, Fraunhofer FKIE",
+    "primary_language": "Python",
+    "other_license_expressions": [],
+    "other_holders": [
+      {
+        "value": "Example Corporation",
+        "count": 1
+      }
+    ],
+    "other_languages": []
+  },
+  "files": [
+    {
+      "path": "codebase",
+      "type": "directory",
+      "name": "codebase",
+      "base_name": "codebase",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 1215,
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/README.txt",
+      "type": "file",
+      "name": "README.txt",
+      "base_name": "README",
+      "extension": ".txt",
+      "size": 33,
+      "sha1": "49c764d8447393378fcd13c8ab69c807a3ce67e9",
+      "md5": "d5a15a5aab582d924dddd5a87a5fdca1",
+      "sha256": "44bbf9c92da0a4ae21795690dc8b9ae553f57b5b3d7a9d6ce794869a7e0542c3",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with no line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) Example Corporation",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Example Corporation",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/setup.py",
+      "type": "file",
+      "name": "setup.py",
+      "base_name": "setup",
+      "extension": ".py",
+      "size": 1182,
+      "sha1": "ca26ea89aab5d6ac910fe4e092cd7c8857e62322",
+      "md5": "2761f0e079fcd2b07af5088c4712f8f0",
+      "sha256": "a047b71004e6b070d174d260b95dca5930a6ce51948e66afec25692c157408c5",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 100.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 4,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "apache-2.0_7.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 85,
+            "matched_length": 85,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "percentage_of_license_text": 53.12,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2020 Google LLC",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "copyright": "Copyright 2021 Fraunhofer FKIE",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Google LLC",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "holder": "Fraunhofer FKIE",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "atheris",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "A coverage-guided fuzzer for Python and Python extensions.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Bitshift",
+              "email": "atheris@google.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/google/atheris/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": {},
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/pybind11",
+              "extracted_requirement": "pybind11>=2.5.0",
+              "scope": "setup",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/atheris",
+          "repository_download_url": null,
+          "api_data_url": "https://pypi.org/pypi/atheris/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/atheris"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

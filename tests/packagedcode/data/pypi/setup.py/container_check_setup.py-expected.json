@@ -14,12 +14,15 @@
         "type": "person",
         "role": "author",
         "name": "Ian Main",
-        "email": null,
+        "email": "imain@redhat.com",
         "url": null
       }
     ],
     "keywords": [
-      "containers update rpm yum",
+      "containers",
+      "update",
+      "rpm",
+      "yum",
       "Development Status :: 4 - Beta",
       "Intended Audience :: Developers",
       "Topic :: System :: Archiving :: Packaging",

@@ -50,11 +50,12 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
         )
 
 
@@ -75,7 +76,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
     """
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         """
         Given a ``package_data`` PackageData found in the ``resource`` datafile
         of the ``codebase``, assemble package their files and dependencies
@@ -100,6 +101,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 package=package,
                 resource=resource,
                 codebase=codebase,
+                package_adder=package_adder
             )
 
             yield package
@@ -175,12 +177,13 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
             )
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, skip_name=None):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name=None):
         package_uid = package.package_uid
+        if not package_uid:
+            return
         parent = resource.parent(codebase)
         for res in walk_build(resource=parent, codebase=codebase, skip_name=skip_name):
-            res.for_packages.append(package_uid)
-            res.save(codebase)
+            package_adder(package_uid, res, codebase)
 
 
 def walk_build(resource, codebase, skip_name):
@@ -233,11 +236,12 @@ class BazelBuildHandler(BaseStarlarkManifestHandler):
     documentation_url = 'https://bazel.build/'
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUILD'):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name='BUILD'):
         return super().assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
             skip_name=skip_name,
         )
 
@@ -250,11 +254,12 @@ class BuckPackageHandler(BaseStarlarkManifestHandler):
     documentation_url = 'https://buck.build/'
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, skip_name='BUCK'):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name='BUCK'):
         return super().assign_package_to_resources(
             package=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
             skip_name=skip_name,
         )
 
@@ -375,9 +380,10 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             return models.compute_normalized_license(declared_license)
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase):
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
             package_=package,
             resource=resource,
             codebase=codebase,
+            package_adder=package_adder,
         )

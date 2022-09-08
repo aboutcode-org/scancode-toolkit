@@ -4,9 +4,9 @@ All "Core" Scan Options
 -n, --processes INTEGER  Scan ``<input>`` using n parallel processes.
                          [Default: 1]
 
---verbose                Print verbose file-by-file progress messages.
+-v, --verbose            Print verbose file-by-file progress messages.
 
---quiet                  Do not print summary or progress messages.
+-q, --quiet              Do not print summary or progress messages.
 
 --timeout FLOAT          Stop scanning a file if scanning takes longer
                          than a timeout in seconds.  [Default: 120]

@@ -1,54 +1,68 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "pycparser",
-  "version": "2.20",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "C parser in Python",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Eli Bendersky",
-      "email": "eliben@gmail.com",
-      "url": "https://github.com/eliben/pycparser"
-    }
-  ],
-  "keywords": [
-    "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6"
-  ],
-  "homepage_url": "https://github.com/eliben/pycparser",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": {
-    "license": "BSD",
-    "classifiers": [
-      "License :: OSI Approved :: BSD License"
-    ]
-  },
-  "notice_text": null,
-  "dependencies": [],
-  "source_packages": [],
-  "purl": "pkg:pypi/pycparser@2.20",
-  "repository_homepage_url": "https://pypi.org/project/pycparser",
-  "repository_download_url": "https://pypi.io/packages/source/p/pycparser/pycparser-2.20.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/pycparser/2.20/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pycparser",
+    "version": "2.20",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "C parser in Python",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Eli Bendersky",
+        "email": "eliben@gmail.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Eli Bendersky",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6"
+    ],
+    "homepage_url": "https://github.com/eliben/pycparser",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "unknown AND bsd-new",
+    "declared_license": {
+      "license": "BSD",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ]
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "python_requires": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/pycparser",
+    "repository_download_url": "https://pypi.org/packages/source/p/pycparser/pycparser-2.20.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/pycparser/2.20/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/pycparser@2.20"
+  }
+]

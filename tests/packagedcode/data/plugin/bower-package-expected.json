@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "bower.json",
@@ -21,6 +22,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "bower.json",
@@ -34,6 +36,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "bower.json",
@@ -152,7 +155,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:bower/eventEmitter",
@@ -161,7 +165,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:bower/qunit",
@@ -170,7 +175,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,

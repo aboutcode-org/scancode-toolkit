@@ -8,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/php?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -21,6 +22,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/phpunit/phpunit?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -34,6 +36,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:composer/squizlabs/php_codesniffer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "composer.json",
@@ -154,7 +157,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/phpunit/phpunit",
@@ -163,7 +167,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -172,7 +177,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",

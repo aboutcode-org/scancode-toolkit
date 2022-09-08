@@ -93,7 +93,13 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
     qbegin = query_run.start
 
     matched_positions = get_matched_positions(query_run.tokens, qbegin, automaton)
+    if TRACE:
+        matched_positions = list(matched_positions)
+        logger_debug(' ##exact_AHO: matched_positions', matched_positions)
     matched_spans = get_matched_spans(matched_positions, query_run.matchables)
+    if TRACE:
+        matched_spans = list(matched_spans)
+        logger_debug(' ##exact_AHO: matched_spans', matched_spans)
 
     len_legalese = idx.len_legalese
     rules_by_rid = idx.rules_by_rid

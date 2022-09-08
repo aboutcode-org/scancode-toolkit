@@ -146,7 +146,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         return detected
 
     @classmethod
-    def assemble(cls, package_data, resource, codebase):
+    def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         # take the 1st pattern as a reference
         # for instance: '*usr/lib/sysimage/rpm/Packages.db'
@@ -188,6 +188,29 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         _declared, detected = detect_declared_license(package.declared_license)
         package.license_expression = detected
 
+        # tag files from refs
+        resources = []
+        missing_file_references = []
+        # a file ref extends from the root of the filesystem
+        for ref in package.file_references:
+            ref_path = '/'.join([root_path, ref.path])
+            res = codebase.get_resource(ref_path)
+            if not res:
+                missing_file_references.append(ref)
+            else:
+                if package_uid:
+                    # path is found and processed: remove it, so we can check if we
+                    # found all of them
+                    package_adder(package_uid, res, codebase)
+                    resources.append(res)
+
+        # if we have left over file references, add these to extra data
+        if missing_file_references:
+            missing = sorted(missing_file_references, key=lambda r: r.path)
+            package.extra_data['missing_file_references'] = missing
+
+        yield package
+
         # yield deps
         dependent_packages = package_data.dependencies
         if dependent_packages:
@@ -201,26 +224,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                     dep.namespace = namespace
                 yield dep
 
-        # tag files from refs
-        missing_file_references = []
-        # a file ref extends from the root of the filesystem
-        for ref in package.file_references:
-            ref_path = '/'.join([root_path, ref.path])
-            res = codebase.get_resource(ref_path)
-            if not res:
-                missing_file_references.append(ref)
-            else:
-                # path is found and processed: remove it, so we can check if we
-                # found all of them
-                res.for_packages.append(package_uid)
-                res.save(codebase)
-
-        # if we have left over file references, add these to extra data
-        if missing_file_references:
-            missing = sorted(missing_file_references, key=lambda r: r.path)
-            package.extra_data['missing_file_references'] = missing
-
-        yield package
+        yield from resources
 
 
 # TODO: add dependencies!!!

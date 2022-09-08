@@ -1,0 +1,69 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "my-package",
+    "version": "0.1.2",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Demo project.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "S\u00e9bastien Eustace",
+        "email": "sebastien@eustace.io",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/demo/demo",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT"
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pendulum",
+        "extracted_requirement": "pendulum>=1.4.4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/cachy",
+        "extracted_requirement": "cachy[msgpack]>=0.2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/my-package",
+    "repository_download_url": "https://pypi.org/packages/source/m/my-package/my-package-0.1.2.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/my-package/0.1.2/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/my-package@0.1.2"
+  }
+]

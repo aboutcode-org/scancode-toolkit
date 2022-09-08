@@ -1,30 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 5
-      }
-    }
-  ],
   "dependencies": [
     {
       "purl": "pkg:npm/lodash._baseclone",
@@ -34,6 +8,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/lodash._baseclone?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package.json",
@@ -94,6 +69,7 @@
         "datasource_id": "npm_package_lock_json",
         "purl": "pkg:npm/ms@2.0.0"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ms@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package-lock.json",
@@ -154,6 +130,7 @@
         "datasource_id": "npm_package_lock_json",
         "purl": "pkg:npm/regenerator-runtime@0.11.0"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/regenerator-runtime@0.11.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package-lock.json",
@@ -214,6 +191,7 @@
         "datasource_id": "npm_package_lock_json",
         "purl": "pkg:npm/to-fast-properties@1.0.3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/to-fast-properties@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/package-lock.json",
@@ -227,6 +205,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
@@ -240,6 +219,7 @@
       "is_optional": false,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/wkx?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
@@ -253,6 +233,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/chai?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
@@ -266,6 +247,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/chai-as-promised?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
@@ -279,6 +261,7 @@
       "is_optional": true,
       "is_resolved": false,
       "resolved_package": {},
+      "extra_data": {},
       "dependency_uid": "pkg:npm/watchr?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package.json",
@@ -339,6 +322,7 @@
         "datasource_id": "npm_package_lock_json",
         "purl": "pkg:npm/ansi-regex@2.1.1"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/ansi-regex@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package-lock.json",
@@ -399,6 +383,7 @@
         "datasource_id": "npm_package_lock_json",
         "purl": "pkg:npm/to-fast-properties@1.0.3"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/to-fast-properties@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/package-lock.json",
@@ -447,6 +432,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/abbrev@1.0.9"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/abbrev@1.0.9?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/yarn.lock",
@@ -496,7 +482,8 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
-            "resolved_package": {}
+            "resolved_package": {},
+            "extra_data": {}
           }
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/xdg-basedir",
@@ -505,6 +492,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/xdg-basedir@2.0.0"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/xdg-basedir@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/yarn.lock",
@@ -553,6 +541,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/xtend@4.0.1"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/xtend@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/yarn.lock",
@@ -601,6 +590,7 @@
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/yallist@2.0.0"
       },
+      "extra_data": {},
       "dependency_uid": "pkg:npm/yallist@2.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/node_modules/sequelize/yarn.lock",
@@ -877,7 +867,8 @@
                 "api_data_url": "https://registry.npmjs.org/ansi-regex/2.1.1",
                 "datasource_id": "npm_package_lock_json",
                 "purl": "pkg:npm/ansi-regex@2.1.1"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/to-fast-properties@1.0.3",
@@ -933,7 +924,8 @@
                 "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
                 "datasource_id": "npm_package_lock_json",
                 "purl": "pkg:npm/to-fast-properties@1.0.3"
-              }
+              },
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
@@ -1031,7 +1023,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/wkx",
@@ -1040,7 +1033,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/chai",
@@ -1049,7 +1043,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/chai-as-promised",
@@ -1058,7 +1053,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/watchr",
@@ -1067,7 +1063,8 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
@@ -1158,7 +1155,8 @@
                 "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/abbrev@1.0.9"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/xdg-basedir@2.0.0",
@@ -1204,7 +1202,8 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
-                    "resolved_package": {}
+                    "resolved_package": {},
+                    "extra_data": {}
                   }
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/xdg-basedir",
@@ -1212,7 +1211,8 @@
                 "api_data_url": "https://registry.npmjs.org/xdg-basedir/2.0.0",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/xdg-basedir@2.0.0"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/xtend@4.0.1",
@@ -1256,7 +1256,8 @@
                 "api_data_url": "https://registry.npmjs.org/xtend/4.0.1",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/xtend@4.0.1"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/yallist@2.0.0",
@@ -1300,7 +1301,8 @@
                 "api_data_url": "https://registry.npmjs.org/yallist/2.0.0",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/yallist@2.0.0"
-              }
+              },
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": null,
@@ -1405,7 +1407,8 @@
                 "api_data_url": "https://registry.npmjs.org/ms/2.0.0",
                 "datasource_id": "npm_package_lock_json",
                 "purl": "pkg:npm/ms@2.0.0"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/regenerator-runtime@0.11.0",
@@ -1461,7 +1464,8 @@
                 "api_data_url": "https://registry.npmjs.org/regenerator-runtime/0.11.0",
                 "datasource_id": "npm_package_lock_json",
                 "purl": "pkg:npm/regenerator-runtime@0.11.0"
-              }
+              },
+              "extra_data": {}
             },
             {
               "purl": "pkg:npm/to-fast-properties@1.0.3",
@@ -1517,7 +1521,8 @@
                 "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
                 "datasource_id": "npm_package_lock_json",
                 "purl": "pkg:npm/to-fast-properties@1.0.3"
-              }
+              },
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
@@ -1607,7 +1612,8 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
-              "resolved_package": {}
+              "resolved_package": {},
+              "extra_data": {}
             }
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",

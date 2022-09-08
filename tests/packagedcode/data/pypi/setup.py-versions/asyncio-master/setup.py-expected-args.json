@@ -1,0 +1,11 @@
+{
+  "name": "asyncio",
+  "version": "3.4.4",
+  "description": "reference implementation of PEP 3156",
+  "url": "http://www.python.org/dev/peps/pep-3156/",
+  "classifiers": [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3"
+  ]
+}

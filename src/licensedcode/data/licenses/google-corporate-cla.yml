@@ -1,0 +1,7 @@
+key: google-corporate-cla
+short_name: Google Corporate CLA
+name: Google Software Grant and Corporate Contributor License Agreement
+category: Patent License
+owner: Google
+homepage_url: https://cla.developers.google.com/about/google-corporate
+spdx_license_key: LicenseRef-scancode-google-corporate-cla

@@ -1,0 +1,233 @@
+Duende Software, Inc. – Rev. 01/2022
+DUENDE™ SOFTWARE LICENSE AGREEMENT
+
+This Software License Agreement (“Agreement”) is a legal agreement between you (either
+as an individual or a single entity (“You”)) and Duende Software, Inc. (“Licensor”) for certain
+software application libraries as set forth on the quote or invoice (“Applications”) provided to
+You by Licensor (“Quote”), associated “online”, electronic or hard copy user documentation,
+and any upgrades, modified versions, bug fixes, additions and improvements thereof that
+Licensor may make available during the Term of the Agreement (collectively referred to as
+the “Software”).
+
+References to “You” herein shall refer to You, and/or the entity on whose behalf You are using
+the Software, and all individual developer-users of the Software on behalf of such entity.
+
+Please note: this Agreement is not intended for affiliate use outside the scope of this
+Agreement. If you intend to purchase the software for use by Your Affiliates please contact
+licensor for the appropriate fees and license before proceeding. “Affiliate” means any parent
+or subsidiary entity that controls or is controlled by You. "Control" means the direct or indirect
+ownership of more than fifty percent (50%) of the voting securities of an entity or possession
+of the right to vote more than fifty percent (50%) of the voting interest in the ordinary direction
+of the entity's affairs. An Affiliate shall only be considered such for so long as such control
+exists.
+
+If the Software is acquired by or on behalf of a unit or agency of the U.S. Government
+(the “Government”), the Government agrees that the Software is “commercial
+computer software” or “commercial computer software documentation” and that,
+absent a written agreement to the contrary, the Government’s rights with respect to
+the Software is limited by the terms of this Agreement, pursuant to applicable FAR
+and/or DFARS and successor regulations.
+
+BY DOWNLOADING, INSTALLING, OR OTHERWISE ACCESSING OR USING THE
+SOFTWARE, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE
+TO BE BOUND BY THIS AGREEMENT. IF YOU DO NOT AGREE, YOU MAY NOT
+USE THE SOFTWARE OR ACCESS THE SOURCE CODE.
+
+Accordingly, You and Licensor acknowledge and agree as follows:
+
+1. LIMITED LICENSE
+
+A. Subject to your complete and ongoing compliance with all the terms and
+conditions set forth in this Agreement, including without limitation, payment of
+any applicable fees and all license limitations and restrictions set forth herein,
+Licensor grants You the following limited, non-exclusive, non-transferable, nonsublicensable, revocable license to use, and (where applicable) authorize your
+employees and other personnel to use, the unmodified Software in binary form,
+internally solely in connection with the specific Software Application(s) and
+usage as set forth on the Quote and/or purchase terms selected and paid for in
+conjunction with downloading the Software.
+
+B. The License granted in Paragraph A above does not include the right to
+sublicense, however, you may redistribute the Software upon payment of
+additional license fees under a separate redistribution license agreement for the
+Software.
+
+2. RESTRICTIONS
+
+A. You acknowledge that the license granted in Paragraph 1A does not include any
+right to: (i) redistribute, sell, lease, license, or modify any portion of the
+Software; (ii) reproduce, distribute, publicly display, or publicly perform any part
+of the Software; (iii) modify the source code of any portion of the Software (other
+than modifications made in a non-production environment); or (iv) remove,
+obscure, interfere with or circumvent any feature of the Software, including
+without limitation any copyright or other intellectual property notices, security,
+or access control mechanism.
+
+B. You may not use the Software for any purpose other than deploying it on one or
+more servers in a manner for which the Software is expressly designed.
+
+C. The Software may only be hosted on the machines, servers, and internetworking
+devices within Your computer network or systems.
+
+D. You may not sell, license, distribute, copy, modify, publicly perform or display,
+transmit, publish, edit, adapt, create derivative works from, or make any use of
+the Software except as expressly authorized in this Agreement.
+
+E. If You are prohibited under applicable law from using the Software, You may not
+use it, and You will comply with all applicable laws and regulations (including
+without limitation laws and regulations related to export controls) in connection
+with your use of the Software.
+
+3. LICENSE FEES
+
+A. If you wish to use the Software in a production environment, you may download
+and use the Software for the Term upon payment of the appropriate license fee
+as indicated on the Quote in accordance with the terms and conditions of this
+Agreement.
+
+B. If you wish to use the Software in a non-production environment, you may
+download and access the source and/or binaries at no charge solely for testing
+and evaluation purposes and in accordance with all license limitations and
+restrictions set forth in this Agreement.
+
+4. SUPPORT
+
+A. Licensor will only provide support in accordance with the support guidelines
+posted at https://duendesoftware.com/products/support. Licensor will use
+Duende Software, Inc. – Rev. 01/2022 Page 3 of 5
+commercially reasonable efforts to resolve all reasonable support requests, but
+makes no guarantee that all requests can be finally resolved.
+
+B. Licensor shall not provide support for: instances of the Software deployed on
+unsupported platforms as specified in the documentation accompanying the
+Software; support requests not resulting from the ordinary use of the Software; or
+support requests resulting from the use of third-party products.
+
+C. Licensor will not provide You with any individual or customized support services
+under this Agreement.
+
+D. A support contract may be purchased separately from Licensor for individual or
+customized support services with varying higher service levels than those
+provided herein.
+
+5. EXPORT CONTROLS. You represent and warrant that the Software will not be
+shipped, transferred or exported into any country or used in any manner prohibited by
+the United States Export Administration Act or any other export laws, restrictions or
+regulations (collectively, “Export Laws”). In addition, if the Software is identified as
+export controlled items under the Export Laws, You represent and warrant that You
+are not a citizen, or otherwise located within, an embargoed nation (including without
+limitation Cuba, Iran, North Korea, Sudan, or Syria) and that You are not otherwise
+prohibited under the Export Laws from receiving the Software. Any use in violation of
+the foregoing limitations and restrictions is strictly prohibited, and unlicensed.
+
+6. RESERVATION OF RIGHTS. The Software is owned by Licensor and licensed, not
+sold, to You. The Software is protected by copyright laws and international copyright
+treaties, as well as other intellectual property laws and treaties. Except for the limited
+rights of use granted herein, all right, title and interest to the Software, including patent,
+copyright, and trademark rights in and to the Software, the accompanying printed
+materials, and any copies of the Software are owned by Licensor.
+
+7. CONFIDENTIALITY. The Software is the confidential and proprietary information of
+Licensor, and You may not, during the term or thereafter, disclose it to any third party,
+or to use it for any purpose other than as expressly provided herein, without a separate
+written agreement with Licensor authorizing You to do so.
+
+8. FEEDBACK. If You provide Licensor with any comments, bug reports, feedback,
+enhancements, or modifications proposed or suggested by You for the Software
+(“Feedback”), such Feedback is provided on a non-confidential basis (notwithstanding
+any notice to the contrary You may include in any accompanying communication), and
+Licensor shall have the right to use such Feedback at its discretion, including, but not
+limited to the incorporation of such suggested changes into future releases of the
+Software. You hereby grant Licensor a perpetual, irrevocable, transferable,
+sublicensable, nonexclusive license under all rights necessary to incorporate and use
+your Feedback for any purpose, including to make and sell any products and services.
+Duende Software, Inc. – Rev. 01/2022 Page 4 of 5
+
+9. TERM AND TERMINATION. This Agreement will remain in effect for the time
+frame specified in your Quote issued to you by Licensor and commences on the
+date You: (i) paid the applicable license fee for the Software; or (ii) downloaded
+the Software as a non-production user. However, Licensor may terminate this
+Agreement upon 30 days’ prior written notice allowing You the opportunity to cure, for
+any actual or suspected misuse or abuse by You of the Software or any material
+violation of this Agreement. You may also choose to terminate this Agreement for any
+reason by ceasing all use of the Software. Following any termination of this Agreement,
+You will not be provided any refund, in whole or in part, and You must immediately
+cease use of the Software, remove or destroy any instances of the Software and/or
+copies thereof, and be able to show evidence of such cessation to Licensor upon
+request. The terms of this Agreement that expressly are to, or by implication ought to,
+survive, will survive this Agreement. Notwithstanding the foregoing, should Licensor
+completely cease to do business (excluding transactions in connection with a sale of
+all or substantially all of Licensor’s assets or stock, or in connection with a merger or
+other corporate reorganization), the term of this Agreement shall be perpetual as to
+Your custom application previously deployed by You prior to the date of such cessation
+of business and without the need for any further payments in accordance with all
+limitations and restrictions in this Agreement.
+
+10. WARRANTY DISCLAIMER AND LIMITATION OF LIABILITY.
+The Software and any support are provided on an “as is” basis, without warranty
+of any kind. To the maximum extent permitted by applicable law, Licensor
+disclaims all warranties and conditions, express, implied, statutory or otherwise,
+including but not limited to implied warranties or conditions of fitness for a
+particular purpose, merchantability, title, quality, results, and non-infringement.
+Under no circumstances will Licensor be liable for any consequential, special,
+indirect, incidental or punitive damages whatsoever arising out of the use or
+inability to use the Software, even if Licensor has been advised of the possibility
+of such damages, and notwithstanding any failure of essential purpose of any
+limited remedy. In no event will Licensor’s aggregate liability for damages arising
+out of this Agreement or the terms exceed the amount paid by you for the
+Software. Some jurisdictions do not allow limitations on implied warranties or
+the exclusion or limitation of liability for consequential or incidental damages,
+so the above limitations may not apply to You. In such an event, the above
+limitations and exclusions will be enforced to the maximum extent permitted
+under applicable law.
+
+11. INDEMNITY. You agree to indemnify Licensor and its affiliates, officers, directors,
+suppliers, licensors, and other customers from and against any and all liability and
+costs (including reasonable attorneys’ fees) incurred by such parties in connection with
+or arising out of your use or misuse of the Software.
+Duende Software, Inc. – Rev. 01/2022 Page 5 of 5
+
+12. GOVERNING LAW; VENUE. This Agreement shall be governed by and interpreted
+in accordance with the laws of the State of New York, USA, excluding its law on conflict
+of laws. You hereby consent to submit to personal jurisdiction and venue exclusively
+in the federal and state courts of the State of New York, USA.
+
+13. GENERAL PROVISIONS.
+
+A. You will be responsible for the payment of all taxes, duties, levies, and other charges
+including, but not limited to sales, use, gross receipts, excise, VAT, ad valorem and
+any other taxes, any withholdings or deductions, import and custom taxes, any duties,
+or any other charges imposed by any taxing authority (excluding any taxes based on
+the Licensor’s income) with respect to the fees payable to Licensor in connection with
+this Agreement.
+
+B. This Agreement contains the entire agreement between You and Licensor,
+supersedes any other agreement or discussions, oral and written, concerning
+the subject matter hereof, and may not be modified or amended except by a
+written amendment signed by both parties.
+
+C. If any provision of this Agreement is declared invalid, illegal, or unenforceable
+by a court of competent jurisdiction, such provision shall, as to that jurisdiction,
+be ineffective only to the extent of such invalidity, illegality, or unenforceability,
+and shall not in any manner affect the remaining provisions hereof in such
+jurisdiction or render any other provision of this Agreement invalid, illegal, or
+unenforceable in any other jurisdiction.
+
+D. You may provide Licensor with a valid purchase order; provided, however,
+purchase orders are to be used solely for your accounting purposes and any
+terms and conditions contained therein shall be deemed null and void with
+respect to the parties’ relationship and this License Agreement. Any such
+purchase order provided to Licensor shall in no way relieve you of any obligation
+entered into pursuant to this License Agreement including, but not limited to,
+your obligation to pay Licensor the appropriate license fees.
+
+E. You agree that in the event of a breach or threatened breach of this Agreement,
+Licensor may suffer irreparable harm and will be entitled to specific
+performance, and preliminary and/or permanent injunctive relief to enforce this
+Agreement without the need to post bond and that such relief shall be in addition
+to, and not in lieu of, any monetary damages or other relief a court of competent
+jurisdiction, whether at law or equity, may award.
+
+F. This Agreement shall supersede any provisions of the Uniform Commercial
+Code as adopted or made applicable to the Software in any competent
+jurisdiction. This Agreement shall not be governed by the United Nations
+Convention on Contracts for the International Sale of Goods.

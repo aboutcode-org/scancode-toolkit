@@ -1,0 +1,69 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "setupreader",
+    "version": "0.0.3",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "retrieve package specification from setup.py",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Lars van de Kerkhof",
+        "email": "lars@permanentmarkers.nl",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/specialunderwear/setupreader",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-1.0-plus",
+    "declared_license": {
+      "license": "GPL"
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/setuptools",
+        "extracted_requirement": "setuptools",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/mock",
+        "extracted_requirement": "mock",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/setupreader",
+    "repository_download_url": "https://pypi.org/packages/source/s/setupreader/setupreader-0.0.3.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/setupreader/0.0.3/json",
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/setupreader@0.0.3"
+  }
+]

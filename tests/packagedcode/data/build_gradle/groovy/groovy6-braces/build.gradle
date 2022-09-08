@@ -1,0 +1,5 @@
+dependencies {
+
+    compile 'junit:junit:4.13.1', { force = true }
+}
+

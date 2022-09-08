@@ -1,0 +1,12 @@
+key: ms-typescript-msbuild-4.1.4
+short_name: MS TypeScript MSBuild 4.1.4
+name: Microsoft TypeScript MSBuild 4.1.4
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild/4.1.4/License
+spdx_license_key: LicenseRef-scancode-ms-typescript-msbuild-4.1.4
+ignorable_urls:
+    - http://www.microsoft.com/licensing/userights
+    - https://docs.microsoft.com/en-us/legal/gdpr
+    - https://go.microsoft.com/fwlink/?LinkID=824704
+    - https://go.microsoft.com/fwlink/?linkid=823097

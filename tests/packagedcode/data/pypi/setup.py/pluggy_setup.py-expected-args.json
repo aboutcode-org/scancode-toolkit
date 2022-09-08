@@ -1,0 +1,14 @@
+{
+  "name": "pluggy",
+  "description": "plugin and hook calling mechanisms for python",
+  "license": "MIT license",
+  "platforms": [
+    "unix",
+    "linux",
+    "osx",
+    "win32"
+  ],
+  "author": "Holger Krekel",
+  "author_email": "holger at merlinux.eu",
+  "url": "https://github.com/pytest-dev/pluggy"
+}

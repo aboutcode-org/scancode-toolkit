@@ -1,0 +1,10 @@
+key: ms-programsynthesis-7.22.0
+short_name: MS ProgramSynthesis 7.22.0
+name: Microsoft ProgramSynthesis 7.22.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.nuget.org/packages/Microsoft.ProgramSynthesis/7.22.0/License
+spdx_license_key: LicenseRef-scancode-ms-programsynthesis-7.22.0
+ignorable_urls:
+    - http://aka.ms/exporting
+    - https://go.microsoft.com/fwlink/?LinkId=521839

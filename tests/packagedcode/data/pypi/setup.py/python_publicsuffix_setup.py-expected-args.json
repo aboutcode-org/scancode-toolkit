@@ -1,0 +1,15 @@
+{
+  "name": "publicsuffix",
+  "version": "1.1.1",
+  "description": "Get a public suffix for a domain name using the Public Suffix List.",
+  "license": "MIT",
+  "author": "Tomaz Solc",
+  "author_email": "tomaz.solc@tablix.org",
+  "classifiers": [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: Name Service (DNS)"
+  ]
+}
