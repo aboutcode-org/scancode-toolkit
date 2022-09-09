@@ -349,23 +349,17 @@ class License:
     )
 
     @classmethod
-    def from_dir(cls, key, licenses_data_dir=licenses_data_dir):
+    def from_dir(cls, key, licenses_data_dir=licenses_data_dir, check_consistency=True):
         """
         Return a new License object for a license ``key`` and load its attribute
         from a data file stored in ``licenses_data_dir``.
         """
         lic = cls(key=key)
-        data_file = lic.data_file(licenses_data_dir=licenses_data_dir)
-        if exists(data_file):
-            text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
-            text_file = exists(text_file) and text_file or None
-            lic.load(data_file=data_file, text_file=text_file)
+        license_file = lic.license_file(licenses_data_dir=licenses_data_dir)
+        lic.load(license_file=license_file, check_consistency=check_consistency)
         return lic
 
-    def data_file(self, licenses_data_dir=licenses_data_dir):
-        return join(licenses_data_dir, f'{self.key}.yml')
-
-    def text_file(self, licenses_data_dir=licenses_data_dir):
+    def license_file(self, licenses_data_dir=licenses_data_dir):
         return join(licenses_data_dir, f'{self.key}.LICENSE')
 
     def update(self, mapping):
@@ -420,9 +414,9 @@ class License:
 
     def dump(self, licenses_data_dir):
         """
-        Dump a representation of this license as two files:
-         - <key>.yml : the license data in YAML
-         - <key>.LICENSE: the license text
+        Dump a representation of this license as a .LICENSE file with:
+         - the license data as YAML frontmatter
+         - the license text
         """
 
         def write(location, byte_string):
@@ -431,23 +425,45 @@ class License:
             with io.open(location, 'wb') as of:
                 of.write(byte_string)
 
-        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        data_file = self.data_file(licenses_data_dir=licenses_data_dir)
-        write(data_file, as_yaml)
+        metadata = self.to_dict()
+        content = self.text.encode('utf-8')
+        rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
+        output_string = dumps_frontmatter(post=rule_post)
 
-        text = self.text
-        if text:
-            write(self.text_file(licenses_data_dir=licenses_data_dir), text.encode('utf-8'))
+        license_file = self.license_file(licenses_data_dir=licenses_data_dir)
+        write(license_file, output_string.encode('utf-8'))
 
-    def load(self, data_file, text_file):
+    def load(self, license_file, check_consistency=True):
         """
-        Populate license data from a YAML file stored in ``data_file`` and  ``text_file``.
+        Populate license data from a .LICENSE file stored as a YAML frontmatter.
         Does not load text files yet.
         Unknown fields are ignored and not bound to the License object.
         """
         try:
-            with io.open(data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
+            post = load_frontmatter(license_file)
+            data = post.metadata
+            if check_consistency:
+                if not data:
+                    raise InvalidLicense(
+                        f'Cannot load License with empty YAML frontmatter: '
+                        f'{self}: file://{license_file}'
+                    )
+
+            if not post.content:
+                if check_consistency:
+                    if not any(
+                        attribute in data
+                        for attribute in ('is_deprecated', 'is_generic', 'is_unknown')
+                    ):
+                        raise InvalidLicense(
+                            f'Cannot load License with empty text: '
+                            f'only deprecated, generic or unknown licenses can exist without text '
+                            f'{self}: file://{license_file}'
+                        )
+
+                self.text = ''
+            else:
+                self.text = post.content
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -455,25 +471,19 @@ class License:
 
                 if k == 'key':
                     assert self.key == v, (
-                        'The license "key" attribute in the .yml file MUST ' +
-                        'be the same as the base name of this license .LICENSE ' +
-                        'and .yml data files license files. ' +
+                        'The license "key" attribute in the YAML frontmatter MUST ' +
+                        'be the same as the base name of this .LICENSE ' +
+                        'license file. ' +
                         f'Yet file name = {self.key} and license key = {v}'
                     )
 
                 setattr(self, k, v)
 
-            if text_file and exists(text_file):
-                with io.open(text_file, encoding='utf-8') as f:
-                    self.text = f.read()
-            else:
-                self.text = ''
-
         except Exception as e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', f'file://{self.data_file}')
+            print('INVALID LICENSE YAML FILE:', f'file://{self.license_file}')
             print('#############################')
             print(traceback.format_exc())
             print('#############################')
@@ -555,7 +565,7 @@ class License:
                 error(f'Unknown language: {lic.language}')
 
             if lic.is_unknown:
-                if not 'unknown' in lic.key:
+                if not 'unknown' in lic.key and lic.key != 'no-license':
                     error(
                         'is_unknown can be true only for licenses with '
                         '"unknown " in their key string.'
@@ -684,7 +694,7 @@ def ignore_editor_tmp_files(location):
 def load_licenses(
     licenses_data_dir=licenses_data_dir,
     with_deprecated=False,
-    check_dangling=True,
+    check_consistency=True,
 ):
     """
     Return a mapping of {key: License} loaded from license data and text files
@@ -702,47 +712,38 @@ def load_licenses(
     ))
 
     licenses = {}
-    used_files = set()
 
-    for data_file in all_files:
-        if data_file.endswith('.yml'):
+    for license_file in all_files:
+        if license_file.endswith('.LICENSE'):
             if TRACE:
-                logger_debug('load_licenses: data_file:', data_file)
+                logger_debug('load_licenses: license_file:', license_file)
 
-            key = file_base_name(data_file)
+            key = file_base_name(license_file)
 
             try:
-                lic = License.from_dir(key=key, licenses_data_dir=licenses_data_dir)
+                lic = License.from_dir(
+                    key=key,
+                    licenses_data_dir=licenses_data_dir,
+                    check_consistency=check_consistency
+                )
             except Exception as e:
-                raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
-
-            if check_dangling:
-                used_files.add(data_file)
-
-            text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
-            if check_dangling and exists(text_file):
-                used_files.add(text_file)
+                msg = (
+                    f'Failed to load license: {key} from: '
+                    f'file://{licenses_data_dir}/{key}.LICENSE with error: {e}'
+                )
+                raise InvalidLicense(msg) from e
 
             if not with_deprecated and lic.is_deprecated:
                 continue
 
             licenses[key] = lic
 
-    if check_dangling:
-        dangling = set(all_files).difference(used_files)
-        if dangling:
-            msg = (
-                f'Some License files are orphaned in {licenses_data_dir!r}.\n' +
-                '\n'.join(f'file://{f}' for f in sorted(dangling))
-            )
-            raise Exception(msg)
-
     if not licenses:
         msg = (
             'No licenses were loaded. Check to see if the license data files '
             f'are available at "{licenses_data_dir}".'
         )
-        raise Exception(msg)
+        raise InvalidLicense(msg)
 
     return licenses
 
@@ -774,6 +775,10 @@ def get_rules(
 
 
 class InvalidRule(Exception):
+    pass
+
+
+class InvalidLicense(Exception):
     pass
 
 
