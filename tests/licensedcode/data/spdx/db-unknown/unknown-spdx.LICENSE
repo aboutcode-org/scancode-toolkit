@@ -1,7 +1,7 @@
 ---
 key: unknown-spdx
 short_name: unknown SPDX
-name: Unknown SPDX license detected, but not recognized
+name: Unknown SPDX license detected but not recognized
 category: Unstated License
 owner: Unspecified
 ---

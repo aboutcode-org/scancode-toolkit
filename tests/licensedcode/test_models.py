@@ -90,7 +90,7 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library_can_return_errors(self):
         test_dir = self.get_test_loc('models/validate')
-        lics = models.load_licenses(test_dir)
+        lics = models.load_licenses(test_dir, check_consistency=False)
         errors, warnings, infos = models.License.validate(
             lics,
             no_dupe_urls=True,
@@ -143,20 +143,27 @@ class TestLicense(FileBasedTesting):
         }
         assert infos == expected_infos
 
-    def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
-        test_dir = self.get_test_loc('models/orphaned_licenses')
+    def test_load_licenses_fails_if_file_contains_empty_yaml_frontmatter(self):
+        test_dir = self.get_test_loc('models/licenses_without_frontmatter')
         try:
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
         except Exception as e:
-            assert 'Some License files are orphaned in' in str(e)
+            assert 'Cannot load License with empty YAML frontmatter' in str(e)
 
-    def test_license_text_file_and_data_file_are_computed_correctly(self):
+    def test_load_licenses_fails_if_file_contains_empty_text(self):
+        test_dir = self.get_test_loc('models/licenses_without_text')
+        try:
+            list(models.load_licenses(test_dir))
+            self.fail('Exception not raised')
+        except Exception as e:
+            assert 'only deprecated, generic or unknown licenses can exist without text' in str(e)
+
+    def test_license_file_is_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
         licenses = models.load_licenses(licenses_data_dir)
         lic = licenses['gpl-1.0']
-        assert lic.text_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
-        assert lic.data_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
+        assert lic.license_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
 
     def test_rule_from_license_have_text_file_and_data_file_are_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')

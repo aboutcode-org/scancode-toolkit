@@ -4,5 +4,6 @@ short_name: Generic patent disclaimer
 name: Generic patent disclaimer
 category: Permissive
 owner: Unspecified
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-patent-disclaimer
 ---

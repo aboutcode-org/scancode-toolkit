@@ -1,3 +1,4 @@
+---
 key: xxd
 short_name: xxd License
 name: xxd License
@@ -7,3 +8,4 @@ homepage_url: https://github.com/unixdj/xxd/blob/master/README
 other_spdx_license_keys:
     - Foo
     - Bar
+---
