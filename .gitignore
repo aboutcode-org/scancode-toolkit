@@ -94,3 +94,20 @@ tcl
 /00-*.txt
 /z-todo-licenses-*
 
+# Extra ignores from licensedb
+*.pyc
+*.db
+.installed.cfg
+parts
+develop-eggs
+eggs
+downloads
+.settings
+TAGS
+Procfile
+local.cfg
+geckodriver.log
+var
+.metaflow
+selenium
+/dist/
