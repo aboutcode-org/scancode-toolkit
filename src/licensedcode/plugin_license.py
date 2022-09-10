@@ -11,6 +11,7 @@ import posixpath
 from functools import partial
 
 import attr
+import click
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
@@ -20,6 +21,7 @@ from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
 from scancode.api import SCANCODE_LICENSEDB_URL
+from licensedcode.license_db import dump_license_data
 
 TRACE = False
 
@@ -137,6 +139,17 @@ class LicenseScanner(ScanPlugin):
             help='[EXPERIMENTAL] Detect unknown licenses and follow license '
                  'references such as "See license in file COPYING".',
             help_group=SCAN_OPTIONS_GROUP,
+        ),
+
+        PluggableCommandLineOption(
+            ('--get-license-data',),
+            type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
+            metavar='DIR',
+            callback=dump_license_data,
+            help='Include this directory with additional custom licenses and license rules '
+                 'in the license detection index. Creates the directory if it does not exist. ',
+            help_group=MISC_GROUP,
+            is_eager=True,
         ),
 
         PluggableCommandLineOption(

@@ -22,31 +22,24 @@
 # either express or implied.
 # No content from ScanCode LicenseDB should be considered or used as legal advice.
 # Consult an attorney for any legal advice.
-#
-# Visit https://github.com/nexB/scancode-licensedb for support.
-#
-# ScanCode Toolkit is a free Software Composition Analysis tool from nexB Inc. and
-# others.
-# Visit https://github.com/nexB/scancode-toolkit for support and download.
 
+import os
 import json
 import pathlib
 from datetime import datetime
+from os.path import dirname
+from os.path import join
+from distutils.dir_util import copy_tree
+
 
 import saneyaml
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment, FileSystemLoader
 from licensedcode.models import load_licenses
 from scancode_config import __version__ as scancode_version
 
-licenses = load_licenses(with_deprecated=True)
 
-# GitHub Pages support only /(root) or docs/ for the source
-BUILD_LOCATION = "docs"
-
-env = Environment(
-    loader=PackageLoader("app", "templates"),
-    autoescape=True,
-)
+TEMPLATES_DIR = os.path.join(dirname(__file__), 'templates')
+STATIC_DIR = os.path.join(dirname(__file__), 'static')
 
 
 def write_file(path, filename, content):
@@ -63,8 +56,15 @@ base_context = {
 }
 
 
-def generate_indexes(output_path):
-    license_list_template = env.get_template("license_list.html")
+def generate_indexes(output_path, environment, licenses):
+    
+    static_dest_dir = join(output_path, 'static')
+    if not os.path.exists(static_dest_dir):
+        os.makedirs(static_dest_dir)
+
+    copy_tree(STATIC_DIR, static_dest_dir)
+
+    license_list_template = environment.get_template("license_list.html")
     index_html = license_list_template.render(
         **base_context,
         licenses=licenses,
@@ -74,50 +74,93 @@ def generate_indexes(output_path):
     index = [
         {
             "license_key": key,
+            "category": license.category,
             "spdx_license_key": license.spdx_license_key,
             "other_spdx_license_keys": license.other_spdx_license_keys,
             "is_exception": license.is_exception,
             "is_deprecated": license.is_deprecated,
+            "text": license.text,
             "json": f"{key}.json",
-            "yml": f"{key}.yml",
+            "yaml": f"{key}.yml",
             "html": f"{key}.html",
-            "text": f"{key}.LICENSE",
+            "license": f"{key}.LICENSE",
         }
         for key, license in licenses.items()
     ]
-    write_file(output_path, "index.json", json.dumps(index))
-    write_file(output_path, "index.yml", saneyaml.dump(index))
+
+    write_file(
+        output_path,
+        "index.json",
+        json.dumps(index, indent=2, sort_keys=False)
+    )
+    write_file(
+        output_path,
+        "index.yml",
+        saneyaml.dump(index, indent=2)
+    )
 
 
-def generate_details(output_path):
-    license_details_template = env.get_template("license_details.html")
+def generate_details(output_path, environment, licenses):
+    license_details_template = environment.get_template("license_details.html")
     for license in licenses.values():
-        license_data = license.to_dict()
+        license_data = license.to_dict(include_text=True)
         html = license_details_template.render(
             **base_context,
             license=license,
             license_data=license_data,
         )
         write_file(output_path, f"{license.key}.html", html)
-        write_file(output_path, f"{license.key}.yml", saneyaml.dump(license_data))
-        write_file(output_path, f"{license.key}.json", json.dumps(license_data))
-        write_file(output_path, f"{license.key}.LICENSE", license.text)
+        write_file(
+            output_path,
+            f"{license.key}.yml",
+            saneyaml.dump(license_data, indent=2)
+        )
+        write_file(
+            output_path,
+            f"{license.key}.json",
+            json.dumps(license_data, indent=2, sort_keys=False)
+        )
+        license.dump(output_path)
 
 
-def generate_help(output_path):
-    template = env.get_template("help.html")
+def generate_help(output_path, environment):
+    template = environment.get_template("help.html")
     html = template.render(**base_context)
     write_file(output_path, "help.html", html)
 
 
-def generate():
-    root_path = pathlib.Path(BUILD_LOCATION)
+def generate(build_location, template_dir=TEMPLATES_DIR):
+
+    if not os.path.exists(build_location):
+        os.makedirs(build_location)
+
+    env = Environment(
+        loader=FileSystemLoader(template_dir),
+        autoescape=True,
+    )
+    licenses = load_licenses(with_deprecated=True)
+
+    root_path = pathlib.Path(build_location)
     root_path.mkdir(parents=False, exist_ok=True)
 
-    generate_indexes(root_path)
-    generate_details(root_path)
-    generate_help(root_path)
+    generate_indexes(output_path=root_path, environment=env, licenses=licenses)
+    generate_details(output_path=root_path, environment=env, licenses=licenses)
+    generate_help(output_path=root_path, environment=env)
 
 
-if __name__ == "__main__":
-    generate()
+def dump_license_data(ctx, param, value):
+    """
+    Dump license data from scancode licenses to the directory passed in from 
+    command line.
+
+    Dumps data in JSON, YAML and HTML formats and also dumps the .LICENSE file with
+    the license text and the data as YAML frontmatter.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+
+    import click
+    click.echo('Dumping license data to the directory specified: ')
+    generate(build_location=value)
+    click.echo('Done.')
+    ctx.exit(0)
