@@ -11,6 +11,7 @@ spdx_license_key: LGPL-2.1-only
 other_spdx_license_keys:
     - LGPL-2.1
     - LicenseRef-LGPL-2.1
+osi_license_key: LGPL-2.1
 text_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
 osi_url: http://opensource.org/licenses/lgpl-2.1.php
@@ -31,4 +32,3 @@ ignorable_copyrights:
 ignorable_holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
-osi_license_key: LGPL-2.1

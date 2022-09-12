@@ -7,8 +7,8 @@ homepage_url: http://www.openldap.org/software/release/license.html
 spdx_license_key: OLDAP-2.8
 text_urls:
     - http://www.openldap.org/software/release/license.html
+minimum_coverage: 70
 ignorable_copyrights:
     - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA.
 ignorable_holders:
     - The OpenLDAP Foundation, Redwood City, California, USA.
-minimum_coverage: 70

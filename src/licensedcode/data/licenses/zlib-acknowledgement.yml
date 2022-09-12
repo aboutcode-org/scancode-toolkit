@@ -15,6 +15,7 @@ other_spdx_license_keys:
     - Nunit
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement
+minimum_coverage: 50
 ignorable_copyrights:
     - Copyright (c) 2000-2002 Philip A. Craig
     - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
@@ -23,4 +24,3 @@ ignorable_holders:
     - Charlie Poole
     - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
     - Philip A. Craig
-minimum_coverage: 50

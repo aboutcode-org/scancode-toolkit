@@ -8,6 +8,7 @@ notes: |
     Per SPDX.org, this license is OSI certified. This license was superseded by
     CPL.
 spdx_license_key: IPL-1.0
+osi_license_key: IPL-1.0
 text_urls:
     - http://www.opensource.org/licenses/ibmpl.php
 osi_url: http://www.opensource.org/licenses/ibmpl.php
@@ -18,4 +19,3 @@ ignorable_copyrights:
     - Copyright (c) 1996, 1999 International Business Machines Corporation and others
 ignorable_holders:
     - International Business Machines Corporation and others
-osi_license_key: IPL-1.0

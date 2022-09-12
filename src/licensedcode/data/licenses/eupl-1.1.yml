@@ -9,6 +9,7 @@ notes: |
     certified. This license is available in the 22 official languages of the
     EU. The English version is included here.
 spdx_license_key: EUPL-1.1
+osi_license_key: EUPL-1.1
 text_urls:
     - http://ec.europa.eu/idabc/eupl
 other_urls:
@@ -23,4 +24,3 @@ ignorable_copyrights:
     - (c) the European Community 2007
 ignorable_holders:
     - the European Community
-osi_license_key: EUPL-1.1

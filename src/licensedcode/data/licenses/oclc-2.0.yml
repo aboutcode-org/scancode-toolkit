@@ -8,6 +8,7 @@ notes: |
     Per SPDX.org, this license is OSI certified. This license was released May
     2002
 spdx_license_key: OCLC-2.0
+osi_license_key: OCLC-2.0
 text_urls:
     - http://opensource.org/licenses/oclc2.php
 osi_url: http://opensource.org/licenses/oclc2.php
@@ -25,4 +26,3 @@ ignorable_holders:
 ignorable_urls:
     - http://purl.oclc.org/oclc/research/ORPL
     - http://www.oclc.org/oclc/research
-osi_license_key: OCLC-2.0

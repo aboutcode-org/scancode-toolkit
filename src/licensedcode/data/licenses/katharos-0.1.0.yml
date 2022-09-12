@@ -8,7 +8,6 @@ spdx_license_key: LicenseRef-scancode-katharos-0.1.0
 text_urls:
     - https://github.com/katharostech/katharos-license/blob/v0.1.0/LICENSE.md
 ignorable_urls:
-  - https://firstdonoharm.dev/version/2/1/license.html
-  - https://github.com/raisely/NoHarm
-  - https://spdx.org/licenses/BSD-3-Clause.html
-
+    - https://firstdonoharm.dev/version/2/1/license.html
+    - https://github.com/raisely/NoHarm
+    - https://spdx.org/licenses/BSD-3-Clause.html
