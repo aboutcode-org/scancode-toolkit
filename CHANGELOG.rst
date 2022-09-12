@@ -32,6 +32,13 @@ Package detection:
 
   https://github.com/nexB/scancode-toolkit/issues/3083
 
+- Fix issue where we were returning incorrect purl package ``type`` for cocoapods.
+  ``pods`` was being returned  as a purl type for cocoapods, it should be
+  ``cocoapods`` instead.
+  https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst#cocoapods
+
+  https://github.com/nexB/scancode-toolkit/issues/3081
+
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 

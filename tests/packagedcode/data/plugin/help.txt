@@ -139,6 +139,34 @@ Package type:  chrome
   description:       Chrome extension
   path_patterns:    '*.crx'
 --------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podfile
+  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
+  primary language:  Objective-C
+  description:       Cocoapods Podfile
+  path_patterns:    '*Podfile'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podfile_lock
+  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
+  primary language:  Objective-C
+  description:       Cocoapods Podfile.lock
+  path_patterns:    '*Podfile.lock'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podspec
+  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
+  primary language:  Objective-C
+  description:       Cocoapods .podspec
+  path_patterns:    '*.podspec'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podspec_json
+  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
+  primary language:  Objective-C
+  description:       Cocoapods .podspec.json
+  path_patterns:    '*.podspec.json'
+--------------------------------------------
 Package type:  composer
   datasource_id:     php_composer_json
   documentation URL: https://getcomposer.org/doc/04-schema.md
@@ -572,34 +600,6 @@ Package type:  opam
   primary language:  Ocaml
   description:       Ocaml Opam file
   path_patterns:    '*opam'
---------------------------------------------
-Package type:  pods
-  datasource_id:     cocoapods_podfile
-  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
-  primary language:  Objective-C
-  description:       Cocoapods Podfile
-  path_patterns:    '*Podfile'
---------------------------------------------
-Package type:  pods
-  datasource_id:     cocoapods_podfile_lock
-  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
-  primary language:  Objective-C
-  description:       Cocoapods Podfile.lock
-  path_patterns:    '*Podfile.lock'
---------------------------------------------
-Package type:  pods
-  datasource_id:     cocoapods_podspec
-  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
-  primary language:  Objective-C
-  description:       Cocoapods .podspec
-  path_patterns:    '*.podspec'
---------------------------------------------
-Package type:  pods
-  datasource_id:     cocoapods_podspec_json
-  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
-  primary language:  Objective-C
-  description:       Cocoapods .podspec.json
-  path_patterns:    '*.podspec.json'
 --------------------------------------------
 Package type:  pubspec
   datasource_id:     pubspec_lock

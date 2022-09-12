@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "kmmWebSocket",
     "version": "1.0.1",
@@ -41,6 +41,6 @@
     "repository_download_url": "Not Published/archive/refs/tags/1.0.1.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/3/c/kmmWebSocket/1.0.1/kmmWebSocket.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/kmmWebSocket@1.0.1"
+    "purl": "pkg:cocoapods/kmmWebSocket@1.0.1"
   }
 ]
