@@ -1,0 +1,8 @@
+key: mpi-permissive
+short_name: mpi Permissive License
+name: mpi Permissive License
+category: Permissive
+owner: Etnus
+spdx_license_key: mpi-permissive
+other_urls:
+    - https://sources.debian.org/src/openmpi/4.1.0-10/ompi/debuggers/msgq_interface.h/?hl=19#L19
