@@ -11,6 +11,7 @@ text_urls:
     - http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
 other_urls:
     - http://www.nicta.com.au/
+    - https://opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
 ignorable_copyrights:
     - Copyright (c) 2004 National ICT Australia Ltd
 ignorable_holders:
