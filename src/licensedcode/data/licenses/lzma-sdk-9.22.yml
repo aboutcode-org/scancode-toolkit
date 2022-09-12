@@ -1,7 +1,7 @@
 key: lzma-sdk-9.22
 short_name: LZMA SDK License (versions 9.22 and beyond)
 name: LZMA SDK License (versions 9.22 and beyond)
-category: Permissive
+category: Public Domain
 owner: Igor Pavlov
 spdx_license_key: LZMA-SDK-9.22
 other_urls:

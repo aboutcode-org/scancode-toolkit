@@ -8,6 +8,7 @@ spdx_license_key: Python-2.0.1
 other_urls:
     - https://docs.python.org/3/license.html
     - https://github.com/python/cpython/blob/main/LICENSE
+    - https://www.python.org/download/releases/2.0.1/license/
 ignorable_copyrights:
     - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands
     - Copyright (c) 1995-2001 Corporation for National Research Initiatives

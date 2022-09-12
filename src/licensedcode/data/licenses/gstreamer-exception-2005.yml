@@ -2,7 +2,7 @@ key: gstreamer-exception-2005
 short_name: GStreamer Exception (2005)
 name: GStreamer Exception (2005)
 category: Permissive
-owner: Unspecified
+owner: GStreamer Project
 is_exception: yes
 spdx_license_key: GStreamer-exception-2005
 other_urls:
