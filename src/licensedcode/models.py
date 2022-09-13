@@ -1597,10 +1597,11 @@ class BasicRule:
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
 
-    def to_dict(self):
+    def to_dict(self, include_text=False):
         """
-        Return an ordered mapping of self, excluding texts. Used for
-        serialization. Empty values are not included.
+        Return an ordered mapping of self, excluding texts unless
+        ``include_text`` is True. Used for serialization. Empty values are not
+        included.
         """
         data = {}
 
@@ -1639,6 +1640,9 @@ class BasicRule:
 
         if self.notes:
             data['notes'] = self.notes
+
+        if include_text and self.text:
+            data['text'] = self.text
 
         if not is_false_positive:
             ignorables = (
@@ -1915,10 +1919,10 @@ class Rule(BasicRule):
 
         data_file = self.data_file(rules_data_dir=rules_data_dir)
         as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        write(data_file, as_yaml)
+        write(location=data_file, byte_string=as_yaml)
 
         text_file = self.text_file(rules_data_dir=rules_data_dir)
-        write(text_file, self.text.encode('utf-8'))
+        write(location=text_file, byte_string=self.text.encode('utf-8'))
 
     def load(self, data_file, text_file, with_checks=True):
         """
