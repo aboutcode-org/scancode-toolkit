@@ -110,68 +110,72 @@ class ExternalLicensesSource:
             # we store new external licenses in this directory
             self.new_dir = os.path.join(external_base_dir, "new")
 
-            self.fetched = False
-            if exists(self.original_dir):
-                # fetch ONLY if the directory is non-existing
-                self.fetched = True
-            else:
+            if not exists(self.original_dir):
                 mkdir(self.original_dir)
 
-            if not exists(self.update_dir):
-                mkdir(self.update_dir)
+            # always cleanup updated and new
+            if exists(self.update_dir):
+                fileutils.delete(self.update_dir)
+            mkdir(self.update_dir)
 
-            if not exists(self.new_dir):
-                mkdir(self.new_dir)
+            if exists(self.new_dir):
+                fileutils.delete(self.new_dir)
+            mkdir(self.new_dir)
 
     def get_licenses(
         self,
         scancode_licenses=None,
+        use_cache=False,
         **kwargs,
     ):
         """
         Return a mapping of key -> ScanCode License objects either fetched
         externally or loaded from the existing `self.original_dir`
+        If ``force_refetch`` the licenses are always refected. Otherwise if
+        `self.original_dir` exists, they are loaded from there.
         """
-        print("Fetching and storing external licenses in:", self.original_dir)
+        if not use_cache:
+            print("Fetching and storing external licenses in:", self.original_dir)
 
-        licenses = []
-        if TRACE_DEEP:
-            print()
-        for lic in self.fetch_licenses(
-            scancode_licenses=scancode_licenses,
-            **kwargs,
-        ):
+            licenses = []
             if TRACE_DEEP:
-                start = time.time()
+                print()
+            for lic in self.fetch_licenses(
+                scancode_licenses=scancode_licenses,
+                **kwargs,
+            ):
+                if TRACE_DEEP:
+                    start = time.time()
 
-            try:
-                lic.dump(licenses_data_dir=self.original_dir)
-                licenses.append(lic)
-            except:
-                if TRACE:
-                    print()
-                    print(repr(lic))
-                raise
-            if TRACE_DEEP:
-                print(
-                    f"    Saving fetched license: {lic.key} in :",
-                    round(time.time() - start, 1),
-                    "s",
+                try:
+                    lic.dump(licenses_data_dir=self.original_dir)
+                    licenses.append(lic)
+                except:
+                    if TRACE:
+                        print()
+                        print(repr(lic))
+                    raise
+                if TRACE_DEEP:
+                    print(
+                        f"    Saving fetched license: {lic.key} in :",
+                        round(time.time() - start, 1),
+                        "s",
+                    )
+
+            print(
+                "Stored %d external licenses in: %r."
+                % (
+                    len(licenses),
+                    self.original_dir,
                 )
-
-        print(
-            "Stored %d external licenses in: %r."
-            % (
-                len(licenses),
-                self.original_dir,
             )
-        )
+        else:
+            print("Reusing and loading external licenses in:", self.original_dir)
 
         print(f"Modified (or not modified) external licenses will be in: {self.update_dir}.")
         fileutils.copytree(self.original_dir, self.update_dir)
 
         print(f"New external licenses will be in: {self.new_dir}.")
-
         return load_licenses(self.update_dir, with_deprecated=True)
 
     def fetch_licenses(self, scancode_licenses, **kwargs):
@@ -293,7 +297,7 @@ def clean_text(text):
     """
     if not text:
         return text
-    text = text.strip()
+    text = text.rstrip()
     lines = text.splitlines(False)
     formatted = []
     for line in lines:
@@ -481,6 +485,7 @@ class SpdxSource(ExternalLicensesSource):
             # example = mapping.get('example')
         )
         return lic
+
 
 # these licenses are rare commercial license with no text and only a
 # link or these licenses may be combos of many others or are ignored
@@ -1003,9 +1008,9 @@ def merge_licenses(
             ):
                 all_sc_urls = set(
                     list(normalized_scancode_value)
-                    +scancode_license.text_urls
-                    +scancode_license.other_urls
-                    +[
+                    + scancode_license.text_urls
+                    + scancode_license.other_urls
+                    + [
                         scancode_license.homepage_url,
                         scancode_license.osi_url,
                         scancode_license.faq_url,
@@ -1078,6 +1083,7 @@ def synchronize_licenses(
     match_text=False,
     match_approx=False,
     commitish=None,
+    use_cache=False,
 ):
     """
     Return a tuple of lists of License objects:
@@ -1125,6 +1131,7 @@ def synchronize_licenses(
     externals_by_key = external_source.get_licenses(
         scancode_licenses,
         commitish=commitish,
+        use_cache=use_cache,
     )
 
     if TRACE_DEEP:
@@ -1335,6 +1342,13 @@ def synchronize_licenses(
         models.update_ignorables(lic, verbose=False)
         lic.dump(licenses_data_dir=licensedcode.models.licenses_data_dir)
 
+    if TRACE_DEEP:
+        print(
+            "updated_in_external:",
+            len(updated_in_external),
+            "added_to_external:",
+            len(added_to_external),
+        )
     for k in sorted(updated_in_external | added_to_external):
         lic = externals_by_key[k]
         if not lic:
@@ -1406,6 +1420,12 @@ def synchronize_licenses(
     default=None,
     help="An optional commitish to use for SPDX license data instead of the latest release.",
 )
+@click.option(
+    "--use-cache",
+    is_flag=True,
+    default=False,
+    help="Use cached data, do not re-fetch external licenses. Instead, reuse previously fetched external licenses if available.",
+)
 @click.help_option("-h", "--help")
 def cli(
     license_dir,
@@ -1416,6 +1436,7 @@ def cli(
     create_external,
     update_external,
     commitish=None,
+    use_cache=False,
 ):
     """
     Synchronize ScanCode licenses with an external license source.
@@ -1443,6 +1464,7 @@ def cli(
         match_text=match_text,
         match_approx=match_approx,
         commitish=commitish,
+        use_cache=use_cache,
     )
     print()
     if source == "dejacode":
