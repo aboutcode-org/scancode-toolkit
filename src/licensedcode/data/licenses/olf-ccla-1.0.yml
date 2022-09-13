@@ -1,0 +1,13 @@
+key: olf-ccla-1.0
+short_name: OLF-CCLA-1.0
+name: Open Logistics Foundation Corporate Contributor CLA 1.0
+category: Patent License
+owner: Open Logistics Foundation
+homepage_url: https://www.openlogisticsfoundation.org/licenses
+spdx_license_key: LicenseRef-scancode-olf-ccla-1.0
+ignorable_authors:
+    - the Open Logistics Foundation
+ignorable_urls:
+    - https://www.openlogisticsfoundation.org/licenses
+ignorable_emails:
+    - info@openlogisticsfoundation.org

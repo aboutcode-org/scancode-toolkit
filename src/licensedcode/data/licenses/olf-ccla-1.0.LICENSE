@@ -1,0 +1,131 @@
+Open Logistics Foundation
+Corporate Contributor License Agreement (“CLA”) 
+Version 1.0, March 2022 
+https://www.openlogisticsfoundation.org/licenses
+
+The Open Logistics Foundation provides a framework for the design, development and use of open source solutions in logistics. Within this framework, developers bring together their efforts for increased efficiency and successful commercial use on the basis of open source components.
+
+This CLA enables the Contributor to submit Contributions to the Open Logistics Foundation, or to have them submitted, and to grant the rights stated below in such Contribution/s in their entirety. This CLA determines which of the Contributor’s rights in their Contributions to the Open Logistics Foundation will be granted by the Contributor to the Open Logistics Foundation and the conditions that must be observed in that regard.
+
+By way of conclusion of this CLA, the Contributor accepts the following conditions for their current and future Contributions to the Open Logistics Foundation. Except for the licenses granted in this CLA to the Open Logistics Foundation and the recipients of Works containing such Contribution distributed by the Open Logistics Foundation, the Contributor reserves all rights in their Contributions.
+
+Please complete, sign and send this Agreement to info@openlogisticsfoundation.org. The CLA is concluded when the Open Logistics Foundation expressly confirms the conclusion of the CLA or activates access to the Open Logistics Repository for the Contributor, thereby enabling the Contributor to submit Contributions.
+
+Corporation name: 
+Corporation address:
+Point of Contact / CLA-Manager:
+E-Mail:
+Phone:
+
+Referred to as “Contributor” or “you”
+
+1 Definitions
+
+(1) “Contribution” means any work protected under copyright, design and/or patent law, including any modifications of or additions to this work as well as adaptations of the work, that are submitted by the Contributor as copyright holder or by parties legally or contractually entitled to do so by copyright holders to the Open Logistics Foundation for inclusion in works developed and distributed by the Open Logistics Foundation. Within the meaning of this definition, “submit” means any form of electronic or written communication which is intentionally submitted to the Open Logistics Foundation to discuss or improve a current or future work or project undertaken by the Open Logistics Foundation, including but not limited to communications sent via electronic mailing lists, source code control systems and issue tracking systems; however, communications that the Contributor or any employee specifically named by him/her have clearly marked as “no contribution”, or which are otherwise identified as such in writing, are excluded.
+
+(2) “Work” means any work protected under copyright, design and/or patent law containing a Contribution.
+
+(3) “Committers” are persons named by the Open Logistics Foundation or by Contributors who have write access to works or projects undertaken by the Open Logistics Foundation in the version control system.
+
+(4) “Source Code” means the version of the code of the respective Contribution – if the Contribution is a software – in the programming language.
+
+(5) “Object Code” means the intermediate product of a compilation or translation process of the Source Code.
+
+2 Granting of usage rights
+The Contributor hereby grants the Open Logistics Foundation and any third party who receives and/or uses a Work or the Contributions themselves – whether adapted or not - for the duration of the existence of the copyrights pertaining to such Contributions
+• the royalty-free and non-exclusive right,
+• sublicensable for commercial and non-commercial purposes
+• worldwide and perpetual,
+• irrevocable and non-terminable,
+to use the Contributions in their original form or in modified, translated, edited or transformed form on their own or as a part of a Work in the following ways:
+• use them in any hardware and software environment, - insofar as the Contribution is a software – in particular to store or load them permanently or temporarily, to display them and run them, including to the extent reproductions are necessary to that end,
+• modify, translate, edit or transform them in another way,
+• store, reproduce, exhibit or publish them, distribute them in tangible or intangible form, on any medium or in any other way, for commercial and non-commercial purposes, in particular to communicate them privately or publicly, also through image, audio and other information carriers, irrespective of whether by wire or wireless means,
+• use them in databases, data networks and online services, including the right to make it available in Source Code or Object Code to users of the aforementioned databases, networks and online services for research and retrieval purposes,
+• allow third parties to use or operate them,
+• use them not only for own purposes but also to provide services to third parties,
+• distribute them.
+
+The above right of use relates to the Contributions, in particular – insofar as the Contribution is a software– their Source Code and Object Code in any and all forms. The above usage rights include – where applicable – design rights.
+
+3 Granting of a patent license
+
+(1) For any patents (including pending patent applications) owned and licensable by the Contributor at the time of the submission of the Contribution, the Contributor hereby grants the Open Logistics Foundation and any third party who receives and/or uses a Work containing the Contributions or the Contributions themselves - adapted or not - a
+• perpetual,
+• worldwide,
+• non-exclusive,
+• free of charge,
+• irrevocable
+patent license in all rights deriving from the patent to
+• produce,
+• arrange to have produced,
+• use,
+• offer for sale,
+• sell,
+• import and otherwise transfer
+
+ the Work or the respective Contributions.
+
+However, this patent license covers only those rights deriving from the patent of the respective Contributor as are indispensable in order not to infringe that patent and only to the extent that the use of the Contributor’s respective Contribution, whether in itself or as a combination with other Contributions of the Contributor or any third parties together with the Work for which these Contributions were submitted, would otherwise infringe that patent. For avoidance of doubt, no patent licenses are granted for the use of a Work or the Contribution which become necessary for lawful use because third party modifications are made to the Work or the respective Contribution after the Contribution has been submitted by the Contributor.
+
+(2) If any entity or person institutes patent litigation against You or any other entity or person (including a cross-claim or counterclaim in a lawsuit) alleging that your Contribution, or the Work to which you have contributed, constitutes direct or contributory patent infringement, then any patent licenses granted to that person or entity under this CLA for that Contribution or Work shall terminate as of the date such litigation is filed.
+
+(3) The Contributor is entitled to decide in its own discretion to abandon respectively maintain any patent for which he has granted a patent license in accordance with para. 1 of this Section 3.
+
+4 Contributor’s binding representations
+
+(1) The Contributor hereby represents that
+a. it is entitled to grant the usage rights and - to the extent applicable - patent licenses for Contributions under this CLA, and
+b. by granting usage rights under Section 2 above and patent licenses under Section 3 above, they are not infringing any rights granted by the Contributor to third parties.
+
+(2) Furthermore, the Contributor hereby undertakes to identify by name all employees and service providers who submit Contributions or otherwise make them available to the Open Logistics Foundation in the Contributor’s name, and that all employees and service providers they identify by name to the Open Logistics Foundation are authorised to submit Contributions in the Contributor’s name; identifying the employees in this regard shall be at least in text form (as per Sec. 126b German Civil Code). It is the Contributor’s sole responsibility to notify the Open Logistics Foundation if changes need to be made to the list of named employees authorised to make Contributions in the Contributor’s name.
+
+(3) If the Contributor wishes to submit a third-party work, this must take place separately from any Contribution, in which case the complete details of the source and all licenses or other limitations (including but not limited to any associated patents, trademarks and licensing agreements) which they are personally aware of must be provided. The corresponding work must be clearly identified as a third-party work when it is submitted.
+
+5 Trademarks
+The Contributor does not grant permission to use its trade names, trademarks, service marks or product names.
+
+6 No restriction on other use by the Contributor
+The Contributor is expressly permitted to use and exploit the Contributions on a commercial or non– commercial basis – individually, in part or as part of another work – in accordance with the rights held by the Contributor, provided that such other use or exploitation does not conflict with the rights granted under this CLA.
+
+7 Obligations of the Open Logistics Foundation
+
+(1) The Open Logistics Foundation is not obliged to incorporate the Contributor’s Contributions into any Work or to use them in any other way.
+
+(2) If a Work is distributed by the Open Logistics Foundation by way of incorporation of the Contributor’s Contributions or if the Contributions themselves are distributed, the Open Logistics Foundation is obliged - irrespective of whether the Contributions have been modified by the Open Logistics Foundation or any third party -
+a. to retain and to oblige the recipients of the Work to retain all copyright, patent, trade mark and name credit notices in the Contributions - in the form as distributed - with the exception of those notices that do not pertain to any part of the distributed Contributions;
+b. to grant the Contributor a license to the rights in the distributed Work that contains the Contributor’s Contributions, corresponding to Sections 2 and 3 above.
+
+8 Contributor’s assumption of the role of Committer
+If the Open Logistics Foundation under a separate agreement assigns the role of a Committer to the Contributor and the Contributor accepts the role, the Contributor must comply with the guidelines, policies and codes of conduct imposed as part of the assignment.
+
+9 Limitation of liability
+Except in cases of intent and gross negligence or causing personal injury, the Contributor, its legal representatives, trustees, officers and employees shall not be liable towards the Open Logistics Foundation for direct or indirect, material or immaterial losses of any kind arising from the use of the Contributions; this includes but is not limited to loss of goodwill, interruption of production, computer failures or errors, loss of data or economic losses, even if the Contributor has been made aware of the possibility of such losses. Notwithstanding the above, the Contributor shall only be liable under product liability law to the extent that the respective provisions are applicable to the Contributions.
+Except in case of intent or gross negligence the Contributor, its legal representatives, trustees, officers and employees shall not be liable that any of the Contributions is free from any claim of infringement of any patent or any other intellectual property right owned by any third party, accurate, devoid of mistakes, complete and/or usable for any purpose.
+
+10 Other provisions
+
+(1) This CLA is governed by German law, excluding the UN Convention on Contracts for the International Sale of Goods (CISG). Exclusive place of jurisdiction for all disputes between the parties regarding
+ the interpretation of this CLA is Dortmund. This CLA or any provision thereof may be amended or modified only with the mutual consent of the contracting parties as set out in a written instrument. This requirement of written form can only be deviated from in writing.
+
+(2) Any failure by the Open Logistics Foundation or the Contributor to insist that the other Party adhere to a provision of this CLA in a given situation does not affect the right of such Party to require adherence in the same regard at a later date. Waiving compliance with a provision in one situation shall not be deemed a waiver of compliance with that provision in the future or as a waiver of the provision in its entirety.
+
+(3) If any provision of this CLA should prove to be invalid and unenforceable, then the validity of the remaining provisions shall remain unaffected. In this case, that provision will be replaced, as far as possible, by an enforceable provision that most closely reflects the meaning of the original provision.
+
+Location: 
+Date: 
+Signature:  
+Title and name: 
+Position and corporation: 
+
+*****
+Initial list of designated employees. The authorization is not tied to particular Contributions.
+Full Name
+E-Mail
+
+It is your responsibility to notify the Foundation when any change is required to the list of designated employees authorized to submit Contributions on behalf of the Corporation, or to the Corporation's Point of Contact with the Foundation.
+
+Open Logistics Foundation Emil-Figge-Straße 80 | D-44227 Dortmund | Germany
+BoardJochen Thewes – Chairman | Stefan Hohm and Dr. Stephan Peters – Deputy Chairmen
+Managing Directors Andreas Nettsträter | Thorsten Hülsmann
+Cheques and transfers payable to Sparkasse Dortmund | IBAN DE63440501990001146017 | BIC (Swift Code) DORTDE33XXX VAT Ident no. DE350640517 | Tax no. 315/5704/0848 | Supervisory authority Bezirksregierung Arnsberg

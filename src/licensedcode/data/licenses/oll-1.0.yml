@@ -1,0 +1,9 @@
+key: oll-1.0
+short_name: OLL-1.0
+name: Open Logistics License Version 1.0
+category: Permissive
+owner: Open Logistics Foundation
+homepage_url: https://www.openlogisticsfoundation.org/licenses/
+spdx_license_key: LicenseRef-scancode-oll-1.0
+ignorable_urls:
+    - https://www.openlogisticsfoundation.org/licenses/
