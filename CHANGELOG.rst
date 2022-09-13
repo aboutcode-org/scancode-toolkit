@@ -55,6 +55,14 @@ License detection:
   as an option.
 
 
+v31.2.0 - 2022-09-02
+----------------------------------
+
+This is a minor release with small bug fixes and minor feature updates.
+
+- Update SPDX license list to 3.18
+- Improve how we discard license matches that are "gibberish"
+- And new and improve existing license and license rules
 
 
 v31.1.1 - 2022-09-02
