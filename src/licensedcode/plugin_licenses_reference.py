@@ -105,8 +105,12 @@ class LicensesReference(PostScanPlugin):
             )
 
             license_detections = getattr(resource, 'license_detections', []) or []
+            license_clues = getattr(resource, 'license_clues', []) or []
             rules_data.extend(
-                get_license_rules_reference_data(license_detections=license_detections)
+                get_license_rules_reference_data(
+                    license_detections=license_detections,
+                    license_clues=license_clues,
+                )
             )
 
             codebase.save_resource(resource)
@@ -157,7 +161,7 @@ def get_unique_rule_references(rules_data):
     return rules_references
 
 
-def get_license_rules_reference_data(license_detections):
+def get_license_rules_reference_data(license_detections, license_clues=None):
     """
     Get Rule data for references from a list of LicenseDetections.
 
@@ -168,36 +172,55 @@ def get_license_rules_reference_data(license_detections):
     rule_identifiers = set()
     rules_reference_data = []
 
-    for detection in license_detections:
-        if not detection:
-            continue
+    if license_detections:
 
-        for match in detection['matches']:
+        for detection in license_detections:
+            if not detection:
+                continue
+
+            for match in detection['matches']:
+
+                rule_identifier = match['rule_identifier']
+                ref_data = get_reference_data(match)
+
+                if rule_identifier not in rule_identifiers:
+                    rule_identifiers.update(rule_identifier)
+                    rules_reference_data.append(ref_data)
+    
+    if license_clues:
+
+        for match in license_clues:
 
             rule_identifier = match['rule_identifier']
-
-            ref_data = {}
-            ref_data['license_expression'] = match['license_expression']
-            ref_data['rule_identifier'] = rule_identifier
-            ref_data['referenced_filenames'] = match.pop('referenced_filenames')
-            ref_data['is_license_text'] = match.pop('is_license_text')
-            ref_data['is_license_notice'] = match.pop('is_license_notice')
-            ref_data['is_license_reference'] = match.pop('is_license_reference')
-            ref_data['is_license_tag'] = match.pop('is_license_tag')
-            ref_data['is_license_intro'] = match.pop('is_license_intro')
-            ref_data['rule_length'] = match.pop('rule_length')
-            ref_data['rule_relevance'] = match.pop('rule_relevance')
-
-            if 'matched_text' in match:
-                ref_data['matched_text'] = match.pop('matched_text')
-
-            _ = match.pop('licenses')
+            ref_data = get_reference_data(match)
 
             if rule_identifier not in rule_identifiers:
                 rule_identifiers.update(rule_identifier)
                 rules_reference_data.append(ref_data)
 
     return rules_reference_data
+
+
+def get_reference_data(match):
+
+    ref_data = {}
+    ref_data['license_expression'] = match['license_expression']
+    ref_data['rule_identifier'] = match['rule_identifier']
+    ref_data['referenced_filenames'] = match.pop('referenced_filenames')
+    ref_data['is_license_text'] = match.pop('is_license_text')
+    ref_data['is_license_notice'] = match.pop('is_license_notice')
+    ref_data['is_license_reference'] = match.pop('is_license_reference')
+    ref_data['is_license_tag'] = match.pop('is_license_tag')
+    ref_data['is_license_intro'] = match.pop('is_license_intro')
+    ref_data['rule_length'] = match.pop('rule_length')
+    ref_data['rule_relevance'] = match.pop('rule_relevance')
+
+    if 'matched_text' in match:
+        ref_data['matched_text'] = match.pop('matched_text')
+
+    _ = match.pop('licenses')
+
+    return ref_data
 
 
 def get_license_detection_references(license_detections_by_path):
