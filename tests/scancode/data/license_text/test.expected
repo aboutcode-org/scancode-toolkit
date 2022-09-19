@@ -29,7 +29,7 @@
               "is_license_intro": false,
               "rule_length": 4,
               "rule_relevance": 100,
-              "matched_text": "license: LGPL-2.1",
+              "matched_text": "foo bar this that license: LGPL-2.1 bar",
               "licenses": [
                 {
                   "key": "lgpl-2.1",

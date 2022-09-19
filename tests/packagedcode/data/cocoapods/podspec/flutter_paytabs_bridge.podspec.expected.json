@@ -30,13 +30,13 @@
     "code_view_url": "./tree/2.2.5",
     "vcs_url": ".",
     "copyright": null,
-    "declared_license_expression": "unknown-license-reference",
-    "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
     "license_detections": [
       {
-        "license_expression": "unknown-license-reference",
+        "license_expression": "unknown",
         "detection_rules": [
-          "not-combined"
+          "undetected-license"
         ],
         "matches": [
           {
@@ -45,36 +45,34 @@
             "end_line": 1,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "unknown-license-reference",
-            "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
-            "referenced_filenames": [
-              "LICENSE"
-            ],
+            "matcher": "5-undetected",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown",
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
             "matched_text": "license :file = ../LICENSE",
             "licenses": [
               {
-                "key": "unknown-license-reference",
-                "name": "Unknown License file reference",
-                "short_name": "Unknown License reference",
+                "key": "unknown",
+                "name": "Unknown license detected but not recognized",
+                "short_name": "unknown",
                 "category": "Unstated License",
                 "is_exception": false,
                 "is_unknown": true,
                 "owner": "Unspecified",
                 "homepage_url": null,
                 "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-                "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
+                "spdx_license_key": "LicenseRef-scancode-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
               }
             ]
           }

@@ -40,25 +40,23 @@
         ],
         "matches": [
           {
-            "score": 100.0,
+            "score": 90.0,
             "start_line": 1,
             "end_line": 1,
-            "matched_length": 4,
+            "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
+            "matcher": "2-aho",
             "license_expression": "mit",
-            "rule_identifier": "mit_in_manifest.RULE",
-            "referenced_filenames": [
-              "LICENSE"
-            ],
+            "rule_identifier": "mit_273.RULE",
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
             "is_license_intro": false,
-            "rule_length": 4,
-            "rule_relevance": 100,
-            "matched_text": "type = MIT, :file = LICENSE",
+            "rule_length": 2,
+            "rule_relevance": 90,
+            "matched_text": ":type = MIT, :file = LICENSE",
             "licenses": [
               {
                 "key": "mit",

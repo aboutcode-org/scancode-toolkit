@@ -92,7 +92,7 @@
           "is_license_intro": false,
           "rule_length": 1,
           "rule_relevance": 75,
-          "matched_text": "lgpl.",
+          "matched_text": "http://repository.jboss.com/licenses/lgpl.txt",
           "licenses": [
             {
               "key": "lgpl-2.0-plus",

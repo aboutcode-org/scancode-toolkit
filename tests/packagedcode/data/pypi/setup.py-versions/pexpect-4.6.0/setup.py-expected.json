@@ -121,7 +121,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 100,
-            "matched_text": "License :: OSI Approved :: ISC License (ISCL)']",
+            "matched_text": "['License :: OSI Approved :: ISC License (ISCL)']",
             "licenses": [
               {
                 "key": "isc",

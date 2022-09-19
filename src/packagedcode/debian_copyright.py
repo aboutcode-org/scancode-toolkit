@@ -511,7 +511,8 @@ class UnstructuredCopyrightProcessor(DebianDetector):
         )
 
         license_detections_mapping, _expression = get_mapping_and_expression_from_detections(
-            license_detections=license_detections
+            license_detections=license_detections,
+            whole_lines=False,
         )
 
         return license_detections_mapping
@@ -661,7 +662,8 @@ class StructuredCopyrightProcessor(DebianDetector):
             detection_objects.append(detection)
 
         detections_mapping, _expression = get_mapping_and_expression_from_detections(
-            license_detections=detection_objects
+            license_detections=detection_objects,
+            whole_lines=False,
         )
 
         self.primary_license_detections = detections_mapping
@@ -955,7 +957,8 @@ class StructuredCopyrightProcessor(DebianDetector):
             detection_objects.append(detection)
 
         detections_mapping, _expression = get_mapping_and_expression_from_detections(
-            license_detections=detection_objects
+            license_detections=detection_objects,
+            whole_lines=False,
         )
 
         return detections_mapping

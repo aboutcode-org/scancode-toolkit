@@ -50,7 +50,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "GPLv3+",
+            "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
             "licenses": [
               {
                 "key": "gpl-3.0-plus",
@@ -87,7 +87,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "GPLv3+",
+            "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
             "licenses": [
               {
                 "key": "gpl-3.0-plus",
@@ -124,7 +124,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "GPLv2+",
+            "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
             "licenses": [
               {
                 "key": "gpl-2.0-plus",
@@ -161,7 +161,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "LGPLv2+",
+            "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
             "licenses": [
               {
                 "key": "lgpl-2.0-plus",

@@ -68,7 +68,7 @@
               "is_license_intro": false,
               "rule_length": 77,
               "rule_relevance": 100,
-              "matched_text": "usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.",
+              "matched_text": "/usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.2",
               "licenses": [
                 {
                   "key": "lgpl-2.0-plus",
@@ -169,7 +169,7 @@
               "is_license_intro": false,
               "rule_length": 4,
               "rule_relevance": 100,
-              "matched_text": "licenses/Apache-2.0",
+              "matched_text": "/usr/share/common-licenses/Apache-2.0",
               "licenses": [
                 {
                   "key": "apache-2.0",
@@ -206,7 +206,7 @@
               "is_license_intro": false,
               "rule_length": 2,
               "rule_relevance": 99,
-              "matched_text": "licenses/BSD",
+              "matched_text": "/usr/share/common-licenses/BSD",
               "licenses": [
                 {
                   "key": "bsd-new",
@@ -243,7 +243,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 95,
-              "matched_text": "CC0-1.0",
+              "matched_text": "/usr/share/common-licenses/CC0-1.0",
               "licenses": [
                 {
                   "key": "cc0-1.0",
@@ -280,7 +280,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 50,
-              "matched_text": "GFDL-1.2",
+              "matched_text": "/usr/share/common-licenses/GFDL-1.2",
               "licenses": [
                 {
                   "key": "gfdl-1.2",
@@ -317,7 +317,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 50,
-              "matched_text": "GFDL-1.3",
+              "matched_text": "/usr/share/common-licenses/GFDL-1.3",
               "licenses": [
                 {
                   "key": "gfdl-1.3",
@@ -354,7 +354,7 @@
               "is_license_intro": false,
               "rule_length": 41,
               "rule_relevance": 100,
-              "matched_text": "licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2",
+              "matched_text": "/usr/share/common-licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2",
               "licenses": [
                 {
                   "key": "gpl-1.0-plus",
@@ -439,7 +439,7 @@
               "is_license_intro": false,
               "rule_length": 2,
               "rule_relevance": 60,
-              "matched_text": "GPL-1",
+              "matched_text": "/usr/share/common-licenses/GPL-1",
               "licenses": [
                 {
                   "key": "gpl-1.0",
@@ -481,7 +481,7 @@
               "is_license_intro": false,
               "rule_length": 44,
               "rule_relevance": 100,
-              "matched_text": "usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1",
+              "matched_text": "/usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1",
               "licenses": [
                 {
                   "key": "lgpl-2.0",
@@ -536,7 +536,7 @@
               "is_license_intro": false,
               "rule_length": 6,
               "rule_relevance": 100,
-              "matched_text": "usr/share/common-licenses/LGPL-3",
+              "matched_text": "/usr/share/common-licenses/LGPL-3",
               "licenses": [
                 {
                   "key": "lgpl-3.0",
@@ -573,7 +573,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 50,
-              "matched_text": "MPL-1.1",
+              "matched_text": "/usr/share/common-licenses/MPL-1.1",
               "licenses": [
                 {
                   "key": "mpl-1.1",
@@ -610,7 +610,7 @@
               "is_license_intro": false,
               "rule_length": 3,
               "rule_relevance": 50,
-              "matched_text": "MPL-2.0",
+              "matched_text": "/usr/share/common-licenses/MPL-2.0",
               "licenses": [
                 {
                   "key": "mpl-2.0",
@@ -658,7 +658,7 @@
               "is_license_intro": false,
               "rule_length": 43,
               "rule_relevance": 100,
-              "matched_text": "usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL",
+              "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL",
               "licenses": [
                 {
                   "key": "gpl-2.0",
@@ -1381,7 +1381,7 @@
                   "is_license_intro": false,
                   "rule_length": 77,
                   "rule_relevance": 100,
-                  "matched_text": "usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.",
+                  "matched_text": "/usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.2",
                   "licenses": [
                     {
                       "key": "lgpl-2.0-plus",
@@ -1482,7 +1482,7 @@
                   "is_license_intro": false,
                   "rule_length": 4,
                   "rule_relevance": 100,
-                  "matched_text": "licenses/Apache-2.0",
+                  "matched_text": "/usr/share/common-licenses/Apache-2.0",
                   "licenses": [
                     {
                       "key": "apache-2.0",
@@ -1519,7 +1519,7 @@
                   "is_license_intro": false,
                   "rule_length": 2,
                   "rule_relevance": 99,
-                  "matched_text": "licenses/BSD",
+                  "matched_text": "/usr/share/common-licenses/BSD",
                   "licenses": [
                     {
                       "key": "bsd-new",
@@ -1556,7 +1556,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 95,
-                  "matched_text": "CC0-1.0",
+                  "matched_text": "/usr/share/common-licenses/CC0-1.0",
                   "licenses": [
                     {
                       "key": "cc0-1.0",
@@ -1593,7 +1593,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 50,
-                  "matched_text": "GFDL-1.2",
+                  "matched_text": "/usr/share/common-licenses/GFDL-1.2",
                   "licenses": [
                     {
                       "key": "gfdl-1.2",
@@ -1630,7 +1630,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 50,
-                  "matched_text": "GFDL-1.3",
+                  "matched_text": "/usr/share/common-licenses/GFDL-1.3",
                   "licenses": [
                     {
                       "key": "gfdl-1.3",
@@ -1667,7 +1667,7 @@
                   "is_license_intro": false,
                   "rule_length": 41,
                   "rule_relevance": 100,
-                  "matched_text": "licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2",
+                  "matched_text": "/usr/share/common-licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2",
                   "licenses": [
                     {
                       "key": "gpl-1.0-plus",
@@ -1752,7 +1752,7 @@
                   "is_license_intro": false,
                   "rule_length": 2,
                   "rule_relevance": 60,
-                  "matched_text": "GPL-1",
+                  "matched_text": "/usr/share/common-licenses/GPL-1",
                   "licenses": [
                     {
                       "key": "gpl-1.0",
@@ -1794,7 +1794,7 @@
                   "is_license_intro": false,
                   "rule_length": 44,
                   "rule_relevance": 100,
-                  "matched_text": "usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1",
+                  "matched_text": "/usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1",
                   "licenses": [
                     {
                       "key": "lgpl-2.0",
@@ -1849,7 +1849,7 @@
                   "is_license_intro": false,
                   "rule_length": 6,
                   "rule_relevance": 100,
-                  "matched_text": "usr/share/common-licenses/LGPL-3",
+                  "matched_text": "/usr/share/common-licenses/LGPL-3",
                   "licenses": [
                     {
                       "key": "lgpl-3.0",
@@ -1886,7 +1886,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 50,
-                  "matched_text": "MPL-1.1",
+                  "matched_text": "/usr/share/common-licenses/MPL-1.1",
                   "licenses": [
                     {
                       "key": "mpl-1.1",
@@ -1923,7 +1923,7 @@
                   "is_license_intro": false,
                   "rule_length": 3,
                   "rule_relevance": 50,
-                  "matched_text": "MPL-2.0",
+                  "matched_text": "/usr/share/common-licenses/MPL-2.0",
                   "licenses": [
                     {
                       "key": "mpl-2.0",
@@ -1971,7 +1971,7 @@
                   "is_license_intro": false,
                   "rule_length": 43,
                   "rule_relevance": 100,
-                  "matched_text": "usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL",
+                  "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL",
                   "licenses": [
                     {
                       "key": "gpl-2.0",

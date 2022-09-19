@@ -47,7 +47,7 @@
           "is_license_intro": false,
           "rule_length": 15,
           "rule_relevance": 100,
-          "matched_text": "lgpl-2.1-only OR lgpl-3.0-only) AND lgpl-2.0-or-later",
+          "matched_text": "(lgpl-2.1-only OR lgpl-3.0-only) AND lgpl-2.0-or-later",
           "licenses": [
             {
               "key": "lgpl-2.1",

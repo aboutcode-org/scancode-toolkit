@@ -73,7 +73,7 @@
             "is_license_intro": false,
             "rule_length": 5,
             "rule_relevance": 100,
-            "matched_text": "Eclipse Public License v1.0 /",
+            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
             "licenses": [
               {
                 "key": "epl-1.0",
@@ -110,7 +110,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "Eclipse Distribution License",
+            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
             "licenses": [
               {
                 "key": "bsd-new",
@@ -149,11 +149,11 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
+            "is_license_tag": true,
+            "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "License :: OSI Approved']",
+            "matched_text": "['License :: OSI Approved']",
             "licenses": [
               {
                 "key": "free-unknown",

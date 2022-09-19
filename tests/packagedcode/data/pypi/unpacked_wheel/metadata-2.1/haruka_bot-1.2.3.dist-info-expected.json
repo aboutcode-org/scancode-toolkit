@@ -110,7 +110,7 @@
             "is_license_intro": false,
             "rule_length": 12,
             "rule_relevance": 100,
-            "matched_text": "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']",
+            "matched_text": "['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']",
             "licenses": [
               {
                 "key": "agpl-3.0-plus",

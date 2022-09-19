@@ -759,6 +759,7 @@ class LicenseMatch(object):
         spdx_license_url,
         include_text=False,
         license_text_diagnostics=False,
+        whole_lines=True,
     ):
         """
         Return a list of "matches" scan data built from a license match.
@@ -771,7 +772,10 @@ class LicenseMatch(object):
             if license_text_diagnostics:
                 matched_text = self.matched_text(whole_lines=False, highlight=True)
             else:
-                matched_text = self.matched_text(whole_lines=False, highlight=False)
+                if whole_lines:
+                    matched_text = self.matched_text(whole_lines=True, highlight=False)
+                else:
+                    matched_text = self.matched_text(whole_lines=False, highlight=False)
 
         SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
         SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'

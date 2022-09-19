@@ -524,7 +524,7 @@
               "is_license_intro": false,
               "rule_length": 5,
               "rule_relevance": 100,
-              "matched_text": "License :: OSI Approved :: MIT License']",
+              "matched_text": "['License :: OSI Approved :: MIT License']",
               "licenses": [
                 {
                   "key": "mit",
@@ -765,7 +765,7 @@
               "is_license_intro": false,
               "rule_length": 5,
               "rule_relevance": 100,
-              "matched_text": "License :: OSI Approved :: MIT License']",
+              "matched_text": "['License :: OSI Approved :: MIT License']",
               "licenses": [
                 {
                   "key": "mit",
@@ -1041,7 +1041,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "License :: OSI Approved :: MIT License']",
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",
@@ -1747,7 +1747,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "License :: OSI Approved :: MIT License']",
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",

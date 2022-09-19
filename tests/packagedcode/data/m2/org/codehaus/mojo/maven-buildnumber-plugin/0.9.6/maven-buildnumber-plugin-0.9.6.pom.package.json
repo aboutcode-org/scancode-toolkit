@@ -100,7 +100,7 @@
           "is_license_intro": false,
           "rule_length": 2,
           "rule_relevance": 100,
-          "matched_text": "licenses/mit-",
+          "matched_text": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt",
           "licenses": [
             {
               "key": "mit",

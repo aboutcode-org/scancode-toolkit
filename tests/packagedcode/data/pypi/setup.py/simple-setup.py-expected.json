@@ -41,8 +41,8 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "declared_license_expression": "((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND apache-2.0 AND cc0-1.0",
-    "declared_license_expression_spdx": "((Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0) AND Apache-2.0 AND CC0-1.0",
+    "declared_license_expression": "((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND (apache-2.0 AND free-unknown AND cc0-1.0)",
+    "declared_license_expression_spdx": "((Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0) AND (Apache-2.0 AND LicenseRef-scancode-free-unknown AND CC0-1.0)",
     "license_detections": [
       {
         "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
@@ -67,7 +67,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 100,
-            "matched_text": "Apache-2.0 with ScanCode acknowledgment",
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
             "licenses": [
               {
                 "key": "apache-2.0",
@@ -120,7 +120,7 @@
             "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 95,
-            "matched_text": "CC0-1.0",
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
             "licenses": [
               {
                 "key": "cc0-1.0",
@@ -143,10 +143,8 @@
         ]
       },
       {
-        "license_expression": "apache-2.0",
-        "detection_rules": [
-          "not-combined"
-        ],
+        "license_expression": "apache-2.0 AND free-unknown AND cc0-1.0",
+        "detection_rules": [],
         "matches": [
           {
             "score": 95.0,
@@ -165,7 +163,7 @@
             "is_license_intro": false,
             "rule_length": 6,
             "rule_relevance": 95,
-            "matched_text": "License :: OSI Approved :: Apache Software License', '",
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
             "licenses": [
               {
                 "key": "apache-2.0",
@@ -184,15 +182,7 @@
                 "spdx_url": "https://spdx.org/licenses/Apache-2.0"
               }
             ]
-          }
-        ]
-      },
-      {
-        "license_expression": "cc0-1.0",
-        "detection_rules": [
-          "unknown-intro-followed-by-match"
-        ],
-        "matches": [
+          },
           {
             "score": 100.0,
             "start_line": 1,
@@ -206,11 +196,11 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
+            "is_license_tag": true,
+            "is_license_intro": false,
             "rule_length": 3,
             "rule_relevance": 100,
-            "matched_text": "License :: OSI Approved ::",
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
             "licenses": [
               {
                 "key": "free-unknown",
@@ -247,7 +237,7 @@
             "is_license_intro": false,
             "rule_length": 1,
             "rule_relevance": 100,
-            "matched_text": "CC0']",
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
             "licenses": [
               {
                 "key": "cc0-1.0",

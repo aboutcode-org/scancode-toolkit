@@ -16,20 +16,20 @@
               "score": 100.0,
               "start_line": 2,
               "end_line": 2,
-              "matched_length": 4,
+              "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
+              "matcher": "2-aho",
               "license_expression": "zlib",
-              "rule_identifier": "spdx-license-identifier: zlib",
+              "rule_identifier": "zlib_101.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
+              "is_license_reference": true,
+              "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 4,
+              "rule_length": 5,
               "rule_relevance": 100,
-              "matched_text": "licenses.nuget.org/Zlib",
+              "matched_text": "https://licenses.nuget.org/Zlib",
               "licenses": [
                 {
                   "key": "zlib",
@@ -90,7 +90,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 90.91,
+      "percentage_of_license_text": 100.0,
       "scan_errors": []
     }
   ]

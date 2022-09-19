@@ -121,7 +121,7 @@
             "is_license_intro": false,
             "rule_length": 2,
             "rule_relevance": 100,
-            "matched_text": "LICENSE-MIT",
+            "matched_text": "https://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
             "licenses": [
               {
                 "key": "mit",

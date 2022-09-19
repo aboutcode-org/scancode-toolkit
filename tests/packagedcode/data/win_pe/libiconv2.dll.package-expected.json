@@ -54,7 +54,7 @@
             "is_license_intro": false,
             "rule_length": 38,
             "rule_relevance": 100,
-            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/",
+            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
             "licenses": [
               {
                 "key": "gpl-2.0-plus",
@@ -91,7 +91,7 @@
             "is_license_intro": false,
             "rule_length": 21,
             "rule_relevance": 100,
-            "matched_text": "the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
+            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
             "licenses": [
               {
                 "key": "lgpl-2.1-plus",

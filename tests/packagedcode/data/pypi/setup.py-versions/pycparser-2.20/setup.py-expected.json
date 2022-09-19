@@ -116,7 +116,7 @@
             "is_license_intro": false,
             "rule_length": 5,
             "rule_relevance": 99,
-            "matched_text": "License :: OSI Approved :: BSD License']",
+            "matched_text": "['License :: OSI Approved :: BSD License']",
             "licenses": [
               {
                 "key": "bsd-new",

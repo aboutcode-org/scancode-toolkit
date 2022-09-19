@@ -47,7 +47,7 @@
           "is_license_intro": false,
           "rule_length": 19,
           "rule_relevance": 100,
-          "matched_text": "gpl-2.0-only OR gpl-3.0-only) AND (lgpl-2.1-only AND lgpl-3.0-only)",
+          "matched_text": "(gpl-2.0-only OR gpl-3.0-only) AND (lgpl-2.1-only AND lgpl-3.0-only)",
           "licenses": [
             {
               "key": "gpl-2.0",

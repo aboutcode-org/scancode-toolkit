@@ -22,7 +22,7 @@
         "is_license_intro": true,
         "rule_length": 14,
         "rule_relevance": 100,
-        "matched_text": "This program and the accompanying materials are made\n * available under the terms of the",
+        "matched_text": " * This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0",
         "licenses": [
           {
             "key": "unknown-license-reference",
@@ -59,7 +59,7 @@
         "is_license_intro": false,
         "rule_length": 5,
         "rule_relevance": 100,
-        "matched_text": "Eclipse Public License 2.0",
+        "matched_text": " * available under the terms of the Eclipse Public License 2.0",
         "licenses": [
           {
             "key": "epl-2.0",
@@ -96,7 +96,7 @@
         "is_license_intro": false,
         "rule_length": 8,
         "rule_relevance": 100,
-        "matched_text": "https://www.eclipse.org/legal/epl-2.0/",
+        "matched_text": " * which is available at https://www.eclipse.org/legal/epl-2.0/",
         "licenses": [
           {
             "key": "epl-2.0",
@@ -133,7 +133,7 @@
         "is_license_intro": false,
         "rule_length": 5,
         "rule_relevance": 100,
-        "matched_text": "License-Identifier: EPL-2.0",
+        "matched_text": " * SPDX-License-Identifier: EPL-2.0",
         "licenses": [
           {
             "key": "epl-2.0",

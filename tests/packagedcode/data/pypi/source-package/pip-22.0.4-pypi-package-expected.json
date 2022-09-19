@@ -116,7 +116,7 @@
               "is_license_intro": false,
               "rule_length": 5,
               "rule_relevance": 100,
-              "matched_text": "License :: OSI Approved :: MIT License']",
+              "matched_text": "['License :: OSI Approved :: MIT License']",
               "licenses": [
                 {
                   "key": "mit",
@@ -318,7 +318,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "License :: OSI Approved :: MIT License']",
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",
@@ -731,48 +731,9 @@
             {
               "license_expression": "mit",
               "detection_rules": [
-                "package-unknown-reference-to-local-file"
+                "not-combined"
               ],
               "matches": [
-                {
-                  "score": 100.0,
-                  "start_line": 87,
-                  "end_line": 87,
-                  "matched_length": 4,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "unknown-license-reference",
-                  "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-                  "referenced_filenames": [
-                    "LICENSE.txt"
-                  ],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": true,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 4,
-                  "rule_relevance": 100,
-                  "matched_text": "license_file = LICENSE.txt",
-                  "licenses": [
-                    {
-                      "key": "unknown-license-reference",
-                      "name": "Unknown License file reference",
-                      "short_name": "Unknown License reference",
-                      "category": "Unstated License",
-                      "is_exception": false,
-                      "is_unknown": true,
-                      "owner": "Unspecified",
-                      "homepage_url": null,
-                      "text_url": "",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-                      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                    }
-                  ]
-                },
                 {
                   "score": 100.0,
                   "start_line": 3,
@@ -953,7 +914,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "License :: OSI Approved :: MIT License']",
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",
@@ -1141,7 +1102,7 @@
                   "is_license_intro": false,
                   "rule_length": 5,
                   "rule_relevance": 100,
-                  "matched_text": "License :: OSI Approved :: MIT License']",
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
                   "licenses": [
                     {
                       "key": "mit",

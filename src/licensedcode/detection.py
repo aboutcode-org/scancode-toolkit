@@ -380,6 +380,7 @@ class LicenseDetection:
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
         spdx_license_url=SPDX_LICENSE_URL,
+        whole_lines=True,
     ):
         def dict_fields(attr, value):
             if attr.name == 'file_region':
@@ -396,6 +397,7 @@ class LicenseDetection:
                     license_text_diagnostics=license_text_diagnostics,
                     license_url_template=license_url_template,
                     spdx_license_url=spdx_license_url,
+                    whole_lines=whole_lines,
                 )
             )
 

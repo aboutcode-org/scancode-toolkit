@@ -378,6 +378,7 @@ def get_mapping_and_expression_from_detections(
     unique=True,
     include_text=True,
     license_text_diagnostics=False,
+    whole_lines=True,
 ):
     detection_data = []
 
@@ -396,6 +397,7 @@ def get_mapping_and_expression_from_detections(
             license_detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
+                whole_lines=whole_lines,
             )
         )
 

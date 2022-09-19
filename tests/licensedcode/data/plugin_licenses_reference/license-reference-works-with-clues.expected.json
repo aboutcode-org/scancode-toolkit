@@ -218,7 +218,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 80,
-      "matched_text": "GPL-compatible"
+      "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -231,7 +231,7 @@
       "is_license_intro": false,
       "rule_length": 3,
       "rule_relevance": 100,
-      "matched_text": "under\n    the GPL."
+      "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under\n    the GPL.  All Python licenses, unlike the GPL, let you distribute"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -244,7 +244,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 85,
-      "matched_text": "the GPL,"
+      "matched_text": "    the GPL.  All Python licenses, unlike the GPL, let you distribute"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -257,7 +257,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 85,
-      "matched_text": "The\n    GPL-"
+      "matched_text": "    a modified version without making your changes open source.  The\n    GPL-compatible licenses make it possible to combine Python with"
     },
     {
       "license_expression": "other-copyleft",
@@ -270,7 +270,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 80,
-      "matched_text": "GPL-compatible"
+      "matched_text": "    GPL-compatible licenses make it possible to combine Python with"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -283,7 +283,7 @@
       "is_license_intro": false,
       "rule_length": 4,
       "rule_relevance": 100,
-      "matched_text": "released under the GPL;"
+      "matched_text": "    other software that is released under the GPL; the others don't."
     },
     {
       "license_expression": "other-copyleft",
@@ -296,7 +296,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 80,
-      "matched_text": "GPL-compatible,"
+      "matched_text": "(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -309,7 +309,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 85,
-      "matched_text": "the GPL."
+      "matched_text": "    is \"not incompatible\" with the GPL."
     },
     {
       "license_expression": "python",
@@ -348,7 +348,7 @@
       "is_license_intro": true,
       "rule_length": 6,
       "rule_relevance": 100,
-      "matched_text": "is licensed under the following terms:"
+      "matched_text": "This copy of Python includes a copy of bzip2, which is licensed under the following terms:"
     },
     {
       "license_expression": "bzip2-libbzip-2010",
@@ -374,7 +374,7 @@
       "is_license_intro": true,
       "rule_length": 6,
       "rule_relevance": 100,
-      "matched_text": "is licensed under the following terms:"
+      "matched_text": "This copy of Python includes a copy of db, which is licensed under the following terms:"
     },
     {
       "license_expression": "sleepycat",
@@ -387,7 +387,7 @@
       "is_license_intro": false,
       "rule_length": 174,
       "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Redistributions in any form must be accompanied by information on\n *    how to obtain complete source code for the DB software and any\n *    accompanying software that uses the DB software.  The source code\n *    must either be included in the distribution or be available for no\n *    more than the cost of distribution plus a nominal fee, and must be\n *    freely redistributable under reasonable conditions.  For an\n *    executable file, complete source code means the source code for all\n *    modules it contains.  It does not include source code for modules or\n *    files that typically accompany the major components of the operating\n *    system on which the executable file runs."
+      "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Redistributions in any form must be accompanied by information on\n *    how to obtain complete source code for the DB software and any\n *    accompanying software that uses the DB software.  The source code\n *    must either be included in the distribution or be available for no\n *    more than the cost of distribution plus a nominal fee, and must be\n *    freely redistributable under reasonable conditions.  For an\n *    executable file, complete source code means the source code for all\n *    modules it contains.  It does not include source code for modules or\n *    files that typically accompany the major components of the operating\n *    system on which the executable file runs."
     },
     {
       "license_expression": "bsd-new",
@@ -400,7 +400,7 @@
       "is_license_intro": false,
       "rule_length": 213,
       "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
+      "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
     },
     {
       "license_expression": "bsd-new",
@@ -413,7 +413,7 @@
       "is_license_intro": false,
       "rule_length": 213,
       "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
+      "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
     },
     {
       "license_expression": "unknown-license-reference",
@@ -426,7 +426,7 @@
       "is_license_intro": true,
       "rule_length": 6,
       "rule_relevance": 100,
-      "matched_text": "is licensed under the following terms:"
+      "matched_text": "This copy of Python includes a copy of openssl, which is licensed under the following terms:"
     },
     {
       "license_expression": "openssl-ssleay",
@@ -439,7 +439,7 @@
       "is_license_intro": false,
       "rule_length": 56,
       "rule_relevance": 100,
-      "matched_text": "The OpenSSL toolkit stays under a dual license, i.e. both the conditions of\n  the OpenSSL License and the original SSLeay license apply to the toolkit.\n  See below for the actual license texts. Actually both licenses are BSD-style\n  Open Source licenses. In case of any license issues related to OpenSSL\n  please contact openssl-core@openssl.org."
+      "matched_text": "  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of\n  the OpenSSL License and the original SSLeay license apply to the toolkit.\n  See below for the actual license texts. Actually both licenses are BSD-style\n  Open Source licenses. In case of any license issues related to OpenSSL\n  please contact openssl-core@openssl.org."
     },
     {
       "license_expression": "openssl-ssleay",
@@ -452,7 +452,7 @@
       "is_license_intro": false,
       "rule_length": 2,
       "rule_relevance": 100,
-      "matched_text": "OpenSSL License"
+      "matched_text": "  OpenSSL License"
     },
     {
       "license_expression": "openssl",
@@ -465,7 +465,7 @@
       "is_license_intro": false,
       "rule_length": 332,
       "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer. \n *\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in\n *    the documentation and/or other materials provided with the\n *    distribution.\n *\n * 3. All advertising materials mentioning features or use of this\n *    software must display the following acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n *\n * 4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n *    endorse or promote products derived from this software without\n *    prior written permission. For written permission, please contact\n *    openssl-core@openssl.org.\n *\n * 5. Products derived from this software may not be called \"OpenSSL\"\n *    nor may \"OpenSSL\" appear in their names without prior written\n *    permission of the OpenSSL Project.\n *\n * 6. Redistributions of any form whatsoever must retain the following\n *    acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\n *\n * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\n * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\n * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n * OF THE POSSIBILITY OF SUCH DAMAGE.\n * ====================================================================\n *\n * This product includes cryptographic software written by Eric Young\n * (eay@cryptsoft.com).  This product includes software written by Tim\n * Hudson (tjh@cryptsoft.com)."
+      "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer. \n *\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in\n *    the documentation and/or other materials provided with the\n *    distribution.\n *\n * 3. All advertising materials mentioning features or use of this\n *    software must display the following acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n *\n * 4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n *    endorse or promote products derived from this software without\n *    prior written permission. For written permission, please contact\n *    openssl-core@openssl.org.\n *\n * 5. Products derived from this software may not be called \"OpenSSL\"\n *    nor may \"OpenSSL\" appear in their names without prior written\n *    permission of the OpenSSL Project.\n *\n * 6. Redistributions of any form whatsoever must retain the following\n *    acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\n *\n * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\n * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\n * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n * OF THE POSSIBILITY OF SUCH DAMAGE.\n * ====================================================================\n *\n * This product includes cryptographic software written by Eric Young\n * (eay@cryptsoft.com).  This product includes software written by Tim\n * Hudson (tjh@cryptsoft.com)."
     },
     {
       "license_expression": "ssleay-windows",
@@ -478,7 +478,7 @@
       "is_license_intro": false,
       "rule_length": 453,
       "rule_relevance": 100,
-      "matched_text": "This package is an SSL implementation written\n * by Eric Young (eay@cryptsoft.com).\n * The implementation was written so as to conform with Netscapes SSL.\n * \n * This library is free for commercial and non-commercial use as long as\n * the following conditions are aheared to.  The following conditions\n * apply to all code found in this distribution, be it the RC4, RSA,\n * lhash, DES, etc., code; not just the SSL code.  The SSL documentation\n * included with this distribution is covered by the same copyright terms\n * except that the holder is Tim Hudson (tjh@cryptsoft.com).\n * \n * Copyright remains Eric Young's, and as such any Copyright notices in\n * the code are not to be removed.\n * If this package is used in a product, Eric Young should be given attribution\n * as the author of the parts of the library used.\n * This can be in the form of a textual message at program startup or\n * in documentation (online or textual) provided with the package.\n * \n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. All advertising materials mentioning features or use of this software\n *    must display the following acknowledgement:\n *    \"This product includes cryptographic software written by\n *     Eric Young (eay@cryptsoft.com)\"\n *    The word 'cryptographic' can be left out if the rouines from the library\n *    being used are not cryptographic related :-).\n * 4. If you include any Windows specific code (or a derivative thereof) from \n *    the apps directory (application code) you must include an acknowledgement:\n *    \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n * \n * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE.\n * \n * The licence and distribution terms for any publically available version or\n * derivative of this code cannot be changed.  i.e. this code cannot simply be\n * copied and put under another distribution licence\n * [including the GNU Public Licence.]"
+      "matched_text": " * This package is an SSL implementation written\n * by Eric Young (eay@cryptsoft.com).\n * The implementation was written so as to conform with Netscapes SSL.\n * \n * This library is free for commercial and non-commercial use as long as\n * the following conditions are aheared to.  The following conditions\n * apply to all code found in this distribution, be it the RC4, RSA,\n * lhash, DES, etc., code; not just the SSL code.  The SSL documentation\n * included with this distribution is covered by the same copyright terms\n * except that the holder is Tim Hudson (tjh@cryptsoft.com).\n * \n * Copyright remains Eric Young's, and as such any Copyright notices in\n * the code are not to be removed.\n * If this package is used in a product, Eric Young should be given attribution\n * as the author of the parts of the library used.\n * This can be in the form of a textual message at program startup or\n * in documentation (online or textual) provided with the package.\n * \n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. All advertising materials mentioning features or use of this software\n *    must display the following acknowledgement:\n *    \"This product includes cryptographic software written by\n *     Eric Young (eay@cryptsoft.com)\"\n *    The word 'cryptographic' can be left out if the rouines from the library\n *    being used are not cryptographic related :-).\n * 4. If you include any Windows specific code (or a derivative thereof) from \n *    the apps directory (application code) you must include an acknowledgement:\n *    \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n * \n * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE.\n * \n * The licence and distribution terms for any publically available version or\n * derivative of this code cannot be changed.  i.e. this code cannot simply be\n * copied and put under another distribution licence\n * [including the GNU Public Licence.]"
     },
     {
       "license_expression": "unknown-license-reference",
@@ -491,7 +491,7 @@
       "is_license_intro": true,
       "rule_length": 6,
       "rule_relevance": 100,
-      "matched_text": "is licensed under the following terms:"
+      "matched_text": "This copy of Python includes a copy of tcl, which is licensed under the following terms:"
     },
     {
       "license_expression": "tcl",
@@ -517,7 +517,7 @@
       "is_license_intro": true,
       "rule_length": 6,
       "rule_relevance": 100,
-      "matched_text": "is licensed under the following terms:"
+      "matched_text": "This copy of Python includes a copy of tk, which is licensed under the following terms:"
     },
     {
       "license_expression": "tcl",
@@ -543,7 +543,7 @@
       "is_license_intro": false,
       "rule_length": 175,
       "rule_relevance": 100,
-      "matched_text": "INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
+      "matched_text": " * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
     }
   ],
   "files": [
