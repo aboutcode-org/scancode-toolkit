@@ -529,6 +529,55 @@ class FileReference(ModelMixin):
         return self
 
 
+wheel = "wheel"
+sdist = "sdist"
+
+RELEASE_TYPES = (
+    None,
+    wheel,
+    sdist,
+)
+
+@attr.attributes(slots=True)
+class PackageRelease:
+
+    type = String(
+        repr=True,
+        validator=choices(RELEASE_TYPES),
+        label='distribution type',
+        help='the type of this distribution: One of: '
+            +', '.join(p for p in RELEASE_TYPES if p))
+
+    download_url = String(
+        label='Download URL',
+        help='A direct download URL.')
+
+    size = Integer(
+        default=None,
+        label='download size',
+        help='size of the package download in bytes')
+
+    sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this package download in hexadecimal')
+
+    md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this package download in hexadecimal')
+
+    sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this package download in hexadecimal')
+
+    sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this package download in hexadecimal')
+    
+    release_date = Date(
+        label='release date',
+        help='Release date of the package')
+
+
 @attr.attributes(slots=True)
 class PackageData(IdentifiablePackageData):
     """
@@ -563,6 +612,11 @@ class PackageData(IdentifiablePackageData):
     homepage_url = String(
         label='homepage URL',
         help='URL to the homepage for this package.')
+    
+    package_releases = List(
+        item_type=PackageRelease,
+        label='package_distributions',
+        help='A list of package distributions.')
 
     download_url = String(
         label='Download URL',

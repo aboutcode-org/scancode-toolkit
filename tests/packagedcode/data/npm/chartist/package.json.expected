@@ -25,6 +25,7 @@
       "charting"
     ],
     "homepage_url": "https://gionkunz.github.io/chartist-js",
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/chartist/-/chartist-0.11.0.tgz",
     "size": null,
     "sha1": null,
@@ -35,7 +36,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/gionkunz/chartist-js.git",
     "copyright": null,
-    "license_expression": "(mit OR wtfpl-2.0) AND (wtfpl-2.0 AND (wtfpl-2.0 AND unknown)) AND (mit AND (mit AND unknown))",
+    "license_expression": "(mit OR wtfpl-2.0) AND unknown AND (mit AND (mit AND unknown))",
     "declared_license": [
       "MIT OR WTFPL",
       {

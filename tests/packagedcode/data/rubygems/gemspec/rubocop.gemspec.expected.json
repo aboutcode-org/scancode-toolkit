@@ -41,6 +41,7 @@
     ],
     "keywords": [],
     "homepage_url": "https://github.com/rubocop-hq/rubocop",
+    "package_releases": [],
     "download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
     "size": null,
     "sha1": null,

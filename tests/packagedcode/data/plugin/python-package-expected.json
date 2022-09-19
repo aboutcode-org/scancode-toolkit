@@ -336,6 +336,7 @@
       ],
       "keywords": [],
       "homepage_url": "http://bitbucket.org/viraptor/arpy",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -346,7 +347,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "bsd-simplified",
+      "license_expression": "unknown",
       "declared_license": {
         "license": "Simplified BSD"
       },
@@ -394,6 +395,7 @@
         "Programming Language :: Python :: Implementation :: CPython"
       ],
       "homepage_url": "https://github.com/untitaker/python-atomicwrites",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -404,7 +406,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit AND mit",
+      "license_expression": "unknown",
       "declared_license": {
         "license": "MIT",
         "classifiers": [
@@ -439,6 +441,7 @@
       "parties": [],
       "keywords": [],
       "homepage_url": null,
+      "package_releases": [],
       "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
       "size": null,
       "sha1": null,
@@ -493,6 +496,7 @@
         "Topic :: Utilities"
       ],
       "homepage_url": "http://pypi.python.org/pypi/six/",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -503,7 +507,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit AND mit",
+      "license_expression": "unknown",
       "declared_license": {
         "license": "MIT",
         "classifiers": [
@@ -546,6 +550,7 @@
       ],
       "keywords": [],
       "homepage_url": "http://nexb.com",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -556,7 +561,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "bsd-new",
+      "license_expression": "unknown",
       "declared_license": {
         "license": "BSD"
       },
@@ -629,6 +634,7 @@
             "Topic :: Utilities"
           ],
           "homepage_url": "http://pypi.python.org/pypi/six/",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -639,7 +645,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit AND mit",
+          "license_expression": "unknown",
           "declared_license": {
             "license": "MIT",
             "classifiers": [
@@ -680,6 +686,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
           "size": null,
           "sha1": null,
@@ -741,6 +748,7 @@
           ],
           "keywords": [],
           "homepage_url": "http://nexb.com",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -751,7 +759,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "bsd-new",
+          "license_expression": "unknown",
           "declared_license": {
             "license": "BSD"
           },
@@ -804,6 +812,7 @@
           ],
           "keywords": [],
           "homepage_url": "http://bitbucket.org/viraptor/arpy",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -859,6 +868,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -1090,6 +1100,7 @@
             "Programming Language :: Python :: Implementation :: CPython"
           ],
           "homepage_url": "https://github.com/untitaker/python-atomicwrites",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -1100,7 +1111,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit AND mit",
+          "license_expression": "unknown",
           "declared_license": {
             "license": "MIT",
             "classifiers": [
@@ -1194,6 +1205,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,

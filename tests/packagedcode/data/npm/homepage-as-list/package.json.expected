@@ -35,6 +35,7 @@
       "packages"
     ],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/npm-research/-/npm-research-0.0.1.tgz",
     "size": null,
     "sha1": "85ef4a002119cb82482f82824e1218ed1b4b99df",

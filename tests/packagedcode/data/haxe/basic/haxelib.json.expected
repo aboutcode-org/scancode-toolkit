@@ -58,6 +58,7 @@
       "core"
     ],
     "homepage_url": "https://lib.haxe.org/documentation/",
+    "package_releases": [],
     "download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
     "size": null,
     "sha1": null,
@@ -68,7 +69,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-1.0-plus",
+    "license_expression": "unknown",
     "declared_license": "GPL",
     "notice_text": null,
     "source_packages": [],

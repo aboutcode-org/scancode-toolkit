@@ -32,6 +32,7 @@
       "Topic :: Utilities"
     ],
     "homepage_url": "https://lab.openintegrity.org/agents/agents-common-code",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -42,7 +43,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-3.0 AND (free-unknown AND gpl-3.0)",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "GPLv3",
       "classifiers": [

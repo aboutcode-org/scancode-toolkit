@@ -25,6 +25,7 @@
       "sysutils"
     ],
     "homepage_url": "http://www.nongnu.org/dmidecode/",
+    "package_releases": [],
     "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
     "size": null,
     "sha1": null,
@@ -35,7 +36,7 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "gpl-2.0",
+    "license_expression": "unknown",
     "declared_license": {
       "licenses": [
         "GPLv2"

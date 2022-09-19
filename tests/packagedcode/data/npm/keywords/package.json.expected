@@ -44,6 +44,7 @@
       "clonedeep"
     ],
     "homepage_url": "https://lodash.com/",
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
     "size": null,
     "sha1": null,

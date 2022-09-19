@@ -32,6 +32,7 @@
       "Programming Language :: Python :: 3.8"
     ],
     "homepage_url": "https://certifiio.readthedocs.io/en/latest/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -42,7 +43,7 @@
     "code_view_url": "https://github.com/certifi/python-certifi",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mpl-2.0",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "MPL-2.0",
       "classifiers": [

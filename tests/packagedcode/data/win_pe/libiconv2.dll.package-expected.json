@@ -20,6 +20,7 @@
     ],
     "keywords": [],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -30,7 +31,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
-    "license_expression": "(lgpl-2.1 AND lgpl-2.1-plus) AND unknown",
+    "license_expression": "unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
       "LegalTrademarks": "GNU\u00ae, LibIconv\u00ae, libiconv2\u00ae",

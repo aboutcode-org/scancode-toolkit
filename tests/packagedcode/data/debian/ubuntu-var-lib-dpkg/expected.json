@@ -26,6 +26,7 @@
         "admin"
       ],
       "homepage_url": null,
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -93,6 +94,7 @@
         "admin"
       ],
       "homepage_url": null,
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -304,6 +306,7 @@
         "shells"
       ],
       "homepage_url": "http://tiswww.case.edu/php/chet/bash/bashtop.html",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -571,6 +574,7 @@
         "utils"
       ],
       "homepage_url": "https://www.gnu.org/software/tar/",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -661,6 +665,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -1617,6 +1622,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -1817,6 +1823,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -2251,6 +2258,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -2508,6 +2516,7 @@
             "admin"
           ],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -2558,6 +2567,7 @@
             "admin"
           ],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -2608,6 +2618,7 @@
             "shells"
           ],
           "homepage_url": "http://tiswww.case.edu/php/chet/bash/bashtop.html",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -2658,6 +2669,7 @@
             "utils"
           ],
           "homepage_url": "https://www.gnu.org/software/tar/",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,

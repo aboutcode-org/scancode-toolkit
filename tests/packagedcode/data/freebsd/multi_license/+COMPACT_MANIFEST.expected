@@ -26,6 +26,7 @@
       "dns"
     ],
     "homepage_url": "https://github.com/kjd/idna",
+    "package_releases": [],
     "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/py27-idna-2.6.txz",
     "size": null,
     "sha1": null,
@@ -36,7 +37,7 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "python AND bsd-new",
+    "license_expression": "unknown",
     "declared_license": {
       "licenses": [
         "PSFL",

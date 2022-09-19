@@ -29,6 +29,7 @@
       "Topic :: Software Development :: Libraries :: Python Modules"
     ],
     "homepage_url": "https://github.com/dbtsai/python-mimeparse",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -39,7 +40,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
+    "license_expression": "unknown",
     "declared_license": {
       "classifiers": [
         "License :: OSI Approved :: MIT License"

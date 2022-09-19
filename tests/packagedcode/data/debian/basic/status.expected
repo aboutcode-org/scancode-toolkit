@@ -24,6 +24,7 @@
       "libs"
     ],
     "homepage_url": "https://invisible-island.net/ncurses/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -76,6 +77,7 @@
       "libs"
     ],
     "homepage_url": "http://e2fsprogs.sourceforge.net",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -128,6 +130,7 @@
       "libs"
     ],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -180,6 +183,7 @@
       "libs"
     ],
     "homepage_url": "https://people.redhat.com/sgrubb/audit/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -232,6 +236,7 @@
       "perl"
     ],
     "homepage_url": "http://dev.perl.org/perl5/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -282,6 +287,7 @@
       "libs"
     ],
     "homepage_url": "https://www.freedesktop.org/wiki/Software/systemd",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,

@@ -20,6 +20,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://laurikari.net/tre",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -30,7 +31,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2008 Ville Laurikari <vl@iki.fi>",
-    "license_expression": "(gpl-1.0-plus AND gpl-1.0-plus) AND unknown",
+    "license_expression": "unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2008 Ville Laurikari <vl@iki.fi>",
       "LegalTrademarks": "GnuWin32\u00ae, Tre\u00ae, tre4\u00ae",

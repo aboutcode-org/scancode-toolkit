@@ -19,6 +19,7 @@
   ],
   "keywords": [],
   "homepage_url": "https://jrecordbind.dev.java.net/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -29,7 +30,7 @@
   "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
   "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
   "copyright": null,
-  "license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "LGPL",

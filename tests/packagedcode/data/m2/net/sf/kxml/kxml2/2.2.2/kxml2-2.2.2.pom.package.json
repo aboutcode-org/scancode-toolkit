@@ -26,6 +26,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://kxml.sourceforge.net/kxml2",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -36,7 +37,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/kxml/kxml2/",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/kxml:kxml2",
   "copyright": null,
-  "license_expression": "bsd-new",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The BSD License",

@@ -109,6 +109,7 @@
         "electron"
       ],
       "homepage_url": null,
+      "package_releases": [],
       "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
       "size": null,
       "sha1": null,
@@ -183,6 +184,7 @@
             "electron"
           ],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
           "size": null,
           "sha1": null,

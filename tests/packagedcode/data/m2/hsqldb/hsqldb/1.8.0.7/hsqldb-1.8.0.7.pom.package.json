@@ -11,6 +11,7 @@
   "parties": [],
   "keywords": [],
   "homepage_url": "http://hsqldb.org/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -21,7 +22,7 @@
   "code_view_url": "http://sourceforge.net/cvs/?group_id=23316",
   "vcs_url": "http://sourceforge.net/cvs/?group_id=23316",
   "copyright": null,
-  "license_expression": "bsd-new",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "HSQLDB License",

@@ -39,6 +39,7 @@
       "Topic :: Utilities"
     ],
     "homepage_url": "https://github.com/kjd/idna",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -49,7 +50,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "other-permissive AND bsd-new",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "BSD-like",
       "classifiers": [

@@ -27,6 +27,7 @@
           ],
           "keywords": [],
           "homepage_url": "http://www.darwinsys.com/file/",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -37,7 +38,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "\u00a9 2009 Ian F. Darwin",
-          "license_expression": "bsd-simplified-darwin AND unknown",
+          "license_expression": "unknown",
           "declared_license": {
             "LegalCopyright": "\u00a9 2009 Ian F. Darwin",
             "LegalTrademarks": "GnuWin32\u00ae, File\u00ae, file\u00ae",

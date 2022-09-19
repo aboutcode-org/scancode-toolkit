@@ -14,6 +14,7 @@
       "parties": [],
       "keywords": [],
       "homepage_url": null,
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -40,48 +41,6 @@
         "buck_file"
       ],
       "purl": "pkg:buck/end2end"
-    },
-    {
-      "type": "buck",
-      "namespace": null,
-      "name": "bin",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": [
-        "LICENSE"
-      ],
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "end2end/subdir2/BUCK"
-      ],
-      "datasource_ids": [
-        "buck_file"
-      ],
-      "purl": "pkg:buck/bin"
     }
   ],
   "files": [
@@ -109,6 +68,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -200,6 +160,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -226,45 +187,37 @@
           "purl": "pkg:buck/bin"
         }
       ],
-      "for_packages": [
-        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "scan_errors": []
+      "for_packages": [],
+      "scan_errors": [
+        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='buck', namespace=None, name='bin', version=None, datasource_id='buck_file'):\nTypeError: 'list' object cannot be interpreted as an integer\n"
+      ]
     },
     {
       "path": "end2end/subdir2/LICENSE",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

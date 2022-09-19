@@ -12,6 +12,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz",
     "size": null,
     "sha1": null,

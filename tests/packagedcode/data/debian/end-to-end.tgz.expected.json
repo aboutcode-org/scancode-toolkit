@@ -26,6 +26,7 @@
         "libs"
       ],
       "homepage_url": "https://invisible-island.net/ncurses/",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -200,6 +201,7 @@
           "parties": [],
           "keywords": [],
           "homepage_url": null,
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -295,6 +297,7 @@
             "libs"
           ],
           "homepage_url": "https://invisible-island.net/ncurses/",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,

@@ -30,6 +30,7 @@
       "event"
     ],
     "homepage_url": "http://haxetink.org/tink_core",
+    "package_releases": [],
     "download_url": "https://lib.haxe.org/p/tink_core/1.18.0/download/",
     "size": null,
     "sha1": null,

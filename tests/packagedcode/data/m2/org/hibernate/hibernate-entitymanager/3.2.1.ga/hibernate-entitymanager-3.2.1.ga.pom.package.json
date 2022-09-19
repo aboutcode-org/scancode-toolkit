@@ -11,6 +11,7 @@
   "parties": [],
   "keywords": [],
   "homepage_url": "http://entitymanager.hibernate.org",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -21,7 +22,7 @@
   "code_view_url": "http://anonhibernate.labs.jboss.com/trunk/HibernateExt",
   "vcs_url": "http://anonhibernate.labs.jboss.com/trunk/HibernateExt",
   "copyright": null,
-  "license_expression": "lgpl-2.0-plus",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "GNU LESSER GENERAL PUBLIC LICENSE",

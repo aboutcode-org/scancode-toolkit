@@ -41,6 +41,7 @@
       "Programming Language :: Python :: 3.5"
     ],
     "homepage_url": "https://virtualenv.pypa.io/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -51,7 +52,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
+    "license_expression": "mit AND unknown",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

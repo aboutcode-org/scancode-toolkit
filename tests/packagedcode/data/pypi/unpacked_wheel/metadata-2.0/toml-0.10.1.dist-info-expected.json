@@ -37,6 +37,7 @@
       "Programming Language :: Python :: Implementation :: PyPy"
     ],
     "homepage_url": "https://github.com/uiri/toml",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -47,7 +48,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit AND mit",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

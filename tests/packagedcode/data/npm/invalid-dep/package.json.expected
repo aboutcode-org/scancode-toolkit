@@ -29,6 +29,7 @@
       "@angular"
     ],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",
     "size": null,
     "sha1": null,

@@ -19,6 +19,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://jakarta.apache.org/velocity/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -29,7 +30,7 @@
   "code_view_url": "http://cvs.apache.org/viewcvs/jakarta-turbine-maven/",
   "vcs_url": "cvs+pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-velocity",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0",

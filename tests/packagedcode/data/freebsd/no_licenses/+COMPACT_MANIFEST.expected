@@ -25,6 +25,7 @@
       "sysutils"
     ],
     "homepage_url": "http://www.nongnu.org/dmidecode/",
+    "package_releases": [],
     "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
     "size": null,
     "sha1": null,

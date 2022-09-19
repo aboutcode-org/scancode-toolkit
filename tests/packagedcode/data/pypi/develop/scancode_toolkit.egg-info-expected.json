@@ -40,6 +40,7 @@
       "Topic :: Utilities"
     ],
     "homepage_url": "https://github.com/nexB/scancode-toolkit",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -50,7 +51,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "(apache-2.0 AND cc-by-4.0) AND unknown",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
     },

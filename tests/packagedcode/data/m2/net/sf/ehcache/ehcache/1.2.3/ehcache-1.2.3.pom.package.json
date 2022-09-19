@@ -61,6 +61,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://ehcache.sf.net",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -71,7 +72,7 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/ehcache/",
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/ehcache",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0",

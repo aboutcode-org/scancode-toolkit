@@ -83,6 +83,7 @@
         "Programming Language :: Python :: 3.10"
       ],
       "homepage_url": "https://github.com/mharrisb1/daglib",
+      "package_releases": [],
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -93,7 +94,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/mharrisb1/daglib",
       "copyright": null,
-      "license_expression": "mit AND mit",
+      "license_expression": "unknown",
       "declared_license": {
         "license": "MIT",
         "classifiers": [
@@ -178,6 +179,7 @@
             "Programming Language :: Python :: 3.10"
           ],
           "homepage_url": "https://github.com/mharrisb1/daglib",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -188,7 +190,7 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/mharrisb1/daglib",
           "copyright": null,
-          "license_expression": "mit AND mit",
+          "license_expression": "unknown",
           "declared_license": {
             "license": "MIT",
             "classifiers": [

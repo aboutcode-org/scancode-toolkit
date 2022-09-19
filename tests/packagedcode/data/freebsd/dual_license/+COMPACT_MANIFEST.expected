@@ -26,6 +26,7 @@
       "rubygems"
     ],
     "homepage_url": "http://rubyworks.github.io/facets/",
+    "package_releases": [],
     "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/rubygem-facets-3.1.0.txz",
     "size": null,
     "sha1": null,
@@ -36,7 +37,7 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/devel/rubygem-facets",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "ruby OR gpl-2.0",
+    "license_expression": "ruby OR unknown",
     "declared_license": {
       "licenses": [
         "RUBY",

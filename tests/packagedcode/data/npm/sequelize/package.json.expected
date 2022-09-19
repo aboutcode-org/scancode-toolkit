@@ -57,6 +57,7 @@
       "object relational mapper"
     ],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
     "size": null,
     "sha1": null,

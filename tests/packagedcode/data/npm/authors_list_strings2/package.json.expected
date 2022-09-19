@@ -34,6 +34,7 @@
       "gps"
     ],
     "homepage_url": null,
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",
     "size": null,
     "sha1": null,

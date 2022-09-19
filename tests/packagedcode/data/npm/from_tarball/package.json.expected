@@ -25,6 +25,7 @@
       "package.json"
     ],
     "homepage_url": "https://docs.npmjs.com/",
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
     "size": null,
     "sha1": null,
@@ -35,7 +36,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/npm/npm",
     "copyright": null,
-    "license_expression": "artistic-2.0",
+    "license_expression": "unknown",
     "declared_license": [
       "Artistic-2.0"
     ],

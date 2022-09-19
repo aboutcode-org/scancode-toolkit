@@ -38,6 +38,7 @@
       "Topic :: Software Development :: Libraries"
     ],
     "homepage_url": "https://urllib3.readthedocs.io/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -48,7 +49,7 @@
     "code_view_url": "https://github.com/urllib3/urllib3",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit AND mit",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

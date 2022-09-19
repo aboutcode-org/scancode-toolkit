@@ -27,6 +27,7 @@
         "socket.io"
       ],
       "homepage_url": "https://github.com/gogoprog/hxsocketio/",
+      "package_releases": [],
       "download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
       "size": null,
       "sha1": null,
@@ -86,6 +87,7 @@
             "socket.io"
           ],
           "homepage_url": "https://github.com/gogoprog/hxsocketio/",
+          "package_releases": [],
           "download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
           "size": null,
           "sha1": null,

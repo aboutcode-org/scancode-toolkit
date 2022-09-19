@@ -20,6 +20,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://www.gnu.org/software/gettext/gettext.html",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -30,7 +31,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
-    "license_expression": "gpl-2.0-plus AND unknown",
+    "license_expression": "unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
       "LegalTrademarks": "GNU\u00ae, GetText\u00ae, libintl3\u00ae",

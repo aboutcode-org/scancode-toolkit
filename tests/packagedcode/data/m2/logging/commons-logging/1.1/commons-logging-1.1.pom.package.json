@@ -103,6 +103,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://jakarta.apache.org/commons/logging/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -113,7 +114,7 @@
   "code_view_url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0",

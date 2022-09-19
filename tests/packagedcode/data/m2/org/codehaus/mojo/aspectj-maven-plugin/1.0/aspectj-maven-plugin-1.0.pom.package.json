@@ -26,6 +26,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://mojo.codehaus.org/aspectj-maven-plugin",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -36,7 +37,7 @@
   "code_view_url": "https://svn.codehaus.org/mojo/tags/aspectj-maven-plugin-1.0",
   "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/aspectj-maven-plugin-1.0",
   "copyright": null,
-  "license_expression": "mit",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The MIT License",

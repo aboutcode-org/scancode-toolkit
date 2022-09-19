@@ -29,6 +29,7 @@
       "Programming Language :: Python :: 3.9"
     ],
     "homepage_url": "https://github.com/SK-415/HarukaBot",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -39,7 +40,7 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
-    "license_expression": "agpl-3.0-plus AND agpl-3.0-plus",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "AGPL-3.0-or-later",
       "classifiers": [

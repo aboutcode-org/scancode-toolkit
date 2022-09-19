@@ -11,6 +11,7 @@
   "parties": [],
   "keywords": [],
   "homepage_url": "http://dev.mysql.com/usingmysql/java/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -21,7 +22,7 @@
   "code_view_url": "http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j",
   "vcs_url": "svn+http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j",
   "copyright": null,
-  "license_expression": "gpl-2.0 AND gpl-1.0-plus AND gpl-2.0 WITH mysql-linking-exception-2018",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The GNU General Public License, Version 2",

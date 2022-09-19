@@ -30,6 +30,7 @@
       "Topic :: System :: Software Distribution"
     ],
     "homepage_url": "https://github.com/repology/py-libversion",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -40,7 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
+    "license_expression": "mit AND unknown",
     "declared_license": {
       "license": "MIT",
       "classifiers": [

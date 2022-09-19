@@ -35,6 +35,7 @@
       "Programming Language :: Python :: 3.6"
     ],
     "homepage_url": "https://github.com/eliben/pycparser",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -45,7 +46,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "unknown AND bsd-new",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "BSD",
       "classifiers": [

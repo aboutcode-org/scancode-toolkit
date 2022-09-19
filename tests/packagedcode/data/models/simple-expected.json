@@ -22,6 +22,7 @@
     "keyword"
   ],
   "homepage_url": null,
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -32,7 +33,7 @@
   "code_view_url": null,
   "vcs_url": "git+https://somerepo.com/that.git",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": "apache-2.0",
   "notice_text": null,
   "source_packages": [],

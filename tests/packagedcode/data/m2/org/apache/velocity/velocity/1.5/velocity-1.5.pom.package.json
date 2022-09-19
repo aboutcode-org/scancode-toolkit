@@ -54,6 +54,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://velocity.apache.org/engine/releases/velocity-1.5/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -64,7 +65,7 @@
   "code_view_url": "http://svn.apache.org/viewvc/velocity/engine/tags/Velocity_1.5",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/velocity/engine/tags/Velocity_1.5",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0",

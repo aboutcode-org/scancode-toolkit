@@ -19,6 +19,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://logging.apache.org:80/log4j/1.2/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -29,7 +30,7 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0",

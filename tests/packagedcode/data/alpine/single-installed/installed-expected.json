@@ -22,6 +22,7 @@
     ],
     "keywords": [],
     "homepage_url": "https://busybox.net/",
+    "package_releases": [],
     "download_url": null,
     "size": 507134,
     "sha1": null,
@@ -32,7 +33,7 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e5c984f68aabb28de623a7e3ada5a223c2b66d77",
     "copyright": null,
-    "license_expression": "gpl-2.0",
+    "license_expression": "unknown",
     "declared_license": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [

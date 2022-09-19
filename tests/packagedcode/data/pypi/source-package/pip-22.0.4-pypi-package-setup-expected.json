@@ -40,6 +40,7 @@
             "Programming Language :: Python :: Implementation :: PyPy"
           ],
           "homepage_url": "https://pip.pypa.io/",
+          "package_releases": [],
           "download_url": null,
           "size": null,
           "sha1": null,

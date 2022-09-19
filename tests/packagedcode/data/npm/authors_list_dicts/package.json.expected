@@ -40,6 +40,7 @@
       "LESS"
     ],
     "homepage_url": "https://github.com/csscomb/grunt-csscomb",
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz",
     "size": null,
     "sha1": null,

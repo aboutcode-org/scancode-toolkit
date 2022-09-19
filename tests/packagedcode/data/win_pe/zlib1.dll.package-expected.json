@@ -20,6 +20,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://www.zlib.net",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -30,7 +31,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
-    "license_expression": "zlib AND unknown",
+    "license_expression": "unknown",
     "declared_license": {
       "LegalCopyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
       "LegalTrademarks": "GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae",

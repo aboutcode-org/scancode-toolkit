@@ -22,6 +22,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://github.com/redis/hiredis-rb",
+    "package_releases": [],
     "download_url": "https://rubygems.org/downloads/hiredis-0.6.3-java.gem",
     "size": null,
     "sha1": null,
@@ -32,7 +33,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "bsd-new",
+    "license_expression": "unknown",
     "declared_license": [
       "BSD-3-Clause"
     ],

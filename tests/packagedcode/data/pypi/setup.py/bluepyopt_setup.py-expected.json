@@ -30,6 +30,7 @@
       "Topic :: Utilities"
     ],
     "homepage_url": "https://github.com/BlueBrain/BluePyOpt",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -40,7 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "lgpl-3.0",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "LGPLv3",
       "classifiers": [

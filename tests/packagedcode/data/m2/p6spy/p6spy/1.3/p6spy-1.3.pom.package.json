@@ -47,6 +47,7 @@
   ],
   "keywords": [],
   "homepage_url": "http://www.p6spy.com/",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -57,7 +58,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/p6spy",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy",
   "copyright": null,
-  "license_expression": "apache-1.1",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "The P6Spy Software License, Version 1.1",

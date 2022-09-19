@@ -37,6 +37,7 @@
       "Topic :: Text Processing :: Markup :: HTML"
     ],
     "homepage_url": "http://jinja.pocoo.org/",
+    "package_releases": [],
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -47,7 +48,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "bsd-new AND bsd-new",
+    "license_expression": "unknown",
     "declared_license": {
       "license": "BSD",
       "classifiers": [

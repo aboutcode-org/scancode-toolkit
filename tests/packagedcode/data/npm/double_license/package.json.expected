@@ -22,6 +22,7 @@
       "gruntplugin"
     ],
     "homepage_url": "https://github.com/spenceralger/grunt-esvm",
+    "package_releases": [],
     "download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
     "size": null,
     "sha1": null,
@@ -32,7 +33,7 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/spenceralger/grunt-esvm.git",
     "copyright": null,
-    "license_expression": "apache-2.0",
+    "license_expression": "unknown",
     "declared_license": [
       "Apache-2.0",
       {

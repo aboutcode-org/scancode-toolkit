@@ -11,6 +11,7 @@
   "parties": [],
   "keywords": [],
   "homepage_url": "http://logback.qos.ch/access",
+  "package_releases": [],
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -21,7 +22,7 @@
   "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
   "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
   "copyright": null,
-  "license_expression": "lgpl-2.0-plus",
+  "license_expression": "unknown",
   "declared_license": [
     {
       "name": "GNU Lesser General Public License",
