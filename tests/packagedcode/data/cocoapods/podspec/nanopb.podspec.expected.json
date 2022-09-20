@@ -30,49 +30,51 @@
     "code_view_url": "https://github.com/nanopb/nanopb/tree/1.30905.0",
     "vcs_url": "https://github.com/nanopb/nanopb.git",
     "copyright": null,
-    "declared_license_expression": "unknown",
-    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "declared_license_expression": "zlib",
+    "declared_license_expression_spdx": "Zlib",
     "license_detections": [
       {
-        "license_expression": "unknown",
+        "license_expression": "zlib",
         "detection_rules": [
-          "undetected-license"
+          "not-combined"
         ],
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
-            "matched_length": 6,
+            "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "5-undetected",
-            "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown",
-            "referenced_filenames": [],
+            "matcher": "1-hash",
+            "license_expression": "zlib",
+            "rule_identifier": "zlib_in_manifest.RULE",
+            "referenced_filenames": [
+              "LICENSE.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "is_license_intro": false,
-            "rule_length": 6,
+            "rule_length": 5,
             "rule_relevance": 100,
-            "matched_text": "license :type = zlib, :file = LICENSE.txt",
+            "matched_text": ":type = zlib, :file = LICENSE.txt",
             "licenses": [
               {
-                "key": "unknown",
-                "name": "Unknown license detected but not recognized",
-                "short_name": "unknown",
-                "category": "Unstated License",
+                "key": "zlib",
+                "name": "ZLIB License",
+                "short_name": "ZLIB License",
+                "category": "Permissive",
                 "is_exception": false,
-                "is_unknown": true,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
-                "spdx_license_key": "LicenseRef-scancode-unknown",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
+                "is_unknown": false,
+                "owner": "zlib",
+                "homepage_url": "http://www.zlib.net/",
+                "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                "spdx_license_key": "Zlib",
+                "spdx_url": "https://spdx.org/licenses/Zlib"
               }
             ]
           }

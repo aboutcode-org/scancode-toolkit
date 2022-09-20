@@ -174,6 +174,23 @@ def test_license_match_referenced_filename():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_match_referenced_filename():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-unknown-reference-copyright', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-unknown-reference-copyright.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_get_referenced_filenames():
     license_matches = [
         {'referenced_filenames' : ['LICENSE.txt', 'COPYING']},
