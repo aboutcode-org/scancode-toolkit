@@ -270,6 +270,10 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
                 key_file_resource = codebase.get_resource(path=datafile_path)
                 if not key_file_resource:
                     continue
+
+                if not hasattr(key_file_resource, 'holders'):
+                    break
+
                 holders = [h['holder'] for h in key_file_resource.holders]
                 declared_holders.extend(holders)
     # Normalize holder names before collecting them
