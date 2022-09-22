@@ -9,8 +9,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu18_cpython
-          image_name: ubuntu-18.04
+          job_name: ubuntu22_cpython
+          image_name: ubuntu-22.04
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
@@ -25,8 +25,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython
-          image_name: macos-10.15
+          job_name: macos12_cpython
+          image_name: macos-12
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
