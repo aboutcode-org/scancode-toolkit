@@ -118,16 +118,16 @@ class AboutFileHandler(models.DatafileHandler):
                 package_data=package_data,
                 datafile_path=datafile_path,
             )
-            package_uid = package.package_uid
-
-            # NOTE: we do not attach files to the Package level. Instead we
-            # update `for_package` in the file
-            package_adder(package_uid, resource, codebase)
 
             if not package.license_expression:
                 package.license_expression = cls.compute_normalized_license(package)
 
             yield package
+
+            package_uid = package.package_uid
+            # NOTE: we do not attach files to the Package level. Instead we
+            # update `for_package` in the file
+            package_adder(package_uid, resource, codebase)
 
             if resource.has_parent() and package_data.file_references:
                 parent_resource = resource.parent(codebase)
