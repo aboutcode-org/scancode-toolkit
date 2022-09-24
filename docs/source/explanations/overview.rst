@@ -29,7 +29,7 @@ Scan results are provided in various formats:
 
 * a JSON file simple or pretty-printed,
 * SPDX tag value or XML, RDF formats,
-*  CSV,
+* CSV,
 * a simple unformatted HTML file that can be opened in browser or as a spreadsheet.
 
 For each scanned file, the result contains:
