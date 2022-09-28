@@ -138,7 +138,7 @@ def generate(build_location, template_dir=TEMPLATES_DIR):
         loader=FileSystemLoader(template_dir),
         autoescape=True,
     )
-    licenses = load_licenses(with_deprecated=True)
+    licenses = dict(sorted(load_licenses(with_deprecated=True).items()))
 
     root_path = pathlib.Path(build_location)
     root_path.mkdir(parents=False, exist_ok=True)
