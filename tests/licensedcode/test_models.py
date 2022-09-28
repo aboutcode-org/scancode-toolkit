@@ -20,19 +20,10 @@ from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
-from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import check_json
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-
-def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
-    if regen:
-        mode = 'w'
-        with open(expected, mode) as ex:
-            json.dump(results, ex, indent=2, separators=(',', ': '))
-    with open(expected) as ex:
-        expected = json.load(ex)
-    assert results == expected
 
 
 def as_sorted_mapping_seq(licenses):

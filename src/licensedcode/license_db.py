@@ -35,6 +35,7 @@ from distutils.dir_util import copy_tree
 import saneyaml
 from jinja2 import Environment, FileSystemLoader
 from licensedcode.models import load_licenses
+from licensedcode.models import licenses_data_dir
 from scancode_config import __version__ as scancode_version
 
 
@@ -129,7 +130,11 @@ def generate_help(output_path, environment):
     write_file(output_path, "help.html", html)
 
 
-def generate(build_location, template_dir=TEMPLATES_DIR):
+def generate(
+    build_location,
+    template_dir=TEMPLATES_DIR,
+    licenses_data_dir=licenses_data_dir
+):
 
     if not os.path.exists(build_location):
         os.makedirs(build_location)
@@ -138,7 +143,9 @@ def generate(build_location, template_dir=TEMPLATES_DIR):
         loader=FileSystemLoader(template_dir),
         autoescape=True,
     )
-    licenses = dict(sorted(load_licenses(with_deprecated=True).items()))
+    licenses = dict(sorted(
+        load_licenses(licenses_data_dir=licenses_data_dir, with_deprecated=True).items()
+    ))
 
     root_path = pathlib.Path(build_location)
     root_path.mkdir(parents=False, exist_ok=True)

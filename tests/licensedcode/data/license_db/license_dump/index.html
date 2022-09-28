@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <link rel="stylesheet" href="static/datatables/jquery.dataTables-1.10.22.min.css">
+  <script src="static/datatables/jquery.dataTables-1.10.22.min.js"></script>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <div class="loading loading-lg" style="margin-top:50px;"></div>
+    <table class="display" style="visibility: hidden;">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Short name</th>
+          <th>SPDX identifier</th>
+          <th>
+            <div class="popover popover-top">
+              <a class="help_text" href="#popovers">Category</a>
+              <div class="popover-container" style="font-weight: normal;">
+                <div class="card">
+                  <div class="card-body">
+                    <a href="help.html#license-categories">Click here for help</a> about categories.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+        <tr>
+          <td>
+            <a href="bash-exception-gpl.html">bash-exception-gpl</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Bash exception to GPL</td>
+          <td>
+            
+              
+                LicenseRef-scancode-bash-exception-gpl-2.0
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft" style="color: inherit !important;">Copyleft</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bash-exception-gpl.yml">yml</a> -
+            <a href="bash-exception-gpl.json">json</a> -
+            <a href="bash-exception-gpl.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="binary-linux-firmware.html">binary-linux-firmware</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Binary-Only Linux Firmware License</td>
+          <td>
+            
+              
+                LicenseRef-scancode-binary-linux-firmware
+              
+            
+          </td>
+          <td>
+            <a href="?search=Proprietary Free" style="color: inherit !important;">Proprietary Free</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="binary-linux-firmware.yml">yml</a> -
+            <a href="binary-linux-firmware.json">json</a> -
+            <a href="binary-linux-firmware.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bison-exception-2.0.html">bison-exception-2.0</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Bison exception to GPL 2.0 or later</td>
+          <td>
+            
+              
+                LicenseRef-scancode-bison-exception-2.0
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bison-exception-2.0.yml">yml</a> -
+            <a href="bison-exception-2.0.json">json</a> -
+            <a href="bison-exception-2.0.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bison-exception-2.2.html">bison-exception-2.2</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Bison 2.2 exception to GPL 2.0 or later</td>
+          <td>
+            
+              
+                <a href="https://spdx.org/licenses/Bison-exception-2.2.html">Bison-exception-2.2</a>
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bison-exception-2.2.yml">yml</a> -
+            <a href="bison-exception-2.2.json">json</a> -
+            <a href="bison-exception-2.2.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bittorrent-1.0.html">bittorrent-1.0</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>BitTorrent 1.0</td>
+          <td>
+            
+              
+                <a href="https://spdx.org/licenses/BitTorrent-1.0.html">BitTorrent-1.0</a>
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bittorrent-1.0.yml">yml</a> -
+            <a href="bittorrent-1.0.json">json</a> -
+            <a href="bittorrent-1.0.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bittorrent-1.1.html">bittorrent-1.1</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>BitTorrent 1.1</td>
+          <td>
+            
+              
+                <a href="https://spdx.org/licenses/BitTorrent-1.1.html">BitTorrent-1.1</a>
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bittorrent-1.1.yml">yml</a> -
+            <a href="bittorrent-1.1.json">json</a> -
+            <a href="bittorrent-1.1.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bittorrent-1.2.html">bittorrent-1.2</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>BitTorrent 1.2</td>
+          <td>
+            
+              
+                LicenseRef-scancode-bittorrent-1.2
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bittorrent-1.2.yml">yml</a> -
+            <a href="bittorrent-1.2.json">json</a> -
+            <a href="bittorrent-1.2.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bittorrent-eula.html">bittorrent-eula</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>BitTorrent EULA</td>
+          <td>
+            
+              
+                LicenseRef-scancode-bittorrent-eula
+              
+            
+          </td>
+          <td>
+            <a href="?search=Proprietary Free" style="color: inherit !important;">Proprietary Free</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bittorrent-eula.yml">yml</a> -
+            <a href="bittorrent-eula.json">json</a> -
+            <a href="bittorrent-eula.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="boost-1.0.html">boost-1.0</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Boost 1.0</td>
+          <td>
+            
+              
+                <a href="https://spdx.org/licenses/BSL-1.0.html">BSL-1.0</a>
+              
+            
+          </td>
+          <td>
+            <a href="?search=Permissive" style="color: inherit !important;">Permissive</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="boost-1.0.yml">yml</a> -
+            <a href="boost-1.0.json">json</a> -
+            <a href="boost-1.0.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="boost-original.html">boost-original</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Boost Original</td>
+          <td>
+            
+              
+                LicenseRef-scancode-boost-original
+              
+            
+          </td>
+          <td>
+            <a href="?search=Permissive" style="color: inherit !important;">Permissive</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="boost-original.yml">yml</a> -
+            <a href="boost-original.json">json</a> -
+            <a href="boost-original.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bootloader-exception.html">bootloader-exception</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>Bootloader Distribution Exception to GPL 2.0</td>
+          <td>
+            
+              
+                <a href="https://spdx.org/licenses/Bootloader-exception.html">Bootloader-exception</a>
+              
+            
+          </td>
+          <td>
+            <a href="?search=Copyleft Limited" style="color: inherit !important;">Copyleft Limited</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bootloader-exception.yml">yml</a> -
+            <a href="bootloader-exception.json">json</a> -
+            <a href="bootloader-exception.LICENSE">text</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <a href="bsla.html">bsla</a>
+            
+            <span class="d-none">active</span>
+          </td>
+          <td>BSLA</td>
+          <td>
+            
+              
+                LicenseRef-scancode-bsla
+              
+            
+          </td>
+          <td>
+            <a href="?search=Permissive" style="color: inherit !important;">Permissive</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="bsla.yml">yml</a> -
+            <a href="bsla.json">json</a> -
+            <a href="bsla.LICENSE">text</a>
+          </td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 31.1.0 on Sep 28, 2022.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let table = $("table")
+      .on("init.dt", function() {
+        $(".loading").remove();
+      })
+      .DataTable({
+        "paging": false,
+        "ordering": true,
+        "info": true,
+        "infoCallback": function(settings, start, end, max, total, pre) {
+          let show_active_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
+          let show_deprecated_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
+          return pre.replace(/entries/g, "licenses") + show_deprecated_link;
+        },
+        // Display "info" on top
+        "sDom": '<"top"<"actions">lfpi<"clear">><"clear">rt<"bottom">',
+        // Hide deprecated rows by default using the search on the first column
+        "searchCols": [
+          {"search": "active"},
+        ]
+      });
+
+      $("#toggle-deprecated").on("click", function(event) {
+        event.preventDefault();
+        table.search("deprecated").column(0).search("").draw();
+      });
+
+      let url_params = new URLSearchParams(window.location.search);
+
+      // https://datatables.net/reference/api/search()
+      let searchbox = $("#searchbox");
+      searchbox.on("keyup", function() {
+        table.search(this.value).draw();
+
+        // Inject the search value in the browser href
+        if (history.replaceState) {
+          url_params.set('search', this.value);
+          let href = window.location.pathname + "?" + url_params.toString();
+          history.replaceState({}, null, href);
+        }
+      });
+
+      let search = url_params.get('search');
+      if (search) {
+        searchbox.val(search);
+        searchbox.keyup();
+      }
+    });
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+key: bash-exception-gpl
+short_name: Bash exception to GPL
+name: Bash exception to GPL
+category: Copyleft
+owner: Free Software Foundation (FSF)
+notes: this used with GPL 1.0 and 2.0. It was removed from the V3 text https://git.savannah.gnu.org/cgit/bash.git/commit/COPYING?id=3185942a5234e26ab13fa02f9c51d340cec514f8
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-bash-exception-gpl-2.0
+text_urls:
+    - https://git.savannah.gnu.org/cgit/bash.git/plain/COPYING?h=bash-3.0-rc1&id=dd9e6dfa23d0dae4888f11fb8c6a27bc36d1b283
+---
+
+The Free Software Foundation has exempted Bash from the requirement of
+Paragraph 2c of the General Public License.  This is to say, there is
+no requirement for Bash to print a notice when it is started
+interactively in the usual way.  We made this exception because users
+and standards expect shells not to print such messages.  This
+exception applies to any program that serves as a shell and that is
+based primarily on Bash as opposed to other GNU software.
