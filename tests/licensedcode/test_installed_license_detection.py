@@ -24,7 +24,7 @@ These tests spawn new process as if launched from the command line.
 """
 
 
-@pytest.mark.scanslow
+@pytest.mark.scanplugins
 def test_detection_with_single_installed_external_license():
     test_dir = test_env.get_test_loc('plugin_license/installed_licenses/scan', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -40,7 +40,7 @@ def test_detection_with_single_installed_external_license():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-@pytest.mark.scanslow
+@pytest.mark.scanplugins
 def test_detection_with_single_installed_external_rule():
     test_dir = test_env.get_test_loc('plugin_license/installed_rules/scan', copy=True)
     result_file = test_env.get_temp_file('json')
