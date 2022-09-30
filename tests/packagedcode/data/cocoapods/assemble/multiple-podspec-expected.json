@@ -1,7 +1,7 @@
 {
   "dependencies": [
     {
-      "purl": "pkg:pods/boost@1.76.0",
+      "purl": "pkg:cocoapods/boost@1.76.0",
       "extracted_requirement": "1.76.0",
       "scope": "requires",
       "is_runtime": false,
@@ -9,13 +9,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/Yoga@1.14.0",
+      "purl": "pkg:cocoapods/Yoga@1.14.0",
       "extracted_requirement": "1.14.0",
       "scope": "requires",
       "is_runtime": false,
@@ -23,13 +23,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/YogaKit@1.18.1",
+      "purl": "pkg:cocoapods/YogaKit@1.18.1",
       "extracted_requirement": "1.18.1",
       "scope": "requires",
       "is_runtime": false,
@@ -37,15 +37,15 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "multiple-podspec/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
   "packages": [
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "RxDataSources",
       "version": "4.0.1",
@@ -83,17 +83,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
       "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
-      "package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "multiple-podspec/RxDataSources.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/RxDataSources@4.0.1"
+      "purl": "pkg:cocoapods/RxDataSources@4.0.1"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "Differentiator",
       "version": "4.0.1",
@@ -131,14 +131,14 @@
       "repository_homepage_url": "https://cocoapods.org/pods/Differentiator",
       "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/9/8/Differentiator/4.0.1/Differentiator.podspec.json",
-      "package_uid": "pkg:pods/Differentiator@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/Differentiator@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "multiple-podspec/Differentiator.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/Differentiator@4.0.1"
+      "purl": "pkg:cocoapods/Differentiator@4.0.1"
     }
   ],
   "files": [
@@ -154,7 +154,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "Differentiator",
           "version": "4.0.1",
@@ -195,11 +195,11 @@
           "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/9/8/Differentiator/4.0.1/Differentiator.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/Differentiator@4.0.1"
+          "purl": "pkg:cocoapods/Differentiator@4.0.1"
         }
       ],
       "for_packages": [
-        "pkg:pods/Differentiator@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/Differentiator@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -208,7 +208,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": null,
           "version": null,
@@ -245,7 +245,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -254,7 +254,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": null,
           "version": null,
@@ -284,7 +284,7 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:pods/boost@1.76.0",
+              "purl": "pkg:cocoapods/boost@1.76.0",
               "extracted_requirement": "1.76.0",
               "scope": "requires",
               "is_runtime": false,
@@ -294,7 +294,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/Yoga@1.14.0",
+              "purl": "pkg:cocoapods/Yoga@1.14.0",
               "extracted_requirement": "1.14.0",
               "scope": "requires",
               "is_runtime": false,
@@ -304,7 +304,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/YogaKit@1.18.1",
+              "purl": "pkg:cocoapods/YogaKit@1.18.1",
               "extracted_requirement": "1.18.1",
               "scope": "requires",
               "is_runtime": false,
@@ -322,7 +322,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -331,7 +331,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "RxDataSources",
           "version": "4.0.1",
@@ -372,11 +372,11 @@
           "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/RxDataSources@4.0.1"
+          "purl": "pkg:cocoapods/RxDataSources@4.0.1"
         }
       ],
       "for_packages": [
-        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

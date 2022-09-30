@@ -1,34 +1,8 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json": "<file>",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 1
-      }
-    }
-  ],
   "dependencies": [],
   "packages": [
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "RxDataSources",
       "version": "4.0.1",
@@ -66,14 +40,14 @@
       "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
       "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
-      "package_uid": "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "RxDataSources.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/RxDataSources@4.0.1"
+      "purl": "pkg:cocoapods/RxDataSources@4.0.1"
     }
   ],
   "files": [
@@ -82,7 +56,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "RxDataSources",
           "version": "4.0.1",
@@ -123,11 +97,11 @@
           "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/RxDataSources@4.0.1"
+          "purl": "pkg:cocoapods/RxDataSources@4.0.1"
         }
       ],
       "for_packages": [
-        "pkg:pods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

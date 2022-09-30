@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "nanopb",
     "version": "1.30905.0",
@@ -41,6 +41,6 @@
     "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/1/e/nanopb/1.30905.0/nanopb.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/nanopb@1.30905.0"
+    "purl": "pkg:cocoapods/nanopb@1.30905.0"
   }
 ]

@@ -642,7 +642,7 @@
         "extracted_requirement": "Babel>=0.8; extra == \"i18n\"",
         "scope": "i18n",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}

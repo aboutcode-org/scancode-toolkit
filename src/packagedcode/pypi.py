@@ -29,6 +29,7 @@ import pip_requirements_parser
 import pkginfo2
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
+from commoncode.resource import Resource
 from packaging.specifiers import SpecifierSet
 from packageurl import PackageURL
 from packaging import markers
@@ -133,6 +134,16 @@ def create_package_from_package_data(package_data, datafile_path):
     return package
 
 
+def is_egg_info_directory(resource):
+    """
+    Return True if `resource` is a Python .egg-info directory
+    """
+    return (
+        isinstance(resource, Resource)
+        and resource.path.endswith('.egg-info')
+    )
+
+
 class BaseExtractedPythonLayout(BasePypiHandler):
     """
     Base class for development repos, sdist tarballs and other related extracted
@@ -152,7 +163,33 @@ class BaseExtractedPythonLayout(BasePypiHandler):
 
         package_resource = None
         if resource.name == 'PKG-INFO':
+            # Initially use current Resource as `package_resource`.
+            # We'll want update `package_resource` with the Resource of a
+            # PKG-INFO file that's in an .egg-info Directory.
             package_resource = resource
+            # We want to use the PKG-INFO file from an .egg-info directory, as
+            # the package info collected from a *.egg_info/PKG-INFO file has
+            # dependency information that a PKG-INFO from the root of a Python
+            # project lacks.
+            parent_resource = resource.parent(codebase)
+            if not is_egg_info_directory(parent_resource):
+                # If we are not in an .egg-info directory, we assume we are at
+                # the root of a Python codebase and we want to find the
+                # .egg_info dir
+                egg_info_dir = None
+                for sibling in resource.siblings(codebase):
+                    if sibling.path.endswith('.egg-info'):
+                        egg_info_dir = sibling
+                        break
+
+                # If we find the .egg_info dir, then we look for the PKG-INFO
+                # file in it and use that as our package_resource
+                if egg_info_dir:
+                    for child in egg_info_dir.children(codebase):
+                        if not child.name == 'PKG-INFO':
+                            continue
+                        package_resource = child
+                        break
         elif resource.name in datafile_name_patterns:
             if resource.has_parent():
                 siblings = resource.siblings(codebase)
@@ -221,7 +258,14 @@ class BaseExtractedPythonLayout(BasePypiHandler):
                 package.license_expression = compute_normalized_license(package.declared_license)
             package_uid = package.package_uid
 
-            root = package_resource.parent(codebase)
+            package_resource_parent = package_resource.parent(codebase)
+            if is_egg_info_directory(package_resource_parent):
+                root = package_resource_parent.parent(codebase)
+            else:
+                # We're assuming that our package resource is already at the
+                # root
+                root = package_resource_parent
+
             if root:
                 for py_res in cls.walk_pypi(resource=root, codebase=codebase):
                     if py_res.is_dir:
@@ -724,14 +768,16 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                         name="python",
                     )
                     resolved_purl = get_resolved_purl(purl=purl, specifiers=SpecifierSet(python_requires_specifier))
-                    dependent_packages.append(models.DependentPackage(
-                    purl=str(resolved_purl.purl),
-                    scope=scope,
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=resolved_purl.is_resolved,
-                    extracted_requirement=f"python_requires{python_requires_specifier}",
-                    ))
+                    dependent_packages.append(
+                        models.DependentPackage(
+                            purl=str(resolved_purl.purl),
+                            scope=scope,
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=resolved_purl.is_resolved,
+                            extracted_requirement=f"python_requires{python_requires_specifier}",
+                        )
+                    )
 
             if section.name == "options.extras_require":
                 for sub_section in section:
@@ -931,11 +977,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
             purl = None
 
         purl = purl and purl.to_string() or None
-
-        if req.is_editable:
-            requirement = req.dumps()
-        else:
-            requirement = req.dumps(with_name=False)
+        requirement = req.dumps()
 
         if location.endswith(
             (
@@ -1311,15 +1353,16 @@ def get_requires_dependencies(requires, default_scope='install'):
                     is_resolved = True
                     purl = purl._replace(version=specifier.version)
 
-        # we use the extra as scope if avialble
-        scope = get_extra(req.marker) or default_scope
+        # we use the extra as scope if available
+        extra = get_extra(req.marker)
+        scope = extra or default_scope
 
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
                 scope=scope,
                 is_runtime=True,
-                is_optional=False,
+                is_optional=True if bool(extra) else False,
                 is_resolved=is_resolved,
                 extracted_requirement=str(req),
         ))

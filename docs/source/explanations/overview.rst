@@ -27,18 +27,18 @@ ScanCode-Toolkit performs the scan on a codebase in the following steps :
 
 Scan results are provided in various formats:
 
-- a JSON file simple or pretty-printed,
-- SPDX tag value or XML, RDF formats,
-- CSV,
-- a simple unformatted HTML file that can be opened in browser or as a spreadsheet.
+* a JSON file simple or pretty-printed,
+* SPDX tag value or XML, RDF formats,
+* CSV,
+* a simple unformatted HTML file that can be opened in browser or as a spreadsheet.
 
 For each scanned file, the result contains:
 
-- its location in the codebase,
-- the detected licenses and copyright statements,
-- the start and end line numbers identifying where the license or copyright was found in the
+* its location in the codebase,
+* the detected licenses and copyright statements,
+* the start and end line numbers identifying where the license or copyright was found in the
   scanned file, and
-- reference information for the detected license.
+* reference information for the detected license.
 
 For archive extraction, ScanCode uses a combination of Python modules, 7zip and libarchive/bsdtar
 to detect archive types and extract these recursively.

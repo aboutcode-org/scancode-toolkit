@@ -31,7 +31,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/prompt-toolkit",
-        "extracted_requirement": ">=1.0.14",
+        "extracted_requirement": "prompt_toolkit>=1.0.14",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
@@ -52,7 +52,7 @@
       },
       {
         "purl": "pkg:pypi/pygments@2.2.0",
-        "extracted_requirement": "==2.2.0",
+        "extracted_requirement": "Pygments==2.2.0",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,
@@ -73,7 +73,7 @@
       },
       {
         "purl": "pkg:pypi/regex",
-        "extracted_requirement": "",
+        "extracted_requirement": "regex",
         "scope": "development",
         "is_runtime": false,
         "is_optional": true,

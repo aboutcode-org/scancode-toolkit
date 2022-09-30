@@ -31,7 +31,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/mypackage@3.0",
-        "extracted_requirement": "[pdf]==3.0",
+        "extracted_requirement": "MyPackage[pdf]==3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -52,7 +52,7 @@
       },
       {
         "purl": "pkg:pypi/fizzy",
-        "extracted_requirement": "[bar,foo]",
+        "extracted_requirement": "Fizzy[bar,foo]",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
