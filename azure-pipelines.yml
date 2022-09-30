@@ -83,6 +83,17 @@ jobs:
                 venv/bin/pytest -vvs --test-suite=all \
                   tests/licensedcode/test_installed_license_detection.py
 
+              # this test runs in isolation because it modifies the actual
+              # license index with additional licenses provided by a plugin
+              # and we use the special --test-suite=plugins marker for these
+              # tests
+              additional_licenses_plugin: |
+                venv/bin/pip install tests/licensedcode/data/additional_license_location_provider/plugin/licenses_to_install2
+                venv/bin/scancode --reindex-licenses
+                venv/bin/pytest -vvs --test-suite=plugins \
+                  tests/licensedcode/test_additional_license_location_provider.py
+
+
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: ubuntu18_cpython

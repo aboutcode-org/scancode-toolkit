@@ -1,0 +1,19 @@
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum foo bar
+This is a test license EXAMPLE2 that must be installed into ScanCode Toolkit.
+Lorem ipsum install packages foo bar
+Lorem ipsum foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum foo bar
+This is a test rule EXAMPLE2 that must be installed into ScanCode Toolkit.
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+Lorem ipsum install packages foo bar
+

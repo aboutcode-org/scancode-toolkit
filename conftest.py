@@ -38,6 +38,7 @@ branches all the tests run: none are skipped.
 ################################################################################
 SLOW_TEST = 'scanslow'
 VALIDATION_TEST = 'scanvalidate'
+PLUGINS_TEST = 'scanplugins'
 
 
 def pytest_configure(config):
@@ -53,8 +54,14 @@ def pytest_configure(config):
         ': Mark a ScanCode test as a validation test, super slow, long running test.',
     )
 
+    config.addinivalue_line(
+        'markers',
+        PLUGINS_TEST +
+        ': Mark a ScanCode test as a special CI test to tests installing additional plugins.',
+    )
 
-TEST_SUITES = 'standard', 'all', 'validate'
+
+TEST_SUITES = ('standard', 'all', 'validate', 'plugins',)
 
 
 def pytest_addoption(parser):
@@ -72,9 +79,11 @@ def pytest_addoption(parser):
         help='Select which test suite to run: '
              '"standard" runs the standard test suite designed to run reasonably fast. '
              '"all" runs "standard" and "slow" (long running) tests. '
-             '"validate" runs all the tests. '
+             '"validate" runs all the tests, except the "plugins" tests. '
+             '"plugins" runs special plugins tests. Needs extra setup, and is used only in the CI. '
              'Use the @pytest.mark.scanslow marker to mark a test as "slow" test. '
              'Use the @pytest.mark.scanvalidate marker to mark a test as a "validate" test.'
+             'Use the @pytest.mark.scanplugins marker to mark a test as a "plugins" test.'
         )
 
 ################################################################################
@@ -87,6 +96,7 @@ def pytest_collection_modifyitems(config, items):
     test_suite = config.getvalue('test_suite')
     run_everything = test_suite == 'validate'
     run_slow_test = test_suite in ('all', 'validate')
+    run_only_plugins = test_suite == 'plugins'
 
     tests_to_run = []
     tests_to_skip = []
@@ -94,6 +104,11 @@ def pytest_collection_modifyitems(config, items):
     for item in items:
         is_validate = bool(item.get_closest_marker(VALIDATION_TEST))
         is_slow = bool(item.get_closest_marker(SLOW_TEST))
+        is_plugins = bool(item.get_closest_marker(PLUGINS_TEST))
+
+        if is_plugins and not run_only_plugins:
+            tests_to_skip.append(item)
+            continue
 
         if is_validate and not run_everything:
             tests_to_skip.append(item)

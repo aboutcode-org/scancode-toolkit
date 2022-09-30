@@ -1,0 +1,94 @@
+{
+  "files": [
+    {
+      "path": "test_file.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "example-installed-2",
+          "score": 100.0,
+          "name": "Example Installed License 2",
+          "short_name": "Example Installed License 2",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "",
+          "scancode_text_url": "",
+          "scancode_data_url": "",
+          "spdx_license_key": "LicenseRef-scancode-example-installed2",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-2.LICENSE",
+          "start_line": 8,
+          "end_line": 8,
+          "matched_rule": {
+            "identifier": "example-installed-2.LICENSE",
+            "license_expression": "example-installed-2",
+            "licenses": [
+              "example-installed-2"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "This is a test license EXAMPLE2 that must be installed into ScanCode Toolkit."
+        },
+        {
+          "key": "example-installed-2",
+          "score": 66.0,
+          "name": "Example Installed License 2",
+          "short_name": "Example Installed License 2",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "",
+          "scancode_text_url": "",
+          "scancode_data_url": "",
+          "spdx_license_key": "LicenseRef-scancode-example-installed2",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-2.LICENSE",
+          "start_line": 13,
+          "end_line": 13,
+          "matched_rule": {
+            "identifier": "example-installed-2.RULE",
+            "license_expression": "example-installed-2",
+            "licenses": [
+              "example-installed-2"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 66
+          },
+          "matched_text": "This is a test rule EXAMPLE2 that must be installed into ScanCode Toolkit."
+        }
+      ],
+      "license_expressions": [
+        "example-installed-2",
+        "example-installed-2"
+      ],
+      "percentage_of_license_text": 21.05,
+      "scan_errors": []
+    }
+  ]
+}
