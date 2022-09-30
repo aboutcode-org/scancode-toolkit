@@ -1,0 +1,1 @@
+A ScanCode CSV output helpful to debug license detection
