@@ -46,7 +46,6 @@ License detection:
   matches in a larger license detecion. This remove a larger number of false
   positive or ambiguous license detections.
 
-
 - The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
@@ -54,7 +53,9 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
-
+- We can now detect licenses using custom license texts and license rules.
+  These can be provided as a one off in a directory or packaged as a plugin
+  for consistent reuse and deployment.
 
 
 v31.1.1 - 2022-09-02
