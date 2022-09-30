@@ -1,0 +1,6 @@
+license_expression: ijg
+is_license_text: yes
+ignorable_copyrights:
+    - copyright (c) 1994-1996, Thomas G. Lane
+ignorable_holders:
+    - Thomas G. Lane

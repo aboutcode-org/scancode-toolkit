@@ -1,0 +1,1 @@
+haveGpl3 = QFile::exists(orgLicenseFile + "/LICENSE.GPL");
