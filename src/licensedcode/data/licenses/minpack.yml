@@ -11,3 +11,5 @@ text_urls:
     - http://www.netlib.org/minpack/disclaimer
 other_urls:
     - https://gitlab.com/libeigen/eigen/-/blob/master/COPYING.MINPACK
+ignorable_authors:
+    - the University of Chicago
