@@ -30,7 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
-    "license_expression": "gpl-2.0-plus AND unknown",
+    "license_expression": "gpl-1.0-plus",
     "declared_license": {
       "LegalCopyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
       "LegalTrademarks": "GNU\u00ae, GetText\u00ae, libintl3\u00ae",

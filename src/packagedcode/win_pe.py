@@ -342,6 +342,10 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
         )
 
         if not package_data.license_expression and package_data.declared_license:
-            package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
+            if License:
+                lexp = models.compute_normalized_license(License)
+            else:
+                lexp = models.compute_normalized_license(package_data.declared_license)
+            package_data.license_expression = lexp
 
         yield package_data
