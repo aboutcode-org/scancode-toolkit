@@ -35,10 +35,10 @@
       "type": "file",
       "licenses": [
         {
-          "key": "example-installed-1",
-          "score": 61.0,
-          "name": "Example Installed License 1",
-          "short_name": "Example Installed License 1",
+          "key": "example-installed-2",
+          "score": 60.5,
+          "name": "Example Installed License 2",
+          "short_name": "Example Installed License 2",
           "category": "Permissive",
           "is_exception": false,
           "is_unknown": false,
@@ -48,15 +48,15 @@
           "reference_url": "",
           "scancode_text_url": "",
           "scancode_data_url": "",
-          "spdx_license_key": "scancode-example-installed1",
-          "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
+          "spdx_license_key": "LicenseRef-scancode-example-installed2",
+          "spdx_url": "***/tree/develop/src/licensedcode/data/licenses/example-installed-2.LICENSE",
           "start_line": 1,
           "end_line": 1,
           "matched_rule": {
-            "identifier": "example-installed-1.RULE",
-            "license_expression": "example-installed-1",
+            "identifier": "example-installed-2.RULE",
+            "license_expression": "example-installed-2",
             "licenses": [
-              "example-installed-1"
+              "example-installed-2"
             ],
             "referenced_filenames": [],
             "is_license_text": true,
@@ -65,16 +65,16 @@
             "is_license_tag": false,
             "is_license_intro": false,
             "has_unknown": false,
-            "matcher": "1-hash",
-            "rule_length": 11,
+            "matcher": "3-seq",
+            "rule_length": 12,
             "matched_length": 11,
-            "match_coverage": 100.0,
-            "rule_relevance": 61
+            "match_coverage": 91.67,
+            "rule_relevance": 66
           }
         }
       ],
       "license_expressions": [
-        "example-installed-1"
+        "example-installed-2"
       ],
       "percentage_of_license_text": 100.0,
       "scan_errors": []
