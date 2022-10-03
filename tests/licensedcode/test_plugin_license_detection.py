@@ -21,6 +21,22 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
+def test_complicated_license_text_from_ffmpeg():
+    test_dir = test_env.get_test_loc('plugin_license/scan/ffmpeg-LICENSE.md', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/scan/ffmpeg-license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_match_unknown_license_intro_with_imperfect_matches():
     test_dir = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-with-imperfect-matches/', copy=True)
     result_file = test_env.get_temp_file('json')

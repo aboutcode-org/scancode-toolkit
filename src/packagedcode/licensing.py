@@ -215,13 +215,15 @@ def get_license_detection_mappings(
     index=None,
     analysis=None,
     post_scan=False,
+    package_license=True,
 ):
     license_detections = []
     detections = detect_licenses(
         index=index,
         location=location,
         analysis=analysis,
-        post_scan=post_scan
+        post_scan=post_scan,
+        package_license=package_license,
     )
 
     for detection in detections:
@@ -347,7 +349,10 @@ def get_license_detections_from_matches(matches):
 
     for group_of_matches in group_matches(matches):
         license_detections.append(
-            LicenseDetection.from_matches(group_of_matches)
+            LicenseDetection.from_matches(
+                matches=group_of_matches,
+                package_license=True,
+            )
         )
 
     return license_detections

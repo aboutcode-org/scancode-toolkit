@@ -2242,7 +2242,8 @@ other_license_detections:
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: x11-xconsortium AND public-domain
-    detection_rules: []
+    detection_rules:
+      - not-combined
     matches:
       - score: '20.2'
         start_line: 293

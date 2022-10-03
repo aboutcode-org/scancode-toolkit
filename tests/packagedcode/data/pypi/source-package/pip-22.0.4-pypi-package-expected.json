@@ -634,7 +634,7 @@
             {
               "license_expression": "mit",
               "detection_rules": [
-                "not-combined"
+                "from-package-sibling-file"
               ],
               "matches": [
                 {

@@ -655,8 +655,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-free-unknown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
   - license_expression: free-unknown
-    detection_rules:
-      - not-combined
+    detection_rules: []
     matches:
       - score: '82.5'
         start_line: 539
@@ -692,8 +691,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-free-unknown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
   - license_expression: gpl-2.0-plus
-    detection_rules:
-      - not-combined
+    detection_rules: []
     matches:
       - score: '100.0'
         start_line: 1076

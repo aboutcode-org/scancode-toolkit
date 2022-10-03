@@ -1,0 +1,7 @@
+license_expression: epl-2.0
+is_license_notice: yes
+referenced_filenames:
+  - License.md
+ignorable_urls:
+   - https://www.eclipse.org/legal/epl-2.0/
+

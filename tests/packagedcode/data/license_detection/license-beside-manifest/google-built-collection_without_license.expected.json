@@ -73,7 +73,7 @@
         {
           "license_expression": "bsd-new",
           "detection_rules": [
-            "not-combined"
+            "from-package-sibling-file"
           ],
           "matches": [
             {
@@ -177,7 +177,7 @@
             {
               "license_expression": "bsd-new",
               "detection_rules": [
-                "not-combined"
+                "from-package-sibling-file"
               ],
               "matches": [
                 {

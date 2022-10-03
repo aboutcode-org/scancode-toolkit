@@ -1201,8 +1201,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: public-domain
-    detection_rules:
-      - not-combined
+    detection_rules: []
     matches:
       - score: '100.0'
         start_line: 1091

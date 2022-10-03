@@ -1829,8 +1829,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-copyleft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
   - license_expression: public-domain
-    detection_rules:
-      - not-combined
+    detection_rules: []
     matches:
       - score: '100.0'
         start_line: 2489
@@ -10684,8 +10683,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-1.0
-    detection_rules:
-      - not-combined
+    detection_rules: []
     matches:
       - score: '90.0'
         start_line: 1641

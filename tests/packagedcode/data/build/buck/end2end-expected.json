@@ -275,7 +275,7 @@
             {
               "license_expression": "apache-2.0",
               "detection_rules": [
-                "not-combined"
+                "from-package-sibling-file"
               ],
               "matches": [
                 {

@@ -1085,7 +1085,8 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules: []
+    detection_rules:
+      - not-combined
     matches:
       - score: '100.0'
         start_line: 646

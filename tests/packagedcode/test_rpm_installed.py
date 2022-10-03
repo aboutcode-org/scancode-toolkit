@@ -139,7 +139,7 @@ class TestRpmInstalled(PackageTester):
         # 3. Then extract `bdb-fedora-rootfs.tar.xz-expected.json.tar.xz` and stage the changes, then regen to see changes
         # 4. Then run `tar -cJf bdb-fedora-rootfs.tar.xz-expected.json.tar.xz bdb-fedora-rootfs.tar.xz-expected.json`
         # 5. Remove the extracted folder and also revert changes in this file, run test without regen to verify
-        expected_file= os.path.join(expected_file, 'tests/packagedcode/data/rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz-expected.json')
+        expected_file= os.path.join(expected_file, 'bdb-fedora-rootfs.tar.xz-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
