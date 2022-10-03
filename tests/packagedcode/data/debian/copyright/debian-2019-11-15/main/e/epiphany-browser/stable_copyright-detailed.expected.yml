@@ -272,14 +272,14 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: cc0-1.0'
-  - score: '100.0'
+  - score: '50.0'
     start_line: 171
     end_line: 171
     matcher: 2-aho
     rule_length: 1
     matched_length: 1
     match_coverage: '100.0'
-    rule_relevance: 100
+    rule_relevance: 50
     identifier: cc0-1.0_176.RULE
     license_expression: cc0-1.0
     is_license_text: no
@@ -288,14 +288,14 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: CC0
-  - score: '100.0'
+  - score: '50.0'
     start_line: 173
     end_line: 173
     matcher: 2-aho
     rule_length: 1
     matched_length: 1
     match_coverage: '100.0'
-    rule_relevance: 100
+    rule_relevance: 50
     identifier: cc0-1.0_176.RULE
     license_expression: cc0-1.0
     is_license_text: no
@@ -304,14 +304,14 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: CC0
-  - score: '100.0'
+  - score: '50.0'
     start_line: 175
     end_line: 175
     matcher: 2-aho
     rule_length: 1
     matched_length: 1
     match_coverage: '100.0'
-    rule_relevance: 100
+    rule_relevance: 50
     identifier: cc0-1.0_176.RULE
     license_expression: cc0-1.0
     is_license_text: no
