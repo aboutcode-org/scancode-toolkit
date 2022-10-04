@@ -97,7 +97,6 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             # path is found and processed: remove it, so we can check if we
             # found all of them
             del file_references_by_path[res.path]
-            package_adder(package_uid, res, codebase)
             resources.append(res)
 
         # if we have left over file references, add these to extra data
@@ -106,7 +105,9 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
             package.extra_data['missing_file_references'] = missing
 
         yield package
-        yield from resources
+        for res in resources:
+            package_adder(package_uid, res, codebase)
+            yield res
 
         dependent_packages = package_data.dependencies
         if dependent_packages:
