@@ -55,7 +55,7 @@ License detection:
   as an option.
 
 
-v31.2.0 - 2022-09-29
+v31.2.0 - 2022-10-05
 ----------------------------------
 
 This is a minor release with small bug fixes and minor feature updates.
