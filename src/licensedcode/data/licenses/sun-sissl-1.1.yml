@@ -5,6 +5,7 @@ category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://www.openoffice.org/licenses/sissl_license.html
 spdx_license_key: SISSL
+osi_license_key: SISSL
 text_urls:
     - http://www.openoffice.org/licenses/sissl_license.html
 other_urls:
@@ -13,4 +14,3 @@ other_urls:
 ignorable_urls:
     - http://api.openoffice.org/
     - http://xml.openoffice.org/
-osi_license_key: SISSL

@@ -10,7 +10,6 @@ other_urls:
     - http://www.gnu.org/licenses/
 minimum_coverage: 70
 ignorable_copyrights:
-  - Copyright (c) 2000-2017 Kern Sibbald
+    - Copyright (c) 2000-2017 Kern Sibbald
 ignorable_holders:
-  - Kern Sibbald
-
+    - Kern Sibbald

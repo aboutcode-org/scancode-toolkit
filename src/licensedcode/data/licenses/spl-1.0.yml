@@ -6,6 +6,7 @@ owner: Oracle (Sun)
 homepage_url: http://www.netbeans.org/about/legal/spl.html
 notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: SPL-1.0
+osi_license_key: SPL-1.0
 text_urls:
     - http://java.sun.com/spl.html
     - https://fedoraproject.org/wiki/Licensing/Sun_Public_License
@@ -17,4 +18,3 @@ other_urls:
     - https://opensource.org/licenses/SPL-1.0
 ignorable_urls:
     - http://www.sun.com/
-osi_license_key: SPL-1.0

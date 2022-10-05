@@ -6,3 +6,6 @@ owner: Unspecified
 spdx_license_key: LicenseRef-scancode-nortel-dasa
 ignorable_emails:
     - frank@comsys.dofn.de
+ignorable_authors:
+    - F.Schnekenbuehl <frank@comsys.dofn.de>
+

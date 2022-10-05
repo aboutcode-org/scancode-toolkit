@@ -4,6 +4,7 @@ name: Oculus Software Development Kit License Agreement v3.5
 category: Proprietary Free
 owner: Facebook
 homepage_url: https://developer.oculus.com/licenses/sdk-3.5/
+spdx_license_key: LicenseRef-scancode-oculus-sdk-3.5
 standard_notice: |
     Licensed under the Oculus SDK License Version 3.5 (the "License");
     you may not use the Oculus SDK except in compliance with the License,
@@ -16,13 +17,11 @@ standard_notice: |
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-spdx_license_key: LicenseRef-scancode-oculus-sdk-3.5
 ignorable_copyrights:
-  - (c) Facebook Technologies, LLC and its affiliates
-  - Copyright (c) Facebook Technologies, LLC and its affiliates
+    - (c) Facebook Technologies, LLC and its affiliates
+    - Copyright (c) Facebook Technologies, LLC and its affiliates
 ignorable_holders:
-  - Facebook Technologies, LLC and its affiliates
+    - Facebook Technologies, LLC and its affiliates
 ignorable_urls:
-  - https://developer.oculus.com/
-  - https://developer.oculus.com/licenses/sdk-3.5/
-
+    - https://developer.oculus.com/
+    - https://developer.oculus.com/licenses/sdk-3.5/

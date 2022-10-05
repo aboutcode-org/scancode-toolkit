@@ -17,9 +17,13 @@ on:
     tags:
       - "v*.*.*"
 
+permissions: {}
 jobs:
 
   build_scancode_for_pypi:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Build PyPI archives
     runs-on: ubuntu-20.04
 
@@ -67,6 +71,9 @@ jobs:
 
 
   build_scancode_for_release_linux:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Build Release for linux
     runs-on: ubuntu-20.04
     needs:
@@ -106,6 +113,9 @@ jobs:
 
 
   build_scancode_for_release_macos:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Build Release for mac
     runs-on: ubuntu-20.04
     needs:
@@ -145,6 +155,9 @@ jobs:
 
 
   build_scancode_for_release_windows:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Build Release for windows
     runs-on: ubuntu-20.04
     needs:
@@ -183,6 +196,9 @@ jobs:
 
 
   build_scancode_for_release_source:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Build source
     runs-on: ubuntu-20.04
     needs:
@@ -221,6 +237,9 @@ jobs:
 
 
   smoke_test_install_and_run_pypi_dists_posix:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Test POSIX PyPI wheels
     needs:
       - build_scancode_for_pypi
@@ -267,6 +286,9 @@ jobs:
 
 
   smoke_test_install_and_run_pypi_dists_windows:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Test Windows PyPI wheels
     needs:
       - build_scancode_for_pypi
@@ -312,6 +334,9 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_linux:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_linux
@@ -350,6 +375,9 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_macos:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_macos
@@ -388,6 +416,9 @@ jobs:
 
 
   smoke_test_install_and_run_app_archives_on_windows:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
     name: Test app on ${{ matrix.os }}
     needs:
       - build_scancode_for_release_windows
@@ -422,6 +453,9 @@ jobs:
           for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
 
   publish_to_gh_release:
+    permissions:
+      contents: write # to create GitHub release (softprops/action-gh-release)
+
     name: Publish to GH Release
     needs:
       - smoke_test_install_and_run_app_archives_on_linux

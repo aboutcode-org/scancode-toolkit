@@ -4,12 +4,11 @@ name: Realm Platform Extensions License 2017
 category: Proprietary Free
 owner: Realm
 homepage_url: https://github.com/realm/realm-studio/blob/channel/major-10/LICENSE
-faq_url: http://realm.io/pricing/
 spdx_license_key: LicenseRef-scancode-realm-platform-extension-2017
+faq_url: http://realm.io/pricing/
 ignorable_copyrights:
-  - Copyright (c) 2011-2017 Realm Inc
+    - Copyright (c) 2011-2017 Realm Inc
 ignorable_holders:
-  - Realm Inc
+    - Realm Inc
 ignorable_urls:
-  - http://realm.io/pricing
-
+    - http://realm.io/pricing

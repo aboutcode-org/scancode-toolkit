@@ -1,0 +1,9 @@
+key: woodruff-2002
+short_name: Woodruff Restricted MIT 2002
+name: Woodruff Restricted MIT 2002
+category: Free Restricted
+owner: William Woodruff
+homepage_url: https://github.com/woodruffw/ff2mpv/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-woodruff-2002
+other_urls:
+    - https://github.com/search?p=2&q="The+MIT+License+(MIT)+with+restrictions"&type=Code

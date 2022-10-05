@@ -1,0 +1,4 @@
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 95
+notes: Limited to certain HW. Seen in https://github.com/espressif/ESP8266_RTOS_SDK/commit/19aed2e67ffcc27ba4dca9aad4b4264f62c4bcc2

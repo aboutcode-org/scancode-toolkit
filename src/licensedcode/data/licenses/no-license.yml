@@ -3,5 +3,5 @@ short_name: No License Stated
 name: No License Stated
 category: Unstated License
 owner: Unspecified
-spdx_license_key: LicenseRef-scancode-no-license
 notes: Scanning and analysis of a software object did not find any license information at all.
+spdx_license_key: LicenseRef-scancode-no-license

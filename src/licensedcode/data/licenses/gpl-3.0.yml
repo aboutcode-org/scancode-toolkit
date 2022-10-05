@@ -11,6 +11,7 @@ spdx_license_key: GPL-3.0-only
 other_spdx_license_keys:
     - GPL-3.0
     - LicenseRef-gpl-3.0
+osi_license_key: GPL-3.0
 text_urls:
     - http://www.gnu.org/licenses/gpl-3.0-standalone.html
     - http://www.gnu.org/licenses/gpl-3.0.txt
@@ -29,4 +30,3 @@ ignorable_urls:
     - https://fsf.org/
     - https://www.gnu.org/licenses/
     - https://www.gnu.org/licenses/why-not-lgpl.html
-osi_license_key: GPL-3.0

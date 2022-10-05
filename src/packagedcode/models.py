@@ -808,7 +808,11 @@ def add_to_package(package_uid, resource, codebase):
     Append `package_uid` to `resource.for_packages`, if the attribute exists and
     `package_uid` is not already in `resource.for_packages`.
     """
-    if hasattr(resource, 'for_packages') and isinstance(resource.for_packages, list):
+    if (
+        hasattr(resource, 'for_packages')
+        and isinstance(resource.for_packages, list)
+        and package_uid
+    ):
         if package_uid in resource.for_packages:
             return
         resource.for_packages.append(package_uid)
@@ -1113,16 +1117,21 @@ class DatafileHandler:
                 package.license_expression = cls.compute_normalized_license(package)
             yield package
         yield from dependencies
-        yield from resources
 
-        # Associate Package to Resources once they have been yielded
+        # Associate Package to Resources and yield them
+        for resource in resources:
+            package_adder(package_uid, resource, codebase)
+            yield resource
+
         for package_uid, resource in resources_from_package:
             package_adder(package_uid, resource, codebase)
+            yield resource
 
         # the whole parent subtree of the base_resource is for this package
         if package_uid:
             for res in base_resource.walk(codebase):
                 package_adder(package_uid, res, codebase)
+                yield res
 
     @classmethod
     def assemble_from_many_datafiles(

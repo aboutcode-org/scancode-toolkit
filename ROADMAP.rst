@@ -18,19 +18,27 @@ even if it is correct and it is technically correct.
 The goal of this improvement is to:
 
 - combine multiple related license matches in a single license detection
+
 - in a license detection, expose a primary license expression in addition
   to the complete, full license expression.
+
 - make the logic of selection of the primary license visible, at the minimum
   with a log of combination and primary license selection operations
 
 This is for SCTK first.
+
+Status: This has been completed in SCTK and also included in SCIO. We use
+an updated --summary option and a new license clarity score for this.
+Some work is still in progress as part of 3.) "detections"
 
 
 2. Package files.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting the set of package files for each package instance is important because
-it allows for natural grouping of these in one unit. 
+it allows for natural grouping of these in one unit.
+
+This has been completed in SCTK and also included in SCIO.
 
 
 3. Go to two-level reporting of detections to provide more effective detections

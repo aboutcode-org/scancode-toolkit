@@ -1,0 +1,12 @@
+key: cc-by-3.0-igo
+short_name: Creative Commons Attribution 3.0 IGO
+name: Creative Commons Attribution 3.0 IGO
+category: Permissive
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by/3.0/igo
+spdx_license_key: CC-BY-3.0-IGO
+text_urls:
+    - https://creativecommons.org/licenses/by/3.0/igo/legalcode
+minimum_coverage: 50
+ignorable_urls:
+    - https://creativecommons.org/

@@ -1,0 +1,237 @@
+Open Logistics License
+Version 1.0, March 2022
+https://www.openlogisticsfoundation.org/licenses/
+
+TERMS AND CONDITIONS FOR THE USE, REPRODUCTION AND DISTRIBUTION
+
+ß1 Definitions
+
+(1) "Subject Matter of the License" means the copyrighted works of the software
+components in source code or object code as well as the other components
+protected under copyright, design and/or patent law which are made available
+under this license in accordance with a copyright notice inserted into or
+attached to the work as well as the application and user documentation.
+
+(2) "License" means the terms and conditions for the use, reproduction and
+distribution of the Subject Matter of the License in accordance with the
+provisions of this document.
+
+(3) "Licensor(s)" means the copyright holder(s) or the entity authorised by law
+or contract by the copyright holder(s) to grant the license.
+
+(4) "You" (or "Your") means a natural or legal person exercising the
+permissions granted by this License.
+
+(5) "Source Code" means the version of the code of the software components of
+the Subject Matter of the License in the programming language.
+
+(6) "Object Code" means the interim product after compilation or interpretation
+of the Source Code.
+
+(7) "Derivative Works" shall mean any work, whether in Source or Object Code or
+any other form, that is based on (or derived from) the Subject Matter of the
+License and for which the editorial revisions, annotations, elaborations, or
+other modifications represent, as a whole, an original work of authorship. For
+the purposes of this License, Derivative Works shall not include works that
+remain separable from, or merely link (or bind by name) to the interfaces of,
+the Subject Matter of the License and Derivative Works thereof.
+
+(8) "Contribution" means any proprietary work, including the original version
+of the Subject Matter of the License and any changes or additions to such work,
+or Derivative Works of such work, that the copyright holder, or a natural or
+legal person authorised to make submissions, intentionally submits to the
+Licensor or one of the Licensors to be incorporated into the Subject Matter of
+the License.  For the purposes of this definition, "submit" means any form of
+electronic or written communication which is sent to the Licensor (or one of
+the Licensors) or its representatives to discuss or improve the Subject Matter
+of the License, including, but not limited to, communications sent via
+electronic mailing lists, source code control systems and issue tracking
+systems; however, communications that are clearly labelled as "no contribution"
+by the copyright holder or otherwise identified as such in writing are
+excluded.
+
+(9) "Contributor" means the Licensor and/or any natural or legal person on
+whose behalf the Licensor receives any Contribution subsequently incorporated
+into the Subject Matter of the License.
+
+ß2 Granting of usage rights
+
+Subject to the terms and conditions of this License and compliance with the
+provisions of this License, You are hereby granted by all Contributors, for the
+term of the copyrights in the Subject Matter of the License, the
+
+- royalty-free and non-exclusive,
+- sub-licensable for commercial and non-commercial purposes,
+- worldwide and perpetual,
+- irrevocable and non-terminable
+
+right
+
+- to use in any hardware and software environment, - with regard to the
+  software and data components - in particular to store or load it permanently
+  or temporarily, to display it and run it, including to the extent
+  reproductions are necessary to that end,
+- to modify, interpret, edit or redesign in another way,
+- to store, reproduce, exhibit, publish, distribute in tangible or intangible
+  form, on any medium or in any other way, for commercial and non-commercial
+  purposes, in particular to communicate privately or publicly, also through
+  image, audio and other information carriers, irrespective of whether by wire
+  or wireless means,
+- to use in databases, data networks and online services, including the right
+  to make the software and data components of the Subject Matter of the License
+  available in source code or object code to users of the aforementioned
+  databases, networks and online services for research and retrieval purposes,
+- to allow third parties to use or operate,
+- to use for own purposes but also to provide services to third parties,
+- to distribute
+
+the Subject Matter of the License in its original or modified, interpreted,
+edited or redesigned form.
+
+This right of use relates to the Subject Matter of the License in particular
+its source code and object code of the software components in all forms
+(including - where applicable - design rights).
+
+ß3 Grant of a patent license
+
+Subject to the terms and conditions of this License and compliance with the
+provisions of this License, You are hereby granted by each Contributor a
+
+- perpetual,
+- worldwide,
+- non-exclusive,
+- free of charge,
+- irrevocable (with the exception of the restrictions set out in this
+  Section 3)
+
+patent license in all rights deriving from the patents, owned and licensable by
+the Contributor at the time of the submission of the Contribution, to
+
+- produce,
+- have produced,
+- use,
+- offer for sale,
+- sell,
+- import and otherwise transfer
+
+the Subject Matter of the License.
+
+However, this patent license covers only those rights deriving from the patents
+of the respective Contributors as are indispensable in order not to infringe
+that patent and only to the extent that the use of the Contributor's respective
+Contributions, whether in itself or as a combination with other Contributions
+of the Contributors or any third parties together with the Subject Matter of
+the License for which these Contributions were submitted, would otherwise
+infringe that patent. For avoidance of doubt, no patent licenses are granted
+for the use of the Subject Matter of the License or the Contributions which
+become necessary for lawful use because third party modifications are made to
+the Subject Matter of the License or the respective Contributions after the
+Contributions has been submitted by the Contributors. Under no circumstances
+will anything in this Section 3 be construed as granting, by implication,
+estoppel or otherwise, a license to any patent for which the respective
+Contributors have not granted patent rights when they submitted their
+respective Contributions.
+
+In the event that You institute judicial patent proceedings against any entity
+or person (including a counterclaim or countersuit in a legal dispute), arguing
+that the Subject Matter of the License or a Contribution incorporated or
+contained therein constitutes a patent infringement or a contributory factor to
+a patent infringement, all patent licenses which have been granted to You under
+this License for the Subject Matter of the License as well as this License in
+itself shall be deemed terminated as of the date on which the action is filed.
+
+For avoidance of doubt, the Contributors are entitled to decide in their own
+discretion to abandon respectively maintain any patent designated by patent
+number upon delivery of the Subject Matter of the License.
+
+ß4 Distribution
+
+You may reproduce and distribute copies of the Subject Matter of the License or
+Derivative Works on any medium, with or without modifications, (with regard to
+software components) in Source or Object Code, provided that You comply with
+the following rules:
+
+- You must provide all other recipients of the Subject Matter of the License or
+  of Derivative Works with a copy of this License and inform them that the
+  Subject Matter of the License was originally licensed under this License.
+- You must ensure that modified files contain prominent notices indicating that
+  You have modified the files.
+- You must retain all copyright, patent, trademark and name credit notices in
+  the Subject Matter of the License in the source code of any Derivative Works
+  You distribute, with the exception of those notices which do not belong to
+  any part of the Derivative Works.
+- You must oblige the recipients of the Subject Matter of the License or
+  Derivative Works to incorporate the provisions of this Section 4 into any
+  license under which they distribute the the Subject Matter of the License or
+  Derivative Works to any other recipients.
+
+You may add Your own copyright notices to Your modifications and state any
+additional or different license conditions and conditions for the use,
+reproduction or distribution of Your modifications or for these Derivative
+Works as a whole, provided that Your use, reproduction and distribution of the
+work in all other respects complies with the terms and conditions set out in
+this License.
+
+ß5 Submission of Contributions
+
+Unless expressly stated otherwise, every Contribution that You have
+intentionally submitted for inclusion in the Subject Matter of the License is
+subject to this License without any additional terms or conditions applying.
+Irrespective of the above, none of the terms or conditions contained herein may
+be interpreted to replace or change the terms or conditions of a separate
+licensing agreement that You may have concluded with a Licensor for such
+Contributions, such as a so-called "Contributor License Agreement" (CLA).
+
+ß6 Trademarks
+
+This License does not grant permission to use the trade names, trademarks,
+service marks or product names of the Licensor or of a Contributor.
+
+ß7 Limited warranty
+
+This License is granted free of charge and thus constitutes a gift.
+Accordingly, any warranty is excluded. Work on the Subject Matter of the
+License continues on an ongoing basis; it is constantly improved by countless
+Contributors. The Subject Matter of the License is not completed and may
+therefore contain errors ("bugs") or additional patents of Contributors or
+third parties, as is inherent to this type of development.
+
+ß8 Limitation of liability
+
+Except in cases of intent and gross negligence or causing personal injury, the
+Contributors, their legal representatives, trustees, officers and employees
+shall not be liable for direct or indirect, material or immaterial loss or
+damage of any kind arising from the License or the use of the Subject Matter of
+the License; this applies, among other things, but not exclusively, to loss of
+goodwill, loss of production, computer failures or errors, loss of data or
+economic loss or damage, even if the Contributor has been notified of the
+possibility of such loss or damage. Irrespective of the above, the Licensor
+shall only be liable in the scope of statutory product liability, to the extent
+the respective provisions are applicable to the Subject Matter of the License
+or the Contribution.
+
+Except in the case of intent, the Contributors, their legal representatives,
+trustees, officers and employees shall not be liable that any of the
+Contributions are free from any claim of infringement of any patent or any
+other intellectual property right owned by any third party, accurate, devoid of
+mistakes, complete and/or usable for any purpose.
+
+ß9 Provision of warranties or assumption of additional liability in the event
+of distribution of the Subject Matter of the License
+
+In the event of distribution of the Subject Matter of the License or Derivative
+Works, You are free to assume support, warranty, indemnity or other liability
+obligations and/or rights in accordance with this License and to charge a fee
+in return. However, in accepting such obligations, You may act only on Your own
+behalf and on Your sole responsibility, not on behalf of any other Contributor,
+and You hereby agree to indemnify, defend, and hold each Contributor harmless
+for any liability incurred by, or claims asserted against, such Contributor by
+reason of your accepting any such warranty or additional liability.
+
+ß10 Applicable law
+
+This License is governed by German law with the exclusion of its provisions on
+the conflict of laws and with the exclusion of the UN Convention on Contracts
+for the International Sale of Goods (CISG).
+
+END OF TERMS AND CONDITIONS
