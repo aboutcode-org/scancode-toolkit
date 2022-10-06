@@ -12,10 +12,69 @@ import xmltodict
 from packagedcode import models
 from packagedcode.utils import build_description
 
+
 """
 Handle NuGet packages and their manifests.
 """
-# TODO: add dependencies
+
+# TODO: Add section to handle dependencies of dependencies
+
+
+def get_dependencies(nuspec):
+    """
+    Return a list of Dependent package objects found in a NuGet `nuspec` object.
+    """
+    dependencies = []
+    try:
+        if "dependencies" in nuspec:
+            if "dependency" in nuspec.get("dependencies"):
+                if "@id" and "@version" in nuspec.get("dependencies").get("dependency"):
+                    dpurl = models.PackageURL(
+                        type='nuget',
+                        namespace=None,
+                        name=nuspec.get("dependencies").get(
+                            "dependency").get("@id"),
+                        version=nuspec.get("dependencies").get(
+                            "dependency").get("@version"),
+                        qualifiers=None
+                    )
+                    dep_pack = models.DependentPackage(
+                        purl=str(dpurl),
+                        extracted_requirement=nuspec.get("dependencies").get(
+                            "dependency").get("@version"),
+                        scope="dependency",
+                        is_runtime=False,
+                        is_optional=False,
+                        is_resolved=True,
+                    )
+
+                    dependencies.append(dep_pack)
+
+                else:
+                    for dependency in nuspec.get("dependencies").get("dependency"):
+                        dpurl = models.PackageURL(
+                            type='nuget',
+                            namespace=None,
+                            name=dependency.get("@id"),
+                            version=dependency.get("@version"),
+                            qualifiers=None
+                        )
+                        dep_pack = models.DependentPackage(
+                            purl=str(dpurl),
+                            extracted_requirement=dependency.get(
+                                "@version"),
+                            scope="dependency",
+                            is_runtime=False,
+                            is_optional=False,
+                            is_resolved=True,
+                        )
+                        dependencies.append(dep_pack)
+
+        return dependencies
+
+    except Exception as e:
+        print(e)
+        return dependencies
 
 
 def get_urls(name, version, **kwargs):
@@ -46,7 +105,7 @@ class NugetNuspecHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        with open(location , 'rb') as loc:
+        with open(location, 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
         if not parsed:
@@ -62,14 +121,15 @@ class NugetNuspecHandler(models.DatafileHandler):
 
         # Summary: A short description of the package for UI display. If omitted, a
         # truncated version of description is used.
-        description = build_description(nuspec.get('summary') , nuspec.get('description'))
+        description = build_description(
+            nuspec.get('summary'), nuspec.get('description'))
 
         # title: A human-friendly title of the package, typically used in UI
         # displays as on nuget.org and the Package Manager in Visual Studio. If not
         # specified, the package ID is used.
         title = nuspec.get('title')
         if title and title != name:
-            description = build_description(nuspec.get('title') , description)
+            description = build_description(nuspec.get('title'), description)
 
         parties = []
         authors = nuspec.get('authors')
@@ -112,7 +172,16 @@ class NugetNuspecHandler(models.DatafileHandler):
             homepage_url=nuspec.get('projectUrl') or None,
             parties=parties,
             extracted_license_statement=extracted_license_statement,
+            dependencies=get_dependencies(nuspec),
+            # FIXME: license has evolved and is now SPDX...
+            declared_license=nuspec.get('licenseUrl') or None,
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
             **urls,
         )
+
+        if not package_data.license_expression and package_data.declared_license:
+            package_data.license_expression = cls.compute_normalized_license(
+                package_data)
+
+        yield package_data
