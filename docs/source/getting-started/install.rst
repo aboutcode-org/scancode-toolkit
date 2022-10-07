@@ -314,8 +314,14 @@ Now you are ready to use the freshly configured scancode-toolkit.
 
 .. NOTE::
 
-    For use in development, run instead ``configure --dev``. If your face
-    issues while configuring a previous version, ``configure --clean`` to
+    For use in development, run instead ``configure --dev`` and if you are
+    working on licenses related developement (i.e. working on ``licensedcode`` or
+    adding new licenses/rules) you should use ``configure --dev-license`` which also
+    checks licenses/rules consistency and regenerates the scancode license index.
+
+
+.. NOTE::
+    If your face issues while configuring a previous version, ``configure --clean`` to
     clean and reset your enviroment. You will need to run ``configure`` again.
 
 

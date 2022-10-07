@@ -30,6 +30,7 @@ set "REQUIREMENTS=--editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 set "DOCS_REQUIREMENTS=--editable .[docs] --constraint requirements.txt"
 set "REL_REQUIREMENTS=--requirement etc/scripts/requirements.txt"
+set "REINDEX_SCANCODE_LICENSE= "
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
@@ -80,6 +81,10 @@ if not "%1" == "" (
     if "%1" EQU "--help"   (goto cli_help)
     if "%1" EQU "--clean"  (goto clean)
     if "%1" EQU "--dev"    (
+        set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+    )
+    if "%1" EQU "--dev-license"    (
+        set "REINDEX_SCANCODE_LICENSE=TRUE" &
         set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     )
     if "%1" EQU "--docs"    (
@@ -182,6 +187,11 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
+
+if "%REINDEX_SCANCODE_LICENSE%" EQU "TRUE" (
+    goto reindex_license
+)
+
 exit /b 0
 
 
@@ -195,6 +205,7 @@ exit /b 0
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --dev-license:   configure the environment for development related to licenses."
     echo " --help:  display this help message and exit."
     echo " "
     echo By default, the python interpreter version found in the path is used.
@@ -203,6 +214,13 @@ exit /b 0
     echo set, a file named PYTHON_EXECUTABLE containing a single line with the
     echo path of the Python executable to use will be checked last.
     exit /b 0
+
+
+@rem ################################
+:reindex_license
+@rem # Regenerate scancode license index
+scancode --reindex-license
+exit /b 0
 
 
 @rem ################################

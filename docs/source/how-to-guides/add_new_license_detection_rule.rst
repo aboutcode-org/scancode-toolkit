@@ -51,6 +51,14 @@ you are done!
 
 See the ``src/licensedcode/data/rules/`` directory for many examples.
 
+.. NOTE::
+
+    These are instructions to add a license detection rule, but if you intend to
+    add these rules and then run detection with these rules, you have to regenerate
+    scancode license index with ``scancode --reindex-licenses`` or reconfigure with
+    ``configure --dev-license``.
+
+
 More (advanced) rules options:
 
 - you can use a notes: text field to document this rule and explain where you

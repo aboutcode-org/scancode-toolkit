@@ -33,3 +33,10 @@ Save these two files in the ``src/licensedcode/data/licenses/`` directory.
 Done!
 
 See the ``src/licensedcode/data/licenses/`` directory for many examples.
+
+.. NOTE::
+
+    These are instructions to add a license, but if you intend to
+    add a license and then run detection with these license such that they
+    are detected, you have to regenerate scancode license index with
+    ``scancode --reindex-licenses`` or reconfigure with ``configure --dev-license``.

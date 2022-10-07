@@ -118,7 +118,7 @@ def build_per_package_index(pkg_name, packages, base_url):
   <body>"""
     document.append(header)
 
-    for package in packages:
+    for package in sorted(packages):
         document.append(package.simple_index_entry(base_url))
 
     footer = """  </body>
@@ -142,7 +142,7 @@ def build_links_package_index(packages_by_package_name, base_url):
     document.append(header)
 
     for _name, packages in packages_by_package_name.items():
-        for package in packages:
+        for package in sorted(packages):
             document.append(package.simple_index_entry(base_url))
 
     footer = """  </body>

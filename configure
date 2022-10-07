@@ -166,6 +166,8 @@ PIP_EXTRA_ARGS=" "
 
 # the URL to download virtualenv.pyz if needed
 VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
+
+REINDEX_SCANCODE_LICENSE=""
 ################################
 
 
@@ -265,9 +267,10 @@ cli_help() {
     echo The default is to configure for regular use. Use --dev for development.
     echo
     echo The options are:
-    echo " --clean: clean built and installed files and exit."
-    echo " --dev:   configure the environment for development."
-    echo " --help:  display this help message and exit."
+    echo " --clean:         clean built and installed files and exit."
+    echo " --dev:           configure the environment for development."
+    echo " --dev-license:   configure the environment for development related to licenses."
+    echo " --help:          display this help message and exit."
     echo
     echo By default, the python interpreter version found in the path is used.
     echo Alternatively, the PYTHON_EXECUTABLE environment variable can be set to
@@ -292,6 +295,16 @@ clean() {
 
 
 ################################
+reindex_license() {
+    . "$CFG_BIN_DIR/activate"
+    # Regenerate license index for after developement configure
+    scancode --reindex-licenses
+    set +e
+    exit
+}
+
+
+################################
 # Main command line entry point
 
 # We are using getopts to parse option arguments that start with "-"
@@ -299,11 +312,14 @@ while getopts :-: optchar; do
     case "${optchar}" in
         -)
             case "${OPTARG}" in
-                help  ) cli_help;;
+                help ) cli_help;;
                 clean ) find_python && clean;;
-                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
-                docs   ) CFG_REQUIREMENTS="$DOCS_REQUIREMENTS";;
-                rel   ) CFG_REQUIREMENTS="$REL_REQUIREMENTS";;
+                dev ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS";;
+                dev-license )
+                    REINDEX_SCANCODE_LICENSE="TRUE"
+                    CFG_REQUIREMENTS="$DEV_REQUIREMENTS";; 
+                docs ) CFG_REQUIREMENTS="$DOCS_REQUIREMENTS";;
+                rel ) CFG_REQUIREMENTS="$REL_REQUIREMENTS";;
             esac;;
     esac
 done
@@ -315,5 +331,10 @@ create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$CFG_REQUIREMENTS"
 . "$CFG_BIN_DIR/activate"
 
+################################
+# Regenerate scancode license index
+if [[ "$REINDEX_SCANCODE_LICENSE" == "TRUE" ]]; then
+    reindex_license
+fi
 
 set +e
