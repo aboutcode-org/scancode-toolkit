@@ -243,56 +243,6 @@ def test_reindex_licenses_works():
 
 
 @pytest.mark.scanslow
-def test_detection_with_single_external_license_directory():
-    test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
-    example1_dir = test_env.get_test_loc('example_external_licenses/example1')
-    result_file = test_env.get_temp_file('json')
-
-    # first reindex with the example directory
-    run_scan_click([
-        '--additional-license-directory', example1_dir,
-        '--reindex-licenses',
-    ])
-
-    args = [
-        '--license',
-        '--strip-root',
-        '--verbose',
-        '--json', result_file,
-        test_dir,
-    ]
-    run_scan_click(args)
-    test_loc = test_env.get_test_loc('plugin_license/external_licenses/scan.expected.json')
-    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
-
-
-# @pytest.mark.scanslow
-def test_detection_with_multiple_external_license_directories():
-    test_dir = test_env.get_test_loc('plugin_license/external_licenses/scan', copy=True)
-    example1_dir = test_env.get_test_loc('example_external_licenses/example1')
-    example2_dir = test_env.get_test_loc('example_external_licenses/example2')
-    result_file = test_env.get_temp_file('json')
-
-    # first reindex with the example directories
-    run_scan_click([
-        '--additional-license-directory', example1_dir,
-        '--additional-license-directory', example2_dir,
-        '--reindex-licenses',
-    ])
-
-    args = [
-        '--license',
-        '--strip-root',
-        '--verbose',
-        '--json', result_file,
-        test_dir,
-    ]
-    run_scan_click(args)
-    test_loc = test_env.get_test_loc('plugin_license/external_licenses/scan_multiple.expected.json')
-    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
-
-
-@pytest.mark.scanslow
 def test_scan_license_with_url_template():
     test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -325,14 +275,3 @@ def test_detection_is_correct_in_legacy_npm_package_json():
     expected_file = test_env.get_test_loc('plugin_license/package/package.expected.json')
     run_scan_click(['-lp', '--json-pp', result_file, test_dir])
     check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
-
-
-def test_validate_license_library_returns_errors():
-    from licensedcode.models import InvalidLicense
-    licenses_dir = test_env.get_test_loc('plugin_license/validate_licenses')
-    args = [
-        '--additional-license-directory', licenses_dir,
-        '--reindex-licenses',
-    ]
-    with pytest.raises(InvalidLicense):
-        run_scan_click(args)

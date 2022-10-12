@@ -82,13 +82,13 @@ jobs:
               # license index with additional licenses provided by a plugin
               # and we use the special --test-suite=plugins marker for these
               # tests
-              additional_licenses_plugin: |
-                venv/bin/pip install tests/licensedcode/data/additional_license_location_provider/plugin/licenses_to_install2
-                venv/bin/scancode --reindex-licenses
+              additional_license_combined: |
+                venv/bin/pip install tests/licensedcode/data/additional_licenses/additional_plugin_1/
+                venv/bin/pip install tests/licensedcode/data/additional_licenses/additional_plugin_2/
+                venv/bin/scancode-reindex-licenses \
+                  --additional-directory tests/licensedcode/data/additional_licenses/additional_dir/
                 venv/bin/pytest -vvs --test-suite=plugins \
-                  tests/licensedcode/test_additional_license_location_provider.py \
-                  tests/licensedcode/test_installed_license_detection.py
-
+                  tests/licensedcode/test_additional_license.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
