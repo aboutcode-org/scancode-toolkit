@@ -8,6 +8,7 @@ notes: |
     Per SPDX.org, this license was released 24 January 2004. This license is
     OSI certified.
 spdx_license_key: CDDL-1.0
+osi_license_key: CDDL-1.0
 text_urls:
     - http://www.opensolaris.org/os/licensing/cddllicense.txt
     - http://www.sun.com/cddl/cddl.html
@@ -19,4 +20,3 @@ other_urls:
     - http://www.oracle.com/us/sun/index.html
     - https://glassfish.dev.java.net/public/CDDLv1.0.html
     - https://opensource.org/licenses/cddl1
-osi_license_key: CDDL-1.0

@@ -4,16 +4,15 @@ name: NVIDIA APEX SDK End User License Agreement 2011
 category: Proprietary Free
 owner: NVIDIA
 homepage_url: https://developer.download.nvidia.com/assets/gamedev/docs/NVIDIA%20APEX%20EULA.pdf
+spdx_license_key: LicenseRef-scancode-nvidia-apex-sdk-eula-2011
 other_urls:
     - www.developer.nvidia.com/apex
-spdx_license_key: LicenseRef-scancode-nvidia-apex-sdk-eula-2011
 ignorable_copyrights:
-  - Copyright 2011 NVIDIA Corporation
-ignorable_emails:
-  - PHYSXLICENCING@NVIDIA.COM
-  - PHYSXLICENSING@NVIDIA.COM
+    - Copyright 2011 NVIDIA Corporation
 ignorable_holders:
-  - NVIDIA Corporation
+    - NVIDIA Corporation
 ignorable_urls:
-  - http://www.developer.nvidia.com/apex
-
+    - http://www.developer.nvidia.com/apex
+ignorable_emails:
+    - PHYSXLICENCING@NVIDIA.COM
+    - PHYSXLICENSING@NVIDIA.COM

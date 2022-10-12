@@ -161,6 +161,19 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_summary_without_copyright_or_holders(self):
+        test_dir = self.get_test_loc('summary/summary_without_holder/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/summary_without_holder/summary-without-holder-pypi.expected.json')
+        run_scan_click([
+            '-lp',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+
     def test_remove_from_tallies(self):
         tallies = [
             {

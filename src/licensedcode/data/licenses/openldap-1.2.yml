@@ -10,8 +10,8 @@ notes: |
 spdx_license_key: OLDAP-1.2
 text_urls:
     - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=42b0383c50c299977b5893ee695cf4e486fb0dc7
+minimum_coverage: 70
 ignorable_copyrights:
     - Copyright 1998, The OpenLDAP Foundation
 ignorable_holders:
     - The OpenLDAP Foundation
-minimum_coverage: 70

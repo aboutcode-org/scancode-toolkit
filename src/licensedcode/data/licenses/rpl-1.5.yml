@@ -8,6 +8,7 @@ notes: |
     Per SPDX.org, this license was released 15 July 2007 This license is OSI
     certified.
 spdx_license_key: RPL-1.5
+osi_license_key: RPL-1.5
 text_urls:
     - http://www.opensource.org/licenses/rpl1.5.txt
 osi_url: http://www.opensource.org/licenses/rpl1.5.txt
@@ -19,4 +20,3 @@ ignorable_copyrights:
     - Copyright (c) 2001-2007 Technical Pursuit Inc.
 ignorable_holders:
     - Technical Pursuit Inc.
-osi_license_key: RPL-1.5

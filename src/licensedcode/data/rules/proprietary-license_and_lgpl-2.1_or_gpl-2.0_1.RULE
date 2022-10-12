@@ -1,0 +1,3 @@
+The Fraunhofer AAC library is licensed under a license incompatible to the GPL
+and is not known to be compatible to the LGPL. Therefore, you have to pass
+@code{--enable-nonfree} to configure to use it.

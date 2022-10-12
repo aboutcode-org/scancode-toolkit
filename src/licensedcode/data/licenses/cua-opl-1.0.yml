@@ -6,6 +6,7 @@ owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/cuaoffice.php
 notes: Per SPDX.org, this license is OSI certifified.
 spdx_license_key: CUA-OPL-1.0
+osi_license_key: CUA-OPL-1.0
 text_urls:
     - http://opensource.org/licenses/cuaoffice.php
 osi_url: http://opensource.org/licenses/cuaoffice.php
@@ -14,4 +15,3 @@ other_urls:
     - https://opensource.org/licenses/CUA-OPL-1.0
 ignorable_urls:
     - http://cuaoffice.sourceforge.net/
-osi_license_key: CUA-OPL-1.0

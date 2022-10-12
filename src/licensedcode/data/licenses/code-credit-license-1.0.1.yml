@@ -10,6 +10,5 @@ other_urls:
     - https://github.com/DoctorLaplace/Storm-Mind-Public/blob/main/LICENSE
     - https://github.com/pedrohdjs/javascript-basico-para-programadores/blob/main/LICENSE
 ignorable_urls:
-  - https://codecreditlicense.com/license/1.0.1
-  - https://creditstxt.com/
-
+    - https://codecreditlicense.com/license/1.0.1
+    - https://creditstxt.com/

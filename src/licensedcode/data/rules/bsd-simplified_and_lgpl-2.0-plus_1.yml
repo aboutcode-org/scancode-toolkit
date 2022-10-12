@@ -1,0 +1,7 @@
+license_expression: bsd-simplified AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - COPYING.LIB
+notes: seen in qtwebkit Qt_5.3.2/qtwebkit/Source/WebCore/platform/text/win/TextCodecWin.cpp
+    and the text is weirdly damaged combo of bsd and lgpl

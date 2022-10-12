@@ -1,0 +1,6 @@
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+notes: See in https://github.com/translate5/translate5/blob/develop/license.txt
+ignorable_urls:
+    - http://www.gnu.org/licenses/agpl.html
+    - http://www.translate5.net/plugin-exception.txt
