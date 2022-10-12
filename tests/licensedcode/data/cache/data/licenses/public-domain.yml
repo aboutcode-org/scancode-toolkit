@@ -1,7 +1,7 @@
 key: public-domain
 short_name: Public Domain
 name: Public Domain
-
+spdx_license_key: LicenseRef-scancode-public-domain
 category: Public Domain
 owner: Unspecified
 homepage_url: http://www.linfo.org/publicdomain.html

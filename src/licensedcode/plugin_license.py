@@ -163,6 +163,14 @@ class LicenseScanner(ScanPlugin):
                         f'after : {license_expressions_after}'
                     )
 
+        from licensedcode import cache
+        cche = cache.get_cache()
+        cle = codebase.get_or_create_current_header()
+        if cche.additional_license_directory:
+            cle.extra_data['additional_license_directory'] = cche.additional_license_directory
+        if cche.additional_license_plugins:
+            cle.extra_data['additional_license_plugins'] = cche.additional_license_plugins
+
 
 def add_referenced_filenames_license_matches(resource, codebase):
     """

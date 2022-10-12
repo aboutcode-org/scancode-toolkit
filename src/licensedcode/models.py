@@ -101,8 +101,6 @@ OTHER_CATEGORIES = set([
 
 CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 
-# prefix for name of all externally installed license plugins
-EXTERNAL_LICENSE_PLUGIN_PREFIX = 'licenses'
 
 @attr.s(slots=True)
 class License:
@@ -193,7 +191,7 @@ class License:
         default=True,
         repr=False,
         metadata=dict(
-            help='Flag set to True if this license is a built in license in the ScanCode LicenseDB.')
+            help='Flag set to True if this is a builtin standard license.')
     )
 
     # TODO: add the license key(s) this exception applies to
@@ -446,8 +444,6 @@ class License:
         if text:
             write(self.text_file(licenses_data_dir=licenses_data_dir), text.encode('utf-8'))
 
-        return self
-
     def load(self, data_file, text_file):
         """
         Populate license data from a YAML file stored in ``data_file`` and  ``text_file``.
@@ -694,7 +690,7 @@ def load_licenses(
     licenses_data_dir=licenses_data_dir,
     with_deprecated=False,
     check_dangling=True,
-    is_builtin = True,
+    is_builtin=True,
 ):
     """
     Return a mapping of {key: License} loaded from license data and text files
@@ -722,9 +718,16 @@ def load_licenses(
             key = file_base_name(data_file)
 
             try:
-                lic = License.from_dir(key=key, licenses_data_dir=licenses_data_dir, is_builtin=is_builtin)
+                lic = License.from_dir(
+                    key=key,
+                    licenses_data_dir=licenses_data_dir,
+                    is_builtin=is_builtin,
+                )
             except Exception as e:
-                raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
+                raise Exception(
+                    f'Failed to load license: {key} from: '
+                    f'file://{licenses_data_dir}/{key}.yml with error: {e}'
+                ) from e
 
             if check_dangling:
                 used_files.add(data_file)
@@ -785,22 +788,17 @@ def get_rules(
     return chain(licenses_as_rules, rules)
 
 
-def get_license_dirs(
-    additional_dirs,
-):
+def get_license_dirs(additional_dirs):
     """
-    Returns a list of all subdirectories containing license files within the
+    Return a list of all subdirectories containing license files within the
     input list of additional directories. These directories do not have to be absolute paths.
     """
-    # convert to absolute path in case user passes in a relative path, which messes up building rules from licenses
     return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
 
 
-def get_rule_dirs(
-    additional_dirs,
-):
+def get_rule_dirs(additional_dirs):
     """
-    Returns a list of all subdirectories containing rule files within the
+    Return a list of all subdirectories containing rule files within the
     input list of additional directories. These directories do not have to be absolute paths.
     """
     return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
@@ -808,7 +806,7 @@ def get_rule_dirs(
 
 def get_paths_to_installed_licenses_and_rules():
     """
-    Returns a list of paths to externally packaged licenses or rules that the user has
+    Return a list of paths to externally packaged licenses or rules that the user has
     installed. Gets a list of all of these licenses (installed as plugins) and
     then gets the plugins containing licenses by checking that their names start
     with a common prefix.
@@ -824,59 +822,67 @@ def get_paths_to_installed_licenses_and_rules():
 
 
 def load_licenses_from_multiple_dirs(
-    license_directories,
-    scancode_license_dir,
+    builtin_license_data_dir,
+    additional_license_data_dirs,
     with_deprecated=False,
 ):
     """
-    Combines a list of directories containing additional licenses into the same mapping.
-    These directory paths do not need to be absolute paths.
+    Return a mapping of {key: License} combining a list of
+    ``additional_license_data_dirs`` containing additional licenses with the
+    builtin ``builtin_license_data_dir`` licenses into the same mapping.
     """
-    combined_licenses = {}
-    combined_licenses_keys = set()
-    for license_dir in license_directories:
-        is_builtin = scancode_license_dir == license_dir
-        licenses = load_licenses(licenses_data_dir=license_dir, with_deprecated=False, is_builtin=is_builtin)
-        # check if two dictionaries have duplicate keys
-        licenses_keys = set(licenses.keys())
-        duplicate_keys = combined_licenses_keys.intersection(licenses_keys)
+    #raise Exception(builtin_license_data_dir)
+    combined_licenses = load_licenses(
+        licenses_data_dir=builtin_license_data_dir,
+        with_deprecated=with_deprecated,
+        is_builtin=True,
+    )
+    for license_dir in additional_license_data_dirs:
+        additional_licenses = load_licenses(
+            licenses_data_dir=license_dir,
+            with_deprecated=with_deprecated,
+            is_builtin=False,
+        )
+
+        # validate that additional licenses keys do not exist as builtin
+        duplicate_keys = set(combined_licenses).intersection(set(additional_licenses))
         if duplicate_keys:
-            message = ['Duplicate licenses found when loading additional licenses.']
-            message.append(', '.join(duplicate_keys))
-            raise ValueError('\n'.join(message))
-        combined_licenses.update(licenses)
-        # we keep combined_licenses_keys and licenses_keys as separate variables so we can avoid calling set()
-        # on the dictionary keys every single iteration
-        combined_licenses_keys.update(licenses_keys)
+            dupes = ', '.join(sorted(duplicate_keys))
+            message = f'Duplicate licenses found when loading additional licenses from: {license_dir}: {dupes}'
+            raise ValueError(message)
+
+        combined_licenses.update(additional_licenses)
+
     return combined_licenses
 
 
 def get_rules_from_multiple_dirs(
     licenses_db,
-    rule_directories,
-    scancode_rules_dir,
+    builtin_rule_data_dir,
+    additional_rules_data_dirs,
 ):
     """
-    Return a mapping of {key: License} built from a list of ``license_directories``.
-    Combines all rules together into the same data structure and validates them.
-    These license directories do not need to be absolute paths.
+    Yield Rule(s) built from:
+    - A ``license_db`` mapping of {key: License}
+    - The ``builtin_rule_data_dir`` of builtin license rules
+    - The list of ``additional_rules_data_dirs`` containing additional rules.
     """
-    if rule_directories:
-        combined_rules = []
-        for rules_dir in rule_directories:
-            is_builtin = rules_dir == scancode_rules_dir
-            r = list(load_rules(
-                rules_data_dir=rules_dir,
-                is_builtin=is_builtin,
-            ))
-            combined_rules.append(r)
-        # flatten lists of rules into a single iterable
-        rules = list(chain.from_iterable(combined_rules))
-        validate_rules(rules, licenses_db)
-        licenses_as_rules = build_rules_from_licenses(licenses_db)
-        return chain(licenses_as_rules, rules)
-    else:
-        return get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
+    # first load all builtin
+    combined_rules = list(get_rules(
+        licenses_db=licenses_db,
+        rules_data_dir=builtin_rule_data_dir,
+    ))
+
+    # load additional rules
+    for rules_dir in additional_rules_data_dirs or []:
+        combined_rules.extend(load_rules(
+            rules_data_dir=rules_dir,
+            is_builtin=False,
+        ))
+
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+
+    return combined_rules
 
 
 class InvalidLicense(Exception):
@@ -888,7 +894,10 @@ def validate_additional_license_data(additional_directories, scancode_license_di
     Raises an exception if there are any invalid licenses in the directories of
     additional licenses.
     """
-    licenses = load_licenses_from_multiple_dirs(additional_directories, scancode_license_dir)
+    licenses = load_licenses_from_multiple_dirs(
+        additional_license_data_dirs=additional_directories,
+        builtin_license_data_dir=scancode_license_dir
+    )
     errors, _, _ = License.validate(
         licenses,
         verbose=False,
@@ -939,14 +948,14 @@ def validate_ignorable_clues(rule_directories, is_builtin):
             if _ignorable_clue_error(rule, rules_dir):
                 error_present = True
                 result, expected = _ignorable_clue_error(rule, rules_dir)
-                message.append('')
-                message.append(f'{rule!r}')
-                message.append('Result:')
-                message.append(result)
-                message.append('Expected:')
-                message.append(expected)
+                messages.append('')
+                messages.append(f'{rule!r}')
+                messages.append('Result:')
+                messages.append(result)
+                messages.append('Expected:')
+                messages.append(expected)
     if error_present:
-        raise InvalidRule('\n'.join(message))
+        raise InvalidRule('\n'.join(messages))
 
 
 class InvalidRule(Exception):
@@ -1102,7 +1111,11 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True)
             text_file = join(rules_data_dir, f'{base_name}.RULE')
 
             try:
-                yield Rule.from_files(data_file=data_file, text_file=text_file, is_builtin=is_builtin)
+                yield Rule.from_files(
+                    data_file=data_file,
+                    text_file=text_file,
+                    is_builtin=is_builtin,
+                )
             except Exception as re:
                 if with_checks:
                     model_errors.append(str(re))
@@ -1211,7 +1224,7 @@ class BasicRule:
         default=True,
         repr=False,
         metadata=dict(
-            help='Flag set to True if this license is a built in license in the ScanCode LicenseDB.')
+            help='Flag set to True if this is a builtin standard rule.')
     )
 
     # The is_license_xxx flags below are nn indication of what this rule
@@ -2104,10 +2117,10 @@ class Rule(BasicRule):
 
         data_file = self.data_file(rules_data_dir=rules_data_dir)
         as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        write(location=data_file, byte_string=as_yaml)
+        write(data_file, as_yaml)
 
         text_file = self.text_file(rules_data_dir=rules_data_dir)
-        write(location=text_file, byte_string=self.text.encode('utf-8'))
+        write(text_file, self.text.encode('utf-8'))
 
     def load(self, data_file, text_file, with_checks=True):
         """
