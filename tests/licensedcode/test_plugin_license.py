@@ -238,8 +238,9 @@ def test_match_reference_license():
 
 
 def test_reindex_licenses_works():
-    run_scan_click(['--reindex-licenses-for-all-languages'])
-    run_scan_click(['--reindex-licenses'])
+    from licensedcode.cache import get_index
+    get_index(force=True)
+    get_index(force=True, index_all_languages=True)
 
 
 @pytest.mark.scanslow

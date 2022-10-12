@@ -11,8 +11,6 @@ import posixpath
 from functools import partial
 
 import attr
-import click
-from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
@@ -43,55 +41,6 @@ if TRACE:
 
     def logger_debug(*args):
         return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-def reindex_licenses(ctx, param, value):
-    """
-    Rebuild and cache the license index
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
-    import click
-    click.echo('Rebuilding the license index...')
-    get_index(force=True)
-    click.echo('Done.')
-    ctx.exit(0)
-
-
-def reindex_licenses_additional(ctx, param, value):
-    """
-    Rebuild and cache the license index using additional directories passed in
-    from command line.
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
-    import click
-    click.echo('Rebuilding the license index with additional directories...')
-    get_index(force=True, additional_directories=value)
-    click.echo('Done.')
-    ctx.exit(0)
-
-def reindex_licenses_all_languages(ctx, param, value):
-    """
-    EXPERIMENTAL: Rebuild and cache the license index including all languages
-    and not only English.
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
-    import click
-    click.echo('Rebuilding the license index for all languages...')
-    get_index(force=True, index_all_languages=True)
-    click.echo('Done.')
-    ctx.exit(0)
 
 
 @scan_impl
@@ -154,36 +103,6 @@ class LicenseScanner(ScanPlugin):
             help='[EXPERIMENTAL] Detect unknown licenses and follow license '
                  'references such as "See license in file COPYING".',
             help_group=SCAN_OPTIONS_GROUP,
-        ),
-
-        PluggableCommandLineOption(
-            ('--reindex-licenses',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses,
-            help='Rebuild the license index and exit.',
-            help_group=MISC_GROUP,
-        ),
-
-        PluggableCommandLineOption(
-            ('--reindex-licenses-for-all-languages',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses_all_languages,
-            help='[EXPERIMENTAL] Rebuild the license index including texts all '
-                 'languages (and not only English) and exit.',
-            help_group=MISC_GROUP,
-        ),
-
-        PluggableCommandLineOption(
-            ('--additional-license-directory',),
-            required_options=['reindex_licenses'],
-            multiple=True,
-            type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
-            metavar='DIR',
-            callback=reindex_licenses_additional,
-            help='Include this directory with additional custom licenses and license rules '
-                 'in the license detection index.',
-            help_group=MISC_GROUP,
-            is_eager=True,
         ),
     ]
 

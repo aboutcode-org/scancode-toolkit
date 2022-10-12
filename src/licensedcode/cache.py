@@ -59,7 +59,7 @@ class LicenseCache:
         timeout=LICENSE_INDEX_LOCK_TIMEOUT,
         licenses_data_dir=None,
         rules_data_dir=None,
-        additional_directories=None,
+        additional_directory=None,
     ):
         """
         Load or build and save and return a LicenseCache object.
@@ -114,12 +114,11 @@ class LicenseCache:
                 # Here, the cache is either stale or non-existing: we need to
                 # rebuild all cached data (e.g. mostly the index) and cache it
 
+                additional_directories = get_paths_to_installed_licenses_and_rules()
                 # include installed licenses
-                if not additional_directories:
-                    additional_directories = get_paths_to_installed_licenses_and_rules()
-                else:
+                if additional_directory:
                     # additional_directories is originally a tuple
-                    additional_directories = list(additional_directories) + get_paths_to_installed_licenses_and_rules()
+                    additional_directories.append(additional_directory)
 
                     # persist additional directories as a file so that we can include it in the scancode output as extra info
                     # only persist when we're generating a new license cache
@@ -353,7 +352,7 @@ def build_unknown_spdx_symbol(licenses_db=None):
     return LicenseSymbolLike(licenses_db['unknown-spdx'])
 
 
-def get_cache(force=False, index_all_languages=False, additional_directories=None):
+def get_cache(force=False, index_all_languages=False, additional_directory=None):
     """
     Return a LicenseCache either rebuilt, cached or loaded from disk.
 
@@ -361,12 +360,12 @@ def get_cache(force=False, index_all_languages=False, additional_directories=Non
     building the license index. Otherwise, only include the English license \
     texts and rules (the default)
     """
-    populate_cache(force=force, index_all_languages=index_all_languages, additional_directories=additional_directories)
+    populate_cache(force=force, index_all_languages=index_all_languages, additional_directory=additional_directory)
     global _LICENSE_CACHE
     return _LICENSE_CACHE
 
 
-def populate_cache(force=False, index_all_languages=False, additional_directories=None):
+def populate_cache(force=False, index_all_languages=False, additional_directory=None):
     """
     Load or build and cache a LicenseCache. Return None.
     """
@@ -380,7 +379,7 @@ def populate_cache(force=False, index_all_languages=False, additional_directorie
             index_all_languages=index_all_languages,
             # used for testing only
             timeout=LICENSE_INDEX_LOCK_TIMEOUT,
-            additional_directories=additional_directories,
+            additional_directory=additional_directory,
         )
 
 
@@ -402,14 +401,14 @@ def load_cache_file(cache_file):
             raise Exception(msg) from e
 
 
-def get_index(force=False, index_all_languages=False, additional_directories=None):
+def get_index(force=False, index_all_languages=False, additional_directory=None):
     """
     Return and eventually build and cache a LicenseIndex.
     """
     return get_cache(
         force=force,
         index_all_languages=index_all_languages,
-        additional_directories=additional_directories
+        additional_directory=additional_directory
     ).index
 
 

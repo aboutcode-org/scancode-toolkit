@@ -22,13 +22,10 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 def test_validate_license_library_returns_errors():
     from licensedcode.models import InvalidLicense
+    from licensedcode.cache import get_index
     licenses_dir = test_env.get_test_loc('additional_licenses/validate_licenses')
-    args = [
-        '--additional-license-directory', licenses_dir,
-        '--reindex-licenses',
-    ]
     with pytest.raises(InvalidLicense):
-        run_scan_click(args)
+        get_index(force=True, additional_directory=licenses_dir)
 
 
 """
