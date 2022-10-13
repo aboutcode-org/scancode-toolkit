@@ -463,7 +463,7 @@ class License:
 
                 self.text = ''
             else:
-                self.text = post.content
+                self.text = post.content.lstrip()
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -1927,7 +1927,7 @@ class Rule(BasicRule):
                     f'{self}: file://{rule_file}'
                 )
 
-            self.text = post.content
+            self.text = post.content.lstrip()
 
         except Exception as e:
             print('#############################')

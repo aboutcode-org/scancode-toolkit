@@ -5,7 +5,6 @@
   is_exception: yes
   is_deprecated: no
   text: |
-
     The Free Software Foundation has exempted Bash from the requirement of
     Paragraph 2c of the General Public License.  This is to say, there is
     no requirement for Bash to print a notice when it is started
@@ -24,7 +23,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     Redistribution. Redistribution and use in binary form, without
     modification, are permitted provided that the following conditions are
     met:
@@ -61,9 +59,9 @@
   other_spdx_license_keys: []
   is_exception: yes
   is_deprecated: no
-  text: |
-
-    As a special exception, when this file is copied by Bison into a Bison output file, you may use that output file without restriction. This special exception was added by the Free Software Foundation in version 1.24 of Bison.
+  text: As a special exception, when this file is copied by Bison into a Bison output file,
+    you may use that output file without restriction. This special exception was added by the
+    Free Software Foundation in version 1.24 of Bison.
   json: bison-exception-2.0.json
   yaml: bison-exception-2.0.yml
   html: bison-exception-2.0.html
@@ -75,7 +73,6 @@
   is_exception: yes
   is_deprecated: no
   text: |
-
     As a special exception, you may create a larger work that contains part or all
     of the Bison parser skeleton and distribute that work under terms of your
     choice, so long as that work isn't itself a parser generator using the skeleton
@@ -98,7 +95,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     BitTorrent Open Source License
 
     Version 1.0
@@ -440,7 +436,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     BitTorrent Open Source License
 
     Version 1.1
@@ -591,7 +586,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     BitTorrent Open Source License
     Version 1.2
 
@@ -688,7 +682,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     End User License Agreement (EULA)
 
     By accepting this agreement or by installing BitTorrent or uTorrent or other software offered by or on behalf of BitTorrent, Inc. (the "Software") or by clicking "Install", you agree to the following terms, notwithstanding anything to the contrary in this agreement.
@@ -735,7 +728,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     Boost Software License - Version 1.0 - August 17th, 2003
 
     Permission is hereby granted, free of charge, to any person or organization
@@ -770,7 +762,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     Permission to copy, use, modify, sell and distribute this software is granted
     provided this copyright notice appears in all copies. This software is provided "as
     is" without express or implied warranty, and with no claim as to its suitability for
@@ -786,7 +777,6 @@
   is_exception: yes
   is_deprecated: no
   text: |
-
     Bootloader Exception
 
     In addition to the permissions in the GNU General Public License, the authors give you unlimited permission to link or embed compiled bootloader and related files into combinations with other programs, and to distribute those combinations without any restriction coming from the use of those files. (The General Public License restrictions do apply in other respects; for example, they cover modification of the files, and distribution when not linked into a combined executable.)
@@ -801,7 +791,6 @@
   is_exception: no
   is_deprecated: no
   text: |
-
     Redistribution and use in source and binary forms are permitted
     provided that the above copyright notice and this paragraph are
     duplicated in all such forms and that any documentation,

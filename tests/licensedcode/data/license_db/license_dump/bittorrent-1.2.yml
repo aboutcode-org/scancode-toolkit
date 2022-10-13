@@ -8,7 +8,6 @@ spdx_license_key: LicenseRef-scancode-bittorrent-1.2
 ignorable_urls:
   - http://www.bittorrent.com/license
 text: |
-
   BitTorrent Open Source License
   Version 1.2
 
