@@ -149,3 +149,37 @@ def test_license_reference_detection_in_manifest_siblings_without_license():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/license-beside-manifest/google-built-collection_without_license.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+def test_license_reference_to_unknown_package_django():
+    test_dir = test_env.get_test_loc('license_detection/reference-to-package/google_appengine_sdk/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-to-package/google_appengine_sdk.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+def test_license_reference_to_unknown_package_django_base():
+    test_dir = test_env.get_test_loc('license_detection/reference-to-package/base-example/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-to-package/base.expected.json', must_exist=False)
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)

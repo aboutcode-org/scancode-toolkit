@@ -143,6 +143,87 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
             yield resource
 
 
+def add_referenced_license_detection_from_package(resource, codebase):
+    """
+    Return an updated ``resource`` saving it in place, after adding new license
+    matches (licenses and license_expressions) following their Rule
+    ``referenced_filenames`` if it is pointing to a package.
+    """
+    if TRACE:
+        logger_debug(f'packagedcode.licensing: add_referenced_license_matches_from_package: resource: {resource.path}')
+
+    if not resource.is_file:
+        return
+
+    license_detections = resource.license_detections
+    if not license_detections:
+        return
+
+    codebase_packages = codebase.attributes.packages
+
+    modified = False
+ 
+    for detection in license_detections:
+        detection_modified = False
+        matches = detection["matches"]
+        referenced_filenames = get_referenced_filenames(matches)
+        if not referenced_filenames:
+            continue
+
+        has_reference_to_package = any([
+            'package' in referenced_filename
+            for referenced_filename in referenced_filenames
+        ])
+
+        if not has_reference_to_package:
+            continue
+
+        for_packages = resource.for_packages
+        for package_uid in for_packages:
+
+            for codebase_package in codebase_packages:
+                if codebase_package["package_uid"] == package_uid:
+                    break
+
+            pkg_detections = codebase_package["license_detections"]
+            for pkg_detection in pkg_detections:
+                modified = True
+                detection_modified = True
+                matches.extend(pkg_detection["matches"])
+        
+        if not detection_modified:
+            continue
+
+        reasons, license_expression = get_detected_license_expression(
+            matches=matches,
+            analysis=DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value,
+            post_scan=True,
+        )
+        detection["license_expression"] = str(license_expression)
+        detection["detection_rules"] = reasons
+
+    if modified:
+
+        license_expressions = [
+            detection["license_expression"]
+            for detection in license_detections
+        ]
+
+        resource.detected_license_expression = combine_expressions(
+            expressions=license_expressions,
+            relation='AND',
+            unique=True,
+        )
+
+        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
+            license_expression=resource.detected_license_expression,
+            licensing=get_cache().licensing,
+        ))
+
+        codebase.save_resource(resource)
+        yield resource
+
+
 def add_license_from_sibling_file(resource, codebase, no_licenses):
     
     if TRACE:

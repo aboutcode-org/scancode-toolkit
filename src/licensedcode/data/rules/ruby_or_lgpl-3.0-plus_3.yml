@@ -2,4 +2,6 @@ license_expression: ruby OR lgpl-3.0-plus
 is_license_notice: yes
 relevance: 90
 minimum_coverage: 100
+referenced_filenames:
+   - package
 notes: this is found mostly in Ruby gettext

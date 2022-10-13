@@ -81,6 +81,7 @@ class DetectionCategory(Enum):
     PERFECT_DETECTION = 'perfect-detection'
     UNKNOWN_INTRO_BEFORE_DETECTION = 'unknown-intro-before-detection'
     UNKNOWN_FILE_REFERENCE_LOCAL = 'unknown-file-reference-local'
+    UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE = 'unknown-reference-in-file-to-package'
     PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL = 'package-unknown-file-reference-local'
     PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
     PACKAGE_ADD_FROM_FILE = 'from-package-file'
@@ -99,6 +100,7 @@ class DetectionRule(Enum):
     FALSE_POSITIVE = 'false-positive'
     UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file' 
     UNKNOWN_INTRO_FOLLOWED_BY_MATCH = 'unknown-intro-followed-by-match'
+    UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE = 'unknown-reference-in-file-to-package'
     CONTAINED_SAME_LICENSE = 'contained-with-same-license'
     NOTICE_FOLLOWED_BY_TEXT = 'notice-followed-by-text'
     CONTIGUOUS_SAME_LICENSE = 'contiguous-with-same-license'
@@ -443,6 +445,7 @@ def is_correct_detection(license_matches):
     Return True if all the matches in `license_matches` List of LicenseMatch
     are correct license detections.
     """
+    #TODO: Add matches with full match coverage
     matchers = (license_match.matcher for license_match in license_matches)
     return (
         all(matcher in ("1-hash", "1-spdx-id") for matcher in matchers)
@@ -578,7 +581,6 @@ def is_license_clues(license_matches):
     license detection and are mere license clues.
     """
     return not is_correct_detection(license_matches) and (
-        has_unknown_matches(license_matches) or
         is_match_coverage_less_than_threshold(
             license_matches=license_matches,
             threshold=CLUES_MATCH_COVERAGE_THR,
@@ -718,7 +720,11 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
         reasons.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
 
     elif post_scan:
-        if analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value:
+        if analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value:
+            matches_for_expression = filter_license_references(matches)
+            reasons.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value)
+
+        elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value:
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 

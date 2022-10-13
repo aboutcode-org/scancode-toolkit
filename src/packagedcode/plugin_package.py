@@ -27,6 +27,7 @@ from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
+from packagedcode.licensing import add_referenced_license_detection_from_package
 from packagedcode.licensing import add_license_from_sibling_file
 from packagedcode.licensing import get_license_detection_mappings
 from packagedcode.licensing import get_license_expression_from_detection_mappings
@@ -162,6 +163,8 @@ class PackageScanner(ScanPlugin):
         """
         no_licenses = False
 
+        # These steps add proper license detections to package_data and hence
+        # this is performed before top level packages creation
         for resource in codebase.walk(topdown=False):
             if not hasattr(resource, 'license_detections'):
                 no_licenses=True
@@ -189,6 +192,15 @@ class PackageScanner(ScanPlugin):
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+
+        if not no_licenses:
+            # This step is dependent on top level packages 
+            for resource in codebase.walk(topdown=False):
+                # If there is a unknown reference to a package we add the license
+                # from the package license detection
+                modified = list(add_referenced_license_detection_from_package(resource, codebase))
+                if TRACE and modified:
+                    logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
 
 def add_license_from_file(resource, codebase, no_licenses):

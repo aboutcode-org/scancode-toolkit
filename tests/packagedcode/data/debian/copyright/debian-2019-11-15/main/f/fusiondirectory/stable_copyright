@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: FusionDirectory
 Upstream-Contact: Contact <contact@fusiondirectory.org>
-Source: https://repos.fusiondirectory.org/sources/
+Source: https://gitlab.fusiondirectory.org/fusiondirectory
 
 Files:
  core/contrib/smarty/plugins/function.filePath.php
@@ -12,8 +12,10 @@ Files:
  core/include/class_exceptions.inc
  core/include/class_exceptions.inc
  core/include/class_IconTheme.inc
+ core/include/class_Language.inc
  core/include/class_ldapFilter.inc
  core/include/class_ldapGeneralizedTime.inc
+ core/include/class_ldapSizeLimit.inc
  core/include/class_objects.inc
  core/include/class_template.inc
  core/include/class_templateHandling.inc
@@ -31,6 +33,7 @@ Files:
  core/include/simpleplugin/attributes/class_FileAttribute.inc
  core/include/simpleplugin/attributes/class_FlagsAttribute.inc
  core/include/simpleplugin/attributes/class_IntAttribute.inc
+ core/include/simpleplugin/attributes/class_PhoneNumberAttribute.inc
  core/include/simpleplugin/attributes/class_SelectAttribute.inc
  core/include/simpleplugin/attributes/class_SetAttribute.inc
  core/include/simpleplugin/attributes/class_StringAttribute.inc
@@ -41,6 +44,7 @@ Files:
  core/include/simpleplugin/class_simplePlugin.inc
  core/include/simpleplugin/class_simpleSelectManagement.inc
  core/include/simpleplugin/class_simpleService.inc
+ core/plugins/addons/dashboard/class_dashBoardPasswords.inc
  core/plugins/addons/dashboard/main.inc
  core/plugins/addons/dashboard/tabs_dashBoard.inc
  core/plugins/addons/dashboard/class_dashBoardPasswords.inc
@@ -51,11 +55,16 @@ Files:
  core/plugins/admin/aclrole/main.inc
  core/plugins/admin/departments/class_country.inc
  core/plugins/admin/departments/class_dcObject.inc
+ core/plugins/admin/departments/class_departmentManagement.inc
  core/plugins/admin/departments/class_domain.inc
  core/plugins/admin/departments/class_locality.inc
  core/plugins/admin/departments/class_organization.inc
+ core/plugins/admin/departments/main.inc
+ core/plugins/admin/departments/tabs_department.inc
  core/plugins/admin/groups/class_roleGeneric.inc
  core/plugins/admin/groups/main.inc
+ core/plugins/admin/groups/tabs_ogroups.inc
+ core/plugins/admin/users/main.inc
  core/plugins/config/class_configInLdap.inc
  core/plugins/config/class_dashBoardConfig.inc
  core/plugins/config/class_mainPluginsConfig.inc
@@ -83,6 +92,7 @@ Files:
  plugins/argonaut/addons/argonaut/class_filterArgonautEvents.inc
  plugins/argonaut/addons/argonaut/main.inc
  plugins/argonaut/admin/systems/argonaut/class_argonautClient.inc
+ plugins/argonaut/admin/systems/argonaut/class_deploymentTimeframe.inc
  plugins/argonaut/admin/systems/services/argonaut/class_argonautDNSConfig.inc
  plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseConfig.inc
  plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseFAIConfig.inc
@@ -109,8 +119,8 @@ Files:
  plugins/debconf/admin/debconfProfile/class_debconfProfileManagement.inc
  plugins/debconf/admin/debconfProfile/main.inc
  plugins/debconf/admin/systems/debconf/class_debconfStartup.inc
- plugins/developers/debug-help/addons/debug-help/class_debugHelp.inc
- plugins/developers/debug-help/addons/debug-help/main.inc
+ plugins/developers/addons/debugHelp/class_debugHelp.inc
+ plugins/developers/addons/debugHelp/main.inc
  plugins/dhcp/admin/dhcp/class_dhcpManagement.inc
  plugins/dhcp/admin/dhcp/class_dhcpPlugin.inc
  plugins/dhcp/admin/dhcp/main.inc
@@ -187,6 +197,7 @@ Files:
  plugins/newsletter/config/newsletter/class_newsletterConfig.inc
  plugins/newsletter/personal/newsletter/class_newsletterSubscriptions.inc
  plugins/newsletter/personal/newsletter/main.inc
+ plugins/opsi/addons/dashboard/class_dashBoardOpsi.inc
  plugins/opsi/addons/opsi/main.inc
  plugins/opsi/admin/opsi/class_opsiOnDemandList.inc
  plugins/opsi/admin/opsi/class_opsiProductProperties.inc
@@ -195,6 +206,7 @@ Files:
  plugins/opsi/admin/opsi/class_opsiSoftwareList.inc
  plugins/opsi/admin/opsi/main.inc
  plugins/opsi/admin/systems/opsi/class_opsiClient.inc
+ plugins/opsi/admin/systems/opsi/class_opsiLogView.inc
  plugins/opsi/admin/systems/services/opsi/class_serviceOPSI.inc
  plugins/opsi/config/opsi/class_opsiConfig.inc
  plugins/personal/config/personal/class_personalConfig.inc
@@ -222,6 +234,12 @@ Files:
  plugins/samba/admin/samba/main.inc
  plugins/samba/admin/systems/samba/class_argonautEventSambaShares.inc
  plugins/samba/config/samba/class_sambaPluginConfig.inc
+ plugins/sinaps/config/sinaps/class_sinapsConfig.inc
+ plugins/sinaps/html/sinaps.php
+ plugins/sinaps/include/class_sinapsDiffusionHandlerJob.inc
+ plugins/sinaps/include/class_sinapsRequest.inc
+ plugins/sinaps/include/class_sinapsRequestAcquisition.inc
+ plugins/sinaps/personal/sinaps/class_sinapsUser.inc
  plugins/sogo/admin/sogo/class_sogoManagement.inc
  plugins/sogo/admin/sogo/class_sogoResource.inc
  plugins/sogo/admin/sogo/main.inc
@@ -230,10 +248,13 @@ Files:
  plugins/spamassassin/personal/spamassassin/main.inc
  plugins/squid/personal/squid/main.inc
  plugins/ssh/personal/ssh/main.inc
+ plugins/subcontracting/personal/subcontracting/class_subContracting.inc
  plugins/subcontracting/personal/subcontracting/main.inc
+ plugins/sudo/admin/sudo/class_sudoOptions.inc
  plugins/sudo/admin/sudo/main.inc
  plugins/sudo/admin/sudo/tabs_sudo.inc
  plugins/sudo/config/sudo/class_sudoConfig.inc
+ plugins/supann-ext/admin/supannStructures/class_supannStructureExt.inc
  plugins/supann/admin/supannStructures/class_entite.inc
  plugins/supann/admin/supannStructures/class_etablissement.inc
  plugins/supann/admin/supannStructures/class_supann.inc
@@ -243,6 +264,10 @@ Files:
  plugins/supann/personal/supann/main.inc
  plugins/sympa/admin/sympa/main.inc
  plugins/sympa/admin/sympa/class_sympaAlias.inc
+ plugins/sympa/admin/sympa/class_sympaManagement.inc
+ plugins/systems/admin/systems/class_componentGeneric.inc
+ plugins/systems/admin/systems/class_ipHostPlugin.inc
+ plugins/systems/admin/systems/system-list.xml
  plugins/sympa/admin/systems/services/sympa/class_serviceSympa.inc
  plugins/sympa/config/sympa/class_sympaConfig.inc
  plugins/systems/admin/systems/class_mobilePhoneGeneric.inc
@@ -258,20 +283,15 @@ Files:
  plugins/weblink/admin/systems/weblink/class_webLink.inc
  plugins/webservice/config/class_webserviceConfig.inc
  plugins/webservice/html/jsonrpc.php
-Copyright: 2011-2016, FusionDirectory
-  2011-2017, FusionDirectory
-  2011-2018, FusionDirectory
-  2012-2016, FusionDirectory
-  2012-2017, FusionDirectory
-  2013-2016, FusionDirectory
-  2013-2016, FusionDirectory
-  2013-2017, FusionDirectory
+Copyright: 2011-2018, FusionDirectory
+  2012-2018, FusionDirectory
+  2012-2019, FusionDirectory
+  2013-2018, FusionDirectory
   2014-2016, FusionDirectory
+  2014-2018, FusionDirectory
   2015-2016, FusionDirectory
-  2015-2017, FusionDirectory
-  2016, FusionDirectory
-  2016-2017, FusionDirectory
-  2017, FusionDirectory
+  2015-2018, FusionDirectory
+  2016-2018, FusionDirectory
   2017-2018, FusionDirectory
   2018, FusionDirectory
 License: GPL-2+
@@ -328,14 +348,9 @@ Files:
  core/plugins/admin/acl/class_aclManagement.inc
  core/plugins/admin/aclrole/class_aclEditionDialog.inc
  core/plugins/admin/departments/class_department.inc
- core/plugins/admin/departments/class_departmentManagement.inc
- core/plugins/admin/departments/main.inc
- core/plugins/admin/departments/tabs_department.inc
  core/plugins/admin/groups/class_groupManagement.inc
  core/plugins/admin/groups/class_ogroup.inc
- core/plugins/admin/groups/tabs_ogroups.inc
  core/plugins/admin/users/class_userManagement.inc
- core/plugins/admin/users/main.inc
  core/plugins/generic/welcome/main.inc
  core/setup/class_setup.inc
  core/setup/class_setupStepChecks.inc
@@ -379,7 +394,6 @@ Files:
  plugins/sudo/admin/sudo/class_sudoGeneric.inc
  plugins/sudo/admin/sudo/class_sudoManagement.inc
  plugins/sudo/admin/sudo/class_sudoOption.inc
- plugins/systems/admin/systems/class_componentGeneric.inc
  plugins/systems/admin/systems/class_filterServerService.inc
  plugins/systems/admin/systems/class_printGeneric.inc
  plugins/systems/admin/systems/class_serverService.inc
@@ -392,10 +406,8 @@ Files:
  plugins/systems/admin/systems/tabs_server.inc
 Copyright: 2003, Cajus Pollmeier
   2003-2010, Cajus Pollmeier
-  2011-2015, FusionDirectory
   2011-2016, FusionDirectory
   2011-2018, FusionDirectory
-  2012-2016, FusionDirectory
 License: GPL-2+
 Comment:
  This file is distributed under the same license as the PACKAGE package.
@@ -411,7 +423,7 @@ Files:
  core/setup/class_setupStepWelcome.inc
  core/setup/main.inc
 Copyright: 2007, Fabian Hickert
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
 License: GPL-2+
 
 Files:
@@ -440,44 +452,53 @@ Copyright: 2014-2015, Dhatim
 License: GPL-2+
 
 Files:
- core/plugins/addons/dashboard/class_dashBoard.inc
+ core/contrib/man/fusiondirectory-insert-schema.1
+ core/contrib/man/fusiondirectory-setup.1
+ core/contrib/man/fusiondirectory.conf.5
+ plugins/systems/admin/systems/serverService-list.xml
+ plugins/webservice/contrib/man/fusiondirectory-shell.1
+Copyright: 2011-2019, FusionDirectory
+License: GPL-2+
+Comment:
+ Assuming copyright holdership and license from rest of the
+ project files.
+
+Files:
  core/plugins/addons/dashboard/class_dashBoardUsers.inc
  plugins/opsi/addons/opsi/class_opsiImport.inc
- plugins/sympa/admin/sympa/class_sympaManagement.inc
  plugins/systems/addons/dashboard/class_dashBoardNetwork.inc
  plugins/systems/addons/dashboard/class_dashBoardSystems.inc
 Copyright: 2010, Antoine Gallavardin
   2010-2012, Antoine Gallavardin
-  2011-2016, FusionDirectory
-  2012-2016, FusionDirectory
-  2012-2017, FusionDirectory
-  2013-2016, FusionDirectory
+  2011-2018, FusionDirectory
+  2012-2019, FusionDirectory
 License: GPL-2+
 
 Files:
+ core/plugins/addons/dashboard/class_dashBoard.inc
  plugins/alias/admin/alias/class_aliasManagement.inc
  plugins/quota/admin/systems/services/quota/class_serviceQuota.inc
  plugins/quota/personal/quota/class_quotaAccount.inc
  plugins/supann/personal/supann/class_supannAccount.inc
 Copyright: 2010, Antoine Gallavardin
   2010-2012, Antoine Gallavardin
-  2011-2016, FusionDirectory
-  2012-2016, FusionDirectory
-  2013-2016, FusionDirectory
+  2011-2018, FusionDirectory
+  2012-2018, FusionDirectory
+  2013-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  plugins/netgroups/admin/netgroups/class_netgroup.inc
  plugins/netgroups/personal/netgroups/class_netgroupMembership.inc
-Copyright: 2011, Alejandro Escanero Blanco (aescanero@gmail.com)
-  2011-2016, FusionDirectory
+Copyright: 2011, Alejandro Escanero Blanco
+  2011-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  plugins/freeradius/admin/freeradius/class_freeradiusGroup.inc
  plugins/freeradius/personal/freeradius/class_freeradiusAccount.inc
 Copyright: 2003-2009, GONICUS GmbH
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
   2012, WILLIAME Jeremy
 License: GPL-2+
 
@@ -521,6 +542,7 @@ Files:
  plugins/quota/locale/*/fusiondirectory.po
  plugins/repository/locale/*/fusiondirectory.po
  plugins/samba/locale/*/fusiondirectory.po
+ plugins/sinaps/locale/*/fusiondirectory.po
  plugins/sogo/locale/*/fusiondirectory.po
  plugins/spamassassin/locale/*/fusiondirectory.po
  plugins/squid/locale/*/fusiondirectory.po
@@ -528,6 +550,7 @@ Files:
  plugins/subcontracting/locale/*/fusiondirectory.po
  plugins/sudo/locale/*/fusiondirectory.po
  plugins/supann/locale/*/fusiondirectory.po
+ plugins/supann-ext/locale/*/fusiondirectory.po
  plugins/sympa/locale/*/fusiondirectory.po
  plugins/systems/locale/*/fusiondirectory.po
  plugins/user-reminder/locale/*/fusiondirectory.po
@@ -1084,16 +1107,14 @@ Files:
  core/contrib/apache/fusiondirectory-apache.conf
  core/contrib/bin/fusiondirectory-insert-schema
  core/contrib/bin/fusiondirectory-setup
+ core/contrib/docs/fusiondirectory-oid.pdf
  core/contrib/fusiondirectory.conf
  core/contrib/images/favicon.png
  core/contrib/images/favicon.svg
  core/contrib/images/Fusiondirectory-logo-noir.eps
  core/contrib/images/Fusiondirectory-logo.png
  core/contrib/lighttpd/fusiondirectory-lighttpd.conf
- core/contrib/man/fusiondirectory.conf.5
  core/contrib/man/fusiondirectory.conf.pod
- core/contrib/man/fusiondirectory-insert-schema.1
- core/contrib/man/fusiondirectory-setup.1
  core/contrib/openldap/core-fd-conf.schema
  core/contrib/openldap/core-fd.schema
  core/contrib/openldap/ldapns.schema
@@ -1149,6 +1170,7 @@ Files:
  core/html/themes/legacy/tabs.css
  core/html/themes/legacy/theme.css
  core/ihtml/themes/breezy/colors.txt
+ core/ihtml/themes/breezy/copynotice.tpl
  core/ihtml/themes/breezy/css.tpl
  core/ihtml/themes/breezy/framework.tpl
  core/ihtml/themes/breezy/headers.tpl
@@ -1157,7 +1179,6 @@ Files:
  core/ihtml/themes/breezy/msg_dialog.tpl
  core/ihtml/themes/breezy/recovery.tpl
  core/ihtml/themes/breezy/restore-confirm.tpl
- core/ihtml/themes/breezy/setup_header.tpl
  core/ihtml/themes/breezy/simple-filter.tpl
  core/ihtml/themes/breezy/simple-list.tpl
  core/ihtml/themes/breezy/simpleplugin_section_alone.tpl
@@ -1167,6 +1188,9 @@ Files:
  core/ihtml/themes/breezy/simple-select-list.tpl
  core/ihtml/themes/breezy/sizelimit.tpl
  core/ihtml/themes/breezy/template.tpl
+ core/ihtml/themes/legacy/login.tpl
+ core/ihtml/themes/legacy/recovery.tpl
+ core/ihtml/themes/legacy/setup_header.tpl
  core/include/functions_debug.inc
  core/include/functions_debug.inc
  core/include/functions_debug.inc
@@ -1199,7 +1223,15 @@ Files:
  core/setup/setup_migrate_baseOC.tpl
  core/setup/setup_migrate.tpl
  core/setup/setup_welcome.tpl
+ core/.gitlab/.gitkeep
  core/.gitlab-ci.yml
+ core/.gitlab/issue_templates/.gitkeep
+ core/.gitlab/issue_templates/Backporting.md
+ core/.gitlab/issue_templates/Bugs.md
+ core/.gitlab/issue_templates/Contribution.md
+ core/.gitlab/issue_templates/Enhancement.md
+ core/.gitlab/merge_request_templates/.gitkeep
+ core/.gitlab/merge_request_templates/Merge.md
  core/.tx/config
  core/AUTHORS.md
  core/CODE_OF_CONDUCT.md
@@ -1217,6 +1249,7 @@ Files:
  plugins/argonaut/addons/argonaut/deploy-list.xml
  plugins/argonaut/addons/argonaut/import_events.tpl
  plugins/argonaut/contrib/openldap/argonaut-fd.schema
+ plugins/audit/admin/audit/audit-filter.tpl
  plugins/audit/contrib/openldap/audit-fd-conf.schema
  plugins/audit/contrib/openldap/audit-fd.schema
  plugins/autofs/contrib/openldap/autofs-fd-conf.schema
@@ -1228,7 +1261,7 @@ Files:
  plugins/debconf/admin/debconfProfile/debconfProfile-filter.xml
  plugins/debconf/contrib/openldap/debconf-fd.schema
  plugins/debconf/contrib/openldap/debconf.schema
- plugins/developers/debug-help/addons/debug-help/debughelp.tpl
+ plugins/developers/addons/debugHelp/debughelp.tpl
  plugins/dhcp/contrib/openldap/dhcp-fd-conf.schema
  plugins/dhcp/contrib/openldap/dhcp-fd.schema
  plugins/dns/admin/systems/dnsrecords.tpl
@@ -1265,6 +1298,8 @@ Files:
  plugins/netgroups/contrib/openldap/netgroups-fd-conf.schema
  plugins/newsletter/contrib/openldap/newsletter-fd-conf.schema
  plugins/newsletter/contrib/openldap/newsletter-fd.schema
+ plugins/opsi/addons/dashboard/opsi_profiles.tpl
+ plugins/opsi/addons/dashboard/opsi_stats.tpl
  plugins/opsi/addons/opsi/opsiimport.tpl
  plugins/opsi/contrib/openldap/opsi-fd-conf.schema
  plugins/opsi/contrib/openldap/opsi-fd.schema
@@ -1304,6 +1339,9 @@ Files:
  plugins/samba/contrib/openldap/samba-fd-conf.schema
  plugins/samba/contrib/openldap/samba.schema
  plugins/samba/personal/samba/sambaLogonHours.tpl
+ plugins/sinaps/contrib/openldap/sinaps-fd-conf.schema
+ plugins/sinaps/contrib/test/testAcquisition.php
+ plugins/sinaps/contrib/test/testEndPoint.php
  plugins/sogo/contrib/openldap/calEntry.schema
  plugins/sogo/contrib/openldap/calRessources.schema
  plugins/sogo/contrib/openldap/sogo-fd-conf.schema
@@ -1315,16 +1353,17 @@ Files:
  plugins/sudo/admin/sudo/usedoptions_section.tpl
  plugins/sudo/contrib/openldap/sudo-fd-conf.schema
  plugins/sudo/contrib/openldap/sudo.schema
+ plugins/supann-ext/contrib/openldap/supann-ext-fd.schema
  plugins/supann/contrib/openldap/internet2.schema
  plugins/supann/contrib/openldap/supann_2009.schema
  plugins/supann/contrib/openldap/supann-fd-conf.schema
  plugins/supann/contrib/etc/activite_CNU
  plugins/supann/contrib/etc/activite_REFERENS
  plugins/supann/contrib/etc/affiliation
- plugins/supann/contrib/etc/corps
+ plugins/supann/contrib/etc/corps_NCORPS
  plugins/supann/contrib/etc/diplome_SISE
  plugins/supann/contrib/etc/discipline_SISE
- plugins/supann/contrib/etc/entite
+ plugins/supann/contrib/etc/entite_SUPANN
  plugins/supann/contrib/etc/etablissement_SUPANN
  plugins/supann/contrib/etc/eturegimeinscription_SISE
  plugins/supann/contrib/etc/role_SUPANN
@@ -1347,21 +1386,28 @@ Files:
  plugins/systems/admin/systems/serverService-list.xml
  plugins/systems/admin/systems/server_import.tpl
  plugins/systems/admin/systems/services/shares/service_share.tpl
- plugins/systems/admin/systems/system-list.xml
  plugins/systems/contrib/openldap/service-fd.schema
  plugins/systems/contrib/openldap/systems-fd-conf.schema
  plugins/systems/contrib/openldap/systems-fd.schema
  plugins/.gitlab-ci.yml
+ plugins/.gitlab/.gitkeep
+ plugins/.gitlab/issue_templates/.gitkeep
+ plugins/.gitlab/issue_templates/Backporting.md
+ plugins/.gitlab/issue_templates/Bugs.md
+ plugins/.gitlab/issue_templates/Contribution.md
+ plugins/.gitlab/issue_templates/Enhancement.md
+ plugins/.gitlab/merge_request_templates/.gitkeep
+ plugins/.gitlab/merge_request_templates/Merge.md
  plugins/.tx/config
  plugins/CODE_OF_CONDUCT.md
  plugins/CONTRIBUTING.md
  plugins/Changelog.md
+ plugins/README.md
  plugins/user-reminder/contrib/openldap/user-reminder-fd-conf.schema
  plugins/user-reminder/ihtml/themes/breezy/user-reminder.tpl
  plugins/weblink/contrib/openldap/weblink-fd.schema
  plugins/webservice/contrib/bin/fusiondirectory-shell
  plugins/webservice/contrib/docs/jsonrpc.php.doc
- plugins/webservice/contrib/man/fusiondirectory-shell.1
  plugins/webservice/contrib/openldap/webservice-fd-conf.schema
 Copyright: *No copyright*
 License: GPL-2+
@@ -1372,7 +1418,7 @@ Files:
  plugins/argonaut/include/jsonRPCClient.php
  plugins/webservice/include/jsonrpcphp/jsonRPCServer.php
 Copyright: 2007, Sergio Vaccaro <sergio@inservibile.org>
-  2012-2016, FusionDirectory
+  2012-2018, FusionDirectory
   2013-2018, FusionDirectory
 License: GPL-2+
 
@@ -1384,23 +1430,22 @@ License: Expat
 
 Files:
  core/include/class_ldap.inc
-Copyright: 1998, Eric Kilfoil <eric@ipass.net>
-  2003, Alejandro Escanero Blanco <aescanero@chaosdimension.org>
+Copyright: 1998, Eric Kilfoil
+  2003, Alejandro Escanero Blanco
   2003-2010, Cajus Pollmeier
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
 License: GPL-2+
-
 
 Files:
  plugins/mail/admin/groups/mail/class_mailGroup.inc
 Copyright: 2009-2010, Bas Tichelaar
-  2013-2016, FusionDirectory
+  2013-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  plugins/nagios/personal/nagios/main.inc
 Copyright: 2005, Benoit Mortier
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
 License: GPL-2+
 
 Files:
@@ -1408,37 +1453,37 @@ Files:
 Copyright: 2005, Guillame Delecourt
   2006, Benoit Mortier
   2006, Vincent Seynhaeve
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  plugins/ppolicy/addons/dashboard/class_dashBoardPPolicy.inc
 Copyright: 2014-2015, Dhatim
-  2014-2016, FusionDirectory project
+  2014-2018, FusionDirectory project
 License: GPL-2+
 
 Files:
  plugins/mail/personal/mail/class_mailAccount.inc
 Copyright: 2007, Fabian Hicker
-  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  core/include/accept-to-gettext.inc
 Copyright: 2003, Wouter Verhelst <wouter@debian.org>
-  2012-2016, FusionDirectory
+  2012-2018, FusionDirectory
 License: GPL-2+
 
 Files:
  plugins/samba/include/class_smbHash.inc
 Copyright: 2004, - 2006, Roland Gruber
-  2013-2016, FusionDirectory Project
+  2013-2018, FusionDirectory Project
 License: GPL-2+
 
 Files:
  plugins/subcontracting/personal/subcontracting/class_subContracting.inc
 Copyright:
-  2015-2016, OpenSides <benoit.mortier@opensides.be>
+  2015-2018, OpenSides <benoit.mortier@opensides.be>
 License: GPL-2+
 
 Files:
@@ -1459,6 +1504,12 @@ Files:
  core/html/include/datepicker.js
 Copyright:
   2007, Mathieu Jondet <mathieu@eulerian.com>
+License: Expat
+
+Files:
+ core/html/include/tsorter.js
+Copyright:
+  2015, Terrill Dent, http://terrill.ca
 License: Expat
 
 Files:

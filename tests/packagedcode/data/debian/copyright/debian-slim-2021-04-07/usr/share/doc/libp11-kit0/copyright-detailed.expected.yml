@@ -17,11 +17,11 @@ declared_license_expression: bsd-new
 declared_license_expression_spdx: BSD-3-Clause
 other_license_expression: bsd-new AND fsf-unlimited-no-warranty AND bsd-new AND bsd-new AND
   mit AND isc AND (isc AND ibm-dhcp) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
-  AND bsd-new AND bsd-new AND free-unknown
+  AND bsd-new AND bsd-new AND bsd-new
 other_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-fsf-unlimited-no-warranty
   AND BSD-3-Clause AND BSD-3-Clause AND MIT AND ISC AND (ISC AND LicenseRef-scancode-ibm-dhcp)
   AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
-  AND BSD-3-Clause AND LicenseRef-scancode-free-unknown
+  AND BSD-3-Clause AND BSD-3-Clause
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited-no-warranty
@@ -215,43 +215,45 @@ other_license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.yml
             spdx_license_key: LicenseRef-scancode-ibm-dhcp
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
-  - license_expression: free-unknown
-    detection_rules: []
+  - license_expression: bsd-new
+    detection_rules:
+      - not-combined
     matches:
-      - score: '76.15'
+      - score: '80.0'
         start_line: 160
         end_line: 161
-        matched_length: 11
+        matched_length: 13
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: free-unknown
-        rule_identifier: free-unknown_79.RULE
-        referenced_filenames: []
+        matcher: 1-hash
+        license_expression: bsd-new
+        rule_identifier: bsd-new_1192.RULE
+        referenced_filenames:
+          - package
         is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
+        is_license_notice: no
+        is_license_reference: yes
         is_license_tag: no
         is_license_intro: no
-        rule_length: 11
-        rule_relevance: 90
+        rule_length: 13
+        rule_relevance: 80
         matched_text: |
           This file is distributed under the same license as the p11-kit
           package.
         licenses:
-          - key: free-unknown
-            name: Free unknown license detected but not recognized
-            short_name: Free unknown
-            category: Unstated License
+          - key: bsd-new
+            name: BSD-3-Clause
+            short_name: BSD-3-Clause
+            category: Permissive
             is_exception: no
-            is_unknown: yes
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/free-unknown
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
-            spdx_license_key: LicenseRef-scancode-free-unknown
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+            is_unknown: no
+            owner: Regents of the University of California
+            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+            text_url: http://www.opensource.org/licenses/BSD-3-Clause
+            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            spdx_license_key: BSD-3-Clause
+            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_rules:
       - not-combined
@@ -369,7 +371,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_1043.RULE
-        referenced_filenames: []
+        referenced_filenames: -package
         is_license_text: no
         is_license_notice: yes
         is_license_reference: no
