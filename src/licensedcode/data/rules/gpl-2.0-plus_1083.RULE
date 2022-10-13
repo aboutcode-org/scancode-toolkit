@@ -1,0 +1,21 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+---
+
+LICENSE
+
+ distributed under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version
+2, or (at your option) any later version.
+
+This means it is distributed in the hope that it will be useful, but
+I<without any warranty>; without even the implied warranty of
+I<merchantability> or I<fitness for a particular purpose>.  See the
+GNU General Public License for more details.
+
+Since Perl scripts are only compiled at runtime, and simply calling
+ does I<not> bring your program under the GPL, the only
+real restriction is that you can't use  in an
+binary-only distribution produced with C<dump> (unless you also
+provide source code).

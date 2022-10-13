@@ -1,0 +1,11 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+notes: Seen in https://github.com/translate5/translate5/blob/develop/Translate5/maintenance-cli.php
+ignorable_urls:
+    - http://www.gnu.org/licenses/agpl.html
+    - http://www.translate5.net/plugin-exception.txt
+---
+
+@license    GNU AFFERO GENERAL PUBLIC LICENSE version 3 with plugin-execption
+ http://www.gnu.org/licenses/agpl.html http://www.translate5.net/plugin-exception.txt

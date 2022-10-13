@@ -7,6 +7,7 @@ owner: OSI - Open Source Initiative
 homepage_url: http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: NASA-1.3
+osi_license_key: NASA-1.3
 text_urls:
     - http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
 other_urls:
@@ -19,18 +20,18 @@ ignorable_copyrights:
     - Copyright YEAR United States Government as represented by
 ignorable_holders:
     - United States Government as represented by
-osi_license_key: NASA-1.3
 ---
+
 
 NASA OPEN SOURCE AGREEMENT VERSION 1.3
 
 THIS OPEN SOURCE AGREEMENT ("AGREEMENT") DEFINES THE RIGHTS OF USE, REPRODUCTION, DISTRIBUTION, MODIFICATION AND REDISTRIBUTION OF CERTAIN COMPUTER SOFTWARE ORIGINALLY RELEASED BY THE UNITED STATES GOVERNMENT AS REPRESENTED BY THE GOVERNMENT AGENCY LISTED BELOW ("GOVERNMENT AGENCY"). THE UNITED STATES GOVERNMENT, AS REPRESENTED BY GOVERNMENT AGENCY, IS AN INTENDED THIRD-PARTY BENEFICIARY OF ALL SUBSEQUENT DISTRIBUTIONS OR REDISTRIBUTIONS OF THE SUBJECT SOFTWARE. ANYONE WHO USES, REPRODUCES, DISTRIBUTES, MODIFIES OR REDISTRIBUTES THE SUBJECT SOFTWARE, AS DEFINED HEREIN, OR ANY PART THEREOF, IS, BY THAT ACTION, ACCEPTING IN FULL THE RESPONSIBILITIES AND OBLIGATIONS CONTAINED IN THIS AGREEMENT.
 
-Government Agency:  
-Government Agency Original Software Designation:  
-Government Agency Original Software Title:  
-User Registration Requested. Please Visit http:// 
-Government Agency Point of Contact for Original Software:    
+Government Agency:
+Government Agency Original Software Designation:
+Government Agency Original Software Title:
+User Registration Requested. Please Visit http://
+Government Agency Point of Contact for Original Software:
 
 1. DEFINITIONS
 
@@ -59,7 +60,7 @@ A. Under Non-Patent Rights: Subject to the terms and conditions of this Agreemen
 5. Redistribution
 6. Display
 
-B. Under Patent Rights: Subject to the terms and conditions of this Agreement, each Contributor, with respect to its own contribution to the Subject Software, hereby grants to each Recipient under Covered Patents a non-exclusive, world-wide, royalty-free license to engage in the following activities pertaining to the Subject Software: 
+B. Under Patent Rights: Subject to the terms and conditions of this Agreement, each Contributor, with respect to its own contribution to the Subject Software, hereby grants to each Recipient under Covered Patents a non-exclusive, world-wide, royalty-free license to engage in the following activities pertaining to the Subject Software:
 
 1. Use
 2. Distribution
@@ -120,7 +121,7 @@ B. Severability: If any provision of this Agreement is invalid or unenforceable 
 
 C. Applicable Law: This Agreement shall be subject to United States federal law only for all purposes, including, but not limited to, determining the validity of this Agreement, the meaning of its provisions and the rights, obligations and remedies of the parties.
 
-D. Entire Understanding: This Agreement constitutes the entire understanding and agreement of the parties relating to release of the Subject Software and may not be superseded, modified or amended except by further written agreement duly executed by the parties. 
+D. Entire Understanding: This Agreement constitutes the entire understanding and agreement of the parties relating to release of the Subject Software and may not be superseded, modified or amended except by further written agreement duly executed by the parties.
 
 
 E. Binding Authority: By accepting and using the Subject Software under this Agreement, a Recipient affirms its authority to bind the Recipient to all terms and conditions of this Agreement and that that Recipient hereby agrees to all terms and conditions herein.

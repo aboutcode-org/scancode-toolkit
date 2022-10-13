@@ -11,6 +11,7 @@
 /src/*.egg-info
 *.egg-info
 !tests/packagedcode/data/pypi/source-package/pip-22.0.4/src/pip.egg-info
+!tests/packagedcode/data/pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery/celery.egg-info
 /dist
 /build
 /bin

@@ -955,8 +955,9 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
             if model_errors:
                 errors = '\n'.join(model_errors)
                 msg += (
-                    '\nInvalid rule file in directory: '
+                    '\nInvalid rule files: '
                     f'{rules_data_dir!r}\n'
+                    f'{errors!r}\n'
                 )
 
             if unknown_files:
@@ -964,6 +965,7 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
                 msg += (
                     '\nOrphaned files in rule directory: '
                     f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             if case_problems:
@@ -971,6 +973,7 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
                 msg += (
                     '\nRule files with non-unique name in rule directory: '
                     f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             if space_problems:
@@ -978,6 +981,7 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
                 msg += (
                     '\nRule filename cannot contain spaces: '
                     f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             raise InvalidRule(msg)
@@ -1585,10 +1589,11 @@ class BasicRule:
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
 
-    def to_dict(self):
+    def to_dict(self, include_text=False):
         """
-        Return an ordered mapping of self, excluding texts. Used for
-        serialization. Empty values are not included.
+        Return an ordered mapping of self, excluding texts unless
+        ``include_text`` is True. Used for serialization. Empty values are not
+        included.
         """
         data = {}
 
@@ -1627,6 +1632,9 @@ class BasicRule:
 
         if self.notes:
             data['notes'] = self.notes
+
+        if include_text and self.text:
+            data['text'] = self.text
 
         if not is_false_positive:
             ignorables = (

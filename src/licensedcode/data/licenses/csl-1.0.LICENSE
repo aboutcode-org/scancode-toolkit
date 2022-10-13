@@ -15,14 +15,15 @@ other_urls:
 ignorable_copyrights:
     - Copyright 2020 Joint Development Foundation
     - Copyright Attribution. As
-ignorable_authors:
-    - the Working Group
 ignorable_holders:
     - Attribution. As
     - Joint Development Foundation
+ignorable_authors:
+    - the Working Group
 ignorable_urls:
     - https://creativecommons.org/licenses/by/4.0
 ---
+
 
 Community Specification License 1.0
 

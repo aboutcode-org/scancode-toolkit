@@ -1,0 +1,25 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+notes: See in https://github.com/translate5/translate5/blob/develop/license.txt
+ignorable_urls:
+    - http://www.gnu.org/licenses/agpl.html
+    - http://www.translate5.net/plugin-exception.txt
+---
+
+Open Source License
+This version of translate5 is licensed under the terms of the Open Source GNU AFFERO GENERAL PUBLIC LICENSE version 3. 
+
+A copy of AGPL can be found in the same folder as this document and at
+http://www.gnu.org/licenses/agpl.html
+
+There is a plugin exception available for use with this release for
+translate5 plug-ins that are distributed under GNU GENERAL PUBLIC LICENSE version 3.
+
+* License Exception for Development of Plugins for translate5
+
+  http://www.translate5.net/plugin-exception.txt or as plugin-exception.txt in the same
+  folder as this document
+
+
+This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY RIGHTS.  See the GNU Affero General Public License for more details.

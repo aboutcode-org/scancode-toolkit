@@ -18,10 +18,6 @@ ignorable_copyrights:
     - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
         Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
     - copyright 1997-2003 Simon Tatham
-ignorable_authors:
-    - Daniel J. Bernstein <djb@cr.yp.to>
-    - Matt Johnston
-    - Tom St Denis
 ignorable_holders:
     - Google Inc.
     - Matt Johnston
@@ -31,6 +27,10 @@ ignorable_holders:
     - Simon Tatham
     - Tatu Ylonen , Espoo, Finland
     - Todd C. Miller
+ignorable_authors:
+    - Daniel J. Bernstein <djb@cr.yp.to>
+    - Matt Johnston
+    - Tom St Denis
 ignorable_urls:
     - http://code.google.com/p/curve25519-donna/
     - http://cr.yp.to/ecdh.html
@@ -40,8 +40,9 @@ ignorable_emails:
     - ylo@cs.hut.fi
 ---
 
+
 Dropbear contains a number of components from different sources, hence there
-are a few licenses and authors involved. All licenses are fairly 
+are a few licenses and authors involved. All licenses are fairly
 non-restrictive.
 The majority of code is written by Matt Johnston, under the license below.
 
@@ -67,12 +68,12 @@ LibTomCrypt and LibTomMath are written by Tom St Denis, and are Public Domain.
 
 =====
 
-sshpty.c is taken from OpenSSH 3.5p1, 
-  Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                     All rights reserved
- "As far as I am concerned, the code I have written for this software  can be used freely for any purpose.  Any derived versions of this
-  software must be clearly marked as such, and if the derived work is incompatible with the protocol description in the RFC file, it must be
-  called by a name other than "ssh" or "Secure Shell". "
+sshpty.c is taken from OpenSSH 3.5p1,
+Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+All rights reserved
+"As far as I am concerned, the code I have written for this software  can be used freely for any purpose.  Any derived versions of this
+software must be clearly marked as such, and if the derived work is incompatible with the protocol description in the RFC file, it must be
+called by a name other than "ssh" or "Secure Shell". "
 
 =====
 
@@ -102,8 +103,8 @@ subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
@@ -112,49 +113,49 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 curve25519-donna:
 
 /* Copyright 2008, Google Inc.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * curve25519-donna: Curve25519 elliptic curve, public key function
- *
- * http://code.google.com/p/curve25519-donna/
- *
- * Adam Langley <agl@imperialviolet.org>
- *
- * Derived from public domain C code by Daniel J. Bernstein <djb@cr.yp.to>
- *
- * More information about curve25519 can be found here
- *   http://cr.yp.to/ecdh.html
- *
- * djb's sample implementation of curve25519 is written in a special assembly
- * language called qhasm and uses the floating point registers.
- *
- * This is, almost, a clean room reimplementation from the curve25519 paper. It
- * uses many of the tricks described therein. Only the crecip function is taken
- * from the sample implementation.
- */
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are
+* met:
+*
+*     * Redistributions of source code must retain the above copyright
+* notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above
+* copyright notice, this list of conditions and the following disclaimer
+* in the documentation and/or other materials provided with the
+* distribution.
+*     * Neither the name of Google Inc. nor the names of its
+* contributors may be used to endorse or promote products derived from
+* this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+* "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+* OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+* DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+* THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* curve25519-donna: Curve25519 elliptic curve, public key function
+*
+* http://code.google.com/p/curve25519-donna/
+*
+* Adam Langley <agl@imperialviolet.org>
+*
+* Derived from public domain C code by Daniel J. Bernstein <djb@cr.yp.to>
+*
+* More information about curve25519 can be found here
+*   http://cr.yp.to/ecdh.html
+*
+* djb's sample implementation of curve25519 is written in a special assembly
+* language called qhasm and uses the floating point registers.
+*
+* This is, almost, a clean room reimplementation from the curve25519 paper. It
+* uses many of the tricks described therein. Only the crecip function is taken
+* from the sample implementation.
+*/

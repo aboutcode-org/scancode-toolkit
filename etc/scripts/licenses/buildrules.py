@@ -77,7 +77,7 @@ class RuleData(object):
 def load_data(location="00-new-licenses.txt"):
     """
     Load rules metadata  and text from file at ``location``. Return a list of
-    LicenseRulew.
+    RuleData.
     """
     with io.open(location, encoding="utf-8") as o:
         lines = o.read().splitlines(False)
@@ -95,7 +95,7 @@ def load_data(location="00-new-licenses.txt"):
             if not (ln == 1 or in_text):
                 raise Exception(
                     "Invalid structure: #{ln}: {line}\n".format(**locals())
-                    + "\n".join(last_lines[-10:])
+                    +"\n".join(last_lines[-10:])
                 )
 
             in_data = True
@@ -111,7 +111,7 @@ def load_data(location="00-new-licenses.txt"):
             if not in_data:
                 raise Exception(
                     "Invalid structure: #{ln}: {line}\n".format(**locals())
-                    + "\n".join(last_lines[-10:])
+                    +"\n".join(last_lines[-10:])
                 )
 
             in_data = False
@@ -169,7 +169,10 @@ def find_rule_base_loc(license_expression):
     Return a new, unique and non-existing base name location suitable to create
     a new rule using the a license_expression as a prefix.
     """
-    return models.find_rule_base_location(license_expression, rules_directory=models.rules_data_dir)
+    return models.find_rule_base_location(
+        name_prefix=license_expression,
+        rules_directory=models.rules_data_dir,
+    )
 
 
 @click.command()
@@ -210,8 +213,7 @@ def cli(licenses_file):
         minimum_coverage = rdata.data.get("minimum_coverage")
         rdata.data["has_stored_minimum_coverage"] = bool(minimum_coverage)
 
-        rl = models.BasicRule(**rdata.data)
-        rl.text = rdata.text
+        rl = models.BasicRule(text=rdata.text, **rdata.data)
         skinny_rules.append(rl)
 
     models.validate_rules(skinny_rules, licenses_by_key, with_text=True)
@@ -225,6 +227,9 @@ def cli(licenses_file):
             base_name = "license-intro"
         else:
             base_name = rule.license_expression
+
+        base_loc = find_rule_base_loc(base_name)
+        identifier = f"{base_loc}.RULE"
 
         text = rule.text
 
@@ -241,13 +246,10 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
 
-        base_loc = find_rule_base_loc(base_name)
-
-        rd = rule.to_dict()
-        rd["text"] = rule.text
+        rd = rule.to_dict(include_text=True)
         rd["has_stored_relevance"] = rule.has_stored_relevance
         rd["has_stored_minimum_coverage"] = rule.has_stored_minimum_coverage
-
+        rd["identifier"] = identifier
         rulerec = models.Rule(**rd)
 
         # force recomputing relevance to remove junk stored relevance for long rules
@@ -260,9 +262,9 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
         else:
-            print(f"Adding new rule: {base_name}")
-            models.update_ignorables(rulerec, verbose=False)
-            rulerec.dump()
+            print(f"Adding new rule: {identifier}")
+            rl = models.update_ignorables(rulerec, verbose=False)
+            rl.dump(rules_data_dir=models.rules_data_dir)
 
             rule_by_tokens[rule_tokens] = base_name
 

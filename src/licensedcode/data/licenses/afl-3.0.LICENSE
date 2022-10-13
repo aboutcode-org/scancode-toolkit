@@ -7,6 +7,7 @@ owner: Lawrence Rosen
 homepage_url: http://opensource.org/licenses/afl-3.0.php
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: AFL-3.0
+osi_license_key: AFL-3.0
 text_urls:
     - http://www.opensource.org/licenses/afl-3.0.php
     - http://www.rosenlaw.com/AFL3.0.htm
@@ -20,7 +21,6 @@ ignorable_copyrights:
     - Copyright (c) 2005 Lawrence Rosen
 ignorable_holders:
     - Lawrence Rosen
-osi_license_key: AFL-3.0
 ---
 
 This Academic Free License (the "License") applies to any original work of authorship (the "Original Work") whose owner (the "Licensor") has placed the following licensing notice adjacent to the copyright notice for the Original Work:

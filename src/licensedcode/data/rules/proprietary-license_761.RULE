@@ -1,0 +1,18 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: seen in https://github.com/peshitta/sedrajs/blob/ba6684a97e80cde14cc2b51903d8f802a1a19ab1/doc/readme.hbs#L55
+---
+
+database use is restricted according to the terms mentioned below:
+```
+        You are allowed to use for personal and academic
+        purposes provided that:
+        1. You do NOT redistribute any altered versions of the files.
+        2. You do NOT redistribute any files for any kind of profit.
+        3. You acknowledge in any publication whose results make use of
+           , by any means, using a formula similar to the
+           following:
+          "This work makes use of the distributed
+           by the  Computing Institute."
+           You should also cite the paper mentioned above.

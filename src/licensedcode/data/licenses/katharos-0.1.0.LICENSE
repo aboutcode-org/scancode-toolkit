@@ -14,6 +14,7 @@ ignorable_urls:
     - https://spdx.org/licenses/BSD-3-Clause.html
 ---
 
+
 # The Katharos License v0.1.0
 
 ## Preamble
@@ -50,36 +51,36 @@ Neither the name of the copyright holder nor the names of its contributors may b
 
 1. The Work shall not be used by any person or entity for any systems, activities, products, services or other uses that (i) lobby for, promote, or support the following activities or materials or (ii) that derive a majority of income from the following activities or materials:
 
-   - sex trafficking
-   - human trafficking
-   - slavery
-   - indentured servitude
-   - warfare
-   - weapons manufacturing
-   - war crimes
-   - violence ( except when required to protect public safety )
-   - weapons of mass destruction
-   - sexually suggestive or explicit images, artwork, or any other media
-   - excessively gory and/or violent images, artwork, or any other media
-   - abortion
-   - murder
-   - mass surveillance and/or stealing of private information
-   - hate speech or discrimination based on age, gender, gender identity, race, sexuality, religion, nationality
+- sex trafficking
+- human trafficking
+- slavery
+- indentured servitude
+- warfare
+- weapons manufacturing
+- war crimes
+- violence ( except when required to protect public safety )
+- weapons of mass destruction
+- sexually suggestive or explicit images, artwork, or any other media
+- excessively gory and/or violent images, artwork, or any other media
+- abortion
+- murder
+- mass surveillance and/or stealing of private information
+- hate speech or discrimination based on age, gender, gender identity, race, sexuality, religion, nationality
 
 2. The Work shall not be used by any person, entity, product, service or other use that (i) lobbies against, discourages, or frustrates the following activities or (ii) that derives a majority of income from actions that discourage, or frustrate the following activities:
 
-   - peaceful assembly and association (including worker associations)
-   - democratic processes
+- peaceful assembly and association (including worker associations)
+- democratic processes
 
 ### Compliance with Permitted Use of Work & Human Rights Laws
 
 1. Permitted Use of Work.
 
-   (a) Licensee shall use the Software in a manner consistent with Permitted Use of Work defined above.
+(a) Licensee shall use the Software in a manner consistent with Permitted Use of Work defined above.
 
-   (b) Unless the Licensor and Licensee agree otherwise, any dispute, controversy, or claim arising out of or relating to (i) Section 1(a) regarding Permitted Use of Work, including the breach of Section 1(a), termination of this License for breach of the Permitted Use of Work, or invalidity of Section 1(a) or (ii) a determination of whether any Law is consistent or in conflict with Permitted Use of Work pursuant to Section 2, below, shall be settled by arbitration in accordance with the Hague Rules on Business and Human Rights Arbitration (the “Rules”); provided, however, that Licensee may elect not to participate in such arbitration, in which event this License (and all rights licensed hereunder) shall end immediately. The number of arbitrators shall be one unless the Rules require otherwise.
+(b) Unless the Licensor and Licensee agree otherwise, any dispute, controversy, or claim arising out of or relating to (i) Section 1(a) regarding Permitted Use of Work, including the breach of Section 1(a), termination of this License for breach of the Permitted Use of Work, or invalidity of Section 1(a) or (ii) a determination of whether any Law is consistent or in conflict with Permitted Use of Work pursuant to Section 2, below, shall be settled by arbitration in accordance with the Hague Rules on Business and Human Rights Arbitration (the “Rules”); provided, however, that Licensee may elect not to participate in such arbitration, in which event this License (and all rights licensed hereunder) shall end immediately. The number of arbitrators shall be one unless the Rules require otherwise.
 
-   Unless both the Licensor and Licensee agree to the contrary: (1) All documents and information concerning the arbitration shall be public and may be disclosed by any party; (2) The repository referred to under Article 43 of the Rules shall make available to the public in a timely manner all documents concerning the arbitration which are communicated to it, including all submissions of the parties, all evidence admitted into the record of the proceedings, all transcripts or other recordings of hearings and all orders, decisions and awards of the arbitral tribunal, subject only to the arbitral tribunal’s powers to take such measures as may be necessary to safeguard the integrity of the arbitral process pursuant to Articles 18, 33, 41 and 42 of the Rules; and (3) Article 26(6) of the Rules shall not apply.
+Unless both the Licensor and Licensee agree to the contrary: (1) All documents and information concerning the arbitration shall be public and may be disclosed by any party; (2) The repository referred to under Article 43 of the Rules shall make available to the public in a timely manner all documents concerning the arbitration which are communicated to it, including all submissions of the parties, all evidence admitted into the record of the proceedings, all transcripts or other recordings of hearings and all orders, decisions and awards of the arbitral tribunal, subject only to the arbitral tribunal’s powers to take such measures as may be necessary to safeguard the integrity of the arbitral process pursuant to Articles 18, 33, 41 and 42 of the Rules; and (3) Article 26(6) of the Rules shall not apply.
 
 2. Human Rights Laws. The Software shall not be used by any person or entity for any systems, activities, or other uses that violate any Human Rights Laws. “Human Rights Laws” means any applicable laws, regulations, or rules (collectively, “Laws”) that protect human, civil, labor, privacy, political, environmental, security, economic, due process, or similar rights; provided, however, that such Laws are consistent and not in conflict with Permitted Use of Work (a dispute over the consistency or a conflict between Laws and Permitted Use of Work shall be determined by arbitration as stated above). Where the Human Rights Laws of more than one jurisdiction are applicable or in conflict with respect to the use of the Work, the Human Rights Laws that are most aligned with the guidelines defined in the Holy Bible shall apply.
 

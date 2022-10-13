@@ -11,6 +11,7 @@ import os
 from unittest.case import skipIf
 
 import pytest
+from commoncode.resource import VirtualCodebase
 from commoncode.system import on_windows
 
 from packagedcode import pypi
@@ -262,6 +263,22 @@ class TestPypiUnpackedSdist(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_metadata_prefer_pkg_info_from_egg_info_from_command_line(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery')
+        expected_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery-expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+        # Really check to see that we are only using the PKG-INFO from
+        # `celery/celery.egg-info/PKG-INFO`
+        vc = VirtualCodebase(location=result_file)
+        for dep in vc.attributes.dependencies:
+            self.assertEqual(dep['datafile_path'], 'celery/celery.egg-info/PKG-INFO')
+        for pkg in vc.attributes.packages:
+            for path in pkg['datafile_paths']:
+                self.assertEqual(path, 'celery/celery.egg-info/PKG-INFO')
 
 
 class TestPipRequirementsFileHandler(PackageTester):

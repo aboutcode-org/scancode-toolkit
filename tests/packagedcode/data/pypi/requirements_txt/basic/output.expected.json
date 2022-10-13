@@ -31,7 +31,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": ">=32.0.0",
+        "extracted_requirement": "setuptools>=32.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -52,7 +52,7 @@
       },
       {
         "purl": "pkg:pypi/nose",
-        "extracted_requirement": ">=1.3.7",
+        "extracted_requirement": "nose>=1.3.7",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -73,7 +73,7 @@
       },
       {
         "purl": "pkg:pypi/chardet",
-        "extracted_requirement": ">=3.0.4",
+        "extracted_requirement": "chardet>=3.0.4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

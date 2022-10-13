@@ -2,6 +2,8 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 90
+notes: the relevance is not 100 because the license uses "lesser" and a v2 but the v2 should
+    be "library" and only v2.1 and v3 of the lgpl are using "lesser".
 ---
 
 This library is free software; you can redistribute it and/or

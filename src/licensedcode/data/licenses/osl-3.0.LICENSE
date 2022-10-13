@@ -7,6 +7,7 @@ owner: Lawrence Rosen
 homepage_url: http://www.opensource.org/licenses/osl-3.0.php
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: OSL-3.0
+osi_license_key: OSL-3.0
 text_urls:
     - http://www.opensource.org/licenses/osl-3.0.php
 osi_url: http://opensource.org/licenses/osl-3.0.php
@@ -20,8 +21,8 @@ ignorable_copyrights:
     - Copyright (c) 2005 Lawrence Rosen
 ignorable_holders:
     - Lawrence Rosen
-osi_license_key: OSL-3.0
 ---
+
 
 Open Software License ("OSL") v. 3.0
 

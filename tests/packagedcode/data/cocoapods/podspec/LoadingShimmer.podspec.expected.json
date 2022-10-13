@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "LoadingShimmer",
     "version": "1.0.3",
@@ -41,6 +41,6 @@
     "repository_download_url": "https://github.com/jogendra/LoadingShimmer/archive/refs/tags/1.0.3.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/7/6/8/LoadingShimmer/1.0.3/LoadingShimmer.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/LoadingShimmer@1.0.3"
+    "purl": "pkg:cocoapods/LoadingShimmer@1.0.3"
   }
 ]

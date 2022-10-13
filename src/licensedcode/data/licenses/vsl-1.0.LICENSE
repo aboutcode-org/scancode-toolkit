@@ -7,6 +7,7 @@ owner: Vovida
 homepage_url: http://www.vovida.org/About/license.html
 notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: VSL-1.0
+osi_license_key: VSL-1.0
 text_urls:
     - http://www.vovida.org/About/license.html
 osi_url: http://opensource.org/licenses/vovidapl.php
@@ -22,8 +23,8 @@ ignorable_urls:
     - http://www.vovida.org/
 ignorable_emails:
     - vocal@vovida.org
-osi_license_key: VSL-1.0
 ---
+
 
 Vovida Software License v. 1.0
 

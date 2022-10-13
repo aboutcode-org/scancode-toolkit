@@ -1,0 +1,831 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
+MENTOR GRAPHICS IS WILLING TO LICENSE THE SOFTWARE ONLY UPON
+   THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN
+   THIS SOFTWARE LICENSE AGREEMENT. PLEASE READ THE TERMS
+   CAREFULLY. BY CLICKING ON "I accept the terms of the License
+   Agreement", YOU WILL INDICATE YOUR AGREEMENT WITH THEM. IF
+   YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY
+   OR OTHER LEGAL ENTITY, YOUR ACCEPTANCE REPRESENTS THAT YOU
+   HAVE THE AUTHORITY TO BIND SUCH ENTITY TO THESE TERMS, IN
+   WHICH CASE "YOU" OR "YOUR" SHALL REFER TO YOUR ENTITY. IF YOU
+   DO NOT AGREE WITH THESE TERMS, OR IF YOU DO NOT HAVE THE
+   AUTHORITY TO BIND YOUR ENTITY, THEN MENTOR GRAPHICS IS
+   UNWILLING TO LICENSE THE SOFTWARE.
+   Sourcery CodeBench Lite License Agreement
+
+   Sourcery CodeBench Lite for ARM GNU/Linux is licensed under
+   the Mentor Graphics Embedded Software and Hardware License
+   Agreement. If you have a separate signed or shrinkwrap
+   agreement (as applicable) with Mentor Graphics related to
+   your use of Sourcery CodeBench Lite, your order is subject to
+   the terms of that agreement. If you do not, the following
+   terms apply, unless otherwise specifically agreed to in
+   writing by an authorized representative of Mentor Graphics.
+   The terms of this Getting Started Guide supplement, but do
+   not replace or amend, the terms of your separate agreement
+   with Mentor Graphics. Accordingly, to the extent the
+   following terms and conditions conflict with such separate
+   agreement, the terms and conditions of the separate agreement
+   shall control.
+
+   The latest version of the License Agreement is available
+   on-line at .
+
+   MENTOR GRAPHICS IS WILLING TO LICENSE THE SOFTWARE ONLY UPON
+   THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN
+   THIS SOFTWARE LICENSE AGREEMENT. PLEASE READ THE TERMS
+   CAREFULLY. BY CLICKING ON "I accept the terms of the License
+   Agreement", YOU WILL INDICATE YOUR AGREEMENT WITH THEM. IF
+   YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY
+   OR OTHER LEGAL ENTITY, YOUR ACCEPTANCE REPRESENTS THAT YOU
+   HAVE THE AUTHORITY TO BIND SUCH ENTITY TO THESE TERMS, IN
+   WHICH CASE "YOU" OR "YOUR" SHALL REFER TO YOUR ENTITY. IF YOU
+   DO NOT AGREE WITH THESE TERMS, OR IF YOU DO NOT HAVE THE
+   AUTHORITY TO BIND YOUR ENTITY, THEN MENTOR GRAPHICS IS
+   UNWILLING TO LICENSE THE SOFTWARE.
+   Embedded Software and Hardware License Agreement IMPORTANT
+   INFORMATION
+
+   USE OF ALL PRODUCTS IS SUBJECT TO LICENSE RESTRICTIONS.
+   CAREFULLY READ THIS LICENSE AGREEMENT BEFORE USING THE
+   PRODUCTS. USE OF PRODUCTS INDICATES CUSTOMER'S COMPLETE AND
+   UNCONDITIONAL ACCEPTANCE OF THE TERMS AND CONDITIONS SET
+   FORTH IN THIS AGREEMENT. ANY ADDITIONAL OR DIFFERENT PURCHASE
+   ORDER TERMS AND CONDITIONS SHALL NOT APPLY.
+   EMBEDDED SOFTWARE AND HARDWARE LICENSE AGREEMENT
+   ("Agreement")
+
+   This is a legal agreement concerning the use of Products (as
+   defined in Section 1) between the company acquiring the
+   Products ("Customer"), and the Mentor Graphics entity that
+   issued the corresponding quotation or, if no quotation was
+   issued, the applicable local Mentor Graphics entity ("Mentor
+   Graphics"). Except for license agreements related to the
+   subject matter of this license agreement which are physically
+   signed by Customer and an authorized representative of Mentor
+   Graphics, this Agreement and the applicable quotation contain
+   the parties' entire understanding relating to the subject
+   matter and supersede all prior or contemporaneous agreements.
+   If Customer does not agree to these terms and conditions,
+   promptly return or, in the case of Products received
+   electronically, certify destruction of Products and all
+   accompanying items within five days after receipt of such
+   Products and receive a full refund of any license fee paid.
+    1. Definitions.
+         1. "Customer's Product" means Customer's end-user
+            product identified by a unique SKU (including any
+            Related SKUs) in an applicable Addenda that is
+            developed, manufactured, branded and shipped solely
+            by Customer or an authorized manufacturer or
+            subcontractor on behalf of Customer to end-users or
+            consumers;
+         2. "Developer" means a unique user, as identified by a
+            unique user identification number, with access to
+            Embedded Software at an authorized Development
+            Location. A unique user is an individual who works
+            directly with the embedded software in source code
+            form, or creates, modifies or compiles software that
+            ultimately links to the Embedded Software in Object
+            Code form and is embedded into Customer's Product at
+            the point of manufacture;
+         3. "Development Location" means the location where
+            Products may be used as authorized in the applicable
+            Addenda;
+         4. "Development Tools" means the software that may be
+            used by Customer for building, editing, compiling,
+            debugging or prototyping Customer's Product;
+         5. "Embedded Software" means Software that is
+            embeddable;
+         6. "End-User" means Customer's customer;
+         7. "Executable Code" means a compiled program
+            translated into a machine-readable format that can
+            be loaded into memory and run by a certain
+            processor;
+         8. "Hardware" means a physically tangible
+            electro-mechanical system or sub-system and
+            associated documentation;
+         9. "Linkable Object Code" or "Object Code" means
+            linkable code resulting from the translation,
+            processing, or compiling of Source Code by a
+            computer into machine-readable format;
+        10. "Mentor Embedded Linux" or "MEL" means Mentor
+            Graphics' tools, source code, and recipes for
+            building Linux systems;
+        11. "Open Source Software" or "OSS" means software
+            subject to an open source license which requires as
+            a condition for redistribution of such software,
+            including modifications thereto, that the: (i)
+            redistribution be in source code form or be made
+            available in source code form; (ii) redistributed
+            software be licensed to allow the making of
+            derivative works; or (iii) redistribution be at no
+            charge;
+        12. "Processor" means the specific microprocessor to be
+            used with Software and implemented in Customer's
+            Product;
+        13. "Products" means Software, Term-Licensed Products
+            and/or Hardware;
+        14. "Proprietary Components" means the components of the
+            Products that are owned and/or licensed by Mentor
+            Graphics and are not subject to an Open Source
+            Software license, as more fully set forth herein;
+        15. "Redistributable Components" means those components
+            that are intended to be incorporated or linked into
+            Customer's Linkable Object Code developed with the
+            Software, as more fully set forth herein;
+        16. "Related SKU" means two or more Customer Products
+            identified by logically-related SKUs, where there is
+            no difference or change in the electrical hardware
+            or software content between such Customer Products;
+        17. "Software" means software programs, Embedded
+            Software and/or Development Tools, including any
+            updates, modifications, revisions, copies,
+            documentation and design data that are licensed
+            under this Agreement;
+        18. "Source Code" means software in a form in which the
+            program logic is readily understandable by a human
+            being;
+        19. "Sourcery CodeBench Software" means Mentor Graphics'
+            Development Tool for C/C++ embedded application
+            development;
+        20. "Sourcery VSIPL++" is Software providing C++ classes
+            and functions for writing embedded signal processing
+            applications designed to run on one or more
+            processors;
+        21. "Stock Keeping Unit" or "SKU" is a unique number or
+            code used to identify each distinct product, item or
+            service available for purchase;
+        22. "Subsidiary" means any corporation more than 50%
+            owned by Customer, excluding Mentor Graphics
+            competitors. Customer agrees to fulfill the
+            obligations of such Subsidiary in the event of
+            default. To the extent Mentor Graphics authorizes
+            any Subsidiary's use of Products under this
+            Agreement, Customer agrees to ensure such
+            Subsidiary's compliance with the terms of this
+            Agreement and will be liable for any breach by a
+            Subsidiary; and
+        23. "Term-Licensed Products" means Products licensed to
+            Customer for a limited time period ("Term").
+    2. Orders, Fees and Payment.
+         1. To the extent Customer (or if agreed by Mentor
+            Graphics, Customer's appointed third party buying
+            agent) places and Mentor Graphics accepts purchase
+            orders pursuant to this Agreement ("Order(s)"), each
+            Order will constitute a contract between Customer
+            and Mentor Graphics, which shall be governed solely
+            and exclusively by the terms and conditions of this
+            Agreement and any applicable Addenda, whether or not
+            these documents are referenced on the Order. Any
+            additional or conflicting terms and conditions
+            appearing on an Order will not be effective unless
+            agreed in writing by an authorized representative of
+            Customer and Mentor Graphics.
+         2. Amounts invoiced will be paid, in the currency
+            specified on the applicable invoice, within 30 days
+            from the date of such invoice. All invoices will be
+            sent electronically to Customer on the date stated
+            on the invoice unless otherwise specified in an
+            Addendum. Any past due invoices will be subject to
+            the imposition of interest charges in the amount of
+            one and one-half percent per month or the applicable
+            legal rate currently in effect, whichever is lower.
+            Prices do not include freight, insurance, customs
+            duties, taxes or other similar charges, which Mentor
+            Graphics will state separately in the applicable
+            invoice(s). Unless timely provided with a valid
+            certificate of exemption or other evidence that
+            items are not taxable, Mentor Graphics will invoice
+            Customer for all applicable taxes including, but not
+            limited to, VAT, GST, sales tax, consumption tax and
+            service tax. Customer will make all payments free
+            and clear of, and without reduction for, any
+            withholding or other taxes; any such taxes imposed
+            on payments by Customer hereunder will be Customer's
+            sole responsibility. If Customer appoints a third
+            party to place purchase orders and/or make payments
+            on Customer's behalf, Customer shall be liable for
+            payment under Orders placed by such third party in
+            the event of default.
+         3. All Products are delivered FCA factory (Incoterms
+            2010), freight prepaid and invoiced to Customer,
+            except Software delivered electronically, which
+            shall be deemed delivered when made available to
+            Customer for download. Mentor Graphics' delivery of
+            Software by electronic means is subject to
+            Customer's provision of both a primary and an
+            alternate e-mail address.
+    3. Grant of License.
+         1. The Products installed, downloaded, or otherwise
+            acquired by Customer under this Agreement constitute
+            or contain copyrighted, trade secret, proprietary
+            and confidential information of Mentor Graphics or
+            its licensors, who maintain exclusive title to all
+            Software and retain all rights not expressly granted
+            by this Agreement. Mentor Graphics grants to
+            Customer, subject to payment of applicable license
+            fees, a nontransferable, nonexclusive license to use
+            Software as described in the applicable Addenda. The
+            limited licenses granted under the applicable
+            Addenda shall continue until the expiration date of
+            Term-Licensed Products or termination in accordance
+            with Section 12 below, whichever occurs first.
+            Mentor Graphics does NOT grant Customer any right to
+            (a) sublicense or (b) use Software beyond the scope
+            of this Section without first signing a separate
+            agreement or Addenda with Mentor Graphics for such
+            purpose.
+         2. License Type. The license type shall be identified
+            in the applicable Addenda.
+              1. Development License: During the Term, if any,
+                 Customer may modify, compile, assemble and
+                 convert the applicable Embedded Software Source
+                 Code into Linkable Object Code and/or
+                 Executable Code form by the number of
+                 Developers specified, for the Processor(s),
+                 Customer's Product(s) and at the Development
+                 Location(s) identified in the applicable
+                 Addenda.
+              2. End-User Product License: During the Term, if
+                 any, and unless otherwise specified in the
+                 applicable Addenda, Customer may incorporate or
+                 embed an Executable Code version of the
+                 Embedded Software into the specified number of
+                 copies of Customer's Product(s), using the
+                 Processor Unit(s), and at the Development
+                 Location(s) identified in the applicable
+                 Addenda. Customer may manufacture, brand and
+                 distribute such Customer's Product(s) worldwide
+                 to its End-Users.
+              3. Internal Tool License: During the Term, if any,
+                 Customer may use the Development Tools solely:
+                 (a) for internal business purposes and (b) on
+                 the specified number of computer work stations
+                 and sites. Development Tools are licensed on a
+                 per-seat or floating basis, as specified in the
+                 applicable Addenda, and shall not be
+                 distributed to others or delivered in
+                 Customer's Product(s) unless specifically
+                 authorized in an applicable Addenda.
+              4. Sourcery CodeBench Professional Edition
+                 License: During the Term specified in the
+                 applicable Addenda, Customer may (a) install
+                 and use the Proprietary Components of the
+                 Software (i) if the license is a node-locked
+                 license, by a single user who uses the Software
+                 on up to two machines provided that only one
+                 copy of the Software is in use at any one time,
+                 or (ii) if the license is a floating license,
+                 by the authorized number of concurrent users on
+                 one or more machines provided that only the
+                 authorized number of copies of the Software are
+                 in use at any one time, and (b) distribute the
+                 Redistributable Components of the Software in
+                 Executable Code form only and only as part of
+                 Customer's Object Code developed with the
+                 Software that provides substantially different
+                 functionality than the Redistributable
+                 Component(s) alone.
+              5. Sourcery CodeBench Standard Edition License:
+                 During the Term specified in the applicable
+                 Addenda, Customer may (a) install and use the
+                 Proprietary Components of the Software by a
+                 single user who uses the Software on up to two
+                 machines provided that only one copy of the
+                 Software is in use at any one time, and (b)
+                 distribute the Redistributable Component(s) of
+                 the Software in Executable Code form only and
+                 only as part of Customer's Object Code
+                 developed with the Software that provides
+                 substantially different functionality than the
+                 Redistributable Component(s) alone.
+              6. Sourcery CodeBench Personal Edition License:
+                 During the Term specified in the applicable
+                 Addenda, Customer may (a) install and use the
+                 Proprietary Components of the Software by a
+                 single user who uses the Software on one
+                 machine, and (b) distribute the Redistributable
+                 Component(s) of the Software in Executable Code
+                 form only and only as part of Customer Object
+                 Code developed with the Software that provides
+                 substantially different functionality than the
+                 Redistributable Component(s) alone.
+              7. Sourcery CodeBench Academic Edition License:
+                 During the Term specified in the applicable
+                 Addenda, Customer may (a) install and use the
+                 Proprietary Components of the Software for
+                 non-commercial, academic purposes only by a
+                 single user who uses the Software on one
+                 machine, and (b) distribute the Redistributable
+                 Component(s) of the Software in Executable Code
+                 form only and only as part of Customer Object
+                 Code developed with the Software that provides
+                 substantially different functionality than the
+                 Redistributable Component(s) alone.
+         3. Mentor Graphics may from time to time, in its sole
+            discretion, lend Products to Customer. For each
+            loan, Mentor Graphics will identify in writing the
+            quantity and description of Software loaned, the
+            authorized location and the Term of the loan. Mentor
+            Graphics will grant to Customer a temporary license
+            to use the loaned Software solely for Customer's
+            internal evaluation in a non-production environment.
+            Customer shall return to Mentor Graphics or delete
+            and destroy loaned Software on or before the
+            expiration of the loan Term. Customer will sign a
+            certification of such deletion or destruction if
+            requested by Mentor Graphics.
+    4. Beta Code.
+         1. Portions or all of certain Products may contain code
+            for experimental testing and evaluation ("Beta
+            Code"), which may not be used without Mentor
+            Graphics' explicit authorization. Upon Mentor
+            Graphics' authorization, Mentor Graphics grants to
+            Customer a temporary, nontransferable, nonexclusive
+            license for experimental use to test and evaluate
+            the Beta Code without charge for a limited period of
+            time specified by Mentor Graphics. This grant and
+            Customer's use of the Beta Code shall not be
+            construed as marketing or offering to sell a license
+            to the Beta Code, which Mentor Graphics may choose
+            not to release commercially in any form.
+         2. If Mentor Graphics authorizes Customer to use the
+            Beta Code, Customer agrees to evaluate and test the
+            Beta Code under normal conditions as directed by
+            Mentor Graphics. Customer will contact Mentor
+            Graphics periodically during Customer's use of the
+            Beta Code to discuss any malfunctions or suggested
+            improvements. Upon completion of Customer's
+            evaluation and testing, Customer will send to Mentor
+            Graphics a written evaluation of the Beta Code,
+            including its strengths, weaknesses and recommended
+            improvements.
+         3. Customer agrees to maintain Beta Code in confidence
+            and shall restrict access to the Beta Code,
+            including the methods and concepts utilized therein,
+            solely to those employees and Customer location(s)
+            authorized by Mentor Graphics to perform beta
+            testing. Customer agrees that any written
+            evaluations and all inventions, product
+            improvements, modifications or developments that
+            Mentor Graphics conceived or made during or
+            subsequent to this Agreement, including those based
+            partly or wholly on Customer's feedback, will be the
+            exclusive property of Mentor Graphics. Mentor
+            Graphics will have exclusive rights, title and
+            interest in all such property. The provisions of
+            this Subsection 4.3 shall survive termination of
+            this Agreement.
+    5. Restrictions on Use.
+         1. Customer may copy Software only as reasonably
+            necessary to support the authorized use, including
+            archival and backup purposes. Each copy must include
+            all notices and legends embedded in Software and
+            affixed to its medium and container as received from
+            Mentor Graphics. All copies shall remain the
+            property of Mentor Graphics or its licensors. Except
+            where embedded in Executable Code form in Customer's
+            Product, Customer shall maintain a record of the
+            number and location of all copies of Software,
+            including copies merged with other software and
+            products, and shall make those records available to
+            Mentor Graphics upon request. Customer shall not
+            make Products available in any form to any person
+            other than Customer's employees, authorized
+            manufacturers or authorized contractors, excluding
+            Mentor Graphics competitors, whose job performance
+            requires access and who are under obligations of
+            confidentiality. Customer shall take appropriate
+            action to protect the confidentiality of Products
+            and ensure that any person permitted access does not
+            disclose or use Products except as permitted by this
+            Agreement. Customer shall give Mentor Graphics
+            immediate written notice of any unauthorized
+            disclosure or use of the Products as soon as
+            Customer learns or becomes aware of such
+            unauthorized disclosure or use.
+         2. Customer acknowledges that the Products provided
+            hereunder may contain Source Code which is
+            proprietary and its confidentiality is of the
+            highest importance and value to Mentor Graphics.
+            Customer acknowledges that Mentor Graphics may be
+            seriously harmed if such Source Code is disclosed in
+            violation of this Agreement. Except as otherwise
+            permitted for purposes of interoperability as
+            specified by applicable and mandatory local law,
+            Customer shall not reverse-assemble,
+            reverse-compile, reverse-engineer or in any way
+            derive any Source Code from Products that are not
+            provided in Source Code form. Except as embedded in
+            Executable Code in Customer's Product and
+            distributed in the ordinary course of business, in
+            no event shall Customer provide Products to Mentor
+            Graphics competitors. Log files, data files, rule
+            files and script files generated by or for the
+            Software (collectively "Files") constitute and/or
+            include confidential information of Mentor Graphics.
+            Customer may share Files with third parties,
+            excluding Mentor Graphics competitors, provided that
+            the confidentiality of such Files is protected by
+            written agreement at least as well as Customer
+            protects other information of a similar nature or
+            importance, but in any case with at least reasonable
+            care. Under no circumstances shall Customer use
+            Products or allow their use for the purpose of
+            developing, enhancing or marketing any product that
+            is in any way competitive with Products, or disclose
+            to any third party the results of, or information
+            pertaining to, any benchmark.
+         3. Customer may not assign this Agreement or the rights
+            and duties under it, or relocate, sublicense or
+            otherwise transfer the Products, whether by
+            operation of law or otherwise ("Attempted
+            Transfer"), without Mentor Graphics' prior written
+            consent, which shall not be unreasonably withheld,
+            and payment of Mentor Graphics' then-current
+            applicable relocation and/or transfer fees. Any
+            Attempted Transfer without Mentor Graphics' prior
+            written consent shall be a material breach of this
+            Agreement and may, at Mentor Graphics' option,
+            result in the immediate termination of the Agreement
+            and/or the licenses granted under this Agreement.
+            The terms of this Agreement, including without
+            limitation the licensing and assignment provisions,
+            shall be binding upon Customer's permitted
+            successors in interest and assigns.
+         4. Notwithstanding any provision in an OSS license
+            agreement applicable to a component of the Sourcery
+            CodeBench Software that permits the redistribution
+            of such component to a third party in Source Code or
+            binary form, Customer may not use any Mentor
+            Graphics trademark, whether registered or
+            unregistered, in connection with such distribution,
+            and may not recompile the Open Source Software
+            components with the --with-pkgversion or
+            --with-bugurl configuration options that embed
+            Mentor Graphics' trademarks in the resulting binary.
+         5. The provisions of this Section 5 shall survive the
+            termination of this Agreement.
+    6. Support Services.
+         1. Except as described in Sections 6.2, 6.3 and 6.4
+            below, and unless otherwise specified in any
+            applicable Addenda to this Agreement, to the extent
+            Customer purchases support services, Mentor Graphics
+            will provide Customer updates and technical support
+            for the number of Developers at the Development
+            Location(s) for which support is purchased in
+            accordance with Mentor Graphics' then-current
+            End-User Software Support Terms located at .
+         2. To the extent Customer purchases support services
+            for Sourcery CodeBench Software, support will be
+            provided solely in accordance with the provisions of
+            this Section 6.2. Mentor Graphics shall provide
+            updates and technical support to Customer as
+            described herein only on the condition that Customer
+            uses the Executable Code form of the Sourcery
+            CodeBench Software for internal use only and/or
+            distributes the Redistributable Components in
+            Executable Code form only (except as provided in a
+            separate redistribution agreement with Mentor
+            Graphics or as required by the applicable Open
+            Source license). Any other distribution by Customer
+            of the Sourcery CodeBench Software (or any component
+            thereof) in any form, including distribution
+            permitted by the applicable Open Source license,
+            shall automatically terminate any remaining support
+            term. Subject to the foregoing and the payment of
+            support fees, Mentor Graphics will provide Customer
+            updates and technical support for the number of
+            Developers at the Development Location(s) for which
+            support is purchased in accordance with Mentor
+            Graphics' then-current Sourcery CodeBench Software
+            Support Terms located at .
+         3. To the extent Customer purchases support services
+            for Sourcery VSIPL++, Mentor Graphics will provide
+            Customer updates and technical support for the
+            number of Developers at the Development Location(s)
+            for which support is purchased solely in accordance
+            with Mentor Graphics' then-current Sourcery VSIPL++
+            Support Terms located at. .
+         4. To the extent Customer purchases support services
+            for Mentor Embedded Linux, Mentor Graphics will
+            provide Customer updates and technical support for
+            the number of Developers at the Development
+            Location(s) for which support is purchased solely in
+            accordance with Mentor Graphics' then-current Mentor
+            Embedded Linux Support Terms located at .
+    7. Third Party and Open Source Software. Products may
+       contain Open Source Software or code distributed under a
+       proprietary third party license agreement. Please see
+       applicable Products documentation, including but not
+       limited to license notice files, header files or source
+       code for further details. Please see and for additional
+       rights and obligations governing your use and
+       distribution of Open Source Software. Customer agrees
+       that it shall not subject any Product provided by Mentor
+       Graphics under this Agreement to any Open Source Software
+       license that does not otherwise apply to such Product. In
+       the event of conflict between the terms of this
+       Agreement, any Addenda and an applicable OSS or
+       proprietary third party agreement, the OSS or proprietary
+       third party agreement will control solely with respect to
+       the OSS or proprietary third party software component.
+       The provisions of this Section 7 shall survive the
+       termination of this Agreement.
+    8. Limited Warranty.
+         1. Mentor Graphics warrants that during the warranty
+            period its standard, generally supported Products,
+            when properly installed, will substantially conform
+            to the functional specifications set forth in the
+            applicable user manual and/or specification. Mentor
+            Graphics does not warrant that Products will meet
+            Customer's requirements or that operation of
+            Products will be uninterrupted or error free. The
+            warranty period is 90 days starting on the 15th day
+            after delivery or upon installation, whichever first
+            occurs. Customer must notify Mentor Graphics in
+            writing of any nonconformity within the warranty
+            period. For the avoidance of doubt, this warranty
+            applies only to the initial shipment of Products
+            under an Order and does not renew or reset, for
+            example, with the delivery of (a) Software updates
+            or (b) authorization codes. This warranty shall not
+            be valid if Products have been subject to misuse,
+            unauthorized modification or improper installation.
+            MENTOR GRAPHICS' ENTIRE LIABILITY AND CUSTOMER'S
+            EXCLUSIVE REMEDY SHALL BE, AT MENTOR GRAPHICS'
+            OPTION, EITHER (A) REFUND OF THE PRICE PAID UPON
+            RETURN OF THE PRODUCTS TO MENTOR GRAPHICS OR (B)
+            MODIFICATION OR REPLACEMENT OF THE PRODUCTS THAT DO
+            NOT MEET THIS LIMITED WARRANTY, PROVIDED CUSTOMER
+            HAS OTHERWISE COMPLIED WITH THIS AGREEMENT. MENTOR
+            GRAPHICS MAKES NO WARRANTIES WITH RESPECT TO: (A)
+            SERVICES; OR (B) PRODUCTS PROVIDED AT NO CHARGE,
+            WHICH ARE PROVIDED "AS IS" UNLESS OTHERWISE AGREED
+            IN WRITING.
+         2. THE WARRANTIES SET FORTH IN THIS SECTION 8 ARE
+            EXCLUSIVE TO CUSTOMER AND DO NOT APPLY TO ANY
+            END-USER. NEITHER MENTOR GRAPHICS NOR ITS LICENSORS
+            MAKE ANY OTHER WARRANTIES, EXPRESS, IMPLIED, OR
+            STATUTORY, WITH RESPECT TO PRODUCTS OR OTHER
+            MATERIAL PROVIDED UNDER THIS AGREEMENT. MENTOR
+            GRAPHICS AND ITS LICENSORS SPECIFICALLY DISCLAIM ALL
+            IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+            PARTICULAR PURPOSE AND NON-INFRINGEMENT OF
+            INTELLECTUAL PROPERTY.
+    9. LIMITATION OF LIABILITY. EXCEPT WHERE THIS EXCLUSION OR
+       RESTRICTION OF LIABILITY WOULD BE VOID OR INEFFECTIVE
+       UNDER APPLICABLE LAW, AND EXCEPT FOR EITHER PARTY'S
+       BREACH OF ITS CONFIDENTIALITY OBLIGATIONS, CUSTOMER'S
+       BREACH OF LICENSING TERMS OR CUSTOMER'S OBLIGATIONS UNDER
+       SECTION 10, IN NO EVENT SHALL: (A) EITHER PARTY OR ITS
+       RESPECTIVE LICENSORS BE LIABLE FOR INDIRECT, SPECIAL,
+       INCIDENTAL, OR CONSEQUENTIAL DAMAGES (INCLUDING LOST
+       PROFITS OR SAVINGS) WHETHER BASED ON CONTRACT, TORT OR
+       ANY OTHER LEGAL THEORY, EVEN IF SUCH PARTY OR ITS
+       LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH
+       DAMAGES; AND (B) EITHER PARTY OR ITS RESPECTIVE
+       LICENSORS' LIABILITY UNDER THIS AGREEMENT, INCLUDING, FOR
+       THE AVOIDANCE OF DOUBT, LIABILITY FOR ATTORNEYS' FEES OR
+       COSTS, EXCEED THE GREATER OF THE FEES PAID OR OWING TO
+       MENTOR GRAPHICS FOR THE PRODUCT OR SERVICE GIVING RISE TO
+       THE CLAIM OR $500,000 (FIVE HUNDRED THOUSAND U.S.
+       DOLLARS). NOTWITHSTANDING THE FOREGOING, IN THE CASE
+       WHERE NO AMOUNT WAS PAID, MENTOR GRAPHICS AND ITS
+       LICENSORS SHALL HAVE NO LIABILITY FOR ANY DAMAGES
+       WHATSOEVER. THE PROVISIONS OF THIS SECTION 9 SHALL
+       SURVIVE THE TERMINATION OF THIS AGREEMENT.
+   10. Hazardous Applications.
+         1. Customer agrees that Mentor Graphics has no control
+            over Customer's testing or the specific applications
+            and use that Customer will make of Products. Mentor
+            Graphics Products are not specifically designed for
+            use in the operation of nuclear facilities, aircraft
+            navigation or communications systems, air traffic
+            control, life support systems, medical devices or
+            other applications in which the failure of Mentor
+            Graphics Products could lead to death, personal
+            injury, or severe physical or environmental damage
+            ("Hazardous Applications").
+         2. CUSTOMER ACKNOWLEDGES IT IS SOLELY RESPONSIBLE FOR
+            TESTING PRODUCTS USED IN HAZARDOUS APPLICATIONS AND
+            SHALL BE SOLELY LIABLE FOR ANY DAMAGES RESULTING
+            FROM SUCH USE. NEITHER MENTOR GRAPHICS NOR ITS
+            LICENSORS SHALL BE LIABLE FOR ANY DAMAGES RESULTING
+            FROM OR IN CONNECTION WITH THE USE OF PRODUCTS IN
+            ANY HAZARDOUS APPLICATIONS.
+         3. CUSTOMER AGREES TO INDEMNIFY AND HOLD HARMLESS
+            MENTOR GRAPHICS AND ITS LICENSORS FROM ANY CLAIMS,
+            LOSS, COST, DAMAGE, EXPENSE OR LIABILITY, INCLUDING
+            REASONABLE ATTORNEYS' FEES, ARISING OUT OF OR IN
+            CONNECTION WITH THE USE OF PRODUCTS AS DESCRIBED IN
+            SECTION 10.1.
+         4. THE PROVISIONS OF THIS SECTION 10 SHALL SURVIVE THE
+            TERMINATION OF THIS AGREEMENT.
+   11. Infringement.
+         1. Mentor Graphics will defend or settle, at its option
+            and expense, any action brought against Customer in
+            the United States, Canada, Japan, or member state of
+            the European Union which alleges that any standard,
+            generally supported Product acquired by Customer
+            hereunder infringes a patent or copyright or
+            misappropriates a trade secret in such jurisdiction.
+            Mentor Graphics will pay any costs and damages
+            finally awarded against Customer that are
+            attributable to the action. Customer understands and
+            agrees that as conditions to Mentor Graphics'
+            obligations under this section Customer must: (a)
+            notify Mentor Graphics promptly in writing of the
+            action; (b) provide Mentor Graphics all reasonable
+            information and assistance to settle or defend the
+            action; and (c) grant Mentor Graphics sole authority
+            and control of the defense or settlement of the
+            action.
+         2. If a claim is made under Subsection 11.1 Mentor
+            Graphics may, at its option and expense, and in
+            addition to its obligations under Section 11.1,
+            either (a) replace or modify the Product so that it
+            becomes noninfringing; or (b) procure for Customer
+            the right to continue using the Product. If Mentor
+            Graphics determines that neither of those
+            alternatives is financially practical or otherwise
+            reasonably available, Mentor Graphics may require
+            the return of the Product and refund to Customer any
+            purchase price or license fee(s) paid.
+         3. Mentor Graphics has no liability to Customer if the
+            claim is based upon: (a) the combination of the
+            Product with any product not furnished by Mentor
+            Graphics, where the Product itself is not
+            infringing; (b) the modification of the Product
+            other than by Mentor Graphics or as directed by
+            Mentor Graphics, where the unmodified Product would
+            not infringe; (c) the use of the infringing Product
+            when Mentor Graphics has provided Customer with a
+            current unaltered release of a non-infringing
+            Product of substantially similar functionality in
+            accordance with Subsection 11.2(a); (d) the use of
+            the Product as part of an infringing process; (e) a
+            product that Customer makes, uses, or sells, where
+            the Product itself is not infringing; (f) any
+            Product provided at no charge; (g) any software
+            provided by Mentor Graphics' licensors who do not
+            provide such indemnification to Mentor Graphics'
+            customers; (h) Open Source Software, except to the
+            extent that the infringement is directly caused by
+            Mentor Graphics' modifications to such Open Source
+            Software; or (i) infringement by Customer that is
+            deemed willful. In the case of (i), Customer shall
+            reimburse Mentor Graphics for its reasonable
+            attorneys' fees and other costs related to the
+            action.
+         4. THIS SECTION 11 IS SUBJECT TO SECTION 9 ABOVE AND
+            STATES: (A) THE ENTIRE LIABILITY OF MENTOR GRAPHICS
+            AND ITS LICENSORS AND (B) CUSTOMER'S SOLE AND
+            EXCLUSIVE REMEDY, WITH RESPECT TO ANY ALLEGED PATENT
+            OR COPYRIGHT INFRINGEMENT OR TRADE SECRET
+            MISAPPROPRIATION BY ANY PRODUCT PROVIDED UNDER THIS
+            AGREEMENT.
+   12. Termination and Effect of Termination. If a Software
+       license was provided for limited term use, such license
+       will automatically terminate at the end of the authorized
+       Term.
+         1. Termination for Breach. This Agreement shall remain
+            in effect until terminated in accordance with its
+            terms. Mentor Graphics may terminate this Agreement
+            and/or any licenses granted under this Agreement,
+            and Customer will immediately discontinue use and
+            distribution of Products, if Customer (a) commits
+            any material breach of any provision of this
+            Agreement and fails to cure such breach upon 30-days
+            prior written notice; or (b) becomes insolvent,
+            files a bankruptcy petition, institutes proceedings
+            for liquidation or winding up or enters into an
+            agreement to assign its assets for the benefit of
+            creditors. Termination of this Agreement or any
+            license granted hereunder will not affect Customer's
+            obligation to pay for Products shipped or licenses
+            granted prior to the termination, which amounts
+            shall be payable immediately upon the date of
+            termination. For the avoidance of doubt, nothing in
+            this Section 12 shall be construed to prevent Mentor
+            Graphics from seeking immediate injunctive relief in
+            the event of any threatened or actual breach of
+            Customer's obligations hereunder.
+         2. Effect of Termination. Upon termination of this
+            Agreement, the rights and obligations of the parties
+            shall cease except as expressly set forth in this
+            Agreement. Upon termination or expiration of the
+            Term, Customer will discontinue use and/or
+            distribution of Products, and shall return Hardware
+            and either return to Mentor Graphics or destroy
+            Software in Customer's possession, including all
+            copies and documentation, and certify in writing to
+            Mentor Graphics within ten business days of the
+            termination date that Customer no longer possesses
+            any of the affected Products or copies of Software
+            in any form, except to the extent an Open Source
+            Software license conflicts with this Section 12.2
+            and permits Customer's continued use of any Open
+            Source Software portion or component of a Product.
+            Upon termination for Customer's breach, an End-User
+            may continue its use and/or distribution of
+            Customer's Product so long as: (a) the End-User was
+            licensed according to the terms of this Agreement,
+            if applicable to such End-User, and (b) such
+            End-User is not in breach of its agreement, if
+            applicable, nor a party to Customer's breach.
+   13. Export. The Products provided hereunder are subject to
+       regulation by local laws and United States government
+       agencies, which prohibit export or diversion of certain
+       products, information about the products, and direct or
+       indirect products thereof, to certain countries and
+       certain persons. Customer agrees that it will not export
+       Products in any manner without first obtaining all
+       necessary approval from appropriate local and United
+       States government agencies. Customer acknowledges that
+       the regulation of product export is in continuous
+       modification by local governments and/or the United
+       States Congress and administrative agencies. Customer
+       agrees to complete all documents and to meet all
+       requirements arising out of such modifications.
+   14. U.S. Government License Rights. Software was developed
+       entirely at private expense. All Software is commercial
+       computer software within the meaning of the applicable
+       acquisition regulations. Accordingly, pursuant to US FAR
+       48 CFR 12.212 and DFAR 48 CFR 227.7202, use, duplication
+       and disclosure of the Software by or for the U.S.
+       Government or a U.S. Government subcontractor is subject
+       solely to the terms and conditions set forth in this
+       Agreement, except for provisions which are contrary to
+       applicable mandatory federal laws.
+   15. Third Party Beneficiary. For any Products licensed under
+       this Agreement and provided by Customer to End-Users,
+       Mentor Graphics or the applicable licensor is a third
+       party beneficiary of the agreement between Customer and
+       End-User. Mentor Graphics Corporation, Mentor Graphics
+       (Ireland) Limited, and other licensors may be third party
+       beneficiaries of this Agreement with the right to enforce
+       the obligations set forth herein.
+   16. Review of License Usage. Customer will monitor the access
+       to and use of Software. With prior written notice, during
+       Customer's normal business hours, and no more frequently
+       than once per calendar year, Mentor Graphics may engage
+       an internationally recognized accounting firm to review
+       Customer's software monitoring system, records, accounts
+       and sublicensing documents deemed relevant by the
+       internationally recognized accounting firm to confirm
+       Customer's compliance with the terms of this Agreement or
+       U.S. or other local export laws. Such review may include
+       FlexNet (or successor product) report log files that
+       Customer shall capture and provide at Mentor Graphics'
+       request. Customer shall make records available in
+       electronic format and shall fully cooperate with data
+       gathering to support the license review. Mentor Graphics
+       shall bear the expense of any such review unless a
+       material non-compliance is revealed. Mentor Graphics
+       shall treat as confidential information all Customer
+       information gained as a result of any request or review
+       and shall only use or disclose such information as
+       required by law or to enforce its rights under this
+       Agreement. Such license review shall be at Mentor
+       Graphics' expense unless it reveals a material
+       underpayment of fees of five percent or more, in which
+       case Customer shall reimburse Mentor Graphics for the
+       costs of such license review. Customer shall promptly pay
+       any such fees. If the license review reveals that
+       Customer has made an overpayment, Mentor Graphics has the
+       option to either provide the Customer with a refund or
+       credit the amount overpaid to Customer's next payment.
+       The provisions of this Section 16 shall survive the
+       termination of this Agreement.
+   17. Controlling Law, Jurisdiction and Dispute Resolution.
+       This Agreement shall be governed by and construed under
+       the laws of the State of California, USA, excluding
+       choice of law rules. All disputes arising out of or in
+       relation to this Agreement shall be submitted to the
+       exclusive jurisdiction of the state and federal courts of
+       California, USA. Nothing in this section shall restrict
+       Mentor Graphics' right to bring an action (including for
+       example a motion for injunctive relief) against Customer
+       or its Subsidiary in the jurisdiction where Customer's or
+       its Subsidiary's place of business is located. The United
+       Nations Convention on Contracts for the International
+       Sale of Goods does not apply to this Agreement.
+   18. Severability. If any provision of this Agreement is held
+       by a court of competent jurisdiction to be void, invalid,
+       unenforceable or illegal, such provision shall be severed
+       from this Agreement and the remaining provisions will
+       remain in full force and effect.
+   19. Miscellaneous. This Agreement contains the parties'
+       entire understanding relating to its subject matter and
+       supersedes all prior or contemporaneous agreements,
+       including but not limited to any purchase order terms and
+       conditions. This Agreement may only be modified in
+       writing, signed by an authorized representative of each
+       party. Waiver of terms or excuse of breach must be in
+       writing and shall not constitute subsequent consent,
+       waiver or excuse.

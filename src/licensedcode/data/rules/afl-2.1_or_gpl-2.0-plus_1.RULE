@@ -1,0 +1,14 @@
+---
+license_expression: afl-2.1 OR gpl-2.0-plus
+is_license_notice: yes
+---
+
+D-Bus is licensed to you under your choice of the Academic Free
+License version 2.1, or the GNU General Public License version 2
+(or, at your option any later version).
+
+Both licenses are included here. Some of the standalone binaries are
+under the GPL only; in particular, but not limited to,
+tools/dbus-cleanup-sockets.c and test/decode-gcov.c. Each source code
+file is marked with the proper copyright information - if you find a
+file that isn't marked please bring it to our attention.

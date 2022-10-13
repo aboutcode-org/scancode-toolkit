@@ -7,6 +7,7 @@ owner: Computer Associates
 homepage_url: http://www.opensource.org/licenses/ca-tosl1.1.php
 notes: Per SPDX.org, this license is OSI certifified.
 spdx_license_key: CATOSL-1.1
+osi_license_key: CATOSL-1.1
 text_urls:
     - http://www.opensource.org/licenses/ca-tosl1.1.php
 osi_url: http://opensource.org/licenses/ca-tosl1.1.php
@@ -17,7 +18,6 @@ ignorable_urls:
     - http://www.ca.com/catrdmrk.htm
 ignorable_emails:
     - opensource@ca.com
-osi_license_key: CATOSL-1.1
 ---
 
 Computer Associates Trusted Open Source License

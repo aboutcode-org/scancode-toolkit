@@ -12,6 +12,7 @@ notes: |
     needs of the education communities using this license. The url included in
     the boilerplate notice does not work. (15/10/10)
 spdx_license_key: ECL-2.0
+osi_license_key: ECL-2.0
 text_urls:
     - http://www.opensource.org/licenses/ecl2.php
 osi_url: http://opensource.org/licenses/ecl2.php
@@ -22,12 +23,12 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
     - http://www.osedu.org/licenses/
     - http://www.osedu.org/licenses/ECL-2.0
-osi_license_key: ECL-2.0
 ---
 
-             Educational Community License
-                Version 2.0, April 2007
-             http://www.osedu.org/licenses/
+
+Educational Community License
+Version 2.0, April 2007
+http://www.osedu.org/licenses/
 
 The Educational Community License version 2.0 ("ECL") consists of the Apache 2.0
 license, modified to change the scope of the patent grant in section 3 to be
@@ -216,15 +217,15 @@ that a file or class name and description of purpose be included on
 the same "printed page" as the copyright notice for easier
 identification within third-party archives.
 
-	Copyright [yyyy] [name of copyright owner] Licensed under the
-	Educational Community License, Version 2.0 (the "License"); you may
-	not use this file except in compliance with the License. You may
-	obtain a copy of the License at
-	
-	http://www.osedu.org/licenses/ECL-2.0
+Copyright [yyyy] [name of copyright owner] Licensed under the
+Educational Community License, Version 2.0 (the "License"); you may
+not use this file except in compliance with the License. You may
+obtain a copy of the License at
 
-	Unless required by applicable law or agreed to in writing,
-	software distributed under the License is distributed on an "AS IS"
-	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-	or implied. See the License for the specific language governing
-	permissions and limitations under the License.
+http://www.osedu.org/licenses/ECL-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an "AS IS"
+BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied. See the License for the specific language governing
+permissions and limitations under the License.

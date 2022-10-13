@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: A comment about licensing
+---
+
+This SPDX licence identifier requirement is enforced by the
+[CI (Continuous Integration)

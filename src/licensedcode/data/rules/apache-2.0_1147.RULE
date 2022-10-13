@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+libraries are under the Apache License 2.0
+(see @url{http://www.apache.org/licenses/LICENSE-2.0} for details)

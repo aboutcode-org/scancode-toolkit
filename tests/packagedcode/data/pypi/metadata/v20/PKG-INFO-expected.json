@@ -68,7 +68,7 @@
         "extracted_requirement": "pykerberos; extra == \"gssapi\"",
         "scope": "gssapi",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -78,7 +78,7 @@
         "extracted_requirement": "dnspython<2.0.0,>=1.8.0; extra == \"srv\"",
         "scope": "srv",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -88,7 +88,7 @@
         "extracted_requirement": "ipaddress; extra == \"tls\"",
         "scope": "tls",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}

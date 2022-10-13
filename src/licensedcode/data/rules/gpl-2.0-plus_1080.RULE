@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
+licensed under the GNU General Public License Version 2 or later
+(see @url{http://www.gnu.org/licenses/old-licenses/gpl-2.0.html} for details),
+you must upgrade FFmpeg's license to GPL in order to use it.

@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "PayTabsSDK",
     "version": "6.1.18",
@@ -41,6 +41,6 @@
     "repository_download_url": "https://github.com/paytabscom/paytabs-ios-library-sample/archive/refs/tags/6.1.18.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/5/f/PayTabsSDK/6.1.18/PayTabsSDK.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/PayTabsSDK@6.1.18"
+    "purl": "pkg:cocoapods/PayTabsSDK@6.1.18"
   }
 ]

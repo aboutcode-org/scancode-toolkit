@@ -5,6 +5,7 @@ name: Henry Spencer Regexp License
 category: Permissive
 owner: Henry Spencer
 homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
+notes: this is very similar to the purdue-bsd license
 spdx_license_key: Spencer-94
 text_urls:
     - http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
@@ -14,9 +15,9 @@ text_urls:
     - https://dev.mysql.com/doc/mysql-security-excerpt/5.0/en/license-regex.html
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
-notes: this is very similar to the purdue-bsd license
 minimum_coverage: 70
 ---
+
 
 This software is not subject to any license of the American Telephone
 and Telegraph Company or of the Regents of the University of California.

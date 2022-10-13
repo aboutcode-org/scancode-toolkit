@@ -1,0 +1,47 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
+The MIT License (MIT) with restrictions
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software according to the limitations and restrictions below. Outside these
+restrictions, this license includes the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+RESTRICTION ON SELLING
+
+You may not sell the Software as a Service (SaaS) in itself, that is, you may
+not sell a digital service whose main component is the Software. You may offer
+such a service completely free of charge, but in that case you must contribute
+any changes made to the Software back to the project. You may expressly use the
+software to manage your own commercial SaaS offering without the requirement to
+contribute changes back. In plain language:
+
+- Running your own services behind apiplexy and selling them for money is okay.
+- Writing your own in-house plugins for apiplexy and not sharing or contributing
+  those is okay.
+- Helping people set up apiplexy in-house for money is okay.
+- Selling apiplexy as a service to manage other people's services for money is
+  NOT okay.
+- Offering apiplexy as a service (as above), but completely free of charge
+  forever, is okay, but you must make your source code available.
+
+COPYRIGHT TRANSMISSION
+
+By contributing to the project, you transfer the copyright to your contributed
+code to the project maintainer (currently ).

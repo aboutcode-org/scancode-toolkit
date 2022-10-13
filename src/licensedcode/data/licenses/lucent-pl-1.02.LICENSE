@@ -7,6 +7,7 @@ owner: Alcatel-Lucent
 homepage_url: http://plan9.bell-labs.com/plan9/license.html
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: LPL-1.02
+osi_license_key: LPL-1.02
 text_urls:
     - http://plan9.bell-labs.com/plan9/license.html
 other_urls:
@@ -16,8 +17,8 @@ ignorable_copyrights:
     - Copyright (c) YEAR, ORGANIZATION and others
 ignorable_holders:
     - YEAR, ORGANIZATION and others
-osi_license_key: LPL-1.02
 ---
+
 
 Lucent Public License Version 1.02
 
@@ -27,11 +28,11 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS PUBLIC LICENSE ("AG
 
 "Contribution" means:
 
-   1. in the case of ORGANIZATION ("OWNER"), the Original Program, and
-   2. in the case of each Contributor,
-         1. changes to the Program, and
-         2. additions to the Program; 
-      where such changes and/or additions to the Program were added to the Program by such Contributor itself or anyone acting on such Contributor's behalf, and the Contributor explicitly consents, in accordance with Section 3C, to characterization of the changes and/or additions as Contributions. 
+1. in the case of ORGANIZATION ("OWNER"), the Original Program, and
+2. in the case of each Contributor,
+1. changes to the Program, and
+2. additions to the Program;
+where such changes and/or additions to the Program were added to the Program by such Contributor itself or anyone acting on such Contributor's behalf, and the Contributor explicitly consents, in accordance with Section 3C, to characterization of the changes and/or additions as Contributions.
 
 "Contributor" means OWNER and any other entity that has Contributed a Contribution to the Program.
 
@@ -47,25 +48,25 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS PUBLIC LICENSE ("AG
 
 2. GRANT OF RIGHTS
 
-   a. Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
-  b. Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. The patent license granted by a Contributor shall also apply to the combination of the Contribution of that Contributor and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license granted by a Contributor shall not apply to (i) any other combinations which include the Contribution, nor to (ii) Contributions of other Contributors. No hardware per se is licensed hereunder.
-   c. Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
-   d. Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement. 
+a. Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
+b. Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. The patent license granted by a Contributor shall also apply to the combination of the Contribution of that Contributor and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license granted by a Contributor shall not apply to (i) any other combinations which include the Contribution, nor to (ii) Contributions of other Contributors. No hardware per se is licensed hereunder.
+c. Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
+d. Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.
 
 3. REQUIREMENTS
 
 A. Distributor may choose to distribute the Program in any form under this Agreement or under its own license agreement, provided that:
 
-   1. it complies with the terms and conditions of this Agreement;
-   2. if the Program is distributed in source code or other tangible form, a copy of this Agreement or Distributor's own license agreement is included with each copy of the Program; and
-   3. if distributed under Distributor's own license agreement, such license agreement:
-         1. effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
-         2. effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits; and
-         3. states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party. 
+1. it complies with the terms and conditions of this Agreement;
+2. if the Program is distributed in source code or other tangible form, a copy of this Agreement or Distributor's own license agreement is included with each copy of the Program; and
+3. if distributed under Distributor's own license agreement, such license agreement:
+1. effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+2. effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits; and
+3. states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party.
 
 B. Each Distributor must include the following in a conspicuous location in the Program:
 
-    Copyright (C) YEAR, ORGANIZATION and others. All Rights Reserved. 
+Copyright (C) YEAR, ORGANIZATION and others. All Rights Reserved.
 
 C. In addition, each Contributor must identify itself as the originator of its Contribution in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution. Also, each Contributor must agree that the additions and/or changes are intended to be a Contribution. Once a Contribution is contributed, it may not thereafter be revoked.
 

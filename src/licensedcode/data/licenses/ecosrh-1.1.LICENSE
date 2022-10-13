@@ -12,14 +12,15 @@ faq_url: http://ecos.sourceware.org/license-overview.html
 ignorable_copyrights:
     - Copyright (c) 1998, 1999, 2000 Red Hat, Inc.
     - Copyright (c) 1998, 1999, 2000 Red Hat, Inc. (http://www.redhat.com/)
-ignorable_authors:
-    - Red Hat
 ignorable_holders:
     - Red Hat, Inc.
+ignorable_authors:
+    - Red Hat
 ignorable_urls:
     - http://sourceware.cygnus.com/ecos
     - http://www.redhat.com/
 ---
+
 
 Red Hat eCos Public License v1.1
 
@@ -55,11 +56,11 @@ substance or structure of either the Original Code or any previous
 Modifications. When Covered Code is released as a series of files, a
 Modification is:
 
-    A. Any addition to or deletion from the contents of a file
-    containing Original Code or previous Modifications.
+A. Any addition to or deletion from the contents of a file
+containing Original Code or previous Modifications.
 
-    B. Any new file that contains any part of the Original Code or
-    previous Modifications.
+B. Any new file that contains any part of the Original Code or
+previous Modifications.
 
 1.10. "Original Code" means Source Code of computer software code which
 is described in the Source Code notice required by Exhibit A as Original
@@ -95,168 +96,168 @@ Covered Code.
 
 2.1. The Initial Developer Grant.
 
-    The Initial Developer hereby grants You a world-wide, royalty-free,
-    non-exclusive license, subject to third party intellectual property
-    claims:
+The Initial Developer hereby grants You a world-wide, royalty-free,
+non-exclusive license, subject to third party intellectual property
+claims:
 
-        (a) to use, reproduce, modify, display, perform, sublicense and
-        distribute the Original Code (or portions thereof) with or
-        without Modifications, or as part of a Larger Work; and
+(a) to use, reproduce, modify, display, perform, sublicense and
+distribute the Original Code (or portions thereof) with or
+without Modifications, or as part of a Larger Work; and
 
-        (b) under patents now or hereafter owned or controlled by
-        Initial Developer, to make, have made, use and sell ("Utilize")
-        the Original Code (or portions thereof), but solely to the
-        extent that any such patent is reasonably necessary to enable
-        You to Utilize the Original Code (or portions thereof) and not
-        to any greater extent that may be necessary to Utilize further
-        Modifications or combinations.
+(b) under patents now or hereafter owned or controlled by
+Initial Developer, to make, have made, use and sell ("Utilize")
+the Original Code (or portions thereof), but solely to the
+extent that any such patent is reasonably necessary to enable
+You to Utilize the Original Code (or portions thereof) and not
+to any greater extent that may be necessary to Utilize further
+Modifications or combinations.
 
 2.2. Contributor Grant.
 
-    Each Contributor hereby grants You a world-wide, royalty-free, non-
-    exclusive license, subject to third party intellectual property
-    claims:
+Each Contributor hereby grants You a world-wide, royalty-free, non-
+exclusive license, subject to third party intellectual property
+claims:
 
-        (a) to use, reproduce, modify, display, perform, sublicense and
-        distribute the Modifications created by such Contributor (or
-        portions thereof) either on an unmodified basis, with other
-        Modifications, as Covered Code or as part of a Larger Work; and
+(a) to use, reproduce, modify, display, perform, sublicense and
+distribute the Modifications created by such Contributor (or
+portions thereof) either on an unmodified basis, with other
+Modifications, as Covered Code or as part of a Larger Work; and
 
-        (b) under patents now or hereafter owned or controlled by
-        Contributor, to Utilize the Contributor Version (or portions
-        thereof), but solely to the extent that any such patent is
-        reasonably necessary to enable You to Utilize the Contributor
-        Version (or portions thereof), and not to any greater extent
-        that may be necessary to Utilize further Modifications or
-        combinations.
+(b) under patents now or hereafter owned or controlled by
+Contributor, to Utilize the Contributor Version (or portions
+thereof), but solely to the extent that any such patent is
+reasonably necessary to enable You to Utilize the Contributor
+Version (or portions thereof), and not to any greater extent
+that may be necessary to Utilize further Modifications or
+combinations.
 
 3. DISTRIBUTION OBLIGATIONS
 
 3.1. Application of License.
 
-    The Modifications which You create or to which You contribute are
-    governed by the terms of this License, including without limitation
-    Section 2.2. The Source Code version of Covered Code may be
-    distributed only under the terms of this License or a future version
-    of this License released under Section 6.1, and You must include a
-    copy of this License with every copy of the Source Code You
-    distribute. You may not offer or impose any terms on any Source Code
-    version that alters or restricts the applicable version of this
-    License or the recipients' rights hereunder. However, You may
-    include an additional document offering the additional rights
-    described in Section 3.5.
+The Modifications which You create or to which You contribute are
+governed by the terms of this License, including without limitation
+Section 2.2. The Source Code version of Covered Code may be
+distributed only under the terms of this License or a future version
+of this License released under Section 6.1, and You must include a
+copy of this License with every copy of the Source Code You
+distribute. You may not offer or impose any terms on any Source Code
+version that alters or restricts the applicable version of this
+License or the recipients' rights hereunder. However, You may
+include an additional document offering the additional rights
+described in Section 3.5.
 
 3.2. Availability of Source Code.
-    
-    Any Modification which You create or to which You contribute must be
-    made available in Source Code form under the terms of this License
-    via an accepted Electronic Distribution Mechanism to anyone to whom
-    you made an Executable version available and to the Initial
-    Developer; and if made available via Electronic Distribution
-    Mechanism, must remain available for at least twelve (12) months
-    after the date it initially became available, or at least six (6)
-    months after a subsequent version of that particular Modification
-    has been made available to such recipients. You are responsible for
-    ensuring that the Source Code version remains available even if the
-    Electronic Distribution Mechanism is maintained by a third party.
-    You are responsible for notifying the Initial Developer of the
-    Modification and the location of the Source if a contact means is
-    provided. Red Hat will be acting as maintainer of the Source and may
-    provide an Electronic Distribution mechanism for the Modification to
-    be made available. You can contact Red Hat to make the Modification
-    available and to notify the Initial Developer.
-    (http://sourceware.cygnus.com/ecos/)
+
+Any Modification which You create or to which You contribute must be
+made available in Source Code form under the terms of this License
+via an accepted Electronic Distribution Mechanism to anyone to whom
+you made an Executable version available and to the Initial
+Developer; and if made available via Electronic Distribution
+Mechanism, must remain available for at least twelve (12) months
+after the date it initially became available, or at least six (6)
+months after a subsequent version of that particular Modification
+has been made available to such recipients. You are responsible for
+ensuring that the Source Code version remains available even if the
+Electronic Distribution Mechanism is maintained by a third party.
+You are responsible for notifying the Initial Developer of the
+Modification and the location of the Source if a contact means is
+provided. Red Hat will be acting as maintainer of the Source and may
+provide an Electronic Distribution mechanism for the Modification to
+be made available. You can contact Red Hat to make the Modification
+available and to notify the Initial Developer.
+(http://sourceware.cygnus.com/ecos/)
 
 3.3. Description of Modifications.
 
-    You must cause all Covered Code to which you contribute to contain a
-    file documenting the changes You made to create that Covered Code
-    and the date of any change. You must include a prominent statement
-    that the Modification is derived, directly or indirectly, from
-    Original Code provided by the Initial Developer and including the
-    name of the Initial Developer in (a) the Source Code, and (b) in any
-    notice in an Executable version or related documentation in which
-    You describe the origin or ownership of the Covered Code.
+You must cause all Covered Code to which you contribute to contain a
+file documenting the changes You made to create that Covered Code
+and the date of any change. You must include a prominent statement
+that the Modification is derived, directly or indirectly, from
+Original Code provided by the Initial Developer and including the
+name of the Initial Developer in (a) the Source Code, and (b) in any
+notice in an Executable version or related documentation in which
+You describe the origin or ownership of the Covered Code.
 
 3.4. Intellectual Property Matters
-        (a) Third Party Claims.
+(a) Third Party Claims.
 
-        If You have knowledge that a party claims an intellectual
-        property right in particular functionality or code (or its
-        utilization under this License), you must include a text file
-        with the source code distribution titled "LEGAL" which describes
-        the claim and the party making the claim in sufficient detail
-        that a recipient will know whom to contact. If you obtain such
-        knowledge after You make Your Modification available as
-        described in Section 3.2, You shall promptly modify the LEGAL
-        file in all copies You make available thereafter and shall take
-        other steps (such as notifying appropriate mailing lists or
-        newsgroups) reasonably calculated to inform those who received
-        the Covered Code that new knowledge has been obtained.
+If You have knowledge that a party claims an intellectual
+property right in particular functionality or code (or its
+utilization under this License), you must include a text file
+with the source code distribution titled "LEGAL" which describes
+the claim and the party making the claim in sufficient detail
+that a recipient will know whom to contact. If you obtain such
+knowledge after You make Your Modification available as
+described in Section 3.2, You shall promptly modify the LEGAL
+file in all copies You make available thereafter and shall take
+other steps (such as notifying appropriate mailing lists or
+newsgroups) reasonably calculated to inform those who received
+the Covered Code that new knowledge has been obtained.
 
-        (b) Contributor APIs.
+(b) Contributor APIs.
 
-        If Your Modification is an application programming interface and
-        You own or control patents which are reasonably necessary to
-        implement that API, you must also include this information in
-        the LEGAL file.
+If Your Modification is an application programming interface and
+You own or control patents which are reasonably necessary to
+implement that API, you must also include this information in
+the LEGAL file.
 
 3.5. Required Notices.
 
-    You must duplicate the notice in Exhibit A in each file of the
-    Source Code, and this License in any documentation for the Source
-    Code, where You describe recipients' rights relating to Covered
-    Code. If You created one or more Modification(s), You may add your
-    name as a Contributor to the Source Code. If it is not possible to
-    put such notice in a particular Source Code file due to its
-    structure, then you must include such notice in a location (such as
-    a relevant directory file) where a user would be likely to look for
-    such a notice. You may choose to offer, and to charge a fee for,
-    warranty, support, indemnity or liability obligations to one or more
-    recipients of Covered Code.
+You must duplicate the notice in Exhibit A in each file of the
+Source Code, and this License in any documentation for the Source
+Code, where You describe recipients' rights relating to Covered
+Code. If You created one or more Modification(s), You may add your
+name as a Contributor to the Source Code. If it is not possible to
+put such notice in a particular Source Code file due to its
+structure, then you must include such notice in a location (such as
+a relevant directory file) where a user would be likely to look for
+such a notice. You may choose to offer, and to charge a fee for,
+warranty, support, indemnity or liability obligations to one or more
+recipients of Covered Code.
 
-    However, You may do so only on Your own behalf, and not on behalf of
-    the Initial Developer or any Contributor. You must make it
-    absolutely clear that any such warranty, support, indemnity or
-    liability obligation is offered by You alone, and You hereby agree
-    to indemnify the Initial Developer and every Contributor for any
-    liability incurred by the Initial Developer or such Contributor as a
-    result of warranty, support, indemnity or liability terms You offer.
+However, You may do so only on Your own behalf, and not on behalf of
+the Initial Developer or any Contributor. You must make it
+absolutely clear that any such warranty, support, indemnity or
+liability obligation is offered by You alone, and You hereby agree
+to indemnify the Initial Developer and every Contributor for any
+liability incurred by the Initial Developer or such Contributor as a
+result of warranty, support, indemnity or liability terms You offer.
 
 3.6. Distribution of Executable Versions.
 
-    You may distribute Covered Code in Executable form only if the
-    requirements of Section 3.1-3.5 have been met for that Covered Code,
-    and if You include a notice stating that the Source Code version of
-    the Covered Code is available under the terms of this License,
-    including a description of how and where You have fulfilled the
-    obligations of Section 3.2. The notice must be conspicuously
-    included in any notice in an Executable version, related
-    documentation or collateral in which You describe recipients' rights
-    relating to the Covered Code. You may distribute the Executable
-    version of Covered Code under a license of Your choice, which may
-    contain terms different from this License, provided that You are in
-    compliance with the terms of this License and that the license for
-    the Executable version does not attempt to limit or alter the
-    recipient's rights in the Source Code version from the rights set
-    forth in this License. If You distribute the Executable version
-    under a different license You must make it absolutely clear that any
-    terms which differ from this License are offered by You alone, not
-    by the Initial Developer or any Contributor. You hereby agree to
-    indemnify the Initial Developer and every Contributor for any
-    liability incurred by the Initial Developer or such Contributor as a
-    result of any such terms You offer.
+You may distribute Covered Code in Executable form only if the
+requirements of Section 3.1-3.5 have been met for that Covered Code,
+and if You include a notice stating that the Source Code version of
+the Covered Code is available under the terms of this License,
+including a description of how and where You have fulfilled the
+obligations of Section 3.2. The notice must be conspicuously
+included in any notice in an Executable version, related
+documentation or collateral in which You describe recipients' rights
+relating to the Covered Code. You may distribute the Executable
+version of Covered Code under a license of Your choice, which may
+contain terms different from this License, provided that You are in
+compliance with the terms of this License and that the license for
+the Executable version does not attempt to limit or alter the
+recipient's rights in the Source Code version from the rights set
+forth in this License. If You distribute the Executable version
+under a different license You must make it absolutely clear that any
+terms which differ from this License are offered by You alone, not
+by the Initial Developer or any Contributor. You hereby agree to
+indemnify the Initial Developer and every Contributor for any
+liability incurred by the Initial Developer or such Contributor as a
+result of any such terms You offer.
 
-    If you distribute executable versions containing Covered Code, you
-    must reproduce the notice in Exhibit B in the documentation and/or
-    other materials provided with the product.
+If you distribute executable versions containing Covered Code, you
+must reproduce the notice in Exhibit B in the documentation and/or
+other materials provided with the product.
 
 3.7. Larger Works.
 
-    You may create a Larger Work by combining Covered Code with other
-    code not governed by the terms of this License and distribute the
-    Larger Work as a single product. In such a case, You must make sure
-    the requirements of this License are fulfilled for the Covered Code.
+You may create a Larger Work by combining Covered Code with other
+code not governed by the terms of this License and distribute the
+Larger Work as a single product. In such a case, You must make sure
+the requirements of this License are fulfilled for the Covered Code.
 
 4. INABILITY TO COMPLY DUE TO STATUTE OR REGULATION
 
@@ -294,32 +295,32 @@ available.
 
 6.1. New Versions.
 
-    Red Hat may publish revised and/or new versions of the License from
-    time to time. Each version will be given a distinguishing version
-    number.
+Red Hat may publish revised and/or new versions of the License from
+time to time. Each version will be given a distinguishing version
+number.
 
 6.2. Effect of New Versions.
 
-    Once Covered Code has been published under a particular version of
-    the License, You may always continue to use it under the terms of
-    that version. You may also choose to use such Covered Code under the
-    terms of any subsequent version of the License published by Red Hat.
-    No one other than Red Hat has the right to modify the terms
-    applicable to Covered Code beyond what is granted under this and
-    subsequent Licenses.
+Once Covered Code has been published under a particular version of
+the License, You may always continue to use it under the terms of
+that version. You may also choose to use such Covered Code under the
+terms of any subsequent version of the License published by Red Hat.
+No one other than Red Hat has the right to modify the terms
+applicable to Covered Code beyond what is granted under this and
+subsequent Licenses.
 
 6.3. Derivative Works.
 
-    If you create or use a modified version of this License (which you
-    may only do in order to apply it to code which is not already
-    Covered Code governed by this License), you must (a) rename Your
-    license so that the phrases "ECOS", "eCos", "Red Hat", "RHEPL" or
-    any confusingly similar phrase do not appear anywhere in your
-    license and (b) otherwise make it clear that your version of the
-    license contains terms which differ from the Red Hat eCos Public
-    License. (Filling in the name of the Initial Developer, Original
-    Code or Contributor in the notice described in Exhibit A shall not
-    of themselves be deemed to be modifications of this License.)
+If you create or use a modified version of this License (which you
+may only do in order to apply it to code which is not already
+Covered Code governed by this License), you must (a) rename Your
+license so that the phrases "ECOS", "eCos", "Red Hat", "RHEPL" or
+any confusingly similar phrase do not appear anywhere in your
+license and (b) otherwise make it clear that your version of the
+license contains terms which differ from the Red Hat eCos Public
+License. (Filling in the name of the Initial Developer, Original
+Code or Contributor in the notice described in Exhibit A shall not
+of themselves be deemed to be modifications of this License.)
 
 7. DISCLAIMER OF WARRANTY
 
@@ -425,7 +426,7 @@ otherwise be considered "Modifications" under this License.
 
 EXHIBIT A
 
-"The contents of this file are subject to the Red Hat eCos Public 
+"The contents of this file are subject to the Red Hat eCos Public
 License Version 1.1 (the "License"); you may not use this file except in
 compliance with the License. You may obtain a copy of the License at
 http://www.redhat.com/

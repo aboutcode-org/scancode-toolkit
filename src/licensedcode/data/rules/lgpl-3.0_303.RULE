@@ -1,0 +1,20 @@
+---
+license_expression: lgpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - lgpl3-license.txt
+notes: https://github.com/translate5/ZfExtended/blob/c18f8771dff7e6df94dad43f883e5bea4c18cac6/Worker/Abstract.php
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl-3.0.txt
+---
+
+START LICENSE AND COPYRIGHT
+ This file may be used under the terms of the GNU LESSER GENERAL PUBLIC LICENSE version 3
+ as published by the Free Software Foundation and appearing in the file lgpl3-license.txt 
+ included in the packaging of this file.  Please review the following information 
+ to ensure the GNU LESSER GENERAL PUBLIC LICENSE version 3.0 requirements will be met:
+https://www.gnu.org/licenses/lgpl-3.0.txt
+
+ @license    GNU LESSER GENERAL PUBLIC LICENSE version 3
+             https://www.gnu.org/licenses/lgpl-3.0.txt
+END LICENSE AND COPYRIGHT

@@ -23,7 +23,7 @@ fasteners==0.17.3
 fingerprints==1.0.3
 ftfy==6.1.1
 future==0.18.2
-gemfileparser==0.8.0
+gemfileparser2==0.9.0
 html5lib==1.1
 idna==3.3
 importlib-metadata==4.12.0

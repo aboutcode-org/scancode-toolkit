@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: not a license note https://ffmpeg.org/doxygen/5.0/libavcodec_2mpl2dec_8c_source.html
+---
+
+mpl2 decode

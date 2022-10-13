@@ -11,6 +11,7 @@ ignorable_urls:
     - https://developer.nvidia.com/
 ---
 
+
 SOFTWARE LICENSE AGREEMENT FOR NVIDIA SOFTWARE DEVELOPMENT KITS
 
 This Software License Agreement, including exhibits attached ("Agreement”) is a
@@ -38,7 +39,7 @@ You agree to use the SDK only for purposes that are permitted by (a) this
 Agreement, and (b) any applicable law, regulation or generally accepted
 practices or guidelines in the relevant jurisdictions.
 
-    1. License.
+1. License.
 
 1.1 Grant
 
@@ -46,43 +47,43 @@ Subject to the terms of this Agreement, NVIDIA hereby grants you a non-
 exclusive, non-transferable license, without the right to sublicense (except as
 expressly provided in this Agreement) to:
 
-    (i) Install and use the SDK,
+(i) Install and use the SDK,
 
-    (ii) Modify and create derivative works of sample source code delivered in
-    the SDK, and
+(ii) Modify and create derivative works of sample source code delivered in
+the SDK, and
 
-    (iii) Distribute those portions of the SDK that are identified in this
-    Agreement as distributable, as incorporated in object code format into a
-    software application that meets the distribution requirements indicated in
-    this Agreement.
+(iii) Distribute those portions of the SDK that are identified in this
+Agreement as distributable, as incorporated in object code format into a
+software application that meets the distribution requirements indicated in
+this Agreement.
 
 1.2 Distribution Requirements
 
 These are the distribution requirements for you to exercise the distribution grant:
 
-    (i) Your application must have material additional functionality, beyond the
-    included portions of the SDK.
+(i) Your application must have material additional functionality, beyond the
+included portions of the SDK.
 
-    (ii) The distributable portions of the SDK shall only be accessed by your
-    application.
+(ii) The distributable portions of the SDK shall only be accessed by your
+application.
 
-    (iii) The following notice shall be included in modifications and derivative
-    works of sample source code distributed: “This software contains source code
-    provided by NVIDIA Corporation.”
+(iii) The following notice shall be included in modifications and derivative
+works of sample source code distributed: “This software contains source code
+provided by NVIDIA Corporation.”
 
-    (iv) Unless a developer tool is identified in this Agreement as
-    distributable, it is delivered for your internal use only.
+(iv) Unless a developer tool is identified in this Agreement as
+distributable, it is delivered for your internal use only.
 
-    (v) The terms under which you distribute your application must be consistent
-    with the terms of this Agreement, including (without limitation) terms
-    relating to the license grant and license restrictions and protection of
-    NVIDIA’s intellectual property rights. Additionally, you agree that you will
-    protect the privacy, security and legal rights of your application users.
+(v) The terms under which you distribute your application must be consistent
+with the terms of this Agreement, including (without limitation) terms
+relating to the license grant and license restrictions and protection of
+NVIDIA’s intellectual property rights. Additionally, you agree that you will
+protect the privacy, security and legal rights of your application users.
 
-    (vi) You agree to notify NVIDIA in writing of any known or suspected
-    distribution or use of the SDK not in compliance with the requirements of
-    this Agreement, and to enforce the terms of your agreements with respect to
-    distributed SDK.
+(vi) You agree to notify NVIDIA in writing of any known or suspected
+distribution or use of the SDK not in compliance with the requirements of
+this Agreement, and to enforce the terms of your agreements with respect to
+distributed SDK.
 
 1.3 Authorized Users
 
@@ -149,7 +150,7 @@ respect to any audio and/or video encoders and decoders.
 NVIDIA reserves all rights, title and interest in and to the SDK not expressly
 granted to you under this Agreement.
 
-    2. Limitations.
+2. Limitations.
 
 The following license limitations apply to your use of the SDK:
 
@@ -191,7 +192,7 @@ attorney’s fees and costs incident to establishing the right of indemnificatio
 arising out of or related to your use of the SDK outside of the scope of this
 Agreement, or not in compliance with its terms.
 
-    3. Ownership.
+3. Ownership.
 
 3.1 NVIDIA or its licensors hold all rights, title and interest in and to the
 SDK and its modifications and derivative works, including their respective
@@ -217,7 +218,7 @@ into the SDK. NVIDIA is constantly looking for ways to improve its products, so
 you may send feedback to NVIDIA through the developer portal at
 https://developer.nvidia.com.
 
-    4. No Warranties.
+4. No Warranties.
 
 THE SDK IS PROVIDED BY NVIDIA “AS IS” AND “WITH ALL FAULTS.” TO THE MAXIMUM
 EXTENT PERMITTED BY LAW, NVIDIA
@@ -229,7 +230,7 @@ INFRINGEMENT, OR THE ABSENCE OF ANY DEFECTS THEREIN, WHETHER LATENT OR PATENT.
 NO WARRANTY IS MADE ON THE BASIS OF TRADE USAGE, COURSE OF DEALING OR COURSE OF
 TRADE.
 
-    5. Limitations of Liability.
+5. Limitations of Liability.
 
 TO THE MAXIMUM EXTENT PERMITTED BY LAW, NVIDIA AND ITS AFFILIATES SHALL NOT BE
 LIABLE FOR ANY SPECIAL, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR ANY
@@ -251,7 +252,7 @@ parties, and, absent any of these exclusions or limitations of liability, the
 provisions of this Agreement, including, without limitation, the economic terms,
 would be substantially different.
 
-    6. Termination.
+6. Termination.
 
 6.1 This Agreement will continue to apply until terminated by either you or
 NVIDIA as described below.
@@ -275,7 +276,7 @@ that you have complied with your commitments under this section. Upon any
 termination of this Agreement all provisions survive except for the licenses
 granted to you.
 
-    7. General.
+7. General.
 
 If you wish to assign this Agreement or your rights and obligations, including
 by merger, consolidation, dissolution or operation of law, contact NVIDIA to ask
@@ -365,46 +366,46 @@ integral part of the Agreement. In the event of conflict between the terms in
 this supplement and the terms in the Agreement, the terms in this supplement
 govern.
 
-    1. Distribution. The following portions of the SDK are distributable under
-    the Agreement: the runtimes files ending with .so and .a as part of your
-    application.
+1. Distribution. The following portions of the SDK are distributable under
+the Agreement: the runtimes files ending with .so and .a as part of your
+application.
 
-    2. Samples. In this SDK, the folder that contains sample source code is the
-    apps/samples folder. With respect to source code samples licensed to you,
-    NVIDIA and its affiliates are free to continue independently developing
-    source code samples and you covenant not to sue NVIDIA, its affiliates or
-    their licensees with respect to later versions of NVIDIA released source
-    code samples.
+2. Samples. In this SDK, the folder that contains sample source code is the
+apps/samples folder. With respect to source code samples licensed to you,
+NVIDIA and its affiliates are free to continue independently developing
+source code samples and you covenant not to sue NVIDIA, its affiliates or
+their licensees with respect to later versions of NVIDIA released source
+code samples.
 
-    3. Restrictions. The following restrictions apply:
+3. Restrictions. The following restrictions apply:
 
-        I. You are not permitted to disclose the results of any benchmarking or
-        other competitive analysis relating to the SDK without the prior written
-        permission from NVIDIA; and
+I. You are not permitted to disclose the results of any benchmarking or
+other competitive analysis relating to the SDK without the prior written
+permission from NVIDIA; and
 
-        II. The SDK is licensed for use with a computer system incorporating one
-        or more NVIDIA GPU hardware products and running NVIDIA software
-        drivers.
+II. The SDK is licensed for use with a computer system incorporating one
+or more NVIDIA GPU hardware products and running NVIDIA software
+drivers.
 
-    4. Source Code Modification and Ownership. Subject to the terms of the
-    Agreement and this supplement, NVIDIA hereby grants you a non-exclusive,
-    non-transferable license, without the right to sublicense to modify and
-    create derivative works of software provided to you by NVIDIA in source code
-    form, except for header files. As between you and NVIDIA, NVIDIA holds all
-    rights, title and interest in and to your modifications and derivative works
-    of the source code software. Subject to NVIDIA’s rights described in the
-    Agreement and this section, you retain all rights, title and in and to your
-    software and products developed independently from the use of the SDK (as
-    may be demonstrated by documentation). You have no obligation to provide to
-    NVIDIA your modifications to the NVIDIA source code.
+4. Source Code Modification and Ownership. Subject to the terms of the
+Agreement and this supplement, NVIDIA hereby grants you a non-exclusive,
+non-transferable license, without the right to sublicense to modify and
+create derivative works of software provided to you by NVIDIA in source code
+form, except for header files. As between you and NVIDIA, NVIDIA holds all
+rights, title and interest in and to your modifications and derivative works
+of the source code software. Subject to NVIDIA’s rights described in the
+Agreement and this section, you retain all rights, title and in and to your
+software and products developed independently from the use of the SDK (as
+may be demonstrated by documentation). You have no obligation to provide to
+NVIDIA your modifications to the NVIDIA source code.
 
-    5. Indemnity. You agree to defend, indemnify and hold harmless NVIDIA and
-    its affiliates, and their respective employees, contractors, agents,
-    officers and directors, from and against any and all claims, damages,
-    obligations, losses, liabilities, costs or debt, fines, restitutions and
-    expenses (including but not limited to attorney’s fees and costs incident to
-    establishing the right of indemnification) arising out of or related to any
-    damages, or injuries, illness or death related to the use of goods and/or
-    services that include or utilize the SDK.
+5. Indemnity. You agree to defend, indemnify and hold harmless NVIDIA and
+its affiliates, and their respective employees, contractors, agents,
+officers and directors, from and against any and all claims, damages,
+obligations, losses, liabilities, costs or debt, fines, restitutions and
+expenses (including but not limited to attorney’s fees and costs incident to
+establishing the right of indemnification) arising out of or related to any
+damages, or injuries, illness or death related to the use of goods and/or
+services that include or utilize the SDK.
 
 (v. March 8, 2019)

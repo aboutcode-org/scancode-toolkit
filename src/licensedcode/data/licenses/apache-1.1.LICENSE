@@ -9,6 +9,7 @@ notes: |
     Per SPDX.org, this license is OSI certified. This license has been
     superseded by Apache 2.0
 spdx_license_key: Apache-1.1
+osi_license_key: Apache-1.1
 text_urls:
     - http://apache.org/licenses/LICENSE-1.1
 faq_url: http://www.apache.org/foundation/license-faq.html
@@ -17,15 +18,14 @@ other_urls:
     - https://opensource.org/licenses/Apache-1.1
 ignorable_copyrights:
     - Copyright (c) 2000 The Apache Software Foundation
-ignorable_authors:
-    - the Apache Software Foundation (http://www.apache.org/)
 ignorable_holders:
     - The Apache Software Foundation
+ignorable_authors:
+    - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:
     - apache@apache.org
-osi_license_key: Apache-1.1
 ---
 
 The Apache Software License, Version 1.1

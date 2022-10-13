@@ -8,17 +8,18 @@ spdx_license_key: LicenseRef-scancode-divx-open-1.0
 minimum_coverage: 30
 ignorable_copyrights:
     - Copyright (c) 2001 Project Mayo
-ignorable_authors:
-    - Project Mayo
 ignorable_holders:
+    - Project Mayo
+ignorable_authors:
     - Project Mayo
 ---
 
+
 DivX Open License
-================= 
+=================
 Version 1.0
 
-Copyright (C) 2001 Project Mayo. 
+Copyright (C) 2001 Project Mayo.
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 

@@ -6,22 +6,23 @@ category: Permissive
 owner: Fraunhofer-Gesellschaft
 spdx_license_key: LicenseRef-scancode-fraunhofer-iso-14496-10
 minimum_coverage: 60
-ignorable_authors:
-    - Heiko Schwarz
 ignorable_copyrights:
     - Copyright (c) ISO/IEC 2005
     - Copyright 2005, International Telecommunications Union, Geneva
 ignorable_holders:
     - ISO/IEC
     - International Telecommunications Union, Geneva
+ignorable_authors:
+    - Heiko Schwarz
 ignorable_urls:
     - http://www.itu.int/
 ---
 
+
 ********************************************************************************
 
 NOTE - One of the two copyright statements below may be chosen
-       that applies for the software.
+that applies for the software.
 
 ********************************************************************************
 
@@ -68,12 +69,12 @@ Copyright 2005, International Telecommunications Union, Geneva
 
 The Fraunhofer HHI hereby donate this source code to the ITU, with the following
 understanding:
-    1. Fraunhofer HHI retain the right to do whatever they wish with the
-       contributed source code, without limit.
-    2. Fraunhofer HHI retain full patent rights (if any exist) in the technical
-       content of techniques and algorithms herein.
-    3. The ITU shall make this code available to anyone, free of license or
-       royalty fees.
+1. Fraunhofer HHI retain the right to do whatever they wish with the
+contributed source code, without limit.
+2. Fraunhofer HHI retain full patent rights (if any exist) in the technical
+content of techniques and algorithms herein.
+3. The ITU shall make this code available to anyone, free of license or
+royalty fees.
 
 DISCLAIMER OF WARRANTY
 

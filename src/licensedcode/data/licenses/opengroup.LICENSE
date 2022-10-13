@@ -7,6 +7,7 @@ owner: Open Group
 homepage_url: http://opensource.org/licenses/opengroup.php
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: OGTSL
+osi_license_key: OGTSL
 text_urls:
     - http://opensource.org/licenses/opengroup.php
 osi_url: http://opensource.org/licenses/opengroup.php
@@ -14,8 +15,8 @@ other_urls:
     - http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt
     - http://www.opensource.org/licenses/OGTSL
     - https://opensource.org/licenses/OGTSL
-osi_license_key: OGTSL
 ---
+
 
 The Open Group Test Suite License
 
@@ -37,11 +38,11 @@ If you find a bug in one of the standards mode test cases, please let us know so
 
 Definitions:
 
-    * "Package" refers to the collection of files distributed by the Copyright Holder, and derivatives of that collection of files created through textual modification.
-    * "Standard Version" refers to such a Package if it has not been modified, or has been modified in accordance with the wishes of the Copyright Holder.
-    * "Copyright Holder" is whoever is named in the copyright or copyrights for the package. "You" is you, if you're thinking about copying or distributing this Package.
-    * "Reasonable copying fee" is whatever you can justify on the basis of media cost, duplication charges, time of people involved, and so on. (You will not be required to justify it to the Copyright Holder, but only to the computing community at large as a market that must bear the fee.)
-    * "Freely Available" means that no fee is charged for the item itself, though there may be fees involved in handling the item. It also means that recipients of the item may redistribute it under the same conditions they received it. 
+* "Package" refers to the collection of files distributed by the Copyright Holder, and derivatives of that collection of files created through textual modification.
+* "Standard Version" refers to such a Package if it has not been modified, or has been modified in accordance with the wishes of the Copyright Holder.
+* "Copyright Holder" is whoever is named in the copyright or copyrights for the package. "You" is you, if you're thinking about copying or distributing this Package.
+* "Reasonable copying fee" is whatever you can justify on the basis of media cost, duplication charges, time of people involved, and so on. (You will not be required to justify it to the Copyright Holder, but only to the computing community at large as a market that must bear the fee.)
+* "Freely Available" means that no fee is charged for the item itself, though there may be fees involved in handling the item. It also means that recipients of the item may redistribute it under the same conditions they received it.
 
 
 *
@@ -52,11 +53,11 @@ Definitions:
 
 3. You may otherwise modify your copy of this Package in any way, provided that you insert a prominent notice in each changed file stating how and when you changed that file, and provided that you do at least the following:
 
-    rename any non-standard executables and testcases so the names do not conflict with standard executables and testcases, which must also be provided, and provide a separate manual page for each non-standard executable and testcase that clearly documents how it differs from the Standard Version.
+rename any non-standard executables and testcases so the names do not conflict with standard executables and testcases, which must also be provided, and provide a separate manual page for each non-standard executable and testcase that clearly documents how it differs from the Standard Version.
 
 4. You may distribute the programs of this Package in object code or executable form, provided that you do at least the following:
 
-    accompany any non-standard executables and testcases with their corresponding Standard Version executables and testcases, giving the non-standard executables and testcases non-standard names, and clearly documenting the differences in manual pages (or equivalent), together with instructions on where to get the Standard Version.
+accompany any non-standard executables and testcases with their corresponding Standard Version executables and testcases, giving the non-standard executables and testcases non-standard names, and clearly documenting the differences in manual pages (or equivalent), together with instructions on where to get the Standard Version.
 
 5. You may charge a reasonable copying fee for any distribution of this Package. You may charge any fee you choose for support of this Package. You may not charge a fee for this Package itself. However, you may distribute this Package in aggregate with other (possibly commercial) programs as part of a larger (possibly commercial) software distribution provided that you do not advertise this Package as a product of your own.
 

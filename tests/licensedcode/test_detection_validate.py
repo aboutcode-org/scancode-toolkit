@@ -19,6 +19,7 @@ from commoncode import text
 
 from licensedcode import cache
 from licensedcode import models
+from licensedcode.models import licenses_data_dir
 from scancode_config import REGEN_TEST_FIXTURES
 
 """
@@ -121,7 +122,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
     ``regen`` the ignorables to update the License or Rule .yml data file.
     """
     result = models.get_ignorables(text=licensish.text)
-
+    
     if verbose:
         print()
         print('result')
@@ -137,7 +138,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
 
         models.set_ignorables(licish, result , verbose=verbose)
 
-        licish.dump()
+        licish.dump(licenses_data_dir)
         if is_from_license:
             licensish = models.build_rule_from_license(licish)
 

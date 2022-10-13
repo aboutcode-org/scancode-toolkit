@@ -1793,12 +1793,16 @@ def filter_invalid_matches_to_single_word_gibberish(
                     'rule_text:', repr(rule_text)
                 )
 
-            if rule.relevance >= 75:
+            if rule.relevance >= 80:
                 max_diff = 1
             else:
                 max_diff = 0
 
-            if is_invalid_short_match(matched_text, rule_text, max_diff=max_diff):
+            if not is_valid_short_match(
+                matched_text=matched_text,
+                rule_text=rule_text,
+                max_diff=max_diff,
+            ):
                 if trace:
                     logger_debug('    ==> DISCARDING INVALID GIBBERISH:', match)
                 discarded_append(match)
@@ -1881,106 +1885,148 @@ def filter_short_matches_scattered_on_too_many_lines(
     return kept, discarded
 
 
-def is_invalid_short_match(
+def is_valid_short_match(
     matched_text,
     rule_text,
     max_diff=0,
     trace=TRACE_FILTER_SINGLE_WORD_GIBBERISH,
 ):
     """
-    Return True if the ``matched_text`` given a ``rule_text`` is invalid.
-    ``max_diff`` is the maximum length difference between these two texts
-    considered as OK.
+    Return True if the match with ``matched_text`` is a valid short match given
+    a ``rule_text``.
+    ``max_diff`` is the maximum number of character differences between these
+    two texts that is considered as acceptable.
 
     For example:
-    >>> is_invalid_short_match("gpl", "GPL")
-    False
-    >>> is_invalid_short_match("Gpl", "GPL")
-    False
-    >>> is_invalid_short_match("gPl", "GPL")
+    >>> is_valid_short_match("gpl", "GPL")
     True
-    >>> is_invalid_short_match("GPL[", "GPL")
+    >>> is_valid_short_match("Gpl", "GPL")
     True
-    >>> is_invalid_short_match("~gpl", "GPL")
-    True
-    >>> is_invalid_short_match("GPL", "gpl")
+    >>> is_valid_short_match("gPl", "GPL")
     False
-    >>> is_invalid_short_match("Gpl+", "gpl+")
+    >>> is_valid_short_match("GPL[", "GPL")
     False
-    >>> is_invalid_short_match("~gpl", "GPL", max_diff=0)
-    True
-    >>> is_invalid_short_match("~gpl", "GPL", max_diff=1)
+    >>> is_valid_short_match("~gpl", "GPL")
     False
-    >>> is_invalid_short_match("ALv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("GPL", "gpl")
+    True
+    >>> is_valid_short_match("Gpl+", "gpl+")
+    True
+    >>> is_valid_short_match("~gpl", "GPL", max_diff=0)
     False
-    >>> is_invalid_short_match("aLv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("~gpl", "GPL", max_diff=1)
     True
-    >>> is_invalid_short_match("alv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("ALv2@", "ALv2", max_diff=1)
+    True
+    >>> is_valid_short_match("aLv2@", "ALv2", max_diff=1)
     False
-    >>> is_invalid_short_match("gpl) &", "GPL")
+    >>> is_valid_short_match("alv2@", "ALv2", max_diff=1)
     True
-    >>> is_invalid_short_match("GPLv2(", "GPLv2")
+    >>> is_valid_short_match("GPLv2@", "GPLv2")
     True
+    >>> is_valid_short_match("LGPL2@", "LGPL2")
+    True
+    >>> is_valid_short_match("gpl) &", "GPL")
+    False
+    >>> is_valid_short_match("GPLv2(", "GPLv2")
+    True
+    >>> is_valid_short_match("GPLv2", "GPLv2")
+    True
+    >>> is_valid_short_match("GPLV2+", "GPLv2+")
+    True
+    >>> is_valid_short_match("gplv2+", "GPLv2+")
+    True
+    >>> is_valid_short_match("LGPLV2+", "LGPLv2+")
+    True
+    >>> is_valid_short_match("LgplV2+", "LGPLv2+")
+    True
+    >>> is_valid_short_match("Cc0(", "CC0")
+    False
+    >>> is_valid_short_match("CC0", "CC0")
+    True
+    >>> is_valid_short_match("Cc0", "CC0")
+    True
+    >>> is_valid_short_match("COPYINGv3", "COPYINGV3")
+    True
+    >>> is_valid_short_match("MpL2", "MPL2")
+    False
+    >>> is_valid_short_match('WJa2!n"n#n$n;F#Cc0(n', "CC0")
+    False
+
     """
     if trace:
         logger_debug(
-            '==> is_invalid_short_match:',
+            '==> is_valid_short_match:',
             'matched_text:', repr(matched_text),
             'rule_text:', repr(rule_text),
             'max_diff:', max_diff,
         )
 
     if matched_text == rule_text:
-        return False
+        return True
+
+    # For long enough rules (length in characters), we consider all matches to
+    # be correct
+    len_rule_text = len(rule_text)
+    if len_rule_text >= 5:
+        return True
 
     # Length differences help decide that this is invalid as the extra chars
     # will be punctuation by construction
-    diff = len(matched_text) - len(rule_text)
+    diff = len(matched_text) - len_rule_text
 
     if diff and diff != max_diff:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:', 'diff:', diff,
+                '    ==> is_valid_short_match:', 'diff:', diff,
                 'max_diff:', max_diff)
 
-        return True
+        return False
 
     if rule_text.endswith('+'):
         matched_text = matched_text.rstrip('+')
         rule_text = rule_text.rstrip('+')
 
     # Same length, do we have mixed case? or title case?
-    # same case and title case are OK, mixed case not OK.
+    # All of same case and title case are OK, mixed case not OK.
     is_title_case = matched_text.istitle()
 
     if is_title_case:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:',
+                '    ==> is_valid_short_match:',
                 'is_title_case:', 'matched_text:', matched_text)
 
-        return False
+        return True
 
-    contains_rule = rule_text in matched_text
-
-    is_same_case = (
+    is_same_case_for_all_chars = (
         matched_text.lower() == matched_text
         or matched_text.upper() == matched_text
     )
 
-    if is_same_case or contains_rule:
+    if is_same_case_for_all_chars:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:',
-                'not is_same_case or contains_rule:',
+                '    ==> is_valid_short_match:',
+                'is_same_case_for_all_chars:',
                 'matched_text:', matched_text, 'rule_text:', rule_text)
 
-        return False
+        return True
+
+    matched_text_contains_full_rule_text = rule_text in matched_text
+    if matched_text_contains_full_rule_text:
+        if trace:
+            logger_debug(
+                '    ==> is_valid_short_match:',
+                'matched_text_contains_full_rule_text:',
+                'matched_text:', matched_text, 'rule_text:', rule_text)
+
+        return True
 
     if trace:
-        logger_debug('    ==> is_invalid_short_match:', 'INVALID', matched_text)
+        logger_debug('    ==> is_valid_short_match:', 'INVALID', matched_text)
 
-    return True
+    return False
 
 
 def filter_false_positive_matches(
@@ -2023,12 +2069,14 @@ def filter_matches_missing_key_phrases(
     rule.
     A key phrase must be matched exactly without gaps or unknown words.
 
-    A rule with "is_continuous" set to True is the same as if it's whole text
+    A rule with "is_continuous" set to True is the same as if its whole text
     was defined as a keyphrase and is processed here too.
     """
-    # never discard a solo match
+    # never discard a solo match, unless matched to "is_continuous" rule
     if len(matches) == 1:
-        return matches, []
+        rule = matches[0]
+        if not rule.is_continuous:
+            return matches, []
 
     kept = []
     kept_append = kept.append

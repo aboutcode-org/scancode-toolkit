@@ -1,8 +1,8 @@
 ---
 key: cecill-2.0-fr
+language: fr
 short_name: CeCILL 2.0 French
 name: CeCILL Free Software License Agreement v2.0 French
-language: fr
 category: Copyleft Limited
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences.en.html

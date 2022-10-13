@@ -6,14 +6,15 @@ category: Permissive
 owner: Analysis and Solutions Company
 homepage_url: http://www.analysisandsolutions.com/software/license.htm
 spdx_license_key: LicenseRef-scancode-simpl-1.1
+minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) The Analysis and Solutions Company http://www.analysisandsolutions.com
 ignorable_holders:
     - The Analysis and Solutions Company
 ignorable_urls:
     - http://www.analysisandsolutions.com/
-minimum_coverage: 80
 ---
+
 
 SIMPLE PUBLIC LICENSE                        VERSION 1.1   2003-01-21
 
@@ -26,11 +27,11 @@ without fee or royalty is hereby granted, provided that you include
 the following on ALL copies of the software and documentation or
 portions thereof, including modifications, that you make:
 
-    a.  The full text of this license in a location viewable to users
-    of the redistributed or derivative work.
+a.  The full text of this license in a location viewable to users
+of the redistributed or derivative work.
 
-    b.  Notice of any changes or modifications to the files,
-    including the date changes were made.
+b.  Notice of any changes or modifications to the files,
+including the date changes were made.
 
 2.  The name, servicemarks and trademarks of the copyright holders
 may NOT be used in advertising or publicity pertaining to the

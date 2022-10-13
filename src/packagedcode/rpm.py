@@ -201,7 +201,6 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                 if package_uid:
                     # path is found and processed: remove it, so we can check if we
                     # found all of them
-                    package_adder(package_uid, res, codebase)
                     resources.append(res)
 
         # if we have left over file references, add these to extra data
@@ -224,7 +223,9 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                     dep.namespace = namespace
                 yield dep
 
-        yield from resources
+        for resource in resources:
+            package_adder(package_uid, resource, codebase)
+            yield resource
 
 
 # TODO: add dependencies!!!

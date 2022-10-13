@@ -10,17 +10,18 @@ text_urls:
     - http://www.openssl.org/source/license.html
 other_urls:
     - http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html
+ignorable_copyrights:
+    - holder is Tim Hudson (tjh@cryptsoft.com)
+ignorable_holders:
+    - Tim Hudson
 ignorable_authors:
     - Eric Young (eay@cryptsoft.com)
     - Tim Hudson (tjh@cryptsoft.com)
-ignorable_copyrights:
-    - holder is Tim Hudson (tjh@cryptsoft.com)
 ignorable_emails:
     - eay@cryptsoft.com
     - tjh@cryptsoft.com
-ignorable_holders:
-    - Tim Hudson
 ---
+
 
 This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).
 The implementation was written so as to conform with Netscapes SSL.
@@ -43,19 +44,19 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 1. Redistributions of source code must retain the copyright
-   notice, this list of conditions and the following disclaimer.
+notice, this list of conditions and the following disclaimer.
 2. Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
 3. All advertising materials mentioning features or use of this software
-   must display the following acknowledgement:
-   "This product includes cryptographic software written by
-    Eric Young (eay@cryptsoft.com)"
-   The word 'cryptographic' can be left out if the rouines from the library
-   being used are not cryptographic related :-).
+must display the following acknowledgement:
+"This product includes cryptographic software written by
+Eric Young (eay@cryptsoft.com)"
+The word 'cryptographic' can be left out if the rouines from the library
+being used are not cryptographic related :-).
 4. If you include any Windows specific code (or a derivative thereof) from
-   the apps directory (application code) you must include an acknowledgement:
-   "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+the apps directory (application code) you must include an acknowledgement:
+"This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
 
 THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE

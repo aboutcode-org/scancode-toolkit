@@ -6,9 +6,9 @@ category: Permissive
 owner: Bill Paul
 homepage_url: https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/sys/dev/an/if_an_isa.c
 spdx_license_key: LicenseRef-scancode-bsd-original-voices
+minimum_coverage: 99
 ignorable_authors:
     - Bill Paul
-minimum_coverage: 99
 ---
 
 * Redistribution and use in source and binary forms, with or without

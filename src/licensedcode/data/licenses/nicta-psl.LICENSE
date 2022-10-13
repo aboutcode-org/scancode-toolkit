@@ -5,16 +5,20 @@ name: NICTA Public Software Licence 1.0
 category: Permissive
 owner: NICTA
 homepage_url: http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
-spdx_license_key: LicenseRef-scancode-nicta-psl
+spdx_license_key: NICTA-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-nicta-psl
 text_urls:
     - http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
 other_urls:
     - http://www.nicta.com.au/
+    - https://opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
 ignorable_copyrights:
     - Copyright (c) 2004 National ICT Australia Ltd
 ignorable_holders:
     - National ICT Australia Ltd
 ---
+
 
 NICTA Public Software Licence
 Version 1.0
@@ -32,13 +36,13 @@ to whom the Software is furnished to do so, provided that the
 following conditions are met:
 
 - Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimers.
+notice, this list of conditions and the following disclaimers.
 - Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimers in
-  the documentation and/or other materials provided with the
-  distribution.
+notice, this list of conditions and the following disclaimers in
+the documentation and/or other materials provided with the
+distribution.
 - The name of NICTA may not be used to endorse or promote products
-  derived from this Software without specific prior written permission.
+derived from this Software without specific prior written permission.
 
 EXCEPT AS EXPRESSLY STATED IN THIS LICENCE AND TO THE FULL EXTENT
 PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS-IS" AND
@@ -68,12 +72,12 @@ NICTA's liability is limited, to the full extent permitted by the
 applicable legislation, at its option, to:
 
 a. in the case of goods, any one or more of the following:
-  i.   the replacement of the goods or the supply of equivalent goods;
-  ii.  the repair of the goods;
-  iii. the payment of the cost of replacing the goods or of acquiring
-       equivalent goods;
-  iv.  the payment of the cost of having the goods repaired; or
+i.   the replacement of the goods or the supply of equivalent goods;
+ii.  the repair of the goods;
+iii. the payment of the cost of replacing the goods or of acquiring
+equivalent goods;
+iv.  the payment of the cost of having the goods repaired; or
 b. in the case of services:
-  i.   the supplying of the services again; or 
-  ii.  the payment of the cost of having the services supplied
-       again.
+i.   the supplying of the services again; or
+ii.  the payment of the cost of having the services supplied
+again.

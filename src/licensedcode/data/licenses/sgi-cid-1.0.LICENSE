@@ -10,13 +10,14 @@ text_urls:
     - http://www.xfree86.org/current/LICENSE10.html
 ignorable_copyrights:
     - Copyright (c) 1994-1999 Silicon Graphics, Inc.
-ignorable_authors:
-    - Silicon Graphics, Inc.
 ignorable_holders:
+    - Silicon Graphics, Inc.
+ignorable_authors:
     - Silicon Graphics, Inc.
 ignorable_urls:
     - http://www.sgi.com/software/opensource/cid/license.html
 ---
+
 
 CID FONT CODE PUBLIC LICENSE Version 1.0 3/31/99
 
@@ -32,41 +33,41 @@ tion, distributing, sublicensing or selling:
 
 1. Definitions.
 
-     a. "Original Software" means source code of computer software code
-     that is described in Exhibit A as Original Software.
+a. "Original Software" means source code of computer software code
+that is described in Exhibit A as Original Software.
 
-     b. "Modifications" means any addition to or deletion from the sub-
-     stance or structure of either the Original Software or any previous
-     Modifications. When Subject Software is released as a series of
-     files, a Modification means (i) any addition to or deletion from
-     the contents of a file containing Original Software or previous
-     Modifications and (ii) any new file that contains any part of the
-     Original Code or previous Modifications.
+b. "Modifications" means any addition to or deletion from the sub-
+stance or structure of either the Original Software or any previous
+Modifications. When Subject Software is released as a series of
+files, a Modification means (i) any addition to or deletion from
+the contents of a file containing Original Software or previous
+Modifications and (ii) any new file that contains any part of the
+Original Code or previous Modifications.
 
-     c. "Subject Software" means the Original Software or Modifications
-     or the combination of the Original Software and Modifications, or
-     portions of any of the foregoing.
+c. "Subject Software" means the Original Software or Modifications
+or the combination of the Original Software and Modifications, or
+portions of any of the foregoing.
 
-     d. "Recipient" means an individual or a legal entity exercising
-     rights under the terms of this License. For legal entities, "Recip-
-     ient" includes any entity that controls, is controlled by, or is
-     under common control with Recipient. For purposes of this defini-
-     tion, "control" of an entity means (i) the power, direct or indi-
-     rect, to direct or manage such entity, or (ii) ownership of fifty
-     percent (50%) or more of the outstanding shares or beneficial own-
-     ership of such entity.
+d. "Recipient" means an individual or a legal entity exercising
+rights under the terms of this License. For legal entities, "Recip-
+ient" includes any entity that controls, is controlled by, or is
+under common control with Recipient. For purposes of this defini-
+tion, "control" of an entity means (i) the power, direct or indi-
+rect, to direct or manage such entity, or (ii) ownership of fifty
+percent (50%) or more of the outstanding shares or beneficial own-
+ership of such entity.
 
-     e. "Required Notice" means the notice set forth in Exhibit A to
-     this License.
+e. "Required Notice" means the notice set forth in Exhibit A to
+this License.
 
-     f. "Accompanying Technology" means any software or other technology
-     that is not a Modification and that is distributed or made publicly
-     available by Recipient with the Subject Software.  Separate soft-
-     ware files that do not contain any Original Software or any previ-
-     ous Modification shall not be deemed a Modification, even if such
-     software files are aggregated as part of a product, or in any
-     medium of storage, with any file that does contain Original Soft-
-     ware or any previous Modification.
+f. "Accompanying Technology" means any software or other technology
+that is not a Modification and that is distributed or made publicly
+available by Recipient with the Subject Software.  Separate soft-
+ware files that do not contain any Original Software or any previ-
+ous Modification shall not be deemed a Modification, even if such
+software files are aggregated as part of a product, or in any
+medium of storage, with any file that does contain Original Soft-
+ware or any previous Modification.
 
 2. License Terms. All distribution of the Subject Software must be made sub-
 ject to the terms of this License. A copy of this License and the Required

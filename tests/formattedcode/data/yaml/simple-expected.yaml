@@ -22,9 +22,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-4.15.0-189-generic-x86_64-with-debian-stretch-sid
-        platform_version: '#200~16.04.1-Ubuntu SMP Fri Jun 24 05:32:48 UTC 2022'
-        python_version: "3.7.9 (default, Dec  6 2020, 11:48:06) \n[GCC 5.4.0 20160609]"
+        platform: Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.35
+        platform_version: '#1 SMP Wed Mar 2 00:30:59 UTC 2022'
+        python_version: 3.10.5 (main, Jul 30 2022, 03:32:13) [GCC 11.2.0]
       spdx_license_list_version: '3.17'
       files_count: 1
 dependencies: []

@@ -5,19 +5,20 @@ name: NVIDIA APEX SDK End User License Agreement 2011
 category: Proprietary Free
 owner: NVIDIA
 homepage_url: https://developer.download.nvidia.com/assets/gamedev/docs/NVIDIA%20APEX%20EULA.pdf
+spdx_license_key: LicenseRef-scancode-nvidia-apex-sdk-eula-2011
 other_urls:
     - www.developer.nvidia.com/apex
-spdx_license_key: LicenseRef-scancode-nvidia-apex-sdk-eula-2011
 ignorable_copyrights:
     - Copyright 2011 NVIDIA Corporation
-ignorable_emails:
-    - PHYSXLICENCING@NVIDIA.COM
-    - PHYSXLICENSING@NVIDIA.COM
 ignorable_holders:
     - NVIDIA Corporation
 ignorable_urls:
     - http://www.developer.nvidia.com/apex
+ignorable_emails:
+    - PHYSXLICENCING@NVIDIA.COM
+    - PHYSXLICENSING@NVIDIA.COM
 ---
+
 
 NVIDIA CORPORATION
 NVIDIA APEX SDK END USER LICENSE AGREEMENT
@@ -57,7 +58,7 @@ the APEX SDK’s “Samples” directory or made available for download from the
 developer site and designated as sample code.
 
 2. License. NVIDIA grants you (“you”) a limited, non-exclusive, non-transferable
-world-wide, royalty-free license to (a) internally install, use and display the APEX SDK, 
+world-wide, royalty-free license to (a) internally install, use and display the APEX SDK,
 solely for purposes of developing APEX asset content for Physics Applications; (b)
 internally use, copy, modify and compile the Sample Code to design, develop and test
 APEX assets; and (c) reproduce and distribute the Redistributable Code only in object
@@ -114,7 +115,7 @@ CONSIDERED A MATERIAL BREACH OF THIS AGREEMENT.
 licensors, and is protected by United States copyright laws, international treaty
 provisions, and other applicable laws. With regard to any copies made, you agree to
 reproduce any copyright notices and other proprietary legends included on the original.
-NVIDIA copyright notice(s) may appear in any of several forms, including machinereadable 
+NVIDIA copyright notice(s) may appear in any of several forms, including machinereadable
 form, and you agree to reproduce such notice in each form in which it appears.
 Title and copyrights to the APEX SDK and any copies made by you remain with
 NVIDIA and its licensors. You acknowledge that the APEX SDK contain valuable
@@ -147,7 +148,7 @@ provisions of this Agreement, will result in automatic termination of this licen
 to NVIDIA.
 
 A: You will include a reference to the APEX SDK and NVIDIA in any press releases
-for such Game that relate to NVIDIA, or in-game physics, and will identify 
+for such Game that relate to NVIDIA, or in-game physics, and will identify
 NVIDIA as the provider of "APEX" (or such other term or phrase as indicated by
 NVIDIA from time to time).
 
@@ -196,7 +197,7 @@ exclusion of implied warranties, so the above exclusion may not apply to you.
 
 8. Remedies. The entire liability of NVIDIA and its licensors, and your exclusive
 remedy under the warranty provided herein will be, at NVIDIA’s option, to replace any
-media found to be defective within the warranty period, or to refund the purchase price 
+media found to be defective within the warranty period, or to refund the purchase price
 and terminate this Agreement. To seek such a remedy, you must return the entire APEX
 SDK to NVIDIA, with a copy of the original purchase receipt within the warranty period.
 
@@ -244,7 +245,7 @@ original and all stand-alone copies, in whole or in part, of the APEX SDK have b
 destroyed. Upon Partial Termination, you may continue to distribute any Physics
 Application that has been commercially released prior to such termination subject to
 prospective compliance with this Agreement. Upon any other termination, you will
-certify to NVIDIA in writing that the original and all copies, in whole or in part, of the 
+certify to NVIDIA in writing that the original and all copies, in whole or in part, of the
 APEX SDK have been destroyed, including those portions contained within any
 unshipped Physics Applications.
 

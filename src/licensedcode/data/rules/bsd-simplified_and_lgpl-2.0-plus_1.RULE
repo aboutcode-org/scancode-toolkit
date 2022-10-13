@@ -1,0 +1,28 @@
+---
+license_expression: bsd-simplified AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - COPYING.LIB
+notes: seen in qtwebkit Qt_5.3.2/qtwebkit/Source/WebCore/platform/text/win/TextCodecWin.cpp
+    and the text is weirdly damaged combo of bsd and lgpl
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+ This library is distributed in the hope that i will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+
+ You should have received a copy of the GNU Library General Public License
+ along with this library; see the file COPYING.LIB.  If not, write to
+ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301, USA.

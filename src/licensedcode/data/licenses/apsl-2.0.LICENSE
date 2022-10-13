@@ -9,6 +9,7 @@ notes: |
     Per SPDX.org, this version was released 6 August 2003. This license is OSI
     certifified.
 spdx_license_key: APSL-2.0
+osi_license_key: APSL-2.0
 text_urls:
     - http://www.opensource.apple.com/license/apsl/
 osi_url: http://opensource.org/licenses/apsl-2.0.php
@@ -20,7 +21,6 @@ ignorable_holders:
 ignorable_urls:
     - http://www.apple.com/legal/guidelinesfor3rdparties.html
     - http://www.opensource.apple.com/apsl/
-osi_license_key: APSL-2.0
 ---
 
 APPLE PUBLIC SOURCE LICENSE

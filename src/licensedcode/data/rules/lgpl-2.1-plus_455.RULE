@@ -1,0 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/copyleft/lesser.html
+---
+
+This program is free software; you can redistribute it and/or modify it under 
+the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.
