@@ -198,7 +198,7 @@ class PackageScanner(ScanPlugin):
             for resource in codebase.walk(topdown=False):
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
-                modified = list(add_referenced_license_detection_from_package(resource, codebase))
+                modified = list(add_referenced_license_detection_from_package(resource, codebase, no_licenses))
                 if TRACE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
@@ -243,7 +243,10 @@ def add_license_from_file(resource, codebase, no_licenses):
                 else:
                     detection["detection_rules"].append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
 
-            license_expression = get_license_expression_from_detection_mappings(license_detections_file) 
+            license_expression = get_license_expression_from_detection_mappings(
+                detections=license_detections_file,
+                valid_expression=True
+            ) 
             pkg["declared_license_expression"] = license_expression
             pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
                 license_expression=license_expression,

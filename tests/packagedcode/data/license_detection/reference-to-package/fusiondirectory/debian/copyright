@@ -1,0 +1,1669 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: FusionDirectory
+Upstream-Contact: Contact <contact@fusiondirectory.org>
+Source: https://gitlab.fusiondirectory.org/fusiondirectory
+
+Files:
+ core/contrib/smarty/plugins/function.filePath.php
+ core/contrib/smarty/plugins/function.iconPath.php
+ core/html/geticon.php
+ core/html/recovery.php
+ core/include/class_Combinations.inc
+ core/include/class_exceptions.inc
+ core/include/class_exceptions.inc
+ core/include/class_IconTheme.inc
+ core/include/class_Language.inc
+ core/include/class_ldapFilter.inc
+ core/include/class_ldapGeneralizedTime.inc
+ core/include/class_ldapSizeLimit.inc
+ core/include/class_objects.inc
+ core/include/class_template.inc
+ core/include/class_templateHandling.inc
+ core/include/class_CSRFProtection.inc
+ core/include/password-methods/class_password-methods-sasl.inc
+ core/include/select/groupSelect/class_groupSelect.inc
+ core/include/select/objectSelect/class_objectSelect.inc
+ core/include/select/systemSelect/class_systemSelect.inc
+ core/include/select/userGroupSelect/class_userGroupSelect.inc
+ core/include/select/userSelect/class_userSelect.inc
+ core/include/simpleplugin/attributes/class_BaseSelectorAttribute.inc
+ core/include/simpleplugin/attributes/class_BooleanAttribute.inc
+ core/include/simpleplugin/attributes/class_CompositeAttribute.inc
+ core/include/simpleplugin/attributes/class_DateAttribute.inc
+ core/include/simpleplugin/attributes/class_FileAttribute.inc
+ core/include/simpleplugin/attributes/class_FlagsAttribute.inc
+ core/include/simpleplugin/attributes/class_IntAttribute.inc
+ core/include/simpleplugin/attributes/class_PhoneNumberAttribute.inc
+ core/include/simpleplugin/attributes/class_SelectAttribute.inc
+ core/include/simpleplugin/attributes/class_SetAttribute.inc
+ core/include/simpleplugin/attributes/class_StringAttribute.inc
+ core/include/simpleplugin/class_Attribute.inc
+ core/include/simpleplugin/class_dialogAttributes.inc
+ core/include/simpleplugin/class_helpersAttribute.inc
+ core/include/simpleplugin/class_simpleManagement.inc
+ core/include/simpleplugin/class_simplePlugin.inc
+ core/include/simpleplugin/class_simpleSelectManagement.inc
+ core/include/simpleplugin/class_simpleService.inc
+ core/plugins/addons/dashboard/class_dashBoardPasswords.inc
+ core/plugins/addons/dashboard/main.inc
+ core/plugins/addons/dashboard/tabs_dashBoard.inc
+ core/plugins/addons/dashboard/class_dashBoardPasswords.inc
+ core/plugins/admin/acl/class_aclAssignment.inc
+ core/plugins/admin/acl/main.inc
+ core/plugins/admin/aclrole/class_aclRole.inc
+ core/plugins/admin/aclrole/class_aclRoleManagement.inc
+ core/plugins/admin/aclrole/main.inc
+ core/plugins/admin/departments/class_country.inc
+ core/plugins/admin/departments/class_dcObject.inc
+ core/plugins/admin/departments/class_departmentManagement.inc
+ core/plugins/admin/departments/class_domain.inc
+ core/plugins/admin/departments/class_locality.inc
+ core/plugins/admin/departments/class_organization.inc
+ core/plugins/admin/departments/main.inc
+ core/plugins/admin/departments/tabs_department.inc
+ core/plugins/admin/groups/class_roleGeneric.inc
+ core/plugins/admin/groups/main.inc
+ core/plugins/admin/groups/tabs_ogroups.inc
+ core/plugins/admin/users/main.inc
+ core/plugins/config/class_configInLdap.inc
+ core/plugins/config/class_dashBoardConfig.inc
+ core/plugins/config/class_mainPluginsConfig.inc
+ core/plugins/config/class_pluginsConfigInLdap.inc
+ core/plugins/config/class_recoveryConfig.inc
+ core/plugins/config/main.inc
+ core/plugins/config/tabs_configInLdap.inc
+ core/plugins/generic/references/class_reference.inc
+ core/plugins/personal/generic/class_user.inc
+ core/plugins/personal/generic/main.inc
+ core/plugins/personal/roles/class_userRoles.inc
+ core/plugins/personal/roles/main.inc
+ plugins/alias/admin/alias/class_mailAliasDistribution.inc
+ plugins/alias/admin/alias/class_mailAliasRedirection.inc
+ plugins/alias/admin/alias/main.inc
+ plugins/alias/config/alias/class_aliasConfig.inc
+ plugins/applications/admin/applications/class_applicationManagement.inc
+ plugins/applications/admin/applications/class_webApplication.inc
+ plugins/applications/admin/applications/main.inc
+ plugins/applications/admin/roles/class_applicationRights.inc
+ plugins/applications/config/applications/class_applicationsPluginConfig.inc
+ plugins/argonaut/addons/argonaut/class_argonautAction.inc
+ plugins/argonaut/addons/argonaut/class_argonautEventTypes.inc
+ plugins/argonaut/addons/argonaut/class_argonautImportFile.inc
+ plugins/argonaut/addons/argonaut/class_filterArgonautEvents.inc
+ plugins/argonaut/addons/argonaut/main.inc
+ plugins/argonaut/admin/systems/argonaut/class_argonautClient.inc
+ plugins/argonaut/admin/systems/argonaut/class_deploymentTimeframe.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautDNSConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseFAIConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseLTSPConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautFuseOPSIConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautMirrorConfig.inc
+ plugins/argonaut/admin/systems/services/argonaut/class_argonautServer.inc
+ plugins/argonaut/include/class_supportDaemon.inc
+ plugins/audit/admin/audit/class_auditEvent.inc
+ plugins/audit/admin/audit/class_auditManagement.inc
+ plugins/audit/admin/audit/main.inc
+ plugins/audit/config/audit/class_auditConfig.inc
+ plugins/autofs/admin/autofs/class_autofsManagement.inc
+ plugins/autofs/admin/autofs/class_nisMap.inc
+ plugins/autofs/admin/autofs/class_nisObject.inc
+ plugins/autofs/admin/autofs/main.inc
+ plugins/autofs/config/autofs/class_autofsConfig.inc
+ plugins/certificates/personal/certificates/class_userCertificates.inc
+ plugins/certificates/personal/certificates/main.inc
+ plugins/community/admin/departments/community/class_communityOrganization.inc
+ plugins/community/admin/departments/community/class_communityProject.inc
+ plugins/community/config/community/class_communityConfig.inc
+ plugins/debconf/admin/debconfProfile/class_debconfProfileGeneric.inc
+ plugins/debconf/admin/debconfProfile/class_debconfProfileManagement.inc
+ plugins/debconf/admin/debconfProfile/main.inc
+ plugins/debconf/admin/systems/debconf/class_debconfStartup.inc
+ plugins/developers/addons/debugHelp/class_debugHelp.inc
+ plugins/developers/addons/debugHelp/main.inc
+ plugins/dhcp/admin/dhcp/class_dhcpManagement.inc
+ plugins/dhcp/admin/dhcp/class_dhcpPlugin.inc
+ plugins/dhcp/admin/dhcp/main.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpClass.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpDnsZone.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpFailOverPeer.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpGroup.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpHost.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpPool.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpService.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpSharedNetwork.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpSubClass.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpSubnet.inc
+ plugins/dhcp/admin/dhcp/sections/class_dhcpTSigKey.inc
+ plugins/dhcp/admin/systems/class_dhcpSystem.inc
+ plugins/dhcp/admin/systems/services/dhcp/class_serviceDHCP.inc
+ plugins/dhcp/config/dhcp/class_dhcpConfig.inc
+ plugins/dns/admin/dns/class_DnsRecordAttribute.inc
+ plugins/dns/admin/dns/class_dnsAcl.inc
+ plugins/dns/admin/dns/class_dnsManagement.inc
+ plugins/dns/admin/dns/class_dnsView.inc
+ plugins/dns/admin/dns/class_dnsZone.inc
+ plugins/dns/admin/dns/main.inc
+ plugins/dns/admin/systems/class_dnsHost.inc
+ plugins/dns/config/dns/class_dnsConfig.inc
+ plugins/dovecot/admin/systems/services/dovecot/class_serviceDovecot.inc
+ plugins/dovecot/personal/mail/mail-methods/class_mail-methods-dovecot.inc
+ plugins/dsa/admin/dsa/class_dsaManagement.inc
+ plugins/dsa/admin/dsa/class_simpleSecurityObject.inc
+ plugins/dsa/admin/dsa/main.inc
+ plugins/dsa/config/dsa/class_dsaConfig.inc
+ plugins/ejbca/admin/ejbca/certificates/class_ejbcaCertificates.inc
+ plugins/ejbca/admin/ejbca/certificates/main.inc
+ plugins/ejbca/admin/ejbca/class_ejbcaCertSelect.inc
+ plugins/ejbca/admin/ejbca/class_ejbcaCertificate.inc
+ plugins/ejbca/admin/ejbca/class_ejbcaManagement.inc
+ plugins/ejbca/admin/ejbca/main.inc
+ plugins/ejbca/config/ejbca/class_ejbcaConfig.inc
+ plugins/fai/admin/fai/class_faiHook.inc
+ plugins/fai/admin/fai/class_faiManagement.inc
+ plugins/fai/admin/fai/class_faiProfile.inc
+ plugins/fai/admin/fai/class_faiScript.inc
+ plugins/fai/admin/fai/class_faiVariable.inc
+ plugins/fai/admin/fai/main.inc
+ plugins/fai/admin/fai/packageSelect/class_filterFAIcustoms.inc
+ plugins/fai/admin/systems/services/monitor/class_argonautFAIMonitor.inc
+ plugins/fai/config/fai/class_faiConfig.inc
+ plugins/freeradius/personal/freeradius/main.inc
+ plugins/fusioninventory/admin/inventory/class_inventoryManagement.inc
+ plugins/fusioninventory/admin/inventory/main.inc
+ plugins/fusioninventory/admin/systems/fusioninventory/class_fiInventory.inc
+ plugins/fusioninventory/admin/systems/fusioninventory/class_fiInventoryAgent.inc
+ plugins/fusioninventory/config/fusioninventory/class_fiConfig.inc
+ plugins/gpg/addons/gpg/class_pgpServerInfo.inc
+ plugins/gpg/addons/gpg/main.inc
+ plugins/gpg/personal/gpg/class_gpgAccount.inc
+ plugins/gpg/personal/gpg/main.inc
+ plugins/gpg/personal/gpg/pgpKeySelect/class_pgpKeySelect.inc
+ plugins/ipmi/admin/systems/ipmi/class_ipmiClient.inc
+ plugins/ldapdump/addons/ldapdump/class_ldapDump.inc
+ plugins/ldapmanager/addons/ldapmanager/class_csvimport.inc
+ plugins/ldapmanager/addons/ldapmanager/main.inc
+ plugins/mail/config/mail/class_mailPluginConfig.inc
+ plugins/mail/personal/mail/mailAddressSelect/class_mailAddressSelect.inc
+ plugins/mail/personal/mail/main.inc
+ plugins/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
+ plugins/nagios/config/nagios/class_nagiosConfig.inc
+ plugins/netgroups/admin/netgroups/class_netgroupManagement.inc
+ plugins/netgroups/admin/netgroups/main.inc
+ plugins/netgroups/admin/netgroups/memberNisnetgroupSelect/class_memberNisnetgroupSelect.inc
+ plugins/netgroups/admin/systems/netgroups/class_netgroupSystem.inc
+ plugins/netgroups/config/netgroups/class_netgroupConfig.inc
+ plugins/netgroups/personal/netgroups/main.inc
+ plugins/newsletter/config/newsletter/class_newsletterConfig.inc
+ plugins/newsletter/personal/newsletter/class_newsletterSubscriptions.inc
+ plugins/newsletter/personal/newsletter/main.inc
+ plugins/opsi/addons/dashboard/class_dashBoardOpsi.inc
+ plugins/opsi/addons/opsi/main.inc
+ plugins/opsi/admin/opsi/class_opsiOnDemandList.inc
+ plugins/opsi/admin/opsi/class_opsiProductProperties.inc
+ plugins/opsi/admin/opsi/class_opsiProfile.inc
+ plugins/opsi/admin/opsi/class_opsiProfileManagement.inc
+ plugins/opsi/admin/opsi/class_opsiSoftwareList.inc
+ plugins/opsi/admin/opsi/main.inc
+ plugins/opsi/admin/systems/opsi/class_opsiClient.inc
+ plugins/opsi/admin/systems/opsi/class_opsiLogView.inc
+ plugins/opsi/admin/systems/services/opsi/class_serviceOPSI.inc
+ plugins/opsi/config/opsi/class_opsiConfig.inc
+ plugins/personal/config/personal/class_personalConfig.inc
+ plugins/personal/personal/personal/class_personalInfo.inc
+ plugins/personal/personal/personal/class_socialHandlers.inc
+ plugins/personal/personal/personal/main.inc
+ plugins/posix/config/posix/class_posixConfig.inc
+ plugins/puppet/admin/systems/puppet/class_puppetNode.inc
+ plugins/puppet/admin/systems/services/puppet/class_servicePuppet.inc
+ plugins/pureftpd/personal/pureftpd/main.inc
+ plugins/quota/personal/quota/main.inc
+ plugins/renater-partage/admin/groups/renater-partage/class_partageGroup.inc
+ plugins/renater-partage/admin/sympa/renater-partage/class_sympaAliasPartage.inc
+ plugins/renater-partage/admin/systems/services/renater-partage/class_serviceRenaterPartage.inc
+ plugins/renater-partage/personal/mail/mail-methods/class_mail-methods-renater-partage.inc
+ plugins/repository/admin/repository/class_buildRepository.inc
+ plugins/repository/admin/repository/class_repositoryDistribution.inc
+ plugins/repository/admin/repository/class_repositoryManagement.inc
+ plugins/repository/admin/repository/class_repositorySection.inc
+ plugins/repository/admin/repository/main.inc
+ plugins/repository/config/repository/class_repositoryConfig.inc
+ plugins/samba/admin/groups/samba/class_sambaGroup.inc
+ plugins/samba/admin/samba/class_sambaDomain.inc
+ plugins/samba/admin/samba/class_sambaDomainManagement.inc
+ plugins/samba/admin/samba/main.inc
+ plugins/samba/admin/systems/samba/class_argonautEventSambaShares.inc
+ plugins/samba/config/samba/class_sambaPluginConfig.inc
+ plugins/sinaps/config/sinaps/class_sinapsConfig.inc
+ plugins/sinaps/html/sinaps.php
+ plugins/sinaps/include/class_sinapsDiffusionHandlerJob.inc
+ plugins/sinaps/include/class_sinapsRequest.inc
+ plugins/sinaps/include/class_sinapsRequestAcquisition.inc
+ plugins/sinaps/personal/sinaps/class_sinapsUser.inc
+ plugins/sogo/admin/sogo/class_sogoManagement.inc
+ plugins/sogo/admin/sogo/class_sogoResource.inc
+ plugins/sogo/admin/sogo/main.inc
+ plugins/sogo/config/sogo/class_sogoConfig.inc
+ plugins/spamassassin/personal/spamassassin/class_spamAssassinAccount.inc
+ plugins/spamassassin/personal/spamassassin/main.inc
+ plugins/squid/personal/squid/main.inc
+ plugins/ssh/personal/ssh/main.inc
+ plugins/subcontracting/personal/subcontracting/class_subContracting.inc
+ plugins/subcontracting/personal/subcontracting/main.inc
+ plugins/sudo/admin/sudo/class_sudoOptions.inc
+ plugins/sudo/admin/sudo/main.inc
+ plugins/sudo/admin/sudo/tabs_sudo.inc
+ plugins/sudo/config/sudo/class_sudoConfig.inc
+ plugins/supann-ext/admin/supannStructures/class_supannStructureExt.inc
+ plugins/supann/admin/supannStructures/class_entite.inc
+ plugins/supann/admin/supannStructures/class_etablissement.inc
+ plugins/supann/admin/supannStructures/class_supann.inc
+ plugins/supann/admin/supannStructures/class_supannStructuresManagement.inc
+ plugins/supann/admin/supannStructures/main.inc
+ plugins/supann/config/supann/class_supannConfig.inc
+ plugins/supann/personal/supann/main.inc
+ plugins/sympa/admin/sympa/main.inc
+ plugins/sympa/admin/sympa/class_sympaAlias.inc
+ plugins/sympa/admin/sympa/class_sympaManagement.inc
+ plugins/systems/admin/systems/class_componentGeneric.inc
+ plugins/systems/admin/systems/class_ipHostPlugin.inc
+ plugins/systems/admin/systems/system-list.xml
+ plugins/sympa/admin/systems/services/sympa/class_serviceSympa.inc
+ plugins/sympa/config/sympa/class_sympaConfig.inc
+ plugins/systems/admin/systems/class_mobilePhoneGeneric.inc
+ plugins/systems/admin/systems/class_phoneGeneric.inc
+ plugins/systems/admin/systems/class_serverGeneric.inc
+ plugins/systems/admin/systems/class_systemImport.inc
+ plugins/systems/admin/systems/class_terminalGeneric.inc
+ plugins/systems/admin/systems/main.inc
+ plugins/systems/config/systems/class_systemsPluginConfig.inc
+ plugins/user-reminder/config/user-reminder/class_userReminderConfig.inc
+ plugins/user-reminder/html/class_expiredUserPostpone.inc
+ plugins/user-reminder/html/expired_postpone.php
+ plugins/weblink/admin/systems/weblink/class_webLink.inc
+ plugins/webservice/config/class_webserviceConfig.inc
+ plugins/webservice/html/jsonrpc.php
+Copyright: 2011-2018, FusionDirectory
+  2012-2018, FusionDirectory
+  2012-2019, FusionDirectory
+  2013-2018, FusionDirectory
+  2014-2016, FusionDirectory
+  2014-2018, FusionDirectory
+  2015-2016, FusionDirectory
+  2015-2018, FusionDirectory
+  2016-2018, FusionDirectory
+  2017-2018, FusionDirectory
+  2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ core/contrib/smarty/plugins/block.render.php
+ core/contrib/smarty/plugins/function.msgPool.php
+ core/html/class_passwordRecovery.inc
+ core/html/include/fusiondirectory.js
+ core/html/autocomplete.php
+ core/html/getbin.php
+ core/html/index.php
+ core/html/main.php
+ core/html/progress.php
+ core/html/setup.php
+ core/include/class_CopyPasteHandler.inc
+ core/include/class_SnapshotDialogs.inc
+ core/include/class_SnapshotHandler.inc
+ core/include/class_acl.inc
+ core/include/class_baseSelector.inc
+ core/include/class_config.inc
+ core/include/class_departmentSortIterator.inc
+ core/include/class_divSelectBox.inc
+ core/include/class_filter.inc
+ core/include/class_filterLDAP.inc
+ core/include/class_ldapMultiplexer.inc
+ core/include/class_listing.inc
+ core/include/class_listingSortIterator.inc
+ core/include/class_msgPool.inc
+ core/include/class_msg_dialog.inc
+ core/include/class_pluglist.inc
+ core/include/class_session.inc
+ core/include/class_tests.inc
+ core/include/class_timezone.inc
+ core/include/class_userinfo.inc
+ core/include/class_xml.inc
+ core/include/exporter/class_PDF.php
+ core/include/exporter/class_cvsExporter.inc
+ core/include/exporter/class_pdfExporter.inc
+ core/include/functions.inc
+ core/include/password-methods/class_password-methods-clear.inc
+ core/include/password-methods/class_password-methods-crypt.inc
+ core/include/password-methods/class_password-methods-md5.inc
+ core/include/password-methods/class_password-methods-sha.inc
+ core/include/password-methods/class_password-methods-smd5.inc
+ core/include/password-methods/class_password-methods-ssha.inc
+ core/include/password-methods/class_password-methods.inc
+ core/include/php_setup.inc
+ core/include/select/class_filterLDAPBlacklist.inc
+ core/include/simpleplugin/class_multiPlugin.inc
+ core/include/simpleplugin/class_simpleTabs.inc
+ core/include/variables.inc
+ core/include/variables_common.inc
+ core/plugins/admin/acl/class_aclManagement.inc
+ core/plugins/admin/aclrole/class_aclEditionDialog.inc
+ core/plugins/admin/departments/class_department.inc
+ core/plugins/admin/groups/class_groupManagement.inc
+ core/plugins/admin/groups/class_ogroup.inc
+ core/plugins/admin/users/class_userManagement.inc
+ core/plugins/generic/welcome/main.inc
+ core/setup/class_setup.inc
+ core/setup/class_setupStepChecks.inc
+ plugins/applications/admin/applications/class_applicationGeneric.inc
+ plugins/argonaut/addons/argonaut/class_argonautQueue.inc
+ plugins/argonaut/html/getFAIstatus.php
+ plugins/cyrus/admin/systems/services/cyrus/class_serviceCyrus.inc
+ plugins/cyrus/personal/mail/mail-methods/class_mail-methods-cyrus.inc
+ plugins/dhcp/admin/dhcp/class_dhcpConfiguration.inc
+ plugins/dhcp/admin/dhcp/class_dhcpSectionCreationDialog.inc
+ plugins/fai/admin/fai/class_faiDiskEntry.inc
+ plugins/fai/admin/fai/class_faiPackage.inc
+ plugins/fai/admin/fai/class_faiPackageConfiguration.inc
+ plugins/fai/admin/fai/class_faiPartition.inc
+ plugins/fai/admin/fai/class_faiPartitionTable.inc
+ plugins/fai/admin/fai/class_faiSimplePluginClass.inc
+ plugins/fai/admin/fai/class_faiTemplate.inc
+ plugins/fai/admin/fai/class_faiTemplateEntry.inc
+ plugins/fai/admin/fai/packageSelect/class_filterFAIPackages.inc
+ plugins/fai/admin/fai/packageSelect/class_packageSelect.inc
+ plugins/fai/admin/systems/class_faiLogView.inc
+ plugins/fai/admin/systems/class_faiStartup.inc
+ plugins/fai/admin/systems/services/repository/class_serviceRepository.inc
+ plugins/ldapmanager/addons/ldapmanager/class_ldapmanager.inc
+ plugins/ldapmanager/addons/ldapmanager/tabs_ldif.inc
+ plugins/mail/admin/systems/services/imap/class_serviceIMAP.inc
+ plugins/mail/personal/mail/class_mail-methods.inc
+ plugins/posix/admin/groups/posix/class_posixGroup.inc
+ plugins/posix/personal/posix/class_posixAccount.inc
+ plugins/posix/personal/posix/main.inc
+ plugins/postfix/admin/systems/services/postfix/class_servicePostfix.inc
+ plugins/pureftpd/personal/pureftpd/class_pureftpdAccount.inc
+ plugins/samba/admin/systems/samba/class_sambaSystemTab.inc
+ plugins/samba/personal/samba/class_sambaAccount.inc
+ plugins/samba/personal/samba/class_sambaLogonHours.inc
+ plugins/samba/personal/samba/class_sambaMungedDial.inc
+ plugins/samba/personal/samba/main.inc
+ plugins/spamassassin/admin/systems/services/spam/class_serviceSpamAssassin.inc
+ plugins/squid/personal/squid/class_proxyAccount.inc
+ plugins/ssh/personal/ssh/class_sshAccount.inc
+ plugins/sudo/admin/sudo/class_sudoGeneric.inc
+ plugins/sudo/admin/sudo/class_sudoManagement.inc
+ plugins/sudo/admin/sudo/class_sudoOption.inc
+ plugins/systems/admin/systems/class_filterServerService.inc
+ plugins/systems/admin/systems/class_printGeneric.inc
+ plugins/systems/admin/systems/class_serverService.inc
+ plugins/systems/admin/systems/class_systemManagement.inc
+ plugins/systems/admin/systems/class_terminalStartup.inc
+ plugins/systems/admin/systems/class_workstationGeneric.inc
+ plugins/systems/admin/systems/services/ldap/class_serviceLDAP.inc
+ plugins/systems/admin/systems/services/shares/class_serviceShare.inc
+ plugins/systems/admin/systems/services/terminal/class_serviceTerminal.inc
+ plugins/systems/admin/systems/tabs_server.inc
+Copyright: 2003, Cajus Pollmeier
+  2003-2010, Cajus Pollmeier
+  2011-2016, FusionDirectory
+  2011-2018, FusionDirectory
+License: GPL-2+
+Comment:
+ This file is distributed under the same license as the PACKAGE package.
+
+Files:
+ core/include/class_logging.inc
+ core/setup/class_setupStep.inc
+ core/setup/class_setupStepConfig.inc
+ core/setup/class_setupStepFinish.inc
+ core/setup/class_setupStepLanguage.inc
+ core/setup/class_setupStepLdap.inc
+ core/setup/class_setupStepMigrate.inc
+ core/setup/class_setupStepWelcome.inc
+ core/setup/main.inc
+Copyright: 2007, Fabian Hickert
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/fai/contrib/openldap/fai.schema
+Copyright: 2005-2009, Cajus Pollmeier
+           2005-2009, Thomas Lange
+License: GPL-2+
+
+Files:
+ plugins/gpg/contrib/openldap/pgp-keyserver.schema
+ plugins/gpg/contrib/openldap/pgp-keyserver.schema
+ plugins/gpg/contrib/openldap/pgp-recon.schema
+ plugins/gpg/contrib/openldap/pgp-remte-prefs.schema
+Copyright: 2001-2003, PGP Corporation
+License: BSD-3-clause
+
+Files:
+ plugins/ppolicy/admin/ppolicy/class_ppolicy.inc
+ plugins/ppolicy/admin/ppolicy/class_ppolicyManagement.inc
+ plugins/ppolicy/admin/ppolicy/main.inc
+ plugins/ppolicy/config/ppolicy/class_ppolicyConfig.inc
+ plugins/ppolicy/personal/ppolicy/class_ppolicyAccount.inc
+ plugins/ppolicy/personal/ppolicy/main.inc
+Copyright: 2014-2015, Dhatim
+  2014-2016, FusionDirectory
+License: GPL-2+
+
+Files:
+ core/contrib/man/fusiondirectory-insert-schema.1
+ core/contrib/man/fusiondirectory-setup.1
+ core/contrib/man/fusiondirectory.conf.5
+ plugins/systems/admin/systems/serverService-list.xml
+ plugins/webservice/contrib/man/fusiondirectory-shell.1
+Copyright: 2011-2019, FusionDirectory
+License: GPL-2+
+Comment:
+ Assuming copyright holdership and license from rest of the
+ project files.
+
+Files:
+ core/plugins/addons/dashboard/class_dashBoardUsers.inc
+ plugins/opsi/addons/opsi/class_opsiImport.inc
+ plugins/systems/addons/dashboard/class_dashBoardNetwork.inc
+ plugins/systems/addons/dashboard/class_dashBoardSystems.inc
+Copyright: 2010, Antoine Gallavardin
+  2010-2012, Antoine Gallavardin
+  2011-2018, FusionDirectory
+  2012-2019, FusionDirectory
+License: GPL-2+
+
+Files:
+ core/plugins/addons/dashboard/class_dashBoard.inc
+ plugins/alias/admin/alias/class_aliasManagement.inc
+ plugins/quota/admin/systems/services/quota/class_serviceQuota.inc
+ plugins/quota/personal/quota/class_quotaAccount.inc
+ plugins/supann/personal/supann/class_supannAccount.inc
+Copyright: 2010, Antoine Gallavardin
+  2010-2012, Antoine Gallavardin
+  2011-2018, FusionDirectory
+  2012-2018, FusionDirectory
+  2013-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/netgroups/admin/netgroups/class_netgroup.inc
+ plugins/netgroups/personal/netgroups/class_netgroupMembership.inc
+Copyright: 2011, Alejandro Escanero Blanco
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/freeradius/admin/freeradius/class_freeradiusGroup.inc
+ plugins/freeradius/personal/freeradius/class_freeradiusAccount.inc
+Copyright: 2003-2009, GONICUS GmbH
+  2011-2018, FusionDirectory
+  2012, WILLIAME Jeremy
+License: GPL-2+
+
+Files:
+ core/locale/*/fusiondirectory.po
+ plugins/alias/locale/*/fusiondirectory.po
+ plugins/applications/locale/*/fusiondirectory.po
+ plugins/argonaut/locale/*/fusiondirectory.po
+ plugins/audit/locale/*/fusiondirectory.po
+ plugins/autofs/locale/*/fusiondirectory.po
+ plugins/certificates/locale/*/fusiondirectory.po
+ plugins/community/locale/*/fusiondirectory.po
+ plugins/cyrus/locale/*/fusiondirectory.po
+ plugins/debconf/locale/*/fusiondirectory.po
+ plugins/developers/locale/*/fusiondirectory.po
+ plugins/dhcp/locale/*/fusiondirectory.po
+ plugins/dns/locale/*/fusiondirectory.po
+ plugins/dovecot/locale/*/fusiondirectory.po
+ plugins/dsa/locale/*/fusiondirectory.po
+ plugins/ejbca/locale/*/fusiondirectory.po
+ plugins/fai/locale/*/fusiondirectory.po
+ plugins/freeradius/locale/*/fusiondirectory.po
+ plugins/fusioninventory/locale/*/fusiondirectory.po
+ plugins/gpg/locale/*/fusiondirectory.po
+ plugins/ipmi/locale/*/fusiondirectory.po
+ plugins/ldapdump/locale/*/fusiondirectory.po
+ plugins/ldapmanager/locale/*/fusiondirectory.po
+ plugins/mixedgroups/locale/*/fusiondirectory.po
+ plugins/mail/locale/*/fusiondirectory.po
+ plugins/nagios/locale/*/fusiondirectory.po
+ plugins/netgroups/locale/*/fusiondirectory.po
+ plugins/newsletter/locale/*/fusiondirectory.po
+ plugins/opsi/locale/*/fusiondirectory.po
+ plugins/renater-partage/locale/*/fusiondirectory.po
+ plugins/personal/locale/*/fusiondirectory.po
+ plugins/posix/locale/*/fusiondirectory.po
+ plugins/postfix/locale/*/fusiondirectory.po
+ plugins/ppolicy/locale/*/fusiondirectory.po
+ plugins/puppet/locale/*/fusiondirectory.po
+ plugins/pureftpd/locale/*/fusiondirectory.po
+ plugins/quota/locale/*/fusiondirectory.po
+ plugins/repository/locale/*/fusiondirectory.po
+ plugins/samba/locale/*/fusiondirectory.po
+ plugins/sinaps/locale/*/fusiondirectory.po
+ plugins/sogo/locale/*/fusiondirectory.po
+ plugins/spamassassin/locale/*/fusiondirectory.po
+ plugins/squid/locale/*/fusiondirectory.po
+ plugins/ssh/locale/*/fusiondirectory.po
+ plugins/subcontracting/locale/*/fusiondirectory.po
+ plugins/sudo/locale/*/fusiondirectory.po
+ plugins/supann/locale/*/fusiondirectory.po
+ plugins/supann-ext/locale/*/fusiondirectory.po
+ plugins/sympa/locale/*/fusiondirectory.po
+ plugins/systems/locale/*/fusiondirectory.po
+ plugins/user-reminder/locale/*/fusiondirectory.po
+ plugins/weblink/locale/*/fusiondirectory.po
+ plugins/webservice/locale/*/fusiondirectory.po
+Copyright: FusionDirectory Project
+License: GPL-2+
+Comment:
+ This file is distributed under the same license as the fusiondirectory package.
+
+Files:
+ core/html/themes/breezy/icons/16/actions/add.png
+ core/html/themes/breezy/icons/16/actions/document-edit.png
+ core/html/themes/breezy/icons/16/actions/document-import.png
+ core/html/themes/breezy/icons/16/actions/document-new.png
+ core/html/themes/breezy/icons/16/actions/document-restore.png
+ core/html/themes/breezy/icons/16/actions/down.png
+ core/html/themes/breezy/icons/16/actions/edit-copy.png
+ core/html/themes/breezy/icons/16/actions/edit-cut.png
+ core/html/themes/breezy/icons/16/actions/edit-delete.png
+ core/html/themes/breezy/icons/16/actions/edit-paste.png
+ core/html/themes/breezy/icons/16/actions/export.png
+ core/html/themes/breezy/icons/16/actions/go-first.png
+ core/html/themes/breezy/icons/16/actions/go-home.png
+ core/html/themes/breezy/icons/16/actions/go-previous.png
+ core/html/themes/breezy/icons/16/actions/next.png
+ core/html/themes/breezy/icons/16/actions/process-stop.png
+ core/html/themes/breezy/icons/16/actions/remove.png
+ core/html/themes/breezy/icons/16/actions/save.png
+ core/html/themes/breezy/icons/16/actions/snapshot.png
+ core/html/themes/breezy/icons/16/actions/submit.png
+ core/html/themes/breezy/icons/16/actions/system-reinstall.png
+ core/html/themes/breezy/icons/16/actions/system-search.png
+ core/html/themes/breezy/icons/16/actions/system-shutdown.png
+ core/html/themes/breezy/icons/16/actions/system-update.png
+ core/html/themes/breezy/icons/16/actions/tools-wizard.png
+ core/html/themes/breezy/icons/16/actions/up.png
+ core/html/themes/breezy/icons/16/actions/view-refresh.png
+ core/html/themes/breezy/icons/16/actions/view-sort-ascending.png
+ core/html/themes/breezy/icons/16/actions/view-sort-descending.png
+ core/html/themes/breezy/icons/16/apps/antivirus.png
+ core/html/themes/breezy/icons/16/apps/imap.png
+ core/html/themes/breezy/icons/16/apps/ldap.png
+ core/html/themes/breezy/icons/16/apps/office-calendar.png
+ core/html/themes/breezy/icons/16/apps/os-linux.png
+ core/html/themes/breezy/icons/16/apps/os-windows.png
+ core/html/themes/breezy/icons/16/apps/utilities-system-monitor.png
+ core/html/themes/breezy/icons/16/categories/acl.png
+ core/html/themes/breezy/icons/16/categories/applications-internet.png
+ core/html/themes/breezy/icons/16/categories/settings.png
+ core/html/themes/breezy/icons/16/devices/computer.png
+ core/html/themes/breezy/icons/16/devices/media-cdrom.png
+ core/html/themes/breezy/icons/16/devices/network-device.png
+ core/html/themes/breezy/icons/16/devices/phone.png
+ core/html/themes/breezy/icons/16/devices/printer.png
+ core/html/themes/breezy/icons/16/devices/server.png
+ core/html/themes/breezy/icons/16/devices/telephone.png
+ core/html/themes/breezy/icons/16/devices/terminal.png
+ core/html/themes/breezy/icons/16/mimetypes/application-certificate.png
+ core/html/themes/breezy/icons/16/mimetypes/application-pdf.png
+ core/html/themes/breezy/icons/16/mimetypes/application-x-executable.png
+ core/html/themes/breezy/icons/16/mimetypes/package-x-generic.png
+ core/html/themes/breezy/icons/16/mimetypes/text-csv.png
+ core/html/themes/breezy/icons/16/places/folder.png
+ core/html/themes/breezy/icons/16/status/dialog-error.png
+ core/html/themes/breezy/icons/16/status/dialog-information.png
+ core/html/themes/breezy/icons/16/status/dialog-password.png
+ core/html/themes/breezy/icons/16/status/dialog-warning.png
+ core/html/themes/breezy/icons/16/status/locked.png
+ core/html/themes/breezy/icons/16/status/task-complete.png
+ core/html/themes/breezy/icons/16/status/task-failure.png
+ core/html/themes/breezy/icons/16/status/task-running.png
+ core/html/themes/breezy/icons/16/status/task-stopped.png
+ core/html/themes/breezy/icons/16/status/unlocked.png
+ core/html/themes/breezy/icons/16/types/action.png
+ core/html/themes/breezy/icons/16/types/application.png
+ core/html/themes/breezy/icons/16/types/contact.png
+ core/html/themes/breezy/icons/16/types/country.png
+ core/html/themes/breezy/icons/16/types/dc.png
+ core/html/themes/breezy/icons/16/types/domain.png
+ core/html/themes/breezy/icons/16/types/locality.png
+ core/html/themes/breezy/icons/16/types/organization.png
+ core/html/themes/breezy/icons/16/types/resource-group.png
+ core/html/themes/breezy/icons/16/types/role.png
+ core/html/themes/breezy/icons/16/types/user-group.png
+ core/html/themes/breezy/icons/16/types/user.png
+ core/html/themes/breezy/icons/22/actions/application-exit.png
+ core/html/themes/breezy/icons/22/actions/go-home.png
+ core/html/themes/breezy/icons/22/status/dialog-error.png
+ core/html/themes/breezy/icons/22/status/dialog-information.png
+ core/html/themes/breezy/icons/32/status/dialog-error.png
+ core/html/themes/breezy/icons/32/status/dialog-information.png
+ core/html/themes/breezy/icons/32/status/dialog-warning.png
+ core/html/themes/breezy/icons/32/status/object-locked.png
+ core/html/themes/breezy/icons/48/actions/view-task.png
+ core/html/themes/breezy/icons/48/apps/config-language.png
+ core/html/themes/breezy/icons/48/apps/config-welcome.png
+ core/html/themes/breezy/icons/48/apps/os-linux.png
+ core/html/themes/breezy/icons/48/apps/utilities-system-monitor.png
+ core/html/themes/breezy/icons/48/categories/acl.png
+ core/html/themes/breezy/icons/48/categories/applications-development.png
+ core/html/themes/breezy/icons/48/categories/applications-other.png
+ core/html/themes/breezy/icons/48/categories/settings.png
+ core/html/themes/breezy/icons/48/devices/computer.png
+ core/html/themes/breezy/icons/48/mimetypes/application-certificate.png
+ core/html/themes/breezy/icons/48/places/folder.png
+ core/html/themes/breezy/icons/48/places/network-server.png
+ core/html/themes/breezy/icons/48/status/dialog-password.png
+ core/html/themes/breezy/icons/48/types/contact.png
+ core/html/themes/breezy/icons/48/types/resource-group.png
+ core/html/themes/breezy/icons/48/types/role.png
+ core/html/themes/breezy/icons/48/types/user-group.png
+ core/html/themes/breezy/icons/48/types/user.png
+ core/html/themes/breezy/icons/AUTHORS
+ core/html/themes/breezy/icons/scalable/apps/fusiondirectory.png
+ core/html/themes/breezy/svg/16/actions/add.svg
+ core/html/themes/breezy/svg/16/actions/document-edit.svg
+ core/html/themes/breezy/svg/16/actions/document-import.svg
+ core/html/themes/breezy/svg/16/actions/document-new.svg
+ core/html/themes/breezy/svg/16/actions/document-restore.svg
+ core/html/themes/breezy/svg/16/actions/down.svg
+ core/html/themes/breezy/svg/16/actions/edit-copy.svg
+ core/html/themes/breezy/svg/16/actions/edit-cut.svg
+ core/html/themes/breezy/svg/16/actions/edit-delete.svg
+ core/html/themes/breezy/svg/16/actions/edit-paste.svg
+ core/html/themes/breezy/svg/16/actions/export.svg
+ core/html/themes/breezy/svg/16/actions/go-first.svg
+ core/html/themes/breezy/svg/16/actions/go-home.svg
+ core/html/themes/breezy/svg/16/actions/go-previous.svg
+ core/html/themes/breezy/svg/16/actions/next.svg
+ core/html/themes/breezy/svg/16/actions/process-stop.svg
+ core/html/themes/breezy/svg/16/actions/remove.svg
+ core/html/themes/breezy/svg/16/actions/save.svg
+ core/html/themes/breezy/svg/16/actions/snapshot.svg
+ core/html/themes/breezy/svg/16/actions/submit.svg
+ core/html/themes/breezy/svg/16/actions/system-reinstall.svg
+ core/html/themes/breezy/svg/16/actions/system-search.svg
+ core/html/themes/breezy/svg/16/actions/system-shutdown.svg
+ core/html/themes/breezy/svg/16/actions/system-update.svg
+ core/html/themes/breezy/svg/16/actions/tools-wizard.svg
+ core/html/themes/breezy/svg/16/actions/up.svg
+ core/html/themes/breezy/svg/16/actions/view-refresh.svg
+ core/html/themes/breezy/svg/16/actions/view-sort-ascending.svg
+ core/html/themes/breezy/svg/16/actions/view-sort-descending.svg
+ core/html/themes/breezy/svg/16/apps/antivirus.svg
+ core/html/themes/breezy/svg/16/apps/imap.svg
+ core/html/themes/breezy/svg/16/apps/ldap.svg
+ core/html/themes/breezy/svg/16/apps/office-calendar.svg
+ core/html/themes/breezy/svg/16/apps/os-linux.svg
+ core/html/themes/breezy/svg/16/apps/os-windows.svg
+ core/html/themes/breezy/svg/16/apps/utilities-system-monitor.svg
+ core/html/themes/breezy/svg/16/categories/acl.svg
+ core/html/themes/breezy/svg/16/categories/applications-internet.svg
+ core/html/themes/breezy/svg/16/categories/settings.svg
+ core/html/themes/breezy/svg/16/devices/computer.svg
+ core/html/themes/breezy/svg/16/devices/media-cdrom.svg
+ core/html/themes/breezy/svg/16/devices/network-device.svg
+ core/html/themes/breezy/svg/16/devices/phone.svg
+ core/html/themes/breezy/svg/16/devices/printer.svg
+ core/html/themes/breezy/svg/16/devices/server.svg
+ core/html/themes/breezy/svg/16/devices/telephone.svg
+ core/html/themes/breezy/svg/16/devices/terminal.svg
+ core/html/themes/breezy/svg/16/mimetypes/application-certificate.svg
+ core/html/themes/breezy/svg/16/mimetypes/application-pdf.svg
+ core/html/themes/breezy/svg/16/mimetypes/application-x-executable.svg
+ core/html/themes/breezy/svg/16/mimetypes/package-x-generic.svg
+ core/html/themes/breezy/svg/16/mimetypes/text-csv.svg
+ core/html/themes/breezy/svg/16/places/folder.svg
+ core/html/themes/breezy/svg/16/status/dialog-error.svg
+ core/html/themes/breezy/svg/16/status/dialog-information.svg
+ core/html/themes/breezy/svg/16/status/dialog-password.svg
+ core/html/themes/breezy/svg/16/status/dialog-warning.svg
+ core/html/themes/breezy/svg/16/status/locked.svg
+ core/html/themes/breezy/svg/16/status/task-complete.svg
+ core/html/themes/breezy/svg/16/status/task-failure.svg
+ core/html/themes/breezy/svg/16/status/task-running.svg
+ core/html/themes/breezy/svg/16/status/task-stopped.svg
+ core/html/themes/breezy/svg/16/status/unlocked.svg
+ core/html/themes/breezy/svg/16/types/action.svg
+ core/html/themes/breezy/svg/16/types/application.svg
+ core/html/themes/breezy/svg/16/types/contact.svg
+ core/html/themes/breezy/svg/16/types/country.svg
+ core/html/themes/breezy/svg/16/types/dc.svg
+ core/html/themes/breezy/svg/16/types/domain.svg
+ core/html/themes/breezy/svg/16/types/locality.svg
+ core/html/themes/breezy/svg/16/types/organization.svg
+ core/html/themes/breezy/svg/16/types/resource-group.svg
+ core/html/themes/breezy/svg/16/types/role.svg
+ core/html/themes/breezy/svg/16/types/user-group.svg
+ core/html/themes/breezy/svg/16/types/user.svg
+ core/html/themes/breezy/svg/22/actions/application-exit.svg
+ core/html/themes/breezy/svg/22/actions/go-home.svg
+ core/html/themes/breezy/svg/22/status/dialog-error.svg
+ core/html/themes/breezy/svg/22/status/dialog-information.svg
+ core/html/themes/breezy/svg/32/status/dialog-error.svg
+ core/html/themes/breezy/svg/32/status/dialog-information.svg
+ core/html/themes/breezy/svg/32/status/dialog-warning.svg
+ core/html/themes/breezy/svg/32/status/object-locked.svg
+ core/html/themes/breezy/svg/48/actions/view-task.svg
+ core/html/themes/breezy/svg/48/apps/config-language.svg
+ core/html/themes/breezy/svg/48/apps/config-welcome.svg
+ core/html/themes/breezy/svg/48/apps/os-linux.svg
+ core/html/themes/breezy/svg/48/apps/utilities-system-monitor.svg
+ core/html/themes/breezy/svg/48/categories/acl.svg
+ core/html/themes/breezy/svg/48/categories/applications-development.svg
+ core/html/themes/breezy/svg/48/categories/applications-other.svg
+ core/html/themes/breezy/svg/48/categories/settings.svg
+ core/html/themes/breezy/svg/48/devices/computer.svg
+ core/html/themes/breezy/svg/48/mimetypes/application-certificate.svg
+ core/html/themes/breezy/svg/48/places/folder.svg
+ core/html/themes/breezy/svg/48/places/network-server.svg
+ core/html/themes/breezy/svg/48/status/dialog-password.svg
+ core/html/themes/breezy/svg/48/types/contact.svg
+ core/html/themes/breezy/svg/48/types/resource-group.svg
+ core/html/themes/breezy/svg/48/types/role.svg
+ core/html/themes/breezy/svg/48/types/user-group.svg
+ core/html/themes/breezy/svg/48/types/user.svg
+ core/html/themes/breezy/svg/AUTHORS
+ plugins/alias/html/themes/breezy/icons/16/apps/alias-distribution.png
+ plugins/alias/html/themes/breezy/icons/16/apps/alias.png
+ plugins/alias/html/themes/breezy/icons/16/apps/alias-redirection.png
+ plugins/alias/html/themes/breezy/icons/16/apps/alias-sympa.png
+ plugins/alias/html/themes/breezy/icons/48/apps/alias.png
+ plugins/alias/html/themes/breezy/svg/16/apps/alias-distribution.svg
+ plugins/alias/html/themes/breezy/svg/16/apps/alias-redirection.svg
+ plugins/alias/html/themes/breezy/svg/16/apps/alias.svg
+ plugins/alias/html/themes/breezy/svg/16/apps/alias-sympa.svg
+ plugins/alias/html/themes/breezy/svg/48/apps/alias.svg
+ plugins/applications/html/plugins/applications/images/default_icon.png
+ plugins/argonaut/html/themes/breezy/icons/16/actions/view-logs.png
+ plugins/argonaut/html/themes/breezy/icons/16/apps/argonaut-dns.png
+ plugins/argonaut/html/themes/breezy/icons/16/apps/argonaut-fuse.png
+ plugins/argonaut/html/themes/breezy/icons/16/apps/argonaut-mirror.png
+ plugins/argonaut/html/themes/breezy/icons/16/apps/argonaut.png
+ plugins/argonaut/html/themes/breezy/icons/48/apps/argonaut.png
+ plugins/argonaut/html/themes/breezy/svg/16/apps/argonaut-dns.svg
+ plugins/argonaut/html/themes/breezy/svg/16/apps/argonaut-fuse.svg
+ plugins/argonaut/html/themes/breezy/svg/16/apps/argonaut-mirror.svg
+ plugins/argonaut/html/themes/breezy/svg/16/apps/argonaut.svg
+ plugins/argonaut/html/themes/breezy/svg/48/apps/argonaut.svg
+ plugins/audit/html/themes/breezy/icons/16/apps/audit.png
+ plugins/audit/html/themes/breezy/icons/48/apps/audit.png
+ plugins/audit/html/themes/breezy/svg/16/apps/audit.svg
+ plugins/audit/html/themes/breezy/svg/48/apps/audit.svg
+ plugins/autofs/html/themes/breezy/icons/16/apps/autofs-nis-netmap.png
+ plugins/autofs/html/themes/breezy/icons/16/apps/autofs-nis-object.png
+ plugins/autofs/html/themes/breezy/icons/16/apps/autofs.png
+ plugins/autofs/html/themes/breezy/icons/48/apps/autofs.png
+ plugins/autofs/html/themes/breezy/svg/16/apps/autofs-nis-map.svg
+ plugins/autofs/html/themes/breezy/svg/16/apps/autofs-nis-object.svg
+ plugins/autofs/html/themes/breezy/svg/16/apps/autofs.svg
+ plugins/autofs/html/themes/breezy/svg/48/apps/autofs.svg
+ plugins/community/html/themes/breezy/icons/16/apps/community.png
+ plugins/community/html/themes/breezy/icons/48/apps/community.png
+ plugins/community/html/themes/breezy/svg/16/apps/community.svg
+ plugins/community/html/themes/breezy/svg/48/apps/community.svg
+ plugins/cyrus/html/themes/breezy/icons/16/apps/cyrus.png
+ plugins/cyrus/html/themes/breezy/icons/48/apps/cyrus.png
+ plugins/cyrus/html/themes/breezy/svg/48/apps/cyrus.svg
+ plugins/debconf/html/themes/breezy/icons/16/apps/debconf.png
+ plugins/debconf/html/themes/breezy/icons/48/apps/debconf.png
+ plugins/debconf/html/themes/breezy/svg/16/apps/debconf.svg
+ plugins/debconf/html/themes/breezy/svg/48/apps/debconf.svg
+ plugins/dhcp/html/themes/breezy/icons/16/apps/dhcp.png
+ plugins/dhcp/html/themes/breezy/icons/48/apps/dhcp.png
+ plugins/dhcp/html/themes/breezy/svg/16/apps/dhcp.svg
+ plugins/dhcp/html/themes/breezy/svg/48/apps/dhcp.svg
+ plugins/dns/html/themes/breezy/icons/16/apps/dns.png
+ plugins/dns/html/themes/breezy/icons/48/apps/dns.png
+ plugins/dns/html/themes/breezy/svg/16/apps/dns.svg
+ plugins/dns/html/themes/breezy/svg/48/apps/dns.svg
+ plugins/dovecot/html/themes/breezy/icons/16/apps/dovecot.png
+ plugins/dovecot/html/themes/breezy/icons/48/apps/dovecot.png
+ plugins/dovecot/html/themes/breezy/svg/16/apps/dovecot.svg
+ plugins/dovecot/html/themes/breezy/svg/48/apps/dovecot.svg
+ plugins/dsa/html/themes/breezy/icons/16/apps/dsa.png
+ plugins/dsa/html/themes/breezy/icons/48/apps/dsa.png
+ plugins/dsa/html/themes/breezy/svg/16/apps/dsa.svg
+ plugins/dsa/html/themes/breezy/svg/48/apps/dsa.svg
+ plugins/ejbca/html/themes/breezy/icons/16/apps/ejbca.png
+ plugins/ejbca/html/themes/breezy/icons/48/apps/ejbca.png
+ plugins/ejbca/html/themes/breezy/svg/16/apps/ejbca.svg
+ plugins/ejbca/html/themes/breezy/svg/48/apps/ejbca.svg
+ plugins/fai/html/themes/breezy/icons/16/actions/package-configure.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-hook.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-packages.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-partitiontable.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-profile.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-script.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-template.png
+ plugins/fai/html/themes/breezy/icons/16/apps/fai-variable.png
+ plugins/fai/html/themes/breezy/icons/48/apps/fai.png
+ plugins/fai/html/themes/breezy/svg/16/actions/package-configure.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-hook.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-packages.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-partitiontable.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-profile.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-script.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-template.svg
+ plugins/fai/html/themes/breezy/svg/16/apps/fai-variable.svg
+ plugins/fai/html/themes/breezy/svg/48/apps/fai.svg
+ plugins/freeradius/html/themes/breezy/icons/16/apps/freeradius.png
+ plugins/freeradius/html/themes/breezy/icons/48/apps/freeradius.png
+ plugins/freeradius/html/themes/breezy/svg/16/apps/freeradius.svg
+ plugins/freeradius/html/themes/breezy/svg/48/apps/freeradius.svg
+ plugins/fusioninventory/html/themes/breezy/icons/16/apps/fusioninventory.png
+ plugins/fusioninventory/html/themes/breezy/icons/48/apps/fusioninventory.png
+ plugins/fusioninventory/html/themes/breezy/svg/16/apps/fusioninventory.svg
+ plugins/fusioninventory/html/themes/breezy/svg/48/apps/fusioninventory.svg
+ plugins/gpg/html/themes/breezy/icons/16/apps/gpg.png
+ plugins/gpg/html/themes/breezy/icons/48/apps/gpg.png
+ plugins/gpg/html/themes/breezy/svg/16/apps/gpg.svg
+ plugins/gpg/html/themes/breezy/svg/48/apps/gpg.svg
+ plugins/ldapmanager/html/themes/breezy/icons/16/apps/ldapmanager.png
+ plugins/ldapmanager/html/themes/breezy/icons/48/apps/ldapmanager.png
+ plugins/ldapmanager/html/themes/breezy/svg/16/apps/ldapmanager.svg
+ plugins/ldapmanager/html/themes/breezy/svg/48/apps/ldapmanager.svg
+ plugins/mail/html/themes/breezy/icons/16/apps/internet-mail.png
+ plugins/mail/html/themes/breezy/icons/48/apps/internet-mail.png
+ plugins/mail/html/themes/breezy/svg/16/apps/internet-mail.svg
+ plugins/mail/html/themes/breezy/svg/48/apps/internet-mail.svg
+ plugins/nagios/html/themes/breezy/icons/16/apps/nagios.png
+ plugins/nagios/html/themes/breezy/icons/48/apps/nagios.png
+ plugins/nagios/html/themes/breezy/svg/16/apps/nagios.svg
+ plugins/nagios/html/themes/breezy/svg/48/apps/nagios.svg
+ plugins/netgroups/html/themes/breezy/icons/16/apps/netgroups.png
+ plugins/netgroups/html/themes/breezy/icons/48/apps/netgroups.png
+ plugins/netgroups/html/themes/breezy/svg/16/apps/netgroups.svg
+ plugins/netgroups/html/themes/breezy/svg/48/apps/netgroups.svg
+ plugins/newsletter/html/themes/breezy/icons/16/apps/newsletter.png
+ plugins/newsletter/html/themes/breezy/icons/48/apps/newsletter.png
+ plugins/newsletter/html/themes/breezy/svg/16/apps/newsletter.svg
+ plugins/newsletter/html/themes/breezy/svg/48/apps/newsletter.svg
+ plugins/opsi/html/themes/breezy/icons/16/apps/opsi-on-demand.png
+ plugins/opsi/html/themes/breezy/icons/16/apps/opsi.png
+ plugins/opsi/html/themes/breezy/icons/16/apps/opsi-software-list.png
+ plugins/opsi/html/themes/breezy/icons/48/apps/opsi-on-demand.png
+ plugins/opsi/html/themes/breezy/icons/48/apps/opsi.png
+ plugins/opsi/html/themes/breezy/icons/48/apps/opsi-software-list.png
+ plugins/opsi/html/themes/breezy/svg/16/apps/opsi-on-demand.svg
+ plugins/opsi/html/themes/breezy/svg/16/apps/opsi-software-list.svg
+ plugins/opsi/html/themes/breezy/svg/16/apps/opsi.svg
+ plugins/opsi/html/themes/breezy/svg/48/apps/opsi-on-demand.svg
+ plugins/opsi/html/themes/breezy/svg/48/apps/opsi-software-list.svg
+ plugins/opsi/html/themes/breezy/svg/48/apps/opsi.svg
+ plugins/puppet/html/themes/breezy/icons/16/apps/puppet.png
+ plugins/puppet/html/themes/breezy/icons/48/apps/puppet.png
+ plugins/puppet/html/themes/breezy/svg/16/apps/puppet.svg
+ plugins/puppet/html/themes/breezy/svg/48/apps/puppet.svg
+ plugins/pureftpd/html/themes/breezy/icons/16/apps/pureftpd.png
+ plugins/pureftpd/html/themes/breezy/icons/48/apps/pureftpd.png
+ plugins/pureftpd/html/themes/breezy/svg/16/apps/action.svg
+ plugins/pureftpd/html/themes/breezy/svg/48/apps/pureftpd.svg
+ plugins/quota/html/themes/breezy/icons/16/apps/quota.png
+ plugins/quota/html/themes/breezy/icons/48/apps/quota.png
+ plugins/quota/html/themes/breezy/svg/16/apps/quota.svg
+ plugins/quota/html/themes/breezy/svg/48/apps/quota.svg
+ plugins/renater-partage/html/themes/breezy/svg/16/apps/renater-partage.svg
+ plugins/samba/html/themes/breezy/icons/48/apps/samba.png
+ plugins/samba/html/themes/breezy/svg/48/apps/samba.svg
+ plugins/sogo/html/themes/breezy/icons/16/apps/sogo.png
+ plugins/sogo/html/themes/breezy/icons/48/apps/sogo.png
+ plugins/sogo/html/themes/breezy/svg/16/apps/sogo.svg
+ plugins/sogo/html/themes/breezy/svg/48/apps/sogo.svg
+ plugins/spamassassin/html/themes/breezy/icons/16/apps/spamassassin.png
+ plugins/spamassassin/html/themes/breezy/icons/48/apps/spamassassin.png
+ plugins/spamassassin/html/themes/breezy/svg/16/apps/spamassassin.svg
+ plugins/spamassassin/html/themes/breezy/svg/48/apps/spamassassin.svg
+ plugins/squid/html/themes/breezy/icons/16/apps/squid.png
+ plugins/squid/html/themes/breezy/icons/48/apps/squid.png
+ plugins/squid/html/themes/breezy/svg/16/apps/squid.svg
+ plugins/squid/html/themes/breezy/svg/48/apps/squid.svg
+ plugins/ssh/html/themes/breezy/icons/16/apps/ssh.png
+ plugins/ssh/html/themes/breezy/icons/48/apps/ssh.png
+ plugins/ssh/html/themes/breezy/svg/16/apps/ssh.svg
+ plugins/ssh/html/themes/breezy/svg/48/apps/ssh.svg
+ plugins/subcontracting/html/themes/breezy/icons/16/apps/subcontracting.png
+ plugins/subcontracting/html/themes/breezy/icons/48/apps/subcontracting.png
+ plugins/subcontracting/html/themes/breezy/svg/16/apps/subcontracting.svg
+ plugins/subcontracting/html/themes/breezy/svg/48/apps/subcontracting.svg
+ plugins/sudo/html/themes/breezy/icons/16/apps/sudo.png
+ plugins/sudo/html/themes/breezy/icons/48/apps/sudo.png
+ plugins/sudo/html/themes/breezy/svg/16/apps/sudo.svg
+ plugins/sudo/html/themes/breezy/svg/48/apps/sudo.svg
+ plugins/supann/html/themes/breezy/icons/16/apps/supann-entite.png
+ plugins/supann/html/themes/breezy/icons/16/apps/supann-etablissement.png
+ plugins/supann/html/themes/breezy/icons/16/apps/supann.png
+ plugins/supann/html/themes/breezy/icons/48/apps/supann.png
+ plugins/supann/html/themes/breezy/svg/16/apps/supann-entite.svg
+ plugins/supann/html/themes/breezy/svg/16/apps/supann-etablissement.svg
+ plugins/supann/html/themes/breezy/svg/16/apps/supann.svg
+ plugins/supann/html/themes/breezy/svg/48/apps/supann.svg
+ plugins/sympa/html/themes/breezy/icons/16/apps/sympa.png
+ plugins/sympa/html/themes/breezy/icons/48/apps/sympa.png
+ plugins/sympa/html/themes/breezy/svg/16/apps/sympa.svg
+ plugins/sympa/html/themes/breezy/svg/48/apps/sympa.svg
+ plugins/systems/html/themes/breezy/icons/16/actions/task-schedule.png
+ plugins/systems/html/themes/breezy/icons/16/actions/task-start.png
+ plugins/systems/html/themes/breezy/icons/16/actions/task-stop.png
+ plugins/systems/html/themes/breezy/icons/16/places/folder-network.png
+ plugins/systems/html/themes/breezy/svg/clock.svg
+ plugins/systems/html/themes/breezy/svg/server_locked.svg
+ plugins/systems/html/themes/breezy/svg/service_apache.svg
+ plugins/systems/html/themes/breezy/svg/service_file.svg
+ plugins/systems/html/themes/breezy/svg/service_ldap.svg
+ plugins/systems/html/themes/breezy/svg/status_start.svg
+ plugins/systems/html/themes/breezy/svg/status_stop.svg
+ plugins/systems/html/themes/breezy/svg/terminal_locked.svg
+ plugins/systems/html/themes/breezy/svg/view_logs.svg
+ plugins/systems/html/themes/breezy/svg/workstation_locked.svg
+Copyright:
+  2014, Uri Herrera <uri_herrera@nitrux.in>
+  2016, Timothée Giet
+License: LGPL-3+
+
+Files:
+ core/html/themes/legacy/icons/16/actions/document-new.png
+ core/html/themes/legacy/icons/16/actions/document-open.png
+ core/html/themes/legacy/icons/16/actions/edit-copy.png
+ core/html/themes/legacy/icons/16/actions/edit-cut.png
+ core/html/themes/legacy/icons/16/actions/edit-delete.png
+ core/html/themes/legacy/icons/16/actions/edit-paste.png
+ core/html/themes/legacy/icons/16/actions/go-down.png
+ core/html/themes/legacy/icons/16/actions/go-first.png
+ core/html/themes/legacy/icons/16/actions/go-home.png
+ core/html/themes/legacy/icons/16/actions/go-jump.png
+ core/html/themes/legacy/icons/16/actions/go-next.png
+ core/html/themes/legacy/icons/16/actions/go-previous.png
+ core/html/themes/legacy/icons/16/actions/list-add.png
+ core/html/themes/legacy/icons/16/actions/list-remove.png
+ core/html/themes/legacy/icons/16/actions/process-stop.png
+ core/html/themes/legacy/icons/16/actions/system-search.png
+ core/html/themes/legacy/icons/16/actions/system-shutdown.png
+ core/html/themes/legacy/icons/16/actions/view-refresh.png
+ core/html/themes/legacy/icons/16/apps/accessories-text-editor.png
+ core/html/themes/legacy/icons/16/apps/office-calendar.png
+ core/html/themes/legacy/icons/16/apps/system-installer.png
+ core/html/themes/legacy/icons/16/apps/system-software-update.png
+ core/html/themes/legacy/icons/16/apps/system-users.png
+ core/html/themes/legacy/icons/16/apps/utilities-system-monitor.png
+ core/html/themes/legacy/icons/16/apps/utilities-terminal.png
+ core/html/themes/legacy/icons/16/categories/applications-internet.png
+ core/html/themes/legacy/icons/16/categories/preferences-desktop.png
+ core/html/themes/legacy/icons/16/devices/computer.png
+ core/html/themes/legacy/icons/16/devices/media-optical.png
+ core/html/themes/legacy/icons/16/devices/printer.png
+ core/html/themes/legacy/icons/16/mimetypes/application-certificate.png
+ core/html/themes/legacy/icons/16/mimetypes/application-x-executable.png
+ core/html/themes/legacy/icons/16/mimetypes/package-x-generic.png
+ core/html/themes/legacy/icons/16/mimetypes/x-office-document.png
+ core/html/themes/legacy/icons/16/mimetypes/x-office-spreadsheet.png
+ core/html/themes/legacy/icons/16/places/folder.png
+ core/html/themes/legacy/icons/16/places/network-server.png
+ core/html/themes/legacy/icons/16/status/dialog-error.png
+ core/html/themes/legacy/icons/16/status/dialog-information.png
+ core/html/themes/legacy/icons/16/status/dialog-warning.png
+ core/html/themes/legacy/icons/22/actions/go-home.png
+ core/html/themes/legacy/icons/22/actions/system-log-out.png
+ core/html/themes/legacy/icons/22/status/dialog-error.png
+ core/html/themes/legacy/icons/22/status/dialog-information.png
+ core/html/themes/legacy/icons/32/status/dialog-error.png
+ core/html/themes/legacy/icons/32/status/dialog-information.png
+ core/html/themes/legacy/icons/32/status/dialog-warning.png
+ core/html/themes/legacy/icons/48/apps/preferences-desktop-locale.png
+ core/html/themes/legacy/icons/48/apps/system-users.png
+ core/html/themes/legacy/icons/48/apps/utilities-system-monitor.png
+ core/html/themes/legacy/icons/48/categories/applications-development.png
+ core/html/themes/legacy/icons/48/categories/applications-other.png
+ core/html/themes/legacy/icons/48/categories/preferences-desktop.png
+ core/html/themes/legacy/icons/48/devices/computer.png
+ core/html/themes/legacy/icons/48/mimetypes/application-certificate.png
+ core/html/themes/legacy/icons/48/places/folder.png
+ core/html/themes/legacy/icons/48/places/network-server.png
+ core/html/themes/legacy/icons/AUTHORS
+ core/html/themes/legacy/svg/AUTHORS
+ core/html/themes/legacy/svg/scalable/actions/document-new.svg
+ core/html/themes/legacy/svg/scalable/actions/document-open.svg
+ core/html/themes/legacy/svg/scalable/actions/document-save.svg
+ core/html/themes/legacy/svg/scalable/actions/edit-copy.svg
+ core/html/themes/legacy/svg/scalable/actions/edit-cut.svg
+ core/html/themes/legacy/svg/scalable/actions/edit-delete.svg
+ core/html/themes/legacy/svg/scalable/actions/edit-paste.svg
+ core/html/themes/legacy/svg/scalable/actions/go-down.svg
+ core/html/themes/legacy/svg/scalable/actions/go-first.svg
+ core/html/themes/legacy/svg/scalable/actions/go-home.svg
+ core/html/themes/legacy/svg/scalable/actions/go-jump.svg
+ core/html/themes/legacy/svg/scalable/actions/go-next.svg
+ core/html/themes/legacy/svg/scalable/actions/go-previous.svg
+ core/html/themes/legacy/svg/scalable/actions/go-up.svg
+ core/html/themes/legacy/svg/scalable/actions/list-add.svg
+ core/html/themes/legacy/svg/scalable/actions/list-remove.svg
+ core/html/themes/legacy/svg/scalable/actions/system-log-out.svg
+ core/html/themes/legacy/svg/scalable/actions/system-search.svg
+ core/html/themes/legacy/svg/scalable/actions/system-shutdown.svg
+ core/html/themes/legacy/svg/scalable/actions/view-refresh.svg
+ core/html/themes/legacy/svg/scalable/apps/accessories-text-editor.svg
+ core/html/themes/legacy/svg/scalable/apps/office-calendar.svg
+ core/html/themes/legacy/svg/scalable/apps/preferences-desktop-locale.svg
+ core/html/themes/legacy/svg/scalable/apps/system-installer.svg
+ core/html/themes/legacy/svg/scalable/apps/system-software-update.svg
+ core/html/themes/legacy/svg/scalable/apps/system-users.svg
+ core/html/themes/legacy/svg/scalable/apps/utilities-system-monitor.svg
+ core/html/themes/legacy/svg/scalable/apps/utilities-terminal.svg
+ core/html/themes/legacy/svg/scalable/categories/applications-development.svg
+ core/html/themes/legacy/svg/scalable/categories/applications-internet.svg
+ core/html/themes/legacy/svg/scalable/categories/applications-other.svg
+ core/html/themes/legacy/svg/scalable/categories/preferences-desktop.svg
+ core/html/themes/legacy/svg/scalable/devices/computer.svg
+ core/html/themes/legacy/svg/scalable/devices/media-optical.svg
+ core/html/themes/legacy/svg/scalable/devices/printer.svg
+ core/html/themes/legacy/svg/scalable/mimetypes/application-certificate.svg
+ core/html/themes/legacy/svg/scalable/mimetypes/application-x-executable.svg
+ core/html/themes/legacy/svg/scalable/mimetypes/package-x-generic.svg
+ core/html/themes/legacy/svg/scalable/mimetypes/x-office-document.svg
+ core/html/themes/legacy/svg/scalable/mimetypes/x-office-spreadsheet.svg
+ core/html/themes/legacy/svg/scalable/places/folder.svg
+ core/html/themes/legacy/svg/scalable/places/network-server.svg
+ core/html/themes/legacy/svg/scalable/status/dialog-error.svg
+ core/html/themes/legacy/svg/scalable/status/dialog-information.svg
+ core/html/themes/legacy/svg/scalable/status/dialog-warning.svg
+ plugins/systems/html/themes/legacy/icons/16/actions/media-playback-start.png
+ plugins/systems/html/themes/legacy/icons/16/actions/media-playback-stop.png
+ plugins/systems/html/themes/legacy/icons/16/places/folder-remote.png
+ plugins/systems/html/themes/legacy/svg/folder-remote.svg
+ plugins/systems/html/themes/legacy/svg/media-playback-start.svg
+ plugins/systems/html/themes/legacy/svg/media-playback-stop.svg
+ plugins/mail/html/themes/legacy/icons/16/apps/internet-mail.png
+ plugins/mail/html/themes/legacy/icons/48/apps/internet-mail.png
+ plugins/mail/html/themes/legacy/svg/internet-mail.svg
+Copyright:
+  Ulisse Perusin <uli.peru@gmail.com>
+  Steven Garrity <sgarrity@silverorange.com>
+  Lapo Calamandrei <calamandrei@gmail.com>
+  Ryan Collier <rcollier@novell.com>
+  Rodney Dawes <dobey@novell.com>
+  Andreas Nilsson <nisses.mail@home.se>
+  Tuomas Kuosmanen <tigert@tigert.com>
+  Garrett LeSage <garrett@novell.com>
+  Jakub Steiner <jimmac@novell.com>
+License: public-domain
+Comment:
+  Artwork has been derived from the Tango icon theme.
+  .
+  Slight modifications may fall under the same license as
+  FusionDirectory (i.e. GPL-2+).
+  .
+  2003-2008, GONICUS GmbH
+  2011-2016, FusionDirectory
+
+Files:
+ core/AUTHORS.md
+ core/Changelog
+ core/contrib/apache/fusiondirectory-apache.conf
+ core/contrib/bin/fusiondirectory-insert-schema
+ core/contrib/bin/fusiondirectory-setup
+ core/contrib/docs/fusiondirectory-oid.pdf
+ core/contrib/fusiondirectory.conf
+ core/contrib/images/favicon.png
+ core/contrib/images/favicon.svg
+ core/contrib/images/Fusiondirectory-logo-noir.eps
+ core/contrib/images/Fusiondirectory-logo.png
+ core/contrib/lighttpd/fusiondirectory-lighttpd.conf
+ core/contrib/man/fusiondirectory.conf.pod
+ core/contrib/openldap/core-fd-conf.schema
+ core/contrib/openldap/core-fd.schema
+ core/contrib/openldap/ldapns.schema
+ core/contrib/openldap/rfc2307bis.schema
+ core/contrib/openldap/template-fd.schema
+ core/.gitignore
+ core/html/favicon.ico
+ core/html/geticon.php
+ core/html/images/date_active.png
+ core/html/images/down-arrow.png
+ core/html/images/down-arrow.png
+ core/html/images/empty.png
+ core/html/images/empty.png
+ core/html/images/forward-arrow.png
+ core/html/images/forward-arrow.png
+ core/html/images/lists/expand.png
+ core/html/images/lists/expand.png
+ core/html/images/lists/lastnode.png
+ core/html/images/lists/lastnode.png
+ core/html/images/lists/node.png
+ core/html/images/lists/node.png
+ core/html/images/lists/seperator.png
+ core/html/images/lists/seperator.png
+ core/html/images/lists/vline.png
+ core/html/images/lists/vline.png
+ core/html/images/opacity_black.png
+ core/html/plugins/users/images/default.jpg
+ core/html/plugins/users/style/user_tab.css
+ core/html/recovery.php
+ core/html/robots.txt
+ core/html/themes/breezy/datepicker.css
+ core/html/themes/breezy/dialog.css
+ core/html/themes/breezy/form.css
+ core/html/themes/breezy/images/border.png
+ core/html/themes/breezy/index.theme
+ core/html/themes/breezy/lists.css
+ core/html/themes/breezy/login.css
+ core/html/themes/breezy/menu.css
+ core/html/themes/breezy/plugin.css
+ core/html/themes/breezy/printer.css
+ core/html/themes/breezy/setup.css
+ core/html/themes/breezy/style.css
+ core/html/themes/breezy/tabs.css
+ core/html/themes/breezy/theme.css
+ core/html/themes/legacy/images/border.png
+ core/html/themes/legacy/index.theme
+ core/html/themes/legacy/lists.css
+ core/html/themes/legacy/login.css
+ core/html/themes/legacy/menu.css
+ core/html/themes/legacy/plugin.css
+ core/html/themes/legacy/setup.css
+ core/html/themes/legacy/style.css
+ core/html/themes/legacy/tabs.css
+ core/html/themes/legacy/theme.css
+ core/ihtml/themes/breezy/colors.txt
+ core/ihtml/themes/breezy/copynotice.tpl
+ core/ihtml/themes/breezy/css.tpl
+ core/ihtml/themes/breezy/framework.tpl
+ core/ihtml/themes/breezy/headers.tpl
+ core/ihtml/themes/breezy/islocked.tpl
+ core/ihtml/themes/breezy/login.tpl
+ core/ihtml/themes/breezy/msg_dialog.tpl
+ core/ihtml/themes/breezy/recovery.tpl
+ core/ihtml/themes/breezy/restore-confirm.tpl
+ core/ihtml/themes/breezy/simple-filter.tpl
+ core/ihtml/themes/breezy/simple-list.tpl
+ core/ihtml/themes/breezy/simpleplugin_section_alone.tpl
+ core/ihtml/themes/breezy/simpleplugin_section.tpl
+ core/ihtml/themes/breezy/simpleplugin.tpl
+ core/ihtml/themes/breezy/simple-remove.tpl
+ core/ihtml/themes/breezy/simple-select-list.tpl
+ core/ihtml/themes/breezy/sizelimit.tpl
+ core/ihtml/themes/breezy/template.tpl
+ core/ihtml/themes/legacy/login.tpl
+ core/ihtml/themes/legacy/recovery.tpl
+ core/ihtml/themes/legacy/setup_header.tpl
+ core/include/functions_debug.inc
+ core/include/functions_debug.inc
+ core/include/functions_debug.inc
+ core/include/select/groupSelect/group-filter.tpl
+ core/include/select/groupSelect/group-filter.xml
+ core/include/simpleplugin/simple-filter.xml
+ core/include/simpleplugin/simple-list.xml
+ core/include/simpleplugin/simple-select-list.xml
+ core/plugins/addons/dashboard/groups_stats.tpl
+ core/plugins/addons/dashboard/main_stats.tpl
+ core/plugins/addons/dashboard/pwd_stats.tpl
+ core/plugins/addons/dashboard/users_accounts.tpl
+ core/plugins/addons/dashboard/users_stats.tpl
+ core/plugins/admin/acl/remove.tpl
+ core/plugins/admin/aclrole/acleditiondialog.tpl
+ core/plugins/admin/departments/dep-list.xml
+ core/plugins/admin/groups/group-filter.xml
+ core/plugins/admin/groups/group-list.xml
+ core/plugins/admin/users/user-filter.tpl
+ core/plugins/admin/users/user-filter.xml
+ core/plugins/admin/users/user-list.xml
+ core/plugins/generic/references/contents.tpl
+ core/plugins/generic/welcome/welcome.tpl
+ core/README.md
+ core/setup/setup_checks.tpl
+ core/setup/setup_finish.tpl
+ core/setup/setup_frame.tpl
+ core/setup/setup_migrate_accounts.tpl
+ core/setup/setup_migrate_adminAccount.tpl
+ core/setup/setup_migrate_baseOC.tpl
+ core/setup/setup_migrate.tpl
+ core/setup/setup_welcome.tpl
+ core/.gitlab/.gitkeep
+ core/.gitlab-ci.yml
+ core/.gitlab/issue_templates/.gitkeep
+ core/.gitlab/issue_templates/Backporting.md
+ core/.gitlab/issue_templates/Bugs.md
+ core/.gitlab/issue_templates/Contribution.md
+ core/.gitlab/issue_templates/Enhancement.md
+ core/.gitlab/merge_request_templates/.gitkeep
+ core/.gitlab/merge_request_templates/Merge.md
+ core/.tx/config
+ core/AUTHORS.md
+ core/CODE_OF_CONDUCT.md
+ core/CONTRIBUTING.md
+ core/Changelog.md
+ core/UPGRADE.md
+ plugins/README.md
+ plugins/alias/contrib/openldap/alias-fd-conf.schema
+ plugins/alias/contrib/openldap/alias-fd.schema
+ plugins/applications/contrib/openldap/applications-fd-conf.schema
+ plugins/applications/contrib/openldap/applications-fd.schema
+ plugins/applications/contrib/svg/default_icon.svg
+ plugins/argonaut/addons/argonaut/deploy-filter.xml
+ plugins/argonaut/addons/argonaut/deploy-list.tpl
+ plugins/argonaut/addons/argonaut/deploy-list.xml
+ plugins/argonaut/addons/argonaut/import_events.tpl
+ plugins/argonaut/contrib/openldap/argonaut-fd.schema
+ plugins/audit/admin/audit/audit-filter.tpl
+ plugins/audit/contrib/openldap/audit-fd-conf.schema
+ plugins/audit/contrib/openldap/audit-fd.schema
+ plugins/autofs/contrib/openldap/autofs-fd-conf.schema
+ plugins/community/contrib/openldap/community-fd-conf.schema
+ plugins/community/contrib/openldap/community-fd.schema
+ plugins/cyrus/contrib/openldap/cyrus-fd.schema
+ plugins/cyrus/personal/mail/mail-methods/sieve_script.tpl
+ plugins/debconf/admin/debconfProfile/debconfProfile-filter.tpl
+ plugins/debconf/admin/debconfProfile/debconfProfile-filter.xml
+ plugins/debconf/contrib/openldap/debconf-fd.schema
+ plugins/debconf/contrib/openldap/debconf.schema
+ plugins/developers/addons/debugHelp/debughelp.tpl
+ plugins/dhcp/contrib/openldap/dhcp-fd-conf.schema
+ plugins/dhcp/contrib/openldap/dhcp-fd.schema
+ plugins/dns/admin/systems/dnsrecords.tpl
+ plugins/dns/contrib/openldap/dns-fd-conf.schema
+ plugins/dns/contrib/openldap/dns-fd.schema
+ plugins/dns/contrib/openldap/dnszone.schema
+ plugins/dovecot/contrib/openldap/dovecot-fd.schema
+ plugins/dsa/contrib/openldap/dsa-fd-conf.schema
+ plugins/ejbca/contrib/openldap/ejbca-fd-conf.schema
+ plugins/ejbca/contrib/openldap/ejbca-fd.schema
+ plugins/ejbca/contrib/resources/ejbca.svg
+ plugins/fai/admin/fai/packageSelect/selectPackage-filter.tpl
+ plugins/fai/admin/fai/packageSelect/selectPackage-filter.xml
+ plugins/fai/admin/fai/packageSelect/selectPackage-list.xml
+ plugins/fai/admin/systems/services/repository/fai_repository.tpl
+ plugins/fai/contrib/openldap/fai-fd-conf.schema
+ plugins/freeradius/contrib/openldap/freeradius.schema
+ plugins/fusioninventory/admin/inventory/inventory-list.xml
+ plugins/fusioninventory/admin/systems/fusioninventory/inventory.tpl
+ plugins/fusioninventory/contrib/openldap/fusioninventory-fd-conf.schema
+ plugins/fusioninventory/contrib/openldap/fusioninventory-fd.schema
+ plugins/fusioninventory/contrib/openldap/inventory-fd.schema
+ plugins/fusioninventory/html/collect.php
+ plugins/fusioninventory/html/plugins/fusioninventory/inventory.css
+ plugins/.gitignore
+ plugins/gpg/contrib/openldap/gpg-fd.schema
+ plugins/gpg/personal/gpg/pgpKeySelect/pgpKeySelect-list.xml
+ plugins/ipmi/contrib/openldap/ipmi-fd.schema
+ plugins/ldapdump/addons/ldapdump/ldapdump.tpl
+ plugins/mail/contrib/openldap/mail-fd-conf.schema
+ plugins/mail/contrib/openldap/mail-fd.schema
+ plugins/nagios/contrib/openldap/nagios-fd-conf.schema
+ plugins/nagios/contrib/openldap/netways.schema
+ plugins/netgroups/contrib/openldap/netgroups-fd-conf.schema
+ plugins/newsletter/contrib/openldap/newsletter-fd-conf.schema
+ plugins/newsletter/contrib/openldap/newsletter-fd.schema
+ plugins/opsi/addons/dashboard/opsi_profiles.tpl
+ plugins/opsi/addons/dashboard/opsi_stats.tpl
+ plugins/opsi/addons/opsi/opsiimport.tpl
+ plugins/opsi/contrib/openldap/opsi-fd-conf.schema
+ plugins/opsi/contrib/openldap/opsi-fd.schema
+ plugins/personal/contrib/openldap/personal-fd-conf.schema
+ plugins/personal/contrib/openldap/personal-fd.schema
+ plugins/postfix/contrib/openldap/postfix-fd.schema
+ plugins/postfix/html/themes/breezy/icons/16/apps/smtp.png
+ plugins/postfix/html/themes/breezy/svg/16/smtp.svg
+ plugins/ppolicy/addons/dashboard/ppolicy_locked_accounts.tpl
+ plugins/ppolicy/contrib/openldap/ppolicy-fd-conf.schema
+ plugins/ppolicy/contrib/doc/ppolicyconfig.ldif
+ plugins/ppolicy/contrib/doc/ppolicymodule.ldif
+ plugins/ppolicy/html/themes/breezy/icons/16/apps/ppolicy.png
+ plugins/ppolicy/html/themes/breezy/icons/48/apps/ppolicy.png
+ plugins/ppolicy/html/themes/breezy/svg/16/apps/ppolicy.svg
+ plugins/ppolicy/html/themes/breezy/svg/48/apps/ppolicy.svg
+ plugins/puppet/contrib/openldap/puppet-fd.schema
+ plugins/puppet/contrib/openldap/puppet.schema
+ plugins/pureftpd/contrib/openldap/pureftpd.schema
+ plugins/quota/admin/systems/services/quota/service_quota_parameters.tpl
+ plugins/quota/contrib/openldap/quota-fd.schema
+ plugins/quota/contrib/openldap/quota.schema
+ plugins/quota/personal/quota/quota_section.tpl
+ plugins/renater-partage/admin/systems/services/renater-partage/renater_domains.tpl
+ plugins/renater-partage/contrib/openldap/renater-partage-fd.schema
+ plugins/renater-partage/html/themes/breezy/icons/16/apps/renater-partage.png
+ plugins/repository/contrib/openldap/repository-fd-conf.schema
+ plugins/repository/contrib/openldap/repository-fd.schema
+ plugins/repository/html/themes/breezy/icons/16/apps/repository-distribution.png
+ plugins/repository/html/themes/breezy/icons/16/apps/repository.png
+ plugins/repository/html/themes/breezy/icons/16/apps/repository-section.png
+ plugins/repository/html/themes/breezy/icons/48/apps/repository.png
+ plugins/repository/html/themes/breezy/svg/16/apps/repository-distribution.svg
+ plugins/repository/html/themes/breezy/svg/16/apps/repository-section.svg
+ plugins/repository/html/themes/breezy/svg/16/apps/repository.svg
+ plugins/repository/html/themes/breezy/svg/48/apps/repository.svg
+ plugins/samba/contrib/openldap/samba-fd-conf.schema
+ plugins/samba/contrib/openldap/samba.schema
+ plugins/samba/personal/samba/sambaLogonHours.tpl
+ plugins/sinaps/contrib/openldap/sinaps-fd-conf.schema
+ plugins/sinaps/contrib/test/testAcquisition.php
+ plugins/sinaps/contrib/test/testEndPoint.php
+ plugins/sogo/contrib/openldap/calEntry.schema
+ plugins/sogo/contrib/openldap/calRessources.schema
+ plugins/sogo/contrib/openldap/sogo-fd-conf.schema
+ plugins/spamassassin/contrib/openldap/spamassassin-fd.schema
+ plugins/squid/contrib/openldap/proxy-fd.schema
+ plugins/squid/personal/squid/proxyAccount.tpl
+ plugins/ssh/contrib/openldap/openssh-lpk.schema
+ plugins/subcontracting/contrib/openldap/subcontracting-fd.schema
+ plugins/sudo/admin/sudo/usedoptions_section.tpl
+ plugins/sudo/contrib/openldap/sudo-fd-conf.schema
+ plugins/sudo/contrib/openldap/sudo.schema
+ plugins/supann-ext/contrib/openldap/supann-ext-fd.schema
+ plugins/supann/contrib/openldap/internet2.schema
+ plugins/supann/contrib/openldap/supann_2009.schema
+ plugins/supann/contrib/openldap/supann-fd-conf.schema
+ plugins/supann/contrib/etc/activite_CNU
+ plugins/supann/contrib/etc/activite_REFERENS
+ plugins/supann/contrib/etc/affiliation
+ plugins/supann/contrib/etc/corps_NCORPS
+ plugins/supann/contrib/etc/diplome_SISE
+ plugins/supann/contrib/etc/discipline_SISE
+ plugins/supann/contrib/etc/entite_SUPANN
+ plugins/supann/contrib/etc/etablissement_SUPANN
+ plugins/supann/contrib/etc/eturegimeinscription_SISE
+ plugins/supann/contrib/etc/role_SUPANN
+ plugins/supann/contrib/etc/typediplome_SISE
+ plugins/supann/contrib/doc/examples/diplome_EXAMPLE
+ plugins/supann/contrib/doc/examples/discipline_EXAMPLE
+ plugins/supann/contrib/doc/examples/etuelementpedagogique_EXAMPLE
+ plugins/supann/contrib/doc/examples/etuetape_EXAMPLE
+ plugins/supann/contrib/doc/examples/eturegimeinscription_EXAMPLE
+ plugins/supann/contrib/doc/examples/typediplome_EXAMPLE
+ plugins/supann/personal/supann/student_subscription.tpl
+ plugins/sympa/contrib/openldap/sympa-fd.schema
+ plugins/sympa/contrib/openldap/sympa-fd-conf.schema
+ plugins/systems/addons/dashboard/network_dhcp.tpl
+ plugins/systems/addons/dashboard/systems_pcids.tpl
+ plugins/systems/addons/dashboard/systems_stats.tpl
+ plugins/systems/admin/systems/serverService-filter.tpl
+ plugins/systems/admin/systems/serverService-filter.xml
+ plugins/systems/admin/systems/serverService-list.tpl
+ plugins/systems/admin/systems/serverService-list.xml
+ plugins/systems/admin/systems/server_import.tpl
+ plugins/systems/admin/systems/services/shares/service_share.tpl
+ plugins/systems/contrib/openldap/service-fd.schema
+ plugins/systems/contrib/openldap/systems-fd-conf.schema
+ plugins/systems/contrib/openldap/systems-fd.schema
+ plugins/.gitlab-ci.yml
+ plugins/.gitlab/.gitkeep
+ plugins/.gitlab/issue_templates/.gitkeep
+ plugins/.gitlab/issue_templates/Backporting.md
+ plugins/.gitlab/issue_templates/Bugs.md
+ plugins/.gitlab/issue_templates/Contribution.md
+ plugins/.gitlab/issue_templates/Enhancement.md
+ plugins/.gitlab/merge_request_templates/.gitkeep
+ plugins/.gitlab/merge_request_templates/Merge.md
+ plugins/.tx/config
+ plugins/CODE_OF_CONDUCT.md
+ plugins/CONTRIBUTING.md
+ plugins/Changelog.md
+ plugins/README.md
+ plugins/user-reminder/contrib/openldap/user-reminder-fd-conf.schema
+ plugins/user-reminder/ihtml/themes/breezy/user-reminder.tpl
+ plugins/weblink/contrib/openldap/weblink-fd.schema
+ plugins/webservice/contrib/bin/fusiondirectory-shell
+ plugins/webservice/contrib/docs/jsonrpc.php.doc
+ plugins/webservice/contrib/openldap/webservice-fd-conf.schema
+Copyright: *No copyright*
+License: GPL-2+
+Comment:
+ Assuming license from core/COPYING.
+
+Files:
+ plugins/argonaut/include/jsonRPCClient.php
+ plugins/webservice/include/jsonrpcphp/jsonRPCServer.php
+Copyright: 2007, Sergio Vaccaro <sergio@inservibile.org>
+  2012-2018, FusionDirectory
+  2013-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ core/html/include/pwdStrength.js
+Copyright:
+  2006, Steve Moitozo <god at zilla dot us>
+License: Expat
+
+Files:
+ core/include/class_ldap.inc
+Copyright: 1998, Eric Kilfoil
+  2003, Alejandro Escanero Blanco
+  2003-2010, Cajus Pollmeier
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/mail/admin/groups/mail/class_mailGroup.inc
+Copyright: 2009-2010, Bas Tichelaar
+  2013-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/nagios/personal/nagios/main.inc
+Copyright: 2005, Benoit Mortier
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/nagios/personal/nagios/class_nagiosAccount.inc
+Copyright: 2005, Guillame Delecourt
+  2006, Benoit Mortier
+  2006, Vincent Seynhaeve
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/ppolicy/addons/dashboard/class_dashBoardPPolicy.inc
+Copyright: 2014-2015, Dhatim
+  2014-2018, FusionDirectory project
+License: GPL-2+
+
+Files:
+ plugins/mail/personal/mail/class_mailAccount.inc
+Copyright: 2007, Fabian Hicker
+  2011-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ core/include/accept-to-gettext.inc
+Copyright: 2003, Wouter Verhelst <wouter@debian.org>
+  2012-2018, FusionDirectory
+License: GPL-2+
+
+Files:
+ plugins/samba/include/class_smbHash.inc
+Copyright: 2004, - 2006, Roland Gruber
+  2013-2018, FusionDirectory Project
+License: GPL-2+
+
+Files:
+ plugins/subcontracting/personal/subcontracting/class_subContracting.inc
+Copyright:
+  2015-2018, OpenSides <benoit.mortier@opensides.be>
+License: GPL-2+
+
+Files:
+ plugins/mail/personal/mail/class_sieve.inc
+Copyright: 2001, Dan Ellis
+  2001, Dan Ellis <danellis@rushmore.com>
+License: GPL-2+
+Comment:
+ Assuming license from core/COPYING.
+
+Files:
+ core/html/include/pulldown.js
+Copyright:
+  2004, Knallgrau New Medias Solutions GmbH, Vienna - Austria
+License: BSD-4-clause
+
+Files:
+ core/html/include/datepicker.js
+Copyright:
+  2007, Mathieu Jondet <mathieu@eulerian.com>
+License: Expat
+
+Files:
+ core/html/include/tsorter.js
+Copyright:
+  2015, Terrill Dent, http://terrill.ca
+License: Expat
+
+Files:
+ debian/*
+ README.multi-orig-tarball-package
+Copyright:
+  2010, Benoit Mortier <benoit.mortier@opensides.be>
+  2014, Mike Gabriel <sunweaver@debian.org>
+License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA  02110-1301  USA
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 2,1 can be found in the file
+ `/usr/share/common-licenses/LGPL-2.1'.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+   - Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+   - Neither the name of the copyright holder nor the names of its contributors
+     may be used to endorse or promote products derived from this software
+     without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;  OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-4-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+   - Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+   - All advertising materials mentioning features or use of this software must
+     display the following acknowledgement: “This product includes software
+     developed by the <author(s)>.”
+   - Neither the name of the author(s) nor the names of this program's
+     contributors may be used to endorse or promote products derived from this
+     software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) “AS IS” AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+ OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-3+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License 3 can be found in `/usr/share/common-licenses/LGPL-3'.
+
+License: public-domain
+ This file is in the public domain.  You may use and modify it as
+ you see fit, as long as this copyright message is included and
+ that there is an indication as to what modifications have been
+ made (if any).

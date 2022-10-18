@@ -41,6 +41,8 @@ heuristics.
 
 TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_DETECTION', False)
 
+TRACE_ANALYSIS = False
+TRACE_IS_FUNCTIONS = False
 
 def logger_debug(*args):
     pass
@@ -49,7 +51,11 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 
-if TRACE:
+if (
+    TRACE
+    or TRACE_ANALYSIS
+    or TRACE_IS_FUNCTIONS
+):
     import sys
 
     logging.basicConfig(stream=sys.stdout)
@@ -82,6 +88,7 @@ class DetectionCategory(Enum):
     UNKNOWN_INTRO_BEFORE_DETECTION = 'unknown-intro-before-detection'
     UNKNOWN_FILE_REFERENCE_LOCAL = 'unknown-file-reference-local'
     UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE = 'unknown-reference-in-file-to-package'
+    UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE = 'unknown-reference-in-file-to-nonexistent-package'
     PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL = 'package-unknown-file-reference-local'
     PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
     PACKAGE_ADD_FROM_FILE = 'from-package-file'
@@ -101,6 +108,7 @@ class DetectionRule(Enum):
     UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file' 
     UNKNOWN_INTRO_FOLLOWED_BY_MATCH = 'unknown-intro-followed-by-match'
     UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE = 'unknown-reference-in-file-to-package'
+    UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE = 'unknown-reference-in-file-to-nonexistent-package'
     CONTAINED_SAME_LICENSE = 'contained-with-same-license'
     NOTICE_FOLLOWED_BY_TEXT = 'notice-followed-by-text'
     CONTIGUOUS_SAME_LICENSE = 'contiguous-with-same-license'
@@ -700,7 +708,7 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
     Return a tuple of (reasons, combined_expression) by combining a `matches` list of
     LicenseMatch objects using an `analysis` code string.
     """
-    if TRACE:
+    if TRACE or TRACE_ANALYSIS:
         logger_debug(f'license_matches {matches}', f'package_license {analysis}', f'post_scan: {post_scan}')
 
     matches_for_expression = None
@@ -708,47 +716,76 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
     reasons = []
 
     if analysis == DetectionCategory.FALSE_POSITVE.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionRule.FALSE_POSITIVE.value}')
         reasons.append(DetectionRule.FALSE_POSITIVE.value)
         return reasons, combined_expression
 
     elif analysis == DetectionCategory.UNDETECTED_LICENSE.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.UNDETECTED_LICENSE.value}')
         matches_for_expression = matches
         reasons.append(DetectionRule.UNDETECTED_LICENSE.value)
 
     elif analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value}')
         matches_for_expression = filter_license_intros(matches)
         reasons.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
 
     elif post_scan:
         if analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value}')
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value)
 
+        elif analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value}')
+            matches_for_expression = filter_license_references(matches)
+            reasons.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value)
+
         elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value}')
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value}')
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value}')
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.PACKAGE_ADD_FROM_SIBLING_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_FILE.value:
+            if TRACE_ANALYSIS:
+                logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_FILE.value}')
             matches_for_expression = filter_license_references(matches)
             reasons.append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
 
     elif analysis == DetectionCategory.UNKNOWN_MATCH.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.UNKNOWN_MATCH.value}')
+        matches_for_expression = matches
         reasons.append(DetectionRule.UNKNOWN_MATCH.value)
         return reasons, combined_expression
 
     elif analysis == DetectionCategory.LICENSE_CLUES.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.LICENSE_CLUES.value}')
         reasons.append(DetectionRule.LICENSE_CLUES.value)
         return reasons, combined_expression
 
     else:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionRule.NOT_COMBINED.value}')
         matches_for_expression = matches
         reasons.append(DetectionRule.NOT_COMBINED.value)
 
@@ -764,7 +801,7 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
             expressions=[match.rule.license_expression for match in matches_for_expression]
         )
 
-    if TRACE:
+    if TRACE or TRACE_ANALYSIS:
         logger_debug(f'combined_expression {combined_expression}')
 
     return reasons, combined_expression
