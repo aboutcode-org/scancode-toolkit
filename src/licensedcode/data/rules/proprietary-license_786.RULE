@@ -1,0 +1,5 @@
+CONFIG_NONFREE
+     printf(
+     "This version of %s has nonfree parts compiled in.\n"
+     "Therefore it is not legally redistributable.\n",
+     program_name );

@@ -6,6 +6,7 @@ owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/
 notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: ZPL-2.0
+osi_license_key: ZPL-2.0
 text_urls:
     - http://www.zope.org/Resources/License/
 other_urls:
@@ -15,4 +16,3 @@ other_urls:
     - https://opensource.org/licenses/ZPL-2.0
 ignorable_urls:
     - http://www.zope.com/Marks
-osi_license_key: ZPL-2.0

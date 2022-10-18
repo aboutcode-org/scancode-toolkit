@@ -30,68 +30,31 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
-    "declared_license_expression": "(gpl-2.0-plus AND lgpl-2.1-plus) AND unknown",
-    "declared_license_expression_spdx": "(GPL-2.0-or-later AND LGPL-2.1-or-later) AND LicenseRef-scancode-unknown",
+    "declared_license_expression": "lgpl-2.1-plus",
+    "declared_license_expression_spdx": "LGPL-2.1-or-later",
     "license_detections": [
       {
-        "license_expression": "gpl-2.0-plus AND lgpl-2.1-plus",
+        "license_expression": "lgpl-2.1-plus",
         "detection_rules": [
           "not-combined"
         ],
         "matches": [
           {
-            "score": 65.79,
+            "score": 100.0,
             "start_line": 1,
             "end_line": 1,
-            "matched_length": 25,
-            "match_coverage": 65.79,
-            "matcher": "3-seq",
-            "license_expression": "gpl-2.0-plus",
-            "rule_identifier": "gpl-2.0-plus_925.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 38,
-            "rule_relevance": 100,
-            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
-            "licenses": [
-              {
-                "key": "gpl-2.0-plus",
-                "name": "GNU General Public License 2.0 or later",
-                "short_name": "GPL 2.0 or later",
-                "category": "Copyleft",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Free Software Foundation (FSF)",
-                "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-                "spdx_license_key": "GPL-2.0-or-later",
-                "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
-              }
-            ]
-          },
-          {
-            "score": 57.14,
-            "start_line": 1,
-            "end_line": 1,
-            "matched_length": 12,
-            "match_coverage": 57.14,
-            "matcher": "3-seq",
+            "matched_length": 30,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
             "license_expression": "lgpl-2.1-plus",
-            "rule_identifier": "lgpl-2.1-plus_55.RULE",
+            "rule_identifier": "lgpl-2.1-plus_455.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
-            "rule_length": 21,
+            "rule_length": 30,
             "rule_relevance": 100,
             "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
             "licenses": [
@@ -110,51 +73,6 @@
                 "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
                 "spdx_license_key": "LGPL-2.1-or-later",
                 "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "license_expression": "unknown",
-        "detection_rules": [
-          "undetected-license"
-        ],
-        "matches": [
-          {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "matched_length": 31,
-            "match_coverage": 100.0,
-            "matcher": "5-undetected",
-            "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 31,
-            "rule_relevance": 100,
-            "matched_text": "license This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.",
-            "licenses": [
-              {
-                "key": "unknown",
-                "name": "Unknown license detected but not recognized",
-                "short_name": "unknown",
-                "category": "Unstated License",
-                "is_exception": false,
-                "is_unknown": true,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
-                "spdx_license_key": "LicenseRef-scancode-unknown",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
               }
             ]
           }

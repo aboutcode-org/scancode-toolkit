@@ -231,7 +231,7 @@
             ]
           },
           {
-            "score": 100.0,
+            "score": 50.0,
             "start_line": 1,
             "end_line": 1,
             "matched_length": 1,
@@ -246,7 +246,7 @@
             "is_license_tag": false,
             "is_license_intro": false,
             "rule_length": 1,
-            "rule_relevance": 100,
+            "rule_relevance": 50,
             "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
             "licenses": [
               {

@@ -1,7 +1,7 @@
 {
   "dependencies": [
     {
-      "purl": "pkg:pods/AWSCore@2.27.0",
+      "purl": "pkg:cocoapods/AWSCore@2.27.0",
       "extracted_requirement": "2.27.0",
       "scope": "requires",
       "is_runtime": false,
@@ -9,13 +9,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/CwlCatchException@2.1.1",
+      "purl": "pkg:cocoapods/CwlCatchException@2.1.1",
       "extracted_requirement": "2.1.1",
       "scope": "requires",
       "is_runtime": false,
@@ -23,13 +23,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/CwlCatchExceptionSupport@2.1.1",
+      "purl": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1",
       "extracted_requirement": "2.1.1",
       "scope": "requires",
       "is_runtime": false,
@@ -37,13 +37,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/CwlMachBadInstructionHandler@2.1.0",
+      "purl": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0",
       "extracted_requirement": "2.1.0",
       "scope": "requires",
       "is_runtime": false,
@@ -51,13 +51,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/CwlPosixPreconditionTesting@2.1.0",
+      "purl": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0",
       "extracted_requirement": "2.1.0",
       "scope": "requires",
       "is_runtime": false,
@@ -65,13 +65,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/CwlPreconditionTesting@2.1.0",
+      "purl": "pkg:cocoapods/CwlPreconditionTesting@2.1.0",
       "extracted_requirement": "2.1.0",
       "scope": "requires",
       "is_runtime": false,
@@ -79,13 +79,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/SwiftFormat/CLI@0.44.17",
+      "purl": "pkg:cocoapods/SwiftFormat/CLI@0.44.17",
       "extracted_requirement": "0.44.17",
       "scope": "requires",
       "is_runtime": false,
@@ -93,13 +93,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/SwiftLint@0.46.2",
+      "purl": "pkg:cocoapods/SwiftLint@0.46.2",
       "extracted_requirement": "0.46.2",
       "scope": "requires",
       "is_runtime": false,
@@ -107,15 +107,15 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "many-podspecs/Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
   "packages": [
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "CoreMLPredictionsPlugin",
       "version": "$AMPLIFY_VERSION",
@@ -204,17 +204,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
-      "package_uid": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/CoreMLPredictionsPlugin.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "Amplify",
       "version": "$AMPLIFY_VERSION",
@@ -303,17 +303,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
-      "package_uid": "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/Amplify.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "AmplifyPlugins",
       "version": "$AMPLIFY_VERSION",
@@ -402,17 +402,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
-      "package_uid": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AmplifyPlugins.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "AmplifyTestCommon",
       "version": "$AMPLIFY_VERSION",
@@ -501,17 +501,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
-      "package_uid": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AmplifyTestCommon.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "AWSPluginsCore",
       "version": "$AMPLIFY_VERSION",
@@ -600,17 +600,17 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
-      "package_uid": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AWSPluginsCore.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
     },
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "AWSPredictionsPlugin",
       "version": "$AMPLIFY_VERSION",
@@ -699,14 +699,14 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
-      "package_uid": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AWSPredictionsPlugin.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+      "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
     }
   ],
   "files": [
@@ -722,7 +722,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "AWSPluginsCore",
           "version": "$AMPLIFY_VERSION",
@@ -814,11 +814,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -827,7 +827,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "AWSPredictionsPlugin",
           "version": "$AMPLIFY_VERSION",
@@ -919,11 +919,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -932,7 +932,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "Amplify",
           "version": "$AMPLIFY_VERSION",
@@ -1024,11 +1024,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/Amplify@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1037,7 +1037,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "AmplifyPlugins",
           "version": "$AMPLIFY_VERSION",
@@ -1129,11 +1129,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1142,7 +1142,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "AmplifyTestCommon",
           "version": "$AMPLIFY_VERSION",
@@ -1234,11 +1234,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1247,7 +1247,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "CoreMLPredictionsPlugin",
           "version": "$AMPLIFY_VERSION",
@@ -1339,11 +1339,11 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+          "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
         }
       ],
       "for_packages": [
-        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1352,7 +1352,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": null,
           "version": null,
@@ -1440,7 +1440,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1449,7 +1449,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": null,
           "version": null,
@@ -1530,7 +1530,7 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:pods/AWSCore@2.27.0",
+              "purl": "pkg:cocoapods/AWSCore@2.27.0",
               "extracted_requirement": "2.27.0",
               "scope": "requires",
               "is_runtime": false,
@@ -1540,7 +1540,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/CwlCatchException@2.1.1",
+              "purl": "pkg:cocoapods/CwlCatchException@2.1.1",
               "extracted_requirement": "2.1.1",
               "scope": "requires",
               "is_runtime": false,
@@ -1550,7 +1550,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/CwlCatchExceptionSupport@2.1.1",
+              "purl": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1",
               "extracted_requirement": "2.1.1",
               "scope": "requires",
               "is_runtime": false,
@@ -1560,7 +1560,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/CwlMachBadInstructionHandler@2.1.0",
+              "purl": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0",
               "extracted_requirement": "2.1.0",
               "scope": "requires",
               "is_runtime": false,
@@ -1570,7 +1570,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/CwlPosixPreconditionTesting@2.1.0",
+              "purl": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0",
               "extracted_requirement": "2.1.0",
               "scope": "requires",
               "is_runtime": false,
@@ -1580,7 +1580,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/CwlPreconditionTesting@2.1.0",
+              "purl": "pkg:cocoapods/CwlPreconditionTesting@2.1.0",
               "extracted_requirement": "2.1.0",
               "scope": "requires",
               "is_runtime": false,
@@ -1590,7 +1590,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/SwiftFormat/CLI@0.44.17",
+              "purl": "pkg:cocoapods/SwiftFormat/CLI@0.44.17",
               "extracted_requirement": "0.44.17",
               "scope": "requires",
               "is_runtime": false,
@@ -1600,7 +1600,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/SwiftLint@0.46.2",
+              "purl": "pkg:cocoapods/SwiftLint@0.46.2",
               "extracted_requirement": "0.46.2",
               "scope": "requires",
               "is_runtime": false,
@@ -1618,7 +1618,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },

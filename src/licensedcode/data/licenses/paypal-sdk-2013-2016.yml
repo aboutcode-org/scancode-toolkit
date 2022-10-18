@@ -10,7 +10,6 @@ standard_notice: |
     Copyright (c) 2013-2016 PAYPAL, INC.
     SDK LICENSE
 ignorable_copyrights:
-  - Copyright (c) 2013-2016 PAYPAL, INC.
+    - Copyright (c) 2013-2016 PAYPAL, INC.
 ignorable_holders:
-  - PAYPAL, INC.
-
+    - PAYPAL, INC.

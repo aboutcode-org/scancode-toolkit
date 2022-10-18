@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "Starscream",
     "version": "4.0.3",
@@ -99,6 +99,6 @@
     "repository_download_url": "https://github.com/daltoniam/Starscream/archive/refs/tags/4.0.3.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/2/f/Starscream/4.0.3/Starscream.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/Starscream@4.0.3"
+    "purl": "pkg:cocoapods/Starscream@4.0.3"
   }
 ]

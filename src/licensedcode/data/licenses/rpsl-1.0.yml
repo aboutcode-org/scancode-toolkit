@@ -6,6 +6,7 @@ owner: RealNetworks
 homepage_url: http://opensource.org/licenses/real.php
 notes: This license is OSI certified
 spdx_license_key: RPSL-1.0
+osi_license_key: RPSL-1.0
 text_urls:
     - http://opensource.org/licenses/real.php
 osi_url: http://opensource.org/licenses/real.php
@@ -24,4 +25,3 @@ ignorable_urls:
     - https://www.helixcommunity.org/content/complicense
     - https://www.helixcommunity.org/content/rcsl
     - https://www.helixcommunity.org/content/rpsl
-osi_license_key: RPSL-1.0

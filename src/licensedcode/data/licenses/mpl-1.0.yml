@@ -8,6 +8,7 @@ notes: |
     Per SPDX.org, this license was OSI certified. This license have been
     superseded by v1.1
 spdx_license_key: MPL-1.0
+osi_license_key: MPL-1.0
 text_urls:
     - http://www.mozilla.com/MPL/1.0/index.html
     - http://www.mozilla.org/MPL/1.0/
@@ -22,4 +23,3 @@ other_urls:
     - https://opensource.org/licenses/MPL-1.0
 ignorable_urls:
     - http://www.mozilla.org/MPL/
-osi_license_key: MPL-1.0

@@ -36,7 +36,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/distutils2@1.0a3",
-        "extracted_requirement": "==1.0a3",
+        "extracted_requirement": "Distutils2==1.0a3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

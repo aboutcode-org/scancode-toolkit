@@ -4,6 +4,6 @@ name: Data licence Germany - attribution - Version 1 - English
 category: Permissive
 owner: govdata.de
 homepage_url: https://www.govdata.de/dl-de/by-1-0
+spdx_license_key: LicenseRef-scancode-dl-de-by-1-0-en
 other_urls:
     - https://www.dcat-ap.de/def/licenses/
-spdx_license_key: LicenseRef-scancode-dl-de-by-1-0-en

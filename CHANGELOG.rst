@@ -14,6 +14,30 @@ Package detection:
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+- Update ``GemfileLockParser`` to track the gem which the Gemfile.lock is for,
+  which we assign to the new ``GemfileLockParser.primary_gem`` field. Update
+  ``GemfileLockHandler.parse()`` to handle the case where there is a primary gem
+  detected from a gemfile.lock. If there is a primary gem, a single ``Package``
+  is created and the detected gem data within the gemfile.lock are assigned as
+  dependencies. If there is no primary gem, then all of the dependencies are
+  collected into Package with no name and yielded.
+
+  https://github.com/nexB/scancode-toolkit/issues/3072
+
+- Fix issue where dependencies were not reported when scanning an extracted
+  Python project by modifying ``BaseExtractedPythonLayout.assemble()`` to favor
+  using package data from a PKG-INFO file from an egg-info directory. Package
+  data from a PKG-INFO file from an egg-info directory contains the dependency
+  information collected from the requirements.txt file along side PKG-INFO.
+
+  https://github.com/nexB/scancode-toolkit/issues/3083
+
+- Fix issue where we were returning incorrect purl package ``type`` for cocoapods.
+  ``pods`` was being returned  as a purl type for cocoapods, it should be
+  ``cocoapods`` instead.
+  https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst#cocoapods
+
+  https://github.com/nexB/scancode-toolkit/issues/3081
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
@@ -30,7 +54,20 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
+v31.2.1 - 2022-10-05
+----------------------------------
 
+This is a minor release to fix a typo in a date.
+
+
+v31.2.0 - 2022-10-05
+----------------------------------
+
+This is a minor release with small bug fixes and minor feature updates.
+
+- Update SPDX license list to 3.18
+- Improve how we discard license matches that are "gibberish"
+- And new and improve existing license and license detection rules
 
 
 v31.1.1 - 2022-09-02

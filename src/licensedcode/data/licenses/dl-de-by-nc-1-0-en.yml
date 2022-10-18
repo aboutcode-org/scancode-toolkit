@@ -4,6 +4,6 @@ name: Data licence Germany - attribution - non-commercial - Version 1.0 - Englis
 category: Free Restricted
 owner: govdata.de
 homepage_url: https://www.govdata.de/dl-de/by-nc-1-0
+spdx_license_key: LicenseRef-scancode-dl-de-by-nc-1-0-en
 other_urls:
     - https://www.dcat-ap.de/def/licenses/
-spdx_license_key: LicenseRef-scancode-dl-de-by-nc-1-0-en

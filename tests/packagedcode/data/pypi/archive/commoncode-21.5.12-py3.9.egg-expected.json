@@ -201,7 +201,7 @@
         "extracted_requirement": "Sphinx>=3.3.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -211,7 +211,7 @@
         "extracted_requirement": "sphinx-rtd-theme>=0.5.0; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -221,7 +221,7 @@
         "extracted_requirement": "doc8>=0.8.1; extra == \"docs\"",
         "scope": "docs",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -231,7 +231,7 @@
         "extracted_requirement": "pytest>=6; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -241,7 +241,7 @@
         "extracted_requirement": "pytest-xdist>=2; extra == \"testing\"",
         "scope": "testing",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}

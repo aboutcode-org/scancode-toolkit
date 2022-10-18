@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": null,
     "version": null,
@@ -35,7 +35,7 @@
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:pods/Expecta@1.0.6",
+        "purl": "pkg:cocoapods/Expecta@1.0.6",
         "extracted_requirement": "1.0.6",
         "scope": "requires",
         "is_runtime": false,
@@ -45,7 +45,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/InAppSettingsKit@3.1.4",
+        "purl": "pkg:cocoapods/InAppSettingsKit@3.1.4",
         "extracted_requirement": "3.1.4",
         "scope": "requires",
         "is_runtime": false,
@@ -55,7 +55,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OCMock@3.7.1",
+        "purl": "pkg:cocoapods/OCMock@3.7.1",
         "extracted_requirement": "3.7.1",
         "scope": "requires",
         "is_runtime": false,
@@ -65,7 +65,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -75,7 +75,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs/Core@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs/Core@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -85,7 +85,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs/Default@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs/Default@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -95,7 +95,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs/JSON@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs/JSON@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -105,7 +105,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs/NSURLSession@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs/NSURLSession@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -115,7 +115,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/OHHTTPStubs/OHPathHelpers@9.0.0",
+        "purl": "pkg:cocoapods/OHHTTPStubs/OHPathHelpers@9.0.0",
         "extracted_requirement": "9.0.0",
         "scope": "requires",
         "is_runtime": false,
@@ -125,7 +125,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/Specta@1.0.7",
+        "purl": "pkg:cocoapods/Specta@1.0.7",
         "extracted_requirement": "1.0.7",
         "scope": "requires",
         "is_runtime": false,
@@ -135,7 +135,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:pods/xcbeautify@0.8.1",
+        "purl": "pkg:cocoapods/xcbeautify@0.8.1",
         "extracted_requirement": "0.8.1",
         "scope": "requires",
         "is_runtime": false,

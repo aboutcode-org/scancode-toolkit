@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/jieba",
-      "extracted_requirement": "",
+      "extracted_requirement": "jieba",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -27,7 +27,7 @@
     },
     {
       "purl": "pkg:pypi/colorlog",
-      "extracted_requirement": "",
+      "extracted_requirement": "colorlog",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -52,7 +52,7 @@
     },
     {
       "purl": "pkg:pypi/colorama",
-      "extracted_requirement": "",
+      "extracted_requirement": "colorama",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -77,7 +77,7 @@
     },
     {
       "purl": "pkg:pypi/seqeval",
-      "extracted_requirement": "",
+      "extracted_requirement": "seqeval",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -102,7 +102,7 @@
     },
     {
       "purl": "pkg:pypi/multiprocess",
-      "extracted_requirement": "",
+      "extracted_requirement": "multiprocess",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -127,7 +127,7 @@
     },
     {
       "purl": "pkg:pypi/datasets",
-      "extracted_requirement": ">=2.0.0",
+      "extracted_requirement": "datasets>=2.0.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -152,7 +152,7 @@
     },
     {
       "purl": "pkg:pypi/tqdm",
-      "extracted_requirement": "",
+      "extracted_requirement": "tqdm",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -177,7 +177,7 @@
     },
     {
       "purl": "pkg:pypi/paddlefsl",
-      "extracted_requirement": "",
+      "extracted_requirement": "paddlefsl",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -202,7 +202,7 @@
     },
     {
       "purl": "pkg:pypi/sentencepiece",
-      "extracted_requirement": "",
+      "extracted_requirement": "sentencepiece",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -227,7 +227,7 @@
     },
     {
       "purl": "pkg:pypi/paddle2onnx",
-      "extracted_requirement": "",
+      "extracted_requirement": "paddle2onnx",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -1019,7 +1019,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/jinja2@3.0.3",
-              "extracted_requirement": "==3.0.3",
+              "extracted_requirement": "jinja2==3.0.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1040,7 +1040,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx@3.5.2",
-              "extracted_requirement": "==3.5.2",
+              "extracted_requirement": "sphinx==3.5.2",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1061,7 +1061,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-rtd-theme@0.5.2",
-              "extracted_requirement": "==0.5.2",
+              "extracted_requirement": "sphinx_rtd_theme==0.5.2",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1082,7 +1082,7 @@
             },
             {
               "purl": "pkg:pypi/readthedocs-sphinx-search@0.1.0",
-              "extracted_requirement": "==0.1.0",
+              "extracted_requirement": "readthedocs-sphinx-search==0.1.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1103,7 +1103,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-copybutton@0.3.1",
-              "extracted_requirement": "==0.3.1",
+              "extracted_requirement": "sphinx-copybutton==0.3.1",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1124,7 +1124,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-markdown-tables@0.0.15",
-              "extracted_requirement": "==0.0.15",
+              "extracted_requirement": "sphinx-markdown-tables==0.0.15",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1145,7 +1145,7 @@
             },
             {
               "purl": "pkg:pypi/paddlepaddle",
-              "extracted_requirement": ">=2.2.2",
+              "extracted_requirement": "paddlepaddle>=2.2.2",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1458,7 +1458,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/jieba",
-              "extracted_requirement": "",
+              "extracted_requirement": "jieba",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1479,7 +1479,7 @@
             },
             {
               "purl": "pkg:pypi/colorlog",
-              "extracted_requirement": "",
+              "extracted_requirement": "colorlog",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1500,7 +1500,7 @@
             },
             {
               "purl": "pkg:pypi/colorama",
-              "extracted_requirement": "",
+              "extracted_requirement": "colorama",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1521,7 +1521,7 @@
             },
             {
               "purl": "pkg:pypi/seqeval",
-              "extracted_requirement": "",
+              "extracted_requirement": "seqeval",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1542,7 +1542,7 @@
             },
             {
               "purl": "pkg:pypi/multiprocess",
-              "extracted_requirement": "",
+              "extracted_requirement": "multiprocess",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1563,7 +1563,7 @@
             },
             {
               "purl": "pkg:pypi/datasets",
-              "extracted_requirement": ">=2.0.0",
+              "extracted_requirement": "datasets>=2.0.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1584,7 +1584,7 @@
             },
             {
               "purl": "pkg:pypi/tqdm",
-              "extracted_requirement": "",
+              "extracted_requirement": "tqdm",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1605,7 +1605,7 @@
             },
             {
               "purl": "pkg:pypi/paddlefsl",
-              "extracted_requirement": "",
+              "extracted_requirement": "paddlefsl",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1626,7 +1626,7 @@
             },
             {
               "purl": "pkg:pypi/sentencepiece",
-              "extracted_requirement": "",
+              "extracted_requirement": "sentencepiece",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -1647,7 +1647,7 @@
             },
             {
               "purl": "pkg:pypi/paddle2onnx",
-              "extracted_requirement": "",
+              "extracted_requirement": "paddle2onnx",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,

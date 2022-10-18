@@ -68,7 +68,7 @@ Can I install ScanCode in a Unicode path?
 -----------------------------------------
 
 Yes but but it is best to void this for now. See
-https://github.com/nexB/scancode- toolkit/issues/867
+https://github.com/nexB/scancode-toolkit/issues/867
 
 There is a bug in virtualenv https://github.com/pypa/virtualenv/issues/457 that
 is now fixed but has not been extensively tested for ScanCode.

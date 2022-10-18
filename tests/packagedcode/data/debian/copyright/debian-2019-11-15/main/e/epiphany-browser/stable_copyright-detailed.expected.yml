@@ -20,17 +20,17 @@ declared_license:
   - CC-BY-SA-4.0
 declared_license_expression: gpl-3.0-plus
 declared_license_expression_spdx: GPL-3.0-or-later
-other_license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0
-  AND cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
-  AND cc-by-sa-3.0 AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
-  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (apache-2.0
-  AND apache-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
-other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC0-1.0 AND CC0-1.0
-  AND CC0-1.0 AND CC0-1.0 AND CC0-1.0) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-3.0-or-later
-  AND GPL-3.0-or-later) AND CC-BY-SA-3.0 AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later
-  AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later
-  AND LGPL-2.0-or-later) AND (Apache-2.0 AND Apache-2.0) AND (GPL-3.0-or-later AND GPL-3.0-or-later)
-  AND (CC-BY-SA-4.0 AND CC-BY-SA-4.0)
+other_license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus AND
+  gpl-3.0-plus) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
+other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC0-1.0 AND CC0-1.0)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND
+  CC-BY-SA-3.0 AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  AND (Apache-2.0 AND Apache-2.0) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC-BY-SA-4.0
+  AND CC-BY-SA-4.0)
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
@@ -402,118 +402,43 @@ other_license_detections:
             spdx_license_key: CC0-1.0
             spdx_url: https://spdx.org/licenses/CC0-1.0
       - score: '100.0'
-        start_line: 171
-        end_line: 171
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_176.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1
-        rule_relevance: 100
-        matched_text: CC0
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
-      - score: '100.0'
-        start_line: 173
-        end_line: 173
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_176.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1
-        rule_relevance: 100
-        matched_text: CC0
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
-      - score: '100.0'
-        start_line: 175
-        end_line: 175
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_176.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1
-        rule_relevance: 100
-        matched_text: CC0
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
-      - score: '100.0'
-        start_line: 178
+        start_line: 158
         end_line: 179
-        matched_length: 22
+        matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
+        matcher: 1-hash
         license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_162.RULE
-        referenced_filenames: []
+        rule_identifier: cc0-1.0_186.RULE
+        referenced_filenames:
+          - /usr/share/common-licenses/CC0-1.0
         is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
+        is_license_notice: yes
+        is_license_reference: no
         is_license_tag: no
         is_license_intro: no
-        rule_length: 22
+        rule_length: 213
         rule_relevance: 100
         matched_text: |
+          Certain owners wish to permanently relinquish those rights to a Work for
+          the purpose of contributing to a commons of creative, cultural and
+          scientific works ("Commons") that the public can reliably and without
+          fear of later claims of infringement build upon, modify, incorporate in
+          other works, reuse and redistribute as freely as possible in any form
+          whatsoever and for any purposes, including without limitation commercial
+          purposes. These owners may contribute to the Commons to promote the
+          ideal of a free culture and the further production of creative, cultural
+          and scientific works, or to gain reputation or greater distribution for
+          their Work in part through the use and efforts of others.
+
+          For these and/or other purposes and motivations, and without any
+          expectation of additional consideration or compensation, the person
+          associating CC0 with a Work (the "Affirmer"), to the extent that he or
+          she is an owner of Copyright and Related Rights in the Work, voluntarily
+          elects to apply CC0 to the Work and publicly distribute the Work under
+          its terms, with knowledge of his or her Copyright and Related Rights in
+          the Work and the meaning and intended legal effect of CC0 on those
+          rights.
+           .
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
         licenses:

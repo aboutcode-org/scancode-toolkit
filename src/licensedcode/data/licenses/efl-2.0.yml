@@ -6,6 +6,7 @@ owner: Eiffel NICE
 homepage_url: http://www.eiffel-nice.org/license/
 notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: EFL-2.0
+osi_license_key: EFL-2.0
 text_urls:
     - http://www.eiffel-nice.org/license/eiffel-forum-license-2.txt
     - http://www.opensource-definition.org/licenses/ver2_eiffel.html
@@ -17,4 +18,3 @@ other_urls:
     - http://opensource.org/licenses/EFL-2.0
     - http://www.eiffel-nice.org/license/eiffel-forum-license-2.html
     - https://opensource.org/licenses/EFL-2.0
-osi_license_key: EFL-2.0

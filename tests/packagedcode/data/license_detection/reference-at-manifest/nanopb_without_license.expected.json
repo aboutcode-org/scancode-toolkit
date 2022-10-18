@@ -2,7 +2,7 @@
   "dependencies": [],
   "packages": [
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "nanopb",
       "version": "1.30905.0",
@@ -130,14 +130,14 @@
       "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
       "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/1/e/nanopb/1.30905.0/nanopb.podspec.json",
-      "package_uid": "pkg:pods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "nanopb.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/nanopb@1.30905.0"
+      "purl": "pkg:cocoapods/nanopb@1.30905.0"
     }
   ],
   "files": [
@@ -153,7 +153,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "nanopb",
           "version": "1.30905.0",
@@ -284,11 +284,11 @@
           "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/1/e/nanopb/1.30905.0/nanopb.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/nanopb@1.30905.0"
+          "purl": "pkg:cocoapods/nanopb@1.30905.0"
         }
       ],
       "for_packages": [
-        "pkg:pods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

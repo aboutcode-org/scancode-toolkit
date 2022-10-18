@@ -5184,8 +5184,8 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus) AND lgpl-3.0-plus AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified",
-          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later) AND LGPL-3.0-or-later AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause",
+          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus AND free-unknown) AND lgpl-3.0-plus AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified",
+          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND LGPL-3.0-or-later AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause",
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -5722,7 +5722,7 @@
               ]
             },
             {
-              "license_expression": "apache-2.0 AND gpl-2.0-plus",
+              "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
               "detection_rules": [
                 "not-combined"
               ],
@@ -5802,14 +5802,14 @@
                   ]
                 },
                 {
-                  "score": 80.0,
+                  "score": 100.0,
                   "start_line": 562,
                   "end_line": 562,
-                  "matched_length": 11,
+                  "matched_length": 10,
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
-                  "license_expression": "gpl-2.0-plus",
-                  "rule_identifier": "gpl-2.0-plus_1070.RULE",
+                  "license_expression": "free-unknown",
+                  "rule_identifier": "free-unknown-package_4.RULE",
                   "referenced_filenames": [
                     "package"
                   ],
@@ -5818,25 +5818,25 @@
                   "is_license_reference": true,
                   "is_license_tag": false,
                   "is_license_intro": false,
-                  "rule_length": 11,
-                  "rule_relevance": 80,
-                  "matched_text": "This file is distributed under the same license as the fusiondirectory",
+                  "rule_length": 10,
+                  "rule_relevance": 100,
+                  "matched_text": "This file is distributed under the same license as the",
                   "licenses": [
                     {
-                      "key": "gpl-2.0-plus",
-                      "name": "GNU General Public License 2.0 or later",
-                      "short_name": "GPL 2.0 or later",
-                      "category": "Copyleft",
+                      "key": "free-unknown",
+                      "name": "Free unknown license detected but not recognized",
+                      "short_name": "Free unknown",
+                      "category": "Unstated License",
                       "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-                      "spdx_license_key": "GPL-2.0-or-later",
-                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                      "is_unknown": true,
+                      "owner": "Unspecified",
+                      "homepage_url": null,
+                      "text_url": "",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml",
+                      "spdx_license_key": "LicenseRef-scancode-free-unknown",
+                      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
                     }
                   ]
                 }
@@ -12179,8 +12179,8 @@
     {
       "path": "debian/copyright",
       "type": "file",
-      "detected_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus) AND lgpl-3.0-plus AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive)",
-      "detected_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later) AND LGPL-3.0-or-later AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive)",
+      "detected_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus AND free-unknown) AND lgpl-3.0-plus AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive)",
+      "detected_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND LGPL-3.0-or-later AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive)",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -12717,7 +12717,7 @@
           ]
         },
         {
-          "license_expression": "apache-2.0 AND gpl-2.0-plus",
+          "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
           "detection_rules": [
             "not-combined"
           ],
@@ -12797,14 +12797,14 @@
               ]
             },
             {
-              "score": 80.0,
+              "score": 100.0,
               "start_line": 562,
               "end_line": 562,
-              "matched_length": 11,
+              "matched_length": 10,
               "match_coverage": 100.0,
               "matcher": "2-aho",
-              "license_expression": "gpl-2.0-plus",
-              "rule_identifier": "gpl-2.0-plus_1070.RULE",
+              "license_expression": "free-unknown",
+              "rule_identifier": "free-unknown-package_4.RULE",
               "referenced_filenames": [
                 "package"
               ],
@@ -12813,25 +12813,25 @@
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 11,
-              "rule_relevance": 80,
-              "matched_text": "This file is distributed under the same license as the fusiondirectory",
+              "rule_length": 10,
+              "rule_relevance": 100,
+              "matched_text": "This file is distributed under the same license as the",
               "licenses": [
                 {
-                  "key": "gpl-2.0-plus",
-                  "name": "GNU General Public License 2.0 or later",
-                  "short_name": "GPL 2.0 or later",
-                  "category": "Copyleft",
+                  "key": "free-unknown",
+                  "name": "Free unknown license detected but not recognized",
+                  "short_name": "Free unknown",
+                  "category": "Unstated License",
                   "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-                  "spdx_license_key": "GPL-2.0-or-later",
-                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                  "is_unknown": true,
+                  "owner": "Unspecified",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml",
+                  "spdx_license_key": "LicenseRef-scancode-free-unknown",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
                 }
               ]
             }
@@ -14389,7 +14389,7 @@
           ]
         }
       ],
-      "percentage_of_license_text": 11.25,
+      "percentage_of_license_text": 11.24,
       "package_data": [],
       "for_packages": [
         "pkg:deb/fusiondirectory?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -15980,24 +15980,24 @@
     {
       "path": "debian/po/de.po",
       "type": "file",
-      "detected_license_expression": "gpl-2.0-plus",
-      "detected_license_expression_spdx": "GPL-2.0-or-later",
+      "detected_license_expression": "free-unknown",
+      "detected_license_expression_spdx": "LicenseRef-scancode-free-unknown",
       "license_detections": [
         {
-          "license_expression": "gpl-2.0-plus",
+          "license_expression": "free-unknown",
           "detection_rules": [
             "not-combined"
           ],
           "matches": [
             {
-              "score": 80.0,
+              "score": 100.0,
               "start_line": 3,
               "end_line": 3,
-              "matched_length": 11,
+              "matched_length": 10,
               "match_coverage": 100.0,
               "matcher": "2-aho",
-              "license_expression": "gpl-2.0-plus",
-              "rule_identifier": "gpl-2.0-plus_1070.RULE",
+              "license_expression": "free-unknown",
+              "rule_identifier": "free-unknown-package_4.RULE",
               "referenced_filenames": [
                 "package"
               ],
@@ -16006,25 +16006,25 @@
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
-              "rule_length": 11,
-              "rule_relevance": 80,
-              "matched_text": "This file is distributed under the same license as the fusiondirectory",
+              "rule_length": 10,
+              "rule_relevance": 100,
+              "matched_text": "This file is distributed under the same license as the",
               "licenses": [
                 {
-                  "key": "gpl-2.0-plus",
-                  "name": "GNU General Public License 2.0 or later",
-                  "short_name": "GPL 2.0 or later",
-                  "category": "Copyleft",
+                  "key": "free-unknown",
+                  "name": "Free unknown license detected but not recognized",
+                  "short_name": "Free unknown",
+                  "category": "Unstated License",
                   "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-                  "spdx_license_key": "GPL-2.0-or-later",
-                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                  "is_unknown": true,
+                  "owner": "Unspecified",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml",
+                  "spdx_license_key": "LicenseRef-scancode-free-unknown",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
                 }
               ]
             }
@@ -16032,7 +16032,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 2.63,
+      "percentage_of_license_text": 2.39,
       "package_data": [],
       "for_packages": [
         "pkg:deb/fusiondirectory?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",

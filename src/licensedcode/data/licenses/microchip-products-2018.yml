@@ -1,0 +1,10 @@
+key: microchip-products-2018
+short_name: Microchip Products 2018
+name: Microchip Technology Products 2018
+category: Proprietary Free
+owner: Microchip
+spdx_license_key: LicenseRef-scancode-microchip-products-2018
+ignorable_copyrights:
+    - (c) 2018 Microchip Technology Inc. and its subsidiaries
+ignorable_holders:
+    - Microchip Technology Inc. and its subsidiaries

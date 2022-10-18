@@ -192,7 +192,7 @@ class BasePodHandler(models.DatafileHandler):
 class PodspecHandler(BasePodHandler):
     datasource_id = 'cocoapods_podspec'
     path_patterns = ('*.podspec',)
-    default_package_type = 'pods'
+    default_package_type = 'cocoapods'
     default_primary_language = 'Objective-C'
     description = 'Cocoapods .podspec'
     documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
@@ -260,7 +260,7 @@ class PodspecHandler(BasePodHandler):
 class PodfileHandler(PodspecHandler):
     datasource_id = 'cocoapods_podfile'
     path_patterns = ('*Podfile',)
-    default_package_type = 'pods'
+    default_package_type = 'cocoapods'
     default_primary_language = 'Objective-C'
     description = 'Cocoapods Podfile'
     documentation_url = 'https://guides.cocoapods.org/using/the-podfile.html'
@@ -269,7 +269,7 @@ class PodfileHandler(PodspecHandler):
 class PodfileLockHandler(BasePodHandler):
     datasource_id = 'cocoapods_podfile_lock'
     path_patterns = ('*Podfile.lock',)
-    default_package_type = 'pods'
+    default_package_type = 'cocoapods'
     default_primary_language = 'Objective-C'
     description = 'Cocoapods Podfile.lock'
     documentation_url = 'https://guides.cocoapods.org/using/the-podfile.html'
@@ -330,7 +330,7 @@ class PodfileLockHandler(BasePodHandler):
 class PodspecJsonHandler(models.DatafileHandler):
     datasource_id = 'cocoapods_podspec_json'
     path_patterns = ('*.podspec.json',)
-    default_package_type = 'pods'
+    default_package_type = 'cocoapods'
     default_primary_language = 'Objective-C'
     description = 'Cocoapods .podspec.json'
     documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
@@ -510,14 +510,14 @@ def parse_dep_requirements(dep):
 
     For example:
 
-    >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs@9.0.0'), '9.0.0'
+    >>> expected = PackageURL.from_string('pkg:cocoapods/OHHTTPStubs@9.0.0'), '9.0.0'
     >>> assert parse_dep_requirements('OHHTTPStubs (9.0.0)') == expected
 
-    >>> expected = PackageURL.from_string('pkg:pods/OHHTTPStubs/NSURLSession'), None
+    >>> expected = PackageURL.from_string('pkg:cocoapods/OHHTTPStubs/NSURLSession'), None
     >>> result = parse_dep_requirements('OHHTTPStubs/NSURLSession')
     >>> assert result == expected, result
 
-    >>> expected = PackageURL.from_string('pkg:pods/AFNetworking/Serialization@3.0.4'), '= 3.0.4'
+    >>> expected = PackageURL.from_string('pkg:cocoapods/AFNetworking/Serialization@3.0.4'), '= 3.0.4'
     >>> result = parse_dep_requirements(' AFNetworking/Serialization (= 3.0.4) ')
     >>> assert result == expected, result
     """
@@ -539,7 +539,7 @@ def parse_dep_requirements(dep):
         namespace = None
 
     purl = PackageURL(
-        type='pods',
+        type='cocoapods',
         namespace=namespace,
         name=name,
         version=version,

@@ -243,7 +243,7 @@
         "extracted_requirement": "django; extra == \"test\"",
         "scope": "test",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": false,
         "resolved_package": {},
         "extra_data": {}
@@ -253,7 +253,7 @@
         "extracted_requirement": "pytest==2.9.1; extra == \"test\"",
         "scope": "test",
         "is_runtime": true,
-        "is_optional": false,
+        "is_optional": true,
         "is_resolved": true,
         "resolved_package": {},
         "extra_data": {}

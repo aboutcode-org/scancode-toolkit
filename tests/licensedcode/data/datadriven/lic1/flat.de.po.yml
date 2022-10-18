@@ -1,4 +1,4 @@
 license_expressions:
-  - unknown-license-reference
+  - free-unknown
 notes: this is a reference to some "package" license common in gettext .po files. See https://github.com/nexB/scancode-toolkit/issues/1379  and
   https://savannah.gnu.org/bugs/index.php?55733

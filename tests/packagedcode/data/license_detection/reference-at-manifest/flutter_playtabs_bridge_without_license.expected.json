@@ -2,7 +2,7 @@
   "dependencies": [],
   "packages": [
     {
-      "type": "pods",
+      "type": "cocoapods",
       "namespace": null,
       "name": "flutter_paytabs_bridge",
       "version": "2.2.5",
@@ -167,14 +167,14 @@
       "repository_homepage_url": "https://cocoapods.org/pods/flutter_paytabs_bridge",
       "repository_download_url": "./archive/refs/tags/2.2.5.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/4/flutter_paytabs_bridge/2.2.5/flutter_paytabs_bridge.podspec.json",
-      "package_uid": "pkg:pods/flutter_paytabs_bridge@2.2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:cocoapods/flutter_paytabs_bridge@2.2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "flutter_paytabs_bridge.podspec"
       ],
       "datasource_ids": [
         "cocoapods_podspec"
       ],
-      "purl": "pkg:pods/flutter_paytabs_bridge@2.2.5"
+      "purl": "pkg:cocoapods/flutter_paytabs_bridge@2.2.5"
     }
   ],
   "files": [
@@ -190,7 +190,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": "flutter_paytabs_bridge",
           "version": "2.2.5",
@@ -358,11 +358,11 @@
           "repository_download_url": "./archive/refs/tags/2.2.5.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/4/flutter_paytabs_bridge/2.2.5/flutter_paytabs_bridge.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "purl": "pkg:pods/flutter_paytabs_bridge@2.2.5"
+          "purl": "pkg:cocoapods/flutter_paytabs_bridge@2.2.5"
         }
       ],
       "for_packages": [
-        "pkg:pods/flutter_paytabs_bridge@2.2.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:cocoapods/flutter_paytabs_bridge@2.2.5?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

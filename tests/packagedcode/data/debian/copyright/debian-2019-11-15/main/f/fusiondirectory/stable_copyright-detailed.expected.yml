@@ -42,7 +42,7 @@ declared_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus A
   AND free-unknown AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
   bsd-new AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
   AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
-  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND gpl-2.0-plus AND
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND free-unknown AND
   (lgpl-3.0-plus AND lgpl-3.0-plus) AND other-permissive AND gpl-2.0-plus AND (gpl-2.0-plus
   AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
@@ -56,10 +56,10 @@ declared_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (G
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND BSD-3-Clause AND (GPL-2.0-or-later AND GPL-2.0-or-later)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
   (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND GPL-2.0-or-later AND
-  (LGPL-3.0-or-later AND LGPL-3.0-or-later) AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
-  MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-free-unknown
+  AND (LGPL-3.0-or-later AND LGPL-3.0-or-later) AND LicenseRef-scancode-other-permissive AND
+  GPL-2.0-or-later AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
   (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
   AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND
@@ -659,18 +659,18 @@ license_detections:
             scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
             spdx_license_key: LicenseRef-scancode-free-unknown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
-  - license_expression: gpl-2.0-plus
+  - license_expression: free-unknown
     detection_rules:
       - not-combined
     matches:
-      - score: '80.0'
+      - score: '91.67'
         start_line: 562
         end_line: 562
         matched_length: 11
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_1070.RULE
+        matcher: 1-hash
+        license_expression: free-unknown
+        rule_identifier: free-unknown-package_1.RULE
         referenced_filenames:
           - package
         is_license_text: no
@@ -679,23 +679,24 @@ license_detections:
         is_license_tag: no
         is_license_intro: no
         rule_length: 11
-        rule_relevance: 80
+        rule_relevance: 100
         matched_text: This file is distributed under the same license as the fusiondirectory
+          package.
         licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
+          - key: free-unknown
+            name: Free unknown license detected but not recognized
+            short_name: Free unknown
+            category: Unstated License
             is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
+            is_unknown: yes
+            owner: Unspecified
+            homepage_url:
+            text_url:
+            reference_url: https://scancode-licensedb.aboutcode.org/free-unknown
+            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
+            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml
+            spdx_license_key: LicenseRef-scancode-free-unknown
+            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
   - license_expression: gpl-2.0-plus
     detection_rules: []
     matches:

@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "SwiftLib",
     "version": "0.0.1",
@@ -94,6 +94,6 @@
     "repository_download_url": "https://github.com/alizainprasla/swiftlib/archive/refs/tags/0.0.1.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/9/1/SwiftLib/0.0.1/SwiftLib.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/SwiftLib@0.0.1"
+    "purl": "pkg:cocoapods/SwiftLib@0.0.1"
   }
 ]

@@ -6,6 +6,7 @@ owner: IBM
 homepage_url: http://www.eclipse.org/legal/cpl-v10.html
 notes: Per SPDX.org, this license was superseded by Eclipse Public License
 spdx_license_key: CPL-1.0
+osi_license_key: CPL-1.0
 text_urls:
     - http://www.eclipse.org/legal/cpl-v10.html
 osi_url: http://www.opensource.org/licenses/cpl1.0.php
@@ -17,4 +18,3 @@ other_urls:
     - http://www.ibm.com/developerworks/library/os-cplfaq.html
     - http://www.padsproj.org/License.html
     - https://opensource.org/licenses/CPL-1.0
-osi_license_key: CPL-1.0

@@ -204,10 +204,10 @@ def get_primary_language(programming_language_tallies):
     programming_languages_by_count = {
         entry['count']: entry['value'] for entry in programming_language_tallies
     }
-    primary_language = ''
+    primary_language = None
     if programming_languages_by_count:
         highest_count = max(programming_languages_by_count)
-        primary_language = programming_languages_by_count[highest_count] or ''
+        primary_language = programming_languages_by_count[highest_count] or None
     return primary_language
 
 
@@ -219,7 +219,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     ``codebase``.
     """
     if not top_level_packages:
-        return '', [], ''
+        return None, [], None
 
     license_expressions = []
     programming_languages = []
@@ -250,7 +250,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
         relation='AND',
     )
 
-    declared_license_expression = ''
+    declared_license_expression = None
     if combined_declared_license_expression:
         declared_license_expression = str(
             Licensing().parse(combined_declared_license_expression).simplify()
@@ -270,6 +270,10 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
                 key_file_resource = codebase.get_resource(path=datafile_path)
                 if not key_file_resource:
                     continue
+
+                if not hasattr(key_file_resource, 'holders'):
+                    break
+
                 holders = [h['holder'] for h in key_file_resource.holders]
                 declared_holders.extend(holders)
     # Normalize holder names before collecting them
@@ -279,7 +283,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
 
     # Programming language
     unique_programming_languages = unique(programming_languages)
-    primary_language = ''
+    primary_language = None
     if len(unique_programming_languages) == 1:
         primary_language = unique_programming_languages[0]
 

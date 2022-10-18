@@ -476,7 +476,7 @@ def get_primary_license(declared_license_expressions):
         if len(single_expressions) == 1:
             return single_expressions[0]
         else:
-            return ''
+            return None
 
     # Group single expressions to joined expressions to see if single
     # expressions are accounted for in a joined expression
@@ -498,4 +498,4 @@ def get_primary_license(declared_license_expressions):
     if len(single_expressions_by_joined_expressions) == 1 and not not_in_joined_expressions:
         return next(iter(single_expressions_by_joined_expressions))
     else:
-        return ''
+        return None

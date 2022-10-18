@@ -6,6 +6,7 @@ owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/NOSL3.0.html
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: NPOSL-3.0
+osi_license_key: NPOSL-3.0
 text_urls:
     - http://www.opensource.org/licenses/NOSL3.0.html
 osi_url: http://www.opensource.org/licenses/NOSL3.0.html
@@ -16,4 +17,3 @@ ignorable_copyrights:
     - Copyright (c) 2005 Lawrence Rosen
 ignorable_holders:
     - Lawrence Rosen
-osi_license_key: NPOSL-3.0

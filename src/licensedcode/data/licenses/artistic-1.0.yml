@@ -6,6 +6,7 @@ owner: Perl Foundation
 homepage_url: http://www.perlfoundation.org/
 notes: Per SPDX.org, this license was superseded by v2.0
 spdx_license_key: Artistic-1.0
+osi_license_key: Artistic-1.0
 text_urls:
     - http://opensource.org/licenses/artistic-license-1.0
 osi_url: http://opensource.org/licenses/artistic-license-1.0
@@ -16,4 +17,3 @@ other_urls:
     - https://opensource.org/licenses/Artistic-1.0
 ignorable_urls:
     - http://ftp.uu.net/
-osi_license_key: Artistic-1.0
