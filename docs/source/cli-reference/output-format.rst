@@ -494,6 +494,13 @@ Comparing Different ``json`` Output Formats
 
     ScanCode can publish results in the useful ``.csv`` format.
 
+    .. note::
+
+        This option is deprecated and will be replaced by new CSV and tabular
+        output formats in the next ScanCode release. Visit
+        https://github.com/nexB/scancode-toolkit/issues/3043
+        for details and to provide inputs and feedback.
+
     The following code performs a scan on the samples directory, and publishes the results in
     ``csv`` format::
 
