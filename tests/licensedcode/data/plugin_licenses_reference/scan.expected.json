@@ -1,32 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--json-pp": "<file>",
-        "--license": true,
-        "--licenses-reference": true,
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "2.0.0",
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-5.4.0-109-generic-x86_64-with-Ubuntu-18.04-bionic",
-          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
-          "python_version": "3.6.9 (default, Mar 15 2022, 13:55:28) \n[GCC 8.4.0]"
-        },
-        "spdx_license_list_version": "3.16",
-        "files_count": 2
-      }
-    }
-  ],
   "dependencies": [],
   "packages": [
     {
@@ -94,7 +66,7 @@
       "owner": "Apache Software Foundation",
       "homepage_url": "http://www.apache.org/licenses/",
       "notes": "Per SPDX.org, this version was released January 2004 This license is OSI\ncertified\n",
-      "is_builtin": "yes",
+      "is_builtin": true,
       "spdx_license_key": "Apache-2.0",
       "other_spdx_license_keys": [
         "LicenseRef-Apache",
@@ -121,7 +93,7 @@
       "owner": "Perl Foundation",
       "homepage_url": "http://www.perlfoundation.org/",
       "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertifified.\n",
-      "is_builtin": "yes",
+      "is_builtin": true,
       "spdx_license_key": "Artistic-2.0",
       "osi_license_key": "Artistic-2.0",
       "text_urls": [
@@ -146,7 +118,7 @@
       "owner": "Regents of the University of California",
       "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
       "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": "yes",
+      "is_builtin": true,
       "spdx_license_key": "BSD-2-Clause",
       "other_spdx_license_keys": [
         "BSD-2-Clause-NetBSD",
@@ -171,7 +143,7 @@
       "owner": "MIT",
       "homepage_url": "http://opensource.org/licenses/mit-license.php",
       "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": "yes",
+      "is_builtin": true,
       "spdx_license_key": "MIT",
       "text_urls": [
         "http://opensource.org/licenses/mit-license.php"
