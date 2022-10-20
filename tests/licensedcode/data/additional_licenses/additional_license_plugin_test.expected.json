@@ -13,11 +13,11 @@
           "is_exception": false,
           "is_unknown": false,
           "owner": "NexB",
-          "homepage_url": "",
-          "text_url": "",
-          "reference_url": "",
-          "scancode_text_url": "",
-          "scancode_data_url": "",
+          "homepage_url": null,
+          "text_url": null,
+          "reference_url": null,
+          "scancode_text_url": null,
+          "scancode_data_url": null,
           "spdx_license_key": "scancode-example-installed1",
           "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
           "start_line": 1,
@@ -39,7 +39,8 @@
             "rule_length": 11,
             "matched_length": 11,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 100,
+            "is_builtin": false
           }
         }
       ],
