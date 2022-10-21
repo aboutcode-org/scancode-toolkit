@@ -1,18 +1,25 @@
+.. _install_external_licenses:
+
+How to Install External Licenses to Use in License Detection
+============================================================
+
+Users can install external licenses and rules in the form of:
+
+1. reusable plugins
+2. license directories
+
+These licenses and rules are then used in license detection.
+
 .. _install_new_license_plugin:
 
-How to Install External License Plugins to Use in License Detection
-===================================================================
-
-Users can install external licenses and rules in the form of plugins. These
-licenses and rules are then used in license detection.
-
-How to create a plugin containing external licenses and/or rules
-----------------------------------------------------------------
+How to install a plugin containing external licenses and/or rules
+-----------------------------------------------------------------
 
 To create a plugin with external licenses or rules, we must create a Python package
 containing the license and/or rule files. Python packages can have many different
-file structures. You can find an example package in
-``tests/licensedcode/data/example_external_licenses/licenses_to_install1``.
+file structures. You can find an example package in:
+
+``tests/licensedcode/data/additional_licenses/additional_plugin_1``.
 
 This is the basic structure of the example plugin::
 
@@ -26,13 +33,10 @@ This is the basic structure of the example plugin::
     │       │   ├── example-installed-1.RULE
     │       │   └── example-installed-1.yaml
     │       └── __init__.py
-    ├── gpl-1.0.LICENSE
+    ├── apache-2.0.LICENSE
     ├── MANIFEST.in
     ├── setup.cfg
     └── setup.py
-
-Key points to note
-------------------
 
 Entry points definition in ``setup.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,18 +79,27 @@ After creating this plugin, you can upload it to PyPI so that others can use it,
 leave it as a local directory.
 
 Installing and using the plugin
--------------------------------
-To use the plugin in license detection, all you need to do is install it using ``pip``.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To use the plugin in license detection, all you need to do is:
+
+1. Configure the scancode-toolkit virtualenv and activate.
+2. Install the package with `pip` like the following:
+   ``pip install tests/licensedcode/data/additional_licenses/additional_plugin_2/``
+3. Reindex licenses using `scancode-reindex-licenses`.
+
+.. include::  /rst_snippets/note_snippets/license_plugin_needs_reindex.rst
+
 Once it is installed, the contained licenses and rules will automatically be used in
 license detection assuming the plugin follows the correct directory structure conventions.
 
 Writing tests for new installed licenses
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Look at ``tests/licensedcode/data/example_external_licenses/licenses_to_install1`` to see
 an example of a plugin with tests. The tests are contained in the ``tests`` directory::
 
-   licenses_to_install1/
+    licenses_to_install1/
     ├── src/
     │   └── licenses_to_install1/
     │       ├── licenses/
@@ -132,8 +145,44 @@ Then you can define a test class and call the ``build_tests`` method defined in
 The ``tests/data`` directory contains a pair of files for each license:
 a license text file and a YAML file specifying the expected license expressions from the test.
 
-Finally, to run the test, do the following:
+Finally, install the plugin and run the test:
 
-1. Create a virtual environment to install the package into.
-2. Install the package using ``pip``, e.g. ``pip install ./licenses_to_install1``.
-3. Run the tests, e.g. ``py.test tests/test_detection_datadriven.py``.
+``pytest -vvs tests/test_detection_datadriven.py``.
+
+.. include::  /rst_snippets/note_snippets/license_plugin_delete.rst
+
+----
+
+.. _add_new_license_directory:
+
+How to add external licenses and/or rules from a directory
+----------------------------------------------------------
+
+This is the basic structure of the example license directory::
+
+    additional_license_directory/
+    ├── licenses/
+    │   ├── example-installed-1.LICENSE
+    │   └── example-installed-1.yaml
+    ├── rules/
+    │   ├── example-installed-1.RULE
+    │   └── example-installed-1.yaml
+
+Adding the licenses to the index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To add the licenses in the directory to the index, all you need to do is:
+
+1. Configure the scancode-toolkit virtualenv and activate.
+2. Run ``scancode-reindex-licenses`` with:
+
+   ``--additional-directory tests/licensedcode/data/additional_licenses/additional_dir/``
+
+.. include::  /rst_snippets/note_snippets/additional_directory_is_temp.rst
+
+
+Once the licenses/rules are in the index, they will automatically be used in license detection.
+
+----
+
+.. include::  /rst_snippets/scancode-reindex-licenses.rst
