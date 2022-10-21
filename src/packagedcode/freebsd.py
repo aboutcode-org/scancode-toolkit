@@ -42,11 +42,7 @@ class CompactManifestHandler(models.DatafileHandler):
     documentation_url = 'https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS'
 
     @classmethod
-    def parse(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
-        """
+    def _parse_freebsd_manifest_data(cls, location):
         with io.open(location, encoding='utf-8') as loc:
             freebsd_manifest = saneyaml.load(loc)
 
@@ -97,7 +93,19 @@ class CompactManifestHandler(models.DatafileHandler):
         if package_data.declared_license:
             package_data.license_expression = cls.compute_normalized_license(package_data)
 
-        yield package_data
+        return package_data
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        yield cls._parse_freebsd_manifest_data(
+            location=location,
+            datasource_id=cls.datasource_id,
+            default_package_type=cls.default_package_type,
+        )
 
     @classmethod
     def compute_normalized_license(cls, package):

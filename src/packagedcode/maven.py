@@ -891,12 +891,12 @@ def has_basic_pom_attributes(pom):
     return basics
 
 
-def get_maven_pom(location=None):
+def get_maven_pom(location=None, text=None):
     """
     Return a MavenPom object from a POM file at `location` or provided as a
     `text` string.
     """
-    pom = MavenPom(location=location)
+    pom = MavenPom(location=location, text=text)
 
     extra_properties = {}
 
@@ -1043,7 +1043,7 @@ def get_parties(pom):
     return parties
 
 
-def get_urls(namespace, name, version, qualifiers, base_url='https://repo1.maven.org/maven2'):
+def get_urls(namespace, name, version, qualifiers, base_url='https://repo1.maven.org/maven2', **kwargs):
     """
     Return a mapping of URLs.
     """
@@ -1095,17 +1095,40 @@ def get_urls(namespace, name, version, qualifiers, base_url='https://repo1.maven
 
 
 def parse(
-    location,
     datasource_id,
     package_type,
     primary_language,
+    location=None,
+    text=None,
     base_url='https://repo1.maven.org/maven2',
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
     using the provided `text` (one or the other but not both).
     """
-    pom = get_maven_pom(location=location)
+    yield parse_pom(
+        datasource_id=datasource_id,
+        package_type=package_type,
+        primary_language=primary_language,
+        location=location,
+        text=text,
+        base_url=base_url
+    )
+
+
+def parse_pom(
+    datasource_id,
+    package_type,
+    primary_language,
+    location=None,
+    text=None,
+    base_url='https://repo1.maven.org/maven2',
+):
+    """
+    Yield Packagedata objects from parsing a Maven pom file at `location` or
+    using the provided `text` (one or the other but not both).
+    """
+    pom = get_maven_pom(location=location, text=text)
 
     if not pom:
         return
@@ -1192,7 +1215,8 @@ def parse(
     if not package_data.license_expression and package_data.declared_license:
         package_data.license_expression = models.compute_normalized_license(package_data.declared_license)
 
-    yield package_data
+    return package_data
+
 
 def build_vcs_and_code_view_urls(scm):
     """

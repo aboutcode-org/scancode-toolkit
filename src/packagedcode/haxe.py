@@ -45,26 +45,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
     documentation_url = 'https://lib.haxe.org/documentation/creating-a-haxelib-package/'
 
     @classmethod
-    def parse(cls, location):
-        """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package_data archive, manifest or similar.
-
-        {
-            "name": "haxelib",
-            "url" : "https://lib.haxe.org/documentation/",
-            "license": "GPL",
-            "tags": ["haxelib", "core"],
-            "description": "The haxelib client",
-            "classPath": "src",
-            "version": "3.4.0",
-            "releasenote": " * Fix password input issue in Windows (#421).\n * ....",
-            "contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
-        }
-        """
-        with io.open(location, encoding='utf-8') as loc:
-            json_data = json.load(loc)
-
+    def _parse_haxelib_json_data(cls, json_data):
         name = json_data.get('name')
         version = json_data.get('version')
 
@@ -110,4 +91,27 @@ class HaxelibJsonHandler(models.DatafileHandler):
             dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
             package_data.dependencies.append(dep)
 
-        yield package_data
+        return package_data
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package_data archive, manifest or similar.
+
+        {
+            "name": "haxelib",
+            "url" : "https://lib.haxe.org/documentation/",
+            "license": "GPL",
+            "tags": ["haxelib", "core"],
+            "description": "The haxelib client",
+            "classPath": "src",
+            "version": "3.4.0",
+            "releasenote": " * Fix password input issue in Windows (#421).\n * ....",
+            "contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
+        }
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            json_data = json.load(loc)
+
+        yield cls._parse_haxelib_json_data(json_data)
