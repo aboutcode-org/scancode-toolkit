@@ -6,9 +6,10 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-import click
+
 import os
 import pickle
+from shutil import rmtree
 
 import attr
 
@@ -53,6 +54,7 @@ class LicenseCache:
 
     @staticmethod
     def load_or_build(
+        only_builtin=False,
         licensedcode_cache_dir=licensedcode_cache_dir,
         scancode_cache_dir=scancode_cache_dir,
         force=False,
@@ -81,6 +83,9 @@ class LicenseCache:
           directories using the same format that we use for licenses and rules.
         """
         idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
+        if only_builtin:
+            rmtree(idx_cache_dir)
+
         create_dir(idx_cache_dir)
         cache_file = os.path.join(idx_cache_dir, LICENSE_INDEX_FILENAME)
 
@@ -120,14 +125,18 @@ class LicenseCache:
                 # rebuild all cached data (e.g. mostly the index) and cache it
 
                 additional_directories = []
-                plugin_directories = get_paths_to_installed_licenses_and_rules()
-                if plugin_directories:
-                    additional_directories.extend(plugin_directories)
+                if only_builtin:
+                    additional_directory = None
+                    plugin_directories = []
+                else:
+                    plugin_directories = get_paths_to_installed_licenses_and_rules()
+                    if plugin_directories:
+                        additional_directories.extend(plugin_directories)
 
-                # include installed licenses
-                if additional_directory:
-                    # additional_directories is originally a tuple
-                    additional_directories.append(additional_directory)
+                    # include installed licenses
+                    if additional_directory:
+                        # additional_directories is originally a tuple
+                        additional_directories.append(additional_directory)
 
                 additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
                 validate_additional_license_data(
@@ -355,7 +364,12 @@ def build_unknown_spdx_symbol(licenses_db=None):
     return LicenseSymbolLike(licenses_db['unknown-spdx'])
 
 
-def get_cache(force=False, index_all_languages=False, additional_directory=None):
+def get_cache(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
     Return a LicenseCache either rebuilt, cached or loaded from disk.
 
@@ -364,13 +378,19 @@ def get_cache(force=False, index_all_languages=False, additional_directory=None)
     texts and rules (the default)
     """
     return populate_cache(
+        only_builtin=only_builtin,
         force=force,
         index_all_languages=index_all_languages,
         additional_directory=additional_directory,
     )
 
 
-def populate_cache(force=False, index_all_languages=False, additional_directory=None):
+def populate_cache(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
     Return, load or build and cache a LicenseCache.
     """
@@ -378,6 +398,7 @@ def populate_cache(force=False, index_all_languages=False, additional_directory=
 
     if force or not _LICENSE_CACHE:
         _LICENSE_CACHE = LicenseCache.load_or_build(
+            only_builtin=only_builtin,
             licensedcode_cache_dir=licensedcode_cache_dir,
             scancode_cache_dir=scancode_cache_dir,
             force=force,
@@ -407,11 +428,17 @@ def load_cache_file(cache_file):
             raise Exception(msg) from e
 
 
-def get_index(force=False, index_all_languages=False, additional_directory=None):
+def get_index(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
     Return and eventually build and cache a LicenseIndex.
     """
     return get_cache(
+        only_builtin=only_builtin,
         force=force,
         index_all_languages=index_all_languages,
         additional_directory=additional_directory

@@ -9,6 +9,8 @@
 
 import click
 
+from commoncode.cliutils import PluggableCommandLineOption
+
 
 @click.command(name='scancode-reindex-licenses')
 @click.option(
@@ -16,6 +18,17 @@ import click
     is_flag=True,
     help='[EXPERIMENTAL] Rebuild the license index including texts all '
             'languages (and not only English) and exit.',
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    '--only-builtin',
+    is_flag=True,
+    help='Rebuild the license index excluding any additional '
+         'license directory or additional license plugins which'
+         'were added previously, i.e. with only builtin scancode '
+         'license and rules.',
+    conflicting_options=['additional_directory'],
+    cls=PluggableCommandLineOption,
 )
 @click.option(
     '--additional-directory',
@@ -23,9 +36,12 @@ import click
     metavar='DIR',
     help='Include this directory with additional custom licenses and license rules '
             'in the license detection index.',
+    conflicting_options=['only_builtin'],
+    cls=PluggableCommandLineOption,
 )
 @click.help_option('-h', '--help')
 def reindex_licenses(
+    only_builtin,
     all_languages,
     additional_directory,
     *args,
@@ -35,7 +51,12 @@ def reindex_licenses(
 
     from licensedcode.cache import get_index
     click.echo('Rebuilding the license index...')
-    get_index(force=True, index_all_languages=bool(all_languages), additional_directory=additional_directory)
+    get_index(
+        only_builtin=only_builtin,
+        force=True,
+        index_all_languages=bool(all_languages),
+        additional_directory=additional_directory
+    )
     click.echo('Done.')
 
 
