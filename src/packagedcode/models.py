@@ -413,7 +413,6 @@ class Dependency(DependentPackage):
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.dependency_uid:
-            print(self.purl)
             self.dependency_uid = build_package_uid(self.purl)
 
     @classmethod

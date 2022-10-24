@@ -163,95 +163,85 @@ class NpmPackageJsonHandler(BaseNpmHandler):
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
+    def _parse(cls, json_data):
+        name = json_data.get('name')
+        version = json_data.get('version')
+        homepage_url = json_data.get('homepage', '')
+
+        # a package.json without name and version can be a private package
+
+        if homepage_url and isinstance(homepage_url, list):
+            # TODO: should we keep other URLs
+            homepage_url = homepage_url[0]
+        homepage_url = homepage_url.strip() or None
+
+        namespace, name = split_scoped_package_name(name)
+
+        urls = get_urls(namespace, name, version)
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            namespace=namespace or None,
+            name=name,
+            version=version or None,
+            description=json_data.get('description', '').strip() or None,
+            homepage_url=homepage_url,
+            **urls,
+        )
+        vcs_revision = json_data.get('gitHead') or None
+
+        # mapping of top level package.json items to a function accepting as
+        # arguments the package.json element value and returning an iterable of (key,
+        # values) to update on a package
+        field_mappers = [
+            ('author', partial(party_mapper, party_type='author')),
+            ('contributors', partial(party_mapper, party_type='contributor')),
+            ('maintainers', partial(party_mapper, party_type='maintainer')),
+
+            ('dependencies', partial(deps_mapper, field_name='dependencies')),
+            ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
+            ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
+            ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
+            ('bundledDependencies', bundle_deps_mapper),
+            ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
+            ('keywords', keywords_mapper,),
+            ('bugs', bugs_mapper),
+            ('dist', dist_mapper),
+        ]
+
+        for source, func in field_mappers:
+            value = json_data.get(source) or None
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    func(value, package)
+
+        if not package.download_url:
+            # Only add a synthetic download URL if there is none from the dist mapping.
+            package.download_url = npm_download_url(package.namespace, package.name, package.version)
+
+        # licenses are a tad special with many different data structures
+        lic = json_data.get('license')
+        lics = json_data.get('licenses')
+        package = licenses_mapper(lic, lics, package)
+
+        if not package.license_expression and package.declared_license:
+            package.license_expression = compute_normalized_license(package.declared_license)
+
+        return package
+
+    @classmethod
     def parse(cls, location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
+            json_data = json.load(loc)
 
-        yield parse_npm_package_json(
-            package_data,
-            datasource_id=cls.datasource_id,
-            default_package_type=cls.default_package_type,
-            default_primary_language=cls.default_primary_language
-        )
+        yield cls._parse(json_data)
 
     @classmethod
     def compute_normalized_license(cls, package):
         return compute_normalized_license(package.declared_license)
-
-
-def parse_npm_package_json(
-    package_data,
-    datasource_id='npm_package_json',
-    default_package_type='npm',
-    default_primary_language='Javascript'
-):
-    name = package_data.get('name')
-    version = package_data.get('version')
-    homepage_url = package_data.get('homepage', '')
-
-    # a package.json without name and version can be a private package
-
-    if homepage_url and isinstance(homepage_url, list):
-        # TODO: should we keep other URLs
-        homepage_url = homepage_url[0]
-    homepage_url = homepage_url.strip() or None
-
-    namespace, name = split_scoped_package_name(name)
-
-    urls = get_urls(namespace, name, version)
-    package = models.PackageData(
-        datasource_id=datasource_id,
-        type=default_package_type,
-        primary_language=default_primary_language,
-        namespace=namespace or None,
-        name=name,
-        version=version or None,
-        description=package_data.get('description', '').strip() or None,
-        homepage_url=homepage_url,
-        **urls,
-    )
-    vcs_revision = package_data.get('gitHead') or None
-
-    # mapping of top level package.json items to a function accepting as
-    # arguments the package.json element value and returning an iterable of (key,
-    # values) to update on a package
-    field_mappers = [
-        ('author', partial(party_mapper, party_type='author')),
-        ('contributors', partial(party_mapper, party_type='contributor')),
-        ('maintainers', partial(party_mapper, party_type='maintainer')),
-
-        ('dependencies', partial(deps_mapper, field_name='dependencies')),
-        ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
-        ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
-        ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
-        ('bundledDependencies', bundle_deps_mapper),
-        ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
-        ('keywords', keywords_mapper,),
-        ('bugs', bugs_mapper),
-        ('dist', dist_mapper),
-    ]
-
-    for source, func in field_mappers:
-        value = package_data.get(source) or None
-        if value:
-            if isinstance(value, str):
-                value = value.strip()
-            if value:
-                func(value, package)
-
-    if not package.download_url:
-        # Only add a synthetic download URL if there is none from the dist mapping.
-        package.download_url = npm_download_url(package.namespace, package.name, package.version)
-
-    # licenses are a tad special with many different data structures
-    lic = package_data.get('license')
-    lics = package_data.get('licenses')
-    package = licenses_mapper(lic, lics, package)
-
-    if not package.license_expression and package.declared_license:
-        package.license_expression = compute_normalized_license(package.declared_license)
-
-    return package
 
 
 class BaseNpmLockHandler(BaseNpmHandler):

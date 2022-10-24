@@ -42,16 +42,13 @@ class CompactManifestHandler(models.DatafileHandler):
     documentation_url = 'https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS'
 
     @classmethod
-    def _parse_freebsd_manifest_data(cls, location):
-        with io.open(location, encoding='utf-8') as loc:
-            freebsd_manifest = saneyaml.load(loc)
-
+    def _parse(cls, yaml_data):
         package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             qualifiers=dict(
-                arch=freebsd_manifest.get('arch'),
-                origin=freebsd_manifest.get('origin'),
+                arch=yaml_data.get('arch'),
+                origin=yaml_data.get('origin'),
             )
         )
 
@@ -65,7 +62,7 @@ class CompactManifestHandler(models.DatafileHandler):
         ]
 
         for source, target in plain_fields:
-            value = freebsd_manifest.get(source)
+            value = yaml_data.get(source)
             if value:
                 if isinstance(value, str):
                     value = value.strip()
@@ -83,12 +80,12 @@ class CompactManifestHandler(models.DatafileHandler):
 
         for source, func in field_mappers:
             logger.debug('parse: %(source)r, %(func)r' % locals())
-            value = freebsd_manifest.get(source) or None
+            value = yaml_data.get(source) or None
             if value:
                 func(value, package_data)
 
         # license_mapper needs multiple fields
-        license_mapper(freebsd_manifest, package_data)
+        license_mapper(yaml_data, package_data)
 
         if package_data.declared_license:
             package_data.license_expression = cls.compute_normalized_license(package_data)
@@ -101,11 +98,10 @@ class CompactManifestHandler(models.DatafileHandler):
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
         """
-        yield cls._parse_freebsd_manifest_data(
-            location=location,
-            datasource_id=cls.datasource_id,
-            default_package_type=cls.default_package_type,
-        )
+        with io.open(location, encoding='utf-8') as loc:
+            yaml_data = saneyaml.load(loc)
+
+        yield cls._parse(yaml_data)
 
     @classmethod
     def compute_normalized_license(cls, package):

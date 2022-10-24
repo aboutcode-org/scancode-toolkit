@@ -45,7 +45,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
     documentation_url = 'https://lib.haxe.org/documentation/creating-a-haxelib-package/'
 
     @classmethod
-    def _parse_haxelib_json_data(cls, json_data):
+    def _parse(cls, json_data):
         name = json_data.get('name')
         version = json_data.get('version')
 
@@ -114,4 +114,4 @@ class HaxelibJsonHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse_haxelib_json_data(json_data)
+        yield cls._parse(json_data)

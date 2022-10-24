@@ -1095,28 +1095,26 @@ def get_urls(namespace, name, version, qualifiers, base_url='https://repo1.maven
 
 
 def parse(
+    location,
     datasource_id,
     package_type,
     primary_language,
-    location=None,
-    text=None,
     base_url='https://repo1.maven.org/maven2',
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
     using the provided `text` (one or the other but not both).
     """
-    yield parse_pom(
+    yield _parse(
         datasource_id=datasource_id,
         package_type=package_type,
         primary_language=primary_language,
         location=location,
-        text=text,
         base_url=base_url
     )
 
 
-def parse_pom(
+def _parse(
     datasource_id,
     package_type,
     primary_language,
