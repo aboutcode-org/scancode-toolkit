@@ -54,6 +54,15 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
+Package parsing:
+~~~~~~~~~~~~~~~~~
+
+- Code for parsing a Maven POM, npm package.json, freebsd manifest, haxelib
+  JSON, have been separated into two functions: one that creates a PackageData
+  object from the parsed Resource, and another that calls the previous function
+  and yields the PackageData. This was done such that we can use the package
+  manifest data parsing code outside of the scancode-toolkit context.
+
 v31.2.1 - 2022-10-05
 ----------------------------------
 

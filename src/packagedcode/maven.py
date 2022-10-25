@@ -1105,13 +1105,15 @@ def parse(
     Yield Packagedata objects from parsing a Maven pom file at `location` or
     using the provided `text` (one or the other but not both).
     """
-    yield _parse(
+    package = _parse(
         datasource_id=datasource_id,
         package_type=package_type,
         primary_language=primary_language,
         location=location,
         base_url=base_url
     )
+    if package:
+        yield package
 
 
 def _parse(
