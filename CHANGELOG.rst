@@ -57,6 +57,11 @@ License detection:
   These can be provided as a one off in a directory or packaged as a plugin
   for consistent reuse and deployment.
 
+- There is a new "scancode-reindex-licenses" command that replace the
+  "scancode --reindex-licenses" command line option which has been
+  removed. This new command supports simpler reindexing using custom
+  license texts and license rules contributed by plugins or stored in an
+  additional directory. 
 v31.2.1 - 2022-10-05
 ----------------------------------
 
