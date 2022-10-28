@@ -234,7 +234,7 @@ A sample JSON output for an individual file will look like::
           "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
           "spdx_license_key": null,
-          "spdx_url": "",
+          "spdx_url": null,
           "start_line": 9,
           "end_line": 15,
           "matched_rule": {

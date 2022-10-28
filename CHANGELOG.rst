@@ -46,7 +46,6 @@ License detection:
   matches in a larger license detecion. This remove a larger number of false
   positive or ambiguous license detections.
 
-
 - The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
@@ -54,14 +53,26 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
-Package parsing:
-~~~~~~~~~~~~~~~~~
+- We can now detect licenses using custom license texts and license rules.
+  These can be provided as a one off in a directory or packaged as a plugin
+  for consistent reuse and deployment.
 
-- Code for parsing a Maven POM, npm package.json, freebsd manifest, haxelib
-  JSON, have been separated into two functions: one that creates a PackageData
+- There is a new "scancode-reindex-licenses" command that replace the
+  "scancode --reindex-licenses" command line option which has been
+  removed. This new command supports simpler reindexing using custom
+  license texts and license rules contributed by plugins or stored in an
+  additional directory. 
+
+Package detection:
+~~~~~~~~~~~~~~~~~~~~~
+
+- Code for parsing a Maven POM, npm package.json, freebsd manifest and haxelib
+  JSON have been separated into two functions: one that creates a PackageData
   object from the parsed Resource, and another that calls the previous function
   and yields the PackageData. This was done such that we can use the package
-  manifest data parsing code outside of the scancode-toolkit context.
+  manifest data parsing code outside of the scancode-toolkit context in other
+  libraries.
+
 
 v31.2.1 - 2022-10-05
 ----------------------------------

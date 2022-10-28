@@ -861,6 +861,7 @@ def run_scan(
         cle.options = pretty_params or {}
         # useful for debugging
         cle.extra_data['system_environment'] = system_environment = {}
+
         system_environment['operating_system'] = commoncode.system.current_os
         system_environment['cpu_architecture'] = commoncode.system.current_arch
         system_environment['platform'] = platform.platform()

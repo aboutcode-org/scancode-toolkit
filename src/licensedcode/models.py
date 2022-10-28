@@ -22,6 +22,7 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 from time import time
+from pathlib import Path
 
 import attr
 import saneyaml
@@ -186,6 +187,13 @@ class License:
             help='Free text notes.')
     )
 
+    is_builtin = attr.ib(
+        default=True,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a builtin standard license.')
+    )
+
     # TODO: add the license key(s) this exception applies to
     is_exception = attr.ib(
         default=False,
@@ -346,12 +354,12 @@ class License:
     )
 
     @classmethod
-    def from_dir(cls, key, licenses_data_dir=licenses_data_dir):
+    def from_dir(cls, key, licenses_data_dir=licenses_data_dir, is_builtin=True):
         """
         Return a new License object for a license ``key`` and load its attribute
         from a data file stored in ``licenses_data_dir``.
         """
-        lic = cls(key=key)
+        lic = cls(key=key, is_builtin=is_builtin)
         data_file = lic.data_file(licenses_data_dir=licenses_data_dir)
         if exists(data_file):
             text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
@@ -684,6 +692,7 @@ def load_licenses(
     licenses_data_dir=licenses_data_dir,
     with_deprecated=False,
     check_dangling=True,
+    is_builtin=True,
 ):
     """
     Return a mapping of {key: License} loaded from license data and text files
@@ -711,9 +720,16 @@ def load_licenses(
             key = file_base_name(data_file)
 
             try:
-                lic = License.from_dir(key=key, licenses_data_dir=licenses_data_dir)
+                lic = License.from_dir(
+                    key=key,
+                    licenses_data_dir=licenses_data_dir,
+                    is_builtin=is_builtin,
+                )
             except Exception as e:
-                raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
+                raise Exception(
+                    f'Failed to load license: {key} from: '
+                    f'file://{licenses_data_dir}/{key}.yml with error: {e}'
+                ) from e
 
             if check_dangling:
                 used_files.add(data_file)
@@ -751,6 +767,7 @@ def get_rules(
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
     validate=False,
+    is_builtin=True,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
@@ -763,6 +780,7 @@ def get_rules(
 
     rules = list(load_rules(
         rules_data_dir=rules_data_dir,
+        is_builtin=is_builtin,
     ))
 
     if validate:
@@ -770,6 +788,176 @@ def get_rules(
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
+
+
+def get_license_dirs(additional_dirs):
+    """
+    Return a list of all subdirectories containing license files within the
+    input list of additional directories. These directories do not have to be absolute paths.
+    """
+    return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
+
+
+def get_rule_dirs(additional_dirs):
+    """
+    Return a list of all subdirectories containing rule files within the
+    input list of additional directories. These directories do not have to be absolute paths.
+    """
+    return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
+
+
+def get_paths_to_installed_licenses_and_rules():
+    """
+    Return a list of paths to externally packaged licenses or rules that the user has
+    installed. Gets a list of all of these licenses (installed as plugins) and
+    then gets the plugins containing licenses by checking that their names start
+    with a common prefix.
+    """
+    from importlib_metadata import entry_points
+    from licensedcode.additional_license_location_provider import get_location
+    installed_plugins = entry_points(group='scancode_additional_license_location_provider')
+    paths = []
+    for plugin in installed_plugins:
+        # get path to directory of licenses and/or rules
+        paths.append(get_location(plugin.name))
+    return paths
+
+
+def load_licenses_from_multiple_dirs(
+    builtin_license_data_dir,
+    additional_license_data_dirs,
+    with_deprecated=False,
+):
+    """
+    Return a mapping of {key: License} combining a list of
+    ``additional_license_data_dirs`` containing additional licenses with the
+    builtin ``builtin_license_data_dir`` licenses into the same mapping.
+    """
+    #raise Exception(builtin_license_data_dir)
+    combined_licenses = load_licenses(
+        licenses_data_dir=builtin_license_data_dir,
+        with_deprecated=with_deprecated,
+        is_builtin=True,
+    )
+    for license_dir in additional_license_data_dirs:
+        additional_licenses = load_licenses(
+            licenses_data_dir=license_dir,
+            with_deprecated=with_deprecated,
+            is_builtin=False,
+        )
+
+        # validate that additional licenses keys do not exist as builtin
+        duplicate_keys = set(combined_licenses).intersection(set(additional_licenses))
+        if duplicate_keys:
+            dupes = ', '.join(sorted(duplicate_keys))
+            message = f'Duplicate licenses found when loading additional licenses from: {license_dir}: {dupes}'
+            raise ValueError(message)
+
+        combined_licenses.update(additional_licenses)
+
+    return combined_licenses
+
+
+def get_rules_from_multiple_dirs(
+    licenses_db,
+    builtin_rule_data_dir,
+    additional_rules_data_dirs,
+):
+    """
+    Yield Rule(s) built from:
+    - A ``license_db`` mapping of {key: License}
+    - The ``builtin_rule_data_dir`` of builtin license rules
+    - The list of ``additional_rules_data_dirs`` containing additional rules.
+    """
+    # first load all builtin
+    combined_rules = list(get_rules(
+        licenses_db=licenses_db,
+        rules_data_dir=builtin_rule_data_dir,
+    ))
+
+    # load additional rules
+    for rules_dir in additional_rules_data_dirs or []:
+        combined_rules.extend(load_rules(
+            rules_data_dir=rules_dir,
+            is_builtin=False,
+        ))
+
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+
+    return combined_rules
+
+
+class InvalidLicense(Exception):
+    pass
+
+
+def validate_additional_license_data(additional_directories, scancode_license_dir):
+    """
+    Raises an exception if there are any invalid licenses in the directories of
+    additional licenses.
+    """
+    licenses = load_licenses_from_multiple_dirs(
+        additional_license_data_dirs=additional_directories,
+        builtin_license_data_dir=scancode_license_dir
+    )
+    errors, _, _ = License.validate(
+        licenses,
+        verbose=False,
+    )
+    if errors:
+        message = ['Errors while validating licenses:']
+        for key, msgs in errors.items():
+            message.append('')
+            message.append(f'License: {key}')
+            for msg in msgs:
+                message.append(f'  {msg!r}')
+        raise InvalidLicense('\n'.join(message))
+
+
+def _ignorable_clue_error(rule, rules_dir):
+    """
+    Return a pair of the result of validating a rule's ignorable clues and expected ignorable clues
+    if there is an error. Otherwise, returns None.
+    """
+    result = get_ignorables(rule.text_file(rules_data_dir=rules_dir))
+    expected = get_normalized_ignorables(rule)
+    if result != expected:
+        data_file = rule.data_file(rules_data_dir=rules_dir)
+        text_file = rule.text_file(rules_data_dir=rules_dir)
+        if not data_file:
+            data_file = text_file.replace('.LICENSE', '.yml')
+
+        result['files'] = [
+            f'file://{data_file}',
+            f'file://{text_file}',
+        ]
+        return result, expected
+
+
+def validate_ignorable_clues(rule_directories, is_builtin):
+    """
+    Raises an exception if any ignorable clues declared in a Rule are improperly detected
+    in the rule text file.
+    """
+    messages = ['Errors while validating ignorable rules:']
+    error_present = False
+    for rules_dir in rule_directories:
+        r = list(load_rules(
+            rules_data_dir=rules_dir,
+            is_builtin=is_builtin,
+        ))
+        for rule in r:
+            if _ignorable_clue_error(rule, rules_dir):
+                error_present = True
+                result, expected = _ignorable_clue_error(rule, rules_dir)
+                messages.append('')
+                messages.append(f'{rule!r}')
+                messages.append('Result:')
+                messages.append(result)
+                messages.append('Expected:')
+                messages.append(expected)
+    if error_present:
+        raise InvalidRule('\n'.join(messages))
 
 
 class InvalidRule(Exception):
@@ -848,6 +1036,7 @@ def build_rule_from_license(license_obj):
             has_stored_minimum_coverage=bool(minimum_coverage),
             minimum_coverage=minimum_coverage,
 
+            is_builtin=license_obj.is_builtin,
             is_from_license=True,
             is_license_text=True,
 
@@ -900,7 +1089,7 @@ def get_license_tokens():
     yield 'licensed'
 
 
-def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
+def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
     Optionally check for consistency if ``with_checks`` is True.
@@ -924,7 +1113,11 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
             text_file = join(rules_data_dir, f'{base_name}.RULE')
 
             try:
-                yield Rule.from_files(data_file=data_file, text_file=text_file)
+                yield Rule.from_files(
+                    data_file=data_file,
+                    text_file=text_file,
+                    is_builtin=is_builtin,
+                )
             except Exception as re:
                 if with_checks:
                     model_errors.append(str(re))
@@ -1027,6 +1220,13 @@ class BasicRule:
             help='license_expression LicenseExpression object, computed and '
             'cached automatically at creation time from the license_expression '
             'string.')
+    )
+
+    is_builtin = attr.ib(
+        default=True,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a builtin standard rule.')
     )
 
     # The is_license_xxx flags below are nn indication of what this rule
@@ -1717,12 +1917,12 @@ class Rule(BasicRule):
         self.setup()
 
     @classmethod
-    def from_files(cls, data_file, text_file):
+    def from_files(cls, data_file, text_file, is_builtin=True):
         """
         Return a new Rule object loaded from a data file stored at
         ``data_file`` and a companion ``text_file``.
         """
-        rule = Rule()
+        rule = Rule(is_builtin=is_builtin)
         rule.load_data(data_file=data_file, text_file=text_file)
         return rule
 
@@ -1919,10 +2119,10 @@ class Rule(BasicRule):
 
         data_file = self.data_file(rules_data_dir=rules_data_dir)
         as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        write(location=data_file, byte_string=as_yaml)
+        write(data_file, as_yaml)
 
         text_file = self.text_file(rules_data_dir=rules_data_dir)
-        write(location=text_file, byte_string=self.text.encode('utf-8'))
+        write(text_file, self.text.encode('utf-8'))
 
     def load(self, data_file, text_file, with_checks=True):
         """

@@ -8,6 +8,7 @@
    help-text-options
    list-options
    simple-examples
+   other-commands
    basic-options
    core-options
    output-format
