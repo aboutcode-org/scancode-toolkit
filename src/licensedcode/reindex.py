@@ -24,7 +24,7 @@ from commoncode.cliutils import PluggableCommandLineOption
     '--only-builtin',
     is_flag=True,
     help='Rebuild the license index excluding any additional '
-         'license directory or additional license plugins which'
+         'license directory or additional license plugins which '
          'were added previously, i.e. with only builtin scancode '
          'license and rules.',
     conflicting_options=['additional_directory'],

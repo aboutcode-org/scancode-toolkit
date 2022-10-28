@@ -444,6 +444,8 @@ class License:
         if text:
             write(self.text_file(licenses_data_dir=licenses_data_dir), text.encode('utf-8'))
 
+        return self
+
     def load(self, data_file, text_file):
         """
         Populate license data from a YAML file stored in ``data_file`` and  ``text_file``.

@@ -72,9 +72,9 @@ class LicenseCache:
         On the side, we load cached or build license db, SPDX symbols and other
         license-related data structures.
 
-        - If the cache exists, it is returned unless corrupted, ``force`` is True, or if we pass in additional
-          directories containing licenses that are not present in the existing cache.
-        - If the cache does not exist, a new index is built and cached.
+        - If the cache exists, it is returned unless corrupted.
+        - If ``force`` is True, or if the cache does not exist a new index is built
+          and cached.
         - If ``index_all_languages`` is True, include texts in all languages when
           building the license index. Otherwise, only include the English license
           texts and rules (the default)
