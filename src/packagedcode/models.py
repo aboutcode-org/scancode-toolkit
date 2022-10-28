@@ -307,7 +307,7 @@ class IdentifiablePackageData(ModelMixin):
         for key, value in package_url.to_dict().items():
             self_val = getattr(self, key)
             if not self_val and value:
-                setattr(self, attr, value)
+                setattr(self, key, value)
 
     def to_dict(self, **kwargs):
         mapping = super().to_dict(**kwargs)

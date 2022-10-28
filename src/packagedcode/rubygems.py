@@ -337,7 +337,7 @@ def compute_normalized_license(declared_license):
         return combine_expressions(detected_licenses)
 
 
-def get_urls(name, version=None, platform=None):
+def get_urls(name, version=None, platform=None, **kwargs):
     """
     Return a mapping of standard URLs
     """

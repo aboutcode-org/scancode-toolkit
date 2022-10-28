@@ -62,6 +62,18 @@ License detection:
   removed. This new command supports simpler reindexing using custom
   license texts and license rules contributed by plugins or stored in an
   additional directory. 
+
+Package detection:
+~~~~~~~~~~~~~~~~~~~~~
+
+- Code for parsing a Maven POM, npm package.json, freebsd manifest and haxelib
+  JSON have been separated into two functions: one that creates a PackageData
+  object from the parsed Resource, and another that calls the previous function
+  and yields the PackageData. This was done such that we can use the package
+  manifest data parsing code outside of the scancode-toolkit context in other
+  libraries.
+
+
 v31.2.1 - 2022-10-05
 ----------------------------------
 
